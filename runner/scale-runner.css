@@ -549,33 +549,54 @@
 .sr-vas-vertical {
   flex-direction: row;
   align-items:    stretch;
-  min-height:     300px;
+  min-height:     350px;
 }
 
 .sr-vas-slider-vertical {
   writing-mode:       bt-lr;      /* IE */
   -webkit-appearance: slider-vertical;
-  width:              8px;
+  width:              28px;
   height:             100%;
-  min-height:         250px;
+  min-height:         300px;
+  flex-shrink:        0;
 }
 
 .sr-vas-vertical .sr-vas-anchor-bar {
-  display:        flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  width:          auto;
-  height:         100%;
-  min-height:     250px;
-  margin-left:    1rem;
-  margin-bottom:  0;
+  position:        static !important;
+  display:         flex !important;
+  flex-direction:  column-reverse !important;
+  justify-content: space-between !important;
+  width:           auto !important;
+  height:          100% !important;
+  min-height:      300px !important;
+  margin-left:     1.5rem;
+  margin-bottom:   0;
+  padding:         0.5rem 0;
 }
 
 .sr-vas-vertical .sr-vas-anchor-point {
-  position:   static;
-  transform:  none;
+  position:   static !important;
+  transform:  none !important;
+  text-align: left !important;
+  max-width:  14rem;
+  font-size:  0.95rem;
+  line-height: 1.3;
+}
+
+/* Legacy min/max label anchors in vertical mode */
+.sr-vas-vertical .sr-vas-anchors {
+  flex-direction:  column-reverse !important;
+  justify-content: space-between !important;
+  height:          100% !important;
+  min-height:      300px !important;
+  margin-left:     1.5rem;
+  gap:             0;
+}
+
+.sr-vas-vertical .sr-vas-anchor-low,
+.sr-vas-vertical .sr-vas-anchor-high {
   text-align: left;
-  max-width:  12rem;
+  max-width:  14rem;
 }
 
 /* ── Grid (matrix) ──────────────────────────────────────────── */

@@ -1019,7 +1019,10 @@ const ScaleRunner = (() => {
         const frac = (anchor.value - min) / (max - min);
         const el = document.createElement('span');
         el.className = 'sr-vas-anchor-point';
-        el.style.left = `calc(${thumbR}px + ${frac} * (100% - ${thumbR * 2}px))`;
+        if (!vertical) {
+          el.style.left = `calc(${thumbR}px + ${frac} * (100% - ${thumbR * 2}px))`;
+        }
+        // Vertical: flex layout handles positioning (column-reverse + space-between)
         el.style.cursor = 'pointer';
         el.innerHTML = resolveText(anchor.label, strings, state.params, state.responseMap, state.aliasMap);
         el.addEventListener('click', () => {
@@ -1031,20 +1034,29 @@ const ScaleRunner = (() => {
         anchorBar.appendChild(el);
       }
 
-      // Add tick marks aligned with anchors
+      // Add tick marks aligned with anchors (horizontal only)
       const tickBar = document.createElement('div');
       tickBar.className = 'sr-vas-tick-bar';
-      for (const anchor of namedAnchors) {
-        const frac = (anchor.value - min) / (max - min);
-        const tick = document.createElement('span');
-        tick.className = 'sr-vas-tick';
-        tick.style.left = `calc(${thumbR}px + ${frac} * (100% - ${thumbR * 2}px))`;
-        tickBar.appendChild(tick);
+      if (!vertical) {
+        for (const anchor of namedAnchors) {
+          const frac = (anchor.value - min) / (max - min);
+          const tick = document.createElement('span');
+          tick.className = 'sr-vas-tick';
+          tick.style.left = `calc(${thumbR}px + ${frac} * (100% - ${thumbR * 2}px))`;
+          tickBar.appendChild(tick);
+        }
       }
 
-      container.appendChild(anchorBar);
-      container.appendChild(slider);
-      container.appendChild(tickBar);
+      if (vertical) {
+        // Vertical: slider on left, anchors on right
+        container.appendChild(slider);
+        container.appendChild(anchorBar);
+      } else {
+        // Horizontal: anchors above, slider, ticks below
+        container.appendChild(anchorBar);
+        container.appendChild(slider);
+        container.appendChild(tickBar);
+      }
     } else {
       // Legacy: simple low/high endpoint labels
       const anchorsDiv = document.createElement('div');
@@ -1058,10 +1070,18 @@ const ScaleRunner = (() => {
       highEl.className = 'sr-vas-anchor-high';
       if (qdef.max_label) highEl.innerHTML = resolveText(qdef.max_label, strings, state.params, state.responseMap, state.aliasMap);
 
-      anchorsDiv.appendChild(lowEl);
-      anchorsDiv.appendChild(highEl);
-      container.appendChild(anchorsDiv);
-      container.appendChild(slider);
+      if (vertical) {
+        // Vertical: high label first (top), then low (bottom) — column-reverse flips them
+        anchorsDiv.appendChild(lowEl);
+        anchorsDiv.appendChild(highEl);
+        container.appendChild(slider);
+        container.appendChild(anchorsDiv);
+      } else {
+        anchorsDiv.appendChild(lowEl);
+        anchorsDiv.appendChild(highEl);
+        container.appendChild(anchorsDiv);
+        container.appendChild(slider);
+      }
     }
 
     wrap.appendChild(container);

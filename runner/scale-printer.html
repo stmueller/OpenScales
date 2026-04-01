@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenScales — Printable Scale</title>
+  <style>
+    /* ── Screen styles ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: 'Times New Roman', Georgia, serif;
+      font-size: 12pt;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+      background: #f3f4f6;
+      color: #111;
+    }
+    .print-page {
+      max-width: 8in;
+      margin: 1rem auto;
+      padding: 0.75in;
+      background: white;
+      box-shadow: 0 1px 6px rgba(0,0,0,.15);
+    }
+    .toolbar {
+      max-width: 8in;
+      margin: 1rem auto 0;
+      padding: 0.5rem;
+      text-align: center;
+      font-family: system-ui, sans-serif;
+      font-size: 10pt;
+    }
+    .toolbar button {
+      padding: 8px 24px;
+      font-size: 11pt;
+      border: 1px solid #666;
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+      margin: 0 4px;
+    }
+    .toolbar button:hover { background: #eee; }
+    .toolbar select { padding: 6px; font-size: 10pt; }
+
+    /* ── Header ── */
+    .scale-header { margin-bottom: 1.5em; border-bottom: 2px solid #333; padding-bottom: 0.75em; }
+    .scale-header h1 { font-size: 16pt; margin: 0 0 0.25em; }
+    .scale-header .citation { font-size: 9pt; color: #555; font-style: italic; margin: 0.25em 0; }
+    .scale-header .meta { font-size: 9pt; color: #777; }
+
+    /* ── Entry form ── */
+    .entry-form { margin-bottom: 1.5em; padding-bottom: 0.75em; border-bottom: 1px solid #ccc; }
+    .entry-row { display: flex; gap: 1em; margin-bottom: 0.5em; }
+    .entry-field { flex: 1; display: flex; align-items: baseline; gap: 0.3em; }
+    .entry-label { font-size: 10pt; font-weight: bold; white-space: nowrap; }
+    .entry-blank { flex: 1; border-bottom: 1pt solid #999; min-width: 2in; height: 1.2em; }
+
+    /* ── Items ── */
+    .item { margin-bottom: 1.25em; page-break-inside: avoid; }
+    .item-number { font-weight: bold; margin-right: 0.25em; }
+    .item-text { margin-bottom: 0.4em; }
+    .question-head { font-style: italic; color: #444; margin-bottom: 0.3em; font-size: 11pt; }
+
+    /* ── Instructions ── */
+    .inst { margin-bottom: 1em; padding: 0.5em 0; font-style: italic; color: #333; }
+
+    /* ── Section ── */
+    .section-break { margin: 1.5em 0 0.75em; font-size: 13pt; font-weight: bold; border-bottom: 1px solid #999; padding-bottom: 0.25em; }
+
+    /* ── Likert ── */
+    .likert-options { display: flex; gap: 0; margin: 0.3em 0 0 1em; }
+    .likert-option {
+      display: flex; flex-direction: column; align-items: center;
+      min-width: 4em; text-align: center; font-size: 9pt; padding: 0 0.3em;
+    }
+    .likert-circle {
+      width: 16px; height: 16px; border: 1.5pt solid #333;
+      border-radius: 50%; margin-bottom: 3px; flex-shrink: 0;
+    }
+    .likert-label { line-height: 1.2; max-width: 5em; word-wrap: break-word; }
+
+    /* ── VAS ── */
+    .vas-container { margin: 0.4em 0 0 1em; }
+    .vas-line { display: flex; align-items: center; gap: 0.5em; }
+    .vas-track { flex: 1; height: 0; border-top: 1.5pt solid #333; }
+    .vas-endpoint { font-size: 9pt; white-space: nowrap; }
+    .vas-anchors { display: flex; justify-content: space-between; margin-top: 2px; font-size: 8pt; color: #555; }
+
+    /* ── Multi / Multicheck ── */
+    .multi-options { margin: 0.3em 0 0 1.5em; }
+    .multi-option { display: flex; align-items: baseline; gap: 0.4em; margin-bottom: 0.2em; font-size: 11pt; }
+    .radio-circle { width: 12px; height: 12px; border: 1.5pt solid #333; border-radius: 50%; flex-shrink: 0; display: inline-block; }
+    .check-box { width: 12px; height: 12px; border: 1.5pt solid #333; flex-shrink: 0; display: inline-block; }
+
+    /* ── Short / Long ── */
+    .short-line { border-bottom: 1pt solid #999; height: 1.5em; margin: 0.3em 0 0 1em; width: 60%; }
+    .long-box { border: 1pt solid #999; height: 4em; margin: 0.3em 0 0 1em; width: 90%; }
+
+    /* ── Grid ── */
+    .grid-table { border-collapse: collapse; margin: 0.4em 0 0 0; font-size: 10pt; width: 100%; }
+    .grid-table th, .grid-table td { border: 0.5pt solid #bbb; padding: 4px 6px; text-align: center; }
+    .grid-table th { font-weight: normal; font-size: 9pt; background: #f5f5f5; }
+    .grid-table td.row-label { text-align: left; font-size: 10pt; }
+    .grid-circle { width: 12px; height: 12px; border: 1.5pt solid #333; border-radius: 50%; margin: auto; }
+
+    /* ── Footer ── */
+    .scale-footer { margin-top: 2em; padding-top: 0.5em; border-top: 1px solid #ccc; font-size: 8pt; color: #888; }
+
+    /* ── Print ── */
+    @media print {
+      body { background: white; }
+      .toolbar { display: none; }
+      .print-page { box-shadow: none; margin: 0; padding: 0.5in 0.75in; max-width: none; }
+      .item { page-break-inside: avoid; }
+      .section-break { page-break-before: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="toolbar" id="toolbar">
+  <label>Language: <select id="langSelect"></select></label>
+  <button onclick="window.print()">🖨 Print / Save PDF</button>
+  <button onclick="downloadHTML()">📄 Download HTML</button>
+</div>
+
+<div class="print-page" id="output">
+  <p style="color:#999; text-align:center; padding:3em;">Loading scale…</p>
+</div>
+
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const osdUrl = params.get('osd');
+  let lang = params.get('lang') || 'en';
+
+  if (!osdUrl) {
+    document.getElementById('output').innerHTML = '<p style="color:red;">No scale specified. Use <code>?osd=path/to/SCALE.osd</code></p>';
+    return;
+  }
+
+  fetch(osdUrl)
+    .then(r => r.json())
+    .then(data => {
+      window._osdData = data;
+      setupLangSelector(data);
+      render(data, lang);
+    })
+    .catch(err => {
+      document.getElementById('output').innerHTML = `<p style="color:red;">Error loading scale: ${err.message}</p>`;
+    });
+
+  function setupLangSelector(data) {
+    const sel = document.getElementById('langSelect');
+    const langs = Object.keys(data.translations || {});
+    langs.forEach(l => {
+      const opt = document.createElement('option');
+      opt.value = l; opt.textContent = l;
+      if (l === lang) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener('change', () => { lang = sel.value; render(data, lang); });
+  }
+
+  function t(key, strings) {
+    if (key in strings) return strings[key];
+    return key;
+  }
+
+  function esc(s) {
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  function render(data, lang) {
+    const defn = data.definition || {};
+    const strings = (data.translations || {})[lang] || {};
+    const info = defn.scale_info || {};
+    const items = defn.items || [];
+    const likertOpts = defn.likert_options || {};
+    let html = '';
+
+    // Header
+    html += '<div class="scale-header">';
+    html += `<h1>${esc(info.name || info.code || 'Scale')}</h1>`;
+    if (info.citation) html += `<div class="citation">${esc(info.citation)}</div>`;
+    const meta = [];
+    if (info.code) meta.push(`Code: ${esc(info.code)}`);
+    if (info.version) meta.push(`Version: ${esc(info.version)}`);
+    if (info.license) meta.push(`License: ${esc(info.license)}`);
+    meta.push(`Language: ${esc(lang)}`);
+    if (meta.length) html += `<div class="meta">${meta.join(' &nbsp;|&nbsp; ')}</div>`;
+    html += '</div>';
+
+    // Entry form
+    html += '<div class="entry-form">';
+    html += '<div class="entry-row">';
+    html += '<div class="entry-field"><span class="entry-label">Date:</span><span class="entry-blank"></span></div>';
+    html += '<div class="entry-field"><span class="entry-label">Participant ID:</span><span class="entry-blank"></span></div>';
+    html += '</div>';
+    html += '<div class="entry-row">';
+    html += '<div class="entry-field"><span class="entry-label">Study:</span><span class="entry-blank"></span></div>';
+    html += '<div class="entry-field"><span class="entry-label">Condition:</span><span class="entry-blank"></span></div>';
+    html += '</div>';
+    html += '<div class="entry-row">';
+    html += '<div class="entry-field"><span class="entry-label">Researcher:</span><span class="entry-blank"></span></div>';
+    html += '<div class="entry-field"><span class="entry-label">Session:</span><span class="entry-blank"></span></div>';
+    html += '</div>';
+    html += '</div>';
+
+    // Items
+    let qNum = 0;
+    let currentQHead = '';
+
+    for (const item of items) {
+      const type = item.type || '';
+
+      if (type === 'section') {
+        const title = t(item.text_key || item.title_key || '', strings);
+        if (title) html += `<div class="section-break">${esc(title)}</div>`;
+        continue;
+      }
+
+      if (type === 'inst') {
+        const text = t(item.text_key || '', strings);
+        if (text) html += `<div class="inst">${text}</div>`;
+        continue;
+      }
+
+      // Scored item
+      qNum++;
+      const text = t(item.text_key || item.id, strings);
+
+      // Question head
+      const qHeadKey = item.question_head || likertOpts.question_head || '';
+      const qHead = qHeadKey ? t(qHeadKey, strings) : '';
+      if (qHead && qHead !== currentQHead) {
+        html += `<div class="question-head">${qHead}</div>`;
+        currentQHead = qHead;
+      }
+
+      html += '<div class="item">';
+      html += `<div class="item-text"><span class="item-number">${qNum}.</span> ${text}</div>`;
+
+      if (type === 'likert') {
+        html += renderLikert(item, likertOpts, strings);
+      } else if (type === 'vas') {
+        html += renderVAS(item, strings);
+      } else if (type === 'multi') {
+        html += renderMulti(item, strings, false);
+      } else if (type === 'multicheck') {
+        html += renderMulti(item, strings, true);
+      } else if (type === 'short') {
+        html += '<div class="short-line"></div>';
+      } else if (type === 'long') {
+        html += '<div class="long-box"></div>';
+      } else if (type === 'grid') {
+        html += renderGrid(item, strings);
+      }
+
+      html += '</div>';
+    }
+
+    // Footer
+    html += '<div class="scale-footer">';
+    html += `Generated from OpenScales — <a href="https://openscales.net">openscales.net</a>`;
+    if (info.implementation && info.implementation.author) {
+      html += ` | OSD by ${esc(info.implementation.author)}`;
+    }
+    html += '</div>';
+
+    document.getElementById('output').innerHTML = html;
+    document.title = `${info.name || info.code || 'Scale'} — Printable`;
+  }
+
+  function renderLikert(item, likertOpts, strings) {
+    const points = item.likert_points || likertOpts.points || 5;
+    const min = item.likert_min || likertOpts.min || 1;
+    const max = item.likert_max || likertOpts.max || points;
+    const labels = item.likert_labels || likertOpts.labels || [];
+    const reverse = item.likert_reverse || false;
+
+    let vals = [];
+    for (let v = min; v <= max; v++) vals.push(v);
+    if (reverse) vals = vals.reverse();
+
+    let html = '<div class="likert-options">';
+    for (const v of vals) {
+      const idx = v - min;
+      const label = idx < labels.length ? t(labels[idx], strings) : String(v);
+      html += `<div class="likert-option"><div class="likert-circle"></div><div class="likert-label">${esc(label)}</div></div>`;
+    }
+    html += '</div>';
+    return html;
+  }
+
+  function renderVAS(item, strings) {
+    const minLabel = item.min_label ? t(item.min_label, strings) : String(item.min || 0);
+    const maxLabel = item.max_label ? t(item.max_label, strings) : String(item.max || 100);
+    const anchors = item.anchors || null;
+
+    let html = '<div class="vas-container">';
+    html += '<div class="vas-line">';
+    html += `<span class="vas-endpoint">${esc(minLabel)}</span>`;
+    html += '<span class="vas-track"></span>';
+    html += `<span class="vas-endpoint">${esc(maxLabel)}</span>`;
+    html += '</div>';
+
+    if (anchors && anchors.length > 2) {
+      html += '<div class="vas-anchors">';
+      for (const a of anchors) {
+        html += `<span>${esc(t(a.label, strings))}</span>`;
+      }
+      html += '</div>';
+    }
+    html += '</div>';
+    return html;
+  }
+
+  function renderMulti(item, strings, isMulti) {
+    const options = item.options || [];
+    const shape = isMulti ? 'check-box' : 'radio-circle';
+    let html = '<div class="multi-options">';
+    for (const opt of options) {
+      let label;
+      if (typeof opt === 'object') {
+        label = t(opt.text_key || opt.value || '', strings);
+      } else {
+        label = t(String(opt), strings);
+      }
+      html += `<div class="multi-option"><span class="${shape}"></span> ${esc(label)}</div>`;
+    }
+    html += '</div>';
+    return html;
+  }
+
+  function renderGrid(item, strings) {
+    const rows = item.rows || [];
+    const cols = item.columns || [];
+
+    let html = '<table class="grid-table"><thead><tr><th></th>';
+    for (const col of cols) {
+      const label = typeof col === 'object' ? t(col.text_key || col.label || '', strings) : t(String(col), strings);
+      html += `<th>${esc(label)}</th>`;
+    }
+    html += '</tr></thead><tbody>';
+
+    for (const row of rows) {
+      const label = typeof row === 'object' ? t(row.text_key || row.id || '', strings) : t(String(row), strings);
+      html += `<tr><td class="row-label">${esc(label)}</td>`;
+      for (let i = 0; i < cols.length; i++) {
+        html += '<td><div class="grid-circle"></div></td>';
+      }
+      html += '</tr>';
+    }
+    html += '</tbody></table>';
+    return html;
+  }
+
+})();
+
+function downloadHTML() {
+  const content = document.getElementById('output').innerHTML;
+  const title = document.title || 'Scale';
+  const styles = document.querySelector('style').textContent;
+
+  // Build standalone HTML with inline styles
+  const html = `<!DOCTYPE html>
+<html lang="${document.getElementById('langSelect').value || 'en'}">
+<head>
+<meta charset="UTF-8">
+<title>${title}</title>
+<style>
+${styles}
+/* Override for standalone file */
+body { background: white; }
+.print-page { box-shadow: none; margin: 0; padding: 0.5in 0.75in; max-width: none; }
+</style>
+</head>
+<body>
+<div class="print-page">
+${content}
+</div>
+</body>
+</html>`;
+
+  const code = (window._osdData && window._osdData.definition && window._osdData.definition.scale_info)
+    ? window._osdData.definition.scale_info.code : 'scale';
+  const lang = document.getElementById('langSelect').value || 'en';
+  const filename = code + '_' + lang + '.html';
+
+  const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>

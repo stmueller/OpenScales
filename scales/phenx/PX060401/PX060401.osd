@@ -1,0 +1,395 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Exposure at Work and in Daily Life",
+      "code": "PX060401",
+      "abbreviation": "PX060401",
+      "description": "The respondent is asked to complete a table of questions about exposures at work or during daily life. If the respondent answers \"yes\" to any of the exposures the number of years exposed to the substance is also requested.",
+      "domain": "Environmental Exposures",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/60401]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/60401"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "instructions_060401",
+        "text_key": "instructions_060401",
+        "type": "inst"
+      },
+      {
+        "id": "exposure_asbestos",
+        "text_key": "exposure_asbestos",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_asbestos_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_asbestos_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_asbestos_years",
+        "text_key": "exposure_asbestos_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_asbestos",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_solvent",
+        "text_key": "exposure_solvent",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_solvent_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_solvent_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_solvent_years",
+        "text_key": "exposure_solvent_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_solvent",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_coal_dust",
+        "text_key": "exposure_coal_dust",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_coal_dust_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_coal_dust_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_coal_dust_years",
+        "text_key": "exposure_coal_dust_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_coal_dust",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_coal_tar",
+        "text_key": "exposure_coal_tar",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_coal_tar_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_coal_tar_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_coal_tar_years",
+        "text_key": "exposure_coal_tar_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_coal_tar",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_diesel_engine_exhaust",
+        "text_key": "exposure_diesel_engine_exhaust",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_diesel_engine_exhaust_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_diesel_engine_exhaust_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_diesel_engine_exhaust_years",
+        "text_key": "exposure_diesel_engine_exhaust_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_diesel_engine_exhaust",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_dye",
+        "text_key": "exposure_dye",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_dye_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_dye_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_dye_years",
+        "text_key": "exposure_dye_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_dye",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_formaldehyde",
+        "text_key": "exposure_formaldehyde",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_formaldehyde_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_formaldehyde_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_formaldehyde_years",
+        "text_key": "exposure_formaldehyde_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_formaldehyde",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_gasoline_exhaust",
+        "text_key": "exposure_gasoline_exhaust",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_gasoline_exhaust_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_gasoline_exhaust_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_gasoline_exhaust_years",
+        "text_key": "exposure_gasoline_exhaust_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_gasoline_exhaust",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_pesticides_herbicides",
+        "text_key": "exposure_pesticides_herbicides",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_pesticides_herbicides_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_pesticides_herbicides_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_pesticides_herbicides_years",
+        "text_key": "exposure_pesticides_herbicides_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_pesticides_herbicides",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_textile_fiber_dust",
+        "text_key": "exposure_textile_fiber_dust",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_textile_fiber_dust_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_textile_fiber_dust_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_textile_fiber_dust_years",
+        "text_key": "exposure_textile_fiber_dust_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_textile_fiber_dust",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_wood_dust",
+        "text_key": "exposure_wood_dust",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_wood_dust_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_wood_dust_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_wood_dust_years",
+        "text_key": "exposure_wood_dust_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_wood_dust",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_radioactive_materials",
+        "text_key": "exposure_radioactive_materials",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_radioactive_materials_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_radioactive_materials_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_radioactive_materials_years",
+        "text_key": "exposure_radioactive_materials_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_radioactive_materials",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "instructions_060401": "In your work or daily life, are (were) you regularly exposed to any of the following? If \"yes\", indicate the number of years exposed.",
+      "exposure_asbestos": "In your work or daily life, are (were) you regularly exposed to Asbestos?",
+      "exposure_asbestos_opt_1": "Yes",
+      "exposure_asbestos_opt_2": "No",
+      "exposure_asbestos_years": "How many years are (were) you regularly exposed to Asbestos?",
+      "exposure_solvent": "In your work or daily life, are (were) you regularly exposed to Chemicals/Acids/Solvents?",
+      "exposure_solvent_opt_1": "Yes",
+      "exposure_solvent_opt_2": "No",
+      "exposure_solvent_years": "How many years are (were) you regularly exposed to Chemicals/Acids/Solvents?",
+      "exposure_coal_dust": "In your work or daily life, are (were) you regularly exposed to Coal or Stone Dusts?",
+      "exposure_coal_dust_opt_1": "Yes",
+      "exposure_coal_dust_opt_2": "No",
+      "exposure_coal_dust_years": "How many years are (were) you regularly exposed to Coal or Stone Dusts?",
+      "exposure_coal_tar": "In your work or daily life, are (were) you regularly exposed to Coal Tar/Pitch/Asphalt?",
+      "exposure_coal_tar_opt_1": "Yes",
+      "exposure_coal_tar_opt_2": "No",
+      "exposure_coal_tar_years": "How many years are (were) you regularly exposed to Coal Tar/Pitch/Asphalt?",
+      "exposure_diesel_engine_exhaust": "In your work or daily life, are (were) you regularly exposed to Diesel Engine Exhaust?",
+      "exposure_diesel_engine_exhaust_opt_1": "Yes",
+      "exposure_diesel_engine_exhaust_opt_2": "No",
+      "exposure_diesel_engine_exhaust_years": "How many years are (were) you regularly exposed to Diesel Engine Exhaust?",
+      "exposure_dye": "In your work or daily life, are (were) you regularly exposed to Dyes?",
+      "exposure_dye_opt_1": "Yes",
+      "exposure_dye_opt_2": "No",
+      "exposure_dye_years": "How many years are (were) you regularly exposed to Dyes?",
+      "exposure_formaldehyde": "In your work or daily life, are (were) you regularly exposed to Formaldehyde?",
+      "exposure_formaldehyde_opt_1": "Yes",
+      "exposure_formaldehyde_opt_2": "No",
+      "exposure_formaldehyde_years": "How many years are (were) you regularly exposed to Formaldehyde?",
+      "exposure_gasoline_exhaust": "In your work or daily life, are (were) you regularly exposed to Gasoline Exhaust?",
+      "exposure_gasoline_exhaust_opt_1": "Yes",
+      "exposure_gasoline_exhaust_opt_2": "No",
+      "exposure_gasoline_exhaust_years": "How many years are (were) you regularly exposed to Gasoline Exhaust?",
+      "exposure_pesticides_herbicides": "In your work or daily life, are (were) you regularly exposed to Pesticides/Herbicides?",
+      "exposure_pesticides_herbicides_opt_1": "Yes",
+      "exposure_pesticides_herbicides_opt_2": "No",
+      "exposure_pesticides_herbicides_years": "How many years are (were) you regularly exposed to Pesticides/Herbicides?",
+      "exposure_textile_fiber_dust": "In your work or daily life, are (were) you regularly exposed to Textile Fibers/Dusts?",
+      "exposure_textile_fiber_dust_opt_1": "Yes",
+      "exposure_textile_fiber_dust_opt_2": "No",
+      "exposure_textile_fiber_dust_years": "How many years are (were) you regularly exposed to Textile Fibers/Dusts?",
+      "exposure_wood_dust": "In your work or daily life, are (were) you regularly exposed to Wood Dust?",
+      "exposure_wood_dust_opt_1": "Yes",
+      "exposure_wood_dust_opt_2": "No",
+      "exposure_wood_dust_years": "How many years are (were) you regularly exposed to Wood Dust?",
+      "exposure_radioactive_materials": "In your work or daily life, are (were) you regularly exposed to X-rays/Radioactive Materials?",
+      "exposure_radioactive_materials_opt_1": "Yes",
+      "exposure_radioactive_materials_opt_2": "No",
+      "exposure_radioactive_materials_years": "How many years are (were) you regularly exposed to X-rays/Radioactive Materials?"
+    }
+  }
+}

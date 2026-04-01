@@ -1,0 +1,447 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "PHQ Panic Disorder Module",
+      "code": "PHQPANIC",
+      "abbreviation": "PHQ-PD",
+      "description": "15-item yes/no panic disorder screening module from the Patient Health Questionnaire (PHQ). Items 1–4 are gate questions about anxiety attacks. Items 5–15 assess 11 somatic symptoms during the last bad anxiety attack. Panic Syndrome is diagnosed if items 1–4 are all YES and 4 or more of items 5–15 are YES. Items 2–15 are only shown if item 1 is YES. Free to use (Pfizer/PHQ Screeners).",
+      "citation": "Spitzer, R. L., Kroenke, K., & Williams, J. B. W. (1999). Validation and utility of a self-report version of PRIME-MD: The PHQ Primary Care Study. JAMA, 282(18), 1737–1744. https://doi.org/10.1001/jama.282.18.1737",
+      "license": "free to use",
+      "license_explanation": "Pfizer released all PHQ and GAD-7 screeners without copyright restriction. No permission is required to reproduce, translate, display, or distribute.",
+      "license_url": "https://www.phqscreeners.com/",
+      "version": "1.0",
+      "url": "https://www.phqscreeners.com"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "dimensions": [
+      {
+        "id": "gate",
+        "name": "Panic Gate Questions",
+        "description": "Items 1–4. All must be YES for panic syndrome diagnosis."
+      },
+      {
+        "id": "symptoms",
+        "name": "Somatic Symptom Count",
+        "description": "Items 5–15. Count of YES responses. 4 or more needed (with all gate items YES) for panic syndrome."
+      }
+    ],
+    "items": [
+      {
+        "id": "phqpd_inst",
+        "text_key": "phqpd_inst",
+        "type": "inst"
+      },
+      {
+        "id": "phqpd1",
+        "text_key": "phqpd1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd2",
+        "text_key": "phqpd2",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd3",
+        "text_key": "phqpd3",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd4",
+        "text_key": "phqpd4",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd_symptom_inst",
+        "text_key": "phqpd_symptom_head",
+        "type": "inst",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "phqpd5",
+        "text_key": "phqpd5",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd6",
+        "text_key": "phqpd6",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd7",
+        "text_key": "phqpd7",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd8",
+        "text_key": "phqpd8",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd9",
+        "text_key": "phqpd9",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd10",
+        "text_key": "phqpd10",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd11",
+        "text_key": "phqpd11",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd12",
+        "text_key": "phqpd12",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd13",
+        "text_key": "phqpd13",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd14",
+        "text_key": "phqpd14",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "phqpd15",
+        "text_key": "phqpd15",
+        "type": "multi",
+        "visible_when": {
+          "item": "phqpd1",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "no",
+            "value": 0
+          },
+          {
+            "text_key": "yes",
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "gate": {
+        "method": "sum_coded",
+        "items": [
+          "phqpd1",
+          "phqpd2",
+          "phqpd3",
+          "phqpd4"
+        ],
+        "description": "Gate questions (0–4). All 4 must be YES (sum=4) for panic syndrome.",
+        "item_coding": {
+          "phqpd1": 1,
+          "phqpd2": 1,
+          "phqpd3": 1,
+          "phqpd4": 1
+        }
+      },
+      "symptoms": {
+        "method": "sum_coded",
+        "items": [
+          "phqpd5",
+          "phqpd6",
+          "phqpd7",
+          "phqpd8",
+          "phqpd9",
+          "phqpd10",
+          "phqpd11",
+          "phqpd12",
+          "phqpd13",
+          "phqpd14",
+          "phqpd15"
+        ],
+        "description": "Somatic symptoms (0–11). 4 or more YES (with all gate YES) = panic syndrome.",
+        "item_coding": {
+          "phqpd5": 1,
+          "phqpd6": 1,
+          "phqpd7": 1,
+          "phqpd8": 1,
+          "phqpd9": 1,
+          "phqpd10": 1,
+          "phqpd11": 1,
+          "phqpd12": 1,
+          "phqpd13": 1,
+          "phqpd14": 1,
+          "phqpd15": 1
+        },
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 3,
+              "label": "Below symptom threshold"
+            },
+            {
+              "min": 4,
+              "max": 11,
+              "label": "Meets symptom criterion (if all gate items YES)"
+            }
+          ]
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "PHQ Panic Disorder Module Report",
+      "footer_refs": [
+        "Spitzer, R. L., Kroenke, K., & Williams, J. B. W. (1999). JAMA, 282(18), 1737–1744.",
+        "Panic Syndrome: all 4 gate items YES AND 4+ of 11 symptom items YES."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "yes": "Yes",
+      "no": "No",
+      "phqpd_inst": "The following questions ask about anxiety and panic attacks. An anxiety attack is a sudden rush of intense fear or anxiety that comes on quickly and may include physical symptoms like a racing heart, shortness of breath, or dizziness. Please answer based on your experience in the <b>last 4 weeks</b>.",
+      "phqpd_symptom_head": "<b>Think about your last bad anxiety attack.</b>",
+      "phqpd1": "In the <b>last 4 weeks</b>, have you had an anxiety attack — suddenly feeling fear or panic?",
+      "phqpd2": "Has this ever happened before?",
+      "phqpd3": "Do some of these attacks come <u>suddenly out of the blue</u> — that is, in situations where you don't expect to be nervous or uncomfortable?",
+      "phqpd4": "Do these attacks bother you a lot or are you worried about having another attack?",
+      "phqpd5": "Were you short of breath?",
+      "phqpd6": "Did your heart race, pound, or skip?",
+      "phqpd7": "Did you have chest pain or pressure?",
+      "phqpd8": "Did you sweat?",
+      "phqpd9": "Did you feel as if you were choking?",
+      "phqpd10": "Did you have hot flashes or chills?",
+      "phqpd11": "Did you have nausea or an upset stomach, or the feeling that you were going to have diarrhea?",
+      "phqpd12": "Did you feel dizzy, unsteady, or faint?",
+      "phqpd13": "Did you have tingling or numbness in parts of your body?",
+      "phqpd14": "Did you tremble or shake?",
+      "phqpd15": "Were you afraid you were dying?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

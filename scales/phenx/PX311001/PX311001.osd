@@ -1,0 +1,110 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Patient Satisfaction with Genetic Counseling",
+      "code": "PX311001",
+      "abbreviation": "PX311001",
+      "description": "The Genetic Counseling Satisfaction Scale (GCSS) is a 6-item, 5-point Likert scale used to assess patient satisfaction with genetic counseling.",
+      "domain": "Genomics & Genetics",
+      "citation": "Buchanan, A. H., Datta, S. K., Skinner, C. S., Hollowell, G. P., Beresford, H. F., Freeland, T., Rogers, B., Boling, J., Marcom, P. K., Adams, M. B. (2015). Randomized trial of telegenetics vs. in-person cancer genetic counseling: Cost, patient satisfaction and attendance. Journal of Genetic Counseling, 24(6), 961–970. Tercyak, K. P., Demarco, T. A., Mars, B. D., & Peshkin, B. N. (2004). Women’s satisfaction with genetic counseling for hereditary breast-ovarian cancer: Psychological aspects. American Journal of Medical Genetics Part A, 131(1), 36–41. [PhenX: https://www.phenxtoolkit.org/protocols/view/311001]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/311001"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "lk_opt_1",
+        "lk_opt_2",
+        "lk_opt_3",
+        "lk_opt_4",
+        "lk_opt_5"
+      ]
+    },
+    "items": [
+      {
+        "id": "genetic_counseling_stresses",
+        "text_key": "genetic_counseling_stresses",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "genetic_counseling_decisions",
+        "text_key": "genetic_counseling_decisions",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "genetic_counseling_health",
+        "text_key": "genetic_counseling_health",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "genetic_counseling_time",
+        "text_key": "genetic_counseling_time",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "genetic_counseling_well_being",
+        "text_key": "genetic_counseling_well_being",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "genetic_counseling_valuable",
+        "text_key": "genetic_counseling_valuable",
+        "type": "likert",
+        "likert_points": 5
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "genetic_counseling_stresses",
+          "genetic_counseling_decisions",
+          "genetic_counseling_health",
+          "genetic_counseling_time",
+          "genetic_counseling_well_being",
+          "genetic_counseling_valuable"
+        ],
+        "item_coding": {
+          "genetic_counseling_stresses": 1,
+          "genetic_counseling_decisions": 1,
+          "genetic_counseling_health": 1,
+          "genetic_counseling_time": 1,
+          "genetic_counseling_well_being": 1,
+          "genetic_counseling_valuable": 1
+        },
+        "description": "Total score (sum of all items)"
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "lk_opt_1": "Strongly disagree",
+      "lk_opt_2": "Disagree somewhat",
+      "lk_opt_3": "Uncertain",
+      "lk_opt_4": "Agree somewhat",
+      "lk_opt_5": "Agree strongly",
+      "genetic_counseling_stresses": "My genetic counselor seemed to understand the stresses I was facing.",
+      "genetic_counseling_decisions": "My genetic counselor helped me to identify what I needed to know to make decisions about what could happen to me.",
+      "genetic_counseling_health": "I felt better about my health after meeting with my genetic counselor.",
+      "genetic_counseling_time": "The genetic counseling session was about the right length of time I needed.",
+      "genetic_counseling_well_being": "My genetic counselor was truly concerned about my well-being.",
+      "genetic_counseling_valuable": "The genetic counseling session was valuable to me."
+    }
+  }
+}

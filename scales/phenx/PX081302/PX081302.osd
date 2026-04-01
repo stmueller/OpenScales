@@ -1,0 +1,144 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Professional Dental Care",
+      "code": "PX081302",
+      "abbreviation": "PX081302",
+      "description": "Interviewer-administered questions for adults to determine when the participant last visited the dentist and the purpose of the visit. These questions may also be administered to an adult as a proxy for a child.",
+      "domain": "Oral Health & Early Childhood",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/81302]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/81302"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "professional_dental_care_last_visit",
+        "text_key": "professional_dental_care_last_visit",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "professional_dental_care_last_visit_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "professional_dental_care_last_visit_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "professional_dental_care_last_visit_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "professional_dental_care_last_visit_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "professional_dental_care_last_visit_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "professional_dental_care_last_visit_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "professional_dental_care_last_visit_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "professional_dental_care_last_visit_opt_77",
+            "value": 77
+          },
+          {
+            "text_key": "professional_dental_care_last_visit_opt_99",
+            "value": 99
+          }
+        ]
+      },
+      {
+        "id": "professional_dental_care_visit_reason",
+        "text_key": "professional_dental_care_visit_reason",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "professional_dental_care_last_visit",
+              "operator": "not_equals",
+              "value": 7
+            },
+            {
+              "item": "professional_dental_care_last_visit",
+              "operator": "not_equals",
+              "value": 77
+            },
+            {
+              "item": "professional_dental_care_last_visit",
+              "operator": "not_equals",
+              "value": 99
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "professional_dental_care_visit_reason_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "professional_dental_care_visit_reason_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "professional_dental_care_visit_reason_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "professional_dental_care_visit_reason_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "professional_dental_care_visit_reason_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "professional_dental_care_visit_reason_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "professional_dental_care_visit_reason_opt_9",
+            "value": 9
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "professional_dental_care_last_visit": "About how long has it been since {you/SP} last visited a dentist? Include all types of dentists, such as, orthodontists, oral surgeons, and all other dental specialists, as well as dental hygienists.",
+      "professional_dental_care_last_visit_opt_1": "6 months or less",
+      "professional_dental_care_last_visit_opt_2": "More than 6 months, but not more than 1 year ago",
+      "professional_dental_care_last_visit_opt_3": "More than 1 year, but not more than 2 years ago",
+      "professional_dental_care_last_visit_opt_4": "More than 2 years, but not more than 3 years ago",
+      "professional_dental_care_last_visit_opt_5": "More than 3 years, but not more than 5 years ago",
+      "professional_dental_care_last_visit_opt_6": "More than 5 years ago",
+      "professional_dental_care_last_visit_opt_7": "Never have been",
+      "professional_dental_care_last_visit_opt_77": "Refused",
+      "professional_dental_care_last_visit_opt_99": "Don't know",
+      "professional_dental_care_visit_reason": "What was the main reason {you/SP} last visited the dentist?",
+      "professional_dental_care_visit_reason_opt_1": "Went in on own for check-up, examination, or cleaning",
+      "professional_dental_care_visit_reason_opt_2": "Was called in by the dentist for check-up, examination, or cleaning",
+      "professional_dental_care_visit_reason_opt_3": "Something was wrong, bothering or hurting {Me/SP}",
+      "professional_dental_care_visit_reason_opt_4": "Went for treatment of a condition that dentist discovered at earlier check-up or examination",
+      "professional_dental_care_visit_reason_opt_5": "Other",
+      "professional_dental_care_visit_reason_opt_7": "Refused",
+      "professional_dental_care_visit_reason_opt_9": "Don't know"
+    }
+  }
+}

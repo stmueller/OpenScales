@@ -1,0 +1,109 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Informed Consent",
+      "code": "Consent",
+      "abbreviation": "Consent",
+      "description": "Generic IRB-style informed consent gate. Customise study_title, pi_name, and contact_email via parameters. Terminates and records a data row if the participant declines or is ineligible.",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "study_title": {
+        "type": "string",
+        "default": "this study",
+        "description": "Full title of the study shown in the consent text"
+      },
+      "pi_name": {
+        "type": "string",
+        "default": "the Principal Investigator",
+        "description": "Name of the PI or research team"
+      },
+      "contact_email": {
+        "type": "string",
+        "default": "research@example.com",
+        "description": "Contact email for participant questions"
+      },
+      "min_age": {
+        "type": "integer",
+        "default": 18,
+        "description": "Minimum age required to participate"
+      }
+    },
+    "items": [
+      {
+        "id": "consent_intro",
+        "type": "inst",
+        "text_key": "consent_intro"
+      },
+      {
+        "id": "consent_age",
+        "type": "multi",
+        "text_key": "consent_age",
+        "required": true,
+        "options": [
+          {
+            "value": "yes",
+            "text_key": "consent_age_yes"
+          },
+          {
+            "value": "no",
+            "text_key": "consent_age_no"
+          }
+        ],
+        "gate": {
+          "required_value": "yes",
+          "terminate_message_key": "gate_underage"
+        }
+      },
+      {
+        "id": "consent_agree",
+        "type": "multi",
+        "text_key": "consent_agree",
+        "required": true,
+        "options": [
+          {
+            "value": "agree",
+            "text_key": "consent_agree_yes"
+          },
+          {
+            "value": "disagree",
+            "text_key": "consent_agree_no"
+          }
+        ],
+        "gate": {
+          "required_value": "agree",
+          "terminate_message_key": "gate_declined"
+        }
+      }
+    ],
+    "scoring": {},
+    "data_output": {
+      "individual_file": "Consent-{subnum}.csv",
+      "pooled_file": "Consent-pooled.csv"
+    }
+  },
+  "translations": {
+    "en": {
+      "LANGUAGE": "en",
+      "consent_intro": "<b>Before you begin, please read the following information carefully.</b><br><br>You are being invited to take part in <b>{study_title}</b>, conducted by {pi_name}.<br><br><b>Your participation is voluntary.</b> You may withdraw at any time without penalty. Your responses will be kept confidential and used only for research purposes. There are no known risks beyond those of everyday computer use.<br><br>If you have questions about this study, please contact <b>{contact_email}</b>.",
+      "consent_age": "Are you {min_age} years of age or older?",
+      "consent_age_yes": "Yes, I am {min_age} or older",
+      "consent_age_no": "No, I am under {min_age}",
+      "consent_agree": "Having read the above information, do you agree to participate in this study?",
+      "consent_agree_yes": "I agree to participate",
+      "consent_agree_no": "I do not agree to participate",
+      "gate_underage": "Thank you for your interest. Unfortunately this study requires participants to be at least {min_age} years old. Your response has been recorded.",
+      "gate_declined": "Thank you for your time. Your decision not to participate has been recorded. You may close this window.",
+      "terminate_heading": "Session Ended",
+      "debrief": "Thank you — your consent has been recorded. The study will now begin."
+    }
+  }
+}

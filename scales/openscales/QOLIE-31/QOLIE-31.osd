@@ -1,0 +1,763 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Quality of Life in Epilepsy Inventory-31",
+      "code": "QOLIE-31",
+      "abbreviation": "QOLIE-31",
+      "description": "31-item patient inventory measuring quality of life in epilepsy across 7 subscales: Seizure Worry, Overall QOL, Emotional Well-Being, Energy/Fatigue, Cognitive Functioning, Medication Effects, and Social Functioning. Mixed response formats. Items derived from the QOLIE-89. Past 4 weeks recall. Copyright 1993 RAND. Public Domain.",
+      "citation": "Cramer, J. A., Perrine, K., Devinsky, O., Bryant-Comstock, L., Meador, K., & Hermann, B. (1998). Development and cross-cultural translations of a 31-item quality of life in epilepsy inventory. Epilepsia, 39(1), 81–88.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health-care/surveys_tools/qolie.html",
+      "domain": "Quality of Life",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": [
+        "freq1",
+        "freq2",
+        "freq3",
+        "freq4",
+        "freq5",
+        "freq6"
+      ],
+      "question_head": "freq_head"
+    },
+    "dimensions": [
+      {
+        "id": "seizure_worry",
+        "name": "Seizure Worry",
+        "description": "Items 11, 21, 22, 23, 24."
+      },
+      {
+        "id": "overall_qol",
+        "name": "Overall QOL",
+        "description": "Items 1, 14."
+      },
+      {
+        "id": "emotional_wellbeing",
+        "name": "Emotional Well-Being",
+        "description": "Items 3, 4, 5, 7, 9."
+      },
+      {
+        "id": "energy_fatigue",
+        "name": "Energy/Fatigue",
+        "description": "Items 2, 6, 8, 10."
+      },
+      {
+        "id": "cognitive",
+        "name": "Cognitive Functioning",
+        "description": "Items 12, 15, 16, 17, 18, 26."
+      },
+      {
+        "id": "medication_effects",
+        "name": "Medication Effects",
+        "description": "Items 24, 29, 30."
+      },
+      {
+        "id": "social_function",
+        "name": "Social Functioning",
+        "description": "Items 13, 19, 20, 27, 28."
+      }
+    ],
+    "items": [
+      {
+        "id": "q31_inst",
+        "text_key": "q31_inst",
+        "type": "inst"
+      },
+      {
+        "id": "q1",
+        "text_key": "q1",
+        "type": "likert",
+        "likert_points": 11,
+        "likert_min": 0,
+        "likert_max": 10,
+        "likert_labels": [
+          "qol0",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "qol10"
+        ],
+        "likert_reverse": true
+      },
+      {
+        "id": "q2_inst",
+        "text_key": "q2_head",
+        "type": "inst"
+      },
+      {
+        "id": "q2",
+        "text_key": "q2",
+        "type": "likert"
+      },
+      {
+        "id": "q3",
+        "text_key": "q3",
+        "type": "likert"
+      },
+      {
+        "id": "q4",
+        "text_key": "q4",
+        "type": "likert"
+      },
+      {
+        "id": "q5",
+        "text_key": "q5",
+        "type": "likert"
+      },
+      {
+        "id": "q6",
+        "text_key": "q6",
+        "type": "likert"
+      },
+      {
+        "id": "q7",
+        "text_key": "q7",
+        "type": "likert"
+      },
+      {
+        "id": "q8",
+        "text_key": "q8",
+        "type": "likert"
+      },
+      {
+        "id": "q9",
+        "text_key": "q9",
+        "type": "likert"
+      },
+      {
+        "id": "q10",
+        "text_key": "q10",
+        "type": "likert"
+      },
+      {
+        "id": "q11",
+        "text_key": "q11",
+        "type": "likert"
+      },
+      {
+        "id": "q12",
+        "text_key": "q12",
+        "type": "likert"
+      },
+      {
+        "id": "q13",
+        "text_key": "q13",
+        "type": "likert"
+      },
+      {
+        "id": "q14",
+        "text_key": "q14",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "qol_1",
+            "value": 1
+          },
+          {
+            "text_key": "qol_2",
+            "value": 2
+          },
+          {
+            "text_key": "qol_3",
+            "value": 3
+          },
+          {
+            "text_key": "qol_4",
+            "value": 4
+          },
+          {
+            "text_key": "qol_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "q15_inst",
+        "text_key": "q15_head",
+        "type": "inst"
+      },
+      {
+        "id": "q15",
+        "text_key": "q15",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "mem_1",
+            "value": 1
+          },
+          {
+            "text_key": "mem_2",
+            "value": 2
+          },
+          {
+            "text_key": "mem_3",
+            "value": 3
+          },
+          {
+            "text_key": "mem_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "q16",
+        "text_key": "q16",
+        "type": "likert",
+        "question_head": "q16_head"
+      },
+      {
+        "id": "q17_inst",
+        "text_key": "q17_head",
+        "type": "inst"
+      },
+      {
+        "id": "q17",
+        "text_key": "q17",
+        "type": "likert"
+      },
+      {
+        "id": "q18",
+        "text_key": "q18",
+        "type": "likert"
+      },
+      {
+        "id": "q19",
+        "text_key": "q19",
+        "type": "likert",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "act_1",
+          "act_2",
+          "act_3",
+          "act_4",
+          "act_5"
+        ],
+        "question_head": "q19_head"
+      },
+      {
+        "id": "q20",
+        "text_key": "q20",
+        "type": "likert",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "act_1",
+          "act_2",
+          "act_3",
+          "act_4",
+          "act_5"
+        ],
+        "question_head": "q19_head"
+      },
+      {
+        "id": "q21_inst",
+        "text_key": "q21_head",
+        "type": "inst"
+      },
+      {
+        "id": "q21",
+        "text_key": "q21",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "fear_1",
+            "value": 1
+          },
+          {
+            "text_key": "fear_2",
+            "value": 2
+          },
+          {
+            "text_key": "fear_3",
+            "value": 3
+          },
+          {
+            "text_key": "fear_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "q22",
+        "text_key": "q22",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "worryhurt_1",
+            "value": 1
+          },
+          {
+            "text_key": "worryhurt_2",
+            "value": 2
+          },
+          {
+            "text_key": "worryhurt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "q23",
+        "text_key": "q23",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "worry4_1",
+            "value": 1
+          },
+          {
+            "text_key": "worry4_2",
+            "value": 2
+          },
+          {
+            "text_key": "worry4_3",
+            "value": 3
+          },
+          {
+            "text_key": "worry4_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "q24",
+        "text_key": "q24",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "worry4_1",
+            "value": 1
+          },
+          {
+            "text_key": "worry4_2",
+            "value": 2
+          },
+          {
+            "text_key": "worry4_3",
+            "value": 3
+          },
+          {
+            "text_key": "worry4_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "q25_inst",
+        "text_key": "q25_head",
+        "type": "inst"
+      },
+      {
+        "id": "q25",
+        "text_key": "q25",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "bother_1",
+            "value": 1
+          },
+          {
+            "text_key": "bother_2",
+            "value": 2
+          },
+          {
+            "text_key": "bother_3",
+            "value": 3
+          },
+          {
+            "text_key": "bother_4",
+            "value": 4
+          },
+          {
+            "text_key": "bother_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "q26",
+        "text_key": "q26",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "bother_1",
+            "value": 1
+          },
+          {
+            "text_key": "bother_2",
+            "value": 2
+          },
+          {
+            "text_key": "bother_3",
+            "value": 3
+          },
+          {
+            "text_key": "bother_4",
+            "value": 4
+          },
+          {
+            "text_key": "bother_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "q27",
+        "text_key": "q27",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "bother_1",
+            "value": 1
+          },
+          {
+            "text_key": "bother_2",
+            "value": 2
+          },
+          {
+            "text_key": "bother_3",
+            "value": 3
+          },
+          {
+            "text_key": "bother_4",
+            "value": 4
+          },
+          {
+            "text_key": "bother_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "q28",
+        "text_key": "q28",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "bother_1",
+            "value": 1
+          },
+          {
+            "text_key": "bother_2",
+            "value": 2
+          },
+          {
+            "text_key": "bother_3",
+            "value": 3
+          },
+          {
+            "text_key": "bother_4",
+            "value": 4
+          },
+          {
+            "text_key": "bother_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "q29",
+        "text_key": "q29",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "bother_1",
+            "value": 1
+          },
+          {
+            "text_key": "bother_2",
+            "value": 2
+          },
+          {
+            "text_key": "bother_3",
+            "value": 3
+          },
+          {
+            "text_key": "bother_4",
+            "value": 4
+          },
+          {
+            "text_key": "bother_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "q30",
+        "text_key": "q30",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "bother_1",
+            "value": 1
+          },
+          {
+            "text_key": "bother_2",
+            "value": 2
+          },
+          {
+            "text_key": "bother_3",
+            "value": 3
+          },
+          {
+            "text_key": "bother_4",
+            "value": 4
+          },
+          {
+            "text_key": "bother_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "q31",
+        "text_key": "q31",
+        "type": "vas",
+        "min": 0,
+        "max": 100,
+        "min_label": "vas_lo",
+        "max_label": "vas_hi"
+      }
+    ],
+    "scoring": {
+      "overall_qol": {
+        "method": "mean_coded",
+        "items": [
+          "q1",
+          "q14"
+        ],
+        "description": "Overall QOL. Items 1, 14.",
+        "item_coding": {
+          "q1": 1,
+          "q14": 1
+        }
+      },
+      "emotional_wellbeing": {
+        "method": "mean_coded",
+        "items": [
+          "q3",
+          "q4",
+          "q5",
+          "q7",
+          "q9"
+        ],
+        "description": "Emotional Well-Being. Items 3, 4, 5, 7, 9.",
+        "item_coding": {
+          "q3": 1,
+          "q4": 1,
+          "q5": 1,
+          "q7": 1,
+          "q9": 1
+        }
+      },
+      "energy_fatigue": {
+        "method": "mean_coded",
+        "items": [
+          "q2",
+          "q6",
+          "q8",
+          "q10"
+        ],
+        "description": "Energy/Fatigue. Items 2, 6, 8, 10.",
+        "item_coding": {
+          "q2": 1,
+          "q6": 1,
+          "q8": 1,
+          "q10": 1
+        }
+      },
+      "seizure_worry": {
+        "method": "mean_coded",
+        "items": [
+          "q11",
+          "q21",
+          "q22",
+          "q23",
+          "q24"
+        ],
+        "description": "Seizure Worry. Items 11, 21, 22, 23, 24.",
+        "item_coding": {
+          "q11": 1,
+          "q21": 1,
+          "q22": 1,
+          "q23": 1,
+          "q24": 1
+        }
+      },
+      "cognitive": {
+        "method": "mean_coded",
+        "items": [
+          "q12",
+          "q15",
+          "q16",
+          "q17",
+          "q18",
+          "q26"
+        ],
+        "description": "Cognitive Functioning. Items 12, 15, 16, 17, 18, 26.",
+        "item_coding": {
+          "q12": 1,
+          "q15": 1,
+          "q16": 1,
+          "q17": 1,
+          "q18": 1,
+          "q26": 1
+        }
+      },
+      "medication_effects": {
+        "method": "mean_coded",
+        "items": [
+          "q24",
+          "q29",
+          "q30"
+        ],
+        "description": "Medication Effects. Items 24, 29, 30.",
+        "item_coding": {
+          "q24": 1,
+          "q29": 1,
+          "q30": 1
+        }
+      },
+      "social_function": {
+        "method": "mean_coded",
+        "items": [
+          "q13",
+          "q19",
+          "q20",
+          "q27",
+          "q28"
+        ],
+        "description": "Social Functioning. Items 13, 19, 20, 27, 28.",
+        "item_coding": {
+          "q13": 1,
+          "q19": 1,
+          "q20": 1,
+          "q27": 1,
+          "q28": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Quality of Life in Epilepsy Inventory-31 (QOLIE-31) Report",
+      "footer_refs": [
+        "Cramer, J. A., et al. (1998). Epilepsia, 39(1), 81–88.",
+        "Items derived from the QOLIE-89. Copyright 1993 RAND."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "q31_inst": "This survey asks about your health and daily activities. <b>Answer every question.</b> If you are unsure about how to answer a question, please give the best answer you can.",
+      "freq_head": "How much of the time during the <b>past 4 weeks</b>...",
+      "freq1": "All of the time",
+      "freq2": "Most of the time",
+      "freq3": "A good bit of the time",
+      "freq4": "Some of the time",
+      "freq5": "A little of the time",
+      "freq6": "None of the time",
+      "qol0": "Worst possible quality of life (as bad as or worse than being dead)",
+      "qol10": "Best possible quality of life",
+      "qol_1": "Very well: could hardly be better",
+      "qol_2": "Pretty good",
+      "qol_3": "Good & bad parts about equal",
+      "qol_4": "Pretty bad",
+      "qol_5": "Very bad: could hardly be worse",
+      "mem_1": "Yes, a great deal",
+      "mem_2": "Yes, somewhat",
+      "mem_3": "Only a little",
+      "mem_4": "No, not at all",
+      "act_1": "A great deal",
+      "act_2": "A lot",
+      "act_3": "Somewhat",
+      "act_4": "Only a little",
+      "act_5": "Not at all",
+      "fear_1": "Very fearful",
+      "fear_2": "Somewhat fearful",
+      "fear_3": "Not very fearful",
+      "fear_4": "Not fearful at all",
+      "worryhurt_1": "Worry a lot",
+      "worryhurt_2": "Occasionally worry",
+      "worryhurt_3": "Don't worry at all",
+      "worry4_1": "Very worried",
+      "worry4_2": "Somewhat worried",
+      "worry4_3": "Not very worried",
+      "worry4_4": "Not at all worried",
+      "bother_1": "Not at all bothersome",
+      "bother_2": "Slightly bothersome",
+      "bother_3": "Moderately bothersome",
+      "bother_4": "Quite a bit bothersome",
+      "bother_5": "Extremely bothersome",
+      "vas_lo": "Worst imaginable Health (as bad as or worse than being dead)",
+      "vas_hi": "Best imaginable Health",
+      "q1": "Overall, how would you rate your quality of life?",
+      "q2_head": "These questions are about how you <b>FEEL</b> and how things have been with you during the <b>past 4 weeks</b>. For each question, please indicate the one answer that comes closest to the way you have been feeling.",
+      "q2": "Did you feel full of pep?",
+      "q3": "Have you been a very nervous person?",
+      "q4": "Have you felt so down in the dumps that nothing could cheer you up?",
+      "q5": "Have you felt calm and peaceful?",
+      "q6": "Did you have a lot of energy?",
+      "q7": "Have you felt downhearted and blue?",
+      "q8": "Did you feel worn out?",
+      "q9": "Have you been a happy person?",
+      "q10": "Did you feel tired?",
+      "q11": "Have you worried about having another seizure?",
+      "q12": "Did you have difficulty reasoning and solving problems (such as making plans, making decisions, learning new things)?",
+      "q13": "Has your epilepsy limited your social activities (such as visiting with friends or close relatives)?",
+      "q14": "How has the <b>QUALITY OF YOUR LIFE</b> been during the <b>past 4 weeks</b> (that is, how have things been going for you)?",
+      "q15_head": "The following questions are about <b>MEMORY</b>.",
+      "q15": "In the past 4 weeks, have you had any trouble with your memory?",
+      "q16_head": "Select <b>how often</b> in the <b>past 4 weeks</b> you have had trouble <i>remembering</i> or <b>how often</b> this memory problem has interfered with your normal work or living.",
+      "q16": "Trouble remembering things people tell you",
+      "q17_head": "The following questions are about <b>CONCENTRATION</b> problems you may have. Indicate <b>how often</b> in the <b>past 4 weeks</b> you had trouble concentrating or <b>how often</b> these problems interfered with your normal work or living.",
+      "q17": "Trouble concentrating on reading",
+      "q18": "Trouble concentrating on doing one thing at a time",
+      "q19_head": "The following questions are about problems you may have with certain <b>ACTIVITIES</b>. Indicate for <b>how much</b> during the <b>past 4 weeks</b> your epilepsy or antiepileptic medication has caused trouble with...",
+      "q19": "Leisure time (such as hobbies, going out)",
+      "q20": "Driving",
+      "q21_head": "The following questions relate to the way you <b>FEEL</b> about your <b>seizures</b>.",
+      "q21": "How fearful are you of having a seizure during the next month?",
+      "q22": "Do you worry about hurting or injuring yourself during a seizure?",
+      "q23": "How worried are you about being embarrassed or having social problems as a result of having a seizure in the next month?",
+      "q24": "How worried are you that your epilepsy medications may be bad for you in the long run?",
+      "q25_head": "For each of these <b>PROBLEMS</b>, indicate <b>how much they bother you</b>.",
+      "q25": "Seizures",
+      "q26": "Memory difficulties",
+      "q27": "Work limitations",
+      "q28": "Social limitations",
+      "q29": "Physical effects of antiepileptic medication",
+      "q30": "Mental effects of antiepileptic medication",
+      "q31": "How good or bad do you think your health is? On the scale below, the best imaginable state of health is 100 and the worst imaginable state is 0. Please indicate how you feel about your health. <b>Please consider your epilepsy as part of your health when you answer this question.</b>",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

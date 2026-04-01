@@ -1,0 +1,287 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Smartphone Addiction Proneness Scale for Youth",
+      "code": "SAPS",
+      "abbreviation": "SAPS",
+      "description": "15-item screening tool for smartphone addiction proneness in youth (elementary, middle, and high school students). Four subscales: Disturbance of Adaptive Functions, Virtual Life Orientation, Withdrawal, and Tolerance. 4-point Likert scale (1–4). Three items are reverse-scored (8, 10, 13). Total score range 15–60.",
+      "citation": "Kim, D., Lee, Y., Lee, J., Nam, J. K., & Chung, Y. (2014). Development of Korean Smartphone Addiction Proneness Scale for Youth. PLoS ONE, 9(5), e97920. https://doi.org/10.1371/journal.pone.0097920",
+      "license": "CC BY 4.0",
+      "license_explanation": "Published in PLoS ONE under Creative Commons Attribution License.",
+      "license_url": "https://doi.org/10.1371/journal.pone.0097920",
+      "version": "1.0",
+      "url": "https://doi.org/10.1371/journal.pone.0097920",
+      "domain": "Technology"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "saps_r1",
+        "saps_r2",
+        "saps_r3",
+        "saps_r4"
+      ],
+      "question_head": "saps_head"
+    },
+    "dimensions": [
+      {
+        "id": "adaptive",
+        "name": "Disturbance of Adaptive Functions",
+        "description": "Items 1, 5, 9, 12, 13(R). Impact on school, work, and daily functioning."
+      },
+      {
+        "id": "virtual",
+        "name": "Virtual Life Orientation",
+        "description": "Items 2, 6. Preference for virtual over real-life interactions."
+      },
+      {
+        "id": "withdrawal",
+        "name": "Withdrawal",
+        "description": "Items 3, 7, 10(R), 14. Anxiety and distress when not using smartphone."
+      },
+      {
+        "id": "tolerance",
+        "name": "Tolerance",
+        "description": "Items 4, 8(R), 11, 15. Inability to control usage and need for increasing use."
+      },
+      {
+        "id": "total",
+        "name": "Total Score",
+        "description": "Sum of all 15 items (range 15–60)."
+      }
+    ],
+    "items": [
+      {
+        "id": "saps_inst",
+        "text_key": "saps_inst",
+        "type": "inst"
+      },
+      {
+        "id": "saps1",
+        "text_key": "saps1",
+        "type": "likert"
+      },
+      {
+        "id": "saps2",
+        "text_key": "saps2",
+        "type": "likert"
+      },
+      {
+        "id": "saps3",
+        "text_key": "saps3",
+        "type": "likert"
+      },
+      {
+        "id": "saps4",
+        "text_key": "saps4",
+        "type": "likert"
+      },
+      {
+        "id": "saps5",
+        "text_key": "saps5",
+        "type": "likert"
+      },
+      {
+        "id": "saps6",
+        "text_key": "saps6",
+        "type": "likert"
+      },
+      {
+        "id": "saps7",
+        "text_key": "saps7",
+        "type": "likert"
+      },
+      {
+        "id": "saps8",
+        "text_key": "saps8",
+        "type": "likert"
+      },
+      {
+        "id": "saps9",
+        "text_key": "saps9",
+        "type": "likert"
+      },
+      {
+        "id": "saps10",
+        "text_key": "saps10",
+        "type": "likert"
+      },
+      {
+        "id": "saps11",
+        "text_key": "saps11",
+        "type": "likert"
+      },
+      {
+        "id": "saps12",
+        "text_key": "saps12",
+        "type": "likert"
+      },
+      {
+        "id": "saps13",
+        "text_key": "saps13",
+        "type": "likert"
+      },
+      {
+        "id": "saps14",
+        "text_key": "saps14",
+        "type": "likert"
+      },
+      {
+        "id": "saps15",
+        "text_key": "saps15",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "adaptive": {
+        "method": "sum_coded",
+        "items": [
+          "saps1",
+          "saps5",
+          "saps9",
+          "saps12",
+          "saps13"
+        ],
+        "description": "Disturbance of Adaptive Functions (5 items). Item 13 is reverse-scored.",
+        "item_coding": {
+          "saps1": 1,
+          "saps5": 1,
+          "saps9": 1,
+          "saps12": 1,
+          "saps13": -1
+        }
+      },
+      "virtual": {
+        "method": "sum_coded",
+        "items": [
+          "saps2",
+          "saps6"
+        ],
+        "description": "Virtual Life Orientation (2 items).",
+        "item_coding": {
+          "saps2": 1,
+          "saps6": 1
+        }
+      },
+      "withdrawal": {
+        "method": "sum_coded",
+        "items": [
+          "saps3",
+          "saps7",
+          "saps10",
+          "saps14"
+        ],
+        "description": "Withdrawal (4 items). Item 10 is reverse-scored.",
+        "item_coding": {
+          "saps3": 1,
+          "saps7": 1,
+          "saps10": -1,
+          "saps14": 1
+        }
+      },
+      "tolerance": {
+        "method": "sum_coded",
+        "items": [
+          "saps4",
+          "saps8",
+          "saps11",
+          "saps15"
+        ],
+        "description": "Tolerance (4 items). Item 8 is reverse-scored.",
+        "item_coding": {
+          "saps4": 1,
+          "saps8": -1,
+          "saps11": 1,
+          "saps15": 1
+        }
+      },
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "saps1",
+          "saps2",
+          "saps3",
+          "saps4",
+          "saps5",
+          "saps6",
+          "saps7",
+          "saps8",
+          "saps9",
+          "saps10",
+          "saps11",
+          "saps12",
+          "saps13",
+          "saps14",
+          "saps15"
+        ],
+        "description": "Total score (15 items, range 15–60 after reverse coding). Higher = greater smartphone addiction proneness.",
+        "item_coding": {
+          "saps1": 1,
+          "saps2": 1,
+          "saps3": 1,
+          "saps4": 1,
+          "saps5": 1,
+          "saps6": 1,
+          "saps7": 1,
+          "saps8": -1,
+          "saps9": 1,
+          "saps10": -1,
+          "saps11": 1,
+          "saps12": 1,
+          "saps13": -1,
+          "saps14": 1,
+          "saps15": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Smartphone Addiction Proneness Scale for Youth (SAPS) Report",
+      "footer_refs": [
+        "Kim, D., et al. (2014). PLoS ONE, 9(5), e97920.",
+        "Items 8, 10, 13 are reverse-scored."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "saps_inst": "Please indicate how much you agree or disagree with each of the following statements about your smartphone use.",
+      "saps_head": "How much do you agree or disagree?",
+      "saps_r1": "Strongly disagree",
+      "saps_r2": "Disagree",
+      "saps_r3": "Agree",
+      "saps_r4": "Strongly agree",
+      "saps1": "My school grades dropped due to excessive smartphone use.",
+      "saps2": "Using a smartphone is more enjoyable than spending time with family or friends.",
+      "saps3": "It would be painful if I am not allowed to use a smartphone.",
+      "saps4": "I try cutting my smartphone usage time, but I fail.",
+      "saps5": "I have a hard time doing what I have planned (study, do homework, or go to afterschool classes) due to using smartphone.",
+      "saps6": "When I cannot use a smartphone, I feel like I have lost the entire world.",
+      "saps7": "I get restless and nervous when I am without a smartphone.",
+      "saps8": "I can control my smartphone usage time.",
+      "saps9": "People frequently comment on my excessive smartphone use.",
+      "saps10": "I am not anxious even when I am without a smartphone.",
+      "saps11": "Even when I think I should stop, I continue to use my smartphone too much.",
+      "saps12": "Family or friends complain that I use my smartphone too much.",
+      "saps13": "My smartphone does not distract me from my studies.",
+      "saps14": "I panic when I cannot use my smartphone.",
+      "saps15": "Spending a lot of time on my smartphone has become a habit.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Center for Epidemiologic Studies Depression Scale",
+      "code": "CESD",
+      "abbreviation": "CES-D",
+      "description": "20-item self-report depression scale measuring depressive symptoms over the past week. Scores range from 0 to 60, with a threshold of 16 indicating clinically significant depression.",
+      "citation": "Radloff, L. S. (1977). The CES-D scale: A self-report depression scale for research in the general population. Applied Psychological Measurement, 1(3), 385-401.",
+      "license": "Public Domain",
+      "license_explanation": "The CES-D is in the public domain and free to use without permission. See https://cesd-r.com/",
+      "license_url": "https://cesd-r.com/",
+      "version": "1.0",
+      "url": "https://doi.org/10.1177/014662167700100306"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "max": 3,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "depression",
+        "name": "Depression"
+      }
+    ],
+    "items": [
+      {
+        "id": "cesd1",
+        "text_key": "cesd1",
+        "type": "likert"
+      },
+      {
+        "id": "cesd2",
+        "text_key": "cesd2",
+        "type": "likert"
+      },
+      {
+        "id": "cesd3",
+        "text_key": "cesd3",
+        "type": "likert"
+      },
+      {
+        "id": "cesd4",
+        "text_key": "cesd4",
+        "type": "likert"
+      },
+      {
+        "id": "cesd5",
+        "text_key": "cesd5",
+        "type": "likert"
+      },
+      {
+        "id": "cesd6",
+        "text_key": "cesd6",
+        "type": "likert"
+      },
+      {
+        "id": "cesd7",
+        "text_key": "cesd7",
+        "type": "likert"
+      },
+      {
+        "id": "cesd8",
+        "text_key": "cesd8",
+        "type": "likert"
+      },
+      {
+        "id": "cesd9",
+        "text_key": "cesd9",
+        "type": "likert"
+      },
+      {
+        "id": "cesd10",
+        "text_key": "cesd10",
+        "type": "likert"
+      },
+      {
+        "id": "cesd11",
+        "text_key": "cesd11",
+        "type": "likert"
+      },
+      {
+        "id": "cesd12",
+        "text_key": "cesd12",
+        "type": "likert"
+      },
+      {
+        "id": "cesd13",
+        "text_key": "cesd13",
+        "type": "likert"
+      },
+      {
+        "id": "cesd14",
+        "text_key": "cesd14",
+        "type": "likert"
+      },
+      {
+        "id": "cesd15",
+        "text_key": "cesd15",
+        "type": "likert"
+      },
+      {
+        "id": "cesd16",
+        "text_key": "cesd16",
+        "type": "likert"
+      },
+      {
+        "id": "cesd17",
+        "text_key": "cesd17",
+        "type": "likert"
+      },
+      {
+        "id": "cesd18",
+        "text_key": "cesd18",
+        "type": "likert"
+      },
+      {
+        "id": "cesd19",
+        "text_key": "cesd19",
+        "type": "likert"
+      },
+      {
+        "id": "cesd20",
+        "text_key": "cesd20",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "depression": {
+        "method": "sum_coded",
+        "items": [
+          "cesd1",
+          "cesd2",
+          "cesd3",
+          "cesd4",
+          "cesd5",
+          "cesd6",
+          "cesd7",
+          "cesd8",
+          "cesd9",
+          "cesd10",
+          "cesd11",
+          "cesd12",
+          "cesd13",
+          "cesd14",
+          "cesd15",
+          "cesd16",
+          "cesd17",
+          "cesd18",
+          "cesd19",
+          "cesd20"
+        ],
+        "description": "Sum of all items after reverse coding positive affect items cesd4, cesd8, cesd12, cesd16 (0-60). Scores of 16 or higher indicate clinically significant depressive symptoms.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 15,
+              "label": "Below Clinical Threshold"
+            },
+            {
+              "min": 16,
+              "max": 60,
+              "label": "Clinically Significant Depressive Symptoms"
+            }
+          ]
+        },
+        "item_coding": {
+          "cesd1": 1,
+          "cesd2": 1,
+          "cesd3": 1,
+          "cesd4": -1,
+          "cesd5": 1,
+          "cesd6": 1,
+          "cesd7": 1,
+          "cesd8": -1,
+          "cesd9": 1,
+          "cesd10": 1,
+          "cesd11": 1,
+          "cesd12": -1,
+          "cesd13": 1,
+          "cesd14": 1,
+          "cesd15": 1,
+          "cesd16": -1,
+          "cesd17": 1,
+          "cesd18": 1,
+          "cesd19": 1,
+          "cesd20": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Rarely or none of the time (less than 1 day)",
+      "likert_2": "Some or a little of the time (1-2 days)",
+      "likert_3": "Occasionally or a moderate amount of time (3-4 days)",
+      "likert_4": "Most or all of the time (5-7 days)",
+      "question_head": "Below is a list of the ways you might have felt or behaved. Please tell me how often you have felt this way during the <b>past week</b>.",
+      "cesd1": "I was bothered by things that usually don't bother me.",
+      "cesd2": "I did not feel like eating; my appetite was poor.",
+      "cesd3": "I felt that I could not shake off the blues even with help from my family or friends.",
+      "cesd4": "I felt that I was just as good as other people.",
+      "cesd5": "I had trouble keeping my mind on what I was doing.",
+      "cesd6": "I felt depressed.",
+      "cesd7": "I felt that everything I did was an effort.",
+      "cesd8": "I felt hopeful about the future.",
+      "cesd9": "I thought my life had been a failure.",
+      "cesd10": "I felt fearful.",
+      "cesd11": "My sleep was restless.",
+      "cesd12": "I was happy.",
+      "cesd13": "I talked less than usual.",
+      "cesd14": "I felt lonely.",
+      "cesd15": "People were unfriendly.",
+      "cesd16": "I enjoyed life.",
+      "cesd17": "I had crying spells.",
+      "cesd18": "I felt sad.",
+      "cesd19": "I felt that people disliked me.",
+      "cesd20": "I could not get “going.”",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

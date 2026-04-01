@@ -1,0 +1,210 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Patient Health Questionnaire-15",
+      "code": "PHQ15",
+      "abbreviation": "PHQ-15",
+      "description": "15-item somatic symptom severity measure. Scores range from 0 to 30. Derived from the full PHQ.",
+      "citation": "Kroenke, K., Spitzer, R. L., & Williams, J. B. (2002). The PHQ-15: Validity of a new measure for evaluating the severity of somatic symptoms. Psychosomatic Medicine, 64(2), 258-266. https://doi.org/10.1097/00006842-200203000-00008",
+      "license": "free to use",
+      "license_explanation": "Pfizer released all PHQ and GAD-7 screeners without copyright restriction. The phqscreeners.com terms of use state: 'Content found at the PHQ Screeners site is expressly exempted from Pfizer's general copyright restrictions; content found on the PHQ Screeners site is free for download and use as stated within the PHQ Screeners site.' No permission is required to reproduce, translate, display, or distribute.",
+      "license_url": "https://www.phqscreeners.com/",
+      "version": "1.0",
+      "url": "https://doi.org/10.1097/00006842-200203000-00008",
+      "domain": "Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 3,
+      "min": 0,
+      "max": 2,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "somatic",
+        "name": "Somatic Symptom Severity",
+        "abbreviation": "Somatic",
+        "description": "Total somatic symptom burden across 15 physical symptom domains."
+      }
+    ],
+    "items": [
+      {
+        "id": "phq15_1",
+        "text_key": "phq15_1",
+        "type": "likert"
+      },
+      {
+        "id": "phq15_2",
+        "text_key": "phq15_2",
+        "type": "likert"
+      },
+      {
+        "id": "phq15_3",
+        "text_key": "phq15_3",
+        "type": "likert"
+      },
+      {
+        "id": "phq15_4",
+        "text_key": "phq15_4",
+        "type": "likert",
+        "required": false
+      },
+      {
+        "id": "phq15_5",
+        "text_key": "phq15_5",
+        "type": "likert"
+      },
+      {
+        "id": "phq15_6",
+        "text_key": "phq15_6",
+        "type": "likert"
+      },
+      {
+        "id": "phq15_7",
+        "text_key": "phq15_7",
+        "type": "likert"
+      },
+      {
+        "id": "phq15_8",
+        "text_key": "phq15_8",
+        "type": "likert"
+      },
+      {
+        "id": "phq15_9",
+        "text_key": "phq15_9",
+        "type": "likert"
+      },
+      {
+        "id": "phq15_10",
+        "text_key": "phq15_10",
+        "type": "likert"
+      },
+      {
+        "id": "phq15_11",
+        "text_key": "phq15_11",
+        "type": "likert"
+      },
+      {
+        "id": "phq15_12",
+        "text_key": "phq15_12",
+        "type": "likert"
+      },
+      {
+        "id": "phq15_13",
+        "text_key": "phq15_13",
+        "type": "likert"
+      },
+      {
+        "id": "phq15_14",
+        "text_key": "phq15_14",
+        "type": "likert"
+      },
+      {
+        "id": "phq15_15",
+        "text_key": "phq15_15",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "somatic": {
+        "method": "sum_coded",
+        "items": [
+          "phq15_1",
+          "phq15_2",
+          "phq15_3",
+          "phq15_4",
+          "phq15_5",
+          "phq15_6",
+          "phq15_7",
+          "phq15_8",
+          "phq15_9",
+          "phq15_10",
+          "phq15_11",
+          "phq15_12",
+          "phq15_13",
+          "phq15_14",
+          "phq15_15"
+        ],
+        "description": "Sum of all items (0-30). Severity: 0-4 minimal, 5-9 low, 10-14 medium, ≥15 high.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 4,
+              "label": "Minimal"
+            },
+            {
+              "min": 5,
+              "max": 9,
+              "label": "Low"
+            },
+            {
+              "min": 10,
+              "max": 14,
+              "label": "Medium"
+            },
+            {
+              "min": 15,
+              "max": 30,
+              "label": "High"
+            }
+          ]
+        },
+        "item_coding": {
+          "phq15_1": 1,
+          "phq15_2": 1,
+          "phq15_3": 1,
+          "phq15_4": 1,
+          "phq15_5": 1,
+          "phq15_6": 1,
+          "phq15_7": 1,
+          "phq15_8": 1,
+          "phq15_9": 1,
+          "phq15_10": 1,
+          "phq15_11": 1,
+          "phq15_12": 1,
+          "phq15_13": 1,
+          "phq15_14": 1,
+          "phq15_15": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Not bothered at all",
+      "likert_2": "Bothered a little",
+      "likert_3": "Bothered a lot",
+      "question_head": "During the <b>last 4 weeks</b>, how much have you been bothered by any of the following problems?",
+      "phq15_1": "Stomach pain",
+      "phq15_2": "Back pain",
+      "phq15_3": "Pain in your arms, legs, or joints (knees, hips, etc.)",
+      "phq15_4": "Menstrual cramps or other problems with your periods (women only)",
+      "phq15_5": "Headaches",
+      "phq15_6": "Chest pain",
+      "phq15_7": "Dizziness",
+      "phq15_8": "Fainting spells",
+      "phq15_9": "Feeling your heart pound or race",
+      "phq15_10": "Shortness of breath",
+      "phq15_11": "Pain or problems during sexual intercourse",
+      "phq15_12": "Constipation, loose bowels, or diarrhea",
+      "phq15_13": "Nausea, gas, or indigestion",
+      "phq15_14": "Feeling tired or having little energy",
+      "phq15_15": "Trouble sleeping",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

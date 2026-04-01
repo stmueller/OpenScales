@@ -1,0 +1,164 @@
+{
+  "definition": {
+    "data_output": {
+      "columns": "",
+      "individual_file": "{code}-{subnum}.csv",
+      "pooled_columns": "",
+      "pooled_file": "{code}-pooled.csv",
+      "report_file": "{code}-report-{subnum}.html"
+    },
+    "dimensions": [
+      {
+        "abbreviation": "TRUSTAI",
+        "description": "Mean trust in AI score, with appropriate reverse coding of negatively-posed questions.",
+        "enabled_param": null,
+        "id": "Trust_In_AI",
+        "name": "Trust in AI"
+      }
+    ],
+    "items": [
+      {
+        "id": "AITrust001",
+        "random_group": 1,
+        "text_key": "AITrust001",
+        "type": "likert"
+      },
+      {
+        "id": "AITrust002",
+        "random_group": 1,
+        "text_key": "AITrust002",
+        "type": "likert"
+      },
+      {
+        "id": "AITrust003",
+        "random_group": 1,
+        "text_key": "AITrust003",
+        "type": "likert"
+      },
+      {
+        "id": "AITrust004",
+        "random_group": 1,
+        "text_key": "AITrust004",
+        "type": "likert"
+      },
+      {
+        "id": "AITrust005",
+        "random_group": 1,
+        "text_key": "AITrust005",
+        "type": "likert"
+      },
+      {
+        "id": "AITrust006",
+        "random_group": 1,
+        "text_key": "AITrust006",
+        "type": "likert"
+      },
+      {
+        "id": "AITrust007",
+        "random_group": 1,
+        "text_key": "AITrust007",
+        "type": "likert"
+      },
+      {
+        "id": "AITrust008",
+        "random_group": 1,
+        "text_key": "AITrust008",
+        "type": "likert"
+      },
+      {
+        "id": "AITrustOpen",
+        "random_group": 1,
+        "text_key": "AITrustOpen",
+        "type": "long"
+      }
+    ],
+    "likert_options": {
+      "labels": [
+        "AITrust_response_1",
+        "AITrust_response_2",
+        "AITrust_response_3",
+        "AITrust_response_4",
+        "AITrust_response_5"
+      ],
+      "points": 5,
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "toolname": {
+        "default": "the tool",
+        "description": "Name of the tool",
+        "type": "string"
+      }
+    },
+    "report": {
+      "footer_refs": [],
+      "header": "",
+      "include": [],
+      "template": "standard"
+    },
+    "scale_info": {
+      "abbreviation": "Trust in the AI/XAI Context",
+      "citation": "Hoffman, R. R., Mueller, S. T., Klein, G., & Litman, J. (2023). Measures for explainable AI: Explanation goodness, user satisfaction, mental models, curiosity, trust, and human-AI performance. Frontiers in Computer Science, 5, 1096257.",
+      "code": "AITrust",
+      "description": "8-item scale measuring user assessments of trust in AI systems, with reverse-coded wary item.",
+      "license": "CC",
+      "name": "Trust in AI Scale",
+      "url": "https://www.frontiersin.org/journals/computer-science/articles/10.3389/fcomp.2023.1096257/full",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "scoring": {
+      "Trust_In_AI": {
+        "description": "",
+        "item_coding": {
+          "AITrust001": 1,
+          "AITrust002": 1,
+          "AITrust003": 1,
+          "AITrust004": 1,
+          "AITrust005": 1,
+          "AITrust006": -1,
+          "AITrust007": 1,
+          "AITrust008": 1
+        },
+        "items": [
+          "AITrust004",
+          "AITrust002",
+          "AITrust001",
+          "AITrust003",
+          "AITrust005",
+          "AITrust006",
+          "AITrust007",
+          "AITrust008"
+        ],
+        "method": "mean_coded"
+      }
+    }
+  },
+  "osd_version": "1.0",
+  "translations": {
+    "en": {
+      "AITrust001": "1. I am confident in {toolname}. I feel that it works well.",
+      "AITrust002": "2. The outputs of {toolname} are very predictable.",
+      "AITrust003": "3. {toolname} is very reliable. I can count on it to be correct all the time.",
+      "AITrust004": "4. I feel safe that when I rely on {toolname} I will get the right answers.",
+      "AITrust005": "5. {toolname} is efficient in that it works very quickly.",
+      "AITrust006": "6. I am wary of {toolname}.",
+      "AITrust007": "7.  {toolname} can perform the task better than a novice human user.",
+      "AITrust008": "8. I like using {toolname} for decision making.",
+      "AITrustOpen": "Please indicate any reasons you have for trusting or not trusting {toolname}.",
+      "AITrust_response_1": "Strongly Disagree",
+      "AITrust_response_2": "Disagree",
+      "AITrust_response_3": "Neutral",
+      "AITrust_response_4": "Agree",
+      "AITrust_response_5": "Strongly Agree",
+      "debrief": "Thank you for completing this questionnaire.",
+      "question_head": "Consider your use of {toolname} you have been instructed to evaluate.  Please answer each of the questions regarding how much you can trust and rely on the system."
+    }
+  }
+}

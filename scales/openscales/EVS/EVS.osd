@@ -1,0 +1,249 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Emotional Vulnerability Scale",
+      "code": "EVS",
+      "abbreviation": "EVS",
+      "description": "16-item self-report measure of emotional vulnerability in university students. Assesses vulnerability in relation to everyday situations across four factors: vulnerability toward criticism or denial, worsening relationships, interpersonal discord, and procrastination and emotional avoidance.",
+      "citation": "Takahashi, F., Ishizu, K., Matsubara, K., Ohtsuki, T., & Shimoda, Y. (2022). The development and validation of an emotional vulnerability scale for university students. Frontiers in Psychology, 13, 941250. https://doi.org/10.3389/fpsyg.2022.941250",
+      "license": "CC BY 4.0",
+      "license_explanation": "Published in Frontiers in Psychology under Creative Commons Attribution 4.0 International License.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyg.2022.941250",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "criticism",
+        "name": "Vulnerability toward Criticism or Denial",
+        "description": "Emotional vulnerability when facing criticism or having thoughts denied."
+      },
+      {
+        "id": "relationships",
+        "name": "Vulnerability toward Worsening Relationships",
+        "description": "Emotional vulnerability related to fear of being hated and inability to refuse requests."
+      },
+      {
+        "id": "discord",
+        "name": "Vulnerability toward Interpersonal Discord",
+        "description": "Emotional vulnerability in the face of interpersonal conflict and negative feedback."
+      },
+      {
+        "id": "avoidance",
+        "name": "Vulnerability toward Procrastination and Emotional Avoidance",
+        "description": "Emotional vulnerability arising from avoidance and procrastination behaviors."
+      }
+    ],
+    "items": [
+      {
+        "id": "evs1",
+        "text_key": "evs1",
+        "type": "likert",
+        "dimension": "criticism"
+      },
+      {
+        "id": "evs2",
+        "text_key": "evs2",
+        "type": "likert",
+        "dimension": "criticism"
+      },
+      {
+        "id": "evs3",
+        "text_key": "evs3",
+        "type": "likert",
+        "dimension": "criticism"
+      },
+      {
+        "id": "evs4",
+        "text_key": "evs4",
+        "type": "likert",
+        "dimension": "criticism"
+      },
+      {
+        "id": "evs5",
+        "text_key": "evs5",
+        "type": "likert",
+        "dimension": "relationships"
+      },
+      {
+        "id": "evs6",
+        "text_key": "evs6",
+        "type": "likert",
+        "dimension": "relationships"
+      },
+      {
+        "id": "evs7",
+        "text_key": "evs7",
+        "type": "likert",
+        "dimension": "relationships"
+      },
+      {
+        "id": "evs8",
+        "text_key": "evs8",
+        "type": "likert",
+        "dimension": "relationships"
+      },
+      {
+        "id": "evs9",
+        "text_key": "evs9",
+        "type": "likert",
+        "dimension": "discord"
+      },
+      {
+        "id": "evs10",
+        "text_key": "evs10",
+        "type": "likert",
+        "dimension": "discord"
+      },
+      {
+        "id": "evs11",
+        "text_key": "evs11",
+        "type": "likert",
+        "dimension": "discord"
+      },
+      {
+        "id": "evs12",
+        "text_key": "evs12",
+        "type": "likert",
+        "dimension": "discord"
+      },
+      {
+        "id": "evs13",
+        "text_key": "evs13",
+        "type": "likert",
+        "dimension": "avoidance"
+      },
+      {
+        "id": "evs14",
+        "text_key": "evs14",
+        "type": "likert",
+        "dimension": "avoidance"
+      },
+      {
+        "id": "evs15",
+        "text_key": "evs15",
+        "type": "likert",
+        "dimension": "avoidance"
+      },
+      {
+        "id": "evs16",
+        "text_key": "evs16",
+        "type": "likert",
+        "dimension": "avoidance"
+      }
+    ],
+    "scoring": {
+      "criticism": {
+        "method": "mean_coded",
+        "items": [
+          "evs1",
+          "evs2",
+          "evs3",
+          "evs4"
+        ],
+        "description": "Mean of criticism vulnerability items (1-4). Higher scores indicate greater vulnerability to criticism.",
+        "item_coding": {
+          "evs1": 1,
+          "evs2": 1,
+          "evs3": 1,
+          "evs4": 1
+        }
+      },
+      "relationships": {
+        "method": "mean_coded",
+        "items": [
+          "evs5",
+          "evs6",
+          "evs7",
+          "evs8"
+        ],
+        "description": "Mean of relationship vulnerability items (1-4). Higher scores indicate greater vulnerability related to worsening relationships.",
+        "item_coding": {
+          "evs5": 1,
+          "evs6": 1,
+          "evs7": 1,
+          "evs8": 1
+        }
+      },
+      "discord": {
+        "method": "mean_coded",
+        "items": [
+          "evs9",
+          "evs10",
+          "evs11",
+          "evs12"
+        ],
+        "description": "Mean of interpersonal discord vulnerability items (1-4). Higher scores indicate greater vulnerability to interpersonal discord.",
+        "item_coding": {
+          "evs9": 1,
+          "evs10": 1,
+          "evs11": 1,
+          "evs12": 1
+        }
+      },
+      "avoidance": {
+        "method": "mean_coded",
+        "items": [
+          "evs13",
+          "evs14",
+          "evs15",
+          "evs16"
+        ],
+        "description": "Mean of avoidance vulnerability items (1-4). Higher scores indicate greater vulnerability related to procrastination and emotional avoidance.",
+        "item_coding": {
+          "evs13": 1,
+          "evs14": 1,
+          "evs15": 1,
+          "evs16": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "I completely disagree",
+      "likert_2": "I somewhat disagree",
+      "likert_3": "I somewhat agree",
+      "likert_4": "I completely agree",
+      "question_head": "Please indicate how much you agree with each statement.",
+      "evs1": "I get hurt when my opinion is criticized.",
+      "evs2": "I get hurt when my thoughts are denied.",
+      "evs3": "I get hurt when someone criticizes me.",
+      "evs4": "I get hurt when someone advises me.",
+      "evs5": "I do not want to be hated, so I feel hurt if I cannot decline an invitation.",
+      "evs6": "I am afraid of being hated by people, and I feel weak and hurt for accepting requests.",
+      "evs7": "I feel hurt if I cannot refuse what people have asked me to do.",
+      "evs8": "I feel weak and hurt when I cannot oppose people's ideas.",
+      "evs9": "I get hurt when I am directly told bad things about myself.",
+      "evs10": "I get hurt when I am indirectly told bad things about myself.",
+      "evs11": "I get hurt when my relationship with my friends goes bad.",
+      "evs12": "I get hurt when someone I trust does not talk to me.",
+      "evs13": "I feel vulnerable when I try to avoid things I do not like.",
+      "evs14": "I feel hurt avoiding things that cause inconvenience to me.",
+      "evs15": "I feel regret and hurt when I turn my back toward a problem.",
+      "evs16": "I feel hurt when I put off things I do not like.",
+      "debrief": "Thank you for completing the Emotional Vulnerability Scale."
+    }
+  }
+}

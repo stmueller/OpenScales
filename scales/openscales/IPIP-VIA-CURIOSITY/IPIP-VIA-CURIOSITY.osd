@@ -1,0 +1,174 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Curiosity",
+      "code": "IPIP-VIA-CURIOSITY",
+      "abbreviation": "IPIP-VIA-CURIOSITY",
+      "description": "IPIP representation of the VIA character strength 'Curiosity'. 10-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "curiosity",
+        "name": "Curiosity",
+        "abbreviation": "CURIOSITY",
+        "description": "IPIP VIA Curiosity subscale (10 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_091",
+        "text_key": "ipip_via_091",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_092",
+        "text_key": "ipip_via_092",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_093",
+        "text_key": "ipip_via_093",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_094",
+        "text_key": "ipip_via_094",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_095",
+        "text_key": "ipip_via_095",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_096",
+        "text_key": "ipip_via_096",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_097",
+        "text_key": "ipip_via_097",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_098",
+        "text_key": "ipip_via_098",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_099",
+        "text_key": "ipip_via_099",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_100",
+        "text_key": "ipip_via_100",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "curiosity": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_091",
+          "ipip_via_092",
+          "ipip_via_093",
+          "ipip_via_094",
+          "ipip_via_095",
+          "ipip_via_096",
+          "ipip_via_097",
+          "ipip_via_098",
+          "ipip_via_099",
+          "ipip_via_100"
+        ],
+        "description": "Mean of 10 items (range 1–5; higher = stronger Curiosity). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_091": 1,
+          "ipip_via_092": 1,
+          "ipip_via_093": 1,
+          "ipip_via_094": -1,
+          "ipip_via_095": 1,
+          "ipip_via_096": -1,
+          "ipip_via_097": 1,
+          "ipip_via_098": -1,
+          "ipip_via_099": 1,
+          "ipip_via_100": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_091": "Am always busy with something interesting.",
+      "ipip_via_092": "Am excited by many different activities.",
+      "ipip_via_093": "Am never bored.",
+      "ipip_via_094": "Am not all that curious about the world.",
+      "ipip_via_095": "Can find something of interest in any situation.",
+      "ipip_via_096": "Find it difficult to entertain myself.",
+      "ipip_via_097": "Find the world a very interesting place.",
+      "ipip_via_098": "Have few interests.",
+      "ipip_via_099": "Love to hear about other countries and cultures.",
+      "ipip_via_100": "Think that my life is extremely interesting."
+    }
+  }
+}

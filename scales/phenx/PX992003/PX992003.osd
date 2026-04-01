@@ -1,0 +1,788 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Long COVID - Symptoms Due to COVID-19 - Neurology",
+      "code": "PX992003",
+      "abbreviation": "PX992003",
+      "description": "The Neurology module extracted from the Online Survey on Recovery from COVID-19 contains 14 items measuring symptom experiences as related to headaches, sense of smell and taste, tremors and vibrating sensations, other neurological sensations. Each symptom section asks for the presence of certain sy",
+      "domain": "Long COVID",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/992003]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/992003"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "sec_headaches",
+        "type": "section",
+        "text_key": "sec_headaches_title"
+      },
+      {
+        "id": "long_covid_symptoms_neurology_headaches_related",
+        "text_key": "long_covid_symptoms_neurology_headaches_related",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_neurology_headaches_related_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_headaches_related_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_neurology_headaches_symptoms",
+        "text_key": "long_covid_symptoms_neurology_headaches_symptoms",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_neurology_headaches_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_headaches_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_headaches_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_headaches_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_headaches_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_headaches_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_headaches_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_headaches_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_headaches_symptoms_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_headaches_symptoms_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_headaches_symptoms_opt_11",
+            "value": 11
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_neurology_headaches_symptoms_other",
+        "text_key": "long_covid_symptoms_neurology_headaches_symptoms_other",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_neurology_headaches_symptoms",
+          "operator": "in",
+          "value": [
+            6
+          ]
+        }
+      },
+      {
+        "id": "long_covid_symptoms_neurology_experience_headache_symptoms",
+        "text_key": "long_covid_symptoms_neurology_experience_headache_symptoms",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_headache_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_headache_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_headache_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_headache_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_headache_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_headache_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_headache_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_headache_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_headache_symptoms_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_headache_symptoms_opt_10",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "id": "sec_sense_of_smell_and_taste",
+        "type": "section",
+        "text_key": "sec_sense_of_smell_and_taste_title"
+      },
+      {
+        "id": "long_covid_symptoms_neurology_smell_taste_changes",
+        "text_key": "long_covid_symptoms_neurology_smell_taste_changes",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_neurology_smell_taste_changes_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_smell_taste_changes_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_neurology_smell_taste_symptoms",
+        "text_key": "long_covid_symptoms_neurology_smell_taste_symptoms",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_neurology_smell_taste_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_smell_taste_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_smell_taste_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_smell_taste_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_smell_taste_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_smell_taste_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_smell_taste_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_smell_taste_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_smell_taste_symptoms_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_neurology_experience_smell_taste_symptoms",
+        "text_key": "long_covid_symptoms_neurology_experience_smell_taste_symptoms",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_10",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_neurology_phantom_taste",
+        "text_key": "long_covid_symptoms_neurology_phantom_taste",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_neurology_smell_taste_symptoms",
+          "operator": "in",
+          "value": [
+            6
+          ]
+        }
+      },
+      {
+        "id": "long_covid_symptoms_neurology_phantom_smells",
+        "text_key": "long_covid_symptoms_neurology_phantom_smells",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_neurology_smell_taste_symptoms",
+          "operator": "in",
+          "value": [
+            2
+          ]
+        }
+      },
+      {
+        "id": "sec_tremors_and_vibrating_sensations",
+        "type": "section",
+        "text_key": "sec_tremors_and_vibrating_sensations_title"
+      },
+      {
+        "id": "long_covid_symptoms_neurology_tremor_vibration_sensations",
+        "text_key": "long_covid_symptoms_neurology_tremor_vibration_sensations",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_neurology_tremor_vibration_sensations_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_tremor_vibration_sensations_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_neurology_experienced_tremors_vibrating_sensations",
+        "text_key": "long_covid_symptoms_neurology_experienced_tremors_vibrating_sensations",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_neurology_experienced_tremors_vibrating_sensations_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experienced_tremors_vibrating_sensations_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_neurology_experienced_tremors_location",
+        "text_key": "long_covid_symptoms_neurology_experienced_tremors_location",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_neurology_experienced_tremors_vibrating_sensations",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        }
+      },
+      {
+        "id": "long_covid_symptoms_neurology_experienced_vibrating_sensations_location",
+        "text_key": "long_covid_symptoms_neurology_experienced_vibrating_sensations_location",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_neurology_experienced_tremors_vibrating_sensations",
+          "operator": "in",
+          "value": [
+            2
+          ]
+        }
+      },
+      {
+        "id": "sec_when_did_you_experience_these_symptoms_p",
+        "type": "section",
+        "text_key": "sec_when_did_you_experience_these_symptoms_p_title"
+      },
+      {
+        "id": "long_covid_symptoms_neurology_when_experience_symptoms_tremors",
+        "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_tremors",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_11",
+            "value": 11
+          }
+        ],
+        "_matrix_group": "symptoms_time"
+      },
+      {
+        "id": "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations",
+        "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_11",
+            "value": 11
+          }
+        ],
+        "_matrix_group": "symptoms_time"
+      },
+      {
+        "id": "long_covid_symptoms_neurology_describe_tremors_vibration_shaking",
+        "text_key": "long_covid_symptoms_neurology_describe_tremors_vibration_shaking",
+        "type": "short"
+      },
+      {
+        "id": "sec_weakness_numbness_tingling_coldness_and_",
+        "type": "section",
+        "text_key": "sec_weakness_numbness_tingling_coldness_and__title"
+      },
+      {
+        "id": "long_covid_symptoms_neurology_neurological_sensation_symptoms",
+        "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_neurology_neurological_sensation_symptoms_numbness_location",
+        "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_numbness_location",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_neurology_neurological_sensation_symptoms",
+          "operator": "in",
+          "value": [
+            2
+          ]
+        }
+      },
+      {
+        "id": "long_covid_symptoms_neurology_neurological_sensation_symptoms_coldness_location",
+        "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_coldness_location",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_neurology_neurological_sensation_symptoms",
+          "operator": "in",
+          "value": [
+            4
+          ]
+        }
+      },
+      {
+        "id": "long_covid_symptoms_neurology_neurological_sensation_symptoms_tingling_location",
+        "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_tingling_location",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_neurology_neurological_sensation_symptoms",
+          "operator": "in",
+          "value": [
+            5
+          ]
+        }
+      },
+      {
+        "id": "long_covid_symptoms_neurology_neurological_sensation_symptoms_electrical_zaps_location",
+        "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_electrical_zaps_location",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_neurology_neurological_sensation_symptoms",
+          "operator": "in",
+          "value": [
+            6
+          ]
+        }
+      },
+      {
+        "id": "long_covid_symptoms_neurology_neurological_sensation_symptoms_facial_paralysis_location",
+        "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_facial_paralysis_location",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_neurology_neurological_sensation_symptoms",
+          "operator": "in",
+          "value": [
+            7
+          ]
+        }
+      },
+      {
+        "id": "long_covid_symptoms_neurology_neurological_sensation_symptoms_facial_pressure_location",
+        "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_facial_pressure_location",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_neurology_neurological_sensation_symptoms",
+          "operator": "in",
+          "value": [
+            10
+          ]
+        }
+      },
+      {
+        "id": "long_covid_symptoms_neurology_neurological_sensation_symptoms_weakness_location",
+        "text_key": "long_covid_symptoms_neurology_neurological_sensation_symptoms_weakness_location",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_neurology_neurological_sensation_symptoms",
+          "operator": "in",
+          "value": [
+            11
+          ]
+        }
+      },
+      {
+        "id": "long_covid_symptoms_neurology_experience_neurological_sensations",
+        "text_key": "long_covid_symptoms_neurology_experience_neurological_sensations",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_neurological_sensations_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_neurological_sensations_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_neurological_sensations_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_neurological_sensations_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_neurological_sensations_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_neurological_sensations_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_neurological_sensations_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_neurological_sensations_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_neurological_sensations_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_neurological_sensations_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "long_covid_symptoms_neurology_experience_neurological_sensations_opt_11",
+            "value": 11
+          }
+        ]
+      }
+    ],
+    "_conversion_notes": [
+      "INFO  long_covid_symptoms_neurology_when_experience_symptoms_tremors: member of matrix group 'symptoms_time' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations: member of matrix group 'symptoms_time' — consider converting to grid type manually"
+    ]
+  },
+  "translations": {
+    "en": {
+      "sec_headaches_title": "Headaches",
+      "long_covid_symptoms_neurology_headaches_related": "Have you experienced any new HEADACHES OR RELATED ISSUES since the start of your COVID-19 illness?",
+      "long_covid_symptoms_neurology_headaches_related_opt_1": "Yes",
+      "long_covid_symptoms_neurology_headaches_related_opt_2": "No",
+      "long_covid_symptoms_neurology_headaches_symptoms": "Which of the following symptoms have you experienced since the start of your COVID-19 illness?",
+      "long_covid_symptoms_neurology_headaches_symptoms_opt_1": "Headaches, at the base of the skull",
+      "long_covid_symptoms_neurology_headaches_symptoms_opt_2": "Headaches, in the temples",
+      "long_covid_symptoms_neurology_headaches_symptoms_opt_3": "Headaches, behind the eyes",
+      "long_covid_symptoms_neurology_headaches_symptoms_opt_4": "Headaches, diffuse (entire brain)",
+      "long_covid_symptoms_neurology_headaches_symptoms_opt_5": "Headaches/pain after mental exertion",
+      "long_covid_symptoms_neurology_headaches_symptoms_opt_6": "Headaches, other",
+      "long_covid_symptoms_neurology_headaches_symptoms_opt_7": "Sensation of brain warmth \"on fire\"",
+      "long_covid_symptoms_neurology_headaches_symptoms_opt_8": "Sensation of brain pressure",
+      "long_covid_symptoms_neurology_headaches_symptoms_opt_9": "Migraines",
+      "long_covid_symptoms_neurology_headaches_symptoms_opt_10": "Stiff neck",
+      "long_covid_symptoms_neurology_headaches_symptoms_opt_11": "None of the above",
+      "long_covid_symptoms_neurology_headaches_symptoms_other": "Headaches, other",
+      "long_covid_symptoms_neurology_experience_headache_symptoms": "When did you experience these symptoms? Please mark symptoms for the first 4 weeks, then months (if applicable). Even if you have only experienced these symptoms for part of a week or month, please select it. Headaches and related symptoms:",
+      "long_covid_symptoms_neurology_experience_headache_symptoms_opt_1": "Week 1",
+      "long_covid_symptoms_neurology_experience_headache_symptoms_opt_2": "Week 2",
+      "long_covid_symptoms_neurology_experience_headache_symptoms_opt_3": "Week 3",
+      "long_covid_symptoms_neurology_experience_headache_symptoms_opt_4": "Week 4",
+      "long_covid_symptoms_neurology_experience_headache_symptoms_opt_5": "Month 2",
+      "long_covid_symptoms_neurology_experience_headache_symptoms_opt_6": "Month 3",
+      "long_covid_symptoms_neurology_experience_headache_symptoms_opt_7": "Month 4",
+      "long_covid_symptoms_neurology_experience_headache_symptoms_opt_8": "Month 5",
+      "long_covid_symptoms_neurology_experience_headache_symptoms_opt_9": "Month 6",
+      "long_covid_symptoms_neurology_experience_headache_symptoms_opt_10": "Month 7",
+      "sec_sense_of_smell_and_taste_title": "Sense of Smell and Taste",
+      "long_covid_symptoms_neurology_smell_taste_changes": "Have you experienced any changes to your SENSE OF SMELL OR TASTE since the start of your COVID-19 illness?",
+      "long_covid_symptoms_neurology_smell_taste_changes_opt_1": "Yes",
+      "long_covid_symptoms_neurology_smell_taste_changes_opt_2": "No",
+      "long_covid_symptoms_neurology_smell_taste_symptoms": "Which of the following symptoms have you experienced since the start of your COVID-19 illness?",
+      "long_covid_symptoms_neurology_smell_taste_symptoms_opt_1": "Loss of smell",
+      "long_covid_symptoms_neurology_smell_taste_symptoms_opt_2": "Phantom smells (imagining/hallucinating smells - smelling things that aren't there)",
+      "long_covid_symptoms_neurology_smell_taste_symptoms_opt_3": "Heightened sense of smell",
+      "long_covid_symptoms_neurology_smell_taste_symptoms_opt_4": "Altered sense of smell",
+      "long_covid_symptoms_neurology_smell_taste_symptoms_opt_5": "Loss of taste",
+      "long_covid_symptoms_neurology_smell_taste_symptoms_opt_6": "Phantom taste (imagining/hallucinating tastes - tasting things when there's nothing in your mouth",
+      "long_covid_symptoms_neurology_smell_taste_symptoms_opt_7": "Heightened sense of taste",
+      "long_covid_symptoms_neurology_smell_taste_symptoms_opt_8": "Altered sense of taste",
+      "long_covid_symptoms_neurology_smell_taste_symptoms_opt_9": "None of the above",
+      "long_covid_symptoms_neurology_experience_smell_taste_symptoms": "When did you experience these symptoms? Please mark symptoms for the first 4 weeks, then months (if applicable). Even if you have only experienced these symptoms for part of a week or month, please select it. Changes to sense of smell and taste",
+      "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_1": "Week 1",
+      "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_2": "Week 2",
+      "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_3": "Week 3",
+      "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_4": "Week 4",
+      "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_5": "Month 2",
+      "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_6": "Month 3",
+      "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_7": "Month 4",
+      "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_8": "Month 5",
+      "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_9": "Month 6",
+      "long_covid_symptoms_neurology_experience_smell_taste_symptoms_opt_10": "Month 7",
+      "long_covid_symptoms_neurology_phantom_taste": "If you had phantom tastes, please describe them:",
+      "long_covid_symptoms_neurology_phantom_smells": "If you had phantom smells, please describe them:",
+      "sec_tremors_and_vibrating_sensations_title": "Tremors and Vibrating Sensations",
+      "long_covid_symptoms_neurology_tremor_vibration_sensations": "Have you experienced any TREMOR OR VIBRATION SENTATIONS since the start of your COVID-19 illness?Tremor: Involuntary, rhythmic muscle contraction leading to shaking movements in one or more parts of the bodyVibration sensation: A buzzing feeling, when you feel like your muscles, fingers, or legs are vibrating or shaking inside, but you don't see the movement",
+      "long_covid_symptoms_neurology_tremor_vibration_sensations_opt_1": "Yes",
+      "long_covid_symptoms_neurology_tremor_vibration_sensations_opt_2": "No",
+      "long_covid_symptoms_neurology_experienced_tremors_vibrating_sensations": "Which of the following symptoms have you experienced since the start of your COVID-19 illness? Please specify the location on your body in the text box. If multiple locations, please separate them with a comma (i.e. leg, torso, hand).",
+      "long_covid_symptoms_neurology_experienced_tremors_vibrating_sensations_opt_1": "Tremors",
+      "long_covid_symptoms_neurology_experienced_tremors_vibrating_sensations_opt_2": "Vibrating sensations",
+      "long_covid_symptoms_neurology_experienced_tremors_location": "Tremors",
+      "long_covid_symptoms_neurology_experienced_vibrating_sensations_location": "Vibrating Sensations",
+      "sec_when_did_you_experience_these_symptoms_p_title": "When did you experience these symptoms? Please mark symptoms for the first 4 weeks, then months (if applicable). Even if you have only experienced these symptoms for part of a week or month, please select it.",
+      "long_covid_symptoms_neurology_when_experience_symptoms_tremors": "Tremors",
+      "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_1": "N/A",
+      "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_2": "Week 1",
+      "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_3": "Week 2",
+      "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_4": "Week 3",
+      "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_5": "Week 4",
+      "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_6": "Month 2",
+      "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_7": "Month 3",
+      "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_8": "Month 4",
+      "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_9": "Month 5",
+      "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_10": "Month 6",
+      "long_covid_symptoms_neurology_when_experience_symptoms_tremors_opt_11": "Month 7",
+      "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations": "Vibrating Sensations",
+      "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_1": "N/A",
+      "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_2": "Week 1",
+      "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_3": "Week 2",
+      "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_4": "Week 3",
+      "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_5": "Week 4",
+      "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_6": "Month 2",
+      "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_7": "Month 3",
+      "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_8": "Month 4",
+      "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_9": "Month 5",
+      "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_10": "Month 6",
+      "long_covid_symptoms_neurology_when_experience_symptoms_vibrating_sensations_opt_11": "Month 7",
+      "long_covid_symptoms_neurology_describe_tremors_vibration_shaking": "Please use this space to describe examples of your tremors or body vibration/shaking during your illness. Please do not include any identifying information (such as name or location).",
+      "sec_weakness_numbness_tingling_coldness_and__title": "Weakness, numbness, tingling, coldness, and other sensations",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms": "Which of the following NEUROLOGICAL SENSATION SYMPTOMS have you experienced since the start of your COVID-19 illness, if any? Please specify the location on your body in the text box. If multiple locations, please separate them with a comma (i.e. hand, leg, foot).",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_1": "Skin sensations: burning, tingling, or itchiness without rash",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_2": "Numbness/loss of sensation",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_3": "Numbness/weakness on one side of the body only",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_4": "Coldness",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_5": "Tingling/prickling/pins and needles sensation",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_6": "Electrical zaps/electrical shock sensation",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_7": "Facial paralysis (please indicate where on face was paralyzed)",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_8": "Sensation of facial pressure/numbness, left side",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_9": "Sensation of facial pressure/numbness, right side",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_10": "Sensation of facial pressure/numbness, other",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_11": "Weakness",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_opt_12": "None of the above",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_numbness_location": "Numbness/loss of sensation",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_coldness_location": "Coldness",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_tingling_location": "Tingling/prickling/pins and needles sensation",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_electrical_zaps_location": "Electrical zaps/electrical shock sensation",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_facial_paralysis_location": "Facial paralysis (please indicate where on face was paralyzed)",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_facial_pressure_location": "Sensation of facial pressure/numbness, other",
+      "long_covid_symptoms_neurology_neurological_sensation_symptoms_weakness_location": "Weakness",
+      "long_covid_symptoms_neurology_experience_neurological_sensations": "When did you experience these symptoms? Please mark symptoms for the first 4 weeks, then months (if applicable). Even if you have only experienced these symptoms for part of a week or month, please select it. All neurological sensations",
+      "long_covid_symptoms_neurology_experience_neurological_sensations_opt_1": "N/A",
+      "long_covid_symptoms_neurology_experience_neurological_sensations_opt_2": "Week 1",
+      "long_covid_symptoms_neurology_experience_neurological_sensations_opt_3": "Week 2",
+      "long_covid_symptoms_neurology_experience_neurological_sensations_opt_4": "Week 3",
+      "long_covid_symptoms_neurology_experience_neurological_sensations_opt_5": "Week 4",
+      "long_covid_symptoms_neurology_experience_neurological_sensations_opt_6": "Month 2",
+      "long_covid_symptoms_neurology_experience_neurological_sensations_opt_7": "Month 3",
+      "long_covid_symptoms_neurology_experience_neurological_sensations_opt_8": "Month 4",
+      "long_covid_symptoms_neurology_experience_neurological_sensations_opt_9": "Month 5",
+      "long_covid_symptoms_neurology_experience_neurological_sensations_opt_10": "Month 6",
+      "long_covid_symptoms_neurology_experience_neurological_sensations_opt_11": "Month 7"
+    }
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Brief Assessment of Social Network Characteristics",
+      "code": "PX590201",
+      "abbreviation": "PX590201",
+      "description": "The Social Network Assessment (SNA) is a self- or interviewer-administered, 9-item scale measuring (a) total network size, (b) substance use behavior of network members, and (c) support for substance use and recovery (all coded as counts). Responses to each item are largely treated separately (i.e.,",
+      "domain": "Social Networks & Substance Use",
+      "citation": "Bond, J., Kaskutas, L. A., & Weisner, C. (2003). The persistent influence of social networks and alcoholics anonymous on abstinence. Journal of Studies on Alcohol, 64 (4), 579-588. https://doi.org/10.15288/jsa.2003.64.579 Subbaraman, M. S., & Kaskutas, L. A. (2012). Social support and comfort in AA as mediators of \"Making AA easier\" (MAAEZ), a 12-step facilitation intervention. Psychology of Addictive Behaviors, 26 (4), 759-765. https://doi.org/10.1037/a0028544 [PhenX: https://www.phenxtoolkit.org/protocols/view/590201]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/590201"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+        "text_key": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+        "type": "short",
+        "input_type": "number",
+        "number_min": 0,
+        "number_max": 200
+      },
+      {
+        "id": "brief_assessment_social_network_characteristics_how_many_heavy_drinkers_drug_use",
+        "text_key": "brief_assessment_social_network_characteristics_how_many_heavy_drinkers_drug_use",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "less_than",
+              "value": 201
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "brief_assessment_social_network_characteristics_how_many_drug_users_see_once_twice_week",
+        "text_key": "brief_assessment_social_network_characteristics_how_many_drug_users_see_once_twice_week",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "all": [
+                {
+                  "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+                  "operator": "greater_than",
+                  "value": 0
+                },
+                {
+                  "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+                  "operator": "less_than",
+                  "value": 201
+                }
+              ]
+            },
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_heavy_drinkers_drug_use",
+              "operator": "greater_than",
+              "value": 0
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "brief_assessment_social_network_characteristics_how_many_encourage_drink_use",
+        "text_key": "brief_assessment_social_network_characteristics_how_many_encourage_drink_use",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "less_than",
+              "value": 201
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "brief_assessment_social_network_characteristics_how_many_dont_drink_use_atall",
+        "text_key": "brief_assessment_social_network_characteristics_how_many_dont_drink_use_atall",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "less_than",
+              "value": 201
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "brief_assessment_social_network_characteristics_how_many_support_your_effort_quit",
+        "text_key": "brief_assessment_social_network_characteristics_how_many_support_your_effort_quit",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "less_than",
+              "value": 201
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "brief_assessment_social_network_characteristics_meet_people_support_quitting_aa_ca_na",
+        "text_key": "brief_assessment_social_network_characteristics_meet_people_support_quitting_aa_ca_na",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "less_than",
+              "value": 201
+            },
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_dont_drink_use_atall",
+              "operator": "greater_than",
+              "value": 0
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "brief_assessment_social_network_characteristics_meet_people_support_quitting_aa_ca_na_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "brief_assessment_social_network_characteristics_meet_people_support_quitting_aa_ca_na_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "brief_assessment_social_network_characteristics_how_many_meet_in_aa_ca_na",
+        "text_key": "brief_assessment_social_network_characteristics_how_many_meet_in_aa_ca_na",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "less_than",
+              "value": 201
+            },
+            {
+              "item": "brief_assessment_social_network_characteristics_meet_people_support_quitting_aa_ca_na",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "brief_assessment_social_network_characteristics_how_many_no_longer_contact_with",
+        "text_key": "brief_assessment_social_network_characteristics_how_many_no_longer_contact_with",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact",
+              "operator": "less_than",
+              "value": 201
+            }
+          ]
+        },
+        "input_type": "number"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "brief_assessment_social_network_characteristics_how_many_friends_family_regularly_contact": "About how many friends and family members (including your spouse, lover/s, or partner/s) do you regularly have contact with? (By regularly, we mean you see them or talk on the phone with them once or more every couple of weeks.)",
+      "brief_assessment_social_network_characteristics_how_many_heavy_drinkers_drug_use": "Of the [Q1] people you regularly have contact with, how many are heavy drinkers or drug users?",
+      "brief_assessment_social_network_characteristics_how_many_drug_users_see_once_twice_week": "How many of these heavy drinkers or drug users do you see at least once or twice a week?",
+      "brief_assessment_social_network_characteristics_how_many_encourage_drink_use": "Of the [Q1] people you regularly have contact with, how many encourage you to drink or use drugs?",
+      "brief_assessment_social_network_characteristics_how_many_dont_drink_use_atall": "Of the [Q1] people that you regularly have contact with, how many don't drink or use drugs at all?",
+      "brief_assessment_social_network_characteristics_how_many_support_your_effort_quit": "Of the [Q1] people you regularly have contact with, how many actively support your effort to quit drinking and using drugs?",
+      "brief_assessment_social_network_characteristics_meet_people_support_quitting_aa_ca_na": "Did you meet any of these [Q4] people who support your quitting in AA, CA, or NA?",
+      "brief_assessment_social_network_characteristics_meet_people_support_quitting_aa_ca_na_opt_1": "Yes",
+      "brief_assessment_social_network_characteristics_meet_people_support_quitting_aa_ca_na_opt_2": "No",
+      "brief_assessment_social_network_characteristics_how_many_meet_in_aa_ca_na": "How many did you meet in [AA, CA, or NA]?",
+      "brief_assessment_social_network_characteristics_how_many_no_longer_contact_with": "How many people are you no longer in contact with because of their drinking or drug use?"
+    }
+  }
+}

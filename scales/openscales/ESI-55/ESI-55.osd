@@ -1,0 +1,1589 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Epilepsy Surgery Inventory-55",
+      "code": "ESI-55",
+      "abbreviation": "ESI-55",
+      "description": "55-item health-related quality of life measure developed specifically for patients being evaluated for or having undergone epilepsy surgery. Adapted from the RAND 36-Item Health Survey (SF-36) plus 19 epilepsy-specific items covering cognitive function, role limitations, and overall quality of life. Covers 11 health concepts scored 0–100 (higher = better health/quality of life). NOTE: Exact item text requires the official RAND instrument — see URL above. Item text provided here is based on Vickrey et al. (1992) and the published scale structure.",
+      "citation": "Vickrey, B.G., Hays, R.D., Graber, J., Rausch, R., Engel, J., Jr., & Brook, R.H. (1992). A health-related quality of life instrument for patients evaluated for epilepsy surgery. Medical Care, 30(4), 299–319. https://doi.org/10.1097/00005650-199204000-00003",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health-care/surveys_tools/esi.html",
+      "domain": "Health",
+      "license_explanation": "Public Domain (RAND Corporation)."
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "dimensions": [
+      {
+        "id": "health_perceptions",
+        "name": "Health Perceptions",
+        "abbreviation": "HP",
+        "description": "Personal evaluation of overall health. Items: esi1, esi2, esi20, esi32, esi33.",
+        "enabled_param": null
+      },
+      {
+        "id": "energy_fatigue",
+        "name": "Energy/Fatigue",
+        "abbreviation": "EF",
+        "description": "Level of energy and fatigue over the past 4 weeks. Items: esi23, esi27, esi29, esi31.",
+        "enabled_param": null
+      },
+      {
+        "id": "overall_qol",
+        "name": "Overall Quality of Life",
+        "abbreviation": "OQL",
+        "description": "Global quality of life rating. Items: esi3, esi4.",
+        "enabled_param": null
+      },
+      {
+        "id": "social_function",
+        "name": "Social Function",
+        "abbreviation": "SF",
+        "description": "Degree to which health or emotional problems interfere with social activities. Items: esi17, esi18.",
+        "enabled_param": null
+      },
+      {
+        "id": "emotional_wellbeing",
+        "name": "Emotional Well-Being",
+        "abbreviation": "EWB",
+        "description": "Psychological distress and well-being over the past 4 weeks. Items: esi24, esi25, esi26, esi28, esi30.",
+        "enabled_param": null
+      },
+      {
+        "id": "cognitive_function",
+        "name": "Cognitive Function",
+        "abbreviation": "CF",
+        "description": "Perceived cognitive difficulties including memory and concentration. Items: esi34–esi44.",
+        "enabled_param": null
+      },
+      {
+        "id": "physical_function",
+        "name": "Physical Function",
+        "abbreviation": "PF",
+        "description": "Extent to which health limits physical activities. Items: esi5–esi14.",
+        "enabled_param": null
+      },
+      {
+        "id": "role_physical",
+        "name": "Role Limitations — Physical",
+        "abbreviation": "RP",
+        "description": "Limitations in work due to physical health problems. Items: esi15, esi16.",
+        "enabled_param": null
+      },
+      {
+        "id": "role_emotional",
+        "name": "Role Limitations — Emotional",
+        "abbreviation": "RE",
+        "description": "Limitations in work due to emotional problems. Items: esi19, esi21, esi22.",
+        "enabled_param": null
+      },
+      {
+        "id": "pain",
+        "name": "Pain",
+        "abbreviation": "PAIN",
+        "description": "Intensity of bodily pain and its interference with activities. Items: esi45, esi46.",
+        "enabled_param": null
+      },
+      {
+        "id": "epilepsy_specific",
+        "name": "Epilepsy-Targeted Inventory",
+        "abbreviation": "ETI",
+        "description": "Epilepsy-specific items covering seizure frequency, memory complaints, attention, and adaptation to epilepsy. Items: esi47–esi55.",
+        "enabled_param": null
+      },
+      {
+        "id": "role_memory",
+        "name": "Role Limitations — Memory",
+        "description": "Role limitations due to memory, speech, or language problems (items 49-55)."
+      }
+    ],
+    "items": [
+      {
+        "id": "esi1",
+        "text_key": "esi1",
+        "type": "multi",
+        "dimension": "health_perceptions",
+        "options": [
+          {
+            "text_key": "esi_health1",
+            "value": 5
+          },
+          {
+            "text_key": "esi_health2",
+            "value": 4
+          },
+          {
+            "text_key": "esi_health3",
+            "value": 3
+          },
+          {
+            "text_key": "esi_health4",
+            "value": 2
+          },
+          {
+            "text_key": "esi_health5",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "esi3",
+        "text_key": "esi3",
+        "type": "likert",
+        "dimension": "overall_qol",
+        "likert_points": 10,
+        "likert_min": 1,
+        "likert_max": 10,
+        "likert_labels": [
+          "qol_lo",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "qol_hi"
+        ],
+        "likert_reverse": true
+      },
+      {
+        "id": "esi2",
+        "text_key": "esi2",
+        "type": "multi",
+        "dimension": "health_perceptions",
+        "options": [
+          {
+            "text_key": "esi_change1",
+            "value": 1
+          },
+          {
+            "text_key": "esi_change2",
+            "value": 2
+          },
+          {
+            "text_key": "esi_change3",
+            "value": 3
+          },
+          {
+            "text_key": "esi_change4",
+            "value": 4
+          },
+          {
+            "text_key": "esi_change5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "esi5",
+        "text_key": "esi5",
+        "type": "multi",
+        "dimension": "physical_function",
+        "options": [
+          {
+            "text_key": "esi_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "esi_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "esi_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "esi6",
+        "text_key": "esi6",
+        "type": "multi",
+        "dimension": "physical_function",
+        "options": [
+          {
+            "text_key": "esi_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "esi_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "esi_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "esi7",
+        "text_key": "esi7",
+        "type": "multi",
+        "dimension": "physical_function",
+        "options": [
+          {
+            "text_key": "esi_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "esi_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "esi_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "esi8",
+        "text_key": "esi8",
+        "type": "multi",
+        "dimension": "physical_function",
+        "options": [
+          {
+            "text_key": "esi_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "esi_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "esi_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "esi9",
+        "text_key": "esi9",
+        "type": "multi",
+        "dimension": "physical_function",
+        "options": [
+          {
+            "text_key": "esi_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "esi_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "esi_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "esi10",
+        "text_key": "esi10",
+        "type": "multi",
+        "dimension": "physical_function",
+        "options": [
+          {
+            "text_key": "esi_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "esi_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "esi_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "esi11",
+        "text_key": "esi11",
+        "type": "multi",
+        "dimension": "physical_function",
+        "options": [
+          {
+            "text_key": "esi_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "esi_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "esi_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "esi12",
+        "text_key": "esi12",
+        "type": "multi",
+        "dimension": "physical_function",
+        "options": [
+          {
+            "text_key": "esi_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "esi_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "esi_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "esi13",
+        "text_key": "esi13",
+        "type": "multi",
+        "dimension": "physical_function",
+        "options": [
+          {
+            "text_key": "esi_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "esi_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "esi_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "esi14",
+        "text_key": "esi14",
+        "type": "multi",
+        "dimension": "physical_function",
+        "options": [
+          {
+            "text_key": "esi_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "esi_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "esi_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "esi15",
+        "text_key": "esi15",
+        "type": "multi",
+        "dimension": "role_physical",
+        "options": [
+          {
+            "text_key": "esi_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "esi_yn2",
+            "value": 1
+          }
+        ],
+        "question_head": "qh_rp"
+      },
+      {
+        "id": "esi16",
+        "text_key": "esi16",
+        "type": "multi",
+        "dimension": "role_physical",
+        "options": [
+          {
+            "text_key": "esi_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "esi_yn2",
+            "value": 1
+          }
+        ],
+        "question_head": "qh_rp"
+      },
+      {
+        "id": "esi17_rp",
+        "text_key": "esi17_rp",
+        "type": "multi",
+        "dimension": "role_physical",
+        "question_head": "qh_rp",
+        "options": [
+          {
+            "text_key": "yes_opt",
+            "value": 1
+          },
+          {
+            "text_key": "no_opt",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "esi18_rp",
+        "text_key": "esi18_rp",
+        "type": "multi",
+        "dimension": "role_physical",
+        "question_head": "qh_rp",
+        "options": [
+          {
+            "text_key": "yes_opt",
+            "value": 1
+          },
+          {
+            "text_key": "no_opt",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "esi18_rp_e",
+        "text_key": "esi18_rp_e",
+        "type": "multi",
+        "dimension": "role_physical",
+        "question_head": "qh_rp",
+        "options": [
+          {
+            "text_key": "yes_opt",
+            "value": 1
+          },
+          {
+            "text_key": "no_opt",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "esi19",
+        "text_key": "esi19",
+        "type": "multi",
+        "dimension": "role_emotional",
+        "options": [
+          {
+            "text_key": "esi_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "esi_yn2",
+            "value": 1
+          }
+        ],
+        "question_head": "qh_re"
+      },
+      {
+        "id": "esi21",
+        "text_key": "esi21",
+        "type": "multi",
+        "dimension": "role_emotional",
+        "options": [
+          {
+            "text_key": "esi_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "esi_yn2",
+            "value": 1
+          }
+        ],
+        "question_head": "qh_re"
+      },
+      {
+        "id": "esi21_re_c",
+        "text_key": "esi21_re_c",
+        "type": "multi",
+        "dimension": "role_emotional",
+        "question_head": "qh_re",
+        "options": [
+          {
+            "text_key": "yes_opt",
+            "value": 1
+          },
+          {
+            "text_key": "no_opt",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "esi21_re_d",
+        "text_key": "esi21_re_d",
+        "type": "multi",
+        "dimension": "role_emotional",
+        "question_head": "qh_re",
+        "options": [
+          {
+            "text_key": "yes_opt",
+            "value": 1
+          },
+          {
+            "text_key": "no_opt",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "esi22",
+        "text_key": "esi22",
+        "type": "multi",
+        "dimension": "role_emotional",
+        "options": [
+          {
+            "text_key": "esi_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "esi_yn2",
+            "value": 1
+          }
+        ],
+        "question_head": "qh_re"
+      },
+      {
+        "id": "esi17",
+        "text_key": "esi17",
+        "type": "multi",
+        "dimension": "social_function",
+        "options": [
+          {
+            "text_key": "esi_sf1",
+            "value": 5
+          },
+          {
+            "text_key": "esi_sf2",
+            "value": 4
+          },
+          {
+            "text_key": "esi_sf3",
+            "value": 3
+          },
+          {
+            "text_key": "esi_sf4",
+            "value": 2
+          },
+          {
+            "text_key": "esi_sf5",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "esi23",
+        "text_key": "esi23",
+        "type": "likert",
+        "dimension": "energy_fatigue",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi24",
+        "text_key": "esi24",
+        "type": "likert",
+        "dimension": "emotional_wellbeing",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi25",
+        "text_key": "esi25",
+        "type": "likert",
+        "dimension": "emotional_wellbeing",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi26",
+        "text_key": "esi26",
+        "type": "likert",
+        "dimension": "emotional_wellbeing",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi27",
+        "text_key": "esi27",
+        "type": "likert",
+        "dimension": "energy_fatigue",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi28",
+        "text_key": "esi28",
+        "type": "likert",
+        "dimension": "emotional_wellbeing",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi29",
+        "text_key": "esi29",
+        "type": "likert",
+        "dimension": "energy_fatigue",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi30",
+        "text_key": "esi30",
+        "type": "likert",
+        "dimension": "emotional_wellbeing",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi31",
+        "text_key": "esi31",
+        "type": "likert",
+        "dimension": "energy_fatigue",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi34",
+        "text_key": "esi34",
+        "type": "likert",
+        "dimension": "social_function",
+        "question_head": "qh_34_39",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi35",
+        "text_key": "esi35",
+        "type": "likert",
+        "dimension": "cognitive_function",
+        "question_head": "qh_34_39",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi36",
+        "text_key": "esi36",
+        "type": "likert",
+        "dimension": "cognitive_function",
+        "question_head": "qh_34_39",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi37",
+        "text_key": "esi37",
+        "type": "likert",
+        "dimension": "epilepsy_specific",
+        "question_head": "qh_34_39",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi38",
+        "text_key": "esi38",
+        "type": "likert",
+        "dimension": "cognitive_function",
+        "question_head": "qh_34_39",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi39",
+        "text_key": "esi39",
+        "type": "likert",
+        "dimension": "emotional_wellbeing",
+        "question_head": "qh_34_39",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "esi40",
+        "text_key": "esi40",
+        "type": "likert",
+        "dimension": "pain",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "pain6_1",
+          "pain6_2",
+          "pain6_3",
+          "pain6_4",
+          "pain6_5",
+          "pain6_6"
+        ]
+      },
+      {
+        "id": "esi41",
+        "text_key": "esi41",
+        "type": "likert",
+        "dimension": "pain",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "painint5_1",
+          "painint5_2",
+          "painint5_3",
+          "painint5_4",
+          "painint5_5"
+        ]
+      },
+      {
+        "id": "esi42",
+        "text_key": "esi42",
+        "type": "likert",
+        "dimension": "health_perceptions",
+        "question_head": "qh_42_47",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "esi43",
+        "text_key": "esi43",
+        "type": "likert",
+        "dimension": "health_perceptions",
+        "question_head": "qh_42_47",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "esi44",
+        "text_key": "esi44",
+        "type": "likert",
+        "dimension": "health_perceptions",
+        "question_head": "qh_42_47",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "esi45",
+        "text_key": "esi45",
+        "type": "likert",
+        "dimension": "health_perceptions",
+        "question_head": "qh_42_47",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "esi46",
+        "text_key": "esi46",
+        "type": "likert",
+        "dimension": "health_perceptions",
+        "question_head": "qh_42_47",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "esi47",
+        "text_key": "esi47",
+        "type": "likert",
+        "dimension": "epilepsy_specific",
+        "question_head": "qh_42_47",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "esi48",
+        "text_key": "esi48",
+        "type": "multi",
+        "dimension": "overall_qol",
+        "options": [
+          {
+            "text_key": "qol5_1",
+            "value": 1
+          },
+          {
+            "text_key": "qol5_2",
+            "value": 2
+          },
+          {
+            "text_key": "qol5_3",
+            "value": 3
+          },
+          {
+            "text_key": "qol5_4",
+            "value": 4
+          },
+          {
+            "text_key": "qol5_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "esi49",
+        "text_key": "esi49",
+        "type": "multi",
+        "dimension": "cognitive_function",
+        "options": [
+          {
+            "text_key": "mem4_1",
+            "value": 1
+          },
+          {
+            "text_key": "mem4_2",
+            "value": 2
+          },
+          {
+            "text_key": "mem4_3",
+            "value": 3
+          },
+          {
+            "text_key": "mem4_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "esi50",
+        "text_key": "esi50",
+        "type": "multi",
+        "dimension": "cognitive_function",
+        "options": [
+          {
+            "text_key": "mem4_1",
+            "value": 1
+          },
+          {
+            "text_key": "mem4_2",
+            "value": 2
+          },
+          {
+            "text_key": "mem4_3",
+            "value": 3
+          },
+          {
+            "text_key": "mem4_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "esi51",
+        "text_key": "esi51",
+        "type": "multi",
+        "dimension": "role_memory",
+        "question_head": "qh_51_55",
+        "options": [
+          {
+            "text_key": "yes_opt",
+            "value": 1
+          },
+          {
+            "text_key": "no_opt",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "esi52",
+        "text_key": "esi52",
+        "type": "multi",
+        "dimension": "role_memory",
+        "question_head": "qh_51_55",
+        "options": [
+          {
+            "text_key": "yes_opt",
+            "value": 1
+          },
+          {
+            "text_key": "no_opt",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "esi53",
+        "text_key": "esi53",
+        "type": "multi",
+        "dimension": "role_memory",
+        "question_head": "qh_51_55",
+        "options": [
+          {
+            "text_key": "yes_opt",
+            "value": 1
+          },
+          {
+            "text_key": "no_opt",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "esi54",
+        "text_key": "esi54",
+        "type": "multi",
+        "dimension": "role_memory",
+        "question_head": "qh_51_55",
+        "options": [
+          {
+            "text_key": "yes_opt",
+            "value": 1
+          },
+          {
+            "text_key": "no_opt",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "esi55",
+        "text_key": "esi55",
+        "type": "multi",
+        "dimension": "role_memory",
+        "question_head": "qh_51_55",
+        "options": [
+          {
+            "text_key": "yes_opt",
+            "value": 1
+          },
+          {
+            "text_key": "no_opt",
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "health_perceptions": {
+        "method": "mean_coded",
+        "items": [
+          "esi1",
+          "esi42",
+          "esi43",
+          "esi44",
+          "esi45",
+          "esi46"
+        ],
+        "description": "Health Perceptions (items 1, 42-46; true/false).",
+        "item_coding": {
+          "esi1": 1,
+          "esi42": 1,
+          "esi43": 1,
+          "esi44": 1,
+          "esi45": 1,
+          "esi46": 1
+        }
+      },
+      "energy_fatigue": {
+        "method": "mean_coded",
+        "items": [
+          "esi23",
+          "esi27",
+          "esi29",
+          "esi31"
+        ],
+        "description": "Mean of 4 energy/fatigue items. Values pre-reversed so higher = more energy. 0–100: (mean − 1) / 5 × 100.",
+        "item_coding": {
+          "esi23": 1,
+          "esi27": 1,
+          "esi29": 1,
+          "esi31": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "overall_qol": {
+        "method": "mean_coded",
+        "items": [
+          "esi3",
+          "esi48"
+        ],
+        "description": "Overall Quality of Life (items 2, 48).",
+        "item_coding": {
+          "esi3": 1,
+          "esi48": 1
+        }
+      },
+      "social_function": {
+        "method": "mean_coded",
+        "items": [
+          "esi17",
+          "esi34"
+        ],
+        "description": "Social Function (items 24, 34).",
+        "item_coding": {
+          "esi17": 1,
+          "esi34": 1
+        }
+      },
+      "emotional_wellbeing": {
+        "method": "mean_coded",
+        "items": [
+          "esi24",
+          "esi25",
+          "esi26",
+          "esi28",
+          "esi30",
+          "esi39"
+        ],
+        "description": "Mean of 5 emotional well-being items. Values pre-reversed so higher = better. 0–100: (mean − 1) / 5 × 100.",
+        "item_coding": {
+          "esi24": 1,
+          "esi25": 1,
+          "esi26": 1,
+          "esi28": 1,
+          "esi30": 1,
+          "esi39": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "cognitive_function": {
+        "method": "mean_coded",
+        "items": [
+          "esi35",
+          "esi36",
+          "esi38",
+          "esi49",
+          "esi50"
+        ],
+        "description": "Cognitive Function (items 35, 36, 38; 6-pt freq).",
+        "item_coding": {
+          "esi35": 1,
+          "esi36": 1,
+          "esi38": 1,
+          "esi49": 1,
+          "esi50": 1
+        }
+      },
+      "physical_function": {
+        "method": "mean_coded",
+        "items": [
+          "esi5",
+          "esi6",
+          "esi7",
+          "esi8",
+          "esi9",
+          "esi10",
+          "esi11",
+          "esi12",
+          "esi13",
+          "esi14"
+        ],
+        "description": "Mean of 10 physical function items (1–3 scale). Higher = less limitation. 0–100: (mean − 1) / 2 × 100.",
+        "item_coding": {
+          "esi5": 1,
+          "esi6": 1,
+          "esi7": 1,
+          "esi8": 1,
+          "esi9": 1,
+          "esi10": 1,
+          "esi11": 1,
+          "esi12": 1,
+          "esi13": 1,
+          "esi14": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 2
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "role_physical": {
+        "method": "mean_coded",
+        "items": [
+          "esi15",
+          "esi16",
+          "esi17_rp",
+          "esi18_rp",
+          "esi18_rp_e"
+        ],
+        "description": "Mean of 2 role limitation (physical) items (Yes=0, No=1). 0–100: mean × 100.",
+        "item_coding": {
+          "esi15": 1,
+          "esi16": 1,
+          "esi17_rp": 1,
+          "esi18_rp": 1,
+          "esi18_rp_e": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "role_emotional": {
+        "method": "mean_coded",
+        "items": [
+          "esi19",
+          "esi21",
+          "esi21_re_c",
+          "esi21_re_d",
+          "esi22"
+        ],
+        "description": "Mean of 3 role limitation (emotional) items (Yes=0, No=1). 0–100: mean × 100.",
+        "item_coding": {
+          "esi19": 1,
+          "esi21": 1,
+          "esi21_re_c": 1,
+          "esi21_re_d": 1,
+          "esi22": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "pain": {
+        "method": "mean_coded",
+        "items": [
+          "esi40",
+          "esi41"
+        ],
+        "description": "Pain (items 40-41).",
+        "item_coding": {
+          "esi40": 1,
+          "esi41": 1
+        }
+      },
+      "epilepsy_specific": {
+        "method": "mean_coded",
+        "items": [
+          "esi37",
+          "esi47"
+        ],
+        "description": "Epilepsy-Specific (items 37, 47).",
+        "item_coding": {
+          "esi37": 1,
+          "esi47": 1
+        }
+      },
+      "role_memory": {
+        "method": "mean_coded",
+        "items": [
+          "esi51",
+          "esi52",
+          "esi53",
+          "esi54",
+          "esi55"
+        ],
+        "description": "Role Limitations — Memory/Speech/Language (items 51-55, yes/no).",
+        "item_coding": {
+          "esi51": 1,
+          "esi52": 1,
+          "esi53": 1,
+          "esi54": 1,
+          "esi55": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "esi_health1": "Excellent",
+      "esi_health2": "Very good",
+      "esi_health3": "Good",
+      "esi_health4": "Fair",
+      "esi_health5": "Poor",
+      "esi_change1": "Much better now than one year ago",
+      "esi_change2": "Somewhat better now than one year ago",
+      "esi_change3": "About the same as one year ago",
+      "esi_change4": "Somewhat worse now than one year ago",
+      "esi_change5": "Much worse now than one year ago",
+      "esi_scale1": "1 — Worst possible",
+      "esi_scale2": "2",
+      "esi_scale3": "3",
+      "esi_scale4": "4",
+      "esi_scale5": "5",
+      "esi_scale6": "6",
+      "esi_scale7": "7",
+      "esi_scale8": "8",
+      "esi_scale9": "9",
+      "esi_scale10": "10 — Best possible",
+      "esi_pf1": "Yes, limited a lot",
+      "esi_pf2": "Yes, limited a little",
+      "esi_pf3": "No, not limited at all",
+      "esi_yn1": "Yes",
+      "esi_yn2": "No",
+      "esi_sf1": "Not at all",
+      "esi_sf2": "Slightly",
+      "esi_sf3": "Moderately",
+      "esi_sf4": "Quite a bit",
+      "esi_sf5": "Extremely",
+      "esi_freq1": "All of the time",
+      "esi_freq2": "Most of the time",
+      "esi_freq3": "A good bit of the time",
+      "esi_freq4": "Some of the time",
+      "esi_freq5": "A little of the time",
+      "esi_freq6": "None of the time",
+      "esi_agree1": "Definitely true",
+      "esi_agree2": "Mostly true",
+      "esi_agree3": "Not sure",
+      "esi_agree4": "Mostly false",
+      "esi_agree5": "Definitely false",
+      "esi_pain1": "None",
+      "esi_pain2": "Very mild",
+      "esi_pain3": "Mild",
+      "esi_pain4": "Moderate",
+      "esi_pain5": "Severe",
+      "esi_pain6": "Very severe",
+      "esi_paintint1": "Not at all",
+      "esi_paintint2": "Slightly",
+      "esi_paintint3": "Moderately",
+      "esi_paintint4": "Quite a bit",
+      "esi_paintint5": "Extremely",
+      "esi1": "In general, would you say your health is:",
+      "esi2": "Compared to one year ago, how would you rate your health in general now?",
+      "esi3": "How would you rate your overall quality of life?",
+      "esi_pf_head": "The following items are about activities you might do during a typical day. Does your health now limit you in these activities? If so, how much?",
+      "esi5": "<b>Vigorous activities</b>, such as running, lifting heavy objects, participating in strenuous sports",
+      "esi6": "<b>Moderate activities</b>, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf",
+      "esi7": "Lifting or carrying <b>groceries</b>",
+      "esi8": "Climbing <b>several</b> flights of stairs",
+      "esi9": "Climbing <b>one</b> flight of stairs",
+      "esi10": "Bending, kneeling, or stooping",
+      "esi11": "Walking <b>more than a mile</b>",
+      "esi12": "Walking <b>several blocks</b>",
+      "esi13": "Walking <b>one block</b>",
+      "esi14": "Bathing or dressing yourself",
+      "esi_rp_head": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of your physical health?",
+      "esi15": "Cut down the <u>amount of time</u> you spent on work or other activities",
+      "esi16": "<u>Accomplished less</u> than you would like",
+      "esi17": "During the <b>past 4 weeks</b>, to what extent has your <b>physical health or emotional problems</b> interfered with your normal social activities with family, friends, neighbors, or groups?",
+      "esi18": "During the <b>past 4 weeks</b>, how much of the time has your <b>physical health or emotional problems</b> interfered with your social activities (like visiting with friends, relatives, etc.)?",
+      "esi_re_head": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of any emotional problems?",
+      "esi19": "Cut down the <u>amount of time</u> you spent on work or other activities",
+      "esi20": "I am somewhat ill.",
+      "esi21": "<u>Accomplished less</u> than you would like",
+      "esi22": "Did work or other activities <u>less carefully</u> than usual",
+      "esi_vitality_head": "These questions are about how you feel and how things have been with you during the past 4 weeks.",
+      "esi23": "...did you feel <b>full of pep</b>?",
+      "esi24": "...have you been a <b>very nervous person</b>?",
+      "esi25": "...have you felt so <b>down in the dumps</b> that nothing could cheer you up?",
+      "esi26": "...have you felt <b>calm and peaceful</b>?",
+      "esi27": "...did you have <b>a lot of energy</b>?",
+      "esi28": "...have you felt <b>downhearted and blue</b>?",
+      "esi29": "...did you feel <b>worn out</b>?",
+      "esi30": "...have you been a <b>happy person</b>?",
+      "esi31": "...did you feel <b>tired</b>?",
+      "esi32": "I am <b>as healthy as anybody</b> I know",
+      "esi33": "My health is <b>excellent</b>",
+      "esi_cog_head": "The following questions are about problems you may have had with your memory and thinking during the past 4 weeks.",
+      "esi34": "has your <u>health</u> limited your <u>social activities</u> (like visiting with friends or close relatives)?",
+      "esi35": "have you had difficulty concentrating and thinking?",
+      "esi36": "did you have trouble keeping your attention on an activity for long?",
+      "esi37": "have you worried about having another seizure?",
+      "esi38": "did you have difficulty reasoning and solving problems (for example, making plans, making decisions, learning new things)?",
+      "esi39": "were you discouraged by your health problems?",
+      "esi40": "How much <b><u>bodily</u></b> pain have you had during the <b><u>past 4 weeks</u></b>?",
+      "esi41": "During the <b><u>past 4 weeks</u></b>, how much did bodily <b><u>pain</u></b> interfere with your normal work (including both outside the home and housework)?",
+      "esi42": "I seem to get sick (any kind of sickness) a little easier than other people.",
+      "esi43": "I am as healthy as anybody I know.",
+      "esi44": "I expect my health to get worse.",
+      "esi45": "My health is excellent.",
+      "esi46": "When there is an illness going around, I usually catch it.",
+      "esi_epi_head": "The following questions are about your epilepsy and how it affects your daily life.",
+      "esi47": "I seem to get seizures a little easier than other people with epilepsy.",
+      "esi48": "How has the quality of your life been during the <b><u>past 4 weeks</u></b>? That is, how have things been going for you?",
+      "esi49": "In the <b><u>past 4 weeks</u></b>, have you had any trouble with your memory?",
+      "esi50": "In the <b><u>past 4 weeks</u></b>, have you had any trouble with your speech or language?",
+      "esi51": "Cut down on the <u>amount of time</u> you could spend on work or other activities",
+      "esi52": "<u>Accomplished less</u> than you would like",
+      "esi53": "Were limited in the <u>kind</u> of work or other activities",
+      "esi54": "Had <u>difficulty</u> performing the work or other activities",
+      "esi55": "Did work or other activities <u>less carefully</u> than usual",
+      "debrief": "Thank you for completing this questionnaire.",
+      "qol_lo": "Worst possible",
+      "qol_hi": "Best possible",
+      "qh_pf": "The following items are about activities you might do during a typical day. Does <b>your health</b> now limit you in these activities? If so, how much?",
+      "qh_rp": "During the <b>past 4 weeks</b>, have you had any of the following problems with your work or other regular daily activities <b>as a result of your physical health</b>?",
+      "qh_re": "During the <b>past 4 weeks</b>, have you had any of the following problems with your work or other regular daily activities <b>as a result of any emotional problems</b> (such as feeling depressed or anxious)?",
+      "qh_vitality": "These questions are about how you feel and how things have been with you <b>during the past 4 weeks</b>. Indicate the one answer that comes closest to the way you have been feeling. How much of the time during the <u>past 4 weeks</u>...",
+      "qh_gh_tf": "How <b>TRUE</b> or <b>FALSE</b> is each of the following statements for you?",
+      "qh_cognitive": "How often during the <b>past 4 weeks</b> did you...",
+      "qh_epilepsy": "How often during the <b>past 4 weeks</b>...",
+      "esi17_rp": "Were limited in the <u>kind</u> of work or other activities",
+      "esi18_rp": "Had <u>difficulty</u> performing the work or other activities (for example, it took extra effort)",
+      "yes_opt": "Yes",
+      "no_opt": "No",
+      "esi21_re_c": "Were limited in the <u>kind</u> of work or other activities",
+      "esi21_re_d": "Had <u>difficulty</u> performing the work or other activities (for example, it took extra effort)",
+      "esi18_rp_e": "Did work or other activities <u>less carefully</u> than usual",
+      "freq6_1": "All of the time",
+      "freq6_2": "Most of the time",
+      "freq6_3": "A good bit of the time",
+      "freq6_4": "Some of the time",
+      "freq6_5": "A little of the time",
+      "freq6_6": "None of the time",
+      "qh_34_39": "How much of the time during the <b><u>past 4 weeks</u></b>...",
+      "pain6_1": "None",
+      "pain6_2": "Very mild",
+      "pain6_3": "Mild",
+      "pain6_4": "Moderate",
+      "pain6_5": "Severe",
+      "pain6_6": "Very severe",
+      "painint5_1": "Not at all",
+      "painint5_2": "A little bit",
+      "painint5_3": "Moderately",
+      "painint5_4": "Quite a bit",
+      "painint5_5": "Extremely",
+      "qh_42_47": "Please choose the answer that best describes how <u>true</u> or <u>false</u> each of the following statements is for you.",
+      "tf5_1": "Definitely true",
+      "tf5_2": "Mostly true",
+      "tf5_3": "Not sure",
+      "tf5_4": "Mostly false",
+      "tf5_5": "Definitely false",
+      "qol5_1": "Very well: could hardly be better",
+      "qol5_2": "Pretty good",
+      "qol5_3": "Good & bad parts about equal",
+      "qol5_4": "Pretty bad",
+      "qol5_5": "Very bad: could hardly be worse",
+      "mem4_1": "Yes, a great deal",
+      "mem4_2": "Yes, somewhat",
+      "mem4_3": "Yes, a little",
+      "mem4_4": "No, not at all",
+      "qh_51_55": "During the <b><u>past 4 weeks</u></b>, have you had any of the following problems with your regular daily activities or work <b><u>as a result of any memory, speech or language problems</u></b>? (Please answer YES or NO for each question.)"
+    }
+  }
+}

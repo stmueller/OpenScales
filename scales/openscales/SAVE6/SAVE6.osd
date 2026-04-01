@@ -1,0 +1,138 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Stress and Anxiety to Viral Epidemics-6",
+      "code": "SAVE6",
+      "abbreviation": "SAVE-6",
+      "description": "6-item measure assessing anxiety response to viral epidemic threats, covering fear of contagion, health worry, and avoidance concerns. Scores range from 0 to 24.",
+      "citation": "Chung, S., Kim, H. J., Ahn, M. H., Yeo, S., Kim, K., Jeong, J., Lee, J., & Suh, S. (2021). Development of the Stress and Anxiety to Viral Epidemics-6 items (SAVE-6) scale for assessing the anxiety response of the general population to the viral epidemic during the COVID-19 pandemic. Frontiers in Psychology, 12, 669606. https://doi.org/10.3389/fpsyg.2021.669606",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyg.2021.669606",
+      "domain": "Anxiety"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 0,
+      "max": 4,
+      "labels": [
+        "save_r0",
+        "save_r1",
+        "save_r2",
+        "save_r3",
+        "save_r4"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "anxiety",
+        "name": "Viral Epidemic Anxiety",
+        "description": "Overall anxiety response to viral epidemic threats. Higher scores indicate greater anxiety."
+      }
+    ],
+    "items": [
+      {
+        "id": "save1",
+        "text_key": "save1",
+        "type": "likert"
+      },
+      {
+        "id": "save2",
+        "text_key": "save2",
+        "type": "likert"
+      },
+      {
+        "id": "save3",
+        "text_key": "save3",
+        "type": "likert"
+      },
+      {
+        "id": "save4",
+        "text_key": "save4",
+        "type": "likert"
+      },
+      {
+        "id": "save5",
+        "text_key": "save5",
+        "type": "likert"
+      },
+      {
+        "id": "save6",
+        "text_key": "save6",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "anxiety": {
+        "method": "sum_coded",
+        "items": [
+          "save1",
+          "save2",
+          "save3",
+          "save4",
+          "save5",
+          "save6"
+        ],
+        "description": "Sum of all 6 items (0-24). Severity: 0-6 minimal, 7-12 mild, 13-18 moderate, 19-24 severe.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 6,
+              "label": "Minimal Anxiety"
+            },
+            {
+              "min": 7,
+              "max": 12,
+              "label": "Mild Anxiety"
+            },
+            {
+              "min": 13,
+              "max": 18,
+              "label": "Moderate Anxiety"
+            },
+            {
+              "min": 19,
+              "max": 24,
+              "label": "Severe Anxiety"
+            }
+          ]
+        },
+        "item_coding": {
+          "save1": 1,
+          "save2": 1,
+          "save3": 1,
+          "save4": 1,
+          "save5": 1,
+          "save6": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "save_r0": "Never",
+      "save_r1": "Rarely",
+      "save_r2": "Sometimes",
+      "save_r3": "Often",
+      "save_r4": "Always",
+      "question_head": "Please answer the following questions about your thoughts and feelings regarding viral epidemics.",
+      "save1": "Are you afraid the virus outbreak will continue indefinitely?",
+      "save2": "Are you afraid your health will worsen because of the virus?",
+      "save3": "Are you worried that you might get infected?",
+      "save4": "Are you more sensitive toward minor physical symptoms than usual?",
+      "save5": "Are you worried that others might avoid you even after the infection risk has been minimized?",
+      "save6": "Do you worry your family or friends may become infected because of you?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

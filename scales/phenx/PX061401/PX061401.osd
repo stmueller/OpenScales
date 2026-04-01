@@ -1,0 +1,359 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Home and Workplace Exposures to Floor and Wall Materials",
+      "code": "PX061401",
+      "abbreviation": "PX061401",
+      "description": "The respondent answers questions about the interior surfaces in his or her residence and workplace.",
+      "domain": "Environmental Exposures",
+      "citation": "Jaakkola, J. J., Oie, L., Nafstad, P., Botten, G., Samuelsen, S. O., & Magnus, P. (1999). Interior surface materials in the home and the development of bronchial obstruction in young children in Oslo, Norway. American Journal of Public Health, 89, 188-192. [PhenX: https://www.phenxtoolkit.org/protocols/view/61401]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/61401"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "workspace_renovation_moisture",
+        "text_key": "workspace_renovation_moisture",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "workspace_renovation_moisture_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "workspace_renovation_moisture_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "workspace_renovation_moisture_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "workspace_renovation_moisture_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "workspace_renovation_moisture_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "workspace_floor_material",
+        "text_key": "workspace_floor_material",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "workspace_floor_material_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "workspace_floor_material_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "workspace_floor_material_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "workspace_floor_material_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "workspace_floor_material_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "workspace_floor_material_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "workspace_floor_material_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "workspace_floor_material_other",
+        "text_key": "workspace_floor_material_other",
+        "type": "short",
+        "visible_when": {
+          "item": "workspace_floor_material",
+          "operator": "equals",
+          "value": 6
+        }
+      },
+      {
+        "id": "textile_wall_material",
+        "text_key": "textile_wall_material",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "textile_wall_material_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "textile_wall_material_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "textile_wall_material_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "plastic_wall_material",
+        "text_key": "plastic_wall_material",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "plastic_wall_material_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "plastic_wall_material_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "plastic_wall_material_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "home_renovation_moisture",
+        "text_key": "home_renovation_moisture",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "home_renovation_moisture_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "home_renovation_moisture_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "home_renovation_moisture_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "home_renovation_moisture_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "home_renovation",
+        "text_key": "home_renovation",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "home_renovation_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "home_renovation_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "home_repairs_enumerated",
+        "text_key": "home_repairs_enumerated",
+        "type": "multi",
+        "visible_when": {
+          "item": "home_renovation",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "home_repairs_enumerated_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "home_repairs_enumerated_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "home_repairs_enumerated_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "home_repairs_enumerated_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "home_repairs_enumerated_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "home_repairs_enumerated_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "home_repairs_enumerated_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "home_repairs_enumerated_other",
+        "text_key": "home_repairs_enumerated_other",
+        "type": "short",
+        "visible_when": {
+          "item": "home_repairs_enumerated",
+          "operator": "equals",
+          "value": 7
+        }
+      },
+      {
+        "id": "wall_to_wall_carpeting",
+        "text_key": "wall_to_wall_carpeting",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "wall_to_wall_carpeting_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "wall_to_wall_carpeting_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "wall_to_wall_carpeting_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "vinyl_plastic_floor",
+        "text_key": "vinyl_plastic_floor",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "vinyl_plastic_floor_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vinyl_plastic_floor_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vinyl_plastic_floor_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "textile_wall_material_home",
+        "text_key": "textile_wall_material_home",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "textile_wall_material_home_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "textile_wall_material_home_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "textile_wall_material_home_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "plastic_wall_material_home",
+        "text_key": "plastic_wall_material_home",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "plastic_wall_material_home_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "plastic_wall_material_home_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "plastic_wall_material_home_opt_3",
+            "value": 3
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "workspace_renovation_moisture": "Has there been renovation or repairs in your workspace because of moisture damage?",
+      "workspace_renovation_moisture_opt_1": "no",
+      "workspace_renovation_moisture_opt_2": "yes, during the past 12 months",
+      "workspace_renovation_moisture_opt_3": "yes, 1-3 years ago",
+      "workspace_renovation_moisture_opt_4": "yes, more than 3 years ago",
+      "workspace_renovation_moisture_opt_5": "I don't know",
+      "workspace_floor_material": "What is the floor material in your workspace?",
+      "workspace_floor_material_opt_1": "concrete",
+      "workspace_floor_material_opt_2": "wood",
+      "workspace_floor_material_opt_3": "cork",
+      "workspace_floor_material_opt_4": "vinyl",
+      "workspace_floor_material_opt_5": "wall-to-wall carpet",
+      "workspace_floor_material_opt_6": "other",
+      "workspace_floor_material_opt_7": "I don't know",
+      "workspace_floor_material_other": "If \"other,\" what is the floor material in your workspace?",
+      "textile_wall_material": "Is the wall material of your work space textile (cloth, jute, etc.)",
+      "textile_wall_material_opt_1": "no",
+      "textile_wall_material_opt_2": "yes, less than half of the wall surfaces",
+      "textile_wall_material_opt_3": "yes, at least half of the wall surfaces",
+      "plastic_wall_material": "Is the wall material of your work space plastic?",
+      "plastic_wall_material_opt_1": "no",
+      "plastic_wall_material_opt_2": "yes, less than half of the wall surfaces",
+      "plastic_wall_material_opt_3": "yes, at least half of the wall surfaces",
+      "home_renovation_moisture": "Has there been renovation or repairs in your home due to moisture damage?",
+      "home_renovation_moisture_opt_1": "no",
+      "home_renovation_moisture_opt_2": "yes, during the past 12 months",
+      "home_renovation_moisture_opt_3": "yes, 1-3 years ago",
+      "home_renovation_moisture_opt_4": "yes, more than 3 years ago",
+      "home_renovation": "Has there been renovation in your home during the past 12 months?",
+      "home_renovation_opt_1": "yes",
+      "home_renovation_opt_2": "no",
+      "home_repairs_enumerated": "Which of the following repairs was done in your home during the past 12 months? (You may circle more than one alternative):",
+      "home_repairs_enumerated_opt_1": "Painting, less than half of the wall area",
+      "home_repairs_enumerated_opt_2": "Painting, at least half of the wall area",
+      "home_repairs_enumerated_opt_3": "Wall-papering, less than half of the wall area",
+      "home_repairs_enumerated_opt_4": "Wall-papering, at least half of the wall area",
+      "home_repairs_enumerated_opt_5": "Lacquering of the floor",
+      "home_repairs_enumerated_opt_6": "Use of floor putty",
+      "home_repairs_enumerated_opt_7": "Other",
+      "home_repairs_enumerated_other": "If \"Other,\" which of the following repairs was done in your home during the past 12 months? (You may circle more than one alternative):",
+      "wall_to_wall_carpeting": "Do you have wall-to-wall carpeting in your home?",
+      "wall_to_wall_carpeting_opt_1": "no",
+      "wall_to_wall_carpeting_opt_2": "yes, less than half of the floor area",
+      "wall_to_wall_carpeting_opt_3": "yes, at least half of the floor area",
+      "vinyl_plastic_floor": "Is the floor material in your home plastic/vinyl? (excluding the bathroom)",
+      "vinyl_plastic_floor_opt_1": "no",
+      "vinyl_plastic_floor_opt_2": "yes, less than half of the floor area",
+      "vinyl_plastic_floor_opt_3": "yes, at least half of the floor area",
+      "textile_wall_material_home": "Is the wall material in your home textile (cloth, jute, etc.)?",
+      "textile_wall_material_home_opt_1": "no",
+      "textile_wall_material_home_opt_2": "yes, less than half of the wall surface area",
+      "textile_wall_material_home_opt_3": "yes, at least half of the wall surface area",
+      "plastic_wall_material_home": "Is the wall material in your home plastic? (excluding the bathroom)",
+      "plastic_wall_material_home_opt_1": "no",
+      "plastic_wall_material_home_opt_2": "yes, less than half of the wall surface area",
+      "plastic_wall_material_home_opt_3": "yes, at least half of the wall surface area"
+    }
+  }
+}

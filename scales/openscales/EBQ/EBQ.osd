@@ -1,0 +1,346 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Emotion Beliefs Questionnaire",
+      "abbreviation": "EBQ",
+      "description": "16-item self-report measure of beliefs about the controllability and usefulness of negative and positive emotions. Four valence-specific subscales (Negative-Controllability, Positive-Controllability, Negative-Usefulness, Positive-Usefulness), two composite scores (General-Controllability, General-Usefulness), and a Total score. Higher scores indicate stronger beliefs that emotions are uncontrollable and useless.",
+      "citation": "Becerra, R., Preece, D. A., & Gross, J. J. (2020). Assessing beliefs about emotions: Development and validation of the Emotion Beliefs Questionnaire. PLOS ONE, 15(4), e0231395. https://doi.org/10.1371/journal.pone.0231395",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1371/journal.pone.0231395",
+      "domain": "Mood"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": [
+        "ebq_opt1",
+        "ebq_opt2",
+        "ebq_opt3",
+        "ebq_opt4",
+        "ebq_opt5",
+        "ebq_opt6",
+        "ebq_opt7"
+      ],
+      "question_head": "ebq_inst"
+    },
+    "dimensions": [
+      {
+        "id": "neg_controllability",
+        "name": "Negative-Controllability",
+        "abbreviation": "EBQ-NC",
+        "description": "Beliefs about the controllability of negative emotions (4 items). Higher scores indicate stronger beliefs that negative emotions are uncontrollable."
+      },
+      {
+        "id": "pos_controllability",
+        "name": "Positive-Controllability",
+        "abbreviation": "EBQ-PC",
+        "description": "Beliefs about the controllability of positive emotions (4 items). Higher scores indicate stronger beliefs that positive emotions are uncontrollable."
+      },
+      {
+        "id": "neg_usefulness",
+        "name": "Negative-Usefulness",
+        "abbreviation": "EBQ-NU",
+        "description": "Beliefs about the usefulness of negative emotions (4 items). Higher scores indicate stronger beliefs that negative emotions are useless."
+      },
+      {
+        "id": "pos_usefulness",
+        "name": "Positive-Usefulness",
+        "abbreviation": "EBQ-PU",
+        "description": "Beliefs about the usefulness of positive emotions (4 items). Higher scores indicate stronger beliefs that positive emotions are useless."
+      }
+    ],
+    "items": [
+      {
+        "id": "ebq1",
+        "text_key": "ebq1",
+        "type": "likert",
+        "dimension": "neg_controllability"
+      },
+      {
+        "id": "ebq2",
+        "text_key": "ebq2",
+        "type": "likert",
+        "dimension": "pos_controllability"
+      },
+      {
+        "id": "ebq3",
+        "text_key": "ebq3",
+        "type": "likert",
+        "dimension": "neg_usefulness"
+      },
+      {
+        "id": "ebq4",
+        "text_key": "ebq4",
+        "type": "likert",
+        "dimension": "pos_usefulness"
+      },
+      {
+        "id": "ebq5",
+        "text_key": "ebq5",
+        "type": "likert",
+        "dimension": "neg_controllability"
+      },
+      {
+        "id": "ebq6",
+        "text_key": "ebq6",
+        "type": "likert",
+        "dimension": "pos_controllability"
+      },
+      {
+        "id": "ebq7",
+        "text_key": "ebq7",
+        "type": "likert",
+        "dimension": "neg_usefulness"
+      },
+      {
+        "id": "ebq8",
+        "text_key": "ebq8",
+        "type": "likert",
+        "dimension": "pos_usefulness"
+      },
+      {
+        "id": "ebq9",
+        "text_key": "ebq9",
+        "type": "likert",
+        "dimension": "neg_controllability"
+      },
+      {
+        "id": "ebq10",
+        "text_key": "ebq10",
+        "type": "likert",
+        "dimension": "pos_controllability"
+      },
+      {
+        "id": "ebq11",
+        "text_key": "ebq11",
+        "type": "likert",
+        "dimension": "neg_usefulness"
+      },
+      {
+        "id": "ebq12",
+        "text_key": "ebq12",
+        "type": "likert",
+        "dimension": "pos_usefulness"
+      },
+      {
+        "id": "ebq13",
+        "text_key": "ebq13",
+        "type": "likert",
+        "dimension": "neg_controllability"
+      },
+      {
+        "id": "ebq14",
+        "text_key": "ebq14",
+        "type": "likert",
+        "dimension": "pos_controllability"
+      },
+      {
+        "id": "ebq15",
+        "text_key": "ebq15",
+        "type": "likert",
+        "dimension": "neg_usefulness"
+      },
+      {
+        "id": "ebq16",
+        "text_key": "ebq16",
+        "type": "likert",
+        "dimension": "pos_usefulness"
+      }
+    ],
+    "scoring": {
+      "neg_controllability": {
+        "method": "mean_coded",
+        "items": [
+          "ebq1",
+          "ebq5",
+          "ebq9",
+          "ebq13"
+        ],
+        "description": "Mean of 4 Negative-Controllability items (1-7). Higher scores indicate stronger beliefs that negative emotions are uncontrollable.",
+        "item_coding": {
+          "ebq1": 1,
+          "ebq5": 1,
+          "ebq9": 1,
+          "ebq13": 1
+        }
+      },
+      "pos_controllability": {
+        "method": "mean_coded",
+        "items": [
+          "ebq2",
+          "ebq6",
+          "ebq10",
+          "ebq14"
+        ],
+        "description": "Mean of 4 Positive-Controllability items (1-7). Higher scores indicate stronger beliefs that positive emotions are uncontrollable.",
+        "item_coding": {
+          "ebq2": 1,
+          "ebq6": 1,
+          "ebq10": 1,
+          "ebq14": 1
+        }
+      },
+      "neg_usefulness": {
+        "method": "mean_coded",
+        "items": [
+          "ebq3",
+          "ebq7",
+          "ebq11",
+          "ebq15"
+        ],
+        "description": "Mean of 4 Negative-Usefulness items (1-7). Higher scores indicate stronger beliefs that negative emotions are useless or harmful.",
+        "item_coding": {
+          "ebq3": 1,
+          "ebq7": 1,
+          "ebq11": 1,
+          "ebq15": 1
+        }
+      },
+      "pos_usefulness": {
+        "method": "mean_coded",
+        "items": [
+          "ebq4",
+          "ebq8",
+          "ebq12",
+          "ebq16"
+        ],
+        "description": "Mean of 4 Positive-Usefulness items (1-7). Higher scores indicate stronger beliefs that positive emotions are useless or harmful.",
+        "item_coding": {
+          "ebq4": 1,
+          "ebq8": 1,
+          "ebq12": 1,
+          "ebq16": 1
+        }
+      },
+      "general_controllability": {
+        "method": "mean_coded",
+        "name": "General-Controllability (composite)",
+        "items": [
+          "ebq1",
+          "ebq2",
+          "ebq5",
+          "ebq6",
+          "ebq9",
+          "ebq10",
+          "ebq13",
+          "ebq14"
+        ],
+        "description": "Mean of all 8 controllability items (Negative-Controllability + Positive-Controllability). CFA supported combining these into a single factor.",
+        "item_coding": {
+          "ebq1": 1,
+          "ebq2": 1,
+          "ebq5": 1,
+          "ebq6": 1,
+          "ebq9": 1,
+          "ebq10": 1,
+          "ebq13": 1,
+          "ebq14": 1
+        }
+      },
+      "general_usefulness": {
+        "method": "mean_coded",
+        "name": "General-Usefulness (composite)",
+        "items": [
+          "ebq3",
+          "ebq4",
+          "ebq7",
+          "ebq8",
+          "ebq11",
+          "ebq12",
+          "ebq15",
+          "ebq16"
+        ],
+        "description": "Mean of all 8 usefulness items (Negative-Usefulness + Positive-Usefulness). Higher scores indicate stronger beliefs that emotions are useless.",
+        "item_coding": {
+          "ebq3": 1,
+          "ebq4": 1,
+          "ebq7": 1,
+          "ebq8": 1,
+          "ebq11": 1,
+          "ebq12": 1,
+          "ebq15": 1,
+          "ebq16": 1
+        }
+      },
+      "total": {
+        "method": "mean_coded",
+        "name": "EBQ Total (composite)",
+        "items": [
+          "ebq1",
+          "ebq2",
+          "ebq3",
+          "ebq4",
+          "ebq5",
+          "ebq6",
+          "ebq7",
+          "ebq8",
+          "ebq9",
+          "ebq10",
+          "ebq11",
+          "ebq12",
+          "ebq13",
+          "ebq14",
+          "ebq15",
+          "ebq16"
+        ],
+        "description": "Mean of all 16 EBQ items (1-7). Higher-order maladaptive beliefs about emotions factor. Higher scores indicate stronger overall beliefs that emotions are uncontrollable and useless.",
+        "item_coding": {
+          "ebq1": 1,
+          "ebq2": 1,
+          "ebq3": 1,
+          "ebq4": 1,
+          "ebq5": 1,
+          "ebq6": 1,
+          "ebq7": 1,
+          "ebq8": 1,
+          "ebq9": 1,
+          "ebq10": 1,
+          "ebq11": 1,
+          "ebq12": 1,
+          "ebq13": 1,
+          "ebq14": 1,
+          "ebq15": 1,
+          "ebq16": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ebq_inst": "Please read each of the following statements and indicate the degree to which you agree or disagree with each statement.",
+      "ebq_opt1": "Strongly disagree",
+      "ebq_opt2": "Disagree",
+      "ebq_opt3": "Somewhat disagree",
+      "ebq_opt4": "Neither agree nor disagree",
+      "ebq_opt5": "Somewhat agree",
+      "ebq_opt6": "Agree",
+      "ebq_opt7": "Strongly agree",
+      "ebq1": "Once people are experiencing negative emotions, there is nothing they can do about modifying them.",
+      "ebq2": "People cannot control their positive emotions.",
+      "ebq3": "There is very little use for negative emotions.",
+      "ebq4": "Positive emotions are very unhelpful to people.",
+      "ebq5": "It doesn't matter how hard people try, they cannot change their negative emotions.",
+      "ebq6": "People cannot learn techniques to effectively control their positive emotions.",
+      "ebq7": "People don't need their negative emotions.",
+      "ebq8": "There is very little use for positive emotions.",
+      "ebq9": "People cannot control their negative emotions.",
+      "ebq10": "It doesn't matter how hard people try, they cannot change their positive emotions.",
+      "ebq11": "Negative emotions are harmful.",
+      "ebq12": "People don't need their positive emotions.",
+      "ebq13": "People cannot learn techniques to effectively control their negative emotions.",
+      "ebq14": "Once people are experiencing positive emotions, there is nothing they can do about modifying them.",
+      "ebq15": "The presence of negative emotions is a bad thing for people.",
+      "ebq16": "Positive emotions are harmful."
+    }
+  }
+}

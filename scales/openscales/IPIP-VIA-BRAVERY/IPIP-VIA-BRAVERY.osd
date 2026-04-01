@@ -1,0 +1,174 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Bravery/Courage",
+      "code": "IPIP-VIA-BRAVERY",
+      "abbreviation": "IPIP-VIA-BRAVERY",
+      "description": "IPIP representation of the VIA character strength 'Bravery/Courage'. 10-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "bravery_courage_valor",
+        "name": "Bravery/Courage",
+        "abbreviation": "BRAVERY",
+        "description": "IPIP VIA Bravery/Courage subscale (10 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_019",
+        "text_key": "ipip_via_019",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_020",
+        "text_key": "ipip_via_020",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_021",
+        "text_key": "ipip_via_021",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_022",
+        "text_key": "ipip_via_022",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_023",
+        "text_key": "ipip_via_023",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_024",
+        "text_key": "ipip_via_024",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_025",
+        "text_key": "ipip_via_025",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_026",
+        "text_key": "ipip_via_026",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_027",
+        "text_key": "ipip_via_027",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_028",
+        "text_key": "ipip_via_028",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "bravery_courage_valor": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_019",
+          "ipip_via_020",
+          "ipip_via_021",
+          "ipip_via_022",
+          "ipip_via_023",
+          "ipip_via_024",
+          "ipip_via_025",
+          "ipip_via_026",
+          "ipip_via_027",
+          "ipip_via_028"
+        ],
+        "description": "Mean of 10 items (range 1–5; higher = stronger Bravery/Courage). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_019": 1,
+          "ipip_via_020": -1,
+          "ipip_via_021": -1,
+          "ipip_via_022": 1,
+          "ipip_via_023": 1,
+          "ipip_via_024": -1,
+          "ipip_via_025": 1,
+          "ipip_via_026": -1,
+          "ipip_via_027": 1,
+          "ipip_via_028": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_019": "Am a brave person.",
+      "ipip_via_020": "Avoid dealing with awkward situations.",
+      "ipip_via_021": "Avoid dealing with uncomfortable emotions.",
+      "ipip_via_022": "Call for action while others talk.",
+      "ipip_via_023": "Can face my fears.",
+      "ipip_via_024": "Do not stand up for my beliefs.",
+      "ipip_via_025": "Don't hesitate to express an unpopular opinion.",
+      "ipip_via_026": "Don't speak my mind freely when there might be negative results.",
+      "ipip_via_027": "Have taken frequent stands in the face of strong opposition.",
+      "ipip_via_028": "Speak up in protest when I hear someone say mean things."
+    }
+  }
+}

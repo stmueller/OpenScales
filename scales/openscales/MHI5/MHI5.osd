@@ -1,0 +1,123 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Mental Health Inventory-5",
+      "code": "MHI5",
+      "abbreviation": "MHI-5",
+      "description": "5-item mental health screening measure derived from the RAND SF-36 (items 9b, 9c, 9d, 9f, 9h). Assesses psychological well-being and distress over the past 4 weeks. 6-point frequency scale (1=All of the time to 6=None of the time). Items 1, 2, 4 (anxiety/depression) are reverse-scored; items 3, 5 (positive affect) are forward-scored. Score range 5–30; lower scores indicate worse mental health. Widely used as a brief mental health screener.",
+      "citation": "Berwick, D. M., Murphy, J. M., Goldman, P. A., Ware, J. E., Barsky, A. J., & Weinstein, M. C. (1991). Performance of a five-item mental health screening test. Medical Care, 29(2), 169–176. https://doi.org/10.1097/00005650-199102000-00008",
+      "license": "Public Domain",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. MHI-5 items are a subset of the RAND SF-36.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools/mos/36-item-short-form.html",
+      "version": "1.0",
+      "url": "https://www.rand.org/health-care/surveys_tools/mos/36-item-short-form.html",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": [
+        "mhi_r1",
+        "mhi_r2",
+        "mhi_r3",
+        "mhi_r4",
+        "mhi_r5",
+        "mhi_r6"
+      ],
+      "question_head": "mhi_head"
+    },
+    "dimensions": [
+      {
+        "id": "mental_health",
+        "name": "Mental Health",
+        "description": "Sum of 5 items after reverse-scoring anxiety/depression items (range 5–30). Lower scores = worse mental health. Cutoff ≤52 (on 0–100 transformed scale) suggests clinical depression."
+      }
+    ],
+    "items": [
+      {
+        "id": "mhi1",
+        "text_key": "mhi1",
+        "type": "likert"
+      },
+      {
+        "id": "mhi2",
+        "text_key": "mhi2",
+        "type": "likert"
+      },
+      {
+        "id": "mhi3",
+        "text_key": "mhi3",
+        "type": "likert"
+      },
+      {
+        "id": "mhi4",
+        "text_key": "mhi4",
+        "type": "likert"
+      },
+      {
+        "id": "mhi5",
+        "text_key": "mhi5",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "mental_health": {
+        "method": "sum_coded",
+        "items": [
+          "mhi1",
+          "mhi2",
+          "mhi3",
+          "mhi4",
+          "mhi5"
+        ],
+        "description": "Sum of items after reverse-scoring (range 5–30). Items 1,2,4 (negative) are reverse-scored; items 3,5 (positive) are forward-scored. Higher = better mental health.",
+        "item_coding": {
+          "mhi1": -1,
+          "mhi2": -1,
+          "mhi3": 1,
+          "mhi4": -1,
+          "mhi5": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Mental Health Inventory-5 (MHI-5) Report",
+      "footer_refs": [
+        "Berwick, D. M., et al. (1991). Medical Care, 29(2), 169–176.",
+        "Items from the RAND SF-36 (Public Domain)."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "mhi_head": "These questions are about how you feel and how things have been with you <b>during the past 4 weeks</b>. For each question, please give the one answer that comes closest to the way you have been feeling. How much of the time during the <b>past 4 weeks</b>...",
+      "mhi_r1": "All of the time",
+      "mhi_r2": "Most of the time",
+      "mhi_r3": "A good bit of the time",
+      "mhi_r4": "Some of the time",
+      "mhi_r5": "A little of the time",
+      "mhi_r6": "None of the time",
+      "mhi1": "...have you been a <b>very nervous person</b>?",
+      "mhi2": "...have you felt so <b>down in the dumps</b> that nothing could cheer you up?",
+      "mhi3": "...have you felt <b>calm and peaceful</b>?",
+      "mhi4": "...have you felt <b>downhearted and blue</b>?",
+      "mhi5": "...have you been a <b>happy person</b>?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

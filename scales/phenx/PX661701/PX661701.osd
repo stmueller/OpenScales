@@ -1,0 +1,661 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Multi-dimensional Assessment of Antipsychotic Medication Side Effects",
+      "code": "PX661701",
+      "abbreviation": "PX661701",
+      "description": "The Glasgow Antipsychotic Side-effect Scale (GASS) is a 22-item, self-administered checklist that captures a patient’s viewpoint about suffering from excessive side effects from the antipsychotic medication. Questions 1-20 relate to the previous week and questions 21-22 to the last three months. For",
+      "domain": "Psychiatric Symptoms & Wellbeing",
+      "citation": "Day, J. C., Wood, G., Dewey, M., & Bentall, R. P. (1995). A self-rating scale for measuring neuroleptic side-effects. Validation in a group of schizophrenic patients. British Journal of Psychiatry , 166, 650-653. Lambert, M., Conus, P., Eide, P., Mass, R., Karow, A., Moritz, S., Golks, D., & Naber, D. (2004). Impact of present and past antipsychotic side effects on attitude toward typical antipsychotic treatment and adherence. European Psychiatry, 19, 415-422. [PhenX: https://www.phenxtoolkit.org/protocols/view/661701]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/661701"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "sideeffect_scale_name",
+        "text_key": "sideeffect_scale_name",
+        "type": "short"
+      },
+      {
+        "id": "sideeffect_scale_age",
+        "text_key": "sideeffect_scale_age",
+        "type": "short"
+      },
+      {
+        "id": "sideeffect_scale_sex",
+        "text_key": "sideeffect_scale_sex",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_sex_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_sex_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_medications",
+        "text_key": "sideeffect_scale_medications",
+        "type": "short"
+      },
+      {
+        "id": "sideeffect_scale_sleepiness",
+        "text_key": "sideeffect_scale_sleepiness",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_sleepiness_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_sleepiness_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_sleepiness_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_sleepiness_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_drugged",
+        "text_key": "sideeffect_scale_drugged",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_drugged_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_drugged_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_drugged_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_drugged_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_dizziness",
+        "text_key": "sideeffect_scale_dizziness",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_dizziness_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_dizziness_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_dizziness_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_dizziness_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_heart_irregularities",
+        "text_key": "sideeffect_scale_heart_irregularities",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_heart_irregularities_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_heart_irregularities_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_heart_irregularities_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_heart_irregularities_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_muscle_tense",
+        "text_key": "sideeffect_scale_muscle_tense",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_muscle_tense_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_muscle_tense_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_muscle_tense_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_muscle_tense_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_shaky_hands",
+        "text_key": "sideeffect_scale_shaky_hands",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_shaky_hands_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_shaky_hands_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_shaky_hands_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_shaky_hands_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_restless_legs",
+        "text_key": "sideeffect_scale_restless_legs",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_restless_legs_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_restless_legs_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_restless_legs_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_restless_legs_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_drooling",
+        "text_key": "sideeffect_scale_drooling",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_drooling_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_drooling_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_drooling_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_drooling_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_slow_movement",
+        "text_key": "sideeffect_scale_slow_movement",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_slow_movement_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_slow_movement_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_slow_movement_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_slow_movement_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_uncontrollable_movement",
+        "text_key": "sideeffect_scale_uncontrollable_movement",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_uncontrollable_movement_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_uncontrollable_movement_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_uncontrollable_movement_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_uncontrollable_movement_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_blurry_vision",
+        "text_key": "sideeffect_scale_blurry_vision",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_blurry_vision_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_blurry_vision_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_blurry_vision_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_blurry_vision_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_dry_mouth",
+        "text_key": "sideeffect_scale_dry_mouth",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_dry_mouth_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_dry_mouth_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_dry_mouth_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_dry_mouth_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_difficulty_urinating",
+        "text_key": "sideeffect_scale_difficulty_urinating",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_difficulty_urinating_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_difficulty_urinating_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_difficulty_urinating_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_difficulty_urinating_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_nausea",
+        "text_key": "sideeffect_scale_nausea",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_nausea_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_nausea_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_nausea_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_nausea_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_bed_wetting",
+        "text_key": "sideeffect_scale_bed_wetting",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_bed_wetting_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_bed_wetting_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_bed_wetting_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_bed_wetting_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_thirsty",
+        "text_key": "sideeffect_scale_thirsty",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_thirsty_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_thirsty_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_thirsty_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_thirsty_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_sensitive_nipples",
+        "text_key": "sideeffect_scale_sensitive_nipples",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_sensitive_nipples_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_sensitive_nipples_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_sensitive_nipples_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_sensitive_nipples_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_nipple_fluid",
+        "text_key": "sideeffect_scale_nipple_fluid",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_nipple_fluid_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_nipple_fluid_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_nipple_fluid_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_nipple_fluid_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_sexual_problems",
+        "text_key": "sideeffect_scale_sexual_problems",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_sexual_problems_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_sexual_problems_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_sexual_problems_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_sexual_problems_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_erection_problems",
+        "text_key": "sideeffect_scale_erection_problems",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_erection_problems_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_erection_problems_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sideeffect_scale_erection_problems_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sideeffect_scale_erection_problems_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_menstrual_cycle",
+        "text_key": "sideeffect_scale_menstrual_cycle",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_menstrual_cycle_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_menstrual_cycle_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sideeffect_scale_weight_gain",
+        "text_key": "sideeffect_scale_weight_gain",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sideeffect_scale_weight_gain_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sideeffect_scale_weight_gain_opt_2",
+            "value": 2
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "sideeffect_scale_name": "What is your name?",
+      "sideeffect_scale_age": "What is your age?",
+      "sideeffect_scale_sex": "What is your sex?",
+      "sideeffect_scale_sex_opt_1": "Male",
+      "sideeffect_scale_sex_opt_2": "Female",
+      "sideeffect_scale_medications": "Please list current medication and total daily doses below:",
+      "sideeffect_scale_sleepiness": "I felt sleepy during the day",
+      "sideeffect_scale_sleepiness_opt_1": "Never",
+      "sideeffect_scale_sleepiness_opt_2": "Once",
+      "sideeffect_scale_sleepiness_opt_3": "A few times",
+      "sideeffect_scale_sleepiness_opt_4": "Everyday",
+      "sideeffect_scale_drugged": "I felt drugged or like a zombie",
+      "sideeffect_scale_drugged_opt_1": "Never",
+      "sideeffect_scale_drugged_opt_2": "Once",
+      "sideeffect_scale_drugged_opt_3": "A few times",
+      "sideeffect_scale_drugged_opt_4": "Everyday",
+      "sideeffect_scale_dizziness": "I felt dizzy when I stood up and or or have fainted",
+      "sideeffect_scale_dizziness_opt_1": "Never",
+      "sideeffect_scale_dizziness_opt_2": "Once",
+      "sideeffect_scale_dizziness_opt_3": "A few times",
+      "sideeffect_scale_dizziness_opt_4": "Everyday",
+      "sideeffect_scale_heart_irregularities": "I have felt my heart beating irregularly or unusually fast",
+      "sideeffect_scale_heart_irregularities_opt_1": "Never",
+      "sideeffect_scale_heart_irregularities_opt_2": "Once",
+      "sideeffect_scale_heart_irregularities_opt_3": "A few times",
+      "sideeffect_scale_heart_irregularities_opt_4": "Everyday",
+      "sideeffect_scale_muscle_tense": "My muscles have been tense or jerky",
+      "sideeffect_scale_muscle_tense_opt_1": "Never",
+      "sideeffect_scale_muscle_tense_opt_2": "Once",
+      "sideeffect_scale_muscle_tense_opt_3": "A few times",
+      "sideeffect_scale_muscle_tense_opt_4": "Everyday",
+      "sideeffect_scale_shaky_hands": "My hands or arms have been shaky",
+      "sideeffect_scale_shaky_hands_opt_1": "Never",
+      "sideeffect_scale_shaky_hands_opt_2": "Once",
+      "sideeffect_scale_shaky_hands_opt_3": "A few times",
+      "sideeffect_scale_shaky_hands_opt_4": "Everyday",
+      "sideeffect_scale_restless_legs": "My legs have felt restless and or or I couldn't sit still",
+      "sideeffect_scale_restless_legs_opt_1": "Never",
+      "sideeffect_scale_restless_legs_opt_2": "Once",
+      "sideeffect_scale_restless_legs_opt_3": "A few times",
+      "sideeffect_scale_restless_legs_opt_4": "Everyday",
+      "sideeffect_scale_drooling": "I have been drooling",
+      "sideeffect_scale_drooling_opt_1": "Never",
+      "sideeffect_scale_drooling_opt_2": "Once",
+      "sideeffect_scale_drooling_opt_3": "A few times",
+      "sideeffect_scale_drooling_opt_4": "Everyday",
+      "sideeffect_scale_slow_movement": "My movements or walking have been slower than usual",
+      "sideeffect_scale_slow_movement_opt_1": "Never",
+      "sideeffect_scale_slow_movement_opt_2": "Once",
+      "sideeffect_scale_slow_movement_opt_3": "A few times",
+      "sideeffect_scale_slow_movement_opt_4": "Everyday",
+      "sideeffect_scale_uncontrollable_movement": "I have had, or people have noticed uncontrollable movements of my face or body",
+      "sideeffect_scale_uncontrollable_movement_opt_1": "Never",
+      "sideeffect_scale_uncontrollable_movement_opt_2": "Once",
+      "sideeffect_scale_uncontrollable_movement_opt_3": "A few times",
+      "sideeffect_scale_uncontrollable_movement_opt_4": "Everyday",
+      "sideeffect_scale_blurry_vision": "My vision has been blurry",
+      "sideeffect_scale_blurry_vision_opt_1": "Never",
+      "sideeffect_scale_blurry_vision_opt_2": "Once",
+      "sideeffect_scale_blurry_vision_opt_3": "A few times",
+      "sideeffect_scale_blurry_vision_opt_4": "Everyday",
+      "sideeffect_scale_dry_mouth": "My mouth has been dry",
+      "sideeffect_scale_dry_mouth_opt_1": "Never",
+      "sideeffect_scale_dry_mouth_opt_2": "Once",
+      "sideeffect_scale_dry_mouth_opt_3": "A few times",
+      "sideeffect_scale_dry_mouth_opt_4": "Everyday",
+      "sideeffect_scale_difficulty_urinating": "I have had difficulty passing urine",
+      "sideeffect_scale_difficulty_urinating_opt_1": "Never",
+      "sideeffect_scale_difficulty_urinating_opt_2": "Once",
+      "sideeffect_scale_difficulty_urinating_opt_3": "A few times",
+      "sideeffect_scale_difficulty_urinating_opt_4": "Everyday",
+      "sideeffect_scale_nausea": "I have felt like I am going to be sick or have vomited",
+      "sideeffect_scale_nausea_opt_1": "Never",
+      "sideeffect_scale_nausea_opt_2": "Once",
+      "sideeffect_scale_nausea_opt_3": "A few times",
+      "sideeffect_scale_nausea_opt_4": "Everyday",
+      "sideeffect_scale_bed_wetting": "I have wet the bed",
+      "sideeffect_scale_bed_wetting_opt_1": "Never",
+      "sideeffect_scale_bed_wetting_opt_2": "Once",
+      "sideeffect_scale_bed_wetting_opt_3": "A few times",
+      "sideeffect_scale_bed_wetting_opt_4": "Everyday",
+      "sideeffect_scale_thirsty": "I have been very thirsty and or or passing urine frequently",
+      "sideeffect_scale_thirsty_opt_1": "Never",
+      "sideeffect_scale_thirsty_opt_2": "Once",
+      "sideeffect_scale_thirsty_opt_3": "A few times",
+      "sideeffect_scale_thirsty_opt_4": "Everyday",
+      "sideeffect_scale_sensitive_nipples": "The areas around my nipples have been sore and swollen",
+      "sideeffect_scale_sensitive_nipples_opt_1": "Never",
+      "sideeffect_scale_sensitive_nipples_opt_2": "Once",
+      "sideeffect_scale_sensitive_nipples_opt_3": "A few times",
+      "sideeffect_scale_sensitive_nipples_opt_4": "Everyday",
+      "sideeffect_scale_nipple_fluid": "I have noticed fluid coming from my nipples",
+      "sideeffect_scale_nipple_fluid_opt_1": "Never",
+      "sideeffect_scale_nipple_fluid_opt_2": "Once",
+      "sideeffect_scale_nipple_fluid_opt_3": "A few times",
+      "sideeffect_scale_nipple_fluid_opt_4": "Everyday",
+      "sideeffect_scale_sexual_problems": "I have had problems enjoying sex",
+      "sideeffect_scale_sexual_problems_opt_1": "Never",
+      "sideeffect_scale_sexual_problems_opt_2": "Once",
+      "sideeffect_scale_sexual_problems_opt_3": "A few times",
+      "sideeffect_scale_sexual_problems_opt_4": "Everyday",
+      "sideeffect_scale_erection_problems": "Men only: I have had problems getting an erection",
+      "sideeffect_scale_erection_problems_opt_1": "Never",
+      "sideeffect_scale_erection_problems_opt_2": "Once",
+      "sideeffect_scale_erection_problems_opt_3": "A few times",
+      "sideeffect_scale_erection_problems_opt_4": "Everyday",
+      "sideeffect_scale_menstrual_cycle": "Women only: I have noticed a change in my periods",
+      "sideeffect_scale_menstrual_cycle_opt_1": "Yes",
+      "sideeffect_scale_menstrual_cycle_opt_2": "No",
+      "sideeffect_scale_weight_gain": "Men and women: I have been gaining weight",
+      "sideeffect_scale_weight_gain_opt_1": "Yes",
+      "sideeffect_scale_weight_gain_opt_2": "No"
+    }
+  }
+}

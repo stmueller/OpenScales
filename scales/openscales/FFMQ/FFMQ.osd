@@ -1,0 +1,604 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Five Facet Mindfulness Questionnaire",
+      "code": "FFMQ",
+      "abbreviation": "FFMQ-39",
+      "description": "39-item measure of five facets of mindfulness: Observing, Describing, Acting with Awareness, Non-Judging, and Non-Reactivity. 5-point scale (1=Never or very rarely true to 5=Very often or always true). 19 items are reverse-scored. Set use_short_form=1 to administer the 15-item FFMQ-15 subset.",
+      "citation": "Baer, R. A., Smith, G. T., Hopkins, J., Krietemeyer, J., & Toney, L. (2006). Using self-report assessment methods to explore facets of mindfulness. Assessment, 13(1), 27–45. https://doi.org/10.1177/1073191105283504",
+      "license": "CC BY 3.0",
+      "license_explanation": "Items published under CC BY 3.0 in Gu et al. (2016), Psychological Assessment, 28(7), 791–802. https://psycnet.apa.org/fulltext/2016-17965-001.html. Also freely available from developer at ruthbaer.com.",
+      "license_url": "https://psycnet.apa.org/fulltext/2016-17965-001.html",
+      "version": "1.0",
+      "url": "https://ruthbaer.com/academics/FFMQ.pdf",
+      "domain": "Self & Coping"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "use_short_form": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Use FFMQ-15 (15-item short form). When 1, 24 items are hidden."
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ffmq_r1",
+        "ffmq_r2",
+        "ffmq_r3",
+        "ffmq_r4",
+        "ffmq_r5"
+      ],
+      "question_head": "ffmq_head"
+    },
+    "dimensions": [
+      {
+        "id": "observe",
+        "name": "Observing",
+        "description": "Noticing internal and external experiences (8 items). All forward-scored."
+      },
+      {
+        "id": "describe",
+        "name": "Describing",
+        "description": "Labeling internal experiences with words (8 items). Items 12, 16, 22 reverse-scored."
+      },
+      {
+        "id": "act_aware",
+        "name": "Acting with Awareness",
+        "description": "Attending to activities in the moment (8 items). All reverse-scored."
+      },
+      {
+        "id": "nonjudge",
+        "name": "Non-Judging of Inner Experience",
+        "description": "Non-evaluative stance toward thoughts/feelings (8 items). All reverse-scored."
+      },
+      {
+        "id": "nonreact",
+        "name": "Non-Reactivity to Inner Experience",
+        "description": "Allowing thoughts/feelings to come and go (7 items). All forward-scored."
+      }
+    ],
+    "items": [
+      {
+        "id": "ffmq_inst",
+        "text_key": "ffmq_inst",
+        "type": "inst"
+      },
+      {
+        "id": "ffmq1",
+        "text_key": "ffmq1",
+        "type": "likert",
+        "dimension": "observe",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq2",
+        "text_key": "ffmq2",
+        "type": "likert",
+        "dimension": "describe"
+      },
+      {
+        "id": "ffmq3",
+        "text_key": "ffmq3",
+        "type": "likert",
+        "dimension": "nonjudge",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq4",
+        "text_key": "ffmq4",
+        "type": "likert",
+        "dimension": "nonreact",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq5",
+        "text_key": "ffmq5",
+        "type": "likert",
+        "dimension": "act_aware",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq6",
+        "text_key": "ffmq6",
+        "type": "likert",
+        "dimension": "observe"
+      },
+      {
+        "id": "ffmq7",
+        "text_key": "ffmq7",
+        "type": "likert",
+        "dimension": "describe",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq8",
+        "text_key": "ffmq8",
+        "type": "likert",
+        "dimension": "act_aware"
+      },
+      {
+        "id": "ffmq9",
+        "text_key": "ffmq9",
+        "type": "likert",
+        "dimension": "nonreact",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq10",
+        "text_key": "ffmq10",
+        "type": "likert",
+        "dimension": "nonjudge"
+      },
+      {
+        "id": "ffmq11",
+        "text_key": "ffmq11",
+        "type": "likert",
+        "dimension": "observe"
+      },
+      {
+        "id": "ffmq12",
+        "text_key": "ffmq12",
+        "type": "likert",
+        "dimension": "describe",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq13",
+        "text_key": "ffmq13",
+        "type": "likert",
+        "dimension": "act_aware",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq14",
+        "text_key": "ffmq14",
+        "type": "likert",
+        "dimension": "nonjudge"
+      },
+      {
+        "id": "ffmq15",
+        "text_key": "ffmq15",
+        "type": "likert",
+        "dimension": "observe"
+      },
+      {
+        "id": "ffmq16",
+        "text_key": "ffmq16",
+        "type": "likert",
+        "dimension": "describe"
+      },
+      {
+        "id": "ffmq17",
+        "text_key": "ffmq17",
+        "type": "likert",
+        "dimension": "nonjudge",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq18",
+        "text_key": "ffmq18",
+        "type": "likert",
+        "dimension": "act_aware",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq19",
+        "text_key": "ffmq19",
+        "type": "likert",
+        "dimension": "nonreact"
+      },
+      {
+        "id": "ffmq20",
+        "text_key": "ffmq20",
+        "type": "likert",
+        "dimension": "observe",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq21",
+        "text_key": "ffmq21",
+        "type": "likert",
+        "dimension": "nonreact",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq22",
+        "text_key": "ffmq22",
+        "type": "likert",
+        "dimension": "describe",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq23",
+        "text_key": "ffmq23",
+        "type": "likert",
+        "dimension": "act_aware",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq24",
+        "text_key": "ffmq24",
+        "type": "likert",
+        "dimension": "nonreact",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq25",
+        "text_key": "ffmq25",
+        "type": "likert",
+        "dimension": "nonjudge",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq26",
+        "text_key": "ffmq26",
+        "type": "likert",
+        "dimension": "observe",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq27",
+        "text_key": "ffmq27",
+        "type": "likert",
+        "dimension": "describe"
+      },
+      {
+        "id": "ffmq28",
+        "text_key": "ffmq28",
+        "type": "likert",
+        "dimension": "act_aware",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq29",
+        "text_key": "ffmq29",
+        "type": "likert",
+        "dimension": "nonreact"
+      },
+      {
+        "id": "ffmq30",
+        "text_key": "ffmq30",
+        "type": "likert",
+        "dimension": "nonjudge"
+      },
+      {
+        "id": "ffmq31",
+        "text_key": "ffmq31",
+        "type": "likert",
+        "dimension": "observe",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq32",
+        "text_key": "ffmq32",
+        "type": "likert",
+        "dimension": "describe",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq33",
+        "text_key": "ffmq33",
+        "type": "likert",
+        "dimension": "nonreact"
+      },
+      {
+        "id": "ffmq34",
+        "text_key": "ffmq34",
+        "type": "likert",
+        "dimension": "act_aware"
+      },
+      {
+        "id": "ffmq35",
+        "text_key": "ffmq35",
+        "type": "likert",
+        "dimension": "nonjudge",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq36",
+        "text_key": "ffmq36",
+        "type": "likert",
+        "dimension": "observe",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq37",
+        "text_key": "ffmq37",
+        "type": "likert",
+        "dimension": "describe",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      },
+      {
+        "id": "ffmq38",
+        "text_key": "ffmq38",
+        "type": "likert",
+        "dimension": "act_aware"
+      },
+      {
+        "id": "ffmq39",
+        "text_key": "ffmq39",
+        "type": "likert",
+        "dimension": "nonjudge",
+        "visible_when": {
+          "parameter": "use_short_form",
+          "operator": "equals",
+          "value": "0"
+        }
+      }
+    ],
+    "scoring": {
+      "observe": {
+        "method": "mean_coded",
+        "items": [
+          "ffmq1",
+          "ffmq6",
+          "ffmq11",
+          "ffmq15",
+          "ffmq20",
+          "ffmq26",
+          "ffmq31",
+          "ffmq36"
+        ],
+        "description": "observe facet mean (range 1–5).",
+        "item_coding": {
+          "ffmq1": 1,
+          "ffmq6": 1,
+          "ffmq11": 1,
+          "ffmq15": 1,
+          "ffmq20": 1,
+          "ffmq26": 1,
+          "ffmq31": 1,
+          "ffmq36": 1
+        }
+      },
+      "describe": {
+        "method": "mean_coded",
+        "items": [
+          "ffmq2",
+          "ffmq7",
+          "ffmq12",
+          "ffmq16",
+          "ffmq22",
+          "ffmq27",
+          "ffmq32",
+          "ffmq37"
+        ],
+        "description": "describe facet mean (range 1–5).",
+        "item_coding": {
+          "ffmq2": 1,
+          "ffmq7": 1,
+          "ffmq12": -1,
+          "ffmq16": -1,
+          "ffmq22": -1,
+          "ffmq27": 1,
+          "ffmq32": 1,
+          "ffmq37": 1
+        }
+      },
+      "act_aware": {
+        "method": "mean_coded",
+        "items": [
+          "ffmq5",
+          "ffmq8",
+          "ffmq13",
+          "ffmq18",
+          "ffmq23",
+          "ffmq28",
+          "ffmq34",
+          "ffmq38"
+        ],
+        "description": "act_aware facet mean (range 1–5).",
+        "item_coding": {
+          "ffmq5": -1,
+          "ffmq8": -1,
+          "ffmq13": -1,
+          "ffmq18": -1,
+          "ffmq23": -1,
+          "ffmq28": -1,
+          "ffmq34": -1,
+          "ffmq38": -1
+        }
+      },
+      "nonjudge": {
+        "method": "mean_coded",
+        "items": [
+          "ffmq3",
+          "ffmq10",
+          "ffmq14",
+          "ffmq17",
+          "ffmq25",
+          "ffmq30",
+          "ffmq35",
+          "ffmq39"
+        ],
+        "description": "nonjudge facet mean (range 1–5).",
+        "item_coding": {
+          "ffmq3": -1,
+          "ffmq10": -1,
+          "ffmq14": -1,
+          "ffmq17": -1,
+          "ffmq25": -1,
+          "ffmq30": -1,
+          "ffmq35": -1,
+          "ffmq39": -1
+        }
+      },
+      "nonreact": {
+        "method": "mean_coded",
+        "items": [
+          "ffmq4",
+          "ffmq9",
+          "ffmq19",
+          "ffmq21",
+          "ffmq24",
+          "ffmq29",
+          "ffmq33"
+        ],
+        "description": "nonreact facet mean (range 1–5).",
+        "item_coding": {
+          "ffmq4": 1,
+          "ffmq9": 1,
+          "ffmq19": 1,
+          "ffmq21": 1,
+          "ffmq24": 1,
+          "ffmq29": 1,
+          "ffmq33": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ffmq_inst": "Please rate each of the following statements using the scale provided. Write the number in the blank that best describes your own opinion of what is generally true for you.",
+      "ffmq_head": "Rate each statement:",
+      "ffmq_r1": "Never or very rarely true",
+      "ffmq_r2": "Rarely true",
+      "ffmq_r3": "Sometimes true",
+      "ffmq_r4": "Often true",
+      "ffmq_r5": "Very often or always true",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ffmq1": "When I'm walking, I deliberately notice the sensations of my body moving.",
+      "ffmq2": "I'm good at finding words to describe my feelings.",
+      "ffmq3": "I criticize myself for having irrational or inappropriate emotions.",
+      "ffmq4": "I perceive my feelings and emotions without having to react to them.",
+      "ffmq5": "When I do things, my mind wanders off and I'm easily distracted.",
+      "ffmq6": "When I take a shower or bath, I stay alert to the sensations of water on my body.",
+      "ffmq7": "I can easily put my beliefs, opinions, and expectations into words.",
+      "ffmq8": "I don't pay attention to what I'm doing because I'm daydreaming, worrying, or otherwise distracted.",
+      "ffmq9": "I watch my feelings without getting lost in them.",
+      "ffmq10": "I tell myself I shouldn't be feeling the way I'm feeling.",
+      "ffmq11": "I notice how foods and drinks affect my thoughts, bodily sensations, and emotions.",
+      "ffmq12": "It's hard for me to find the words to describe what I'm thinking.",
+      "ffmq13": "I am easily distracted.",
+      "ffmq14": "I believe some of my thoughts are abnormal or bad and I shouldn't think that way.",
+      "ffmq15": "I pay attention to sensations, such as the wind in my hair or sun on my face.",
+      "ffmq16": "I have trouble thinking of the right words to express how I feel about things.",
+      "ffmq17": "I make judgments about whether my thoughts are good or bad.",
+      "ffmq18": "I find it difficult to stay focused on what's happening in the present.",
+      "ffmq19": "When I have distressing thoughts or images, I \"step back\" and am aware of the thought or image without getting taken over by it.",
+      "ffmq20": "I pay attention to sounds, such as clocks ticking, birds chirping, or cars passing.",
+      "ffmq21": "In difficult situations, I can pause without immediately reacting.",
+      "ffmq22": "When I have a sensation in my body, it's difficult for me to describe it because I can't find the right words.",
+      "ffmq23": "It seems I am \"running on automatic\" without much awareness of what I'm doing.",
+      "ffmq24": "When I have distressing thoughts or images, I feel calm soon after.",
+      "ffmq25": "I tell myself that I shouldn't be thinking the way I'm thinking.",
+      "ffmq26": "I notice the smells and aromas of things.",
+      "ffmq27": "Even when I'm feeling terribly upset, I can find a way to put it into words.",
+      "ffmq28": "I rush through activities without being really attentive to them.",
+      "ffmq29": "When I have distressing thoughts or images I am able just to notice them without reacting.",
+      "ffmq30": "I think some of my emotions are bad or inappropriate and I shouldn't feel them.",
+      "ffmq31": "I notice visual elements in art or nature, such as colors, shapes, textures, or patterns of light and shadow.",
+      "ffmq32": "My natural tendency is to put my experiences into words.",
+      "ffmq33": "When I have distressing thoughts or images, I just notice them and let them go.",
+      "ffmq34": "I do jobs or tasks automatically without being aware of what I'm doing.",
+      "ffmq35": "When I have distressing thoughts or images, I judge myself as good or bad, depending what the thought/image is about.",
+      "ffmq36": "I pay attention to how my emotions affect my thoughts and behavior.",
+      "ffmq37": "I can usually describe how I feel at the moment in considerable detail.",
+      "ffmq38": "I find myself doing things without paying attention.",
+      "ffmq39": "I disapprove of myself when I have irrational ideas."
+    }
+  }
+}

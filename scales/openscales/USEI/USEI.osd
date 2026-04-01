@@ -1,0 +1,247 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "University Student Engagement Inventory",
+      "code": "USEI",
+      "abbreviation": "USEI",
+      "description": "15-item multidimensional measure of student engagement in higher education across behavioural, emotional, and cognitive dimensions. Validated across seven countries.",
+      "citation": "Marôco, J., Marôco, A. L., Campos, J. A. D. B., & Fredricks, J. A. (2016). University student's engagement: Development of the University Student Engagement Inventory (USEI). Psicologia: Reflexão e Crítica, 29, 21. https://doi.org/10.1186/s41155-016-0042-8",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1186/s41155-016-0042-8",
+      "domain": "Education"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "usei_l1",
+        "usei_l2",
+        "usei_l3",
+        "usei_l4",
+        "usei_l5"
+      ],
+      "question_head": "usei_head"
+    },
+    "dimensions": [
+      {
+        "id": "behavioural",
+        "name": "Behavioural Engagement"
+      },
+      {
+        "id": "emotional",
+        "name": "Emotional Engagement"
+      },
+      {
+        "id": "cognitive",
+        "name": "Cognitive Engagement"
+      }
+    ],
+    "items": [
+      {
+        "id": "usei1",
+        "text_key": "usei1",
+        "type": "likert",
+        "dimension": "behavioural"
+      },
+      {
+        "id": "usei2",
+        "text_key": "usei2",
+        "type": "likert",
+        "dimension": "behavioural"
+      },
+      {
+        "id": "usei3",
+        "text_key": "usei3",
+        "type": "likert",
+        "dimension": "behavioural"
+      },
+      {
+        "id": "usei4",
+        "text_key": "usei4",
+        "type": "likert",
+        "dimension": "behavioural"
+      },
+      {
+        "id": "usei5",
+        "text_key": "usei5",
+        "type": "likert",
+        "dimension": "behavioural"
+      },
+      {
+        "id": "usei6",
+        "text_key": "usei6",
+        "type": "likert",
+        "dimension": "emotional",
+        "reverse": true
+      },
+      {
+        "id": "usei7",
+        "text_key": "usei7",
+        "type": "likert",
+        "dimension": "emotional"
+      },
+      {
+        "id": "usei8",
+        "text_key": "usei8",
+        "type": "likert",
+        "dimension": "emotional"
+      },
+      {
+        "id": "usei9",
+        "text_key": "usei9",
+        "type": "likert",
+        "dimension": "emotional"
+      },
+      {
+        "id": "usei10",
+        "text_key": "usei10",
+        "type": "likert",
+        "dimension": "emotional"
+      },
+      {
+        "id": "usei11",
+        "text_key": "usei11",
+        "type": "likert",
+        "dimension": "cognitive"
+      },
+      {
+        "id": "usei12",
+        "text_key": "usei12",
+        "type": "likert",
+        "dimension": "cognitive"
+      },
+      {
+        "id": "usei13",
+        "text_key": "usei13",
+        "type": "likert",
+        "dimension": "cognitive"
+      },
+      {
+        "id": "usei14",
+        "text_key": "usei14",
+        "type": "likert",
+        "dimension": "cognitive"
+      },
+      {
+        "id": "usei15",
+        "text_key": "usei15",
+        "type": "likert",
+        "dimension": "cognitive"
+      }
+    ],
+    "scoring": {
+      "behavioural": {
+        "method": "mean_coded",
+        "items": [
+          "usei1",
+          "usei2",
+          "usei3",
+          "usei4",
+          "usei5"
+        ],
+        "description": "Mean of 5 Behavioural Engagement items (range 1–5). Higher scores indicate greater behavioural participation and rule-following in academic settings.",
+        "item_coding": {
+          "usei1": 1,
+          "usei2": 1,
+          "usei3": 1,
+          "usei4": 1,
+          "usei5": 1
+        }
+      },
+      "emotional": {
+        "method": "mean_coded",
+        "items": [
+          "usei6",
+          "usei7",
+          "usei8",
+          "usei9",
+          "usei10"
+        ],
+        "description": "Mean of 5 Emotional Engagement items (range 1–5; item 6 reverse-coded). Higher scores indicate more positive emotional connection to the school and its work.",
+        "item_coding": {
+          "usei6": -1,
+          "usei7": 1,
+          "usei8": 1,
+          "usei9": 1,
+          "usei10": 1
+        }
+      },
+      "cognitive": {
+        "method": "mean_coded",
+        "items": [
+          "usei11",
+          "usei12",
+          "usei13",
+          "usei14",
+          "usei15"
+        ],
+        "description": "Mean of 5 Cognitive Engagement items (range 1–5). Higher scores indicate greater use of deep learning strategies and knowledge integration.",
+        "item_coding": {
+          "usei11": 1,
+          "usei12": 1,
+          "usei13": 1,
+          "usei14": 1,
+          "usei15": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "usei_head": "How often do you do the following at your university?",
+      "usei_l1": "Never",
+      "usei_l2": "Rarely",
+      "usei_l3": "Sometimes",
+      "usei_l4": "Often",
+      "usei_l5": "Always",
+      "usei1": "I pay attention in class.",
+      "usei2": "I follow the school's rules.",
+      "usei3": "I usually do my homework on time.",
+      "usei4": "When I have doubts I ask questions and participate in debates in the classroom.",
+      "usei5": "I usually participate actively in group assignments.",
+      "usei6": "I don't feel very accomplished at this school.",
+      "usei7": "I feel excited about the school work.",
+      "usei8": "I like being at school.",
+      "usei9": "I am interested in the school work.",
+      "usei10": "My classroom is an interesting place to be.",
+      "usei11": "When I read a book, I question myself to make sure I understand the subject I'm reading about.",
+      "usei12": "I talk to people outside the school on matters that I learned in class.",
+      "usei13": "If I do not understand the meaning of a word, I try to solve the problem, for example by consulting a dictionary or asking someone else.",
+      "usei14": "I try to integrate the acquired knowledge in solving new problems.",
+      "usei15": "I try to integrate subjects from different disciplines into my general knowledge."
+    },
+    "pt": {
+      "usei_head": "Com que frequência faz o seguinte na sua universidade?",
+      "usei_l1": "Nunca",
+      "usei_l2": "Raramente",
+      "usei_l3": "Às vezes",
+      "usei_l4": "Frequentemente",
+      "usei_l5": "Sempre",
+      "usei1": "Eu estou atento na aula.",
+      "usei2": "Eu sigo as regras da escola.",
+      "usei3": "Geralmente faço os trabalhos de casa a tempo e horas.",
+      "usei4": "Quando tenho dúvidas faço perguntas e envolvo-me nos debates da sala de aula.",
+      "usei5": "Geralmente participo ativamente nos trabalhos de grupo.",
+      "usei6": "Sinto-me pouco realizado nesta escola.",
+      "usei7": "Sinto-me entusiasmado com o trabalho da escola.",
+      "usei8": "Eu gosto de estar na escola.",
+      "usei9": "Estou interessado no trabalho da escola.",
+      "usei10": "Minha sala de aula é um lugar interessante para estar.",
+      "usei11": "Quando leio um livro, questiono-me a mim próprio para ter certeza que entendo o assunto que estou a ler.",
+      "usei12": "Eu converso com outras pessoas fora da escola sobre as matérias que aprendo nas aulas.",
+      "usei13": "Se não compreendo o significado de uma palavra, eu tento resolver o problema, por exemplo, consultando um dicionário ou perguntando a outra pessoa.",
+      "usei14": "Tento integrar os conhecimentos adquiridos para resolver problemas novos.",
+      "usei15": "Tento integrar as matérias das diferentes disciplinas no meu conhecimento geral."
+    }
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Burnout Assessment Tool – Short Form",
+      "code": "BAT12",
+      "abbreviation": "BAT-12",
+      "description": "12-item short form of the Burnout Assessment Tool measuring core burnout symptoms across four subscales: Exhaustion (4 items), Mental Distance (3 items), Emotional Impairment (3 items), and Cognitive Impairment (2 items). Items use a 5-point frequency scale (1=Never to 5=Always). Subscale scores are means (range 1–5); a core burnout score is computed as the mean of Exhaustion and Mental Distance subscales. Higher scores indicate greater burnout.",
+      "citation": "Schaufeli, W. B., De Witte, H., & Desart, S. (2020). Manual Burnout Assessment Tool (BAT) – Version 2.0. KU Leuven, Belgium. https://burnoutassessmenttool.be",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://burnoutassessmenttool.be",
+      "domain": "Work",
+      "license_explanation": "CC BY 4.0. Published in IJERPH (MDPI open access).",
+      "license_url": "https://doi.org/10.3390/ijerph17249495"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "bat_r1",
+        "bat_r2",
+        "bat_r3",
+        "bat_r4",
+        "bat_r5"
+      ],
+      "question_head": "bat_inst"
+    },
+    "dimensions": [
+      {
+        "id": "exhaustion",
+        "name": "Exhaustion",
+        "abbreviation": "EX",
+        "description": "Feeling physically and mentally depleted by work (items 1–4). Mean range 1–5; higher = more exhaustion. Cut-off ≥3.00."
+      },
+      {
+        "id": "mental_distance",
+        "name": "Mental Distance",
+        "abbreviation": "MD",
+        "description": "Feeling aversion to and growing distance from work (items 5–7). Mean range 1–5; higher = more distancing. Cut-off ≥2.00."
+      },
+      {
+        "id": "emotional_impairment",
+        "name": "Emotional Impairment",
+        "abbreviation": "EI",
+        "description": "Difficulty controlling emotions at work (items 8–10). Mean range 1–5; higher = more emotional impairment."
+      },
+      {
+        "id": "cognitive_impairment",
+        "name": "Cognitive Impairment",
+        "abbreviation": "CI",
+        "description": "Difficulty concentrating and making decisions at work (items 11–12). Mean range 1–5; higher = more cognitive impairment."
+      }
+    ],
+    "items": [
+      {
+        "id": "bat1",
+        "text_key": "bat1",
+        "type": "likert",
+        "dimension": "exhaustion"
+      },
+      {
+        "id": "bat2",
+        "text_key": "bat2",
+        "type": "likert",
+        "dimension": "exhaustion"
+      },
+      {
+        "id": "bat3",
+        "text_key": "bat3",
+        "type": "likert",
+        "dimension": "exhaustion"
+      },
+      {
+        "id": "bat4",
+        "text_key": "bat4",
+        "type": "likert",
+        "dimension": "exhaustion"
+      },
+      {
+        "id": "bat5",
+        "text_key": "bat5",
+        "type": "likert",
+        "dimension": "mental_distance"
+      },
+      {
+        "id": "bat6",
+        "text_key": "bat6",
+        "type": "likert",
+        "dimension": "mental_distance"
+      },
+      {
+        "id": "bat7",
+        "text_key": "bat7",
+        "type": "likert",
+        "dimension": "mental_distance"
+      },
+      {
+        "id": "bat8",
+        "text_key": "bat8",
+        "type": "likert",
+        "dimension": "emotional_impairment"
+      },
+      {
+        "id": "bat9",
+        "text_key": "bat9",
+        "type": "likert",
+        "dimension": "emotional_impairment"
+      },
+      {
+        "id": "bat10",
+        "text_key": "bat10",
+        "type": "likert",
+        "dimension": "emotional_impairment"
+      },
+      {
+        "id": "bat11",
+        "text_key": "bat11",
+        "type": "likert",
+        "dimension": "cognitive_impairment"
+      },
+      {
+        "id": "bat12",
+        "text_key": "bat12",
+        "type": "likert",
+        "dimension": "cognitive_impairment"
+      }
+    ],
+    "scoring": {
+      "exhaustion": {
+        "method": "mean_coded",
+        "items": [
+          "bat1",
+          "bat2",
+          "bat3",
+          "bat4"
+        ],
+        "description": "Mean of items 1–4 (range 1–5). Scores ≥3.00 indicate high exhaustion.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 1.0,
+              "max": 1.99,
+              "label": "Very Low"
+            },
+            {
+              "min": 2.0,
+              "max": 2.99,
+              "label": "Low"
+            },
+            {
+              "min": 3.0,
+              "max": 3.99,
+              "label": "High"
+            },
+            {
+              "min": 4.0,
+              "max": 5.0,
+              "label": "Very High"
+            }
+          ]
+        },
+        "item_coding": {
+          "bat1": 1,
+          "bat2": 1,
+          "bat3": 1,
+          "bat4": 1
+        }
+      },
+      "mental_distance": {
+        "method": "mean_coded",
+        "items": [
+          "bat5",
+          "bat6",
+          "bat7"
+        ],
+        "description": "Mean of items 5–7 (range 1–5). Scores ≥2.00 indicate problematic mental distancing.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 1.0,
+              "max": 1.99,
+              "label": "Low"
+            },
+            {
+              "min": 2.0,
+              "max": 2.99,
+              "label": "Moderate"
+            },
+            {
+              "min": 3.0,
+              "max": 3.99,
+              "label": "High"
+            },
+            {
+              "min": 4.0,
+              "max": 5.0,
+              "label": "Very High"
+            }
+          ]
+        },
+        "item_coding": {
+          "bat5": 1,
+          "bat6": 1,
+          "bat7": 1
+        }
+      },
+      "emotional_impairment": {
+        "method": "mean_coded",
+        "items": [
+          "bat8",
+          "bat9",
+          "bat10"
+        ],
+        "description": "Mean of items 8–10 (range 1–5). Higher scores indicate greater difficulty regulating emotions at work.",
+        "item_coding": {
+          "bat8": 1,
+          "bat9": 1,
+          "bat10": 1
+        }
+      },
+      "cognitive_impairment": {
+        "method": "mean_coded",
+        "items": [
+          "bat11",
+          "bat12"
+        ],
+        "description": "Mean of items 11–12 (range 1–5). Higher scores indicate greater difficulty with concentration and decision-making at work.",
+        "item_coding": {
+          "bat11": 1,
+          "bat12": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "bat_r1": "Never",
+      "bat_r2": "Rarely",
+      "bat_r3": "Sometimes",
+      "bat_r4": "Often",
+      "bat_r5": "Always",
+      "bat_inst": "The following statements are about how you experience your work. Please indicate how often each statement applies to you.",
+      "bat1": "I feel mentally exhausted at my work.",
+      "bat2": "Everything I do for my work feels like a great effort.",
+      "bat3": "After a working day I feel empty.",
+      "bat4": "At my work I feel that I have reached the end of my tether.",
+      "bat5": "I struggle to find enthusiasm for my work.",
+      "bat6": "I feel a strong aversion to my work.",
+      "bat7": "I feel an aversion to carrying out my tasks.",
+      "bat8": "At work, I am unable to control my emotions.",
+      "bat9": "I do not recognize myself in the way I react emotionally at work.",
+      "bat10": "I react to people or things at work in a way that is not typical of me.",
+      "bat11": "At work, I have difficulty concentrating.",
+      "bat12": "I make more mistakes at work because I have my mind on other things.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

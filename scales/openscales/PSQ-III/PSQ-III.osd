@@ -1,0 +1,578 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Patient Satisfaction Questionnaire III",
+      "code": "PSQ-III",
+      "abbreviation": "PSQ-III",
+      "description": "51-item measure of patient satisfaction with medical care across 7 subscales: General Satisfaction (6 items), Technical Quality (10 items), Interpersonal Manner (7 items), Communication (5 items), Financial Aspects (8 items), Time Spent with Doctor (2 items), and Access/Availability/Convenience (12 items). Item 30 is not scored. Items use a 5-point Strongly Agree to Strongly Disagree scale. Favorably worded items (+) are reverse-coded so that higher subscale scores indicate greater satisfaction. Subscale scores are sums of constituent items. Public Domain (RAND Corporation).",
+      "citation": "Hays, R. D., Davies, A. R., & Ware, J. E. (1987). Scoring the Medical Outcomes Study Patient Satisfaction Questionnaire: PSQ-III. MOS Memorandum. RAND Corporation.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health-care/surveys_tools/psq.html",
+      "domain": "Health",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. RAND explicitly states these instruments are available for use without permission or fee.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools/psq.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "psq_r1",
+        "psq_r2",
+        "psq_r3",
+        "psq_r4",
+        "psq_r5"
+      ],
+      "question_head": "psq_head"
+    },
+    "dimensions": [
+      {
+        "id": "gsat",
+        "name": "General Satisfaction",
+        "abbreviation": "GSAT",
+        "description": "Items 3(+), 33(–), 42(+), 21(–), 11(+), 49(–). Sum range 6–30."
+      },
+      {
+        "id": "tech",
+        "name": "Technical Quality",
+        "abbreviation": "TECH",
+        "description": "Items 15(+), 2(–), 8(+), 12(–), 23(+), 36(–), 50(+), 45(–), 31(+), 41(–). Sum range 10–50."
+      },
+      {
+        "id": "inter",
+        "name": "Interpersonal Manner",
+        "abbreviation": "INTER",
+        "description": "Items 29(–), 47(+), 39(–), 17(+), 26(–), 34(+), 9(–). Sum range 7–35."
+      },
+      {
+        "id": "comm",
+        "name": "Communication",
+        "abbreviation": "COMM",
+        "description": "Items 6(+), 18(–), 13(+), 38(–), 43(+). Sum range 5–25."
+      },
+      {
+        "id": "finan",
+        "name": "Financial Aspects",
+        "abbreviation": "FINAN",
+        "description": "Items 14(+), 4(–), 27(+), 10(–), 44(+), 24(–), 32(+), 19(–). Sum range 8–40."
+      },
+      {
+        "id": "time",
+        "name": "Time Spent with Doctor",
+        "abbreviation": "TIME",
+        "description": "Items 46(+), 35(–). Sum range 2–10."
+      },
+      {
+        "id": "access",
+        "name": "Access/Availability/Convenience",
+        "abbreviation": "ACCESS",
+        "description": "Items 1(+), 16(–), 5(+), 22(–), 37(+), 28(–), 40(+), 48(–), 20(+), 7(–), 25(+), 51(+). Sum range 12–60."
+      }
+    ],
+    "items": [
+      {
+        "id": "psq_inst",
+        "text_key": "psq_inst",
+        "type": "inst"
+      },
+      {
+        "id": "psq3_1",
+        "text_key": "psq3_1",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_2",
+        "text_key": "psq3_2",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_3",
+        "text_key": "psq3_3",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_4",
+        "text_key": "psq3_4",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_5",
+        "text_key": "psq3_5",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_6",
+        "text_key": "psq3_6",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_7",
+        "text_key": "psq3_7",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_8",
+        "text_key": "psq3_8",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_9",
+        "text_key": "psq3_9",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_10",
+        "text_key": "psq3_10",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_11",
+        "text_key": "psq3_11",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_12",
+        "text_key": "psq3_12",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_13",
+        "text_key": "psq3_13",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_14",
+        "text_key": "psq3_14",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_15",
+        "text_key": "psq3_15",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_16",
+        "text_key": "psq3_16",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_17",
+        "text_key": "psq3_17",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_18",
+        "text_key": "psq3_18",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_19",
+        "text_key": "psq3_19",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_20",
+        "text_key": "psq3_20",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_21",
+        "text_key": "psq3_21",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_22",
+        "text_key": "psq3_22",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_23",
+        "text_key": "psq3_23",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_24",
+        "text_key": "psq3_24",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_25",
+        "text_key": "psq3_25",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_26",
+        "text_key": "psq3_26",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_27",
+        "text_key": "psq3_27",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_28",
+        "text_key": "psq3_28",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_29",
+        "text_key": "psq3_29",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_30",
+        "text_key": "psq3_30",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_31",
+        "text_key": "psq3_31",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_32",
+        "text_key": "psq3_32",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_33",
+        "text_key": "psq3_33",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_34",
+        "text_key": "psq3_34",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_35",
+        "text_key": "psq3_35",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_36",
+        "text_key": "psq3_36",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_37",
+        "text_key": "psq3_37",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_38",
+        "text_key": "psq3_38",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_39",
+        "text_key": "psq3_39",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_40",
+        "text_key": "psq3_40",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_41",
+        "text_key": "psq3_41",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_42",
+        "text_key": "psq3_42",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_43",
+        "text_key": "psq3_43",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_44",
+        "text_key": "psq3_44",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_45",
+        "text_key": "psq3_45",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_46",
+        "text_key": "psq3_46",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_47",
+        "text_key": "psq3_47",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_48",
+        "text_key": "psq3_48",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_49",
+        "text_key": "psq3_49",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_50",
+        "text_key": "psq3_50",
+        "type": "likert"
+      },
+      {
+        "id": "psq3_51",
+        "text_key": "psq3_51",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "gsat": {
+        "method": "sum_coded",
+        "items": [
+          "psq3_3",
+          "psq3_33",
+          "psq3_42",
+          "psq3_21",
+          "psq3_11",
+          "psq3_49"
+        ],
+        "description": "General Satisfaction. Sum of 6 items (6–30). Higher = more satisfied.",
+        "item_coding": {
+          "psq3_3": -1,
+          "psq3_33": 1,
+          "psq3_42": -1,
+          "psq3_21": 1,
+          "psq3_11": -1,
+          "psq3_49": 1
+        }
+      },
+      "tech": {
+        "method": "sum_coded",
+        "items": [
+          "psq3_15",
+          "psq3_2",
+          "psq3_8",
+          "psq3_12",
+          "psq3_23",
+          "psq3_36",
+          "psq3_50",
+          "psq3_45",
+          "psq3_31",
+          "psq3_41"
+        ],
+        "description": "Technical Quality. Sum of 10 items (10–50). Higher = more satisfied.",
+        "item_coding": {
+          "psq3_15": -1,
+          "psq3_2": 1,
+          "psq3_8": -1,
+          "psq3_12": 1,
+          "psq3_23": -1,
+          "psq3_36": 1,
+          "psq3_50": -1,
+          "psq3_45": 1,
+          "psq3_31": -1,
+          "psq3_41": 1
+        }
+      },
+      "inter": {
+        "method": "sum_coded",
+        "items": [
+          "psq3_29",
+          "psq3_47",
+          "psq3_39",
+          "psq3_17",
+          "psq3_26",
+          "psq3_34",
+          "psq3_9"
+        ],
+        "description": "Interpersonal Manner. Sum of 7 items (7–35). Higher = more satisfied.",
+        "item_coding": {
+          "psq3_29": 1,
+          "psq3_47": -1,
+          "psq3_39": 1,
+          "psq3_17": -1,
+          "psq3_26": 1,
+          "psq3_34": -1,
+          "psq3_9": 1
+        }
+      },
+      "comm": {
+        "method": "sum_coded",
+        "items": [
+          "psq3_6",
+          "psq3_18",
+          "psq3_13",
+          "psq3_38",
+          "psq3_43"
+        ],
+        "description": "Communication. Sum of 5 items (5–25). Higher = more satisfied.",
+        "item_coding": {
+          "psq3_6": -1,
+          "psq3_18": 1,
+          "psq3_13": -1,
+          "psq3_38": 1,
+          "psq3_43": -1
+        }
+      },
+      "finan": {
+        "method": "sum_coded",
+        "items": [
+          "psq3_14",
+          "psq3_4",
+          "psq3_27",
+          "psq3_10",
+          "psq3_44",
+          "psq3_24",
+          "psq3_32",
+          "psq3_19"
+        ],
+        "description": "Financial Aspects. Sum of 8 items (8–40). Higher = more satisfied.",
+        "item_coding": {
+          "psq3_14": -1,
+          "psq3_4": 1,
+          "psq3_27": -1,
+          "psq3_10": 1,
+          "psq3_44": -1,
+          "psq3_24": 1,
+          "psq3_32": -1,
+          "psq3_19": 1
+        }
+      },
+      "time": {
+        "method": "sum_coded",
+        "items": [
+          "psq3_46",
+          "psq3_35"
+        ],
+        "description": "Time Spent with Doctor. Sum of 2 items (2–10). Higher = more satisfied.",
+        "item_coding": {
+          "psq3_46": -1,
+          "psq3_35": 1
+        }
+      },
+      "access": {
+        "method": "sum_coded",
+        "items": [
+          "psq3_1",
+          "psq3_16",
+          "psq3_5",
+          "psq3_22",
+          "psq3_37",
+          "psq3_28",
+          "psq3_40",
+          "psq3_48",
+          "psq3_20",
+          "psq3_7",
+          "psq3_25",
+          "psq3_51"
+        ],
+        "description": "Access/Availability/Convenience. Sum of 12 items (12–60). Higher = more satisfied.",
+        "item_coding": {
+          "psq3_1": -1,
+          "psq3_16": 1,
+          "psq3_5": -1,
+          "psq3_22": 1,
+          "psq3_37": -1,
+          "psq3_28": 1,
+          "psq3_40": -1,
+          "psq3_48": 1,
+          "psq3_20": -1,
+          "psq3_7": 1,
+          "psq3_25": -1,
+          "psq3_51": -1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Patient Satisfaction Questionnaire III (PSQ-III) Report",
+      "footer_refs": [
+        "Hays, R. D., Davies, A. R., & Ware, J. E. (1987). Scoring the Medical Outcomes Study Patient Satisfaction Questionnaire: PSQ-III. MOS Memorandum. RAND Corporation.",
+        "Favorably worded (+) items are reverse-coded (1→5, 2→4, 3→3, 4→2, 5→1) so that higher scores indicate greater satisfaction. Item 30 is not scored on any subscale."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "psq_inst": "The following statements are about how you feel about the medical care you receive. Please read each one carefully, keeping in mind the medical care you are receiving now. (If you have not received care recently, think about what you would <u>expect</u> if you needed care today.) We are interested in your feelings, <u>good</u> and <u>bad</u>, about the medical care you have received.",
+      "psq_head": "How strongly do you AGREE or DISAGREE with the following statement:",
+      "psq_r1": "Strongly Agree",
+      "psq_r2": "Agree",
+      "psq_r3": "Uncertain",
+      "psq_r4": "Disagree",
+      "psq_r5": "Strongly Disagree",
+      "psq3_1": "If I need hospital care, I can get admitted without any trouble.",
+      "psq3_2": "Doctors need to be more thorough in treating and examining me.",
+      "psq3_3": "I am very satisfied with the medical care I receive.",
+      "psq3_4": "I worry sometimes about having to pay large medical bills.",
+      "psq3_5": "It is easy for me to get medical care in an emergency.",
+      "psq3_6": "Doctors are good about explaining the reason for medical tests.",
+      "psq3_7": "I am usually kept waiting for a long time when I am at the doctor's office.",
+      "psq3_8": "I think my doctor's office has everything needed to provide complete medical care.",
+      "psq3_9": "The doctors who treat me should give me more respect.",
+      "psq3_10": "Sometimes it is a problem to cover my share of the cost for a medical care visit.",
+      "psq3_11": "The medical care I have been receiving is just about perfect.",
+      "psq3_12": "Sometimes doctors make me wonder if their diagnosis is correct.",
+      "psq3_13": "During my medical visits, I am always allowed to say everything that I think is important.",
+      "psq3_14": "I feel confident that I can get the medical care I need without being set back financially.",
+      "psq3_15": "When I go for medical care, they are careful to check everything when treating and examining me.",
+      "psq3_16": "It's hard for me to get medical care on short notice.",
+      "psq3_17": "The doctors who treat me have a genuine interest in me as a person.",
+      "psq3_18": "Sometimes doctors use medical terms without explaining what they mean.",
+      "psq3_19": "Sometimes I go without the medical care I need because it is too expensive.",
+      "psq3_20": "The office hours when I can get medical care are convenient (good) for me.",
+      "psq3_21": "There are things about the medical system I receive my care from that need to be improved.",
+      "psq3_22": "The office where I get medical care should be open for more hours than it is.",
+      "psq3_23": "The medical staff that treats me knows about the latest medical developments.",
+      "psq3_24": "I have to pay for more of my medical care than I can afford.",
+      "psq3_25": "I have easy access to the medical specialists I need.",
+      "psq3_26": "Sometimes doctors make me feel foolish.",
+      "psq3_27": "Regardless of the health problems I have now or develop later, I feel protected from financial hardship.",
+      "psq3_28": "Where I get medical care, people have to wait too long for emergency treatment.",
+      "psq3_29": "Doctors act too businesslike and impersonal toward me.",
+      "psq3_30": "There is a crisis in health care in the United States today.",
+      "psq3_31": "Doctors never expose me to unnecessary risk.",
+      "psq3_32": "The amount I have to pay to cover or insure my medical care needs is reasonable.",
+      "psq3_33": "There are some things about the medical care I receive that could be better.",
+      "psq3_34": "My doctors treat me in a very friendly and courteous manner.",
+      "psq3_35": "Those who provide my medical care sometimes hurry too much when they treat me.",
+      "psq3_36": "Some of the doctors I have seen lack experience with my medical problems.",
+      "psq3_37": "Places where I can get medical care are very conveniently located.",
+      "psq3_38": "Doctors sometimes ignore what I tell them.",
+      "psq3_39": "When I am receiving medical care, they should pay more attention to my privacy.",
+      "psq3_40": "If I have a medical question, I can reach a doctor for help without any problem.",
+      "psq3_41": "Doctors rarely give me advice about ways to avoid illness and stay healthy.",
+      "psq3_42": "All things considered, the medical care I receive is excellent.",
+      "psq3_43": "Doctors listen carefully to what I have to say.",
+      "psq3_44": "I feel insured and protected financially against all possible medical problems.",
+      "psq3_45": "I have some doubts about the ability of the doctors who treat me.",
+      "psq3_46": "Doctors usually spend plenty of time with me.",
+      "psq3_47": "Doctors always do their best to keep me from worrying.",
+      "psq3_48": "I find it hard to get an appointment for medical care right away.",
+      "psq3_49": "I am dissatisfied with some things about the medical care I receive.",
+      "psq3_50": "My doctors are very competent and well-trained.",
+      "psq3_51": "I am able to get medical care whenever I need it.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

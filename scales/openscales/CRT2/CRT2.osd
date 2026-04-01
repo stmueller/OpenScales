@@ -1,0 +1,202 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Cognitive Reflection Test — Alternate Form",
+      "code": "CRT2",
+      "abbreviation": "CRT-2",
+      "description": "4-item alternate form of the Cognitive Reflection Test, with 4 decoy questions. Measures the tendency to override incorrect intuitive responses and engage in further reflection. Score range 0–4.",
+      "citation": "Thomson, K. S., & Oppenheimer, D. M. (2016). Investigating an alternate form of the cognitive reflection test. Judgment and Decision Making, 11(1), 99-113.",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/investigating-an-alternate-form-of-the-cognitive-reflection-test/42F4F70E998C63952D26DF2F4EBEA59E"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize question order"
+      }
+    },
+    "dimensions": [
+      {
+        "id": "reflection",
+        "name": "Cognitive Reflection",
+        "abbreviation": "CRT2",
+        "description": "Number of correct responses reflecting analytic rather than intuitive thinking (0-4)"
+      },
+      {
+        "id": "decoy",
+        "name": "Decoy Accuracy",
+        "description": "Number of correct responses on decoy (non-trick) questions (0-4)"
+      }
+    ],
+    "items": [
+      {
+        "id": "inst1",
+        "type": "inst",
+        "text_key": "inst1"
+      },
+      {
+        "id": "q1",
+        "type": "short",
+        "text_key": "q1",
+        "dimension": "reflection",
+        "maxlength": 30,
+        "random_group": 1
+      },
+      {
+        "id": "q2",
+        "type": "short",
+        "text_key": "q2",
+        "dimension": "reflection",
+        "maxlength": 30,
+        "random_group": 1
+      },
+      {
+        "id": "q3",
+        "type": "short",
+        "text_key": "q3",
+        "dimension": "reflection",
+        "maxlength": 30,
+        "random_group": 1
+      },
+      {
+        "id": "q4",
+        "type": "short",
+        "text_key": "q4",
+        "dimension": "reflection",
+        "maxlength": 30,
+        "random_group": 1
+      },
+      {
+        "id": "d1",
+        "type": "short",
+        "text_key": "d1",
+        "dimension": "decoy",
+        "maxlength": 30,
+        "random_group": 1
+      },
+      {
+        "id": "d2",
+        "type": "short",
+        "text_key": "d2",
+        "dimension": "decoy",
+        "maxlength": 30,
+        "random_group": 1
+      },
+      {
+        "id": "d3",
+        "type": "short",
+        "text_key": "d3",
+        "dimension": "decoy",
+        "maxlength": 30,
+        "random_group": 1
+      },
+      {
+        "id": "d4",
+        "type": "short",
+        "text_key": "d4",
+        "dimension": "decoy",
+        "maxlength": 30,
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "reflection": {
+        "method": "sum_correct",
+        "items": [
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ],
+        "description": "Number of correct responses (0-4)",
+        "correct_answers": {
+          "q1": [
+            "second",
+            "2nd",
+            "2",
+            "second place"
+          ],
+          "q2": [
+            "8",
+            "eight"
+          ],
+          "q3": [
+            "emily"
+          ],
+          "q4": [
+            "0",
+            "zero",
+            "none"
+          ]
+        },
+        "item_coding": {
+          "q1": 1,
+          "q2": 1,
+          "q3": 1,
+          "q4": 1
+        }
+      },
+      "decoy": {
+        "method": "sum_correct",
+        "items": [
+          "d1",
+          "d2",
+          "d3",
+          "d4"
+        ],
+        "description": "Number of correct responses on decoy questions (0-4)",
+        "correct_answers": {
+          "d1": [
+            "200",
+            "two hundred"
+          ],
+          "d2": [
+            "sandwiches",
+            "cooler of sandwiches",
+            "the sandwiches",
+            "cooler",
+            "the cooler"
+          ],
+          "d3": [
+            "4",
+            "four"
+          ],
+          "d4": [
+            "2",
+            "two"
+          ]
+        },
+        "item_coding": {
+          "d1": 1,
+          "d2": 1,
+          "d3": 1,
+          "d4": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "inst1": "<b>Cognitive Reflection Test — Alternate Form</b><br><br>Please answer the following questions. Note: Some may seem to have an obvious answer, but that answer is often wrong. Please think carefully before answering.<br><br>Enter your answer and press Enter (or click Next) to continue.",
+      "q1": "If you're running a race and you pass the person in second place, what place are you in?",
+      "q2": "A farmer had 15 sheep and all but 8 died. How many are left?",
+      "q3": "Emily's father has three daughters. The first two are named April and May. What is the third daughter's name?",
+      "q4": "How many cubic feet of dirt are there in a hole that is 3' deep x 3' wide x 3' long?",
+      "d1": "A cargo hold of a ship had 500 crates of oranges. At the ship's first stop, 100 crates were unloaded. At the second stop, 200 more were unloaded. How many crates of oranges were left after the second stop?",
+      "d2": "Sara, Emma, and Sophia embark on a river trip. Each of them brings one supply item for the trip: a kayak, a cooler of sandwiches, and a bag of apples. Sara brought the apples and Emma didn't bring anything edible. What did Sophia bring?",
+      "d3": "An expedition on a mountain climbing trip was traveling with eleven horse packs. Each horse can carry only three packs. How many horses does the expedition need?",
+      "d4": "A mechanic shop had five silver cars, two red cars, and one blue car in the garage. During the day, three silver cars and one red car were picked up, and one black car was dropped off. How many silver cars were in the garage at the end of the day?",
+      "debrief": "Thank you for completing the Cognitive Reflection Test — Alternate Form."
+    }
+  }
+}

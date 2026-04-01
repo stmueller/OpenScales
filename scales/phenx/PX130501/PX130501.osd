@@ -1,0 +1,629 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Migraine - Adult",
+      "code": "PX130501",
+      "abbreviation": "PX130501",
+      "description": "The Self-Administered Questionnaire for Migraine is a 20-item questionnaire that assesses the frequency of severe headaches, the level of pain, whether the person is taking medications, and associated complications such as nausea.",
+      "domain": "Neurology",
+      "citation": "Headache Classification Committee of the International Headache Society. (1998). Classification and diagnostic criteria for headache disorders, cranial neuralgias and facial pain. Cephalalgia, 8 (Suppl. 7), 1-96. Headache Classification Subcommittee of the International Headache Society. (2004). The International Classification of Headache Disorders. Part one: The primary headaches. Cephalalgia , 24 (Suppl. 1), 23-136. [PhenX: https://www.phenxtoolkit.org/protocols/view/130501]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/130501"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "severe_headaches_last_year",
+        "text_key": "severe_headaches_last_year",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "severe_headaches_last_year_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "severe_headaches_last_year_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "current_age",
+        "text_key": "current_age",
+        "type": "short",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "gender",
+        "text_key": "gender",
+        "type": "multi",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "gender_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "gender_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "headache_complications_numbness_enum",
+        "text_key": "headache_complications_numbness_enum",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "headache_complications_numbness_enum_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "headache_complications_numbness_enum_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "headache_complications_numbness_enum_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "headache_complications_numbness_enum_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "headache_complications_numbness_enum_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "headache_complications_numbness_enum_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "headache_complications_numbness_enum_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "headache_complications_numbness_enum_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "headache_complications_numbness_enum_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "headache_complications_numbness_enum_opt_10",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "id": "severe_headaches_average_frequency",
+        "text_key": "severe_headaches_average_frequency",
+        "type": "short",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "severe_headache_pain_type",
+        "text_key": "severe_headache_pain_type",
+        "type": "multi",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "severe_headache_pain_type_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "severe_headache_pain_type_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "severe_headache_pain_type_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "severe_headache_pain_type_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "how_affected_by_headaches",
+        "text_key": "how_affected_by_headaches",
+        "type": "multi",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "how_affected_by_headaches_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "how_affected_by_headaches_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "how_affected_by_headaches_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "how_affected_by_headaches_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "how_long_unable_to_work",
+        "text_key": "how_long_unable_to_work",
+        "type": "multi",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "how_long_unable_to_work_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "how_long_unable_to_work_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "how_long_unable_to_work_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "how_long_unable_to_work_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "how_long_unable_to_work_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "headache_frequency_last_three_months",
+        "text_key": "headache_frequency_last_three_months",
+        "type": "short",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "number_days_miss_school",
+        "text_key": "number_days_miss_school",
+        "type": "short",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "number_days_reduced_productivity",
+        "text_key": "number_days_reduced_productivity",
+        "type": "short",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "number_days_no_house_work",
+        "text_key": "number_days_no_house_work",
+        "type": "short",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "number_days_housework_reduced_half",
+        "text_key": "number_days_housework_reduced_half",
+        "type": "short",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "number_days_miss_activities",
+        "text_key": "number_days_miss_activities",
+        "type": "short",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "age_headaches_began",
+        "text_key": "age_headaches_began",
+        "type": "short",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "ever_goneto_hospital_for_headaches",
+        "text_key": "ever_goneto_hospital_for_headaches",
+        "type": "multi",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "ever_goneto_hospital_for_headaches_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "ever_goneto_hospital_for_headaches_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "usual_headache_treatment",
+        "text_key": "usual_headache_treatment",
+        "type": "multi",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "usual_headache_treatment_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "usual_headache_treatment_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "usual_headache_treatment_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "usual_headache_treatment_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "headache_prescription_medication_daily_basis",
+        "text_key": "headache_prescription_medication_daily_basis",
+        "type": "multi",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "headache_prescription_medication_daily_basis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "headache_prescription_medication_daily_basis_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "any_other_daily_medication_prescription_depression_enum",
+        "text_key": "any_other_daily_medication_prescription_depression_enum",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "any_other_daily_medication_prescription_depression_enum_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "any_other_daily_medication_prescription_depression_enum_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "any_other_daily_medication_prescription_depression_enum_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "any_other_daily_medication_prescription_depression_enum_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "any_other_daily_medication_prescription_depression_enum_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "any_other_daily_medication_prescription_depression_enum_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "last_took_daily_headache_medication",
+        "text_key": "last_took_daily_headache_medication",
+        "type": "multi",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "last_took_daily_headache_medication_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_took_daily_headache_medication_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "last_took_daily_headache_medication_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "last_took_daily_headache_medication_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "last_took_daily_headache_medication_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "consider_headaches_tobe_migraines",
+        "text_key": "consider_headaches_tobe_migraines",
+        "type": "multi",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "consider_headaches_tobe_migraines_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "consider_headaches_tobe_migraines_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "diagnosed_with_headache_type_migraine_enum",
+        "text_key": "diagnosed_with_headache_type_migraine_enum",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "diagnosed_with_headache_type_migraine_enum_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "diagnosed_with_headache_type_migraine_enum_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "diagnosed_with_headache_type_migraine_enum_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "diagnosed_with_headache_type_migraine_enum_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "diagnosed_with_headache_type_migraine_enum_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "diagnosed_with_headache_type_migraine_enum_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "age_diagnosed_with_migraines",
+        "text_key": "age_diagnosed_with_migraines",
+        "type": "short",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "height_feet",
+        "text_key": "height_feet",
+        "type": "short",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "height_inches",
+        "text_key": "height_inches",
+        "type": "short",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "weight",
+        "text_key": "weight",
+        "type": "short",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "scoring_130501",
+        "text_key": "scoring_130501",
+        "type": "inst",
+        "visible_when": {
+          "item": "severe_headaches_last_year",
+          "operator": "equals",
+          "value": 1
+        }
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "severe_headaches_last_year": "Over the past year, have you suffered from severe headaches?",
+      "severe_headaches_last_year_opt_1": "Yes",
+      "severe_headaches_last_year_opt_2": "No",
+      "current_age": "Age:",
+      "gender": "Sex",
+      "gender_opt_1": "Male",
+      "gender_opt_2": "Female",
+      "headache_complications_numbness_enum": "When you have a severe headache, do you experience any of the following?  (check all that apply)",
+      "headache_complications_numbness_enum_opt_1": "Nausea",
+      "headache_complications_numbness_enum_opt_2": "Vomiting",
+      "headache_complications_numbness_enum_opt_3": "One side of head only",
+      "headache_complications_numbness_enum_opt_4": "Pulsating/throbbing headaches",
+      "headache_complications_numbness_enum_opt_5": "Pain-free intervals of days or weeks between severe headache attacks",
+      "headache_complications_numbness_enum_opt_6": "Sensitivity to light",
+      "headache_complications_numbness_enum_opt_7": "Sensitivity to noise",
+      "headache_complications_numbness_enum_opt_8": "Blurring of vision",
+      "headache_complications_numbness_enum_opt_9": "Seeing shimmering lights, circles, other shapes, or colors before the eyes, before the headache starts",
+      "headache_complications_numbness_enum_opt_10": "Numbness of lips, tongue, fingers, or legs before the headache starts",
+      "severe_headaches_average_frequency": "4a. About how often do your severe headaches occur? (Write In Number Of Headache Days You Have Per Week, Month or Year - please specify which in answer)",
+      "severe_headache_pain_type": "Which statement best describes the pain of your severe headaches? (Check ONE)",
+      "severe_headache_pain_type_opt_1": "Extremely severe pain",
+      "severe_headache_pain_type_opt_2": "Severe pain",
+      "severe_headache_pain_type_opt_3": "Moderately severe pain",
+      "severe_headache_pain_type_opt_4": "Mild pain",
+      "how_affected_by_headaches": "Which best describes how you are usually affected by severe headaches? (Check ONE)",
+      "how_affected_by_headaches_opt_1": "Able to work/function normally",
+      "how_affected_by_headaches_opt_2": "Working ability or activity impaired to some degree",
+      "how_affected_by_headaches_opt_3": "Working ability or activity severely impaired",
+      "how_affected_by_headaches_opt_4": "Bed rest required",
+      "how_long_unable_to_work": "Each time you have a severe headache, how long are you unable to work or undertake normal activities? (Check ONE)",
+      "how_long_unable_to_work_opt_1": "0 days (no activity restriction)",
+      "how_long_unable_to_work_opt_2": "Less than 1 day",
+      "how_long_unable_to_work_opt_3": "1-2 days",
+      "how_long_unable_to_work_opt_4": "3-5 days",
+      "how_long_unable_to_work_opt_5": "6 or more days",
+      "headache_frequency_last_three_months": "On how many days in the last 3 months did you have a headache (if headache lasted more than 1 day, count each day)?",
+      "number_days_miss_school": "9a. Because of your headaches on how many days in the last 3 months... ?  did you miss work or school",
+      "number_days_reduced_productivity": "9b. Because of your headaches on how many days in the last 3 months... ?  was your productivity at work/school reduced by half or more (not including days missed in qu. 9a above)",
+      "number_days_no_house_work": "9c. Because of your headaches on how many days in the last 3 months... ?  did you not do household work",
+      "number_days_housework_reduced_half": "9d. Because of your headaches on how many days in the last 3 months... ?  was your productivity in house-hold work reduced by half or more (not including days counted in qu. 9c above)",
+      "number_days_miss_activities": "9e. Because of your headaches on how many days in the last 3 months... ?  did you miss family, social, or leisure activities",
+      "age_headaches_began": "At what age did you BEGIN having severe headaches?",
+      "ever_goneto_hospital_for_headaches": "Have you ever gone to the hospital emergency room or to an urgent care clinic because of your severe headaches?",
+      "ever_goneto_hospital_for_headaches_opt_1": "Yes",
+      "ever_goneto_hospital_for_headaches_opt_2": "No",
+      "usual_headache_treatment": "Which best describes the way you usually treat severe headaches? (Check ONE)",
+      "usual_headache_treatment_opt_1": "Take non-prescription medications",
+      "usual_headache_treatment_opt_2": "Take prescription medications",
+      "usual_headache_treatment_opt_3": "Take both prescription and non-prescription medications",
+      "usual_headache_treatment_opt_4": "Take no medications",
+      "headache_prescription_medication_daily_basis": "Have you ever taken prescription medication for headache on a DAILY basis, whether or not you have a headache, to help prevent a severe headache from happening in the first place?",
+      "headache_prescription_medication_daily_basis_opt_1": "Yes",
+      "headache_prescription_medication_daily_basis_opt_2": "No",
+      "any_other_daily_medication_prescription_depression_enum": "Are you currently taking any other medication on a DAILY basis?  (Check all that apply)",
+      "any_other_daily_medication_prescription_depression_enum_opt_1": "Water pill or prescription diuretic for high blood pressure",
+      "any_other_daily_medication_prescription_depression_enum_opt_2": "Prescription medicine (other than water pill) for high blood pressure",
+      "any_other_daily_medication_prescription_depression_enum_opt_3": "Prescription medicine for seizures, epilepsy, or fits",
+      "any_other_daily_medication_prescription_depression_enum_opt_4": "Prescription medicine for diabetes",
+      "any_other_daily_medication_prescription_depression_enum_opt_5": "Prescription medicine for cholesterol",
+      "any_other_daily_medication_prescription_depression_enum_opt_6": "Prescription medicine for depression or anxiety",
+      "last_took_daily_headache_medication": "When did you last take prescription medication for headache on a DAILY basis to help prevent a severe headache from happening in the first place? (Check ONE)",
+      "last_took_daily_headache_medication_opt_1": "Currently taking",
+      "last_took_daily_headache_medication_opt_2": "Last took within the past 3 months",
+      "last_took_daily_headache_medication_opt_3": "Last took 3 to 12 months ago",
+      "last_took_daily_headache_medication_opt_4": "Last took more than 12 months ago",
+      "last_took_daily_headache_medication_opt_5": "Never took",
+      "consider_headaches_tobe_migraines": "Do you consider your severe headaches to be migraines?",
+      "consider_headaches_tobe_migraines_opt_1": "Yes",
+      "consider_headaches_tobe_migraines_opt_2": "No",
+      "diagnosed_with_headache_type_migraine_enum": "Have you ever been diagnosed by a physician or other health professional as suffering from... (Check all that apply)",
+      "diagnosed_with_headache_type_migraine_enum_opt_1": "Tension headaches",
+      "diagnosed_with_headache_type_migraine_enum_opt_2": "Sinus headaches",
+      "diagnosed_with_headache_type_migraine_enum_opt_3": "Cluster headaches",
+      "diagnosed_with_headache_type_migraine_enum_opt_4": "Stress headaches",
+      "diagnosed_with_headache_type_migraine_enum_opt_5": "Sick headaches",
+      "diagnosed_with_headache_type_migraine_enum_opt_6": "Migraine headaches",
+      "age_diagnosed_with_migraines": "If diagnosed with migraines, at what age were you FIRST DIAGNOSED with migraines?",
+      "height_feet": "19a. Height - in feet?",
+      "height_inches": "19b. Height - in inches?",
+      "weight": "Current weight - in pounds?",
+      "scoring_130501": "Scoring InstructionsIn Lipton et al. (2001), respondents were classified as suffering from migraine if they fulfill the criteria for migraine with aura and migraine without aura established in 1998 by the International Headache Society (IHS) (Headache Classification Committee of the International Headache Society, 1998). This included one or more severe headache in the last year with \"unilateral or pulsatile pain, and either nausea, vomiting, or phonophobia with photophobia; or visual or sensory aura before the headache\" (Lipton et al., 2001). These criteria were updated by the International Headache Society in 2004 (Headache Classification Subcommittee of the International Headache Society, 2004)."
+    }
+  }
+}

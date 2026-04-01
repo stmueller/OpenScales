@@ -1,0 +1,292 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Mcq17",
+      "code": "MCQ17",
+      "abbreviation": "MCQ17",
+      "description": "17-item self-report measure.",
+      "citation": "Heishman, S. J., Singleton, E. G., & Liguori, A. (2001). Marijuana Craving Questionnaire: Development and initial validation of a self-report instrument. Addiction, 96(7), 1023-1034.",
+      "license": "Public Domain",
+      "license_explanation": "Public domain: (C) US Government.",
+      "version": "1.0",
+      "url": "https://arc.psych.wisc.edu/self-report/"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": [
+        "mcq17_r1",
+        "mcq17_r2",
+        "mcq17_r3",
+        "mcq17_r4",
+        "mcq17_r5",
+        "mcq17_r6",
+        "mcq17_r7"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "mcq_com",
+        "name": "Mcq Com",
+        "description": "4 forward, 3 reverse items."
+      },
+      {
+        "id": "mcq_exp",
+        "name": "Mcq Exp",
+        "description": "2 forward, 1 reverse items."
+      },
+      {
+        "id": "mcq_pur",
+        "name": "Mcq Pur",
+        "description": "1 forward, 2 reverse items."
+      },
+      {
+        "id": "mcq_tot",
+        "name": "Mcq Tot",
+        "description": "7 forward, 10 reverse items."
+      }
+    ],
+    "items": [
+      {
+        "id": "mcq17_inst",
+        "text_key": "mcq17_inst",
+        "type": "inst"
+      },
+      {
+        "id": "mcq17_1",
+        "text_key": "mcq17_1",
+        "type": "likert",
+        "dimension": "mcq_com"
+      },
+      {
+        "id": "mcq17_2",
+        "text_key": "mcq17_2",
+        "type": "likert",
+        "dimension": "mcq_com"
+      },
+      {
+        "id": "mcq17_3",
+        "text_key": "mcq17_3",
+        "type": "likert",
+        "dimension": "mcq_com"
+      },
+      {
+        "id": "mcq17_4",
+        "text_key": "mcq17_4",
+        "type": "likert",
+        "dimension": "mcq_com"
+      },
+      {
+        "id": "mcq17_5",
+        "text_key": "mcq17_5",
+        "type": "likert",
+        "dimension": "mcq_com"
+      },
+      {
+        "id": "mcq17_6",
+        "text_key": "mcq17_6",
+        "type": "likert",
+        "dimension": "mcq_com"
+      },
+      {
+        "id": "mcq17_7",
+        "text_key": "mcq17_7",
+        "type": "likert",
+        "dimension": "mcq_com"
+      },
+      {
+        "id": "mcq17_8",
+        "text_key": "mcq17_8",
+        "type": "likert",
+        "dimension": "mcq_tot"
+      },
+      {
+        "id": "mcq17_9",
+        "text_key": "mcq17_9",
+        "type": "likert",
+        "dimension": "mcq_tot"
+      },
+      {
+        "id": "mcq17_10",
+        "text_key": "mcq17_10",
+        "type": "likert",
+        "dimension": "mcq_tot"
+      },
+      {
+        "id": "mcq17_11",
+        "text_key": "mcq17_11",
+        "type": "likert",
+        "dimension": "mcq_tot"
+      },
+      {
+        "id": "mcq17_12",
+        "text_key": "mcq17_12",
+        "type": "likert",
+        "dimension": "mcq_exp"
+      },
+      {
+        "id": "mcq17_13",
+        "text_key": "mcq17_13",
+        "type": "likert",
+        "dimension": "mcq_exp"
+      },
+      {
+        "id": "mcq17_14",
+        "text_key": "mcq17_14",
+        "type": "likert",
+        "dimension": "mcq_exp"
+      },
+      {
+        "id": "mcq17_15",
+        "text_key": "mcq17_15",
+        "type": "likert",
+        "dimension": "mcq_pur"
+      },
+      {
+        "id": "mcq17_16",
+        "text_key": "mcq17_16",
+        "type": "likert",
+        "dimension": "mcq_pur"
+      },
+      {
+        "id": "mcq17_17",
+        "text_key": "mcq17_17",
+        "type": "likert",
+        "dimension": "mcq_pur"
+      }
+    ],
+    "scoring": {
+      "mcq_com": {
+        "method": "sum_coded",
+        "items": [
+          "mcq17_1",
+          "mcq17_2",
+          "mcq17_3",
+          "mcq17_5",
+          "mcq17_4",
+          "mcq17_6",
+          "mcq17_7"
+        ],
+        "description": "MCQ_Com (7 items)",
+        "item_coding": {
+          "mcq17_1": 1,
+          "mcq17_2": 1,
+          "mcq17_3": 1,
+          "mcq17_5": 1,
+          "mcq17_4": -1,
+          "mcq17_6": -1,
+          "mcq17_7": -1
+        }
+      },
+      "mcq_exp": {
+        "method": "sum_coded",
+        "items": [
+          "mcq17_12",
+          "mcq17_13",
+          "mcq17_14"
+        ],
+        "description": "MCQ_Exp (3 items)",
+        "item_coding": {
+          "mcq17_12": 1,
+          "mcq17_13": 1,
+          "mcq17_14": -1
+        }
+      },
+      "mcq_pur": {
+        "method": "sum_coded",
+        "items": [
+          "mcq17_17",
+          "mcq17_15",
+          "mcq17_16"
+        ],
+        "description": "MCQ_Pur (3 items)",
+        "item_coding": {
+          "mcq17_17": 1,
+          "mcq17_15": -1,
+          "mcq17_16": -1
+        }
+      },
+      "mcq_tot": {
+        "method": "sum_coded",
+        "items": [
+          "mcq17_1",
+          "mcq17_2",
+          "mcq17_3",
+          "mcq17_5",
+          "mcq17_12",
+          "mcq17_13",
+          "mcq17_17",
+          "mcq17_4",
+          "mcq17_6",
+          "mcq17_7",
+          "mcq17_8",
+          "mcq17_9",
+          "mcq17_10",
+          "mcq17_11",
+          "mcq17_14",
+          "mcq17_15",
+          "mcq17_16"
+        ],
+        "description": "MCQ_Tot (17 items)",
+        "item_coding": {
+          "mcq17_1": 1,
+          "mcq17_2": 1,
+          "mcq17_3": 1,
+          "mcq17_5": 1,
+          "mcq17_12": 1,
+          "mcq17_13": 1,
+          "mcq17_17": 1,
+          "mcq17_4": -1,
+          "mcq17_6": -1,
+          "mcq17_7": -1,
+          "mcq17_8": -1,
+          "mcq17_9": -1,
+          "mcq17_10": -1,
+          "mcq17_11": -1,
+          "mcq17_14": -1,
+          "mcq17_15": -1,
+          "mcq17_16": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "mcq17_inst": "Read each question and determine how strongly you agree with each statement, regarding marijuana. If you do not smoke but otherwise consume marijuana, respond based on your typical use. Please answer based on how you are thinking and feeling RIGHT NOW.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "mcq17_r1": "Strongly disagree",
+      "mcq17_r2": "",
+      "mcq17_r3": "",
+      "mcq17_r4": "",
+      "mcq17_r5": "",
+      "mcq17_r6": "",
+      "mcq17_r7": "Strongly agree",
+      "mcq17_1": "If I smoke a little marijuana right now, I would not be able to stop using it.",
+      "mcq17_2": "I would do almost anything for a joint.",
+      "mcq17_3": "It would be difficult to turn down a joint right this minute.",
+      "mcq17_4": "Starting now, I could go without smoking marijuana for a long time",
+      "mcq17_5": "I would not be able to control how much marijuana I smoked if I had some here.",
+      "mcq17_6": "I could easily limit how much marijuana I smoked right now.",
+      "mcq17_7": "I do not need to smoke marijuana right now.",
+      "mcq17_8": "I would feel more anxious if I smoked marijuana right now.",
+      "mcq17_9": "I would feel less in control of things right now if I could smoke marijuana.",
+      "mcq17_10": "If I smoked marijuana right now, I would feel more tense.",
+      "mcq17_11": "I would feel more restless if I smoked marijuana right now.",
+      "mcq17_12": "Smoking marijuana would help me sleep better at night.",
+      "mcq17_13": "If I were smoking marijuana right now, I would feel less nervous.",
+      "mcq17_14": "Smoking marijuana would not make me content.",
+      "mcq17_15": "Smoking marijuana would not be pleasant right now.",
+      "mcq17_16": "Right now, I am not making any plans to use marijuana.",
+      "mcq17_17": "It would be great to smoke marijuana right now."
+    }
+  }
+}

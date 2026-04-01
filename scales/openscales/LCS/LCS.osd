@@ -1,0 +1,172 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Life Crafting Scale",
+      "abbreviation": "LCS",
+      "description": "9-item self-report measure of life crafting behaviors across cognitive meaning-making, social support seeking, and challenge seeking dimensions.",
+      "citation": "Chen, S., van der Meij, L., van Zyl, L. E., & Demerouti, E. (2022). The Life Crafting Scale: Development and validation of a multi-dimensional meaning-making measure. Frontiers in Psychology, 13, 795686. https://doi.org/10.3389/fpsyg.2022.795686",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyg.2022.795686",
+      "domain": "Well-Being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "lcs_opt1",
+        "lcs_opt2",
+        "lcs_opt3",
+        "lcs_opt4",
+        "lcs_opt5"
+      ],
+      "question_head": "lcs_inst"
+    },
+    "dimensions": [
+      {
+        "id": "past_reflection",
+        "name": "Past Reflection",
+        "description": "Reflecting on how one's life and actions contribute to others and society (cognitive crafting). Higher scores indicate more frequent cognitive meaning-making."
+      },
+      {
+        "id": "social_crafting",
+        "name": "Social Crafting",
+        "description": "Seeking social support and drawing on relationships when facing difficulties. Higher scores indicate more active social crafting behaviors."
+      },
+      {
+        "id": "future_planning",
+        "name": "Future Planning",
+        "description": "Seeking challenges and opportunities for growth and personal development. Higher scores indicate more active challenge-seeking behaviors."
+      }
+    ],
+    "items": [
+      {
+        "id": "lcs1",
+        "text_key": "lcs1",
+        "type": "likert",
+        "dimension": "past_reflection"
+      },
+      {
+        "id": "lcs2",
+        "text_key": "lcs2",
+        "type": "likert",
+        "dimension": "past_reflection"
+      },
+      {
+        "id": "lcs3",
+        "text_key": "lcs3",
+        "type": "likert",
+        "dimension": "past_reflection"
+      },
+      {
+        "id": "lcs4",
+        "text_key": "lcs4",
+        "type": "likert",
+        "dimension": "social_crafting"
+      },
+      {
+        "id": "lcs5",
+        "text_key": "lcs5",
+        "type": "likert",
+        "dimension": "social_crafting"
+      },
+      {
+        "id": "lcs6",
+        "text_key": "lcs6",
+        "type": "likert",
+        "dimension": "social_crafting"
+      },
+      {
+        "id": "lcs7",
+        "text_key": "lcs7",
+        "type": "likert",
+        "dimension": "future_planning"
+      },
+      {
+        "id": "lcs8",
+        "text_key": "lcs8",
+        "type": "likert",
+        "dimension": "future_planning"
+      },
+      {
+        "id": "lcs9",
+        "text_key": "lcs9",
+        "type": "likert",
+        "dimension": "future_planning"
+      }
+    ],
+    "scoring": {
+      "past_reflection": {
+        "method": "mean_coded",
+        "items": [
+          "lcs1",
+          "lcs2",
+          "lcs3"
+        ],
+        "description": "Mean of items 1-3 (cognitive crafting: thinking about how life helps others and contributes to society).",
+        "item_coding": {
+          "lcs1": 1,
+          "lcs2": 1,
+          "lcs3": 1
+        }
+      },
+      "social_crafting": {
+        "method": "mean_coded",
+        "items": [
+          "lcs4",
+          "lcs5",
+          "lcs6"
+        ],
+        "description": "Mean of items 4-6 (seeking social support: asking for advice and support from family and others).",
+        "item_coding": {
+          "lcs4": 1,
+          "lcs5": 1,
+          "lcs6": 1
+        }
+      },
+      "future_planning": {
+        "method": "mean_coded",
+        "items": [
+          "lcs7",
+          "lcs8",
+          "lcs9"
+        ],
+        "description": "Mean of items 7-9 (seeking challenges: working hard on challenging activities and seeking new opportunities for growth).",
+        "item_coding": {
+          "lcs7": 1,
+          "lcs8": 1,
+          "lcs9": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "lcs_inst": "For the following set of questions, think about how you approach different components of your life. Consider the strategies you employ to create meaningful life experiences. Then rate each item as it applies to your life.",
+      "lcs_opt1": "Never",
+      "lcs_opt2": "Sometimes",
+      "lcs_opt3": "Regularly",
+      "lcs_opt4": "Often",
+      "lcs_opt5": "Always",
+      "lcs1": "I think about how my life helps others.",
+      "lcs2": "I think about how my actions positively impact my community.",
+      "lcs3": "I think about how my life contributes to society.",
+      "lcs4": "I actively ask people for advice when I encounter difficulties.",
+      "lcs5": "I seek support from my family when I am down.",
+      "lcs6": "I am willing to ask others for help when things become too difficult to bear.",
+      "lcs7": "I try to work hard on challenging activities.",
+      "lcs8": "I change my activities so that they are more challenging.",
+      "lcs9": "I seek out opportunities that challenge my skills and abilities.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

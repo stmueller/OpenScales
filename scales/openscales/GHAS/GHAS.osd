@@ -1,0 +1,261 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Gaming Hazard Assessment Scale",
+      "code": "GHAS",
+      "abbreviation": "GHAS",
+      "description": "18-item risk screening tool for gaming disorder based on DSM-5 and ICD-11 criteria. Assesses three dimensions: out-of-control gaming, impairment of social functioning, and cognitive impairment. Total scores range from 0 to 54, with cutoffs for no risk (0-18), moderate risk (19-36), and high risk (37-54).",
+      "citation": "Tang, Y., Liao, Z., Huang, S., Hao, J., Huang, Q., Huang, X., Chen, X., Lin, S., Li, Y., Qi, J., & Shen, H. (2022). Development and validation of a risk assessment tool for gaming disorder in China: The Gaming Hazard Assessment Scale. Frontiers in Public Health, 10, 870358. https://doi.org/10.3389/fpubh.2022.870358",
+      "license": "CC BY 4.0",
+      "license_explanation": "Published in Frontiers in Public Health under Creative Commons Attribution 4.0 International License.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpubh.2022.870358",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "max": 3,
+      "labels": [
+        "likert_0",
+        "likert_1",
+        "likert_2",
+        "likert_3"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "out_of_control",
+        "name": "Out-of-Control",
+        "description": "Loss of control over gaming behavior including inability to stop, playing longer than intended, and failed attempts to reduce gaming."
+      },
+      {
+        "id": "social_impairment",
+        "name": "Impairment of Social Functioning",
+        "description": "Negative impact of gaming on social relationships, daily activities, sleep, finances, and responsibilities."
+      },
+      {
+        "id": "cognitive_impairment",
+        "name": "Cognitive Impairment",
+        "description": "Preoccupation with gaming, preference for gaming over other activities, and irritability when asked to stop."
+      }
+    ],
+    "items": [
+      {
+        "id": "ghas1",
+        "text_key": "ghas1",
+        "type": "likert",
+        "dimension": "out_of_control"
+      },
+      {
+        "id": "ghas2",
+        "text_key": "ghas2",
+        "type": "likert",
+        "dimension": "out_of_control"
+      },
+      {
+        "id": "ghas3",
+        "text_key": "ghas3",
+        "type": "likert",
+        "dimension": "out_of_control"
+      },
+      {
+        "id": "ghas5",
+        "text_key": "ghas5",
+        "type": "likert",
+        "dimension": "out_of_control"
+      },
+      {
+        "id": "ghas8",
+        "text_key": "ghas8",
+        "type": "likert",
+        "dimension": "cognitive_impairment"
+      },
+      {
+        "id": "ghas9",
+        "text_key": "ghas9",
+        "type": "likert",
+        "dimension": "social_impairment"
+      },
+      {
+        "id": "ghas10",
+        "text_key": "ghas10",
+        "type": "likert",
+        "dimension": "cognitive_impairment"
+      },
+      {
+        "id": "ghas11",
+        "text_key": "ghas11",
+        "type": "likert",
+        "dimension": "cognitive_impairment"
+      },
+      {
+        "id": "ghas12",
+        "text_key": "ghas12",
+        "type": "likert",
+        "dimension": "cognitive_impairment"
+      },
+      {
+        "id": "ghas14",
+        "text_key": "ghas14",
+        "type": "likert",
+        "dimension": "cognitive_impairment"
+      },
+      {
+        "id": "ghas18",
+        "text_key": "ghas18",
+        "type": "likert",
+        "dimension": "out_of_control"
+      },
+      {
+        "id": "ghas21",
+        "text_key": "ghas21",
+        "type": "likert",
+        "dimension": "out_of_control"
+      },
+      {
+        "id": "ghas26",
+        "text_key": "ghas26",
+        "type": "likert",
+        "dimension": "social_impairment"
+      },
+      {
+        "id": "ghas27",
+        "text_key": "ghas27",
+        "type": "likert",
+        "dimension": "social_impairment"
+      },
+      {
+        "id": "ghas28",
+        "text_key": "ghas28",
+        "type": "likert",
+        "dimension": "social_impairment"
+      },
+      {
+        "id": "ghas30",
+        "text_key": "ghas30",
+        "type": "likert",
+        "dimension": "social_impairment"
+      },
+      {
+        "id": "ghas33",
+        "text_key": "ghas33",
+        "type": "likert",
+        "dimension": "social_impairment"
+      },
+      {
+        "id": "ghas34",
+        "text_key": "ghas34",
+        "type": "likert",
+        "dimension": "social_impairment"
+      }
+    ],
+    "scoring": {
+      "out_of_control": {
+        "method": "mean_coded",
+        "items": [
+          "ghas1",
+          "ghas2",
+          "ghas3",
+          "ghas5",
+          "ghas18",
+          "ghas21"
+        ],
+        "description": "Out of Control (6 items).",
+        "item_coding": {
+          "ghas1": 1,
+          "ghas2": 1,
+          "ghas3": 1,
+          "ghas5": 1,
+          "ghas18": 1,
+          "ghas21": 1
+        }
+      },
+      "social_impairment": {
+        "method": "mean_coded",
+        "items": [
+          "ghas9",
+          "ghas26",
+          "ghas27",
+          "ghas28",
+          "ghas30",
+          "ghas33",
+          "ghas34"
+        ],
+        "description": "Social Impairment (7 items).",
+        "item_coding": {
+          "ghas9": 1,
+          "ghas26": 1,
+          "ghas27": 1,
+          "ghas28": 1,
+          "ghas30": 1,
+          "ghas33": 1,
+          "ghas34": 1
+        }
+      },
+      "cognitive_impairment": {
+        "method": "mean_coded",
+        "items": [
+          "ghas8",
+          "ghas10",
+          "ghas11",
+          "ghas12",
+          "ghas14"
+        ],
+        "description": "Cognitive Impairment (5 items).",
+        "item_coding": {
+          "ghas8": 1,
+          "ghas10": 1,
+          "ghas11": 1,
+          "ghas12": 1,
+          "ghas14": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_0": "Never",
+      "likert_1": "Sometimes",
+      "likert_2": "Often",
+      "likert_3": "Always",
+      "question_head": "Please indicate how often each of the following statements applies to you in the past 12 months.",
+      "debrief": "Thank you for completing the Gaming Hazard Assessment Scale.",
+      "ghas1": "I can't control how long or how often I play games.",
+      "ghas2": "I play games more or for longer than I want.",
+      "ghas3": "Once I start playing, it's hard to stop.",
+      "ghas5": "I keep playing games even if I have lost interest or feel bored with the game itself.",
+      "ghas8": "I prefer playing games to participating in other entertainment activities.",
+      "ghas9": "I feel like there's no fun in life except playing games.",
+      "ghas10": "When not playing games, I'm still thinking about games or game-related things.",
+      "ghas11": "I get excited when I see or hear something about games.",
+      "ghas12": "I have thoughts or urges to play games when I see or hear something related to the games.",
+      "ghas14": "I get irritable when I'm asked to stop the game or reduce gaming time.",
+      "ghas18": "I have tried to reduce gaming time or stop playing but failed.",
+      "ghas21": "The actual gaming time is longer than promised.",
+      "ghas26": "I have conflict with family members other than parents due to playing games.",
+      "ghas27": "I seldom go out because of playing games.",
+      "ghas28": "I rarely socialize with people because of playing games.",
+      "ghas30": "I have serious sleep problems (e.g., insomnia, wakefulness) caused by playing games.",
+      "ghas33": "Playing games costs a lot of money and lowers my living standards.",
+      "ghas34": "I delay important things (e.g., exams, job hunting) because of playing games.",
+      "ghas4": "I keep playing games even if I have lost interest or feel bored with the game itself.",
+      "ghas6": "The actual gaming time is longer than promised.",
+      "ghas7": "I feel like there's no fun in life except playing games.",
+      "ghas13": "I delay important things (e.g., exams, job hunting) because of playing games.",
+      "ghas15": "When not playing games, I'm still thinking about games or game-related things.",
+      "ghas16": "I get excited when I see or hear something about games.",
+      "ghas17": "I have thoughts or urges to play games when I see or hear something related to the games."
+    }
+  }
+}

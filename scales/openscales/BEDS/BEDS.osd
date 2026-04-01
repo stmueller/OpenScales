@@ -1,0 +1,214 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Brief Emotion Dysregulation Scale",
+      "code": "BEDS",
+      "abbreviation": "BEDS",
+      "description": "12-item Brief Emotion Dysregulation Scale with 3 subscales: Sensitivity (3 items), Lability (3 items), and Consequences (6 items). 4-point Likert (1=Strongly disagree to 4=Strongly agree). Items 6, 11, 12 are reverse-scored. Higher scores indicate greater emotion dysregulation.",
+      "citation": "Wycoff, A. M., Griffin, S. A., Helle, A. C., Haney, A. M., Watts, A. L., & Trull, T. J. (2023). The Brief Emotion Dysregulation Scale: Development, preliminary validation, and recommendations for use. Assessment, 31(2), 335-349. https://doi.org/10.1177/10731911231161800",
+      "license": "Free for research use",
+      "license_explanation": "Authors have made the scale freely available for research use.",
+      "license_url": "https://doi.org/10.1177/10731911231161800",
+      "version": "1.0",
+      "url": "https://doi.org/10.1177/10731911231161800",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "beds_r1",
+        "beds_r2",
+        "beds_r3",
+        "beds_r4"
+      ],
+      "question_head": "beds_head"
+    },
+    "dimensions": [
+      {
+        "id": "sensitivity",
+        "name": "Sensitivity",
+        "description": "Emotional sensitivity (items 1, 3, 6R). Mean 1–4."
+      },
+      {
+        "id": "lability",
+        "name": "Lability",
+        "description": "Emotional lability/unpredictability (items 2, 4, 5). Mean 1–4."
+      },
+      {
+        "id": "consequences",
+        "name": "Consequences",
+        "description": "Negative consequences of emotions (items 7, 8, 9, 10, 11R, 12R). Mean 1–4 or count of items rated agree/strongly agree (0–6)."
+      }
+    ],
+    "items": [
+      {
+        "id": "beds1",
+        "text_key": "beds1",
+        "type": "likert",
+        "dimension": "sensitivity"
+      },
+      {
+        "id": "beds2",
+        "text_key": "beds2",
+        "type": "likert",
+        "dimension": "lability"
+      },
+      {
+        "id": "beds3",
+        "text_key": "beds3",
+        "type": "likert",
+        "dimension": "sensitivity"
+      },
+      {
+        "id": "beds4",
+        "text_key": "beds4",
+        "type": "likert",
+        "dimension": "lability"
+      },
+      {
+        "id": "beds5",
+        "text_key": "beds5",
+        "type": "likert",
+        "dimension": "lability"
+      },
+      {
+        "id": "beds6",
+        "text_key": "beds6",
+        "type": "likert",
+        "dimension": "sensitivity"
+      },
+      {
+        "id": "beds7",
+        "text_key": "beds7",
+        "type": "likert",
+        "dimension": "consequences"
+      },
+      {
+        "id": "beds8",
+        "text_key": "beds8",
+        "type": "likert",
+        "dimension": "consequences"
+      },
+      {
+        "id": "beds9",
+        "text_key": "beds9",
+        "type": "likert",
+        "dimension": "consequences"
+      },
+      {
+        "id": "beds10",
+        "text_key": "beds10",
+        "type": "likert",
+        "dimension": "consequences"
+      },
+      {
+        "id": "beds11",
+        "text_key": "beds11",
+        "type": "likert",
+        "dimension": "consequences"
+      },
+      {
+        "id": "beds12",
+        "text_key": "beds12",
+        "type": "likert",
+        "dimension": "consequences"
+      }
+    ],
+    "scoring": {
+      "sensitivity": {
+        "method": "mean_coded",
+        "items": [
+          "beds1",
+          "beds3",
+          "beds6"
+        ],
+        "description": "Sensitivity (items 1, 3, 6R). Mean 1–4. Item 6 reverse-scored.",
+        "item_coding": {
+          "beds1": 1,
+          "beds3": 1,
+          "beds6": -1
+        }
+      },
+      "lability": {
+        "method": "mean_coded",
+        "items": [
+          "beds2",
+          "beds4",
+          "beds5"
+        ],
+        "description": "Lability (items 2, 4, 5). Mean 1–4.",
+        "item_coding": {
+          "beds2": 1,
+          "beds4": 1,
+          "beds5": 1
+        }
+      },
+      "consequences": {
+        "method": "mean_coded",
+        "items": [
+          "beds7",
+          "beds8",
+          "beds9",
+          "beds10",
+          "beds11",
+          "beds12"
+        ],
+        "description": "Consequences (items 7, 8, 9, 10, 11R, 12R). Mean 1–4. Items 11, 12 reverse-scored.",
+        "item_coding": {
+          "beds7": 1,
+          "beds8": 1,
+          "beds9": 1,
+          "beds10": 1,
+          "beds11": -1,
+          "beds12": -1
+        }
+      }
+    },
+    "computed": {
+      "consequences_count": {
+        "expression": "(answer.beds7 > 2) + (answer.beds8 > 2) + (answer.beds9 > 2) + (answer.beds10 > 2) + (answer.beds11 < 3) + (answer.beds12 < 3)",
+        "type": "number",
+        "label": "Consequences Count Score",
+        "description": "Count of consequence items endorsed (agree or strongly agree, after reverse scoring). Range 0–6."
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Strongly Disagree",
+      "likert_2": "Disagree",
+      "likert_3": "Agree",
+      "likert_4": "Strongly Agree",
+      "question_head": "Please indicate how much you agree or disagree with each statement.",
+      "beds1": "I cry easily.",
+      "beds2": "My emotions about people or events change frequently.",
+      "beds3": "I've always been a sensitive person.",
+      "beds4": "It's hard to predict my emotions from one moment to the next.",
+      "beds5": "I can feel one way in one minute and feel totally different in the next.",
+      "beds6": "I have a thick skin.",
+      "beds7": "My emotions cause problems or conflicts with other people.",
+      "beds8": "When I'm emotional, I don't make the best decisions.",
+      "beds9": "When I'm emotional, I do things that I later regret.",
+      "beds10": "It bothers me that I'm so emotional.",
+      "beds11": "My emotions rarely cause problems for me.",
+      "beds12": "My emotions don't get the best of me.",
+      "debrief": "Thank you for completing the Brief Emotion Dysregulation Scale.",
+      "beds_inst": "Below are a series of statements that describe how people experience their emotions. For each statement, please rate how much you agree or disagree with the statement.",
+      "beds_r1": "Strongly disagree",
+      "beds_r2": "Disagree",
+      "beds_r3": "Agree",
+      "beds_r4": "Strongly agree",
+      "beds_head": "Below is a statement that describes how people experience their emotions. Please rate how much you agree or disagree with the statement."
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Smartphone Addiction Scale - Short Version",
+      "code": "SASV",
+      "abbreviation": "SAS-SV",
+      "description": "10-item short version of the Smartphone Addiction Scale measuring problematic smartphone use. Scores range from 10 to 60. At-risk cutoffs: ≥31 for males, ≥33 for females.",
+      "citation": "Kwon, M., Kim, D.-J., Cho, H., & Yang, S. (2013). The Smartphone Addiction Scale: Development and validation of a short version for adolescents. PLOS ONE, 8(12), e83558. https://doi.org/10.1371/journal.pone.0083558",
+      "license": "Open access (CC BY)",
+      "version": "1.0",
+      "url": "https://doi.org/10.1371/journal.pone.0083558"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": [
+        "sasv_r1",
+        "sasv_r2",
+        "sasv_r3",
+        "sasv_r4",
+        "sasv_r5",
+        "sasv_r6"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Smartphone Addiction",
+        "abbreviation": "SAS-SV",
+        "description": "Total problematic smartphone use score (range 10–60). At-risk cutoffs: ≥31 males, ≥33 females.",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "sasv1",
+        "text_key": "sasv1",
+        "type": "likert"
+      },
+      {
+        "id": "sasv2",
+        "text_key": "sasv2",
+        "type": "likert"
+      },
+      {
+        "id": "sasv3",
+        "text_key": "sasv3",
+        "type": "likert"
+      },
+      {
+        "id": "sasv4",
+        "text_key": "sasv4",
+        "type": "likert"
+      },
+      {
+        "id": "sasv5",
+        "text_key": "sasv5",
+        "type": "likert"
+      },
+      {
+        "id": "sasv6",
+        "text_key": "sasv6",
+        "type": "likert"
+      },
+      {
+        "id": "sasv7",
+        "text_key": "sasv7",
+        "type": "likert"
+      },
+      {
+        "id": "sasv8",
+        "text_key": "sasv8",
+        "type": "likert"
+      },
+      {
+        "id": "sasv9",
+        "text_key": "sasv9",
+        "type": "likert"
+      },
+      {
+        "id": "sasv10",
+        "text_key": "sasv10",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "sasv1",
+          "sasv2",
+          "sasv3",
+          "sasv4",
+          "sasv5",
+          "sasv6",
+          "sasv7",
+          "sasv8",
+          "sasv9",
+          "sasv10"
+        ],
+        "description": "Sum of all 10 items (range 10–60). At-risk cutoffs: ≥31 for males, ≥33 for females.",
+        "item_coding": {
+          "sasv1": 1,
+          "sasv2": 1,
+          "sasv3": 1,
+          "sasv4": 1,
+          "sasv5": 1,
+          "sasv6": 1,
+          "sasv7": 1,
+          "sasv8": 1,
+          "sasv9": 1,
+          "sasv10": 1
+        },
+        "norms": {
+          "thresholds": [
+            {
+              "min": 10,
+              "max": 30,
+              "label": "Normal"
+            },
+            {
+              "min": 31,
+              "max": 60,
+              "label": "At-Risk"
+            }
+          ]
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "The Smartphone Addiction Scale – Short Version (SAS-SV) measures problematic smartphone use. Note: At-risk cutoffs differ by sex (≥31 males, ≥33 females); the threshold shown uses the male cutoff.",
+      "footer_refs": [
+        "Kwon, M., Kim, D.-J., Cho, H., & Yang, S. (2013). The Smartphone Addiction Scale: Development and validation of a short version for adolescents. PLOS ONE, 8(12), e83558."
+      ]
+    },
+    "data_output": {
+      "individual_file": "SASV-{subnum}.csv",
+      "pooled_file": "SASV-pooled.csv",
+      "report_file": "SASV-report-{subnum}.html",
+      "columns": "subnum,order,timestamp,question_id,text_key,dimension,coding,response,rt",
+      "pooled_columns": ""
+    }
+  },
+  "translations": {
+    "en": {
+      "question_head": "How much do you agree or disagree with the following statements about your smartphone use?",
+      "sasv_r1": "Strongly Disagree",
+      "sasv_r2": "Disagree",
+      "sasv_r3": "Slightly Disagree",
+      "sasv_r4": "Slightly Agree",
+      "sasv_r5": "Agree",
+      "sasv_r6": "Strongly Agree",
+      "sasv1": "Missing planned work due to smartphone use",
+      "sasv2": "Having a hard time concentrating in class, while doing assignments, or while working, due to smartphone use",
+      "sasv3": "Feeling pain in the wrists or at the back of the neck while using a smartphone",
+      "sasv4": "Won't be able to stand not having a smartphone",
+      "sasv5": "Feeling impatient and fretful when I am not holding my smartphone",
+      "sasv6": "Having my smartphone in mind even when I am not using it",
+      "sasv7": "I will never give up using my smartphone even when my daily life is already greatly affected by it",
+      "sasv8": "Constantly checking my smartphone so as not to miss conversations between other people on social media",
+      "sasv9": "Using my smartphone longer than I had intended",
+      "sasv10": "The people around me tell me that I use my smartphone too much",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

@@ -1,0 +1,497 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Personal History of Gastrointestinal Conditions",
+      "code": "PX191001",
+      "abbreviation": "PX191001",
+      "description": "This self-administered questionnaire asks respondents about their personal history of several gastrointestinal conditions including colon or rectal polyps, gallbladder conditions, gastric ulcers, Barretts esophagus, ulcerative colitis/Crohns disease, colon or rectal cancer, pancreatic cancer, and ga",
+      "domain": "Gastrointestinal",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/191001]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/191001"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "upper_endoscopy",
+        "text_key": "upper_endoscopy",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "upper_endoscopy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "upper_endoscopy_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "virtual_ct_colonoscopy",
+        "text_key": "virtual_ct_colonoscopy",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "virtual_ct_colonoscopy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "virtual_ct_colonoscopy_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "colonoscopy",
+        "text_key": "colonoscopy",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "colonoscopy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "colonoscopy_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "initial_reason_colon",
+        "text_key": "initial_reason_colon",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "colonoscopy",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "initial_reason_colon_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "initial_reason_colon_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "initial_reason_colon_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "initial_reason_colon_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "initial_reason_colon_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "initial_reason_colon_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "initial_reason_colon_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "initial_reason_colon_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "initial_reason_colon_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "sigmoidoscopy",
+        "text_key": "sigmoidoscopy",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sigmoidoscopy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sigmoidoscopy_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "initial_reason_sigmoid",
+        "text_key": "initial_reason_sigmoid",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sigmoidoscopy",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "initial_reason_sigmoid_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "diverticulitis_or_diverticulosis_enum",
+        "text_key": "diverticulitis_or_diverticulosis_enum",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "diverticulitis_or_diverticulosis_enum_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "diverticulitis_or_diverticulosis_enum_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "diverticulitis_year_of_diagnosis",
+        "text_key": "diverticulitis_year_of_diagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "colon_or_rectal_polyp",
+        "text_key": "colon_or_rectal_polyp",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "colon_or_rectal_polyp_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "colon_or_rectal_polyp_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "polyp_year_of_diagnosis",
+        "text_key": "polyp_year_of_diagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "cancer_of_colon_or_rectum",
+        "text_key": "cancer_of_colon_or_rectum",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "cancer_of_colon_or_rectum_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_of_colon_or_rectum_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "cancer_year_of_diagnosis",
+        "text_key": "cancer_year_of_diagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "gall_bladder_removal",
+        "text_key": "gall_bladder_removal",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "gall_bladder_removal_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "gall_bladder_removal_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "gall_bladder_removal_year_ofdiagnosis",
+        "text_key": "gall_bladder_removal_year_ofdiagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "gastric_or_duodenal_ulcer",
+        "text_key": "gastric_or_duodenal_ulcer",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "gastric_or_duodenal_ulcer_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "gastric_or_duodenal_ulcer_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "ulcer_year_of_diagnosis",
+        "text_key": "ulcer_year_of_diagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "barretts_esophagus",
+        "text_key": "barretts_esophagus",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "barretts_esophagus_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "barretts_esophagus_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "barretts_esophagus_year_of_diagnosis",
+        "text_key": "barretts_esophagus_year_of_diagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "ulcerative_colitiscrohns_disease",
+        "text_key": "ulcerative_colitiscrohns_disease",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "ulcerative_colitiscrohns_disease_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "ulcerative_colitiscrohns_disease_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "ulcerative_colitiscrohns_year_of_diagnosis",
+        "text_key": "ulcerative_colitiscrohns_year_of_diagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "gastrointestinal_bleeding",
+        "text_key": "gastrointestinal_bleeding",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "gastrointestinal_bleeding_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "gastrointestinal_bleeding_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "site_of_the_bleeding_unkown_enum",
+        "text_key": "site_of_the_bleeding_unkown_enum",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "site_of_the_bleeding_unkown_enum_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "site_of_the_bleeding_unkown_enum_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "site_of_the_bleeding_unkown_enum_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "site_of_the_bleeding_unkown_enum_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "site_of_the_bleeding_unkown_enum_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "site_of_the_bleeding_unkown_enum_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "site_of_the_bleeding_other_specify",
+        "text_key": "site_of_the_bleeding_other_specify",
+        "type": "short"
+      },
+      {
+        "id": "bleeding_year_enum",
+        "text_key": "bleeding_year_enum",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "bleeding_year_enum_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "bleeding_year_enum_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "bleeding_year_enum_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "bleeding_year_enum_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "bleeding_year_enum_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "bleeding_year_enum_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "bleeding_year_enum_opt_7",
+            "value": 7
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "upper_endoscopy": "In the past 2 years, have you had...  an upper endoscopy (esophagus/stomach)?",
+      "upper_endoscopy_opt_1": "No",
+      "upper_endoscopy_opt_2": "Yes",
+      "virtual_ct_colonoscopy": "In the past 2 years, have you had...  a (Virtual) CT colonoscopy?",
+      "virtual_ct_colonoscopy_opt_1": "No",
+      "virtual_ct_colonoscopy_opt_2": "Yes",
+      "colonoscopy": "In the past 2 years, have you had...  a colonoscopy?",
+      "colonoscopy_opt_1": "No",
+      "colonoscopy_opt_2": "Yes",
+      "initial_reason_colon": "Initial reason(s) you had a colonoscopy?",
+      "initial_reason_colon_opt_1": "visible blood",
+      "initial_reason_colon_opt_2": "family history of colon cancer",
+      "initial_reason_colon_opt_3": "Virtual (CT) colonography",
+      "initial_reason_colon_opt_4": "occult fecal blood",
+      "initial_reason_colon_opt_5": "diarrhea/constipation",
+      "initial_reason_colon_opt_6": "prior polyps",
+      "initial_reason_colon_opt_7": "abdominal pain",
+      "initial_reason_colon_opt_8": "barium enema",
+      "initial_reason_colon_opt_9": "asymptomatic or routine screening",
+      "sigmoidoscopy": "In the past 2 years, have you had...  a sigmoidoscopy?",
+      "sigmoidoscopy_opt_1": "No",
+      "sigmoidoscopy_opt_2": "Yes",
+      "initial_reason_sigmoid": "Initial reason(s) you had a sigmoidoscopy?",
+      "initial_reason_sigmoid_opt_1": "visible blood",
+      "initial_reason_sigmoid_opt_2": "family history of colon cancer",
+      "initial_reason_sigmoid_opt_3": "Virtual (CT) colonography",
+      "initial_reason_sigmoid_opt_4": "occult fecal blood",
+      "initial_reason_sigmoid_opt_5": "diarrhea/constipation",
+      "initial_reason_sigmoid_opt_6": "prior polyps",
+      "initial_reason_sigmoid_opt_7": "abdominal pain",
+      "initial_reason_sigmoid_opt_8": "barium enema",
+      "initial_reason_sigmoid_opt_9": "asymptomatic or routine screening",
+      "diverticulitis_or_diverticulosis_enum": "Have you had any of the following clinician diagnosed conditions?  Diverticulitis or Diverticulosis?",
+      "diverticulitis_or_diverticulosis_enum_opt_1": "Yes",
+      "diverticulitis_or_diverticulosis_enum_opt_2": "No",
+      "diverticulitis_year_of_diagnosis": "Have you had any of the following clinician diagnosed conditions?  Diverticulitis or Diverticulosis?  If Yes, year of diagnosis",
+      "colon_or_rectal_polyp": "Have you had any of the following clinician diagnosed conditions?  Colon or rectal polyp?",
+      "colon_or_rectal_polyp_opt_1": "No",
+      "colon_or_rectal_polyp_opt_2": "Yes",
+      "polyp_year_of_diagnosis": "Have you had any of the following clinician diagnosed conditions?  Colon or rectal polyp?  If Yes, year of diagnosis",
+      "cancer_of_colon_or_rectum": "Have you had any of the following clinician diagnosed conditions?  Cancer of colon or rectum?",
+      "cancer_of_colon_or_rectum_opt_1": "No",
+      "cancer_of_colon_or_rectum_opt_2": "Yes",
+      "cancer_year_of_diagnosis": "Have you had any of the following clinician diagnosed conditions?  Cancer of colon or rectum?  If Yes, year of diagnosis",
+      "gall_bladder_removal": "Have you had any of the following clinician diagnosed conditions?  Gall bladder removal?",
+      "gall_bladder_removal_opt_1": "No",
+      "gall_bladder_removal_opt_2": "Yes",
+      "gall_bladder_removal_year_ofdiagnosis": "Have you had any of the following clinician diagnosed conditions?  Gall bladder removal?  If Yes, year of diagnosis",
+      "gastric_or_duodenal_ulcer": "Have you had any of the following clinician diagnosed conditions?  Gastric or duodenal ulcer?",
+      "gastric_or_duodenal_ulcer_opt_1": "No",
+      "gastric_or_duodenal_ulcer_opt_2": "Yes",
+      "ulcer_year_of_diagnosis": "Have you had any of the following clinician diagnosed conditions?  Gastric or duodenal ulcer?  If Yes, year of diagnosis",
+      "barretts_esophagus": "Have you had any of the following clinician diagnosed conditions?  Barrett's esophagus?",
+      "barretts_esophagus_opt_1": "No",
+      "barretts_esophagus_opt_2": "Yes",
+      "barretts_esophagus_year_of_diagnosis": "Have you had any of the following clinician diagnosed conditions?  Barrett's esophagus?  If Yes, year of diagnosis",
+      "ulcerative_colitiscrohns_disease": "Have you had any of the following clinician diagnosed conditions?  Ulcerative colitis/Crohn's disease",
+      "ulcerative_colitiscrohns_disease_opt_1": "No",
+      "ulcerative_colitiscrohns_disease_opt_2": "Yes",
+      "ulcerative_colitiscrohns_year_of_diagnosis": "Have you had any of the following clinician diagnosed conditions?  Ulcerative colitis/Crohn's disease?  If Yes, year of diagnosis",
+      "gastrointestinal_bleeding": "Have you ever had gastrointestinal bleeding that required hospitalization or a transfusion?",
+      "gastrointestinal_bleeding_opt_1": "Yes",
+      "gastrointestinal_bleeding_opt_2": "No",
+      "site_of_the_bleeding_unkown_enum": "What was the site of the bleeding?",
+      "site_of_the_bleeding_unkown_enum_opt_1": "Esophagus",
+      "site_of_the_bleeding_unkown_enum_opt_2": "Stomach",
+      "site_of_the_bleeding_unkown_enum_opt_3": "Duodenum",
+      "site_of_the_bleeding_unkown_enum_opt_4": "Colon/Rectum",
+      "site_of_the_bleeding_unkown_enum_opt_5": "Other",
+      "site_of_the_bleeding_unkown_enum_opt_6": "Unknown",
+      "site_of_the_bleeding_other_specify": "What was the site of the bleeding? Other Specify",
+      "bleeding_year_enum": "What year(s) did this happen?",
+      "bleeding_year_enum_opt_1": "Before 1993",
+      "bleeding_year_enum_opt_2": "1993-1997",
+      "bleeding_year_enum_opt_3": "1998-1999",
+      "bleeding_year_enum_opt_4": "2000-2001",
+      "bleeding_year_enum_opt_5": "2002-2003",
+      "bleeding_year_enum_opt_6": "2004-2005",
+      "bleeding_year_enum_opt_7": "2006+"
+    }
+  }
+}

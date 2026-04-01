@@ -1,0 +1,184 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Financial Hardship Associated with Cancer",
+      "code": "PX320501",
+      "abbreviation": "PX320501",
+      "description": "This self-administered subset of the questionnaire collects data on the effects of cancer and cancer treatments on the lives of those who have been diagnosed with cancer. These questions focus on different kinds of financial hardship on the participant and participant’s family members associated wit",
+      "domain": "Cancer & Chronic Disease",
+      "citation": "Yabroff, K. R., Dowling, E., Rodriguez, J., Ekwueme, D. U., Meissner, H., Soni, A., Virgo, K. S. (2012). The Medical Expenditure Panel Survey (MEPS) experiences with cancer survivorship supplement. Journal of cancer survivorship : research and practice, 6(4), 407–419. doi:10.1007/s11764-012-0221-2 Mariotto AB, Yabroff KR, Shao Y, Feuer EJ, Brown ML. Projections of the cost of cancer care in the United States: 2010–2020. J Natl Cancer Inst. 2011;103(2):117–28. [PubMed], [Google Scholar] Guy GP, Ekwueme DU, Yabroff KR, et al. : Economic burden of cancer survivorship among adults in the United States. J. Clin Oncol 31 (30); 3749-57, 2013. [PubMed]. Guy GP, Yabroff KR, Ekwueme DU, et al.: Estimating the health and economic burden of cancer among these diagnosed as adolescents and young adults. Health Aff (Millwood) 33 (6): 1024-31, 2014 [PubMed]. [PhenX: https://www.phenxtoolkit.org/protocols/view/320501]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/320501"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "desc1",
+        "text_key": "desc1",
+        "type": "inst"
+      },
+      {
+        "id": "borrow_money_debt",
+        "text_key": "borrow_money_debt",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "borrow_money_debt_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "borrow_money_debt_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "borrow_money_debt_amount",
+        "text_key": "borrow_money_debt_amount",
+        "type": "multi",
+        "visible_when": {
+          "item": "borrow_money_debt",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "borrow_money_debt_amount_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "borrow_money_debt_amount_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "borrow_money_debt_amount_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "borrow_money_debt_amount_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "borrow_money_debt_amount_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "borrow_money_debt_amount_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "bankruptcy",
+        "text_key": "bankruptcy",
+        "type": "multi",
+        "visible_when": {
+          "item": "borrow_money_debt",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "bankruptcy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "bankruptcy_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "other_sacrifices",
+        "text_key": "other_sacrifices",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "other_sacrifices_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "other_sacrifices_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "other_sacrifices_describe",
+        "text_key": "other_sacrifices_describe",
+        "type": "long",
+        "visible_when": {
+          "item": "other_sacrifices",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "worry_large_medical_bills",
+        "text_key": "worry_large_medical_bills",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "worry_large_medical_bills_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "worry_large_medical_bills_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "unable_cover_cost",
+        "text_key": "unable_cover_cost",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "unable_cover_cost_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "unable_cover_cost_opt_2",
+            "value": 2
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "desc1": "The next questions ask about different kinds of financial burden you or your family may have experienced because of your cancer, its treatment, or the lasting effects of that treatment.Please continue to think about all the time from when you were first diagnosed with cancer to now.If you have had more than one type of cancer please think about your experiences across all of them. If that is not possible, please focus on the most severe, and if they were equally severe, please focus on the most recent.",
+      "borrow_money_debt": "Have you or has anyone in your family had to borrow money or go into debt because of your cancer, its treatment, or the lasting effects of that treatment?",
+      "borrow_money_debt_opt_1": "Yes",
+      "borrow_money_debt_opt_2": "No",
+      "borrow_money_debt_amount": "How much did you or your family borrow, or how much debt did you incur because of your cancer, its treatment, or the lasting effects of that treatment?",
+      "borrow_money_debt_amount_opt_1": "Less than $10,000",
+      "borrow_money_debt_amount_opt_2": "$10,000 to $24,999",
+      "borrow_money_debt_amount_opt_3": "$25,000 to $49,999",
+      "borrow_money_debt_amount_opt_4": "$50,000 to $74,999",
+      "borrow_money_debt_amount_opt_5": "$75,000 to $99,999",
+      "borrow_money_debt_amount_opt_6": "$100,000 or more",
+      "bankruptcy": "Did you or your family ever file for bankruptcy because of your cancer, its treatment, or the lasting effects of that treatment?",
+      "bankruptcy_opt_1": "Yes",
+      "bankruptcy_opt_2": "No",
+      "other_sacrifices": "Have you or your family had to make any other kinds of financial sacrifices because of your cancer, its treatment, or the lasting effects of that treatment?",
+      "other_sacrifices_opt_1": "Yes",
+      "other_sacrifices_opt_2": "No",
+      "other_sacrifices_describe": "Please describe:",
+      "worry_large_medical_bills": "Have you ever worried about having to pay large medical bills related to your cancer?",
+      "worry_large_medical_bills_opt_1": "Yes",
+      "worry_large_medical_bills_opt_2": "No",
+      "unable_cover_cost": "Please think about medical care visits for cancer, its treatment, or the lasting effects of that treatment. Have you ever been unable to cover your share of the cost of those visits?",
+      "unable_cover_cost_opt_1": "Yes",
+      "unable_cover_cost_opt_2": "No"
+    }
+  }
+}

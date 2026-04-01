@@ -1,0 +1,206 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Male Reproductive Tract Birth Defects",
+      "code": "PX100901",
+      "abbreviation": "PX100901",
+      "description": "The male participant answers whether he was ever diagnosed with Cryptorchidism, Hypospadias and/or other related conditions.",
+      "domain": "Puberty & Development",
+      "citation": "Swan, S.H., Main, K.M., Liu, F., Stewart, S.L., Kruse, R.L., Calafat, A.M., et al; Study for Future Families Research Team. (2005). Decrease in anogenital distance among male infants with prenatal phthalate exposure. Environ Health Perspect. , 113(8):1056-61. [PhenX: https://www.phenxtoolkit.org/protocols/view/100901]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/100901"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "undescended_testicle_born",
+        "text_key": "undescended_testicle_born",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "undescended_testicle_born_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "undescended_testicle_born_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "undescended_testicle_born_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "undescended_testicle_specify",
+        "text_key": "undescended_testicle_specify",
+        "type": "multi",
+        "visible_when": {
+          "item": "undescended_testicle_born",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "undescended_testicle_specify_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "undescended_testicle_specify_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "undescended_testicle_specify_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "undescended_testicle_down_scrotum_itself",
+        "text_key": "undescended_testicle_down_scrotum_itself",
+        "type": "multi",
+        "visible_when": {
+          "item": "undescended_testicle_born",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "undescended_testicle_down_scrotum_itself_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "undescended_testicle_down_scrotum_itself_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "undescended_testicle_down_scrotum_itself_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "undescended_testicle_receive_treatment",
+        "text_key": "undescended_testicle_receive_treatment",
+        "type": "multi",
+        "visible_when": {
+          "item": "undescended_testicle_born",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "undescended_testicle_receive_treatment_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "undescended_testicle_receive_treatment_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "undescended_testicle_receive_treatment_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "undescended_testicle_treatment_specify",
+        "text_key": "undescended_testicle_treatment_specify",
+        "type": "multi",
+        "visible_when": {
+          "item": "undescended_testicle_receive_treatment",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "undescended_testicle_treatment_specify_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "undescended_testicle_treatment_specify_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "undescended_testicle_treatment_specify_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "undescended_testicle_treatment_specify_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "disease_penis_testicles_urinary_scrotum",
+        "text_key": "disease_penis_testicles_urinary_scrotum",
+        "type": "short"
+      },
+      {
+        "id": "hypospadius_ever",
+        "text_key": "hypospadius_ever",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "hypospadius_ever_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "hypospadius_ever_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "most_treatment_medication",
+        "text_key": "most_treatment_medication",
+        "type": "short"
+      },
+      {
+        "id": "most_treatment_year",
+        "text_key": "most_treatment_year",
+        "type": "short",
+        "input_type": "number"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "undescended_testicle_born": "Were you born with one or both of your testicles undescended (not completely down in the scrotum)?",
+      "undescended_testicle_born_opt_0": "No",
+      "undescended_testicle_born_opt_1": "Yes",
+      "undescended_testicle_born_opt_2": "Don't know",
+      "undescended_testicle_specify": "Which testicle was this?",
+      "undescended_testicle_specify_opt_1": "Right",
+      "undescended_testicle_specify_opt_2": "Left",
+      "undescended_testicle_specify_opt_3": "Both",
+      "undescended_testicle_down_scrotum_itself": "Did the testicle go down to the scrotum by itself?",
+      "undescended_testicle_down_scrotum_itself_opt_0": "No",
+      "undescended_testicle_down_scrotum_itself_opt_1": "Yes",
+      "undescended_testicle_down_scrotum_itself_opt_2": "Don't know",
+      "undescended_testicle_receive_treatment": "Did you receive treatment?",
+      "undescended_testicle_receive_treatment_opt_0": "No",
+      "undescended_testicle_receive_treatment_opt_1": "Yes",
+      "undescended_testicle_receive_treatment_opt_2": "Don't know",
+      "undescended_testicle_treatment_specify": "What treatment?",
+      "undescended_testicle_treatment_specify_opt_1": "Surgery",
+      "undescended_testicle_treatment_specify_opt_2": "Hormones",
+      "undescended_testicle_treatment_specify_opt_3": "Other (specify)",
+      "undescended_testicle_treatment_specify_opt_4": "Don't know",
+      "disease_penis_testicles_urinary_scrotum": "Has your doctor or another health care provider ever told you that you had other diseases of the penis, testicles, urinary tract or scrotum (specify)?",
+      "hypospadius_ever": "Has your doctor or another health care provider ever told you that you had hypospadius?",
+      "hypospadius_ever_opt_1": "No",
+      "hypospadius_ever_opt_2": "Yes",
+      "most_treatment_medication": "What was your most recent treatment or medication (if any)?",
+      "most_treatment_year": "When was your most recent treatment or medication (if any)? (YEAR)"
+    }
+  }
+}

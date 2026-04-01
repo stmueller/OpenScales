@@ -1,0 +1,119 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Pain Quality Descriptors (Neuropathic) - Adult",
+      "code": "PX860704",
+      "abbreviation": "PX860704",
+      "description": "The Patient-Reported Outcomes Measurement Information System (PROMIS ® ) Scale v2.0 - Neuropathic Pain Quality 5a is a self-administered questionnaire for individuals aged 18 years and older, assessing 5 descriptors of neuropathic pain quality, with a recall period of the past 7 days. This protocol ",
+      "domain": "Pain",
+      "citation": "Curtis, S. A., Brandow, A. M., DeVeaux, M., Zeltermam, D., Devine, L., & Roberts, J. D. (2020). Daily cannabis users with sickle cell disease show fewer admissions than others with similar pain complaints. Cannabis and Cannabinoid Research, 5(3), 255–262. Revicki, D. A., Cook, K. F., Amtmann, D., Harnam, N., Chen, W. H., & Keefe, F. J. (2014). Exploratory and confirmatory factor analysis of the PROMIS pain quality item bank. Quality of Life Research, 23(1), 245–255. Vaughan, B., Chase, B., Hickey, J., Tassoulas, M., Weston, H., Fitzgerald, K., Fleischmann, M., Mulcahy, J., & Austin, P. (2021). PROMIS neuropathic and nociceptive pain quality in musculoskeletal pain presentations. Clinical Journal of Pain, 37(9), 639–647. [PhenX: https://www.phenxtoolkit.org/protocols/view/860704]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/860704"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "lk_opt_1",
+        "lk_opt_2",
+        "lk_opt_3",
+        "lk_opt_4",
+        "lk_opt_5"
+      ]
+    },
+    "items": [
+      {
+        "id": "sec_please_respond_to_each_question_or_state",
+        "type": "section",
+        "text_key": "sec_please_respond_to_each_question_or_state_title"
+      },
+      {
+        "id": "pain_quality_descriptors_neuropathic_adult_pins_needles",
+        "text_key": "pain_quality_descriptors_neuropathic_adult_pins_needles",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "pain"
+      },
+      {
+        "id": "pain_quality_descriptors_neuropathic_adult_tingly",
+        "text_key": "pain_quality_descriptors_neuropathic_adult_tingly",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "pain"
+      },
+      {
+        "id": "pain_quality_descriptors_neuropathic_adult_stinging",
+        "text_key": "pain_quality_descriptors_neuropathic_adult_stinging",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "pain"
+      },
+      {
+        "id": "pain_quality_descriptors_neuropathic_adult_electrical",
+        "text_key": "pain_quality_descriptors_neuropathic_adult_electrical",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "pain"
+      },
+      {
+        "id": "pain_quality_descriptors_neuropathic_adult_numb",
+        "text_key": "pain_quality_descriptors_neuropathic_adult_numb",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "pain"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "pain_quality_descriptors_neuropathic_adult_pins_needles",
+          "pain_quality_descriptors_neuropathic_adult_tingly",
+          "pain_quality_descriptors_neuropathic_adult_stinging",
+          "pain_quality_descriptors_neuropathic_adult_electrical",
+          "pain_quality_descriptors_neuropathic_adult_numb"
+        ],
+        "item_coding": {
+          "pain_quality_descriptors_neuropathic_adult_pins_needles": 1,
+          "pain_quality_descriptors_neuropathic_adult_tingly": 1,
+          "pain_quality_descriptors_neuropathic_adult_stinging": 1,
+          "pain_quality_descriptors_neuropathic_adult_electrical": 1,
+          "pain_quality_descriptors_neuropathic_adult_numb": 1
+        },
+        "description": "Total score (sum of all items)"
+      }
+    },
+    "_conversion_notes": [
+      "INFO  pain_quality_descriptors_neuropathic_adult_pins_needles: member of matrix group 'pain' — consider converting to grid type manually",
+      "INFO  pain_quality_descriptors_neuropathic_adult_tingly: member of matrix group 'pain' — consider converting to grid type manually",
+      "INFO  pain_quality_descriptors_neuropathic_adult_stinging: member of matrix group 'pain' — consider converting to grid type manually",
+      "INFO  pain_quality_descriptors_neuropathic_adult_electrical: member of matrix group 'pain' — consider converting to grid type manually",
+      "INFO  pain_quality_descriptors_neuropathic_adult_numb: member of matrix group 'pain' — consider converting to grid type manually"
+    ]
+  },
+  "translations": {
+    "en": {
+      "lk_opt_1": "Not at all",
+      "lk_opt_2": "A little bit",
+      "lk_opt_3": "Somewhat",
+      "lk_opt_4": "Quite a bit",
+      "lk_opt_5": "Very much",
+      "sec_please_respond_to_each_question_or_state_title": "Please respond to each question or statement by marking one box per row.In the past 7 days...",
+      "pain_quality_descriptors_neuropathic_adult_pins_needles": "Did your pain feel like pins and needles?",
+      "pain_quality_descriptors_neuropathic_adult_tingly": "Did your pain feel tingly?",
+      "pain_quality_descriptors_neuropathic_adult_stinging": "Did your pain feel stinging?",
+      "pain_quality_descriptors_neuropathic_adult_electrical": "Did your pain feel electrical?",
+      "pain_quality_descriptors_neuropathic_adult_numb": "Did your pain feel numb?"
+    }
+  }
+}

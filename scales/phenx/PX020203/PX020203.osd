@@ -1,0 +1,160 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Birth Weight - Proxy Reported Birth Weight",
+      "code": "PX020203",
+      "abbreviation": "PX020203",
+      "description": "Proxy-reported birth weight",
+      "domain": "Anthropometrics",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/20203]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/20203"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "proxy_birthwt_gram",
+        "text_key": "proxy_birthwt_gram",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "proxy_birthwt_gram_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "proxy_birthwt_gram_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "proxy_birthwt_gram_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "proxy_report_birthwt_g",
+        "text_key": "proxy_report_birthwt_g",
+        "type": "short",
+        "visible_when": {
+          "item": "proxy_birthwt_gram",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number",
+        "number_min": 1,
+        "number_max": 4000
+      },
+      {
+        "id": "proxy_reported_birthweight_pounds",
+        "text_key": "proxy_reported_birthweight_pounds",
+        "type": "short",
+        "visible_when": {
+          "item": "proxy_birthwt_gram",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number",
+        "number_min": 1,
+        "number_max": 20
+      },
+      {
+        "id": "proxy_reported_birthweight_ounces",
+        "text_key": "proxy_reported_birthweight_ounces",
+        "type": "short",
+        "visible_when": {
+          "item": "proxy_birthwt_gram",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number",
+        "number_min": 0,
+        "number_max": 15
+      },
+      {
+        "id": "proxy_reported_birthweight_2500g",
+        "text_key": "proxy_reported_birthweight_2500g",
+        "type": "multi",
+        "visible_when": {
+          "item": "proxy_birthwt_gram",
+          "operator": "equals",
+          "value": 3
+        },
+        "options": [
+          {
+            "text_key": "proxy_reported_birthweight_2500g_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "proxy_reported_birthweight_2500g_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "proxy_reported_birthweight_2500g_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "proxy_reported_birthweight_2500g_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "proxy_reported_birthweight_4100g",
+        "text_key": "proxy_reported_birthweight_4100g",
+        "type": "multi",
+        "visible_when": {
+          "item": "proxy_birthwt_gram",
+          "operator": "equals",
+          "value": 3
+        },
+        "options": [
+          {
+            "text_key": "proxy_reported_birthweight_4100g_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "proxy_reported_birthweight_4100g_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "proxy_reported_birthweight_4100g_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "proxy_reported_birthweight_4100g_opt_9",
+            "value": 9
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "proxy_birthwt_gram": "How much did participant weigh at birth? ENTER WEIGHT IN GRAMS OR POUNDS AND OUNCES",
+      "proxy_birthwt_gram_opt_1": "Grams",
+      "proxy_birthwt_gram_opt_2": "Pounds and ounces",
+      "proxy_birthwt_gram_opt_3": "Unknown",
+      "proxy_report_birthwt_g": "How much did {you/[participant]} weigh at birth in grams?",
+      "proxy_reported_birthweight_pounds": "How much did {you/[participant]} weigh at birth in pounds?",
+      "proxy_reported_birthweight_ounces": "How much did {you/[participant]} weigh at birth in ounces?",
+      "proxy_reported_birthweight_2500g": "Did {you/[participant]} weigh ...?",
+      "proxy_reported_birthweight_2500g_opt_1": "More than 5 1/2 pounds (2500 g)",
+      "proxy_reported_birthweight_2500g_opt_2": "Less than 5 1/2 pounds (2500 g)",
+      "proxy_reported_birthweight_2500g_opt_7": "Refused",
+      "proxy_reported_birthweight_2500g_opt_9": "Don't know",
+      "proxy_reported_birthweight_4100g": "Did {you/[participant]} weigh ...?",
+      "proxy_reported_birthweight_4100g_opt_1": "More than 9 pounds (4100 g)",
+      "proxy_reported_birthweight_4100g_opt_2": "Less than 9 pounds (4100 g)",
+      "proxy_reported_birthweight_4100g_opt_7": "Refused",
+      "proxy_reported_birthweight_4100g_opt_9": "Don't know"
+    }
+  }
+}

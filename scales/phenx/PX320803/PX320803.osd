@@ -1,0 +1,2051 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Patient Experience with Cancer Care - Radiation Therapy",
+      "code": "PX320803",
+      "abbreviation": "PX320803",
+      "description": "The CAHPS® Cancer Care Survey asks adult patients (age 18 and older) to report on their experiences with the care team that delivered the cancer treatment and the cancer center’s office staff. The three versions of the Cancer Care Survey reflect the three most common treatment modalities in the Unit",
+      "domain": "Cancer & Chronic Disease",
+      "citation": "CAHPS® Cancer Care Survey. Content last reviewed December 2019. Agency for Healthcare Research and Quality. Rockville, MD. https://www.ahrq.gov/cahps/surveys-guidance/cancer/index.html Crofton C, Lubalin JS, Darby C. Consumer Assessment of Health Plans Study (CAHPSTM): Foreword. Medical Care 1999 March 37(3):MS1-MS9 Evensen CT, Yost KJ, Keller S, Arora NK, Frentzel E, Cowans T, Garfinkel SA. Development and Testing of the CAHPS Cancer Care Survey. J Oncol Pract. 2019 Nov;15(11):e969-e978. doi: 10.1200/JOP.19.00039. Epub 2019 Aug 19. PubMed PMID: 31425009; PubMed Central PMCID: PMC6851792. [PhenX: https://www.phenxtoolkit.org/protocols/view/320803]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/320803"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "desc1",
+        "text_key": "desc1",
+        "type": "inst"
+      },
+      {
+        "id": "sec_contacting_your_drug_therapy_team",
+        "type": "section",
+        "text_key": "sec_contacting_your_drug_therapy_team_title"
+      },
+      {
+        "id": "cancer_team_encourage_contact",
+        "text_key": "cancer_team_encourage_contact",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "cancer_team_encourage_contact_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_team_encourage_contact_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_team_encourage_contact_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "cancer_team_call_side_effects",
+        "text_key": "cancer_team_call_side_effects",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "cancer_team_call_side_effects_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_team_call_side_effects_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_team_call_side_effects_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "cancer_team_contact_after_hours",
+        "text_key": "cancer_team_contact_after_hours",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "cancer_team_contact_after_hours_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_team_contact_after_hours_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_team_contact_after_hours_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "cancer_team_involve_family",
+        "text_key": "cancer_team_involve_family",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "cancer_team_involve_family_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_team_involve_family_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_team_involve_family_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "last_time_radiation_therapy_center",
+        "text_key": "last_time_radiation_therapy_center",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "last_time_radiation_therapy_center_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_time_radiation_therapy_center_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sec_your_care_team_from_this_cancer_center",
+        "type": "section",
+        "text_key": "sec_your_care_team_from_this_cancer_center_title"
+      },
+      {
+        "id": "cancer_center_visit_times",
+        "text_key": "cancer_center_visit_times",
+        "type": "multi",
+        "visible_when": {
+          "item": "last_time_radiation_therapy_center",
+          "operator": "not_equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "cancer_center_visit_times_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_center_visit_times_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_center_visit_times_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cancer_center_visit_times_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "cancer_center_contact_immediate_care",
+        "text_key": "cancer_center_contact_immediate_care",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cancer_center_contact_immediate_care_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_center_contact_immediate_care_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "cancer_center_appointment_immediacy",
+        "text_key": "cancer_center_appointment_immediacy",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_center_contact_immediate_care",
+              "operator": "not_equals",
+              "value": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cancer_center_appointment_immediacy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_center_appointment_immediacy_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_center_appointment_immediacy_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cancer_center_appointment_immediacy_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "cancer_center_appointment_last_six_months",
+        "text_key": "cancer_center_appointment_last_six_months",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cancer_center_appointment_last_six_months_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_center_appointment_last_six_months_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "cancer_immediacy",
+        "text_key": "cancer_immediacy",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_center_appointment_last_six_months",
+              "operator": "not_equals",
+              "value": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cancer_immediacy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_immediacy_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_immediacy_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cancer_immediacy_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "cancer_center_question_office_hours",
+        "text_key": "cancer_center_question_office_hours",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cancer_center_question_office_hours_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_center_question_office_hours_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "cancer_center_question_office_hours_same_day_answer",
+        "text_key": "cancer_center_question_office_hours_same_day_answer",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_center_question_office_hours",
+              "operator": "not_equals",
+              "value": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cancer_center_question_office_hours_same_day_answer_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_center_question_office_hours_same_day_answer_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_center_question_office_hours_same_day_answer_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cancer_center_question_office_hours_same_day_answer_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sec_your_drug_therapy_team",
+        "type": "section",
+        "text_key": "sec_your_drug_therapy_team_title"
+      },
+      {
+        "id": "radiation_therapy_team_explain_understand",
+        "text_key": "radiation_therapy_team_explain_understand",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "radiation_therapy_team_explain_understand_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "radiation_therapy_team_explain_understand_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "radiation_therapy_team_explain_understand_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "radiation_therapy_team_explain_understand_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "radiation_therapy_team_listen",
+        "text_key": "radiation_therapy_team_listen",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "radiation_therapy_team_listen_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "radiation_therapy_team_listen_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "radiation_therapy_team_listen_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "radiation_therapy_team_listen_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "radiation_therapy_team_know_medical_history",
+        "text_key": "radiation_therapy_team_know_medical_history",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "radiation_therapy_team_know_medical_history_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "radiation_therapy_team_know_medical_history_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "radiation_therapy_team_know_medical_history_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "radiation_therapy_team_know_medical_history_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "radiation_therapy_team_respect",
+        "text_key": "radiation_therapy_team_respect",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "radiation_therapy_team_respect_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "radiation_therapy_team_respect_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "radiation_therapy_team_respect_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "radiation_therapy_team_respect_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "radiation_therapy_team_time",
+        "text_key": "radiation_therapy_team_time",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "radiation_therapy_team_time_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "radiation_therapy_team_time_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "radiation_therapy_team_time_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "radiation_therapy_team_time_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "radiation_therapy_team_order_test",
+        "text_key": "radiation_therapy_team_order_test",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "radiation_therapy_team_order_test_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "radiation_therapy_team_order_test_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "test_center_followup",
+        "text_key": "test_center_followup",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            },
+            {
+              "item": "radiation_therapy_team_order_test",
+              "operator": "not_equals",
+              "value": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "test_center_followup_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "test_center_followup_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "test_center_followup_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "test_center_followup_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_prescription",
+        "text_key": "last_six_months_prescription",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_prescription_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_prescription_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_radiation_therapy_team_prescription_talk",
+        "text_key": "last_six_months_radiation_therapy_team_prescription_talk",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            },
+            {
+              "item": "last_six_months_prescription",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_radiation_therapy_team_prescription_talk_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_team_prescription_talk_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_team_prescription_talk_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_team_prescription_talk_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_radiation_therapy_team_pain_talk",
+        "text_key": "last_six_months_radiation_therapy_team_pain_talk",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_radiation_therapy_team_pain_talk_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_team_pain_talk_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_pain_radiation_therapy",
+        "text_key": "last_six_months_pain_radiation_therapy",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_pain_radiation_therapy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_pain_radiation_therapy_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_radiation_therapy_team_pain_advice",
+        "text_key": "last_six_months_radiation_therapy_team_pain_advice",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            },
+            {
+              "item": "last_six_months_pain_radiation_therapy",
+              "operator": "not_equals",
+              "value": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_radiation_therapy_team_pain_advice_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_team_pain_advice_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_team_pain_advice_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_change_energy_radiation_therapy",
+        "text_key": "last_six_months_change_energy_radiation_therapy",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_change_energy_radiation_therapy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_change_energy_radiation_therapy_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_change_energy_radiation_therapy_bother",
+        "text_key": "last_six_months_change_energy_radiation_therapy_bother",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_change_energy_radiation_therapy_bother_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_change_energy_radiation_therapy_bother_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_change_energy_radiation_therapy_advice",
+        "text_key": "last_six_months_change_energy_radiation_therapy_advice",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            },
+            {
+              "item": "last_six_months_change_energy_radiation_therapy_bother",
+              "operator": "not_equals",
+              "value": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_change_energy_radiation_therapy_advice_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_change_energy_radiation_therapy_advice_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "last_six_months_change_energy_radiation_therapy_advice_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_emotional_problem_radiation_therapy",
+        "text_key": "last_six_months_emotional_problem_radiation_therapy",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_emotional_problem_radiation_therapy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_emotional_problem_radiation_therapy_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_emotional_problem_radiation_therapy_bother",
+        "text_key": "last_six_months_emotional_problem_radiation_therapy_bother",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_emotional_problem_radiation_therapy_bother_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_emotional_problem_radiation_therapy_bother_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_emotional_problem_radiation_therapy_advice",
+        "text_key": "last_six_months_emotional_problem_radiation_therapy_advice",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            },
+            {
+              "item": "last_six_months_emotional_problem_radiation_therapy_bother",
+              "operator": "not_equals",
+              "value": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_emotional_problem_radiation_therapy_advice_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_emotional_problem_radiation_therapy_advice_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "last_six_months_emotional_problem_radiation_therapy_advice_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_radiation_therapy_additional_service",
+        "text_key": "last_six_months_radiation_therapy_additional_service",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_radiation_therapy_additional_service_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_additional_service_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_health_maintain_treatment",
+        "text_key": "last_six_months_health_maintain_treatment",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_health_maintain_treatment_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_health_maintain_treatment_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "last_six_months_health_maintain_treatment_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "radiation_therapy_team_rating",
+        "text_key": "radiation_therapy_team_rating",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "radiation_therapy_team_rating_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "radiation_therapy_team_rating_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "radiation_therapy_team_rating_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "radiation_therapy_team_rating_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "radiation_therapy_team_rating_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "radiation_therapy_team_rating_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "radiation_therapy_team_rating_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "radiation_therapy_team_rating_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "radiation_therapy_team_rating_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "radiation_therapy_team_rating_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "radiation_therapy_team_rating_opt_10",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_need_interpreter",
+        "text_key": "last_six_months_need_interpreter",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_need_interpreter_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_need_interpreter_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_need_interpreter_radiation_therapy",
+        "text_key": "last_six_months_need_interpreter_radiation_therapy",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            },
+            {
+              "item": "last_six_months_need_interpreter",
+              "operator": "not_equals",
+              "value": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_need_interpreter_radiation_therapy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_need_interpreter_radiation_therapy_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "last_six_months_need_interpreter_radiation_therapy_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "last_six_months_need_interpreter_radiation_therapy_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "cancer_center_care_rating",
+        "text_key": "cancer_center_care_rating",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cancer_center_care_rating_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "cancer_center_care_rating_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_center_care_rating_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_center_care_rating_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cancer_center_care_rating_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "cancer_center_care_rating_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "cancer_center_care_rating_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "cancer_center_care_rating_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "cancer_center_care_rating_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "cancer_center_care_rating_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "cancer_center_care_rating_opt_10",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "id": "sec_access_questions",
+        "type": "section",
+        "text_key": "sec_access_questions_title"
+      },
+      {
+        "id": "last_six_months_cancer_center_contact_office_hours",
+        "text_key": "last_six_months_cancer_center_contact_office_hours",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_cancer_center_contact_office_hours_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_cancer_center_contact_office_hours_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_cancer_center_contact_office_hours_answer",
+        "text_key": "last_six_months_cancer_center_contact_office_hours_answer",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            },
+            {
+              "item": "last_six_months_cancer_center_contact_office_hours",
+              "operator": "not_equals",
+              "value": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_cancer_center_contact_office_hours_answer_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_cancer_center_contact_office_hours_answer_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "last_six_months_cancer_center_contact_office_hours_answer_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "last_six_months_cancer_center_contact_office_hours_answer_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_fifteen_minute_wait_time",
+        "text_key": "last_six_months_fifteen_minute_wait_time",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_fifteen_minute_wait_time_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_fifteen_minute_wait_time_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "last_six_months_fifteen_minute_wait_time_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "last_six_months_fifteen_minute_wait_time_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sec_information_from_providers",
+        "type": "section",
+        "text_key": "sec_information_from_providers_title"
+      },
+      {
+        "id": "radiation_therapy_affect_normal_activity",
+        "text_key": "radiation_therapy_affect_normal_activity",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "radiation_therapy_affect_normal_activity_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "radiation_therapy_affect_normal_activity_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "radiation_therapy_affect_normal_activity_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_radiation_therapy_told_next_steps",
+        "text_key": "last_six_months_radiation_therapy_told_next_steps",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_radiation_therapy_told_next_steps_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_told_next_steps_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_told_next_steps_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_radiation_therapy_team_explain_results",
+        "text_key": "last_six_months_radiation_therapy_team_explain_results",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_radiation_therapy_team_explain_results_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_team_explain_results_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_team_explain_results_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_team_explain_results_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_radiation_therapy_team_prescribe_medicine",
+        "text_key": "last_six_months_radiation_therapy_team_prescribe_medicine",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_radiation_therapy_team_prescribe_medicine_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_team_prescribe_medicine_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "last_six_months_radiation_therapy_team_explain_medicine",
+        "text_key": "last_six_months_radiation_therapy_team_explain_medicine",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "last_six_months_radiation_therapy_team_explain_medicine_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_team_explain_medicine_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "last_six_months_radiation_therapy_team_explain_medicine_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sec_shared_decision_making",
+        "type": "section",
+        "text_key": "sec_shared_decision_making_title"
+      },
+      {
+        "id": "health_professional_treatment_alternative",
+        "text_key": "health_professional_treatment_alternative",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "health_professional_treatment_alternative_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "health_professional_treatment_alternative_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "health_professional_explain_treatment_advantage",
+        "text_key": "health_professional_explain_treatment_advantage",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            },
+            {
+              "item": "health_professional_treatment_alternative",
+              "operator": "not_equals",
+              "value": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "health_professional_explain_treatment_advantage_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "health_professional_explain_treatment_advantage_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "health_professional_explain_treatment_advantage_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "health_professional_explain_treatment_disadvantage",
+        "text_key": "health_professional_explain_treatment_disadvantage",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            },
+            {
+              "item": "health_professional_treatment_alternative",
+              "operator": "not_equals",
+              "value": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "health_professional_explain_treatment_disadvantage_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "health_professional_explain_treatment_disadvantage_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "health_professional_explain_treatment_disadvantage_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "health_professional_explain_treatment_opinion",
+        "text_key": "health_professional_explain_treatment_opinion",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            },
+            {
+              "item": "health_professional_treatment_alternative",
+              "operator": "not_equals",
+              "value": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "health_professional_explain_treatment_opinion_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "health_professional_explain_treatment_opinion_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "health_professional_explain_treatment_opinion_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "health_professional_radiation_therapy_reason",
+        "text_key": "health_professional_radiation_therapy_reason",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "health_professional_radiation_therapy_reason_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "health_professional_radiation_therapy_reason_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "health_professional_radiation_therapy_reason_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "health_professional_radiation_therapy_reason_not",
+        "text_key": "health_professional_radiation_therapy_reason_not",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "health_professional_radiation_therapy_reason_not_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "health_professional_radiation_therapy_reason_not_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "health_professional_radiation_therapy_reason_not_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "health_professional_radiation_therapy_best_interest",
+        "text_key": "health_professional_radiation_therapy_best_interest",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "health_professional_radiation_therapy_best_interest_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "health_professional_radiation_therapy_best_interest_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "health_professional_radiation_therapy_best_interest_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "health_professional_treatment_decision_involve",
+        "text_key": "health_professional_treatment_decision_involve",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "last_time_radiation_therapy_center",
+              "operator": "not_equals",
+              "value": 2
+            },
+            {
+              "item": "cancer_center_visit_times",
+              "operator": "not_equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "health_professional_treatment_decision_involve_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "health_professional_treatment_decision_involve_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "health_professional_treatment_decision_involve_opt_3",
+            "value": 3
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "desc1": "<div class=\"rich-text-field-label\"><table style=\"width: 386.75pt; border-collapse: collapse; border: none;\"> <tbody> <tr> <td style=\"width: 386.75pt; border: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;\"> <p style=\"tab-stops: 255.75pt; text-autospace: none;\">Answer each question by marking the box to the left of your answer.</p> <p style=\"tab-stops: 255.75pt; text-autospace: none;\"> </p> <p style=\"tab-stops: 255.75pt; text-autospace: none;\">You are sometimes told to skip over some questions in this survey. When this happens, you will see an arrow with a note that tells you what questions to answer next, like this:</p> <p style=\"tab-stops: 255.75pt; text-autospace: none;\">[ ] Yes</p> <p style=\"tab-stops: 255.75pt; text-autospace: none;\">[x] No→ <strong>If No, go to #1 on page 3</strong></p> </td> </tr> </tbody> </table></div>",
+      "sec_contacting_your_drug_therapy_team_title": "Contacting Your Drug Therapy Team",
+      "cancer_team_encourage_contact": "Radiation therapy team refers to the doctors, nurses, therapists, technicians, and their support staff involved with your radiation therapy through this cancer center. Since it was decided that you would have radiation therapy, did your radiation therapy team encourage you to contact them with questions between visits?",
+      "cancer_team_encourage_contact_opt_1": "Yes, definitely",
+      "cancer_team_encourage_contact_opt_2": "Yes, somewhat",
+      "cancer_team_encourage_contact_opt_3": "No",
+      "cancer_team_call_side_effects": "Since it was decided that you would have radiation therapy, did your radiation therapy team tell you to call them immediately if you have certain symptoms or side effects?",
+      "cancer_team_call_side_effects_opt_1": "Yes, definitely",
+      "cancer_team_call_side_effects_opt_2": "Yes, somewhat",
+      "cancer_team_call_side_effects_opt_3": "No",
+      "cancer_team_contact_after_hours": "Since it was decided that you would have radiation therapy, did your radiation therapy team give you clear instructions about how to contact them after regular office hours?",
+      "cancer_team_contact_after_hours_opt_1": "Yes, definitely",
+      "cancer_team_contact_after_hours_opt_2": "Yes, somewhat",
+      "cancer_team_contact_after_hours_opt_3": "No",
+      "cancer_team_involve_family": "Since it was decided that you would have radiation therapy, did your radiation therapy team involve your family members or close friends in discussions about your cancer or cancer care as much as you wanted?",
+      "cancer_team_involve_family_opt_1": "Yes, definitely",
+      "cancer_team_involve_family_opt_2": "Yes, somewhat",
+      "cancer_team_involve_family_opt_3": "No",
+      "last_time_radiation_therapy_center": "When was the last time you received radiation therapy for cancer from this cancer center?",
+      "last_time_radiation_therapy_center_opt_1": "In the last 6 months",
+      "last_time_radiation_therapy_center_opt_2": "More than 6 months ago",
+      "sec_your_care_team_from_this_cancer_center_title": "Your Care Team from This Cancer Center",
+      "cancer_center_visit_times": "In the last 6 months, how many times did you visit this cancer center to get care from your radiation therapy team? Do not include telephone calls or emails.",
+      "cancer_center_visit_times_opt_1": "None",
+      "cancer_center_visit_times_opt_2": "1 to 5 times",
+      "cancer_center_visit_times_opt_3": "6 to 10 times",
+      "cancer_center_visit_times_opt_4": "11 or more times",
+      "cancer_center_contact_immediate_care": "In the last 6 months, did you contact this cancer center to get an appointment for an illness, injury, or condition that needed care right away?",
+      "cancer_center_contact_immediate_care_opt_1": "Yes",
+      "cancer_center_contact_immediate_care_opt_2": "No",
+      "cancer_center_appointment_immediacy": "In the last 6 months, when you contacted this cancer center to get an appointment for care you needed right away, how often did you get an appointment as soon as you needed?",
+      "cancer_center_appointment_immediacy_opt_1": "Never",
+      "cancer_center_appointment_immediacy_opt_2": "Sometimes",
+      "cancer_center_appointment_immediacy_opt_3": "Usually",
+      "cancer_center_appointment_immediacy_opt_4": "Always",
+      "cancer_center_appointment_last_six_months": "In the last 6 months, did you make any appointments for a check - up or routine care at this cancer center?",
+      "cancer_center_appointment_last_six_months_opt_1": "Yes",
+      "cancer_center_appointment_last_six_months_opt_2": "No",
+      "cancer_immediacy": "In the last 6 months, when you made an appointment for a check - up or routine care at this cancer center, how often did you get an appointment as soon as you needed?",
+      "cancer_immediacy_opt_1": "Never",
+      "cancer_immediacy_opt_2": "Sometimes",
+      "cancer_immediacy_opt_3": "Usually",
+      "cancer_immediacy_opt_4": "Always",
+      "cancer_center_question_office_hours": "In the last 6 months, did you contact this cancer center with a medical question during regular office hours?",
+      "cancer_center_question_office_hours_opt_1": "Yes",
+      "cancer_center_question_office_hours_opt_2": "No",
+      "cancer_center_question_office_hours_same_day_answer": "In the last 6 months, when you contacted this cancer center during regular office hours, how often did you get an answer to your medical question that same day?",
+      "cancer_center_question_office_hours_same_day_answer_opt_1": "Never",
+      "cancer_center_question_office_hours_same_day_answer_opt_2": "Sometimes",
+      "cancer_center_question_office_hours_same_day_answer_opt_3": "Usually",
+      "cancer_center_question_office_hours_same_day_answer_opt_4": "Always",
+      "sec_your_drug_therapy_team_title": "Your Drug Therapy Team",
+      "radiation_therapy_team_explain_understand": "Radiation therapy team refers to the doctors, nurses, therapists, technicians, and their support staff involved with your radiation therapy through this cancer center. In the last 6 months, how often did your radiation therapy team explain things in a way that was easy to understand?",
+      "radiation_therapy_team_explain_understand_opt_1": "Never",
+      "radiation_therapy_team_explain_understand_opt_2": "Sometimes",
+      "radiation_therapy_team_explain_understand_opt_3": "Usually",
+      "radiation_therapy_team_explain_understand_opt_4": "Always",
+      "radiation_therapy_team_listen": "In the last 6 months, how often did your radiation therapy team listen carefully to you?",
+      "radiation_therapy_team_listen_opt_1": "Never",
+      "radiation_therapy_team_listen_opt_2": "Sometimes",
+      "radiation_therapy_team_listen_opt_3": "Usually",
+      "radiation_therapy_team_listen_opt_4": "Always",
+      "radiation_therapy_team_know_medical_history": "In the last 6 months, how often did your radiation therapy team seem to know the important information about your medical history?",
+      "radiation_therapy_team_know_medical_history_opt_1": "Never",
+      "radiation_therapy_team_know_medical_history_opt_2": "Sometimes",
+      "radiation_therapy_team_know_medical_history_opt_3": "Usually",
+      "radiation_therapy_team_know_medical_history_opt_4": "Always",
+      "radiation_therapy_team_respect": "In the last 6 months, how often did your radiation therapy team show respect for what you had to say?",
+      "radiation_therapy_team_respect_opt_1": "Never",
+      "radiation_therapy_team_respect_opt_2": "Sometimes",
+      "radiation_therapy_team_respect_opt_3": "Usually",
+      "radiation_therapy_team_respect_opt_4": "Always",
+      "radiation_therapy_team_time": "In the last 6 months, how often did your radiation therapy team spend enough time with you?",
+      "radiation_therapy_team_time_opt_1": "Never",
+      "radiation_therapy_team_time_opt_2": "Sometimes",
+      "radiation_therapy_team_time_opt_3": "Usually",
+      "radiation_therapy_team_time_opt_4": "Always",
+      "radiation_therapy_team_order_test": "In the last 6 months, did your radiation therapy team order a blood test, x - ray, or other test for you? Do not include radiation therapy.",
+      "radiation_therapy_team_order_test_opt_1": "Yes",
+      "radiation_therapy_team_order_test_opt_2": "No",
+      "test_center_followup": "In the last 6 months, when you had blood tests, x - rays, or other tests as part of your cancer treatment, how often did someone from this cancer center follow up to give you those results?",
+      "test_center_followup_opt_1": "Never",
+      "test_center_followup_opt_2": "Sometimes",
+      "test_center_followup_opt_3": "Usually",
+      "test_center_followup_opt_4": "Always",
+      "last_six_months_prescription": "In the last 6 months, did you take any prescription medicine?",
+      "last_six_months_prescription_opt_1": "No",
+      "last_six_months_prescription_opt_2": "Yes",
+      "last_six_months_radiation_therapy_team_prescription_talk": "In the last 6 months, how often did you and your radiation therapy team talk about all the prescription medicines you were taking?",
+      "last_six_months_radiation_therapy_team_prescription_talk_opt_1": "Never",
+      "last_six_months_radiation_therapy_team_prescription_talk_opt_2": "Sometimes",
+      "last_six_months_radiation_therapy_team_prescription_talk_opt_3": "Usually",
+      "last_six_months_radiation_therapy_team_prescription_talk_opt_4": "Always",
+      "last_six_months_radiation_therapy_team_pain_talk": "In the last 6 months, did you and your radiation therapy team talk about pain related to your cancer or radiation therapy?",
+      "last_six_months_radiation_therapy_team_pain_talk_opt_1": "Yes",
+      "last_six_months_radiation_therapy_team_pain_talk_opt_2": "No",
+      "last_six_months_pain_radiation_therapy": "In the last 6 months, were you bothered by pain from your cancer or radiation therapy?",
+      "last_six_months_pain_radiation_therapy_opt_1": "Yes",
+      "last_six_months_pain_radiation_therapy_opt_2": "No",
+      "last_six_months_radiation_therapy_team_pain_advice": "In the last 6 months, did your radiation therapy team advise you about or help you deal with this pain?",
+      "last_six_months_radiation_therapy_team_pain_advice_opt_1": "Yes, definitely",
+      "last_six_months_radiation_therapy_team_pain_advice_opt_2": "Yes, somewhat",
+      "last_six_months_radiation_therapy_team_pain_advice_opt_3": "No",
+      "last_six_months_change_energy_radiation_therapy": "In the last 6 months, did you and your radiation therapy team talk about any changes in your energy levels related to your cancer or radiation therapy?",
+      "last_six_months_change_energy_radiation_therapy_opt_1": "Yes",
+      "last_six_months_change_energy_radiation_therapy_opt_2": "No",
+      "last_six_months_change_energy_radiation_therapy_bother": "In the last 6 months, were you bothered by changes in your energy levels related to your cancer or radiation therapy?",
+      "last_six_months_change_energy_radiation_therapy_bother_opt_1": "Yes",
+      "last_six_months_change_energy_radiation_therapy_bother_opt_2": "No",
+      "last_six_months_change_energy_radiation_therapy_advice": "In the last 6 months, did your radiation therapy team advise you about or help you deal with these changes in your energy levels?",
+      "last_six_months_change_energy_radiation_therapy_advice_opt_1": "Yes, definitely",
+      "last_six_months_change_energy_radiation_therapy_advice_opt_2": "Yes, somewhat",
+      "last_six_months_change_energy_radiation_therapy_advice_opt_3": "No",
+      "last_six_months_emotional_problem_radiation_therapy": "In the last 6 months, did you and your radiation therapy team talk about any emotional problems, such as anxiety or depression, related to your cancer or radiation therapy?",
+      "last_six_months_emotional_problem_radiation_therapy_opt_1": "Yes",
+      "last_six_months_emotional_problem_radiation_therapy_opt_2": "No",
+      "last_six_months_emotional_problem_radiation_therapy_bother": "In the last 6 months, were you bothered by any emotional problems, such as anxiety or depression, related to your cancer or radiation therapy?",
+      "last_six_months_emotional_problem_radiation_therapy_bother_opt_1": "Yes",
+      "last_six_months_emotional_problem_radiation_therapy_bother_opt_2": "No",
+      "last_six_months_emotional_problem_radiation_therapy_advice": "In the last 6 months, did your radiation therapy team advise you about or help you deal with these emotional problems?",
+      "last_six_months_emotional_problem_radiation_therapy_advice_opt_1": "Yes, definitely",
+      "last_six_months_emotional_problem_radiation_therapy_advice_opt_2": "Yes, somewhat",
+      "last_six_months_emotional_problem_radiation_therapy_advice_opt_3": "No",
+      "last_six_months_radiation_therapy_additional_service": "Additional services to manage your cancer care at home include home health care, special medical equipment, or special supplies. In the last 6 months, did you and your radiation therapy team talk about these additional services?",
+      "last_six_months_radiation_therapy_additional_service_opt_1": "Yes",
+      "last_six_months_radiation_therapy_additional_service_opt_2": "No",
+      "last_six_months_health_maintain_treatment": "In the last 6 months, did you and your radiation therapy team talk about things you can do to maintain your health during cancer treatment such as what to eat and what exercises to do?",
+      "last_six_months_health_maintain_treatment_opt_1": "Yes, definitely",
+      "last_six_months_health_maintain_treatment_opt_2": "Yes, somewhat",
+      "last_six_months_health_maintain_treatment_opt_3": "No",
+      "radiation_therapy_team_rating": "Using any number from 0 to 10, where 0 is the worst radiation therapy team possible and 10 is the best radiation therapy team possible, what number would you use to rate your radiation therapy team?",
+      "radiation_therapy_team_rating_opt_0": "0 - Worst cancer surgery team possible",
+      "radiation_therapy_team_rating_opt_1": "1",
+      "radiation_therapy_team_rating_opt_2": "2",
+      "radiation_therapy_team_rating_opt_3": "3",
+      "radiation_therapy_team_rating_opt_4": "4",
+      "radiation_therapy_team_rating_opt_5": "5",
+      "radiation_therapy_team_rating_opt_6": "6",
+      "radiation_therapy_team_rating_opt_7": "7",
+      "radiation_therapy_team_rating_opt_8": "8",
+      "radiation_therapy_team_rating_opt_9": "9",
+      "radiation_therapy_team_rating_opt_10": "10 - Best cancer surgery team possible",
+      "last_six_months_need_interpreter": "An interpreter is someone who helps you talk with others who do not speak your language. Interpreters can include staff from this cancer center, telephone interpreters, friends, or family members. In the last 6 months, was there any time when you needed an interpreter at this cancer center?",
+      "last_six_months_need_interpreter_opt_1": "Yes",
+      "last_six_months_need_interpreter_opt_2": "No",
+      "last_six_months_need_interpreter_radiation_therapy": "In the last 6 months, when you needed an interpreter to speak with your radiation therapy team, how often did you get one?",
+      "last_six_months_need_interpreter_radiation_therapy_opt_1": "Never",
+      "last_six_months_need_interpreter_radiation_therapy_opt_2": "Sometimes",
+      "last_six_months_need_interpreter_radiation_therapy_opt_3": "Usually",
+      "last_six_months_need_interpreter_radiation_therapy_opt_4": "Always",
+      "cancer_center_care_rating": "Considering all your cancer care at this cancer center, using any number from 0 to 10, where 0 is the worst overall cancer care experience possible and 10 is the best overall cancer care experience possible, what number would you use to rate your overall cancer care experience?",
+      "cancer_center_care_rating_opt_0": "0 - Worst overall cancer care experience possible",
+      "cancer_center_care_rating_opt_1": "1",
+      "cancer_center_care_rating_opt_2": "2",
+      "cancer_center_care_rating_opt_3": "3",
+      "cancer_center_care_rating_opt_4": "4",
+      "cancer_center_care_rating_opt_5": "5",
+      "cancer_center_care_rating_opt_6": "6",
+      "cancer_center_care_rating_opt_7": "7",
+      "cancer_center_care_rating_opt_8": "8",
+      "cancer_center_care_rating_opt_9": "9",
+      "cancer_center_care_rating_opt_10": "10 - Best overall cancer care experience possible",
+      "sec_access_questions_title": "Access Questions",
+      "last_six_months_cancer_center_contact_office_hours": "In the last 6 months, did you contact this cancer center with a medical question after regular office hours?",
+      "last_six_months_cancer_center_contact_office_hours_opt_1": "Yes",
+      "last_six_months_cancer_center_contact_office_hours_opt_2": "No",
+      "last_six_months_cancer_center_contact_office_hours_answer": "In the last 6 months, when you contacted this cancer center after regular office hours, how often did you get an answer to your medical questions as soon as you needed?",
+      "last_six_months_cancer_center_contact_office_hours_answer_opt_1": "Never",
+      "last_six_months_cancer_center_contact_office_hours_answer_opt_2": "Sometimes",
+      "last_six_months_cancer_center_contact_office_hours_answer_opt_3": "Usually",
+      "last_six_months_cancer_center_contact_office_hours_answer_opt_4": "Always",
+      "last_six_months_fifteen_minute_wait_time": "Wait time includes time spent in the waiting room and exam room. In the last 6 months, how often did you see the person you came to see within 15 minutes of your appointment time?",
+      "last_six_months_fifteen_minute_wait_time_opt_1": "Never",
+      "last_six_months_fifteen_minute_wait_time_opt_2": "Sometimes",
+      "last_six_months_fifteen_minute_wait_time_opt_3": "Usually",
+      "last_six_months_fifteen_minute_wait_time_opt_4": "Always",
+      "sec_information_from_providers_title": "Information from Providers",
+      "radiation_therapy_affect_normal_activity": "Since it was decided that you would have radiation therapy, did your radiation therapy team clearly explain how your cancer and radiation therapy could affect your normal daily activities?",
+      "radiation_therapy_affect_normal_activity_opt_1": "Yes, definitely",
+      "radiation_therapy_affect_normal_activity_opt_2": "Yes, somewhat",
+      "radiation_therapy_affect_normal_activity_opt_3": "No",
+      "last_six_months_radiation_therapy_told_next_steps": "In the last 6 months, did your radiation therapy team tell you what the next steps in your radiation therapy would be?",
+      "last_six_months_radiation_therapy_told_next_steps_opt_1": "Yes, definitely",
+      "last_six_months_radiation_therapy_told_next_steps_opt_2": "Yes, somewhat",
+      "last_six_months_radiation_therapy_told_next_steps_opt_3": "No",
+      "last_six_months_radiation_therapy_team_explain_results": "In the last 6 months, how often did your radiation therapy team explain those results in a way that was easy to understand?",
+      "last_six_months_radiation_therapy_team_explain_results_opt_1": "Never",
+      "last_six_months_radiation_therapy_team_explain_results_opt_2": "Sometimes",
+      "last_six_months_radiation_therapy_team_explain_results_opt_3": "Usually",
+      "last_six_months_radiation_therapy_team_explain_results_opt_4": "Always",
+      "last_six_months_radiation_therapy_team_prescribe_medicine": "In the last 6 months, did your radiation therapy team prescribe medicine that you had not taken before?",
+      "last_six_months_radiation_therapy_team_prescribe_medicine_opt_1": "Yes",
+      "last_six_months_radiation_therapy_team_prescribe_medicine_opt_2": "No",
+      "last_six_months_radiation_therapy_team_explain_medicine": "In the last 6 months, did your radiation therapy team explain what that medicine was for in a way that was easy to understand?",
+      "last_six_months_radiation_therapy_team_explain_medicine_opt_1": "Yes, definitely",
+      "last_six_months_radiation_therapy_team_explain_medicine_opt_2": "Yes, somewhat",
+      "last_six_months_radiation_therapy_team_explain_medicine_opt_3": "No",
+      "sec_shared_decision_making_title": "Shared Decision Making",
+      "health_professional_treatment_alternative": "Since your cancer was diagnosed, did a doctor or other health care professional at this cancer center talk with you about more than one way to treat your cancer?",
+      "health_professional_treatment_alternative_opt_1": "Yes",
+      "health_professional_treatment_alternative_opt_2": "No",
+      "health_professional_explain_treatment_advantage": "Since your career was diagnosed, did a doctor or other health care professional at this cancer center clearly explain the advantages of each choice for cancer treatment, including the treatments you did not get?",
+      "health_professional_explain_treatment_advantage_opt_1": "Yes, definitely",
+      "health_professional_explain_treatment_advantage_opt_2": "Yes, somewhat",
+      "health_professional_explain_treatment_advantage_opt_3": "No",
+      "health_professional_explain_treatment_disadvantage": "Since your cancer was diagnosed did a doctor or health care professional at this cancer center clearly explain the disadvantages of each choice for cancer treatment, including the treatments you did not get?",
+      "health_professional_explain_treatment_disadvantage_opt_1": "Yes, definitely",
+      "health_professional_explain_treatment_disadvantage_opt_2": "Yes, somewhat",
+      "health_professional_explain_treatment_disadvantage_opt_3": "No",
+      "health_professional_explain_treatment_opinion": "Since your cancer was diagnosed, did a doctor or other health care professional at this cancer center ask for your opinion about each choice of cancer treatment, including the treatments you did not get?",
+      "health_professional_explain_treatment_opinion_opt_1": "Yes, definitely",
+      "health_professional_explain_treatment_opinion_opt_2": "Yes, somewhat",
+      "health_professional_explain_treatment_opinion_opt_3": "No",
+      "health_professional_radiation_therapy_reason": "Since your cancer was diagnosed, did a doctor or other health care professional at this cancer center talk with you about the reason you might want to have radiation therapy?",
+      "health_professional_radiation_therapy_reason_opt_1": "Yes, definitely",
+      "health_professional_radiation_therapy_reason_opt_2": "Yes, somewhat",
+      "health_professional_radiation_therapy_reason_opt_3": "No",
+      "health_professional_radiation_therapy_reason_not": "Since your cancer was diagnosed, did a doctor or other health care professional at this cancer center talk with you about the reasons you might not want to have radiation therapy?",
+      "health_professional_radiation_therapy_reason_not_opt_1": "Yes, definitely",
+      "health_professional_radiation_therapy_reason_not_opt_2": "Yes, somewhat",
+      "health_professional_radiation_therapy_reason_not_opt_3": "No",
+      "health_professional_radiation_therapy_best_interest": "Since your cancer was diagnosed, when you talked about having radiation therapy, did a doctor or other health care professional at this cancer center ask you what you thought was best for you?",
+      "health_professional_radiation_therapy_best_interest_opt_1": "Yes, definitely",
+      "health_professional_radiation_therapy_best_interest_opt_2": "Yes, somewhat",
+      "health_professional_radiation_therapy_best_interest_opt_3": "No",
+      "health_professional_treatment_decision_involve": "Since your cancer was diagnosed, did a doctor or health professional at this cancer center involve you in decisions about your cancer treatment as much as you wanted?",
+      "health_professional_treatment_decision_involve_opt_1": "Yes, definitely",
+      "health_professional_treatment_decision_involve_opt_2": "Yes, somewhat",
+      "health_professional_treatment_decision_involve_opt_3": "No"
+    }
+  }
+}

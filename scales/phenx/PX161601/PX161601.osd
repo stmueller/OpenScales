@@ -1,0 +1,904 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Personal Medical History of Allergies, Infectious Diseases, and Immunizations - Child",
+      "code": "PX161601",
+      "abbreviation": "PX161601",
+      "description": "This protocol is a proxy-administered personal health record from the American Health Information Management Association (AHIMA). The parent or guardian is asked to provide details on the child in the following categories: Birth, Health Log, Allergies/Drug Sensitivities, Infectious Disease, and Immu",
+      "domain": "Immune System & Infectious Disease",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/161601]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/161601"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "birth_details",
+        "text_key": "birth_details",
+        "type": "inst"
+      },
+      {
+        "id": "birth_hospital",
+        "text_key": "birth_hospital",
+        "type": "short"
+      },
+      {
+        "id": "birth_weight",
+        "text_key": "birth_weight",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "birth_weight_units",
+        "text_key": "birth_weight_units",
+        "type": "short"
+      },
+      {
+        "id": "birth_length",
+        "text_key": "birth_length",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "birth_length_units",
+        "text_key": "birth_length_units",
+        "type": "short"
+      },
+      {
+        "id": "birth_doctor",
+        "text_key": "birth_doctor",
+        "type": "short"
+      },
+      {
+        "id": "birth_prenatal_problem",
+        "text_key": "birth_prenatal_problem",
+        "type": "short"
+      },
+      {
+        "id": "birth_apgar_score",
+        "text_key": "birth_apgar_score",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "section_b_health_log",
+        "text_key": "section_b_health_log",
+        "type": "inst"
+      },
+      {
+        "id": "health_problem1_type",
+        "text_key": "health_problem1_type",
+        "type": "short"
+      },
+      {
+        "id": "health_problem1_date",
+        "text_key": "health_problem1_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "health_problem1_remarks",
+        "text_key": "health_problem1_remarks",
+        "type": "short"
+      },
+      {
+        "id": "health_problem2_type",
+        "text_key": "health_problem2_type",
+        "type": "short"
+      },
+      {
+        "id": "health_problem2_date",
+        "text_key": "health_problem2_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "health_problem2_remarks",
+        "text_key": "health_problem2_remarks",
+        "type": "short"
+      },
+      {
+        "id": "health_problem3_type",
+        "text_key": "health_problem3_type",
+        "type": "short"
+      },
+      {
+        "id": "health_problem3_date",
+        "text_key": "health_problem3_date",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "health_problem3_remarks",
+        "text_key": "health_problem3_remarks",
+        "type": "short"
+      },
+      {
+        "id": "section_c_allergies_drug_s",
+        "text_key": "section_c_allergies_drug_s",
+        "type": "inst"
+      },
+      {
+        "id": "allergysensitivity1_type",
+        "text_key": "allergysensitivity1_type",
+        "type": "short"
+      },
+      {
+        "id": "allergysensitivity1_reaction",
+        "text_key": "allergysensitivity1_reaction",
+        "type": "short"
+      },
+      {
+        "id": "allergysensitivity1_date_last_occurred",
+        "text_key": "allergysensitivity1_date_last_occurred",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "allergysensitivity1_treatment",
+        "text_key": "allergysensitivity1_treatment",
+        "type": "short"
+      },
+      {
+        "id": "allergysensitivity2_type",
+        "text_key": "allergysensitivity2_type",
+        "type": "short"
+      },
+      {
+        "id": "allergysensitivity2_reaction",
+        "text_key": "allergysensitivity2_reaction",
+        "type": "short"
+      },
+      {
+        "id": "allergysensitivity2_date_last_occurred",
+        "text_key": "allergysensitivity2_date_last_occurred",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "allergysensitivity2_treatment",
+        "text_key": "allergysensitivity2_treatment",
+        "type": "short"
+      },
+      {
+        "id": "allergysensitivity3_type",
+        "text_key": "allergysensitivity3_type",
+        "type": "short"
+      },
+      {
+        "id": "allergysensitivity3_reaction",
+        "text_key": "allergysensitivity3_reaction",
+        "type": "short"
+      },
+      {
+        "id": "allergysensitivity3_date_last_occurred",
+        "text_key": "allergysensitivity3_date_last_occurred",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "allergysensitivity3_treatment",
+        "text_key": "allergysensitivity3_treatment",
+        "type": "short"
+      },
+      {
+        "id": "section_d_infectious_disea",
+        "text_key": "section_d_infectious_disea",
+        "type": "inst"
+      },
+      {
+        "id": "chicken_pox_age",
+        "text_key": "chicken_pox_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "chicken_pox_date",
+        "text_key": "chicken_pox_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "chicken_pox_remarks",
+        "text_key": "chicken_pox_remarks",
+        "type": "short"
+      },
+      {
+        "id": "measles_age",
+        "text_key": "measles_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "measles_date",
+        "text_key": "measles_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "measles_remarks",
+        "text_key": "measles_remarks",
+        "type": "short"
+      },
+      {
+        "id": "rubella_age",
+        "text_key": "rubella_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "rubella_date",
+        "text_key": "rubella_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "rubella_remarks",
+        "text_key": "rubella_remarks",
+        "type": "short"
+      },
+      {
+        "id": "hepatitis_age",
+        "text_key": "hepatitis_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "hepatitis_date",
+        "text_key": "hepatitis_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "hepatitis_remarks",
+        "text_key": "hepatitis_remarks",
+        "type": "short"
+      },
+      {
+        "id": "pertussiswhooping_cough_age",
+        "text_key": "pertussiswhooping_cough_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pertussiswhooping_cough_date",
+        "text_key": "pertussiswhooping_cough_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "pertussiswhooping_cough_remarks",
+        "text_key": "pertussiswhooping_cough_remarks",
+        "type": "short"
+      },
+      {
+        "id": "pneumonia_age",
+        "text_key": "pneumonia_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pneumonia_date",
+        "text_key": "pneumonia_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "pneumonia_remarks",
+        "text_key": "pneumonia_remarks",
+        "type": "short"
+      },
+      {
+        "id": "polio_age",
+        "text_key": "polio_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "polio_date",
+        "text_key": "polio_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "polio_remarks",
+        "text_key": "polio_remarks",
+        "type": "short"
+      },
+      {
+        "id": "mumps_age",
+        "text_key": "mumps_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "mumps_date",
+        "text_key": "mumps_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "mumps_remarks",
+        "text_key": "mumps_remarks",
+        "type": "short"
+      },
+      {
+        "id": "scarlet_fever_age",
+        "text_key": "scarlet_fever_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "scarlet_fever_date",
+        "text_key": "scarlet_fever_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "scarlet_fever_remarks",
+        "text_key": "scarlet_fever_remarks",
+        "type": "short"
+      },
+      {
+        "id": "other_age",
+        "text_key": "other_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "other_date",
+        "text_key": "other_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "other_remarks",
+        "text_key": "other_remarks",
+        "type": "short"
+      },
+      {
+        "id": "section_e_immunizations",
+        "text_key": "section_e_immunizations",
+        "type": "inst"
+      },
+      {
+        "id": "diphtheria_booster1_age",
+        "text_key": "diphtheria_booster1_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "diphtheria_booster1_date",
+        "text_key": "diphtheria_booster1_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "diphtheria_booster2_age",
+        "text_key": "diphtheria_booster2_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "diphtheria_booster2_date",
+        "text_key": "diphtheria_booster2_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "diphtheria_booster3_age",
+        "text_key": "diphtheria_booster3_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "diphtheria_booster3_date",
+        "text_key": "diphtheria_booster3_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "pertussiswhooping_cough_booster1_age",
+        "text_key": "pertussiswhooping_cough_booster1_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pertussiswhooping_cough_booster1_date",
+        "text_key": "pertussiswhooping_cough_booster1_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "pertussiswhooping_cough_booster2_age",
+        "text_key": "pertussiswhooping_cough_booster2_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pertussiswhooping_cough_booster2_date",
+        "text_key": "pertussiswhooping_cough_booster2_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "pertussiswhooping_cough_booster3_age",
+        "text_key": "pertussiswhooping_cough_booster3_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pertussiswhooping_cough_booster3_date",
+        "text_key": "pertussiswhooping_cough_booster3_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "tetanus_booster1_age",
+        "text_key": "tetanus_booster1_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "tetanus_booster1_date",
+        "text_key": "tetanus_booster1_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "tetanus_booster2_age",
+        "text_key": "tetanus_booster2_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "tetanus_booster2_date",
+        "text_key": "tetanus_booster2_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "tetanus_booster3_age",
+        "text_key": "tetanus_booster3_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "tetanus_booster3_date",
+        "text_key": "tetanus_booster3_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "smallpox_booster1_age",
+        "text_key": "smallpox_booster1_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "smallpox_booster1_date",
+        "text_key": "smallpox_booster1_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "smallpox_booster2_age",
+        "text_key": "smallpox_booster2_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "smallpox_booster2_date",
+        "text_key": "smallpox_booster2_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "smallpox_booster3_age",
+        "text_key": "smallpox_booster3_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "smallpox_booster3_date",
+        "text_key": "smallpox_booster3_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "typhoid_booster1_age",
+        "text_key": "typhoid_booster1_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "typhoid_booster1_date",
+        "text_key": "typhoid_booster1_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "typhoid_booster2_age",
+        "text_key": "typhoid_booster2_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "typhoid_booster2_date",
+        "text_key": "typhoid_booster2_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "typhoid_booster3_age",
+        "text_key": "typhoid_booster3_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "typhoid_booster3_date",
+        "text_key": "typhoid_booster3_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "rubella_booster1_age",
+        "text_key": "rubella_booster1_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "rubella_booster1_date",
+        "text_key": "rubella_booster1_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "rubella_booster2_age",
+        "text_key": "rubella_booster2_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "rubella_booster2_date",
+        "text_key": "rubella_booster2_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "rubella_booster3_age",
+        "text_key": "rubella_booster3_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "rubella_booster3_date",
+        "text_key": "rubella_booster3_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "mumps_booster1_age",
+        "text_key": "mumps_booster1_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "mumps_booster1_date",
+        "text_key": "mumps_booster1_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "mumps_booster2_age",
+        "text_key": "mumps_booster2_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "mumps_booster2_date",
+        "text_key": "mumps_booster2_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "mumps_booster3_age",
+        "text_key": "mumps_booster3_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "mumps_booster3_date",
+        "text_key": "mumps_booster3_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "measles_booster1_age",
+        "text_key": "measles_booster1_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "measles_booster1_date",
+        "text_key": "measles_booster1_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "measles_booster2_age",
+        "text_key": "measles_booster2_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "measles_booster2_date",
+        "text_key": "measles_booster2_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "measles_booster3_age",
+        "text_key": "measles_booster3_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "measles_booster3_date",
+        "text_key": "measles_booster3_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "tuberculosis_booster1_age",
+        "text_key": "tuberculosis_booster1_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "tuberculosis_booster1_date",
+        "text_key": "tuberculosis_booster1_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "tuberculosis_booster2_age",
+        "text_key": "tuberculosis_booster2_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "tuberculosis_booster2_date",
+        "text_key": "tuberculosis_booster2_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "tuberculosis_booster3_age",
+        "text_key": "tuberculosis_booster3_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "tuberculosis_booster3_date",
+        "text_key": "tuberculosis_booster3_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "hepatitis_b_booster1_age",
+        "text_key": "hepatitis_b_booster1_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "hepatitis_b_booster1_date",
+        "text_key": "hepatitis_b_booster1_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "hepatitis_b_booster2_age",
+        "text_key": "hepatitis_b_booster2_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "hepatitis_b_booster2_date",
+        "text_key": "hepatitis_b_booster2_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "hepatitis_b_booster3_age",
+        "text_key": "hepatitis_b_booster3_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "hepatitis_b_booster3_date",
+        "text_key": "hepatitis_b_booster3_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "other_booster1_age",
+        "text_key": "other_booster1_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "other_booster1_date",
+        "text_key": "other_booster1_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "other_booster2_age",
+        "text_key": "other_booster2_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "other_booster2_date",
+        "text_key": "other_booster2_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "other_booster3_age",
+        "text_key": "other_booster3_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "other_booster3_date",
+        "text_key": "other_booster3_date",
+        "type": "short",
+        "input_type": "date"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "birth_details": "Section A.  Birth Details:",
+      "birth_hospital": "Birth Hospital",
+      "birth_weight": "Birth Weight",
+      "birth_weight_units": "Birth Weight - Specify Units",
+      "birth_length": "Birth Length",
+      "birth_length_units": "Birth Length - Specify units",
+      "birth_doctor": "Birth Doctor",
+      "birth_prenatal_problem": "Birth Prenatal Problem",
+      "birth_apgar_score": "Birth Apgar Score",
+      "section_b_health_log": "Section B.  Health Log:",
+      "health_problem1_type": "Health Problem 1 - Type",
+      "health_problem1_date": "Health Problem 1 - Date",
+      "health_problem1_remarks": "Health Problem 1 - Remarks (e.g., medications, special tests, x-rays, length of hospital stay, surgery)",
+      "health_problem2_type": "Health Problem 2 - Type",
+      "health_problem2_date": "Health Problem 2 - Date",
+      "health_problem2_remarks": "Health Problem 2 - Remarks (e.g., medications, special tests, x-rays, length of hospital stay, surgery)",
+      "health_problem3_type": "Health Problem 3 - Type",
+      "health_problem3_date": "Health Problem 3 - Date",
+      "health_problem3_remarks": "Health Problem 3 - Remarks (e.g., medications, special tests, x-rays, length of hospital stay, surgery)",
+      "section_c_allergies_drug_s": "Section C.  Allergies/Drug Sensitivities:",
+      "allergysensitivity1_type": "Allergy/Sensitivity 1 - Type (include medications, foods, environmental, or other)",
+      "allergysensitivity1_reaction": "Allergy/Sensitivity 1 - Reaction",
+      "allergysensitivity1_date_last_occurred": "Allergy/Sensitivity 1 - Date Last Occurred",
+      "allergysensitivity1_treatment": "Allergy/Sensitivity 1 - Treatment",
+      "allergysensitivity2_type": "Allergy/Sensitivity 2 - Type (include medications, foods, environmental, or other)",
+      "allergysensitivity2_reaction": "Allergy/Sensitivity 2 - Reaction",
+      "allergysensitivity2_date_last_occurred": "Allergy/Sensitivity 2 - Date Last Occurred",
+      "allergysensitivity2_treatment": "Allergy/Sensitivity 2 - Treatment",
+      "allergysensitivity3_type": "Allergy/Sensitivity 3 - Type (include medications, foods, environmental, or other)",
+      "allergysensitivity3_reaction": "Allergy/Sensitivity 3 - Reaction",
+      "allergysensitivity3_date_last_occurred": "Allergy/Sensitivity 3 - Date Last Occurred",
+      "allergysensitivity3_treatment": "Allergy/Sensitivity 3 - Treatment",
+      "section_d_infectious_disea": "Section D. Infectious Disease:",
+      "chicken_pox_age": "Chicken Pox - Age",
+      "chicken_pox_date": "Chicken Pox - Date",
+      "chicken_pox_remarks": "Chicken Pox - Remarks",
+      "measles_age": "Measles - Age",
+      "measles_date": "Measles - Date",
+      "measles_remarks": "Measles - Remarks",
+      "rubella_age": "Rubella - Age",
+      "rubella_date": "Rubella - Date",
+      "rubella_remarks": "Rubella - Remarks",
+      "hepatitis_age": "Hepatitis - Age",
+      "hepatitis_date": "Hepatitis - Date",
+      "hepatitis_remarks": "Hepatitis - Remarks",
+      "pertussiswhooping_cough_age": "Pertussis/Whooping Cough - Age",
+      "pertussiswhooping_cough_date": "Pertussis/Whooping Cough - Date",
+      "pertussiswhooping_cough_remarks": "Pertussis/Whooping Cough - Remarks",
+      "pneumonia_age": "Pneumonia - Age",
+      "pneumonia_date": "Pneumonia - Date",
+      "pneumonia_remarks": "Pneumonia - Remarks",
+      "polio_age": "Polio - Age",
+      "polio_date": "Polio - Date",
+      "polio_remarks": "Polio - Remarks",
+      "mumps_age": "Mumps - Age",
+      "mumps_date": "Mumps - Date",
+      "mumps_remarks": "Mumps - Remarks",
+      "scarlet_fever_age": "Scarlet Fever - Age",
+      "scarlet_fever_date": "Scarlet Fever - Date",
+      "scarlet_fever_remarks": "Scarlet Fever - Remarks",
+      "other_age": "Other - Age",
+      "other_date": "Other - Date",
+      "other_remarks": "Other - Remarks",
+      "section_e_immunizations": "Section E. Immunizations:",
+      "diphtheria_booster1_age": "Diphtheria Booster 1 Age",
+      "diphtheria_booster1_date": "Diphtheria Booster 1 Date",
+      "diphtheria_booster2_age": "Diphtheria Booster 2 Age",
+      "diphtheria_booster2_date": "Diphtheria Booster 2 Date",
+      "diphtheria_booster3_age": "Diphtheria Booster 3 Age",
+      "diphtheria_booster3_date": "Diphtheria Booster 3 Date",
+      "pertussiswhooping_cough_booster1_age": "Pertussis/Whooping Cough Booster 1 Age",
+      "pertussiswhooping_cough_booster1_date": "Pertussis/Whooping Cough Booster 1 Date",
+      "pertussiswhooping_cough_booster2_age": "Pertussis/Whooping Cough Booster 2 Age",
+      "pertussiswhooping_cough_booster2_date": "Pertussis/Whooping Cough Booster 2 Date",
+      "pertussiswhooping_cough_booster3_age": "Pertussis/Whooping Cough Booster 3 Age",
+      "pertussiswhooping_cough_booster3_date": "Pertussis/Whooping Cough Booster 3 Date",
+      "tetanus_booster1_age": "Tetanus Booster 1 Age",
+      "tetanus_booster1_date": "Tetanus Booster 1 Date",
+      "tetanus_booster2_age": "Tetanus Booster 2 Age",
+      "tetanus_booster2_date": "Tetanus Booster 2 Date",
+      "tetanus_booster3_age": "Tetanus Booster 3 Age",
+      "tetanus_booster3_date": "Tetanus Booster 3 Date",
+      "smallpox_booster1_age": "Smallpox Booster 1 Age",
+      "smallpox_booster1_date": "Smallpox Booster 1 Date",
+      "smallpox_booster2_age": "Smallpox Booster 2 Age",
+      "smallpox_booster2_date": "Smallpox Booster 2 Date",
+      "smallpox_booster3_age": "Smallpox Booster 3 Age",
+      "smallpox_booster3_date": "Smallpox Booster 3 Date",
+      "typhoid_booster1_age": "Typhoid Booster 1 Age",
+      "typhoid_booster1_date": "Typhoid Booster 1 Date",
+      "typhoid_booster2_age": "Typhoid Booster 2 Age",
+      "typhoid_booster2_date": "Typhoid Booster 2 Date",
+      "typhoid_booster3_age": "Typhoid Booster 3 Age",
+      "typhoid_booster3_date": "Typhoid Booster 3 Date",
+      "rubella_booster1_age": "Rubella Booster 1 Age",
+      "rubella_booster1_date": "Rubella Booster 1 Date",
+      "rubella_booster2_age": "Rubella Booster 2 Age",
+      "rubella_booster2_date": "Rubella Booster 2 Date",
+      "rubella_booster3_age": "Rubella Booster 3 Age",
+      "rubella_booster3_date": "Rubella Booster 3 Date",
+      "mumps_booster1_age": "Mumps Booster 1 Age",
+      "mumps_booster1_date": "Mumps Booster 1 Date",
+      "mumps_booster2_age": "Mumps Booster 2 Age",
+      "mumps_booster2_date": "Mumps Booster 2 Date",
+      "mumps_booster3_age": "Mumps Booster 3 Age",
+      "mumps_booster3_date": "Mumps Booster 3 Date",
+      "measles_booster1_age": "Measles Booster 1 Age",
+      "measles_booster1_date": "Measles Booster 1 Date",
+      "measles_booster2_age": "Measles Booster 2 Age",
+      "measles_booster2_date": "Measles Booster 2 Date",
+      "measles_booster3_age": "Measles Booster 3 Age",
+      "measles_booster3_date": "Measles Booster 3 Date",
+      "tuberculosis_booster1_age": "Tuberculosis Booster 1 Age",
+      "tuberculosis_booster1_date": "Tuberculosis Booster 1 Date",
+      "tuberculosis_booster2_age": "Tuberculosis Booster 2 Age",
+      "tuberculosis_booster2_date": "Tuberculosis Booster 2 Date",
+      "tuberculosis_booster3_age": "Tuberculosis Booster 3 Age",
+      "tuberculosis_booster3_date": "Tuberculosis Booster 3 Date",
+      "hepatitis_b_booster1_age": "Hepatitis B Booster 1 Age",
+      "hepatitis_b_booster1_date": "Hepatitis B Booster 1 Date",
+      "hepatitis_b_booster2_age": "Hepatitis B Booster 2 Age",
+      "hepatitis_b_booster2_date": "Hepatitis B Booster 2 Date",
+      "hepatitis_b_booster3_age": "Hepatitis B Booster 3 Age",
+      "hepatitis_b_booster3_date": "Hepatitis B Booster 3 Date",
+      "other_booster1_age": "Other Booster 1 Age",
+      "other_booster1_date": "Other Booster 1 Date",
+      "other_booster2_age": "Other Booster 2 Age",
+      "other_booster2_date": "Other Booster 2 Date",
+      "other_booster3_age": "Other Booster 3 Age",
+      "other_booster3_date": "Other Booster 3 Date"
+    }
+  }
+}

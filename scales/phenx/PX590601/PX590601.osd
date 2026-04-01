@@ -1,0 +1,824 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Use of Treatment and Recovery Support Services",
+      "code": "PX590601",
+      "abbreviation": "PX590601",
+      "description": "The Use of Treatment and Recovery Support Services is a self-administered or interviewer-administered questionnaire that collects information on all three recovery services: psychosocial, pharmacological, and recovery supports participants may have engaged in, including residential treatments, anti-",
+      "domain": "Social Networks & Substance Use",
+      "citation": "Day, E., Manitsa, I., Farley, A., & Kelly, J. F. (2024). The UK National Recovery Survey: nationally representative survey of people overcoming a drug or alcohol problem. BJPsych Open, 10(2) , e67. doi:10.1192/bjo.2023.654 Marchand, K., Beaumont, S., Westfall, J., MacDonald, S., Marsh, D. C., Schechter, M. T., & Oviedo-Joekes, E. (2019). Conceptualizing patient-centered care for substance use disorder treatment: findings from a systematic scoping review. Substance Abuse Treatment, Prevention, and Policy,14, 37 . https://doi.org/10.1186/s13011-019-0227-0 [PhenX: https://www.phenxtoolkit.org/protocols/view/590601]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/590601"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_outpatient",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_outpatient",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_outpatient_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_outpatient_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_detox",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_detox",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_detox_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_detox_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_inpatient",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_inpatient",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_inpatient_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_inpatient_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_past_30_days_treatment_attendance",
+        "text_key": "use_of_treatment_and_recovery_support_services_past_30_days_treatment_attendance",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "use_of_treatment_and_recovery_support_services_participate_outpatient",
+              "operator": "equals",
+              "value": "Yes"
+            },
+            {
+              "item": "use_of_treatment_and_recovery_support_services_participate_detox",
+              "operator": "equals",
+              "value": "Yes"
+            },
+            {
+              "item": "use_of_treatment_and_recovery_support_services_participate_inpatient",
+              "operator": "equals",
+              "value": "Yes"
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_alcohol_rx_antabuse",
+        "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_antabuse",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_antabuse_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_antabuse_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_alcohol_rx_selincro",
+        "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_selincro",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_selincro_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_selincro_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_alcohol_rx_revia",
+        "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_revia",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_revia_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_revia_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_alcohol_rx_campral",
+        "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_campral",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_campral_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_campral_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_alcohol_rx_topamax",
+        "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_topamax",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_topamax_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_topamax_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_alcohol_rx_lioresal",
+        "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_lioresal",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_lioresal_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_lioresal_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_alcohol_rx_other",
+        "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_other",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_other_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_other_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_alcohol_rx_other_specify",
+        "text_key": "use_of_treatment_and_recovery_support_services_alcohol_rx_other_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "use_of_treatment_and_recovery_support_services_alcohol_rx_other",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_opioid_rx_methadone",
+        "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_methadone",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_methadone_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_methadone_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_opioid_rx_orlaam",
+        "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_orlaam",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_orlaam_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_orlaam_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_opioid_rx_suboxone",
+        "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_suboxone",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_suboxone_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_suboxone_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_opioid_rx_subutex",
+        "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_subutex",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_subutex_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_subutex_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_opioid_rx_revia",
+        "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_revia",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_revia_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_revia_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_opioid_rx_vivitrol",
+        "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_vivitrol",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_vivitrol_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_vivitrol_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_opioid_rx_other",
+        "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_other",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_other_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_other_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_opioid_rx_other_specify",
+        "text_key": "use_of_treatment_and_recovery_support_services_opioid_rx_other_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "use_of_treatment_and_recovery_support_services_opioid_rx_other",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_past_30_days_used_rx",
+        "text_key": "use_of_treatment_and_recovery_support_services_past_30_days_used_rx",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "use_of_treatment_and_recovery_support_services_opioid_rx_methadone",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "use_of_treatment_and_recovery_support_services_opioid_rx_orlaam",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "use_of_treatment_and_recovery_support_services_opioid_rx_suboxone",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "use_of_treatment_and_recovery_support_services_opioid_rx_subutex",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "use_of_treatment_and_recovery_support_services_opioid_rx_revia",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "use_of_treatment_and_recovery_support_services_opioid_rx_vivitrol",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "use_of_treatment_and_recovery_support_services_opioid_rx_other",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_sober_living",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_sober_living",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_sober_living_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_sober_living_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_recovery_high_school",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_recovery_high_school",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_recovery_high_school_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_recovery_high_school_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_college_recovery",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_college_recovery",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_college_recovery_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_college_recovery_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_faith_based_recovery",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_faith_based_recovery",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_faith_based_recovery_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_faith_based_recovery_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_recovery_community_center",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_recovery_community_center",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_recovery_community_center_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_recovery_community_center_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_recovery_community_organization",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_recovery_community_organization",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_recovery_community_organization_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_recovery_community_organization_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_online_communities",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_online_communities",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_online_communities_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_online_communities_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_phone_apps",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_phone_apps",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_phone_apps_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_phone_apps_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_past_30_days_used_recovery_support",
+        "text_key": "use_of_treatment_and_recovery_support_services_past_30_days_used_recovery_support",
+        "type": "short",
+        "visible_when": {
+          "item": "use_of_treatment_and_recovery_support_services_participate_sober_living",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_mutual_help_aa",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_aa",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_aa_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_aa_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_mutual_help_na",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_na",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_na_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_na_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_mutual_help_ca",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_ca",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_ca_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_ca_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_mutual_help_celebrate_recovery",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_celebrate_recovery",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_celebrate_recovery_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_celebrate_recovery_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_mutual_help_smart_recovery",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_smart_recovery",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_smart_recovery_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_smart_recovery_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_mutual_help_women_for_sobriety",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_women_for_sobriety",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_women_for_sobriety_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_women_for_sobriety_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_mutual_help_cma",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_cma",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_cma_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_cma_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_mutual_help_ma",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_ma",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_ma_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_ma_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_mutual_help_lifering",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_lifering",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_lifering_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_lifering_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_mutual_help_moderation_management",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_moderation_management",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_moderation_management_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_moderation_management_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_mutual_help_sos",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_sos",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_sos_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_sos_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_mutual_help_other",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_other",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_other_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_other_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_participate_mutual_help_other_specify",
+        "text_key": "use_of_treatment_and_recovery_support_services_participate_mutual_help_other_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "use_of_treatment_and_recovery_support_services_participate_mutual_help_other",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "use_of_treatment_and_recovery_support_services_past_30_days_used_mutual_help",
+        "text_key": "use_of_treatment_and_recovery_support_services_past_30_days_used_mutual_help",
+        "type": "short",
+        "visible_when": {
+          "item": "use_of_treatment_and_recovery_support_services_participate_mutual_help_aa",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "use_of_treatment_and_recovery_support_services_participate_outpatient": "Have you ever participated in any of the following treatment? Outpatient addiction treatment",
+      "use_of_treatment_and_recovery_support_services_participate_outpatient_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_outpatient_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_detox": "Have you ever participated in any of the following treatment? Alcohol/drug detoxification services",
+      "use_of_treatment_and_recovery_support_services_participate_detox_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_detox_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_inpatient": "Have you ever participated in any of the following treatment? Inpatient or residential treatment",
+      "use_of_treatment_and_recovery_support_services_participate_inpatient_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_inpatient_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_past_30_days_treatment_attendance": "In the past 30 days, on how many days have you attended [insert treatment type here]",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_antabuse": "Have you ever been prescribed any of the following anti-relapse/craving medications for alcohol use?  Antabuse (Disulfiram)",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_antabuse_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_antabuse_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_selincro": "Have you ever been prescribed any of the following anti-relapse/craving medications for alcohol use?  Selincro (Nalmefene)",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_selincro_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_selincro_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_revia": "Have you ever been prescribed any of the following anti-relapse/craving medications for alcohol use?  Revia (Naltrexone)",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_revia_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_revia_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_campral": "Have you ever been prescribed any of the following anti-relapse/craving medications for alcohol use?  Campral (Acamprosate)",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_campral_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_campral_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_topamax": "Have you ever been prescribed any of the following anti-relapse/craving medications for alcohol use?  Topamax (Topiramate)",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_topamax_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_topamax_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_lioresal": "Have you ever been prescribed any of the following anti-relapse/craving medications for alcohol use?  Lioresal (Baclofen)",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_lioresal_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_lioresal_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_other": "Have you ever been prescribed any of the following anti-relapse/craving medications for alcohol use?  Other",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_other_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_other_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_alcohol_rx_other_specify": "Have you ever been prescribed any of the following anti-relapse/craving medications for alcohol use?  Other Please specify:____",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_methadone": "Have you ever been prescribed any of the following anti-relapse/craving medications for opioid use? Methadone",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_methadone_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_methadone_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_orlaam": "Have you ever been prescribed any of the following anti-relapse/craving medications for opioid use? Orlaam (Levomethadyl acetate)",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_orlaam_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_orlaam_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_suboxone": "Have you ever been prescribed any of the following anti-relapse/craving medications for opioid use? Suboxone (Buprenorphine-naloxone)",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_suboxone_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_suboxone_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_subutex": "Have you ever been prescribed any of the following anti-relapse/craving medications for opioid use? Subutex (Buprenorphine)",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_subutex_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_subutex_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_revia": "Have you ever been prescribed any of the following anti-relapse/craving medications for opioid use? Revia (Oral naltrexone)",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_revia_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_revia_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_vivitrol": "Have you ever been prescribed any of the following anti-relapse/craving medications for opioid use? Vivitrol (Long-acting injectable naltrexone)",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_vivitrol_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_vivitrol_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_other": "Have you ever been prescribed any of the following anti-relapse/craving medications for opioid use? Other",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_other_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_other_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_opioid_rx_other_specify": "Have you ever been prescribed any of the following anti-relapse/craving medications for opioid use? Please specify: ____",
+      "use_of_treatment_and_recovery_support_services_past_30_days_used_rx": "In the past 30 days, on how many days have you used [insert medication name here]",
+      "use_of_treatment_and_recovery_support_services_participate_sober_living": "Have you ever participated in any of the following recovery support services? Sober living environment (e.g., halfway house, Oxford house, sober dorm, etc.)",
+      "use_of_treatment_and_recovery_support_services_participate_sober_living_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_sober_living_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_recovery_high_school": "Have you ever participated in any of the following recovery support services? Recovery high schools",
+      "use_of_treatment_and_recovery_support_services_participate_recovery_high_school_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_recovery_high_school_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_college_recovery": "Have you ever participated in any of the following recovery support services? College recovery programs/communities",
+      "use_of_treatment_and_recovery_support_services_participate_college_recovery_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_college_recovery_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_faith_based_recovery": "Have you ever participated in any of the following recovery support services? Faith-based recovery services (e.g., an addiction recovery support group provided by a church, synagogue, mosque, etc.)",
+      "use_of_treatment_and_recovery_support_services_participate_faith_based_recovery_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_faith_based_recovery_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_recovery_community_center": "Have you ever participated in any of the following recovery support services? Recovery community centers",
+      "use_of_treatment_and_recovery_support_services_participate_recovery_community_center_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_recovery_community_center_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_recovery_community_organization": "Have you ever participated in any of the following recovery support services? State or local recovery community organization (RCO)",
+      "use_of_treatment_and_recovery_support_services_participate_recovery_community_organization_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_recovery_community_organization_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_online_communities": "Have you ever participated in any of the following recovery support services? Online communities (e.g., Facebook groups, In The Rooms, etc.)",
+      "use_of_treatment_and_recovery_support_services_participate_online_communities_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_online_communities_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_phone_apps": "Have you ever participated in any of the following recovery support services? Phone applications (e.g. SoberGrid, A-CHESS, etc.)",
+      "use_of_treatment_and_recovery_support_services_participate_phone_apps_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_phone_apps_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_past_30_days_used_recovery_support": "In the past 30 days, on how many days have you used [insert name of recovery support service here]",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_aa": "Have you ever participated in the following mutual-help groups? Alcoholics Anonymous (AA)",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_aa_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_aa_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_na": "Have you ever participated in the following mutual-help groups? Narcotics Anonymous (NA)",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_na_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_na_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_ca": "Have you ever participated in the following mutual-help groups? Cocaine Anonymous (CA)",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_ca_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_ca_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_celebrate_recovery": "Have you ever participated in the following mutual-help groups? Celebrate Recovery",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_celebrate_recovery_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_celebrate_recovery_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_smart_recovery": "Have you ever participated in the following mutual-help groups? SMART Recovery",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_smart_recovery_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_smart_recovery_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_women_for_sobriety": "Have you ever participated in the following mutual-help groups? Women for Sobriety",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_women_for_sobriety_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_women_for_sobriety_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_cma": "Have you ever participated in the following mutual-help groups? Crystal Methamphetamine Anonymous (CMA)",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_cma_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_cma_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_ma": "Have you ever participated in the following mutual-help groups? Marijuana Anonymous (MA)",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_ma_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_ma_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_lifering": "Have you ever participated in the following mutual-help groups? LifeRing Secular Recovery",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_lifering_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_lifering_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_moderation_management": "Have you ever participated in the following mutual-help groups? Moderation Management",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_moderation_management_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_moderation_management_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_sos": "Have you ever participated in the following mutual-help groups? Secular Organizations for Sobriety (S.O.S.)",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_sos_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_sos_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_other": "Have you ever participated in the following mutual-help groups? Other",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_other_opt_1": "Yes",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_other_opt_2": "No",
+      "use_of_treatment_and_recovery_support_services_participate_mutual_help_other_specify": "Have you ever participated in the following mutual-help groups? Please specify: ____",
+      "use_of_treatment_and_recovery_support_services_past_30_days_used_mutual_help": "In the past 30 days, on how many days have you used [insert name of mutual help group here]"
+    }
+  }
+}

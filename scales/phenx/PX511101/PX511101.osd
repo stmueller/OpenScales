@@ -1,0 +1,861 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Motives for Using Medical Cannabis",
+      "code": "PX511101",
+      "abbreviation": "PX511101",
+      "description": "This questionnaire includes nine self-administered items from the International Cannabis Policy Study Survey, Wave 6 (2023). Respondents are asked about motivations for using medical cannabis and use of cannabis as a complement to or substitution for prescription and other drugs.",
+      "domain": "Substance Use - Screening & Family History",
+      "citation": "Advanis Inc. (2022). The Canadian Cannabis Survey 2022: Methodological Report . Ottawa, Ontario, Canada: Health Canada. https://epe.lac-bac.gc.ca/100/200/301/pwgsc-tpsgc/por-ef/health/2022/124-21-e/POR124-21-Methodological_Report.pdf Hammond, D., Goodman, S., Wadsworth, E., Freeman, T. P., Kilmer, B., Schauer, G., Pacula, R. L., & Hall, W. (2022). Trends in the use of cannabis products in Canada and the USA, 2018-2020: Findings from the International Cannabis Policy Study. International Journal on Drug Policy, 105 , 103716. doi:10.1016/j.drugpo.2022.103716 Hammond, D., Goodman, S., Wadsworth, E., Rynard, V., Boudreau, C., & Hall, W. (2020). Evaluating the impacts of cannabis legalization: The International Cannabis Policy Study. International Journal on Drug Policy, 77 , 102698. doi:10.1016/j.drugpo.2020.102698 [PhenX: https://www.phenxtoolkit.org/protocols/view/511101]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/511101"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "motives_for_using_medical_cannabis_use",
+        "text_key": "motives_for_using_medical_cannabis_use",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "motives_for_using_medical_cannabis_use_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_use_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_use_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_use_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_use_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "motives_for_using_medical_cannabis_improve_symptoms",
+        "text_key": "motives_for_using_medical_cannabis_improve_symptoms",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "motives_for_using_medical_cannabis_improve_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_improve_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_improve_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_improve_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_improve_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_improve_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_improve_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_improve_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_improve_symptoms_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_improve_symptoms_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_improve_symptoms_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_improve_symptoms_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_improve_symptoms_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "motives_for_using_medical_cannabis_improve_symptoms_other",
+        "text_key": "motives_for_using_medical_cannabis_improve_symptoms_other",
+        "type": "short",
+        "visible_when": {
+          "item": "motives_for_using_medical_cannabis_improve_symptoms",
+          "operator": "in",
+          "value": [
+            10
+          ]
+        }
+      },
+      {
+        "id": "motives_for_using_medical_cannabis_current_use",
+        "text_key": "motives_for_using_medical_cannabis_current_use",
+        "type": "multicheck",
+        "visible_when": {
+          "any": [
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                1
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                2
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                3
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                4
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                5
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                6
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                7
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                8
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                9
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                10
+              ]
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_use_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_use_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_use_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_use_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_use_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_use_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_use_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_use_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_use_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_use_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_use_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_use_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_use_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "motives_for_using_medical_cannabis_current_use_other",
+        "text_key": "motives_for_using_medical_cannabis_current_use_other",
+        "type": "short",
+        "visible_when": {
+          "item": "motives_for_using_medical_cannabis_current_use",
+          "operator": "in",
+          "value": [
+            10
+          ]
+        }
+      },
+      {
+        "id": "motives_for_using_medical_cannabis_mental_health",
+        "text_key": "motives_for_using_medical_cannabis_mental_health",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                1
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                2
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                3
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                4
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                5
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                6
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                7
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                8
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                9
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_improve_symptoms",
+              "operator": "in",
+              "value": [
+                10
+              ]
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "motives_for_using_medical_cannabis_mental_health_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_mental_health_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_mental_health_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_mental_health_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "motives_for_using_medical_cannabis_manage_symptoms_type",
+        "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_12",
+            "value": 12
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "motives_for_using_medical_cannabis_manage_symptoms_type_other",
+        "text_key": "motives_for_using_medical_cannabis_manage_symptoms_type_other",
+        "type": "short",
+        "visible_when": {
+          "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+          "operator": "in",
+          "value": [
+            11
+          ]
+        }
+      },
+      {
+        "id": "motives_for_using_medical_cannabis_current_improve_symptoms",
+        "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms",
+        "type": "multicheck",
+        "visible_when": {
+          "any": [
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                1
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                2
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                3
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                4
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                5
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                6
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                7
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                8
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                9
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                10
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                11
+              ]
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_12",
+            "value": 12
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "motives_for_using_medical_cannabis_current_improve_symptoms_other",
+        "text_key": "motives_for_using_medical_cannabis_current_improve_symptoms_other",
+        "type": "short",
+        "visible_when": {
+          "item": "motives_for_using_medical_cannabis_current_improve_symptoms",
+          "operator": "in",
+          "value": [
+            11
+          ]
+        }
+      },
+      {
+        "id": "motives_for_using_medical_cannabis_main_reason_improve_physical_health",
+        "text_key": "motives_for_using_medical_cannabis_main_reason_improve_physical_health",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                1
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                2
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                3
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                4
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                5
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                6
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                7
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                8
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                9
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                10
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                11
+              ]
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "motives_for_using_medical_cannabis_main_reason_improve_physical_health_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_main_reason_improve_physical_health_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_main_reason_improve_physical_health_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_main_reason_improve_physical_health_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "motives_for_using_medical_cannabis_pain_relief",
+        "text_key": "motives_for_using_medical_cannabis_pain_relief",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                1
+              ]
+            },
+            {
+              "item": "motives_for_using_medical_cannabis_manage_symptoms_type",
+              "operator": "in",
+              "value": [
+                2
+              ]
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "motives_for_using_medical_cannabis_pain_relief_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_pain_relief_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_pain_relief_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_pain_relief_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "motives_for_using_medical_cannabis_pain_relief_past_year",
+        "text_key": "motives_for_using_medical_cannabis_pain_relief_past_year",
+        "type": "multi",
+        "visible_when": {
+          "item": "motives_for_using_medical_cannabis_pain_relief",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "motives_for_using_medical_cannabis_pain_relief_past_year_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_pain_relief_past_year_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_pain_relief_past_year_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "motives_for_using_medical_cannabis_pain_relief_past_year_opt_-88",
+            "value": -88
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "motives_for_using_medical_cannabis_use": "Do you use marijuana for medical reasons, 'recreational' reasons, or both? By \"medical marijuana user,\" we mean someone who uses marijuana only to manage a medical condition.",
+      "motives_for_using_medical_cannabis_use_opt_1": "Medical use only",
+      "motives_for_using_medical_cannabis_use_opt_2": "Recreational use only",
+      "motives_for_using_medical_cannabis_use_opt_3": "Both recreational and medical use",
+      "motives_for_using_medical_cannabis_use_opt_-77": "Don't know",
+      "motives_for_using_medical_cannabis_use_opt_-88": "Refuse to answer",
+      "motives_for_using_medical_cannabis_improve_symptoms": "Have you ever used marijuana to improve or manage symptoms for any of the following: SELECT ALL THAT APPLY.",
+      "motives_for_using_medical_cannabis_improve_symptoms_opt_1": "Anxiety (including phobia, obsessive-compulsive disorder or a panic disorder)",
+      "motives_for_using_medical_cannabis_improve_symptoms_opt_2": "Depression (including dysthymia)",
+      "motives_for_using_medical_cannabis_improve_symptoms_opt_3": "Post-traumatic stress disorder (PTSD) or traumatic event (e.g., abuse or loss)",
+      "motives_for_using_medical_cannabis_improve_symptoms_opt_4": "Bipolar disorder, mania, or borderline personality disorder",
+      "motives_for_using_medical_cannabis_improve_symptoms_opt_5": "Psychosis (e.g., paranoia, disorganized thinking, hearing voices that others can't hear) or dissociative identity disorder",
+      "motives_for_using_medical_cannabis_improve_symptoms_opt_6": "Schizophrenia",
+      "motives_for_using_medical_cannabis_improve_symptoms_opt_7": "Alcohol or other drug use",
+      "motives_for_using_medical_cannabis_improve_symptoms_opt_8": "Eating disorder",
+      "motives_for_using_medical_cannabis_improve_symptoms_opt_9": "ADD/ADHD",
+      "motives_for_using_medical_cannabis_improve_symptoms_opt_10": "Other significant emotional or mental health problem (we'll ask about pain, sleep and physical health symptoms on the next screen):",
+      "motives_for_using_medical_cannabis_improve_symptoms_opt_11": "I have never used marijuana for any of the above",
+      "motives_for_using_medical_cannabis_improve_symptoms_opt_-77": "Don't know",
+      "motives_for_using_medical_cannabis_improve_symptoms_opt_-88": "Refuse to answer",
+      "motives_for_using_medical_cannabis_improve_symptoms_other": "Have you ever used marijuana to improve or manage symptoms for any of the following: SELECT ALL THAT APPLY.: Other significant emotional or mental health problem (we'll ask about pain, sleep and physical health symptoms on the next screen):",
+      "motives_for_using_medical_cannabis_current_use": "Do you currently use marijuana to improve or manage any of the following symptoms: SELECT ALL THAT APPLY",
+      "motives_for_using_medical_cannabis_current_use_opt_1": "Anxiety (including phobia, obsessive-compulsive disorder or a panic disorder)",
+      "motives_for_using_medical_cannabis_current_use_opt_2": "Depression (including dysthymia)",
+      "motives_for_using_medical_cannabis_current_use_opt_3": "Post-traumatic stress disorder (PTSD) or traumatic event (e.g., abuse or loss)",
+      "motives_for_using_medical_cannabis_current_use_opt_4": "Bipolar disorder, mania, or borderline personality disorder",
+      "motives_for_using_medical_cannabis_current_use_opt_5": "Psychosis (e.g., paranoia, disorganized thinking, hearing voices that others can't hear) or dissociative identity disorder",
+      "motives_for_using_medical_cannabis_current_use_opt_6": "Schizophrenia",
+      "motives_for_using_medical_cannabis_current_use_opt_7": "Alcohol or other drug use",
+      "motives_for_using_medical_cannabis_current_use_opt_8": "Eating disorder",
+      "motives_for_using_medical_cannabis_current_use_opt_9": "ADD/ADHD",
+      "motives_for_using_medical_cannabis_current_use_opt_10": "Other significant emotional or mental health problem (we'll ask about pain, sleep and physical health symptoms on the next screen):",
+      "motives_for_using_medical_cannabis_current_use_opt_11": "I have never used marijuana for any of the above",
+      "motives_for_using_medical_cannabis_current_use_opt_-77": "Don't know",
+      "motives_for_using_medical_cannabis_current_use_opt_-88": "Refuse to answer",
+      "motives_for_using_medical_cannabis_current_use_other": "Do you currently use marijuana to improve or manage any of the following symptoms: SELECT ALL THAT APPLY: Other significant emotional or mental health problem (we'll ask about pain, sleep and physical health symptoms on the next screen):",
+      "motives_for_using_medical_cannabis_mental_health": "Is improving or managing mental health one of the main reasons you use cannabis?",
+      "motives_for_using_medical_cannabis_mental_health_opt_1": "Yes",
+      "motives_for_using_medical_cannabis_mental_health_opt_2": "No",
+      "motives_for_using_medical_cannabis_mental_health_opt_-77": "Don't know",
+      "motives_for_using_medical_cannabis_mental_health_opt_-88": "Refuse to answer",
+      "motives_for_using_medical_cannabis_manage_symptoms_type": "Have you ever used marijuana to improve or manage symptoms for any of the following: SELECT ALL THAT APPLY.",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_1": "Headaches/migraines",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_2": "Pain (including arthritis, neuropathy or premenstrual syndrome)",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_3": "Nausea/vomiting or chemotherapy symptoms",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_4": "Lack of appetite",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_5": "Seizures",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_6": "Muscle spasms",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_7": "To shrink tumors or treat cancer",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_8": "Problems sleeping",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_9": "Digestion/gastrointestinal issues (irritable bowel syndrome, inflammatory bowel disease, colitis, etc.)",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_10": "Fibromyalgia",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_11": "Other condition(s) (please specify):",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_12": "I have never used marijuana to treat or improve symptoms",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_-77": "Don't know",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_opt_-88": "Refuse to answer",
+      "motives_for_using_medical_cannabis_manage_symptoms_type_other": "Have you ever used marijuana to improve or manage symptoms for any of the following: SELECT ALL THAT APPLY.: Other condition(s) (please specify):",
+      "motives_for_using_medical_cannabis_current_improve_symptoms": "Do you currently use marijuana to improve or manage any of the following symptoms: SELECT ALL THAT APPLY",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_1": "Headaches/migraines",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_2": "Pain (including arthritis, neuropathy or premenstrual syndrome)",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_3": "Nausea/vomiting or chemotherapy symptoms",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_4": "Lack of appetite",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_5": "Seizures",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_6": "Muscle spasms",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_7": "To shrink tumors or treat cancer",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_8": "Problems sleeping",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_9": "Digestion/gastrointestinal issues (irritable bowel syndrome, inflammatory bowel disease, colitis, etc.)",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_10": "Fibromyalgia",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_11": "Other condition(s) (please specify):",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_12": "I have never used marijuana to treat or improve symptoms",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_-77": "Don't know",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_opt_-88": "Refuse to answer",
+      "motives_for_using_medical_cannabis_current_improve_symptoms_other": "Do you currently use marijuana to improve or manage any of the following symptoms: SELECT ALL THAT APPLY: Other condition(s) (please specify):",
+      "motives_for_using_medical_cannabis_main_reason_improve_physical_health": "Is improving or managing physical health one of the main reasons you use cannabis?",
+      "motives_for_using_medical_cannabis_main_reason_improve_physical_health_opt_1": "Yes",
+      "motives_for_using_medical_cannabis_main_reason_improve_physical_health_opt_2": "No",
+      "motives_for_using_medical_cannabis_main_reason_improve_physical_health_opt_-77": "Don't know",
+      "motives_for_using_medical_cannabis_main_reason_improve_physical_health_opt_-88": "Refuse to answer",
+      "motives_for_using_medical_cannabis_pain_relief": "Have you ever used marijuana for pain relief, instead of using opioids or prescription pain medication?",
+      "motives_for_using_medical_cannabis_pain_relief_opt_1": "Yes",
+      "motives_for_using_medical_cannabis_pain_relief_opt_2": "No",
+      "motives_for_using_medical_cannabis_pain_relief_opt_-77": "Don't know",
+      "motives_for_using_medical_cannabis_pain_relief_opt_-88": "Refuse to answer",
+      "motives_for_using_medical_cannabis_pain_relief_past_year": "Did you use marijuana for pain relief, instead of using opioids or prescription pain medication in the PAST 12 MONTHS?",
+      "motives_for_using_medical_cannabis_pain_relief_past_year_opt_1": "Yes",
+      "motives_for_using_medical_cannabis_pain_relief_past_year_opt_2": "No",
+      "motives_for_using_medical_cannabis_pain_relief_past_year_opt_-77": "Don't know",
+      "motives_for_using_medical_cannabis_pain_relief_past_year_opt_-88": "Refuse to answer"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Knee Pain - Past 30 Days",
+      "code": "PX171501",
+      "abbreviation": "PX171501",
+      "description": "A self-report, three-item series of questions with answer choices for “Yes,” “No,” and “Don’t know.”",
+      "domain": "Dermatology, Bone & Rheumatology",
+      "citation": "Carlesso, L. C., Law, L. F., Wang, N., Nevitt, M., Lewis, C. E., & Neogi, T.; Multicenter Osteoarthritis Study Group. (2022). Association of pain sensitization and conditioned pain modulation to pain patterns in knee osteoarthritis . Arthritis Care & Research, 74(1), 107–112. https://doi.org/10.1002/acr.24437 National Institute on Aging. (2021). MOST public data release: Annotated data collection forms: Baseline dataset. AgingResearch Biobank. https://agingresearchbiobank.nia.nih.gov/studies/most/documents/download/Forms/AnnotatedForms_Baseline.pdf/ Perry, T. A., Segal, N. A., Bowen, C., Gates, L., Arden, N., & Nevitt, M. C. (2021). Foot and ankle pain and risk of incident knee osteoarthritis and knee pain: Data from the Multicentre Osteoarthritis Study . Osteoarthritis and Cartilage Open, 3(4), 100210. https://doi.org/10.1016/j.ocarto.2021.100210 [PhenX: https://www.phenxtoolkit.org/protocols/view/171501]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/171501"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "knee_pain_either_knee",
+        "text_key": "knee_pain_either_knee",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "knee_pain_either_knee_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "knee_pain_either_knee_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "knee_pain_either_knee_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "knee_pain_right_knee",
+        "text_key": "knee_pain_right_knee",
+        "type": "multi",
+        "visible_when": {
+          "item": "knee_pain_either_knee",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "knee_pain_right_knee_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "knee_pain_right_knee_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "knee_pain_right_knee_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "knee_pain_left_knee",
+        "text_key": "knee_pain_left_knee",
+        "type": "multi",
+        "visible_when": {
+          "item": "knee_pain_either_knee",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "knee_pain_left_knee_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "knee_pain_left_knee_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "knee_pain_left_knee_opt_8",
+            "value": 8
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "knee_pain_either_knee": "During the past 30 days, have you had any pain, aching or stiffness in or around either knee?",
+      "knee_pain_either_knee_opt_1": "Yes",
+      "knee_pain_either_knee_opt_0": "No",
+      "knee_pain_either_knee_opt_8": "Don't know/Refused",
+      "knee_pain_right_knee": "During the past 30 days, have you had pain, aching or stiffness in or around your right knee on most days?",
+      "knee_pain_right_knee_opt_1": "Yes",
+      "knee_pain_right_knee_opt_0": "No",
+      "knee_pain_right_knee_opt_8": "Don't know",
+      "knee_pain_left_knee": "During the past 30 days, have you had pain, aching or stiffness in or around your left knee on most days?",
+      "knee_pain_left_knee_opt_1": "Yes",
+      "knee_pain_left_knee_opt_0": "No",
+      "knee_pain_left_knee_opt_8": "Don't know"
+    }
+  }
+}

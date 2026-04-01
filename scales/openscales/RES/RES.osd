@@ -1,0 +1,181 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Regret Elements Scale",
+      "code": "RES",
+      "abbreviation": "RES",
+      "description": "10-item measure of post-decisional regret distinguishing two components: the affective element (RES-A, 5 items) capturing the emotional/feeling component of regret, and the cognitive element (RES-C, 5 items) capturing counterfactual thinking and mental simulation. Items are rated on a 7-point Likert scale (1 = Strongly Disagree, 7 = Strongly Agree). Higher subscale scores indicate stronger affective or cognitive regret.",
+      "citation": "Buchanan, J., Summerville, A., Lehmann, J., & Reb, J. (2016). The Regret Elements Scale: Distinguishing the affective and cognitive components of regret. Judgment and Decision Making, 11(3), 275-286. https://doi.org/10.1017/S1930297500003107",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1017/S1930297500003107"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5",
+        "likert_6",
+        "likert_7"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "res_affective",
+        "name": "Affective Regret",
+        "abbreviation": "RES-A",
+        "description": "Emotional/feeling component of regret associated with maladaptive affective outcomes"
+      },
+      {
+        "id": "res_cognitive",
+        "name": "Cognitive Regret",
+        "abbreviation": "RES-C",
+        "description": "Cognitive/counterfactual thinking component of regret associated with functional preparatory outcomes"
+      }
+    ],
+    "items": [
+      {
+        "id": "res1",
+        "type": "likert",
+        "text_key": "res1",
+        "dimension": "res_affective"
+      },
+      {
+        "id": "res2",
+        "type": "likert",
+        "text_key": "res2",
+        "dimension": "res_affective"
+      },
+      {
+        "id": "res3",
+        "type": "likert",
+        "text_key": "res3",
+        "dimension": "res_affective"
+      },
+      {
+        "id": "res4",
+        "type": "likert",
+        "text_key": "res4",
+        "dimension": "res_affective"
+      },
+      {
+        "id": "res5",
+        "type": "likert",
+        "text_key": "res5",
+        "dimension": "res_affective"
+      },
+      {
+        "id": "res6",
+        "type": "likert",
+        "text_key": "res6",
+        "dimension": "res_cognitive"
+      },
+      {
+        "id": "res7",
+        "type": "likert",
+        "text_key": "res7",
+        "dimension": "res_cognitive"
+      },
+      {
+        "id": "res8",
+        "type": "likert",
+        "text_key": "res8",
+        "dimension": "res_cognitive"
+      },
+      {
+        "id": "res9",
+        "type": "likert",
+        "text_key": "res9",
+        "dimension": "res_cognitive"
+      },
+      {
+        "id": "res10",
+        "type": "likert",
+        "text_key": "res10",
+        "dimension": "res_cognitive"
+      }
+    ],
+    "scoring": {
+      "res_affective": {
+        "method": "mean_coded",
+        "items": [
+          "res1",
+          "res2",
+          "res3",
+          "res4",
+          "res5"
+        ],
+        "description": "Mean of 5 affective items (1-7). Higher scores indicate stronger emotional regret associated with maladaptive affective outcomes (alpha = .87).",
+        "item_coding": {
+          "res1": 1,
+          "res2": 1,
+          "res3": 1,
+          "res4": 1,
+          "res5": 1
+        }
+      },
+      "res_cognitive": {
+        "method": "mean_coded",
+        "items": [
+          "res6",
+          "res7",
+          "res8",
+          "res9",
+          "res10"
+        ],
+        "description": "Mean of 5 cognitive items (1-7). Higher scores indicate stronger counterfactual thinking associated with functional preparatory outcomes (alpha = .89).",
+        "item_coding": {
+          "res6": 1,
+          "res7": 1,
+          "res8": 1,
+          "res9": 1,
+          "res10": 1
+        }
+      }
+    },
+    "data_output": {
+      "individual_file": "RES-{subnum}.csv",
+      "pooled_file": "RES-pooled.csv",
+      "columns": "subnum,order,time,qnum,ques,dim,valence,resp,rt",
+      "pooled_columns": "subnum,timestamp,time,res1,res2,res3,res4,res5,res6,res7,res8,res9,res10,res_affective,res_cognitive"
+    }
+  },
+  "translations": {
+    "en": {
+      "LANGUAGE": "en",
+      "question_head": "Please rate how much you agree with each of the following statements about how you feel about this decision.",
+      "likert_1": "Strongly Disagree",
+      "likert_2": "Disagree",
+      "likert_3": "Somewhat Disagree",
+      "likert_4": "Neither Agree nor Disagree",
+      "likert_5": "Somewhat Agree",
+      "likert_6": "Agree",
+      "likert_7": "Strongly Agree",
+      "res1": "I am experiencing self-blame about the way I made my decision.",
+      "res2": "I feel sorry.",
+      "res3": "I am experiencing self-blame.",
+      "res4": "I feel guilty.",
+      "res5": "I feel like kicking myself.",
+      "res6": "Things would have gone better if I had chosen another option.",
+      "res7": "I wish I had made a different decision.",
+      "res8": "I should have decided differently.",
+      "res9": "I would have been better off had I decided differently.",
+      "res10": "Before I should have chosen differently.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

@@ -1,0 +1,359 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Burnout Assessment Tool – Ultra-Short Form",
+      "code": "BAT4",
+      "abbreviation": "BAT-4",
+      "description": "4-item ultra-short version of the Burnout Assessment Tool (one item per core subscale: Exhaustion, Mental Distance, Cognitive Impairment, Emotional Impairment). Items use a 5-point frequency scale (1=Never to 5=Always). Total score is the mean of all 4 items (range 1–5). Intended for group/population-level screening, not individual diagnosis.",
+      "citation": "Hadžibajramović, E., Schaufeli, W. B., & De Witte, H. (2024). The ultra-short version of the Burnout Assessment Tool (BAT-4)—development, validation, and measurement invariance across countries, age and gender. PLOS ONE, 19(2), e0297843. https://doi.org/10.1371/journal.pone.0297843",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://burnoutassessmenttool.be",
+      "domain": "Work",
+      "license_explanation": "CC BY 4.0. Published in IJERPH (MDPI open access).",
+      "license_url": "https://doi.org/10.3390/ijerph17249495"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Show scale title — default off: title may sensitize respondents to burnout framing"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "bat_r1",
+        "bat_r2",
+        "bat_r3",
+        "bat_r4",
+        "bat_r5"
+      ],
+      "question_head": "bat_inst"
+    },
+    "dimensions": [
+      {
+        "id": "burnout",
+        "name": "Burnout",
+        "abbreviation": "BO",
+        "description": "Mean of all 4 items (range 1–5). Higher scores indicate greater burnout severity. Designed for group/population-level screening."
+      }
+    ],
+    "items": [
+      {
+        "id": "bat1",
+        "text_key": "bat1",
+        "type": "likert",
+        "dimension": "burnout"
+      },
+      {
+        "id": "bat9",
+        "text_key": "bat9",
+        "type": "likert",
+        "dimension": "burnout"
+      },
+      {
+        "id": "bat17",
+        "text_key": "bat17",
+        "type": "likert",
+        "dimension": "burnout"
+      },
+      {
+        "id": "bat23",
+        "text_key": "bat23",
+        "type": "likert",
+        "dimension": "burnout"
+      }
+    ],
+    "scoring": {
+      "burnout": {
+        "method": "mean_coded",
+        "items": [
+          "bat1",
+          "bat9",
+          "bat17",
+          "bat23"
+        ],
+        "description": "Mean of all 4 items (range 1–5). Intended for population/group-level screening, not individual diagnosis.",
+        "item_coding": {
+          "bat1": 1,
+          "bat9": 1,
+          "bat17": 1,
+          "bat23": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "bat_r1": "Never",
+      "bat_r2": "Rarely",
+      "bat_r3": "Sometimes",
+      "bat_r4": "Often",
+      "bat_r5": "Always",
+      "bat_inst": "Please indicate how often each of the following applies to you at work.",
+      "bat1": "At work, I feel mentally exhausted.",
+      "bat9": "I struggle to find any enthusiasm for my work.",
+      "bat17": "When I'm working, I have trouble concentrating.",
+      "bat23": "At work, I may overreact unintentionally.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "nl": {
+      "bat_r1": "Nooit",
+      "bat_r2": "Zelden",
+      "bat_r3": "Soms",
+      "bat_r4": "Vaak",
+      "bat_r5": "Altijd",
+      "bat_inst": "De volgende uitspraken hebben betrekking op hoe u uw werk beleeft en hoe u zich daarbij voelt. Wilt u aangeven hoe vaak iedere uitspraak op u van toepassing is door steeds het best passende antwoord aan te kruisen.",
+      "bat1": "Op het werk voel ik me geestelijk uitgeput.",
+      "bat9": "Ik kan geen belangstelling en enthousiasme opbrengen voor mijn werk.",
+      "bat17": "Als ik aan het werk ben, kan ik me moeilijk concentreren.",
+      "bat23": "Op mijn werk kan ik onbedoeld te sterk emotioneel reageren.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "de": {
+      "bat_r1": "Nie",
+      "bat_r2": "Selten",
+      "bat_r3": "Manchmal",
+      "bat_r4": "Oft",
+      "bat_r5": "Immer",
+      "bat_inst": "Die nachfolgenden Aussagen beziehen sich auf Ihre Arbeitssituation und wie Sie diese erleben. Bitte kreuzen Sie an, wie häufig dies für Sie zutrifft.",
+      "bat1": "Bei der Arbeit fühle ich mich psychisch erschöpft.",
+      "bat9": "Ich kann keine Begeisterung für meine Arbeit aufbringen.",
+      "bat17": "Bei der Arbeit habe ich Mühe, mich zu konzentrieren.",
+      "bat23": "Bei meiner Arbeit kommt es vor, dass ich emotional überreagiere, ohne es zu wollen.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "fr": {
+      "bat_r1": "Jamais",
+      "bat_r2": "Rarement",
+      "bat_r3": "Parfois",
+      "bat_r4": "Souvent",
+      "bat_r5": "Toujours",
+      "bat_inst": "Les énoncés suivants sont liés à votre situation de travail et à la manière dont vous la vivez. Veuillez indiquer la fréquence à laquelle chaque déclaration s'applique à vous.",
+      "bat1": "Au travail, je me sens mentalement épuisé/e.",
+      "bat9": "Je n'arrive pas à faire preuve d'intérêt et d'enthousiasme pour mon travail.",
+      "bat17": "Lorsque je suis au travail, je parviens difficilement à me concentrer.",
+      "bat23": "Il m'arrive de réagir de façon trop émotionnelle au travail sans le vouloir.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "it": {
+      "bat_r1": "Mai",
+      "bat_r2": "Raramente",
+      "bat_r3": "Qualche volta",
+      "bat_r4": "Spesso",
+      "bat_r5": "Sempre",
+      "bat_inst": "Le affermazioni presentate di seguito si riferiscono alla sua situazione lavorativa attuale e a come lei percepisce tale situazione. Per favore, indichi con che frequenza sperimenta ciascuna affermazione.",
+      "bat1": "Al lavoro mi sento mentalmente esausto/a.",
+      "bat9": "Ho difficoltà a provare un qualche entusiasmo per il mio lavoro.",
+      "bat17": "Quando lavoro faccio fatica a concentrarmi.",
+      "bat23": "Al lavoro mi capita di avere delle reazioni esagerate senza volerlo.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "pt": {
+      "bat_r1": "Nunca",
+      "bat_r2": "Raramente",
+      "bat_r3": "Algumas vezes",
+      "bat_r4": "Frequentemente",
+      "bat_r5": "Sempre",
+      "bat_inst": "As seguintes afirmações estão relacionadas com a sua situação no trabalho e como experiência esta situação. Por favor, indique a frequência com cada afirmação se aplica a si.",
+      "bat1": "No trabalho, sinto-me mentalmente exausto(a).",
+      "bat9": "Tenho dificuldade em encontrar algum entusiasmo pelo meu trabalho.",
+      "bat17": "Quando estou a trabalhar, tenho dificuldade em me concentrar.",
+      "bat23": "Pode acontecer que no trabalho eu reaja exageradamente sem querer.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "pt_BR": {
+      "bat_r1": "Nunca",
+      "bat_r2": "Raramente",
+      "bat_r3": "Algumas vezes",
+      "bat_r4": "Com Frequência",
+      "bat_r5": "Sempre",
+      "bat_inst": "Leia atentamente as frases abaixo e assinale a resposta que corresponde à frequência com que você se sente desse modo no seu trabalho.",
+      "bat1": "No trabalho, sinto-me mentalmente exausto.",
+      "bat9": "Eu luto para encontrar algum entusiasmo pelo meu trabalho.",
+      "bat17": "Tenho dificuldade em me concentrar quando estou trabalhando.",
+      "bat23": "No trabalho, eu posso ter reações exageradas sem querer.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "pl": {
+      "bat_r1": "Nigdy",
+      "bat_r2": "Rzadko",
+      "bat_r3": "Czasami",
+      "bat_r4": "Często",
+      "bat_r5": "Zawsze",
+      "bat_inst": "Poniższe stwierdzenia odnoszą się do twojej pracy i jak tego doświadczasz. Proszę podaj jak często czujesz się w ten sposób.",
+      "bat1": "W pracy czuję się psychicznie wyczerpana(y).",
+      "bat9": "Zmagam się, by wykrzesać z siebie jakikolwiek entuzjazm do pracy.",
+      "bat17": "Kiedy pracuję, nie potrafię się skoncentrować.",
+      "bat23": "W pracy zdarza mi się reagować nieadekwatnie bez powodu.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "fi": {
+      "bat_r1": "Ei koskaan",
+      "bat_r2": "Harvoin",
+      "bat_r3": "Joskus",
+      "bat_r4": "Usein",
+      "bat_r5": "Aina",
+      "bat_inst": "Seuraavat väittämät koskevat työtilannettasi ja sitä koskevia kokemuksiasi. Miten usein seuraavat väittämät kuvaavat tilannettasi.",
+      "bat1": "Tunnen itseni henkisesti uupuneeksi työssäni.",
+      "bat9": "En ole kiinnostunut enkä innostunut työstäni.",
+      "bat17": "Kun työskentelen, en pysty keskittymään hyvin.",
+      "bat23": "Työssäni saatan tahattomasti ylireagoida tunteillani.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "ro": {
+      "bat_r1": "Niciodată",
+      "bat_r2": "Rar",
+      "bat_r3": "Uneori",
+      "bat_r4": "Des",
+      "bat_r5": "Întotdeauna",
+      "bat_inst": "Următoarele afirmații se referă la modul în care vă simțiți în legătură cu munca dumneavoastră și cum vă raportați la aceasta. Vă rugăm indicați în ce măsură fiecare din afirmațiile de mai jos vă caracterizează.",
+      "bat1": "La muncă, mă simt epuizat(ă) psihic.",
+      "bat9": "Mă străduiesc să găsesc motivația necesară pentru munca mea.",
+      "bat17": "Când muncesc, mă concentrez greu.",
+      "bat23": "La serviciu, se mai întâmplă să reacționez exagerat fără să vreau.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "tr": {
+      "bat_r1": "Hiçbir Zaman",
+      "bat_r2": "Nadiren",
+      "bat_r3": "Bazen",
+      "bat_r4": "Sık Sık",
+      "bat_r5": "Her Zaman",
+      "bat_inst": "Aşağıdaki ifadeler sizin işteki durumunuz ve tecrübelerinizle ilgilidir. Lütfen ifadelerin size ne kadar uyduğunu 1=Hiçbir Zaman'dan 5=Her Zaman'a uzanan ölçek üzerinde işaretleyiniz.",
+      "bat1": "İşteyken bitkinlik yaşıyorum.",
+      "bat9": "İşime karşı şevk duymakta çok zorlanıyorum.",
+      "bat17": "Çalışırken konsantre olmakta zorlanıyorum.",
+      "bat23": "İş yerinde istemeyerek aşırı tepkiler verebiliyorum.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "sl": {
+      "bat_r1": "Nikoli",
+      "bat_r2": "Redko",
+      "bat_r3": "Včasih",
+      "bat_r4": "Pogosto",
+      "bat_r5": "Vedno",
+      "bat_inst": "Spodnje trditve so povezane z vašo delovno situacijo in s tem, kako to situacijo doživljate. Prosimo označite, kako pogosto je vsaka izmed trditev značilna za vas.",
+      "bat1": "Pri delu se počutim mentalno izčrpano.",
+      "bat9": "Težko najdem kaj navdušenja za delo.",
+      "bat17": "Med delom težko ostanem zbran/-a.",
+      "bat23": "Pri delu se lahko nehote pretirano odzovem.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "ru": {
+      "bat_r1": "Никогда",
+      "bat_r2": "Редко",
+      "bat_r3": "Иногда",
+      "bat_r4": "Часто",
+      "bat_r5": "Постоянно",
+      "bat_inst": "Следующие утверждения относятся к Вашей работе и Вашим ощущениям от работы. Пожалуйста, отметьте, насколько часто каждое утверждение соответствует Вашим ощущениям.",
+      "bat1": "На работе я чувствую душевную усталость.",
+      "bat9": "Мне трудно найти в себе энтузиазм к моей работе.",
+      "bat17": "Когда я работаю, мне сложно сконцентрироваться.",
+      "bat23": "На работе я могу слишком остро реагировать, сам(а) того не желая.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "el": {
+      "bat_r1": "Ποτέ",
+      "bat_r2": "Σπάνια",
+      "bat_r3": "Μερικές φορές",
+      "bat_r4": "Συχνά",
+      "bat_r5": "Πάντα",
+      "bat_inst": "Οι ακόλουθες δηλώσεις σχετίζονται με την εργασιακή σας κατάσταση και τον τρόπο με τον οποίο την αντιμετωπίζετε. Παρακαλώ αναφέρατε πόσο συχνά ισχύει κάθε δήλωση για εσάς.",
+      "bat1": "Στη δουλειά, αισθάνομαι πνευματικά εξαντλημένος/η.",
+      "bat9": "Παλεύω να βρω τον ενθουσιασμό μου για τη δουλειά.",
+      "bat17": "Όταν εργάζομαι, παλεύω να συγκεντρωθώ.",
+      "bat23": "Στη δουλειά, μπορεί να αντιδρώ υπερβολικά, χωρίς να έχω τέτοια πρόθεση.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "cs": {
+      "bat_r1": "Nikdy",
+      "bat_r2": "Zřídka",
+      "bat_r3": "Občas",
+      "bat_r4": "Často",
+      "bat_r5": "Vždy",
+      "bat_inst": "Následující tvrzení souvisí s vaší situací v práci a s tím, jak tuto situaci prožíváte. Prosím označte, jak často pro vás platí každé z níže uvedených tvrzení.",
+      "bat1": "V práci se cítím psychicky vyčerpaný/á.",
+      "bat9": "Je pro mě těžké dosáhnout toho, aby mě práce bavila.",
+      "bat17": "Když pracuji, dělá mi problém se soustředit.",
+      "bat23": "Může se stát, že v práci nechtěně zareaguji nepřiměřeně.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "sv": {
+      "bat_r1": "Aldrig",
+      "bat_r2": "Sällan",
+      "bat_r3": "Ibland",
+      "bat_r4": "Ofta",
+      "bat_r5": "Alltid",
+      "bat_inst": "Följande påståenden handlar om din arbetssituation och hur du upplever denna situation. Vänligen ange hur ofta varje påstående gäller för dig.",
+      "bat1": "När jag är på arbetet känner jag mig psykiskt utmattad.",
+      "bat9": "Jag får kämpa för att uppbringa entusiasm för mitt arbete.",
+      "bat17": "När jag arbetar har jag svårt att koncentrera mig.",
+      "bat23": "På arbetet händer det att jag överreagerar utan att mena det.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "hr": {
+      "bat_r1": "Nikada",
+      "bat_r2": "Rijetko",
+      "bat_r3": "Ponekad",
+      "bat_r4": "Često",
+      "bat_r5": "Uvijek",
+      "bat_inst": "Sljedeće tvrdnje odnose se na Vašu radnu situaciju i način na koji ju doživljavate. Molimo Vas da za svaku tvrdnju procijenite koliko često se ona odnosi na Vas.",
+      "bat1": "Na svom se poslu osjećam psihički iscrpljeno.",
+      "bat9": "Teško mi je pronaći bilo kakav entuzijazam za posao.",
+      "bat17": "Teško se koncentriram na posao.",
+      "bat23": "Dogodi se da na poslu nekontrolirano dramatiziram.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "no": {
+      "bat_r1": "Aldri",
+      "bat_r2": "Sjelden",
+      "bat_r3": "Noen ganger",
+      "bat_r4": "Ofte",
+      "bat_r5": "Alltid",
+      "bat_inst": "De følgende utsagnene er relatert til din arbeidssituasjon og hvordan du opplever denne situasjonen. Vennligst oppgi hvor ofte hvert av utsagnene gjelder for deg.",
+      "bat1": "På jobb føler jeg meg mentalt utmattet.",
+      "bat9": "Jeg sliter med å finne entusiasme for arbeidet mitt.",
+      "bat17": "Når jeg jobber har jeg problemer med å konsentrere meg.",
+      "bat23": "På jobb kan jeg overreagere uten at det var meningen.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "hu": {
+      "bat_r1": "Soha",
+      "bat_r2": "Ritkán",
+      "bat_r3": "Néha",
+      "bat_r4": "Gyakran",
+      "bat_r5": "Mindig",
+      "bat_inst": "A következő állítások a munkában tapasztaltakra vonatkoznak. Kérem, jelölje be, milyen gyakorisággal igazak az alábbi állítások az Ön esetében!",
+      "bat1": "Mentálisan kimerültnek érzem magam a munkámban.",
+      "bat9": "Nehezemre esik, hogy lelkesedést találjak a munkám iránt.",
+      "bat17": "Nehezemre esik koncentrálni, amikor dolgozom.",
+      "bat23": "A munkámban akaratlanul is túlreagálhatok dolgokat.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "es": {
+      "bat_r1": "nunca",
+      "bat_r2": "raramente",
+      "bat_r3": "algunas veces",
+      "bat_r4": "a menudo",
+      "bat_r5": "siempre",
+      "bat_inst": "Las siguientes frases están relacionadas con su situación laboral y cómo experimenta esta situación. Indique con qué frecuencia cada frase se aplica a usted.",
+      "bat1": "En el trabajo me siento mentalmente exhausto.",
+      "bat9": "Me esfuerzo por encontrar entusiasmo en mi trabajo.",
+      "bat17": "Cuando estoy trabajando, tengo dificultades para concentrarme.",
+      "bat23": "En el trabajo, puedo reaccionar exageradamente sin querer.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

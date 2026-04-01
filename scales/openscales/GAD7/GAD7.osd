@@ -1,0 +1,144 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Generalized Anxiety Disorder-7",
+      "code": "GAD7",
+      "abbreviation": "GAD-7",
+      "description": "7-item anxiety screening tool measuring symptom severity over the past 2 weeks. Scores range from 0 to 21.",
+      "citation": "Spitzer, R. L., Kroenke, K., Williams, J. B., & Lowe, B. (2006). A brief measure for assessing generalized anxiety disorder: The GAD-7. Archives of Internal Medicine, 166(10), 1092-1097. https://doi.org/10.1001/archinte.166.10.1092",
+      "license": "free to use",
+      "license_explanation": "Pfizer released all PHQ and GAD-7 screeners without copyright restriction. The phqscreeners.com terms of use state: 'Content found at the PHQ Screeners site is expressly exempted from Pfizer's general copyright restrictions; content found on the PHQ Screeners site is free for download and use as stated within the PHQ Screeners site.' No permission is required to reproduce, translate, display, or distribute.",
+      "license_url": "https://www.phqscreeners.com/",
+      "version": "1.0",
+      "url": "https://doi.org/10.1001/archinte.166.10.1092"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "max": 3,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "anxiety",
+        "name": "Anxiety Severity"
+      }
+    ],
+    "items": [
+      {
+        "id": "gad1",
+        "text_key": "gad1",
+        "type": "likert"
+      },
+      {
+        "id": "gad2",
+        "text_key": "gad2",
+        "type": "likert"
+      },
+      {
+        "id": "gad3",
+        "text_key": "gad3",
+        "type": "likert"
+      },
+      {
+        "id": "gad4",
+        "text_key": "gad4",
+        "type": "likert"
+      },
+      {
+        "id": "gad5",
+        "text_key": "gad5",
+        "type": "likert"
+      },
+      {
+        "id": "gad6",
+        "text_key": "gad6",
+        "type": "likert"
+      },
+      {
+        "id": "gad7",
+        "text_key": "gad7",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "anxiety": {
+        "method": "sum_coded",
+        "items": [
+          "gad1",
+          "gad2",
+          "gad3",
+          "gad4",
+          "gad5",
+          "gad6",
+          "gad7"
+        ],
+        "description": "Sum of all items (0-21). Severity: 0-4 minimal, 5-9 mild, 10-14 moderate, 15-21 severe.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 4,
+              "label": "Minimal"
+            },
+            {
+              "min": 5,
+              "max": 9,
+              "label": "Mild"
+            },
+            {
+              "min": 10,
+              "max": 14,
+              "label": "Moderate"
+            },
+            {
+              "min": 15,
+              "max": 21,
+              "label": "Severe"
+            }
+          ]
+        },
+        "item_coding": {
+          "gad1": 1,
+          "gad2": 1,
+          "gad3": 1,
+          "gad4": 1,
+          "gad5": 1,
+          "gad6": 1,
+          "gad7": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "not at all",
+      "likert_2": "several days",
+      "likert_3": "more than half the days",
+      "likert_4": "nearly every day",
+      "question_head": "Over the last 2 weeks, how often have you been bothered by the following problems?",
+      "gad1": "Feeling nervous, anxious or on edge",
+      "gad2": "Not being able to stop or control worrying",
+      "gad3": "Worrying too much about different things",
+      "gad4": "Trouble relaxing",
+      "gad5": "Being so restless that it is hard to sit still",
+      "gad6": "Becoming easily annoyed or irritable",
+      "gad7": "Feeling afraid as if something awful might happen",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "COVID-19 Vaccination - Child",
+      "code": "PX940402",
+      "abbreviation": "PX940402",
+      "description": "This protocol has 7 items asking about the COVID-19 vaccination.",
+      "domain": "COVID-19 - Vaccination",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/940402]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/940402"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "covid_vaccination_child_had_vaccine",
+        "text_key": "covid_vaccination_child_had_vaccine",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "covid_vaccination_child_had_vaccine_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_child_had_vaccine_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "covid_vaccination_child_number_vaccines",
+        "text_key": "covid_vaccination_child_number_vaccines",
+        "type": "multi",
+        "visible_when": {
+          "item": "covid_vaccination_child_had_vaccine",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "covid_vaccination_child_number_vaccines_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_child_number_vaccines_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "covid_vaccination_child_number_vaccines_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "covid_vaccination_child_number_vaccines_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "covid_vaccination_child_vaccine_first_type",
+        "text_key": "covid_vaccination_child_vaccine_first_type",
+        "type": "multi",
+        "visible_when": {
+          "item": "covid_vaccination_child_had_vaccine",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "covid_vaccination_child_vaccine_first_type_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_child_vaccine_first_type_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "covid_vaccination_child_vaccine_first_type_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "covid_vaccination_child_vaccine_first_type_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "covid_vaccination_child_vaccine_first_date",
+        "text_key": "covid_vaccination_child_vaccine_first_date",
+        "type": "short",
+        "visible_when": {
+          "item": "covid_vaccination_child_had_vaccine",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "covid_vaccination_child_vaccine_second_type",
+        "text_key": "covid_vaccination_child_vaccine_second_type",
+        "type": "multi",
+        "visible_when": {
+          "item": "covid_vaccination_child_number_vaccines",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "options": [
+          {
+            "text_key": "covid_vaccination_child_vaccine_second_type_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_child_vaccine_second_type_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "covid_vaccination_child_vaccine_second_type_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "covid_vaccination_child_vaccine_second_type_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "covid_vaccination_child_vaccine_second_date",
+        "text_key": "covid_vaccination_child_vaccine_second_date",
+        "type": "short",
+        "visible_when": {
+          "item": "covid_vaccination_child_number_vaccines",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "covid_vaccination_child_vaccine_third_type",
+        "text_key": "covid_vaccination_child_vaccine_third_type",
+        "type": "multi",
+        "visible_when": {
+          "item": "covid_vaccination_child_number_vaccines",
+          "operator": "equals",
+          "value": 3
+        },
+        "options": [
+          {
+            "text_key": "covid_vaccination_child_vaccine_third_type_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_child_vaccine_third_type_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "covid_vaccination_child_vaccine_third_type_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "covid_vaccination_child_vaccine_third_type_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "covid_vaccination_child_vaccine_third_date",
+        "text_key": "covid_vaccination_child_vaccine_third_date",
+        "type": "short",
+        "visible_when": {
+          "item": "covid_vaccination_child_number_vaccines",
+          "operator": "equals",
+          "value": 3
+        },
+        "input_type": "date"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "covid_vaccination_child_had_vaccine": "Have you had a vaccination against COVID-19?",
+      "covid_vaccination_child_had_vaccine_opt_1": "Yes",
+      "covid_vaccination_child_had_vaccine_opt_2": "No",
+      "covid_vaccination_child_number_vaccines": "How many vaccines have you had?",
+      "covid_vaccination_child_number_vaccines_opt_1": "1",
+      "covid_vaccination_child_number_vaccines_opt_2": "2",
+      "covid_vaccination_child_number_vaccines_opt_3": "3",
+      "covid_vaccination_child_number_vaccines_opt_4": "Unsure",
+      "covid_vaccination_child_vaccine_first_type": "Which vaccine did you have? (if more than 1: please answer in relation to your first vaccine)",
+      "covid_vaccination_child_vaccine_first_type_opt_1": "Pfizer",
+      "covid_vaccination_child_vaccine_first_type_opt_2": "AstraZeneca",
+      "covid_vaccination_child_vaccine_first_type_opt_3": "Moderna",
+      "covid_vaccination_child_vaccine_first_type_opt_4": "Unsure",
+      "covid_vaccination_child_vaccine_first_date": "When did you have the vaccine? (if more than 1: please answer in relation to your first vaccine)",
+      "covid_vaccination_child_vaccine_second_type": "What was the second vaccine?",
+      "covid_vaccination_child_vaccine_second_type_opt_1": "Pfizer",
+      "covid_vaccination_child_vaccine_second_type_opt_2": "AstraZeneca",
+      "covid_vaccination_child_vaccine_second_type_opt_3": "Moderna",
+      "covid_vaccination_child_vaccine_second_type_opt_4": "Unsure",
+      "covid_vaccination_child_vaccine_second_date": "When did you have the second vaccine?",
+      "covid_vaccination_child_vaccine_third_type": "What was the third vaccine?",
+      "covid_vaccination_child_vaccine_third_type_opt_1": "Pfizer",
+      "covid_vaccination_child_vaccine_third_type_opt_2": "AstraZeneca",
+      "covid_vaccination_child_vaccine_third_type_opt_3": "Moderna",
+      "covid_vaccination_child_vaccine_third_type_opt_4": "Unsure",
+      "covid_vaccination_child_vaccine_third_date": "When did you have the third vaccine?"
+    }
+  }
+}

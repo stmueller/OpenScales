@@ -1,0 +1,375 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "COVID-19 Vaccination - Adult",
+      "code": "PX940401",
+      "abbreviation": "PX940401",
+      "description": "This protocol has 13 items asking about the COVID-19 vaccination and enrollment in the vaccine trial.",
+      "domain": "COVID-19 - Vaccination",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/940401]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/940401"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "covid_vaccination_adult_ever_given",
+        "text_key": "covid_vaccination_adult_ever_given",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "covid_vaccination_adult_ever_given_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_adult_ever_given_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "covid_vaccination_adult_ever_given_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "covid_vaccination_adult_ever_given_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "covid_vaccination_adult_number_doses",
+        "text_key": "covid_vaccination_adult_number_doses",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "covid_vaccination_adult_number_doses_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_adult_number_doses_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "covid_vaccination_adult_number_doses_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "covid_vaccination_adult_number_doses_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "covid_vaccination_adult_number_doses_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "covid_vaccination_adult_number_doses_other",
+        "text_key": "covid_vaccination_adult_number_doses_other",
+        "type": "short",
+        "visible_when": {
+          "item": "covid_vaccination_adult_number_doses",
+          "operator": "equals",
+          "value": 4
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_first",
+        "text_key": "covid_vaccination_adult_dose_first",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "covid_vaccination_adult_dose_first_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_first_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_first_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_first_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_first_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_first_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_first_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_first_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "covid_vaccination_adult_dose_first_other",
+        "text_key": "covid_vaccination_adult_dose_first_other",
+        "type": "short",
+        "visible_when": {
+          "item": "covid_vaccination_adult_dose_first",
+          "operator": "equals",
+          "value": 6
+        }
+      },
+      {
+        "id": "covid_vaccination_adult_dose_placebo",
+        "text_key": "covid_vaccination_adult_dose_placebo",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "covid_vaccination_adult_dose_placebo_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_placebo_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_placebo_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_placebo_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_placebo_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "covid_vaccination_adult_dose_first_month",
+        "text_key": "covid_vaccination_adult_dose_first_month",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_first_day",
+        "text_key": "covid_vaccination_adult_dose_first_day",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_first_year",
+        "text_key": "covid_vaccination_adult_dose_first_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_second",
+        "text_key": "covid_vaccination_adult_dose_second",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "covid_vaccination_adult_dose_second_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_second_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_second_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_second_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_second_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_second_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_second_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_second_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "covid_vaccination_adult_dose_second_other",
+        "text_key": "covid_vaccination_adult_dose_second_other",
+        "type": "short",
+        "visible_when": {
+          "item": "covid_vaccination_adult_dose_second",
+          "operator": "equals",
+          "value": 6
+        }
+      },
+      {
+        "id": "covid_vaccination_adult_dose_second_month",
+        "text_key": "covid_vaccination_adult_dose_second_month",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_second_day",
+        "text_key": "covid_vaccination_adult_dose_second_day",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_second_year",
+        "text_key": "covid_vaccination_adult_dose_second_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_third",
+        "text_key": "covid_vaccination_adult_dose_third",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "covid_vaccination_adult_dose_third_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_third_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_third_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_third_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_third_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_third_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_third_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_third_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "covid_vaccination_adult_dose_third_other",
+        "text_key": "covid_vaccination_adult_dose_third_other",
+        "type": "short",
+        "visible_when": {
+          "item": "covid_vaccination_adult_dose_third",
+          "operator": "equals",
+          "value": 6
+        }
+      },
+      {
+        "id": "covid_vaccination_adult_dose_third_month",
+        "text_key": "covid_vaccination_adult_dose_third_month",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_third_day",
+        "text_key": "covid_vaccination_adult_dose_third_day",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_third_year",
+        "text_key": "covid_vaccination_adult_dose_third_year",
+        "type": "short",
+        "input_type": "number"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "covid_vaccination_adult_ever_given": "Have you ever been given a vaccine for COVID-19 or enrolled in the COVID-19 clinical vaccine trials?",
+      "covid_vaccination_adult_ever_given_opt_1": "Yes",
+      "covid_vaccination_adult_ever_given_opt_2": "No",
+      "covid_vaccination_adult_ever_given_opt_3": "Don't know",
+      "covid_vaccination_adult_ever_given_opt_4": "Refuse to answer",
+      "covid_vaccination_adult_number_doses": "How many doses of the COVID-19 vaccine have you received to date?",
+      "covid_vaccination_adult_number_doses_opt_1": "1",
+      "covid_vaccination_adult_number_doses_opt_2": "2",
+      "covid_vaccination_adult_number_doses_opt_3": "3",
+      "covid_vaccination_adult_number_doses_opt_4": "Other (specify)",
+      "covid_vaccination_adult_number_doses_opt_5": "Refuse to answer",
+      "covid_vaccination_adult_number_doses_other": "Please specify the other number of doses of the COVID-19 vaccine you have received to date:",
+      "covid_vaccination_adult_dose_first": "Which COVID-19 vaccine trial or vaccine were you given as your first dose?",
+      "covid_vaccination_adult_dose_first_opt_1": "Moderna mRNA vaccine",
+      "covid_vaccination_adult_dose_first_opt_2": "Pfizer mRNA vaccine",
+      "covid_vaccination_adult_dose_first_opt_3": "AstraZeneca attenuated viral vaccine",
+      "covid_vaccination_adult_dose_first_opt_4": "Johnson & Johnson",
+      "covid_vaccination_adult_dose_first_opt_5": "Novavax",
+      "covid_vaccination_adult_dose_first_opt_6": "Other (specify)",
+      "covid_vaccination_adult_dose_first_opt_7": "Don't know",
+      "covid_vaccination_adult_dose_first_opt_8": "Refuse to answer",
+      "covid_vaccination_adult_dose_first_other": "Please specify other COVID-19 vaccine you were given as your first dose:",
+      "covid_vaccination_adult_dose_placebo": "If you participated in the COVID-19 clinical vaccine trials, do you know if you received a placebo or the vaccine? A placebo is a harmless substance that looks like the vaccine being tested, but does not contain active ingredients.",
+      "covid_vaccination_adult_dose_placebo_opt_1": "I received a placebo",
+      "covid_vaccination_adult_dose_placebo_opt_2": "I received the vaccine",
+      "covid_vaccination_adult_dose_placebo_opt_3": "I was not part of the COVID-19 clinical vaccine trials",
+      "covid_vaccination_adult_dose_placebo_opt_4": "Don't know",
+      "covid_vaccination_adult_dose_placebo_opt_5": "Refuse to answer",
+      "covid_vaccination_adult_dose_first_month": "In which month did you receive the first dose of the COVID-19 vaccine? *must provide value",
+      "covid_vaccination_adult_dose_first_day": "On which day did you receive the first dose of the COVID-19 vaccine? *must provide value",
+      "covid_vaccination_adult_dose_first_year": "In which year did you receive the first dose of the COVID-19 vaccine? *must provide value",
+      "covid_vaccination_adult_dose_second": "Which COVID-19 vaccine trial or vaccine were you given as your second dose?",
+      "covid_vaccination_adult_dose_second_opt_1": "Moderna mRNA vaccine",
+      "covid_vaccination_adult_dose_second_opt_2": "Pfizer mRNA vaccine",
+      "covid_vaccination_adult_dose_second_opt_3": "AstraZeneca attenuated viral vaccine",
+      "covid_vaccination_adult_dose_second_opt_4": "Johnson & Johnson",
+      "covid_vaccination_adult_dose_second_opt_5": "Novavax",
+      "covid_vaccination_adult_dose_second_opt_6": "Other (specify)",
+      "covid_vaccination_adult_dose_second_opt_7": "Don't know",
+      "covid_vaccination_adult_dose_second_opt_8": "Refuse to answer",
+      "covid_vaccination_adult_dose_second_other": "Please specify other COVID-19 vaccine you were given as your second dose",
+      "covid_vaccination_adult_dose_second_month": "In which month did you receive or will you receive the second dose of the COVID-19 vaccine? *must provide value",
+      "covid_vaccination_adult_dose_second_day": "On which day did you receive or will you receive the second dose of the COVID-19 vaccine? *must provide value",
+      "covid_vaccination_adult_dose_second_year": "In which year did you receive or will you receive the second dose of the COVID-19 vaccine? *must provide value",
+      "covid_vaccination_adult_dose_third": "Which COVID-19 vaccine trial or vaccine were you given as your third dose?",
+      "covid_vaccination_adult_dose_third_opt_1": "Moderna mRNA vaccine",
+      "covid_vaccination_adult_dose_third_opt_2": "Pfizer mRNA vaccine",
+      "covid_vaccination_adult_dose_third_opt_3": "AstraZeneca attenuated viral vaccine",
+      "covid_vaccination_adult_dose_third_opt_4": "Johnson & Johnson",
+      "covid_vaccination_adult_dose_third_opt_5": "Novavax",
+      "covid_vaccination_adult_dose_third_opt_6": "Other (specify)",
+      "covid_vaccination_adult_dose_third_opt_7": "Don't know",
+      "covid_vaccination_adult_dose_third_opt_8": "Refuse to answer",
+      "covid_vaccination_adult_dose_third_other": "Please specify other COVID-19 vaccine you were given as your third dose",
+      "covid_vaccination_adult_dose_third_month": "In which month did you receive or will you receive the third dose of the COVID-19 vaccine? *must provide value",
+      "covid_vaccination_adult_dose_third_day": "On which day did you receive or will you receive the third dose of the COVID-19 vaccine? *must provide value",
+      "covid_vaccination_adult_dose_third_year": "In which year did you receive or will you receive the third dose of the COVID-19 vaccine? *must provide value"
+    }
+  }
+}

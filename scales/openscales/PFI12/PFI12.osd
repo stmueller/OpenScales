@@ -1,0 +1,215 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Positive Functioning Inventory",
+      "code": "PFI12",
+      "abbreviation": "PFI-12",
+      "description": "12-item measure of subjective well-being and positive psychological functioning. Items describe positive and negative feelings experienced in the past seven days. Scores range from 0 to 36, with higher scores indicating greater well-being. Negative items are reverse-coded for the total score.",
+      "citation": "Joseph, S., & Maltby, J. (2014). Positive functioning inventory: initial validation of a 12-item self-report measure of well-being. Psychology of Well-Being, 4, 15. https://doi.org/10.1186/s13612-014-0015-6",
+      "license": "CC BY 2.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1186/s13612-014-0015-6"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "max": 3,
+      "labels": [
+        "likert_0",
+        "likert_1",
+        "likert_2",
+        "likert_3"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "positive_affect",
+        "name": "Positive Affect",
+        "description": "Sum of 6 positive items: happy, pleased with the way I am, life enjoyable, content, calm, relaxed (0–18). Higher = greater positive affect."
+      },
+      {
+        "id": "negative_affect",
+        "name": "Negative Affect",
+        "description": "Sum of 6 negative items: dissatisfied, cheerless, life meaningless, tense, upset, worried (0–18). Higher = greater negative affect."
+      },
+      {
+        "id": "total_wellbeing",
+        "name": "Total Well-being",
+        "description": "Total score (0–36). Negative items reverse-coded so higher = greater well-being."
+      }
+    ],
+    "items": [
+      {
+        "id": "pfi_inst",
+        "text_key": "pfi_inst",
+        "type": "inst"
+      },
+      {
+        "id": "pfi1",
+        "text_key": "pfi1",
+        "type": "likert"
+      },
+      {
+        "id": "pfi2",
+        "text_key": "pfi2",
+        "type": "likert"
+      },
+      {
+        "id": "pfi3",
+        "text_key": "pfi3",
+        "type": "likert"
+      },
+      {
+        "id": "pfi4",
+        "text_key": "pfi4",
+        "type": "likert"
+      },
+      {
+        "id": "pfi5",
+        "text_key": "pfi5",
+        "type": "likert"
+      },
+      {
+        "id": "pfi6",
+        "text_key": "pfi6",
+        "type": "likert"
+      },
+      {
+        "id": "pfi7",
+        "text_key": "pfi7",
+        "type": "likert"
+      },
+      {
+        "id": "pfi8",
+        "text_key": "pfi8",
+        "type": "likert"
+      },
+      {
+        "id": "pfi9",
+        "text_key": "pfi9",
+        "type": "likert"
+      },
+      {
+        "id": "pfi10",
+        "text_key": "pfi10",
+        "type": "likert"
+      },
+      {
+        "id": "pfi11",
+        "text_key": "pfi11",
+        "type": "likert"
+      },
+      {
+        "id": "pfi12",
+        "text_key": "pfi12",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "positive_affect": {
+        "method": "sum_coded",
+        "items": [
+          "pfi2",
+          "pfi4",
+          "pfi5",
+          "pfi7",
+          "pfi9",
+          "pfi10"
+        ],
+        "description": "Sum of positive affect items (0–18). Higher scores indicate greater positive affect.",
+        "item_coding": {
+          "pfi2": 1,
+          "pfi4": 1,
+          "pfi5": 1,
+          "pfi7": 1,
+          "pfi9": 1,
+          "pfi10": 1
+        }
+      },
+      "negative_affect": {
+        "method": "sum_coded",
+        "items": [
+          "pfi1",
+          "pfi3",
+          "pfi6",
+          "pfi8",
+          "pfi11",
+          "pfi12"
+        ],
+        "description": "Sum of negative affect items (0–18). Higher scores indicate greater negative affect.",
+        "item_coding": {
+          "pfi1": 1,
+          "pfi3": 1,
+          "pfi6": 1,
+          "pfi8": 1,
+          "pfi11": 1,
+          "pfi12": 1
+        }
+      },
+      "total_wellbeing": {
+        "method": "sum_coded",
+        "items": [
+          "pfi1",
+          "pfi2",
+          "pfi3",
+          "pfi4",
+          "pfi5",
+          "pfi6",
+          "pfi7",
+          "pfi8",
+          "pfi9",
+          "pfi10",
+          "pfi11",
+          "pfi12"
+        ],
+        "description": "Total well-being score (0–36). Negative affect items are reverse-coded so that higher scores indicate greater well-being.",
+        "item_coding": {
+          "pfi1": -1,
+          "pfi2": 1,
+          "pfi3": -1,
+          "pfi4": 1,
+          "pfi5": 1,
+          "pfi6": -1,
+          "pfi7": 1,
+          "pfi8": -1,
+          "pfi9": 1,
+          "pfi10": 1,
+          "pfi11": -1,
+          "pfi12": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_0": "Never",
+      "likert_1": "Rarely",
+      "likert_2": "Sometimes",
+      "likert_3": "Often",
+      "pfi_inst": "Next, you will read a number of statements that people have made to describe how they feel. Please read each one and select the option which best describes how frequently you felt that way in <b>the past seven days, including today</b>. Some statements describe positive feelings and some describe negative feelings. You may have experienced both positive and negative feelings at different times during the past seven days.",
+      "question_head": "Select which best describes how frequently you have felt this way in the past seven days, including today.",
+      "pfi1": "I felt dissatisfied with my life",
+      "pfi2": "I felt happy",
+      "pfi3": "I felt cheerless",
+      "pfi4": "I felt pleased with the way I am",
+      "pfi5": "I felt that life was enjoyable",
+      "pfi6": "I felt that life was meaningless",
+      "pfi7": "I felt content",
+      "pfi8": "I felt tense",
+      "pfi9": "I felt calm",
+      "pfi10": "I felt relaxed",
+      "pfi11": "I felt upset",
+      "pfi12": "I felt worried",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

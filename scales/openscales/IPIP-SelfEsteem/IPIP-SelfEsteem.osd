@@ -1,0 +1,161 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Self-Esteem Scale",
+      "code": "IPIP-SelfEsteem",
+      "abbreviation": "IPIP-SE",
+      "description": "IPIP items measuring self-esteem, designed to approximate the Rosenberg Self-Esteem Scale.",
+      "citation": "Rosenberg, M. (1965). Society and the Adolescent Self-Image. Princeton University Press.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newSingleConstructsKey.htm#Self-esteem"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "selfesteem",
+        "name": "Self-esteem"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_selfesteem_001",
+        "text_key": "ipip_selfesteem_001",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_002",
+        "text_key": "ipip_selfesteem_002",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_003",
+        "text_key": "ipip_selfesteem_003",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_004",
+        "text_key": "ipip_selfesteem_004",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_005",
+        "text_key": "ipip_selfesteem_005",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_006",
+        "text_key": "ipip_selfesteem_006",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_007",
+        "text_key": "ipip_selfesteem_007",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_008",
+        "text_key": "ipip_selfesteem_008",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_009",
+        "text_key": "ipip_selfesteem_009",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_010",
+        "text_key": "ipip_selfesteem_010",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "selfesteem": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_selfesteem_001",
+          "ipip_selfesteem_002",
+          "ipip_selfesteem_003",
+          "ipip_selfesteem_004",
+          "ipip_selfesteem_005",
+          "ipip_selfesteem_006",
+          "ipip_selfesteem_007",
+          "ipip_selfesteem_008",
+          "ipip_selfesteem_009",
+          "ipip_selfesteem_010"
+        ],
+        "item_coding": {
+          "ipip_selfesteem_001": -1,
+          "ipip_selfesteem_002": -1,
+          "ipip_selfesteem_003": 1,
+          "ipip_selfesteem_004": -1,
+          "ipip_selfesteem_005": -1,
+          "ipip_selfesteem_006": 1,
+          "ipip_selfesteem_007": 1,
+          "ipip_selfesteem_008": 1,
+          "ipip_selfesteem_009": -1,
+          "ipip_selfesteem_010": 1
+        },
+        "description": "Cronbach's alpha = 0.84"
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "ipip_selfesteem_001": "Am less capable than most people.",
+      "ipip_selfesteem_002": "Dislike myself.",
+      "ipip_selfesteem_003": "Feel comfortable with myself.",
+      "ipip_selfesteem_004": "Feel that I'm unable to deal with things.",
+      "ipip_selfesteem_005": "Feel that my life lacks direction.",
+      "ipip_selfesteem_006": "Just know that I will be a success.",
+      "ipip_selfesteem_007": "Know my strengths.",
+      "ipip_selfesteem_008": "Like to take responsibility for making decisions.",
+      "ipip_selfesteem_009": "Question my ability to do my work properly.",
+      "ipip_selfesteem_010": "Seldom feel blue.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

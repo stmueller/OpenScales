@@ -1,0 +1,885 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Mental Health Inventory (MHI-38)",
+      "code": "MHI38",
+      "abbreviation": "MHI-38",
+      "description": "38-item measure of psychological distress and well-being developed for the Medical Outcomes Study. Most items use a 6-point frequency scale referring to the past month, but several items use alternate response formats (happiness, frequency, nervousness severity, depression severity, suicidal ideation). Yields 5 subscales: Anxiety (9 items), Depression (4 items), Loss of Behavioral/Emotional Control (10 items), General Positive Affect (10 items), and Emotional Ties (5 items). Two composite scores: Psychological Distress and Psychological Well-Being. Scores are item means transformed to 0–100: (mean − 1) / 5 × 100. Higher scores indicate better mental health.",
+      "citation": "Veit, C.T., & Ware, J.E. (1983). The structure of psychological distress and well-being in general populations. Journal of Consulting and Clinical Psychology, 51(5), 730-742. https://doi.org/10.1037/0022-006X.51.5.730",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health/surveys/mos/mental-health.html",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. RAND explicitly states these instruments are available for use without permission or fee.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": [
+        "mhi_freq1",
+        "mhi_freq2",
+        "mhi_freq3",
+        "mhi_freq4",
+        "mhi_freq5",
+        "mhi_freq6"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "anxiety",
+        "name": "Anxiety",
+        "abbreviation": "ANX",
+        "description": "Frequency of anxious symptoms (9 items: mhi2, mhi3, mhi4, mhi9, mhi14, mhi15, mhi22, mhi27, mhi37). Higher transformed scores indicate less anxiety."
+      },
+      {
+        "id": "depression",
+        "name": "Depression",
+        "abbreviation": "DEP",
+        "description": "Frequency of depressive symptoms (4 items: mhi6, mhi11, mhi12, mhi17). Higher transformed scores indicate less depression."
+      },
+      {
+        "id": "loss_of_control",
+        "name": "Loss of Behavioral/Emotional Control",
+        "abbreviation": "LOC",
+        "description": "Frequency of loss of control over behavior, thoughts, and emotions (10 items: mhi5, mhi13, mhi18, mhi20, mhi24, mhi26, mhi28, mhi32, mhi35, mhi38). Higher transformed scores indicate better control."
+      },
+      {
+        "id": "positive_affect",
+        "name": "General Positive Affect",
+        "abbreviation": "GPA",
+        "description": "Frequency of positive emotional states (10 items: mhi1, mhi7, mhi8, mhi19, mhi23, mhi29, mhi30, mhi31, mhi33, mhi34). Higher transformed scores indicate greater positive affect."
+      },
+      {
+        "id": "emotional_ties",
+        "name": "Emotional Ties",
+        "abbreviation": "ET",
+        "description": "Frequency of positive social and emotional connections (5 items: mhi10, mhi16, mhi21, mhi25, mhi36). Higher transformed scores indicate stronger emotional ties."
+      },
+      {
+        "id": "psychological_distress",
+        "name": "Psychological Distress",
+        "abbreviation": "PD",
+        "description": "Composite of Anxiety + Depression + Loss of Control (23 items). Transform: (mean−1)/5×100. Higher = less distress."
+      },
+      {
+        "id": "psychological_wellbeing",
+        "name": "Psychological Well-Being",
+        "abbreviation": "PWB",
+        "description": "Composite of Positive Affect + Emotional Ties (15 items). Transform: (mean−1)/5×100. Higher = greater well-being."
+      }
+    ],
+    "items": [
+      {
+        "id": "mhi_inst",
+        "text_key": "mhi_inst",
+        "type": "inst"
+      },
+      {
+        "id": "mhi1",
+        "text_key": "mhi1",
+        "type": "multi",
+        "dimension": "positive_affect",
+        "options": [
+          {
+            "text_key": "mhi_happy1",
+            "value": 1
+          },
+          {
+            "text_key": "mhi_happy2",
+            "value": 2
+          },
+          {
+            "text_key": "mhi_happy3",
+            "value": 3
+          },
+          {
+            "text_key": "mhi_happy4",
+            "value": 4
+          },
+          {
+            "text_key": "mhi_happy5",
+            "value": 5
+          },
+          {
+            "text_key": "mhi_happy6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "mhi2",
+        "text_key": "mhi2",
+        "type": "likert",
+        "dimension": "anxiety",
+        "likert_labels": [
+          "mhi_often1",
+          "mhi_often2",
+          "mhi_often3",
+          "mhi_often4",
+          "mhi_often5",
+          "mhi_often6"
+        ]
+      },
+      {
+        "id": "mhi3",
+        "text_key": "mhi3",
+        "type": "likert",
+        "dimension": "anxiety",
+        "likert_labels": [
+          "mhi_often1",
+          "mhi_often2",
+          "mhi_often3",
+          "mhi_often4",
+          "mhi_often5",
+          "mhi_often6"
+        ]
+      },
+      {
+        "id": "mhi4",
+        "text_key": "mhi4",
+        "type": "likert",
+        "dimension": "anxiety"
+      },
+      {
+        "id": "mhi5",
+        "text_key": "mhi5",
+        "type": "likert",
+        "dimension": "loss_of_control"
+      },
+      {
+        "id": "mhi6",
+        "text_key": "mhi6",
+        "type": "likert",
+        "dimension": "depression"
+      },
+      {
+        "id": "mhi7",
+        "text_key": "mhi7",
+        "type": "likert",
+        "dimension": "positive_affect"
+      },
+      {
+        "id": "mhi8",
+        "text_key": "mhi8",
+        "type": "likert",
+        "dimension": "positive_affect"
+      },
+      {
+        "id": "mhi9",
+        "text_key": "mhi9",
+        "type": "likert",
+        "dimension": "anxiety"
+      },
+      {
+        "id": "mhi10",
+        "text_key": "mhi10",
+        "type": "likert",
+        "dimension": "emotional_ties"
+      },
+      {
+        "id": "mhi11",
+        "text_key": "mhi11",
+        "type": "likert",
+        "dimension": "depression"
+      },
+      {
+        "id": "mhi12",
+        "text_key": "mhi12",
+        "type": "likert",
+        "dimension": "depression"
+      },
+      {
+        "id": "mhi13",
+        "text_key": "mhi13",
+        "type": "likert",
+        "dimension": "loss_of_control"
+      },
+      {
+        "id": "mhi14",
+        "text_key": "mhi14",
+        "type": "likert",
+        "dimension": "anxiety"
+      },
+      {
+        "id": "mhi15",
+        "text_key": "mhi15",
+        "type": "likert",
+        "dimension": "anxiety"
+      },
+      {
+        "id": "mhi16",
+        "text_key": "mhi16",
+        "type": "likert",
+        "dimension": "emotional_ties"
+      },
+      {
+        "id": "mhi17",
+        "text_key": "mhi17",
+        "type": "likert",
+        "dimension": "depression"
+      },
+      {
+        "id": "mhi18",
+        "text_key": "mhi18",
+        "type": "likert",
+        "dimension": "loss_of_control",
+        "likert_labels": [
+          "mhi_often1",
+          "mhi_often2",
+          "mhi_often3",
+          "mhi_often4",
+          "mhi_often5",
+          "mhi_often6"
+        ]
+      },
+      {
+        "id": "mhi19",
+        "text_key": "mhi19",
+        "type": "likert",
+        "dimension": "positive_affect"
+      },
+      {
+        "id": "mhi20",
+        "text_key": "mhi20",
+        "type": "likert",
+        "dimension": "loss_of_control",
+        "likert_labels": [
+          "mhi_often1",
+          "mhi_often2",
+          "mhi_often3",
+          "mhi_often4",
+          "mhi_often5",
+          "mhi_often6"
+        ]
+      },
+      {
+        "id": "mhi21",
+        "text_key": "mhi21",
+        "type": "likert",
+        "dimension": "emotional_ties"
+      },
+      {
+        "id": "mhi22",
+        "text_key": "mhi22",
+        "type": "likert",
+        "dimension": "anxiety"
+      },
+      {
+        "id": "mhi23",
+        "text_key": "mhi23",
+        "type": "multi",
+        "dimension": "positive_affect",
+        "options": [
+          {
+            "text_key": "mhi_nerves1",
+            "value": 1
+          },
+          {
+            "text_key": "mhi_nerves2",
+            "value": 2
+          },
+          {
+            "text_key": "mhi_nerves3",
+            "value": 3
+          },
+          {
+            "text_key": "mhi_nerves4",
+            "value": 4
+          },
+          {
+            "text_key": "mhi_nerves5",
+            "value": 5
+          },
+          {
+            "text_key": "mhi_nerves6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "mhi24",
+        "text_key": "mhi24",
+        "type": "likert",
+        "dimension": "loss_of_control"
+      },
+      {
+        "id": "mhi25",
+        "text_key": "mhi25",
+        "type": "likert",
+        "dimension": "emotional_ties"
+      },
+      {
+        "id": "mhi26",
+        "text_key": "mhi26",
+        "type": "multi",
+        "dimension": "loss_of_control",
+        "options": [
+          {
+            "text_key": "mhi_suicide1",
+            "value": 1
+          },
+          {
+            "text_key": "mhi_suicide2",
+            "value": 2
+          },
+          {
+            "text_key": "mhi_suicide3",
+            "value": 3
+          },
+          {
+            "text_key": "mhi_suicide4",
+            "value": 4
+          },
+          {
+            "text_key": "mhi_suicide5",
+            "value": 5
+          },
+          {
+            "text_key": "mhi_suicide6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "mhi27",
+        "text_key": "mhi27",
+        "type": "likert",
+        "dimension": "anxiety"
+      },
+      {
+        "id": "mhi28",
+        "text_key": "mhi28",
+        "type": "likert",
+        "dimension": "loss_of_control"
+      },
+      {
+        "id": "mhi29",
+        "text_key": "mhi29",
+        "type": "likert",
+        "dimension": "positive_affect",
+        "likert_labels": [
+          "mhi_often1",
+          "mhi_often2",
+          "mhi_often3",
+          "mhi_often4",
+          "mhi_often5",
+          "mhi_often6"
+        ]
+      },
+      {
+        "id": "mhi30",
+        "text_key": "mhi30",
+        "type": "likert",
+        "dimension": "positive_affect"
+      },
+      {
+        "id": "mhi31",
+        "text_key": "mhi31",
+        "type": "likert",
+        "dimension": "positive_affect"
+      },
+      {
+        "id": "mhi32",
+        "text_key": "mhi32",
+        "type": "likert",
+        "dimension": "loss_of_control"
+      },
+      {
+        "id": "mhi33",
+        "text_key": "mhi33",
+        "type": "likert",
+        "dimension": "positive_affect",
+        "likert_labels": [
+          "mhi_often1",
+          "mhi_often2",
+          "mhi_often3",
+          "mhi_often4",
+          "mhi_often5",
+          "mhi_often6"
+        ]
+      },
+      {
+        "id": "mhi34",
+        "text_key": "mhi34",
+        "type": "likert",
+        "dimension": "positive_affect"
+      },
+      {
+        "id": "mhi35",
+        "text_key": "mhi35",
+        "type": "likert",
+        "dimension": "loss_of_control"
+      },
+      {
+        "id": "mhi36",
+        "text_key": "mhi36",
+        "type": "multi",
+        "dimension": "emotional_ties",
+        "options": [
+          {
+            "text_key": "mhi_depr1",
+            "value": 1
+          },
+          {
+            "text_key": "mhi_depr2",
+            "value": 2
+          },
+          {
+            "text_key": "mhi_depr3",
+            "value": 3
+          },
+          {
+            "text_key": "mhi_depr4",
+            "value": 4
+          },
+          {
+            "text_key": "mhi_depr5",
+            "value": 5
+          },
+          {
+            "text_key": "mhi_depr6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "mhi37",
+        "text_key": "mhi37",
+        "type": "likert",
+        "dimension": "anxiety"
+      },
+      {
+        "id": "mhi38",
+        "text_key": "mhi38",
+        "type": "likert",
+        "dimension": "loss_of_control",
+        "likert_labels": [
+          "mhi_often1",
+          "mhi_often2",
+          "mhi_often3",
+          "mhi_often4",
+          "mhi_often5",
+          "mhi_often6"
+        ]
+      }
+    ],
+    "scoring": {
+      "anxiety": {
+        "method": "mean_coded",
+        "items": [
+          "mhi2",
+          "mhi3",
+          "mhi4",
+          "mhi9",
+          "mhi14",
+          "mhi15",
+          "mhi22",
+          "mhi27",
+          "mhi37"
+        ],
+        "description": "Mean of 9 anxiety items. Transform: (mean−1)/5×100. Higher = less anxiety.",
+        "item_coding": {
+          "mhi2": 1,
+          "mhi3": 1,
+          "mhi4": 1,
+          "mhi9": 1,
+          "mhi14": 1,
+          "mhi15": 1,
+          "mhi22": 1,
+          "mhi27": 1,
+          "mhi37": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "depression": {
+        "method": "mean_coded",
+        "items": [
+          "mhi6",
+          "mhi11",
+          "mhi12",
+          "mhi17"
+        ],
+        "description": "Mean of 4 depression items. Transform: (mean−1)/5×100. Higher = less depression.",
+        "item_coding": {
+          "mhi6": 1,
+          "mhi11": 1,
+          "mhi12": 1,
+          "mhi17": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "loss_of_control": {
+        "method": "mean_coded",
+        "items": [
+          "mhi5",
+          "mhi13",
+          "mhi18",
+          "mhi20",
+          "mhi24",
+          "mhi26",
+          "mhi28",
+          "mhi32",
+          "mhi35",
+          "mhi38"
+        ],
+        "description": "Mean of 10 loss-of-control items. mhi13 reverse-coded. Transform: (mean−1)/5×100. Higher = better control.",
+        "item_coding": {
+          "mhi5": 1,
+          "mhi13": -1,
+          "mhi18": 1,
+          "mhi20": 1,
+          "mhi24": 1,
+          "mhi26": 1,
+          "mhi28": 1,
+          "mhi32": 1,
+          "mhi35": 1,
+          "mhi38": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "positive_affect": {
+        "method": "mean_coded",
+        "items": [
+          "mhi1",
+          "mhi7",
+          "mhi8",
+          "mhi19",
+          "mhi23",
+          "mhi29",
+          "mhi30",
+          "mhi31",
+          "mhi33",
+          "mhi34"
+        ],
+        "description": "Mean of 10 positive affect items. All reverse-coded. Transform: (mean−1)/5×100. Higher = greater positive affect.",
+        "item_coding": {
+          "mhi1": -1,
+          "mhi7": -1,
+          "mhi8": -1,
+          "mhi19": -1,
+          "mhi23": -1,
+          "mhi29": -1,
+          "mhi30": -1,
+          "mhi31": -1,
+          "mhi33": -1,
+          "mhi34": -1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "emotional_ties": {
+        "method": "mean_coded",
+        "items": [
+          "mhi10",
+          "mhi16",
+          "mhi21",
+          "mhi25",
+          "mhi36"
+        ],
+        "description": "Mean of 5 emotional ties items. mhi16, mhi25, mhi36 reverse-coded. Transform: (mean−1)/5×100. Higher = stronger ties.",
+        "item_coding": {
+          "mhi10": 1,
+          "mhi16": -1,
+          "mhi21": 1,
+          "mhi25": -1,
+          "mhi36": -1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "psychological_distress": {
+        "method": "mean_coded",
+        "items": [
+          "mhi2",
+          "mhi3",
+          "mhi4",
+          "mhi9",
+          "mhi14",
+          "mhi15",
+          "mhi22",
+          "mhi27",
+          "mhi37",
+          "mhi6",
+          "mhi11",
+          "mhi12",
+          "mhi17",
+          "mhi5",
+          "mhi13",
+          "mhi18",
+          "mhi20",
+          "mhi24",
+          "mhi26",
+          "mhi28",
+          "mhi32",
+          "mhi35",
+          "mhi38"
+        ],
+        "description": "Composite: Anxiety + Depression + Loss of Control (23 items). Transform: (mean−1)/5×100. Higher = less distress.",
+        "item_coding": {
+          "mhi2": 1,
+          "mhi3": 1,
+          "mhi4": 1,
+          "mhi9": 1,
+          "mhi14": 1,
+          "mhi15": 1,
+          "mhi22": 1,
+          "mhi27": 1,
+          "mhi37": 1,
+          "mhi6": 1,
+          "mhi11": 1,
+          "mhi12": 1,
+          "mhi17": 1,
+          "mhi5": 1,
+          "mhi13": -1,
+          "mhi18": 1,
+          "mhi20": 1,
+          "mhi24": 1,
+          "mhi26": 1,
+          "mhi28": 1,
+          "mhi32": 1,
+          "mhi35": 1,
+          "mhi38": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "psychological_wellbeing": {
+        "method": "mean_coded",
+        "items": [
+          "mhi1",
+          "mhi7",
+          "mhi8",
+          "mhi19",
+          "mhi23",
+          "mhi29",
+          "mhi30",
+          "mhi31",
+          "mhi33",
+          "mhi34",
+          "mhi10",
+          "mhi16",
+          "mhi21",
+          "mhi25",
+          "mhi36"
+        ],
+        "description": "Composite: Positive Affect + Emotional Ties (15 items). Transform: (mean−1)/5×100. Higher = greater well-being.",
+        "item_coding": {
+          "mhi1": -1,
+          "mhi7": -1,
+          "mhi8": -1,
+          "mhi19": -1,
+          "mhi23": -1,
+          "mhi29": -1,
+          "mhi30": -1,
+          "mhi31": -1,
+          "mhi33": -1,
+          "mhi34": -1,
+          "mhi10": 1,
+          "mhi16": -1,
+          "mhi21": 1,
+          "mhi25": -1,
+          "mhi36": -1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Mental Health Inventory (MHI-38) Report",
+      "footer_refs": [
+        "Veit, C.T., & Ware, J.E. (1983). The structure of psychological distress and well-being in general populations. Journal of Consulting and Clinical Psychology, 51(5), 730-742.",
+        "Transformed scores range 0–100. Higher scores indicate better mental health. Transform: (mean − 1) / 5 × 100.",
+        "MHI instrument: https://www.rand.org/health/surveys/mos/mental-health.html"
+      ]
+    },
+    "data_output": {
+      "individual_file": "MHI38-{subnum}.csv",
+      "pooled_file": "MHI38-pooled.csv",
+      "report_file": "MHI38-report-{subnum}.html",
+      "columns": "subnum,order,timestamp,question_id,text_key,dimension,coding,response,rt",
+      "pooled_columns": ""
+    }
+  },
+  "translations": {
+    "en": {
+      "mhi_inst": "These questions are about how you feel and how things have been with you during <b>the past month</b>. For each question, please indicate the one answer that comes closest to the way you have been feeling.",
+      "mhi_freq1": "All of the time",
+      "mhi_freq2": "Most of the time",
+      "mhi_freq3": "A good bit of the time",
+      "mhi_freq4": "Some of the time",
+      "mhi_freq5": "A little of the time",
+      "mhi_freq6": "None of the time",
+      "mhi_often1": "Always",
+      "mhi_often2": "Very often",
+      "mhi_often3": "Fairly often",
+      "mhi_often4": "Sometimes",
+      "mhi_often5": "Almost never",
+      "mhi_often6": "Never",
+      "mhi_happy1": "Extremely happy, could not have been more satisfied or pleased",
+      "mhi_happy2": "Very happy most of the time",
+      "mhi_happy3": "Generally satisfied, pleased",
+      "mhi_happy4": "Sometimes fairly satisfied, sometimes fairly unhappy",
+      "mhi_happy5": "Generally dissatisfied, unhappy",
+      "mhi_happy6": "Very dissatisfied, unhappy most of the time",
+      "mhi_nerves1": "Extremely so, to the point where I could not take care of things",
+      "mhi_nerves2": "Very much bothered",
+      "mhi_nerves3": "Bothered quite a bit",
+      "mhi_nerves4": "Bothered some, enough to notice",
+      "mhi_nerves5": "Bothered just a little",
+      "mhi_nerves6": "Not bothered at all",
+      "mhi_suicide1": "Yes, constantly",
+      "mhi_suicide2": "Yes, very often",
+      "mhi_suicide3": "Yes, fairly often",
+      "mhi_suicide4": "Yes, a couple of times",
+      "mhi_suicide5": "Yes, once",
+      "mhi_suicide6": "No, never",
+      "mhi_depr1": "Extremely depressed",
+      "mhi_depr2": "Very depressed",
+      "mhi_depr3": "Quite depressed",
+      "mhi_depr4": "Somewhat depressed",
+      "mhi_depr5": "A little depressed",
+      "mhi_depr6": "Not depressed at all",
+      "mhi1": "How happy, satisfied, or pleased have you been with your personal life during the <b>past month</b>?",
+      "mhi2": "During the <b>past month</b>, how often did you feel there were people you were close to?",
+      "mhi3": "During the <b>past month</b>, how often has feeling depressed interfered with what you usually do?",
+      "mhi4": "How much of the time, during the <b>past month</b>, did you have difficulty reasoning and solving problems; for example, making plans, making decisions, learning new things?",
+      "mhi5": "During the <b>past month</b>, how much of the time have you generally enjoyed the things you do?",
+      "mhi6": "How much of the time, during the <b>past month</b>, has your daily life been full of things that were interesting to you?",
+      "mhi7": "During the <b>past month</b>, how much of the time have you felt loved and wanted?",
+      "mhi8": "How much of the time, during the <b>past month</b>, have you been a very nervous person?",
+      "mhi9": "During the <b>past month</b>, how much of the time did you have difficulty doing activities involving concentration and thinking?",
+      "mhi10": "During the <b>past month</b>, how much of the time did you feel depressed?",
+      "mhi11": "During the <b>past month</b>, how much of the time have you felt tense or \"high-strung\"?",
+      "mhi12": "During the <b>past month</b>, how much of the time have you been in firm control of your behavior, thoughts, emotions, feelings?",
+      "mhi13": "During the <b>past month</b>, how much of the time did you become confused and start several actions at a time?",
+      "mhi14": "During the <b>past month</b>, how much of the time did you feel that you had nothing to look forward to?",
+      "mhi15": "How much of the time, during the <b>past month</b>, have you felt calm and peaceful?",
+      "mhi16": "How much of the time, during the <b>past month</b>, have you felt emotionally stable?",
+      "mhi17": "How much of the time, during the <b>past month</b>, have you felt downhearted and blue?",
+      "mhi18": "How often have you felt like crying during the <b>past month</b>?",
+      "mhi19": "How much of the time, during the <b>past month</b>, did you feel left out?",
+      "mhi20": "During the <b>past month</b>, how often did you feel that others would be better off if you were dead?",
+      "mhi21": "During the <b>past month</b>, how much of the time did you forget, for example, things that happened recently, where you put things, appointments?",
+      "mhi22": "During the <b>past month</b>, how much of the time did you feel that your love relationships, loving and being loved, were full and complete?",
+      "mhi23": "How much have you been bothered by nervousness, or your \"nerves,\" during the <b>past month</b>?",
+      "mhi24": "During the <b>past month</b>, how much of the time has living been a wonderful adventure for you?",
+      "mhi25": "During the <b>past month</b>, how much of the time have you felt so down in the dumps that nothing could cheer you up?",
+      "mhi26": "During the <b>past month</b>, did you ever think about taking your own life?",
+      "mhi27": "During the <b>past month</b>, how much of the time have you felt restless, fidgety, or impatient?",
+      "mhi28": "During the <b>past month</b>, how much of the time have you been moody or brooded about things?",
+      "mhi29": "During the <b>past month</b>, how often did you get rattled, upset, or flustered?",
+      "mhi30": "How much of the time, during the <b>past month</b>, did you have trouble keeping your attention on any activity for long?",
+      "mhi31": "During the <b>past month</b>, how much of the time have you been anxious or worried?",
+      "mhi32": "During the <b>past month</b>, how much of the time have you been a happy person?",
+      "mhi33": "How often during the <b>past month</b> did you find yourself having difficulty trying to calm down?",
+      "mhi34": "During the <b>past month</b>, how much of the time have you been in low or very low spirits?",
+      "mhi35": "How much of the time, during the <b>past month</b>, have you felt cheerful, lighthearted?",
+      "mhi36": "During the <b>past month</b>, how depressed (at its worst) have you felt?",
+      "mhi37": "How much of the time, during the <b>past month</b>, did you react slowly to things that were said or done?",
+      "mhi38": "During the <b>past month</b>, how often did you feel isolated from others?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

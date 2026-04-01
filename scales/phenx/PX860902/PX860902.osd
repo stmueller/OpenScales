@@ -1,0 +1,152 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Physical Mobility - Child",
+      "code": "PX860902",
+      "abbreviation": "PX860902",
+      "description": "Patient-Reported Outcomes Measurement Information System ® (PROMIS) Pediatric Item Bank v2.0 - Mobility Short Form 8a is an 8-item self-administered questionnaire (with a proxy version available), with items prompting on a five-point rating scale indicating how well an individual can perform a speci",
+      "domain": "Pain",
+      "citation": "Adjei, J., Schachne, J. M., Green, D. W., & Fabricant, P. D. (2020). Correlation between the PROMIS Pediatric Mobility Instrument and the Hospital for Special Surgery Pediatric Functional Activity Brief Scale (HSS Pedi-FABS). HSS Journal: The Musculoskeletal Journal of Hospital for Special Surgery, 16(Suppl 2), 311-315. DeWalt, D. A., Gross, H. E., Gipson, D. S., Selewski, D. T., DeWitt, E. M., Dampier, C. D., Hinds, P. S., Huang, I. C., Thissen, D., & Varni, J. W. (2015). PROMIS ® pediatric self-report scales distinguish subgroups of children within and across six common pediatric chronic health conditions. Quality of Life Research: An International Journal of Quality of Life Aspects of Treatment, Care and Rehabilitation, 24(9), 2195-2208. Reeve, B. B., Edwards, L. J., Jaeger, B. C., Hinds, P. S., Dampier, C., Gipson, D. S., Selewski, D. T., Troost, J. P., Thissen, D., Barry, V., Gross, H. E., & DeWalt, D. A. (2018). Assessing responsiveness over time of the PROMIS ® pediatric symptom and function measures in cancer, nephrotic syndrome, and sickle cell disease. Quality of Life Research: An International Journal of Quality of Life Aspects of Treatment, Care and Rehabilitation, 27(1), 249-257. [PhenX: https://www.phenxtoolkit.org/protocols/view/860902]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/860902"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "lk_opt_1",
+        "lk_opt_2",
+        "lk_opt_3",
+        "lk_opt_4",
+        "lk_opt_5"
+      ]
+    },
+    "items": [
+      {
+        "id": "sec_in_the_past_7_days",
+        "type": "section",
+        "text_key": "sec_in_the_past_7_days_title"
+      },
+      {
+        "id": "sports_exercise_other_kids",
+        "text_key": "sports_exercise_other_kids",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "item_bank_mobility_child"
+      },
+      {
+        "id": "get_up_floor",
+        "text_key": "get_up_floor",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "item_bank_mobility_child"
+      },
+      {
+        "id": "keep_up_play_kids",
+        "text_key": "keep_up_play_kids",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "item_bank_mobility_child"
+      },
+      {
+        "id": "move_legs",
+        "text_key": "move_legs",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "item_bank_mobility_child"
+      },
+      {
+        "id": "stand_self",
+        "text_key": "stand_self",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "item_bank_mobility_child"
+      },
+      {
+        "id": "stand_tiptoes",
+        "text_key": "stand_tiptoes",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "item_bank_mobility_child"
+      },
+      {
+        "id": "walk_stairs_without_holding_anything",
+        "text_key": "walk_stairs_without_holding_anything",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "item_bank_mobility_child"
+      },
+      {
+        "id": "able_activity_enjoy_most",
+        "text_key": "able_activity_enjoy_most",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "item_bank_mobility_child"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "sports_exercise_other_kids",
+          "get_up_floor",
+          "keep_up_play_kids",
+          "move_legs",
+          "stand_self",
+          "stand_tiptoes",
+          "walk_stairs_without_holding_anything",
+          "able_activity_enjoy_most"
+        ],
+        "item_coding": {
+          "sports_exercise_other_kids": 1,
+          "get_up_floor": 1,
+          "keep_up_play_kids": 1,
+          "move_legs": 1,
+          "stand_self": 1,
+          "stand_tiptoes": 1,
+          "walk_stairs_without_holding_anything": 1,
+          "able_activity_enjoy_most": 1
+        },
+        "description": "Total score (sum of all items)"
+      }
+    },
+    "_conversion_notes": [
+      "INFO  sports_exercise_other_kids: member of matrix group 'item_bank_mobility_child' — consider converting to grid type manually",
+      "INFO  get_up_floor: member of matrix group 'item_bank_mobility_child' — consider converting to grid type manually",
+      "INFO  keep_up_play_kids: member of matrix group 'item_bank_mobility_child' — consider converting to grid type manually",
+      "INFO  move_legs: member of matrix group 'item_bank_mobility_child' — consider converting to grid type manually",
+      "INFO  stand_self: member of matrix group 'item_bank_mobility_child' — consider converting to grid type manually",
+      "INFO  stand_tiptoes: member of matrix group 'item_bank_mobility_child' — consider converting to grid type manually",
+      "INFO  walk_stairs_without_holding_anything: member of matrix group 'item_bank_mobility_child' — consider converting to grid type manually",
+      "INFO  able_activity_enjoy_most: member of matrix group 'item_bank_mobility_child' — consider converting to grid type manually"
+    ]
+  },
+  "translations": {
+    "en": {
+      "lk_opt_1": "With no trouble",
+      "lk_opt_2": "With a little trouble",
+      "lk_opt_3": "With some trouble",
+      "lk_opt_4": "With a lot of trouble",
+      "lk_opt_5": "Not able to do",
+      "sec_in_the_past_7_days_title": "In the past 7 days...",
+      "sports_exercise_other_kids": "I could do sports and exercise that other kids my age could do.",
+      "get_up_floor": "I could get up from the floor.",
+      "keep_up_play_kids": "I could keep up when I played with other kids.",
+      "move_legs": "I could move my legs.",
+      "stand_self": "I could stand up by myself.",
+      "stand_tiptoes": "I could stand up on my tiptoes.",
+      "walk_stairs_without_holding_anything": "I could walk up stairs without holding on to anything.",
+      "able_activity_enjoy_most": "I have been physically able to do the activities I enjoy most."
+    }
+  }
+}

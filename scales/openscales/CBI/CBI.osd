@@ -1,0 +1,747 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Copenhagen Burnout Inventory",
+      "code": "CBI",
+      "abbreviation": "CBI",
+      "description": "19-item burnout measure with three subscales: Personal Burnout (6 items), Work-Related Burnout (7 items), and Client-Related Burnout (6 items). Two response formats: frequency (Always→Never) and degree (Very high degree→Very low degree), both scored 0–100 in 25-point increments. Item 13 is reverse-scored. Subscale scores are means (0–100). Public domain.",
+      "citation": "Kristensen, T. S., Borritz, M., Villadsen, E., & Christensen, K. B. (2005). The Copenhagen Burnout Inventory: A new tool for the assessment of burnout. Work & Stress, 19(3), 192–207. https://doi.org/10.1080/02678370500297720",
+      "license": "Public Domain",
+      "license_explanation": "Developed at the Danish National Research Centre for the Working Environment (NFA) with public funds. Freely available.",
+      "license_url": "https://nfa.dk/vaerktoejer/spoergeskemaer/spoergeskema-til-maaling-af-udbraendthed-cbi/copenhagen-burnout-inventory-cbi",
+      "version": "1.0",
+      "url": "https://nfa.dk/vaerktoejer/spoergeskemaer/spoergeskema-til-maaling-af-udbraendthed-cbi/copenhagen-burnout-inventory-cbi",
+      "domain": "Work"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "include_client": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include Client-Related Burnout subscale (items 14–19). Set to 0 for respondents who do not work with clients/patients/students."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "personal",
+        "name": "Personal Burnout",
+        "description": "General fatigue and exhaustion not attributed to a specific domain (items 1–6). Mean 0–100."
+      },
+      {
+        "id": "work",
+        "name": "Work-Related Burnout",
+        "description": "Fatigue and exhaustion attributed to work (items 7–13). Mean 0–100. Item 13 reverse-scored."
+      },
+      {
+        "id": "client",
+        "name": "Client-Related Burnout",
+        "description": "Fatigue and exhaustion attributed to working with clients/patients/students (items 14–19). Mean 0–100."
+      }
+    ],
+    "items": [
+      {
+        "id": "cbi_inst",
+        "text_key": "cbi_inst",
+        "type": "inst"
+      },
+      {
+        "id": "cbi1",
+        "text_key": "cbi1",
+        "type": "multi",
+        "dimension": "personal",
+        "options": [
+          {
+            "text_key": "freq_always",
+            "value": 100
+          },
+          {
+            "text_key": "freq_often",
+            "value": 75
+          },
+          {
+            "text_key": "freq_sometimes",
+            "value": 50
+          },
+          {
+            "text_key": "freq_seldom",
+            "value": 25
+          },
+          {
+            "text_key": "freq_never",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi2",
+        "text_key": "cbi2",
+        "type": "multi",
+        "dimension": "personal",
+        "options": [
+          {
+            "text_key": "freq_always",
+            "value": 100
+          },
+          {
+            "text_key": "freq_often",
+            "value": 75
+          },
+          {
+            "text_key": "freq_sometimes",
+            "value": 50
+          },
+          {
+            "text_key": "freq_seldom",
+            "value": 25
+          },
+          {
+            "text_key": "freq_never",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi3",
+        "text_key": "cbi3",
+        "type": "multi",
+        "dimension": "personal",
+        "options": [
+          {
+            "text_key": "freq_always",
+            "value": 100
+          },
+          {
+            "text_key": "freq_often",
+            "value": 75
+          },
+          {
+            "text_key": "freq_sometimes",
+            "value": 50
+          },
+          {
+            "text_key": "freq_seldom",
+            "value": 25
+          },
+          {
+            "text_key": "freq_never",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi4",
+        "text_key": "cbi4",
+        "type": "multi",
+        "dimension": "personal",
+        "options": [
+          {
+            "text_key": "freq_always",
+            "value": 100
+          },
+          {
+            "text_key": "freq_often",
+            "value": 75
+          },
+          {
+            "text_key": "freq_sometimes",
+            "value": 50
+          },
+          {
+            "text_key": "freq_seldom",
+            "value": 25
+          },
+          {
+            "text_key": "freq_never",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi5",
+        "text_key": "cbi5",
+        "type": "multi",
+        "dimension": "personal",
+        "options": [
+          {
+            "text_key": "freq_always",
+            "value": 100
+          },
+          {
+            "text_key": "freq_often",
+            "value": 75
+          },
+          {
+            "text_key": "freq_sometimes",
+            "value": 50
+          },
+          {
+            "text_key": "freq_seldom",
+            "value": 25
+          },
+          {
+            "text_key": "freq_never",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi6",
+        "text_key": "cbi6",
+        "type": "multi",
+        "dimension": "personal",
+        "options": [
+          {
+            "text_key": "freq_always",
+            "value": 100
+          },
+          {
+            "text_key": "freq_often",
+            "value": 75
+          },
+          {
+            "text_key": "freq_sometimes",
+            "value": 50
+          },
+          {
+            "text_key": "freq_seldom",
+            "value": 25
+          },
+          {
+            "text_key": "freq_never",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi_work_inst",
+        "text_key": "cbi_work_inst",
+        "type": "inst"
+      },
+      {
+        "id": "cbi7",
+        "text_key": "cbi7",
+        "type": "multi",
+        "dimension": "work",
+        "options": [
+          {
+            "text_key": "deg_veryhigh",
+            "value": 100
+          },
+          {
+            "text_key": "deg_high",
+            "value": 75
+          },
+          {
+            "text_key": "deg_somewhat",
+            "value": 50
+          },
+          {
+            "text_key": "deg_low",
+            "value": 25
+          },
+          {
+            "text_key": "deg_verylow",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi8",
+        "text_key": "cbi8",
+        "type": "multi",
+        "dimension": "work",
+        "options": [
+          {
+            "text_key": "deg_veryhigh",
+            "value": 100
+          },
+          {
+            "text_key": "deg_high",
+            "value": 75
+          },
+          {
+            "text_key": "deg_somewhat",
+            "value": 50
+          },
+          {
+            "text_key": "deg_low",
+            "value": 25
+          },
+          {
+            "text_key": "deg_verylow",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi9",
+        "text_key": "cbi9",
+        "type": "multi",
+        "dimension": "work",
+        "options": [
+          {
+            "text_key": "deg_veryhigh",
+            "value": 100
+          },
+          {
+            "text_key": "deg_high",
+            "value": 75
+          },
+          {
+            "text_key": "deg_somewhat",
+            "value": 50
+          },
+          {
+            "text_key": "deg_low",
+            "value": 25
+          },
+          {
+            "text_key": "deg_verylow",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi10",
+        "text_key": "cbi10",
+        "type": "multi",
+        "dimension": "work",
+        "options": [
+          {
+            "text_key": "freq_always",
+            "value": 100
+          },
+          {
+            "text_key": "freq_often",
+            "value": 75
+          },
+          {
+            "text_key": "freq_sometimes",
+            "value": 50
+          },
+          {
+            "text_key": "freq_seldom",
+            "value": 25
+          },
+          {
+            "text_key": "freq_never",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi11",
+        "text_key": "cbi11",
+        "type": "multi",
+        "dimension": "work",
+        "options": [
+          {
+            "text_key": "freq_always",
+            "value": 100
+          },
+          {
+            "text_key": "freq_often",
+            "value": 75
+          },
+          {
+            "text_key": "freq_sometimes",
+            "value": 50
+          },
+          {
+            "text_key": "freq_seldom",
+            "value": 25
+          },
+          {
+            "text_key": "freq_never",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi12",
+        "text_key": "cbi12",
+        "type": "multi",
+        "dimension": "work",
+        "options": [
+          {
+            "text_key": "freq_always",
+            "value": 100
+          },
+          {
+            "text_key": "freq_often",
+            "value": 75
+          },
+          {
+            "text_key": "freq_sometimes",
+            "value": 50
+          },
+          {
+            "text_key": "freq_seldom",
+            "value": 25
+          },
+          {
+            "text_key": "freq_never",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi13",
+        "text_key": "cbi13",
+        "type": "multi",
+        "dimension": "work",
+        "options": [
+          {
+            "text_key": "freq_always",
+            "value": 0
+          },
+          {
+            "text_key": "freq_often",
+            "value": 25
+          },
+          {
+            "text_key": "freq_sometimes",
+            "value": 50
+          },
+          {
+            "text_key": "freq_seldom",
+            "value": 75
+          },
+          {
+            "text_key": "freq_never",
+            "value": 100
+          }
+        ]
+      },
+      {
+        "id": "cbi_client_inst",
+        "text_key": "cbi_client_inst",
+        "type": "inst",
+        "visible_when": {
+          "parameter": "include_client",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "cbi14",
+        "text_key": "cbi14",
+        "type": "multi",
+        "dimension": "client",
+        "visible_when": {
+          "parameter": "include_client",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "deg_veryhigh",
+            "value": 100
+          },
+          {
+            "text_key": "deg_high",
+            "value": 75
+          },
+          {
+            "text_key": "deg_somewhat",
+            "value": 50
+          },
+          {
+            "text_key": "deg_low",
+            "value": 25
+          },
+          {
+            "text_key": "deg_verylow",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi15",
+        "text_key": "cbi15",
+        "type": "multi",
+        "dimension": "client",
+        "visible_when": {
+          "parameter": "include_client",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "deg_veryhigh",
+            "value": 100
+          },
+          {
+            "text_key": "deg_high",
+            "value": 75
+          },
+          {
+            "text_key": "deg_somewhat",
+            "value": 50
+          },
+          {
+            "text_key": "deg_low",
+            "value": 25
+          },
+          {
+            "text_key": "deg_verylow",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi16",
+        "text_key": "cbi16",
+        "type": "multi",
+        "dimension": "client",
+        "visible_when": {
+          "parameter": "include_client",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "deg_veryhigh",
+            "value": 100
+          },
+          {
+            "text_key": "deg_high",
+            "value": 75
+          },
+          {
+            "text_key": "deg_somewhat",
+            "value": 50
+          },
+          {
+            "text_key": "deg_low",
+            "value": 25
+          },
+          {
+            "text_key": "deg_verylow",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi17",
+        "text_key": "cbi17",
+        "type": "multi",
+        "dimension": "client",
+        "visible_when": {
+          "parameter": "include_client",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "deg_veryhigh",
+            "value": 100
+          },
+          {
+            "text_key": "deg_high",
+            "value": 75
+          },
+          {
+            "text_key": "deg_somewhat",
+            "value": 50
+          },
+          {
+            "text_key": "deg_low",
+            "value": 25
+          },
+          {
+            "text_key": "deg_verylow",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi18",
+        "text_key": "cbi18",
+        "type": "multi",
+        "dimension": "client",
+        "visible_when": {
+          "parameter": "include_client",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "freq_always",
+            "value": 100
+          },
+          {
+            "text_key": "freq_often",
+            "value": 75
+          },
+          {
+            "text_key": "freq_sometimes",
+            "value": 50
+          },
+          {
+            "text_key": "freq_seldom",
+            "value": 25
+          },
+          {
+            "text_key": "freq_never",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cbi19",
+        "text_key": "cbi19",
+        "type": "multi",
+        "dimension": "client",
+        "visible_when": {
+          "parameter": "include_client",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "freq_always",
+            "value": 100
+          },
+          {
+            "text_key": "freq_often",
+            "value": 75
+          },
+          {
+            "text_key": "freq_sometimes",
+            "value": 50
+          },
+          {
+            "text_key": "freq_seldom",
+            "value": 25
+          },
+          {
+            "text_key": "freq_never",
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "personal": {
+        "method": "mean_coded",
+        "items": [
+          "cbi1",
+          "cbi2",
+          "cbi3",
+          "cbi4",
+          "cbi5",
+          "cbi6"
+        ],
+        "description": "Personal Burnout (items 1–6, mean 0–100).",
+        "item_coding": {
+          "cbi1": 1,
+          "cbi2": 1,
+          "cbi3": 1,
+          "cbi4": 1,
+          "cbi5": 1,
+          "cbi6": 1
+        }
+      },
+      "work": {
+        "method": "mean_coded",
+        "items": [
+          "cbi7",
+          "cbi8",
+          "cbi9",
+          "cbi10",
+          "cbi11",
+          "cbi12",
+          "cbi13"
+        ],
+        "description": "Work-Related Burnout (items 7–13, mean 0–100). Item 13 reverse-scored via option values.",
+        "item_coding": {
+          "cbi7": 1,
+          "cbi8": 1,
+          "cbi9": 1,
+          "cbi10": 1,
+          "cbi11": 1,
+          "cbi12": 1,
+          "cbi13": 1
+        }
+      },
+      "client": {
+        "method": "mean_coded",
+        "items": [
+          "cbi14",
+          "cbi15",
+          "cbi16",
+          "cbi17",
+          "cbi18",
+          "cbi19"
+        ],
+        "description": "Client-Related Burnout (items 14–19, mean 0–100). Only scored when include_client=1.",
+        "item_coding": {
+          "cbi14": 1,
+          "cbi15": 1,
+          "cbi16": 1,
+          "cbi17": 1,
+          "cbi18": 1,
+          "cbi19": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Copenhagen Burnout Inventory (CBI) Report",
+      "footer_refs": [
+        "Kristensen, T. S., et al. (2005). Work & Stress, 19(3), 192–207.",
+        "Scores 0–100. Item 13 reverse-scored. Client subscale optional."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "cbi_inst": "The following questions ask about your degree of fatigue and exhaustion. Please indicate how often or to what degree each statement applies to you.",
+      "cbi_work_inst": "The following questions are about your <b>work</b> situation.",
+      "cbi_client_inst": "The following questions are about working with <b>clients</b> (or patients, students, etc.).",
+      "freq_always": "Always",
+      "freq_often": "Often",
+      "freq_sometimes": "Sometimes",
+      "freq_seldom": "Seldom",
+      "freq_never": "Never/almost never",
+      "deg_veryhigh": "To a very high degree",
+      "deg_high": "To a high degree",
+      "deg_somewhat": "Somewhat",
+      "deg_low": "To a low degree",
+      "deg_verylow": "To a very low degree",
+      "cbi1": "How often do you feel tired?",
+      "cbi2": "How often are you physically exhausted?",
+      "cbi3": "How often are you emotionally exhausted?",
+      "cbi4": "How often do you think: \"I can't take it anymore\"?",
+      "cbi5": "How often do you feel worn out?",
+      "cbi6": "How often do you feel weak and susceptible to illness?",
+      "cbi7": "Is your work emotionally exhausting?",
+      "cbi8": "Do you feel burnt out because of your work?",
+      "cbi9": "Does your work frustrate you?",
+      "cbi10": "Do you feel worn out at the end of the working day?",
+      "cbi11": "Are you exhausted in the morning at the thought of another day at work?",
+      "cbi12": "Do you feel that every working hour is tiring for you?",
+      "cbi13": "Do you have enough energy for family and friends during leisure time?",
+      "cbi14": "Do you find it hard to work with clients?",
+      "cbi15": "Does it drain your energy to work with clients?",
+      "cbi16": "Do you find it frustrating to work with clients?",
+      "cbi17": "Do you feel that you give more than you get back when you work with clients?",
+      "cbi18": "Are you tired of working with clients?",
+      "cbi19": "Do you sometimes wonder how long you will be able to continue working with clients?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

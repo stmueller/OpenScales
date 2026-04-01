@@ -1,0 +1,128 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Pain Interference - Child",
+      "code": "PX860502",
+      "abbreviation": "PX860502",
+      "description": "The Patient-Reported Outcomes Measurement Information System (PROMIS ® ) Pediatric Item Bank v2.0 - Pain Interference - Short Form 8a is an 8-item self-report questionnaire completed by children that assesses how pain impacts a childs daily activities of living and the enjoyment of those activities.",
+      "domain": "Pain",
+      "citation": "Dampier, C., Barry, V., Gross, H. E., Lui, Y., Thornburg, C. D., DeWalt, D. A., & Reeve, B. B. (2016). Initial evaluation of the pediatric PROMIS ® health domains in children and adolescents with sickle cell disease. Pediatric Blood & Cancer, 63(6), 1031-1037. Singh, A., & Panepinto, J. A. (2019). Clinical meaning of PROMIS pain domains for children with sickle cell disease. Blood Advances, 3(15), 2244-2249. Amtmann, D., Cook, K. F., Jensen, M. P., Chen, W. H., Choi, S., Revicki, D., ... Lai, J-S. (2010). Development of a PROMIS item bank to measure pain interference. Pain, 150(1), 173-182. [PhenX: https://www.phenxtoolkit.org/protocols/view/860502]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/860502"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "lk_opt_1",
+        "lk_opt_2",
+        "lk_opt_3",
+        "lk_opt_4",
+        "lk_opt_5"
+      ]
+    },
+    "items": [
+      {
+        "id": "pain_interference_child_angry",
+        "text_key": "pain_interference_child_angry",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "pain_interference_child_schoolwork",
+        "text_key": "pain_interference_child_schoolwork",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "pain_interference_child_sleeping",
+        "text_key": "pain_interference_child_sleeping",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "pain_interference_child_pay_attention",
+        "text_key": "pain_interference_child_pay_attention",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "pain_interference_child_run",
+        "text_key": "pain_interference_child_run",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "pain_interference_child_walk",
+        "text_key": "pain_interference_child_walk",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "pain_interference_child_fun",
+        "text_key": "pain_interference_child_fun",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "pain_interference_child_standing",
+        "text_key": "pain_interference_child_standing",
+        "type": "likert",
+        "likert_points": 5
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "pain_interference_child_angry",
+          "pain_interference_child_schoolwork",
+          "pain_interference_child_sleeping",
+          "pain_interference_child_pay_attention",
+          "pain_interference_child_run",
+          "pain_interference_child_walk",
+          "pain_interference_child_fun",
+          "pain_interference_child_standing"
+        ],
+        "item_coding": {
+          "pain_interference_child_angry": 1,
+          "pain_interference_child_schoolwork": 1,
+          "pain_interference_child_sleeping": 1,
+          "pain_interference_child_pay_attention": 1,
+          "pain_interference_child_run": 1,
+          "pain_interference_child_walk": 1,
+          "pain_interference_child_fun": 1,
+          "pain_interference_child_standing": 1
+        },
+        "description": "Total score (sum of all items)"
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "lk_opt_1": "Never",
+      "lk_opt_2": "Almost Never",
+      "lk_opt_3": "Sometimes",
+      "lk_opt_4": "Often",
+      "lk_opt_5": "Almost Always",
+      "pain_interference_child_angry": "In the past 7 days... I felt angry when I had pain.",
+      "pain_interference_child_schoolwork": "In the past 7 days... I had trouble doing schoolwork when I had pain.",
+      "pain_interference_child_sleeping": "In the past 7 days... I had trouble sleeping when I had pain.",
+      "pain_interference_child_pay_attention": "In the past 7 days... It was hard for me to pay attention when I had pain.",
+      "pain_interference_child_run": "In the past 7 days... It was hard for me to run when I had pain.",
+      "pain_interference_child_walk": "In the past 7 days... It was hard for me to walk one block when I had pain.",
+      "pain_interference_child_fun": "In the past 7 days... It was hard to have fun when I had pain.",
+      "pain_interference_child_standing": "In the past 7 days... It was hard to stay standing when I had pain."
+    }
+  }
+}

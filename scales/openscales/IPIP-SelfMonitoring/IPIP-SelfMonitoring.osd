@@ -1,0 +1,161 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Self-Monitoring Scale",
+      "code": "IPIP-SelfMonitoring",
+      "abbreviation": "IPIP-SM",
+      "description": "IPIP items measuring self-monitoring tendencies.",
+      "citation": "Snyder, M. (1974). Self-monitoring of expressive behavior. Journal of Personality and Social Psychology, 30(4), 526-537.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newSingleConstructsKey.htm#Self-monitoring"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "selfmonitoring",
+        "name": "Self-monitoring"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_selfmonitoring_001",
+        "text_key": "ipip_selfmonitoring_001",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfmonitoring_002",
+        "text_key": "ipip_selfmonitoring_002",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfmonitoring_003",
+        "text_key": "ipip_selfmonitoring_003",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfmonitoring_004",
+        "text_key": "ipip_selfmonitoring_004",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfmonitoring_005",
+        "text_key": "ipip_selfmonitoring_005",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfmonitoring_006",
+        "text_key": "ipip_selfmonitoring_006",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfmonitoring_007",
+        "text_key": "ipip_selfmonitoring_007",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfmonitoring_008",
+        "text_key": "ipip_selfmonitoring_008",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfmonitoring_009",
+        "text_key": "ipip_selfmonitoring_009",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfmonitoring_010",
+        "text_key": "ipip_selfmonitoring_010",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "selfmonitoring": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_selfmonitoring_001",
+          "ipip_selfmonitoring_002",
+          "ipip_selfmonitoring_003",
+          "ipip_selfmonitoring_004",
+          "ipip_selfmonitoring_005",
+          "ipip_selfmonitoring_006",
+          "ipip_selfmonitoring_007",
+          "ipip_selfmonitoring_008",
+          "ipip_selfmonitoring_009",
+          "ipip_selfmonitoring_010"
+        ],
+        "item_coding": {
+          "ipip_selfmonitoring_001": 1,
+          "ipip_selfmonitoring_002": 1,
+          "ipip_selfmonitoring_003": 1,
+          "ipip_selfmonitoring_004": -1,
+          "ipip_selfmonitoring_005": -1,
+          "ipip_selfmonitoring_006": 1,
+          "ipip_selfmonitoring_007": 1,
+          "ipip_selfmonitoring_008": 1,
+          "ipip_selfmonitoring_009": 1,
+          "ipip_selfmonitoring_010": -1
+        },
+        "description": "Cronbach's alpha = 0.82"
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "ipip_selfmonitoring_001": "Am good at making impromptu speeches.",
+      "ipip_selfmonitoring_002": "Am likely to show off if I get the chance.",
+      "ipip_selfmonitoring_003": "Am the life of the party.",
+      "ipip_selfmonitoring_004": "Don't like to draw attention to myself.",
+      "ipip_selfmonitoring_005": "Hate being the center of attention.",
+      "ipip_selfmonitoring_006": "Like to attract attention.",
+      "ipip_selfmonitoring_007": "Put on a show to impress people.",
+      "ipip_selfmonitoring_008": "Use flattery to get ahead.",
+      "ipip_selfmonitoring_009": "Would make a good actor.",
+      "ipip_selfmonitoring_010": "Would not be a good comedian.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

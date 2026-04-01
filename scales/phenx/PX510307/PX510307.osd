@@ -1,0 +1,314 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "General Cannabis Use",
+      "code": "PX510307",
+      "abbreviation": "PX510307",
+      "description": "This questionnaire includes six items from the International Cannabis Policy Study Survey, Wave 6 (2023). Respondents are asked if they ever tried marijuana, when they last used marijuana, how often they use marijuana, how often they used marijuana in the last 30 days, length of marijuana use and ho",
+      "domain": "Substance Use - Screening & Family History",
+      "citation": "Corsetti, D., Fataar, F., Burkalter, R., & Hammond, D. (2023). International Cannabis Policy Study Technical Report-Wave 5 (2022) . Waterloo, Ontario, Canada: University of Waterloo. Hammond, D., Goodman, S., Wadsworth, E., Rynard, V., Boudreau, C., & Hall, W. (2020). Evaluating the impacts of cannabis legalization: The International Cannabis Policy Study. International Journal on Drug Policy, 77 , 102698. https://doi.org/10.1016/j.drugpo.2020.102698 [PhenX: https://www.phenxtoolkit.org/protocols/view/510307]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/510307"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "general_cannabis_use_tried_marijuana",
+        "text_key": "general_cannabis_use_tried_marijuana",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "general_cannabis_use_tried_marijuana_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "general_cannabis_use_tried_marijuana_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "general_cannabis_use_tried_marijuana_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "general_cannabis_use_tried_marijuana_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "general_cannabis_use_last_time",
+        "text_key": "general_cannabis_use_last_time",
+        "type": "multi",
+        "visible_when": {
+          "item": "general_cannabis_use_tried_marijuana",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "general_cannabis_use_last_time_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "general_cannabis_use_last_time_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "general_cannabis_use_last_time_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "general_cannabis_use_last_time_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "general_cannabis_use_last_time_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "general_cannabis_use_last_time_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "general_cannabis_use_frequency",
+        "text_key": "general_cannabis_use_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "general_cannabis_use_last_time",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4
+          ]
+        },
+        "options": [
+          {
+            "text_key": "general_cannabis_use_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "general_cannabis_use_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "general_cannabis_use_frequency_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "general_cannabis_use_frequency_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "general_cannabis_use_frequency_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "general_cannabis_use_frequency_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "general_cannabis_use_marijuana_days",
+        "text_key": "general_cannabis_use_marijuana_days",
+        "type": "short",
+        "visible_when": {
+          "item": "general_cannabis_use_last_time",
+          "operator": "equals",
+          "value": 4
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "general_cannabis_use_marijuana_days_other",
+        "text_key": "general_cannabis_use_marijuana_days_other",
+        "type": "multi",
+        "visible_when": {
+          "item": "general_cannabis_use_last_time",
+          "operator": "equals",
+          "value": 4
+        },
+        "options": [
+          {
+            "text_key": "general_cannabis_use_marijuana_days_other_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "general_cannabis_use_marijuana_days_other_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "general_cannabis_use_frequency_years",
+        "text_key": "general_cannabis_use_frequency_years",
+        "type": "short",
+        "visible_when": {
+          "item": "general_cannabis_use_frequency",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "general_cannabis_use_frequency_months",
+        "text_key": "general_cannabis_use_frequency_months",
+        "type": "short",
+        "visible_when": {
+          "item": "general_cannabis_use_frequency",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "general_cannabis_use_frequency_days",
+        "text_key": "general_cannabis_use_frequency_days",
+        "type": "short",
+        "visible_when": {
+          "item": "general_cannabis_use_frequency",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "general_cannabis_use_frequency_other",
+        "text_key": "general_cannabis_use_frequency_other",
+        "type": "multi",
+        "visible_when": {
+          "item": "general_cannabis_use_frequency",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4
+          ]
+        },
+        "options": [
+          {
+            "text_key": "general_cannabis_use_frequency_other_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "general_cannabis_use_frequency_other_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "general_cannabis_use_after_waking",
+        "text_key": "general_cannabis_use_after_waking",
+        "type": "multi",
+        "visible_when": {
+          "item": "general_cannabis_use_frequency",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "general_cannabis_use_after_waking_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "general_cannabis_use_after_waking_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "general_cannabis_use_after_waking_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "general_cannabis_use_after_waking_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "general_cannabis_use_after_waking_minutes",
+        "text_key": "general_cannabis_use_after_waking_minutes",
+        "type": "short",
+        "visible_when": {
+          "item": "general_cannabis_use_after_waking",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "general_cannabis_use_after_waking_hours",
+        "text_key": "general_cannabis_use_after_waking_hours",
+        "type": "short",
+        "visible_when": {
+          "item": "general_cannabis_use_after_waking",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "general_cannabis_use_tried_marijuana": "Have you ever tried marijuana?",
+      "general_cannabis_use_tried_marijuana_opt_1": "Yes",
+      "general_cannabis_use_tried_marijuana_opt_2": "No",
+      "general_cannabis_use_tried_marijuana_opt_-77": "Don't know",
+      "general_cannabis_use_tried_marijuana_opt_-88": "Refuse to answer",
+      "general_cannabis_use_last_time": "When was the last time you used marijuana?",
+      "general_cannabis_use_last_time_opt_1": "More than 12 months ago",
+      "general_cannabis_use_last_time_opt_2": "More than 3 months ago but less than 12 months ago",
+      "general_cannabis_use_last_time_opt_3": "More than 30 days ago, but less than 3 months ago",
+      "general_cannabis_use_last_time_opt_4": "Within the past 30 days",
+      "general_cannabis_use_last_time_opt_-77": "Don't know",
+      "general_cannabis_use_last_time_opt_-88": "Refuse to answer",
+      "general_cannabis_use_frequency": "How often do you use marijuana?",
+      "general_cannabis_use_frequency_opt_1": "Less than once per month",
+      "general_cannabis_use_frequency_opt_2": "One or more times per month",
+      "general_cannabis_use_frequency_opt_3": "One or more times per week",
+      "general_cannabis_use_frequency_opt_4": "Every day or almost every day",
+      "general_cannabis_use_frequency_opt_-77": "Don't know",
+      "general_cannabis_use_frequency_opt_-88": "Refuse to answer",
+      "general_cannabis_use_marijuana_days": "Think specifically about the past 30 days, from [DATEFILL] up to and including today. During the past 30 days, on how many days did you use marijuana? NUMBER OF DAYS:",
+      "general_cannabis_use_marijuana_days_other": "Think specifically about the past 30 days, from [DATEFILL] up to and including today. During the past 30 days, on how many days did you use marijuana?",
+      "general_cannabis_use_marijuana_days_other_opt_-77": "Don't know",
+      "general_cannabis_use_marijuana_days_other_opt_-88": "Refuse to answer",
+      "general_cannabis_use_frequency_years": "How long have you used marijuana at least [question 3 = 4: \"daily/almost daily\"; question 3 = 3: \"weekly\"; question 3 = 2: \"monthly\"]?   You can enter in number of years, months, or days. : Enter # years:",
+      "general_cannabis_use_frequency_months": "How long have you used marijuana at least [question 3 = 4: \"daily/almost daily\"; question 3 = 3: \"weekly\"; question 3 = 2: \"monthly\"]?   You can enter in number of years, months, or days. : Enter # months:",
+      "general_cannabis_use_frequency_days": "How long have you used marijuana at least [question 3 = 4: \"daily/almost daily\"; question 3 = 3: \"weekly\"; question 3 = 2: \"monthly\"]?   You can enter in number of years, months, or days. : Enter # days:",
+      "general_cannabis_use_frequency_other": "How long have you used marijuana at least [question 3 = 4: \"daily/almost daily\"; question 3 = 3: \"weekly\"; question 3 = 2: \"monthly\"]?   You can enter in number of years, months, or days.",
+      "general_cannabis_use_frequency_other_opt_-77": "Don't know",
+      "general_cannabis_use_frequency_other_opt_-88": "Refuse to answer",
+      "general_cannabis_use_after_waking": "How soon after waking do you usually use marijuana?  You can answer with minutes or hours, or use both hours and minutes to give a more accurate answer.",
+      "general_cannabis_use_after_waking_opt_1": "Minutes",
+      "general_cannabis_use_after_waking_opt_2": "Hours",
+      "general_cannabis_use_after_waking_opt_3": "Don't know",
+      "general_cannabis_use_after_waking_opt_4": "Refuse to answer",
+      "general_cannabis_use_after_waking_minutes": "How soon after waking do you usually use marijuana?  You can answer with minutes or hours, or use both hours and minutes to give a more accurate answer.: Minutes:",
+      "general_cannabis_use_after_waking_hours": "How soon after waking do you usually use marijuana?  You can answer with minutes or hours, or use both hours and minutes to give a more accurate answer.: Hours:"
+    }
+  }
+}

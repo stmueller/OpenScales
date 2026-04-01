@@ -1,0 +1,81 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Weight Loss/Gain",
+      "code": "PX021402",
+      "abbreviation": "PX021402",
+      "description": "The protocol contains a question about the participant’s weight 1 year ago.* *NOTE: This period can be modified for different periods. Depending on your hypothesis, you may want to modify the time interval as appropriate (e.g., 3 months, 6 months, 1 year).",
+      "domain": "Anthropometrics",
+      "citation": "Garmey, E. G., Liu, Q., Sklar, C. A., Meacham, L. R., Mertens, A. C., Stovall, M. A., et al. (2008). Longitudinal changes in obesity and body mass index among adult survivors of childhood acute lymphoblastic leukemia: A report from the Childhood Cancer Survivor Study. Journal of Clinical Oncology, 26(28), 4639-4645. doi:10.1200/JCO.2008.16.3527 [PhenX: https://www.phenxtoolkit.org/protocols/view/21402]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/21402"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "weight_loss_gain_weight_one_year_ago",
+        "text_key": "weight_loss_gain_weight_one_year_ago",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "weight_loss_gain_weight_one_year_ago_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "weight_loss_gain_weight_one_year_ago_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "weight_loss_gain_weight_one_year_ago_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "weight_loss_gain_weight_one_year_ago_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "weight_loss_gain_weight_one_year_ago_pounds",
+        "text_key": "weight_loss_gain_weight_one_year_ago_pounds",
+        "type": "short",
+        "visible_when": {
+          "item": "weight_loss_gain_weight_one_year_ago",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "weight_loss_gain_weight_one_year_ago_kilograms",
+        "text_key": "weight_loss_gain_weight_one_year_ago_kilograms",
+        "type": "short",
+        "visible_when": {
+          "item": "weight_loss_gain_weight_one_year_ago",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "weight_loss_gain_weight_one_year_ago": "How much did {you/SP*} weigh a year ago? [If {you were/she was} pregnant a year ago, how much did {you/she} weigh before your pregnancy?]",
+      "weight_loss_gain_weight_one_year_ago_opt_1": "Enter weight in pounds",
+      "weight_loss_gain_weight_one_year_ago_opt_2": "Enter weight in kilograms",
+      "weight_loss_gain_weight_one_year_ago_opt_7": "Refused",
+      "weight_loss_gain_weight_one_year_ago_opt_9": "Don't know",
+      "weight_loss_gain_weight_one_year_ago_pounds": "How much did {you/SP*} weigh a year ago? [If {you were/she was} pregnant a year ago, how much did {you/she} weigh before your pregnancy?]. Pounds",
+      "weight_loss_gain_weight_one_year_ago_kilograms": "How much did {you/SP*} weigh a year ago? [If {you were/she was} pregnant a year ago, how much did {you/she} weigh before your pregnancy?]. Kilograms"
+    }
+  }
+}

@@ -1,0 +1,552 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Gaming Disorder Symptom Questionnaire",
+      "code": "GDSQ21",
+      "abbreviation": "GDSQ-21",
+      "description": "21-item Gaming Disorder Symptom Questionnaire with 3 subscales. Items 1-13 use a 5-point frequency scale (0=Never to 4=Almost daily). Items 14-21 use a two-part format: (a) frequency (0-4), then (b) yes/no continuation question (only if a≥1). Score for items 14-21 = a × b. Originally developed in Chinese.",
+      "citation": "Zhang, L., Luo, T., Hao, W., Cao, Y., Yuan, M., & Liao, Y. (2022). Gaming Disorder Symptom Questionnaire: The development and validation of a screening tool for ICD-11 gaming disorder in adolescents. Frontiers in Psychiatry, 13, 848157. https://doi.org/10.3389/fpsyt.2022.848157",
+      "license": "CC BY 4.0",
+      "license_explanation": "Published in Frontiers in Psychiatry under Creative Commons Attribution 4.0 International License.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyt.2022.848157",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 0,
+      "max": 4,
+      "labels": [
+        "likert_0",
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "impaired_control",
+        "name": "Impaired Control",
+        "description": "Difficulty controlling the onset, frequency, intensity, duration, and termination of gaming."
+      },
+      {
+        "id": "increasing_priority",
+        "name": "Increasing Priority",
+        "description": "Gaming takes precedence over other life interests and daily activities."
+      },
+      {
+        "id": "continued_use",
+        "name": "Continued Use Despite Negative Consequences",
+        "description": "Continuation or escalation of gaming despite negative consequences."
+      }
+    ],
+    "items": [
+      {
+        "id": "gdsq1",
+        "text_key": "gdsq1",
+        "type": "likert",
+        "dimension": "impaired_control"
+      },
+      {
+        "id": "gdsq2",
+        "text_key": "gdsq2",
+        "type": "likert",
+        "dimension": "impaired_control"
+      },
+      {
+        "id": "gdsq3",
+        "text_key": "gdsq3",
+        "type": "likert",
+        "dimension": "impaired_control"
+      },
+      {
+        "id": "gdsq4",
+        "text_key": "gdsq4",
+        "type": "likert",
+        "dimension": "impaired_control"
+      },
+      {
+        "id": "gdsq5",
+        "text_key": "gdsq5",
+        "type": "likert",
+        "dimension": "impaired_control"
+      },
+      {
+        "id": "gdsq6",
+        "text_key": "gdsq6",
+        "type": "likert",
+        "dimension": "impaired_control"
+      },
+      {
+        "id": "gdsq7",
+        "text_key": "gdsq7",
+        "type": "likert",
+        "dimension": "increasing_priority"
+      },
+      {
+        "id": "gdsq8",
+        "text_key": "gdsq8",
+        "type": "likert",
+        "dimension": "increasing_priority"
+      },
+      {
+        "id": "gdsq9",
+        "text_key": "gdsq9",
+        "type": "likert",
+        "dimension": "increasing_priority"
+      },
+      {
+        "id": "gdsq10",
+        "text_key": "gdsq10",
+        "type": "likert",
+        "dimension": "increasing_priority"
+      },
+      {
+        "id": "gdsq11",
+        "text_key": "gdsq11",
+        "type": "likert",
+        "dimension": "increasing_priority"
+      },
+      {
+        "id": "gdsq12",
+        "text_key": "gdsq12",
+        "type": "likert",
+        "dimension": "increasing_priority"
+      },
+      {
+        "id": "gdsq13",
+        "text_key": "gdsq13",
+        "type": "likert",
+        "dimension": "increasing_priority"
+      },
+      {
+        "id": "gdsq14a",
+        "text_key": "gdsq14a",
+        "type": "likert",
+        "dimension": "continued_use"
+      },
+      {
+        "id": "gdsq14b",
+        "text_key": "gdsq14b",
+        "type": "multi",
+        "dimension": "continued_use",
+        "visible_when": {
+          "item": "gdsq14a",
+          "operator": "greater_than",
+          "value": "0"
+        },
+        "options": [
+          {
+            "text_key": "gdsq_no",
+            "value": 0
+          },
+          {
+            "text_key": "gdsq_yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "gdsq15a",
+        "text_key": "gdsq15a",
+        "type": "likert",
+        "dimension": "continued_use"
+      },
+      {
+        "id": "gdsq15b",
+        "text_key": "gdsq15b",
+        "type": "multi",
+        "dimension": "continued_use",
+        "visible_when": {
+          "item": "gdsq15a",
+          "operator": "greater_than",
+          "value": "0"
+        },
+        "options": [
+          {
+            "text_key": "gdsq_no",
+            "value": 0
+          },
+          {
+            "text_key": "gdsq_yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "gdsq16a",
+        "text_key": "gdsq16a",
+        "type": "likert",
+        "dimension": "continued_use"
+      },
+      {
+        "id": "gdsq16b",
+        "text_key": "gdsq16b",
+        "type": "multi",
+        "dimension": "continued_use",
+        "visible_when": {
+          "item": "gdsq16a",
+          "operator": "greater_than",
+          "value": "0"
+        },
+        "options": [
+          {
+            "text_key": "gdsq_no",
+            "value": 0
+          },
+          {
+            "text_key": "gdsq_yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "gdsq17a",
+        "text_key": "gdsq17a",
+        "type": "likert",
+        "dimension": "continued_use"
+      },
+      {
+        "id": "gdsq17b",
+        "text_key": "gdsq17b",
+        "type": "multi",
+        "dimension": "continued_use",
+        "visible_when": {
+          "item": "gdsq17a",
+          "operator": "greater_than",
+          "value": "0"
+        },
+        "options": [
+          {
+            "text_key": "gdsq_no",
+            "value": 0
+          },
+          {
+            "text_key": "gdsq_yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "gdsq18a",
+        "text_key": "gdsq18a",
+        "type": "likert",
+        "dimension": "continued_use"
+      },
+      {
+        "id": "gdsq18b",
+        "text_key": "gdsq18b",
+        "type": "multi",
+        "dimension": "continued_use",
+        "visible_when": {
+          "item": "gdsq18a",
+          "operator": "greater_than",
+          "value": "0"
+        },
+        "options": [
+          {
+            "text_key": "gdsq_no",
+            "value": 0
+          },
+          {
+            "text_key": "gdsq_yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "gdsq19a",
+        "text_key": "gdsq19a",
+        "type": "likert",
+        "dimension": "continued_use"
+      },
+      {
+        "id": "gdsq19b",
+        "text_key": "gdsq19b",
+        "type": "multi",
+        "dimension": "continued_use",
+        "visible_when": {
+          "item": "gdsq19a",
+          "operator": "greater_than",
+          "value": "0"
+        },
+        "options": [
+          {
+            "text_key": "gdsq_no",
+            "value": 0
+          },
+          {
+            "text_key": "gdsq_yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "gdsq20a",
+        "text_key": "gdsq20a",
+        "type": "likert",
+        "dimension": "continued_use"
+      },
+      {
+        "id": "gdsq20b",
+        "text_key": "gdsq20b",
+        "type": "multi",
+        "dimension": "continued_use",
+        "visible_when": {
+          "item": "gdsq20a",
+          "operator": "greater_than",
+          "value": "0"
+        },
+        "options": [
+          {
+            "text_key": "gdsq_no",
+            "value": 0
+          },
+          {
+            "text_key": "gdsq_yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "gdsq21a",
+        "text_key": "gdsq21a",
+        "type": "likert",
+        "dimension": "continued_use"
+      },
+      {
+        "id": "gdsq21b",
+        "text_key": "gdsq21b",
+        "type": "multi",
+        "dimension": "continued_use",
+        "visible_when": {
+          "item": "gdsq21a",
+          "operator": "greater_than",
+          "value": "0"
+        },
+        "options": [
+          {
+            "text_key": "gdsq_no",
+            "value": 0
+          },
+          {
+            "text_key": "gdsq_yes",
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "impaired_control": {
+        "method": "sum_coded",
+        "items": [
+          "gdsq1",
+          "gdsq2",
+          "gdsq3",
+          "gdsq4",
+          "gdsq5",
+          "gdsq6"
+        ],
+        "description": "Sum of impaired control items (0-24). Subscale cutoff >= 14 indicates impaired control.",
+        "item_coding": {
+          "gdsq1": 1,
+          "gdsq2": 1,
+          "gdsq3": 1,
+          "gdsq4": 1,
+          "gdsq5": 1,
+          "gdsq6": 1
+        }
+      },
+      "increasing_priority": {
+        "method": "sum_coded",
+        "items": [
+          "gdsq7",
+          "gdsq8",
+          "gdsq9",
+          "gdsq10",
+          "gdsq11",
+          "gdsq12",
+          "gdsq13"
+        ],
+        "description": "Sum of increasing priority items (0-28). Subscale cutoff >= 11 indicates increasing priority given to gaming.",
+        "item_coding": {
+          "gdsq7": 1,
+          "gdsq8": 1,
+          "gdsq9": 1,
+          "gdsq10": 1,
+          "gdsq11": 1,
+          "gdsq12": 1,
+          "gdsq13": 1
+        }
+      },
+      "continued_use": {
+        "method": "sum_coded",
+        "items": [
+          "gdsq14a",
+          "gdsq15a",
+          "gdsq16a",
+          "gdsq17a",
+          "gdsq18a",
+          "gdsq19a",
+          "gdsq20a",
+          "gdsq21a"
+        ],
+        "description": "Sum of continued use items (0-32). Subscale cutoff >= 4 indicates continued gaming despite negative consequences. Note: In the original scale, items 14-21 use a two-stage format; here they are simplified to the standard Likert format.",
+        "item_coding": {
+          "gdsq14a": 1,
+          "gdsq15a": 1,
+          "gdsq16a": 1,
+          "gdsq17a": 1,
+          "gdsq18a": 1,
+          "gdsq19a": 1,
+          "gdsq20a": 1,
+          "gdsq21a": 1
+        }
+      }
+    },
+    "computed": {
+      "gdsq14_score": {
+        "expression": "(answer.gdsq14a || 0) * (answer.gdsq14b || 0)",
+        "type": "number",
+        "label": "Item 14 score (frequency × continuation)",
+        "description": "Item 14: frequency (0-4) multiplied by continuation (0-1). Range 0-4."
+      },
+      "gdsq15_score": {
+        "expression": "(answer.gdsq15a || 0) * (answer.gdsq15b || 0)",
+        "type": "number",
+        "label": "Item 15 score (frequency × continuation)",
+        "description": "Item 15: frequency (0-4) multiplied by continuation (0-1). Range 0-4."
+      },
+      "gdsq16_score": {
+        "expression": "(answer.gdsq16a || 0) * (answer.gdsq16b || 0)",
+        "type": "number",
+        "label": "Item 16 score (frequency × continuation)",
+        "description": "Item 16: frequency (0-4) multiplied by continuation (0-1). Range 0-4."
+      },
+      "gdsq17_score": {
+        "expression": "(answer.gdsq17a || 0) * (answer.gdsq17b || 0)",
+        "type": "number",
+        "label": "Item 17 score (frequency × continuation)",
+        "description": "Item 17: frequency (0-4) multiplied by continuation (0-1). Range 0-4."
+      },
+      "gdsq18_score": {
+        "expression": "(answer.gdsq18a || 0) * (answer.gdsq18b || 0)",
+        "type": "number",
+        "label": "Item 18 score (frequency × continuation)",
+        "description": "Item 18: frequency (0-4) multiplied by continuation (0-1). Range 0-4."
+      },
+      "gdsq19_score": {
+        "expression": "(answer.gdsq19a || 0) * (answer.gdsq19b || 0)",
+        "type": "number",
+        "label": "Item 19 score (frequency × continuation)",
+        "description": "Item 19: frequency (0-4) multiplied by continuation (0-1). Range 0-4."
+      },
+      "gdsq20_score": {
+        "expression": "(answer.gdsq20a || 0) * (answer.gdsq20b || 0)",
+        "type": "number",
+        "label": "Item 20 score (frequency × continuation)",
+        "description": "Item 20: frequency (0-4) multiplied by continuation (0-1). Range 0-4."
+      },
+      "gdsq21_score": {
+        "expression": "(answer.gdsq21a || 0) * (answer.gdsq21b || 0)",
+        "type": "number",
+        "label": "Item 21 score (frequency × continuation)",
+        "description": "Item 21: frequency (0-4) multiplied by continuation (0-1). Range 0-4."
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_0": "Never",
+      "likert_1": "Less than monthly",
+      "likert_2": "Monthly",
+      "likert_3": "Weekly",
+      "likert_4": "Almost daily",
+      "question_head": "Please indicate how often each of the following statements applies to you.",
+      "gdsq1": "I will turn on games uncontrollably sometimes.",
+      "gdsq2": "When I see or call to mind something about a game, I can't help playing the game for a while.",
+      "gdsq3": "When the devices for playing games are in my sight, I would want to turn them on to play.",
+      "gdsq4": "Once I start playing the game, it is hard to stop.",
+      "gdsq5": "I intend to play games less recently, but actually there is no reduction in playing time.",
+      "gdsq6": "I play longer or more often than the upper limits I set for my game playing.",
+      "gdsq7": "To play games as soon as possible, I am perfunctory in the everyday things that I have to do.",
+      "gdsq8": "I miss regular meals or sleep time because of playing games.",
+      "gdsq9": "When I play games, I pay no attention to my personal hygiene.",
+      "gdsq10": "If others' demands occupy my game time, I feel upset.",
+      "gdsq11": "Although some activities provoke my interest, I refuse to participate in them because they will delay playing games.",
+      "gdsq12": "I feel that the things people are excited to talk about are not as interesting as games.",
+      "gdsq13": "To play games, I cancel or postpone the leisure activities in my plan.",
+      "debrief": "Thank you for completing the Gaming Disorder Symptom Questionnaire.",
+      "gdsq_yes": "Yes",
+      "gdsq_no": "No",
+      "gdsq14a": "Because of playing games, I don't have enough time and energy to get the right things done.",
+      "gdsq14b": "After the aforementioned situation, I continue to play games whenever there is a chance.",
+      "gdsq15a": "Playing games interferes with my work or learning tasks that I should complete.",
+      "gdsq15b": "After the aforementioned situation, I continue to play games whenever there is a chance.",
+      "gdsq16a": "Because of playing games, my performance in homework, academics, or work does not match my ability.",
+      "gdsq16b": "After the aforementioned situation, I continue to play games whenever there is a chance.",
+      "gdsq17a": "Because I play games, my family members or friends express their disappointment with me, argue with me, or become distant from me.",
+      "gdsq17b": "After the aforementioned situation, I continue to play games whenever there is a chance.",
+      "gdsq18a": "I have common topics only with people who play games. I don't know what to say to someone who does not play games.",
+      "gdsq18b": "After the aforementioned situation, I continue to play games whenever there is a chance.",
+      "gdsq19a": "I am worried about my future because I play games too much.",
+      "gdsq19b": "After the aforementioned situation, I continue to play games whenever there is a chance.",
+      "gdsq20a": "I have negative feelings after playing games (e.g., guilt or regret).",
+      "gdsq20b": "After the aforementioned situation, I continue to play games whenever there is a chance.",
+      "gdsq21a": "I experience sustained negative impacts from game playing on my health (e.g., weight gain, sleeping problems, neck and shoulder damage).",
+      "gdsq21b": "After the aforementioned situation, I continue to play games whenever there is a chance."
+    },
+    "zh": {
+      "gdsq_inst": "请回忆您最近一年中与玩游戏相关的实际情况，在每一项描述后面选择最能描述实际频率或时间间隔的选项。",
+      "gdsq_head": "最近一年中...",
+      "gdsq_r0": "从来没有",
+      "gdsq_r1": "不到每月1次",
+      "gdsq_r2": "每月1次",
+      "gdsq_r3": "每周1次",
+      "gdsq_r4": "几乎每天",
+      "gdsq1": "我有时似乎会不由自主地打开游戏",
+      "gdsq2": "看到或想到游戏相关的内容后，我就忍不住要玩一会游戏",
+      "gdsq3": "玩游戏的设备在我眼前，我就会想打开玩游戏",
+      "gdsq4": "我一开始玩游戏就难以停下来",
+      "gdsq5": "我打算最近少玩一点游戏，但实际上玩起来并没有减少",
+      "gdsq6": "我给自己玩游戏的频率或时长设置了上限，但实际上依然超过上限",
+      "gdsq7": "我为了尽快去玩游戏而草草完成一些不得不做的日常事情",
+      "gdsq8": "我因为玩游戏而错过正常的吃饭或睡觉时间",
+      "gdsq9": "我玩起游戏来就不注意自己的个人卫生",
+      "gdsq10": "别人要求我做的事情占用我玩游戏的时间，我就感到不高兴",
+      "gdsq11": "一些活动引起了我的兴趣，但因为会耽误玩游戏，我就拒绝参加",
+      "gdsq12": "别人兴致勃勃谈论的事，我认为不如游戏有意思",
+      "gdsq13": "我原本打算要进行的休闲娱乐活动因为玩游戏而取消或推迟",
+      "debrief": "感谢您完成此问卷。",
+      "gdsq_yes": "是",
+      "gdsq_no": "否",
+      "gdsq14a": "玩游戏使得我没有足够的时间和精力去做好该做的正事",
+      "gdsq14b": "发生这种情况后，只要有机会我又会玩游戏",
+      "gdsq15a": "我因为玩游戏而耽误了本该完成的工作或学习任务",
+      "gdsq15b": "发生这种情况后，只要有机会我又会玩游戏",
+      "gdsq16a": "因为玩游戏，我的作业结果、学习成绩或工作绩效没达到与我本身能力相称的水平",
+      "gdsq16b": "发生这种情况后，只要有机会我又会玩游戏",
+      "gdsq17a": "亲人或朋友因为我玩游戏而表示失望、与我争吵或变疏远",
+      "gdsq17b": "发生这种情况后，只要有机会我又会玩游戏",
+      "gdsq18a": "我只与玩游戏的人有共同话题，如果对方不玩游戏，我不知道该聊些什么",
+      "gdsq18b": "发生这种情况后，只要有机会我又会玩游戏",
+      "gdsq19a": "我因为玩游戏太多而感到自己前途堪忧",
+      "gdsq19b": "发生这种情况后，只要有机会我又会玩游戏",
+      "gdsq20a": "玩游戏之后感到负面情绪，例如内疚或后悔",
+      "gdsq20b": "发生这种情况后，只要有机会我又会玩游戏",
+      "gdsq21a": "我感到玩游戏对我的健康状况有持续的负面影响（例如体重变化、睡眠问题、颈肩受损）",
+      "gdsq21b": "发生这种情况后，只要有机会我又会玩游戏"
+    }
+  }
+}

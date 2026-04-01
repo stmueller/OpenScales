@@ -1,0 +1,144 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Social/Emotional Intelligence",
+      "code": "IPIP-VIA-SOCIAL-EQ",
+      "abbreviation": "IPIP-VIA-SOCIAL-EQ",
+      "description": "IPIP representation of the VIA character strength 'Social/Emotional Intelligence'. 7-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "social_personal_emotional_intelligence",
+        "name": "Social/Emotional Intelligence",
+        "abbreviation": "SOCIAL-EQ",
+        "description": "IPIP VIA Social/Emotional Intelligence subscale (7 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_084",
+        "text_key": "ipip_via_084",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_085",
+        "text_key": "ipip_via_085",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_086",
+        "text_key": "ipip_via_086",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_087",
+        "text_key": "ipip_via_087",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_088",
+        "text_key": "ipip_via_088",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_089",
+        "text_key": "ipip_via_089",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_090",
+        "text_key": "ipip_via_090",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "social_personal_emotional_intelligence": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_084",
+          "ipip_via_085",
+          "ipip_via_086",
+          "ipip_via_087",
+          "ipip_via_088",
+          "ipip_via_089",
+          "ipip_via_090"
+        ],
+        "description": "Mean of 7 items (range 1–5; higher = stronger Social/Emotional Intelligence). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_084": 1,
+          "ipip_via_085": 1,
+          "ipip_via_086": -1,
+          "ipip_via_087": 1,
+          "ipip_via_088": 1,
+          "ipip_via_089": 1,
+          "ipip_via_090": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_084": "Am able to fit into any situation.",
+      "ipip_via_085": "Am good at sensing what others are feeling.",
+      "ipip_via_086": "Don't know how to handle myself in a new social situation.",
+      "ipip_via_087": "Get along well with people I have just met.",
+      "ipip_via_088": "Have the ability to make others feel interesting.",
+      "ipip_via_089": "Know what makes others tick.",
+      "ipip_via_090": "Know what to say to make people feel good."
+    }
+  }
+}

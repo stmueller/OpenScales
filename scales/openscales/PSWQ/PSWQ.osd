@@ -1,0 +1,213 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Penn State Worry Questionnaire",
+      "code": "PSWQ",
+      "abbreviation": "PSWQ",
+      "description": "16-item measure of the trait of worry. Scores range from 16 to 80; higher scores indicate greater worry severity.",
+      "citation": "Meyer, T. J., Miller, M. L., Metzger, R. L., & Borkovec, T. D. (1990). Development and validation of the Penn State Worry Questionnaire. Behaviour Research and Therapy, 28(6), 487-495. https://doi.org/10.1016/0005-7967(90)90135-6",
+      "license": "Public Domain",
+      "license_explanation": "Confirmed public domain by original author Thomas D. Borkovec (personal communication to Rudolf Cardinal, 2015-07-23, documented in CamCOPS). Also described as public domain at multiple sources and reproduced in full in Lam et al. (2005) Assessment Scales in Depression, Mania and Anxiety.",
+      "license_url": "https://camcops.readthedocs.io/en/latest/tasks/pswq.html",
+      "version": "1.0",
+      "url": "https://doi.org/10.1016/0005-7967(90)90135-6"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "worry",
+        "name": "Worry"
+      }
+    ],
+    "items": [
+      {
+        "id": "pswq1",
+        "text_key": "pswq1",
+        "type": "likert"
+      },
+      {
+        "id": "pswq2",
+        "text_key": "pswq2",
+        "type": "likert"
+      },
+      {
+        "id": "pswq3",
+        "text_key": "pswq3",
+        "type": "likert"
+      },
+      {
+        "id": "pswq4",
+        "text_key": "pswq4",
+        "type": "likert"
+      },
+      {
+        "id": "pswq5",
+        "text_key": "pswq5",
+        "type": "likert"
+      },
+      {
+        "id": "pswq6",
+        "text_key": "pswq6",
+        "type": "likert"
+      },
+      {
+        "id": "pswq7",
+        "text_key": "pswq7",
+        "type": "likert"
+      },
+      {
+        "id": "pswq8",
+        "text_key": "pswq8",
+        "type": "likert"
+      },
+      {
+        "id": "pswq9",
+        "text_key": "pswq9",
+        "type": "likert"
+      },
+      {
+        "id": "pswq10",
+        "text_key": "pswq10",
+        "type": "likert"
+      },
+      {
+        "id": "pswq11",
+        "text_key": "pswq11",
+        "type": "likert"
+      },
+      {
+        "id": "pswq12",
+        "text_key": "pswq12",
+        "type": "likert"
+      },
+      {
+        "id": "pswq13",
+        "text_key": "pswq13",
+        "type": "likert"
+      },
+      {
+        "id": "pswq14",
+        "text_key": "pswq14",
+        "type": "likert"
+      },
+      {
+        "id": "pswq15",
+        "text_key": "pswq15",
+        "type": "likert"
+      },
+      {
+        "id": "pswq16",
+        "text_key": "pswq16",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "worry": {
+        "method": "sum_coded",
+        "items": [
+          "pswq1",
+          "pswq2",
+          "pswq3",
+          "pswq4",
+          "pswq5",
+          "pswq6",
+          "pswq7",
+          "pswq8",
+          "pswq9",
+          "pswq10",
+          "pswq11",
+          "pswq12",
+          "pswq13",
+          "pswq14",
+          "pswq15",
+          "pswq16"
+        ],
+        "description": "Sum of all items after reverse coding items 1, 3, 8, 10, 11 (range 16-80). Higher scores indicate greater tendency to worry.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 16,
+              "max": 34,
+              "label": "Low Worry"
+            },
+            {
+              "min": 35,
+              "max": 54,
+              "label": "Moderate Worry"
+            },
+            {
+              "min": 55,
+              "max": 80,
+              "label": "High Worry"
+            }
+          ]
+        },
+        "item_coding": {
+          "pswq1": -1,
+          "pswq2": 1,
+          "pswq3": -1,
+          "pswq4": 1,
+          "pswq5": 1,
+          "pswq6": 1,
+          "pswq7": 1,
+          "pswq8": -1,
+          "pswq9": 1,
+          "pswq10": -1,
+          "pswq11": -1,
+          "pswq12": 1,
+          "pswq13": 1,
+          "pswq14": 1,
+          "pswq15": 1,
+          "pswq16": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Not at all typical of me",
+      "likert_2": "Rarely typical of me",
+      "likert_3": "Somewhat typical of me",
+      "likert_4": "Often typical of me",
+      "likert_5": "Very typical of me",
+      "question_head": "Rate each of the following statements on a scale of 1 to 5, indicating how typical it is of you.",
+      "pswq1": "If I do not have enough time to do everything, I do not worry about it.",
+      "pswq2": "My worries overwhelm me.",
+      "pswq3": "I do not tend to worry about things.",
+      "pswq4": "Many situations make me worry.",
+      "pswq5": "I know I should not worry about things, but I just cannot help it.",
+      "pswq6": "When I am under pressure I worry a lot.",
+      "pswq7": "I am always worrying about something.",
+      "pswq8": "I find it easy to dismiss worrying thoughts.",
+      "pswq9": "As soon as I finish one task, I start to worry about everything else I have to do.",
+      "pswq10": "I never worry about anything.",
+      "pswq11": "When there is nothing more I can do about a concern, I do not worry about it anymore.",
+      "pswq12": "I have been a worrier all my life.",
+      "pswq13": "I notice that I have been worrying about things.",
+      "pswq14": "Once I start worrying, I cannot stop.",
+      "pswq15": "I worry all the time.",
+      "pswq16": "I worry about projects until they are all done.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

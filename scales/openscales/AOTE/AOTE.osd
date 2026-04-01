@@ -1,0 +1,143 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Actively Open-Minded Thinking about Evidence Scale",
+      "code": "AOTE",
+      "abbreviation": "AOT-E",
+      "description": "The Actively Open-Minded Thinking about Evidence (AOT-E) scale measures the meta-belief that one's beliefs should be revised in response to evidence. It was derived from the Stanovich and West (2007) AOT scale by Pennycook et al. (2020), who selected 8 items related to belief mutability from four AOT subscales (AOT, belief identification, dogmatism, and openness values). Participants respond on a 6-point scale from 1 (Strongly disagree) to 6 (Strongly agree). Items 3, 4, 5, 7, and 8 are reverse-scored. Higher total scores indicate more actively open-minded thinking about evidence. The scale was validated in a Brazilian sample and published in Judgment and Decision Making (Bonafé-Pontes et al., 2025).",
+      "citation": "Pennycook, G., Cheyne, J. A., Koehler, D. J., & Fugelsang, J. A. (2020). On the belief that beliefs should change according to evidence: Implications for conspiratorial, moral, paranormal, political, religious, and science beliefs. Judgment and Decision Making, 15(4), 476–498. Brazilian validation: Bonafé-Pontes, A., Costa Bastos, R., & Pilati, R. (2025). Actively Open-Minded Thinking About Evidence (AOT-E) Scale: Adaptation and evidence of validity in a Brazilian sample. Judgment and Decision Making, 20, e3.",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1017/jdm.2024.37"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "question_head": "question_head",
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5",
+        "likert_6"
+      ]
+    },
+    "items": [
+      {
+        "id": "aote1",
+        "type": "likert",
+        "text_key": "aote1",
+        "dimension": "aote"
+      },
+      {
+        "id": "aote2",
+        "type": "likert",
+        "text_key": "aote2",
+        "dimension": "aote"
+      },
+      {
+        "id": "aote3",
+        "type": "likert",
+        "text_key": "aote3",
+        "dimension": "aote"
+      },
+      {
+        "id": "aote4",
+        "type": "likert",
+        "text_key": "aote4",
+        "dimension": "aote"
+      },
+      {
+        "id": "aote5",
+        "type": "likert",
+        "text_key": "aote5",
+        "dimension": "aote"
+      },
+      {
+        "id": "aote6",
+        "type": "likert",
+        "text_key": "aote6",
+        "dimension": "aote"
+      },
+      {
+        "id": "aote7",
+        "type": "likert",
+        "text_key": "aote7",
+        "dimension": "aote"
+      },
+      {
+        "id": "aote8",
+        "type": "likert",
+        "text_key": "aote8",
+        "dimension": "aote"
+      }
+    ],
+    "dimensions": [
+      {
+        "id": "aote",
+        "name": "Actively Open-Minded Thinking about Evidence"
+      }
+    ],
+    "scoring": {
+      "aote": {
+        "method": "mean_coded",
+        "items": [
+          "aote1",
+          "aote2",
+          "aote3",
+          "aote4",
+          "aote5",
+          "aote6",
+          "aote7",
+          "aote8"
+        ],
+        "description": "Mean of 8 items after reverse-scoring items 3, 4, 5, 7, and 8. Range 1–6. Higher scores indicate greater willingness to revise beliefs in response to evidence.",
+        "item_coding": {
+          "aote3": -1,
+          "aote4": -1,
+          "aote5": -1,
+          "aote7": -1,
+          "aote8": -1,
+          "aote1": 1,
+          "aote2": 1,
+          "aote6": 1
+        }
+      }
+    },
+    "data_output": {
+      "individual_file": "AOTE_individual.csv",
+      "pooled_file": "AOTE_pooled.csv"
+    }
+  },
+  "translations": {
+    "en": {
+      "LANGUAGE": "en",
+      "likert_1": "Strongly disagree",
+      "likert_2": "Disagree",
+      "likert_3": "Somewhat disagree",
+      "likert_4": "Somewhat agree",
+      "likert_5": "Agree",
+      "likert_6": "Strongly agree",
+      "question_head": "Please indicate how much you agree or disagree with each of the following statements, using the scale from 1 (Strongly disagree) to 6 (Strongly agree).",
+      "aote1": "A person should always consider new possibilities.",
+      "aote2": "People should always take into consideration evidence that goes against their beliefs.",
+      "aote3": "It is important to persevere in your beliefs even when evidence is brought to bear against them.",
+      "aote4": "Certain beliefs are just too important to abandon no matter how good a case can be made against them.",
+      "aote5": "One should disregard evidence that conflicts with your established beliefs.",
+      "aote6": "Beliefs should always be revised in response to new information or evidence.",
+      "aote7": "No one can talk me out of something I know is right.",
+      "aote8": "I believe that loyalty to one's ideals and principles is more important than “open-mindedness”.",
+      "debrief": "Thank you — your responses have been recorded."
+    }
+  }
+}

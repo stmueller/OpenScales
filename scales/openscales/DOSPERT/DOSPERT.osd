@@ -1,0 +1,2014 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Domain-Specific Risk-Taking Scale (Revised)",
+      "code": "DOSPERT",
+      "abbreviation": "DOSPERT",
+      "description": "30-item scale with up to three response modes per item: risk-taking likelihood (RT), risk perception (RP), and expected benefits (EB). Assesses five content domains: ethical, financial, health/safety, recreational, and social. For each item, RT is rated first (7-point: Extremely Unlikely to Extremely Likely), then RP (7-point: Not at all Risky to Extremely Risky), then optionally EB (7-point: No benefits at all to Great benefits). The EB mode can be enabled via the show_expected_benefits parameter. Items are presented in triplets grouped into randomizable sections. Subscale scores are means of 6 items per domain within each response mode.",
+      "citation": "Blais, A.-R., & Weber, E. U. (2006). A Domain-Specific Risk-Taking (DOSPERT) scale for adult populations. Judgment and Decision Making, 1(1), 33-47.",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1017/S1930297500000334"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_expected_benefits": {
+        "type": "boolean",
+        "default": true,
+        "description": "Include the Expected Benefits (EB) response mode for each item"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": [
+        "rt_l1",
+        "rt_l2",
+        "rt_l3",
+        "rt_l4",
+        "rt_l5",
+        "rt_l6",
+        "rt_l7"
+      ],
+      "question_head": "rt_head"
+    },
+    "randomize_sections": {
+      "method": "shuffle",
+      "fixed": [
+        "sec_intro"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "rt_ethical",
+        "name": "Risk-Taking: Ethical"
+      },
+      {
+        "id": "rt_financial",
+        "name": "Risk-Taking: Financial"
+      },
+      {
+        "id": "rt_health_safety",
+        "name": "Risk-Taking: Health/Safety"
+      },
+      {
+        "id": "rt_recreational",
+        "name": "Risk-Taking: Recreational"
+      },
+      {
+        "id": "rt_social",
+        "name": "Risk-Taking: Social"
+      },
+      {
+        "id": "rp_ethical",
+        "name": "Risk Perception: Ethical"
+      },
+      {
+        "id": "rp_financial",
+        "name": "Risk Perception: Financial"
+      },
+      {
+        "id": "rp_health_safety",
+        "name": "Risk Perception: Health/Safety"
+      },
+      {
+        "id": "rp_recreational",
+        "name": "Risk Perception: Recreational"
+      },
+      {
+        "id": "rp_social",
+        "name": "Risk Perception: Social"
+      },
+      {
+        "id": "eb_ethical",
+        "name": "Expected Benefits: Ethical"
+      },
+      {
+        "id": "eb_financial",
+        "name": "Expected Benefits: Financial"
+      },
+      {
+        "id": "eb_health_safety",
+        "name": "Expected Benefits: Health/Safety"
+      },
+      {
+        "id": "eb_recreational",
+        "name": "Expected Benefits: Recreational"
+      },
+      {
+        "id": "eb_social",
+        "name": "Expected Benefits: Social"
+      }
+    ],
+    "items": [
+      {
+        "id": "sec_intro",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "inst1",
+        "type": "inst",
+        "text_key": "instructions"
+      },
+      {
+        "id": "sec1",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt1",
+        "type": "likert",
+        "text_key": "q1",
+        "dimension": "rt_social",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp1",
+        "type": "likert",
+        "text_key": "q1",
+        "dimension": "rp_social",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb1",
+        "type": "likert",
+        "text_key": "q1",
+        "dimension": "eb_social",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec2",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt2",
+        "type": "likert",
+        "text_key": "q2",
+        "dimension": "rt_recreational",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp2",
+        "type": "likert",
+        "text_key": "q2",
+        "dimension": "rp_recreational",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb2",
+        "type": "likert",
+        "text_key": "q2",
+        "dimension": "eb_recreational",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec3",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt3",
+        "type": "likert",
+        "text_key": "q3",
+        "dimension": "rt_financial",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp3",
+        "type": "likert",
+        "text_key": "q3",
+        "dimension": "rp_financial",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb3",
+        "type": "likert",
+        "text_key": "q3",
+        "dimension": "eb_financial",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec4",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt4",
+        "type": "likert",
+        "text_key": "q4",
+        "dimension": "rt_financial",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp4",
+        "type": "likert",
+        "text_key": "q4",
+        "dimension": "rp_financial",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb4",
+        "type": "likert",
+        "text_key": "q4",
+        "dimension": "eb_financial",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec5",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt5",
+        "type": "likert",
+        "text_key": "q5",
+        "dimension": "rt_health_safety",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp5",
+        "type": "likert",
+        "text_key": "q5",
+        "dimension": "rp_health_safety",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb5",
+        "type": "likert",
+        "text_key": "q5",
+        "dimension": "eb_health_safety",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec6",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt6",
+        "type": "likert",
+        "text_key": "q6",
+        "dimension": "rt_ethical",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp6",
+        "type": "likert",
+        "text_key": "q6",
+        "dimension": "rp_ethical",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb6",
+        "type": "likert",
+        "text_key": "q6",
+        "dimension": "eb_ethical",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec7",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt7",
+        "type": "likert",
+        "text_key": "q7",
+        "dimension": "rt_social",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp7",
+        "type": "likert",
+        "text_key": "q7",
+        "dimension": "rp_social",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb7",
+        "type": "likert",
+        "text_key": "q7",
+        "dimension": "eb_social",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec8",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt8",
+        "type": "likert",
+        "text_key": "q8",
+        "dimension": "rt_financial",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp8",
+        "type": "likert",
+        "text_key": "q8",
+        "dimension": "rp_financial",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb8",
+        "type": "likert",
+        "text_key": "q8",
+        "dimension": "eb_financial",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec9",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt9",
+        "type": "likert",
+        "text_key": "q9",
+        "dimension": "rt_ethical",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp9",
+        "type": "likert",
+        "text_key": "q9",
+        "dimension": "rp_ethical",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb9",
+        "type": "likert",
+        "text_key": "q9",
+        "dimension": "eb_ethical",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec10",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt10",
+        "type": "likert",
+        "text_key": "q10",
+        "dimension": "rt_ethical",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp10",
+        "type": "likert",
+        "text_key": "q10",
+        "dimension": "rp_ethical",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb10",
+        "type": "likert",
+        "text_key": "q10",
+        "dimension": "eb_ethical",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec11",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt11",
+        "type": "likert",
+        "text_key": "q11",
+        "dimension": "rt_recreational",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp11",
+        "type": "likert",
+        "text_key": "q11",
+        "dimension": "rp_recreational",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb11",
+        "type": "likert",
+        "text_key": "q11",
+        "dimension": "eb_recreational",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec12",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt12",
+        "type": "likert",
+        "text_key": "q12",
+        "dimension": "rt_financial",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp12",
+        "type": "likert",
+        "text_key": "q12",
+        "dimension": "rp_financial",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb12",
+        "type": "likert",
+        "text_key": "q12",
+        "dimension": "eb_financial",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec13",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt13",
+        "type": "likert",
+        "text_key": "q13",
+        "dimension": "rt_recreational",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp13",
+        "type": "likert",
+        "text_key": "q13",
+        "dimension": "rp_recreational",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb13",
+        "type": "likert",
+        "text_key": "q13",
+        "dimension": "eb_recreational",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec14",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt14",
+        "type": "likert",
+        "text_key": "q14",
+        "dimension": "rt_financial",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp14",
+        "type": "likert",
+        "text_key": "q14",
+        "dimension": "rp_financial",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb14",
+        "type": "likert",
+        "text_key": "q14",
+        "dimension": "eb_financial",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec15",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt15",
+        "type": "likert",
+        "text_key": "q15",
+        "dimension": "rt_health_safety",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp15",
+        "type": "likert",
+        "text_key": "q15",
+        "dimension": "rp_health_safety",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb15",
+        "type": "likert",
+        "text_key": "q15",
+        "dimension": "eb_health_safety",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec16",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt16",
+        "type": "likert",
+        "text_key": "q16",
+        "dimension": "rt_ethical",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp16",
+        "type": "likert",
+        "text_key": "q16",
+        "dimension": "rp_ethical",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb16",
+        "type": "likert",
+        "text_key": "q16",
+        "dimension": "eb_ethical",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec17",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt17",
+        "type": "likert",
+        "text_key": "q17",
+        "dimension": "rt_health_safety",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp17",
+        "type": "likert",
+        "text_key": "q17",
+        "dimension": "rp_health_safety",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb17",
+        "type": "likert",
+        "text_key": "q17",
+        "dimension": "eb_health_safety",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec18",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt18",
+        "type": "likert",
+        "text_key": "q18",
+        "dimension": "rt_financial",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp18",
+        "type": "likert",
+        "text_key": "q18",
+        "dimension": "rp_financial",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb18",
+        "type": "likert",
+        "text_key": "q18",
+        "dimension": "eb_financial",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec19",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt19",
+        "type": "likert",
+        "text_key": "q19",
+        "dimension": "rt_recreational",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp19",
+        "type": "likert",
+        "text_key": "q19",
+        "dimension": "rp_recreational",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb19",
+        "type": "likert",
+        "text_key": "q19",
+        "dimension": "eb_recreational",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec20",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt20",
+        "type": "likert",
+        "text_key": "q20",
+        "dimension": "rt_health_safety",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp20",
+        "type": "likert",
+        "text_key": "q20",
+        "dimension": "rp_health_safety",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb20",
+        "type": "likert",
+        "text_key": "q20",
+        "dimension": "eb_health_safety",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec21",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt21",
+        "type": "likert",
+        "text_key": "q21",
+        "dimension": "rt_social",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp21",
+        "type": "likert",
+        "text_key": "q21",
+        "dimension": "rp_social",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb21",
+        "type": "likert",
+        "text_key": "q21",
+        "dimension": "eb_social",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec22",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt22",
+        "type": "likert",
+        "text_key": "q22",
+        "dimension": "rt_social",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp22",
+        "type": "likert",
+        "text_key": "q22",
+        "dimension": "rp_social",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb22",
+        "type": "likert",
+        "text_key": "q22",
+        "dimension": "eb_social",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec23",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt23",
+        "type": "likert",
+        "text_key": "q23",
+        "dimension": "rt_health_safety",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp23",
+        "type": "likert",
+        "text_key": "q23",
+        "dimension": "rp_health_safety",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb23",
+        "type": "likert",
+        "text_key": "q23",
+        "dimension": "eb_health_safety",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec24",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt24",
+        "type": "likert",
+        "text_key": "q24",
+        "dimension": "rt_recreational",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp24",
+        "type": "likert",
+        "text_key": "q24",
+        "dimension": "rp_recreational",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb24",
+        "type": "likert",
+        "text_key": "q24",
+        "dimension": "eb_recreational",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec25",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt25",
+        "type": "likert",
+        "text_key": "q25",
+        "dimension": "rt_recreational",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp25",
+        "type": "likert",
+        "text_key": "q25",
+        "dimension": "rp_recreational",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb25",
+        "type": "likert",
+        "text_key": "q25",
+        "dimension": "eb_recreational",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec26",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt26",
+        "type": "likert",
+        "text_key": "q26",
+        "dimension": "rt_health_safety",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp26",
+        "type": "likert",
+        "text_key": "q26",
+        "dimension": "rp_health_safety",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb26",
+        "type": "likert",
+        "text_key": "q26",
+        "dimension": "eb_health_safety",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec27",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt27",
+        "type": "likert",
+        "text_key": "q27",
+        "dimension": "rt_social",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp27",
+        "type": "likert",
+        "text_key": "q27",
+        "dimension": "rp_social",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb27",
+        "type": "likert",
+        "text_key": "q27",
+        "dimension": "eb_social",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec28",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt28",
+        "type": "likert",
+        "text_key": "q28",
+        "dimension": "rt_social",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp28",
+        "type": "likert",
+        "text_key": "q28",
+        "dimension": "rp_social",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb28",
+        "type": "likert",
+        "text_key": "q28",
+        "dimension": "eb_social",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec29",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt29",
+        "type": "likert",
+        "text_key": "q29",
+        "dimension": "rt_ethical",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp29",
+        "type": "likert",
+        "text_key": "q29",
+        "dimension": "rp_ethical",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb29",
+        "type": "likert",
+        "text_key": "q29",
+        "dimension": "eb_ethical",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec30",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt30",
+        "type": "likert",
+        "text_key": "q30",
+        "dimension": "rt_ethical",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp30",
+        "type": "likert",
+        "text_key": "q30",
+        "dimension": "rp_ethical",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb30",
+        "type": "likert",
+        "text_key": "q30",
+        "dimension": "eb_ethical",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      }
+    ],
+    "scoring": {
+      "rt_ethical": {
+        "method": "mean_coded",
+        "items": [
+          "rt6",
+          "rt9",
+          "rt10",
+          "rt16",
+          "rt29",
+          "rt30"
+        ],
+        "description": "Mean of 6 ethical risk-taking items (1-7).",
+        "item_coding": {
+          "rt6": 1,
+          "rt9": 1,
+          "rt10": 1,
+          "rt16": 1,
+          "rt29": 1,
+          "rt30": 1
+        }
+      },
+      "rt_financial": {
+        "method": "mean_coded",
+        "items": [
+          "rt3",
+          "rt4",
+          "rt8",
+          "rt12",
+          "rt14",
+          "rt18"
+        ],
+        "description": "Mean of 6 financial risk-taking items (1-7).",
+        "item_coding": {
+          "rt3": 1,
+          "rt4": 1,
+          "rt8": 1,
+          "rt12": 1,
+          "rt14": 1,
+          "rt18": 1
+        }
+      },
+      "rt_health_safety": {
+        "method": "mean_coded",
+        "items": [
+          "rt5",
+          "rt15",
+          "rt17",
+          "rt20",
+          "rt23",
+          "rt26"
+        ],
+        "description": "Mean of 6 health/safety risk-taking items (1-7).",
+        "item_coding": {
+          "rt5": 1,
+          "rt15": 1,
+          "rt17": 1,
+          "rt20": 1,
+          "rt23": 1,
+          "rt26": 1
+        }
+      },
+      "rt_recreational": {
+        "method": "mean_coded",
+        "items": [
+          "rt2",
+          "rt11",
+          "rt13",
+          "rt19",
+          "rt24",
+          "rt25"
+        ],
+        "description": "Mean of 6 recreational risk-taking items (1-7).",
+        "item_coding": {
+          "rt2": 1,
+          "rt11": 1,
+          "rt13": 1,
+          "rt19": 1,
+          "rt24": 1,
+          "rt25": 1
+        }
+      },
+      "rt_social": {
+        "method": "mean_coded",
+        "items": [
+          "rt1",
+          "rt7",
+          "rt21",
+          "rt22",
+          "rt27",
+          "rt28"
+        ],
+        "description": "Mean of 6 social risk-taking items (1-7).",
+        "item_coding": {
+          "rt1": 1,
+          "rt7": 1,
+          "rt21": 1,
+          "rt22": 1,
+          "rt27": 1,
+          "rt28": 1
+        }
+      },
+      "rp_ethical": {
+        "method": "mean_coded",
+        "items": [
+          "rp6",
+          "rp9",
+          "rp10",
+          "rp16",
+          "rp29",
+          "rp30"
+        ],
+        "description": "Mean of 6 ethical risk perception items (1-7).",
+        "item_coding": {
+          "rp6": 1,
+          "rp9": 1,
+          "rp10": 1,
+          "rp16": 1,
+          "rp29": 1,
+          "rp30": 1
+        }
+      },
+      "rp_financial": {
+        "method": "mean_coded",
+        "items": [
+          "rp3",
+          "rp4",
+          "rp8",
+          "rp12",
+          "rp14",
+          "rp18"
+        ],
+        "description": "Mean of 6 financial risk perception items (1-7).",
+        "item_coding": {
+          "rp3": 1,
+          "rp4": 1,
+          "rp8": 1,
+          "rp12": 1,
+          "rp14": 1,
+          "rp18": 1
+        }
+      },
+      "rp_health_safety": {
+        "method": "mean_coded",
+        "items": [
+          "rp5",
+          "rp15",
+          "rp17",
+          "rp20",
+          "rp23",
+          "rp26"
+        ],
+        "description": "Mean of 6 health/safety risk perception items (1-7).",
+        "item_coding": {
+          "rp5": 1,
+          "rp15": 1,
+          "rp17": 1,
+          "rp20": 1,
+          "rp23": 1,
+          "rp26": 1
+        }
+      },
+      "rp_recreational": {
+        "method": "mean_coded",
+        "items": [
+          "rp2",
+          "rp11",
+          "rp13",
+          "rp19",
+          "rp24",
+          "rp25"
+        ],
+        "description": "Mean of 6 recreational risk perception items (1-7).",
+        "item_coding": {
+          "rp2": 1,
+          "rp11": 1,
+          "rp13": 1,
+          "rp19": 1,
+          "rp24": 1,
+          "rp25": 1
+        }
+      },
+      "rp_social": {
+        "method": "mean_coded",
+        "items": [
+          "rp1",
+          "rp7",
+          "rp21",
+          "rp22",
+          "rp27",
+          "rp28"
+        ],
+        "description": "Mean of 6 social risk perception items (1-7).",
+        "item_coding": {
+          "rp1": 1,
+          "rp7": 1,
+          "rp21": 1,
+          "rp22": 1,
+          "rp27": 1,
+          "rp28": 1
+        }
+      },
+      "eb_ethical": {
+        "method": "mean_coded",
+        "items": [
+          "eb6",
+          "eb9",
+          "eb10",
+          "eb16",
+          "eb29",
+          "eb30"
+        ],
+        "description": "Mean of 6 ethical expected benefits items (1-7). Only scored when show_expected_benefits is enabled.",
+        "item_coding": {
+          "eb6": 1,
+          "eb9": 1,
+          "eb10": 1,
+          "eb16": 1,
+          "eb29": 1,
+          "eb30": 1
+        }
+      },
+      "eb_financial": {
+        "method": "mean_coded",
+        "items": [
+          "eb3",
+          "eb4",
+          "eb8",
+          "eb12",
+          "eb14",
+          "eb18"
+        ],
+        "description": "Mean of 6 financial expected benefits items (1-7). Only scored when show_expected_benefits is enabled.",
+        "item_coding": {
+          "eb3": 1,
+          "eb4": 1,
+          "eb8": 1,
+          "eb12": 1,
+          "eb14": 1,
+          "eb18": 1
+        }
+      },
+      "eb_health_safety": {
+        "method": "mean_coded",
+        "items": [
+          "eb5",
+          "eb15",
+          "eb17",
+          "eb20",
+          "eb23",
+          "eb26"
+        ],
+        "description": "Mean of 6 health/safety expected benefits items (1-7). Only scored when show_expected_benefits is enabled.",
+        "item_coding": {
+          "eb5": 1,
+          "eb15": 1,
+          "eb17": 1,
+          "eb20": 1,
+          "eb23": 1,
+          "eb26": 1
+        }
+      },
+      "eb_recreational": {
+        "method": "mean_coded",
+        "items": [
+          "eb2",
+          "eb11",
+          "eb13",
+          "eb19",
+          "eb24",
+          "eb25"
+        ],
+        "description": "Mean of 6 recreational expected benefits items (1-7). Only scored when show_expected_benefits is enabled.",
+        "item_coding": {
+          "eb2": 1,
+          "eb11": 1,
+          "eb13": 1,
+          "eb19": 1,
+          "eb24": 1,
+          "eb25": 1
+        }
+      },
+      "eb_social": {
+        "method": "mean_coded",
+        "items": [
+          "eb1",
+          "eb7",
+          "eb21",
+          "eb22",
+          "eb27",
+          "eb28"
+        ],
+        "description": "Mean of 6 social expected benefits items (1-7). Only scored when show_expected_benefits is enabled.",
+        "item_coding": {
+          "eb1": 1,
+          "eb7": 1,
+          "eb21": 1,
+          "eb22": 1,
+          "eb27": 1,
+          "eb28": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "sec_blank": "",
+      "instructions": "For each situation below, you will answer two or three questions. First, indicate how likely you are to engage in the activity. Then, indicate how risky you perceive the situation to be. Riskiness is a very personal and intuitive notion — we are interested in your gut level assessment.",
+      "rt_head": "How likely are you to engage in this activity?",
+      "rp_head": "How risky do you perceive this situation?",
+      "eb_head": "What benefits would you obtain from this situation?",
+      "rt_l1": "Extremely Unlikely",
+      "rt_l2": "Moderately Unlikely",
+      "rt_l3": "Somewhat Unlikely",
+      "rt_l4": "Not Sure",
+      "rt_l5": "Somewhat Likely",
+      "rt_l6": "Moderately Likely",
+      "rt_l7": "Extremely Likely",
+      "rp_l1": "Not at all Risky",
+      "rp_l2": "Slightly Risky",
+      "rp_l3": "Somewhat Risky",
+      "rp_l4": "Moderately Risky",
+      "rp_l5": "Risky",
+      "rp_l6": "Very Risky",
+      "rp_l7": "Extremely Risky",
+      "eb_l1": "No benefits at all",
+      "eb_l2": "",
+      "eb_l3": "",
+      "eb_l4": "Moderate benefits",
+      "eb_l5": "",
+      "eb_l6": "",
+      "eb_l7": "Great benefits",
+      "q1": "Admitting that your tastes are different from those of a friend.",
+      "q2": "Going camping in the wilderness.",
+      "q3": "Betting a day's income at the horse races.",
+      "q4": "Investing 10% of your annual income in a moderate growth mutual fund.",
+      "q5": "Drinking heavily at a social function.",
+      "q6": "Taking some questionable deductions on your income tax return.",
+      "q7": "Disagreeing with an authority figure on a major issue.",
+      "q8": "Betting a day's income at a high-stake poker game.",
+      "q9": "Having an affair with a married man/woman.",
+      "q10": "Passing off somebody else's work as your own.",
+      "q11": "Going down a ski run that is beyond your ability.",
+      "q12": "Investing 5% of your annual income in a very speculative stock.",
+      "q13": "Going whitewater rafting at high water in the spring.",
+      "q14": "Betting a day's income on the outcome of a sporting event.",
+      "q15": "Engaging in unprotected sex.",
+      "q16": "Revealing a friend's secret to someone else.",
+      "q17": "Driving a car without wearing a seat belt.",
+      "q18": "Investing 10% of your annual income in a new business venture.",
+      "q19": "Taking a skydiving class.",
+      "q20": "Riding a motorcycle without a helmet.",
+      "q21": "Choosing a career that you truly enjoy over a more secure one.",
+      "q22": "Speaking your mind about an unpopular issue in a meeting at work.",
+      "q23": "Sunbathing without sunscreen.",
+      "q24": "Bungee jumping off a tall bridge.",
+      "q25": "Piloting a small plane.",
+      "q26": "Walking home alone at night in an unsafe area of town.",
+      "q27": "Moving to a city far away from your extended family.",
+      "q28": "Starting a new career in your mid-thirties.",
+      "q29": "Leaving your young children alone at home while running an errand.",
+      "q30": "Not returning a wallet you found that contains $200."
+    },
+    "fr": {
+      "sec_blank": "",
+      "instructions": "Pour chaque situation ci-dessous, vous répondrez à deux ou trois questions. D'abord, indiquez la probabilité que vous preniez part à l'activité. Ensuite, indiquez le niveau de risque que vous percevez pour cette situation. Le degré de risque est un concept très personnel et intuitif — nous sommes intéressés par votre évaluation intuitive.",
+      "rt_head": "Quelle est la probabilité que vous preniez part à cette activité?",
+      "rp_head": "Quel niveau de risque percevez-vous pour cette situation?",
+      "eb_head": "Quels bénéfices obtiendriez-vous de cette situation?",
+      "rt_l1": "Extrêmement peu probable",
+      "rt_l2": "Modérément peu probable",
+      "rt_l3": "Quelque peu improbable",
+      "rt_l4": "Pas certain(e)",
+      "rt_l5": "Quelque peu probable",
+      "rt_l6": "Modérément probable",
+      "rt_l7": "Extrêmement probable",
+      "rp_l1": "Pas du tout risqué",
+      "rp_l2": "Légèrement risqué",
+      "rp_l3": "Quelque peu risqué",
+      "rp_l4": "Modérément risqué",
+      "rp_l5": "Risqué",
+      "rp_l6": "Très risqué",
+      "rp_l7": "Extrêmement risqué",
+      "eb_l1": "Aucun bénéfice",
+      "eb_l2": "",
+      "eb_l3": "",
+      "eb_l4": "Bénéfices modérés",
+      "eb_l5": "",
+      "eb_l6": "",
+      "eb_l7": "Grands bénéfices",
+      "q1": "Avouer que vos goûts sont différents de ceux d'un ami.",
+      "q2": "Aller camper en pleine nature.",
+      "q3": "Parier une journée de salaire aux courses de chevaux.",
+      "q4": "Investir 10% de vos revenus annuels dans un fonds mutuel à croissance modérée.",
+      "q5": "Boire abondamment lors d'une activité sociale.",
+      "q6": "Tricher par un montant important dans votre déclaration d'impôt.",
+      "q7": "Être en désaccord avec un symbole d'autorité sur une question importante.",
+      "q8": "Parier une journée de salaire lors d'une partie de poker à enjeu important.",
+      "q9": "Avoir une aventure avec un homme ou une femme marié(e).",
+      "q10": "Présenter le travail de quelqu'un d'autre comme étant le vôtre.",
+      "q11": "Descendre une pente de ski exigeant une habileté plus grande que la vôtre.",
+      "q12": "Investir 5% de vos revenus annuels dans des titres très spéculatifs.",
+      "q13": "Faire de la descente en eau vive au printemps, quand le niveau de l'eau est élevé.",
+      "q14": "Parier une journée de salaire sur le résultat d'un événement sportif.",
+      "q15": "Avoir des relations sexuelles sans protection.",
+      "q16": "Révéler le secret d'un ami à un autre ami.",
+      "q17": "Conduire une voiture sans porter de ceinture de sécurité.",
+      "q18": "Investir 10% de vos revenus annuels dans une nouvelle entreprise.",
+      "q19": "Suivre un cours de parachutisme.",
+      "q20": "Conduire une motocyclette sans casque protecteur.",
+      "q21": "Choisir une carrière qui vous plaît vraiment plutôt qu'une carrière sécuritaire.",
+      "q22": "Dire votre opinion sur une question controversée lors d'une réunion au travail.",
+      "q23": "Vous faire bronzer sans écran solaire.",
+      "q24": "Effectuer un saut à l'élastique à partir d'un pont élevé.",
+      "q25": "Piloter un petit avion.",
+      "q26": "Rentrer chez vous à pied le soir dans un quartier peu sécuritaire.",
+      "q27": "Déménager dans une ville éloignée de votre famille.",
+      "q28": "Entreprendre une nouvelle carrière au cours de la mi-trentaine.",
+      "q29": "Laisser vos enfants seuls à la maison pendant que vous faites une course.",
+      "q30": "Ne pas retourner un portefeuille trouvé contenant 200$."
+    }
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Multidimensional Academic Procrastination Scale",
+      "code": "MAPS15",
+      "abbreviation": "MAPS-15",
+      "description": "15-item self-report measure of academic procrastination with three dimensions: Core Procrastination (6 items), Poor Time Management (4 items), and Work Disconnection (5 items). Items 8, 9, 12, and 13 are reverse-scored. 5-point scale (1-5).",
+      "citation": "Gonzalez-Brignardello, M. P., & Sanchez-Elvira Paniagua, A. (2023). Dimensional structure of MAPS-15: Validation of the multidimensional academic procrastination scale. International Journal of Environmental Research and Public Health, 20(4), 3201. https://doi.org/10.3390/ijerph20043201",
+      "license": "CC BY 4.0",
+      "license_explanation": "Published in IJERPH (MDPI) under Creative Commons Attribution 4.0 International License.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "version": "1.0",
+      "url": "https://doi.org/10.3390/ijerph20043201",
+      "domain": "Education"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "core_procrastination",
+        "name": "Core Procrastination",
+        "description": "Pure dimension of procrastinating behavior and difficulty in carrying out the action (items 4, 5, 6, 7, 10, 13r)."
+      },
+      {
+        "id": "poor_time_management",
+        "name": "Poor Time Management",
+        "description": "Dimension related to time organization and perceived control over time (items 2, 8r, 9r, 12r)."
+      },
+      {
+        "id": "work_disconnection",
+        "name": "Work Disconnection",
+        "description": "Dimension related to lack of persistence and work interruptions (items 1, 3, 11, 14, 15)."
+      }
+    ],
+    "items": [
+      {
+        "id": "maps1",
+        "text_key": "maps1",
+        "type": "likert",
+        "dimension": "work_disconnection"
+      },
+      {
+        "id": "maps2",
+        "text_key": "maps2",
+        "type": "likert",
+        "dimension": "poor_time_management"
+      },
+      {
+        "id": "maps3",
+        "text_key": "maps3",
+        "type": "likert",
+        "dimension": "work_disconnection"
+      },
+      {
+        "id": "maps4",
+        "text_key": "maps4",
+        "type": "likert",
+        "dimension": "core_procrastination"
+      },
+      {
+        "id": "maps5",
+        "text_key": "maps5",
+        "type": "likert",
+        "dimension": "core_procrastination"
+      },
+      {
+        "id": "maps6",
+        "text_key": "maps6",
+        "type": "likert",
+        "dimension": "core_procrastination"
+      },
+      {
+        "id": "maps7",
+        "text_key": "maps7",
+        "type": "likert",
+        "dimension": "core_procrastination"
+      },
+      {
+        "id": "maps8",
+        "text_key": "maps8",
+        "type": "likert",
+        "dimension": "poor_time_management"
+      },
+      {
+        "id": "maps9",
+        "text_key": "maps9",
+        "type": "likert",
+        "dimension": "poor_time_management"
+      },
+      {
+        "id": "maps10",
+        "text_key": "maps10",
+        "type": "likert",
+        "dimension": "core_procrastination"
+      },
+      {
+        "id": "maps11",
+        "text_key": "maps11",
+        "type": "likert",
+        "dimension": "work_disconnection"
+      },
+      {
+        "id": "maps12",
+        "text_key": "maps12",
+        "type": "likert",
+        "dimension": "poor_time_management"
+      },
+      {
+        "id": "maps13",
+        "text_key": "maps13",
+        "type": "likert",
+        "dimension": "core_procrastination"
+      },
+      {
+        "id": "maps14",
+        "text_key": "maps14",
+        "type": "likert",
+        "dimension": "work_disconnection"
+      },
+      {
+        "id": "maps15",
+        "text_key": "maps15",
+        "type": "likert",
+        "dimension": "work_disconnection"
+      }
+    ],
+    "scoring": {
+      "core_procrastination": {
+        "method": "mean_coded",
+        "items": [
+          "maps4",
+          "maps5",
+          "maps6",
+          "maps7",
+          "maps10",
+          "maps13"
+        ],
+        "description": "Mean of Core Procrastination items. Item 13 is reverse-scored.",
+        "item_coding": {
+          "maps4": 1,
+          "maps5": 1,
+          "maps6": 1,
+          "maps7": 1,
+          "maps10": 1,
+          "maps13": -1
+        }
+      },
+      "poor_time_management": {
+        "method": "mean_coded",
+        "items": [
+          "maps2",
+          "maps8",
+          "maps9",
+          "maps12"
+        ],
+        "description": "Mean of Poor Time Management items. Items 8, 9, and 12 are reverse-scored.",
+        "item_coding": {
+          "maps2": 1,
+          "maps8": -1,
+          "maps9": -1,
+          "maps12": -1
+        }
+      },
+      "work_disconnection": {
+        "method": "mean_coded",
+        "items": [
+          "maps1",
+          "maps3",
+          "maps11",
+          "maps14",
+          "maps15"
+        ],
+        "description": "Mean of Work Disconnection items.",
+        "item_coding": {
+          "maps1": 1,
+          "maps3": 1,
+          "maps11": 1,
+          "maps14": 1,
+          "maps15": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Not at all",
+      "likert_2": "A little",
+      "likert_3": "Somewhat",
+      "likert_4": "Quite a bit",
+      "likert_5": "Completely",
+      "question_head": "Please indicate how much each statement describes you.",
+      "maps1": "I work in a non-systematic (disorganized) way.",
+      "maps2": "I am always behind with my work.",
+      "maps3": "I am always interrupting my work to smoke, have a coffee, walk around, chat with someone.",
+      "maps4": "I do not care enough about my studies.",
+      "maps5": "I work on and off, when I feel like it.",
+      "maps6": "I would like to have a real incentive to work.",
+      "maps7": "I find it difficult to make the decision to start studying.",
+      "maps8": "I have a study routine that I stick to.",
+      "maps9": "I keep on top of my studies.",
+      "maps10": "I usually postpone studying because I think I still have a lot of time left to do it.",
+      "maps11": "I usually think that I will be able to do more things in a day than I can actually get done.",
+      "maps12": "I usually manage to study everything I set out to study for a session.",
+      "maps13": "I tend to study instead of doing things that I might feel like more.",
+      "maps14": "When I've been studying and prepping for exams, I wasted time doing other things.",
+      "maps15": "When I am studying, I waste a lot of time on irrelevant information before I get down to the main ideas of a subject.",
+      "debrief": "Thank you for completing the Multidimensional Academic Procrastination Scale."
+    },
+    "es": {
+      "likert_1": "Nada",
+      "likert_2": "Un poco",
+      "likert_3": "Algo",
+      "likert_4": "Bastante",
+      "likert_5": "Completamente",
+      "question_head": "Por favor, indica en qué medida cada afirmación te describe.",
+      "maps1": "Trabajo en forma no sistemática (desordenada).",
+      "maps2": "Voy siempre atrasado/a con mi trabajo.",
+      "maps3": "Continuamente interrumpo mi trabajo para fumar, tomar un café, dar vueltas alrededor, conversar con alguien.",
+      "maps4": "No me preocupo lo suficiente de mis estudios.",
+      "maps5": "Trabajo irregularmente, por impulsos.",
+      "maps6": "Echo de menos un incentivo real para trabajar.",
+      "maps7": "Me cuesta tomar la decisión de ponerme a estudiar.",
+      "maps8": "Tengo una rutina para estudiar que suelo cumplir.",
+      "maps9": "Suelo llevar al día el estudio.",
+      "maps10": "Habitualmente pospongo estudiar porque pienso que aún me queda mucho tiempo para hacerlo.",
+      "maps11": "Suelo tener la sensación de que podré hacer más cosas en el día de las que finalmente puedo hacer.",
+      "maps12": "Habitualmente consigo estudiar todo lo que me había propuesto para una sesión.",
+      "maps13": "Suelo ponerme a estudiar, en vez de ponerme a hacer cosas que pueden ser más apetecibles.",
+      "maps14": "Cuando he estado estudiando y preparando los exámenes he perdido el tiempo haciendo otras cosas.",
+      "maps15": "Cuando estoy estudiando pierdo bastante el tiempo con información irrelevante, antes de centrarme en las ideas principales de un tema.",
+      "debrief": "Gracias por completar la Escala Multidimensional de Procrastinación Académica."
+    }
+  }
+}

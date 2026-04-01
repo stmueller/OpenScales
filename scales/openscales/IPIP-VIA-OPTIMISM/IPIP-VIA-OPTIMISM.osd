@@ -1,0 +1,154 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Hope/Optimism",
+      "code": "IPIP-VIA-OPTIMISM",
+      "abbreviation": "IPIP-VIA-OPTIMISM",
+      "description": "IPIP representation of the VIA character strength 'Hope/Optimism'. 8-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "hope_optimism",
+        "name": "Hope/Optimism",
+        "abbreviation": "OPTIMISM",
+        "description": "IPIP VIA Hope/Optimism subscale (8 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_161",
+        "text_key": "ipip_via_161",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_162",
+        "text_key": "ipip_via_162",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_163",
+        "text_key": "ipip_via_163",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_164",
+        "text_key": "ipip_via_164",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_165",
+        "text_key": "ipip_via_165",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_166",
+        "text_key": "ipip_via_166",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_167",
+        "text_key": "ipip_via_167",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_168",
+        "text_key": "ipip_via_168",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "hope_optimism": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_161",
+          "ipip_via_162",
+          "ipip_via_163",
+          "ipip_via_164",
+          "ipip_via_165",
+          "ipip_via_166",
+          "ipip_via_167",
+          "ipip_via_168"
+        ],
+        "description": "Mean of 8 items (range 1–5; higher = stronger Hope/Optimism). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_161": -1,
+          "ipip_via_162": 1,
+          "ipip_via_163": -1,
+          "ipip_via_164": -1,
+          "ipip_via_165": 1,
+          "ipip_via_166": 1,
+          "ipip_via_167": 1,
+          "ipip_via_168": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_161": "Am not confident that my way of doing things will work out for the best.",
+      "ipip_via_162": "Can find the positive in what seems negative to others.",
+      "ipip_via_163": "Expect the worst.",
+      "ipip_via_164": "Have no plan for my life five years from now.",
+      "ipip_via_165": "Look on the bright side.",
+      "ipip_via_166": "Remain hopeful despite challenges.",
+      "ipip_via_167": "Think about what is good in my life when I feel down.",
+      "ipip_via_168": "Will succeed with the goals I set for myself."
+    }
+  }
+}

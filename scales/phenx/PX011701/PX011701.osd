@@ -1,0 +1,141 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Sexual Orientation",
+      "code": "PX011701",
+      "abbreviation": "PX011701",
+      "description": "A multi-part question asking participants to describe their sexual orientation. Multiple response options are provided along with an open-ended option.",
+      "domain": "Demographics",
+      "citation": "National Academies of Sciences, Engineering, and Medicine; Division of Behavioral and Social Sciences and Education; Committee on National Statistics; Committee on Measuring Sex, Gender Identity, and Sexual Orientation. Measuring Sex, Gender Identity, and Sexual Orientation. Becker T, Chin M, Bates N, editors. Washington (DC): National Academies Press (US); 2022 Mar 9. PMID: 35286054. Perron, T., Kartoz, C., Himelfarb, C., LGBTQ Youth Part 1. National Association of School Nurses, 2017 Mar. 32(2): 106-115. Perron, T., Kartoz, C., Himelfarb, C. LGBTQ Part 2. National Association of School Nurses. 2017 Mar. 32(2): 116-121. The GenIUSS Group. (2014). Best Practices for Asking Questions to Identify Transgender and Other Gender Minority Respondents on Population-Based Surveys. J.L. Herman (Ed.). Los Angeles, CA: The Williams Institute. [PhenX: https://www.phenxtoolkit.org/protocols/view/11701]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/11701"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "sexual_orientation_identity",
+        "text_key": "sexual_orientation_identity",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sexual_orientation_identity_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sexual_orientation_identity_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sexual_orientation_identity_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sexual_orientation_identity_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sexual_orientation_identity_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sexual_orientation_description",
+        "text_key": "sexual_orientation_description",
+        "type": "multi",
+        "visible_when": {
+          "item": "sexual_orientation_identity",
+          "operator": "equals",
+          "value": 5
+        },
+        "options": [
+          {
+            "text_key": "sexual_orientation_description_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sexual_orientation_description_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sexual_orientation_description_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sexual_orientation_description_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sexual_orientation_description_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sexual_orientation_description_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sexual_orientation_description_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "sexual_orientation_description_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "sexual_orientation_description_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "sexual_orientation_description_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "sexual_orientation_description_opt_11",
+            "value": 11
+          }
+        ]
+      },
+      {
+        "id": "sexual_orientation_description_other",
+        "text_key": "sexual_orientation_description_other",
+        "type": "short",
+        "visible_when": {
+          "item": "sexual_orientation_description",
+          "operator": "equals",
+          "value": 10
+        }
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "sexual_orientation_identity": "Which of the following best represents how you think of yourself?",
+      "sexual_orientation_identity_opt_1": "Gay",
+      "sexual_orientation_identity_opt_2": "Lesbian",
+      "sexual_orientation_identity_opt_3": "Straight; that is, not gay or lesbian, etc.",
+      "sexual_orientation_identity_opt_4": "Bisexual",
+      "sexual_orientation_identity_opt_5": "None of these describe me, and Iդ like to see additional options",
+      "sexual_orientation_description": "Are any of these a closer description of how you think of yourself?",
+      "sexual_orientation_description_opt_1": "Queer",
+      "sexual_orientation_description_opt_2": "Polysexual, omnisexual, sapiosexual or pansexual",
+      "sexual_orientation_description_opt_3": "Asexual",
+      "sexual_orientation_description_opt_4": "Two-spirit",
+      "sexual_orientation_description_opt_5": "Have not figured out or are in the process of figuring out your sexuality",
+      "sexual_orientation_description_opt_6": "Mostly straight, but sometimes attracted to people of your own sex",
+      "sexual_orientation_description_opt_7": "Do not think of yourself as having sexuality",
+      "sexual_orientation_description_opt_8": "Do not use labels to identity yourself",
+      "sexual_orientation_description_opt_9": "Don't know the answer",
+      "sexual_orientation_description_opt_10": "No, I mean something else",
+      "sexual_orientation_description_opt_11": "Prefer not to answer",
+      "sexual_orientation_description_other": "Are any of these a closer description of how you think of yourself? Other"
+    }
+  }
+}

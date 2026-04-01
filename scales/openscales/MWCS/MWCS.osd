@@ -1,0 +1,219 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Multidimensional Workplace Compassion Scale",
+      "code": "MWCS",
+      "abbreviation": "MWCS",
+      "description": "12-item self-report measure of other-oriented/expressed compassion in the workplace. Assesses four components of workplace compassion: noticing (recognizing distress), empathizing (feeling distress), sensemaking (understanding context), and acting (responding to distress).",
+      "citation": "Mandliya, A., & Pandey, J. (2023). The development and validation of multidimensional workplace compassion scale: Linking its conceptualization and measurement. Frontiers in Psychology, 14, 1142309. https://doi.org/10.3389/fpsyg.2023.1142309",
+      "license": "CC BY 4.0",
+      "license_explanation": "Published in Frontiers in Psychology under Creative Commons Attribution 4.0 International License.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyg.2023.1142309",
+      "domain": "Work"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5",
+        "likert_6",
+        "likert_7"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "noticing",
+        "name": "Noticing",
+        "description": "Recognizing and detecting the distress or pain of co-workers."
+      },
+      {
+        "id": "empathizing",
+        "name": "Empathizing",
+        "description": "Feeling the distress experienced by others in the workplace."
+      },
+      {
+        "id": "sensemaking",
+        "name": "Sensemaking",
+        "description": "Understanding the context and circumstances of others' distress."
+      },
+      {
+        "id": "acting",
+        "name": "Acting",
+        "description": "Taking action to help those in distress in the workplace."
+      }
+    ],
+    "items": [
+      {
+        "id": "mwcs1",
+        "text_key": "mwcs1",
+        "type": "likert",
+        "dimension": "empathizing"
+      },
+      {
+        "id": "mwcs2",
+        "text_key": "mwcs2",
+        "type": "likert",
+        "dimension": "acting"
+      },
+      {
+        "id": "mwcs3",
+        "text_key": "mwcs3",
+        "type": "likert",
+        "dimension": "noticing"
+      },
+      {
+        "id": "mwcs4",
+        "text_key": "mwcs4",
+        "type": "likert",
+        "dimension": "empathizing"
+      },
+      {
+        "id": "mwcs5",
+        "text_key": "mwcs5",
+        "type": "likert",
+        "dimension": "noticing"
+      },
+      {
+        "id": "mwcs6",
+        "text_key": "mwcs6",
+        "type": "likert",
+        "dimension": "sensemaking"
+      },
+      {
+        "id": "mwcs7",
+        "text_key": "mwcs7",
+        "type": "likert",
+        "dimension": "empathizing"
+      },
+      {
+        "id": "mwcs8",
+        "text_key": "mwcs8",
+        "type": "likert",
+        "dimension": "sensemaking"
+      },
+      {
+        "id": "mwcs9",
+        "text_key": "mwcs9",
+        "type": "likert",
+        "dimension": "acting"
+      },
+      {
+        "id": "mwcs10",
+        "text_key": "mwcs10",
+        "type": "likert",
+        "dimension": "noticing"
+      },
+      {
+        "id": "mwcs11",
+        "text_key": "mwcs11",
+        "type": "likert",
+        "dimension": "sensemaking"
+      },
+      {
+        "id": "mwcs12",
+        "text_key": "mwcs12",
+        "type": "likert",
+        "dimension": "acting"
+      }
+    ],
+    "scoring": {
+      "noticing": {
+        "method": "mean_coded",
+        "items": [
+          "mwcs3",
+          "mwcs5",
+          "mwcs10"
+        ],
+        "description": "Mean of Noticing items (items 3, 5, 10).",
+        "item_coding": {
+          "mwcs3": 1,
+          "mwcs5": 1,
+          "mwcs10": 1
+        }
+      },
+      "empathizing": {
+        "method": "mean_coded",
+        "items": [
+          "mwcs1",
+          "mwcs4",
+          "mwcs7"
+        ],
+        "description": "Mean of Empathizing items (items 1, 4, 7).",
+        "item_coding": {
+          "mwcs1": 1,
+          "mwcs4": 1,
+          "mwcs7": 1
+        }
+      },
+      "sensemaking": {
+        "method": "mean_coded",
+        "items": [
+          "mwcs6",
+          "mwcs8",
+          "mwcs11"
+        ],
+        "description": "Mean of Sensemaking items (items 6, 8, 11).",
+        "item_coding": {
+          "mwcs6": 1,
+          "mwcs8": 1,
+          "mwcs11": 1
+        }
+      },
+      "acting": {
+        "method": "mean_coded",
+        "items": [
+          "mwcs2",
+          "mwcs9",
+          "mwcs12"
+        ],
+        "description": "Mean of Acting items (items 2, 9, 12).",
+        "item_coding": {
+          "mwcs2": 1,
+          "mwcs9": 1,
+          "mwcs12": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Almost never true",
+      "likert_2": "Rarely true",
+      "likert_3": "Sometimes true",
+      "likert_4": "Occasionally true",
+      "likert_5": "Often true",
+      "likert_6": "Usually true",
+      "likert_7": "Almost always true",
+      "question_head": "Please indicate how true each statement is for you in your workplace.",
+      "debrief": "Thank you for completing the Multidimensional Workplace Compassion Scale.",
+      "mwcs1": "I experience pain from people's distress in my workplace.",
+      "mwcs2": "When I see someone in distress in my workplace, I try to act as quickly as possible.",
+      "mwcs3": "I recognize people's feelings of distress without them having to tell me in my workplace.",
+      "mwcs4": "I can feel the distress as my own when I see someone in my workplace experiencing it.",
+      "mwcs5": "I notice the feeling of discomfort experienced by people in my workplace.",
+      "mwcs6": "I try to assess the prior circumstances leading to the person's suffering in my workplace.",
+      "mwcs7": "I feel the pain experienced by people in my workplace.",
+      "mwcs8": "I try to assess the outcomes of my actions toward the person's distress in my workplace.",
+      "mwcs9": "I initiate offering help to people in my workplace, when I hear the story of their pain.",
+      "mwcs10": "I notice my co-worker's feelings of distress or pain without them having to tell me.",
+      "mwcs11": "I try to understand the context of the person's distress in my workplace.",
+      "mwcs12": "When I see someone in my workplace in pain, I try to help them."
+    }
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Passive Smoke Exposure",
+      "code": "PX070301",
+      "abbreviation": "PX070301",
+      "description": "This protocol assesses exposure to environmental tobacco smoke (ETS) during childhood and in adulthood at home, at work, and in social settings. The duration of ETS exposure is collected in hours per day and years for each setting. In addition, there is a question about current ETS exposure.",
+      "domain": "Physical Activity & Exposures",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/70301]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/70301"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "instructions_070301",
+        "text_key": "instructions_070301",
+        "type": "inst"
+      },
+      {
+        "id": "exposure_smoke_childhood",
+        "text_key": "exposure_smoke_childhood",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_smoke_childhood_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_smoke_childhood_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_smoke_childhood_hours",
+        "text_key": "exposure_smoke_childhood_hours",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_smoke_childhood",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number",
+        "number_min": 0,
+        "number_max": 24
+      },
+      {
+        "id": "exposure_smoke_childhood_hours_coded",
+        "text_key": "exposure_smoke_childhood_hours_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "exposure_smoke_childhood",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "exposure_smoke_childhood_hours_coded_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "exposure_smoke_childhood_years",
+        "text_key": "exposure_smoke_childhood_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_smoke_childhood",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_smoke_childhood_years_coded",
+        "text_key": "exposure_smoke_childhood_years_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "exposure_smoke_childhood",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "exposure_smoke_childhood_years_coded_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "exposure_smoke_adulthood_home",
+        "text_key": "exposure_smoke_adulthood_home",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_smoke_adulthood_home_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_smoke_adulthood_home_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_smoke_adulthood_home_hours",
+        "text_key": "exposure_smoke_adulthood_home_hours",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_smoke_adulthood_home",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number",
+        "number_min": 0,
+        "number_max": 24
+      },
+      {
+        "id": "exposure_smoke_adulthood_home_hours_coded",
+        "text_key": "exposure_smoke_adulthood_home_hours_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "exposure_smoke_adulthood_home",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "exposure_smoke_adulthood_home_hours_coded_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "exposure_smoke_adulthood_home_years",
+        "text_key": "exposure_smoke_adulthood_home_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_smoke_adulthood_home",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_smoke_adulthood_home_years_coded",
+        "text_key": "exposure_smoke_adulthood_home_years_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "exposure_smoke_adulthood_home",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "exposure_smoke_adulthood_home_years_coded_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "exposure_smoke_adulthood_work",
+        "text_key": "exposure_smoke_adulthood_work",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_smoke_adulthood_work_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_smoke_adulthood_work_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_smoke_adulthood_work_hours",
+        "text_key": "exposure_smoke_adulthood_work_hours",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_smoke_adulthood_work",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number",
+        "number_min": 0,
+        "number_max": 24
+      },
+      {
+        "id": "exposure_smoke_adulthood_work_hours_coded",
+        "text_key": "exposure_smoke_adulthood_work_hours_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "exposure_smoke_adulthood_work",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "exposure_smoke_adulthood_work_hours_coded_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "exposure_smoke_adulthood_work_years",
+        "text_key": "exposure_smoke_adulthood_work_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_smoke_adulthood_work",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_smoke_adulthood_work_years_coded",
+        "text_key": "exposure_smoke_adulthood_work_years_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "exposure_smoke_adulthood_work",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "exposure_smoke_adulthood_work_years_coded_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "exposure_smoke_social_settings",
+        "text_key": "exposure_smoke_social_settings",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "exposure_smoke_social_settings_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "exposure_smoke_social_settings_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "exposure_smoke_social_settings_hours",
+        "text_key": "exposure_smoke_social_settings_hours",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_smoke_social_settings",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number",
+        "number_min": 0,
+        "number_max": 24
+      },
+      {
+        "id": "exposure_smoke_social_settings_hours_coded",
+        "text_key": "exposure_smoke_social_settings_hours_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "exposure_smoke_social_settings",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "exposure_smoke_social_settings_hours_coded_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "exposure_smoke_social_settings_years",
+        "text_key": "exposure_smoke_social_settings_years",
+        "type": "short",
+        "visible_when": {
+          "item": "exposure_smoke_social_settings",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "exposure_smoke_social_settings_years_coded",
+        "text_key": "exposure_smoke_social_settings_years_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "exposure_smoke_social_settings",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "exposure_smoke_social_settings_years_coded_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "exposure_smoke_present_time_hours",
+        "text_key": "exposure_smoke_present_time_hours",
+        "type": "short",
+        "input_type": "number"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "instructions_070301": "We are interested in your exposure to smoke from other people's cigarettes and tobacco products.",
+      "exposure_smoke_childhood": "Were you exposed to smoke from other people's cigarettes or tobacco products during Childhood at home?",
+      "exposure_smoke_childhood_opt_1": "Yes",
+      "exposure_smoke_childhood_opt_2": "No",
+      "exposure_smoke_childhood_hours": "For how many hours per day?",
+      "exposure_smoke_childhood_hours_coded": "For how many hours per day?",
+      "exposure_smoke_childhood_hours_coded_opt_1": "Don't know",
+      "exposure_smoke_childhood_years": "For how many years?",
+      "exposure_smoke_childhood_years_coded": "For how many years?",
+      "exposure_smoke_childhood_years_coded_opt_1": "Don't know",
+      "exposure_smoke_adulthood_home": "Were you exposed to smoke from other people's cigarettes or tobacco products during Adulthood at home?",
+      "exposure_smoke_adulthood_home_opt_1": "Yes",
+      "exposure_smoke_adulthood_home_opt_2": "No",
+      "exposure_smoke_adulthood_home_hours": "For how many hours per day?",
+      "exposure_smoke_adulthood_home_hours_coded": "For how many hours per day?",
+      "exposure_smoke_adulthood_home_hours_coded_opt_1": "Don't know",
+      "exposure_smoke_adulthood_home_years": "For how many years?",
+      "exposure_smoke_adulthood_home_years_coded": "For how many years?",
+      "exposure_smoke_adulthood_home_years_coded_opt_1": "Don't know",
+      "exposure_smoke_adulthood_work": "Were you exposed to smoke from other people's cigarettes or tobacco products during Adulthood at work?",
+      "exposure_smoke_adulthood_work_opt_1": "Yes",
+      "exposure_smoke_adulthood_work_opt_2": "No",
+      "exposure_smoke_adulthood_work_hours": "For how many hours per day?",
+      "exposure_smoke_adulthood_work_hours_coded": "For how many hours per day?",
+      "exposure_smoke_adulthood_work_hours_coded_opt_1": "Don't know",
+      "exposure_smoke_adulthood_work_years": "For how many years?",
+      "exposure_smoke_adulthood_work_years_coded": "For how many years?",
+      "exposure_smoke_adulthood_work_years_coded_opt_1": "Don't know",
+      "exposure_smoke_social_settings": "Were you exposed to smoke from other people's cigarettes or tobacco products during In social settings such as bars, restaurants, bowling alleys, bingo halls, and friends' homes?",
+      "exposure_smoke_social_settings_opt_1": "Yes",
+      "exposure_smoke_social_settings_opt_2": "No",
+      "exposure_smoke_social_settings_hours": "For how many hours per day?",
+      "exposure_smoke_social_settings_hours_coded": "For how many hours per day?",
+      "exposure_smoke_social_settings_hours_coded_opt_1": "Don't know",
+      "exposure_smoke_social_settings_years": "For how many years?",
+      "exposure_smoke_social_settings_years_coded": "For how many years?",
+      "exposure_smoke_social_settings_years_coded_opt_1": "Don't know",
+      "exposure_smoke_present_time_hours": "At the present time, how many hours per day are you exposed to the smoke of others?"
+    }
+  }
+}

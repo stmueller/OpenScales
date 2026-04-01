@@ -1,0 +1,211 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Total Pregnancy Weight Gain - Self-Reported Weight Gain",
+      "code": "PX021301",
+      "abbreviation": "PX021301",
+      "description": "There are many research contexts in which one could collect this information, and how the information is collected will vary depending on the context. For self-reported total weight gain during pregnancy, the participant is asked to report the total amount of weight gained during her most recent pre",
+      "domain": "Anthropometrics",
+      "citation": "Institute of Medicine, Committee to Reexamine IOM Pregnancy Weight Guidelines. (2009, May). In K. M. Rasmussen, & A. L. Yaktine (Eds.), Weight gain during pregnancy: Reexamining the guidelines . Washington, DC: National Academy Press. Rasmussen, K. M., Catalano, P. M., & Yaktine, A. L. (2009). New guidelines for weight gain during pregnancy: What obstetrician/gynecologists should know. Current Opinion in Obstetrics & Gynecology, 21 , 521-526. [PhenX: https://www.phenxtoolkit.org/protocols/view/21301]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/21301"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "weight_in_pounds",
+        "text_key": "weight_in_pounds",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "weight_in_pounds_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "weight_in_pounds_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "twentyweek_weight_before_kgs",
+        "text_key": "twentyweek_weight_before_kgs",
+        "type": "short",
+        "visible_when": {
+          "item": "weight_in_pounds",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "twentyweek_weight_before_lbs",
+        "text_key": "twentyweek_weight_before_lbs",
+        "type": "short",
+        "visible_when": {
+          "item": "weight_in_pounds",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "twentyweek_weight_before_lbs_coded",
+        "text_key": "twentyweek_weight_before_lbs_coded",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "twentyweek_weight_before_lbs_coded_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "twentyweek_weight_before_lbs_coded_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "twentyweek_weight_gained_kgs",
+        "text_key": "twentyweek_weight_gained_kgs",
+        "type": "short",
+        "visible_when": {
+          "item": "weight_in_pounds",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "twentyweek_weight_gained_lbs",
+        "text_key": "twentyweek_weight_gained_lbs",
+        "type": "short",
+        "visible_when": {
+          "item": "weight_in_pounds",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "twentyweek_weight_gained_coded",
+        "text_key": "twentyweek_weight_gained_coded",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "twentyweek_weight_gained_coded_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "twentyweek_weight_gained_coded_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pregnancy_weeks",
+        "text_key": "pregnancy_weeks",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "parous_weight_before_kgs",
+        "text_key": "parous_weight_before_kgs",
+        "type": "short",
+        "visible_when": {
+          "item": "weight_in_pounds",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "parous_weight_before_lbs",
+        "text_key": "parous_weight_before_lbs",
+        "type": "short",
+        "visible_when": {
+          "item": "weight_in_pounds",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "parous_weight_gained_kgs",
+        "text_key": "parous_weight_gained_kgs",
+        "type": "short",
+        "visible_when": {
+          "item": "weight_in_pounds",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "parous_weight_gained_lbs",
+        "text_key": "parous_weight_gained_lbs",
+        "type": "short",
+        "visible_when": {
+          "item": "weight_in_pounds",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "parous_weight_gained_coded",
+        "text_key": "parous_weight_gained_coded",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "parous_weight_gained_coded_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "parous_weight_gained_coded_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "parous_delivery_weeks",
+        "text_key": "parous_delivery_weeks",
+        "type": "short",
+        "input_type": "number"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "weight_in_pounds": "Enter weight in pounds or kilograms",
+      "weight_in_pounds_opt_1": "pounds",
+      "weight_in_pounds_opt_2": "kilograms",
+      "twentyweek_weight_before_kgs": "For women who are currently at least 20 weeks pregnant, ask the following questions:  Just before you got pregnant with your current pregnancy, how much did you weigh?",
+      "twentyweek_weight_before_lbs": "For women who are currently at least 20 weeks pregnant, ask the following questions:  Just before you got pregnant with your current pregnancy, how much did you weigh?",
+      "twentyweek_weight_before_lbs_coded": "For women who are currently at least 20 weeks pregnant, ask the following questions:  Just before you got pregnant with your current pregnancy, how much did you weigh?",
+      "twentyweek_weight_before_lbs_coded_opt_1": "REFUSED",
+      "twentyweek_weight_before_lbs_coded_opt_2": "DON'T KNOW",
+      "twentyweek_weight_gained_kgs": "For women who are currently at least 20 weeks pregnant, ask the following questions:  How much weight have you gained during this pregnancy?",
+      "twentyweek_weight_gained_lbs": "For women who are currently at least 20 weeks pregnant, ask the following questions:  How much weight have you gained during this pregnancy?",
+      "twentyweek_weight_gained_coded": "For women who are currently at least 20 weeks pregnant, ask the following questions:  How much weight have you gained during this pregnancy?",
+      "twentyweek_weight_gained_coded_opt_1": "I LOST weight during your pregnancy",
+      "twentyweek_weight_gained_coded_opt_2": "I don't know",
+      "pregnancy_weeks": "For women who are currently at least 20 weeks pregnant, ask the following questions:  How many weeks pregnant are you currently?",
+      "parous_weight_before_kgs": "For women who are not currently pregnant (but parous), ask the following questions:  How much did you weigh before your most recent pregnancy?",
+      "parous_weight_before_lbs": "For women who are not currently pregnant (but parous), ask the following questions:  How much did you weigh before your most recent pregnancy?",
+      "parous_weight_gained_kgs": "For women who are not currently pregnant (but parous), ask the following questions:  How much weight did you gain during your most recent pregnancy?",
+      "parous_weight_gained_lbs": "For women who are not currently pregnant (but parous), ask the following questions:  How much weight did you gain during your most recent pregnancy?",
+      "parous_weight_gained_coded": "For women who are not currently pregnant (but parous), ask the following questions:  How much weight did you gain during your most recent pregnancy?",
+      "parous_weight_gained_coded_opt_1": "I LOST weight during your pregnancy",
+      "parous_weight_gained_coded_opt_2": "I don't know",
+      "parous_delivery_weeks": "For women who are not currently pregnant (but parous), ask the following questions:  For your most recent pregnancy, how many weeks along were you when you delivered?"
+    }
+  }
+}

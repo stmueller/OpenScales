@@ -1,0 +1,128 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Socially Desirable Response Set Survey",
+      "code": "SDRS5",
+      "abbreviation": "SDRS-5",
+      "description": "A 5-item scale measuring the tendency to give socially desirable responses. Used as a methodological covariate to identify response bias in self-report surveys.",
+      "citation": "Hays, R. D., Hayashi, T., & Stewart, A. L. (1989). A five-item measure of socially desirable response set. Educational and Psychological Measurement, 49(3), 629–636. https://doi.org/10.1177/001316448904900315",
+      "license": "Public Domain",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. See https://www.rand.org/health/surveys/sdrs.html",
+      "license_url": "https://www.rand.org/health/surveys/sdrs.html",
+      "version": "1.0",
+      "url": "https://doi.org/10.1177/001316448904900315"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "sdrs_r1",
+        "sdrs_r2",
+        "sdrs_r3",
+        "sdrs_r4",
+        "sdrs_r5"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "sdrs",
+        "name": "Social Desirability",
+        "abbreviation": "SDRS",
+        "description": "Tendency to give socially desirable responses. Higher scores indicate greater socially desirable responding.",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "sdrs1",
+        "text_key": "sdrs1",
+        "type": "likert"
+      },
+      {
+        "id": "sdrs2",
+        "text_key": "sdrs2",
+        "type": "likert"
+      },
+      {
+        "id": "sdrs3",
+        "text_key": "sdrs3",
+        "type": "likert"
+      },
+      {
+        "id": "sdrs4",
+        "text_key": "sdrs4",
+        "type": "likert"
+      },
+      {
+        "id": "sdrs5",
+        "text_key": "sdrs5",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "sdrs": {
+        "method": "sum_coded",
+        "items": [
+          "sdrs1",
+          "sdrs2",
+          "sdrs3",
+          "sdrs4",
+          "sdrs5"
+        ],
+        "description": "Sum of coded item responses. Items 1 and 5 are positive/desirable statements (reverse-coded so 'Definitely True' = high desirability). Items 2, 3, 4 are negative statements ('Definitely False' = high desirability). Score range 5–25. Higher scores indicate stronger socially desirable responding. Note: original scoring binarizes each item (extreme response = 1, all others = 0, range 0–5), then transforms to 0–100.",
+        "item_coding": {
+          "sdrs1": -1,
+          "sdrs2": 1,
+          "sdrs3": 1,
+          "sdrs4": 1,
+          "sdrs5": -1
+        },
+        "norms": null
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "SDRS-5 Social Desirability Report",
+      "footer_refs": [
+        "Hays, R. D., Hayashi, T., & Stewart, A. L. (1989). A five-item measure of socially desirable response set. Educational and Psychological Measurement, 49(3), 629–636."
+      ]
+    },
+    "data_output": {
+      "individual_file": "SDRS5-{subnum}.csv",
+      "pooled_file": "SDRS5-pooled.csv",
+      "report_file": "SDRS5-report-{subnum}.html",
+      "columns": "subnum,order,timestamp,question_id,text_key,dimension,coding,response,rt",
+      "pooled_columns": ""
+    }
+  },
+  "translations": {
+    "en": {
+      "question_head": "Listed below are a few statements about your relationships with others. How much is <u>each</u> statement TRUE or FALSE for you?",
+      "sdrs1": "I am always courteous even to people who are disagreeable.",
+      "sdrs2": "There have been occasions when I took advantage of someone.",
+      "sdrs3": "I sometimes try to get even rather than forgive and forget.",
+      "sdrs4": "I sometimes feel resentful when I don't get my way.",
+      "sdrs5": "No matter who I'm talking to, I'm always a good listener.",
+      "sdrs_r1": "Definitely True",
+      "sdrs_r2": "Mostly True",
+      "sdrs_r3": "Don't Know",
+      "sdrs_r4": "Mostly False",
+      "sdrs_r5": "Definitely False"
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "CAGE Questionnaire",
+      "code": "CAGE",
+      "abbreviation": "CAGE",
+      "description": "4-item screening tool for alcohol problems. Acronym: Cut down, Annoyed, Guilty, Eye-opener. Yes/No responses scored 0–1. Total score 0–4; a score of 2 or more suggests problem drinking.",
+      "citation": "Ewing, J. A. (1984). Detecting alcoholism: The CAGE questionnaire. JAMA, 252(14), 1905–1907. https://doi.org/10.1001/jama.1984.03350140051025",
+      "license": "Public Domain",
+      "license_explanation": "Believed to be in the public domain. Ewing (1984), the original author, encourages widespread use. See also: https://camcops.readthedocs.io/en/latest/tasks/cage.html",
+      "license_url": "https://camcops.readthedocs.io/en/latest/tasks/cage.html",
+      "version": "1.0",
+      "url": "https://doi.org/10.1001/jama.1984.03350140051025",
+      "domain": "Substance Use"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "CAGE Total",
+        "description": "Sum of 4 yes/no items (0–4). Score ≥2 suggests problem drinking."
+      }
+    ],
+    "items": [
+      {
+        "id": "cage_inst",
+        "text_key": "cage_inst",
+        "type": "inst"
+      },
+      {
+        "id": "cage1",
+        "text_key": "cage1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 1
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cage2",
+        "text_key": "cage2",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 1
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cage3",
+        "text_key": "cage3",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 1
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "cage4",
+        "text_key": "cage4",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 1
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "cage1",
+          "cage2",
+          "cage3",
+          "cage4"
+        ],
+        "description": "Sum of yes responses (0–4). Score ≥2 suggests problem drinking and warrants further assessment.",
+        "item_coding": {
+          "cage1": 1,
+          "cage2": 1,
+          "cage3": 1,
+          "cage4": 1
+        },
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 1,
+              "label": "Below threshold"
+            },
+            {
+              "min": 2,
+              "max": 4,
+              "label": "Potential problem drinking"
+            }
+          ]
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "CAGE Questionnaire Report",
+      "footer_refs": [
+        "Ewing, J. A. (1984). JAMA, 252(14), 1905–1907.",
+        "Score ≥2 suggests problem drinking."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "cage_inst": "Please answer the following 4 questions:",
+      "yes": "Yes",
+      "no": "No",
+      "cage1": "Have you ever felt you should <b>C</b>ut down on your drinking?",
+      "cage2": "Have people <b>A</b>nnoyed you by criticizing your drinking?",
+      "cage3": "Have you ever felt bad or <b>G</b>uilty about your drinking?",
+      "cage4": "Have you ever had a drink first thing in the morning to steady your nerves or get rid of a hangover (<b>E</b>ye-opener)?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

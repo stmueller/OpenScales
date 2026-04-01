@@ -1,0 +1,334 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Patient Satisfaction Questionnaire - Short Form",
+      "code": "PSQ18",
+      "abbreviation": "PSQ-18",
+      "description": "18-item short form of the Patient Satisfaction Questionnaire (PSQ-III) measuring patient satisfaction with medical care across 7 subscales. Items use a 5-point Strongly Agree to Strongly Disagree scale. Favorably worded items (+) are reverse-coded so that higher subscale scores indicate greater satisfaction. Subscale scores are means of constituent items (range 1–5). Public Domain (RAND Corporation).",
+      "citation": "Marshall, G.N., & Hays, R.D. (1994). The Patient Satisfaction Questionnaire Short Form (PSQ-18). RAND, Santa Monica, CA. P-7865.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health-care/surveys_tools/psq.html",
+      "domain": "Health",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. RAND explicitly states these instruments are available for use without permission or fee.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools/psq.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "psq_r1",
+        "psq_r2",
+        "psq_r3",
+        "psq_r4",
+        "psq_r5"
+      ],
+      "question_head": "psq_head"
+    },
+    "dimensions": [
+      {
+        "id": "general_satisfaction",
+        "name": "General Satisfaction",
+        "abbreviation": "GSAT",
+        "description": "Items 3 (+), 17 (–). Mean range 1–5."
+      },
+      {
+        "id": "technical_quality",
+        "name": "Technical Quality",
+        "abbreviation": "TECH",
+        "description": "Items 2 (+), 4 (–), 6 (+), 14 (–). Mean range 1–5."
+      },
+      {
+        "id": "interpersonal_manner",
+        "name": "Interpersonal Manner",
+        "abbreviation": "INTER",
+        "description": "Items 10 (–), 11 (+). Mean range 1–5."
+      },
+      {
+        "id": "communication",
+        "name": "Communication",
+        "abbreviation": "COMM",
+        "description": "Items 1 (+), 13 (–). Mean range 1–5."
+      },
+      {
+        "id": "financial_aspects",
+        "name": "Financial Aspects",
+        "abbreviation": "FINAN",
+        "description": "Items 5 (+), 7 (–). Mean range 1–5."
+      },
+      {
+        "id": "time_spent",
+        "name": "Time Spent with Doctor",
+        "abbreviation": "TIME",
+        "description": "Items 12 (–), 15 (+). Mean range 1–5."
+      },
+      {
+        "id": "access_convenience",
+        "name": "Access/Availability/Convenience",
+        "abbreviation": "ACCESS",
+        "description": "Items 8 (+), 9 (–), 16 (–), 18 (+). Mean range 1–5."
+      }
+    ],
+    "items": [
+      {
+        "id": "psq_inst",
+        "text_key": "psq_inst",
+        "type": "inst"
+      },
+      {
+        "id": "psq1",
+        "text_key": "psq1",
+        "type": "likert",
+        "dimension": "communication"
+      },
+      {
+        "id": "psq2",
+        "text_key": "psq2",
+        "type": "likert",
+        "dimension": "technical_quality"
+      },
+      {
+        "id": "psq3",
+        "text_key": "psq3",
+        "type": "likert",
+        "dimension": "general_satisfaction"
+      },
+      {
+        "id": "psq4",
+        "text_key": "psq4",
+        "type": "likert",
+        "dimension": "technical_quality"
+      },
+      {
+        "id": "psq5",
+        "text_key": "psq5",
+        "type": "likert",
+        "dimension": "financial_aspects"
+      },
+      {
+        "id": "psq6",
+        "text_key": "psq6",
+        "type": "likert",
+        "dimension": "technical_quality"
+      },
+      {
+        "id": "psq7",
+        "text_key": "psq7",
+        "type": "likert",
+        "dimension": "financial_aspects"
+      },
+      {
+        "id": "psq8",
+        "text_key": "psq8",
+        "type": "likert",
+        "dimension": "access_convenience"
+      },
+      {
+        "id": "psq9",
+        "text_key": "psq9",
+        "type": "likert",
+        "dimension": "access_convenience"
+      },
+      {
+        "id": "psq10",
+        "text_key": "psq10",
+        "type": "likert",
+        "dimension": "interpersonal_manner"
+      },
+      {
+        "id": "psq11",
+        "text_key": "psq11",
+        "type": "likert",
+        "dimension": "interpersonal_manner"
+      },
+      {
+        "id": "psq12",
+        "text_key": "psq12",
+        "type": "likert",
+        "dimension": "time_spent"
+      },
+      {
+        "id": "psq13",
+        "text_key": "psq13",
+        "type": "likert",
+        "dimension": "communication"
+      },
+      {
+        "id": "psq14",
+        "text_key": "psq14",
+        "type": "likert",
+        "dimension": "technical_quality"
+      },
+      {
+        "id": "psq15",
+        "text_key": "psq15",
+        "type": "likert",
+        "dimension": "time_spent"
+      },
+      {
+        "id": "psq16",
+        "text_key": "psq16",
+        "type": "likert",
+        "dimension": "access_convenience"
+      },
+      {
+        "id": "psq17",
+        "text_key": "psq17",
+        "type": "likert",
+        "dimension": "general_satisfaction"
+      },
+      {
+        "id": "psq18",
+        "text_key": "psq18",
+        "type": "likert",
+        "dimension": "access_convenience"
+      }
+    ],
+    "scoring": {
+      "general_satisfaction": {
+        "method": "mean_coded",
+        "items": [
+          "psq3",
+          "psq17"
+        ],
+        "description": "General Satisfaction. Mean of 2 items (1–5). Higher = more satisfied.",
+        "item_coding": {
+          "psq3": -1,
+          "psq17": 1
+        }
+      },
+      "technical_quality": {
+        "method": "mean_coded",
+        "items": [
+          "psq2",
+          "psq4",
+          "psq6",
+          "psq14"
+        ],
+        "description": "Technical Quality. Mean of 4 items (1–5). Higher = more satisfied.",
+        "item_coding": {
+          "psq2": -1,
+          "psq4": 1,
+          "psq6": -1,
+          "psq14": 1
+        }
+      },
+      "interpersonal_manner": {
+        "method": "mean_coded",
+        "items": [
+          "psq10",
+          "psq11"
+        ],
+        "description": "Interpersonal Manner. Mean of 2 items (1–5). Higher = more satisfied.",
+        "item_coding": {
+          "psq10": 1,
+          "psq11": -1
+        }
+      },
+      "communication": {
+        "method": "mean_coded",
+        "items": [
+          "psq1",
+          "psq13"
+        ],
+        "description": "Communication. Mean of 2 items (1–5). Higher = more satisfied.",
+        "item_coding": {
+          "psq1": -1,
+          "psq13": 1
+        }
+      },
+      "financial_aspects": {
+        "method": "mean_coded",
+        "items": [
+          "psq5",
+          "psq7"
+        ],
+        "description": "Financial Aspects. Mean of 2 items (1–5). Higher = more satisfied.",
+        "item_coding": {
+          "psq5": -1,
+          "psq7": 1
+        }
+      },
+      "time_spent": {
+        "method": "mean_coded",
+        "items": [
+          "psq12",
+          "psq15"
+        ],
+        "description": "Time Spent with Doctor. Mean of 2 items (1–5). Higher = more satisfied.",
+        "item_coding": {
+          "psq12": 1,
+          "psq15": -1
+        }
+      },
+      "access_convenience": {
+        "method": "mean_coded",
+        "items": [
+          "psq8",
+          "psq9",
+          "psq16",
+          "psq18"
+        ],
+        "description": "Access/Availability/Convenience. Mean of 4 items (1–5). Higher = more satisfied.",
+        "item_coding": {
+          "psq8": -1,
+          "psq9": 1,
+          "psq16": 1,
+          "psq18": -1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Patient Satisfaction Questionnaire Short Form (PSQ-18) Report",
+      "footer_refs": [
+        "Marshall, G.N., & Hays, R.D. (1994). The Patient Satisfaction Questionnaire Short Form (PSQ-18). RAND, P-7865.",
+        "Favorably worded items are reverse-coded so that higher scores indicate greater satisfaction on all subscales."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "psq_inst": "The following statements are about how you feel about the medical care you receive. Please read each one carefully, keeping in mind the medical care you are receiving now. (If you have not received care recently, think about what you would <u>expect</u> if you needed care today.) We are interested in your feelings, <u>good</u> and <u>bad</u>, about the medical care you have received.",
+      "psq_head": "How strongly do you AGREE or DISAGREE with the following statement:",
+      "psq_r1": "Strongly Agree",
+      "psq_r2": "Agree",
+      "psq_r3": "Uncertain",
+      "psq_r4": "Disagree",
+      "psq_r5": "Strongly Disagree",
+      "psq1": "Doctors are good about explaining the reason for medical tests.",
+      "psq2": "I think my doctor's office has everything needed to provide complete medical care.",
+      "psq3": "The medical care I have been receiving is just about perfect.",
+      "psq4": "Sometimes doctors make me wonder if their diagnosis is correct.",
+      "psq5": "I feel confident that I can get the medical care I need without being set back financially.",
+      "psq6": "When I go for medical care, they are careful to check everything when treating and examining me.",
+      "psq7": "I have to pay for more of my medical care than I can afford.",
+      "psq8": "I have easy access to the medical specialists I need.",
+      "psq9": "Where I get medical care, people have to wait too long for emergency treatment.",
+      "psq10": "Doctors act too businesslike and impersonal toward me.",
+      "psq11": "My doctors treat me in a very friendly and courteous manner.",
+      "psq12": "Those who provide my medical care sometimes hurry too much when they treat me.",
+      "psq13": "Doctors sometimes ignore what I tell them.",
+      "psq14": "I have some doubts about the ability of the doctors who treat me.",
+      "psq15": "Doctors usually spend plenty of time with me.",
+      "psq16": "I find it hard to get an appointment for medical care right away.",
+      "psq17": "I am dissatisfied with some things about the medical care I receive.",
+      "psq18": "I am able to get medical care whenever I need it.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

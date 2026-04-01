@@ -1,0 +1,305 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Cognitive Load Theory Questionnaire",
+      "code": "clt",
+      "abbreviation": "CLT",
+      "description": "15-item scale measuring three types of cognitive load during learning",
+      "citation": "Krieglstein, F., Beege, M., Rey, G. D., Sanchez-Stockhammer, C., & Schneider, S. (2023). Development and validation of a theory-based questionnaire to measure different types of cognitive load. Educational Psychology Review, 35(1), 37. https://doi.org/10.1007/s10648-023-09738-0",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "version": "1.0",
+      "url": "https://doi.org/10.1007/s10648-023-09738-0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize question order"
+      }
+    },
+    "likert_options": {
+      "points": 9,
+      "question_head": "question_head",
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5",
+        "likert_6",
+        "likert_7",
+        "likert_8",
+        "likert_9"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "ICL",
+        "name": "Intrinsic Cognitive Load",
+        "abbreviation": "ICL",
+        "description": "Cognitive load imposed by the inherent difficulty of the learning content",
+        "enabled_param": null
+      },
+      {
+        "id": "ECL",
+        "name": "Extraneous Cognitive Load",
+        "abbreviation": "ECL",
+        "description": "Cognitive load imposed by the design of the learning material",
+        "enabled_param": null
+      },
+      {
+        "id": "GCL",
+        "name": "Germane Cognitive Load",
+        "abbreviation": "GCL",
+        "description": "Cognitive load associated with actively processing and understanding the material",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "inst1",
+        "text_key": "inst1",
+        "type": "inst",
+        "dimension": null
+      },
+      {
+        "id": "icl1",
+        "text_key": "icl1",
+        "type": "likert",
+        "dimension": "ICL"
+      },
+      {
+        "id": "icl2",
+        "text_key": "icl2",
+        "type": "likert",
+        "dimension": "ICL"
+      },
+      {
+        "id": "icl3",
+        "text_key": "icl3",
+        "type": "likert",
+        "dimension": "ICL"
+      },
+      {
+        "id": "icl4",
+        "text_key": "icl4",
+        "type": "likert",
+        "dimension": "ICL"
+      },
+      {
+        "id": "icl5",
+        "text_key": "icl5",
+        "type": "likert",
+        "dimension": "ICL"
+      },
+      {
+        "id": "ecl1",
+        "text_key": "ecl1",
+        "type": "likert",
+        "dimension": "ECL"
+      },
+      {
+        "id": "ecl2",
+        "text_key": "ecl2",
+        "type": "likert",
+        "dimension": "ECL"
+      },
+      {
+        "id": "ecl3",
+        "text_key": "ecl3",
+        "type": "likert",
+        "dimension": "ECL"
+      },
+      {
+        "id": "ecl4",
+        "text_key": "ecl4",
+        "type": "likert",
+        "dimension": "ECL"
+      },
+      {
+        "id": "ecl5",
+        "text_key": "ecl5",
+        "type": "likert",
+        "dimension": "ECL"
+      },
+      {
+        "id": "gcl1",
+        "text_key": "gcl1",
+        "type": "likert",
+        "dimension": "GCL"
+      },
+      {
+        "id": "gcl3",
+        "text_key": "gcl3",
+        "type": "likert",
+        "dimension": "GCL"
+      },
+      {
+        "id": "gcl5",
+        "text_key": "gcl5",
+        "type": "likert",
+        "dimension": "GCL"
+      },
+      {
+        "id": "gcl6",
+        "text_key": "gcl6",
+        "type": "likert",
+        "dimension": "GCL"
+      },
+      {
+        "id": "gcl7",
+        "text_key": "gcl7",
+        "type": "likert",
+        "dimension": "GCL"
+      }
+    ],
+    "scoring": {
+      "ICL": {
+        "method": "mean_coded",
+        "items": [
+          "icl1",
+          "icl2",
+          "icl3",
+          "icl4",
+          "icl5"
+        ],
+        "description": "Mean intrinsic cognitive load (1-9 scale)",
+        "item_coding": {
+          "icl1": 1,
+          "icl2": 1,
+          "icl3": 1,
+          "icl4": 1,
+          "icl5": 1
+        }
+      },
+      "ECL": {
+        "method": "mean_coded",
+        "items": [
+          "ecl1",
+          "ecl2",
+          "ecl3",
+          "ecl4",
+          "ecl5"
+        ],
+        "description": "Mean extraneous cognitive load (1-9 scale)",
+        "item_coding": {
+          "ecl1": 1,
+          "ecl2": 1,
+          "ecl3": 1,
+          "ecl4": 1,
+          "ecl5": 1
+        }
+      },
+      "GCL": {
+        "method": "mean_coded",
+        "items": [
+          "gcl1",
+          "gcl3",
+          "gcl5",
+          "gcl6",
+          "gcl7"
+        ],
+        "description": "Mean germane cognitive load (1-9 scale)",
+        "item_coding": {
+          "gcl1": 1,
+          "gcl3": 1,
+          "gcl5": 1,
+          "gcl6": 1,
+          "gcl7": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "The CLT Questionnaire measures three types of cognitive load experienced during learning.",
+      "footer_refs": [
+        "Krieglstein, F., Beege, M., Rey, G. D., Sanchez-Stockhammer, C., & Schneider, S. (2023). Development and validation of a theory-based questionnaire to measure different types of cognitive load. Educational Psychology Review, 35(1), 37.",
+        "See <a href='https://doi.org/10.1007/s10648-023-09738-0'>https://doi.org/10.1007/s10648-023-09738-0</a> for more information.",
+        "Licensed under <a href='https://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 (CC BY 4.0)</a>"
+      ]
+    },
+    "data_output": {
+      "individual_file": "clt-{subnum}.csv",
+      "pooled_file": "clt-pooled.csv",
+      "report_file": "clt-report-{subnum}.html",
+      "columns": "subnum,order,time,qnum,ques,dim,valence,resp,rt",
+      "pooled_columns": "subnum,timestamp,time,icl1,icl2,icl3,icl4,icl5,ecl1,ecl2,ecl3,ecl4,ecl5,gcl1,gcl3,gcl5,gcl6,gcl7,ICL,ECL,GCL"
+    }
+  },
+  "translations": {
+    "de": {
+      "LANGUAGE": "de",
+      "question_head": "Bitte bewerten Sie die folgenden Aussagen zum Lernmaterial:",
+      "likert_1": "1 - Trifft überhaupt nicht zu",
+      "likert_2": "2",
+      "likert_3": "3",
+      "likert_4": "4",
+      "likert_5": "5",
+      "likert_6": "6",
+      "likert_7": "7",
+      "likert_8": "8",
+      "likert_9": "9 - Trifft vollständig zu",
+      "inst1": "<b>Fragebogen zur Cognitive Load Theory</b><br><br>Dieser Fragebogen misst verschiedene Arten von <i>kognitiver Belastung</i>, die Sie beim Lernen erlebt haben.<br><br>Bitte bewerten Sie jede Aussage auf einer Skala von <b>1 (trifft überhaupt nicht zu)</b> bis <b>9 (trifft vollständig zu)</b>.<br><br>Es gibt keine richtigen oder falschen Antworten. Bitte antworten Sie basierend auf Ihrer persönlichen Erfahrung mit dem Lernmaterial.",
+      "icl1": "Die Lerninhalte waren schwer zu verstehen",
+      "icl2": "Die Erklärungen des Lerninhalts waren schwer nachvollziehbar",
+      "icl3": "Die Lehrninhalte waren komplex",
+      "icl4": "Die Lerninhalte enthielten viele komplexe Informationen",
+      "icl5": "Ohne Vorwissen waren die Informationen nicht verständlich",
+      "ecl1": "Es war schwierig, einen Überblick über den Aufbau des Lernmaterials zu erlangen",
+      "ecl2": "Die Gestaltung des Lernmaterials machte es schwer, die Zusammenhänge zwischen den einzelnen Informationen herzustellen",
+      "ecl3": "Das Lernmaterial war ungünstig gestaltet",
+      "ecl4": "Die Gestaltung des Lernmaterials machte es schwierig, wichtige Informationen zügig zu finden",
+      "ecl5": "Aufgrund der Gestaltung des Lernmaterials hatte ich das Gefühl, mich nicht auf die Lerninhalte konzentrieren zu können",
+      "gcl1": "Ich habe aktiv über die Lerninhalte nachgedacht",
+      "gcl3": "Ich habe mich bemüht, die Lerninhalte zu verstehen",
+      "gcl5": "Ich habe ein umfassendes Verständnis der Lerninhalte erlangt",
+      "gcl6": "Ich konnte mein bestehendes Wissen mit den Lerninhalten erweitern",
+      "gcl7": "Das Wissen, das ich durch das Lernmaterial erworben habe, kann ich schnell und sicher anwenden",
+      "debrief": "<b>Vielen Dank für das Ausfüllen des Fragebogens zur Cognitive Load Theory!</b><br><br>Ihre Antworten helfen dabei zu bewerten, wie das Design und die Komplexität von Lernmaterialien Ihre kognitive Verarbeitung beeinflusst haben.<br><br>Der Fragebogen misst drei Arten kognitiver Belastung:<br>  • <i>Intrinsische Belastung</i> - Schwierigkeit aufgrund der Inhaltskomplexität<br>  • <i>Extrinsische Belastung</i> - Schwierigkeit aufgrund des Materialdesigns<br>  • <i>Lernbezogene Belastung</i> - produktive kognitive Anstrengung zum Lernen<br><br>Ihre Ergebnisse wurden gespeichert."
+    },
+    "en": {
+      "LANGUAGE": "en",
+      "question_head": "Please rate the following statements about the learning material:",
+      "likert_1": "1 - Not at all applicable",
+      "likert_2": "2",
+      "likert_3": "3",
+      "likert_4": "4",
+      "likert_5": "5",
+      "likert_6": "6",
+      "likert_7": "7",
+      "likert_8": "8",
+      "likert_9": "9 - Fully applicable",
+      "inst1": "<b>Cognitive Load Theory Questionnaire</b><br><br>This questionnaire measures different types of <i>cognitive load</i> you experienced while learning.<br><br>Please rate each statement on a scale from <b>1 (not at all applicable)</b> to <b>9 (fully applicable)</b>.<br><br>There are no right or wrong answers. Please respond based on your personal experience with the learning material.",
+      "icl1": "The learning content was difficult to understand",
+      "icl2": "The explanations of the learning content were difficult to understand",
+      "icl3": "The learning contents were complex",
+      "icl4": "The learning content included much complex information",
+      "icl5": "Without prior knowledge, the information was not understandable",
+      "ecl1": "It was difficult to gain an overview of the structure of the learning material",
+      "ecl2": "The design of the learning material made it difficult to recognise links between individual information units",
+      "ecl3": "The design of the learning material was inconvenient",
+      "ecl4": "The design of the learning material made it difficult to find relevant information quickly",
+      "ecl5": "Because of the design of the learning material, I had the impression that I could not concentrate on the learning content",
+      "gcl1": "I actively reflected upon the learning content",
+      "gcl3": "I made an effort to understand the learning content",
+      "gcl5": "I achieved a comprehensive understanding of the learning content",
+      "gcl6": "I was able to expand my prior knowledge with the learning content",
+      "gcl7": "I can apply the knowledge that I acquired through the learning material quickly and accurately",
+      "debrief": "<b>Thank you for completing the Cognitive Load Theory Questionnaire!</b><br><br>Your responses help assess how the design and complexity of learning materials affected your cognitive processing.<br><br>The questionnaire measured three types of cognitive load:<br>  • <i>Intrinsic Load</i> - difficulty due to content complexity<br>  • <i>Extraneous Load</i> - difficulty due to material design<br>  • <i>Germane Load</i> - productive cognitive effort for learning<br><br>Your results have been saved."
+    }
+  }
+}

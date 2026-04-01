@@ -1,0 +1,115 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Brief Resilient Coping Scale",
+      "code": "BRCS",
+      "abbreviation": "BRCS",
+      "description": "4-item measure of resilient coping tendencies. Scores range from 4 to 20. Low resilience: 4-13, medium: 14-16, high: 17-20.",
+      "citation": "Sinclair, V. G., & Wallston, K. A. (2004). The development and psychometric evaluation of the Brief Resilient Coping Scale. Assessment, 11(1), 94-101. https://doi.org/10.1177/1073191103258144",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://doi.org/10.1177/1073191103258144"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "resilient_coping",
+        "name": "Resilient Coping"
+      }
+    ],
+    "items": [
+      {
+        "id": "brcs1",
+        "text_key": "brcs1",
+        "type": "likert"
+      },
+      {
+        "id": "brcs2",
+        "text_key": "brcs2",
+        "type": "likert"
+      },
+      {
+        "id": "brcs3",
+        "text_key": "brcs3",
+        "type": "likert"
+      },
+      {
+        "id": "brcs4",
+        "text_key": "brcs4",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "resilient_coping": {
+        "method": "sum_coded",
+        "items": [
+          "brcs1",
+          "brcs2",
+          "brcs3",
+          "brcs4"
+        ],
+        "description": "Sum of all items (4-20). Low: 4-13, Medium: 14-16, High: 17-20.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 4,
+              "max": 13,
+              "label": "Low Resilient Coping"
+            },
+            {
+              "min": 14,
+              "max": 16,
+              "label": "Medium Resilient Coping"
+            },
+            {
+              "min": 17,
+              "max": 20,
+              "label": "High Resilient Coping"
+            }
+          ]
+        },
+        "item_coding": {
+          "brcs1": 1,
+          "brcs2": 1,
+          "brcs3": 1,
+          "brcs4": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Does not describe me at all",
+      "likert_2": "Does not describe me",
+      "likert_3": "Neutral",
+      "likert_4": "Describes me",
+      "likert_5": "Describes me very well",
+      "question_head": "Consider how well the following statements describe your behavior and actions.",
+      "brcs1": "I look for creative ways to alter difficult situations.",
+      "brcs2": "Regardless of what happens to me, I believe I can control my reaction to it.",
+      "brcs3": "I believe that I can grow in positive ways by dealing with difficult situations.",
+      "brcs4": "I actively look for ways to replace the losses I encounter in life.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

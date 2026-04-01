@@ -1,0 +1,333 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "PTSD Checklist for DSM-5",
+      "code": "PCL5",
+      "abbreviation": "PCL-5",
+      "description": "20-item self-report measure of PTSD symptoms over the past month, aligned with DSM-5 criteria. Scores range from 0 to 80, with a provisional PTSD diagnosis suggested at a score of 31-33 or higher.",
+      "citation": "Weathers, F. W., Litz, B. T., Keane, T. M., Palmieri, P. A., Marx, B. P., & Schnurr, P. P. (2013). The PTSD Checklist for DSM-5 (PCL-5). National Center for PTSD. Available at: https://www.ptsd.va.gov",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.ptsd.va.gov/professional/assessment/adult-sr/ptsd-checklist.asp",
+      "license_explanation": "Public Domain (U.S. Government work)."
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 0,
+      "max": 4,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "intrusion",
+        "name": "Intrusion (Criterion B)"
+      },
+      {
+        "id": "avoidance",
+        "name": "Avoidance (Criterion C)"
+      },
+      {
+        "id": "cognition",
+        "name": "Negative Alterations in Cognition and Mood (Criterion D)"
+      },
+      {
+        "id": "arousal",
+        "name": "Alterations in Arousal and Reactivity (Criterion E)"
+      },
+      {
+        "id": "total",
+        "name": "Total PTSD Severity"
+      }
+    ],
+    "items": [
+      {
+        "id": "pcl_inst",
+        "text_key": "pcl_inst",
+        "type": "inst"
+      },
+      {
+        "id": "pcl1",
+        "text_key": "pcl1",
+        "type": "likert"
+      },
+      {
+        "id": "pcl2",
+        "text_key": "pcl2",
+        "type": "likert"
+      },
+      {
+        "id": "pcl3",
+        "text_key": "pcl3",
+        "type": "likert"
+      },
+      {
+        "id": "pcl4",
+        "text_key": "pcl4",
+        "type": "likert"
+      },
+      {
+        "id": "pcl5",
+        "text_key": "pcl5",
+        "type": "likert"
+      },
+      {
+        "id": "pcl6",
+        "text_key": "pcl6",
+        "type": "likert"
+      },
+      {
+        "id": "pcl7",
+        "text_key": "pcl7",
+        "type": "likert"
+      },
+      {
+        "id": "pcl8",
+        "text_key": "pcl8",
+        "type": "likert"
+      },
+      {
+        "id": "pcl9",
+        "text_key": "pcl9",
+        "type": "likert"
+      },
+      {
+        "id": "pcl10",
+        "text_key": "pcl10",
+        "type": "likert"
+      },
+      {
+        "id": "pcl11",
+        "text_key": "pcl11",
+        "type": "likert"
+      },
+      {
+        "id": "pcl12",
+        "text_key": "pcl12",
+        "type": "likert"
+      },
+      {
+        "id": "pcl13",
+        "text_key": "pcl13",
+        "type": "likert"
+      },
+      {
+        "id": "pcl14",
+        "text_key": "pcl14",
+        "type": "likert"
+      },
+      {
+        "id": "pcl15",
+        "text_key": "pcl15",
+        "type": "likert"
+      },
+      {
+        "id": "pcl16",
+        "text_key": "pcl16",
+        "type": "likert"
+      },
+      {
+        "id": "pcl17",
+        "text_key": "pcl17",
+        "type": "likert"
+      },
+      {
+        "id": "pcl18",
+        "text_key": "pcl18",
+        "type": "likert"
+      },
+      {
+        "id": "pcl19",
+        "text_key": "pcl19",
+        "type": "likert"
+      },
+      {
+        "id": "pcl20",
+        "text_key": "pcl20",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "intrusion": {
+        "method": "sum_coded",
+        "items": [
+          "pcl1",
+          "pcl2",
+          "pcl3",
+          "pcl4",
+          "pcl5"
+        ],
+        "description": "Sum of Criterion B intrusion items (0-20).",
+        "item_coding": {
+          "pcl1": 1,
+          "pcl2": 1,
+          "pcl3": 1,
+          "pcl4": 1,
+          "pcl5": 1
+        }
+      },
+      "avoidance": {
+        "method": "sum_coded",
+        "items": [
+          "pcl6",
+          "pcl7"
+        ],
+        "description": "Sum of Criterion C avoidance items (0-8).",
+        "item_coding": {
+          "pcl6": 1,
+          "pcl7": 1
+        }
+      },
+      "cognition": {
+        "method": "sum_coded",
+        "items": [
+          "pcl8",
+          "pcl9",
+          "pcl10",
+          "pcl11",
+          "pcl12",
+          "pcl13",
+          "pcl14"
+        ],
+        "description": "Sum of Criterion D negative cognition and mood items (0-28).",
+        "item_coding": {
+          "pcl8": 1,
+          "pcl9": 1,
+          "pcl10": 1,
+          "pcl11": 1,
+          "pcl12": 1,
+          "pcl13": 1,
+          "pcl14": 1
+        }
+      },
+      "arousal": {
+        "method": "sum_coded",
+        "items": [
+          "pcl15",
+          "pcl16",
+          "pcl17",
+          "pcl18",
+          "pcl19",
+          "pcl20"
+        ],
+        "description": "Sum of Criterion E arousal and reactivity items (0-24).",
+        "item_coding": {
+          "pcl15": 1,
+          "pcl16": 1,
+          "pcl17": 1,
+          "pcl18": 1,
+          "pcl19": 1,
+          "pcl20": 1
+        }
+      },
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "pcl1",
+          "pcl2",
+          "pcl3",
+          "pcl4",
+          "pcl5",
+          "pcl6",
+          "pcl7",
+          "pcl8",
+          "pcl9",
+          "pcl10",
+          "pcl11",
+          "pcl12",
+          "pcl13",
+          "pcl14",
+          "pcl15",
+          "pcl16",
+          "pcl17",
+          "pcl18",
+          "pcl19",
+          "pcl20"
+        ],
+        "description": "Sum of all 20 items (0-80). A score of 31-33 or higher is suggested as a threshold for probable PTSD.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 32,
+              "label": "Below Probable PTSD Threshold"
+            },
+            {
+              "min": 33,
+              "max": 80,
+              "label": "Probable PTSD — clinical follow-up recommended"
+            }
+          ]
+        },
+        "item_coding": {
+          "pcl1": 1,
+          "pcl2": 1,
+          "pcl3": 1,
+          "pcl4": 1,
+          "pcl5": 1,
+          "pcl6": 1,
+          "pcl7": 1,
+          "pcl8": 1,
+          "pcl9": 1,
+          "pcl10": 1,
+          "pcl11": 1,
+          "pcl12": 1,
+          "pcl13": 1,
+          "pcl14": 1,
+          "pcl15": 1,
+          "pcl16": 1,
+          "pcl17": 1,
+          "pcl18": 1,
+          "pcl19": 1,
+          "pcl20": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Not at all",
+      "likert_2": "A little bit",
+      "likert_3": "Moderately",
+      "likert_4": "Quite a bit",
+      "likert_5": "Extremely",
+      "pcl_inst": "The following is a list of problems that people sometimes have in response to a very stressful experience. Keeping your worst event in mind, please read each problem carefully and indicate how much you have been bothered by that problem <b>in the past month</b>.",
+      "question_head": "<b>In the past month</b>, how much were you bothered by:",
+      "pcl1": "Repeated, disturbing, and unwanted memories of the stressful experience?",
+      "pcl2": "Repeated, disturbing dreams of the stressful experience?",
+      "pcl3": "Suddenly feeling or acting as if the stressful experience were actually happening again (as if you were actually back there reliving it)?",
+      "pcl4": "Feeling very upset when something reminded you of the stressful experience?",
+      "pcl5": "Having strong physical reactions when something reminded you of the stressful experience (for example, heart pounding, trouble breathing, sweating)?",
+      "pcl6": "Avoiding internal reminders of the stressful experience (for example, thoughts, feelings, or physical sensations)?",
+      "pcl7": "Avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?",
+      "pcl8": "Trouble remembering important parts of the stressful experience?",
+      "pcl9": "Having strong negative beliefs about yourself, other people, or the world (for example, having thoughts such as: I am bad, there is something seriously wrong with me, no one can be trusted, the world is completely dangerous)?",
+      "pcl10": "Blaming yourself or someone else for the stressful experience or what happened after it?",
+      "pcl11": "Having strong negative feelings such as fear, horror, anger, guilt, or shame?",
+      "pcl12": "Loss of interest in activities that you used to enjoy?",
+      "pcl13": "Feeling distant or cut off from other people?",
+      "pcl14": "Trouble experiencing positive feelings (for example, being unable to feel happiness or have loving feelings for people close to you)?",
+      "pcl15": "Irritable behavior, angry outbursts, or acting aggressively?",
+      "pcl16": "Taking too many risks or doing things that could cause you harm?",
+      "pcl17": "Being “superalert” or watchful or on guard?",
+      "pcl18": "Feeling jumpy or easily startled?",
+      "pcl19": "Having difficulty concentrating?",
+      "pcl20": "Trouble falling or staying asleep?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

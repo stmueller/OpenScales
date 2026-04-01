@@ -1,0 +1,161 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Optimism Scale",
+      "code": "IPIP-Optimism",
+      "abbreviation": "IPIP-OPT",
+      "description": "IPIP items measuring dispositional optimism, designed to approximate the LOT-R.",
+      "citation": "Scheier, M. F., Carver, C. S., & Bridges, M. W. (1994). Distinguishing optimism from neuroticism. Journal of Personality and Social Psychology, 67(6), 1063-1078.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newSingleConstructsKey.htm#Hope/Optimism"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "hope_optimism",
+        "name": "Hope/Optimism"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_optimism_001",
+        "text_key": "ipip_optimism_001",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_optimism_002",
+        "text_key": "ipip_optimism_002",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_optimism_003",
+        "text_key": "ipip_optimism_003",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_optimism_004",
+        "text_key": "ipip_optimism_004",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_optimism_005",
+        "text_key": "ipip_optimism_005",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_optimism_006",
+        "text_key": "ipip_optimism_006",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_optimism_007",
+        "text_key": "ipip_optimism_007",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_optimism_008",
+        "text_key": "ipip_optimism_008",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_optimism_009",
+        "text_key": "ipip_optimism_009",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_optimism_010",
+        "text_key": "ipip_optimism_010",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "hope_optimism": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_optimism_001",
+          "ipip_optimism_002",
+          "ipip_optimism_003",
+          "ipip_optimism_004",
+          "ipip_optimism_005",
+          "ipip_optimism_006",
+          "ipip_optimism_007",
+          "ipip_optimism_008",
+          "ipip_optimism_009",
+          "ipip_optimism_010"
+        ],
+        "item_coding": {
+          "ipip_optimism_001": -1,
+          "ipip_optimism_002": -1,
+          "ipip_optimism_003": 1,
+          "ipip_optimism_004": -1,
+          "ipip_optimism_005": -1,
+          "ipip_optimism_006": 1,
+          "ipip_optimism_007": 1,
+          "ipip_optimism_008": -1,
+          "ipip_optimism_009": 1,
+          "ipip_optimism_010": -1
+        },
+        "description": "Cronbach's alpha = 0.86"
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "ipip_optimism_001": "Am often in a bad mood.",
+      "ipip_optimism_002": "Dislike myself.",
+      "ipip_optimism_003": "Feel comfortable with myself.",
+      "ipip_optimism_004": "Feel that my life lacks direction.",
+      "ipip_optimism_005": "Have a dark outlook on the future.",
+      "ipip_optimism_006": "Just know that I will be a success.",
+      "ipip_optimism_007": "Look at the bright side of life.",
+      "ipip_optimism_008": "Often feel blue.",
+      "ipip_optimism_009": "Seldom feel blue.",
+      "ipip_optimism_010": "See difficulties everywhere.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

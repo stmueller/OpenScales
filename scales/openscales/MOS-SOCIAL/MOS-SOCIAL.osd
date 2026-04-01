@@ -1,0 +1,446 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "MOS Social Support Survey",
+      "code": "MOS-SOCIAL",
+      "abbreviation": "MOS-Social",
+      "description": "20-item multidimensional measure of perceived social support developed for the Medical Outcomes Study. Item 1 is a structural measure (number of close friends and close relatives). Items 2–20 rate the perceived availability of four types of functional support on a 5-point frequency scale (1=None of the time to 5=All of the time). Subscale scores are transformed to a 0–100 metric: Score = ((mean_of_items − 1) / 4) × 100. Higher scores indicate greater perceived social support.",
+      "citation": "Sherbourne, C.D., & Stewart, A.L. (1991). The MOS Social Support Survey. Social Science & Medicine, 32(6), 705–714. https://doi.org/10.1016/0277-9536(91)90150-B",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health-care/surveys_tools/mos/social-support.html",
+      "domain": "Social Functioning",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. RAND explicitly states these instruments are available for use without permission or fee.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools/mos/social-support-survey.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "mossocial_r1",
+        "mossocial_r2",
+        "mossocial_r3",
+        "mossocial_r4",
+        "mossocial_r5"
+      ],
+      "question_head": "mossocial_question_head"
+    },
+    "dimensions": [
+      {
+        "id": "emotional_info",
+        "name": "Emotional/Informational Support",
+        "abbreviation": "EIS",
+        "description": "Perceived availability of emotional support (being listened to, confided in, understood) and informational support (advice, guidance). Items: mossocial3, mossocial4, mossocial5, mossocial9, mossocial10, mossocial14, mossocial15, mossocial19.",
+        "enabled_param": null
+      },
+      {
+        "id": "tangible",
+        "name": "Tangible Support",
+        "abbreviation": "TS",
+        "description": "Perceived availability of material aid and behavioral assistance (help when confined to bed, transportation, meals, household tasks). Items: mossocial6, mossocial11, mossocial12, mossocial17.",
+        "enabled_param": null
+      },
+      {
+        "id": "affectionate",
+        "name": "Affectionate Support",
+        "abbreviation": "AS",
+        "description": "Perceived availability of love, affection, and emotional closeness. Items: mossocial7, mossocial13, mossocial16.",
+        "enabled_param": null
+      },
+      {
+        "id": "positive_interaction",
+        "name": "Positive Social Interaction",
+        "abbreviation": "PSI",
+        "description": "Perceived availability of others with whom to have fun and relax. Items: mossocial7, mossocial19, mossocial20.",
+        "enabled_param": null
+      },
+      {
+        "id": "overall",
+        "name": "Overall Social Support",
+        "abbreviation": "OSS",
+        "description": "Overall perceived social support across all 19 functional support items (mossocial2–mossocial20). Higher scores indicate greater perceived support.",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "mossocial1",
+        "text_key": "mossocial1",
+        "type": "multi",
+        "dimension": null,
+        "options": [
+          {
+            "text_key": "mossocial1_r1",
+            "value": 1
+          },
+          {
+            "text_key": "mossocial1_r2",
+            "value": 2
+          },
+          {
+            "text_key": "mossocial1_r3",
+            "value": 3
+          },
+          {
+            "text_key": "mossocial1_r4",
+            "value": 4
+          },
+          {
+            "text_key": "mossocial1_r5",
+            "value": 5
+          },
+          {
+            "text_key": "mossocial1_r6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "mossocial2",
+        "text_key": "mossocial2",
+        "type": "likert",
+        "dimension": "emotional_info"
+      },
+      {
+        "id": "mossocial3",
+        "text_key": "mossocial3",
+        "type": "likert",
+        "dimension": "emotional_info"
+      },
+      {
+        "id": "mossocial4",
+        "text_key": "mossocial4",
+        "type": "likert",
+        "dimension": "emotional_info"
+      },
+      {
+        "id": "mossocial5",
+        "text_key": "mossocial5",
+        "type": "likert",
+        "dimension": "tangible"
+      },
+      {
+        "id": "mossocial6",
+        "text_key": "mossocial6",
+        "type": "likert",
+        "dimension": "affectionate"
+      },
+      {
+        "id": "mossocial7",
+        "text_key": "mossocial7",
+        "type": "likert",
+        "dimension": "positive_interaction"
+      },
+      {
+        "id": "mossocial8",
+        "text_key": "mossocial8",
+        "type": "likert",
+        "dimension": "emotional_info"
+      },
+      {
+        "id": "mossocial9",
+        "text_key": "mossocial9",
+        "type": "likert",
+        "dimension": "emotional_info"
+      },
+      {
+        "id": "mossocial10",
+        "text_key": "mossocial10",
+        "type": "likert",
+        "dimension": "tangible"
+      },
+      {
+        "id": "mossocial11",
+        "text_key": "mossocial11",
+        "type": "likert",
+        "dimension": "tangible"
+      },
+      {
+        "id": "mossocial12",
+        "text_key": "mossocial12",
+        "type": "likert",
+        "dimension": "affectionate"
+      },
+      {
+        "id": "mossocial13",
+        "text_key": "mossocial13",
+        "type": "likert",
+        "dimension": "emotional_info"
+      },
+      {
+        "id": "mossocial14",
+        "text_key": "mossocial14",
+        "type": "likert",
+        "dimension": "emotional_info"
+      },
+      {
+        "id": "mossocial15",
+        "text_key": "mossocial15",
+        "type": "likert",
+        "dimension": "affectionate"
+      },
+      {
+        "id": "mossocial16",
+        "text_key": "mossocial16",
+        "type": "likert",
+        "dimension": "tangible"
+      },
+      {
+        "id": "mossocial17",
+        "text_key": "mossocial17",
+        "type": "likert",
+        "dimension": "positive_interaction"
+      },
+      {
+        "id": "mossocial18",
+        "text_key": "mossocial18",
+        "type": "likert",
+        "dimension": "emotional_info"
+      },
+      {
+        "id": "mossocial19",
+        "text_key": "mossocial19",
+        "type": "likert",
+        "dimension": "positive_interaction"
+      },
+      {
+        "id": "mossocial20",
+        "text_key": "mossocial20",
+        "type": "likert",
+        "dimension": "positive_interaction"
+      }
+    ],
+    "scoring": {
+      "emotional_info": {
+        "method": "mean_coded",
+        "items": [
+          "mossocial2",
+          "mossocial3",
+          "mossocial4",
+          "mossocial8",
+          "mossocial9",
+          "mossocial13",
+          "mossocial14",
+          "mossocial18"
+        ],
+        "description": "Emotional/Informational Support: raw sum of 8 items (range 8–40; higher = greater perceived support). To obtain the 0–100 subscale score: ((mean_of_items − 1) / 4) × 100.",
+        "item_coding": {
+          "mossocial2": 1,
+          "mossocial3": 1,
+          "mossocial4": 1,
+          "mossocial8": 1,
+          "mossocial9": 1,
+          "mossocial13": 1,
+          "mossocial14": 1,
+          "mossocial18": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 4
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "tangible": {
+        "method": "mean_coded",
+        "items": [
+          "mossocial5",
+          "mossocial10",
+          "mossocial11",
+          "mossocial16"
+        ],
+        "description": "Tangible Support: raw sum of 4 items (range 4–20; higher = greater perceived support). To obtain the 0–100 subscale score: ((mean_of_items − 1) / 4) × 100.",
+        "item_coding": {
+          "mossocial5": 1,
+          "mossocial10": 1,
+          "mossocial11": 1,
+          "mossocial16": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 4
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "affectionate": {
+        "method": "mean_coded",
+        "items": [
+          "mossocial6",
+          "mossocial12",
+          "mossocial15"
+        ],
+        "description": "Affectionate Support: raw sum of 3 items (range 3–15; higher = greater perceived support). To obtain the 0–100 subscale score: ((mean_of_items − 1) / 4) × 100.",
+        "item_coding": {
+          "mossocial6": 1,
+          "mossocial12": 1,
+          "mossocial15": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 4
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "positive_interaction": {
+        "method": "mean_coded",
+        "items": [
+          "mossocial7",
+          "mossocial19",
+          "mossocial20"
+        ],
+        "description": "Positive Social Interaction: mean of 3 items (range 1–5). Transform to 0–100: ((mean − 1) / 4) × 100.",
+        "item_coding": {
+          "mossocial7": 1,
+          "mossocial19": 1,
+          "mossocial20": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 4
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "overall": {
+        "method": "mean_coded",
+        "items": [
+          "mossocial2",
+          "mossocial3",
+          "mossocial4",
+          "mossocial5",
+          "mossocial6",
+          "mossocial7",
+          "mossocial8",
+          "mossocial9",
+          "mossocial10",
+          "mossocial11",
+          "mossocial12",
+          "mossocial13",
+          "mossocial14",
+          "mossocial15",
+          "mossocial16",
+          "mossocial17",
+          "mossocial18",
+          "mossocial19",
+          "mossocial20"
+        ],
+        "description": "Overall Social Support: raw sum of all 19 functional support items (range 19–95; higher = greater overall perceived support). To obtain the 0–100 overall score: ((mean_of_items − 1) / 4) × 100.",
+        "item_coding": {
+          "mossocial2": 1,
+          "mossocial3": 1,
+          "mossocial4": 1,
+          "mossocial5": 1,
+          "mossocial6": 1,
+          "mossocial7": 1,
+          "mossocial8": 1,
+          "mossocial9": 1,
+          "mossocial10": 1,
+          "mossocial11": 1,
+          "mossocial12": 1,
+          "mossocial13": 1,
+          "mossocial14": 1,
+          "mossocial15": 1,
+          "mossocial16": 1,
+          "mossocial17": 1,
+          "mossocial18": 1,
+          "mossocial19": 1,
+          "mossocial20": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 4
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "mossocial_question_head": "How often is each of the following kinds of support available to you if you need it?",
+      "mossocial_r1": "None of the time",
+      "mossocial_r2": "A little of the time",
+      "mossocial_r3": "Some of the time",
+      "mossocial_r4": "Most of the time",
+      "mossocial_r5": "All of the time",
+      "mossocial1": "About how many close friends and close relatives do you have (people you feel at ease with and can talk to about what is on your mind)?",
+      "mossocial1_r1": "None",
+      "mossocial1_r2": "1",
+      "mossocial1_r3": "2",
+      "mossocial1_r4": "3–5",
+      "mossocial1_r5": "6–9",
+      "mossocial1_r6": "10 or more",
+      "mossocial2": "Someone you can count on to listen to you when you need to talk",
+      "mossocial3": "Someone to give you information to help you understand a situation",
+      "mossocial4": "Someone to give you advice about a crisis",
+      "mossocial5": "Someone to help you if you were confined to bed",
+      "mossocial6": "Someone who shows you love and affection",
+      "mossocial7": "Someone to have a good time with",
+      "mossocial8": "Someone to confide in or talk to about yourself or your problems",
+      "mossocial9": "Someone whose advice you really want",
+      "mossocial10": "Someone to take you to the doctor if you needed it",
+      "mossocial11": "Someone to prepare your meals if you were unable to do it yourself",
+      "mossocial12": "Someone to love and make you feel wanted",
+      "mossocial13": "Someone to share your most private worries and fears with",
+      "mossocial14": "Someone to turn to for suggestions about how to deal with a personal problem",
+      "mossocial15": "Someone who hugs you",
+      "mossocial16": "Someone to help with daily chores if you were sick",
+      "mossocial17": "Someone to do things with to help you get your mind off things",
+      "mossocial18": "Someone who understands your problems",
+      "mossocial19": "Someone to get together with for relaxation",
+      "mossocial20": "Someone to do something enjoyable with",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

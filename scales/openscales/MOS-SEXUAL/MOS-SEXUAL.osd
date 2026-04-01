@@ -1,0 +1,294 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "MOS Sexual Problems Measures",
+      "code": "MOS-SEXUAL",
+      "abbreviation": "MOS-SEXUAL",
+      "description": "Brief measures of sexual problems from the Medical Outcomes Study (MOS). Consists of separate item sets for men (4 items) and women (5 items) assessing the frequency of sexual problems during the past 4 weeks. Men's items cover: lack of interest in sex, inability to relax and enjoy sex, difficulty achieving or maintaining an erection, and difficulty with ejaculation. Women's items cover: lack of interest in sex, inability to relax and enjoy sex, difficulty becoming sexually aroused, difficulty with lubrication, and difficulty achieving orgasm. Scoring: mean of applicable items (1–6 scale); transform to 0–100 via ((mean − 1) / 5) × 100; lower scores indicate fewer sexual problems. Items are administered based on respondent sex; branching logic may be needed in computerized administration. NOTE: Exact item text requires the official RAND instrument — see URL above.",
+      "citation": "Sherbourne, C.D. (1992). Social functioning: Sexual problems measures. In A.L. Stewart & J.E. Ware (Eds.), Measuring functioning and well-being: The Medical Outcomes Study approach (pp. 194–204). Durham, NC: Duke University Press.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health/surveys/mos/sexual-problems.html",
+      "domain": "Health",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. RAND explicitly states these instruments are available for use without permission or fee.",
+      "license_url": "https://www.rand.org/health/surveys/mos/sexual-problems.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": [
+        "mossexual_r1",
+        "mossexual_r2",
+        "mossexual_r3",
+        "mossexual_r4",
+        "mossexual_r5",
+        "mossexual_r6"
+      ],
+      "question_head": "mossexual_question_head"
+    },
+    "dimensions": [
+      {
+        "id": "sexual_problems_male",
+        "name": "Sexual Problems (Male)",
+        "abbreviation": "SPM",
+        "description": "Mean of 4 male sexual problem items (range 1–6; lower = fewer problems). Items: mossexual_m1, mossexual_m2, mossexual_m3, mossexual_m4.",
+        "enabled_param": "male"
+      },
+      {
+        "id": "sexual_problems_female",
+        "name": "Sexual Problems (Female)",
+        "abbreviation": "SPF",
+        "description": "Mean of 5 female sexual problem items (range 1–6; lower = fewer problems). Items: mossexual_f1, mossexual_f2, mossexual_f3, mossexual_f4, mossexual_f5.",
+        "enabled_param": "female"
+      }
+    ],
+    "items": [
+      {
+        "id": "sex_inst",
+        "text_key": "sex_inst",
+        "type": "inst"
+      },
+      {
+        "id": "sex",
+        "text_key": "sex_question",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sex_male",
+            "value": "male"
+          },
+          {
+            "text_key": "sex_female",
+            "value": "female"
+          }
+        ]
+      },
+      {
+        "id": "gender_identity",
+        "text_key": "gender_question",
+        "type": "multicheck",
+        "required": false,
+        "options": [
+          {
+            "text_key": "gender_man",
+            "value": "man"
+          },
+          {
+            "text_key": "gender_woman",
+            "value": "woman"
+          },
+          {
+            "text_key": "gender_nonbinary",
+            "value": "nonbinary"
+          },
+          {
+            "text_key": "gender_other",
+            "value": "other"
+          }
+        ]
+      },
+      {
+        "id": "mossexual_m1",
+        "text_key": "mossexual_m1",
+        "type": "likert",
+        "dimension": "sexual_problems_male",
+        "visible_when": {
+          "item": "sex",
+          "operator": "equals",
+          "value": "male"
+        }
+      },
+      {
+        "id": "mossexual_m2",
+        "text_key": "mossexual_m2",
+        "type": "likert",
+        "dimension": "sexual_problems_male",
+        "visible_when": {
+          "item": "sex",
+          "operator": "equals",
+          "value": "male"
+        }
+      },
+      {
+        "id": "mossexual_m3",
+        "text_key": "mossexual_m3",
+        "type": "likert",
+        "dimension": "sexual_problems_male",
+        "visible_when": {
+          "item": "sex",
+          "operator": "equals",
+          "value": "male"
+        }
+      },
+      {
+        "id": "mossexual_m4",
+        "text_key": "mossexual_m4",
+        "type": "likert",
+        "dimension": "sexual_problems_male",
+        "visible_when": {
+          "item": "sex",
+          "operator": "equals",
+          "value": "male"
+        }
+      },
+      {
+        "id": "mossexual_f1",
+        "text_key": "mossexual_f1",
+        "type": "likert",
+        "dimension": "sexual_problems_female",
+        "visible_when": {
+          "item": "sex",
+          "operator": "equals",
+          "value": "female"
+        }
+      },
+      {
+        "id": "mossexual_f2",
+        "text_key": "mossexual_f2",
+        "type": "likert",
+        "dimension": "sexual_problems_female",
+        "visible_when": {
+          "item": "sex",
+          "operator": "equals",
+          "value": "female"
+        }
+      },
+      {
+        "id": "mossexual_f3",
+        "text_key": "mossexual_f3",
+        "type": "likert",
+        "dimension": "sexual_problems_female",
+        "visible_when": {
+          "item": "sex",
+          "operator": "equals",
+          "value": "female"
+        }
+      },
+      {
+        "id": "mossexual_f4",
+        "text_key": "mossexual_f4",
+        "type": "likert",
+        "dimension": "sexual_problems_female",
+        "visible_when": {
+          "item": "sex",
+          "operator": "equals",
+          "value": "female"
+        }
+      },
+      {
+        "id": "mossexual_f5",
+        "text_key": "mossexual_f5",
+        "type": "likert",
+        "dimension": "sexual_problems_female",
+        "visible_when": {
+          "item": "sex",
+          "operator": "equals",
+          "value": "female"
+        }
+      }
+    ],
+    "scoring": {
+      "sexual_problems_male": {
+        "method": "mean_coded",
+        "items": [
+          "mossexual_m1",
+          "mossexual_m2",
+          "mossexual_m3",
+          "mossexual_m4"
+        ],
+        "description": "Mean of 4 male sexual problem items (range 1–6). Transform to 0–100: ((mean − 1) / 5) × 100. Lower scores indicate fewer sexual problems. Administer only to male respondents.",
+        "item_coding": {
+          "mossexual_m1": 1,
+          "mossexual_m2": 1,
+          "mossexual_m3": 1,
+          "mossexual_m4": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "sexual_problems_female": {
+        "method": "mean_coded",
+        "items": [
+          "mossexual_f1",
+          "mossexual_f2",
+          "mossexual_f3",
+          "mossexual_f4",
+          "mossexual_f5"
+        ],
+        "description": "Mean of 5 female sexual problem items (range 1–6). Transform to 0–100: ((mean − 1) / 5) × 100. Lower scores indicate fewer sexual problems. Administer only to female respondents.",
+        "item_coding": {
+          "mossexual_f1": 1,
+          "mossexual_f2": 1,
+          "mossexual_f3": 1,
+          "mossexual_f4": 1,
+          "mossexual_f5": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "sex_inst": "These next questions are about the way health problems might interfere with your sex life. These questions are personal, but your answers are important for understanding how health problems affect people's lives.<br><br>Because some questions are specific to anatomy, please first indicate your biological sex. This refers to your physical anatomy (i.e., whether you have male or female reproductive organs), regardless of your gender identity.",
+      "sex_question": "What is your biological sex?",
+      "sex_male": "Male",
+      "sex_female": "Female",
+      "gender_question": "If your gender identity differs from your biological sex, how do you identify? (Optional — select all that apply)",
+      "gender_man": "Man",
+      "gender_woman": "Woman",
+      "gender_nonbinary": "Non-binary",
+      "gender_other": "Other",
+      "mossexual_question_head": "During the past 4 weeks, how much of the time have you had problems with the following?",
+      "mossexual_r1": "Never",
+      "mossexual_r2": "Rarely",
+      "mossexual_r3": "Some of the time",
+      "mossexual_r4": "A good bit of the time",
+      "mossexual_r5": "Most of the time",
+      "mossexual_r6": "All of the time",
+      "mossexual_m1": "Lack of interest in sex",
+      "mossexual_m2": "Inability to relax and enjoy sex",
+      "mossexual_m3": "Difficulty achieving or maintaining an erection",
+      "mossexual_m4": "Difficulty with ejaculation",
+      "mossexual_f1": "Lack of interest in sex",
+      "mossexual_f2": "Inability to relax and enjoy sex",
+      "mossexual_f3": "Difficulty becoming sexually aroused",
+      "mossexual_f4": "Difficulty with lubrication",
+      "mossexual_f5": "Difficulty achieving orgasm",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

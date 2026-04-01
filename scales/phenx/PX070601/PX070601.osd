@@ -1,0 +1,4166 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Cancer: Personal and Family History",
+      "code": "PX070601",
+      "abbreviation": "PX070601",
+      "description": "This protocol is used to assess if the respondent and his or her biological parents, siblings, and children have had cancer. This protocol also obtains information about vital status, age, type of cancer, age at first diagnosis, and any additional cancer diagnoses.",
+      "domain": "Physical Activity & Exposures",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/70601]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/70601"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "instructions_070601",
+        "text_key": "instructions_070601",
+        "type": "inst"
+      },
+      {
+        "id": "sec_yourself",
+        "type": "section",
+        "text_key": "sec_yourself_title"
+      },
+      {
+        "id": "self_gender",
+        "text_key": "self_gender",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "self_gender_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "self_gender_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "self_alive",
+        "text_key": "self_alive",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "self_alive_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "self_alive_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "self_age",
+        "text_key": "self_age",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "self_age_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "self_age_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "self_age_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "self_ever_cancer_diagnosis",
+        "text_key": "self_ever_cancer_diagnosis",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "self_ever_cancer_diagnosis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "self_ever_cancer_diagnosis_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "self_first_cancer_diagnosis",
+        "text_key": "self_first_cancer_diagnosis",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "self_ever_cancer_diagnosis",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "self_first_cancer_diagnosis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "self_first_cancer_diagnosis_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "self_first_cancer_diagnosis_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "self_first_cancer_diagnosis_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "self_first_cancer_diagnosis_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "self_first_cancer_diagnosis_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "self_first_cancer_diagnosis_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "self_first_cancer_diagnosis_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "self_first_cancer_diagnosis_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "self_first_cancer_diagnosis_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "self_first_cancer_diagnosis_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "self_first_cancer_diagnosis_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "self_first_cancer_diagnosis_age",
+        "text_key": "self_first_cancer_diagnosis_age",
+        "type": "multi",
+        "visible_when": {
+          "item": "self_ever_cancer_diagnosis",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "self_first_cancer_diagnosis_age_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "self_first_cancer_diagnosis_age_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "self_first_cancer_diagnosis_age_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "self_second_cancer_diagnosis",
+        "text_key": "self_second_cancer_diagnosis",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "self_ever_cancer_diagnosis",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "self_second_cancer_diagnosis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "self_second_cancer_diagnosis_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "self_second_cancer_diagnosis_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "self_second_cancer_diagnosis_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "self_second_cancer_diagnosis_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "self_second_cancer_diagnosis_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "self_second_cancer_diagnosis_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_mother",
+        "type": "section",
+        "text_key": "sec_mother_title"
+      },
+      {
+        "id": "mother_gender",
+        "text_key": "mother_gender",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "mother_gender_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "mother_alive",
+        "text_key": "mother_alive",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "mother_alive_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "mother_alive_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "mother_age",
+        "text_key": "mother_age",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "mother_age_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "mother_age_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "mother_age_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "mother_ever_cancer_diagnosis",
+        "text_key": "mother_ever_cancer_diagnosis",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "mother_ever_cancer_diagnosis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "mother_ever_cancer_diagnosis_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "mother_first_cancer_diagnosis",
+        "text_key": "mother_first_cancer_diagnosis",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "mother_ever_cancer_diagnosis",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "mother_first_cancer_diagnosis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "mother_first_cancer_diagnosis_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "mother_first_cancer_diagnosis_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "mother_first_cancer_diagnosis_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "mother_first_cancer_diagnosis_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "mother_first_cancer_diagnosis_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "mother_first_cancer_diagnosis_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "mother_first_cancer_diagnosis_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "mother_first_cancer_diagnosis_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "mother_first_cancer_diagnosis_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "mother_first_cancer_diagnosis_opt_11",
+            "value": 11
+          }
+        ]
+      },
+      {
+        "id": "mother_first_cancer_diagnosis_age",
+        "text_key": "mother_first_cancer_diagnosis_age",
+        "type": "multi",
+        "visible_when": {
+          "item": "mother_ever_cancer_diagnosis",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "mother_first_cancer_diagnosis_age_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "mother_first_cancer_diagnosis_age_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "mother_first_cancer_diagnosis_age_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "mother_second_cancer_diagnosis",
+        "text_key": "mother_second_cancer_diagnosis",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "mother_ever_cancer_diagnosis",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "mother_second_cancer_diagnosis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "mother_second_cancer_diagnosis_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "mother_second_cancer_diagnosis_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "mother_second_cancer_diagnosis_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "mother_second_cancer_diagnosis_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "mother_second_cancer_diagnosis_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "sec_father",
+        "type": "section",
+        "text_key": "sec_father_title"
+      },
+      {
+        "id": "father_gender",
+        "text_key": "father_gender",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "father_gender_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "father_alive",
+        "text_key": "father_alive",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "father_alive_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "father_alive_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "father_age",
+        "text_key": "father_age",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "father_age_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "father_age_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "father_age_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "father_ever_cancer_diagnosis",
+        "text_key": "father_ever_cancer_diagnosis",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "father_ever_cancer_diagnosis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "father_ever_cancer_diagnosis_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "father_first_cancer_diagnosis",
+        "text_key": "father_first_cancer_diagnosis",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "father_ever_cancer_diagnosis",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "father_first_cancer_diagnosis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "father_first_cancer_diagnosis_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "father_first_cancer_diagnosis_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "father_first_cancer_diagnosis_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "father_first_cancer_diagnosis_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "father_first_cancer_diagnosis_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "father_first_cancer_diagnosis_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "father_first_cancer_diagnosis_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "father_first_cancer_diagnosis_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "father_first_cancer_diagnosis_age",
+        "text_key": "father_first_cancer_diagnosis_age",
+        "type": "multi",
+        "visible_when": {
+          "item": "father_ever_cancer_diagnosis",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "father_first_cancer_diagnosis_age_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "father_first_cancer_diagnosis_age_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "father_first_cancer_diagnosis_age_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "father_second_cancer_diagnosis",
+        "text_key": "father_second_cancer_diagnosis",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "father_ever_cancer_diagnosis",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "father_second_cancer_diagnosis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "father_second_cancer_diagnosis_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "father_second_cancer_diagnosis_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "father_second_cancer_diagnosis_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "father_second_cancer_diagnosis_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sec_sibling_1",
+        "type": "section",
+        "text_key": "sec_sibling_1_title"
+      },
+      {
+        "id": "sibling_gender_01",
+        "text_key": "sibling_gender_01",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_gender_01_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_gender_01_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_alive_01",
+        "text_key": "sibling_alive_01",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_alive_01_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_alive_01_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_age_01",
+        "text_key": "sibling_age_01",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_age_01_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_age_01_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_age_01_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_ever_cancer_diagnosis_1",
+        "text_key": "sibling_ever_cancer_diagnosis_1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_1_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_1",
+        "text_key": "sibling_first_cancer_diagnosis_1",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_1",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_1_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_1_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_1_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_1_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_1_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_1_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_1_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_1_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_1_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_1_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_1_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_age_1",
+        "text_key": "sibling_first_cancer_diagnosis_age_1",
+        "type": "multi",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_1",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_1_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_1_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_second_cancer_diagnosis_1",
+        "text_key": "sibling_second_cancer_diagnosis_1",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_1",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_second_cancer_diagnosis_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_1_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_1_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_1_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_1_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_1_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_1_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_sibling_2",
+        "type": "section",
+        "text_key": "sec_sibling_2_title"
+      },
+      {
+        "id": "sibling_gender_02",
+        "text_key": "sibling_gender_02",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_gender_02_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_gender_02_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_alive_02",
+        "text_key": "sibling_alive_02",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_alive_02_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_alive_02_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_age_02",
+        "text_key": "sibling_age_02",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_age_02_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_age_02_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_age_02_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_ever_cancer_diagnosis_2",
+        "text_key": "sibling_ever_cancer_diagnosis_2",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_2_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_2",
+        "text_key": "sibling_first_cancer_diagnosis_2",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_2",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_2_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_2_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_2_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_2_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_2_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_2_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_2_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_2_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_2_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_2_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_age_2",
+        "text_key": "sibling_first_cancer_diagnosis_age_2",
+        "type": "multi",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_2",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_2_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_second_cancer_diagnosis_2",
+        "text_key": "sibling_second_cancer_diagnosis_2",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_2",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_second_cancer_diagnosis_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_2_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_2_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_2_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_2_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_2_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_sibling_3",
+        "type": "section",
+        "text_key": "sec_sibling_3_title"
+      },
+      {
+        "id": "sibling_gender_03",
+        "text_key": "sibling_gender_03",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_gender_03_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_gender_03_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_alive_03",
+        "text_key": "sibling_alive_03",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_alive_03_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_alive_03_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_age_03",
+        "text_key": "sibling_age_03",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_age_03_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_age_03_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_age_03_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_ever_cancer_diagnosis_3",
+        "text_key": "sibling_ever_cancer_diagnosis_3",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_3_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_3",
+        "text_key": "sibling_first_cancer_diagnosis_3",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_3",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_3_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_3_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_3_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_3_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_3_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_3_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_3_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_3_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_3_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_3_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_3_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_age_3",
+        "text_key": "sibling_first_cancer_diagnosis_age_3",
+        "type": "multi",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_3",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_3_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_3_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_second_cancer_diagnosis_3",
+        "text_key": "sibling_second_cancer_diagnosis_3",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_3",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_second_cancer_diagnosis_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_3_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_3_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_3_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_3_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_3_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_3_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_sibling_4",
+        "type": "section",
+        "text_key": "sec_sibling_4_title"
+      },
+      {
+        "id": "sibling_gender_04",
+        "text_key": "sibling_gender_04",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_gender_04_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_gender_04_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_alive_04",
+        "text_key": "sibling_alive_04",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_alive_04_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_alive_04_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_age_04",
+        "text_key": "sibling_age_04",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_age_04_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_age_04_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_age_04_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_ever_cancer_diagnosis_4",
+        "text_key": "sibling_ever_cancer_diagnosis_4",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_4_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_4",
+        "text_key": "sibling_first_cancer_diagnosis_4",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_4",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_4_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_4_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_4_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_4_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_4_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_4_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_4_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_4_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_4_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_4_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_4_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_age_4",
+        "text_key": "sibling_first_cancer_diagnosis_age_4",
+        "type": "multi",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_4",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_4_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_4_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_second_cancer_diagnosis_4",
+        "text_key": "sibling_second_cancer_diagnosis_4",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_4",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_second_cancer_diagnosis_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_4_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_4_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_4_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_4_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_4_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_4_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_sibling_5",
+        "type": "section",
+        "text_key": "sec_sibling_5_title"
+      },
+      {
+        "id": "sibling_gender_05",
+        "text_key": "sibling_gender_05",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_gender_05_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_gender_05_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_alive_05",
+        "text_key": "sibling_alive_05",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_alive_05_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_alive_05_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_age_05",
+        "text_key": "sibling_age_05",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_age_05_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_age_05_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_age_05_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_ever_cancer_diagnosis_5",
+        "text_key": "sibling_ever_cancer_diagnosis_5",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_5_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_5",
+        "text_key": "sibling_first_cancer_diagnosis_5",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_5",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_5_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_5_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_5_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_5_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_5_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_5_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_5_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_5_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_5_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_5_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_5_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_age_5",
+        "text_key": "sibling_first_cancer_diagnosis_age_5",
+        "type": "multi",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_5",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_5_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_5_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_second_cancer_diagnosis_5",
+        "text_key": "sibling_second_cancer_diagnosis_5",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_5",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_second_cancer_diagnosis_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_5_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_5_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_5_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_5_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_5_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_5_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_sibling_6",
+        "type": "section",
+        "text_key": "sec_sibling_6_title"
+      },
+      {
+        "id": "sibling_gender_06",
+        "text_key": "sibling_gender_06",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_gender_06_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_gender_06_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_alive_06",
+        "text_key": "sibling_alive_06",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_alive_06_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_alive_06_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_age_06",
+        "text_key": "sibling_age_06",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_age_06_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_age_06_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_age_06_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_ever_cancer_diagnosis_6",
+        "text_key": "sibling_ever_cancer_diagnosis_6",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_6_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_6",
+        "text_key": "sibling_first_cancer_diagnosis_6",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_6",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_6_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_6_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_6_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_6_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_6_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_6_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_6_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_6_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_6_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_6_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_6_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_age_6",
+        "text_key": "sibling_first_cancer_diagnosis_age_6",
+        "type": "multi",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_6",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_6_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_6_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_second_cancer_diagnosis_6",
+        "text_key": "sibling_second_cancer_diagnosis_6",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_6",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_second_cancer_diagnosis_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_6_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_6_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_6_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_6_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_6_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_6_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_sibling_7",
+        "type": "section",
+        "text_key": "sec_sibling_7_title"
+      },
+      {
+        "id": "sibling_gender_07",
+        "text_key": "sibling_gender_07",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_gender_07_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_gender_07_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_alive_07",
+        "text_key": "sibling_alive_07",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_alive_07_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_alive_07_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_age_07",
+        "text_key": "sibling_age_07",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_age_07_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_age_07_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_age_07_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_ever_cancer_diagnosis_7",
+        "text_key": "sibling_ever_cancer_diagnosis_7",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_7_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_7_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_7",
+        "text_key": "sibling_first_cancer_diagnosis_7",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_7",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_7_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_7_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_7_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_7_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_7_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_7_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_7_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_7_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_7_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_7_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_7_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_7_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_age_7",
+        "text_key": "sibling_first_cancer_diagnosis_age_7",
+        "type": "multi",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_7",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_7_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_7_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_7_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_second_cancer_diagnosis_7",
+        "text_key": "sibling_second_cancer_diagnosis_7",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_7",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_second_cancer_diagnosis_7_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_7_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_7_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_7_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_7_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_7_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_7_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_sibling_8",
+        "type": "section",
+        "text_key": "sec_sibling_8_title"
+      },
+      {
+        "id": "sibling_gender_08",
+        "text_key": "sibling_gender_08",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_gender_08_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_gender_08_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_alive_08",
+        "text_key": "sibling_alive_08",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_alive_08_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_alive_08_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_age_08",
+        "text_key": "sibling_age_08",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_age_08_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_age_08_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_age_08_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_ever_cancer_diagnosis_8",
+        "text_key": "sibling_ever_cancer_diagnosis_8",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_8_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_ever_cancer_diagnosis_8_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_8",
+        "text_key": "sibling_first_cancer_diagnosis_8",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_8",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_8_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_8_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_8_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_8_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_8_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_8_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_8_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_8_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_8_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_8_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_8_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_8_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "sibling_first_cancer_diagnosis_age_8",
+        "text_key": "sibling_first_cancer_diagnosis_age_8",
+        "type": "multi",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_8",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_8_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_8_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_first_cancer_diagnosis_age_8_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sibling_second_cancer_diagnosis_8",
+        "text_key": "sibling_second_cancer_diagnosis_8",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sibling_ever_cancer_diagnosis_8",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "sibling_second_cancer_diagnosis_8_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_8_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_8_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_8_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_8_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_8_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sibling_second_cancer_diagnosis_8_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_child_1",
+        "type": "section",
+        "text_key": "sec_child_1_title"
+      },
+      {
+        "id": "child_gender_1",
+        "text_key": "child_gender_1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_gender_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_gender_1_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_alive_1",
+        "text_key": "child_alive_1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_alive_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_alive_1_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_age_1",
+        "text_key": "child_age_1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_age_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_age_1_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_age_1_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_ever_cancer_diagnosis_1",
+        "text_key": "child_ever_cancer_diagnosis_1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_ever_cancer_diagnosis_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_ever_cancer_diagnosis_1_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_1",
+        "text_key": "child_first_cancer_diagnosis_1",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_1",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_1_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_1_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_1_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_1_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_1_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_1_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_1_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_1_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_1_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_1_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_1_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_age_1",
+        "text_key": "child_first_cancer_diagnosis_age_1",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_1",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_age_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_1_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_1_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_second_cancer_diagnosis_1",
+        "text_key": "child_second_cancer_diagnosis_1",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_1",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_second_cancer_diagnosis_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_1_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_1_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_1_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_1_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_1_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_1_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_child_2",
+        "type": "section",
+        "text_key": "sec_child_2_title"
+      },
+      {
+        "id": "child_gender_2",
+        "text_key": "child_gender_2",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_gender_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_gender_2_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_alive_2",
+        "text_key": "child_alive_2",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_alive_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_alive_2_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_age_2",
+        "text_key": "child_age_2",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_age_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_age_2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_age_2_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_ever_cancer_diagnosis_2",
+        "text_key": "child_ever_cancer_diagnosis_2",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_ever_cancer_diagnosis_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_ever_cancer_diagnosis_2_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_2",
+        "text_key": "child_first_cancer_diagnosis_2",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_2",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_2_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_2_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_2_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_2_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_2_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_2_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_2_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_2_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_2_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_2_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_age_2",
+        "text_key": "child_first_cancer_diagnosis_age_2",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_2",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_age_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_2_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_second_cancer_diagnosis_2",
+        "text_key": "child_second_cancer_diagnosis_2",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_2",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_second_cancer_diagnosis_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_2_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_2_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_2_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_2_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_2_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_child_3",
+        "type": "section",
+        "text_key": "sec_child_3_title"
+      },
+      {
+        "id": "child_gender_3",
+        "text_key": "child_gender_3",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_gender_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_gender_3_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_alive_3",
+        "text_key": "child_alive_3",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_alive_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_alive_3_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_age_3",
+        "text_key": "child_age_3",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_age_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_age_3_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_age_3_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_ever_cancer_diagnosis_3",
+        "text_key": "child_ever_cancer_diagnosis_3",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_ever_cancer_diagnosis_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_ever_cancer_diagnosis_3_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_3",
+        "text_key": "child_first_cancer_diagnosis_3",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_3",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_3_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_3_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_3_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_3_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_3_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_3_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_3_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_3_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_3_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_3_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_3_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_age_3",
+        "text_key": "child_first_cancer_diagnosis_age_3",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_3",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_age_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_3_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_3_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_second_cancer_diagnosis_3",
+        "text_key": "child_second_cancer_diagnosis_3",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_3",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_second_cancer_diagnosis_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_3_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_3_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_3_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_3_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_3_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_3_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_child_4",
+        "type": "section",
+        "text_key": "sec_child_4_title"
+      },
+      {
+        "id": "child_gender_4",
+        "text_key": "child_gender_4",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_gender_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_gender_4_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_alive_4",
+        "text_key": "child_alive_4",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_alive_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_alive_4_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_age_4",
+        "text_key": "child_age_4",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_age_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_age_4_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_age_4_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_ever_cancer_diagnosis_4",
+        "text_key": "child_ever_cancer_diagnosis_4",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_ever_cancer_diagnosis_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_ever_cancer_diagnosis_4_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_4",
+        "text_key": "child_first_cancer_diagnosis_4",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_4",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_4_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_4_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_4_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_4_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_4_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_4_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_4_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_4_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_4_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_4_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_4_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_age_4",
+        "text_key": "child_first_cancer_diagnosis_age_4",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_4",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_age_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_4_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_4_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_second_cancer_diagnosis_4",
+        "text_key": "child_second_cancer_diagnosis_4",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_4",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_second_cancer_diagnosis_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_4_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_4_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_4_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_4_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_4_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_4_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_child_5",
+        "type": "section",
+        "text_key": "sec_child_5_title"
+      },
+      {
+        "id": "child_gender_5",
+        "text_key": "child_gender_5",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_gender_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_gender_5_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_alive_5",
+        "text_key": "child_alive_5",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_alive_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_alive_5_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_age_5",
+        "text_key": "child_age_5",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_age_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_age_5_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_age_5_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_ever_cancer_diagnosis_5",
+        "text_key": "child_ever_cancer_diagnosis_5",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_ever_cancer_diagnosis_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_ever_cancer_diagnosis_5_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_5",
+        "text_key": "child_first_cancer_diagnosis_5",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_5",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_5_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_5_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_5_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_5_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_5_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_5_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_5_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_5_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_5_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_5_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_5_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_age_5",
+        "text_key": "child_first_cancer_diagnosis_age_5",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_5",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_age_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_5_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_5_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_second_cancer_diagnosis_5",
+        "text_key": "child_second_cancer_diagnosis_5",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_5",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_second_cancer_diagnosis_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_5_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_5_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_5_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_5_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_5_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_5_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_child_6",
+        "type": "section",
+        "text_key": "sec_child_6_title"
+      },
+      {
+        "id": "child_gender_6",
+        "text_key": "child_gender_6",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_gender_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_gender_6_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_alive_6",
+        "text_key": "child_alive_6",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_alive_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_alive_6_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_age_6",
+        "text_key": "child_age_6",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_age_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_age_6_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_age_6_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_ever_cancer_diagnosis_6",
+        "text_key": "child_ever_cancer_diagnosis_6",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_ever_cancer_diagnosis_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_ever_cancer_diagnosis_6_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_6",
+        "text_key": "child_first_cancer_diagnosis_6",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_6",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_6_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_6_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_6_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_6_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_6_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_6_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_6_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_6_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_6_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_6_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_6_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_age_6",
+        "text_key": "child_first_cancer_diagnosis_age_6",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_6",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_age_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_6_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_6_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_second_cancer_diagnosis_6",
+        "text_key": "child_second_cancer_diagnosis_6",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_6",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_second_cancer_diagnosis_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_6_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_6_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_6_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_6_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_6_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_6_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "sec_child_7",
+        "type": "section",
+        "text_key": "sec_child_7_title"
+      },
+      {
+        "id": "child_gender_7",
+        "text_key": "child_gender_7",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_gender_7_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_gender_7_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_alive_7",
+        "text_key": "child_alive_7",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_alive_7_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_alive_7_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_age_7",
+        "text_key": "child_age_7",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_age_7_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_age_7_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_age_7_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_ever_cancer_diagnosis_7",
+        "text_key": "child_ever_cancer_diagnosis_7",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_ever_cancer_diagnosis_7_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_ever_cancer_diagnosis_7_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_7",
+        "text_key": "child_first_cancer_diagnosis_7",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_7",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_7_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_7_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_7_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_7_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_7_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_7_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_7_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_7_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_7_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_7_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_7_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_7_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "child_first_cancer_diagnosis_age_7",
+        "text_key": "child_first_cancer_diagnosis_age_7",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_7",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_first_cancer_diagnosis_age_7_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_7_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_first_cancer_diagnosis_age_7_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_second_cancer_diagnosis_7",
+        "text_key": "child_second_cancer_diagnosis_7",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "child_ever_cancer_diagnosis_7",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_second_cancer_diagnosis_7_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_7_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_7_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_7_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_7_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_7_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_second_cancer_diagnosis_7_opt_7",
+            "value": 7
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "instructions_070601": "Please answer the following questions about you and your \"blood\" relatives. Do not include adopted, half and step relatives.",
+      "sec_yourself_title": "YOURSELF",
+      "self_gender": "Gender?",
+      "self_gender_opt_1": "Male",
+      "self_gender_opt_2": "Female",
+      "self_alive": "Alive?",
+      "self_alive_opt_1": "Yes",
+      "self_alive_opt_2": "No",
+      "self_age": "Current age or age at death?",
+      "self_age_opt_1": "<50",
+      "self_age_opt_2": "50-64",
+      "self_age_opt_3": "65+",
+      "self_ever_cancer_diagnosis": "Never had cancer?",
+      "self_ever_cancer_diagnosis_opt_1": "Yes",
+      "self_ever_cancer_diagnosis_opt_2": "No",
+      "self_first_cancer_diagnosis": "First cancer diagnosis?",
+      "self_first_cancer_diagnosis_opt_1": "Breast Cancer",
+      "self_first_cancer_diagnosis_opt_2": "Ovarian Cancer",
+      "self_first_cancer_diagnosis_opt_3": "Endometrial Cancer",
+      "self_first_cancer_diagnosis_opt_4": "Cervix Cancer",
+      "self_first_cancer_diagnosis_opt_5": "Lymphoma",
+      "self_first_cancer_diagnosis_opt_6": "Melanoma",
+      "self_first_cancer_diagnosis_opt_7": "Colon/Rectal Cancer",
+      "self_first_cancer_diagnosis_opt_8": "Lung Cancer",
+      "self_first_cancer_diagnosis_opt_9": "Prostate Cancer",
+      "self_first_cancer_diagnosis_opt_10": "Pancreas Cancer",
+      "self_first_cancer_diagnosis_opt_11": "Thyroid Cancer",
+      "self_first_cancer_diagnosis_opt_12": "Other Cancer",
+      "self_first_cancer_diagnosis_age": "Current age or age at death?",
+      "self_first_cancer_diagnosis_age_opt_1": "<50",
+      "self_first_cancer_diagnosis_age_opt_2": "50-64",
+      "self_first_cancer_diagnosis_age_opt_3": "65+",
+      "self_second_cancer_diagnosis": "Second or other cancer diagnoses?",
+      "self_second_cancer_diagnosis_opt_1": "Breast Cancer",
+      "self_second_cancer_diagnosis_opt_2": "Ovarian Cancer",
+      "self_second_cancer_diagnosis_opt_3": "Endometrial Cancer",
+      "self_second_cancer_diagnosis_opt_4": "Colon/Rectal Cancer",
+      "self_second_cancer_diagnosis_opt_5": "Melanoma",
+      "self_second_cancer_diagnosis_opt_6": "Prostate Cancer",
+      "self_second_cancer_diagnosis_opt_7": "Other Cancer",
+      "sec_mother_title": "MOTHER",
+      "mother_gender": "Gender?",
+      "mother_gender_opt_1": "Female",
+      "mother_alive": "Alive?",
+      "mother_alive_opt_1": "Yes",
+      "mother_alive_opt_2": "No",
+      "mother_age": "Current age or age at death?",
+      "mother_age_opt_1": "<50",
+      "mother_age_opt_2": "50-64",
+      "mother_age_opt_3": "65+",
+      "mother_ever_cancer_diagnosis": "Never had cancer?",
+      "mother_ever_cancer_diagnosis_opt_1": "Yes",
+      "mother_ever_cancer_diagnosis_opt_2": "No",
+      "mother_first_cancer_diagnosis": "First cancer diagnosis?",
+      "mother_first_cancer_diagnosis_opt_1": "Breast Cancer",
+      "mother_first_cancer_diagnosis_opt_2": "Ovarian Cancer",
+      "mother_first_cancer_diagnosis_opt_3": "Endometrial Cancer",
+      "mother_first_cancer_diagnosis_opt_4": "Cervix Cancer",
+      "mother_first_cancer_diagnosis_opt_5": "Lymphoma",
+      "mother_first_cancer_diagnosis_opt_6": "Melanoma",
+      "mother_first_cancer_diagnosis_opt_7": "Colon/Rectal Cancer",
+      "mother_first_cancer_diagnosis_opt_8": "Lung Cancer",
+      "mother_first_cancer_diagnosis_opt_9": "Pancreas Cancer",
+      "mother_first_cancer_diagnosis_opt_10": "Thyroid Cancer",
+      "mother_first_cancer_diagnosis_opt_11": "Other Cancer",
+      "mother_first_cancer_diagnosis_age": "Current age or age at death?",
+      "mother_first_cancer_diagnosis_age_opt_1": "<50",
+      "mother_first_cancer_diagnosis_age_opt_2": "50-64",
+      "mother_first_cancer_diagnosis_age_opt_3": "65+",
+      "mother_second_cancer_diagnosis": "Second or other cancer diagnoses?",
+      "mother_second_cancer_diagnosis_opt_1": "Breast Cancer",
+      "mother_second_cancer_diagnosis_opt_2": "Ovarian Cancer",
+      "mother_second_cancer_diagnosis_opt_3": "Endometrial Cancer",
+      "mother_second_cancer_diagnosis_opt_4": "Colon/Rectal Cancer",
+      "mother_second_cancer_diagnosis_opt_5": "Melanoma",
+      "mother_second_cancer_diagnosis_opt_6": "Other Cancer",
+      "sec_father_title": "FATHER",
+      "father_gender": "Gender?",
+      "father_gender_opt_1": "Male",
+      "father_alive": "Alive?",
+      "father_alive_opt_1": "Yes",
+      "father_alive_opt_2": "No",
+      "father_age": "Current age or age at death?",
+      "father_age_opt_1": "<50",
+      "father_age_opt_2": "50-64",
+      "father_age_opt_3": "65+",
+      "father_ever_cancer_diagnosis": "Never had cancer?",
+      "father_ever_cancer_diagnosis_opt_1": "Yes",
+      "father_ever_cancer_diagnosis_opt_2": "No",
+      "father_first_cancer_diagnosis": "First cancer diagnosis?",
+      "father_first_cancer_diagnosis_opt_1": "Breast Cancer",
+      "father_first_cancer_diagnosis_opt_2": "Lymphoma",
+      "father_first_cancer_diagnosis_opt_3": "Melanoma",
+      "father_first_cancer_diagnosis_opt_4": "Colon/Rectal Cancer",
+      "father_first_cancer_diagnosis_opt_5": "Lung Cancer",
+      "father_first_cancer_diagnosis_opt_6": "Prostate Cancer",
+      "father_first_cancer_diagnosis_opt_7": "Pancreas Cancer",
+      "father_first_cancer_diagnosis_opt_8": "Thyroid Cancer",
+      "father_first_cancer_diagnosis_opt_9": "Other Cancer",
+      "father_first_cancer_diagnosis_age": "Current age or age at death?",
+      "father_first_cancer_diagnosis_age_opt_1": "<50",
+      "father_first_cancer_diagnosis_age_opt_2": "50-64",
+      "father_first_cancer_diagnosis_age_opt_3": "65+",
+      "father_second_cancer_diagnosis": "Second or other cancer diagnoses?",
+      "father_second_cancer_diagnosis_opt_1": "Breast Cancer",
+      "father_second_cancer_diagnosis_opt_2": "Colon/Rectal Cancer",
+      "father_second_cancer_diagnosis_opt_3": "Melanoma",
+      "father_second_cancer_diagnosis_opt_4": "Prostate Cancer",
+      "father_second_cancer_diagnosis_opt_5": "Other Cancer",
+      "sec_sibling_1_title": "SIBLING 1",
+      "sibling_gender_01": "Gender?",
+      "sibling_gender_01_opt_1": "Male",
+      "sibling_gender_01_opt_2": "Female",
+      "sibling_alive_01": "Alive?",
+      "sibling_alive_01_opt_1": "Yes",
+      "sibling_alive_01_opt_2": "No",
+      "sibling_age_01": "Current age or age at death?",
+      "sibling_age_01_opt_1": "<50",
+      "sibling_age_01_opt_2": "50-64",
+      "sibling_age_01_opt_3": "65+",
+      "sibling_ever_cancer_diagnosis_1": "Never had cancer?",
+      "sibling_ever_cancer_diagnosis_1_opt_1": "Yes",
+      "sibling_ever_cancer_diagnosis_1_opt_2": "No",
+      "sibling_first_cancer_diagnosis_1": "First cancer diagnosis?",
+      "sibling_first_cancer_diagnosis_1_opt_1": "Breast Cancer",
+      "sibling_first_cancer_diagnosis_1_opt_2": "Ovarian Cancer",
+      "sibling_first_cancer_diagnosis_1_opt_3": "Endometrial Cancer",
+      "sibling_first_cancer_diagnosis_1_opt_4": "Cervix Cancer",
+      "sibling_first_cancer_diagnosis_1_opt_5": "Lymphoma",
+      "sibling_first_cancer_diagnosis_1_opt_6": "Melanoma",
+      "sibling_first_cancer_diagnosis_1_opt_7": "Colon/Rectal Cancer",
+      "sibling_first_cancer_diagnosis_1_opt_8": "Lung Cancer",
+      "sibling_first_cancer_diagnosis_1_opt_9": "Prostate Cancer",
+      "sibling_first_cancer_diagnosis_1_opt_10": "Pancreas Cancer",
+      "sibling_first_cancer_diagnosis_1_opt_11": "Thyroid Cancer",
+      "sibling_first_cancer_diagnosis_1_opt_12": "Other Cancer",
+      "sibling_first_cancer_diagnosis_age_1": "Current age or age at death?",
+      "sibling_first_cancer_diagnosis_age_1_opt_1": "<50",
+      "sibling_first_cancer_diagnosis_age_1_opt_2": "50-64",
+      "sibling_first_cancer_diagnosis_age_1_opt_3": "65+",
+      "sibling_second_cancer_diagnosis_1": "Second or other cancer diagnoses?",
+      "sibling_second_cancer_diagnosis_1_opt_1": "Breast Cancer",
+      "sibling_second_cancer_diagnosis_1_opt_2": "Ovarian Cancer",
+      "sibling_second_cancer_diagnosis_1_opt_3": "Endometrial Cancer",
+      "sibling_second_cancer_diagnosis_1_opt_4": "Colon/Rectal Cancer",
+      "sibling_second_cancer_diagnosis_1_opt_5": "Melanoma",
+      "sibling_second_cancer_diagnosis_1_opt_6": "Prostate Cancer",
+      "sibling_second_cancer_diagnosis_1_opt_7": "Other Cancer",
+      "sec_sibling_2_title": "SIBLING 2",
+      "sibling_gender_02": "Gender?",
+      "sibling_gender_02_opt_1": "Male",
+      "sibling_gender_02_opt_2": "Female",
+      "sibling_alive_02": "Alive?",
+      "sibling_alive_02_opt_1": "Yes",
+      "sibling_alive_02_opt_2": "No",
+      "sibling_age_02": "Current age or age at death?",
+      "sibling_age_02_opt_1": "<50",
+      "sibling_age_02_opt_2": "50-64",
+      "sibling_age_02_opt_3": "65+",
+      "sibling_ever_cancer_diagnosis_2": "Never had cancer?",
+      "sibling_ever_cancer_diagnosis_2_opt_1": "Yes",
+      "sibling_ever_cancer_diagnosis_2_opt_2": "No",
+      "sibling_first_cancer_diagnosis_2": "First cancer diagnosis?",
+      "sibling_first_cancer_diagnosis_2_opt_1": "Breast Cancer",
+      "sibling_first_cancer_diagnosis_2_opt_2": "Ovarian Cancer",
+      "sibling_first_cancer_diagnosis_2_opt_3": "Endometrial Cancer",
+      "sibling_first_cancer_diagnosis_2_opt_4": "Cervix Cancer",
+      "sibling_first_cancer_diagnosis_2_opt_5": "Lymphoma",
+      "sibling_first_cancer_diagnosis_2_opt_6": "Melanoma",
+      "sibling_first_cancer_diagnosis_2_opt_7": "Colon/Rectal Cancer",
+      "sibling_first_cancer_diagnosis_2_opt_8": "Lung Cancer",
+      "sibling_first_cancer_diagnosis_2_opt_9": "Prostate Cancer",
+      "sibling_first_cancer_diagnosis_2_opt_10": "Pancreas Cancer",
+      "sibling_first_cancer_diagnosis_2_opt_11": "Thyroid Cancer",
+      "sibling_first_cancer_diagnosis_2_opt_12": "Other Cancer",
+      "sibling_first_cancer_diagnosis_age_2": "Current age or age at death?",
+      "sibling_first_cancer_diagnosis_age_2_opt_1": "<50",
+      "sibling_first_cancer_diagnosis_age_2_opt_2": "50-64",
+      "sibling_first_cancer_diagnosis_age_2_opt_3": "65+",
+      "sibling_second_cancer_diagnosis_2": "Second or other cancer diagnoses?",
+      "sibling_second_cancer_diagnosis_2_opt_1": "Breast Cancer",
+      "sibling_second_cancer_diagnosis_2_opt_2": "Ovarian Cancer",
+      "sibling_second_cancer_diagnosis_2_opt_3": "Endometrial Cancer",
+      "sibling_second_cancer_diagnosis_2_opt_4": "Colon/Rectal Cancer",
+      "sibling_second_cancer_diagnosis_2_opt_5": "Melanoma",
+      "sibling_second_cancer_diagnosis_2_opt_6": "Prostate Cancer",
+      "sibling_second_cancer_diagnosis_2_opt_7": "Other Cancer",
+      "sec_sibling_3_title": "SIBLING 3",
+      "sibling_gender_03": "Gender?",
+      "sibling_gender_03_opt_1": "Male",
+      "sibling_gender_03_opt_2": "Female",
+      "sibling_alive_03": "Alive?",
+      "sibling_alive_03_opt_1": "Yes",
+      "sibling_alive_03_opt_2": "No",
+      "sibling_age_03": "Current age or age at death?",
+      "sibling_age_03_opt_1": "<50",
+      "sibling_age_03_opt_2": "50-64",
+      "sibling_age_03_opt_3": "65+",
+      "sibling_ever_cancer_diagnosis_3": "Never had cancer?",
+      "sibling_ever_cancer_diagnosis_3_opt_1": "Yes",
+      "sibling_ever_cancer_diagnosis_3_opt_2": "No",
+      "sibling_first_cancer_diagnosis_3": "First cancer diagnosis?",
+      "sibling_first_cancer_diagnosis_3_opt_1": "Breast Cancer",
+      "sibling_first_cancer_diagnosis_3_opt_2": "Ovarian Cancer",
+      "sibling_first_cancer_diagnosis_3_opt_3": "Endometrial Cancer",
+      "sibling_first_cancer_diagnosis_3_opt_4": "Cervix Cancer",
+      "sibling_first_cancer_diagnosis_3_opt_5": "Lymphoma",
+      "sibling_first_cancer_diagnosis_3_opt_6": "Melanoma",
+      "sibling_first_cancer_diagnosis_3_opt_7": "Colon/Rectal Cancer",
+      "sibling_first_cancer_diagnosis_3_opt_8": "Lung Cancer",
+      "sibling_first_cancer_diagnosis_3_opt_9": "Prostate Cancer",
+      "sibling_first_cancer_diagnosis_3_opt_10": "Pancreas Cancer",
+      "sibling_first_cancer_diagnosis_3_opt_11": "Thyroid Cancer",
+      "sibling_first_cancer_diagnosis_3_opt_12": "Other Cancer",
+      "sibling_first_cancer_diagnosis_age_3": "Current age or age at death?",
+      "sibling_first_cancer_diagnosis_age_3_opt_1": "<50",
+      "sibling_first_cancer_diagnosis_age_3_opt_2": "50-64",
+      "sibling_first_cancer_diagnosis_age_3_opt_3": "65+",
+      "sibling_second_cancer_diagnosis_3": "Second or other cancer diagnoses?",
+      "sibling_second_cancer_diagnosis_3_opt_1": "Breast Cancer",
+      "sibling_second_cancer_diagnosis_3_opt_2": "Ovarian Cancer",
+      "sibling_second_cancer_diagnosis_3_opt_3": "Endometrial Cancer",
+      "sibling_second_cancer_diagnosis_3_opt_4": "Colon/Rectal Cancer",
+      "sibling_second_cancer_diagnosis_3_opt_5": "Melanoma",
+      "sibling_second_cancer_diagnosis_3_opt_6": "Prostate Cancer",
+      "sibling_second_cancer_diagnosis_3_opt_7": "Other Cancer",
+      "sec_sibling_4_title": "SIBLING 4",
+      "sibling_gender_04": "Gender?",
+      "sibling_gender_04_opt_1": "Male",
+      "sibling_gender_04_opt_2": "Female",
+      "sibling_alive_04": "Alive?",
+      "sibling_alive_04_opt_1": "Yes",
+      "sibling_alive_04_opt_2": "No",
+      "sibling_age_04": "Current age or age at death?",
+      "sibling_age_04_opt_1": "<50",
+      "sibling_age_04_opt_2": "50-64",
+      "sibling_age_04_opt_3": "65+",
+      "sibling_ever_cancer_diagnosis_4": "Never had cancer?",
+      "sibling_ever_cancer_diagnosis_4_opt_1": "Yes",
+      "sibling_ever_cancer_diagnosis_4_opt_2": "No",
+      "sibling_first_cancer_diagnosis_4": "First cancer diagnosis?",
+      "sibling_first_cancer_diagnosis_4_opt_1": "Breast Cancer",
+      "sibling_first_cancer_diagnosis_4_opt_2": "Ovarian Cancer",
+      "sibling_first_cancer_diagnosis_4_opt_3": "Endometrial Cancer",
+      "sibling_first_cancer_diagnosis_4_opt_4": "Cervix Cancer",
+      "sibling_first_cancer_diagnosis_4_opt_5": "Lymphoma",
+      "sibling_first_cancer_diagnosis_4_opt_6": "Melanoma",
+      "sibling_first_cancer_diagnosis_4_opt_7": "Colon/Rectal Cancer",
+      "sibling_first_cancer_diagnosis_4_opt_8": "Lung Cancer",
+      "sibling_first_cancer_diagnosis_4_opt_9": "Prostate Cancer",
+      "sibling_first_cancer_diagnosis_4_opt_10": "Pancreas Cancer",
+      "sibling_first_cancer_diagnosis_4_opt_11": "Thyroid Cancer",
+      "sibling_first_cancer_diagnosis_4_opt_12": "Other Cancer",
+      "sibling_first_cancer_diagnosis_age_4": "Current age or age at death?",
+      "sibling_first_cancer_diagnosis_age_4_opt_1": "<50",
+      "sibling_first_cancer_diagnosis_age_4_opt_2": "50-64",
+      "sibling_first_cancer_diagnosis_age_4_opt_3": "65+",
+      "sibling_second_cancer_diagnosis_4": "Second or other cancer diagnoses?",
+      "sibling_second_cancer_diagnosis_4_opt_1": "Breast Cancer",
+      "sibling_second_cancer_diagnosis_4_opt_2": "Ovarian Cancer",
+      "sibling_second_cancer_diagnosis_4_opt_3": "Endometrial Cancer",
+      "sibling_second_cancer_diagnosis_4_opt_4": "Colon/Rectal Cancer",
+      "sibling_second_cancer_diagnosis_4_opt_5": "Melanoma",
+      "sibling_second_cancer_diagnosis_4_opt_6": "Prostate Cancer",
+      "sibling_second_cancer_diagnosis_4_opt_7": "Other Cancer",
+      "sec_sibling_5_title": "SIBLING 5",
+      "sibling_gender_05": "Gender?",
+      "sibling_gender_05_opt_1": "Male",
+      "sibling_gender_05_opt_2": "Female",
+      "sibling_alive_05": "Alive?",
+      "sibling_alive_05_opt_1": "Yes",
+      "sibling_alive_05_opt_2": "No",
+      "sibling_age_05": "Current age or age at death?",
+      "sibling_age_05_opt_1": "<50",
+      "sibling_age_05_opt_2": "50-64",
+      "sibling_age_05_opt_3": "65+",
+      "sibling_ever_cancer_diagnosis_5": "Never had cancer?",
+      "sibling_ever_cancer_diagnosis_5_opt_1": "Yes",
+      "sibling_ever_cancer_diagnosis_5_opt_2": "No",
+      "sibling_first_cancer_diagnosis_5": "First cancer diagnosis?",
+      "sibling_first_cancer_diagnosis_5_opt_1": "Breast Cancer",
+      "sibling_first_cancer_diagnosis_5_opt_2": "Ovarian Cancer",
+      "sibling_first_cancer_diagnosis_5_opt_3": "Endometrial Cancer",
+      "sibling_first_cancer_diagnosis_5_opt_4": "Cervix Cancer",
+      "sibling_first_cancer_diagnosis_5_opt_5": "Lymphoma",
+      "sibling_first_cancer_diagnosis_5_opt_6": "Melanoma",
+      "sibling_first_cancer_diagnosis_5_opt_7": "Colon/Rectal Cancer",
+      "sibling_first_cancer_diagnosis_5_opt_8": "Lung Cancer",
+      "sibling_first_cancer_diagnosis_5_opt_9": "Prostate Cancer",
+      "sibling_first_cancer_diagnosis_5_opt_10": "Pancreas Cancer",
+      "sibling_first_cancer_diagnosis_5_opt_11": "Thyroid Cancer",
+      "sibling_first_cancer_diagnosis_5_opt_12": "Other Cancer",
+      "sibling_first_cancer_diagnosis_age_5": "Current age or age at death?",
+      "sibling_first_cancer_diagnosis_age_5_opt_1": "<50",
+      "sibling_first_cancer_diagnosis_age_5_opt_2": "50-64",
+      "sibling_first_cancer_diagnosis_age_5_opt_3": "65+",
+      "sibling_second_cancer_diagnosis_5": "Second or other cancer diagnoses?",
+      "sibling_second_cancer_diagnosis_5_opt_1": "Breast Cancer",
+      "sibling_second_cancer_diagnosis_5_opt_2": "Ovarian Cancer",
+      "sibling_second_cancer_diagnosis_5_opt_3": "Endometrial Cancer",
+      "sibling_second_cancer_diagnosis_5_opt_4": "Colon/Rectal Cancer",
+      "sibling_second_cancer_diagnosis_5_opt_5": "Melanoma",
+      "sibling_second_cancer_diagnosis_5_opt_6": "Prostate Cancer",
+      "sibling_second_cancer_diagnosis_5_opt_7": "Other Cancer",
+      "sec_sibling_6_title": "SIBLING 6",
+      "sibling_gender_06": "Gender?",
+      "sibling_gender_06_opt_1": "Male",
+      "sibling_gender_06_opt_2": "Female",
+      "sibling_alive_06": "Alive?",
+      "sibling_alive_06_opt_1": "Yes",
+      "sibling_alive_06_opt_2": "No",
+      "sibling_age_06": "Current age or age at death?",
+      "sibling_age_06_opt_1": "<50",
+      "sibling_age_06_opt_2": "50-64",
+      "sibling_age_06_opt_3": "65+",
+      "sibling_ever_cancer_diagnosis_6": "Never had cancer?",
+      "sibling_ever_cancer_diagnosis_6_opt_1": "Yes",
+      "sibling_ever_cancer_diagnosis_6_opt_2": "No",
+      "sibling_first_cancer_diagnosis_6": "First cancer diagnosis?",
+      "sibling_first_cancer_diagnosis_6_opt_1": "Breast Cancer",
+      "sibling_first_cancer_diagnosis_6_opt_2": "Ovarian Cancer",
+      "sibling_first_cancer_diagnosis_6_opt_3": "Endometrial Cancer",
+      "sibling_first_cancer_diagnosis_6_opt_4": "Cervix Cancer",
+      "sibling_first_cancer_diagnosis_6_opt_5": "Lymphoma",
+      "sibling_first_cancer_diagnosis_6_opt_6": "Melanoma",
+      "sibling_first_cancer_diagnosis_6_opt_7": "Colon/Rectal Cancer",
+      "sibling_first_cancer_diagnosis_6_opt_8": "Lung Cancer",
+      "sibling_first_cancer_diagnosis_6_opt_9": "Prostate Cancer",
+      "sibling_first_cancer_diagnosis_6_opt_10": "Pancreas Cancer",
+      "sibling_first_cancer_diagnosis_6_opt_11": "Thyroid Cancer",
+      "sibling_first_cancer_diagnosis_6_opt_12": "Other Cancer",
+      "sibling_first_cancer_diagnosis_age_6": "Current age or age at death?",
+      "sibling_first_cancer_diagnosis_age_6_opt_1": "<50",
+      "sibling_first_cancer_diagnosis_age_6_opt_2": "50-64",
+      "sibling_first_cancer_diagnosis_age_6_opt_3": "65+",
+      "sibling_second_cancer_diagnosis_6": "Second or other cancer diagnoses?",
+      "sibling_second_cancer_diagnosis_6_opt_1": "Breast Cancer",
+      "sibling_second_cancer_diagnosis_6_opt_2": "Ovarian Cancer",
+      "sibling_second_cancer_diagnosis_6_opt_3": "Endometrial Cancer",
+      "sibling_second_cancer_diagnosis_6_opt_4": "Colon/Rectal Cancer",
+      "sibling_second_cancer_diagnosis_6_opt_5": "Melanoma",
+      "sibling_second_cancer_diagnosis_6_opt_6": "Prostate Cancer",
+      "sibling_second_cancer_diagnosis_6_opt_7": "Other Cancer",
+      "sec_sibling_7_title": "SIBLING 7",
+      "sibling_gender_07": "Gender?",
+      "sibling_gender_07_opt_1": "Male",
+      "sibling_gender_07_opt_2": "Female",
+      "sibling_alive_07": "Alive?",
+      "sibling_alive_07_opt_1": "Yes",
+      "sibling_alive_07_opt_2": "No",
+      "sibling_age_07": "Current age or age at death?",
+      "sibling_age_07_opt_1": "<50",
+      "sibling_age_07_opt_2": "50-64",
+      "sibling_age_07_opt_3": "65+",
+      "sibling_ever_cancer_diagnosis_7": "Never had cancer?",
+      "sibling_ever_cancer_diagnosis_7_opt_1": "Yes",
+      "sibling_ever_cancer_diagnosis_7_opt_2": "No",
+      "sibling_first_cancer_diagnosis_7": "First cancer diagnosis?",
+      "sibling_first_cancer_diagnosis_7_opt_1": "Breast Cancer",
+      "sibling_first_cancer_diagnosis_7_opt_2": "Ovarian Cancer",
+      "sibling_first_cancer_diagnosis_7_opt_3": "Endometrial Cancer",
+      "sibling_first_cancer_diagnosis_7_opt_4": "Cervix Cancer",
+      "sibling_first_cancer_diagnosis_7_opt_5": "Lymphoma",
+      "sibling_first_cancer_diagnosis_7_opt_6": "Melanoma",
+      "sibling_first_cancer_diagnosis_7_opt_7": "Colon/Rectal Cancer",
+      "sibling_first_cancer_diagnosis_7_opt_8": "Lung Cancer",
+      "sibling_first_cancer_diagnosis_7_opt_9": "Prostate Cancer",
+      "sibling_first_cancer_diagnosis_7_opt_10": "Pancreas Cancer",
+      "sibling_first_cancer_diagnosis_7_opt_11": "Thyroid Cancer",
+      "sibling_first_cancer_diagnosis_7_opt_12": "Other Cancer",
+      "sibling_first_cancer_diagnosis_age_7": "Current age or age at death?",
+      "sibling_first_cancer_diagnosis_age_7_opt_1": "<50",
+      "sibling_first_cancer_diagnosis_age_7_opt_2": "50-64",
+      "sibling_first_cancer_diagnosis_age_7_opt_3": "65+",
+      "sibling_second_cancer_diagnosis_7": "Second or other cancer diagnoses?",
+      "sibling_second_cancer_diagnosis_7_opt_1": "Breast Cancer",
+      "sibling_second_cancer_diagnosis_7_opt_2": "Ovarian Cancer",
+      "sibling_second_cancer_diagnosis_7_opt_3": "Endometrial Cancer",
+      "sibling_second_cancer_diagnosis_7_opt_4": "Colon/Rectal Cancer",
+      "sibling_second_cancer_diagnosis_7_opt_5": "Melanoma",
+      "sibling_second_cancer_diagnosis_7_opt_6": "Prostate Cancer",
+      "sibling_second_cancer_diagnosis_7_opt_7": "Other Cancer",
+      "sec_sibling_8_title": "SIBLING 8",
+      "sibling_gender_08": "Gender?",
+      "sibling_gender_08_opt_1": "Male",
+      "sibling_gender_08_opt_2": "Female",
+      "sibling_alive_08": "Alive?",
+      "sibling_alive_08_opt_1": "Yes",
+      "sibling_alive_08_opt_2": "No",
+      "sibling_age_08": "Current age or age at death?",
+      "sibling_age_08_opt_1": "<50",
+      "sibling_age_08_opt_2": "50-64",
+      "sibling_age_08_opt_3": "65+",
+      "sibling_ever_cancer_diagnosis_8": "Never had cancer?",
+      "sibling_ever_cancer_diagnosis_8_opt_1": "Yes",
+      "sibling_ever_cancer_diagnosis_8_opt_2": "No",
+      "sibling_first_cancer_diagnosis_8": "First cancer diagnosis?",
+      "sibling_first_cancer_diagnosis_8_opt_1": "Breast Cancer",
+      "sibling_first_cancer_diagnosis_8_opt_2": "Ovarian Cancer",
+      "sibling_first_cancer_diagnosis_8_opt_3": "Endometrial Cancer",
+      "sibling_first_cancer_diagnosis_8_opt_4": "Cervix Cancer",
+      "sibling_first_cancer_diagnosis_8_opt_5": "Lymphoma",
+      "sibling_first_cancer_diagnosis_8_opt_6": "Melanoma",
+      "sibling_first_cancer_diagnosis_8_opt_7": "Colon/Rectal Cancer",
+      "sibling_first_cancer_diagnosis_8_opt_8": "Lung Cancer",
+      "sibling_first_cancer_diagnosis_8_opt_9": "Prostate Cancer",
+      "sibling_first_cancer_diagnosis_8_opt_10": "Pancreas Cancer",
+      "sibling_first_cancer_diagnosis_8_opt_11": "Thyroid Cancer",
+      "sibling_first_cancer_diagnosis_8_opt_12": "Other Cancer",
+      "sibling_first_cancer_diagnosis_age_8": "Current age or age at death?",
+      "sibling_first_cancer_diagnosis_age_8_opt_1": "<50",
+      "sibling_first_cancer_diagnosis_age_8_opt_2": "50-64",
+      "sibling_first_cancer_diagnosis_age_8_opt_3": "65+",
+      "sibling_second_cancer_diagnosis_8": "Second or other cancer diagnoses?",
+      "sibling_second_cancer_diagnosis_8_opt_1": "Breast Cancer",
+      "sibling_second_cancer_diagnosis_8_opt_2": "Ovarian Cancer",
+      "sibling_second_cancer_diagnosis_8_opt_3": "Endometrial Cancer",
+      "sibling_second_cancer_diagnosis_8_opt_4": "Colon/Rectal Cancer",
+      "sibling_second_cancer_diagnosis_8_opt_5": "Melanoma",
+      "sibling_second_cancer_diagnosis_8_opt_6": "Prostate Cancer",
+      "sibling_second_cancer_diagnosis_8_opt_7": "Other Cancer",
+      "sec_child_1_title": "CHILD 1",
+      "child_gender_1": "Gender?",
+      "child_gender_1_opt_1": "Male",
+      "child_gender_1_opt_2": "Female",
+      "child_alive_1": "Alive?",
+      "child_alive_1_opt_1": "Yes",
+      "child_alive_1_opt_2": "No",
+      "child_age_1": "Current age or age at death?",
+      "child_age_1_opt_1": "<50",
+      "child_age_1_opt_2": "50-64",
+      "child_age_1_opt_3": "65+",
+      "child_ever_cancer_diagnosis_1": "Never had cancer?",
+      "child_ever_cancer_diagnosis_1_opt_1": "Yes",
+      "child_ever_cancer_diagnosis_1_opt_2": "No",
+      "child_first_cancer_diagnosis_1": "First cancer diagnosis?",
+      "child_first_cancer_diagnosis_1_opt_1": "Breast Cancer",
+      "child_first_cancer_diagnosis_1_opt_2": "Ovarian Cancer",
+      "child_first_cancer_diagnosis_1_opt_3": "Endometrial Cancer",
+      "child_first_cancer_diagnosis_1_opt_4": "Cervix Cancer",
+      "child_first_cancer_diagnosis_1_opt_5": "Lymphoma",
+      "child_first_cancer_diagnosis_1_opt_6": "Melanoma",
+      "child_first_cancer_diagnosis_1_opt_7": "Colon/Rectal Cancer",
+      "child_first_cancer_diagnosis_1_opt_8": "Lung Cancer",
+      "child_first_cancer_diagnosis_1_opt_9": "Prostate Cancer",
+      "child_first_cancer_diagnosis_1_opt_10": "Pancreas Cancer",
+      "child_first_cancer_diagnosis_1_opt_11": "Thyroid Cancer",
+      "child_first_cancer_diagnosis_1_opt_12": "Other Cancer",
+      "child_first_cancer_diagnosis_age_1": "Current age or age at death?",
+      "child_first_cancer_diagnosis_age_1_opt_1": "<50",
+      "child_first_cancer_diagnosis_age_1_opt_2": "50-64",
+      "child_first_cancer_diagnosis_age_1_opt_3": "65+",
+      "child_second_cancer_diagnosis_1": "Second or other cancer diagnoses?",
+      "child_second_cancer_diagnosis_1_opt_1": "Breast Cancer",
+      "child_second_cancer_diagnosis_1_opt_2": "Ovarian Cancer",
+      "child_second_cancer_diagnosis_1_opt_3": "Endometrial Cancer",
+      "child_second_cancer_diagnosis_1_opt_4": "Colon/Rectal Cancer",
+      "child_second_cancer_diagnosis_1_opt_5": "Melanoma",
+      "child_second_cancer_diagnosis_1_opt_6": "Prostate Cancer",
+      "child_second_cancer_diagnosis_1_opt_7": "Other Cancer",
+      "sec_child_2_title": "CHILD 2",
+      "child_gender_2": "Gender?",
+      "child_gender_2_opt_1": "Male",
+      "child_gender_2_opt_2": "Female",
+      "child_alive_2": "Alive?",
+      "child_alive_2_opt_1": "Yes",
+      "child_alive_2_opt_2": "No",
+      "child_age_2": "Current age or age at death?",
+      "child_age_2_opt_1": "<50",
+      "child_age_2_opt_2": "50-64",
+      "child_age_2_opt_3": "65+",
+      "child_ever_cancer_diagnosis_2": "Never had cancer?",
+      "child_ever_cancer_diagnosis_2_opt_1": "Yes",
+      "child_ever_cancer_diagnosis_2_opt_2": "No",
+      "child_first_cancer_diagnosis_2": "First cancer diagnosis?",
+      "child_first_cancer_diagnosis_2_opt_1": "Breast Cancer",
+      "child_first_cancer_diagnosis_2_opt_2": "Ovarian Cancer",
+      "child_first_cancer_diagnosis_2_opt_3": "Endometrial Cancer",
+      "child_first_cancer_diagnosis_2_opt_4": "Cervix Cancer",
+      "child_first_cancer_diagnosis_2_opt_5": "Lymphoma",
+      "child_first_cancer_diagnosis_2_opt_6": "Melanoma",
+      "child_first_cancer_diagnosis_2_opt_7": "Colon/Rectal Cancer",
+      "child_first_cancer_diagnosis_2_opt_8": "Lung Cancer",
+      "child_first_cancer_diagnosis_2_opt_9": "Prostate Cancer",
+      "child_first_cancer_diagnosis_2_opt_10": "Pancreas Cancer",
+      "child_first_cancer_diagnosis_2_opt_11": "Thyroid Cancer",
+      "child_first_cancer_diagnosis_2_opt_12": "Other Cancer",
+      "child_first_cancer_diagnosis_age_2": "Current age or age at death?",
+      "child_first_cancer_diagnosis_age_2_opt_1": "<50",
+      "child_first_cancer_diagnosis_age_2_opt_2": "50-64",
+      "child_first_cancer_diagnosis_age_2_opt_3": "65+",
+      "child_second_cancer_diagnosis_2": "Second or other cancer diagnoses?",
+      "child_second_cancer_diagnosis_2_opt_1": "Breast Cancer",
+      "child_second_cancer_diagnosis_2_opt_2": "Ovarian Cancer",
+      "child_second_cancer_diagnosis_2_opt_3": "Endometrial Cancer",
+      "child_second_cancer_diagnosis_2_opt_4": "Colon/Rectal Cancer",
+      "child_second_cancer_diagnosis_2_opt_5": "Melanoma",
+      "child_second_cancer_diagnosis_2_opt_6": "Prostate Cancer",
+      "child_second_cancer_diagnosis_2_opt_7": "Other Cancer",
+      "sec_child_3_title": "CHILD 3",
+      "child_gender_3": "Gender?",
+      "child_gender_3_opt_1": "Male",
+      "child_gender_3_opt_2": "Female",
+      "child_alive_3": "Alive?",
+      "child_alive_3_opt_1": "Yes",
+      "child_alive_3_opt_2": "No",
+      "child_age_3": "Current age or age at death?",
+      "child_age_3_opt_1": "<50",
+      "child_age_3_opt_2": "50-64",
+      "child_age_3_opt_3": "65+",
+      "child_ever_cancer_diagnosis_3": "Never had cancer?",
+      "child_ever_cancer_diagnosis_3_opt_1": "Yes",
+      "child_ever_cancer_diagnosis_3_opt_2": "No",
+      "child_first_cancer_diagnosis_3": "First cancer diagnosis?",
+      "child_first_cancer_diagnosis_3_opt_1": "Breast Cancer",
+      "child_first_cancer_diagnosis_3_opt_2": "Ovarian Cancer",
+      "child_first_cancer_diagnosis_3_opt_3": "Endometrial Cancer",
+      "child_first_cancer_diagnosis_3_opt_4": "Cervix Cancer",
+      "child_first_cancer_diagnosis_3_opt_5": "Lymphoma",
+      "child_first_cancer_diagnosis_3_opt_6": "Melanoma",
+      "child_first_cancer_diagnosis_3_opt_7": "Colon/Rectal Cancer",
+      "child_first_cancer_diagnosis_3_opt_8": "Lung Cancer",
+      "child_first_cancer_diagnosis_3_opt_9": "Prostate Cancer",
+      "child_first_cancer_diagnosis_3_opt_10": "Pancreas Cancer",
+      "child_first_cancer_diagnosis_3_opt_11": "Thyroid Cancer",
+      "child_first_cancer_diagnosis_3_opt_12": "Other Cancer",
+      "child_first_cancer_diagnosis_age_3": "Current age or age at death?",
+      "child_first_cancer_diagnosis_age_3_opt_1": "<50",
+      "child_first_cancer_diagnosis_age_3_opt_2": "50-64",
+      "child_first_cancer_diagnosis_age_3_opt_3": "65+",
+      "child_second_cancer_diagnosis_3": "Second or other cancer diagnoses?",
+      "child_second_cancer_diagnosis_3_opt_1": "Breast Cancer",
+      "child_second_cancer_diagnosis_3_opt_2": "Ovarian Cancer",
+      "child_second_cancer_diagnosis_3_opt_3": "Endometrial Cancer",
+      "child_second_cancer_diagnosis_3_opt_4": "Colon/Rectal Cancer",
+      "child_second_cancer_diagnosis_3_opt_5": "Melanoma",
+      "child_second_cancer_diagnosis_3_opt_6": "Prostate Cancer",
+      "child_second_cancer_diagnosis_3_opt_7": "Other Cancer",
+      "sec_child_4_title": "CHILD 4",
+      "child_gender_4": "Gender?",
+      "child_gender_4_opt_1": "Male",
+      "child_gender_4_opt_2": "Female",
+      "child_alive_4": "Alive?",
+      "child_alive_4_opt_1": "Yes",
+      "child_alive_4_opt_2": "No",
+      "child_age_4": "Current age or age at death?",
+      "child_age_4_opt_1": "<50",
+      "child_age_4_opt_2": "50-64",
+      "child_age_4_opt_3": "65+",
+      "child_ever_cancer_diagnosis_4": "Never had cancer?",
+      "child_ever_cancer_diagnosis_4_opt_1": "Yes",
+      "child_ever_cancer_diagnosis_4_opt_2": "No",
+      "child_first_cancer_diagnosis_4": "First cancer diagnosis?",
+      "child_first_cancer_diagnosis_4_opt_1": "Breast Cancer",
+      "child_first_cancer_diagnosis_4_opt_2": "Ovarian Cancer",
+      "child_first_cancer_diagnosis_4_opt_3": "Endometrial Cancer",
+      "child_first_cancer_diagnosis_4_opt_4": "Cervix Cancer",
+      "child_first_cancer_diagnosis_4_opt_5": "Lymphoma",
+      "child_first_cancer_diagnosis_4_opt_6": "Melanoma",
+      "child_first_cancer_diagnosis_4_opt_7": "Colon/Rectal Cancer",
+      "child_first_cancer_diagnosis_4_opt_8": "Lung Cancer",
+      "child_first_cancer_diagnosis_4_opt_9": "Prostate Cancer",
+      "child_first_cancer_diagnosis_4_opt_10": "Pancreas Cancer",
+      "child_first_cancer_diagnosis_4_opt_11": "Thyroid Cancer",
+      "child_first_cancer_diagnosis_4_opt_12": "Other Cancer",
+      "child_first_cancer_diagnosis_age_4": "Current age or age at death?",
+      "child_first_cancer_diagnosis_age_4_opt_1": "<50",
+      "child_first_cancer_diagnosis_age_4_opt_2": "50-64",
+      "child_first_cancer_diagnosis_age_4_opt_3": "65+",
+      "child_second_cancer_diagnosis_4": "Second or other cancer diagnoses?",
+      "child_second_cancer_diagnosis_4_opt_1": "Breast Cancer",
+      "child_second_cancer_diagnosis_4_opt_2": "Ovarian Cancer",
+      "child_second_cancer_diagnosis_4_opt_3": "Endometrial Cancer",
+      "child_second_cancer_diagnosis_4_opt_4": "Colon/Rectal Cancer",
+      "child_second_cancer_diagnosis_4_opt_5": "Melanoma",
+      "child_second_cancer_diagnosis_4_opt_6": "Prostate Cancer",
+      "child_second_cancer_diagnosis_4_opt_7": "Other Cancer",
+      "sec_child_5_title": "CHILD 5",
+      "child_gender_5": "Gender?",
+      "child_gender_5_opt_1": "Male",
+      "child_gender_5_opt_2": "Female",
+      "child_alive_5": "Alive?",
+      "child_alive_5_opt_1": "Yes",
+      "child_alive_5_opt_2": "No",
+      "child_age_5": "Current age or age at death?",
+      "child_age_5_opt_1": "<50",
+      "child_age_5_opt_2": "50-64",
+      "child_age_5_opt_3": "65+",
+      "child_ever_cancer_diagnosis_5": "Never had cancer?",
+      "child_ever_cancer_diagnosis_5_opt_1": "Yes",
+      "child_ever_cancer_diagnosis_5_opt_2": "No",
+      "child_first_cancer_diagnosis_5": "First cancer diagnosis?",
+      "child_first_cancer_diagnosis_5_opt_1": "Breast Cancer",
+      "child_first_cancer_diagnosis_5_opt_2": "Ovarian Cancer",
+      "child_first_cancer_diagnosis_5_opt_3": "Endometrial Cancer",
+      "child_first_cancer_diagnosis_5_opt_4": "Cervix Cancer",
+      "child_first_cancer_diagnosis_5_opt_5": "Lymphoma",
+      "child_first_cancer_diagnosis_5_opt_6": "Melanoma",
+      "child_first_cancer_diagnosis_5_opt_7": "Colon/Rectal Cancer",
+      "child_first_cancer_diagnosis_5_opt_8": "Lung Cancer",
+      "child_first_cancer_diagnosis_5_opt_9": "Prostate Cancer",
+      "child_first_cancer_diagnosis_5_opt_10": "Pancreas Cancer",
+      "child_first_cancer_diagnosis_5_opt_11": "Thyroid Cancer",
+      "child_first_cancer_diagnosis_5_opt_12": "Other Cancer",
+      "child_first_cancer_diagnosis_age_5": "Current age or age at death?",
+      "child_first_cancer_diagnosis_age_5_opt_1": "<50",
+      "child_first_cancer_diagnosis_age_5_opt_2": "50-64",
+      "child_first_cancer_diagnosis_age_5_opt_3": "65+",
+      "child_second_cancer_diagnosis_5": "Second or other cancer diagnoses?",
+      "child_second_cancer_diagnosis_5_opt_1": "Breast Cancer",
+      "child_second_cancer_diagnosis_5_opt_2": "Ovarian Cancer",
+      "child_second_cancer_diagnosis_5_opt_3": "Endometrial Cancer",
+      "child_second_cancer_diagnosis_5_opt_4": "Colon/Rectal Cancer",
+      "child_second_cancer_diagnosis_5_opt_5": "Melanoma",
+      "child_second_cancer_diagnosis_5_opt_6": "Prostate Cancer",
+      "child_second_cancer_diagnosis_5_opt_7": "Other Cancer",
+      "sec_child_6_title": "CHILD 6",
+      "child_gender_6": "Gender?",
+      "child_gender_6_opt_1": "Male",
+      "child_gender_6_opt_2": "Female",
+      "child_alive_6": "Alive?",
+      "child_alive_6_opt_1": "Yes",
+      "child_alive_6_opt_2": "No",
+      "child_age_6": "Current age or age at death?",
+      "child_age_6_opt_1": "<50",
+      "child_age_6_opt_2": "50-64",
+      "child_age_6_opt_3": "65+",
+      "child_ever_cancer_diagnosis_6": "Never had cancer?",
+      "child_ever_cancer_diagnosis_6_opt_1": "Yes",
+      "child_ever_cancer_diagnosis_6_opt_2": "No",
+      "child_first_cancer_diagnosis_6": "First cancer diagnosis?",
+      "child_first_cancer_diagnosis_6_opt_1": "Breast Cancer",
+      "child_first_cancer_diagnosis_6_opt_2": "Ovarian Cancer",
+      "child_first_cancer_diagnosis_6_opt_3": "Endometrial Cancer",
+      "child_first_cancer_diagnosis_6_opt_4": "Cervix Cancer",
+      "child_first_cancer_diagnosis_6_opt_5": "Lymphoma",
+      "child_first_cancer_diagnosis_6_opt_6": "Melanoma",
+      "child_first_cancer_diagnosis_6_opt_7": "Colon/Rectal Cancer",
+      "child_first_cancer_diagnosis_6_opt_8": "Lung Cancer",
+      "child_first_cancer_diagnosis_6_opt_9": "Prostate Cancer",
+      "child_first_cancer_diagnosis_6_opt_10": "Pancreas Cancer",
+      "child_first_cancer_diagnosis_6_opt_11": "Thyroid Cancer",
+      "child_first_cancer_diagnosis_6_opt_12": "Other Cancer",
+      "child_first_cancer_diagnosis_age_6": "Current age or age at death?",
+      "child_first_cancer_diagnosis_age_6_opt_1": "<50",
+      "child_first_cancer_diagnosis_age_6_opt_2": "50-64",
+      "child_first_cancer_diagnosis_age_6_opt_3": "65+",
+      "child_second_cancer_diagnosis_6": "Second or other cancer diagnoses?",
+      "child_second_cancer_diagnosis_6_opt_1": "Breast Cancer",
+      "child_second_cancer_diagnosis_6_opt_2": "Ovarian Cancer",
+      "child_second_cancer_diagnosis_6_opt_3": "Endometrial Cancer",
+      "child_second_cancer_diagnosis_6_opt_4": "Colon/Rectal Cancer",
+      "child_second_cancer_diagnosis_6_opt_5": "Melanoma",
+      "child_second_cancer_diagnosis_6_opt_6": "Prostate Cancer",
+      "child_second_cancer_diagnosis_6_opt_7": "Other Cancer",
+      "sec_child_7_title": "CHILD 7",
+      "child_gender_7": "Gender?",
+      "child_gender_7_opt_1": "Male",
+      "child_gender_7_opt_2": "Female",
+      "child_alive_7": "Alive?",
+      "child_alive_7_opt_1": "Yes",
+      "child_alive_7_opt_2": "No",
+      "child_age_7": "Current age or age at death?",
+      "child_age_7_opt_1": "<50",
+      "child_age_7_opt_2": "50-64",
+      "child_age_7_opt_3": "65+",
+      "child_ever_cancer_diagnosis_7": "Never had cancer?",
+      "child_ever_cancer_diagnosis_7_opt_1": "Yes",
+      "child_ever_cancer_diagnosis_7_opt_2": "No",
+      "child_first_cancer_diagnosis_7": "First cancer diagnosis?",
+      "child_first_cancer_diagnosis_7_opt_1": "Breast Cancer",
+      "child_first_cancer_diagnosis_7_opt_2": "Ovarian Cancer",
+      "child_first_cancer_diagnosis_7_opt_3": "Endometrial Cancer",
+      "child_first_cancer_diagnosis_7_opt_4": "Cervix Cancer",
+      "child_first_cancer_diagnosis_7_opt_5": "Lymphoma",
+      "child_first_cancer_diagnosis_7_opt_6": "Melanoma",
+      "child_first_cancer_diagnosis_7_opt_7": "Colon/Rectal Cancer",
+      "child_first_cancer_diagnosis_7_opt_8": "Lung Cancer",
+      "child_first_cancer_diagnosis_7_opt_9": "Prostate Cancer",
+      "child_first_cancer_diagnosis_7_opt_10": "Pancreas Cancer",
+      "child_first_cancer_diagnosis_7_opt_11": "Thyroid Cancer",
+      "child_first_cancer_diagnosis_7_opt_12": "Other Cancer",
+      "child_first_cancer_diagnosis_age_7": "Current age or age at death?",
+      "child_first_cancer_diagnosis_age_7_opt_1": "<50",
+      "child_first_cancer_diagnosis_age_7_opt_2": "50-64",
+      "child_first_cancer_diagnosis_age_7_opt_3": "65+",
+      "child_second_cancer_diagnosis_7": "Second or other cancer diagnoses?",
+      "child_second_cancer_diagnosis_7_opt_1": "Breast Cancer",
+      "child_second_cancer_diagnosis_7_opt_2": "Ovarian Cancer",
+      "child_second_cancer_diagnosis_7_opt_3": "Endometrial Cancer",
+      "child_second_cancer_diagnosis_7_opt_4": "Colon/Rectal Cancer",
+      "child_second_cancer_diagnosis_7_opt_5": "Melanoma",
+      "child_second_cancer_diagnosis_7_opt_6": "Prostate Cancer",
+      "child_second_cancer_diagnosis_7_opt_7": "Other Cancer"
+    }
+  }
+}

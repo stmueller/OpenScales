@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenScales Study</title>
+  <link rel="stylesheet" href="scale-runner.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0; min-height: 100%;
+      background: #f3f4f6;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    #chain-container {
+      min-height: 100vh;
+      background: #ffffff;
+      box-shadow: 0 0 0 1px #e5e7eb;
+    }
+    #config-error {
+      max-width: 600px; margin: 4rem auto; padding: 2rem;
+      background: #fff; border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.1);
+      display: none;
+    }
+    #config-error h2 { color: #dc2626; margin-top: 0; }
+    #config-error code {
+      background: #f3f4f6; padding: 2px 6px;
+      border-radius: 4px; font-size: 0.9rem;
+    }
+    #config-error table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+    #config-error th, #config-error td {
+      text-align: left; padding: 0.4rem 0.6rem;
+      border-bottom: 1px solid #e5e7eb; font-size: 0.9rem;
+    }
+    #config-error th { font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<div id="chain-container"></div>
+<div id="config-error">
+  <h2>Configuration Error</h2>
+  <p>An <code>osc</code> parameter pointing to an .osc study chain file is required.</p>
+
+  <p><strong>Example:</strong></p>
+  <pre><code>chain-runner.html?osc=my_study.osc&amp;pid=P001</code></pre>
+
+  <h3>URL Parameters</h3>
+  <table>
+    <thead>
+      <tr><th>Parameter</th><th>Required</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>osc</code></td><td>Yes</td><td>URL to an .osc study chain file</td></tr>
+      <tr><td><code>pid</code></td><td>Depends</td><td>Participant ID (if required by the .osc)</td></tr>
+      <tr><td><code>*</code></td><td>No</td><td>Any other URL parameters are available to the .osc via <code>${name}</code> substitution</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<script src="scale-runner.js"></script>
+<script src="chain-runner.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  const params = new URLSearchParams(window.location.search);
+  const oscURL = params.get('osc') || '';
+
+  if (!oscURL) {
+    document.getElementById('chain-container').style.display = 'none';
+    document.getElementById('config-error').style.display = 'block';
+    return;
+  }
+
+  ChainRunner.start(document.getElementById('chain-container'), {
+    oscURL: oscURL,
+    urlParams: params,
+  });
+})();
+</script>
+</body>
+</html>

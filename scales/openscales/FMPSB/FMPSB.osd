@@ -1,0 +1,169 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Frost Multidimensional Perfectionism Scale — Brief",
+      "code": "FMPSB",
+      "abbreviation": "FMPS-Brief",
+      "description": "8-item brief perfectionism measure with two subscales: Evaluative Concerns (4 items, derived from Concern over Mistakes/Doubts about Actions) and Strivings (4 items, derived from Personal Standards). 5-point Likert (1–5). Subscale scores are sums (range 4–20).",
+      "citation": "Woodfin, V., Binder, P.-E., & Molde, H. (2020). A psychometric assessment of the Frost Multidimensional Perfectionism Scale-Brief. Frontiers in Psychology, 11, 1860. https://doi.org/10.3389/fpsyg.2020.01860",
+      "license": "CC BY 4.0",
+      "license_explanation": "Published in Frontiers in Psychology under CC BY 4.0.",
+      "license_url": "https://doi.org/10.3389/fpsyg.2020.01860",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyg.2020.01860",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "fmps_r1",
+        "fmps_r2",
+        "fmps_r3",
+        "fmps_r4",
+        "fmps_r5"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "evaluative_concerns",
+        "name": "Evaluative Concerns",
+        "description": "Concern over mistakes and fear of evaluation (items 1–4). Sum range 4–20."
+      },
+      {
+        "id": "strivings",
+        "name": "Strivings",
+        "description": "High personal standards and goals (items 5–8). Sum range 4–20."
+      }
+    ],
+    "items": [
+      {
+        "id": "fmps_inst",
+        "text_key": "fmps_inst",
+        "type": "inst"
+      },
+      {
+        "id": "fmps1",
+        "text_key": "fmps1",
+        "type": "likert",
+        "dimension": "evaluative_concerns"
+      },
+      {
+        "id": "fmps2",
+        "text_key": "fmps2",
+        "type": "likert",
+        "dimension": "strivings"
+      },
+      {
+        "id": "fmps3",
+        "text_key": "fmps3",
+        "type": "likert",
+        "dimension": "evaluative_concerns"
+      },
+      {
+        "id": "fmps4",
+        "text_key": "fmps4",
+        "type": "likert",
+        "dimension": "strivings"
+      },
+      {
+        "id": "fmps5",
+        "text_key": "fmps5",
+        "type": "likert",
+        "dimension": "strivings"
+      },
+      {
+        "id": "fmps6",
+        "text_key": "fmps6",
+        "type": "likert",
+        "dimension": "evaluative_concerns"
+      },
+      {
+        "id": "fmps7",
+        "text_key": "fmps7",
+        "type": "likert",
+        "dimension": "strivings"
+      },
+      {
+        "id": "fmps8",
+        "text_key": "fmps8",
+        "type": "likert",
+        "dimension": "evaluative_concerns"
+      }
+    ],
+    "scoring": {
+      "evaluative_concerns": {
+        "method": "sum_coded",
+        "items": [
+          "fmps1",
+          "fmps3",
+          "fmps6",
+          "fmps8"
+        ],
+        "description": "Evaluative Concerns (items 1–4, range 4–20).",
+        "item_coding": {
+          "fmps1": 1,
+          "fmps3": 1,
+          "fmps6": 1,
+          "fmps8": 1
+        }
+      },
+      "strivings": {
+        "method": "sum_coded",
+        "items": [
+          "fmps2",
+          "fmps4",
+          "fmps5",
+          "fmps7"
+        ],
+        "description": "Strivings (items 5–8, range 4–20).",
+        "item_coding": {
+          "fmps2": 1,
+          "fmps4": 1,
+          "fmps5": 1,
+          "fmps7": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Frost Multidimensional Perfectionism Scale — Brief Report",
+      "footer_refs": [
+        "Woodfin, V., et al. (2020). Frontiers in Psychology, 11, 1860."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "fmps_inst": "Please indicate how much you agree or disagree with each of the following statements.",
+      "fmps_r1": "Strongly disagree",
+      "fmps_r2": "Disagree",
+      "fmps_r3": "Neither agree nor disagree",
+      "fmps_r4": "Agree",
+      "fmps_r5": "Strongly agree",
+      "fmps1": "If I fail at work/school, I am a failure as a person.",
+      "fmps2": "I set higher goals for myself than most people.",
+      "fmps3": "If someone does a task at work/school better than me, then I feel like I failed at the whole task.",
+      "fmps4": "I have extremely high goals.",
+      "fmps5": "Other people seem to accept lower standards from themselves than I do.",
+      "fmps6": "If I do not do well all the time, people will not respect me.",
+      "fmps7": "I expect higher performance in my daily tasks than most people.",
+      "fmps8": "The fewer mistakes I make, the more people will like me.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

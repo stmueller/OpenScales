@@ -1,0 +1,238 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Visit-Specific Satisfaction Instrument",
+      "code": "VSQ9",
+      "abbreviation": "VSQ-9",
+      "description": "9-item measure of patient satisfaction with a specific outpatient visit, covering access to care (items 1–4), interaction with the provider (items 5–8), and overall visit satisfaction (item 9). Scores are transformed to a 0–100 scale; higher scores indicate greater satisfaction.",
+      "citation": "Rubin, H. R., Gandek, B., Rogers, W. H., Kosinski, M., McHorney, C. A., & Ware, J. E. (1993). Patients' ratings of outpatient visits in different practice settings: Results from the Medical Outcomes Study. JAMA, 270(7), 835–840. https://doi.org/10.1001/jama.1993.03510070069036",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health-care/surveys_tools/vsq9.html",
+      "domain": "Health",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. RAND explicitly states these instruments are available for use without permission or fee.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools/vsq9.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "vsq_r1",
+        "vsq_r2",
+        "vsq_r3",
+        "vsq_r4",
+        "vsq_r5"
+      ],
+      "question_head": "vsq_inst"
+    },
+    "dimensions": [
+      {
+        "id": "access",
+        "name": "Access to Care",
+        "description": "Satisfaction with access-related aspects of the visit (items 1–4): waiting time before appointment, getting through by phone, convenience of location, and availability of the appointment."
+      },
+      {
+        "id": "visit",
+        "name": "Visit Quality",
+        "description": "Satisfaction with the direct provider interaction (items 5–8): time spent waiting at the office, time spent with the doctor, explanation of what was done, and technical skills."
+      },
+      {
+        "id": "composite",
+        "name": "Composite Score",
+        "description": "Mean of all 9 items transformed to a 0–100 scale: ((mean − 1) / 4) × 100. Higher scores indicate greater satisfaction."
+      }
+    ],
+    "items": [
+      {
+        "id": "vsq_inst",
+        "text_key": "vsq_inst",
+        "type": "inst"
+      },
+      {
+        "id": "vsq1",
+        "text_key": "vsq1",
+        "type": "likert",
+        "dimension": "access"
+      },
+      {
+        "id": "vsq2",
+        "text_key": "vsq2",
+        "type": "likert",
+        "dimension": "access"
+      },
+      {
+        "id": "vsq3",
+        "text_key": "vsq3",
+        "type": "likert",
+        "dimension": "access"
+      },
+      {
+        "id": "vsq4",
+        "text_key": "vsq4",
+        "type": "likert",
+        "dimension": "access"
+      },
+      {
+        "id": "vsq5",
+        "text_key": "vsq5",
+        "type": "likert",
+        "dimension": "visit"
+      },
+      {
+        "id": "vsq6",
+        "text_key": "vsq6",
+        "type": "likert",
+        "dimension": "visit"
+      },
+      {
+        "id": "vsq7",
+        "text_key": "vsq7",
+        "type": "likert",
+        "dimension": "visit"
+      },
+      {
+        "id": "vsq8",
+        "text_key": "vsq8",
+        "type": "likert",
+        "dimension": "visit"
+      },
+      {
+        "id": "vsq9",
+        "text_key": "vsq9",
+        "type": "likert",
+        "dimension": "composite"
+      }
+    ],
+    "scoring": {
+      "access": {
+        "method": "mean_coded",
+        "items": [
+          "vsq1",
+          "vsq2",
+          "vsq3",
+          "vsq4"
+        ],
+        "description": "Mean of items 1–4 (1=Poor to 5=Excellent). Transform to 0–100: ((mean − 1) / 4) × 100.",
+        "item_coding": {
+          "vsq1": 1,
+          "vsq2": 1,
+          "vsq3": 1,
+          "vsq4": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 4
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "visit": {
+        "method": "mean_coded",
+        "items": [
+          "vsq5",
+          "vsq6",
+          "vsq7",
+          "vsq8"
+        ],
+        "description": "Mean of items 5–8 (1=Poor to 5=Excellent). Transform to 0–100: ((mean − 1) / 4) × 100.",
+        "item_coding": {
+          "vsq5": 1,
+          "vsq6": 1,
+          "vsq7": 1,
+          "vsq8": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 4
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "composite": {
+        "method": "mean_coded",
+        "items": [
+          "vsq1",
+          "vsq2",
+          "vsq3",
+          "vsq4",
+          "vsq5",
+          "vsq6",
+          "vsq7",
+          "vsq8",
+          "vsq9"
+        ],
+        "description": "Mean of all 9 items (1=Poor to 5=Excellent). Transform to 0–100: ((mean − 1) / 4) × 100. Higher scores indicate greater satisfaction.",
+        "item_coding": {
+          "vsq1": 1,
+          "vsq2": 1,
+          "vsq3": 1,
+          "vsq4": 1,
+          "vsq5": 1,
+          "vsq6": 1,
+          "vsq7": 1,
+          "vsq8": 1,
+          "vsq9": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 4
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "vsq_inst": "Think about the visit you just completed. In terms of your satisfaction, how would you rate each of the following?",
+      "vsq_r1": "Poor",
+      "vsq_r2": "Fair",
+      "vsq_r3": "Good",
+      "vsq_r4": "Very Good",
+      "vsq_r5": "Excellent",
+      "vsq1": "Waiting time before your appointment (length of time between when you asked for the appointment and today's visit)",
+      "vsq2": "Getting through to the office by phone",
+      "vsq3": "Convenience of the location of the office",
+      "vsq4": "Length of time waiting at the office",
+      "vsq5": "Time spent with the doctor or other health provider",
+      "vsq6": "Explanation of what was done for you",
+      "vsq7": "The technical skills (thoroughness, carefulness, competence) of the person you saw",
+      "vsq8": "The personal manner (courtesy, respect, sensitivity, friendliness) of the person you saw",
+      "vsq9": "This visit overall",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

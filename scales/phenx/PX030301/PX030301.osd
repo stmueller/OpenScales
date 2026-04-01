@@ -1,0 +1,177 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Alcohol - 30-Day Quantity and Frequency",
+      "code": "PX030301",
+      "abbreviation": "PX030301",
+      "description": "Measurements of respondent’s 30-day quantity and frequency of consumption of alcohol.",
+      "domain": "Tobacco & Alcohol Use",
+      "citation": "For information regarding alcohol consumption during the last 30 days among women who are pregnant, please refer to the Centers for Disease Control and Prevention (CDC) National Center on Birth Defects & Developmental Disabilities Fetal Alcohol Syndrome website and the CDC Behavioral Risk Factor Surveillance System website. [PhenX: https://www.phenxtoolkit.org/protocols/view/30301]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/30301"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "alcohol_30day_frequency",
+        "text_key": "alcohol_30day_frequency",
+        "type": "short",
+        "input_type": "number",
+        "number_min": 0,
+        "number_max": 30
+      },
+      {
+        "id": "alcohol_30day_frequency_coded",
+        "text_key": "alcohol_30day_frequency_coded",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "alcohol_30day_frequency",
+              "operator": "less_than",
+              "value": 1
+            },
+            {
+              "item": "alcohol_30day_frequency",
+              "operator": "greater_than",
+              "value": 29
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "alcohol_30day_frequency_coded_opt_97",
+            "value": 97
+          },
+          {
+            "text_key": "alcohol_30day_frequency_coded_opt_99",
+            "value": 99
+          }
+        ]
+      },
+      {
+        "id": "alcohol_30day_quantity",
+        "text_key": "alcohol_30day_quantity",
+        "type": "short",
+        "input_type": "number",
+        "number_min": 1,
+        "number_max": 90
+      },
+      {
+        "id": "alcohol_30day_quantity_coded",
+        "text_key": "alcohol_30day_quantity_coded",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "alcohol_30day_quantity",
+              "operator": "less_than",
+              "value": 2
+            },
+            {
+              "item": "alcohol_30day_quantity",
+              "operator": "greater_than",
+              "value": 89
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "alcohol_30day_quantity_coded_opt_97",
+            "value": 97
+          },
+          {
+            "text_key": "alcohol_30day_quantity_coded_opt_99",
+            "value": 99
+          }
+        ]
+      },
+      {
+        "id": "alcohol_30day_desc_2",
+        "text_key": "alcohol_30day_desc_2",
+        "type": "inst"
+      },
+      {
+        "id": "alcohol_30day_desc_3",
+        "text_key": "alcohol_30day_desc_3",
+        "type": "inst"
+      },
+      {
+        "id": "alcohol_30day_desc_4",
+        "text_key": "alcohol_30day_desc_4",
+        "type": "inst"
+      },
+      {
+        "id": "alcohol_30day_desc_5",
+        "text_key": "alcohol_30day_desc_5",
+        "type": "inst"
+      },
+      {
+        "id": "alcohol_30day_desc_6",
+        "text_key": "alcohol_30day_desc_6",
+        "type": "inst"
+      },
+      {
+        "id": "alcohol_30day_desc_7",
+        "text_key": "alcohol_30day_desc_7",
+        "type": "inst"
+      },
+      {
+        "id": "alcohol_30day_desc_8",
+        "text_key": "alcohol_30day_desc_8",
+        "type": "inst"
+      },
+      {
+        "id": "alcohol_30day_desc_9",
+        "text_key": "alcohol_30day_desc_9",
+        "type": "inst"
+      },
+      {
+        "id": "alcohol_30day_desc_10",
+        "text_key": "alcohol_30day_desc_10",
+        "type": "inst"
+      },
+      {
+        "id": "alcohol_30day_desc_11",
+        "text_key": "alcohol_30day_desc_11",
+        "type": "inst"
+      },
+      {
+        "id": "alcohol_30day_desc_12",
+        "text_key": "alcohol_30day_desc_12",
+        "type": "inst"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "alcohol_30day_frequency": "Think specifically about the past 30 days, from [DATEFILL*], up to and including today. During the past 30 days, on how many days did you drink one or more drinks of an alcoholic beverage?* DATEFILL is the date 30 days prior to the date of the interview.",
+      "alcohol_30day_frequency_coded": "alcohol_30day_frequency_coded",
+      "alcohol_30day_frequency_coded_opt_97": "Refused",
+      "alcohol_30day_frequency_coded_opt_99": "Don't know",
+      "alcohol_30day_quantity": "On the days that you drank during the past 30 days, how many drinks did you usually have each day? Count as a drink a can or bottle of beer; a wine cooler or a glass of wine, champagne, or sherry; a shot of liquor or a mixed drink or cocktail.",
+      "alcohol_30day_quantity_coded": "alcohol_30day_quantity_coded",
+      "alcohol_30day_quantity_coded_opt_97": "Refused",
+      "alcohol_30day_quantity_coded_opt_99": "Don't know",
+      "alcohol_30day_desc_2": "Definition of a standard drink: 1 12oz bottle of beer, 1 glass 4oz non-fortified wine, 1 mixed drink with 1oz liquor.",
+      "alcohol_30day_desc_3": "If respondent needs a visual reference for the size of a drink, the flashcards from the Wave 1 National Epidemiologic Survey on Alcohol and Related Conditions (NESARC) study are provided below:",
+      "alcohol_30day_desc_4": "Card 1A. Cooler ounce size",
+      "alcohol_30day_desc_5": "Card 1B. Cooler ounce size",
+      "alcohol_30day_desc_6": "Card 1C. Cooler ounce size",
+      "alcohol_30day_desc_7": "Card 2A. Wine ounce size",
+      "alcohol_30day_desc_8": "Card 2B. Wine ounce size",
+      "alcohol_30day_desc_9": "Card 2C. Wine ounce size",
+      "alcohol_30day_desc_10": "Card 3A. Liquor ounce size",
+      "alcohol_30day_desc_11": "Card 3B. Liquor ounce size",
+      "alcohol_30day_desc_12": "Card 3C. Liquor ounce size"
+    }
+  }
+}

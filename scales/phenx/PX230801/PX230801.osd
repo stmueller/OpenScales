@@ -1,0 +1,89 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Use of Creatine Growth Hormone and Steroids",
+      "code": "PX230801",
+      "abbreviation": "PX230801",
+      "description": "This is a single-item, three-part measure taken from the Growing Up Today Study (GUTS) that assesses use and frequency of various products (e.g., creatine, growth hormone, steroids) to improve muscle mass or strength in the past year.",
+      "domain": "Eating Disorders",
+      "citation": "Neumark-Sztainer, D., & Eisenberg, M. E. (2014). Body image concerns, muscle-enhancing behaviors, and eating disorders in males. JAMA, 312 (20), 2156-2157. [PhenX: https://www.phenxtoolkit.org/protocols/view/230801]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/230801"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "lk_opt_1",
+        "lk_opt_2",
+        "lk_opt_3",
+        "lk_opt_4",
+        "lk_opt_5"
+      ]
+    },
+    "items": [
+      {
+        "id": "question_230801",
+        "text_key": "question_230801",
+        "type": "inst"
+      },
+      {
+        "id": "creatinegrowthhormones_creatine_use",
+        "text_key": "creatinegrowthhormones_creatine_use",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "creatinegrowthhormones_dhea_androstenedione_hgh_use",
+        "text_key": "creatinegrowthhormones_dhea_androstenedione_hgh_use",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "creatinegrowthhormones_anabolicsteroids_use",
+        "text_key": "creatinegrowthhormones_anabolicsteroids_use",
+        "type": "likert",
+        "likert_points": 5
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "creatinegrowthhormones_creatine_use",
+          "creatinegrowthhormones_dhea_androstenedione_hgh_use",
+          "creatinegrowthhormones_anabolicsteroids_use"
+        ],
+        "item_coding": {
+          "creatinegrowthhormones_creatine_use": 1,
+          "creatinegrowthhormones_dhea_androstenedione_hgh_use": 1,
+          "creatinegrowthhormones_anabolicsteroids_use": 1
+        },
+        "description": "Total score (sum of all items)"
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "lk_opt_1": "Never",
+      "lk_opt_2": "Less than monthly",
+      "lk_opt_3": "Monthly",
+      "lk_opt_4": "Weekly",
+      "lk_opt_5": "Daily",
+      "question_230801": "In the past year, how often did you use any of the following products to improve muscle mass or strength?",
+      "creatinegrowthhormones_creatine_use": "Creatine?",
+      "creatinegrowthhormones_dhea_androstenedione_hgh_use": "DHEA, Androstenedione, or human growth hormone",
+      "creatinegrowthhormones_anabolicsteroids_use": "Anabolic steroids (do not include steroids used for treating medical conditions)"
+    }
+  }
+}

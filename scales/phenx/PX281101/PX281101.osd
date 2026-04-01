@@ -1,0 +1,408 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Healthcare Communications",
+      "code": "PX281101",
+      "abbreviation": "PX281101",
+      "description": "MEPS is a SAQ that aims to understand how people feel about their health and health care by assessing prior experiences with doctors or other health professionals in the last 12 months.",
+      "domain": "Health Technology & Spirituality",
+      "citation": "Carroll, W., & Rhoades, J. (2013, May). Access and experiences regarding health care: estimates for the U.S. civilian noninstitutionalized population age 18 and older, 2010. [Statistical Brief #406]. Agency for Healthcare Research and Quality. http://www.meps.ahrq.gov/mepsweb/data_files/publications/ st406/stat406.pdf Hong, Y. R., Holcomb, D., Bhandari, M., & Larkin, L. (2016). Affordable Care Act: comparison of healthcare indicators among different insurance beneficiaries with new coverage eligibility. BMC Health Services Research, 16, 114. https://doi.org/10.1186/s12913-016-1362-1 Levine, D. M., Linder, J. A., & Landon, B. E. (2016). The quality of outpatient care delivered to adults in the United States, 2002 to 2013. JAMA Internal Medicine, 176(12), 1778-1790. https://doi.org/10.1001/jamainternmed.2016.6217 [PhenX: https://www.phenxtoolkit.org/protocols/view/281101]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/281101"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "healthcare_communications_doctor_instructions_illness_conditionrecord_id",
+        "text_key": "healthcare_communications_doctor_instructions_illness_conditionrecord_id",
+        "type": "short"
+      },
+      {
+        "id": "intro_text",
+        "text_key": "intro_text",
+        "type": "inst"
+      },
+      {
+        "id": "healthcare_communications_doctor_instructions_illness_condition",
+        "text_key": "healthcare_communications_doctor_instructions_illness_condition",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "healthcare_communications_doctor_instructions_illness_condition_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_doctor_instructions_illness_condition_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_doctor_instructions_illness_condition_understand",
+        "text_key": "healthcare_communications_doctor_instructions_illness_condition_understand",
+        "type": "multi",
+        "visible_when": {
+          "item": "healthcare_communications_doctor_instructions_illness_condition",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "healthcare_communications_doctor_instructions_illness_condition_understand_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_doctor_instructions_illness_condition_understand_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "healthcare_communications_doctor_instructions_illness_condition_understand_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "healthcare_communications_doctor_instructions_illness_condition_understand_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_doctor_instructions_illness_condition_describe_follow",
+        "text_key": "healthcare_communications_doctor_instructions_illness_condition_describe_follow",
+        "type": "multi",
+        "visible_when": {
+          "item": "healthcare_communications_doctor_instructions_illness_condition",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "healthcare_communications_doctor_instructions_illness_condition_describe_follow_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_doctor_instructions_illness_condition_describe_follow_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "healthcare_communications_doctor_instructions_illness_condition_describe_follow_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "healthcare_communications_doctor_instructions_illness_condition_describe_follow_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_sign_forms_doctor_office",
+        "text_key": "healthcare_communications_sign_forms_doctor_office",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "healthcare_communications_sign_forms_doctor_office_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_sign_forms_doctor_office_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_sign_forms_doctor_office_help",
+        "text_key": "healthcare_communications_sign_forms_doctor_office_help",
+        "type": "multi",
+        "visible_when": {
+          "item": "healthcare_communications_sign_forms_doctor_office",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "healthcare_communications_sign_forms_doctor_office_help_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_sign_forms_doctor_office_help_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "healthcare_communications_sign_forms_doctor_office_help_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "healthcare_communications_sign_forms_doctor_office_help_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_doctor_explain_easy_understand",
+        "text_key": "healthcare_communications_doctor_explain_easy_understand",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "healthcare_communications_doctor_explain_easy_understand_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_doctor_explain_easy_understand_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "healthcare_communications_doctor_explain_easy_understand_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "healthcare_communications_doctor_explain_easy_understand_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_doctor_listen_carefully",
+        "text_key": "healthcare_communications_doctor_listen_carefully",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "healthcare_communications_doctor_listen_carefully_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_doctor_listen_carefully_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "healthcare_communications_doctor_listen_carefully_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "healthcare_communications_doctor_listen_carefully_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_doctor_show_respect",
+        "text_key": "healthcare_communications_doctor_show_respect",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "healthcare_communications_doctor_show_respect_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_doctor_show_respect_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "healthcare_communications_doctor_show_respect_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "healthcare_communications_doctor_show_respect_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_doctor_spend_time",
+        "text_key": "healthcare_communications_doctor_spend_time",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "healthcare_communications_doctor_spend_time_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_doctor_spend_time_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "healthcare_communications_doctor_spend_time_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "healthcare_communications_doctor_spend_time_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "specialist_text",
+        "text_key": "specialist_text",
+        "type": "inst"
+      },
+      {
+        "id": "healthcare_communications_specialist_appointment",
+        "text_key": "healthcare_communications_specialist_appointment",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "healthcare_communications_specialist_appointment_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_specialist_appointment_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_specialist_appointment_needed",
+        "text_key": "healthcare_communications_specialist_appointment_needed",
+        "type": "multi",
+        "visible_when": {
+          "item": "healthcare_communications_specialist_appointment",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "healthcare_communications_specialist_appointment_needed_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_specialist_appointment_needed_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "healthcare_communications_specialist_appointment_needed_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "healthcare_communications_specialist_appointment_needed_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_complete_date",
+        "text_key": "healthcare_communications_complete_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "healthcare_communications_complete_date_who",
+        "text_key": "healthcare_communications_complete_date_who",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "healthcare_communications_complete_date_who_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_complete_date_who_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_complete_date_who_relationship",
+        "text_key": "healthcare_communications_complete_date_who_relationship",
+        "type": "multi",
+        "visible_when": {
+          "item": "healthcare_communications_complete_date_who",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "healthcare_communications_complete_date_who_relationship_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_complete_date_who_relationship_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "healthcare_communications_complete_date_who_relationship_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "healthcare_communications_complete_date_who_relationship_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "healthcare_communications_complete_date_who_relationship_opt_5",
+            "value": 5
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "healthcare_communications_doctor_instructions_illness_conditionrecord_id": "Record ID",
+      "intro_text": "These questions ask about your own health care. Do not include care you got when you stayed overnight in a hospital. Do not include the times you went for dental care visits.",
+      "healthcare_communications_doctor_instructions_illness_condition": "In the last 12 months, did a doctor or other health provider give you instructions about what to do about a specific illness or health condition?",
+      "healthcare_communications_doctor_instructions_illness_condition_opt_1": "Yes",
+      "healthcare_communications_doctor_instructions_illness_condition_opt_2": "No",
+      "healthcare_communications_doctor_instructions_illness_condition_understand": "In the last 12 months, how often were these instructions easy to understand?",
+      "healthcare_communications_doctor_instructions_illness_condition_understand_opt_1": "Never",
+      "healthcare_communications_doctor_instructions_illness_condition_understand_opt_2": "Sometimes",
+      "healthcare_communications_doctor_instructions_illness_condition_understand_opt_3": "Usually",
+      "healthcare_communications_doctor_instructions_illness_condition_understand_opt_4": "Always",
+      "healthcare_communications_doctor_instructions_illness_condition_describe_follow": "In the last 12 months, how often did doctors or other health providers ask you to describe how you were going to follow these instructions?",
+      "healthcare_communications_doctor_instructions_illness_condition_describe_follow_opt_1": "Never",
+      "healthcare_communications_doctor_instructions_illness_condition_describe_follow_opt_2": "Sometimes",
+      "healthcare_communications_doctor_instructions_illness_condition_describe_follow_opt_3": "Usually",
+      "healthcare_communications_doctor_instructions_illness_condition_describe_follow_opt_4": "Always",
+      "healthcare_communications_sign_forms_doctor_office": "In the last 12 months, did you have to fill out or sign any forms at a doctor's or other health provider's office?",
+      "healthcare_communications_sign_forms_doctor_office_opt_1": "Yes",
+      "healthcare_communications_sign_forms_doctor_office_opt_2": "No",
+      "healthcare_communications_sign_forms_doctor_office_help": "In the last 12 months, how often were you offered help in filling out a form at the doctor's or other health provider's office?",
+      "healthcare_communications_sign_forms_doctor_office_help_opt_1": "Never",
+      "healthcare_communications_sign_forms_doctor_office_help_opt_2": "Sometimes",
+      "healthcare_communications_sign_forms_doctor_office_help_opt_3": "Usually",
+      "healthcare_communications_sign_forms_doctor_office_help_opt_4": "Always",
+      "healthcare_communications_doctor_explain_easy_understand": "In the last 12 months, how often did doctors or other health professionals explain things in a way that was easy to understand?",
+      "healthcare_communications_doctor_explain_easy_understand_opt_1": "Never",
+      "healthcare_communications_doctor_explain_easy_understand_opt_2": "Sometimes",
+      "healthcare_communications_doctor_explain_easy_understand_opt_3": "Usually",
+      "healthcare_communications_doctor_explain_easy_understand_opt_4": "Always",
+      "healthcare_communications_doctor_listen_carefully": "In the last 12 months, how often did doctors or other health professionals listen carefully to you?",
+      "healthcare_communications_doctor_listen_carefully_opt_1": "Never",
+      "healthcare_communications_doctor_listen_carefully_opt_2": "Sometimes",
+      "healthcare_communications_doctor_listen_carefully_opt_3": "Usually",
+      "healthcare_communications_doctor_listen_carefully_opt_4": "Always",
+      "healthcare_communications_doctor_show_respect": "In the last 12 months, how often did doctors or other health professionals show respect for what you had to say?",
+      "healthcare_communications_doctor_show_respect_opt_1": "Never",
+      "healthcare_communications_doctor_show_respect_opt_2": "Sometimes",
+      "healthcare_communications_doctor_show_respect_opt_3": "Usually",
+      "healthcare_communications_doctor_show_respect_opt_4": "Always",
+      "healthcare_communications_doctor_spend_time": "In the last 12 months, how often did doctors or other health professionals spend enough time with you?",
+      "healthcare_communications_doctor_spend_time_opt_1": "Never",
+      "healthcare_communications_doctor_spend_time_opt_2": "Sometimes",
+      "healthcare_communications_doctor_spend_time_opt_3": "Usually",
+      "healthcare_communications_doctor_spend_time_opt_4": "Always",
+      "specialist_text": "When you answer the next questions, do not include dental visits or care you got when you stayed overnight in a hospital.",
+      "healthcare_communications_specialist_appointment": "Specialists are doctors like surgeons, heart doctors, allergy doctors, skin doctors, and other doctors who specialize in one area of health care. In the last 12 months, did you make any appointments to see a specialist?",
+      "healthcare_communications_specialist_appointment_opt_1": "Yes",
+      "healthcare_communications_specialist_appointment_opt_2": "No",
+      "healthcare_communications_specialist_appointment_needed": "In the last 12 months, how often did you get an appointment to see a specialist as soon as you needed?",
+      "healthcare_communications_specialist_appointment_needed_opt_1": "Never",
+      "healthcare_communications_specialist_appointment_needed_opt_2": "Sometimes",
+      "healthcare_communications_specialist_appointment_needed_opt_3": "Usually",
+      "healthcare_communications_specialist_appointment_needed_opt_4": "Always",
+      "healthcare_communications_complete_date": "Date Completed",
+      "healthcare_communications_complete_date_who": "Who completed this form?",
+      "healthcare_communications_complete_date_who_opt_1": "Person named on front of this form",
+      "healthcare_communications_complete_date_who_opt_2": "Someone else",
+      "healthcare_communications_complete_date_who_relationship": "If Someone Else, what is person's relationship to the person named on the front of this form?",
+      "healthcare_communications_complete_date_who_relationship_opt_1": "Husband or wife",
+      "healthcare_communications_complete_date_who_relationship_opt_2": "Unmarried partner",
+      "healthcare_communications_complete_date_who_relationship_opt_3": "Son or daughter",
+      "healthcare_communications_complete_date_who_relationship_opt_4": "Other relative",
+      "healthcare_communications_complete_date_who_relationship_opt_5": "Not related"
+    }
+  }
+}

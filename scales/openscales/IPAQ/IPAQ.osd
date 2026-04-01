@@ -1,0 +1,267 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "International Physical Activity Questionnaire Short Form",
+      "code": "IPAQ",
+      "abbreviation": "IPAQ-SF",
+      "description": "7-item self-report measure of physical activity over the past 7 days. Yields raw day and minute counts for vigorous, moderate, and walking activity, plus sitting time. Official MET-minute scoring: Vigorous = 8.0 × days × min/day; Moderate = 4.0 × days × min/day; Walking = 3.3 × days × min/day. Categories: Inactive (<600 MET-min/week), Minimally Active (600–2999), HEPA Active (≥3000 and meets additional criteria). MET scores are calculated via computed variables.",
+      "citation": "Craig, C. L., Marshall, A. L., Sjöström, M., Bauman, A. E., Booth, M. L., Ainsworth, B. E., Pratt, M., Ekelund, U., Yngve, A., Sallis, J. F., & Oja, P. (2003). International physical activity questionnaire: 12-country reliability and validity. Medicine & Science in Sports & Exercise, 35(8), 1381–1395. https://doi.org/10.1249/01.MSS.0000078924.61453.FB",
+      "license": "open access",
+      "license_explanation": "The IPAQ questionnaire is publicly available, it is open access, and no permissions are required to use it.",
+      "license_url": "https://sites.google.com/view/ipaq/",
+      "version": "1.0",
+      "url": "https://doi.org/10.1249/01.MSS.0000078924.61453.FB"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": null,
+    "dimensions": [
+      {
+        "id": "vigorous",
+        "name": "Vigorous Activity (days × min)",
+        "abbreviation": "VIG",
+        "description": "Vigorous-intensity physical activity. Raw responses are days per week (ipaq1) and minutes per day (ipaq2). Sum is a raw total; MET-min/week is computed via computed.met_vigorous (= 8.0 × ipaq1 × ipaq2).",
+        "enabled_param": null
+      },
+      {
+        "id": "moderate",
+        "name": "Moderate Activity (days × min)",
+        "abbreviation": "MOD",
+        "description": "Moderate-intensity physical activity. Raw responses are days per week (ipaq3) and minutes per day (ipaq4). Sum is a raw total; MET-min/week is computed via computed.met_moderate (= 4.0 × ipaq3 × ipaq4).",
+        "enabled_param": null
+      },
+      {
+        "id": "walking",
+        "name": "Walking (days × min)",
+        "abbreviation": "WALK",
+        "description": "Walking activity. Raw responses are days per week (ipaq5) and minutes per day (ipaq6). Sum is a raw total; MET-min/week is computed via computed.met_walking (= 3.3 × ipaq5 × ipaq6).",
+        "enabled_param": null
+      },
+      {
+        "id": "sitting",
+        "name": "Sitting Time",
+        "abbreviation": "SIT",
+        "description": "Self-reported weekday sitting time in minutes per day (ipaq7). Raw value only; no MET calculation.",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipaq_inst",
+        "text_key": "ipaq_inst",
+        "type": "inst"
+      },
+      {
+        "id": "ipaq1",
+        "text_key": "ipaq1",
+        "type": "short",
+        "validation": {
+          "number_min": 0,
+          "number_min_error": "err_days_min",
+          "number_max": 7,
+          "number_max_error": "err_days_max"
+        }
+      },
+      {
+        "id": "ipaq2",
+        "text_key": "ipaq2",
+        "type": "short",
+        "validation": {
+          "number_min": 0,
+          "number_min_error": "err_min_min",
+          "number_max": 960,
+          "number_max_error": "err_min_max"
+        }
+      },
+      {
+        "id": "ipaq3",
+        "text_key": "ipaq3",
+        "type": "short",
+        "validation": {
+          "number_min": 0,
+          "number_min_error": "err_days_min",
+          "number_max": 7,
+          "number_max_error": "err_days_max"
+        }
+      },
+      {
+        "id": "ipaq4",
+        "text_key": "ipaq4",
+        "type": "short",
+        "validation": {
+          "number_min": 0,
+          "number_min_error": "err_min_min",
+          "number_max": 960,
+          "number_max_error": "err_min_max"
+        }
+      },
+      {
+        "id": "ipaq5",
+        "text_key": "ipaq5",
+        "type": "short",
+        "validation": {
+          "number_min": 0,
+          "number_min_error": "err_days_min",
+          "number_max": 7,
+          "number_max_error": "err_days_max"
+        }
+      },
+      {
+        "id": "ipaq6",
+        "text_key": "ipaq6",
+        "type": "short",
+        "validation": {
+          "number_min": 0,
+          "number_min_error": "err_min_min",
+          "number_max": 960,
+          "number_max_error": "err_min_max"
+        }
+      },
+      {
+        "id": "ipaq7",
+        "text_key": "ipaq7",
+        "type": "short",
+        "validation": {
+          "number_min": 0,
+          "number_min_error": "err_min_min",
+          "number_max": 1440,
+          "number_max_error": "err_sit_max"
+        }
+      }
+    ],
+    "scoring": {
+      "vigorous": {
+        "method": "sum_coded",
+        "items": [
+          "ipaq1",
+          "ipaq2"
+        ],
+        "description": "Raw days (ipaq1) and minutes per day (ipaq2) for vigorous activity. Sum is the raw total of both values. MET-min/week is available via computed.met_vigorous.",
+        "item_coding": {
+          "ipaq1": 1,
+          "ipaq2": 1
+        },
+        "norms": null
+      },
+      "moderate": {
+        "method": "sum_coded",
+        "items": [
+          "ipaq3",
+          "ipaq4"
+        ],
+        "description": "Raw days (ipaq3) and minutes per day (ipaq4) for moderate activity. Sum is the raw total of both values. MET-min/week is available via computed.met_moderate.",
+        "item_coding": {
+          "ipaq3": 1,
+          "ipaq4": 1
+        },
+        "norms": null
+      },
+      "walking": {
+        "method": "sum_coded",
+        "items": [
+          "ipaq5",
+          "ipaq6"
+        ],
+        "description": "Raw days (ipaq5) and minutes per day (ipaq6) for walking activity. Sum is the raw total of both values. MET-min/week is available via computed.met_walking.",
+        "item_coding": {
+          "ipaq5": 1,
+          "ipaq6": 1
+        },
+        "norms": null
+      },
+      "sitting": {
+        "method": "sum_coded",
+        "items": [
+          "ipaq7"
+        ],
+        "description": "Raw weekday sitting time in minutes per day. Sum equals the raw value of ipaq7.",
+        "item_coding": {
+          "ipaq7": 1
+        },
+        "norms": null
+      }
+    },
+    "computed": {
+      "met_vigorous": {
+        "expression": "answer.ipaq1 * answer.ipaq2 * 8.0",
+        "type": "number"
+      },
+      "met_moderate": {
+        "expression": "answer.ipaq3 * answer.ipaq4 * 4.0",
+        "type": "number"
+      },
+      "met_walking": {
+        "expression": "answer.ipaq5 * answer.ipaq6 * 3.3",
+        "type": "number"
+      },
+      "met_total": {
+        "expression": "computed.met_vigorous + computed.met_moderate + computed.met_walking",
+        "type": "number",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 599,
+              "label": "Inactive"
+            },
+            {
+              "min": 600,
+              "max": 2999,
+              "label": "Minimally Active"
+            },
+            {
+              "min": 3000,
+              "max": 99999,
+              "label": "HEPA Active"
+            }
+          ],
+          "source": "IPAQ Scoring Protocol"
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "IPAQ Short Form Physical Activity Report",
+      "footer_refs": [
+        "Craig, C. L., et al. (2003). International physical activity questionnaire: 12-country reliability and validity. Medicine & Science in Sports & Exercise, 35(8), 1381–1395.",
+        "MET-min/week scores: Vigorous = 8.0 × days × min/day; Moderate = 4.0 × days × min/day; Walking = 3.3 × days × min/day. Total MET-min/week = sum of all three.",
+        "IPAQ Activity Categories — Inactive: <600 MET-min/week. Minimally Active: 600–2999 MET-min/week. HEPA Active: ≥3000 MET-min/week (vigorous activity ≥3 days achieving ≥1500 MET-min/week, OR ≥7 days any combination achieving ≥3000 MET-min/week)."
+      ]
+    },
+    "data_output": {
+      "individual_file": "IPAQ-{subnum}.csv",
+      "pooled_file": "IPAQ-pooled.csv",
+      "report_file": "IPAQ-report-{subnum}.html",
+      "columns": "subnum,order,timestamp,question_id,text_key,dimension,coding,response,rt",
+      "pooled_columns": ""
+    }
+  },
+  "translations": {
+    "en": {
+      "ipaq_inst": "The following questions are about the time you spent being physically active in the LAST 7 DAYS. Please answer each question even if you do not consider yourself to be an active person. Think about the activities you do at work, as part of your house and yard work, to get from place to place, and in your spare time for recreation, exercise or sport.",
+      "ipaq1": "During the last 7 days, on how many days did you do vigorous physical activities like heavy lifting, digging, aerobics, or fast bicycling?",
+      "ipaq2": "How much time did you usually spend doing vigorous physical activities on one of those days? (minutes per day)",
+      "ipaq3": "During the last 7 days, on how many days did you do moderate physical activities like carrying light loads, bicycling at a regular pace, or doubles tennis? Do not include walking.",
+      "ipaq4": "How much time did you usually spend doing moderate physical activities on one of those days? (minutes per day)",
+      "ipaq5": "During the last 7 days, on how many days did you walk for at least 10 minutes at a time?",
+      "ipaq6": "How much time did you usually spend walking on one of those days? (minutes per day)",
+      "ipaq7": "During the last 7 days, how much time did you spend sitting on a weekday? (minutes per day)",
+      "err_days_min": "Number of days cannot be negative.",
+      "err_days_max": "Number of days cannot exceed 7.",
+      "err_min_min": "Minutes cannot be negative.",
+      "err_min_max": "Minutes per day cannot exceed 960 (16 hours).",
+      "err_sit_max": "Sitting time cannot exceed 1440 minutes (24 hours)."
+    }
+  }
+}

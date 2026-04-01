@@ -1,0 +1,157 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Clinical Outcomes in Routine Evaluation 10 (CORE-10)",
+      "code": "CORE10",
+      "abbreviation": "CORE-10",
+      "description": "10-item scale. Auto-converted from CamCOPS; requires manual review.",
+      "citation": "Barkham et al. (2001), PMID `11393596 <https://www.ncbi.nlm.nih.gov/pubmed/11393596>`_",
+      "license": "CC BY",
+      "license_explanation": "CamCOPS IP notes: - \"Any organisation is free to reproduce CORE instruments in software, as well as on paper, under the terms of the Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0) licence without payment of any licence fee (see http://creativecommons.org/licenses/by-nd/4.0/ for a human re",
+      "license_url": "https://www.coresystemtrust.org.uk/home/instruments/",
+      "version": "1.0",
+      "url": "https://www.coresystemtrust.org.uk/home/instruments/"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 0,
+      "max": 4,
+      "labels": [
+        "r0",
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total",
+        "description": "Sum of all 10 items."
+      }
+    ],
+    "items": [
+      {
+        "id": "q1",
+        "text_key": "q1",
+        "type": "likert"
+      },
+      {
+        "id": "q2",
+        "text_key": "q2",
+        "type": "likert"
+      },
+      {
+        "id": "q3",
+        "text_key": "q3",
+        "type": "likert"
+      },
+      {
+        "id": "q4",
+        "text_key": "q4",
+        "type": "likert"
+      },
+      {
+        "id": "q5",
+        "text_key": "q5",
+        "type": "likert"
+      },
+      {
+        "id": "q6",
+        "text_key": "q6",
+        "type": "likert"
+      },
+      {
+        "id": "q7",
+        "text_key": "q7",
+        "type": "likert"
+      },
+      {
+        "id": "q8",
+        "text_key": "q8",
+        "type": "likert"
+      },
+      {
+        "id": "q9",
+        "text_key": "q9",
+        "type": "likert"
+      },
+      {
+        "id": "q10",
+        "text_key": "q10",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5",
+          "q6",
+          "q7",
+          "q8",
+          "q9",
+          "q10"
+        ],
+        "description": "Sum of all 10 items.",
+        "item_coding": {
+          "q1": 1,
+          "q2": -1,
+          "q3": -1,
+          "q4": 1,
+          "q5": 1,
+          "q6": 1,
+          "q7": 1,
+          "q8": 1,
+          "q9": 1,
+          "q10": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "question_head": "Over the last week...",
+      "r0": "Not at all",
+      "r1": "Only occasionally",
+      "r2": "Sometimes",
+      "r3": "Often",
+      "r4": "Most or all of the time",
+      "q1": "I have felt tense, anxious or nervous",
+      "q2": "I have felt I have someone to turn to for support when needed",
+      "q3": "I have felt able to cope when things go wrong",
+      "q4": "Talking to people has felt too much for me",
+      "q5": "I have felt panic or terror",
+      "q6": "I made plans to end my life",
+      "q7": "I have had difficulty getting to sleep or staying asleep",
+      "q8": "I have felt despairing or hopeless",
+      "q9": "I have felt unhappy",
+      "q10": "Unwanted images or memories have been distressing me",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  },
+  "_camcops_conversion": {
+    "source": "CamCOPS (https://github.com/ucam-department-of-psychiatry/camcops)",
+    "status": "auto-converted — requires manual review",
+    "reverse_scored_items": [],
+    "n_questions": 10,
+    "response_range": [
+      0,
+      3
+    ]
+  }
+}

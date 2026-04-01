@@ -1,0 +1,643 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Cardiac Distress Inventory Short Form",
+      "code": "CDISF",
+      "abbreviation": "CDI-SF",
+      "description": "12-item measure of distress in cardiac patients. Each item first asks whether the issue has been experienced (Yes/No), then if Yes, rates distress from 0 (no distress) to 3 (severe distress). Total score ranges from 0 to 36; scores >13 indicate significant distress warranting completion of the full 55-item CDI.",
+      "citation": "Le Grande, M. R., Murphy, B. M., Rogerson, M. C., Ski, C. F., Amerena, J., Smith, J. A., Hoover, V., Alvarenga, M. E., Higgins, R. O., Thompson, D. R., & Jackson, A. C. (2023). Development of a short form of the Cardiac Distress Inventory. BMC Cardiovascular Disorders, 23, 408. https://doi.org/10.1186/s12872-023-03439-w",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1186/s12872-023-03439-w"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "dimensions": [
+      {
+        "id": "cardiac_distress",
+        "name": "Cardiac Distress"
+      }
+    ],
+    "items": [
+      {
+        "id": "cdisf1_yn",
+        "text_key": "cdisf1",
+        "type": "multi",
+        "question_head": "yn_head",
+        "options": [
+          {
+            "value": 1,
+            "text_key": "yn_yes"
+          },
+          {
+            "value": 0,
+            "text_key": "yn_no"
+          }
+        ]
+      },
+      {
+        "id": "cdisf1_d",
+        "text_key": "cdisf1",
+        "type": "multi",
+        "question_head": "distress_head",
+        "options": [
+          {
+            "value": 0,
+            "text_key": "d0"
+          },
+          {
+            "value": 1,
+            "text_key": "d1"
+          },
+          {
+            "value": 2,
+            "text_key": "d2"
+          },
+          {
+            "value": 3,
+            "text_key": "d3"
+          }
+        ],
+        "visible_when": {
+          "item": "cdisf1_yn",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "cdisf2_yn",
+        "text_key": "cdisf2",
+        "type": "multi",
+        "question_head": "yn_head",
+        "options": [
+          {
+            "value": 1,
+            "text_key": "yn_yes"
+          },
+          {
+            "value": 0,
+            "text_key": "yn_no"
+          }
+        ]
+      },
+      {
+        "id": "cdisf2_d",
+        "text_key": "cdisf2",
+        "type": "multi",
+        "question_head": "distress_head",
+        "options": [
+          {
+            "value": 0,
+            "text_key": "d0"
+          },
+          {
+            "value": 1,
+            "text_key": "d1"
+          },
+          {
+            "value": 2,
+            "text_key": "d2"
+          },
+          {
+            "value": 3,
+            "text_key": "d3"
+          }
+        ],
+        "visible_when": {
+          "item": "cdisf2_yn",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "cdisf3_yn",
+        "text_key": "cdisf3",
+        "type": "multi",
+        "question_head": "yn_head",
+        "options": [
+          {
+            "value": 1,
+            "text_key": "yn_yes"
+          },
+          {
+            "value": 0,
+            "text_key": "yn_no"
+          }
+        ]
+      },
+      {
+        "id": "cdisf3_d",
+        "text_key": "cdisf3",
+        "type": "multi",
+        "question_head": "distress_head",
+        "options": [
+          {
+            "value": 0,
+            "text_key": "d0"
+          },
+          {
+            "value": 1,
+            "text_key": "d1"
+          },
+          {
+            "value": 2,
+            "text_key": "d2"
+          },
+          {
+            "value": 3,
+            "text_key": "d3"
+          }
+        ],
+        "visible_when": {
+          "item": "cdisf3_yn",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "cdisf4_yn",
+        "text_key": "cdisf4",
+        "type": "multi",
+        "question_head": "yn_head",
+        "options": [
+          {
+            "value": 1,
+            "text_key": "yn_yes"
+          },
+          {
+            "value": 0,
+            "text_key": "yn_no"
+          }
+        ]
+      },
+      {
+        "id": "cdisf4_d",
+        "text_key": "cdisf4",
+        "type": "multi",
+        "question_head": "distress_head",
+        "options": [
+          {
+            "value": 0,
+            "text_key": "d0"
+          },
+          {
+            "value": 1,
+            "text_key": "d1"
+          },
+          {
+            "value": 2,
+            "text_key": "d2"
+          },
+          {
+            "value": 3,
+            "text_key": "d3"
+          }
+        ],
+        "visible_when": {
+          "item": "cdisf4_yn",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "cdisf5_yn",
+        "text_key": "cdisf5",
+        "type": "multi",
+        "question_head": "yn_head",
+        "options": [
+          {
+            "value": 1,
+            "text_key": "yn_yes"
+          },
+          {
+            "value": 0,
+            "text_key": "yn_no"
+          }
+        ]
+      },
+      {
+        "id": "cdisf5_d",
+        "text_key": "cdisf5",
+        "type": "multi",
+        "question_head": "distress_head",
+        "options": [
+          {
+            "value": 0,
+            "text_key": "d0"
+          },
+          {
+            "value": 1,
+            "text_key": "d1"
+          },
+          {
+            "value": 2,
+            "text_key": "d2"
+          },
+          {
+            "value": 3,
+            "text_key": "d3"
+          }
+        ],
+        "visible_when": {
+          "item": "cdisf5_yn",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "cdisf6_yn",
+        "text_key": "cdisf6",
+        "type": "multi",
+        "question_head": "yn_head",
+        "options": [
+          {
+            "value": 1,
+            "text_key": "yn_yes"
+          },
+          {
+            "value": 0,
+            "text_key": "yn_no"
+          }
+        ]
+      },
+      {
+        "id": "cdisf6_d",
+        "text_key": "cdisf6",
+        "type": "multi",
+        "question_head": "distress_head",
+        "options": [
+          {
+            "value": 0,
+            "text_key": "d0"
+          },
+          {
+            "value": 1,
+            "text_key": "d1"
+          },
+          {
+            "value": 2,
+            "text_key": "d2"
+          },
+          {
+            "value": 3,
+            "text_key": "d3"
+          }
+        ],
+        "visible_when": {
+          "item": "cdisf6_yn",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "cdisf7_yn",
+        "text_key": "cdisf7",
+        "type": "multi",
+        "question_head": "yn_head",
+        "options": [
+          {
+            "value": 1,
+            "text_key": "yn_yes"
+          },
+          {
+            "value": 0,
+            "text_key": "yn_no"
+          }
+        ]
+      },
+      {
+        "id": "cdisf7_d",
+        "text_key": "cdisf7",
+        "type": "multi",
+        "question_head": "distress_head",
+        "options": [
+          {
+            "value": 0,
+            "text_key": "d0"
+          },
+          {
+            "value": 1,
+            "text_key": "d1"
+          },
+          {
+            "value": 2,
+            "text_key": "d2"
+          },
+          {
+            "value": 3,
+            "text_key": "d3"
+          }
+        ],
+        "visible_when": {
+          "item": "cdisf7_yn",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "cdisf8_yn",
+        "text_key": "cdisf8",
+        "type": "multi",
+        "question_head": "yn_head",
+        "options": [
+          {
+            "value": 1,
+            "text_key": "yn_yes"
+          },
+          {
+            "value": 0,
+            "text_key": "yn_no"
+          }
+        ]
+      },
+      {
+        "id": "cdisf8_d",
+        "text_key": "cdisf8",
+        "type": "multi",
+        "question_head": "distress_head",
+        "options": [
+          {
+            "value": 0,
+            "text_key": "d0"
+          },
+          {
+            "value": 1,
+            "text_key": "d1"
+          },
+          {
+            "value": 2,
+            "text_key": "d2"
+          },
+          {
+            "value": 3,
+            "text_key": "d3"
+          }
+        ],
+        "visible_when": {
+          "item": "cdisf8_yn",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "cdisf9_yn",
+        "text_key": "cdisf9",
+        "type": "multi",
+        "question_head": "yn_head",
+        "options": [
+          {
+            "value": 1,
+            "text_key": "yn_yes"
+          },
+          {
+            "value": 0,
+            "text_key": "yn_no"
+          }
+        ]
+      },
+      {
+        "id": "cdisf9_d",
+        "text_key": "cdisf9",
+        "type": "multi",
+        "question_head": "distress_head",
+        "options": [
+          {
+            "value": 0,
+            "text_key": "d0"
+          },
+          {
+            "value": 1,
+            "text_key": "d1"
+          },
+          {
+            "value": 2,
+            "text_key": "d2"
+          },
+          {
+            "value": 3,
+            "text_key": "d3"
+          }
+        ],
+        "visible_when": {
+          "item": "cdisf9_yn",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "cdisf10_yn",
+        "text_key": "cdisf10",
+        "type": "multi",
+        "question_head": "yn_head",
+        "options": [
+          {
+            "value": 1,
+            "text_key": "yn_yes"
+          },
+          {
+            "value": 0,
+            "text_key": "yn_no"
+          }
+        ]
+      },
+      {
+        "id": "cdisf10_d",
+        "text_key": "cdisf10",
+        "type": "multi",
+        "question_head": "distress_head",
+        "options": [
+          {
+            "value": 0,
+            "text_key": "d0"
+          },
+          {
+            "value": 1,
+            "text_key": "d1"
+          },
+          {
+            "value": 2,
+            "text_key": "d2"
+          },
+          {
+            "value": 3,
+            "text_key": "d3"
+          }
+        ],
+        "visible_when": {
+          "item": "cdisf10_yn",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "cdisf11_yn",
+        "text_key": "cdisf11",
+        "type": "multi",
+        "question_head": "yn_head",
+        "options": [
+          {
+            "value": 1,
+            "text_key": "yn_yes"
+          },
+          {
+            "value": 0,
+            "text_key": "yn_no"
+          }
+        ]
+      },
+      {
+        "id": "cdisf11_d",
+        "text_key": "cdisf11",
+        "type": "multi",
+        "question_head": "distress_head",
+        "options": [
+          {
+            "value": 0,
+            "text_key": "d0"
+          },
+          {
+            "value": 1,
+            "text_key": "d1"
+          },
+          {
+            "value": 2,
+            "text_key": "d2"
+          },
+          {
+            "value": 3,
+            "text_key": "d3"
+          }
+        ],
+        "visible_when": {
+          "item": "cdisf11_yn",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "cdisf12_yn",
+        "text_key": "cdisf12",
+        "type": "multi",
+        "question_head": "yn_head",
+        "options": [
+          {
+            "value": 1,
+            "text_key": "yn_yes"
+          },
+          {
+            "value": 0,
+            "text_key": "yn_no"
+          }
+        ]
+      },
+      {
+        "id": "cdisf12_d",
+        "text_key": "cdisf12",
+        "type": "multi",
+        "question_head": "distress_head",
+        "options": [
+          {
+            "value": 0,
+            "text_key": "d0"
+          },
+          {
+            "value": 1,
+            "text_key": "d1"
+          },
+          {
+            "value": 2,
+            "text_key": "d2"
+          },
+          {
+            "value": 3,
+            "text_key": "d3"
+          }
+        ],
+        "visible_when": {
+          "item": "cdisf12_yn",
+          "operator": "equals",
+          "value": "1"
+        }
+      }
+    ],
+    "scoring": {
+      "cardiac_distress": {
+        "method": "sum_coded",
+        "items": [
+          "cdisf1_d",
+          "cdisf2_d",
+          "cdisf3_d",
+          "cdisf4_d",
+          "cdisf5_d",
+          "cdisf6_d",
+          "cdisf7_d",
+          "cdisf8_d",
+          "cdisf9_d",
+          "cdisf10_d",
+          "cdisf11_d",
+          "cdisf12_d"
+        ],
+        "description": "Sum of distress ratings (0-36). Scores >13 indicate significant cardiac distress.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 13,
+              "label": "Below Threshold"
+            },
+            {
+              "min": 14,
+              "max": 36,
+              "label": "Significant Cardiac Distress"
+            }
+          ]
+        },
+        "item_coding": {
+          "cdisf1_d": 1,
+          "cdisf2_d": 1,
+          "cdisf3_d": 1,
+          "cdisf4_d": 1,
+          "cdisf5_d": 1,
+          "cdisf6_d": 1,
+          "cdisf7_d": 1,
+          "cdisf8_d": 1,
+          "cdisf9_d": 1,
+          "cdisf10_d": 1,
+          "cdisf11_d": 1,
+          "cdisf12_d": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "yn_head": "Please indicate whether or not you have experienced this issue during the past four weeks by selecting Yes or No.",
+      "distress_head": "Indicate how much distress this issue has caused you during the <u>past four weeks</u>.",
+      "yn_yes": "Yes",
+      "yn_no": "No",
+      "d0": "No distress",
+      "d1": "Slight distress",
+      "d2": "Moderate distress",
+      "d3": "Severe distress",
+      "cdisf1": "Thinking I will never be the same again",
+      "cdisf2": "Not knowing what the future holds for me",
+      "cdisf3": "Feeling lonely",
+      "cdisf4": "Withdrawing from people",
+      "cdisf5": "Having changes in my usual roles",
+      "cdisf6": "Lacking purpose or meaning in life",
+      "cdisf7": "Being unable to deal with stress",
+      "cdisf8": "Being emotionally exhausted",
+      "cdisf9": "Having difficulty concentrating",
+      "cdisf10": "Being physically restricted",
+      "cdisf11": "Not getting clear directions from my health practitioner on how to manage my heart condition",
+      "cdisf12": "Thinking about dying",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

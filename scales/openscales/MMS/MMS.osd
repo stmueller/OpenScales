@@ -1,0 +1,121 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Modified Maximizing Scale",
+      "code": "MMS",
+      "abbreviation": "MMS",
+      "description": "5-item measure of maximizing tendency that excludes the decision difficulty component present in earlier scales. Developed to reduce the confound between maximizing and depressive symptomatology. All items are content-free (not tied to specific consumer situations) and load on a single factor reflecting aspirations for high standards and extensive alternative search. The scale is typically treated as unidimensional, though items reflect two related facets: High Standards and Alternative Search.",
+      "citation": "Lai, L. (2010). Maximizing without difficulty: A modified maximizing scale and its correlates. Judgment and Decision Making, 5(3), 164-175.",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1017/S1930297500001042"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "maximizing",
+        "name": "Maximizing"
+      }
+    ],
+    "items": [
+      {
+        "id": "mms1",
+        "text_key": "mms1",
+        "type": "likert",
+        "dimension": "maximizing"
+      },
+      {
+        "id": "mms2",
+        "text_key": "mms2",
+        "type": "likert",
+        "dimension": "maximizing"
+      },
+      {
+        "id": "mms3",
+        "text_key": "mms3",
+        "type": "likert",
+        "dimension": "maximizing"
+      },
+      {
+        "id": "mms4",
+        "text_key": "mms4",
+        "type": "likert",
+        "dimension": "maximizing"
+      },
+      {
+        "id": "mms5",
+        "text_key": "mms5",
+        "type": "likert",
+        "dimension": "maximizing"
+      }
+    ],
+    "scoring": {
+      "maximizing": {
+        "method": "mean_coded",
+        "items": [
+          "mms1",
+          "mms2",
+          "mms3",
+          "mms4",
+          "mms5"
+        ],
+        "description": "Mean of all 5 items (1-5). Higher scores indicate greater maximizing tendency (high standards combined with extensive alternative search), without the decision difficulty component. Cronbach's alpha ranged from .65 to .77 across three development samples.",
+        "item_coding": {
+          "mms1": 1,
+          "mms2": 1,
+          "mms3": 1,
+          "mms4": 1,
+          "mms5": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Completely Disagree",
+      "likert_2": "Disagree",
+      "likert_3": "Neither Agree nor Disagree",
+      "likert_4": "Agree",
+      "likert_5": "Completely Agree",
+      "question_head": "Please indicate how much you agree or disagree with each of the following statements.",
+      "mms1": "Whenever I'm faced with a choice, I try to imagine what all the other possibilities are, even ones that aren't present at the moment.",
+      "mms2": "My decisions are well thought through.",
+      "mms3": "I am uncomfortable making decisions before I know all of my options.",
+      "mms4": "Before making a choice, I consider many alternatives thoroughly.",
+      "mms5": "No matter what I do, I have the highest standards for myself."
+    },
+    "no": {
+      "likert_1": "Helt uenig",
+      "likert_2": "Uenig",
+      "likert_3": "Verken enig eller uenig",
+      "likert_4": "Enig",
+      "likert_5": "Helt enig",
+      "question_head": "Vennligst angi hvor enig eller uenig du er i hver av de følgende påstandene.",
+      "mms1": "Når jeg står overfor et valg, prøver jeg å forestille meg hva alle de andre mulighetene er, selv de som ikke er tilgjengelige for øyeblikket.",
+      "mms2": "Mine beslutninger er gjennomtenkte.",
+      "mms3": "Jeg liker ikke å ta beslutninger før jeg kjenner alle alternativ.",
+      "mms4": "Før jeg tar et valg, vurderer jeg mange alternativer grundig.",
+      "mms5": "Uansett hva jeg gjør, krever jeg det aller beste av meg selv."
+    }
+  }
+}

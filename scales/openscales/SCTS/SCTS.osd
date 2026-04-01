@@ -1,0 +1,209 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Self-Consciousness Type Scale",
+      "code": "SCTS",
+      "abbreviation": "SCTS",
+      "description": "14-item self-report measure of self-consciousness based on regulatory focus theory. Distinguishes between promotion-focused self-consciousness (growth-oriented) and prevention-focused self-consciousness (defensive). All items begin with the stem 'I think a lot about myself because....' Note: The original preliminary scale had 18 items; after factor analysis, 4 items were removed, yielding 14 final items.",
+      "citation": "Author(s). (2024). Development and validation of the self-consciousness type scale. Frontiers in Psychology, 15, 1362324. https://doi.org/10.3389/fpsyg.2024.1362324",
+      "license": "CC BY 4.0",
+      "license_explanation": "Published in Frontiers in Psychology under Creative Commons Attribution 4.0 International License.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyg.2024.1362324",
+      "domain": "Self & Coping"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5",
+        "likert_6"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "promotion",
+        "name": "Promotion-Focused Self-Consciousness",
+        "description": "Growth-oriented self-consciousness driven by self-improvement and self-discovery motivation."
+      },
+      {
+        "id": "prevention",
+        "name": "Prevention-Focused Self-Consciousness",
+        "description": "Defensive self-consciousness driven by concern about others' evaluation and worry about mistakes."
+      }
+    ],
+    "items": [
+      {
+        "id": "scts1",
+        "text_key": "scts1",
+        "type": "likert",
+        "dimension": "promotion"
+      },
+      {
+        "id": "scts2",
+        "text_key": "scts2",
+        "type": "likert",
+        "dimension": "prevention"
+      },
+      {
+        "id": "scts3",
+        "text_key": "scts3",
+        "type": "likert",
+        "dimension": "prevention"
+      },
+      {
+        "id": "scts4",
+        "text_key": "scts4",
+        "type": "likert",
+        "dimension": "promotion"
+      },
+      {
+        "id": "scts5",
+        "text_key": "scts5",
+        "type": "likert",
+        "dimension": "promotion"
+      },
+      {
+        "id": "scts6",
+        "text_key": "scts6",
+        "type": "likert",
+        "dimension": "prevention"
+      },
+      {
+        "id": "scts7",
+        "text_key": "scts7",
+        "type": "likert",
+        "dimension": "prevention"
+      },
+      {
+        "id": "scts8",
+        "text_key": "scts8",
+        "type": "likert",
+        "dimension": "promotion"
+      },
+      {
+        "id": "scts9",
+        "text_key": "scts9",
+        "type": "likert",
+        "dimension": "prevention"
+      },
+      {
+        "id": "scts10",
+        "text_key": "scts10",
+        "type": "likert",
+        "dimension": "prevention"
+      },
+      {
+        "id": "scts11",
+        "text_key": "scts11",
+        "type": "likert",
+        "dimension": "promotion"
+      },
+      {
+        "id": "scts12",
+        "text_key": "scts12",
+        "type": "likert",
+        "dimension": "prevention"
+      },
+      {
+        "id": "scts13",
+        "text_key": "scts13",
+        "type": "likert",
+        "dimension": "promotion"
+      },
+      {
+        "id": "scts14",
+        "text_key": "scts14",
+        "type": "likert",
+        "dimension": "prevention"
+      }
+    ],
+    "scoring": {
+      "promotion": {
+        "method": "mean_coded",
+        "items": [
+          "scts1",
+          "scts4",
+          "scts5",
+          "scts8",
+          "scts11",
+          "scts13"
+        ],
+        "description": "Mean of promotion-focused items (1-6). Higher scores indicate greater growth-oriented self-consciousness.",
+        "item_coding": {
+          "scts1": 1,
+          "scts4": 1,
+          "scts5": 1,
+          "scts8": 1,
+          "scts11": 1,
+          "scts13": 1
+        }
+      },
+      "prevention": {
+        "method": "mean_coded",
+        "items": [
+          "scts2",
+          "scts3",
+          "scts6",
+          "scts7",
+          "scts9",
+          "scts10",
+          "scts12",
+          "scts14"
+        ],
+        "description": "Mean of prevention-focused items (1-6). Higher scores indicate greater defensive self-consciousness.",
+        "item_coding": {
+          "scts2": 1,
+          "scts3": 1,
+          "scts6": 1,
+          "scts7": 1,
+          "scts9": 1,
+          "scts10": 1,
+          "scts12": 1,
+          "scts14": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Not at all like me",
+      "likert_2": "Slightly like me",
+      "likert_3": "Somewhat like me",
+      "likert_4": "Moderately like me",
+      "likert_5": "Very much like me",
+      "likert_6": "Extremely like me",
+      "question_head": "I think a lot about myself because....",
+      "scts1": "I am interested in learning about myself.",
+      "scts2": "I care too much what people think.",
+      "scts3": "I have a lack of confidence.",
+      "scts4": "It gives me pleasure to learn about myself.",
+      "scts5": "It helps me discover my strength.",
+      "scts6": "I am concerned about how others perceive me.",
+      "scts7": "I worry that I will do something I regret.",
+      "scts8": "I value self-reflection.",
+      "scts9": "I do not want to make a bad impression on others.",
+      "scts10": "It is important to me what others think of me.",
+      "scts11": "I need to grow up.",
+      "scts12": "I worry about making mistakes in front of others.",
+      "scts13": "It helps me understand myself.",
+      "scts14": "I am conscious about what people think of me.",
+      "debrief": "Thank you for completing the Self-Consciousness Type Scale."
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Regret and Disappointment Scale",
+      "code": "RDS",
+      "abbreviation": "RDS",
+      "description": "7-item instrument for assessing regret and disappointment in decision making using cognitive appraisal items (without using the words 'regret' or 'disappointment'). Items distinguish self-caused negative outcomes (internal attribution, regret) from other-caused negative outcomes (external attribution, disappointment). Regret Index = mean of items 2 and 4; Disappointment Index = mean of items 3 and 5. Items rated on a 7-point scale (1 = Not at all, 7 = Totally agree). Item 7 is a forced-choice counterfactual completion.",
+      "citation": "Marcatto, F., & Ferrante, D. (2008). The Regret and Disappointment Scale: An instrument for assessing regret and disappointment in decision making. Judgment and Decision Making, 3(1), 87-99. https://doi.org/10.1017/S193029750000019X",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1017/S193029750000019X"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5",
+        "likert_6",
+        "likert_7"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "rds_regret",
+        "name": "Regret",
+        "abbreviation": "RDS-R",
+        "description": "Self-caused negative outcomes with internal attribution (Regret Index = mean of items 2 and 4)"
+      },
+      {
+        "id": "rds_disappointment",
+        "name": "Disappointment",
+        "abbreviation": "RDS-D",
+        "description": "Other-caused negative outcomes with external attribution (Disappointment Index = mean of items 3 and 5)"
+      }
+    ],
+    "items": [
+      {
+        "id": "rds1",
+        "type": "likert",
+        "text_key": "rds1"
+      },
+      {
+        "id": "rds2",
+        "type": "likert",
+        "text_key": "rds2",
+        "dimension": "rds_regret"
+      },
+      {
+        "id": "rds3",
+        "type": "likert",
+        "text_key": "rds3",
+        "dimension": "rds_disappointment"
+      },
+      {
+        "id": "rds4",
+        "type": "likert",
+        "text_key": "rds4",
+        "dimension": "rds_regret"
+      },
+      {
+        "id": "rds5",
+        "type": "likert",
+        "text_key": "rds5",
+        "dimension": "rds_disappointment"
+      },
+      {
+        "id": "rds6",
+        "type": "likert",
+        "text_key": "rds6"
+      },
+      {
+        "id": "rds7",
+        "type": "multi",
+        "text_key": "rds7",
+        "options": [
+          {
+            "text_key": "rds7_option_regret",
+            "value": 1
+          },
+          {
+            "text_key": "rds7_option_disappointment",
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "rds_regret": {
+        "method": "mean_coded",
+        "items": [
+          "rds2",
+          "rds4"
+        ],
+        "description": "Regret Index: Mean of items 2 (counterfactual wish) and 4 (internal attribution). Higher scores indicate stronger regret. Item 7 (forced-choice counterfactual: 'I had chosen differently') provides a categorical regret indicator.",
+        "item_coding": {
+          "rds2": 1,
+          "rds4": 1
+        }
+      },
+      "rds_disappointment": {
+        "method": "mean_coded",
+        "items": [
+          "rds3",
+          "rds5"
+        ],
+        "description": "Disappointment Index: Mean of items 3 (external counterfactual wish) and 5 (external attribution). Higher scores indicate stronger disappointment.",
+        "item_coding": {
+          "rds3": 1,
+          "rds5": 1
+        }
+      }
+    },
+    "data_output": {
+      "individual_file": "RDS-{subnum}.csv",
+      "pooled_file": "RDS-pooled.csv",
+      "columns": "subnum,order,time,qnum,ques,dim,valence,resp,rt",
+      "pooled_columns": "subnum,timestamp,time,rds1,rds2,rds3,rds4,rds5,rds6,rds7,rds_regret,rds_disappointment"
+    }
+  },
+  "translations": {
+    "en": {
+      "LANGUAGE": "en",
+      "question_head": "Thinking about the situation you were just presented with, please indicate how much you agree with each of the following statements about what happened.",
+      "likert_1": "Not at all / Statement not pertinent",
+      "likert_2": "2",
+      "likert_3": "3",
+      "likert_4": "4",
+      "likert_5": "5",
+      "likert_6": "6",
+      "likert_7": "Totally agree",
+      "rds1": "I am sorry about what happened to me.",
+      "rds2": "I wish I had made a different choice.",
+      "rds3": "I wish the events that were beyond my control had happened differently.",
+      "rds4": "I feel responsible for what happened to me.",
+      "rds5": "The events that were beyond my control are the cause of what happened to me.",
+      "rds6": "I am satisfied about what happened to me.",
+      "rds7": "Things would have gone better if...",
+      "rds7_option_regret": "I had chosen differently.",
+      "rds7_option_disappointment": "The course of events had been different.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

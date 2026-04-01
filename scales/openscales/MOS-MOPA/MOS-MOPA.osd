@@ -1,0 +1,132 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "MOS Patient Adherence Scale",
+      "code": "MOS-MOPA",
+      "abbreviation": "MOS-MOPA",
+      "description": "5-item general measure of patient adherence to medical recommendations from the Medical Outcomes Study. Items 1–4 use a 6-point frequency scale (1=None of the time to 6=All of the time) with question head 'How often was each of the following statements true for you during the past 4 weeks?' Item 5 asks overall adherence frequency. Items 1 and 3 are reverse-coded. Score is mean of 5 items after reversing items 1 and 3; higher scores indicate greater adherence. Internal consistency alpha = 0.81. Public Domain (RAND Corporation).",
+      "citation": "Hays, R. D. (n.d.). The Medical Outcomes Study (MOS) Measures of Patient Adherence. RAND Corporation. https://www.rand.org/health-care/surveys_tools/mos/patient-adherence.html",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health-care/surveys_tools/mos/patient-adherence.html",
+      "domain": "Health",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. RAND explicitly states these instruments are available for use without permission or fee.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": [
+        "mosadh_r1",
+        "mosadh_r2",
+        "mosadh_r3",
+        "mosadh_r4",
+        "mosadh_r5",
+        "mosadh_r6"
+      ],
+      "question_head": "mosadh_head"
+    },
+    "dimensions": [
+      {
+        "id": "general_adherence",
+        "name": "General Adherence",
+        "abbreviation": "GA",
+        "description": "Mean of 5 items (1–6) after reversing items 1 and 3. Higher scores indicate greater adherence to medical recommendations."
+      }
+    ],
+    "items": [
+      {
+        "id": "mosadh_inst",
+        "text_key": "mosadh_inst",
+        "type": "inst"
+      },
+      {
+        "id": "mosadh1",
+        "text_key": "mosadh1",
+        "type": "likert"
+      },
+      {
+        "id": "mosadh2",
+        "text_key": "mosadh2",
+        "type": "likert"
+      },
+      {
+        "id": "mosadh3",
+        "text_key": "mosadh3",
+        "type": "likert"
+      },
+      {
+        "id": "mosadh4",
+        "text_key": "mosadh4",
+        "type": "likert"
+      },
+      {
+        "id": "mosadh5",
+        "text_key": "mosadh5",
+        "type": "likert",
+        "question_head": "mosadh5_head"
+      }
+    ],
+    "scoring": {
+      "general_adherence": {
+        "method": "mean_coded",
+        "items": [
+          "mosadh1",
+          "mosadh2",
+          "mosadh3",
+          "mosadh4",
+          "mosadh5"
+        ],
+        "description": "Mean of 5 items (1–6). Items 1 and 3 reverse-coded. Higher = greater adherence.",
+        "item_coding": {
+          "mosadh1": -1,
+          "mosadh2": 1,
+          "mosadh3": -1,
+          "mosadh4": 1,
+          "mosadh5": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "MOS Patient Adherence Scale Report",
+      "footer_refs": [
+        "Hays, R. D. The Medical Outcomes Study (MOS) Measures of Patient Adherence. RAND Corporation.",
+        "Items 1 and 3 reverse-coded. Score is mean of 5 items; higher scores indicate greater adherence. Alpha = 0.81."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "mosadh_inst": "The following questions ask about your experience following your doctor's recommendations during the <b>past 4 weeks</b>.",
+      "mosadh_head": "How often was each of the following statements true for you during the <b>past 4 weeks</b>?",
+      "mosadh5_head": "Generally speaking, how often during the <b>past 4 weeks</b> were you able to do what the doctor told you?",
+      "mosadh_r1": "None of the time",
+      "mosadh_r2": "A little of the time",
+      "mosadh_r3": "Some of the time",
+      "mosadh_r4": "A good bit of the time",
+      "mosadh_r5": "Most of the time",
+      "mosadh_r6": "All of the time",
+      "mosadh1": "I had a hard time doing what the doctor suggested I do.",
+      "mosadh2": "I followed my doctor's suggestions exactly.",
+      "mosadh3": "I was unable to do what was necessary to follow my doctor's treatment plans.",
+      "mosadh4": "I found it easy to do the things my doctor suggested I do.",
+      "mosadh5": "Generally speaking, how often during the past 4 weeks were you able to do what the doctor told you?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

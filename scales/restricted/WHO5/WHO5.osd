@@ -1,0 +1,126 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "WHO-5 Well-Being Index",
+      "code": "WHO5",
+      "abbreviation": "WHO-5",
+      "description": "5-item measure of subjective well-being over the past 2 weeks. Raw score 0-25; percentage score (0-100) = raw score x 4. Scores of 50 or below suggest low mood warranting further assessment.",
+      "citation": "Topp, C. W., Ostergaard, S. D., Sondergaard, S., & Bech, P. (2015). The WHO-5 Well-Being Index: A systematic review of the literature. Psychotherapy and Psychosomatics, 84(3), 167-176. https://doi.org/10.1159/000376585",
+      "license": "CC BY-NC-SA 3.0 IGO",
+      "version": "1.0",
+      "url": "https://www.who.int/publications/i/item/WHO-ICD-MNH-98.1-Rev2"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 0,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5",
+        "likert_6"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "wellbeing",
+        "name": "Well-Being"
+      }
+    ],
+    "items": [
+      {
+        "id": "who1",
+        "text_key": "who1",
+        "type": "likert"
+      },
+      {
+        "id": "who2",
+        "text_key": "who2",
+        "type": "likert"
+      },
+      {
+        "id": "who3",
+        "text_key": "who3",
+        "type": "likert"
+      },
+      {
+        "id": "who4",
+        "text_key": "who4",
+        "type": "likert"
+      },
+      {
+        "id": "who5",
+        "text_key": "who5",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "wellbeing": {
+        "method": "sum_coded",
+        "items": [
+          "who1",
+          "who2",
+          "who3",
+          "who4",
+          "who5"
+        ],
+        "description": "Raw sum of items (0-25). Percentage well-being score = raw x 4 (0-100). Scores <=50 suggest possible depression.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 12,
+              "label": "Poor Well-Being (≤50% — consider screening for depression)"
+            },
+            {
+              "min": 13,
+              "max": 25,
+              "label": "Good Well-Being"
+            }
+          ]
+        },
+        "item_coding": {
+          "who1": 1,
+          "who2": 1,
+          "who3": 1,
+          "who4": 1,
+          "who5": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 4
+          }
+        ]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "At no time",
+      "likert_2": "Some of the time",
+      "likert_3": "Less than half the time",
+      "likert_4": "More than half the time",
+      "likert_5": "Most of the time",
+      "likert_6": "All of the time",
+      "question_head": "Please indicate for each of the five statements which is closest to how you have been feeling <b>over the last two weeks</b>.",
+      "who1": "I have felt cheerful and in good spirits.",
+      "who2": "I have felt calm and relaxed.",
+      "who3": "I have felt active and vigorous.",
+      "who4": "I woke up feeling fresh and rested.",
+      "who5": "My daily life has been filled with things that interest me.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

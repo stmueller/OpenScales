@@ -1,0 +1,533 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Distress Thermometer",
+      "code": "DistTherm",
+      "abbreviation": "DT",
+      "description": "Screening tool for psychosocial distress in cancer patients. Part 1: a single 0–10 distress rating (the Distress Thermometer proper). Part 2 (optional): 36 yes/no problem checklist across 5 domains (Practical, Family, Emotional, Spiritual/religious, Physical) — this Problem List was used alongside the DT in the original study but is not part of the DT itself. A distress score of 4+ indicates clinically significant distress requiring further assessment. Public domain (US National Cancer Institute).",
+      "citation": "Roth, A. J., Kornblith, A. B., Batel-Copel, L., Peabody, E., Scher, H. I., & Holland, J. C. (1998). Rapid screening for psychologic distress in men with prostate carcinoma. Cancer, 82(10), 1904–1908. https://pubmed.ncbi.nlm.nih.gov/9587123/ / Lynch, J., Goodhart, F., Saunders, Y., & O'Connor, S. J. (2011). Screening for psychological distress in patients with lung cancer: results of a clinical audit evaluating the use of the patient Distress Thermometer. Supportive Care in Cancer, 19, 193–202. https://doi.org/10.1007/s00520-009-0799-8",
+      "license": "Public Domain",
+      "license_explanation": "Believed to be in the public domain. Made freely available by the US National Comprehensive Cancer Network (NCCN).",
+      "version": "1.0",
+      "url": "https://www.nccn.org/patients/resources/life_with_cancer/managing_stress/distress_thermometer.aspx"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "include_problem_list": {
+        "type": "boolean",
+        "default": true,
+        "description": "Include the Problem List checklist after the Distress Thermometer. The Problem List is commonly administered alongside the DT but is not part of the DT itself."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "distress",
+        "name": "Distress Rating",
+        "description": "Single 0–10 distress thermometer rating. 0–4 = low distress (green), 5–6 = moderate (yellow, monitor), 7–10 = high (red, refer)."
+      },
+      {
+        "id": "practical",
+        "name": "Practical Problems",
+        "description": "Count of practical problems endorsed (0–5).",
+        "enabled_param": "include_problem_list"
+      },
+      {
+        "id": "family",
+        "name": "Family Problems",
+        "description": "Count of family problems endorsed (0–3).",
+        "enabled_param": "include_problem_list"
+      },
+      {
+        "id": "emotional",
+        "name": "Emotional Problems",
+        "description": "Count of emotional problems endorsed (0–6).",
+        "enabled_param": "include_problem_list"
+      },
+      {
+        "id": "spiritual",
+        "name": "Spiritual/Religious Concerns",
+        "description": "Spiritual/religious concerns endorsed (0–1).",
+        "enabled_param": "include_problem_list"
+      },
+      {
+        "id": "physical",
+        "name": "Physical Problems",
+        "description": "Count of physical problems endorsed (0–21).",
+        "enabled_param": "include_problem_list"
+      },
+      {
+        "id": "problem_total",
+        "name": "Total Problems",
+        "description": "Total count of all problems endorsed (0–36).",
+        "enabled_param": "include_problem_list"
+      }
+    ],
+    "items": [
+      {
+        "id": "dt_inst1",
+        "text_key": "dt_inst1",
+        "type": "inst"
+      },
+      {
+        "id": "distress",
+        "text_key": "distress_q",
+        "type": "vas",
+        "min": 0,
+        "max": 10,
+        "min_label": "dt_vas_min",
+        "max_label": "dt_vas_max"
+      },
+      {
+        "id": "dt_problem_list_section",
+        "text_key": "dt_problem_list_section",
+        "type": "section",
+        "visible_when": {
+          "parameter": "include_problem_list",
+          "operator": "equals",
+          "value": "true"
+        }
+      },
+      {
+        "id": "dt_inst2",
+        "text_key": "dt_inst2",
+        "type": "inst"
+      },
+      {
+        "id": "grid_practical",
+        "text_key": "dt_sub_practical",
+        "question_head": "dt_grid_head",
+        "type": "grid",
+        "dimension": "practical",
+        "rows": [
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5"
+        ],
+        "columns": [
+          {
+            "text_key": "dt_no",
+            "value": 0
+          },
+          {
+            "text_key": "dt_yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "grid_family",
+        "text_key": "dt_sub_family",
+        "question_head": "dt_grid_head",
+        "type": "grid",
+        "dimension": "family",
+        "rows": [
+          "q6",
+          "q7",
+          "q8"
+        ],
+        "columns": [
+          {
+            "text_key": "dt_no",
+            "value": 0
+          },
+          {
+            "text_key": "dt_yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "grid_emotional",
+        "text_key": "dt_sub_emotional",
+        "question_head": "dt_grid_head",
+        "type": "grid",
+        "dimension": "emotional",
+        "rows": [
+          "q9",
+          "q10",
+          "q11",
+          "q12",
+          "q13",
+          "q14"
+        ],
+        "columns": [
+          {
+            "text_key": "dt_no",
+            "value": 0
+          },
+          {
+            "text_key": "dt_yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "grid_spiritual",
+        "text_key": "dt_sub_spiritual",
+        "question_head": "dt_grid_head",
+        "type": "grid",
+        "dimension": "spiritual",
+        "rows": [
+          "q15"
+        ],
+        "columns": [
+          {
+            "text_key": "dt_no",
+            "value": 0
+          },
+          {
+            "text_key": "dt_yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "grid_physical",
+        "text_key": "dt_sub_physical",
+        "question_head": "dt_grid_head",
+        "type": "grid",
+        "dimension": "physical",
+        "rows": [
+          "q16",
+          "q17",
+          "q18",
+          "q19",
+          "q20",
+          "q21",
+          "q22",
+          "q23",
+          "q24",
+          "q25",
+          "q26",
+          "q27",
+          "q28",
+          "q29",
+          "q30",
+          "q31",
+          "q32",
+          "q33",
+          "q34",
+          "q35",
+          "q36"
+        ],
+        "columns": [
+          {
+            "text_key": "dt_no",
+            "value": 0
+          },
+          {
+            "text_key": "dt_yes",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "other_problems",
+        "text_key": "other_q",
+        "type": "long"
+      }
+    ],
+    "scoring": {
+      "distress": {
+        "method": "sum_coded",
+        "items": [
+          "distress"
+        ],
+        "description": "Distress thermometer rating (0–10). Single item.",
+        "item_coding": {
+          "distress": 1
+        },
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 4,
+              "label": "Low distress (green)"
+            },
+            {
+              "min": 5,
+              "max": 6,
+              "label": "Moderate distress (yellow — monitor)"
+            },
+            {
+              "min": 7,
+              "max": 10,
+              "label": "High distress (red — refer)"
+            }
+          ],
+          "source": "Score of 4+ is the recommended cut-off for clinically significant distress requiring psychological consultation."
+        }
+      },
+      "practical": {
+        "method": "sum_coded",
+        "items": [
+          "grid_practical_1",
+          "grid_practical_2",
+          "grid_practical_3",
+          "grid_practical_4",
+          "grid_practical_5"
+        ],
+        "description": "Practical problems endorsed (0–5).",
+        "item_coding": {
+          "grid_practical_1": 1,
+          "grid_practical_2": 1,
+          "grid_practical_3": 1,
+          "grid_practical_4": 1,
+          "grid_practical_5": 1
+        }
+      },
+      "family": {
+        "method": "sum_coded",
+        "items": [
+          "grid_family_1",
+          "grid_family_2",
+          "grid_family_3"
+        ],
+        "description": "Family problems endorsed (0–3).",
+        "item_coding": {
+          "grid_family_1": 1,
+          "grid_family_2": 1,
+          "grid_family_3": 1
+        }
+      },
+      "emotional": {
+        "method": "sum_coded",
+        "items": [
+          "grid_emotional_1",
+          "grid_emotional_2",
+          "grid_emotional_3",
+          "grid_emotional_4",
+          "grid_emotional_5",
+          "grid_emotional_6"
+        ],
+        "description": "Emotional problems endorsed (0–6).",
+        "item_coding": {
+          "grid_emotional_1": 1,
+          "grid_emotional_2": 1,
+          "grid_emotional_3": 1,
+          "grid_emotional_4": 1,
+          "grid_emotional_5": 1,
+          "grid_emotional_6": 1
+        }
+      },
+      "spiritual": {
+        "method": "sum_coded",
+        "items": [
+          "grid_spiritual_1"
+        ],
+        "description": "Spiritual/religious concerns endorsed (0–1).",
+        "item_coding": {
+          "grid_spiritual_1": 1
+        }
+      },
+      "physical": {
+        "method": "sum_coded",
+        "items": [
+          "grid_physical_1",
+          "grid_physical_2",
+          "grid_physical_3",
+          "grid_physical_4",
+          "grid_physical_5",
+          "grid_physical_6",
+          "grid_physical_7",
+          "grid_physical_8",
+          "grid_physical_9",
+          "grid_physical_10",
+          "grid_physical_11",
+          "grid_physical_12",
+          "grid_physical_13",
+          "grid_physical_14",
+          "grid_physical_15",
+          "grid_physical_16",
+          "grid_physical_17",
+          "grid_physical_18",
+          "grid_physical_19",
+          "grid_physical_20",
+          "grid_physical_21"
+        ],
+        "description": "Physical problems endorsed (0–21).",
+        "item_coding": {
+          "grid_physical_1": 1,
+          "grid_physical_2": 1,
+          "grid_physical_3": 1,
+          "grid_physical_4": 1,
+          "grid_physical_5": 1,
+          "grid_physical_6": 1,
+          "grid_physical_7": 1,
+          "grid_physical_8": 1,
+          "grid_physical_9": 1,
+          "grid_physical_10": 1,
+          "grid_physical_11": 1,
+          "grid_physical_12": 1,
+          "grid_physical_13": 1,
+          "grid_physical_14": 1,
+          "grid_physical_15": 1,
+          "grid_physical_16": 1,
+          "grid_physical_17": 1,
+          "grid_physical_18": 1,
+          "grid_physical_19": 1,
+          "grid_physical_20": 1,
+          "grid_physical_21": 1
+        }
+      },
+      "problem_total": {
+        "method": "sum_coded",
+        "items": [
+          "grid_practical_1",
+          "grid_practical_2",
+          "grid_practical_3",
+          "grid_practical_4",
+          "grid_practical_5",
+          "grid_family_1",
+          "grid_family_2",
+          "grid_family_3",
+          "grid_emotional_1",
+          "grid_emotional_2",
+          "grid_emotional_3",
+          "grid_emotional_4",
+          "grid_emotional_5",
+          "grid_emotional_6",
+          "grid_spiritual_1",
+          "grid_physical_1",
+          "grid_physical_2",
+          "grid_physical_3",
+          "grid_physical_4",
+          "grid_physical_5",
+          "grid_physical_6",
+          "grid_physical_7",
+          "grid_physical_8",
+          "grid_physical_9",
+          "grid_physical_10",
+          "grid_physical_11",
+          "grid_physical_12",
+          "grid_physical_13",
+          "grid_physical_14",
+          "grid_physical_15",
+          "grid_physical_16",
+          "grid_physical_17",
+          "grid_physical_18",
+          "grid_physical_19",
+          "grid_physical_20",
+          "grid_physical_21"
+        ],
+        "description": "Total problems endorsed (0–36).",
+        "item_coding": {
+          "grid_practical_1": 1,
+          "grid_practical_2": 1,
+          "grid_practical_3": 1,
+          "grid_practical_4": 1,
+          "grid_practical_5": 1,
+          "grid_family_1": 1,
+          "grid_family_2": 1,
+          "grid_family_3": 1,
+          "grid_emotional_1": 1,
+          "grid_emotional_2": 1,
+          "grid_emotional_3": 1,
+          "grid_emotional_4": 1,
+          "grid_emotional_5": 1,
+          "grid_emotional_6": 1,
+          "grid_spiritual_1": 1,
+          "grid_physical_1": 1,
+          "grid_physical_2": 1,
+          "grid_physical_3": 1,
+          "grid_physical_4": 1,
+          "grid_physical_5": 1,
+          "grid_physical_6": 1,
+          "grid_physical_7": 1,
+          "grid_physical_8": 1,
+          "grid_physical_9": 1,
+          "grid_physical_10": 1,
+          "grid_physical_11": 1,
+          "grid_physical_12": 1,
+          "grid_physical_13": 1,
+          "grid_physical_14": 1,
+          "grid_physical_15": 1,
+          "grid_physical_16": 1,
+          "grid_physical_17": 1,
+          "grid_physical_18": 1,
+          "grid_physical_19": 1,
+          "grid_physical_20": 1,
+          "grid_physical_21": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Distress Thermometer Report",
+      "footer_refs": [
+        "Roth, A. J., et al. (1998). Rapid screening for psychologic distress in men with prostate carcinoma. Cancer, 82(10), 1904–1908.",
+        "Distress rating: 0–4 low (green), 5–6 moderate (yellow, monitor), 7–10 high (red, refer). Cut-off of 4+ recommended for referral to psychological consultation."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "dt_problem_list_section": "Problem List",
+      "dt_inst1": "First, please indicate how much distress you have been experiencing in <b>the past week including today</b>.",
+      "distress_q": "How much distress have you been experiencing in the past week including today?",
+      "dt_vas_min": "No distress",
+      "dt_vas_max": "Extreme distress",
+      "dt_inst2": "Indicate if any of the following have been a problem for you in <b>the past week including today</b>.",
+      "dt_grid_head": "Indicate if any of the following have been a problem for you in <b>the past week, including today</b>.",
+      "dt_sub_practical": "Practical Problems",
+      "dt_sub_family": "Family Problems",
+      "dt_sub_emotional": "Emotional Problems",
+      "dt_sub_spiritual": "Spiritual/Religious Concerns",
+      "dt_sub_physical": "Physical Problems",
+      "dt_yes": "Yes",
+      "dt_no": "No",
+      "q1": "Child care",
+      "q2": "Housing",
+      "q3": "Insurance/financial",
+      "q4": "Transportation",
+      "q5": "Work/school",
+      "q6": "Dealing with children",
+      "q7": "Dealing with partner",
+      "q8": "Dealing with close friend/relative",
+      "q9": "Depression",
+      "q10": "Fears",
+      "q11": "Nervousness",
+      "q12": "Sadness",
+      "q13": "Worry",
+      "q14": "Loss of interest in usual activities",
+      "q15": "Spiritual/religious concerns",
+      "q16": "Appearance",
+      "q17": "Bathing/dressing",
+      "q18": "Breathing",
+      "q19": "Changes in urination",
+      "q20": "Constipation",
+      "q21": "Diarrhoea",
+      "q22": "Eating",
+      "q23": "Fatigue",
+      "q24": "Feeling swollen",
+      "q25": "Fevers",
+      "q26": "Getting around",
+      "q27": "Indigestion",
+      "q28": "Memory/concentration",
+      "q29": "Mouth sores",
+      "q30": "Nausea",
+      "q31": "Nose dry/congested",
+      "q32": "Pain",
+      "q33": "Sexual",
+      "q34": "Skin dry/itchy",
+      "q35": "Sleep",
+      "q36": "Tingling in hands/feet",
+      "other_q": "Other problems not listed above:",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

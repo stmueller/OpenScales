@@ -1,0 +1,168 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Belief in Science Scale",
+      "code": "BISS",
+      "abbreviation": "BISS",
+      "description": "10-item scale measuring how important science is to individuals and how effective they perceive its methods to be in describing the world and uncovering truth. 6-point Likert scale (1 = Strongly disagree, 6 = Strongly agree). Single factor, alpha = .86.",
+      "citation": "Farias, M., Newheiser, A.-K., Kahane, G., & de Toledo, Z. (2013). Scientific faith: Belief in science increases in the face of stress and existential anxiety. Journal of Experimental Social Psychology, 49(6), 1210–1213. https://doi.org/10.1016/j.jesp.2013.05.008",
+      "license": "CC BY",
+      "license_explanation": "Published under Creative Commons Attribution License.",
+      "license_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3807800/",
+      "version": "1.0",
+      "url": "https://doi.org/10.1016/j.jesp.2013.05.008",
+      "domain": "Attitudes"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": [
+        "biss_r1",
+        "biss_r2",
+        "biss_r3",
+        "biss_r4",
+        "biss_r5",
+        "biss_r6"
+      ],
+      "question_head": "biss_head"
+    },
+    "dimensions": [
+      {
+        "id": "belief_in_science",
+        "name": "Belief in Science",
+        "description": "Single factor measuring belief in the value and efficacy of science (10 items, alpha = .86)."
+      }
+    ],
+    "items": [
+      {
+        "id": "biss_inst",
+        "text_key": "biss_inst",
+        "type": "inst"
+      },
+      {
+        "id": "biss1",
+        "text_key": "biss1",
+        "type": "likert"
+      },
+      {
+        "id": "biss2",
+        "text_key": "biss2",
+        "type": "likert"
+      },
+      {
+        "id": "biss3",
+        "text_key": "biss3",
+        "type": "likert"
+      },
+      {
+        "id": "biss4",
+        "text_key": "biss4",
+        "type": "likert"
+      },
+      {
+        "id": "biss5",
+        "text_key": "biss5",
+        "type": "likert"
+      },
+      {
+        "id": "biss6",
+        "text_key": "biss6",
+        "type": "likert"
+      },
+      {
+        "id": "biss7",
+        "text_key": "biss7",
+        "type": "likert"
+      },
+      {
+        "id": "biss8",
+        "text_key": "biss8",
+        "type": "likert"
+      },
+      {
+        "id": "biss9",
+        "text_key": "biss9",
+        "type": "likert"
+      },
+      {
+        "id": "biss10",
+        "text_key": "biss10",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "belief_in_science": {
+        "method": "mean_coded",
+        "items": [
+          "biss1",
+          "biss2",
+          "biss3",
+          "biss4",
+          "biss5",
+          "biss6",
+          "biss7",
+          "biss8",
+          "biss9",
+          "biss10"
+        ],
+        "description": "Mean of all 10 items (range 1–6). Higher scores indicate stronger belief in science.",
+        "item_coding": {
+          "biss1": 1,
+          "biss2": 1,
+          "biss3": 1,
+          "biss4": 1,
+          "biss5": 1,
+          "biss6": 1,
+          "biss7": 1,
+          "biss8": 1,
+          "biss9": 1,
+          "biss10": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Belief in Science Scale (BISS) Report",
+      "footer_refs": [
+        "Farias, M., et al. (2013). J Exp Soc Psychol, 49(6), 1210–1213."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "biss_inst": "We are interested in how important science is to you and how effective you perceive its methods to be in terms of describing the world and uncovering the truth. Please rate to what extent you agree or disagree with each of the following statements.",
+      "biss_head": "How much do you agree or disagree?",
+      "biss_r1": "Strongly disagree",
+      "biss_r2": "Disagree",
+      "biss_r3": "Slightly disagree",
+      "biss_r4": "Slightly agree",
+      "biss_r5": "Agree",
+      "biss_r6": "Strongly agree",
+      "biss1": "Science provides us with a better understanding of the universe than does religion.",
+      "biss2": "\"In a demon-haunted world, science is a candle in the dark.\" (Carl Sagan)",
+      "biss3": "We can only rationally believe in what is scientifically provable.",
+      "biss4": "Science tells us everything there is to know about what reality consists of.",
+      "biss5": "All the tasks human beings face are soluble by science.",
+      "biss6": "The scientific method is the only reliable path to knowledge.",
+      "biss7": "The only real kind of knowledge we can have is scientific knowledge.",
+      "biss8": "Science is the most valuable part of human culture.",
+      "biss9": "Science is the most efficient means of attaining truth.",
+      "biss10": "Scientists and science should be given more respect in modern society.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

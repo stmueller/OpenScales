@@ -1,0 +1,574 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Personal and Family History of Strabismus",
+      "code": "PX111001",
+      "abbreviation": "PX111001",
+      "description": "A series of self-administered questions to assess family and personal history of strabismus, including history of treatments and surgeries.",
+      "domain": "Vision & Eye Health",
+      "citation": "Engle EC. (2007). Oculomotility disorders arising from disruptions in brainstem motor neuron development. Arch Neurol , 64(5):633-7. Engle EC, Andrews C, Law K, Demer JL. (2007). Two pedigrees segregating Duanes retraction syndrome as a dominant trait map to the DURS2 genetic locus. Invest Ophthalmol Vis Sci , 48(1):189-93. [PhenX: https://www.phenxtoolkit.org/protocols/view/111001]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/111001"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "amblyopia_crossed_wandering_eye_ever",
+        "text_key": "amblyopia_crossed_wandering_eye_ever",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "amblyopia_crossed_wandering_eye_ever_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "amblyopia_crossed_wandering_eye_ever_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "amblyopia_crossed_wandering_eye_ever_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "double_vision_ever",
+        "text_key": "double_vision_ever",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "double_vision_ever_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "double_vision_ever_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "double_vision_ever_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "tilt_head_looking_straight_ever",
+        "text_key": "tilt_head_looking_straight_ever",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "tilt_head_looking_straight_ever_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "tilt_head_looking_straight_ever_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "tilt_head_looking_straight_ever_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "eye_muscle_surgery",
+        "text_key": "eye_muscle_surgery",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "eye_muscle_surgery_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "eye_muscle_surgery_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "eye_muscle_surgery_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "patch_eye_drops_correction_ever",
+        "text_key": "patch_eye_drops_correction_ever",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "patch_eye_drops_correction_ever_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "patch_eye_drops_correction_ever_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "patch_eye_drops_correction_ever_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "glasses_contacts_ever",
+        "text_key": "glasses_contacts_ever",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "glasses_contacts_ever_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "glasses_contacts_ever_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "glasses_contacts_ever_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "details_question_1_to_6",
+        "text_key": "details_question_1_to_6",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "amblyopia_crossed_wandering_eye_ever",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "double_vision_ever",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "tilt_head_looking_straight_ever",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "eye_muscle_surgery",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "glasses_contacts_ever",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "patch_eye_drops_correction_ever",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "coloboma_absence_defect_ocular_tissue",
+        "text_key": "coloboma_absence_defect_ocular_tissue",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "coloboma_absence_defect_ocular_tissue_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "coloboma_absence_defect_ocular_tissue_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "coloboma_absence_defect_ocular_tissue_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "microphthalmia_abnormally_small_eye",
+        "text_key": "microphthalmia_abnormally_small_eye",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "microphthalmia_abnormally_small_eye_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "microphthalmia_abnormally_small_eye_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "microphthalmia_abnormally_small_eye_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "epibulbar_dermoids_eye_tumor",
+        "text_key": "epibulbar_dermoids_eye_tumor",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "epibulbar_dermoids_eye_tumor_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "epibulbar_dermoids_eye_tumor_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "epibulbar_dermoids_eye_tumor_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "abnormal_ocular_features",
+        "text_key": "abnormal_ocular_features",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "abnormal_ocular_features_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "abnormal_ocular_features_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "abnormal_ocular_features_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "retinal_defect_tear_detachment",
+        "text_key": "retinal_defect_tear_detachment",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "retinal_defect_tear_detachment_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "retinal_defect_tear_detachment_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "retinal_defect_tear_detachment_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "other_visual_impairment",
+        "text_key": "other_visual_impairment",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "other_visual_impairment_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "other_visual_impairment_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "other_visual_impairment_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "details_question_8_to_13",
+        "text_key": "details_question_8_to_13",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "coloboma_absence_defect_ocular_tissue",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "microphthalmia_abnormally_small_eye",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "epibulbar_dermoids_eye_tumor",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "abnormal_ocular_features",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "retinal_defect_tear_detachment",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "other_visual_impairment",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "family_ocular_history_heading",
+        "text_key": "family_ocular_history_heading",
+        "type": "inst"
+      },
+      {
+        "id": "glasses_before_6_other_relative_enum",
+        "text_key": "glasses_before_6_other_relative_enum",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Mother",
+            "value": "UNDEFINED_CODE_Mother"
+          },
+          {
+            "text_key": "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Father",
+            "value": "UNDEFINED_CODE_Father"
+          },
+          {
+            "text_key": "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Brother",
+            "value": "UNDEFINED_CODE_Brother"
+          },
+          {
+            "text_key": "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Sister",
+            "value": "UNDEFINED_CODE_Sister"
+          },
+          {
+            "text_key": "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Sibling",
+            "value": "UNDEFINED_CODE_Sibling"
+          },
+          {
+            "text_key": "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Grandparent",
+            "value": "UNDEFINED_CODE_Grandparent"
+          },
+          {
+            "text_key": "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Uncle",
+            "value": "UNDEFINED_CODE_Uncle"
+          },
+          {
+            "text_key": "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Relative",
+            "value": "UNDEFINED_CODE_Relative"
+          }
+        ]
+      },
+      {
+        "id": "glasses_before_6_other_relative_specify",
+        "text_key": "glasses_before_6_other_relative_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "glasses_before_6_other_relative_enum",
+          "operator": "in",
+          "value": [
+            "UNDEFINED_CODE_Relative"
+          ]
+        }
+      },
+      {
+        "id": "patching_other_relative_enum",
+        "text_key": "patching_other_relative_enum",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "patching_other_relative_enum_opt_UNDEFINED_CODE_Mother",
+            "value": "UNDEFINED_CODE_Mother"
+          },
+          {
+            "text_key": "patching_other_relative_enum_opt_UNDEFINED_CODE_Father",
+            "value": "UNDEFINED_CODE_Father"
+          },
+          {
+            "text_key": "patching_other_relative_enum_opt_UNDEFINED_CODE_Brother",
+            "value": "UNDEFINED_CODE_Brother"
+          },
+          {
+            "text_key": "patching_other_relative_enum_opt_UNDEFINED_CODE_Sister",
+            "value": "UNDEFINED_CODE_Sister"
+          },
+          {
+            "text_key": "patching_other_relative_enum_opt_UNDEFINED_CODE_Sibling",
+            "value": "UNDEFINED_CODE_Sibling"
+          },
+          {
+            "text_key": "patching_other_relative_enum_opt_UNDEFINED_CODE_Grandparent",
+            "value": "UNDEFINED_CODE_Grandparent"
+          },
+          {
+            "text_key": "patching_other_relative_enum_opt_UNDEFINED_CODE_Uncle",
+            "value": "UNDEFINED_CODE_Uncle"
+          },
+          {
+            "text_key": "patching_other_relative_enum_opt_UNDEFINED_CODE_Relative",
+            "value": "UNDEFINED_CODE_Relative"
+          }
+        ]
+      },
+      {
+        "id": "patching_other_relative_specify",
+        "text_key": "patching_other_relative_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "patching_other_relative_enum",
+          "operator": "in",
+          "value": [
+            "UNDEFINED_CODE_Relative"
+          ]
+        }
+      },
+      {
+        "id": "eye_muscle_surgery_other_relative_enum",
+        "text_key": "eye_muscle_surgery_other_relative_enum",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Mother",
+            "value": "UNDEFINED_CODE_Mother"
+          },
+          {
+            "text_key": "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Father",
+            "value": "UNDEFINED_CODE_Father"
+          },
+          {
+            "text_key": "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Brother",
+            "value": "UNDEFINED_CODE_Brother"
+          },
+          {
+            "text_key": "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Sister",
+            "value": "UNDEFINED_CODE_Sister"
+          },
+          {
+            "text_key": "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Sibling",
+            "value": "UNDEFINED_CODE_Sibling"
+          },
+          {
+            "text_key": "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Grandparent",
+            "value": "UNDEFINED_CODE_Grandparent"
+          },
+          {
+            "text_key": "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Uncle",
+            "value": "UNDEFINED_CODE_Uncle"
+          },
+          {
+            "text_key": "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Relative",
+            "value": "UNDEFINED_CODE_Relative"
+          }
+        ]
+      },
+      {
+        "id": "eye_muscle_surgery_other_relative",
+        "text_key": "eye_muscle_surgery_other_relative",
+        "type": "short",
+        "visible_when": {
+          "item": "eye_muscle_surgery_other_relative_enum",
+          "operator": "in",
+          "value": [
+            "UNDEFINED_CODE_Relative"
+          ]
+        }
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "amblyopia_crossed_wandering_eye_ever": "Have you ever had a crossed or wandering eye (amblyopia)?",
+      "amblyopia_crossed_wandering_eye_ever_opt_1": "yes",
+      "amblyopia_crossed_wandering_eye_ever_opt_2": "no",
+      "amblyopia_crossed_wandering_eye_ever_opt_3": "I'm not sure",
+      "double_vision_ever": "Have you ever had double vision?",
+      "double_vision_ever_opt_1": "yes",
+      "double_vision_ever_opt_2": "no",
+      "double_vision_ever_opt_3": "I'm not sure",
+      "tilt_head_looking_straight_ever": "Do you ever tilt your head when looking straight?",
+      "tilt_head_looking_straight_ever_opt_1": "yes",
+      "tilt_head_looking_straight_ever_opt_2": "no",
+      "tilt_head_looking_straight_ever_opt_3": "I'm not sure",
+      "eye_muscle_surgery": "Have you ever undergone eye muscle surgery?",
+      "eye_muscle_surgery_opt_1": "yes",
+      "eye_muscle_surgery_opt_2": "no",
+      "eye_muscle_surgery_opt_3": "I'm not sure",
+      "patch_eye_drops_correction_ever": "Have you ever worn a patch or used eye drops (atropine penalization) for eye correction?",
+      "patch_eye_drops_correction_ever_opt_1": "yes",
+      "patch_eye_drops_correction_ever_opt_2": "no",
+      "patch_eye_drops_correction_ever_opt_3": "I'm not sure",
+      "glasses_contacts_ever": "Have you ever worn glasses or contacts?",
+      "glasses_contacts_ever_opt_1": "yes",
+      "glasses_contacts_ever_opt_2": "no",
+      "glasses_contacts_ever_opt_3": "I'm not sure",
+      "details_question_1_to_6": "If you answered YES to any of the above questions (about wandering eye/amblyopia, double vision, tilting head when looking straight, eye muscle surgery, patch/eye drops, glasses/contacts), please provide further details (i.e., age of onset of eye condition, dates of surgery, name of procedure if known, reason for glasses, etc.)",
+      "coloboma_absence_defect_ocular_tissue": "Do you have a coloboma? (Absence or defect of ocular tissue ranging from a small pit in the optic disk to extensive defects in the iris, ciliary body, choroid, retina, or optic disk)",
+      "coloboma_absence_defect_ocular_tissue_opt_1": "yes",
+      "coloboma_absence_defect_ocular_tissue_opt_2": "no",
+      "coloboma_absence_defect_ocular_tissue_opt_3": "I'm not sure",
+      "microphthalmia_abnormally_small_eye": "Do you have microphthalmia? (Abnormally small eye)",
+      "microphthalmia_abnormally_small_eye_opt_1": "yes",
+      "microphthalmia_abnormally_small_eye_opt_2": "no",
+      "microphthalmia_abnormally_small_eye_opt_3": "I'm not sure",
+      "epibulbar_dermoids_eye_tumor": "Do you have epibulbar dermoid? (Eye tumors that are not recurrent or progressive)",
+      "epibulbar_dermoids_eye_tumor_opt_1": "yes",
+      "epibulbar_dermoids_eye_tumor_opt_2": "no",
+      "epibulbar_dermoids_eye_tumor_opt_3": "I'm not sure",
+      "abnormal_ocular_features": "Do you have any abnormal ocular features? (e.g., epicanthal folds---tissue overlapping the nasal corner of the eye, telecanthus---increased distance between the inner corners of the eyes, slanting of the palpebral fissure(s)---opening for the eyes between the eyelids?)",
+      "abnormal_ocular_features_opt_1": "yes",
+      "abnormal_ocular_features_opt_2": "no",
+      "abnormal_ocular_features_opt_3": "I'm not sure",
+      "retinal_defect_tear_detachment": "Do you have any retinal defects? (retinal tears, detachments, etc.)",
+      "retinal_defect_tear_detachment_opt_1": "yes",
+      "retinal_defect_tear_detachment_opt_2": "no",
+      "retinal_defect_tear_detachment_opt_3": "I'm not sure",
+      "other_visual_impairment": "Do you have any visual impairment other than previously noted?",
+      "other_visual_impairment_opt_1": "yes",
+      "other_visual_impairment_opt_2": "no",
+      "other_visual_impairment_opt_3": "I'm not sure",
+      "details_question_8_to_13": "If you answered YES to any question above (coloboma, microphthalmia, epibulbar dermoids, abnormal ocular features, retinal defects, other visual impairment), please describe.",
+      "family_ocular_history_heading": "Family Ocular History Chart:",
+      "glasses_before_6_other_relative_enum": "Glasses before age 6:",
+      "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Mother": "Mother",
+      "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Father": "Father",
+      "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Brother": "Brother",
+      "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Sister": "Sister",
+      "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Sibling": "1/2 sibling through mother/father",
+      "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Grandparent": "Grandfather/mother",
+      "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Uncle": "Aunt/uncle",
+      "glasses_before_6_other_relative_enum_opt_UNDEFINED_CODE_Relative": "Other",
+      "glasses_before_6_other_relative_specify": "Specify other relative (glasses before age 6):",
+      "patching_other_relative_enum": "Patching:",
+      "patching_other_relative_enum_opt_UNDEFINED_CODE_Mother": "Mother",
+      "patching_other_relative_enum_opt_UNDEFINED_CODE_Father": "Father",
+      "patching_other_relative_enum_opt_UNDEFINED_CODE_Brother": "Brother",
+      "patching_other_relative_enum_opt_UNDEFINED_CODE_Sister": "Sister",
+      "patching_other_relative_enum_opt_UNDEFINED_CODE_Sibling": "1/2 sibling through mother/father",
+      "patching_other_relative_enum_opt_UNDEFINED_CODE_Grandparent": "Grandfather/mother",
+      "patching_other_relative_enum_opt_UNDEFINED_CODE_Uncle": "Aunt/uncle",
+      "patching_other_relative_enum_opt_UNDEFINED_CODE_Relative": "Other",
+      "patching_other_relative_specify": "Specify other relative (patching):",
+      "eye_muscle_surgery_other_relative_enum": "Eye muscle surgery:",
+      "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Mother": "Mother",
+      "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Father": "Father",
+      "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Brother": "Brother",
+      "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Sister": "Sister",
+      "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Sibling": "1/2 sibling through mother/father",
+      "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Grandparent": "Grandfather/mother",
+      "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Uncle": "Aunt/uncle",
+      "eye_muscle_surgery_other_relative_enum_opt_UNDEFINED_CODE_Relative": "Other",
+      "eye_muscle_surgery_other_relative": "Specify other relative (eye muscle surgery):"
+    }
+  }
+}

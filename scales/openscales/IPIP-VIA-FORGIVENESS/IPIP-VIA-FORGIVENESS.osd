@@ -1,0 +1,164 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Forgiveness/Mercy",
+      "code": "IPIP-VIA-FORGIVENESS",
+      "abbreviation": "IPIP-VIA-FORGIVENESS",
+      "description": "IPIP representation of the VIA character strength 'Forgiveness/Mercy'. 9-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "forgiveness_mercy",
+        "name": "Forgiveness/Mercy",
+        "abbreviation": "FORGIVENESS",
+        "description": "IPIP VIA Forgiveness/Mercy subscale (9 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_010",
+        "text_key": "ipip_via_010",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_011",
+        "text_key": "ipip_via_011",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_012",
+        "text_key": "ipip_via_012",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_013",
+        "text_key": "ipip_via_013",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_014",
+        "text_key": "ipip_via_014",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_015",
+        "text_key": "ipip_via_015",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_016",
+        "text_key": "ipip_via_016",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_017",
+        "text_key": "ipip_via_017",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_018",
+        "text_key": "ipip_via_018",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "forgiveness_mercy": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_010",
+          "ipip_via_011",
+          "ipip_via_012",
+          "ipip_via_013",
+          "ipip_via_014",
+          "ipip_via_015",
+          "ipip_via_016",
+          "ipip_via_017",
+          "ipip_via_018"
+        ],
+        "description": "Mean of 9 items (range 1–5; higher = stronger Forgiveness/Mercy). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_010": 1,
+          "ipip_via_011": 1,
+          "ipip_via_012": -1,
+          "ipip_via_013": 1,
+          "ipip_via_014": 1,
+          "ipip_via_015": -1,
+          "ipip_via_016": 1,
+          "ipip_via_017": 1,
+          "ipip_via_018": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_010": "Allow others to make a fresh start.",
+      "ipip_via_011": "Believe that it is best to forgive and forget.",
+      "ipip_via_012": "Do not give anyone a second chance to hurt me.",
+      "ipip_via_013": "Don't try to get even.",
+      "ipip_via_014": "Hate to see anyone suffer, even my worst enemy.",
+      "ipip_via_015": "Hold grudges.",
+      "ipip_via_016": "Let bygones be bygones.",
+      "ipip_via_017": "Never seek vengeance.",
+      "ipip_via_018": "Try to respond with understanding when someone treats me badly."
+    }
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Personality Inventory for DSM-5 Brief Form",
+      "code": "PID5BF",
+      "abbreviation": "PID-5-BF",
+      "description": "25-item brief self-report measure of the DSM-5 maladaptive personality trait model, covering five broad domains: Negative Affect, Detachment, Antagonism, Disinhibition, and Psychoticism. Each domain is assessed with 5 items scored 0–3.",
+      "citation": "Krueger, R. F., Derringer, J., Markon, K. E., Watson, D., & Skodol, A. E. (2012). Initial construction of a maladaptive personality trait model and inventory for DSM-5. Psychological Medicine, 42(9), 1879–1890. https://doi.org/10.1017/S0033291711002674",
+      "license": "free for research/clinical",
+      "version": "1.0",
+      "url": "https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures",
+      "license_explanation": "Copyright 2013 American Psychiatric Association. All Rights Reserved. May be reproduced without permission by researchers and by clinicians for use with their patients.",
+      "license_url": "https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "max": 3,
+      "labels": [
+        "pid_likert_0",
+        "pid_likert_1",
+        "pid_likert_2",
+        "pid_likert_3"
+      ],
+      "question_head": "pid_inst"
+    },
+    "dimensions": [
+      {
+        "id": "negative_affect",
+        "name": "Negative Affect"
+      },
+      {
+        "id": "detachment",
+        "name": "Detachment"
+      },
+      {
+        "id": "antagonism",
+        "name": "Antagonism"
+      },
+      {
+        "id": "disinhibition",
+        "name": "Disinhibition"
+      },
+      {
+        "id": "psychoticism",
+        "name": "Psychoticism"
+      }
+    ],
+    "items": [
+      {
+        "id": "pid1",
+        "text_key": "pid1",
+        "type": "likert"
+      },
+      {
+        "id": "pid2",
+        "text_key": "pid2",
+        "type": "likert"
+      },
+      {
+        "id": "pid3",
+        "text_key": "pid3",
+        "type": "likert"
+      },
+      {
+        "id": "pid4",
+        "text_key": "pid4",
+        "type": "likert"
+      },
+      {
+        "id": "pid5",
+        "text_key": "pid5",
+        "type": "likert"
+      },
+      {
+        "id": "pid6",
+        "text_key": "pid6",
+        "type": "likert"
+      },
+      {
+        "id": "pid7",
+        "text_key": "pid7",
+        "type": "likert"
+      },
+      {
+        "id": "pid8",
+        "text_key": "pid8",
+        "type": "likert"
+      },
+      {
+        "id": "pid9",
+        "text_key": "pid9",
+        "type": "likert"
+      },
+      {
+        "id": "pid10",
+        "text_key": "pid10",
+        "type": "likert"
+      },
+      {
+        "id": "pid11",
+        "text_key": "pid11",
+        "type": "likert"
+      },
+      {
+        "id": "pid12",
+        "text_key": "pid12",
+        "type": "likert"
+      },
+      {
+        "id": "pid13",
+        "text_key": "pid13",
+        "type": "likert"
+      },
+      {
+        "id": "pid14",
+        "text_key": "pid14",
+        "type": "likert"
+      },
+      {
+        "id": "pid15",
+        "text_key": "pid15",
+        "type": "likert"
+      },
+      {
+        "id": "pid16",
+        "text_key": "pid16",
+        "type": "likert"
+      },
+      {
+        "id": "pid17",
+        "text_key": "pid17",
+        "type": "likert"
+      },
+      {
+        "id": "pid18",
+        "text_key": "pid18",
+        "type": "likert"
+      },
+      {
+        "id": "pid19",
+        "text_key": "pid19",
+        "type": "likert"
+      },
+      {
+        "id": "pid20",
+        "text_key": "pid20",
+        "type": "likert"
+      },
+      {
+        "id": "pid21",
+        "text_key": "pid21",
+        "type": "likert"
+      },
+      {
+        "id": "pid22",
+        "text_key": "pid22",
+        "type": "likert"
+      },
+      {
+        "id": "pid23",
+        "text_key": "pid23",
+        "type": "likert"
+      },
+      {
+        "id": "pid24",
+        "text_key": "pid24",
+        "type": "likert"
+      },
+      {
+        "id": "pid25",
+        "text_key": "pid25",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "negative_affect": {
+        "method": "sum_coded",
+        "items": [
+          "pid8",
+          "pid9",
+          "pid10",
+          "pid11",
+          "pid15"
+        ],
+        "description": "Mean of items 8, 9, 10, 11, 15 (each 0–3; domain mean range 0–3).",
+        "item_coding": {
+          "pid8": 1,
+          "pid9": 1,
+          "pid10": 1,
+          "pid11": 1,
+          "pid15": 1
+        }
+      },
+      "detachment": {
+        "method": "sum_coded",
+        "items": [
+          "pid4",
+          "pid13",
+          "pid14",
+          "pid16",
+          "pid18"
+        ],
+        "description": "Mean of items 4, 13, 14, 16, 18 (each 0–3; domain mean range 0–3).",
+        "item_coding": {
+          "pid4": 1,
+          "pid13": 1,
+          "pid14": 1,
+          "pid16": 1,
+          "pid18": 1
+        }
+      },
+      "antagonism": {
+        "method": "sum_coded",
+        "items": [
+          "pid17",
+          "pid19",
+          "pid20",
+          "pid22",
+          "pid25"
+        ],
+        "description": "Mean of items 17, 19, 20, 22, 25 (each 0–3; domain mean range 0–3).",
+        "item_coding": {
+          "pid17": 1,
+          "pid19": 1,
+          "pid20": 1,
+          "pid22": 1,
+          "pid25": 1
+        }
+      },
+      "disinhibition": {
+        "method": "sum_coded",
+        "items": [
+          "pid1",
+          "pid2",
+          "pid3",
+          "pid5",
+          "pid6"
+        ],
+        "description": "Mean of items 1, 2, 3, 5, 6 (each 0–3; domain mean range 0–3).",
+        "item_coding": {
+          "pid1": 1,
+          "pid2": 1,
+          "pid3": 1,
+          "pid5": 1,
+          "pid6": 1
+        }
+      },
+      "psychoticism": {
+        "method": "sum_coded",
+        "items": [
+          "pid7",
+          "pid12",
+          "pid21",
+          "pid23",
+          "pid24"
+        ],
+        "description": "Mean of items 7, 12, 21, 23, 24 (each 0–3; domain mean range 0–3).",
+        "item_coding": {
+          "pid7": 1,
+          "pid12": 1,
+          "pid21": 1,
+          "pid23": 1,
+          "pid24": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "pid_inst": "This is a list of things different people might say about themselves. We are interested in how you would describe yourself. There are no right or wrong answers. So you can describe yourself as honestly as possible, we will keep your responses confidential. We'd like you to take your time and read each statement carefully, selecting the response that best describes you.",
+      "pid_likert_0": "Very False or Often False",
+      "pid_likert_1": "Sometimes or Somewhat False",
+      "pid_likert_2": "Sometimes or Somewhat True",
+      "pid_likert_3": "Very True or Often True",
+      "pid1": "People would describe me as reckless.",
+      "pid2": "I feel like I act totally on impulse.",
+      "pid3": "Even though I know better, I can't stop making rash decisions.",
+      "pid4": "I often feel like nothing I do really matters.",
+      "pid5": "Others see me as irresponsible.",
+      "pid6": "I'm not good at planning ahead.",
+      "pid7": "My thoughts often don't make sense to others.",
+      "pid8": "I worry about almost everything.",
+      "pid9": "I get emotional easily, often for very little reason.",
+      "pid10": "I fear being alone in life more than anything else.",
+      "pid11": "I get stuck on one way of doing things, even when it's clear it won't work.",
+      "pid12": "I have seen things that weren't really there.",
+      "pid13": "I steer clear of romantic relationships.",
+      "pid14": "I'm not interested in making friends.",
+      "pid15": "I get irritated easily by all sorts of things.",
+      "pid16": "I don't like to get too close to people.",
+      "pid17": "It's no big deal if I hurt other peoples' feelings.",
+      "pid18": "I rarely get enthusiastic about anything.",
+      "pid19": "I crave attention.",
+      "pid20": "I often have to deal with people who are less important than me.",
+      "pid21": "I often have thoughts that make sense to me but that other people say are strange.",
+      "pid22": "I use people to get what I want.",
+      "pid23": "I often \"zone out\" and then suddenly come to and realize that a lot of time has passed.",
+      "pid24": "Things around me often feel unreal, or more real than usual.",
+      "pid25": "It is easy for me to take advantage of others.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

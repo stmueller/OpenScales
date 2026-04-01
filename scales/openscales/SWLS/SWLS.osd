@@ -1,0 +1,114 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Satisfaction With Life Scale",
+      "code": "SWLS",
+      "version": "1.0",
+      "description": "5-item scale measuring global cognitive judgments of one's life satisfaction.",
+      "citation": "Diener, E., Emmons, R. A., Larsen, R. J., & Griffin, S. (1985). The Satisfaction with Life Scale. Journal of Personality Assessment, 49(1), 71–75. https://doi.org/10.1207/s15327752jpa4901_13",
+      "license": "Public Domain",
+      "abbreviation": "SWLS",
+      "url": "https://www.psytoolkit.org/survey-library/satisfaction-with-life.html",
+      "license_explanation": "The SWLS is in the public domain and therefore you are free to use it without permission or charge by all professionals (researchers and practitioners) as long as you give credit to the authors of the scale: Ed Diener, Robert A. Emmons, Randy J. Larsen and Sharon Griffin as noted in the 1985 article in the Journal of Personality Assessment.",
+      "license_url": "https://labs.psychology.illinois.edu/~ediener/scales.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5",
+        "likert_6",
+        "likert_7"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "swlsscore",
+        "name": "Swlsscore"
+      }
+    ],
+    "items": [
+      {
+        "id": "swls1",
+        "text_key": "swls1",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "swls2",
+        "text_key": "swls2",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "swls3",
+        "text_key": "swls3",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "swls4",
+        "text_key": "swls4",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "swls5",
+        "text_key": "swls5",
+        "type": "likert",
+        "likert_points": 7
+      }
+    ],
+    "scoring": {
+      "swlsscore": {
+        "method": "sum_coded",
+        "items": [
+          "swls1",
+          "swls2",
+          "swls3",
+          "swls4",
+          "swls5"
+        ],
+        "item_coding": {
+          "swls1": 1,
+          "swls2": 1,
+          "swls3": 1,
+          "swls4": 1,
+          "swls5": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Strongly agree",
+      "likert_2": "Agree",
+      "likert_3": "Slightly agree",
+      "likert_4": "Neither agree nor disagree",
+      "likert_5": "Slightly disagree",
+      "likert_6": "Disagree",
+      "likert_7": "Strongly disagree",
+      "question_head": "Below are five statements that you may agree or disagree with. Using the scale below, indicate your agreement with each item by clicking the appropriate selection. Please be open and honest in your responding.",
+      "swls1": "In most ways my life is close to my ideal.",
+      "swls2": "The conditions of my life are excellent.",
+      "swls3": "I am satisfied with my life.",
+      "swls4": "So far I have gotten the important things I want in life.",
+      "swls5": "If I could live my life over, I would change almost nothing.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

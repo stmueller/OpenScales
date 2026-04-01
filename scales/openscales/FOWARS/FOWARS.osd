@@ -1,0 +1,220 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Fear of War Scale",
+      "code": "FOWARS",
+      "abbreviation": "FOWARS",
+      "description": "13-item self-report measure assessing fear of war through two dimensions: experiential fear (emotional/cognitive reactions, items 1-7) and physiological fear (somatic reactions, items 8-13). 5-point Likert scale. Higher scores indicate greater fear of war. Originally developed in Hungarian.",
+      "citation": "Kalcza-Janosi, K., Kotta, I., Marschalko, E. E., & Szabo, K. (2023). The Fear of War Scale (FOWARS): Development and initial validation. Social Sciences, 12(5), 283. https://doi.org/10.3390/socsci12050283",
+      "license": "CC BY 4.0",
+      "license_explanation": "Published in MDPI Social Sciences under Creative Commons Attribution 4.0 International License.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "version": "1.0",
+      "url": "https://doi.org/10.3390/socsci12050283",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "experiential",
+        "name": "Experiential Fear",
+        "description": "Emotional and cognitive reactions to the threat of war, including worry, dread, and fear about the consequences of war."
+      },
+      {
+        "id": "physiological",
+        "name": "Physiological Fear",
+        "description": "Somatic reactions associated with fear of war, including trembling, sleep disturbance, and physical tension."
+      }
+    ],
+    "items": [
+      {
+        "id": "fowars1",
+        "text_key": "fowars1",
+        "type": "likert",
+        "dimension": "experiential"
+      },
+      {
+        "id": "fowars2",
+        "text_key": "fowars2",
+        "type": "likert",
+        "dimension": "experiential"
+      },
+      {
+        "id": "fowars3",
+        "text_key": "fowars3",
+        "type": "likert",
+        "dimension": "experiential"
+      },
+      {
+        "id": "fowars4",
+        "text_key": "fowars4",
+        "type": "likert",
+        "dimension": "experiential"
+      },
+      {
+        "id": "fowars5",
+        "text_key": "fowars5",
+        "type": "likert",
+        "dimension": "experiential"
+      },
+      {
+        "id": "fowars6",
+        "text_key": "fowars6",
+        "type": "likert",
+        "dimension": "experiential"
+      },
+      {
+        "id": "fowars7",
+        "text_key": "fowars7",
+        "type": "likert",
+        "dimension": "experiential"
+      },
+      {
+        "id": "fowars8",
+        "text_key": "fowars8",
+        "type": "likert",
+        "dimension": "physiological"
+      },
+      {
+        "id": "fowars9",
+        "text_key": "fowars9",
+        "type": "likert",
+        "dimension": "physiological"
+      },
+      {
+        "id": "fowars10",
+        "text_key": "fowars10",
+        "type": "likert",
+        "dimension": "physiological"
+      },
+      {
+        "id": "fowars11",
+        "text_key": "fowars11",
+        "type": "likert",
+        "dimension": "physiological"
+      },
+      {
+        "id": "fowars12",
+        "text_key": "fowars12",
+        "type": "likert",
+        "dimension": "physiological"
+      },
+      {
+        "id": "fowars13",
+        "text_key": "fowars13",
+        "type": "likert",
+        "dimension": "physiological"
+      }
+    ],
+    "scoring": {
+      "experiential": {
+        "method": "mean_coded",
+        "items": [
+          "fowars1",
+          "fowars2",
+          "fowars3",
+          "fowars4",
+          "fowars5",
+          "fowars6",
+          "fowars7"
+        ],
+        "description": "Mean of experiential fear items (1-5). Higher scores indicate greater experiential fear of war.",
+        "item_coding": {
+          "fowars1": 1,
+          "fowars2": 1,
+          "fowars3": 1,
+          "fowars4": 1,
+          "fowars5": 1,
+          "fowars6": 1,
+          "fowars7": 1
+        }
+      },
+      "physiological": {
+        "method": "mean_coded",
+        "items": [
+          "fowars8",
+          "fowars9",
+          "fowars10",
+          "fowars11",
+          "fowars12",
+          "fowars13"
+        ],
+        "description": "Mean of physiological fear items (1-5). Higher scores indicate greater physiological fear reactions to war.",
+        "item_coding": {
+          "fowars8": 1,
+          "fowars9": 1,
+          "fowars10": 1,
+          "fowars11": 1,
+          "fowars12": 1,
+          "fowars13": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Strongly disagree",
+      "likert_2": "Disagree",
+      "likert_3": "Neutral",
+      "likert_4": "Agree",
+      "likert_5": "Strongly agree",
+      "question_head": "Please indicate the extent to which each statement is characteristic of you.",
+      "fowars1": "I am scared because I know war costs human lives.",
+      "fowars2": "I am afraid that the war will drag on for a long time.",
+      "fowars3": "I fear that the peace talks will be fruitless.",
+      "fowars4": "I am afraid the world will no longer be a safe place.",
+      "fowars5": "I feel uncomfortable when I think of the war.",
+      "fowars6": "I am concerned about the serious consequences of the war (economic, political, etc.).",
+      "fowars7": "I am afraid that a nuclear war will break out.",
+      "fowars8": "I start to tremble when I think the war reaches here, as well.",
+      "fowars9": "My palms sweat when I think the war will reach us too.",
+      "fowars10": "My heart is beating faster (my heart rate is rising) when I think the war will break out in our country too.",
+      "fowars11": "I have a sleep disorder because I am worried the war will get to us too.",
+      "fowars12": "It gives me the creeps (I get goose bumps) when I think the war will break out here too.",
+      "fowars13": "It makes me sick to the stomach (I have nausea, stomach upset) when I think the war will break out here too.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "hu": {
+      "likert_1": "Határozottan nem értek egyet",
+      "likert_2": "Nem értek egyet",
+      "likert_3": "Semleges",
+      "likert_4": "Egyetértek",
+      "likert_5": "Határozottan egyetértek",
+      "question_head": "Kérjük, jelölje meg, mennyire jellemzőek Önre az alábbi állítások.",
+      "fowars1": "Félek, mert tudom, hogy a háború emberi életekbe kerül.",
+      "fowars2": "Félek, hogy a háború hosszasan elhúzódik.",
+      "fowars3": "Attól tartok, hogy a béketárgyalások eredménytelenek lesznek.",
+      "fowars4": "Félek attól, hogy a világ már nem lesz biztonságos hely.",
+      "fowars5": "Kényelmetlenül érzem magam, ha a háborúra gondolok.",
+      "fowars6": "Aggódom a háború súlyos következményei (gazdasági, politikai stb.) miatt.",
+      "fowars7": "Félek attól, hogy kitör a nukleáris háború.",
+      "fowars8": "Remegni kezdek, amikor arra gondolok, hogy ide is elér a háború.",
+      "fowars9": "Izzad a tenyerem, ha arra gondolok, hogy a háború bennünket is elér.",
+      "fowars10": "A szívem gyorsabban ver (pulzusom megnő) amikor arra gondolok, hogy nálunk is kitör a háború.",
+      "fowars11": "Alvászavarom van, mert aggódom, hogy ide is elér a háború.",
+      "fowars12": "Kiráz a hideg (libabőrös leszek), amikor arra gondolok, hogy nálunk is kitör a háború.",
+      "fowars13": "Felfordul a gyomrom (hányingerem, gyomoridegem van), amikor arra gondolok, hogy nálunk is kitör a háború.",
+      "debrief": "Köszönjük, hogy kitöltötte a kérdőívet."
+    }
+  }
+}

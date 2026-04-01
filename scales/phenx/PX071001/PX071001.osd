@@ -1,0 +1,273 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Smoking Quit Attempts",
+      "code": "PX071001",
+      "abbreviation": "PX071001",
+      "description": "These self-administered questions ask current and former smokers about their intention to quit smoking, details of past attempts to quit, and whether a health care professional advised the respondent to quit smoking.",
+      "domain": "Physical Activity & Exposures",
+      "citation": "Prorok, P. C. (2000). Design of the PLCO Cancer Screening Trial. Control Clinical Trials, 21, 273S–309S. [PhenX: https://www.phenxtoolkit.org/protocols/view/71001]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/71001"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "quit_smoking_consider",
+        "text_key": "quit_smoking_consider",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "quit_smoking_consider_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "quit_smoking_consider_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "quit_smoking_consider_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "quit_smoking_attempt",
+        "text_key": "quit_smoking_attempt",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "quit_smoking_attempt_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "quit_smoking_attempt_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "quit_smoking_longest_time",
+        "text_key": "quit_smoking_longest_time",
+        "type": "multi",
+        "visible_when": {
+          "item": "quit_smoking_attempt",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "quit_smoking_longest_time_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "quit_smoking_longest_time_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "quit_smoking_longest_time_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "quit_smoking_longest_time_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "quit_smoking_longest_time_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "quit_smoking_longest_time_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "quit_smoking_longest_time_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "quit_smoking_age",
+        "text_key": "quit_smoking_age",
+        "type": "short",
+        "visible_when": {
+          "item": "quit_smoking_attempt",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "quit_smoking_product_nicotine_gum",
+        "text_key": "quit_smoking_product_nicotine_gum",
+        "type": "multi",
+        "visible_when": {
+          "item": "quit_smoking_attempt",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "quit_smoking_product_nicotine_gum_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "quit_smoking_product_nicotine_gum_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "quit_smoking_product_nicotine_patch",
+        "text_key": "quit_smoking_product_nicotine_patch",
+        "type": "multi",
+        "visible_when": {
+          "item": "quit_smoking_attempt",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "quit_smoking_product_nicotine_patch_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "quit_smoking_product_nicotine_patch_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "quit_smoking_product_nicotine_other",
+        "text_key": "quit_smoking_product_nicotine_other",
+        "type": "multi",
+        "visible_when": {
+          "item": "quit_smoking_attempt",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "quit_smoking_product_nicotine_other_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "quit_smoking_product_nicotine_other_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "quit_smoking_product_prescription_pill",
+        "text_key": "quit_smoking_product_prescription_pill",
+        "type": "multi",
+        "visible_when": {
+          "item": "quit_smoking_attempt",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "quit_smoking_product_prescription_pill_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "quit_smoking_product_prescription_pill_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "quit_smoking_product_none",
+        "text_key": "quit_smoking_product_none",
+        "type": "multi",
+        "visible_when": {
+          "item": "quit_smoking_attempt",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "quit_smoking_product_none_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "quit_smoking_product_none_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "quit_smoking_professional_advise",
+        "text_key": "quit_smoking_professional_advise",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "quit_smoking_professional_advise_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "quit_smoking_professional_advise_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "quit_smoking_professional_advise_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "quit_smoking_professional_advise_opt_4",
+            "value": 4
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "quit_smoking_consider": "Are you considering quitting smoking during the next 6 months?",
+      "quit_smoking_consider_opt_1": "Yes, plan to stop within next 30 days",
+      "quit_smoking_consider_opt_2": "Yes, plan to stop within next 6 months, but not within next 30 days",
+      "quit_smoking_consider_opt_3": "No, not thinking of quitting in next 6 months",
+      "quit_smoking_attempt": "In the past, have you ever made a serious attempt to quit smoking? That is, have you stopped smoking for at least one day or longer because you were trying to quit?",
+      "quit_smoking_attempt_opt_1": "Yes",
+      "quit_smoking_attempt_opt_2": "No",
+      "quit_smoking_longest_time": "What was the longest length of time you stopped smoking because you were trying to quit?",
+      "quit_smoking_longest_time_opt_1": "Less than 1 week",
+      "quit_smoking_longest_time_opt_2": "1 to 3 weeks",
+      "quit_smoking_longest_time_opt_3": "1 to 2 months",
+      "quit_smoking_longest_time_opt_4": "3 to 11 months",
+      "quit_smoking_longest_time_opt_5": "1 to 4 years",
+      "quit_smoking_longest_time_opt_6": "5 to 9 years",
+      "quit_smoking_longest_time_opt_7": "10 years or more",
+      "quit_smoking_age": "How old were you when you most recently quit smoking?",
+      "quit_smoking_product_nicotine_gum": "Thinking of the most recent time you quit smoking, did you use any of the following products?  Nicotine gum:",
+      "quit_smoking_product_nicotine_gum_opt_1": "Yes",
+      "quit_smoking_product_nicotine_gum_opt_2": "No",
+      "quit_smoking_product_nicotine_patch": "Thinking of the most recent time you quit smoking, did you use any of the following products?  Nicotine patch:",
+      "quit_smoking_product_nicotine_patch_opt_1": "Yes",
+      "quit_smoking_product_nicotine_patch_opt_2": "No",
+      "quit_smoking_product_nicotine_other": "Thinking of the most recent time you quit smoking, did you use any of the following products?  Nicotine nasal spray, inhaler, lozenge, or tablet:",
+      "quit_smoking_product_nicotine_other_opt_1": "Yes",
+      "quit_smoking_product_nicotine_other_opt_2": "No",
+      "quit_smoking_product_prescription_pill": "Thinking of the most recent time you quit smoking, did you use any of the following products?  Prescription pill such as Zyban�, Buproprion, or Wellbutrin�:",
+      "quit_smoking_product_prescription_pill_opt_1": "Yes",
+      "quit_smoking_product_prescription_pill_opt_2": "No",
+      "quit_smoking_product_none": "Thinking of the most recent time you quit smoking, did you use any of the following products?  None of these:",
+      "quit_smoking_product_none_opt_1": "Yes",
+      "quit_smoking_product_none_opt_2": "No",
+      "quit_smoking_professional_advise": "During the past 12 months, did any doctor, dentist, nurse, or any other health professional advise you to quit smoking?",
+      "quit_smoking_professional_advise_opt_1": "Yes",
+      "quit_smoking_professional_advise_opt_2": "No, was not advised to quit",
+      "quit_smoking_professional_advise_opt_3": "No, did not see a health professional in past 12 months",
+      "quit_smoking_professional_advise_opt_4": "No, did not smoke in past 12 months"
+    }
+  }
+}

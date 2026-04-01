@@ -1,0 +1,134 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Fast Alcohol Screening Test (FAST)",
+      "code": "FAST",
+      "abbreviation": "FAST",
+      "description": "4-item rapid alcohol screening test derived from the AUDIT. Items 1–3 use a frequency scale (0–4); item 4 uses a 3-option scale (0, 2, 4). Total score range 0–16; FAST-positive if total ≥3. Public domain (UK NHS/Public Health England).",
+      "citation": "Hodgson, R., Alwyn, T., John, B., Thom, B., & Smith, A. (2002). The FAST Alcohol Screening Test. Alcohol and Alcoholism, 37(1), 61–66. https://pubmed.ncbi.nlm.nih.gov/11825859/",
+      "license": "Public Domain",
+      "license_explanation": "Believed to be in the public domain. Made freely available with encouragement to copy by the UK NHS Health Development Agency, NICE, and Public Health England. See CamCOPS IP documentation: https://camcops.readthedocs.io/en/latest/tasks/fast.html",
+      "license_url": "https://camcops.readthedocs.io/en/latest/tasks/fast.html",
+      "version": "1.0",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11825859/"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 0,
+      "max": 4,
+      "labels": [
+        "r0",
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total",
+        "description": "Sum of all 4 items (0–16). FAST-positive if ≥3."
+      }
+    ],
+    "items": [
+      {
+        "id": "fast_inst",
+        "text_key": "fast_inst",
+        "type": "inst"
+      },
+      {
+        "id": "q1",
+        "text_key": "q1",
+        "type": "likert"
+      },
+      {
+        "id": "q2",
+        "text_key": "q2",
+        "type": "likert"
+      },
+      {
+        "id": "q3",
+        "text_key": "q3",
+        "type": "likert"
+      },
+      {
+        "id": "q4",
+        "text_key": "q4",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "q4_opt0",
+            "value": 0
+          },
+          {
+            "text_key": "q4_opt2",
+            "value": 2
+          },
+          {
+            "text_key": "q4_opt4",
+            "value": 4
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ],
+        "description": "Sum of all 4 items (0–16). FAST-positive if total ≥3.",
+        "item_coding": {
+          "q1": 1,
+          "q2": 1,
+          "q3": 1,
+          "q4": 1
+        },
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 2,
+              "label": "FAST-negative"
+            },
+            {
+              "min": 3,
+              "max": 16,
+              "label": "FAST-positive (hazardous drinking)"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "fast_inst": "For the following questions, please select the answer which best applies.<br><br>1 drink = half a pint of beer or 1 glass of wine or 1 single spirit.",
+      "r0": "Never",
+      "r1": "Less than monthly",
+      "r2": "Monthly",
+      "r3": "Weekly",
+      "r4": "Daily or almost daily",
+      "q1": "MEN: How often do you have EIGHT or more drinks on one occasion?<br>WOMEN: How often do you have SIX or more drinks on one occasion?",
+      "q2": "How often during the last year have you been unable to remember what happened the night before because you had been drinking?",
+      "q3": "How often during the last year have you failed to do what was normally expected of you because of drinking?",
+      "q4": "In the last year has a relative or friend, or a doctor or other health worker been concerned about your drinking or suggested you cut down?",
+      "q4_opt0": "No",
+      "q4_opt2": "Yes, on one occasion",
+      "q4_opt4": "Yes, on more than one occasion",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

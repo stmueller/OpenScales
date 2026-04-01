@@ -1,0 +1,154 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Aesthetic Appreciation",
+      "code": "IPIP-VIA-AESTHETICS",
+      "abbreviation": "IPIP-VIA-AESTHETICS",
+      "description": "IPIP representation of the VIA character strength 'Aesthetic Appreciation'. 8-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "aesthetic_appreciation_artistic_interests",
+        "name": "Aesthetic Appreciation",
+        "abbreviation": "AESTHETICS",
+        "description": "IPIP VIA Aesthetic Appreciation subscale (8 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_143",
+        "text_key": "ipip_via_143",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_144",
+        "text_key": "ipip_via_144",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_145",
+        "text_key": "ipip_via_145",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_146",
+        "text_key": "ipip_via_146",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_147",
+        "text_key": "ipip_via_147",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_148",
+        "text_key": "ipip_via_148",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_149",
+        "text_key": "ipip_via_149",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_150",
+        "text_key": "ipip_via_150",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "aesthetic_appreciation_artistic_interests": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_143",
+          "ipip_via_144",
+          "ipip_via_145",
+          "ipip_via_146",
+          "ipip_via_147",
+          "ipip_via_148",
+          "ipip_via_149",
+          "ipip_via_150"
+        ],
+        "description": "Mean of 8 items (range 1–5; higher = stronger Aesthetic Appreciation). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_143": 1,
+          "ipip_via_144": 1,
+          "ipip_via_145": 1,
+          "ipip_via_146": 1,
+          "ipip_via_147": 1,
+          "ipip_via_148": -1,
+          "ipip_via_149": 1,
+          "ipip_via_150": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_143": "Am in awe of simple things in life that others might take for granted.",
+      "ipip_via_144": "Appreciate all forms of art.",
+      "ipip_via_145": "Can become tearful thinking of the goodness of others.",
+      "ipip_via_146": "Crave the experience of great art.",
+      "ipip_via_147": "Experience deep emotions when I see beautiful things.",
+      "ipip_via_148": "Fail to notice beauty until others comment on it.",
+      "ipip_via_149": "Feel it's important to live in a world of beauty.",
+      "ipip_via_150": "Have been left speechless by the beauty depicted in a movie."
+    }
+  }
+}

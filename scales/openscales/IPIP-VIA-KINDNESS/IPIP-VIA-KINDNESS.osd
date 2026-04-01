@@ -1,0 +1,174 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Kindness/Generosity",
+      "code": "IPIP-VIA-KINDNESS",
+      "abbreviation": "IPIP-VIA-KINDNESS",
+      "description": "IPIP representation of the VIA character strength 'Kindness/Generosity'. 10-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "kindness_generosity",
+        "name": "Kindness/Generosity",
+        "abbreviation": "KINDNESS",
+        "description": "IPIP VIA Kindness/Generosity subscale (10 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_151",
+        "text_key": "ipip_via_151",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_152",
+        "text_key": "ipip_via_152",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_153",
+        "text_key": "ipip_via_153",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_154",
+        "text_key": "ipip_via_154",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_155",
+        "text_key": "ipip_via_155",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_156",
+        "text_key": "ipip_via_156",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_157",
+        "text_key": "ipip_via_157",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_158",
+        "text_key": "ipip_via_158",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_159",
+        "text_key": "ipip_via_159",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_160",
+        "text_key": "ipip_via_160",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "kindness_generosity": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_151",
+          "ipip_via_152",
+          "ipip_via_153",
+          "ipip_via_154",
+          "ipip_via_155",
+          "ipip_via_156",
+          "ipip_via_157",
+          "ipip_via_158",
+          "ipip_via_159",
+          "ipip_via_160"
+        ],
+        "description": "Mean of 10 items (range 1–5; higher = stronger Kindness/Generosity). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_151": 1,
+          "ipip_via_152": -1,
+          "ipip_via_153": 1,
+          "ipip_via_154": 1,
+          "ipip_via_155": -1,
+          "ipip_via_156": 1,
+          "ipip_via_157": 1,
+          "ipip_via_158": 1,
+          "ipip_via_159": 1,
+          "ipip_via_160": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_151": "Am never too busy to help a friend.",
+      "ipip_via_152": "Am only kind to others if they have been kind to me.",
+      "ipip_via_153": "Call my friends when they are sick.",
+      "ipip_via_154": "Get as excited about the good fortunes of others as I am about my own.",
+      "ipip_via_155": "Get impatient when others talk to me about their problems.",
+      "ipip_via_156": "Go out of my way to cheer up people who appear down.",
+      "ipip_via_157": "Helped a neighbor in the last month.",
+      "ipip_via_158": "Love to let others share the spotlight.",
+      "ipip_via_159": "Love to make other people happy.",
+      "ipip_via_160": "Try not to do favors for others."
+    }
+  }
+}

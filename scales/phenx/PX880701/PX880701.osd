@@ -1,0 +1,629 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Offspring and Fertility History",
+      "code": "PX880701",
+      "abbreviation": "PX880701",
+      "description": "The Offspring/Pregnancy History section of the Childhood Cancer Survivor Study includes three self-administered questions for males and females about pregnancy, pregnancy outcomes, and/or the ability to father children.",
+      "domain": "Women's Health",
+      "citation": "Green, D. M., Whitton, J. A., Stovall, M., Mertens, A. C., Donaldson, S. S., Ruymann, F. B., Pendergrass, T. W., & Robison, L. L. (2003). Pregnancy outcome of partners of male survivors of childhood cancer: A report from the Childhood Cancer Survivor Study. Journal of Clinical Oncology, 21 (4), 716–721. https://doi.org/10.1200/JCO.2003.04.085 [PhenX: https://www.phenxtoolkit.org/protocols/view/880701]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/880701"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "fertility_history_ever_pregnant",
+        "text_key": "fertility_history_ever_pregnant",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "fertility_history_ever_pregnant_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_ever_pregnant_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_number_times_pregnant",
+        "text_key": "fertility_history_number_times_pregnant",
+        "type": "short",
+        "visible_when": {
+          "item": "fertility_history_ever_pregnant",
+          "operator": "equals",
+          "value": ""
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "fertility_history_pregnancy_1_outcome",
+        "text_key": "fertility_history_pregnancy_1_outcome",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_1_outcome_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_1_outcome_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_1_outcome_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_1_outcome_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_1_age",
+        "text_key": "fertility_history_pregnancy_1_age",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_1_age_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_1_age_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_1_age_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_1_age_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "fertility_history_pregnancy_1_age_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "fertility_history_pregnancy_1_age_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_1_duration",
+        "text_key": "fertility_history_pregnancy_1_duration",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_1_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_1_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_1_duration_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_1_duration_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "fertility_history_pregnancy_1_duration_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_2_outcome",
+        "text_key": "fertility_history_pregnancy_2_outcome",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_2_outcome_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_2_outcome_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_2_outcome_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_2_outcome_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_2_age",
+        "text_key": "fertility_history_pregnancy_2_age",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_2_age_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_2_age_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_2_age_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_2_age_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "fertility_history_pregnancy_2_age_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "fertility_history_pregnancy_2_age_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_2_duration",
+        "text_key": "fertility_history_pregnancy_2_duration",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_2_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_2_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_2_duration_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_2_duration_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "fertility_history_pregnancy_2_duration_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_3_outcome",
+        "text_key": "fertility_history_pregnancy_3_outcome",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_3_outcome_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_3_outcome_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_3_outcome_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_3_outcome_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_3_age",
+        "text_key": "fertility_history_pregnancy_3_age",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_3_age_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_3_age_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_3_age_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_3_age_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "fertility_history_pregnancy_3_age_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "fertility_history_pregnancy_3_age_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_3_duration",
+        "text_key": "fertility_history_pregnancy_3_duration",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_3_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_3_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_3_duration_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_3_duration_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "fertility_history_pregnancy_3_duration_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_4_outcome",
+        "text_key": "fertility_history_pregnancy_4_outcome",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 3
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_4_outcome_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_4_outcome_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_4_outcome_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_4_outcome_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_4_age",
+        "text_key": "fertility_history_pregnancy_4_age",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 3
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_4_age_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_4_age_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_4_age_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_4_age_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "fertility_history_pregnancy_4_age_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "fertility_history_pregnancy_4_age_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_4_duration",
+        "text_key": "fertility_history_pregnancy_4_duration",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 3
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_4_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_4_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_4_duration_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_4_duration_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "fertility_history_pregnancy_4_duration_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_5_outcome",
+        "text_key": "fertility_history_pregnancy_5_outcome",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 4
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_5_outcome_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_5_outcome_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_5_outcome_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_5_outcome_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_5_age",
+        "text_key": "fertility_history_pregnancy_5_age",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 4
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_5_age_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_5_age_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_5_age_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_5_age_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "fertility_history_pregnancy_5_age_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "fertility_history_pregnancy_5_age_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "fertility_history_pregnancy_5_duration",
+        "text_key": "fertility_history_pregnancy_5_duration",
+        "type": "multi",
+        "visible_when": {
+          "item": "fertility_history_number_times_pregnant",
+          "operator": "greater_than",
+          "value": 4
+        },
+        "options": [
+          {
+            "text_key": "fertility_history_pregnancy_5_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fertility_history_pregnancy_5_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fertility_history_pregnancy_5_duration_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fertility_history_pregnancy_5_duration_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "fertility_history_pregnancy_5_duration_opt_5",
+            "value": 5
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "fertility_history_ever_pregnant": "Have you and a partner ever become pregnant?",
+      "fertility_history_ever_pregnant_opt_1": "No",
+      "fertility_history_ever_pregnant_opt_2": "Yes",
+      "fertility_history_number_times_pregnant": "Including live births, stillbirths, miscarriages, and abortions, how many times have you become pregnant or had a woman become pregnant by you?",
+      "fertility_history_pregnancy_1_outcome": "Pregnancy 1 - Outcome",
+      "fertility_history_pregnancy_1_outcome_opt_1": "Live birth",
+      "fertility_history_pregnancy_1_outcome_opt_2": "Stillbirth",
+      "fertility_history_pregnancy_1_outcome_opt_3": "Miscarriage",
+      "fertility_history_pregnancy_1_outcome_opt_4": "Medical abortion",
+      "fertility_history_pregnancy_1_age": "Pregnancy 1 - Your age (years) at beginning of pregnancy",
+      "fertility_history_pregnancy_1_age_opt_1": "Under 15",
+      "fertility_history_pregnancy_1_age_opt_2": "15-20",
+      "fertility_history_pregnancy_1_age_opt_3": "21-25",
+      "fertility_history_pregnancy_1_age_opt_4": "26-30",
+      "fertility_history_pregnancy_1_age_opt_5": "31-35",
+      "fertility_history_pregnancy_1_age_opt_6": "36 and over",
+      "fertility_history_pregnancy_1_duration": "Pregnancy 1 - Weeks pregnancy lasted",
+      "fertility_history_pregnancy_1_duration_opt_1": "Less than 12 weeks",
+      "fertility_history_pregnancy_1_duration_opt_2": "12 - 24 weeks",
+      "fertility_history_pregnancy_1_duration_opt_3": "25 - 32 weeks",
+      "fertility_history_pregnancy_1_duration_opt_4": "33 - 37 weeks",
+      "fertility_history_pregnancy_1_duration_opt_5": "38 - 40 weeks",
+      "fertility_history_pregnancy_2_outcome": "Pregnancy 2 - Outcome",
+      "fertility_history_pregnancy_2_outcome_opt_1": "Live birth",
+      "fertility_history_pregnancy_2_outcome_opt_2": "Stillbirth",
+      "fertility_history_pregnancy_2_outcome_opt_3": "Miscarriage",
+      "fertility_history_pregnancy_2_outcome_opt_4": "Medical abortion",
+      "fertility_history_pregnancy_2_age": "Pregnancy 2 - Your age (years) at beginning of pregnancy",
+      "fertility_history_pregnancy_2_age_opt_1": "Under 15",
+      "fertility_history_pregnancy_2_age_opt_2": "15-20",
+      "fertility_history_pregnancy_2_age_opt_3": "21-25",
+      "fertility_history_pregnancy_2_age_opt_4": "26-30",
+      "fertility_history_pregnancy_2_age_opt_5": "31-35",
+      "fertility_history_pregnancy_2_age_opt_6": "36 and over",
+      "fertility_history_pregnancy_2_duration": "Pregnancy 2 - Weeks pregnancy lasted",
+      "fertility_history_pregnancy_2_duration_opt_1": "Less than 12 weeks",
+      "fertility_history_pregnancy_2_duration_opt_2": "12 - 24 weeks",
+      "fertility_history_pregnancy_2_duration_opt_3": "25 - 32 weeks",
+      "fertility_history_pregnancy_2_duration_opt_4": "33 - 37 weeks",
+      "fertility_history_pregnancy_2_duration_opt_5": "38 - 40 weeks",
+      "fertility_history_pregnancy_3_outcome": "Pregnancy 3 - Outcome",
+      "fertility_history_pregnancy_3_outcome_opt_1": "Live birth",
+      "fertility_history_pregnancy_3_outcome_opt_2": "Stillbirth",
+      "fertility_history_pregnancy_3_outcome_opt_3": "Miscarriage",
+      "fertility_history_pregnancy_3_outcome_opt_4": "Medical abortion",
+      "fertility_history_pregnancy_3_age": "Pregnancy 3 - Your age (years) at beginning of pregnancy",
+      "fertility_history_pregnancy_3_age_opt_1": "Under 15",
+      "fertility_history_pregnancy_3_age_opt_2": "15-20",
+      "fertility_history_pregnancy_3_age_opt_3": "21-25",
+      "fertility_history_pregnancy_3_age_opt_4": "26-30",
+      "fertility_history_pregnancy_3_age_opt_5": "31-35",
+      "fertility_history_pregnancy_3_age_opt_6": "36 and over",
+      "fertility_history_pregnancy_3_duration": "Pregnancy 3 - Weeks pregnancy lasted",
+      "fertility_history_pregnancy_3_duration_opt_1": "Less than 12 weeks",
+      "fertility_history_pregnancy_3_duration_opt_2": "12 - 24 weeks",
+      "fertility_history_pregnancy_3_duration_opt_3": "25 - 32 weeks",
+      "fertility_history_pregnancy_3_duration_opt_4": "33 - 37 weeks",
+      "fertility_history_pregnancy_3_duration_opt_5": "38 - 40 weeks",
+      "fertility_history_pregnancy_4_outcome": "Pregnancy 4 - Outcome",
+      "fertility_history_pregnancy_4_outcome_opt_1": "Live birth",
+      "fertility_history_pregnancy_4_outcome_opt_2": "Stillbirth",
+      "fertility_history_pregnancy_4_outcome_opt_3": "Miscarriage",
+      "fertility_history_pregnancy_4_outcome_opt_4": "Medical abortion",
+      "fertility_history_pregnancy_4_age": "Pregnancy 4 - Your age (years) at beginning of pregnancy",
+      "fertility_history_pregnancy_4_age_opt_1": "Under 15",
+      "fertility_history_pregnancy_4_age_opt_2": "15-20",
+      "fertility_history_pregnancy_4_age_opt_3": "21-25",
+      "fertility_history_pregnancy_4_age_opt_4": "26-30",
+      "fertility_history_pregnancy_4_age_opt_5": "31-35",
+      "fertility_history_pregnancy_4_age_opt_6": "36 and over",
+      "fertility_history_pregnancy_4_duration": "Pregnancy 4 - Weeks pregnancy lasted",
+      "fertility_history_pregnancy_4_duration_opt_1": "Less than 12 weeks",
+      "fertility_history_pregnancy_4_duration_opt_2": "12 - 24 weeks",
+      "fertility_history_pregnancy_4_duration_opt_3": "25 - 32 weeks",
+      "fertility_history_pregnancy_4_duration_opt_4": "33 - 37 weeks",
+      "fertility_history_pregnancy_4_duration_opt_5": "38 - 40 weeks",
+      "fertility_history_pregnancy_5_outcome": "Pregnancy 5 - Outcome",
+      "fertility_history_pregnancy_5_outcome_opt_1": "Live birth",
+      "fertility_history_pregnancy_5_outcome_opt_2": "Stillbirth",
+      "fertility_history_pregnancy_5_outcome_opt_3": "Miscarriage",
+      "fertility_history_pregnancy_5_outcome_opt_4": "Medical abortion",
+      "fertility_history_pregnancy_5_age": "Pregnancy 5 - Your age (years) at beginning of pregnancy",
+      "fertility_history_pregnancy_5_age_opt_1": "Under 15",
+      "fertility_history_pregnancy_5_age_opt_2": "15-20",
+      "fertility_history_pregnancy_5_age_opt_3": "21-25",
+      "fertility_history_pregnancy_5_age_opt_4": "26-30",
+      "fertility_history_pregnancy_5_age_opt_5": "31-35",
+      "fertility_history_pregnancy_5_age_opt_6": "36 and over",
+      "fertility_history_pregnancy_5_duration": "Pregnancy 5 - Weeks pregnancy lasted",
+      "fertility_history_pregnancy_5_duration_opt_1": "Less than 12 weeks",
+      "fertility_history_pregnancy_5_duration_opt_2": "12 - 24 weeks",
+      "fertility_history_pregnancy_5_duration_opt_3": "25 - 32 weeks",
+      "fertility_history_pregnancy_5_duration_opt_4": "33 - 37 weeks",
+      "fertility_history_pregnancy_5_duration_opt_5": "38 - 40 weeks"
+    }
+  }
+}

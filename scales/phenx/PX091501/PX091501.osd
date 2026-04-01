@@ -1,0 +1,368 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Sleep Apnea - Adult",
+      "code": "PX091501",
+      "abbreviation": "PX091501",
+      "description": "The questionnaire asks about risk factors for sleep apnea, namely snoring behavior, wake time, sleepiness or fatigue, and the presence of high blood pressure. The protocol begins with information that an individual self-reports on height, weight, age, and sex. The 10 questions address snoring, fatig",
+      "domain": "Respiratory",
+      "citation": "Chiu, H.-Y., Chen, P. Y., Chuang, L. P., Chen, N. H., Tu, Y. K., Hsieh, Y. J., Wang, Y. C., & Guilleminault, C. (2016). Diagnostic accuracy of the Berlin questionnaire, STOP-BANG, STOP, and Epworth sleepiness scale in detecting obstructive sleep apnea: A bivariate meta-analysis. Sleep Medicine Reviews. doi: 10.1016/j.smrv.2016.10.004 [PhenX: https://www.phenxtoolkit.org/protocols/view/91501]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/91501"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "sleep_apnea_height",
+        "text_key": "sleep_apnea_height",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "sleep_apnea_weight",
+        "text_key": "sleep_apnea_weight",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "sleep_apnea_age",
+        "text_key": "sleep_apnea_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "sleep_apnea_gender",
+        "text_key": "sleep_apnea_gender",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sleep_apnea_gender_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_gender_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_snore",
+        "text_key": "sleep_apnea_snore",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sleep_apnea_snore_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_snore_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleep_apnea_snore_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_snore_loudness",
+        "text_key": "sleep_apnea_snore_loudness",
+        "type": "multi",
+        "visible_when": {
+          "item": "sleep_apnea_snore",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "sleep_apnea_snore_loudness_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_snore_loudness_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleep_apnea_snore_loudness_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sleep_apnea_snore_loudness_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_snore_frequency",
+        "text_key": "sleep_apnea_snore_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "sleep_apnea_snore",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "sleep_apnea_snore_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_snore_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleep_apnea_snore_frequency_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sleep_apnea_snore_frequency_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sleep_apnea_snore_frequency_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_snore_bother_other",
+        "text_key": "sleep_apnea_snore_bother_other",
+        "type": "multi",
+        "visible_when": {
+          "item": "sleep_apnea_snore",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "sleep_apnea_snore_bother_other_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_snore_bother_other_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleep_apnea_snore_bother_other_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_quit_breathing_sleep",
+        "text_key": "sleep_apnea_quit_breathing_sleep",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sleep_apnea_quit_breathing_sleep_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_quit_breathing_sleep_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleep_apnea_quit_breathing_sleep_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sleep_apnea_quit_breathing_sleep_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sleep_apnea_quit_breathing_sleep_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_tired_fatigued_after",
+        "text_key": "sleep_apnea_tired_fatigued_after",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sleep_apnea_tired_fatigued_after_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_tired_fatigued_after_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleep_apnea_tired_fatigued_after_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sleep_apnea_tired_fatigued_after_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sleep_apnea_tired_fatigued_after_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_tired_fatigued_waking",
+        "text_key": "sleep_apnea_tired_fatigued_waking",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sleep_apnea_tired_fatigued_waking_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_tired_fatigued_waking_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleep_apnea_tired_fatigued_waking_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sleep_apnea_tired_fatigued_waking_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sleep_apnea_tired_fatigued_waking_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_nodded_asleep_driving",
+        "text_key": "sleep_apnea_nodded_asleep_driving",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sleep_apnea_nodded_asleep_driving_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_nodded_asleep_driving_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_asleep_driving_frequency",
+        "text_key": "sleep_apnea_asleep_driving_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "sleep_apnea_nodded_asleep_driving",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "sleep_apnea_asleep_driving_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_asleep_driving_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleep_apnea_asleep_driving_frequency_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sleep_apnea_asleep_driving_frequency_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sleep_apnea_asleep_driving_frequency_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_high_blood_pressure",
+        "text_key": "sleep_apnea_high_blood_pressure",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sleep_apnea_high_blood_pressure_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_high_blood_pressure_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleep_apnea_high_blood_pressure_opt_3",
+            "value": 3
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "sleep_apnea_height": "Height (m):",
+      "sleep_apnea_weight": "Weight (kg):",
+      "sleep_apnea_age": "Age:",
+      "sleep_apnea_gender": "Gender:",
+      "sleep_apnea_gender_opt_1": "Male",
+      "sleep_apnea_gender_opt_2": "Female",
+      "sleep_apnea_snore": "CATEGORY 1  Do you snore?",
+      "sleep_apnea_snore_opt_1": "Yes",
+      "sleep_apnea_snore_opt_2": "No",
+      "sleep_apnea_snore_opt_3": "Don't know",
+      "sleep_apnea_snore_loudness": "CATEGORY 1  Your snoring is:",
+      "sleep_apnea_snore_loudness_opt_1": "Slightly louder than breathing",
+      "sleep_apnea_snore_loudness_opt_2": "As loud as talking",
+      "sleep_apnea_snore_loudness_opt_3": "Louder than talking",
+      "sleep_apnea_snore_loudness_opt_4": "Very loud can be heard in adjacent rooms",
+      "sleep_apnea_snore_frequency": "CATEGORY 1  How often do you snore?",
+      "sleep_apnea_snore_frequency_opt_1": "Nearly every day",
+      "sleep_apnea_snore_frequency_opt_2": "3-4 times a week",
+      "sleep_apnea_snore_frequency_opt_3": "1-2 times a week",
+      "sleep_apnea_snore_frequency_opt_4": "1-2 times a month",
+      "sleep_apnea_snore_frequency_opt_5": "Never or nearly never",
+      "sleep_apnea_snore_bother_other": "CATEGORY 1  Has your snoring ever bothered other people?",
+      "sleep_apnea_snore_bother_other_opt_1": "Yes",
+      "sleep_apnea_snore_bother_other_opt_2": "No",
+      "sleep_apnea_snore_bother_other_opt_3": "Don't know",
+      "sleep_apnea_quit_breathing_sleep": "CATEGORY 1  Has anyone noticed that you quit breathing during your sleep?",
+      "sleep_apnea_quit_breathing_sleep_opt_1": "Nearly every day",
+      "sleep_apnea_quit_breathing_sleep_opt_2": "3-4 times a week",
+      "sleep_apnea_quit_breathing_sleep_opt_3": "1-2 times a week",
+      "sleep_apnea_quit_breathing_sleep_opt_4": "1-2 times a month",
+      "sleep_apnea_quit_breathing_sleep_opt_5": "Never or nearly never",
+      "sleep_apnea_tired_fatigued_after": "CATEGORY 2  How often do you feel tired or fatigued after your sleep?",
+      "sleep_apnea_tired_fatigued_after_opt_1": "Nearly every day",
+      "sleep_apnea_tired_fatigued_after_opt_2": "3-4 times a week",
+      "sleep_apnea_tired_fatigued_after_opt_3": "1-2 times a week",
+      "sleep_apnea_tired_fatigued_after_opt_4": "1-2 times a month",
+      "sleep_apnea_tired_fatigued_after_opt_5": "Never or nearly never",
+      "sleep_apnea_tired_fatigued_waking": "CATEGORY 2  During your waking time, do you feel tired, fatigued, or not up to par?",
+      "sleep_apnea_tired_fatigued_waking_opt_1": "Nearly every day",
+      "sleep_apnea_tired_fatigued_waking_opt_2": "3-4 times a week",
+      "sleep_apnea_tired_fatigued_waking_opt_3": "1-2 times a week",
+      "sleep_apnea_tired_fatigued_waking_opt_4": "1-2 times a month",
+      "sleep_apnea_tired_fatigued_waking_opt_5": "Never or nearly never",
+      "sleep_apnea_nodded_asleep_driving": "CATEGORY 2  Have you ever nodded off or fallen asleep while driving a vehicle?",
+      "sleep_apnea_nodded_asleep_driving_opt_1": "Yes",
+      "sleep_apnea_nodded_asleep_driving_opt_2": "No",
+      "sleep_apnea_asleep_driving_frequency": "CATEGORY 2  How often does this occur?",
+      "sleep_apnea_asleep_driving_frequency_opt_1": "Nearly every day",
+      "sleep_apnea_asleep_driving_frequency_opt_2": "3-4 times a week",
+      "sleep_apnea_asleep_driving_frequency_opt_3": "1-2 times a week",
+      "sleep_apnea_asleep_driving_frequency_opt_4": "1-2 times a month",
+      "sleep_apnea_asleep_driving_frequency_opt_5": "Never or nearly never",
+      "sleep_apnea_high_blood_pressure": "CATEGORY 3  Do you have high blood pressure?",
+      "sleep_apnea_high_blood_pressure_opt_1": "Yes",
+      "sleep_apnea_high_blood_pressure_opt_2": "No",
+      "sleep_apnea_high_blood_pressure_opt_3": "Don't know"
+    }
+  }
+}

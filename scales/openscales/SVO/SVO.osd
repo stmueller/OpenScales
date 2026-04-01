@@ -1,0 +1,1030 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Social Value Orientation Slider Measure",
+      "code": "SVO",
+      "abbreviation": "SVO",
+      "description": "15-item measure of social value orientation assessing the degree to which individuals value outcomes for others relative to themselves. Six primary items yield an SVO angle classifying respondents as altruistic (>57.15°), prosocial (22.45° to 57.15°), individualistic (-12.04° to 22.45°), or competitive (<-12.04°). Nine optional secondary items further distinguish inequality aversion from joint gain maximization among prosocial respondents.",
+      "citation": "Murphy, R. O., Ackermann, K. A., & Handgraaf, M. J. J. (2011). Measuring Social Value Orientation. Judgment and Decision Making, 6(8), 771-781.",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1017/S1930297500004204"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "include_secondary": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Include the 9 secondary items (in addition to the 6 primary items) to distinguish inequality aversion from joint gain maximization among prosocial respondents"
+      }
+    },
+    "dimensions": [
+      {
+        "id": "svo_angle",
+        "name": "SVO Angle",
+        "abbreviation": "SVO°",
+        "description": "Computed as arctan(mean_other / mean_self) × (180/π) using the Self and Other payoffs from the chosen option on each primary item. Range: approximately -90° to +90°. Classification thresholds: Altruistic > 57.15°; Prosocial 22.45° to 57.15°; Individualistic -12.04° to 22.45°; Competitive < -12.04°. Cannot be computed from a simple sum; raw response values (e.g., '85_85') must be parsed to extract Self and Other payoffs. See Murphy et al. (2011) for the full scoring procedure.",
+        "enabled_param": null
+      },
+      {
+        "id": "inequality_aversion",
+        "name": "Inequality Aversion",
+        "abbreviation": "IA",
+        "description": "Mean normalized distance between selected allocations and the equality-maximizing option across the 9 secondary items. Meaningful only for prosocial respondents (SVO angle 22.45° to 57.15°). Requires parsing raw response values to extract Self and Other payoffs. See Murphy et al. (2011) and the secondary-items tutorial for the scoring procedure.",
+        "enabled_param": "include_secondary"
+      },
+      {
+        "id": "joint_gain",
+        "name": "Joint Gain Maximization",
+        "abbreviation": "JG",
+        "description": "Mean normalized distance between selected allocations and the joint-gain-maximizing option across the 9 secondary items. Meaningful only for prosocial respondents (SVO angle 22.45° to 57.15°). Requires parsing raw response values to extract Self and Other payoffs. See Murphy et al. (2011) and the secondary-items tutorial for the scoring procedure.",
+        "enabled_param": "include_secondary"
+      }
+    ],
+    "items": [
+      {
+        "id": "inst1",
+        "type": "inst",
+        "text_key": "inst1"
+      },
+      {
+        "id": "p1",
+        "type": "multi",
+        "text_key": "p1",
+        "dimension": "svo_angle",
+        "required": true,
+        "options": [
+          {
+            "value": "85_85",
+            "text_key": "p1_opt1"
+          },
+          {
+            "value": "85_76",
+            "text_key": "p1_opt2"
+          },
+          {
+            "value": "85_68",
+            "text_key": "p1_opt3"
+          },
+          {
+            "value": "85_59",
+            "text_key": "p1_opt4"
+          },
+          {
+            "value": "85_50",
+            "text_key": "p1_opt5"
+          },
+          {
+            "value": "85_41",
+            "text_key": "p1_opt6"
+          },
+          {
+            "value": "85_33",
+            "text_key": "p1_opt7"
+          },
+          {
+            "value": "85_24",
+            "text_key": "p1_opt8"
+          },
+          {
+            "value": "85_15",
+            "text_key": "p1_opt9"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "type": "multi",
+        "text_key": "p2",
+        "dimension": "svo_angle",
+        "required": true,
+        "options": [
+          {
+            "value": "85_15",
+            "text_key": "p2_opt1"
+          },
+          {
+            "value": "87_19",
+            "text_key": "p2_opt2"
+          },
+          {
+            "value": "89_24",
+            "text_key": "p2_opt3"
+          },
+          {
+            "value": "91_28",
+            "text_key": "p2_opt4"
+          },
+          {
+            "value": "93_33",
+            "text_key": "p2_opt5"
+          },
+          {
+            "value": "94_37",
+            "text_key": "p2_opt6"
+          },
+          {
+            "value": "96_41",
+            "text_key": "p2_opt7"
+          },
+          {
+            "value": "98_46",
+            "text_key": "p2_opt8"
+          },
+          {
+            "value": "100_50",
+            "text_key": "p2_opt9"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "type": "multi",
+        "text_key": "p3",
+        "dimension": "svo_angle",
+        "required": true,
+        "options": [
+          {
+            "value": "50_100",
+            "text_key": "p3_opt1"
+          },
+          {
+            "value": "54_98",
+            "text_key": "p3_opt2"
+          },
+          {
+            "value": "59_96",
+            "text_key": "p3_opt3"
+          },
+          {
+            "value": "63_94",
+            "text_key": "p3_opt4"
+          },
+          {
+            "value": "68_93",
+            "text_key": "p3_opt5"
+          },
+          {
+            "value": "72_91",
+            "text_key": "p3_opt6"
+          },
+          {
+            "value": "76_89",
+            "text_key": "p3_opt7"
+          },
+          {
+            "value": "81_87",
+            "text_key": "p3_opt8"
+          },
+          {
+            "value": "85_85",
+            "text_key": "p3_opt9"
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "type": "multi",
+        "text_key": "p4",
+        "dimension": "svo_angle",
+        "required": true,
+        "options": [
+          {
+            "value": "50_100",
+            "text_key": "p4_opt1"
+          },
+          {
+            "value": "54_89",
+            "text_key": "p4_opt2"
+          },
+          {
+            "value": "59_79",
+            "text_key": "p4_opt3"
+          },
+          {
+            "value": "63_68",
+            "text_key": "p4_opt4"
+          },
+          {
+            "value": "68_58",
+            "text_key": "p4_opt5"
+          },
+          {
+            "value": "72_47",
+            "text_key": "p4_opt6"
+          },
+          {
+            "value": "76_36",
+            "text_key": "p4_opt7"
+          },
+          {
+            "value": "81_26",
+            "text_key": "p4_opt8"
+          },
+          {
+            "value": "85_15",
+            "text_key": "p4_opt9"
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "type": "multi",
+        "text_key": "p5",
+        "dimension": "svo_angle",
+        "required": true,
+        "options": [
+          {
+            "value": "100_50",
+            "text_key": "p5_opt1"
+          },
+          {
+            "value": "94_56",
+            "text_key": "p5_opt2"
+          },
+          {
+            "value": "88_63",
+            "text_key": "p5_opt3"
+          },
+          {
+            "value": "81_69",
+            "text_key": "p5_opt4"
+          },
+          {
+            "value": "75_75",
+            "text_key": "p5_opt5"
+          },
+          {
+            "value": "69_81",
+            "text_key": "p5_opt6"
+          },
+          {
+            "value": "63_88",
+            "text_key": "p5_opt7"
+          },
+          {
+            "value": "56_94",
+            "text_key": "p5_opt8"
+          },
+          {
+            "value": "50_100",
+            "text_key": "p5_opt9"
+          }
+        ]
+      },
+      {
+        "id": "p6",
+        "type": "multi",
+        "text_key": "p6",
+        "dimension": "svo_angle",
+        "required": true,
+        "options": [
+          {
+            "value": "100_50",
+            "text_key": "p6_opt1"
+          },
+          {
+            "value": "98_54",
+            "text_key": "p6_opt2"
+          },
+          {
+            "value": "96_59",
+            "text_key": "p6_opt3"
+          },
+          {
+            "value": "94_63",
+            "text_key": "p6_opt4"
+          },
+          {
+            "value": "93_68",
+            "text_key": "p6_opt5"
+          },
+          {
+            "value": "91_72",
+            "text_key": "p6_opt6"
+          },
+          {
+            "value": "89_76",
+            "text_key": "p6_opt7"
+          },
+          {
+            "value": "87_81",
+            "text_key": "p6_opt8"
+          },
+          {
+            "value": "85_85",
+            "text_key": "p6_opt9"
+          }
+        ]
+      },
+      {
+        "id": "s1",
+        "type": "multi",
+        "text_key": "s1",
+        "dimension": "inequality_aversion",
+        "required": true,
+        "visible_when": {
+          "parameter": "include_secondary",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "value": "100_50",
+            "text_key": "s1_opt1"
+          },
+          {
+            "value": "96_56",
+            "text_key": "s1_opt2"
+          },
+          {
+            "value": "92_62",
+            "text_key": "s1_opt3"
+          },
+          {
+            "value": "89_69",
+            "text_key": "s1_opt4"
+          },
+          {
+            "value": "85_75",
+            "text_key": "s1_opt5"
+          },
+          {
+            "value": "81_81",
+            "text_key": "s1_opt6"
+          },
+          {
+            "value": "78_88",
+            "text_key": "s1_opt7"
+          },
+          {
+            "value": "74_94",
+            "text_key": "s1_opt8"
+          },
+          {
+            "value": "70_100",
+            "text_key": "s1_opt9"
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "type": "multi",
+        "text_key": "s2",
+        "dimension": "inequality_aversion",
+        "required": true,
+        "visible_when": {
+          "parameter": "include_secondary",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "value": "90_100",
+            "text_key": "s2_opt1"
+          },
+          {
+            "value": "91_99",
+            "text_key": "s2_opt2"
+          },
+          {
+            "value": "92_98",
+            "text_key": "s2_opt3"
+          },
+          {
+            "value": "94_96",
+            "text_key": "s2_opt4"
+          },
+          {
+            "value": "95_95",
+            "text_key": "s2_opt5"
+          },
+          {
+            "value": "96_94",
+            "text_key": "s2_opt6"
+          },
+          {
+            "value": "98_92",
+            "text_key": "s2_opt7"
+          },
+          {
+            "value": "99_91",
+            "text_key": "s2_opt8"
+          },
+          {
+            "value": "100_90",
+            "text_key": "s2_opt9"
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "type": "multi",
+        "text_key": "s3",
+        "dimension": "inequality_aversion",
+        "required": true,
+        "visible_when": {
+          "parameter": "include_secondary",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "value": "100_70",
+            "text_key": "s3_opt1"
+          },
+          {
+            "value": "94_74",
+            "text_key": "s3_opt2"
+          },
+          {
+            "value": "88_78",
+            "text_key": "s3_opt3"
+          },
+          {
+            "value": "81_81",
+            "text_key": "s3_opt4"
+          },
+          {
+            "value": "75_85",
+            "text_key": "s3_opt5"
+          },
+          {
+            "value": "69_89",
+            "text_key": "s3_opt6"
+          },
+          {
+            "value": "62_92",
+            "text_key": "s3_opt7"
+          },
+          {
+            "value": "56_96",
+            "text_key": "s3_opt8"
+          },
+          {
+            "value": "50_100",
+            "text_key": "s3_opt9"
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "type": "multi",
+        "text_key": "s4",
+        "dimension": "inequality_aversion",
+        "required": true,
+        "visible_when": {
+          "parameter": "include_secondary",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "value": "100_70",
+            "text_key": "s4_opt1"
+          },
+          {
+            "value": "99_74",
+            "text_key": "s4_opt2"
+          },
+          {
+            "value": "98_78",
+            "text_key": "s4_opt3"
+          },
+          {
+            "value": "96_81",
+            "text_key": "s4_opt4"
+          },
+          {
+            "value": "95_85",
+            "text_key": "s4_opt5"
+          },
+          {
+            "value": "94_89",
+            "text_key": "s4_opt6"
+          },
+          {
+            "value": "92_92",
+            "text_key": "s4_opt7"
+          },
+          {
+            "value": "91_96",
+            "text_key": "s4_opt8"
+          },
+          {
+            "value": "90_100",
+            "text_key": "s4_opt9"
+          }
+        ]
+      },
+      {
+        "id": "s5",
+        "type": "multi",
+        "text_key": "s5",
+        "dimension": "inequality_aversion",
+        "required": true,
+        "visible_when": {
+          "parameter": "include_secondary",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "value": "70_100",
+            "text_key": "s5_opt1"
+          },
+          {
+            "value": "74_96",
+            "text_key": "s5_opt2"
+          },
+          {
+            "value": "78_92",
+            "text_key": "s5_opt3"
+          },
+          {
+            "value": "81_89",
+            "text_key": "s5_opt4"
+          },
+          {
+            "value": "85_85",
+            "text_key": "s5_opt5"
+          },
+          {
+            "value": "89_81",
+            "text_key": "s5_opt6"
+          },
+          {
+            "value": "92_78",
+            "text_key": "s5_opt7"
+          },
+          {
+            "value": "96_74",
+            "text_key": "s5_opt8"
+          },
+          {
+            "value": "100_70",
+            "text_key": "s5_opt9"
+          }
+        ]
+      },
+      {
+        "id": "s6",
+        "type": "multi",
+        "text_key": "s6",
+        "dimension": "inequality_aversion",
+        "required": true,
+        "visible_when": {
+          "parameter": "include_secondary",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "value": "50_100",
+            "text_key": "s6_opt1"
+          },
+          {
+            "value": "56_99",
+            "text_key": "s6_opt2"
+          },
+          {
+            "value": "62_98",
+            "text_key": "s6_opt3"
+          },
+          {
+            "value": "69_96",
+            "text_key": "s6_opt4"
+          },
+          {
+            "value": "75_95",
+            "text_key": "s6_opt5"
+          },
+          {
+            "value": "81_94",
+            "text_key": "s6_opt6"
+          },
+          {
+            "value": "88_92",
+            "text_key": "s6_opt7"
+          },
+          {
+            "value": "94_91",
+            "text_key": "s6_opt8"
+          },
+          {
+            "value": "100_90",
+            "text_key": "s6_opt9"
+          }
+        ]
+      },
+      {
+        "id": "s7",
+        "type": "multi",
+        "text_key": "s7",
+        "dimension": "inequality_aversion",
+        "required": true,
+        "visible_when": {
+          "parameter": "include_secondary",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "value": "50_100",
+            "text_key": "s7_opt1"
+          },
+          {
+            "value": "56_94",
+            "text_key": "s7_opt2"
+          },
+          {
+            "value": "62_88",
+            "text_key": "s7_opt3"
+          },
+          {
+            "value": "69_81",
+            "text_key": "s7_opt4"
+          },
+          {
+            "value": "75_75",
+            "text_key": "s7_opt5"
+          },
+          {
+            "value": "81_69",
+            "text_key": "s7_opt6"
+          },
+          {
+            "value": "88_62",
+            "text_key": "s7_opt7"
+          },
+          {
+            "value": "94_56",
+            "text_key": "s7_opt8"
+          },
+          {
+            "value": "100_50",
+            "text_key": "s7_opt9"
+          }
+        ]
+      },
+      {
+        "id": "s8",
+        "type": "multi",
+        "text_key": "s8",
+        "dimension": "inequality_aversion",
+        "required": true,
+        "visible_when": {
+          "parameter": "include_secondary",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "value": "100_90",
+            "text_key": "s8_opt1"
+          },
+          {
+            "value": "96_91",
+            "text_key": "s8_opt2"
+          },
+          {
+            "value": "92_92",
+            "text_key": "s8_opt3"
+          },
+          {
+            "value": "89_94",
+            "text_key": "s8_opt4"
+          },
+          {
+            "value": "85_95",
+            "text_key": "s8_opt5"
+          },
+          {
+            "value": "81_96",
+            "text_key": "s8_opt6"
+          },
+          {
+            "value": "78_98",
+            "text_key": "s8_opt7"
+          },
+          {
+            "value": "74_99",
+            "text_key": "s8_opt8"
+          },
+          {
+            "value": "70_100",
+            "text_key": "s8_opt9"
+          }
+        ]
+      },
+      {
+        "id": "s9",
+        "type": "multi",
+        "text_key": "s9",
+        "dimension": "inequality_aversion",
+        "required": true,
+        "visible_when": {
+          "parameter": "include_secondary",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "value": "90_100",
+            "text_key": "s9_opt1"
+          },
+          {
+            "value": "91_94",
+            "text_key": "s9_opt2"
+          },
+          {
+            "value": "92_88",
+            "text_key": "s9_opt3"
+          },
+          {
+            "value": "94_81",
+            "text_key": "s9_opt4"
+          },
+          {
+            "value": "95_75",
+            "text_key": "s9_opt5"
+          },
+          {
+            "value": "96_69",
+            "text_key": "s9_opt6"
+          },
+          {
+            "value": "98_62",
+            "text_key": "s9_opt7"
+          },
+          {
+            "value": "99_56",
+            "text_key": "s9_opt8"
+          },
+          {
+            "value": "100_50",
+            "text_key": "s9_opt9"
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "svo_angle": {
+        "method": "sum_coded",
+        "items": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6"
+        ],
+        "description": "The SVO angle cannot be computed from a simple coded sum. Raw response values (e.g., '85_85') must be parsed to extract Self (S_i) and Other (O_i) payoffs for each primary item i. SVO angle = arctan(mean(O_1..O_6) / mean(S_1..S_6)) × (180/π). Classification: Altruistic > 57.15°; Prosocial 22.45° to 57.15°; Individualistic -12.04° to 22.45°; Competitive < -12.04°. See Murphy, Ackermann, & Handgraaf (2011) for the full scoring procedure.",
+        "item_coding": {
+          "p1": 1,
+          "p2": 1,
+          "p3": 1,
+          "p4": 1,
+          "p5": 1,
+          "p6": 1
+        }
+      },
+      "inequality_aversion": {
+        "method": "sum_coded",
+        "items": [
+          "s1",
+          "s2",
+          "s3",
+          "s4",
+          "s5",
+          "s6",
+          "s7",
+          "s8",
+          "s9"
+        ],
+        "description": "Inequality aversion score computed from the 9 secondary items. For each secondary item, compute the normalized distance between the chosen allocation and the equality-maximizing allocation (where Self = Other). Average across all 9 items. Only interpretable for respondents classified as prosocial on the primary items. Raw response values must be parsed to extract Self and Other payoffs. See Murphy et al. (2011) and the secondary-items tutorial (https://ryanomurphy.com/resources/SVO_second_item_tutorial.pdf) for the full scoring procedure.",
+        "item_coding": {
+          "s1": 1,
+          "s2": 1,
+          "s3": 1,
+          "s4": 1,
+          "s5": 1,
+          "s6": 1,
+          "s7": 1,
+          "s8": 1,
+          "s9": 1
+        }
+      },
+      "joint_gain": {
+        "method": "sum_coded",
+        "items": [
+          "s1",
+          "s2",
+          "s3",
+          "s4",
+          "s5",
+          "s6",
+          "s7",
+          "s8",
+          "s9"
+        ],
+        "description": "Joint gain maximization score computed from the 9 secondary items. For each secondary item, compute the normalized distance between the chosen allocation and the joint-gain-maximizing allocation (where Self + Other is largest). Average across all 9 items. Only interpretable for respondents classified as prosocial on the primary items. Raw response values must be parsed to extract Self and Other payoffs. See Murphy et al. (2011) and the secondary-items tutorial (https://ryanomurphy.com/resources/SVO_second_item_tutorial.pdf) for the full scoring procedure.",
+        "item_coding": {
+          "s1": 1,
+          "s2": 1,
+          "s3": 1,
+          "s4": 1,
+          "s5": 1,
+          "s6": 1,
+          "s7": 1,
+          "s8": 1,
+          "s9": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "The Social Value Orientation (SVO) Slider Measure assesses how much individuals value outcomes for others relative to themselves.",
+      "footer_refs": [
+        "Murphy, R. O., Ackermann, K. A., & Handgraaf, M. J. J. (2011). Measuring Social Value Orientation. Judgment and Decision Making, 6(8), 771-781.",
+        "See https://doi.org/10.1017/S1930297500004204 for more information.",
+        "SVO angle = arctan(mean_other / mean_self) × (180/π) computed from the 6 primary items."
+      ]
+    },
+    "data_output": {
+      "individual_file": "SVO-{subnum}.csv",
+      "pooled_file": "SVO-pooled.csv",
+      "report_file": "SVO-report-{subnum}.html",
+      "columns": "subnum,order,time,qnum,ques,dim,valence,resp,rt",
+      "pooled_columns": "subnum,timestamp,time,p1,p2,p3,p4,p5,p6,s1,s2,s3,s4,s5,s6,s7,s8,s9,svo_angle"
+    }
+  },
+  "translations": {
+    "en": {
+      "inst1": "On each of the following pages you will see a set of possible distributions of money between you and another person. Neither you nor the other person will know who the other is.\n\nPlease choose the distribution you prefer most by clicking on one of the nine options.\n\nThere are no right or wrong answers — we are only interested in which distribution you prefer.",
+      "p1": "Please choose the option you prefer most.",
+      "p1_opt1": "You receive: 85 | Other receives: 85",
+      "p1_opt2": "You receive: 85 | Other receives: 76",
+      "p1_opt3": "You receive: 85 | Other receives: 68",
+      "p1_opt4": "You receive: 85 | Other receives: 59",
+      "p1_opt5": "You receive: 85 | Other receives: 50",
+      "p1_opt6": "You receive: 85 | Other receives: 41",
+      "p1_opt7": "You receive: 85 | Other receives: 33",
+      "p1_opt8": "You receive: 85 | Other receives: 24",
+      "p1_opt9": "You receive: 85 | Other receives: 15",
+      "p2": "Please choose the option you prefer most.",
+      "p2_opt1": "You receive: 85 | Other receives: 15",
+      "p2_opt2": "You receive: 87 | Other receives: 19",
+      "p2_opt3": "You receive: 89 | Other receives: 24",
+      "p2_opt4": "You receive: 91 | Other receives: 28",
+      "p2_opt5": "You receive: 93 | Other receives: 33",
+      "p2_opt6": "You receive: 94 | Other receives: 37",
+      "p2_opt7": "You receive: 96 | Other receives: 41",
+      "p2_opt8": "You receive: 98 | Other receives: 46",
+      "p2_opt9": "You receive: 100 | Other receives: 50",
+      "p3": "Please choose the option you prefer most.",
+      "p3_opt1": "You receive: 50 | Other receives: 100",
+      "p3_opt2": "You receive: 54 | Other receives: 98",
+      "p3_opt3": "You receive: 59 | Other receives: 96",
+      "p3_opt4": "You receive: 63 | Other receives: 94",
+      "p3_opt5": "You receive: 68 | Other receives: 93",
+      "p3_opt6": "You receive: 72 | Other receives: 91",
+      "p3_opt7": "You receive: 76 | Other receives: 89",
+      "p3_opt8": "You receive: 81 | Other receives: 87",
+      "p3_opt9": "You receive: 85 | Other receives: 85",
+      "p4": "Please choose the option you prefer most.",
+      "p4_opt1": "You receive: 50 | Other receives: 100",
+      "p4_opt2": "You receive: 54 | Other receives: 89",
+      "p4_opt3": "You receive: 59 | Other receives: 79",
+      "p4_opt4": "You receive: 63 | Other receives: 68",
+      "p4_opt5": "You receive: 68 | Other receives: 58",
+      "p4_opt6": "You receive: 72 | Other receives: 47",
+      "p4_opt7": "You receive: 76 | Other receives: 36",
+      "p4_opt8": "You receive: 81 | Other receives: 26",
+      "p4_opt9": "You receive: 85 | Other receives: 15",
+      "p5": "Please choose the option you prefer most.",
+      "p5_opt1": "You receive: 100 | Other receives: 50",
+      "p5_opt2": "You receive: 94 | Other receives: 56",
+      "p5_opt3": "You receive: 88 | Other receives: 63",
+      "p5_opt4": "You receive: 81 | Other receives: 69",
+      "p5_opt5": "You receive: 75 | Other receives: 75",
+      "p5_opt6": "You receive: 69 | Other receives: 81",
+      "p5_opt7": "You receive: 63 | Other receives: 88",
+      "p5_opt8": "You receive: 56 | Other receives: 94",
+      "p5_opt9": "You receive: 50 | Other receives: 100",
+      "p6": "Please choose the option you prefer most.",
+      "p6_opt1": "You receive: 100 | Other receives: 50",
+      "p6_opt2": "You receive: 98 | Other receives: 54",
+      "p6_opt3": "You receive: 96 | Other receives: 59",
+      "p6_opt4": "You receive: 94 | Other receives: 63",
+      "p6_opt5": "You receive: 93 | Other receives: 68",
+      "p6_opt6": "You receive: 91 | Other receives: 72",
+      "p6_opt7": "You receive: 89 | Other receives: 76",
+      "p6_opt8": "You receive: 87 | Other receives: 81",
+      "p6_opt9": "You receive: 85 | Other receives: 85",
+      "s1": "Please choose the option you prefer most.",
+      "s1_opt1": "You receive: 100 | Other receives: 50",
+      "s1_opt2": "You receive: 96 | Other receives: 56",
+      "s1_opt3": "You receive: 92 | Other receives: 62",
+      "s1_opt4": "You receive: 89 | Other receives: 69",
+      "s1_opt5": "You receive: 85 | Other receives: 75",
+      "s1_opt6": "You receive: 81 | Other receives: 81",
+      "s1_opt7": "You receive: 78 | Other receives: 88",
+      "s1_opt8": "You receive: 74 | Other receives: 94",
+      "s1_opt9": "You receive: 70 | Other receives: 100",
+      "s2": "Please choose the option you prefer most.",
+      "s2_opt1": "You receive: 90 | Other receives: 100",
+      "s2_opt2": "You receive: 91 | Other receives: 99",
+      "s2_opt3": "You receive: 92 | Other receives: 98",
+      "s2_opt4": "You receive: 94 | Other receives: 96",
+      "s2_opt5": "You receive: 95 | Other receives: 95",
+      "s2_opt6": "You receive: 96 | Other receives: 94",
+      "s2_opt7": "You receive: 98 | Other receives: 92",
+      "s2_opt8": "You receive: 99 | Other receives: 91",
+      "s2_opt9": "You receive: 100 | Other receives: 90",
+      "s3": "Please choose the option you prefer most.",
+      "s3_opt1": "You receive: 100 | Other receives: 70",
+      "s3_opt2": "You receive: 94 | Other receives: 74",
+      "s3_opt3": "You receive: 88 | Other receives: 78",
+      "s3_opt4": "You receive: 81 | Other receives: 81",
+      "s3_opt5": "You receive: 75 | Other receives: 85",
+      "s3_opt6": "You receive: 69 | Other receives: 89",
+      "s3_opt7": "You receive: 62 | Other receives: 92",
+      "s3_opt8": "You receive: 56 | Other receives: 96",
+      "s3_opt9": "You receive: 50 | Other receives: 100",
+      "s4": "Please choose the option you prefer most.",
+      "s4_opt1": "You receive: 100 | Other receives: 70",
+      "s4_opt2": "You receive: 99 | Other receives: 74",
+      "s4_opt3": "You receive: 98 | Other receives: 78",
+      "s4_opt4": "You receive: 96 | Other receives: 81",
+      "s4_opt5": "You receive: 95 | Other receives: 85",
+      "s4_opt6": "You receive: 94 | Other receives: 89",
+      "s4_opt7": "You receive: 92 | Other receives: 92",
+      "s4_opt8": "You receive: 91 | Other receives: 96",
+      "s4_opt9": "You receive: 90 | Other receives: 100",
+      "s5": "Please choose the option you prefer most.",
+      "s5_opt1": "You receive: 70 | Other receives: 100",
+      "s5_opt2": "You receive: 74 | Other receives: 96",
+      "s5_opt3": "You receive: 78 | Other receives: 92",
+      "s5_opt4": "You receive: 81 | Other receives: 89",
+      "s5_opt5": "You receive: 85 | Other receives: 85",
+      "s5_opt6": "You receive: 89 | Other receives: 81",
+      "s5_opt7": "You receive: 92 | Other receives: 78",
+      "s5_opt8": "You receive: 96 | Other receives: 74",
+      "s5_opt9": "You receive: 100 | Other receives: 70",
+      "s6": "Please choose the option you prefer most.",
+      "s6_opt1": "You receive: 50 | Other receives: 100",
+      "s6_opt2": "You receive: 56 | Other receives: 99",
+      "s6_opt3": "You receive: 62 | Other receives: 98",
+      "s6_opt4": "You receive: 69 | Other receives: 96",
+      "s6_opt5": "You receive: 75 | Other receives: 95",
+      "s6_opt6": "You receive: 81 | Other receives: 94",
+      "s6_opt7": "You receive: 88 | Other receives: 92",
+      "s6_opt8": "You receive: 94 | Other receives: 91",
+      "s6_opt9": "You receive: 100 | Other receives: 90",
+      "s7": "Please choose the option you prefer most.",
+      "s7_opt1": "You receive: 50 | Other receives: 100",
+      "s7_opt2": "You receive: 56 | Other receives: 94",
+      "s7_opt3": "You receive: 62 | Other receives: 88",
+      "s7_opt4": "You receive: 69 | Other receives: 81",
+      "s7_opt5": "You receive: 75 | Other receives: 75",
+      "s7_opt6": "You receive: 81 | Other receives: 69",
+      "s7_opt7": "You receive: 88 | Other receives: 62",
+      "s7_opt8": "You receive: 94 | Other receives: 56",
+      "s7_opt9": "You receive: 100 | Other receives: 50",
+      "s8": "Please choose the option you prefer most.",
+      "s8_opt1": "You receive: 100 | Other receives: 90",
+      "s8_opt2": "You receive: 96 | Other receives: 91",
+      "s8_opt3": "You receive: 92 | Other receives: 92",
+      "s8_opt4": "You receive: 89 | Other receives: 94",
+      "s8_opt5": "You receive: 85 | Other receives: 95",
+      "s8_opt6": "You receive: 81 | Other receives: 96",
+      "s8_opt7": "You receive: 78 | Other receives: 98",
+      "s8_opt8": "You receive: 74 | Other receives: 99",
+      "s8_opt9": "You receive: 70 | Other receives: 100",
+      "s9": "Please choose the option you prefer most.",
+      "s9_opt1": "You receive: 90 | Other receives: 100",
+      "s9_opt2": "You receive: 91 | Other receives: 94",
+      "s9_opt3": "You receive: 92 | Other receives: 88",
+      "s9_opt4": "You receive: 94 | Other receives: 81",
+      "s9_opt5": "You receive: 95 | Other receives: 75",
+      "s9_opt6": "You receive: 96 | Other receives: 69",
+      "s9_opt7": "You receive: 98 | Other receives: 62",
+      "s9_opt8": "You receive: 99 | Other receives: 56",
+      "s9_opt9": "You receive: 100 | Other receives: 50",
+      "debrief": "Thank you for completing this questionnaire.\n\nYour responses have been recorded."
+    }
+  }
+}

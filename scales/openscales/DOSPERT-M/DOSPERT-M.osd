@@ -1,0 +1,468 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "DOSPERT Medical Risk Subscale",
+      "code": "DOSPERT-M",
+      "abbreviation": "DOSPERT+M",
+      "description": "6-item medical risk domain extension for the DOSPERT scale. Adds medical scenarios to the five existing DOSPERT content domains. Administered with the same three response modes as DOSPERT: risk-taking likelihood (RT), risk perception (RP), and optionally expected benefits (EB). Designed to be used alongside the base DOSPERT scale. Subscale scores are means of the 6 medical items within each response mode.",
+      "citation": "Butler, S., Rosman, A., Seleski, S., Garcia, M., Lee, S., Barnes, J., & Schwartz, A. (2012). A medical risk attitude subscale for DOSPERT. Judgment and Decision Making, 7(2), 189-195.",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1017/S1930297500003028"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_expected_benefits": {
+        "type": "boolean",
+        "default": true,
+        "description": "Include the Expected Benefits (EB) response mode for each item"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": [
+        "rt_l1",
+        "rt_l2",
+        "rt_l3",
+        "rt_l4",
+        "rt_l5",
+        "rt_l6",
+        "rt_l7"
+      ],
+      "question_head": "rt_head"
+    },
+    "randomize_sections": {
+      "method": "shuffle",
+      "fixed": [
+        "sec_intro"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "rt_medical",
+        "name": "Risk-Taking: Medical"
+      },
+      {
+        "id": "rp_medical",
+        "name": "Risk Perception: Medical"
+      },
+      {
+        "id": "eb_medical",
+        "name": "Expected Benefits: Medical"
+      }
+    ],
+    "items": [
+      {
+        "id": "sec_intro",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "inst1",
+        "type": "inst",
+        "text_key": "instructions"
+      },
+      {
+        "id": "sec1",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt_m1",
+        "type": "likert",
+        "text_key": "m1",
+        "dimension": "rt_medical",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp_m1",
+        "type": "likert",
+        "text_key": "m1",
+        "dimension": "rp_medical",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb_m1",
+        "type": "likert",
+        "text_key": "m1",
+        "dimension": "eb_medical",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec2",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt_m2",
+        "type": "likert",
+        "text_key": "m2",
+        "dimension": "rt_medical",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp_m2",
+        "type": "likert",
+        "text_key": "m2",
+        "dimension": "rp_medical",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb_m2",
+        "type": "likert",
+        "text_key": "m2",
+        "dimension": "eb_medical",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec3",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt_m3",
+        "type": "likert",
+        "text_key": "m3",
+        "dimension": "rt_medical",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp_m3",
+        "type": "likert",
+        "text_key": "m3",
+        "dimension": "rp_medical",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb_m3",
+        "type": "likert",
+        "text_key": "m3",
+        "dimension": "eb_medical",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec4",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt_m4",
+        "type": "likert",
+        "text_key": "m4",
+        "dimension": "rt_medical",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp_m4",
+        "type": "likert",
+        "text_key": "m4",
+        "dimension": "rp_medical",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb_m4",
+        "type": "likert",
+        "text_key": "m4",
+        "dimension": "eb_medical",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec5",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt_m5",
+        "type": "likert",
+        "text_key": "m5",
+        "dimension": "rt_medical",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp_m5",
+        "type": "likert",
+        "text_key": "m5",
+        "dimension": "rp_medical",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb_m5",
+        "type": "likert",
+        "text_key": "m5",
+        "dimension": "eb_medical",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      },
+      {
+        "id": "sec6",
+        "type": "section",
+        "text_key": "sec_blank"
+      },
+      {
+        "id": "rt_m6",
+        "type": "likert",
+        "text_key": "m6",
+        "dimension": "rt_medical",
+        "question_head": "rt_head"
+      },
+      {
+        "id": "rp_m6",
+        "type": "likert",
+        "text_key": "m6",
+        "dimension": "rp_medical",
+        "question_head": "rp_head",
+        "likert_labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ]
+      },
+      {
+        "id": "eb_m6",
+        "type": "likert",
+        "text_key": "m6",
+        "dimension": "eb_medical",
+        "question_head": "eb_head",
+        "likert_labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "visible_when": {
+          "parameter": "show_expected_benefits",
+          "operator": "equals",
+          "value": true
+        }
+      }
+    ],
+    "scoring": {
+      "rt_medical": {
+        "method": "mean_coded",
+        "items": [
+          "rt_m1",
+          "rt_m2",
+          "rt_m3",
+          "rt_m4",
+          "rt_m5",
+          "rt_m6"
+        ],
+        "description": "Mean of 6 medical risk-taking items (1-7). Cronbach's alpha = 0.57 (Butler et al., 2012).",
+        "item_coding": {
+          "rt_m1": 1,
+          "rt_m2": 1,
+          "rt_m3": 1,
+          "rt_m4": 1,
+          "rt_m5": 1,
+          "rt_m6": 1
+        }
+      },
+      "rp_medical": {
+        "method": "mean_coded",
+        "items": [
+          "rp_m1",
+          "rp_m2",
+          "rp_m3",
+          "rp_m4",
+          "rp_m5",
+          "rp_m6"
+        ],
+        "description": "Mean of 6 medical risk perception items (1-7).",
+        "item_coding": {
+          "rp_m1": 1,
+          "rp_m2": 1,
+          "rp_m3": 1,
+          "rp_m4": 1,
+          "rp_m5": 1,
+          "rp_m6": 1
+        }
+      },
+      "eb_medical": {
+        "method": "mean_coded",
+        "items": [
+          "eb_m1",
+          "eb_m2",
+          "eb_m3",
+          "eb_m4",
+          "eb_m5",
+          "eb_m6"
+        ],
+        "description": "Mean of 6 medical expected benefits items (1-7). Only scored when show_expected_benefits is enabled.",
+        "item_coding": {
+          "eb_m1": 1,
+          "eb_m2": 1,
+          "eb_m3": 1,
+          "eb_m4": 1,
+          "eb_m5": 1,
+          "eb_m6": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "sec_blank": "",
+      "instructions": "For each situation below, you will answer two or three questions. First, indicate how likely you are to engage in the activity. Then, indicate how risky you perceive the situation to be. Riskiness is a very personal and intuitive notion — we are interested in your gut level assessment.",
+      "rt_head": "How likely are you to engage in this activity?",
+      "rp_head": "How risky do you perceive this situation?",
+      "eb_head": "What benefits would you obtain from this situation?",
+      "rt_l1": "Extremely Unlikely",
+      "rt_l2": "Moderately Unlikely",
+      "rt_l3": "Somewhat Unlikely",
+      "rt_l4": "Not Sure",
+      "rt_l5": "Somewhat Likely",
+      "rt_l6": "Moderately Likely",
+      "rt_l7": "Extremely Likely",
+      "rp_l1": "Not at all Risky",
+      "rp_l2": "Slightly Risky",
+      "rp_l3": "Somewhat Risky",
+      "rp_l4": "Moderately Risky",
+      "rp_l5": "Risky",
+      "rp_l6": "Very Risky",
+      "rp_l7": "Extremely Risky",
+      "eb_l1": "No benefits at all",
+      "eb_l2": "",
+      "eb_l3": "",
+      "eb_l4": "Moderate benefits",
+      "eb_l5": "",
+      "eb_l6": "",
+      "eb_l7": "Great benefits",
+      "m1": "Donating one kidney to a patient you do not know.",
+      "m2": "Giving blood.",
+      "m3": "Participating in a clinical trial to determine whether a new drug is effective.",
+      "m4": "Taking daily medication to relieve allergy symptoms.",
+      "m5": "Knee replacement surgery to treat arthritis.",
+      "m6": "Receiving general rather than local anesthesia when having a wisdom tooth removed."
+    }
+  }
+}

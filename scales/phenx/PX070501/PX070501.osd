@@ -1,0 +1,692 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Ovulation History",
+      "code": "PX070501",
+      "abbreviation": "PX070501",
+      "description": "These self-administered questions ask about menstruation and pregnancy history. Female respondents are asked about age at first menstruation, onset and cause of menopause, and pregnancy history and outcomes.",
+      "domain": "Physical Activity & Exposures",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/70501]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/70501"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "menstrual_period_first_age",
+        "text_key": "menstrual_period_first_age",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "menstrual_period_within_last_year",
+        "text_key": "menstrual_period_within_last_year",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "menstrual_period_within_last_year_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "menstrual_period_within_last_year_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "menstrual_period_last_age",
+        "text_key": "menstrual_period_last_age",
+        "type": "short",
+        "visible_when": {
+          "item": "menstrual_period_within_last_year",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "menopause_cause",
+        "text_key": "menopause_cause",
+        "type": "multi",
+        "visible_when": {
+          "item": "menstrual_period_within_last_year",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "menopause_cause_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "menopause_cause_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "menopause_cause_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "menopause_cause_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "menopause_cause_other",
+        "text_key": "menopause_cause_other",
+        "type": "short",
+        "visible_when": {
+          "item": "menstrual_period_within_last_year",
+          "operator": "equals",
+          "value": 2
+        }
+      },
+      {
+        "id": "ever_pregnancy",
+        "text_key": "ever_pregnancy",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "ever_pregnancy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "ever_pregnancy_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pregnancy_end_date_1",
+        "text_key": "pregnancy_end_date_1",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "pregnancy_outcome_1",
+        "text_key": "pregnancy_outcome_1",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "pregnancy_outcome_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pregnancy_outcome_1_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pregnancy_outcome_1_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "pregnancy_outcome_1_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "pregnancy_outcome_number_birth_1",
+        "text_key": "pregnancy_outcome_number_birth_1",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "breast_feeding_1",
+        "text_key": "breast_feeding_1",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "breast_feeding_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breast_feeding_1_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "breast_feeding_months_1",
+        "text_key": "breast_feeding_months_1",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "pregnancy_end_date_2",
+        "text_key": "pregnancy_end_date_2",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "pregnancy_outcome_2",
+        "text_key": "pregnancy_outcome_2",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "pregnancy_outcome_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pregnancy_outcome_2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pregnancy_outcome_2_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "pregnancy_outcome_2_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "pregnancy_outcome_number_birth_2",
+        "text_key": "pregnancy_outcome_number_birth_2",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "breast_feeding_2",
+        "text_key": "breast_feeding_2",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "breast_feeding_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breast_feeding_2_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "breast_feeding_months_2",
+        "text_key": "breast_feeding_months_2",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "pregnancy_end_date_3",
+        "text_key": "pregnancy_end_date_3",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "pregnancy_outcome_3",
+        "text_key": "pregnancy_outcome_3",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "pregnancy_outcome_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pregnancy_outcome_3_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pregnancy_outcome_3_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "pregnancy_outcome_3_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "pregnancy_outcome_number_birth_3",
+        "text_key": "pregnancy_outcome_number_birth_3",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "breast_feeding_3",
+        "text_key": "breast_feeding_3",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "breast_feeding_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breast_feeding_3_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "breast_feeding_months_3",
+        "text_key": "breast_feeding_months_3",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "pregnancy_end_date_4",
+        "text_key": "pregnancy_end_date_4",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "pregnancy_outcome_4",
+        "text_key": "pregnancy_outcome_4",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "pregnancy_outcome_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pregnancy_outcome_4_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pregnancy_outcome_4_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "pregnancy_outcome_4_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "pregnancy_outcome_number_birth_4",
+        "text_key": "pregnancy_outcome_number_birth_4",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "breast_feeding_4",
+        "text_key": "breast_feeding_4",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "breast_feeding_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breast_feeding_4_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "breast_feeding_months_4",
+        "text_key": "breast_feeding_months_4",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "pregnancy_end_date_5",
+        "text_key": "pregnancy_end_date_5",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "pregnancy_outcome_5",
+        "text_key": "pregnancy_outcome_5",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "pregnancy_outcome_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pregnancy_outcome_5_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pregnancy_outcome_5_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "pregnancy_outcome_5_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "pregnancy_outcome_number_birth_5",
+        "text_key": "pregnancy_outcome_number_birth_5",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "breast_feeding_5",
+        "text_key": "breast_feeding_5",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "breast_feeding_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breast_feeding_5_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "breast_feeding_months_5",
+        "text_key": "breast_feeding_months_5",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "pregnancy_end_date_6",
+        "text_key": "pregnancy_end_date_6",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "pregnancy_outcome_6",
+        "text_key": "pregnancy_outcome_6",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "pregnancy_outcome_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pregnancy_outcome_6_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pregnancy_outcome_6_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "pregnancy_outcome_6_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "pregnancy_outcome_number_birth_6",
+        "text_key": "pregnancy_outcome_number_birth_6",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "breast_feeding_6",
+        "text_key": "breast_feeding_6",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "breast_feeding_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breast_feeding_6_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "breast_feeding_months_6",
+        "text_key": "breast_feeding_months_6",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "first_birth_age",
+        "text_key": "first_birth_age",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_pregnancy",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "menstrual_period_first_age": "Age at First Menstrual Period?",
+      "menstrual_period_within_last_year": "Have you had a menstrual period within the last year?",
+      "menstrual_period_within_last_year_opt_1": "Yes",
+      "menstrual_period_within_last_year_opt_2": "No",
+      "menstrual_period_last_age": "Age at last menstrual period?",
+      "menopause_cause": "Cause of Menopause?",
+      "menopause_cause_opt_1": "natural",
+      "menopause_cause_opt_2": "chemotherapy, medication induced",
+      "menopause_cause_opt_3": "surgery on reproductive organs",
+      "menopause_cause_opt_4": "other",
+      "menopause_cause_other": "Cause of Menopause?",
+      "ever_pregnancy": "Have you ever been pregnant?",
+      "ever_pregnancy_opt_1": "Yes",
+      "ever_pregnancy_opt_2": "No",
+      "pregnancy_end_date_1": "Date of End of Preg?",
+      "pregnancy_outcome_1": "Outcome of Pregnancy?",
+      "pregnancy_outcome_1_opt_1": "Live birth",
+      "pregnancy_outcome_1_opt_2": "Still born",
+      "pregnancy_outcome_1_opt_3": "Miscarriage",
+      "pregnancy_outcome_1_opt_4": "Induced abortion",
+      "pregnancy_outcome_number_birth_1": "Number of birth?",
+      "breast_feeding_1": "Breast Feeding?",
+      "breast_feeding_1_opt_1": "Yes",
+      "breast_feeding_1_opt_2": "No",
+      "breast_feeding_months_1": "Months of breast feeding?",
+      "pregnancy_end_date_2": "Date of End of Preg?",
+      "pregnancy_outcome_2": "Outcome of Pregnancy?",
+      "pregnancy_outcome_2_opt_1": "Live birth",
+      "pregnancy_outcome_2_opt_2": "Still born",
+      "pregnancy_outcome_2_opt_3": "Miscarriage",
+      "pregnancy_outcome_2_opt_4": "Induced abortion",
+      "pregnancy_outcome_number_birth_2": "Number of birth?",
+      "breast_feeding_2": "Breast Feeding?",
+      "breast_feeding_2_opt_1": "Yes",
+      "breast_feeding_2_opt_2": "No",
+      "breast_feeding_months_2": "Months of breast feeding?",
+      "pregnancy_end_date_3": "Date of End of Preg?",
+      "pregnancy_outcome_3": "Outcome of Pregnancy?",
+      "pregnancy_outcome_3_opt_1": "Live birth",
+      "pregnancy_outcome_3_opt_2": "Still born",
+      "pregnancy_outcome_3_opt_3": "Miscarriage",
+      "pregnancy_outcome_3_opt_4": "Induced abortion",
+      "pregnancy_outcome_number_birth_3": "Number of birth?",
+      "breast_feeding_3": "Breast Feeding?",
+      "breast_feeding_3_opt_1": "Yes",
+      "breast_feeding_3_opt_2": "No",
+      "breast_feeding_months_3": "Months of breast feeding?",
+      "pregnancy_end_date_4": "Date of End of Preg?",
+      "pregnancy_outcome_4": "Outcome of Pregnancy?",
+      "pregnancy_outcome_4_opt_1": "Live birth",
+      "pregnancy_outcome_4_opt_2": "Still born",
+      "pregnancy_outcome_4_opt_3": "Miscarriage",
+      "pregnancy_outcome_4_opt_4": "Induced abortion",
+      "pregnancy_outcome_number_birth_4": "Number of birth?",
+      "breast_feeding_4": "Breast Feeding?",
+      "breast_feeding_4_opt_1": "Yes",
+      "breast_feeding_4_opt_2": "No",
+      "breast_feeding_months_4": "Months of breast feeding?",
+      "pregnancy_end_date_5": "Date of End of Preg?",
+      "pregnancy_outcome_5": "Outcome of Pregnancy?",
+      "pregnancy_outcome_5_opt_1": "Live birth",
+      "pregnancy_outcome_5_opt_2": "Still born",
+      "pregnancy_outcome_5_opt_3": "Miscarriage",
+      "pregnancy_outcome_5_opt_4": "Induced abortion",
+      "pregnancy_outcome_number_birth_5": "Number of birth?",
+      "breast_feeding_5": "Breast Feeding?",
+      "breast_feeding_5_opt_1": "Yes",
+      "breast_feeding_5_opt_2": "No",
+      "breast_feeding_months_5": "Months of breast feeding?",
+      "pregnancy_end_date_6": "Date of End of Preg?",
+      "pregnancy_outcome_6": "Outcome of Pregnancy?",
+      "pregnancy_outcome_6_opt_1": "Live birth",
+      "pregnancy_outcome_6_opt_2": "Still born",
+      "pregnancy_outcome_6_opt_3": "Miscarriage",
+      "pregnancy_outcome_6_opt_4": "Induced abortion",
+      "pregnancy_outcome_number_birth_6": "Number of birth?",
+      "breast_feeding_6": "Breast Feeding?",
+      "breast_feeding_6_opt_1": "Yes",
+      "breast_feeding_6_opt_2": "No",
+      "breast_feeding_months_6": "Months of breast feeding?",
+      "first_birth_age": "Age at first birth?"
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Patient Health Questionnaire-9",
+      "code": "PHQ9",
+      "abbreviation": "PHQ-9",
+      "description": "9-item depression screening tool measuring symptom severity over the past 2 weeks. Scores range from 0 to 27. A score of ≥10 has 88% sensitivity and 88% specificity for major depression. Note: The PHQ-8 is this scale with item 9 (suicidal/self-harm thoughts) omitted, for use in contexts where adequate intervention for suicidal ideation cannot be provided (e.g., large population surveys). PHQ-8 uses the same scoring cutoffs. See Kroenke et al. (2009), https://doi.org/10.1016/j.jad.2008.06.026.",
+      "citation": "Kroenke, K., Spitzer, R. L., & Williams, J. B. (2001). The PHQ-9: Validity of a brief depression severity measure. Journal of General Internal Medicine, 16(9), 606-613. https://doi.org/10.1046/j.1525-1497.2001.016009606.x",
+      "license": "free to use",
+      "license_explanation": "Pfizer released all PHQ and GAD-7 screeners without copyright restriction. The phqscreeners.com terms of use state: 'Content found at the PHQ Screeners site is expressly exempted from Pfizer's general copyright restrictions; content found on the PHQ Screeners site is free for download and use as stated within the PHQ Screeners site.' No permission is required to reproduce, translate, display, or distribute.",
+      "license_url": "https://www.phqscreeners.com/",
+      "version": "1.0",
+      "url": "https://doi.org/10.1046/j.1525-1497.2001.016009606.x"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "include_q9": {
+        "type": "boolean",
+        "default": true,
+        "description": "Include item 9 (thoughts of self-harm/suicide). Set to false to administer as PHQ-8, for contexts where adequate intervention for suicidal ideation cannot be provided."
+      }
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "max": 3,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "depression",
+        "name": "Depression Severity"
+      }
+    ],
+    "items": [
+      {
+        "id": "phq1",
+        "text_key": "phq1",
+        "type": "likert"
+      },
+      {
+        "id": "phq2",
+        "text_key": "phq2",
+        "type": "likert"
+      },
+      {
+        "id": "phq3",
+        "text_key": "phq3",
+        "type": "likert"
+      },
+      {
+        "id": "phq4",
+        "text_key": "phq4",
+        "type": "likert"
+      },
+      {
+        "id": "phq5",
+        "text_key": "phq5",
+        "type": "likert"
+      },
+      {
+        "id": "phq6",
+        "text_key": "phq6",
+        "type": "likert"
+      },
+      {
+        "id": "phq7",
+        "text_key": "phq7",
+        "type": "likert"
+      },
+      {
+        "id": "phq8",
+        "text_key": "phq8",
+        "type": "likert"
+      },
+      {
+        "id": "phq9",
+        "text_key": "phq9",
+        "type": "likert",
+        "visible_when": {
+          "parameter": "include_q9",
+          "operator": "equals",
+          "value": "true"
+        }
+      }
+    ],
+    "scoring": {
+      "depression": {
+        "method": "sum_coded",
+        "items": [
+          "phq1",
+          "phq2",
+          "phq3",
+          "phq4",
+          "phq5",
+          "phq6",
+          "phq7",
+          "phq8",
+          "phq9"
+        ],
+        "description": "Sum of all items (0-27 for PHQ-9, 0-24 for PHQ-8). Severity: 0-4 minimal, 5-9 mild, 10-14 moderate, 15-19 moderately severe, 20-27 severe.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 4,
+              "label": "Minimal"
+            },
+            {
+              "min": 5,
+              "max": 9,
+              "label": "Mild"
+            },
+            {
+              "min": 10,
+              "max": 14,
+              "label": "Moderate"
+            },
+            {
+              "min": 15,
+              "max": 19,
+              "label": "Moderately Severe"
+            },
+            {
+              "min": 20,
+              "max": 27,
+              "label": "Severe"
+            }
+          ]
+        },
+        "item_coding": {
+          "phq1": 1,
+          "phq2": 1,
+          "phq3": 1,
+          "phq4": 1,
+          "phq5": 1,
+          "phq6": 1,
+          "phq7": 1,
+          "phq8": 1,
+          "phq9": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Not at all",
+      "likert_2": "Several days",
+      "likert_3": "More than half the days",
+      "likert_4": "Nearly every day",
+      "question_head": "Over the <b>last 2 weeks</b>, how often have you been bothered by any of the following problems?",
+      "phq1": "Little interest or pleasure in doing things",
+      "phq2": "Feeling down, depressed, or hopeless",
+      "phq3": "Trouble falling or staying asleep, or sleeping too much",
+      "phq4": "Feeling tired or having little energy",
+      "phq5": "Poor appetite or overeating",
+      "phq6": "Feeling bad about yourself - or that you are a failure or have let yourself or your family down",
+      "phq7": "Trouble concentrating on things, such as reading the newspaper or watching television",
+      "phq8": "Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual",
+      "phq9": "Thoughts that you would be better off dead or of hurting yourself in some way",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

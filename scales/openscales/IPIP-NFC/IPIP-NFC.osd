@@ -1,0 +1,161 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Need for Cognition Scale",
+      "code": "IPIP-NFC",
+      "abbreviation": "IPIP-NFC",
+      "description": "IPIP representation of the Need for Cognition scale measuring tendency to engage in and enjoy effortful thinking.",
+      "citation": "Cacioppo, J. T., & Petty, R. E. (1982). The need for cognition. Journal of Personality and Social Psychology, 42(1), 116-131.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newSingleConstructsKey.htm#Need-for-Cognition"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "need_for_cognition",
+        "name": "Need for Cognition"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_nfc_001",
+        "text_key": "ipip_nfc_001",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_nfc_002",
+        "text_key": "ipip_nfc_002",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_nfc_003",
+        "text_key": "ipip_nfc_003",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_nfc_004",
+        "text_key": "ipip_nfc_004",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_nfc_005",
+        "text_key": "ipip_nfc_005",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_nfc_006",
+        "text_key": "ipip_nfc_006",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_nfc_007",
+        "text_key": "ipip_nfc_007",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_nfc_008",
+        "text_key": "ipip_nfc_008",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_nfc_009",
+        "text_key": "ipip_nfc_009",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_nfc_010",
+        "text_key": "ipip_nfc_010",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "need_for_cognition": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_nfc_001",
+          "ipip_nfc_002",
+          "ipip_nfc_003",
+          "ipip_nfc_004",
+          "ipip_nfc_005",
+          "ipip_nfc_006",
+          "ipip_nfc_007",
+          "ipip_nfc_008",
+          "ipip_nfc_009",
+          "ipip_nfc_010"
+        ],
+        "item_coding": {
+          "ipip_nfc_001": 1,
+          "ipip_nfc_002": -1,
+          "ipip_nfc_003": -1,
+          "ipip_nfc_004": 1,
+          "ipip_nfc_005": -1,
+          "ipip_nfc_006": 1,
+          "ipip_nfc_007": 1,
+          "ipip_nfc_008": 1,
+          "ipip_nfc_009": 1,
+          "ipip_nfc_010": -1
+        },
+        "description": "Cronbach's alpha = 0.93"
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "ipip_nfc_001": "Am quick to understand things.",
+      "ipip_nfc_002": "Avoid difficult reading material.",
+      "ipip_nfc_003": "Avoid philosophical discussions.",
+      "ipip_nfc_004": "Can handle a lot of information.",
+      "ipip_nfc_005": "Have difficulty understanding abstract ideas.",
+      "ipip_nfc_006": "Like to solve complex problems.",
+      "ipip_nfc_007": "Love to read challenging material.",
+      "ipip_nfc_008": "Love to think up new ways of doing things.",
+      "ipip_nfc_009": "Need things explained only once.",
+      "ipip_nfc_010": "Try to avoid complex people.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

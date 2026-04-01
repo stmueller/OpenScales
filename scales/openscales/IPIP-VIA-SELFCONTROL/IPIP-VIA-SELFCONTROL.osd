@@ -1,0 +1,184 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Self-control/Self-regulation",
+      "code": "IPIP-VIA-SELFCONTROL",
+      "abbreviation": "IPIP-VIA-SELFCONTROL",
+      "description": "IPIP representation of the VIA character strength 'Self-control/Self-regulation'. 11-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "selfcontrol_selfregulation",
+        "name": "Self-control/Self-regulation",
+        "abbreviation": "SELFCONTROL",
+        "description": "IPIP VIA Self-control/Self-regulation subscale (11 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_046",
+        "text_key": "ipip_via_046",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_047",
+        "text_key": "ipip_via_047",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_048",
+        "text_key": "ipip_via_048",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_049",
+        "text_key": "ipip_via_049",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_050",
+        "text_key": "ipip_via_050",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_051",
+        "text_key": "ipip_via_051",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_052",
+        "text_key": "ipip_via_052",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_053",
+        "text_key": "ipip_via_053",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_054",
+        "text_key": "ipip_via_054",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_055",
+        "text_key": "ipip_via_055",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_056",
+        "text_key": "ipip_via_056",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "selfcontrol_selfregulation": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_046",
+          "ipip_via_047",
+          "ipip_via_048",
+          "ipip_via_049",
+          "ipip_via_050",
+          "ipip_via_051",
+          "ipip_via_052",
+          "ipip_via_053",
+          "ipip_via_054",
+          "ipip_via_055",
+          "ipip_via_056"
+        ],
+        "description": "Mean of 11 items (range 1–5; higher = stronger Self-control/Self-regulation). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_046": 1,
+          "ipip_via_047": -1,
+          "ipip_via_048": 1,
+          "ipip_via_049": 1,
+          "ipip_via_050": -1,
+          "ipip_via_051": -1,
+          "ipip_via_052": -1,
+          "ipip_via_053": 1,
+          "ipip_via_054": -1,
+          "ipip_via_055": 1,
+          "ipip_via_056": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_046": "Am a highly disciplined person.",
+      "ipip_via_047": "Am not very good at getting things done.",
+      "ipip_via_048": "Can always say \"enough is enough.\"",
+      "ipip_via_049": "Can stay on a diet.",
+      "ipip_via_050": "Can't resist eating candy or cookies if they are around.",
+      "ipip_via_051": "Do my tasks only just before they need to be done.",
+      "ipip_via_052": "Do not exercise on a regular basis.",
+      "ipip_via_053": "Forego things that are bad for me in the long run even if they make me feel good in the short run.",
+      "ipip_via_054": "Give in to my urges.",
+      "ipip_via_055": "Have no trouble eating healthy foods.",
+      "ipip_via_056": "Let myself be taken over by urges to spend or eat too much."
+    }
+  }
+}

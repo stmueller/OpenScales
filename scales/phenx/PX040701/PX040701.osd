@@ -1,0 +1,711 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Sudden Cardiac Arrest",
+      "code": "PX040701",
+      "abbreviation": "PX040701",
+      "description": "This measure assesses if a patient died of sudden cardiac arrest by reviewing symptoms prior to death, timing of death, possible cardiac origin via autopsy evidence, and/or demonstration of a history of cardiac disease via physician questionnaire and medical records review.",
+      "domain": "Cardiovascular",
+      "citation": "For the Multi-Ethnic Study of Atherosclerosis (MESA) hospital record abstraction diagnosis criteria, see MESA Clinical Events Manual of Procedures, Section 4.2: Criteria for Deaths. http://www.mesa-nhlbi.org/PublicDocs/MesaMOO/Appendix11_MESA_ClinicalEvents_MOP.pdf [PhenX: https://www.phenxtoolkit.org/protocols/view/40701]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/40701"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "instructions",
+        "text_key": "instructions",
+        "type": "inst"
+      },
+      {
+        "id": "physician_familiar_with_event",
+        "text_key": "physician_familiar_with_event",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "physician_familiar_with_event_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "physician_familiar_with_event_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "physician_witness_death",
+        "text_key": "physician_witness_death",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "physician_witness_death_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "physician_witness_death_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain",
+        "text_key": "pain",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pain_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "pain_include_chest",
+        "text_key": "pain_include_chest",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_include_chest_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_include_chest_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pain_include_chest_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "pain_cardiac_origin",
+        "text_key": "pain_cardiac_origin",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_cardiac_origin_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_cardiac_origin_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pain_cardiac_origin_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "pain_cardiac_origin_specify_cause",
+        "text_key": "pain_cardiac_origin_specify_cause",
+        "type": "short",
+        "visible_when": {
+          "item": "pain_cardiac_origin",
+          "operator": "equals",
+          "value": 2
+        }
+      },
+      {
+        "id": "cpr",
+        "text_key": "cpr",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cpr_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cpr_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cpr_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "symptom_time",
+        "text_key": "symptom_time",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "symptom_time_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "symptom_time_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "symptom_time_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "symptom_time_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "symptom_time_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "symptom_time_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "symptom_time_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "symptom_time_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "symptom_time_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "chd",
+        "text_key": "chd",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "chd_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "chd_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "chd_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "location",
+        "text_key": "location",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "location_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "location_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "location_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "location_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "location_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "location_other_specify",
+        "text_key": "location_other_specify",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "any": [
+                {
+                  "item": "physician_familiar_with_event",
+                  "operator": "equals",
+                  "value": 1
+                },
+                {
+                  "item": "physician_witness_death",
+                  "operator": "equals",
+                  "value": 1
+                }
+              ]
+            },
+            {
+              "item": "location",
+              "operator": "equals",
+              "value": 5
+            }
+          ]
+        }
+      },
+      {
+        "id": "witness_record",
+        "text_key": "witness_record",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "witness_record_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "witness_record_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "witness_record_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "cause",
+        "text_key": "cause",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cause_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cause_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cause_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cause_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "cause_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "cause_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "cause_other_atherosclerotic_disease_specify",
+        "text_key": "cause_other_atherosclerotic_disease_specify",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cause_other_cardiovascular_disease_specify",
+        "text_key": "cause_other_cardiovascular_disease_specify",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cause_noncardiovascular_disease_specify",
+        "text_key": "cause_noncardiovascular_disease_specify",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "fatal_chd_type",
+        "text_key": "fatal_chd_type",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "fatal_chd_type_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fatal_chd_type_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fatal_chd_type_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "symptom_time_estimated",
+        "text_key": "symptom_time_estimated",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "symptom_time_estimated_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "symptom_time_estimated_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "symptom_time_estimated_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "symptom_time_estimated_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "symptom_time_estimated_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "mechanism",
+        "text_key": "mechanism",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "physician_familiar_with_event",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "physician_witness_death",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "mechanism_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "mechanism_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "mechanism_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "mechanism_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "mechanism_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "mechanism_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "mechanism_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "mechanism_other_specify",
+        "text_key": "mechanism_other_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "mechanism",
+          "operator": "equals",
+          "value": 6
+        }
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "instructions": "To be completed by physician who signed the death certificate and/or the patient's physician.",
+      "physician_familiar_with_event": "Are you familiar with the events surrounding the decedent's death?",
+      "physician_familiar_with_event_opt_1": "Yes",
+      "physician_familiar_with_event_opt_2": "No",
+      "physician_witness_death": "Did you witness the death?",
+      "physician_witness_death_opt_1": "Yes",
+      "physician_witness_death_opt_2": "No",
+      "pain": "Was there any pain in the chest, left arm or shoulder or jaw within 72 hours of death?",
+      "pain_opt_1": "Yes",
+      "pain_opt_2": "No",
+      "pain_opt_3": "Uncertain",
+      "pain_include_chest": "Did the pain include the chest?",
+      "pain_include_chest_opt_1": "Yes",
+      "pain_include_chest_opt_2": "No",
+      "pain_include_chest_opt_3": "Uncertain",
+      "pain_cardiac_origin": "Did you think this pain was of a cardiac origin?",
+      "pain_cardiac_origin_opt_1": "Yes",
+      "pain_cardiac_origin_opt_2": "No",
+      "pain_cardiac_origin_opt_3": "Uncertain",
+      "pain_cardiac_origin_specify_cause": "Did you think this pain was of a cardiac origin? If no, specify what you think was the cause.",
+      "cpr": "Was cardiopulmonary resuscitation (CPR) and/or cardioversion performed within 24 hours of death?",
+      "cpr_opt_1": "Yes",
+      "cpr_opt_2": "No",
+      "cpr_opt_3": "Uncertain",
+      "symptom_time": "Please give time between onset of acute symptoms to death. (We are defining death as the point where spontaneous breathing ceased and the patient never recovered).",
+      "symptom_time_opt_1": "More than three days",
+      "symptom_time_opt_2": "Two - three days",
+      "symptom_time_opt_3": "One day",
+      "symptom_time_opt_4": "At least 12 hours, but less than 24 hours",
+      "symptom_time_opt_5": "At least 4 hours, but less than 12 hours",
+      "symptom_time_opt_6": "At least 1 hour, but less than 4 hours",
+      "symptom_time_opt_7": "Less than 1 hour",
+      "symptom_time_opt_8": "Death instantaneous, no symptoms",
+      "symptom_time_opt_9": "Unknown",
+      "chd": "Would you classify the decedent's cause of death as due to Coronary Heart Disease (CHD)?",
+      "chd_opt_1": "Yes",
+      "chd_opt_2": "No",
+      "chd_opt_3": "Uncertain",
+      "location": "Location of death",
+      "location_opt_1": "Out-of-Hospital",
+      "location_opt_2": "Emergency Room (not dead on arrival- DOA)",
+      "location_opt_3": "In Hospital",
+      "location_opt_4": "Nursing Home, Skilled Nursing Facility (SNF), or Extended Care Facility (ECF)",
+      "location_opt_5": "Other",
+      "location_other_specify": "Location of death",
+      "witness_record": "Was the death witnessed?",
+      "witness_record_opt_1": "Yes",
+      "witness_record_opt_2": "No",
+      "witness_record_opt_3": "Unknown",
+      "cause": "Multi-Ethnic Study of Atherosclerosis (MESA) classification of underlying cause of death (choose one)",
+      "cause_opt_1": "Atherosclerotic coronary heart disease",
+      "cause_opt_2": "Stroke",
+      "cause_opt_3": "Atherosclerotic disease other than coronary disease or stroke",
+      "cause_opt_4": "Other cardiovascular disease, not defined above",
+      "cause_opt_5": "Non-cardiovascular disease",
+      "cause_opt_6": "Unknown because death certificate unavailable",
+      "cause_other_atherosclerotic_disease_specify": "Multi-Ethnic Study of Atherosclerosis (MESA) classification of underlying cause of death: Atherosclerotic disease other than coronary disease or stroke (specify)",
+      "cause_other_cardiovascular_disease_specify": "Multi-Ethnic Study of Atherosclerosis (MESA) classification of underlying cause of death: Other cardiovascular disease, not defined above (specify)",
+      "cause_noncardiovascular_disease_specify": "Multi-Ethnic Study of Atherosclerosis (MESA) classification of underlying cause of death: Non-cardiovascular disease (specify)",
+      "fatal_chd_type": "Type of fatal coronary heart disease.",
+      "fatal_chd_type_opt_1": "Definite fatal myocardial infarction (MI) (no known non-atherosclerotic cause and definite myocardial infarction within 4 weeks of death)",
+      "fatal_chd_type_opt_2": "Definite fatal coronary heart disease (CHD) (no known non-atherosclerotic cause, and one or both of the following: chest pain within 72 hours of death or a history of chronic ischemic heart disease)",
+      "fatal_chd_type_opt_3": "Possible fatal coronary heart disease (CHD) (no known non-atherosclerotic cause, and death certificate underlying cause: I20-25, I46, I51.6, R96 or R98-99)",
+      "symptom_time_estimated": "Estimated time between onset of acute cardiac symptoms and death.",
+      "symptom_time_estimated_opt_1": "Less than five minutes",
+      "symptom_time_estimated_opt_2": "Five minutes to one hour",
+      "symptom_time_estimated_opt_3": "One hour to 24 hours",
+      "symptom_time_estimated_opt_4": "More than 24 hours",
+      "symptom_time_estimated_opt_5": "Unknown",
+      "mechanism": "Mechanism of death in patients dying of cardiovascular causes (check all that apply).",
+      "mechanism_opt_1": "Primary arrhythmic death",
+      "mechanism_opt_2": "Secondary arrhythmic/mechanical death",
+      "mechanism_opt_3": "Congestive heart failure (CHF)",
+      "mechanism_opt_4": "Cardiac procedure such as coronary artery bypass graft (CABG) or angioplasty",
+      "mechanism_opt_5": "Hemorrhage from thrombolytic therapy",
+      "mechanism_opt_6": "Other",
+      "mechanism_opt_7": "Unknown or Uncertain",
+      "mechanism_other_specify": "Mechanism of death in patients dying of cardiovascular causes"
+    }
+  }
+}

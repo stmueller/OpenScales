@@ -1,0 +1,130 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Screening Instrument for Borderline Personality Disorder",
+      "code": "SIBord",
+      "abbreviation": "SI-Bord",
+      "description": "5-item ultra-brief screening tool for borderline personality disorder (BPD). Each item maps to a DSM-5 BPD criterion. 4-point scale (0–3). Sum score 0–15; cutoff >9 recommended (sensitivity 56%, specificity 92%). AUC-ROC = 0.83.",
+      "citation": "Jucktrakul, K., Wongpakaran, T., Wongpakaran, N., et al. (2020). Development and validation of a screening instrument for borderline personality disorder (SI-Bord) for use among university students. BMC Psychiatry, 20, 479. https://doi.org/10.1186/s12888-020-02807-6",
+      "license": "CC BY 4.0",
+      "license_explanation": "Published in BMC Psychiatry under CC BY 4.0.",
+      "license_url": "https://doi.org/10.1186/s12888-020-02807-6",
+      "version": "1.0",
+      "url": "https://doi.org/10.1186/s12888-020-02807-6",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "max": 3,
+      "labels": [
+        "sib_r0",
+        "sib_r1",
+        "sib_r2",
+        "sib_r3"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "bpd_screen",
+        "name": "BPD Screen",
+        "description": "Sum of 5 items (range 0–15). Cutoff >9 for possible BPD."
+      }
+    ],
+    "items": [
+      {
+        "id": "sib1",
+        "text_key": "sib1",
+        "type": "likert"
+      },
+      {
+        "id": "sib2",
+        "text_key": "sib2",
+        "type": "likert"
+      },
+      {
+        "id": "sib3",
+        "text_key": "sib3",
+        "type": "likert"
+      },
+      {
+        "id": "sib4",
+        "text_key": "sib4",
+        "type": "likert"
+      },
+      {
+        "id": "sib5",
+        "text_key": "sib5",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "bpd_screen": {
+        "method": "sum_coded",
+        "items": [
+          "sib1",
+          "sib2",
+          "sib3",
+          "sib4",
+          "sib5"
+        ],
+        "description": "Sum of 5 items (range 0–15). Cutoff >9 recommended.",
+        "item_coding": {
+          "sib1": 1,
+          "sib2": 1,
+          "sib3": 1,
+          "sib4": 1,
+          "sib5": 1
+        },
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 9,
+              "label": "Below cutoff"
+            },
+            {
+              "min": 10,
+              "max": 15,
+              "label": "Above cutoff — consider further evaluation"
+            }
+          ]
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "SI-Bord BPD Screening Report",
+      "footer_refs": [
+        "Jucktrakul, K., et al. (2020). BMC Psychiatry, 20, 479."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "sib_r0": "Not at all",
+      "sib_r1": "A little",
+      "sib_r2": "Somewhat",
+      "sib_r3": "To a great extent",
+      "sib1": "When people with ties to me leave me, I can barely live.",
+      "sib2": "The relationship between me and those I am bound to fluctuates between when good is very good and when bad is very bad.",
+      "sib3": "My feelings suddenly change, such as \"I don't know who I am,\" \"I don't know where I am going,\" or \"I feel lonely,\" \"I have no goals.\"",
+      "sib4": "I threaten to hurt myself or attempt to hurt myself or have attempted suicide.",
+      "sib5": "My mood changes suddenly, for example, from normal to irritability, depression, or anxiety.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

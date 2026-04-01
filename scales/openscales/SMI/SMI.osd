@@ -1,0 +1,172 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Short Maximization Inventory (Nenkov et al.)",
+      "code": "SMI",
+      "abbreviation": "SMI",
+      "description": "9-item shortened version of the Schwartz et al. (2002) Maximization Scale with three subscales: Alternative Search (3 items), Decision Difficulty (3 items), and High Standards (3 items). Developed through factor-analytic reduction of the original 13-item scale. The three subscales should be examined separately rather than summed into a total score. Items use a 7-point completely disagree to completely agree scale.",
+      "citation": "Nenkov, G. Y., Morrin, M., Ward, A., Schwartz, B., & Hulland, J. (2008). A short form of the Maximization Scale: Factor structure, reliability and validity studies. Judgment and Decision Making, 3(5), 371-388.",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1017/S1930297500000395"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5",
+        "likert_6",
+        "likert_7"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "alt_search",
+        "name": "Alternative Search"
+      },
+      {
+        "id": "decision_difficulty",
+        "name": "Decision Difficulty"
+      },
+      {
+        "id": "high_standards",
+        "name": "High Standards"
+      }
+    ],
+    "items": [
+      {
+        "id": "smi1",
+        "text_key": "smi1",
+        "type": "likert",
+        "dimension": "alt_search"
+      },
+      {
+        "id": "smi2",
+        "text_key": "smi2",
+        "type": "likert",
+        "dimension": "alt_search"
+      },
+      {
+        "id": "smi3",
+        "text_key": "smi3",
+        "type": "likert",
+        "dimension": "alt_search"
+      },
+      {
+        "id": "smi4",
+        "text_key": "smi4",
+        "type": "likert",
+        "dimension": "decision_difficulty"
+      },
+      {
+        "id": "smi5",
+        "text_key": "smi5",
+        "type": "likert",
+        "dimension": "decision_difficulty"
+      },
+      {
+        "id": "smi6",
+        "text_key": "smi6",
+        "type": "likert",
+        "dimension": "decision_difficulty"
+      },
+      {
+        "id": "smi7",
+        "text_key": "smi7",
+        "type": "likert",
+        "dimension": "high_standards"
+      },
+      {
+        "id": "smi8",
+        "text_key": "smi8",
+        "type": "likert",
+        "dimension": "high_standards"
+      },
+      {
+        "id": "smi9",
+        "text_key": "smi9",
+        "type": "likert",
+        "dimension": "high_standards"
+      }
+    ],
+    "scoring": {
+      "alt_search": {
+        "method": "mean_coded",
+        "items": [
+          "smi1",
+          "smi2",
+          "smi3"
+        ],
+        "description": "Mean of Alternative Search items (1-7). Higher scores indicate a greater tendency to seek out all possible alternatives before deciding. Corresponds to items 1, 2, and 4 of the original Schwartz et al. (2002) 13-item scale.",
+        "item_coding": {
+          "smi1": 1,
+          "smi2": 1,
+          "smi3": 1
+        }
+      },
+      "decision_difficulty": {
+        "method": "mean_coded",
+        "items": [
+          "smi4",
+          "smi5",
+          "smi6"
+        ],
+        "description": "Mean of Decision Difficulty items (1-7). Higher scores indicate greater experienced difficulty when making decisions. Corresponds to items 7, 8, and 9 of the original Schwartz et al. (2002) 13-item scale.",
+        "item_coding": {
+          "smi4": 1,
+          "smi5": 1,
+          "smi6": 1
+        }
+      },
+      "high_standards": {
+        "method": "mean_coded",
+        "items": [
+          "smi7",
+          "smi8",
+          "smi9"
+        ],
+        "description": "Mean of High Standards items (1-7). Higher scores indicate higher personal standards and expectations for oneself and one's choices. Corresponds to items 11, 12, and 13 of the original Schwartz et al. (2002) 13-item scale.",
+        "item_coding": {
+          "smi7": 1,
+          "smi8": 1,
+          "smi9": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Completely Disagree",
+      "likert_2": "Disagree",
+      "likert_3": "Somewhat Disagree",
+      "likert_4": "Neither Agree nor Disagree",
+      "likert_5": "Somewhat Agree",
+      "likert_6": "Agree",
+      "likert_7": "Completely Agree",
+      "question_head": "Please indicate how much you agree or disagree with each of the following statements.",
+      "smi1": "When I watch TV, I channel surf, often scanning through the available options even while attempting to watch one program.",
+      "smi2": "When I am in the car listening to the radio, I often check other stations to see if something better is playing, even if I am relatively satisfied with what I'm listening to.",
+      "smi3": "No matter how satisfied I am with my job, it's only right for me to be on the lookout for better opportunities.",
+      "smi4": "I often find it difficult to shop for a gift for a friend.",
+      "smi5": "When shopping, I have a hard time finding clothing that I really love.",
+      "smi6": "Renting videos is really difficult. I'm always struggling to pick the best one.",
+      "smi7": "No matter what I do, I have the highest standards for myself.",
+      "smi8": "I never settle for second best.",
+      "smi9": "Whenever I'm faced with a choice, I try to imagine what all the other possibilities are, even ones that aren't present at the moment."
+    }
+  }
+}

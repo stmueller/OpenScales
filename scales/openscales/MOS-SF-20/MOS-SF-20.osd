@@ -1,0 +1,603 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "MOS 20-Item Short Form Health Survey",
+      "code": "MOS-SF-20",
+      "abbreviation": "MOS-SF-20",
+      "description": "20-item short form general health survey from the Medical Outcomes Study measuring six dimensions: Physical Functioning (6 items), Role Functioning (2 items), Social Functioning (1 item), Mental Health (5 items), Health Perceptions (5 items including general health), and Pain (1 item). Mixed response formats. Higher scores indicate better health. Public Domain (RAND Corporation).",
+      "citation": "Stewart, A. L., Hays, R. D., & Ware, J. E. (1988). The MOS Short-Form General Health Survey: Reliability and validity in a patient population. Medical Care, 26(7), 724–735. https://doi.org/10.1097/00005650-198807000-00007",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health/surveys/mos/20-item-short-form.html",
+      "domain": "Health",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": [
+        "sf20_freq1",
+        "sf20_freq2",
+        "sf20_freq3",
+        "sf20_freq4",
+        "sf20_freq5",
+        "sf20_freq6"
+      ],
+      "question_head": "sf20_freq_head"
+    },
+    "dimensions": [
+      {
+        "id": "physical_functioning",
+        "name": "Physical Functioning",
+        "abbreviation": "PF",
+        "description": "Items 2a–2f. Activity limitations. Higher = less limited."
+      },
+      {
+        "id": "role_functioning",
+        "name": "Role Functioning",
+        "abbreviation": "RF",
+        "description": "Items 4, 5. Health limiting work. Higher = less limited."
+      },
+      {
+        "id": "social_functioning",
+        "name": "Social Functioning",
+        "abbreviation": "SF",
+        "description": "Item 6. Health limiting social activities. Higher = better."
+      },
+      {
+        "id": "mental_health",
+        "name": "Mental Health",
+        "abbreviation": "MH",
+        "description": "Items 7–11. Past month feelings. Items 8, 10 reverse-coded. Higher = better."
+      },
+      {
+        "id": "health_perceptions",
+        "name": "Health Perceptions",
+        "abbreviation": "HP",
+        "description": "Items 1, 12a–12d. Items 12a, 12d reverse-coded. Higher = better perceived health."
+      },
+      {
+        "id": "pain",
+        "name": "Pain",
+        "abbreviation": "BP",
+        "description": "Item 3. Bodily pain. Higher = less pain."
+      }
+    ],
+    "items": [
+      {
+        "id": "sf20_inst",
+        "text_key": "sf20_inst",
+        "type": "inst"
+      },
+      {
+        "id": "sf20_1",
+        "text_key": "sf20_1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "gh_excellent",
+            "value": 5
+          },
+          {
+            "text_key": "gh_verygood",
+            "value": 4
+          },
+          {
+            "text_key": "gh_good",
+            "value": 3
+          },
+          {
+            "text_key": "gh_fair",
+            "value": 2
+          },
+          {
+            "text_key": "gh_poor",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf20_2a",
+        "text_key": "sf20_2a",
+        "type": "multi",
+        "question_head": "sf20_pf_head",
+        "options": [
+          {
+            "text_key": "pf_limited3mo",
+            "value": 1
+          },
+          {
+            "text_key": "pf_limited_le3mo",
+            "value": 2
+          },
+          {
+            "text_key": "pf_notlimited",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf20_2b",
+        "text_key": "sf20_2b",
+        "type": "multi",
+        "question_head": "sf20_pf_head",
+        "options": [
+          {
+            "text_key": "pf_limited3mo",
+            "value": 1
+          },
+          {
+            "text_key": "pf_limited_le3mo",
+            "value": 2
+          },
+          {
+            "text_key": "pf_notlimited",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf20_2c",
+        "text_key": "sf20_2c",
+        "type": "multi",
+        "question_head": "sf20_pf_head",
+        "options": [
+          {
+            "text_key": "pf_limited3mo",
+            "value": 1
+          },
+          {
+            "text_key": "pf_limited_le3mo",
+            "value": 2
+          },
+          {
+            "text_key": "pf_notlimited",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf20_2d",
+        "text_key": "sf20_2d",
+        "type": "multi",
+        "question_head": "sf20_pf_head",
+        "options": [
+          {
+            "text_key": "pf_limited3mo",
+            "value": 1
+          },
+          {
+            "text_key": "pf_limited_le3mo",
+            "value": 2
+          },
+          {
+            "text_key": "pf_notlimited",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf20_2e",
+        "text_key": "sf20_2e",
+        "type": "multi",
+        "question_head": "sf20_pf_head",
+        "options": [
+          {
+            "text_key": "pf_limited3mo",
+            "value": 1
+          },
+          {
+            "text_key": "pf_limited_le3mo",
+            "value": 2
+          },
+          {
+            "text_key": "pf_notlimited",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf20_2f",
+        "text_key": "sf20_2f",
+        "type": "multi",
+        "question_head": "sf20_pf_head",
+        "options": [
+          {
+            "text_key": "pf_limited3mo",
+            "value": 1
+          },
+          {
+            "text_key": "pf_limited_le3mo",
+            "value": 2
+          },
+          {
+            "text_key": "pf_notlimited",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf20_3",
+        "text_key": "sf20_3",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pain_none",
+            "value": 6
+          },
+          {
+            "text_key": "pain_verymild",
+            "value": 5
+          },
+          {
+            "text_key": "pain_mild",
+            "value": 4
+          },
+          {
+            "text_key": "pain_moderate",
+            "value": 3
+          },
+          {
+            "text_key": "pain_severe",
+            "value": 2
+          },
+          {
+            "text_key": "pain_verysevere",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf20_4",
+        "text_key": "sf20_4",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "rf_yes3mo",
+            "value": 1
+          },
+          {
+            "text_key": "rf_yes_le3mo",
+            "value": 2
+          },
+          {
+            "text_key": "rf_no",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf20_5",
+        "text_key": "sf20_5",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "rf_yes3mo",
+            "value": 1
+          },
+          {
+            "text_key": "rf_yes_le3mo",
+            "value": 2
+          },
+          {
+            "text_key": "rf_no",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf20_6",
+        "text_key": "sf20_6",
+        "type": "likert"
+      },
+      {
+        "id": "sf20_7",
+        "text_key": "sf20_7",
+        "type": "likert"
+      },
+      {
+        "id": "sf20_8",
+        "text_key": "sf20_8",
+        "type": "likert"
+      },
+      {
+        "id": "sf20_9",
+        "text_key": "sf20_9",
+        "type": "likert"
+      },
+      {
+        "id": "sf20_10",
+        "text_key": "sf20_10",
+        "type": "likert"
+      },
+      {
+        "id": "sf20_11",
+        "text_key": "sf20_11",
+        "type": "likert"
+      },
+      {
+        "id": "sf20_12_inst",
+        "text_key": "sf20_12_head",
+        "type": "inst"
+      },
+      {
+        "id": "sf20_12a",
+        "text_key": "sf20_12a",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "tf_deftrue",
+            "value": 1
+          },
+          {
+            "text_key": "tf_mostlytrue",
+            "value": 2
+          },
+          {
+            "text_key": "tf_notsure",
+            "value": 3
+          },
+          {
+            "text_key": "tf_mostlyfalse",
+            "value": 4
+          },
+          {
+            "text_key": "tf_deffalse",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sf20_12b",
+        "text_key": "sf20_12b",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "tf_deftrue",
+            "value": 1
+          },
+          {
+            "text_key": "tf_mostlytrue",
+            "value": 2
+          },
+          {
+            "text_key": "tf_notsure",
+            "value": 3
+          },
+          {
+            "text_key": "tf_mostlyfalse",
+            "value": 4
+          },
+          {
+            "text_key": "tf_deffalse",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sf20_12c",
+        "text_key": "sf20_12c",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "tf_deftrue",
+            "value": 1
+          },
+          {
+            "text_key": "tf_mostlytrue",
+            "value": 2
+          },
+          {
+            "text_key": "tf_notsure",
+            "value": 3
+          },
+          {
+            "text_key": "tf_mostlyfalse",
+            "value": 4
+          },
+          {
+            "text_key": "tf_deffalse",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sf20_12d",
+        "text_key": "sf20_12d",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "tf_deftrue",
+            "value": 1
+          },
+          {
+            "text_key": "tf_mostlytrue",
+            "value": 2
+          },
+          {
+            "text_key": "tf_notsure",
+            "value": 3
+          },
+          {
+            "text_key": "tf_mostlyfalse",
+            "value": 4
+          },
+          {
+            "text_key": "tf_deffalse",
+            "value": 5
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "physical_functioning": {
+        "method": "mean_coded",
+        "items": [
+          "sf20_2a",
+          "sf20_2b",
+          "sf20_2c",
+          "sf20_2d",
+          "sf20_2e",
+          "sf20_2f"
+        ],
+        "description": "Physical Functioning (6 items). Higher = less limited.",
+        "item_coding": {
+          "sf20_2a": 1,
+          "sf20_2b": 1,
+          "sf20_2c": 1,
+          "sf20_2d": 1,
+          "sf20_2e": 1,
+          "sf20_2f": 1
+        }
+      },
+      "role_functioning": {
+        "method": "mean_coded",
+        "items": [
+          "sf20_4",
+          "sf20_5"
+        ],
+        "description": "Role Functioning (2 items). Higher = less limited.",
+        "item_coding": {
+          "sf20_4": 1,
+          "sf20_5": 1
+        }
+      },
+      "social_functioning": {
+        "method": "mean_coded",
+        "items": [
+          "sf20_6"
+        ],
+        "description": "Social Functioning (1 item). Higher = less limited.",
+        "item_coding": {
+          "sf20_6": 1
+        }
+      },
+      "mental_health": {
+        "method": "mean_coded",
+        "items": [
+          "sf20_7",
+          "sf20_8",
+          "sf20_9",
+          "sf20_10",
+          "sf20_11"
+        ],
+        "description": "Mental Health (5 items). Items 8 (calm), 10 (happy) reverse-coded. Higher = better.",
+        "item_coding": {
+          "sf20_7": 1,
+          "sf20_8": -1,
+          "sf20_9": 1,
+          "sf20_10": -1,
+          "sf20_11": 1
+        }
+      },
+      "health_perceptions": {
+        "method": "mean_coded",
+        "items": [
+          "sf20_1",
+          "sf20_12a",
+          "sf20_12b",
+          "sf20_12c",
+          "sf20_12d"
+        ],
+        "description": "Health Perceptions (5 items). Items 12a (somewhat ill), 12d (feeling bad) reverse-coded. Higher = better.",
+        "item_coding": {
+          "sf20_1": 1,
+          "sf20_12a": -1,
+          "sf20_12b": 1,
+          "sf20_12c": 1,
+          "sf20_12d": -1
+        }
+      },
+      "pain": {
+        "method": "mean_coded",
+        "items": [
+          "sf20_3"
+        ],
+        "description": "Pain (1 item). Higher = less pain.",
+        "item_coding": {
+          "sf20_3": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "MOS 20-Item Short Form Health Survey Report",
+      "footer_refs": [
+        "Stewart, A. L., Hays, R. D., & Ware, J. E. (1988). Medical Care, 26(7), 724–735.",
+        "Higher scores indicate better health on all dimensions."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "sf20_inst": "Choose one option for each questionnaire item.",
+      "sf20_pf_head": "For how long (if at all) has your health limited you in each of the following activities?",
+      "sf20_freq_head": "For each of the following questions, please select the one answer that comes closest to the way you have been feeling during the <b>past month</b>.",
+      "sf20_12_head": "Please indicate whether each of the following statements is true or false for you.",
+      "sf20_freq1": "All of the time",
+      "sf20_freq2": "Most of the time",
+      "sf20_freq3": "A good bit of the time",
+      "sf20_freq4": "Some of the time",
+      "sf20_freq5": "A little of the time",
+      "sf20_freq6": "None of the time",
+      "gh_excellent": "Excellent",
+      "gh_verygood": "Very good",
+      "gh_good": "Good",
+      "gh_fair": "Fair",
+      "gh_poor": "Poor",
+      "pf_limited3mo": "Limited for more than 3 months",
+      "pf_limited_le3mo": "Limited for 3 months or less",
+      "pf_notlimited": "Not limited at all",
+      "pain_none": "None",
+      "pain_verymild": "Very mild",
+      "pain_mild": "Mild",
+      "pain_moderate": "Moderate",
+      "pain_severe": "Severe",
+      "pain_verysevere": "Very severe",
+      "rf_yes3mo": "Yes, for more than 3 months",
+      "rf_yes_le3mo": "Yes, for 3 months or less",
+      "rf_no": "No",
+      "tf_deftrue": "Definitely true",
+      "tf_mostlytrue": "Mostly true",
+      "tf_notsure": "Not sure",
+      "tf_mostlyfalse": "Mostly false",
+      "tf_deffalse": "Definitely false",
+      "sf20_1": "In general, would you say your health is:",
+      "sf20_2a": "The kinds or amounts of <b>vigorous activities</b> you can do, like lifting heavy objects, running, or participating in strenuous sports",
+      "sf20_2b": "The kinds or amounts of <b>moderate activities</b> you can do, like moving a table, carrying groceries, or bowling",
+      "sf20_2c": "Walking uphill or climbing <b>a few flights of stairs</b>",
+      "sf20_2d": "<b>Bending, lifting, or stooping</b>",
+      "sf20_2e": "Walking <b>one block</b>",
+      "sf20_2f": "<b>Eating, dressing, bathing</b>, or using the toilet",
+      "sf20_3": "How much <b>bodily pain</b> have you had during the <b>past 4 weeks</b>?",
+      "sf20_4": "Does your health keep you from <b>working</b> at a job, doing work around the house, or going to school?",
+      "sf20_5": "Have you been <b>unable to do certain kinds or amounts</b> of work, housework, or schoolwork because of your health?",
+      "sf20_6": "How much of the time, during the <b>past month</b>, has your health <b>limited your social activities</b> (like visiting with friends or close relatives)?",
+      "sf20_7": "How much of the time, during the <b>past month</b>, have you been a <b>very nervous person</b>?",
+      "sf20_8": "During the <b>past month</b>, how much of the time have you felt <b>calm and peaceful</b>?",
+      "sf20_9": "How much of the time, during the <b>past month</b>, have you felt <b>downhearted and blue</b>?",
+      "sf20_10": "During the <b>past month</b>, how much of the time have you been a <b>happy person</b>?",
+      "sf20_11": "How often, during the <b>past month</b>, have you felt so <b>down in the dumps that nothing could cheer you up</b>?",
+      "sf20_12a": "I am somewhat ill.",
+      "sf20_12b": "I am as healthy as anybody I know.",
+      "sf20_12c": "My health is excellent.",
+      "sf20_12d": "I have been feeling bad lately.",
+      "debrief": "Thank you for completing this survey."
+    }
+  }
+}

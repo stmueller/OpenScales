@@ -1,0 +1,309 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Internet Access",
+      "code": "PX281301",
+      "abbreviation": "PX281301",
+      "description": "This protocol includes four self- administered questions from the HINTS 5, Cycle 4 – Section B: Using the Internet to Find Information. This section focuses on how an individual accesses the internet, quality of their internet access, and how they use their internet access to interface with health c",
+      "domain": "Health Technology & Spirituality",
+      "citation": "Greenberg-Worisek, A. J., Kurani, S., Finney Rutten, L. J., Blake, K. D., Moser, R. P., & Hesse, B. W. (2019). Tracking healthy people 2020 internet, broadband, and mobile device access goals: an update using data from the Health Information National Trends Survey. Journal of medical Internet research, 21(6), e13300. https://doi.org/10.2196/13300 Kim, H., Mahmood, A., Goldsmith, J. V., Chang, H., Kedia, S., & Chang, C. F. (2021). Access to broadband internet and its utilization for health information seeking and health communication among informal caregivers in the United States. Journal of Medical Systems, 45(2), 24. https://doi.org/10.1007/s10916-021-01708-9 Nelson, D. E., Kreps, G. L., Hesse, B. W., Croyle, R. T., Willis, G., Arora, N. K., Rimer, B. K., Viswanath, K. V., Weinstein, N., & Alden, S. (2004). The Health Information National Trends Survey (HINTS): development, design, and dissemination. Journal of Health Communication, 9(5), 443–460. https://doi.org/10.1080/10810730490504233 Rains, S. A. (2008). Health at high speed: Broadband Internet access, health communication, and the digital divide. Communication Research, 35(3), 283-297. https://doi.org/10.1177/0093650208315958 [PhenX: https://www.phenxtoolkit.org/protocols/view/281301]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/281301"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "internet_access_ever_go_online",
+        "text_key": "internet_access_ever_go_online",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "internet_access_ever_go_online_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "internet_access_ever_go_online_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "internet_access_use_dial_up",
+        "text_key": "internet_access_use_dial_up",
+        "type": "multi",
+        "visible_when": {
+          "item": "internet_access_ever_go_online",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "internet_access_use_dial_up_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "internet_access_use_dial_up_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "internet_access_use_broadband",
+        "text_key": "internet_access_use_broadband",
+        "type": "multi",
+        "visible_when": {
+          "item": "internet_access_ever_go_online",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "internet_access_use_broadband_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "internet_access_use_broadband_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "internet_access_use_cellular",
+        "text_key": "internet_access_use_cellular",
+        "type": "multi",
+        "visible_when": {
+          "item": "internet_access_ever_go_online",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "internet_access_use_cellular_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "internet_access_use_cellular_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "internet_access_use_wireless",
+        "text_key": "internet_access_use_wireless",
+        "type": "multi",
+        "visible_when": {
+          "item": "internet_access_ever_go_online",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "internet_access_use_wireless_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "internet_access_use_wireless_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "internet_access_via_computer_home",
+        "text_key": "internet_access_via_computer_home",
+        "type": "multi",
+        "visible_when": {
+          "item": "internet_access_ever_go_online",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "internet_access_via_computer_home_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "internet_access_via_computer_home_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "internet_access_via_computer_home_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "internet_access_via_computer_home_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "internet_access_via_computer_work",
+        "text_key": "internet_access_via_computer_work",
+        "type": "multi",
+        "visible_when": {
+          "item": "internet_access_ever_go_online",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "internet_access_via_computer_work_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "internet_access_via_computer_work_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "internet_access_via_computer_work_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "internet_access_via_computer_work_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "internet_access_via_computer_public",
+        "text_key": "internet_access_via_computer_public",
+        "type": "multi",
+        "visible_when": {
+          "item": "internet_access_ever_go_online",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "internet_access_via_computer_public_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "internet_access_via_computer_public_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "internet_access_via_computer_public_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "internet_access_via_computer_public_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "internet_access_via_mobile_device",
+        "text_key": "internet_access_via_mobile_device",
+        "type": "multi",
+        "visible_when": {
+          "item": "internet_access_ever_go_online",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "internet_access_via_mobile_device_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "internet_access_via_mobile_device_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "internet_access_via_mobile_device_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "internet_access_via_mobile_device_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "internet_access_satisfied_speed",
+        "text_key": "internet_access_satisfied_speed",
+        "type": "multi",
+        "visible_when": {
+          "item": "internet_access_ever_go_online",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "internet_access_satisfied_speed_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "internet_access_satisfied_speed_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "internet_access_satisfied_speed_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "internet_access_satisfied_speed_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "internet_access_satisfied_speed_opt_5",
+            "value": 5
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "internet_access_ever_go_online": "Do you ever go on-line to access the Internet or World Wide Web, or to send and receive e-mail?",
+      "internet_access_ever_go_online_opt_1": "Yes",
+      "internet_access_ever_go_online_opt_2": "No",
+      "internet_access_use_dial_up": "When you use the Internet, do you access it through... A regular dial-up telephone line",
+      "internet_access_use_dial_up_opt_1": "Yes",
+      "internet_access_use_dial_up_opt_2": "No",
+      "internet_access_use_broadband": "When you use the Internet, do you access it through... Broadband such as DSL, cable, or FiOS",
+      "internet_access_use_broadband_opt_1": "Yes",
+      "internet_access_use_broadband_opt_2": "No",
+      "internet_access_use_cellular": "When you use the Internet, do you access it through... A cellular network (i.e., phone, 3G/4G)",
+      "internet_access_use_cellular_opt_1": "Yes",
+      "internet_access_use_cellular_opt_2": "No",
+      "internet_access_use_wireless": "When you use the Internet, do you access it through... A wireless network (Wi-Fi)",
+      "internet_access_use_wireless_opt_1": "Yes",
+      "internet_access_use_wireless_opt_2": "No",
+      "internet_access_via_computer_home": "How often do you access the Internet through each of the following? Computer at home",
+      "internet_access_via_computer_home_opt_1": "Daily",
+      "internet_access_via_computer_home_opt_2": "Sometimes",
+      "internet_access_via_computer_home_opt_3": "Never",
+      "internet_access_via_computer_home_opt_4": "Not Applicable",
+      "internet_access_via_computer_work": "How often do you access the Internet through each of the following? Computer at work",
+      "internet_access_via_computer_work_opt_1": "Daily",
+      "internet_access_via_computer_work_opt_2": "Sometimes",
+      "internet_access_via_computer_work_opt_3": "Never",
+      "internet_access_via_computer_work_opt_4": "Not Applicable",
+      "internet_access_via_computer_public": "How often do you access the Internet through each of the following? Computer in a public place (library, community center, other)",
+      "internet_access_via_computer_public_opt_1": "Daily",
+      "internet_access_via_computer_public_opt_2": "Sometimes",
+      "internet_access_via_computer_public_opt_3": "Never",
+      "internet_access_via_computer_public_opt_4": "Not Applicable",
+      "internet_access_via_mobile_device": "How often do you access the Internet through each of the following? On a mobile device (cell phone/smart phone/tablet)",
+      "internet_access_via_mobile_device_opt_1": "Daily",
+      "internet_access_via_mobile_device_opt_2": "Sometimes",
+      "internet_access_via_mobile_device_opt_3": "Never",
+      "internet_access_via_mobile_device_opt_4": "Not Applicable",
+      "internet_access_satisfied_speed": "To what extent are you satisfied with your internet speed?",
+      "internet_access_satisfied_speed_opt_1": "Not at all satisfied",
+      "internet_access_satisfied_speed_opt_2": "Not very satisfied",
+      "internet_access_satisfied_speed_opt_3": "Somewhat satisfied",
+      "internet_access_satisfied_speed_opt_4": "Very satisfied",
+      "internet_access_satisfied_speed_opt_5": "Extremely satisfied"
+    }
+  }
+}

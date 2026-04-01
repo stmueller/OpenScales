@@ -1,0 +1,421 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Alcohol Use Disorders Identification Test",
+      "code": "AUDIT",
+      "abbreviation": "AUDIT",
+      "description": "10-item WHO screening tool for hazardous and harmful alcohol use. Scores range from 0 to 40.",
+      "citation": "Saunders, J. B., Aasland, O. G., Babor, T. F., de la Fuente, J. R., & Grant, M. (1993). Development of the Alcohol Use Disorders Identification Test (AUDIT). Addiction, 88(6), 791-804. https://doi.org/10.1111/j.1360-0443.1993.tb02093.x",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.who.int/publications/i/item/WHO-MSD-MSB-01.6a"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "dimensions": [
+      {
+        "id": "alcohol_use",
+        "name": "Alcohol Use"
+      }
+    ],
+    "items": [
+      {
+        "id": "audit1",
+        "text_key": "audit1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "audit1_opt0",
+            "value": 0
+          },
+          {
+            "text_key": "audit1_opt1",
+            "value": 1
+          },
+          {
+            "text_key": "audit1_opt2",
+            "value": 2
+          },
+          {
+            "text_key": "audit1_opt3",
+            "value": 3
+          },
+          {
+            "text_key": "audit1_opt4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sec_drinking",
+        "type": "section",
+        "visible_when": {
+          "all": [
+            {
+              "item": "audit1",
+              "operator": "is_answered"
+            },
+            {
+              "item": "audit1",
+              "operator": "not_equals",
+              "value": 0
+            }
+          ]
+        }
+      },
+      {
+        "id": "audit2",
+        "text_key": "audit2",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "audit2_opt0",
+            "value": 0
+          },
+          {
+            "text_key": "audit2_opt1",
+            "value": 1
+          },
+          {
+            "text_key": "audit2_opt2",
+            "value": 2
+          },
+          {
+            "text_key": "audit2_opt3",
+            "value": 3
+          },
+          {
+            "text_key": "audit2_opt4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "audit3",
+        "text_key": "audit3",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "audit3_opt0",
+            "value": 0
+          },
+          {
+            "text_key": "audit3_opt1",
+            "value": 1
+          },
+          {
+            "text_key": "audit3_opt2",
+            "value": 2
+          },
+          {
+            "text_key": "audit3_opt3",
+            "value": 3
+          },
+          {
+            "text_key": "audit3_opt4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "audit4",
+        "text_key": "audit4",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "audit4_opt0",
+            "value": 0
+          },
+          {
+            "text_key": "audit4_opt1",
+            "value": 1
+          },
+          {
+            "text_key": "audit4_opt2",
+            "value": 2
+          },
+          {
+            "text_key": "audit4_opt3",
+            "value": 3
+          },
+          {
+            "text_key": "audit4_opt4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "audit5",
+        "text_key": "audit5",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "audit5_opt0",
+            "value": 0
+          },
+          {
+            "text_key": "audit5_opt1",
+            "value": 1
+          },
+          {
+            "text_key": "audit5_opt2",
+            "value": 2
+          },
+          {
+            "text_key": "audit5_opt3",
+            "value": 3
+          },
+          {
+            "text_key": "audit5_opt4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "audit6",
+        "text_key": "audit6",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "audit6_opt0",
+            "value": 0
+          },
+          {
+            "text_key": "audit6_opt1",
+            "value": 1
+          },
+          {
+            "text_key": "audit6_opt2",
+            "value": 2
+          },
+          {
+            "text_key": "audit6_opt3",
+            "value": 3
+          },
+          {
+            "text_key": "audit6_opt4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "audit7",
+        "text_key": "audit7",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "audit7_opt0",
+            "value": 0
+          },
+          {
+            "text_key": "audit7_opt1",
+            "value": 1
+          },
+          {
+            "text_key": "audit7_opt2",
+            "value": 2
+          },
+          {
+            "text_key": "audit7_opt3",
+            "value": 3
+          },
+          {
+            "text_key": "audit7_opt4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "audit8",
+        "text_key": "audit8",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "audit8_opt0",
+            "value": 0
+          },
+          {
+            "text_key": "audit8_opt1",
+            "value": 1
+          },
+          {
+            "text_key": "audit8_opt2",
+            "value": 2
+          },
+          {
+            "text_key": "audit8_opt3",
+            "value": 3
+          },
+          {
+            "text_key": "audit8_opt4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sec_consequences",
+        "type": "section"
+      },
+      {
+        "id": "audit9",
+        "text_key": "audit9",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "audit9_opt0",
+            "value": 0
+          },
+          {
+            "text_key": "audit9_opt2",
+            "value": 2
+          },
+          {
+            "text_key": "audit9_opt4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "audit10",
+        "text_key": "audit10",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "audit10_opt0",
+            "value": 0
+          },
+          {
+            "text_key": "audit10_opt2",
+            "value": 2
+          },
+          {
+            "text_key": "audit10_opt4",
+            "value": 4
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "alcohol_use": {
+        "method": "sum_coded",
+        "items": [
+          "audit1",
+          "audit2",
+          "audit3",
+          "audit4",
+          "audit5",
+          "audit6",
+          "audit7",
+          "audit8",
+          "audit9",
+          "audit10"
+        ],
+        "description": "Sum of all items (0-40). Score ≥8 = hazardous use; ≥15 = dependence likely.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 7,
+              "label": "Low Risk"
+            },
+            {
+              "min": 8,
+              "max": 14,
+              "label": "Hazardous Use — simple advice recommended"
+            },
+            {
+              "min": 15,
+              "max": 19,
+              "label": "Harmful Use — brief counselling recommended"
+            },
+            {
+              "min": 20,
+              "max": 40,
+              "label": "Dependence Likely — specialist assessment recommended"
+            }
+          ]
+        },
+        "item_coding": {
+          "audit1": 1,
+          "audit2": 1,
+          "audit3": 1,
+          "audit4": 1,
+          "audit5": 1,
+          "audit6": 1,
+          "audit7": 1,
+          "audit8": 1,
+          "audit9": 1,
+          "audit10": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "question_head": "Please answer the following questions about your alcohol use over the <b>past year</b>.",
+      "audit1": "How often do you have a drink containing alcohol?",
+      "audit1_opt0": "Never",
+      "audit1_opt1": "Monthly or less",
+      "audit1_opt2": "2 to 4 times a month",
+      "audit1_opt3": "2 to 3 times a week",
+      "audit1_opt4": "4 or more times a week",
+      "audit2": "How many standard drinks containing alcohol do you have on a typical day when you are drinking?",
+      "audit2_opt0": "1 or 2",
+      "audit2_opt1": "3 or 4",
+      "audit2_opt2": "5 or 6",
+      "audit2_opt3": "7 to 9",
+      "audit2_opt4": "10 or more",
+      "audit3": "How often do you have 6 or more drinks on one occasion?",
+      "audit3_opt0": "Never",
+      "audit3_opt1": "Less than monthly",
+      "audit3_opt2": "Monthly",
+      "audit3_opt3": "Weekly",
+      "audit3_opt4": "Daily or almost daily",
+      "audit4": "How often during the last year have you found that you were not able to stop drinking once you had started?",
+      "audit4_opt0": "Never",
+      "audit4_opt1": "Less than monthly",
+      "audit4_opt2": "Monthly",
+      "audit4_opt3": "Weekly",
+      "audit4_opt4": "Daily or almost daily",
+      "audit5": "How often during the last year have you failed to do what was normally expected of you because of drinking?",
+      "audit5_opt0": "Never",
+      "audit5_opt1": "Less than monthly",
+      "audit5_opt2": "Monthly",
+      "audit5_opt3": "Weekly",
+      "audit5_opt4": "Daily or almost daily",
+      "audit6": "How often during the last year have you needed a first drink in the morning to get yourself going after a heavy drinking session?",
+      "audit6_opt0": "Never",
+      "audit6_opt1": "Less than monthly",
+      "audit6_opt2": "Monthly",
+      "audit6_opt3": "Weekly",
+      "audit6_opt4": "Daily or almost daily",
+      "audit7": "How often during the last year have you had a feeling of guilt or remorse after drinking?",
+      "audit7_opt0": "Never",
+      "audit7_opt1": "Less than monthly",
+      "audit7_opt2": "Monthly",
+      "audit7_opt3": "Weekly",
+      "audit7_opt4": "Daily or almost daily",
+      "audit8": "How often during the last year have you been unable to remember what happened the night before because of your drinking?",
+      "audit8_opt0": "Never",
+      "audit8_opt1": "Less than monthly",
+      "audit8_opt2": "Monthly",
+      "audit8_opt3": "Weekly",
+      "audit8_opt4": "Daily or almost daily",
+      "audit9": "Have you or someone else been injured as a result of your drinking?",
+      "audit9_opt0": "No",
+      "audit9_opt2": "Yes, but not in the last year",
+      "audit9_opt4": "Yes, during the last year",
+      "audit10": "Has a relative, friend, doctor, or other health professional expressed concern about your drinking or suggested you cut down?",
+      "audit10_opt0": "No",
+      "audit10_opt2": "Yes, but not in the last year",
+      "audit10_opt4": "Yes, during the last year",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

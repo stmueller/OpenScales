@@ -1,0 +1,164 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Humor/Playfulness",
+      "code": "IPIP-VIA-HUMOR",
+      "abbreviation": "IPIP-VIA-HUMOR",
+      "description": "IPIP representation of the VIA character strength 'Humor/Playfulness'. 9-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "humor_playfulness",
+        "name": "Humor/Playfulness",
+        "abbreviation": "HUMOR",
+        "description": "IPIP VIA Humor/Playfulness subscale (9 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_169",
+        "text_key": "ipip_via_169",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_170",
+        "text_key": "ipip_via_170",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_171",
+        "text_key": "ipip_via_171",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_172",
+        "text_key": "ipip_via_172",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_173",
+        "text_key": "ipip_via_173",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_174",
+        "text_key": "ipip_via_174",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_175",
+        "text_key": "ipip_via_175",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_176",
+        "text_key": "ipip_via_176",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_177",
+        "text_key": "ipip_via_177",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "humor_playfulness": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_169",
+          "ipip_via_170",
+          "ipip_via_171",
+          "ipip_via_172",
+          "ipip_via_173",
+          "ipip_via_174",
+          "ipip_via_175",
+          "ipip_via_176",
+          "ipip_via_177"
+        ],
+        "description": "Mean of 9 items (range 1–5; higher = stronger Humor/Playfulness). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_169": -1,
+          "ipip_via_170": -1,
+          "ipip_via_171": -1,
+          "ipip_via_172": 1,
+          "ipip_via_173": 1,
+          "ipip_via_174": 1,
+          "ipip_via_175": 1,
+          "ipip_via_176": 1,
+          "ipip_via_177": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_169": "Am not fun to be with.",
+      "ipip_via_170": "Am not known for my sense of humor.",
+      "ipip_via_171": "Do not go out of my way to make others smile or laugh.",
+      "ipip_via_172": "Have a great sense of humor.",
+      "ipip_via_173": "Keep my sense of humor even in gloomy situations.",
+      "ipip_via_174": "Try to add some humor to whatever I do.",
+      "ipip_via_175": "Try to have fun in all kinds of situations.",
+      "ipip_via_176": "Try to tease my friends out of their gloomy moods.",
+      "ipip_via_177": "Use laughter to brighten the days of others."
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Contact Lens Use- Adult",
+      "code": "PX111301",
+      "abbreviation": "PX111301",
+      "description": "These self-administered questions are used to assess an individuals current and past contact lens use. The respondent answers an initial question regarding current contact lens use. The respondent then proceeds to a set of two follow-up questions based upon the response to the initial question.",
+      "domain": "Vision & Eye Health",
+      "citation": "Herpetic Eye Disease Study Group. (2000). Psychological stress and other potential triggers for recurrences of herpes simplex virus eye infections. Herpetic Eye Disease Study Group. Arch Ophthalmol , 118(12):1617-25. [PhenX: https://www.phenxtoolkit.org/protocols/view/111301]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/111301"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "contact_lenses_currently",
+        "text_key": "contact_lenses_currently",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "contact_lenses_currently_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "contact_lenses_currently_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "contact_lenses_ever",
+        "text_key": "contact_lenses_ever",
+        "type": "multi",
+        "visible_when": {
+          "item": "contact_lenses_currently",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "contact_lenses_ever_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "contact_lenses_ever_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "contact_lenses_consider_next_year",
+        "text_key": "contact_lenses_consider_next_year",
+        "type": "multi",
+        "visible_when": {
+          "item": "contact_lenses_currently",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "contact_lenses_consider_next_year_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "contact_lenses_consider_next_year_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "contact_lenses_type",
+        "text_key": "contact_lenses_type",
+        "type": "multi",
+        "visible_when": {
+          "item": "contact_lenses_currently",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "contact_lenses_type_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "contact_lenses_type_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "contact_lenses_type_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "contact_lenses_type_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "contact_lenses_sleep_with",
+        "text_key": "contact_lenses_sleep_with",
+        "type": "multi",
+        "visible_when": {
+          "item": "contact_lenses_currently",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "contact_lenses_sleep_with_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "contact_lenses_sleep_with_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "contact_lenses_sleep_with_opt_3",
+            "value": 3
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "contact_lenses_currently": "Do you currently wear contact lenses?",
+      "contact_lenses_currently_opt_1": "yes",
+      "contact_lenses_currently_opt_2": "no",
+      "contact_lenses_ever": "Have you ever worn contact lenses?",
+      "contact_lenses_ever_opt_1": "yes",
+      "contact_lenses_ever_opt_2": "no",
+      "contact_lenses_consider_next_year": "Are you considering wearing contact lenses in the next year?",
+      "contact_lenses_consider_next_year_opt_1": "yes",
+      "contact_lenses_consider_next_year_opt_2": "no",
+      "contact_lenses_type": "What type of contact lenses do you wear?",
+      "contact_lenses_type_opt_1": "soft",
+      "contact_lenses_type_opt_2": "hard",
+      "contact_lenses_type_opt_3": "gas permeable",
+      "contact_lenses_type_opt_4": "not known",
+      "contact_lenses_sleep_with": "Do you sleep with your contact lenses in?",
+      "contact_lenses_sleep_with_opt_1": "no",
+      "contact_lenses_sleep_with_opt_2": "sometimes",
+      "contact_lenses_sleep_with_opt_3": "usually"
+    }
+  }
+}

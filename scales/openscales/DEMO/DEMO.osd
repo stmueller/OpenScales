@@ -1,0 +1,732 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "OpenScales Feature Demonstration",
+      "code": "DEMO",
+      "abbreviation": "DEMO",
+      "description": "Comprehensive demonstration scale exercising all major OSD specification features: consent gate (S8); all question types (likert, multi, multicheck, short, long, vas, grid, inst); sections with randomization (S4); section-order randomization; parameter-driven branches (A1); visible_when on items and sections including is_answered operator (S1); input validation (C9); per-item likert override; likert_reverse display; randomize_options on multi; per-item question_head override; VAS with named anchors and vertical orientation; forward/reverse scoring with norms and score transforms; computed variables (boolean and numeric); answer_alias and answer piping (S3); text substitution via parameters (S2); selectable dimensions (C7). Use this scale to verify all engine features work correctly after changes.",
+      "citation": "OpenScales internal demonstration scale — not for research use.",
+      "license": "Public domain",
+      "version": "2.0",
+      "url": "",
+      "license_explanation": "Public domain demonstration scale. Not for research use.",
+      "license_url": "",
+      "domain": "Demonstration"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "study_name": {
+        "type": "string",
+        "default": "OpenScales Demonstration",
+        "description": "Name of the study substituted into welcome text and debrief via {study_name}. Demonstrates C8 text substitution."
+      },
+      "show_optional_section": {
+        "type": "boolean",
+        "default": 0,
+        "description": "If 1, forces the graduate-details section to appear regardless of q_education answer. Demonstrates C8 parameter-driven section visibility."
+      },
+      "context": {
+        "type": "choice",
+        "default": "general",
+        "options": [
+          "general",
+          "workplace"
+        ],
+        "description": "Selects context-specific question branch: 'general' shows everyday-life items, 'workplace' shows work-context items. Demonstrates C8/A1 parameter-driven branch routing."
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Enables random_group-based item shuffle within sections that do not have their own randomize property."
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "question_head": "question_head",
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "attitudes",
+        "name": "Attitudes Toward Technology",
+        "abbreviation": "ATT",
+        "selectable": true,
+        "default_enabled": true,
+        "enabled_param": "do_attitudes"
+      },
+      {
+        "id": "wellbeing",
+        "name": "Subjective Well-being",
+        "abbreviation": "WB",
+        "selectable": true,
+        "default_enabled": true,
+        "enabled_param": "do_wellbeing"
+      }
+    ],
+    "branches": [
+      {
+        "id": "context_branch",
+        "method": "parameter",
+        "parameter": "context",
+        "arms": [
+          {
+            "id": "general",
+            "sections": [
+              "sec_context_general"
+            ]
+          },
+          {
+            "id": "workplace",
+            "sections": [
+              "sec_context_workplace"
+            ]
+          }
+        ]
+      }
+    ],
+    "randomize_sections": {
+      "fixed": [
+        "sec_consent",
+        "sec_background",
+        "sec_context_general",
+        "sec_context_workplace",
+        "sec_dependent",
+        "sec_final"
+      ],
+      "description": "sec_attitudes, sec_wellbeing, and sec_grid appear in random order between the fixed sections. Both branch sections are fixed so they land immediately after background; only the chosen arm's section will be shown."
+    },
+    "items": [
+      {
+        "id": "sec_consent",
+        "type": "section",
+        "text_key": "sec_consent_title"
+      },
+      {
+        "id": "demo_consent",
+        "type": "multi",
+        "text_key": "demo_consent",
+        "required": true,
+        "options": [
+          {
+            "value": "yes",
+            "text_key": "consent_yes"
+          },
+          {
+            "value": "no",
+            "text_key": "consent_no"
+          }
+        ],
+        "gate": {
+          "required_value": "yes",
+          "terminate_message_key": "consent_declined"
+        }
+      },
+      {
+        "id": "sec_background",
+        "type": "section",
+        "text_key": "sec_background_title"
+      },
+      {
+        "id": "inst_welcome",
+        "type": "inst",
+        "text_key": "inst_welcome",
+        "required": false
+      },
+      {
+        "id": "q_age",
+        "type": "short",
+        "text_key": "q_age",
+        "required": true,
+        "validation": {
+          "type": "number",
+          "min": 18,
+          "max": 120,
+          "min_error": "val_age_min",
+          "max_error": "val_age_max"
+        },
+        "random_group": 1
+      },
+      {
+        "id": "q_education",
+        "type": "multi",
+        "text_key": "q_education",
+        "required": true,
+        "options": [
+          "edu_hs",
+          "edu_college",
+          "edu_bachelors",
+          "edu_grad"
+        ],
+        "random_group": 1,
+        "randomize_options": true,
+        "answer_alias": "education_level"
+      },
+      {
+        "id": "q_tech_use",
+        "type": "multicheck",
+        "text_key": "q_tech_use",
+        "required": true,
+        "min_selected": 1,
+        "max_selected": 4,
+        "options": [
+          "tech_smartphone",
+          "tech_laptop",
+          "tech_tablet",
+          "tech_wearable",
+          "tech_none"
+        ],
+        "random_group": 1
+      },
+      {
+        "id": "sec_context_general",
+        "type": "section",
+        "text_key": "sec_context_general_title",
+        "_note": "Branch arm 'general' — shown when context parameter == 'general'. Demonstrates A1 parameter-driven branch routing."
+      },
+      {
+        "id": "context_general_q1",
+        "type": "likert",
+        "text_key": "context_general_q1",
+        "dimension": "attitudes",
+        "required": true,
+        "random_group": 1
+      },
+      {
+        "id": "context_general_q2",
+        "type": "likert",
+        "text_key": "context_general_q2",
+        "dimension": "attitudes",
+        "required": true,
+        "random_group": 1
+      },
+      {
+        "id": "sec_context_workplace",
+        "type": "section",
+        "text_key": "sec_context_workplace_title",
+        "_note": "Branch arm 'workplace' — shown when context parameter == 'workplace'. Demonstrates A1 parameter-driven branch routing."
+      },
+      {
+        "id": "context_workplace_q1",
+        "type": "likert",
+        "text_key": "context_workplace_q1",
+        "dimension": "attitudes",
+        "required": true,
+        "random_group": 1
+      },
+      {
+        "id": "context_workplace_q2",
+        "type": "likert",
+        "text_key": "context_workplace_q2",
+        "dimension": "attitudes",
+        "required": true,
+        "random_group": 1
+      },
+      {
+        "id": "sec_attitudes",
+        "type": "section",
+        "text_key": "sec_attitudes_title",
+        "randomize": {
+          "method": "shuffle",
+          "fixed": [
+            "att_inst"
+          ],
+          "_note": "Section-level shuffle: att_inst is pinned to position 1; all other items in this section appear in random order."
+        }
+      },
+      {
+        "id": "att_inst",
+        "type": "inst",
+        "text_key": "att_inst",
+        "required": false
+      },
+      {
+        "id": "att1",
+        "type": "likert",
+        "text_key": "att1",
+        "dimension": "attitudes",
+        "required": true,
+        "random_group": 1
+      },
+      {
+        "id": "att2",
+        "type": "likert",
+        "text_key": "att2",
+        "dimension": "attitudes",
+        "required": true,
+        "random_group": 1
+      },
+      {
+        "id": "att3",
+        "type": "likert",
+        "text_key": "att3",
+        "dimension": "attitudes",
+        "required": true,
+        "random_group": 1,
+        "likert_reverse": true,
+        "_note": "Reverse-coded AND reverse-displayed (likert_reverse=true). Buttons show 5-4-3-2-1 left-to-right."
+      },
+      {
+        "id": "att4",
+        "type": "likert",
+        "text_key": "att4",
+        "dimension": "attitudes",
+        "required": true,
+        "random_group": 1
+      },
+      {
+        "id": "att5",
+        "type": "likert",
+        "text_key": "att5",
+        "dimension": "attitudes",
+        "required": true,
+        "random_group": 1
+      },
+      {
+        "id": "att_open",
+        "type": "long",
+        "text_key": "att_open",
+        "required": false,
+        "random_group": 1
+      },
+      {
+        "id": "sec_wellbeing",
+        "type": "section",
+        "text_key": "sec_wellbeing_title",
+        "_note": "No section-level randomize — item shuffle is controlled by random_group + the shuffle_questions parameter."
+      },
+      {
+        "id": "wb_inst",
+        "type": "inst",
+        "text_key": "wb_inst",
+        "random_group": 0,
+        "required": false
+      },
+      {
+        "id": "wb1",
+        "type": "vas",
+        "text_key": "wb1",
+        "dimension": "wellbeing",
+        "random_group": 1,
+        "min": 0,
+        "max": 100,
+        "required": true,
+        "question_head": "wb_question_head",
+        "anchors": [
+          {
+            "value": 0,
+            "label": "vas_anchor_not"
+          },
+          {
+            "value": 25,
+            "label": "vas_anchor_slightly"
+          },
+          {
+            "value": 50,
+            "label": "vas_anchor_moderately"
+          },
+          {
+            "value": 75,
+            "label": "vas_anchor_very"
+          },
+          {
+            "value": 100,
+            "label": "vas_anchor_extremely"
+          }
+        ],
+        "_note": "VAS with 5 named anchors (replaces min_label/max_label)."
+      },
+      {
+        "id": "wb2",
+        "type": "vas",
+        "text_key": "wb2",
+        "dimension": "wellbeing",
+        "random_group": 1,
+        "min": 0,
+        "max": 100,
+        "min_label": "vas_not_at_all",
+        "max_label": "vas_completely",
+        "required": true,
+        "question_head": "wb_question_head"
+      },
+      {
+        "id": "wb3",
+        "type": "vas",
+        "text_key": "wb3",
+        "dimension": "wellbeing",
+        "random_group": 1,
+        "min": 0,
+        "max": 100,
+        "min_label": "vas_not_at_all",
+        "max_label": "vas_completely",
+        "required": true,
+        "question_head": "wb_question_head",
+        "orientation": "vertical",
+        "_note": "Vertical VAS orientation."
+      },
+      {
+        "id": "wb_fixed",
+        "type": "likert",
+        "text_key": "wb_fixed",
+        "random_group": 0,
+        "required": true,
+        "_note": "random_group=0 pins this item at its defined position even when shuffle_questions=1."
+      },
+      {
+        "id": "sec_grid",
+        "type": "section",
+        "text_key": "sec_grid_title"
+      },
+      {
+        "id": "grid_inst",
+        "type": "inst",
+        "text_key": "grid_inst",
+        "required": false
+      },
+      {
+        "id": "daily_habits",
+        "type": "grid",
+        "text_key": "daily_habits",
+        "required": true,
+        "rows": [
+          "grid_row_exercise",
+          "grid_row_sleep",
+          "grid_row_vegetables",
+          "grid_row_screen"
+        ],
+        "columns": [
+          "grid_col_never",
+          "grid_col_rarely",
+          "grid_col_sometimes",
+          "grid_col_often",
+          "grid_col_always"
+        ],
+        "random_group": 1
+      },
+      {
+        "id": "sec_dependent",
+        "type": "section",
+        "text_key": "sec_dependent_title",
+        "visible_when": {
+          "any": [
+            {
+              "item": "q_education",
+              "operator": "in",
+              "value": [
+                "edu_grad"
+              ]
+            },
+            {
+              "parameter": "show_optional_section",
+              "operator": "equals",
+              "value": "1"
+            }
+          ]
+        },
+        "_note": "This section appears only when q_education=='edu_grad' OR the show_optional_section parameter is 1. Demonstrates both response-driven and parameter-driven section visibility."
+      },
+      {
+        "id": "dep_inst",
+        "type": "inst",
+        "text_key": "dep_inst",
+        "required": false
+      },
+      {
+        "id": "dep_field",
+        "type": "multi",
+        "text_key": "dep_field",
+        "required": true,
+        "options": [
+          "field_stem",
+          "field_social",
+          "field_humanities",
+          "field_professional",
+          "field_other"
+        ],
+        "random_group": 1
+      },
+      {
+        "id": "dep_years",
+        "type": "short",
+        "text_key": "dep_years",
+        "required": true,
+        "validation": {
+          "type": "number",
+          "min": 0,
+          "max": 50
+        },
+        "visible_when": {
+          "all": [
+            {
+              "item": "q_education",
+              "operator": "is_answered"
+            },
+            {
+              "item": "dep_field",
+              "operator": "not_equals",
+              "value": "field_other"
+            }
+          ]
+        },
+        "_note": "Demonstrates is_answered operator + compound condition."
+      },
+      {
+        "id": "dep_explain",
+        "type": "long",
+        "text_key": "dep_explain",
+        "required": false,
+        "visible_when": {
+          "item": "dep_field",
+          "operator": "equals",
+          "value": "field_other"
+        },
+        "_note": "Demonstrates item-level visible_when: shown only when dep_field == 'field_other'. Mutually exclusive with dep_years."
+      },
+      {
+        "id": "sec_final",
+        "type": "section",
+        "text_key": "sec_final_title"
+      },
+      {
+        "id": "final_comments",
+        "type": "long",
+        "text_key": "final_comments",
+        "required": false,
+        "random_group": 1
+      },
+      {
+        "id": "final_rating",
+        "type": "likert",
+        "text_key": "final_rating",
+        "required": true,
+        "likert_points": 7,
+        "likert_min": 1,
+        "likert_max": 7,
+        "likert_labels": [
+          "likert7_1",
+          "likert7_2",
+          "likert7_3",
+          "likert7_4",
+          "likert7_5",
+          "likert7_6",
+          "likert7_7"
+        ],
+        "_note": "Demonstrates per-item Likert scale override: 7-point scale with custom labels, overriding the scale-level 5-point default.",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "attitudes": {
+        "method": "mean_coded",
+        "items": [
+          "context_general_q1",
+          "context_general_q2",
+          "context_workplace_q1",
+          "context_workplace_q2",
+          "att1",
+          "att2",
+          "att3",
+          "att4",
+          "att5"
+        ],
+        "description": "Mean of attitude items after reverse-scoring att3 and att5. Branch items (context_general_q* or context_workplace_q*) contribute only one pair depending on parameter; NA responses are excluded from the mean.",
+        "item_coding": {
+          "context_general_q1": 1,
+          "context_general_q2": 1,
+          "context_workplace_q1": 1,
+          "context_workplace_q2": 1,
+          "att3": -1,
+          "att5": -1,
+          "att1": 1,
+          "att2": 1,
+          "att4": 1
+        },
+        "norms": {
+          "thresholds": [
+            {
+              "min": 1.0,
+              "max": 2.5,
+              "label_key": "norm_negative"
+            },
+            {
+              "min": 2.5,
+              "max": 3.5,
+              "label_key": "norm_neutral"
+            },
+            {
+              "min": 3.5,
+              "max": 5.0,
+              "label_key": "norm_positive"
+            }
+          ]
+        }
+      },
+      "wellbeing": {
+        "method": "mean_coded",
+        "items": [
+          "wb1",
+          "wb2",
+          "wb3"
+        ],
+        "description": "Mean of 3 VAS items. Range 0-100. Higher = greater subjective well-being. Transformed: divided by 10 to produce 0-10 scale.",
+        "item_coding": {
+          "wb1": 1,
+          "wb2": 1,
+          "wb3": 1
+        },
+        "transform": [
+          {
+            "op": "divide",
+            "value": 10
+          }
+        ]
+      }
+    },
+    "data_output": {
+      "individual_file": "DEMO_individual.csv",
+      "pooled_file": "DEMO_pooled.csv"
+    },
+    "computed": {
+      "high_wellbeing": {
+        "expression": "score.wellbeing > 5",
+        "type": "boolean"
+      },
+      "combined_index": {
+        "expression": "score.attitudes * 2 + score.wellbeing",
+        "type": "number",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 10,
+              "label_key": "norm_combined_low"
+            },
+            {
+              "min": 10,
+              "max": 20,
+              "label_key": "norm_combined_moderate"
+            },
+            {
+              "min": 20,
+              "max": 100,
+              "label_key": "norm_combined_high"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "LANGUAGE": "en",
+      "question_head": "Please answer each question:",
+      "likert_1": "Strongly disagree",
+      "likert_2": "Disagree",
+      "likert_3": "Neither agree nor disagree",
+      "likert_4": "Agree",
+      "likert_5": "Strongly agree",
+      "likert7_1": "Strongly disagree",
+      "likert7_2": "Disagree",
+      "likert7_3": "Somewhat disagree",
+      "likert7_4": "Neutral",
+      "likert7_5": "Somewhat agree",
+      "likert7_6": "Agree",
+      "likert7_7": "Strongly agree",
+      "vas_not_at_all": "Not at all",
+      "vas_completely": "Completely",
+      "sec_background_title": "Background Information",
+      "inst_welcome": "Welcome to {study_name}. This survey demonstrates all major OpenScales features. Please answer each question honestly. Your responses are completely anonymous.",
+      "q_age": "What is your age (in years)?",
+      "val_age_min": "Please enter an age of 18 or older.",
+      "val_age_max": "Please enter a realistic age.",
+      "q_education": "What is the highest level of education you have completed?",
+      "edu_hs": "High school diploma or GED",
+      "edu_college": "Some college (no degree)",
+      "edu_bachelors": "Bachelor's degree",
+      "edu_grad": "Graduate or professional degree (Master's, PhD, MD, JD, etc.)",
+      "q_tech_use": "Which of the following devices do you use regularly? (Select all that apply — choose between 1 and 4)",
+      "tech_smartphone": "Smartphone",
+      "tech_laptop": "Laptop or desktop computer",
+      "tech_tablet": "Tablet",
+      "tech_wearable": "Smartwatch or wearable device",
+      "tech_none": "None of the above",
+      "sec_context_general_title": "Technology in Daily Life",
+      "context_general_q1": "I find that technology helps me stay connected with people I care about.",
+      "context_general_q2": "Managing technology in my personal life feels overwhelming at times.",
+      "sec_context_workplace_title": "Technology at Work",
+      "context_workplace_q1": "Technology tools help me complete my work tasks more efficiently.",
+      "context_workplace_q2": "I find it difficult to keep up with the pace of technology change in my workplace.",
+      "sec_attitudes_title": "Attitudes Toward Technology",
+      "att_inst": "Please rate your agreement with each of the following statements about technology, using the scale from 1 (Strongly disagree) to 5 (Strongly agree). Note: items appear in randomized order.",
+      "att1": "Technology makes my daily life easier.",
+      "att2": "I feel comfortable learning to use new technology.",
+      "att3": "Technology creates more problems than it solves.",
+      "att4": "New technological tools generally improve my productivity.",
+      "att5": "I worry that technology is making people less independent.",
+      "att_open": "(Optional) Is there anything else you would like to say about your relationship with technology?",
+      "sec_wellbeing_title": "Subjective Well-being",
+      "wb_inst": "The following questions ask about your current well-being. Please move the slider to indicate where you fall on each scale.",
+      "wb1": "Overall, how satisfied are you with your life right now?",
+      "wb2": "How happy have you felt over the past week?",
+      "wb3": "How often do you feel your activities are worthwhile?",
+      "wb_fixed": "How would you rate the quality of your close relationships? (This item has random_group=0 so it always appears last in this section, even when shuffle_questions=1.)",
+      "sec_grid_title": "Daily Habits",
+      "grid_inst": "For each activity below, indicate how frequently you engage in it.",
+      "daily_habits": "How often do you do each of the following?",
+      "grid_row_exercise": "Exercise or physical activity",
+      "grid_row_sleep": "Get 7-8 hours of sleep",
+      "grid_row_vegetables": "Eat vegetables or fruit",
+      "grid_row_screen": "Limit recreational screen time",
+      "grid_col_never": "Never",
+      "grid_col_rarely": "Rarely",
+      "grid_col_sometimes": "Sometimes",
+      "grid_col_often": "Often",
+      "grid_col_always": "Always",
+      "sec_dependent_title": "Graduate-Level Experience",
+      "dep_inst": "You indicated your education level is {answer.education_level}. This section asks about your graduate experience.",
+      "dep_field": "In which broad field is your highest degree?",
+      "field_stem": "STEM (science, technology, engineering, mathematics)",
+      "field_social": "Social sciences (psychology, sociology, economics, etc.)",
+      "field_humanities": "Humanities (history, literature, philosophy, etc.)",
+      "field_professional": "Professional (law, medicine, business, education, etc.)",
+      "field_other": "Other",
+      "dep_years": "How many years ago did you complete this degree? (This item appears only when a non-Other field is selected — demonstrating item-level visibility.)",
+      "dep_explain": "Please briefly describe your field. (This item appears only when 'Other' is selected — demonstrating item-level conditional display.)",
+      "sec_final_title": "Final Questions",
+      "final_comments": "(Optional) Do you have any comments or feedback about this demonstration survey?",
+      "final_rating": "Overall, how would you rate your experience completing {study_name}? (7-point scale — demonstrating per-item Likert override and {study_name} text substitution)",
+      "debrief": "Thank you for completing {study_name}! Your responses have been recorded. This survey demonstrated: text substitution via {study_name} parameter; parameter-driven branch routing (context=general/workplace); multiple sections with partial randomization; all question types (likert, multi, multicheck, short, long, VAS, grid, inst); dependent sections; item-level conditional display; input validation; forward and reverse scoring; and per-item scale overrides.",
+      "norm_negative": "Negative attitude",
+      "norm_neutral": "Neutral attitude",
+      "norm_positive": "Positive attitude",
+      "sec_consent_title": "Consent",
+      "demo_consent": "This is a demonstration scale. Do you agree to proceed?",
+      "consent_yes": "I agree to proceed",
+      "consent_no": "I do not agree",
+      "consent_declined": "You have chosen not to participate. Thank you.",
+      "wb_question_head": "Rate your well-being on the scale below:",
+      "vas_anchor_not": "Not at all",
+      "vas_anchor_slightly": "Slightly",
+      "vas_anchor_moderately": "Moderately",
+      "vas_anchor_very": "Very much",
+      "vas_anchor_extremely": "Extremely",
+      "norm_combined_low": "Low combined score",
+      "norm_combined_moderate": "Moderate combined score",
+      "norm_combined_high": "High combined score"
+    }
+  }
+}

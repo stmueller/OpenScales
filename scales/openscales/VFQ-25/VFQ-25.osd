@@ -1,0 +1,1154 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "National Eye Institute Visual Function Questionnaire-25",
+      "code": "VFQ-25",
+      "abbreviation": "NEI VFQ-25",
+      "description": "25-item self-report measure of vision-related quality of life developed by the National Eye Institute and RAND Corporation. Assesses 12 subscales covering general health, general vision, ocular pain, near and distance activities, social functioning, mental health, role difficulties, dependency, driving, color vision, and peripheral vision. All subscales are scored 0–100 (higher = better visual function). Subscale score = mean of recoded item values × 25; see Mangione et al. (2001) for full recoding tables. A composite score (mean of all subscales excluding general health) is also commonly reported.",
+      "citation": "Mangione, C.M., Lee, P.P., Gutierrez, P.R., Spritzer, K., Berry, S., & Hays, R.D. (2001). Development of the 25-item National Eye Institute Visual Function Questionnaire. Archives of Ophthalmology, 119(7), 1050–1058. https://doi.org/10.1001/archopht.119.7.1050",
+      "license": "Public Domain",
+      "version": "2000",
+      "url": "https://www.rand.org/health-care/surveys_tools/vfq.html",
+      "domain": "Quality of Life",
+      "license_explanation": "RAND Corporation and NEI place their health survey instruments in the public domain. RAND explicitly states these instruments are available for use without permission or fee.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools/vfq.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "dimensions": [
+      {
+        "id": "general_health",
+        "name": "General Health",
+        "abbreviation": "GH",
+        "description": "Single item rating overall health. Item: vfq1.",
+        "enabled_param": null
+      },
+      {
+        "id": "general_vision",
+        "name": "General Vision",
+        "abbreviation": "GV",
+        "description": "Single item rating vision without glasses or contact lenses. Item: vfq2.",
+        "enabled_param": null
+      },
+      {
+        "id": "ocular_pain",
+        "name": "Ocular Pain",
+        "abbreviation": "OP",
+        "description": "Pain or discomfort in/around eyes. Items: vfq4, vfq19.",
+        "enabled_param": null
+      },
+      {
+        "id": "near_activities",
+        "name": "Near Activities",
+        "abbreviation": "NA",
+        "description": "Difficulty with near vision tasks. Items: vfq5, vfq6, vfq7.",
+        "enabled_param": null
+      },
+      {
+        "id": "distance_activities",
+        "name": "Distance Activities",
+        "abbreviation": "DA",
+        "description": "Difficulty with distance vision tasks. Items: vfq8, vfq9, vfq14.",
+        "enabled_param": null
+      },
+      {
+        "id": "social_functioning",
+        "name": "Social Functioning",
+        "abbreviation": "SF",
+        "description": "Vision-related limitations in social activities. Items: vfq11, vfq13.",
+        "enabled_param": null
+      },
+      {
+        "id": "mental_health",
+        "name": "Mental Health",
+        "abbreviation": "MH",
+        "description": "Vision-related emotional distress. Items: vfq3, vfq21, vfq22, vfq25.",
+        "enabled_param": null
+      },
+      {
+        "id": "role_difficulties",
+        "name": "Role Difficulties",
+        "abbreviation": "RD",
+        "description": "Vision-related limitations in work and daily role activities. Items: vfq17, vfq18.",
+        "enabled_param": null
+      },
+      {
+        "id": "dependency",
+        "name": "Dependency",
+        "abbreviation": "DEP",
+        "description": "Reliance on others due to vision problems. Items: vfq20, vfq23, vfq24.",
+        "enabled_param": null
+      },
+      {
+        "id": "driving",
+        "name": "Driving",
+        "abbreviation": "DRV",
+        "description": "Vision-related driving difficulties. Screening: vfq15, vfq15a, vfq15b. Scored: vfq15c (daytime driving difficulty). N/A if not currently driving.",
+        "enabled_param": null
+      },
+      {
+        "id": "color_vision",
+        "name": "Color Vision",
+        "abbreviation": "CV",
+        "description": "Difficulty distinguishing colors. Item: vfq12.",
+        "enabled_param": null
+      },
+      {
+        "id": "peripheral_vision",
+        "name": "Peripheral Vision",
+        "abbreviation": "PV",
+        "description": "Difficulty with peripheral vision. Item: vfq10.",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "vfq1",
+        "text_key": "vfq1",
+        "type": "multi",
+        "dimension": "general_health",
+        "options": [
+          {
+            "text_key": "vfq_health1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_health2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_health3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_health4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_health5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq2",
+        "text_key": "vfq2",
+        "type": "multi",
+        "dimension": "general_vision",
+        "options": [
+          {
+            "text_key": "vfq_vis1",
+            "value": 5
+          },
+          {
+            "text_key": "vfq_vis2",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_vis3",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_vis4",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_vis5",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_vis6",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq3",
+        "text_key": "vfq3",
+        "type": "multi",
+        "dimension": "mental_health",
+        "options": [
+          {
+            "text_key": "vfq_pain1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_pain2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_pain3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_pain4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_pain5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq4",
+        "text_key": "vfq4",
+        "type": "multi",
+        "dimension": "ocular_pain",
+        "options": [
+          {
+            "text_key": "vfq_pain1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_pain2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_pain3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_pain4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_pain5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq5",
+        "text_key": "vfq5",
+        "type": "multi",
+        "dimension": "near_activities",
+        "options": [
+          {
+            "text_key": "vfq_diff1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_diff2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_diff3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_diff4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_diff5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq6",
+        "text_key": "vfq6",
+        "type": "multi",
+        "dimension": "near_activities",
+        "options": [
+          {
+            "text_key": "vfq_diff1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_diff2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_diff3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_diff4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_diff5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq7",
+        "text_key": "vfq7",
+        "type": "multi",
+        "dimension": "near_activities",
+        "options": [
+          {
+            "text_key": "vfq_diff1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_diff2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_diff3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_diff4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_diff5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq8",
+        "text_key": "vfq8",
+        "type": "multi",
+        "dimension": "distance_activities",
+        "options": [
+          {
+            "text_key": "vfq_diff1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_diff2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_diff3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_diff4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_diff5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq9",
+        "text_key": "vfq9",
+        "type": "multi",
+        "dimension": "distance_activities",
+        "options": [
+          {
+            "text_key": "vfq_diff1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_diff2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_diff3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_diff4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_diff5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq10",
+        "text_key": "vfq10",
+        "type": "multi",
+        "dimension": "peripheral_vision",
+        "options": [
+          {
+            "text_key": "vfq_diff1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_diff2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_diff3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_diff4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_diff5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq11",
+        "text_key": "vfq11",
+        "type": "multi",
+        "dimension": "social_functioning",
+        "options": [
+          {
+            "text_key": "vfq_diff1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_diff2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_diff3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_diff4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_diff5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq12",
+        "text_key": "vfq12",
+        "type": "multi",
+        "dimension": "color_vision",
+        "options": [
+          {
+            "text_key": "vfq_diff1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_diff2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_diff3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_diff4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_diff5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq13",
+        "text_key": "vfq13",
+        "type": "multi",
+        "dimension": "social_functioning",
+        "options": [
+          {
+            "text_key": "vfq_diff1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_diff2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_diff3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_diff4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_diff5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq14",
+        "text_key": "vfq14",
+        "type": "multi",
+        "dimension": "distance_activities",
+        "options": [
+          {
+            "text_key": "vfq_diff1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_diff2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_diff3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_diff4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_diff5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq15",
+        "text_key": "vfq15",
+        "type": "multi",
+        "dimension": "driving",
+        "options": [
+          {
+            "text_key": "vfq15_yes",
+            "value": 1
+          },
+          {
+            "text_key": "vfq15_no",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "vfq15a",
+        "text_key": "vfq15a",
+        "type": "multi",
+        "dimension": "driving",
+        "visible_when": {
+          "item": "vfq15",
+          "operator": "equals",
+          "value": "2"
+        },
+        "options": [
+          {
+            "text_key": "vfq15a_never",
+            "value": 1
+          },
+          {
+            "text_key": "vfq15a_gaveup",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "vfq15b",
+        "text_key": "vfq15b",
+        "type": "multi",
+        "dimension": "driving",
+        "visible_when": {
+          "all": [
+            {
+              "item": "vfq15",
+              "operator": "equals",
+              "value": "2"
+            },
+            {
+              "item": "vfq15a",
+              "operator": "equals",
+              "value": "2"
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "vfq15b_eyesight",
+            "value": 1
+          },
+          {
+            "text_key": "vfq15b_other",
+            "value": 2
+          },
+          {
+            "text_key": "vfq15b_both",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "vfq15c",
+        "text_key": "vfq15c",
+        "type": "multi",
+        "dimension": "driving",
+        "visible_when": {
+          "item": "vfq15",
+          "operator": "equals",
+          "value": "1"
+        },
+        "options": [
+          {
+            "text_key": "vfq_drv1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_drv2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_drv3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_drv4",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "vfq17",
+        "text_key": "vfq17",
+        "type": "multi",
+        "dimension": "role_difficulties",
+        "options": [
+          {
+            "text_key": "vfq_diff1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_diff2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_diff3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_diff4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_diff5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq18",
+        "text_key": "vfq18",
+        "type": "multi",
+        "dimension": "role_difficulties",
+        "options": [
+          {
+            "text_key": "vfq_diff1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_diff2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_diff3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_diff4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_diff5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq19",
+        "text_key": "vfq19",
+        "type": "multi",
+        "dimension": "ocular_pain",
+        "options": [
+          {
+            "text_key": "vfq_pain1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_pain2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_pain3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_pain4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_pain5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq20",
+        "text_key": "vfq20",
+        "type": "multi",
+        "dimension": "dependency",
+        "options": [
+          {
+            "text_key": "vfq_dep1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_dep2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_dep3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_dep4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_dep5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq21",
+        "text_key": "vfq21",
+        "type": "multi",
+        "dimension": "mental_health",
+        "options": [
+          {
+            "text_key": "vfq_freq1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_freq2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_freq3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_freq4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_freq5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq22",
+        "text_key": "vfq22",
+        "type": "multi",
+        "dimension": "mental_health",
+        "options": [
+          {
+            "text_key": "vfq_freq1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_freq2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_freq3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_freq4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_freq5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq23",
+        "text_key": "vfq23",
+        "type": "multi",
+        "dimension": "dependency",
+        "options": [
+          {
+            "text_key": "vfq_dep1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_dep2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_dep3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_dep4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_dep5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq24",
+        "text_key": "vfq24",
+        "type": "multi",
+        "dimension": "dependency",
+        "options": [
+          {
+            "text_key": "vfq_dep1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_dep2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_dep3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_dep4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_dep5",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "vfq25",
+        "text_key": "vfq25",
+        "type": "multi",
+        "dimension": "mental_health",
+        "options": [
+          {
+            "text_key": "vfq_freq1",
+            "value": 4
+          },
+          {
+            "text_key": "vfq_freq2",
+            "value": 3
+          },
+          {
+            "text_key": "vfq_freq3",
+            "value": 2
+          },
+          {
+            "text_key": "vfq_freq4",
+            "value": 1
+          },
+          {
+            "text_key": "vfq_freq5",
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "general_health": {
+        "method": "sum_coded",
+        "items": [
+          "vfq1"
+        ],
+        "description": "Single item (0–4; higher = better health). Multiply by 25 for 0–100 score.",
+        "item_coding": {
+          "vfq1": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ]
+      },
+      "general_vision": {
+        "method": "sum_coded",
+        "items": [
+          "vfq2"
+        ],
+        "description": "Single item (0–5; higher = better vision). Multiply by 20 for 0–100 score.",
+        "item_coding": {
+          "vfq2": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 20
+          }
+        ]
+      },
+      "ocular_pain": {
+        "method": "mean_coded",
+        "items": [
+          "vfq4",
+          "vfq19"
+        ],
+        "description": "Mean of 2 items (0–4 each; higher = less pain/discomfort). Multiply mean by 25 for 0–100 score.",
+        "item_coding": {
+          "vfq4": 1,
+          "vfq19": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ]
+      },
+      "near_activities": {
+        "method": "mean_coded",
+        "items": [
+          "vfq5",
+          "vfq6",
+          "vfq7"
+        ],
+        "description": "Mean of 3 items (0–4 each; higher = less difficulty). Multiply mean by 25 for 0–100 score.",
+        "item_coding": {
+          "vfq5": 1,
+          "vfq6": 1,
+          "vfq7": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ]
+      },
+      "distance_activities": {
+        "method": "mean_coded",
+        "items": [
+          "vfq8",
+          "vfq9",
+          "vfq14"
+        ],
+        "description": "Mean of 3 items (0–4 each; higher = less difficulty). Multiply mean by 25 for 0–100 score.",
+        "item_coding": {
+          "vfq8": 1,
+          "vfq9": 1,
+          "vfq14": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ]
+      },
+      "social_functioning": {
+        "method": "mean_coded",
+        "items": [
+          "vfq11",
+          "vfq13"
+        ],
+        "description": "Mean of 2 items (0–4 each; higher = less limitation). Multiply mean by 25 for 0–100 score.",
+        "item_coding": {
+          "vfq11": 1,
+          "vfq13": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ]
+      },
+      "mental_health": {
+        "method": "mean_coded",
+        "items": [
+          "vfq3",
+          "vfq21",
+          "vfq22",
+          "vfq25"
+        ],
+        "description": "Mean of 4 items (0–4 each; higher = better mental health). Multiply mean by 25 for 0–100 score.",
+        "item_coding": {
+          "vfq3": 1,
+          "vfq21": 1,
+          "vfq22": 1,
+          "vfq25": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ]
+      },
+      "role_difficulties": {
+        "method": "mean_coded",
+        "items": [
+          "vfq17",
+          "vfq18"
+        ],
+        "description": "Mean of 2 items (0–4 each; higher = fewer role difficulties). Multiply mean by 25 for 0–100 score.",
+        "item_coding": {
+          "vfq17": 1,
+          "vfq18": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ]
+      },
+      "dependency": {
+        "method": "mean_coded",
+        "items": [
+          "vfq20",
+          "vfq23",
+          "vfq24"
+        ],
+        "description": "Mean of 3 items (0–4 each; higher = less dependency). Multiply mean by 25 for 0–100 score.",
+        "item_coding": {
+          "vfq20": 1,
+          "vfq23": 1,
+          "vfq24": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ]
+      },
+      "driving": {
+        "method": "mean_coded",
+        "items": [
+          "vfq15c"
+        ],
+        "description": "Driving difficulty (vfq15c; vfq15/15a/15b are screening items). Multiply mean by 25 for 0–100 score. Score is N/A if respondent does not currently drive. Per RAND manual: if stopped driving mainly due to eyesight (vfq15b=1 or 3), recode driving score to 0.",
+        "item_coding": {
+          "vfq15c": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ]
+      },
+      "color_vision": {
+        "method": "sum_coded",
+        "items": [
+          "vfq12"
+        ],
+        "description": "Single item (0–4; higher = less difficulty). Multiply by 25 for 0–100 score.",
+        "item_coding": {
+          "vfq12": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ]
+      },
+      "peripheral_vision": {
+        "method": "sum_coded",
+        "items": [
+          "vfq10"
+        ],
+        "description": "Single item (0–4; higher = less difficulty). Multiply by 25 for 0–100 score.",
+        "item_coding": {
+          "vfq10": 1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "vfq1": "In general, would you say your overall health is:",
+      "vfq_health1": "Excellent",
+      "vfq_health2": "Very good",
+      "vfq_health3": "Good",
+      "vfq_health4": "Fair",
+      "vfq_health5": "Poor",
+      "vfq2": "At the present time, would you say your eyesight using both eyes (with glasses or contact lenses, if you wear them) is excellent, good, fair, poor, or very poor, or are you completely blind?",
+      "vfq_vis1": "Excellent",
+      "vfq_vis2": "Good",
+      "vfq_vis3": "Fair",
+      "vfq_vis4": "Poor",
+      "vfq_vis5": "Very poor",
+      "vfq_vis6": "Completely blind",
+      "vfq3": "How much of the time do you worry about your eyesight?",
+      "vfq_freq1": "None of the time",
+      "vfq_freq2": "A little of the time",
+      "vfq_freq3": "Some of the time",
+      "vfq_freq4": "Most of the time",
+      "vfq_freq5": "All of the time",
+      "vfq4": "How much pain or discomfort have you had in and around your eyes (for example, burning, itching, or aching)? Would you say it is:",
+      "vfq_pain1": "None",
+      "vfq_pain2": "Mild",
+      "vfq_pain3": "Moderate",
+      "vfq_pain4": "Severe",
+      "vfq_pain5": "Very severe",
+      "vfq_act_head": "The next questions are about how much difficulty, if any, you have doing certain activities wearing your glasses or contact lenses if you use them.",
+      "vfq_diff1": "No difficulty at all",
+      "vfq_diff2": "A little difficulty",
+      "vfq_diff3": "Moderate difficulty",
+      "vfq_diff4": "Extreme difficulty",
+      "vfq_diff5": "Stopped doing this because of your eyesight",
+      "vfq5": "How much difficulty do you have reading ordinary print in newspapers?",
+      "vfq6": "How much difficulty do you have doing work or hobbies that require you to see well up close, such as cooking, sewing, fixing things around the house, or using hand tools?",
+      "vfq7": "Because of your eyesight, how much difficulty do you have finding something on a crowded shelf?",
+      "vfq8": "How much difficulty do you have reading street signs or the names of stores?",
+      "vfq9": "Because of your eyesight, how much difficulty do you have going down steps, stairs, or curbs in dim light or at night?",
+      "vfq10": "Because of your eyesight, how much difficulty do you have noticing objects off to the side while you are walking?",
+      "vfq11": "Because of your eyesight, how much difficulty do you have seeing how people react to things you say?",
+      "vfq12": "Because of your eyesight, how much difficulty do you have picking out and matching your own clothes?",
+      "vfq13": "Because of your eyesight, how much difficulty do you have visiting with people in their homes, at parties, or in restaurants?",
+      "vfq14": "Because of your eyesight, how much difficulty do you have going out to see movies, plays, or sports events?",
+      "vfq15": "Are you currently driving, at least once in a while?",
+      "vfq15_yes": "Yes",
+      "vfq15_no": "No",
+      "vfq15a": "Have you never driven a car or have you given up driving?",
+      "vfq15a_never": "Never drove",
+      "vfq15a_gaveup": "Gave up",
+      "vfq15b": "Was that mainly because of your eyesight, mainly for some other reason, or because of both your eyesight and other reasons?",
+      "vfq15b_eyesight": "Mainly eyesight",
+      "vfq15b_other": "Mainly other reasons",
+      "vfq15b_both": "Both eyesight and other reasons",
+      "vfq15c": "How much difficulty do you have driving during the daytime in familiar places?",
+      "vfq_drv1": "No difficulty at all",
+      "vfq_drv2": "A little difficulty",
+      "vfq_drv3": "Moderate difficulty",
+      "vfq_drv4": "Extreme difficulty",
+      "vfq17": "How much difficulty do you have doing work or hobbies that require you to see well up close, such as cooking, sewing, fixing things around the house, or using hand tools?",
+      "vfq18": "Because of your eyesight, how much difficulty do you have accomplishing as much as you would like to?",
+      "vfq19": "How much of the time do you have pain or discomfort in and around your eyes?",
+      "vfq_dep1": "No, not at all",
+      "vfq_dep2": "A little of the time",
+      "vfq_dep3": "Some of the time",
+      "vfq_dep4": "Most of the time",
+      "vfq_dep5": "All of the time",
+      "vfq20": "Because of your eyesight, how much do you rely on what other people tell you?",
+      "vfq21": "How much does pain or discomfort in or around your eyes keep you from doing what you would like to be doing?",
+      "vfq22": "How much of the time do you feel frustrated a lot because of your eyesight?",
+      "vfq23": "How much difficulty do you have staying home most of the time because of your eyesight?",
+      "vfq24": "How much of the time do you need a lot of help from others because of your eyesight?",
+      "vfq25": "How much of the time do you worry about doing things that will hurt your eyes?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

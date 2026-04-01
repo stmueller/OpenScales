@@ -1,0 +1,619 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Kidney Disease Quality of Life 36-Item Short Form",
+      "code": "KDQOL-36",
+      "abbreviation": "KDQOL-36",
+      "description": "36-item health-related quality of life measure for patients with kidney disease, including those on dialysis. Contains a 12-item SF-12 generic core plus 3 kidney disease-specific subscales: Burden of Kidney Disease (4 items), Symptoms/Problems of Kidney Disease (12 items), and Effects of Kidney Disease on Daily Life (8 items). One additional overall health rating item (0–10 scale). All subscales scored 0–100 (higher = better quality of life). NOTE: SF-12 items are scored per the SF-12 manual (Ware et al., 1996); kidney-specific subscales are scored as means recoded to 0–100.",
+      "citation": "Ware, J.E., Kosinki, M., Keller, S.D. (1996). SF-12: How to score the SF-12 Physical and Mental Health Summary Scales. Boston: The Health Institute; and Hays, R.D., Kallich, J.D., Mapes, D.L., Coons, S.J., & Carter, W.B. (1994). Development of the kidney disease quality of life (KDQOL) instrument. Quality of Life Research, 3(5), 329–338.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health-care/surveys_tools/kdqol.html",
+      "domain": "Quality of Life",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. RAND explicitly states these instruments are available for use without permission or fee.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools/kdqol.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "dimensions": [
+      {
+        "id": "burden_kidney",
+        "name": "Burden of Kidney Disease",
+        "abbreviation": "BKD",
+        "description": "Extent to which kidney disease takes too much time, is frustrating, burdens family, and creates financial burden. Items: kdqol36_13–kdqol36_16.",
+        "enabled_param": null
+      },
+      {
+        "id": "symptoms_problems",
+        "name": "Symptoms/Problems of Kidney Disease",
+        "abbreviation": "SP",
+        "description": "Bothersomeness of 12 symptoms associated with kidney disease. Items: kdqol36_17–kdqol36_28.",
+        "enabled_param": null
+      },
+      {
+        "id": "effects_daily_life",
+        "name": "Effects of Kidney Disease on Daily Life",
+        "abbreviation": "EDL",
+        "description": "Extent to which kidney disease limits daily activities and life domains. Items: kdqol36_29–kdqol36_36.",
+        "enabled_param": null
+      },
+      {
+        "id": "sf12_physical",
+        "name": "SF-12 Physical Component Summary",
+        "abbreviation": "PCS",
+        "description": "SF-12 Physical Component Summary score. Items: kdqol36_1–kdqol36_12. Computed per SF-12 scoring algorithm.",
+        "enabled_param": null
+      },
+      {
+        "id": "sf12_mental",
+        "name": "SF-12 Mental Component Summary",
+        "abbreviation": "MCS",
+        "description": "SF-12 Mental Component Summary score. Items: kdqol36_1–kdqol36_12. Computed per SF-12 scoring algorithm.",
+        "enabled_param": null
+      },
+      {
+        "id": "overall_health",
+        "name": "Overall Health Rating",
+        "abbreviation": "OH",
+        "description": "Overall health rating on a 0–10 scale (0=worst, 10=best). Item: kdqol36_12.",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "kdqol36_1",
+        "text_key": "kdqol36_1",
+        "type": "multi",
+        "dimension": "sf12_physical",
+        "options": [
+          {
+            "text_key": "kdqol36_health1",
+            "value": 5
+          },
+          {
+            "text_key": "kdqol36_health2",
+            "value": 4
+          },
+          {
+            "text_key": "kdqol36_health3",
+            "value": 3
+          },
+          {
+            "text_key": "kdqol36_health4",
+            "value": 2
+          },
+          {
+            "text_key": "kdqol36_health5",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "kdqol36_2",
+        "text_key": "kdqol36_2",
+        "question_head": "kdqol36_sf12_pf_head",
+        "type": "multi",
+        "dimension": "sf12_physical",
+        "options": [
+          {
+            "text_key": "kdqol36_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqol36_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqol36_pf3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "kdqol36_3",
+        "text_key": "kdqol36_3",
+        "question_head": "kdqol36_sf12_pf_head",
+        "type": "multi",
+        "dimension": "sf12_physical",
+        "options": [
+          {
+            "text_key": "kdqol36_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqol36_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqol36_pf3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "kdqol36_4",
+        "text_key": "kdqol36_4",
+        "question_head": "kdqol36_rp_head",
+        "type": "multi",
+        "dimension": "sf12_physical",
+        "options": [
+          {
+            "text_key": "kdqol36_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "kdqol36_yn2",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "kdqol36_5",
+        "text_key": "kdqol36_5",
+        "question_head": "kdqol36_rp_head",
+        "type": "multi",
+        "dimension": "sf12_physical",
+        "options": [
+          {
+            "text_key": "kdqol36_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "kdqol36_yn2",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "kdqol36_6",
+        "text_key": "kdqol36_6",
+        "question_head": "kdqol36_re_head",
+        "type": "multi",
+        "dimension": "sf12_mental",
+        "options": [
+          {
+            "text_key": "kdqol36_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "kdqol36_yn2",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "kdqol36_7",
+        "text_key": "kdqol36_7",
+        "question_head": "kdqol36_re_head",
+        "type": "multi",
+        "dimension": "sf12_mental",
+        "options": [
+          {
+            "text_key": "kdqol36_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "kdqol36_yn2",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "kdqol36_8",
+        "text_key": "kdqol36_8",
+        "type": "multi",
+        "dimension": "sf12_mental",
+        "options": [
+          {
+            "text_key": "kdqol36_sf1",
+            "value": 5
+          },
+          {
+            "text_key": "kdqol36_sf2",
+            "value": 4
+          },
+          {
+            "text_key": "kdqol36_sf3",
+            "value": 3
+          },
+          {
+            "text_key": "kdqol36_sf4",
+            "value": 2
+          },
+          {
+            "text_key": "kdqol36_sf5",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "kdqol36_mh_grid",
+        "type": "grid",
+        "text_key": "kdqol36_mh_head",
+        "dimension": "sf12_mental",
+        "rows": [
+          "kdqol36_9",
+          "kdqol36_10",
+          "kdqol36_11"
+        ],
+        "columns": [
+          "kdqol36_freq1",
+          "kdqol36_freq2",
+          "kdqol36_freq3",
+          "kdqol36_freq4",
+          "kdqol36_freq5",
+          "kdqol36_freq6"
+        ]
+      },
+      {
+        "id": "kdqol36_12",
+        "text_key": "kdqol36_12",
+        "type": "multi",
+        "dimension": "overall_health",
+        "options": [
+          {
+            "text_key": "kdqol36_sf_time1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqol36_sf_time2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqol36_sf_time3",
+            "value": 3
+          },
+          {
+            "text_key": "kdqol36_sf_time4",
+            "value": 4
+          },
+          {
+            "text_key": "kdqol36_sf_time5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "kdqol36_burden_grid",
+        "type": "grid",
+        "text_key": "kdqol36_burden_head",
+        "dimension": "burden_kidney",
+        "rows": [
+          "kdqol36_13",
+          "kdqol36_14",
+          "kdqol36_15",
+          "kdqol36_16"
+        ],
+        "columns": [
+          "kdqol36_truefalse1",
+          "kdqol36_truefalse2",
+          "kdqol36_truefalse3",
+          "kdqol36_truefalse4",
+          "kdqol36_truefalse5"
+        ]
+      },
+      {
+        "id": "kdqol36_symp_grid",
+        "type": "grid",
+        "text_key": "kdqol36_symp_head",
+        "dimension": "symptoms_problems",
+        "rows": [
+          "kdqol36_17",
+          "kdqol36_18",
+          "kdqol36_19",
+          "kdqol36_20",
+          "kdqol36_21",
+          "kdqol36_22",
+          "kdqol36_23",
+          "kdqol36_24",
+          "kdqol36_25",
+          "kdqol36_26",
+          "kdqol36_27",
+          "kdqol36_28",
+          "kdqol36_28a",
+          "kdqol36_28b"
+        ],
+        "columns": [
+          "kdqol36_effect1",
+          "kdqol36_effect2",
+          "kdqol36_effect3",
+          "kdqol36_effect4",
+          "kdqol36_effect5"
+        ],
+        "optional_rows": [
+          "kdqol36_28a",
+          "kdqol36_28b"
+        ]
+      },
+      {
+        "id": "kdqol36_eff_grid",
+        "type": "grid",
+        "text_key": "kdqol36_eff_head",
+        "dimension": "effects_daily_life",
+        "rows": [
+          "kdqol36_29",
+          "kdqol36_30",
+          "kdqol36_31",
+          "kdqol36_32",
+          "kdqol36_33",
+          "kdqol36_34",
+          "kdqol36_35",
+          "kdqol36_36"
+        ],
+        "columns": [
+          "kdqol36_effect1",
+          "kdqol36_effect2",
+          "kdqol36_effect3",
+          "kdqol36_effect4",
+          "kdqol36_effect5"
+        ]
+      }
+    ],
+    "scoring": {
+      "burden_kidney": {
+        "method": "mean_coded",
+        "items": [
+          "kdqol36_burden_grid_1",
+          "kdqol36_burden_grid_2",
+          "kdqol36_burden_grid_3",
+          "kdqol36_burden_grid_4"
+        ],
+        "description": "Mean of 4 burden items (1=Definitely true … 5=Definitely false; all negative-worded so reverse-code). Higher = less burden. Reverse code: (1+5)−response, then (mean−1)/4×100 → 0–100.",
+        "item_coding": {
+          "kdqol36_burden_grid_1": -1,
+          "kdqol36_burden_grid_2": -1,
+          "kdqol36_burden_grid_3": -1,
+          "kdqol36_burden_grid_4": -1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 4
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "symptoms_problems": {
+        "method": "mean_coded",
+        "items": [
+          "kdqol36_symp_grid_1",
+          "kdqol36_symp_grid_2",
+          "kdqol36_symp_grid_3",
+          "kdqol36_symp_grid_4",
+          "kdqol36_symp_grid_5",
+          "kdqol36_symp_grid_6",
+          "kdqol36_symp_grid_7",
+          "kdqol36_symp_grid_8",
+          "kdqol36_symp_grid_9",
+          "kdqol36_symp_grid_10",
+          "kdqol36_symp_grid_11",
+          "kdqol36_symp_grid_12"
+        ],
+        "description": "Mean of 12 symptom items (items 28a/28b optional, not scored). Columns: 1=Not at all…5=Extremely; reverse-coded so 5=not bothered. Transform: (mean−1)/4×100 → 0–100.",
+        "item_coding": {
+          "kdqol36_symp_grid_1": -1,
+          "kdqol36_symp_grid_2": -1,
+          "kdqol36_symp_grid_3": -1,
+          "kdqol36_symp_grid_4": -1,
+          "kdqol36_symp_grid_5": -1,
+          "kdqol36_symp_grid_6": -1,
+          "kdqol36_symp_grid_7": -1,
+          "kdqol36_symp_grid_8": -1,
+          "kdqol36_symp_grid_9": -1,
+          "kdqol36_symp_grid_10": -1,
+          "kdqol36_symp_grid_11": -1,
+          "kdqol36_symp_grid_12": -1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 4
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "effects_daily_life": {
+        "method": "mean_coded",
+        "items": [
+          "kdqol36_eff_grid_1",
+          "kdqol36_eff_grid_2",
+          "kdqol36_eff_grid_3",
+          "kdqol36_eff_grid_4",
+          "kdqol36_eff_grid_5",
+          "kdqol36_eff_grid_6",
+          "kdqol36_eff_grid_7",
+          "kdqol36_eff_grid_8"
+        ],
+        "description": "Mean of 8 effects items. Values pre-reversed (Not limited=5). 0–100: (mean − 1) / 4 × 100.",
+        "item_coding": {
+          "kdqol36_eff_grid_1": -1,
+          "kdqol36_eff_grid_2": -1,
+          "kdqol36_eff_grid_3": -1,
+          "kdqol36_eff_grid_4": -1,
+          "kdqol36_eff_grid_5": -1,
+          "kdqol36_eff_grid_6": -1,
+          "kdqol36_eff_grid_7": -1,
+          "kdqol36_eff_grid_8": -1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 4
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "sf12_physical": {
+        "method": "sum_coded",
+        "items": [
+          "kdqol36_1",
+          "kdqol36_2",
+          "kdqol36_3",
+          "kdqol36_4",
+          "kdqol36_5",
+          "kdqol36_8",
+          "kdqol36_mh_grid_1",
+          "kdqol36_mh_grid_2",
+          "kdqol36_mh_grid_3"
+        ],
+        "description": "SF-12 Physical Component Summary (PCS). Computed from relevant SF-12 items using the SF-12 scoring algorithm (Ware et al., 1996). Score is standardized to a mean of 50 (SD=10).",
+        "item_coding": {
+          "kdqol36_1": 1,
+          "kdqol36_2": 1,
+          "kdqol36_3": 1,
+          "kdqol36_4": 1,
+          "kdqol36_5": 1,
+          "kdqol36_8": 1,
+          "kdqol36_mh_grid_1": 1,
+          "kdqol36_mh_grid_2": -1,
+          "kdqol36_mh_grid_3": 1
+        }
+      },
+      "sf12_mental": {
+        "method": "sum_coded",
+        "items": [
+          "kdqol36_1",
+          "kdqol36_6",
+          "kdqol36_7",
+          "kdqol36_8",
+          "kdqol36_mh_grid_1",
+          "kdqol36_mh_grid_2",
+          "kdqol36_mh_grid_3"
+        ],
+        "description": "SF-12 Mental Component Summary (MCS). Computed from relevant SF-12 items using the SF-12 scoring algorithm (Ware et al., 1996). Score is standardized to a mean of 50 (SD=10).",
+        "item_coding": {
+          "kdqol36_1": 1,
+          "kdqol36_6": 1,
+          "kdqol36_7": 1,
+          "kdqol36_8": 1,
+          "kdqol36_mh_grid_1": 1,
+          "kdqol36_mh_grid_2": -1,
+          "kdqol36_mh_grid_3": 1
+        }
+      },
+      "overall_health": {
+        "method": "sum_coded",
+        "items": [
+          "kdqol36_12"
+        ],
+        "description": "SF-12 social functioning item. Response: 1=All of the time to 5=None of the time. Part of the SF-12 algorithm (see sf12_physical and sf12_mental).",
+        "item_coding": {
+          "kdqol36_12": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "kdqol36_health1": "Excellent",
+      "kdqol36_health2": "Very good",
+      "kdqol36_health3": "Good",
+      "kdqol36_health4": "Fair",
+      "kdqol36_health5": "Poor",
+      "kdqol36_pf1": "Yes, limited a lot",
+      "kdqol36_pf2": "Yes, limited a little",
+      "kdqol36_pf3": "No, not limited at all",
+      "kdqol36_yn1": "Yes",
+      "kdqol36_yn2": "No",
+      "kdqol36_sf1": "Not at all",
+      "kdqol36_sf2": "Slightly",
+      "kdqol36_sf3": "Moderately",
+      "kdqol36_sf4": "Quite a bit",
+      "kdqol36_sf5": "Extremely",
+      "kdqol36_freq1": "All of the time",
+      "kdqol36_freq2": "Most of the time",
+      "kdqol36_freq3": "A good bit of the time",
+      "kdqol36_freq4": "Some of the time",
+      "kdqol36_freq5": "A little of the time",
+      "kdqol36_freq6": "None of the time",
+      "kdqol36_effect1": "Not at all",
+      "kdqol36_effect2": "Somewhat",
+      "kdqol36_effect3": "Moderately",
+      "kdqol36_effect4": "Very much",
+      "kdqol36_effect5": "Extremely",
+      "kdqol36_1": "In general, would you say your health is:",
+      "kdqol36_sf12_pf_head": "<b>The following items are about activities you might do during a typical day. <u>Does your health now limit</u> you in these activities? If so, how much?</b>",
+      "kdqol36_2": "<u>Moderate activities</u>, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf",
+      "kdqol36_3": "Climbing <u>several</u> flights of stairs",
+      "kdqol36_rp_head": "<b>During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of your physical health?</b>",
+      "kdqol36_4": "<u>Accomplished less</u> than you would like",
+      "kdqol36_5": "Were limited in the <u>kind</u> of work or other activities",
+      "kdqol36_re_head": "<b>During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of any emotional problems (such as feeling depressed or anxious)?</b>",
+      "kdqol36_6": "<u>Accomplished less</u> than you would like",
+      "kdqol36_7": "Didn't do work or other activities as <u>carefully</u> as usual",
+      "kdqol36_8": "<b>During the <u>past 4 weeks</u>, how much did <u>pain</u> interfere with your normal work (including both work outside the home and housework)?",
+      "kdqol36_mh_head": "<b>These questions are about how you feel and how things have been with you <u>during the past 4 weeks</u>. For each question, please give the one answer that comes closest to the way you have been feeling. How much of the time <u>during the past 4 weeks…</u></b>",
+      "kdqol36_9": "Have you felt calm and peaceful?",
+      "kdqol36_10": "Did you have a lot of energy?",
+      "kdqol36_11": "Have you felt downhearted and blue?",
+      "kdqol36_12": "<b>During the <u>past 4 weeks</u>, how much of the time has your <u>physical health or emotional problems</u> interfered with your social activities (like visiting with friends, relatives, etc.)?</b>",
+      "kdqol36_burden_head": "<b>Your Kidney Disease</b><br>How true or false is each of the following statements for you?",
+      "kdqol36_13": "Kidney disease interferes too much with my life.",
+      "kdqol36_14": "Too much of my time is spent dealing with kidney disease.",
+      "kdqol36_15": "I feel frustrated dealing with my kidney disease.",
+      "kdqol36_16": "I feel like a burned on my family.",
+      "kdqol36_symp_head": "<b>During the past 4 weeks, to what extent were you bothered by each of the following?</b>",
+      "kdqol36_17": "Soreness in your muscles?",
+      "kdqol36_18": "Chest pain?",
+      "kdqol36_19": "Cramps?",
+      "kdqol36_20": "Itchy skin?",
+      "kdqol36_21": "Dry skin",
+      "kdqol36_22": "Shortness of breath?",
+      "kdqol36_23": "Faintness or dizziness?",
+      "kdqol36_24": "Lack of appetite?",
+      "kdqol36_25": "Washed out or drained?",
+      "kdqol36_26": "Numbness in hands or feet?",
+      "kdqol36_27": "Nausea or upset stomach?",
+      "kdqol36_28": "Headaches",
+      "kdqol36_28a": "(Hemodialysis patient only) Problems with your access site?",
+      "kdqol36_28b": "(Peritoneal dialysis patient only) Problems with your catheter site?",
+      "kdqol36_eff_head": "<b>Effects of Kidney Disease on Your Daily Life</b><br>Some people are bothered by the effects of kidney disease on their daily life, while others are not. How much does kidney disease <u>bother</u> you in each of the following areas?",
+      "kdqol36_29": "Fluid restriction?",
+      "kdqol36_30": "Dietary restriction?",
+      "kdqol36_31": "Your ability to work around the house?",
+      "kdqol36_32": "Your ability to travel?",
+      "kdqol36_33": "Being dependent on doctors and other medical staff?",
+      "kdqol36_34": "Stress or worries caused by your kidney disease?",
+      "kdqol36_35": "Your sex life?",
+      "kdqol36_36": "Your personal appearance?",
+      "debrief": "Thank you for completing these questions!",
+      "kdqol36_sf_time1": "All of the time",
+      "kdqol36_sf_time2": "Most of the time",
+      "kdqol36_sf_time3": "Some of the time",
+      "kdqol36_sf_time4": "A little of the time",
+      "kdqol36_sf_time5": "None of the time",
+      "kdqol36_truefalse1": "Definitely true",
+      "kdqol36_truefalse2": "Mostly true",
+      "kdqol36_truefalse3": "Don't know",
+      "kdqol36_truefalse4": "Mostly false",
+      "kdqol36_truefalse5": "Definitely false"
+    }
+  }
+}

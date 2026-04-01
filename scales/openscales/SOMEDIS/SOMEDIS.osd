@@ -1,0 +1,251 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Social Media Use Disorder Scale for Adolescents",
+      "code": "SOMEDIS",
+      "abbreviation": "SOMEDIS-A",
+      "description": "10-item ICD-11-based self-report scale assessing social media use disorder in adolescents aged 10–17 years, adapted from the Gaming Disorder Scale for Adolescents (GADIS-A). Two factors: Cognitive Behavioral Symptoms (items 1,2,4,5; cutoff >8) and Negative Consequences (items 3,6,7,8,9; cutoff >6). Item 10 is a time criterion. Disorder is indicated when both factor cutoffs are reached and the time criterion is met.",
+      "citation": "Paschke, K., Austermann, M. I., Simon-Kutscher, K., & Thomasius, R. (2021). ICD-11-Based Assessment of Social Media Use Disorder in Adolescents: Development and Validation of the Social Media Use Disorder Scale for Adolescents. Frontiers in Psychiatry, 12, 661483.",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyt.2021.661483",
+      "domain": "Technology"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 0,
+      "max": 4,
+      "labels": [
+        "likert_0",
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "cognitive_behavioral",
+        "name": "Cognitive Behavioral Symptoms",
+        "description": "Items 1, 2, 4, 5 (sum 0–16, cutoff >8)."
+      },
+      {
+        "id": "negative_consequences",
+        "name": "Negative Consequences",
+        "description": "Items 3, 6, 7, 8, 9 (sum 0–20, cutoff >6)."
+      },
+      {
+        "id": "time_criterion",
+        "name": "Time Criterion",
+        "description": "Item 10. Criterion met if response is 'during longer periods' or 'almost daily' (value ≥2)."
+      }
+    ],
+    "items": [
+      {
+        "id": "inst",
+        "text_key": "inst",
+        "type": "inst"
+      },
+      {
+        "id": "somedis1",
+        "text_key": "somedis1",
+        "type": "likert",
+        "dimension": "cognitive_behavioral"
+      },
+      {
+        "id": "somedis2",
+        "text_key": "somedis2",
+        "type": "likert",
+        "dimension": "cognitive_behavioral"
+      },
+      {
+        "id": "somedis3",
+        "text_key": "somedis3",
+        "type": "likert",
+        "dimension": "negative_consequences"
+      },
+      {
+        "id": "somedis4",
+        "text_key": "somedis4",
+        "type": "likert",
+        "dimension": "cognitive_behavioral"
+      },
+      {
+        "id": "somedis5",
+        "text_key": "somedis5",
+        "type": "likert",
+        "dimension": "cognitive_behavioral"
+      },
+      {
+        "id": "somedis6",
+        "text_key": "somedis6",
+        "type": "likert",
+        "dimension": "negative_consequences"
+      },
+      {
+        "id": "somedis7",
+        "text_key": "somedis7",
+        "type": "likert",
+        "dimension": "negative_consequences"
+      },
+      {
+        "id": "somedis8",
+        "text_key": "somedis8",
+        "type": "likert",
+        "dimension": "negative_consequences"
+      },
+      {
+        "id": "somedis9",
+        "text_key": "somedis9",
+        "type": "likert",
+        "dimension": "negative_consequences"
+      },
+      {
+        "id": "somedis10",
+        "text_key": "somedis10",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "freq_never",
+            "value": 0
+          },
+          {
+            "text_key": "freq_rarely",
+            "value": 1
+          },
+          {
+            "text_key": "freq_periods",
+            "value": 2
+          },
+          {
+            "text_key": "freq_daily",
+            "value": 3
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "cognitive_behavioral": {
+        "method": "sum_coded",
+        "items": [
+          "somedis1",
+          "somedis2",
+          "somedis4",
+          "somedis5"
+        ],
+        "description": "Cognitive Behavioral Symptoms (items 1, 2, 4, 5; range 0–16). Cutoff >8.",
+        "item_coding": {
+          "somedis1": 1,
+          "somedis2": 1,
+          "somedis4": 1,
+          "somedis5": 1
+        },
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 8,
+              "label": "Below cutoff"
+            },
+            {
+              "min": 9,
+              "max": 16,
+              "label": "Above cutoff"
+            }
+          ]
+        }
+      },
+      "negative_consequences": {
+        "method": "sum_coded",
+        "items": [
+          "somedis3",
+          "somedis6",
+          "somedis7",
+          "somedis8",
+          "somedis9"
+        ],
+        "description": "Negative Consequences (items 3, 6, 7, 8, 9; range 0–20). Cutoff >6.",
+        "item_coding": {
+          "somedis3": 1,
+          "somedis6": 1,
+          "somedis7": 1,
+          "somedis8": 1,
+          "somedis9": 1
+        },
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 6,
+              "label": "Below cutoff"
+            },
+            {
+              "min": 7,
+              "max": 20,
+              "label": "Above cutoff"
+            }
+          ]
+        }
+      },
+      "time_criterion": {
+        "method": "sum_coded",
+        "items": [
+          "somedis10"
+        ],
+        "description": "Time criterion (item 10; range 0–3). Criterion met if value ≥2 (during longer periods or almost daily).",
+        "item_coding": {
+          "somedis10": 1
+        },
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 1,
+              "label": "Criterion not met"
+            },
+            {
+              "min": 2,
+              "max": 3,
+              "label": "Criterion met"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_0": "Strongly disagree",
+      "likert_1": "Disagree",
+      "likert_2": "Partially agree / partially disagree",
+      "likert_3": "Agree",
+      "likert_4": "Strongly agree",
+      "question_head": "Thinking of the last 12 months, how strongly do you agree with the following statements?",
+      "inst": "The following questions ask about your use of social media (e.g., Instagram, TikTok, YouTube — digital services on which texts, photos, animations, or videos can be shared, commented on, or liked). Please indicate how strongly you agree with each statement, thinking of the last 12 months.",
+      "somedis1": "I often use social media more frequently and longer than I planned to or agreed upon with my parents.",
+      "somedis2": "I often cannot stop using social media even though it would be sensible to do so or for example my parents have told me to stop.",
+      "somedis3": "I often do not pursue interests outside the digital world (e.g., meeting friends or partner in real life, attending sports club/societies, reading books, making music) because I prefer using social media.",
+      "somedis4": "I neglect daily duties (e.g., grocery shopping, cleaning, tidying up after myself, tidying my room, obligations for school/apprenticeship/job) because I prefer using social media.",
+      "somedis5": "I often continue using social media even though it causes me stress with others (e.g., my parents, siblings, friends, partner, teachers).",
+      "somedis6": "I continue using social media although it harms my performance at school/apprenticeship/job (e.g., by being late, not participating in class, neglecting homework, worse grades).",
+      "somedis7": "Due to my social media use, I neglect my appearance, my personal hygiene, and/or my health (e.g., sleep, nutrition, exercise).",
+      "somedis8": "Due to my social media use, I risk losing important relationships (friends, family, partner) or have lost them already.",
+      "somedis9": "Due to my social media use, I have disadvantages at school/apprenticeship/job (e.g., bad (final) grades, inability to continue to the next grade/no graduation, no apprenticeship or university spot, poor reference, warning/dismissal).",
+      "somedis10": "How often did you experience such problems, conflicts, or difficulties due to your social media use during the past year? Did this only occur on single days, during longer periods of several days to weeks or months, or was it almost daily?",
+      "freq_never": "Not at all",
+      "freq_rarely": "Only on single days",
+      "freq_periods": "During longer periods",
+      "freq_daily": "Almost daily",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

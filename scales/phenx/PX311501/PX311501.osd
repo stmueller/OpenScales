@@ -1,0 +1,335 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Sharing Genomic Information with Relatives",
+      "code": "PX311501",
+      "abbreviation": "PX311501",
+      "description": "This series of questions can be used to determine who the individual shared his or her genetic tests results with, if anyone, and why it was important to share the results.",
+      "domain": "Genomics & Genetics",
+      "citation": "Manuscripts are in progress. [PhenX: https://www.phenxtoolkit.org/protocols/view/311501]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/311501"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "genetic_test_result",
+        "text_key": "genetic_test_result",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "genetic_test_result_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "genetic_test_result_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "genetic_test_result_diagnosis",
+        "text_key": "genetic_test_result_diagnosis",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "genetic_test_result_diagnosis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "genetic_test_result_diagnosis_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "genetic_test_result_shared_biological_family",
+        "text_key": "genetic_test_result_shared_biological_family",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "genetic_test_result_shared_biological_family_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "genetic_test_result_shared_biological_family_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "genetic_test_result_shared_biological_family_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "genetic_test_result_shared_other_biological_parent",
+        "text_key": "genetic_test_result_shared_other_biological_parent",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result_shared_biological_family",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "genetic_test_result_shared_other_biological_parent_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "genetic_test_result_shared_other_biological_parent_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "genetic_test_result_shared_other_biological_parent_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "genetic_test_result_shared_children",
+        "text_key": "genetic_test_result_shared_children",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result_shared_biological_family",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "genetic_test_result_shared_children_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "genetic_test_result_shared_children_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "genetic_test_result_shared_children_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "genetic_test_result_shared_sibling",
+        "text_key": "genetic_test_result_shared_sibling",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result_shared_biological_family",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "genetic_test_result_shared_sibling_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "genetic_test_result_shared_sibling_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "genetic_test_result_shared_sibling_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "genetic_test_result_shared_parent",
+        "text_key": "genetic_test_result_shared_parent",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result_shared_biological_family",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "genetic_test_result_shared_parent_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "genetic_test_result_shared_parent_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "genetic_test_result_shared_parent_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "genetic_test_result_shared_other_biological_family",
+        "text_key": "genetic_test_result_shared_other_biological_family",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result_shared_biological_family",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "genetic_test_result_shared_other_biological_family_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "genetic_test_result_shared_other_biological_family_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "genetic_test_result_shared_other_biological_family_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "genetic_test_result_shared_other_biological_family_detail",
+        "text_key": "genetic_test_result_shared_other_biological_family_detail",
+        "type": "short",
+        "visible_when": {
+          "item": "genetic_test_result_shared_other_biological_family",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "genetic_test_result_share_decision",
+        "text_key": "genetic_test_result_share_decision",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "genetic_test_result_shared_biological_family",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "genetic_test_result_share_decision_opt_a",
+            "value": "a"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_b",
+            "value": "b"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_c",
+            "value": "c"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_d",
+            "value": "d"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_e",
+            "value": "e"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_f",
+            "value": "f"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_g",
+            "value": "g"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_h",
+            "value": "h"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_i",
+            "value": "i"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_j",
+            "value": "j"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_k",
+            "value": "k"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_l",
+            "value": "l"
+          }
+        ]
+      },
+      {
+        "id": "genetic_test_result_share_decision_specify",
+        "text_key": "genetic_test_result_share_decision_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "genetic_test_result_share_decision",
+          "operator": "in",
+          "value": [
+            "l"
+          ]
+        }
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "genetic_test_result": "Did you receive a genetic test result for yourself or your child?",
+      "genetic_test_result_opt_1": "Yes",
+      "genetic_test_result_opt_2": "No",
+      "genetic_test_result_diagnosis": "If so, did the result provide a genetic diagnosis (was there a positive genetic test result)?",
+      "genetic_test_result_diagnosis_opt_1": "Yes",
+      "genetic_test_result_diagnosis_opt_2": "No",
+      "genetic_test_result_shared_biological_family": "Since receiving your/your child's study results, have you shared the information with any biological family members (blood relatives)?",
+      "genetic_test_result_shared_biological_family_opt_1": "Yes",
+      "genetic_test_result_shared_biological_family_opt_2": "I didn't share this information with anyone",
+      "genetic_test_result_shared_biological_family_opt_3": "I haven't shared this information yet, but plan to in the future",
+      "genetic_test_result_shared_other_biological_parent": "Since receiving your/your child's study results, have you shared the information with any of the following blood relatives? My child's other biological parent",
+      "genetic_test_result_shared_other_biological_parent_opt_1": "Yes",
+      "genetic_test_result_shared_other_biological_parent_opt_2": "No",
+      "genetic_test_result_shared_other_biological_parent_opt_3": "N/A",
+      "genetic_test_result_shared_children": "Since receiving your/your child's study results, have you shared the information with any of the following blood relatives? My child(ren)",
+      "genetic_test_result_shared_children_opt_1": "Yes",
+      "genetic_test_result_shared_children_opt_2": "No",
+      "genetic_test_result_shared_children_opt_3": "N/A",
+      "genetic_test_result_shared_sibling": "Since receiving your/your child's study results, have you shared the information with any of the following blood relatives? My siblings",
+      "genetic_test_result_shared_sibling_opt_1": "Yes",
+      "genetic_test_result_shared_sibling_opt_2": "No",
+      "genetic_test_result_shared_sibling_opt_3": "N/A",
+      "genetic_test_result_shared_parent": "Since receiving your/your child's study results, have you shared the information with any of the following blood relatives? My parents",
+      "genetic_test_result_shared_parent_opt_1": "Yes",
+      "genetic_test_result_shared_parent_opt_2": "No",
+      "genetic_test_result_shared_parent_opt_3": "N/A",
+      "genetic_test_result_shared_other_biological_family": "Since receiving your/your child's study results, have you shared the information with any of the following blood relatives? My other biological family members",
+      "genetic_test_result_shared_other_biological_family_opt_1": "Yes",
+      "genetic_test_result_shared_other_biological_family_opt_2": "No",
+      "genetic_test_result_shared_other_biological_family_opt_3": "N/A",
+      "genetic_test_result_shared_other_biological_family_detail": "Please specify:",
+      "genetic_test_result_share_decision": "Thinking about the family members you DID share your genetic test result with, which of the following were important to your decision to share? Check all that apply.",
+      "genetic_test_result_share_decision_opt_a": "I felt obligated to share my genetic test result",
+      "genetic_test_result_share_decision_opt_b": "I was encouraged by my health care provider",
+      "genetic_test_result_share_decision_opt_c": "I made an agreement to tell them before receiving my genetic test result",
+      "genetic_test_result_share_decision_opt_d": "I was encouraged by other family members to share the information",
+      "genetic_test_result_share_decision_opt_e": "I felt the information could help my family members in making medical decisions",
+      "genetic_test_result_share_decision_opt_f": "I was asked about my genetic test result by a family member",
+      "genetic_test_result_share_decision_opt_g": "I wanted to know if a family member had symptoms related to my genetic test result",
+      "genetic_test_result_share_decision_opt_h": "I needed emotional support from my family member",
+      "genetic_test_result_share_decision_opt_i": "I needed advice from my family member in making medical decisions",
+      "genetic_test_result_share_decision_opt_j": "I wanted to provide my family member information about their risk",
+      "genetic_test_result_share_decision_opt_k": "I wanted to encourage them to get tested",
+      "genetic_test_result_share_decision_opt_l": "Other",
+      "genetic_test_result_share_decision_specify": "If Other, specify:"
+    }
+  }
+}

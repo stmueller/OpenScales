@@ -1,0 +1,1021 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "MOS 36-Item Short Form Health Survey (RAND-36)",
+      "code": "MOS-SF-36",
+      "abbreviation": "MOS-SF-36",
+      "description": "36-item health survey measuring 8 dimensions of health. Items use multiple response formats; standard RAND 0–100 subscale scoring requires post-hoc recoding in R/Python. The framework sum_coded scores are relative indicators only (higher = better health). See RAND SF-36 scoring manual for official 0–100 transformation.",
+      "citation": "Hays, R. D., Sherbourne, C. D., & Mazel, R. M. (1993). The RAND 36-Item Health Survey 1.0. Health Economics, 2(3), 217–227. https://doi.org/10.1002/hec.4730020305",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health/surveys_tools/mos/36-item-short-form.html",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. RAND explicitly states these instruments are available for use without permission or fee.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools/mos/36-item-short-form.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": [
+        "sf36_freq1",
+        "sf36_freq2",
+        "sf36_freq3",
+        "sf36_freq4",
+        "sf36_freq5",
+        "sf36_freq6"
+      ],
+      "question_head": "sf36_q9_head"
+    },
+    "dimensions": [
+      {
+        "id": "pf",
+        "name": "Physical Functioning",
+        "abbreviation": "PF",
+        "description": "Extent to which health limits physical activities. Range: 10–30 (higher = less limitation).",
+        "enabled_param": null
+      },
+      {
+        "id": "rp",
+        "name": "Role Limitations – Physical",
+        "abbreviation": "RP",
+        "description": "Extent to which physical health limits work/daily activities. Range: 0–4 (higher = fewer limitations).",
+        "enabled_param": null
+      },
+      {
+        "id": "re",
+        "name": "Role Limitations – Emotional",
+        "abbreviation": "RE",
+        "description": "Extent to which emotional problems limit work/daily activities. Range: 0–3 (higher = fewer limitations).",
+        "enabled_param": null
+      },
+      {
+        "id": "ef",
+        "name": "Energy/Fatigue",
+        "abbreviation": "EF",
+        "description": "Level of energy and fatigue (Vitality). Range: 4–24 (higher = more vitality).",
+        "enabled_param": null
+      },
+      {
+        "id": "ewb",
+        "name": "Emotional Well-Being",
+        "abbreviation": "EWB",
+        "description": "Extent of anxiety and depression. Range: 5–30 (higher = better mental health).",
+        "enabled_param": null
+      },
+      {
+        "id": "sf",
+        "name": "Social Functioning",
+        "abbreviation": "SF",
+        "description": "Extent to which health problems interfere with social activities. Range: 2–10 (higher = less interference).",
+        "enabled_param": null
+      },
+      {
+        "id": "pain",
+        "name": "Pain",
+        "abbreviation": "PAIN",
+        "description": "Intensity of pain and its interference with normal activities. Range: 2–11 (higher = less pain).",
+        "enabled_param": null
+      },
+      {
+        "id": "gh",
+        "name": "General Health",
+        "abbreviation": "GH",
+        "description": "Personal evaluation of health, including current health, health outlook, and resistance to illness. Range: 5–25 (higher = better perceived health).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "sf36_inst1",
+        "text_key": "sf36_inst1",
+        "type": "inst"
+      },
+      {
+        "id": "sf36_q1",
+        "text_key": "sf36_q1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_health1",
+            "value": 5
+          },
+          {
+            "text_key": "sf36_health2",
+            "value": 4
+          },
+          {
+            "text_key": "sf36_health3",
+            "value": 3
+          },
+          {
+            "text_key": "sf36_health4",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_health5",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf36_q2",
+        "text_key": "sf36_q2",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_change1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_change2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_change3",
+            "value": 3
+          },
+          {
+            "text_key": "sf36_change4",
+            "value": 4
+          },
+          {
+            "text_key": "sf36_change5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sf36_inst3",
+        "text_key": "sf36_inst3",
+        "type": "inst"
+      },
+      {
+        "id": "sf36_q3a",
+        "text_key": "sf36_q3a",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_pf3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf36_q3b",
+        "text_key": "sf36_q3b",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_pf3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf36_q3c",
+        "text_key": "sf36_q3c",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_pf3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf36_q3d",
+        "text_key": "sf36_q3d",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_pf3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf36_q3e",
+        "text_key": "sf36_q3e",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_pf3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf36_q3f",
+        "text_key": "sf36_q3f",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_pf3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf36_q3g",
+        "text_key": "sf36_q3g",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_pf3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf36_q3h",
+        "text_key": "sf36_q3h",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_pf3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf36_q3i",
+        "text_key": "sf36_q3i",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_pf3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf36_q3j",
+        "text_key": "sf36_q3j",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_pf3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf36_inst4",
+        "text_key": "sf36_inst4",
+        "type": "inst"
+      },
+      {
+        "id": "sf36_q4a",
+        "text_key": "sf36_q4a",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_yes",
+            "value": 0
+          },
+          {
+            "text_key": "sf36_no",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf36_q4b",
+        "text_key": "sf36_q4b",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_yes",
+            "value": 0
+          },
+          {
+            "text_key": "sf36_no",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf36_q4c",
+        "text_key": "sf36_q4c",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_yes",
+            "value": 0
+          },
+          {
+            "text_key": "sf36_no",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf36_q4d",
+        "text_key": "sf36_q4d",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_yes",
+            "value": 0
+          },
+          {
+            "text_key": "sf36_no",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf36_inst5",
+        "text_key": "sf36_inst5",
+        "type": "inst"
+      },
+      {
+        "id": "sf36_q5a",
+        "text_key": "sf36_q5a",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_yes",
+            "value": 0
+          },
+          {
+            "text_key": "sf36_no",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf36_q5b",
+        "text_key": "sf36_q5b",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_yes",
+            "value": 0
+          },
+          {
+            "text_key": "sf36_no",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf36_q5c",
+        "text_key": "sf36_q5c",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_yes",
+            "value": 0
+          },
+          {
+            "text_key": "sf36_no",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf36_q6",
+        "text_key": "sf36_q6",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_sf6_1",
+            "value": 5
+          },
+          {
+            "text_key": "sf36_sf6_2",
+            "value": 4
+          },
+          {
+            "text_key": "sf36_sf6_3",
+            "value": 3
+          },
+          {
+            "text_key": "sf36_sf6_4",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_sf6_5",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf36_q7",
+        "text_key": "sf36_q7",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_pain7_1",
+            "value": 6
+          },
+          {
+            "text_key": "sf36_pain7_2",
+            "value": 5
+          },
+          {
+            "text_key": "sf36_pain7_3",
+            "value": 4
+          },
+          {
+            "text_key": "sf36_pain7_4",
+            "value": 3
+          },
+          {
+            "text_key": "sf36_pain7_5",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_pain7_6",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf36_q8",
+        "text_key": "sf36_q8",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_pain8_1",
+            "value": 5
+          },
+          {
+            "text_key": "sf36_pain8_2",
+            "value": 4
+          },
+          {
+            "text_key": "sf36_pain8_3",
+            "value": 3
+          },
+          {
+            "text_key": "sf36_pain8_4",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_pain8_5",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf36_q9a",
+        "text_key": "sf36_q9a",
+        "type": "likert"
+      },
+      {
+        "id": "sf36_q9b",
+        "text_key": "sf36_q9b",
+        "type": "likert"
+      },
+      {
+        "id": "sf36_q9c",
+        "text_key": "sf36_q9c",
+        "type": "likert"
+      },
+      {
+        "id": "sf36_q9d",
+        "text_key": "sf36_q9d",
+        "type": "likert"
+      },
+      {
+        "id": "sf36_q9e",
+        "text_key": "sf36_q9e",
+        "type": "likert"
+      },
+      {
+        "id": "sf36_q9f",
+        "text_key": "sf36_q9f",
+        "type": "likert"
+      },
+      {
+        "id": "sf36_q9g",
+        "text_key": "sf36_q9g",
+        "type": "likert"
+      },
+      {
+        "id": "sf36_q9h",
+        "text_key": "sf36_q9h",
+        "type": "likert"
+      },
+      {
+        "id": "sf36_q9i",
+        "text_key": "sf36_q9i",
+        "type": "likert"
+      },
+      {
+        "id": "sf36_q10",
+        "text_key": "sf36_q10",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_time1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_time2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_time3",
+            "value": 3
+          },
+          {
+            "text_key": "sf36_time4",
+            "value": 4
+          },
+          {
+            "text_key": "sf36_time5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sf36_inst11",
+        "text_key": "sf36_inst11",
+        "type": "inst"
+      },
+      {
+        "id": "sf36_q11a",
+        "text_key": "sf36_q11a",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_hp1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_hp2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_hp3",
+            "value": 3
+          },
+          {
+            "text_key": "sf36_hp4",
+            "value": 4
+          },
+          {
+            "text_key": "sf36_hp5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sf36_q11b",
+        "text_key": "sf36_q11b",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_hp1",
+            "value": 5
+          },
+          {
+            "text_key": "sf36_hp2",
+            "value": 4
+          },
+          {
+            "text_key": "sf36_hp3",
+            "value": 3
+          },
+          {
+            "text_key": "sf36_hp4",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_hp5",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf36_q11c",
+        "text_key": "sf36_q11c",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_hp1",
+            "value": 1
+          },
+          {
+            "text_key": "sf36_hp2",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_hp3",
+            "value": 3
+          },
+          {
+            "text_key": "sf36_hp4",
+            "value": 4
+          },
+          {
+            "text_key": "sf36_hp5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sf36_q11d",
+        "text_key": "sf36_q11d",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sf36_hp1",
+            "value": 5
+          },
+          {
+            "text_key": "sf36_hp2",
+            "value": 4
+          },
+          {
+            "text_key": "sf36_hp3",
+            "value": 3
+          },
+          {
+            "text_key": "sf36_hp4",
+            "value": 2
+          },
+          {
+            "text_key": "sf36_hp5",
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "pf": {
+        "method": "sum_coded",
+        "items": [
+          "sf36_q3a",
+          "sf36_q3b",
+          "sf36_q3c",
+          "sf36_q3d",
+          "sf36_q3e",
+          "sf36_q3f",
+          "sf36_q3g",
+          "sf36_q3h",
+          "sf36_q3i",
+          "sf36_q3j"
+        ],
+        "description": "Sum of 10 physical functioning items (range 10–30; higher = less limited). For RAND 0–100 score: (sum - 10) / 20 * 100.",
+        "item_coding": {
+          "sf36_q3a": 1,
+          "sf36_q3b": 1,
+          "sf36_q3c": 1,
+          "sf36_q3d": 1,
+          "sf36_q3e": 1,
+          "sf36_q3f": 1,
+          "sf36_q3g": 1,
+          "sf36_q3h": 1,
+          "sf36_q3i": 1,
+          "sf36_q3j": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 10
+          },
+          {
+            "op": "divide",
+            "value": 20
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "rp": {
+        "method": "sum_coded",
+        "items": [
+          "sf36_q4a",
+          "sf36_q4b",
+          "sf36_q4c",
+          "sf36_q4d"
+        ],
+        "description": "Sum of 4 role-physical items (range 0–4; higher = fewer limitations). Values: Yes=0, No=1. For RAND 0–100: sum / 4 * 100.",
+        "item_coding": {
+          "sf36_q4a": 1,
+          "sf36_q4b": 1,
+          "sf36_q4c": 1,
+          "sf36_q4d": 1
+        },
+        "transform": [
+          {
+            "op": "divide",
+            "value": 4
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "re": {
+        "method": "sum_coded",
+        "items": [
+          "sf36_q5a",
+          "sf36_q5b",
+          "sf36_q5c"
+        ],
+        "description": "Sum of 3 role-emotional items (range 0–3; higher = fewer limitations). Values: Yes=0, No=1. For RAND 0–100: sum / 3 * 100.",
+        "item_coding": {
+          "sf36_q5a": 1,
+          "sf36_q5b": 1,
+          "sf36_q5c": 1
+        },
+        "transform": [
+          {
+            "op": "divide",
+            "value": 3
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "ef": {
+        "method": "sum_coded",
+        "items": [
+          "sf36_q9a",
+          "sf36_q9e",
+          "sf36_q9g",
+          "sf36_q9i"
+        ],
+        "description": "Energy/Fatigue (Vitality): sum of 4 items (range 4–24; higher = more energy). Positive items (pep, energy) use -1 coding; negative items (worn out, tired) use +1. For RAND 0–100: requires item-by-item recoding per RAND manual.",
+        "item_coding": {
+          "sf36_q9a": -1,
+          "sf36_q9e": -1,
+          "sf36_q9g": 1,
+          "sf36_q9i": 1
+        }
+      },
+      "ewb": {
+        "method": "sum_coded",
+        "items": [
+          "sf36_q9b",
+          "sf36_q9c",
+          "sf36_q9d",
+          "sf36_q9f",
+          "sf36_q9h"
+        ],
+        "description": "Emotional Well-Being (Mental Health): sum of 5 items (range 5–30; higher = better mental health). Negative symptoms (nervous, blue) use +1; positive states (calm, happy) use -1. For RAND 0–100: requires item-by-item recoding per RAND manual.",
+        "item_coding": {
+          "sf36_q9b": 1,
+          "sf36_q9c": 1,
+          "sf36_q9d": -1,
+          "sf36_q9f": 1,
+          "sf36_q9h": -1
+        }
+      },
+      "sf": {
+        "method": "sum_coded",
+        "items": [
+          "sf36_q6",
+          "sf36_q10"
+        ],
+        "description": "Social Functioning: sum of 2 items (range 2–10; higher = less interference). Option values pre-reversed so +1 coding applies to both. For RAND 0–100: requires item-by-item recoding per RAND manual.",
+        "item_coding": {
+          "sf36_q6": 1,
+          "sf36_q10": 1
+        }
+      },
+      "pain": {
+        "method": "sum_coded",
+        "items": [
+          "sf36_q7",
+          "sf36_q8"
+        ],
+        "description": "Bodily Pain: sum of 2 items (range 2–11; higher = less pain). Option values pre-reversed so +1 coding applies to both. For RAND 0–100: requires item-by-item recoding per RAND manual.",
+        "item_coding": {
+          "sf36_q7": 1,
+          "sf36_q8": 1
+        }
+      },
+      "gh": {
+        "method": "sum_coded",
+        "items": [
+          "sf36_q1",
+          "sf36_q11a",
+          "sf36_q11b",
+          "sf36_q11c",
+          "sf36_q11d"
+        ],
+        "description": "General Health: sum of 5 items (range 5–25; higher = better perceived health). Option values pre-reversed where needed so +1 coding applies to all. For RAND 0–100: requires item-by-item recoding per RAND manual.",
+        "item_coding": {
+          "sf36_q1": 1,
+          "sf36_q11a": 1,
+          "sf36_q11b": 1,
+          "sf36_q11c": 1,
+          "sf36_q11d": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "The RAND 36-Item Health Survey (SF-36) measures eight dimensions of health. Scores shown are sum-coded relative scores (higher = better health). Official RAND 0–100 scores require post-hoc recoding — see the RAND SF-36 scoring manual.",
+      "footer_refs": [
+        "Hays, R. D., Sherbourne, C. D., & Mazel, R. M. (1993). The RAND 36-Item Health Survey 1.0. Health Economics, 2(3), 217–227.",
+        "RAND SF-36 scoring manual: https://www.rand.org/health/surveys_tools/mos/36-item-short-form.html"
+      ]
+    },
+    "data_output": {
+      "individual_file": "SF36-{subnum}.csv",
+      "pooled_file": "SF36-pooled.csv",
+      "report_file": "SF36-report-{subnum}.html",
+      "columns": "subnum,order,timestamp,question_id,text_key,dimension,coding,response,rt",
+      "pooled_columns": ""
+    }
+  },
+  "translations": {
+    "en": {
+      "sf36_inst1": "This survey asks for your views about your health. This information will help track how you feel and how well you are able to do your usual activities. Answer every question by selecting the answer that best describes you. If you are unsure about how to answer a question, please give the best answer you can.",
+      "sf36_q1": "In general, would you say your health is:",
+      "sf36_health1": "Excellent",
+      "sf36_health2": "Very good",
+      "sf36_health3": "Good",
+      "sf36_health4": "Fair",
+      "sf36_health5": "Poor",
+      "sf36_q2": "Compared to one year ago, how would you rate your health in general now?",
+      "sf36_change1": "Much better now than one year ago",
+      "sf36_change2": "Somewhat better now than one year ago",
+      "sf36_change3": "About the same as one year ago",
+      "sf36_change4": "Somewhat worse now than one year ago",
+      "sf36_change5": "Much worse now than one year ago",
+      "sf36_inst3": "The following questions are about activities you might do during a typical day. Does your health now limit you in these activities? If so, how much?",
+      "sf36_pf1": "Yes, limited a lot",
+      "sf36_pf2": "Yes, limited a little",
+      "sf36_pf3": "No, not limited at all",
+      "sf36_q3a": "<b>Vigorous activities</b>, such as running, lifting heavy objects, participating in strenuous sports",
+      "sf36_q3b": "<b>Moderate activities</b>, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf",
+      "sf36_q3c": "Lifting or carrying <b>groceries</b>",
+      "sf36_q3d": "Climbing <b>several</b> flights of stairs",
+      "sf36_q3e": "Climbing <b>one</b> flight of stairs",
+      "sf36_q3f": "Bending, kneeling, or stooping",
+      "sf36_q3g": "Walking <b>more than a mile</b>",
+      "sf36_q3h": "Walking <b>several blocks</b>",
+      "sf36_q3i": "Walking <b>one block</b>",
+      "sf36_q3j": "Bathing or dressing yourself",
+      "sf36_inst4": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities <b>as a result of your physical health</b>?",
+      "sf36_yes": "Yes",
+      "sf36_no": "No",
+      "sf36_q4a": "Cut down the <b>amount of time</b> you spent on work or other activities",
+      "sf36_q4b": "<b>Accomplished less</b> than you would like",
+      "sf36_q4c": "Were limited in the <b>kind</b> of work or other activities",
+      "sf36_q4d": "Had <b>difficulty</b> performing the work or other activities (for example, it took extra effort)",
+      "sf36_inst5": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities <b>as a result of any emotional problems</b> (such as feeling depressed or anxious)?",
+      "sf36_q5a": "Cut down the <b>amount of time</b> you spent on work or other activities",
+      "sf36_q5b": "<b>Accomplished less</b> than you would like",
+      "sf36_q5c": "Didn't do work or other activities as <b>carefully</b> as usual",
+      "sf36_q6": "During the <b>past 4 weeks</b>, to what extent has your <b>physical health or emotional problems</b> interfered with your normal social activities with family, friends, neighbors, or groups?",
+      "sf36_sf6_1": "Not at all",
+      "sf36_sf6_2": "Slightly",
+      "sf36_sf6_3": "Moderately",
+      "sf36_sf6_4": "Quite a bit",
+      "sf36_sf6_5": "Extremely",
+      "sf36_q7": "How much <b>bodily</b> pain have you had during the <b>last 4 weeks</b>?",
+      "sf36_pain7_1": "None",
+      "sf36_pain7_2": "Very mild",
+      "sf36_pain7_3": "Mild",
+      "sf36_pain7_4": "Moderate",
+      "sf36_pain7_5": "Severe",
+      "sf36_pain7_6": "Very severe",
+      "sf36_q8": "During the <b>past 4 weeks</b>, how much did <b>pain</b> interfere with your normal work (including both work outside the home and housework)?",
+      "sf36_pain8_1": "Not at all",
+      "sf36_pain8_2": "A little bit",
+      "sf36_pain8_3": "Moderately",
+      "sf36_pain8_4": "Quite a bit",
+      "sf36_pain8_5": "Extremely",
+      "sf36_q9_head": "How much of the time during the <b>past 4 weeks</b>...",
+      "sf36_freq1": "All of the time",
+      "sf36_freq2": "Most of the time",
+      "sf36_freq3": "A good bit of the time",
+      "sf36_freq4": "Some of the time",
+      "sf36_freq5": "A little of the time",
+      "sf36_freq6": "None of the time",
+      "sf36_q9a": "...did you feel <b>full of pep</b>?",
+      "sf36_q9b": "...have you been a <b>very nervous person</b>?",
+      "sf36_q9c": "...have you felt so <b>down in the dumps</b> that nothing could cheer you up?",
+      "sf36_q9d": "...have you felt <b>calm and peaceful</b>?",
+      "sf36_q9e": "...did you have <b>a lot of energy</b>?",
+      "sf36_q9f": "...have you felt <b>downhearted and blue</b>?",
+      "sf36_q9g": "...did you feel <b>worn out</b>?",
+      "sf36_q9h": "...have you been a <b>happy person</b>?",
+      "sf36_q9i": "...did you feel <b>tired</b>?",
+      "sf36_q10": "During the <b>past 4 weeks</b>, how much of the time has your <b>physical health or emotional problems</b> interfered with your social activities (like visiting with friends, relatives, etc.)?",
+      "sf36_time1": "All of the time",
+      "sf36_time2": "Most of the time",
+      "sf36_time3": "Some of the time",
+      "sf36_time4": "A little of the time",
+      "sf36_time5": "None of the time",
+      "sf36_inst11": "How TRUE or FALSE is <b>each</b> of the following statements for you?",
+      "sf36_hp1": "Definitely true",
+      "sf36_hp2": "Mostly true",
+      "sf36_hp3": "Don't know",
+      "sf36_hp4": "Mostly false",
+      "sf36_hp5": "Definitely false",
+      "sf36_q11a": "I seem to get <b>sick a little easier</b> than other people",
+      "sf36_q11b": "I am <b>as healthy as anybody</b> I know",
+      "sf36_q11c": "I expect my health to <b>get worse</b>",
+      "sf36_q11d": "My health is <b>excellent</b>",
+      "debrief": "Thank you for completing this survey."
+    }
+  }
+}

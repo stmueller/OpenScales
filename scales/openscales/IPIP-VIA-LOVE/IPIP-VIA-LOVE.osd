@@ -1,0 +1,164 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Capacity for Love",
+      "code": "IPIP-VIA-LOVE",
+      "abbreviation": "IPIP-VIA-LOVE",
+      "description": "IPIP representation of the VIA character strength 'Capacity for Love'. 9-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "capacity_for_love",
+        "name": "Capacity for Love",
+        "abbreviation": "LOVE",
+        "description": "IPIP VIA Capacity for Love subscale (9 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_187",
+        "text_key": "ipip_via_187",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_188",
+        "text_key": "ipip_via_188",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_189",
+        "text_key": "ipip_via_189",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_190",
+        "text_key": "ipip_via_190",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_191",
+        "text_key": "ipip_via_191",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_192",
+        "text_key": "ipip_via_192",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_193",
+        "text_key": "ipip_via_193",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_194",
+        "text_key": "ipip_via_194",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_195",
+        "text_key": "ipip_via_195",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "capacity_for_love": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_187",
+          "ipip_via_188",
+          "ipip_via_189",
+          "ipip_via_190",
+          "ipip_via_191",
+          "ipip_via_192",
+          "ipip_via_193",
+          "ipip_via_194",
+          "ipip_via_195"
+        ],
+        "description": "Mean of 9 items (range 1–5; higher = stronger Capacity for Love). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_187": 1,
+          "ipip_via_188": 1,
+          "ipip_via_189": 1,
+          "ipip_via_190": -1,
+          "ipip_via_191": -1,
+          "ipip_via_192": -1,
+          "ipip_via_193": 1,
+          "ipip_via_194": 1,
+          "ipip_via_195": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_187": "Am the most important person in someone else's life.",
+      "ipip_via_188": "Am willing to take risks to establish a relationship.",
+      "ipip_via_189": "Can express love to someone else.",
+      "ipip_via_190": "Do not easily share my feelings with others.",
+      "ipip_via_191": "Feel isolated from other people.",
+      "ipip_via_192": "Have difficulty accepting love from anyone.",
+      "ipip_via_193": "Know someone whom I really care about as a person.",
+      "ipip_via_194": "Know that some others accept my shortcomings.",
+      "ipip_via_195": "Know that there are people in my life who care as much for me as for themselves."
+    }
+  }
+}

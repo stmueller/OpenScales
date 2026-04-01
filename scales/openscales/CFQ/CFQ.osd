@@ -1,0 +1,135 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Cognitive Fusion Questionnaire",
+      "code": "CFQ",
+      "abbreviation": "CFQ-7",
+      "description": "7-item self-report measure of cognitive fusion — the degree to which thoughts dominate and regulate behavior. Items use a 7-point scale (1=Never to 7=Always). A single total score is computed as the sum of all 7 items (range 7–49); higher scores indicate greater cognitive fusion.",
+      "citation": "Gillanders, D. T., Bolderston, H., Bond, F. W., Dempster, M., Flaxman, P. E., Campbell, L., Kerr, S., Tansey, L., Noel, P., Ferenbach, C., Masley, S., Roach, L., Lloyd, J., May, L., Clarke, S., & Remington, B. (2014). The development and initial validation of the Cognitive Fusion Questionnaire. Behavior Therapy, 45(1), 83–101. https://doi.org/10.1016/j.beth.2013.09.001",
+      "license": "free for research/clinical",
+      "version": "1.0",
+      "url": "https://contextualscience.org/cfq",
+      "domain": "Well-Being",
+      "license_explanation": "Free for research and clinical use (Association for Contextual Behavioral Science, ACBS)."
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": [
+        "cfq_r1",
+        "cfq_r2",
+        "cfq_r3",
+        "cfq_r4",
+        "cfq_r5",
+        "cfq_r6",
+        "cfq_r7"
+      ],
+      "question_head": "cfq_inst"
+    },
+    "dimensions": [
+      {
+        "id": "fusion",
+        "name": "Cognitive Fusion",
+        "abbreviation": "CF",
+        "description": "Sum of all 7 items (range 7–49). Higher scores indicate greater cognitive fusion — thoughts more dominantly regulate behavior."
+      }
+    ],
+    "items": [
+      {
+        "id": "cfq1",
+        "text_key": "cfq1",
+        "type": "likert",
+        "dimension": "fusion"
+      },
+      {
+        "id": "cfq2",
+        "text_key": "cfq2",
+        "type": "likert",
+        "dimension": "fusion"
+      },
+      {
+        "id": "cfq3",
+        "text_key": "cfq3",
+        "type": "likert",
+        "dimension": "fusion"
+      },
+      {
+        "id": "cfq4",
+        "text_key": "cfq4",
+        "type": "likert",
+        "dimension": "fusion"
+      },
+      {
+        "id": "cfq5",
+        "text_key": "cfq5",
+        "type": "likert",
+        "dimension": "fusion"
+      },
+      {
+        "id": "cfq6",
+        "text_key": "cfq6",
+        "type": "likert",
+        "dimension": "fusion"
+      },
+      {
+        "id": "cfq7",
+        "text_key": "cfq7",
+        "type": "likert",
+        "dimension": "fusion"
+      }
+    ],
+    "scoring": {
+      "fusion": {
+        "method": "sum_coded",
+        "items": [
+          "cfq1",
+          "cfq2",
+          "cfq3",
+          "cfq4",
+          "cfq5",
+          "cfq6",
+          "cfq7"
+        ],
+        "description": "Sum of all 7 items (range 7–49). Higher scores indicate greater cognitive fusion.",
+        "item_coding": {
+          "cfq1": 1,
+          "cfq2": 1,
+          "cfq3": 1,
+          "cfq4": 1,
+          "cfq5": 1,
+          "cfq6": 1,
+          "cfq7": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "cfq_r1": "Never",
+      "cfq_r2": "Very rarely",
+      "cfq_r3": "Seldom",
+      "cfq_r4": "Sometimes",
+      "cfq_r5": "Often",
+      "cfq_r6": "Almost always",
+      "cfq_r7": "Always",
+      "cfq_inst": "Below are a number of statements. Please rate how often each statement is true for you.",
+      "cfq1": "My thoughts cause me distress or emotional pain.",
+      "cfq2": "I get so caught up in my thoughts that I am unable to do the things that I most want to do.",
+      "cfq3": "I overanalyze situations to the point where it's unhelpful to me.",
+      "cfq4": "I struggle with my thoughts.",
+      "cfq5": "I get upset with myself for having certain thoughts.",
+      "cfq6": "I tend to get very entangled in my thoughts.",
+      "cfq7": "It's such a struggle to let go of upsetting thoughts even when I know that letting go would be helpful.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

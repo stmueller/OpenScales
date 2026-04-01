@@ -1,0 +1,2295 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Kidney Disease Quality of Life Short Form v1.3",
+      "code": "KDQOL-SF",
+      "abbreviation": "KDQOL-SF",
+      "description": "KDQOL-SF v1.3: 36-item SF-36 health survey plus 46 kidney disease-specific items across 10 dimensions: Burden, Cognitive/Social Function, Symptoms/Problems, Effects on Daily Life, Sexual Function, Sleep, Social Support, Dialysis Care Satisfaction, Work Status, and Overall Health Rating. Public Domain (RAND/University of Arizona).",
+      "citation": "Hays, R.D., Kallich, J.D., Mapes, D.L., Coons, S.J., & Carter, W.B. (1994). Development of the Kidney Disease Quality of Life (KDQOL) instrument. Quality of Life Research, 3(5), 329–338. https://doi.org/10.1007/BF00451725",
+      "license": "Public Domain",
+      "version": "1.3",
+      "url": "https://www.rand.org/health-care/surveys_tools/kdqol.html",
+      "domain": "Health",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. RAND explicitly states these instruments are available for use without permission or fee.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools/kdqol.html",
+      "n_items": 79
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "dimensions": [
+      {
+        "id": "sf36_physical_function",
+        "name": "SF-36 Physical Functioning",
+        "abbreviation": "PF",
+        "description": "SF-36 Physical Functioning subscale (10 items). Items: kdqolsf1–kdqolsf10.",
+        "enabled_param": null
+      },
+      {
+        "id": "sf36_role_physical",
+        "name": "SF-36 Role Limitations — Physical",
+        "abbreviation": "RP",
+        "description": "SF-36 Role Limitations due to physical health (4 items). Items: kdqolsf11–kdqolsf14.",
+        "enabled_param": null
+      },
+      {
+        "id": "sf36_role_emotional",
+        "name": "SF-36 Role Limitations — Emotional",
+        "abbreviation": "RE",
+        "description": "SF-36 Role Limitations due to emotional problems (3 items). Items: kdqolsf15–kdqolsf17.",
+        "enabled_param": null
+      },
+      {
+        "id": "sf36_energy_fatigue",
+        "name": "SF-36 Energy/Fatigue",
+        "abbreviation": "EF",
+        "description": "SF-36 Energy/Fatigue (Vitality) subscale (4 items). Items: kdqolsf23, kdqolsf27, kdqolsf29, kdqolsf31.",
+        "enabled_param": null
+      },
+      {
+        "id": "sf36_emotional_wellbeing",
+        "name": "SF-36 Emotional Well-Being",
+        "abbreviation": "EWB",
+        "description": "SF-36 Mental Health subscale (5 items). Items: kdqolsf24, kdqolsf25, kdqolsf26, kdqolsf28, kdqolsf30.",
+        "enabled_param": null
+      },
+      {
+        "id": "sf36_social_function",
+        "name": "SF-36 Social Functioning",
+        "abbreviation": "SF",
+        "description": "SF-36 Social Functioning subscale (2 items). Items: kdqolsf18, kdqolsf32.",
+        "enabled_param": null
+      },
+      {
+        "id": "sf36_pain",
+        "name": "SF-36 Pain",
+        "abbreviation": "PAIN",
+        "description": "SF-36 Bodily Pain subscale (2 items). Items: kdqolsf19, kdqolsf20.",
+        "enabled_param": null
+      },
+      {
+        "id": "sf36_general_health",
+        "name": "SF-36 General Health",
+        "abbreviation": "GH",
+        "description": "SF-36 General Health subscale (5 items). Items: kdqolsf21, kdqolsf33–kdqolsf36.",
+        "enabled_param": null
+      },
+      {
+        "id": "burden",
+        "name": "Burden of Kidney Disease",
+        "description": "Section 12. How true/false are statements about kidney disease burden (4 items)."
+      },
+      {
+        "id": "cognitive_social",
+        "name": "Cognitive Function / Quality of Social Interaction",
+        "description": "Section 13. How often during the past 4 weeks (6 items, 6-pt freq)."
+      },
+      {
+        "id": "symptoms",
+        "name": "Symptoms/Problems",
+        "description": "Section 14. Extent bothered by symptoms during past 4 weeks (13 items)."
+      },
+      {
+        "id": "effects",
+        "name": "Effects of Kidney Disease on Daily Life",
+        "description": "Section 15. How much kidney disease bothers you in daily life areas (8 items)."
+      },
+      {
+        "id": "sexual_function",
+        "name": "Sexual Function",
+        "description": "Section 16. Sexual activity and problems (3 items)."
+      },
+      {
+        "id": "sleep",
+        "name": "Sleep",
+        "description": "Sections 17-18. Sleep quality rating and frequency items."
+      },
+      {
+        "id": "social_support",
+        "name": "Social Support",
+        "description": "Section 19. Satisfaction with family and friends (2 items)."
+      },
+      {
+        "id": "work_status",
+        "name": "Work Status",
+        "description": "Sections 20-21. Employment status (2 items)."
+      },
+      {
+        "id": "overall_health",
+        "name": "Overall Health Rating",
+        "description": "Section 22. Overall health rating 0-10."
+      },
+      {
+        "id": "dialysis_care",
+        "name": "Satisfaction with Dialysis Care",
+        "description": "Sections 23-24. Satisfaction with care and dialysis staff support (3 items)."
+      }
+    ],
+    "items": [
+      {
+        "id": "kdqolsf_intro",
+        "text_key": "kdqolsf_intro",
+        "type": "inst"
+      },
+      {
+        "id": "kdqolsf21",
+        "text_key": "kdqolsf21",
+        "type": "multi",
+        "dimension": "sf36_general_health",
+        "options": [
+          {
+            "text_key": "kdqolsf_health1",
+            "value": 5
+          },
+          {
+            "text_key": "kdqolsf_health2",
+            "value": 4
+          },
+          {
+            "text_key": "kdqolsf_health3",
+            "value": 3
+          },
+          {
+            "text_key": "kdqolsf_health4",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_health5",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "kdqolsf22",
+        "text_key": "kdqolsf22",
+        "type": "multi",
+        "dimension": "sf36_general_health",
+        "options": [
+          {
+            "text_key": "kdqolsf_change1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqolsf_change2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_change3",
+            "value": 3
+          },
+          {
+            "text_key": "kdqolsf_change4",
+            "value": 4
+          },
+          {
+            "text_key": "kdqolsf_change5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "kdqolsf1",
+        "text_key": "kdqolsf1",
+        "type": "multi",
+        "dimension": "sf36_physical_function",
+        "options": [
+          {
+            "text_key": "kdqolsf_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqolsf_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "kdqolsf2",
+        "text_key": "kdqolsf2",
+        "type": "multi",
+        "dimension": "sf36_physical_function",
+        "options": [
+          {
+            "text_key": "kdqolsf_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqolsf_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "kdqolsf3",
+        "text_key": "kdqolsf3",
+        "type": "multi",
+        "dimension": "sf36_physical_function",
+        "options": [
+          {
+            "text_key": "kdqolsf_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqolsf_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "kdqolsf4",
+        "text_key": "kdqolsf4",
+        "type": "multi",
+        "dimension": "sf36_physical_function",
+        "options": [
+          {
+            "text_key": "kdqolsf_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqolsf_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "kdqolsf5",
+        "text_key": "kdqolsf5",
+        "type": "multi",
+        "dimension": "sf36_physical_function",
+        "options": [
+          {
+            "text_key": "kdqolsf_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqolsf_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "kdqolsf6",
+        "text_key": "kdqolsf6",
+        "type": "multi",
+        "dimension": "sf36_physical_function",
+        "options": [
+          {
+            "text_key": "kdqolsf_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqolsf_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "kdqolsf7",
+        "text_key": "kdqolsf7",
+        "type": "multi",
+        "dimension": "sf36_physical_function",
+        "options": [
+          {
+            "text_key": "kdqolsf_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqolsf_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "kdqolsf8",
+        "text_key": "kdqolsf8",
+        "type": "multi",
+        "dimension": "sf36_physical_function",
+        "options": [
+          {
+            "text_key": "kdqolsf_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqolsf_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "kdqolsf9",
+        "text_key": "kdqolsf9",
+        "type": "multi",
+        "dimension": "sf36_physical_function",
+        "options": [
+          {
+            "text_key": "kdqolsf_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqolsf_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "kdqolsf10",
+        "text_key": "kdqolsf10",
+        "type": "multi",
+        "dimension": "sf36_physical_function",
+        "options": [
+          {
+            "text_key": "kdqolsf_pf1",
+            "value": 1
+          },
+          {
+            "text_key": "kdqolsf_pf2",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_pf3",
+            "value": 3
+          }
+        ],
+        "question_head": "qh_pf"
+      },
+      {
+        "id": "kdqolsf11",
+        "text_key": "kdqolsf11",
+        "type": "multi",
+        "dimension": "sf36_role_physical",
+        "options": [
+          {
+            "text_key": "kdqolsf_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "kdqolsf_yn2",
+            "value": 1
+          }
+        ],
+        "question_head": "qh_rp"
+      },
+      {
+        "id": "kdqolsf12",
+        "text_key": "kdqolsf12",
+        "type": "multi",
+        "dimension": "sf36_role_physical",
+        "options": [
+          {
+            "text_key": "kdqolsf_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "kdqolsf_yn2",
+            "value": 1
+          }
+        ],
+        "question_head": "qh_rp"
+      },
+      {
+        "id": "kdqolsf13",
+        "text_key": "kdqolsf13",
+        "type": "multi",
+        "dimension": "sf36_role_physical",
+        "options": [
+          {
+            "text_key": "kdqolsf_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "kdqolsf_yn2",
+            "value": 1
+          }
+        ],
+        "question_head": "qh_rp"
+      },
+      {
+        "id": "kdqolsf14",
+        "text_key": "kdqolsf14",
+        "type": "multi",
+        "dimension": "sf36_role_physical",
+        "options": [
+          {
+            "text_key": "kdqolsf_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "kdqolsf_yn2",
+            "value": 1
+          }
+        ],
+        "question_head": "qh_rp"
+      },
+      {
+        "id": "kdqolsf15",
+        "text_key": "kdqolsf15",
+        "type": "multi",
+        "dimension": "sf36_role_emotional",
+        "options": [
+          {
+            "text_key": "kdqolsf_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "kdqolsf_yn2",
+            "value": 1
+          }
+        ],
+        "question_head": "qh_re"
+      },
+      {
+        "id": "kdqolsf16",
+        "text_key": "kdqolsf16",
+        "type": "multi",
+        "dimension": "sf36_role_emotional",
+        "options": [
+          {
+            "text_key": "kdqolsf_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "kdqolsf_yn2",
+            "value": 1
+          }
+        ],
+        "question_head": "qh_re"
+      },
+      {
+        "id": "kdqolsf17",
+        "text_key": "kdqolsf17",
+        "type": "multi",
+        "dimension": "sf36_role_emotional",
+        "options": [
+          {
+            "text_key": "kdqolsf_yn1",
+            "value": 0
+          },
+          {
+            "text_key": "kdqolsf_yn2",
+            "value": 1
+          }
+        ],
+        "question_head": "qh_re"
+      },
+      {
+        "id": "kdqolsf18",
+        "text_key": "kdqolsf18",
+        "type": "multi",
+        "dimension": "sf36_social_function",
+        "options": [
+          {
+            "text_key": "kdqolsf_sf1",
+            "value": 5
+          },
+          {
+            "text_key": "kdqolsf_sf2",
+            "value": 4
+          },
+          {
+            "text_key": "kdqolsf_sf3",
+            "value": 3
+          },
+          {
+            "text_key": "kdqolsf_sf4",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_sf5",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "kdqolsf19",
+        "text_key": "kdqolsf19",
+        "type": "multi",
+        "dimension": "sf36_pain",
+        "options": [
+          {
+            "text_key": "kdqolsf_pain1",
+            "value": 6
+          },
+          {
+            "text_key": "kdqolsf_pain2",
+            "value": 5
+          },
+          {
+            "text_key": "kdqolsf_pain3",
+            "value": 4
+          },
+          {
+            "text_key": "kdqolsf_pain4",
+            "value": 3
+          },
+          {
+            "text_key": "kdqolsf_pain5",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_pain6",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "kdqolsf20",
+        "text_key": "kdqolsf20",
+        "type": "multi",
+        "dimension": "sf36_pain",
+        "options": [
+          {
+            "text_key": "kdqolsf_painint1",
+            "value": 5
+          },
+          {
+            "text_key": "kdqolsf_painint2",
+            "value": 4
+          },
+          {
+            "text_key": "kdqolsf_painint3",
+            "value": 3
+          },
+          {
+            "text_key": "kdqolsf_painint4",
+            "value": 2
+          },
+          {
+            "text_key": "kdqolsf_painint5",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "kdqolsf23",
+        "text_key": "kdqolsf23",
+        "type": "likert",
+        "dimension": "sf36_energy_fatigue",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "kdqolsf24",
+        "text_key": "kdqolsf24",
+        "type": "likert",
+        "dimension": "sf36_emotional_wellbeing",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "kdqolsf25",
+        "text_key": "kdqolsf25",
+        "type": "likert",
+        "dimension": "sf36_emotional_wellbeing",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "kdqolsf26",
+        "text_key": "kdqolsf26",
+        "type": "likert",
+        "dimension": "sf36_emotional_wellbeing",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "kdqolsf27",
+        "text_key": "kdqolsf27",
+        "type": "likert",
+        "dimension": "sf36_energy_fatigue",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "kdqolsf28",
+        "text_key": "kdqolsf28",
+        "type": "likert",
+        "dimension": "sf36_emotional_wellbeing",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "kdqolsf29",
+        "text_key": "kdqolsf29",
+        "type": "likert",
+        "dimension": "sf36_energy_fatigue",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "kdqolsf30",
+        "text_key": "kdqolsf30",
+        "type": "likert",
+        "dimension": "sf36_emotional_wellbeing",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "kdqolsf31",
+        "text_key": "kdqolsf31",
+        "type": "likert",
+        "dimension": "sf36_energy_fatigue",
+        "question_head": "qh_vitality",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6_1",
+          "freq6_2",
+          "freq6_3",
+          "freq6_4",
+          "freq6_5",
+          "freq6_6"
+        ]
+      },
+      {
+        "id": "kdqolsf32",
+        "text_key": "kdqolsf32",
+        "type": "likert",
+        "dimension": "sf36_social_function",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "freq5_1",
+          "freq5_2",
+          "freq5_3",
+          "freq5_4",
+          "freq5_5"
+        ]
+      },
+      {
+        "id": "kdqolsf33",
+        "text_key": "kdqolsf33",
+        "type": "likert",
+        "dimension": "sf36_general_health",
+        "question_head": "qh_gh_statements",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "kdqolsf34",
+        "text_key": "kdqolsf34",
+        "type": "likert",
+        "dimension": "sf36_general_health",
+        "question_head": "qh_gh_statements",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "kdqolsf35",
+        "text_key": "kdqolsf35",
+        "type": "likert",
+        "dimension": "sf36_general_health",
+        "question_head": "qh_gh_statements",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "kdqolsf36",
+        "text_key": "kdqolsf36",
+        "type": "likert",
+        "dimension": "sf36_general_health",
+        "question_head": "qh_gh_statements",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "kidney_inst",
+        "text_key": "kidney_inst",
+        "type": "inst"
+      },
+      {
+        "id": "kd1",
+        "text_key": "kd1",
+        "type": "likert",
+        "dimension": "burden",
+        "question_head": "qh_12",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "kd2",
+        "text_key": "kd2",
+        "type": "likert",
+        "dimension": "burden",
+        "question_head": "qh_12",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "kd3",
+        "text_key": "kd3",
+        "type": "likert",
+        "dimension": "burden",
+        "question_head": "qh_12",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "kd4",
+        "text_key": "kd4",
+        "type": "likert",
+        "dimension": "burden",
+        "question_head": "qh_12",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ]
+      },
+      {
+        "id": "kd5",
+        "text_key": "kd5",
+        "type": "likert",
+        "dimension": "cognitive_social",
+        "question_head": "qh_13",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6r_1",
+          "freq6r_2",
+          "freq6r_3",
+          "freq6r_4",
+          "freq6r_5",
+          "freq6r_6"
+        ]
+      },
+      {
+        "id": "kd6",
+        "text_key": "kd6",
+        "type": "likert",
+        "dimension": "cognitive_social",
+        "question_head": "qh_13",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6r_1",
+          "freq6r_2",
+          "freq6r_3",
+          "freq6r_4",
+          "freq6r_5",
+          "freq6r_6"
+        ]
+      },
+      {
+        "id": "kd7",
+        "text_key": "kd7",
+        "type": "likert",
+        "dimension": "cognitive_social",
+        "question_head": "qh_13",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6r_1",
+          "freq6r_2",
+          "freq6r_3",
+          "freq6r_4",
+          "freq6r_5",
+          "freq6r_6"
+        ]
+      },
+      {
+        "id": "kd8",
+        "text_key": "kd8",
+        "type": "likert",
+        "dimension": "cognitive_social",
+        "question_head": "qh_13",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6r_1",
+          "freq6r_2",
+          "freq6r_3",
+          "freq6r_4",
+          "freq6r_5",
+          "freq6r_6"
+        ]
+      },
+      {
+        "id": "kd9",
+        "text_key": "kd9",
+        "type": "likert",
+        "dimension": "cognitive_social",
+        "question_head": "qh_13",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6r_1",
+          "freq6r_2",
+          "freq6r_3",
+          "freq6r_4",
+          "freq6r_5",
+          "freq6r_6"
+        ]
+      },
+      {
+        "id": "kd10",
+        "text_key": "kd10",
+        "type": "likert",
+        "dimension": "cognitive_social",
+        "question_head": "qh_13",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6r_1",
+          "freq6r_2",
+          "freq6r_3",
+          "freq6r_4",
+          "freq6r_5",
+          "freq6r_6"
+        ]
+      },
+      {
+        "id": "kd11",
+        "text_key": "kd11",
+        "type": "likert",
+        "dimension": "symptoms",
+        "question_head": "qh_14",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd12",
+        "text_key": "kd12",
+        "type": "likert",
+        "dimension": "symptoms",
+        "question_head": "qh_14",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd13",
+        "text_key": "kd13",
+        "type": "likert",
+        "dimension": "symptoms",
+        "question_head": "qh_14",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd14",
+        "text_key": "kd14",
+        "type": "likert",
+        "dimension": "symptoms",
+        "question_head": "qh_14",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd15",
+        "text_key": "kd15",
+        "type": "likert",
+        "dimension": "symptoms",
+        "question_head": "qh_14",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd16",
+        "text_key": "kd16",
+        "type": "likert",
+        "dimension": "symptoms",
+        "question_head": "qh_14",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd17",
+        "text_key": "kd17",
+        "type": "likert",
+        "dimension": "symptoms",
+        "question_head": "qh_14",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd18",
+        "text_key": "kd18",
+        "type": "likert",
+        "dimension": "symptoms",
+        "question_head": "qh_14",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd19",
+        "text_key": "kd19",
+        "type": "likert",
+        "dimension": "symptoms",
+        "question_head": "qh_14",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd20",
+        "text_key": "kd20",
+        "type": "likert",
+        "dimension": "symptoms",
+        "question_head": "qh_14",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd21",
+        "text_key": "kd21",
+        "type": "likert",
+        "dimension": "symptoms",
+        "question_head": "qh_14",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd22",
+        "text_key": "kd22",
+        "type": "likert",
+        "dimension": "symptoms",
+        "question_head": "qh_14",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ],
+        "visible_when": {
+          "parameter": "hemodialysis",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "kd23",
+        "text_key": "kd23",
+        "type": "likert",
+        "dimension": "symptoms",
+        "question_head": "qh_14",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ],
+        "visible_when": {
+          "parameter": "peritoneal",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "kd24",
+        "text_key": "kd24",
+        "type": "likert",
+        "dimension": "effects",
+        "question_head": "qh_15",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd25",
+        "text_key": "kd25",
+        "type": "likert",
+        "dimension": "effects",
+        "question_head": "qh_15",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd26",
+        "text_key": "kd26",
+        "type": "likert",
+        "dimension": "effects",
+        "question_head": "qh_15",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd27",
+        "text_key": "kd27",
+        "type": "likert",
+        "dimension": "effects",
+        "question_head": "qh_15",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd28",
+        "text_key": "kd28",
+        "type": "likert",
+        "dimension": "effects",
+        "question_head": "qh_15",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd29",
+        "text_key": "kd29",
+        "type": "likert",
+        "dimension": "effects",
+        "question_head": "qh_15",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd30",
+        "text_key": "kd30",
+        "type": "likert",
+        "dimension": "effects",
+        "question_head": "qh_15",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd31",
+        "text_key": "kd31",
+        "type": "likert",
+        "dimension": "effects",
+        "question_head": "qh_15",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "bother5_1",
+          "bother5_2",
+          "bother5_3",
+          "bother5_4",
+          "bother5_5"
+        ]
+      },
+      {
+        "id": "kd32_inst",
+        "text_key": "kd32_inst",
+        "type": "inst"
+      },
+      {
+        "id": "kd32",
+        "text_key": "kd32",
+        "type": "multi",
+        "dimension": "sexual_function",
+        "options": [
+          {
+            "text_key": "no_val",
+            "value": 0
+          },
+          {
+            "text_key": "yes_val",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "kd33",
+        "text_key": "kd33",
+        "type": "likert",
+        "dimension": "sexual_function",
+        "question_head": "qh_16prob",
+        "visible_when": {
+          "item": "kd32",
+          "operator": "equals",
+          "value": "1"
+        },
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "prob5_1",
+          "prob5_2",
+          "prob5_3",
+          "prob5_4",
+          "prob5_5"
+        ]
+      },
+      {
+        "id": "kd34",
+        "text_key": "kd34",
+        "type": "likert",
+        "dimension": "sexual_function",
+        "question_head": "qh_16prob",
+        "visible_when": {
+          "item": "kd32",
+          "operator": "equals",
+          "value": "1"
+        },
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "prob5_1",
+          "prob5_2",
+          "prob5_3",
+          "prob5_4",
+          "prob5_5"
+        ]
+      },
+      {
+        "id": "kd35",
+        "text_key": "kd35",
+        "type": "likert",
+        "dimension": "sleep",
+        "likert_points": 11,
+        "likert_min": 0,
+        "likert_max": 10,
+        "likert_labels": [
+          "sleep_lo",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "sleep_hi"
+        ]
+      },
+      {
+        "id": "kd36",
+        "text_key": "kd36",
+        "type": "likert",
+        "dimension": "sleep",
+        "question_head": "qh_18",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6r_1",
+          "freq6r_2",
+          "freq6r_3",
+          "freq6r_4",
+          "freq6r_5",
+          "freq6r_6"
+        ]
+      },
+      {
+        "id": "kd37",
+        "text_key": "kd37",
+        "type": "likert",
+        "dimension": "sleep",
+        "question_head": "qh_18",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6r_1",
+          "freq6r_2",
+          "freq6r_3",
+          "freq6r_4",
+          "freq6r_5",
+          "freq6r_6"
+        ]
+      },
+      {
+        "id": "kd38",
+        "text_key": "kd38",
+        "type": "likert",
+        "dimension": "sleep",
+        "question_head": "qh_18",
+        "likert_points": 6,
+        "likert_min": 1,
+        "likert_max": 6,
+        "likert_labels": [
+          "freq6r_1",
+          "freq6r_2",
+          "freq6r_3",
+          "freq6r_4",
+          "freq6r_5",
+          "freq6r_6"
+        ]
+      },
+      {
+        "id": "kd39",
+        "text_key": "kd39",
+        "type": "likert",
+        "dimension": "social_support",
+        "question_head": "qh_19",
+        "likert_points": 4,
+        "likert_min": 1,
+        "likert_max": 4,
+        "likert_labels": [
+          "sat4_1",
+          "sat4_2",
+          "sat4_3",
+          "sat4_4"
+        ]
+      },
+      {
+        "id": "kd40",
+        "text_key": "kd40",
+        "type": "likert",
+        "dimension": "social_support",
+        "question_head": "qh_19",
+        "likert_points": 4,
+        "likert_min": 1,
+        "likert_max": 4,
+        "likert_labels": [
+          "sat4_1",
+          "sat4_2",
+          "sat4_3",
+          "sat4_4"
+        ]
+      },
+      {
+        "id": "kd44",
+        "text_key": "kd44",
+        "type": "likert",
+        "dimension": "dialysis_care",
+        "likert_points": 7,
+        "likert_min": 1,
+        "likert_max": 7,
+        "likert_labels": [
+          "care7_1",
+          "care7_2",
+          "care7_3",
+          "care7_4",
+          "care7_5",
+          "care7_6",
+          "care7_7"
+        ],
+        "visible_when": {
+          "parameter": "dialysis_care",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "kd45",
+        "text_key": "kd45",
+        "type": "likert",
+        "dimension": "dialysis_care",
+        "question_head": "qh_24",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ],
+        "visible_when": {
+          "parameter": "dialysis_care",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "kd46",
+        "text_key": "kd46",
+        "type": "likert",
+        "dimension": "dialysis_care",
+        "question_head": "qh_24",
+        "likert_points": 5,
+        "likert_min": 1,
+        "likert_max": 5,
+        "likert_labels": [
+          "tf5_1",
+          "tf5_2",
+          "tf5_3",
+          "tf5_4",
+          "tf5_5"
+        ],
+        "visible_when": {
+          "parameter": "dialysis_care",
+          "operator": "equals",
+          "value": "1"
+        }
+      },
+      {
+        "id": "kd41",
+        "text_key": "kd41",
+        "type": "multi",
+        "dimension": "work_status",
+        "options": [
+          {
+            "text_key": "yes_val",
+            "value": 1
+          },
+          {
+            "text_key": "no_val",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "kd42",
+        "text_key": "kd42",
+        "type": "multi",
+        "dimension": "work_status",
+        "options": [
+          {
+            "text_key": "yes_val",
+            "value": 1
+          },
+          {
+            "text_key": "no_val",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "kd43",
+        "text_key": "kd43",
+        "type": "likert",
+        "dimension": "overall_health",
+        "likert_points": 11,
+        "likert_min": 0,
+        "likert_max": 10,
+        "likert_labels": [
+          "health_lo",
+          null,
+          null,
+          null,
+          null,
+          "health_mid",
+          null,
+          null,
+          null,
+          null,
+          "health_hi"
+        ]
+      }
+    ],
+    "scoring": {
+      "sf36_physical_function": {
+        "method": "mean_coded",
+        "items": [
+          "kdqolsf1",
+          "kdqolsf2",
+          "kdqolsf3",
+          "kdqolsf4",
+          "kdqolsf5",
+          "kdqolsf6",
+          "kdqolsf7",
+          "kdqolsf8",
+          "kdqolsf9",
+          "kdqolsf10"
+        ],
+        "description": "Mean of 10 physical functioning items (1–3; higher = better). Based on SF-36 Physical Functioning subscale.",
+        "item_coding": {
+          "kdqolsf1": 1,
+          "kdqolsf2": 1,
+          "kdqolsf3": 1,
+          "kdqolsf4": 1,
+          "kdqolsf5": 1,
+          "kdqolsf6": 1,
+          "kdqolsf7": 1,
+          "kdqolsf8": 1,
+          "kdqolsf9": 1,
+          "kdqolsf10": 1
+        }
+      },
+      "sf36_role_physical": {
+        "method": "mean_coded",
+        "items": [
+          "kdqolsf11",
+          "kdqolsf12",
+          "kdqolsf13",
+          "kdqolsf14"
+        ],
+        "description": "Mean of 4 role-physical items (0=Yes limited, 1=No). Based on SF-36 Role Limitations–Physical subscale.",
+        "item_coding": {
+          "kdqolsf11": 1,
+          "kdqolsf12": 1,
+          "kdqolsf13": 1,
+          "kdqolsf14": 1
+        }
+      },
+      "sf36_role_emotional": {
+        "method": "mean_coded",
+        "items": [
+          "kdqolsf15",
+          "kdqolsf16",
+          "kdqolsf17"
+        ],
+        "description": "Mean of 3 role-emotional items (0=Yes limited, 1=No). Based on SF-36 Role Limitations–Emotional subscale.",
+        "item_coding": {
+          "kdqolsf15": 1,
+          "kdqolsf16": 1,
+          "kdqolsf17": 1
+        }
+      },
+      "sf36_social_function": {
+        "method": "mean_coded",
+        "items": [
+          "kdqolsf18",
+          "kdqolsf32"
+        ],
+        "description": "Mean of 2 social functioning items. Based on SF-36 Social Functioning subscale.",
+        "item_coding": {
+          "kdqolsf18": 1,
+          "kdqolsf32": 1
+        }
+      },
+      "sf36_pain": {
+        "method": "mean_coded",
+        "items": [
+          "kdqolsf19",
+          "kdqolsf20"
+        ],
+        "description": "Mean of 2 bodily pain items. Based on SF-36 Bodily Pain subscale.",
+        "item_coding": {
+          "kdqolsf19": 1,
+          "kdqolsf20": 1
+        }
+      },
+      "sf36_general_health": {
+        "method": "mean_coded",
+        "items": [
+          "kdqolsf21",
+          "kdqolsf22",
+          "kdqolsf33",
+          "kdqolsf34",
+          "kdqolsf35",
+          "kdqolsf36"
+        ],
+        "description": "Mean of general health items including health transition. Based on SF-36 General Health subscale.",
+        "item_coding": {
+          "kdqolsf21": 1,
+          "kdqolsf22": 1,
+          "kdqolsf33": 1,
+          "kdqolsf34": 1,
+          "kdqolsf35": 1,
+          "kdqolsf36": 1
+        }
+      },
+      "sf36_energy_fatigue": {
+        "method": "mean_coded",
+        "items": [
+          "kdqolsf23",
+          "kdqolsf27",
+          "kdqolsf29",
+          "kdqolsf31"
+        ],
+        "description": "Mean of 4 vitality/energy items. Based on SF-36 Vitality subscale.",
+        "item_coding": {
+          "kdqolsf23": 1,
+          "kdqolsf27": 1,
+          "kdqolsf29": 1,
+          "kdqolsf31": 1
+        }
+      },
+      "sf36_emotional_wellbeing": {
+        "method": "mean_coded",
+        "items": [
+          "kdqolsf24",
+          "kdqolsf25",
+          "kdqolsf26",
+          "kdqolsf28",
+          "kdqolsf30"
+        ],
+        "description": "Mean of 5 mental health items. Based on SF-36 Mental Health subscale.",
+        "item_coding": {
+          "kdqolsf24": 1,
+          "kdqolsf25": 1,
+          "kdqolsf26": 1,
+          "kdqolsf28": 1,
+          "kdqolsf30": 1
+        }
+      },
+      "burden": {
+        "method": "mean_coded",
+        "items": [
+          "kd1",
+          "kd2",
+          "kd3",
+          "kd4"
+        ],
+        "description": "Burden of Kidney Disease (4 items, true/false 1-5).",
+        "item_coding": {
+          "kd1": 1,
+          "kd2": 1,
+          "kd3": 1,
+          "kd4": 1
+        }
+      },
+      "cognitive_social": {
+        "method": "mean_coded",
+        "items": [
+          "kd5",
+          "kd6",
+          "kd7",
+          "kd8",
+          "kd9",
+          "kd10"
+        ],
+        "description": "Cognitive Function / Quality of Social Interaction (6 items, freq 1-6).",
+        "item_coding": {
+          "kd5": 1,
+          "kd6": 1,
+          "kd7": 1,
+          "kd8": 1,
+          "kd9": 1,
+          "kd10": 1
+        }
+      },
+      "symptoms": {
+        "method": "mean_coded",
+        "items": [
+          "kd11",
+          "kd12",
+          "kd13",
+          "kd14",
+          "kd15",
+          "kd16",
+          "kd17",
+          "kd18",
+          "kd19",
+          "kd20",
+          "kd21",
+          "kd22",
+          "kd23"
+        ],
+        "description": "Symptoms/Problems (13 items, bothered 1-5).",
+        "item_coding": {
+          "kd11": 1,
+          "kd12": 1,
+          "kd13": 1,
+          "kd14": 1,
+          "kd15": 1,
+          "kd16": 1,
+          "kd17": 1,
+          "kd18": 1,
+          "kd19": 1,
+          "kd20": 1,
+          "kd21": 1,
+          "kd22": 1,
+          "kd23": 1
+        }
+      },
+      "effects": {
+        "method": "mean_coded",
+        "items": [
+          "kd24",
+          "kd25",
+          "kd26",
+          "kd27",
+          "kd28",
+          "kd29",
+          "kd30",
+          "kd31"
+        ],
+        "description": "Effects of Kidney Disease on Daily Life (8 items, bothered 1-5).",
+        "item_coding": {
+          "kd24": 1,
+          "kd25": 1,
+          "kd26": 1,
+          "kd27": 1,
+          "kd28": 1,
+          "kd29": 1,
+          "kd30": 1,
+          "kd31": 1
+        }
+      },
+      "sleep": {
+        "method": "mean_coded",
+        "items": [
+          "kd35",
+          "kd36",
+          "kd37",
+          "kd38"
+        ],
+        "description": "Sleep (rating 0-10 + 3 frequency items).",
+        "item_coding": {
+          "kd35": 1,
+          "kd36": 1,
+          "kd37": 1,
+          "kd38": 1
+        }
+      },
+      "social_support": {
+        "method": "mean_coded",
+        "items": [
+          "kd39",
+          "kd40"
+        ],
+        "description": "Social Support / Family Satisfaction (2 items, 4-pt).",
+        "item_coding": {
+          "kd39": 1,
+          "kd40": 1
+        }
+      },
+      "dialysis_care": {
+        "method": "mean_coded",
+        "items": [
+          "kd44",
+          "kd45",
+          "kd46"
+        ],
+        "description": "Satisfaction with Dialysis Care (3 items: 1 satisfaction + 2 true/false).",
+        "item_coding": {
+          "kd44": 1,
+          "kd45": 1,
+          "kd46": 1
+        }
+      }
+    },
+    "parameters": {
+      "hemodialysis": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include hemodialysis access site question (item 14l)"
+      },
+      "peritoneal": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include peritoneal dialysis catheter site question (item 14m)"
+      },
+      "dialysis_care": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include dialysis care satisfaction questions (sections 23-24)"
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "kdqolsf_intro": "This survey asks for your views about your health. This information will help keep track of how you feel and how well you are able to do your usual activities. Thank you for completing these questions!",
+      "kdqolsf_health1": "Excellent",
+      "kdqolsf_health2": "Very good",
+      "kdqolsf_health3": "Good",
+      "kdqolsf_health4": "Fair",
+      "kdqolsf_health5": "Poor",
+      "kdqolsf_pf1": "Yes, limited a lot",
+      "kdqolsf_pf2": "Yes, limited a little",
+      "kdqolsf_pf3": "No, not limited at all",
+      "kdqolsf_yn1": "Yes",
+      "kdqolsf_yn2": "No",
+      "kdqolsf_sf1": "Not at all",
+      "kdqolsf_sf2": "Slightly",
+      "kdqolsf_sf3": "Moderately",
+      "kdqolsf_sf4": "Quite a bit",
+      "kdqolsf_sf5": "Extremely",
+      "kdqolsf_pain1": "None",
+      "kdqolsf_pain2": "Very mild",
+      "kdqolsf_pain3": "Mild",
+      "kdqolsf_pain4": "Moderate",
+      "kdqolsf_pain5": "Severe",
+      "kdqolsf_pain6": "Very severe",
+      "kdqolsf_painint1": "Not at all",
+      "kdqolsf_painint2": "Slightly",
+      "kdqolsf_painint3": "Moderately",
+      "kdqolsf_painint4": "Quite a bit",
+      "kdqolsf_painint5": "Extremely",
+      "kdqolsf_change1": "Much better now than one year ago",
+      "kdqolsf_change2": "Somewhat better now than one year ago",
+      "kdqolsf_change3": "About the same as one year ago",
+      "kdqolsf_change4": "Somewhat worse now than one year ago",
+      "kdqolsf_change5": "Much worse now than one year ago",
+      "kdqolsf_freq1": "All of the time",
+      "kdqolsf_freq2": "Most of the time",
+      "kdqolsf_freq3": "A good bit of the time",
+      "kdqolsf_freq4": "Some of the time",
+      "kdqolsf_freq5": "A little of the time",
+      "kdqolsf_freq6": "None of the time",
+      "kdqolsf_agree1": "Strongly agree",
+      "kdqolsf_agree2": "Agree",
+      "kdqolsf_agree3": "Neither agree nor disagree",
+      "kdqolsf_agree4": "Disagree",
+      "kdqolsf_agree5": "Strongly disagree",
+      "kdqolsf_bother1": "Not at all bothered",
+      "kdqolsf_bother2": "Somewhat bothered",
+      "kdqolsf_bother3": "Moderately bothered",
+      "kdqolsf_bother4": "Very much bothered",
+      "kdqolsf_bother5": "Extremely bothered",
+      "kdqolsf_effect1": "Not at all",
+      "kdqolsf_effect2": "Slightly",
+      "kdqolsf_effect3": "Moderately",
+      "kdqolsf_effect4": "Quite a bit",
+      "kdqolsf_effect5": "Extremely",
+      "kdqolsf_sxf1": "Very satisfied",
+      "kdqolsf_sxf2": "Satisfied",
+      "kdqolsf_sxf3": "Somewhat dissatisfied",
+      "kdqolsf_sxf4": "Very dissatisfied",
+      "kdqolsf_slp1": "None of the time",
+      "kdqolsf_slp2": "A little of the time",
+      "kdqolsf_slp3": "Some of the time",
+      "kdqolsf_slp4": "A good bit of the time",
+      "kdqolsf_slp5": "Most of the time",
+      "kdqolsf_slp6": "All of the time",
+      "kdqolsf_sat1": "Very satisfied",
+      "kdqolsf_sat2": "Somewhat satisfied",
+      "kdqolsf_sat3": "Neither satisfied nor dissatisfied",
+      "kdqolsf_sat4": "Somewhat dissatisfied",
+      "kdqolsf_sat5": "Very dissatisfied",
+      "kdqolsf_oh0": "0 — Worst possible health",
+      "kdqolsf_oh1": "1",
+      "kdqolsf_oh2": "2",
+      "kdqolsf_oh3": "3",
+      "kdqolsf_oh4": "4",
+      "kdqolsf_oh5": "5",
+      "kdqolsf_oh6": "6",
+      "kdqolsf_oh7": "7",
+      "kdqolsf_oh8": "8",
+      "kdqolsf_oh9": "9",
+      "kdqolsf_oh10": "10 — Best possible health",
+      "kdqolsf_pf_head": "The following items are about activities you might do during a typical day. Does your health now limit you in these activities? If so, how much?",
+      "kdqolsf1": "<b>Vigorous activities</b>, such as running, lifting heavy objects, participating in strenuous sports",
+      "kdqolsf2": "<b>Moderate activities</b>, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf",
+      "kdqolsf3": "Lifting or carrying <b>groceries</b>",
+      "kdqolsf4": "Climbing <b>several</b> flights of stairs",
+      "kdqolsf5": "Climbing <b>one</b> flight of stairs",
+      "kdqolsf6": "Bending, kneeling, or stooping",
+      "kdqolsf7": "Walking <b>more than a mile</b>",
+      "kdqolsf8": "Walking <b>several blocks</b>",
+      "kdqolsf9": "Walking <b>one block</b>",
+      "kdqolsf10": "Bathing or dressing yourself",
+      "kdqolsf_rp_head": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of your physical health?",
+      "kdqolsf11": "Cut down the <b>amount of time</b> you spent on work or other activities",
+      "kdqolsf12": "<b>Accomplished less</b> than you would like",
+      "kdqolsf13": "Were limited in the <b>kind</b> of work or other activities",
+      "kdqolsf14": "Had <b>difficulty</b> performing the work or other activities (for example, it took extra effort)",
+      "kdqolsf_re_head": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of any emotional problems?",
+      "kdqolsf15": "Cut down the <b>amount of time</b> you spent on work or other activities",
+      "kdqolsf16": "<b>Accomplished less</b> than you would like",
+      "kdqolsf17": "Didn't do work or other activities as <b>carefully</b> as usual",
+      "kdqolsf18": "During the <b>past 4 weeks</b>, to what extent has your <b>physical health or emotional problems</b> interfered with your normal social activities with family, friends, neighbors, or groups?",
+      "kdqolsf19": "How much <b>bodily</b> pain have you had during the <b>last 4 weeks</b>?",
+      "kdqolsf20": "During the <b>past 4 weeks</b>, how much did <b>pain</b> interfere with your normal work (including both work outside the home and housework)?",
+      "kdqolsf21": "In general, would you say your health is:",
+      "kdqolsf22": "Compared to one year ago, how would you rate your health in general now?",
+      "kdqolsf_vitality_head": "These questions are about how you feel and how things have been with you during the past 4 weeks.",
+      "kdqolsf23": "...did you feel <b>full of pep</b>?",
+      "kdqolsf24": "...have you been a <b>very nervous person</b>?",
+      "kdqolsf25": "...have you felt so <b>down in the dumps</b> that nothing could cheer you up?",
+      "kdqolsf26": "...have you felt <b>calm and peaceful</b>?",
+      "kdqolsf27": "...did you have <b>a lot of energy</b>?",
+      "kdqolsf28": "...have you felt <b>downhearted and blue</b>?",
+      "kdqolsf29": "...did you feel <b>worn out</b>?",
+      "kdqolsf30": "...have you been a <b>happy person</b>?",
+      "kdqolsf31": "...did you feel <b>tired</b>?",
+      "kdqolsf32": "During the <b>past 4 weeks</b>, how much of the time has your <b>physical health or emotional problems</b> interfered with your social activities (like visiting with friends, relatives, etc.)?",
+      "kdqolsf33": "I seem to get <b>sick a little easier</b> than other people",
+      "kdqolsf34": "I am <b>as healthy as anybody</b> I know",
+      "kdqolsf35": "I expect my health to <b>get worse</b>",
+      "kdqolsf36": "My health is <b>excellent</b>",
+      "kdqolsf_symp_head": "How much were you bothered by the following problems during the past 4 weeks?",
+      "kdqolsf37": "Muscle soreness",
+      "kdqolsf38": "Chest pain",
+      "kdqolsf39": "Cramps",
+      "kdqolsf40": "Itchy skin",
+      "kdqolsf41": "Dry skin",
+      "kdqolsf42": "Shortness of breath",
+      "kdqolsf43": "Faintness or dizziness",
+      "kdqolsf44": "Lack of appetite",
+      "kdqolsf45": "Worn out or fatigued",
+      "kdqolsf46": "Bone/joint pain",
+      "kdqolsf47": "Trouble with fistula, graft, or catheter — if applicable",
+      "kdqolsf48": "Headaches",
+      "kdqolsf_eff_head": "How much does kidney disease affect your daily life?",
+      "kdqolsf49": "Fluid limitations",
+      "kdqolsf50": "Dietary limitations",
+      "kdqolsf51": "Your ability to work around the house",
+      "kdqolsf52": "Your ability to travel",
+      "kdqolsf53": "Being dependent on doctors and other medical staff",
+      "kdqolsf54": "Stress or worries caused by your kidney disease",
+      "kdqolsf55": "Your sex life",
+      "kdqolsf56": "Your personal appearance",
+      "kdqolsf_burden_head": "Please indicate the extent to which you agree or disagree with each of the following statements about your kidney disease.",
+      "kdqolsf57": "My kidney disease interferes too much with my life.",
+      "kdqolsf58": "Too much of my time is spent dealing with my kidney disease.",
+      "kdqolsf59": "I feel frustrated dealing with my kidney disease.",
+      "kdqolsf60": "I feel like a burden on my family.",
+      "kdqolsf61": "Are you currently employed (working for pay)?",
+      "kdqolsf62": "Are you currently doing volunteer work?",
+      "kdqolsf_cog_head": "During the past 4 weeks, how much of the time did you:",
+      "kdqolsf63": "Have trouble remembering things?",
+      "kdqolsf64": "Have difficulty concentrating or thinking?",
+      "kdqolsf65": "Have trouble keeping your attention on tasks?",
+      "kdqolsf_qsi_head": "During the past 4 weeks, how much of the time did you:",
+      "kdqolsf66": "Become irritated or annoyed with the people around you?",
+      "kdqolsf67": "Have difficulty getting along with your family?",
+      "kdqolsf68": "Feel isolated from those around you?",
+      "kdqolsf69": "Depend too much on others?",
+      "kdqolsf70": "Act as if you were isolated from others?",
+      "kdqolsf71": "Are you currently sexually active?",
+      "kdqolsf72": "How satisfied are you with your sex life?",
+      "kdqolsf_sleep_head": "During the past 4 weeks:",
+      "kdqolsf73": "On average, how many hours do you sleep per night?",
+      "kdqolsf74": "How often did you have trouble falling asleep?",
+      "kdqolsf75": "How often did you stay asleep during the night?",
+      "kdqolsf76": "How often did you feel rested and refreshed when you woke up?",
+      "kdqolsf77": "How often did you have excessive daytime drowsiness?",
+      "kdqolsf_ss_head": "How often do people around you help you when you need it?",
+      "kdqolsf78": "Someone helped you when you were confined to bed",
+      "kdqolsf79": "Someone helped you with daily chores when you were sick",
+      "kdqolsf80": "Someone listened to you when you needed to talk",
+      "kdqolsf_dse_head": "In the past 4 weeks, how often did your dialysis team (if applicable):",
+      "kdqolsf81": "Encourage you to be as independent as possible",
+      "kdqolsf82": "Treat you with respect and dignity",
+      "kdqolsf_ps_head": "How satisfied are you with the care you have received?",
+      "kdqolsf83": "How satisfied are you with the amount of care and attention you get from your doctor?",
+      "kdqolsf84": "How satisfied are you with the overall quality of your medical care?",
+      "kdqolsf85": "How would you rate your overall health? (0=worst possible, 10=best possible)",
+      "debrief": "Thank you for completing this questionnaire.",
+      "qh_pf": "The following items are about activities you might do during a typical day. Does <b>your health</b> now limit you in these activities? If so, how much?",
+      "qh_rp": "During the <b>past 4 weeks</b>, have you had any of the following problems with your work or other regular daily activities <b>as a result of your physical health</b>?",
+      "qh_re": "During the <b>past 4 weeks</b>, have you had any of the following problems with your work or other regular daily activities <b>as a result of any emotional problems</b> (such as feeling depressed or anxious)?",
+      "qh_vitality": "These questions are about how you feel and how things have been with you <b>during the past 4 weeks</b>. For each question, please give the one answer that comes closest to the way you have been feeling. How much of the time during the <b>past 4 weeks</b>...",
+      "qh_gh_statements": "How <b>TRUE</b> or <b>FALSE</b> is <i>each</i> of the following statements for you?",
+      "qh_symptoms": "During the past 4 weeks, to what extent were you bothered by each of the following?",
+      "qh_effects": "Some people are bothered by the effects of kidney disease on their daily life, while others are not. How much does kidney disease bother you in each of the following areas?",
+      "qh_burden": "How <b>TRUE</b> or <b>FALSE</b> is each of the following statements for you?",
+      "qh_cognitive": "During the past 4 weeks, how often did you...",
+      "qh_social_interaction": "During the past 4 weeks, to what extent did each of the following apply to you?",
+      "qh_sleep": "During the past 4 weeks...",
+      "qh_social_support": "During the past 4 weeks, to what extent were each of the following available to you?",
+      "qh_dialysis": "How satisfied are you with the care you receive from your dialysis staff?",
+      "qh_dialysis_staff": "To what extent do the staff at your dialysis center...",
+      "freq6_1": "All of the time",
+      "freq6_2": "Most of the time",
+      "freq6_3": "A good bit of the time",
+      "freq6_4": "Some of the time",
+      "freq6_5": "A little of the time",
+      "freq6_6": "None of the time",
+      "freq5_1": "All of the time",
+      "freq5_2": "Most of the time",
+      "freq5_3": "Some of the time",
+      "freq5_4": "A little of the time",
+      "freq5_5": "None of the time",
+      "tf5_1": "Definitely true",
+      "tf5_2": "Mostly true",
+      "tf5_3": "Don't know",
+      "tf5_4": "Mostly false",
+      "tf5_5": "Definitely false",
+      "kidney_inst": "<b>Your Kidney Disease</b>",
+      "qh_12": "How <b>true</b> or <b>false</b> is each of the following statements for you?",
+      "kd1": "My kidney disease interferes too much with my life.",
+      "kd2": "Too much of my time is spent dealing with my kidney disease.",
+      "kd3": "I feel frustrated dealing with my kidney disease.",
+      "kd4": "I feel like a burden on my family.",
+      "qh_13": "These questions are about how you feel and how things have been going during the <b>past 4 weeks</b>. For each question, please give the one answer that comes closest to the way you have been feeling.<br><br>How much of the time during the <b>past 4 weeks</b> did you...",
+      "freq6r_1": "None of the time",
+      "freq6r_2": "A little of the time",
+      "freq6r_3": "Some of the time",
+      "freq6r_4": "A good bit of the time",
+      "freq6r_5": "Most of the time",
+      "freq6r_6": "All of the time",
+      "kd5": "Isolate yourself from people around you?",
+      "kd6": "React slowly to things that were said or done?",
+      "kd7": "Act irritable toward those around you?",
+      "kd8": "Have difficulty concentrating or thinking?",
+      "kd9": "Get along well with other people?",
+      "kd10": "Become confused?",
+      "qh_14": "During the <b>past 4 weeks</b>, to what extent were you bothered by each of the following?",
+      "bother5_1": "Not at all bothered",
+      "bother5_2": "Somewhat bothered",
+      "bother5_3": "Moderately bothered",
+      "bother5_4": "Very much bothered",
+      "bother5_5": "Extremely bothered",
+      "kd11": "Soreness in your muscles?",
+      "kd12": "Chest pain?",
+      "kd13": "Cramps?",
+      "kd14": "Itchy skin?",
+      "kd15": "Dry skin?",
+      "kd16": "Shortness of breath?",
+      "kd17": "Faintness or dizziness?",
+      "kd18": "Lack of appetite?",
+      "kd19": "Washed out or drained?",
+      "kd20": "Numbness in hands or feet?",
+      "kd21": "Nausea or upset stomach?",
+      "kd22": "Problems with your access site? (Hemodialysis patients only)",
+      "kd23": "Problems with your catheter site? (Peritoneal dialysis patients only)",
+      "qh_15": "Some people are bothered by the effects of kidney disease on their daily life, while others are not. How much does kidney disease <b>bother</b> you in each of the following areas?",
+      "kd24": "Fluid restriction?",
+      "kd25": "Dietary restriction?",
+      "kd26": "Your ability to work around the house?",
+      "kd27": "Your ability to travel?",
+      "kd28": "Being dependent on doctors and other medical staff?",
+      "kd29": "Stress or worries caused by kidney disease?",
+      "kd30": "Your sex life?",
+      "kd31": "Your personal appearance?",
+      "kd32_inst": "The next three questions are personal and relate to your sexual activity, but your answers are important in understanding how kidney disease impacts on people's lives.",
+      "kd32": "Have you had any sexual activity in the <b>past 4 weeks</b>?",
+      "qh_16prob": "How much of a problem was each of the following in the <b>past 4 weeks</b>?",
+      "prob5_1": "Not a problem",
+      "prob5_2": "A little of a problem",
+      "prob5_3": "Somewhat of a problem",
+      "prob5_4": "Very much a problem",
+      "prob5_5": "Severe problem",
+      "kd33": "Enjoying sex?",
+      "kd34": "Becoming sexually aroused?",
+      "no_val": "No",
+      "yes_val": "Yes",
+      "kd35": "On a scale from 0 to 10, how would you rate your sleep overall?",
+      "sleep_lo": "Very bad",
+      "sleep_hi": "Very good",
+      "qh_18": "How often during the <b>past 4 weeks</b> did you...",
+      "kd36": "Awaken during the night and have trouble falling asleep again?",
+      "kd37": "Get the amount of sleep you need?",
+      "kd38": "Have trouble staying awake during the day?",
+      "qh_19": "Concerning your <b>family and friends</b>, how satisfied are you with...",
+      "sat4_1": "Very dissatisfied",
+      "sat4_2": "Somewhat dissatisfied",
+      "sat4_3": "Somewhat satisfied",
+      "sat4_4": "Very satisfied",
+      "kd39": "The amount of time you are able to spend with your family and friends?",
+      "kd40": "The support you receive from your family and friends?",
+      "kd41": "During the <b>past 4 weeks</b>, did you work at a paying job?",
+      "kd42": "Does your health keep you from working at a paying job?",
+      "kd43": "Overall, how would you rate your health?",
+      "health_lo": "Worst possible (as bad or worse than being dead)",
+      "health_mid": "Half-way between worst and best",
+      "health_hi": "Best possible",
+      "kd44": "Think about the care you receive for kidney dialysis. In terms of your satisfaction, how would you rate the friendliness and interest shown in you as a person?",
+      "care7_1": "Very poor",
+      "care7_2": "Poor",
+      "care7_3": "Fair",
+      "care7_4": "Good",
+      "care7_5": "Very good",
+      "care7_6": "Excellent",
+      "care7_7": "The best",
+      "qh_24": "How <b>true</b> or <b>false</b> is each of the following statements?",
+      "kd45": "Dialysis staff encourage me to be as independent as possible.",
+      "kd46": "Dialysis staff support me in coping with my kidney disease."
+    }
+  }
+}

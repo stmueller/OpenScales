@@ -1,0 +1,232 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Questionnaire on Internet Search Dependence",
+      "code": "QISD",
+      "abbreviation": "QISD",
+      "description": "12-item self-report measure of dependence on Internet search engines. Scores range from 0 to 48, with four subscales: Habitual Use, External Storage, Withdrawal, and Internet Search Trust.",
+      "citation": "Wang, Y., Wu, L., Zhou, H., Xu, J., & Dong, G. (2016). Development and validation of a self-reported questionnaire for measuring internet search dependence. Frontiers in Public Health, 4, 274. https://doi.org/10.3389/fpubh.2016.00274",
+      "license": "CC BY",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpubh.2016.00274"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 0,
+      "max": 4,
+      "labels": [
+        "likert_0",
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "habitual_use",
+        "name": "Habitual Use"
+      },
+      {
+        "id": "external_storage",
+        "name": "External Storage"
+      },
+      {
+        "id": "withdrawal",
+        "name": "Withdrawal"
+      },
+      {
+        "id": "search_trust",
+        "name": "Internet Search Trust"
+      },
+      {
+        "id": "total",
+        "name": "Total Internet Search Dependence"
+      }
+    ],
+    "items": [
+      {
+        "id": "qisd1",
+        "text_key": "qisd1",
+        "type": "likert"
+      },
+      {
+        "id": "qisd2",
+        "text_key": "qisd2",
+        "type": "likert"
+      },
+      {
+        "id": "qisd3",
+        "text_key": "qisd3",
+        "type": "likert"
+      },
+      {
+        "id": "qisd4",
+        "text_key": "qisd4",
+        "type": "likert"
+      },
+      {
+        "id": "qisd5",
+        "text_key": "qisd5",
+        "type": "likert"
+      },
+      {
+        "id": "qisd6",
+        "text_key": "qisd6",
+        "type": "likert"
+      },
+      {
+        "id": "qisd7",
+        "text_key": "qisd7",
+        "type": "likert"
+      },
+      {
+        "id": "qisd8",
+        "text_key": "qisd8",
+        "type": "likert"
+      },
+      {
+        "id": "qisd9",
+        "text_key": "qisd9",
+        "type": "likert"
+      },
+      {
+        "id": "qisd10",
+        "text_key": "qisd10",
+        "type": "likert"
+      },
+      {
+        "id": "qisd11",
+        "text_key": "qisd11",
+        "type": "likert"
+      },
+      {
+        "id": "qisd12",
+        "text_key": "qisd12",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "habitual_use": {
+        "method": "sum_coded",
+        "items": [
+          "qisd1",
+          "qisd3",
+          "qisd4",
+          "qisd6",
+          "qisd7"
+        ],
+        "description": "Sum of Habitual Use items (0–20). Tendency to reflexively turn to Internet search rather than independent thinking.",
+        "item_coding": {
+          "qisd1": 1,
+          "qisd3": 1,
+          "qisd4": 1,
+          "qisd6": 1,
+          "qisd7": 1
+        }
+      },
+      "external_storage": {
+        "method": "sum_coded",
+        "items": [
+          "qisd2",
+          "qisd5"
+        ],
+        "description": "Sum of External Storage items (0–8). Reliance on Internet search as an external memory store.",
+        "item_coding": {
+          "qisd2": 1,
+          "qisd5": 1
+        }
+      },
+      "withdrawal": {
+        "method": "sum_coded",
+        "items": [
+          "qisd8",
+          "qisd11"
+        ],
+        "description": "Sum of Withdrawal items (0–8). Distress and loss of confidence when Internet search is unavailable.",
+        "item_coding": {
+          "qisd8": 1,
+          "qisd11": 1
+        }
+      },
+      "search_trust": {
+        "method": "sum_coded",
+        "items": [
+          "qisd9",
+          "qisd10",
+          "qisd12"
+        ],
+        "description": "Sum of Internet Search Trust items (0–12). Confidence in Internet search to satisfy informational needs.",
+        "item_coding": {
+          "qisd9": 1,
+          "qisd10": 1,
+          "qisd12": 1
+        }
+      },
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "qisd1",
+          "qisd2",
+          "qisd3",
+          "qisd4",
+          "qisd5",
+          "qisd6",
+          "qisd7",
+          "qisd8",
+          "qisd9",
+          "qisd10",
+          "qisd11",
+          "qisd12"
+        ],
+        "description": "Total Internet Search Dependence score (0–48). Higher scores indicate greater dependence.",
+        "item_coding": {
+          "qisd1": 1,
+          "qisd2": 1,
+          "qisd3": 1,
+          "qisd4": 1,
+          "qisd5": 1,
+          "qisd6": 1,
+          "qisd7": 1,
+          "qisd8": 1,
+          "qisd9": 1,
+          "qisd10": 1,
+          "qisd11": 1,
+          "qisd12": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_0": "Never",
+      "likert_1": "Rarely",
+      "likert_2": "Sometimes",
+      "likert_3": "Often",
+      "likert_4": "Always",
+      "question_head": "Please indicate how often each of the following statements applies to you.",
+      "qisd1": "When facing debatable questions, I prefer to search Google/Baidu first rather than thinking by myself.",
+      "qisd2": "I won't take any notes if I know I can search for the information on the Internet.",
+      "qisd3": "When I am asked a complex question, I usually try to abstract the key words from it.",
+      "qisd4": "When someone disagrees with my points, I usually search the Internet for the answer.",
+      "qisd5": "I think it is not necessary to remember a thing if we can find it from Internet search.",
+      "qisd6": "When somebody asks me a question, I will search the Internet for answers if I cannot figure it out immediately.",
+      "qisd7": "I can quickly abstract keywords from a sentence for a potential Internet search.",
+      "qisd8": "I will be upset if I cannot find an answer to a complex question through Internet search.",
+      "qisd9": "I think Internet search can satisfy daily needs, including learning and living.",
+      "qisd10": "I usually start to search online unconsciously when I am idle.",
+      "qisd11": "I am not confident about the answers in my memory if I cannot double-check them through Internet search.",
+      "qisd12": "I think we can find reliable information through Internet search.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

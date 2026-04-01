@@ -1,0 +1,141 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "data_output": {
+      "columns": "",
+      "individual_file": "{code}-{subnum}.csv",
+      "pooled_columns": "",
+      "pooled_file": "{code}-pooled.csv",
+      "report_file": "{code}-report-{subnum}.html"
+    },
+    "dimensions": [
+      {
+        "abbreviation": "",
+        "description": "Mean satisfaction score",
+        "enabled_param": null,
+        "id": "Overall",
+        "name": "Overall satisfaction"
+      }
+    ],
+    "items": [
+      {
+        "id": "Exsatisfaction001",
+        "likert_points": 5,
+        "text_key": "Exsatisfaction001",
+        "type": "likert"
+      },
+      {
+        "id": "Exsatisfaction002",
+        "likert_points": 5,
+        "text_key": "Exsatisfaction002",
+        "type": "likert"
+      },
+      {
+        "id": "Exsatisfaction003",
+        "likert_points": 5,
+        "text_key": "Exsatisfaction003",
+        "type": "likert"
+      },
+      {
+        "id": "Exsatisfaction004",
+        "likert_points": 5,
+        "text_key": "Exsatisfaction004",
+        "type": "likert"
+      },
+      {
+        "id": "Exsatisfaction005",
+        "likert_points": 5,
+        "text_key": "Exsatisfaction005",
+        "type": "likert"
+      },
+      {
+        "id": "Exsatisfaction006",
+        "likert_points": 5,
+        "text_key": "Exsatisfaction006",
+        "type": "likert"
+      },
+      {
+        "id": "Exsatisfaction007",
+        "likert_points": 5,
+        "text_key": "Exsatisfaction007",
+        "type": "likert"
+      }
+    ],
+    "likert_options": {
+      "labels": [
+        "Exsatisfaction_response_1",
+        "Exsatisfaction_response_2",
+        "Exsatisfaction_response_3",
+        "Exsatisfaction_response_4",
+        "Exsatisfaction_response_5"
+      ],
+      "points": 5,
+      "question_head": "question_head"
+    },
+    "report": {
+      "footer_refs": [],
+      "header": "",
+      "include": [],
+      "template": "standard"
+    },
+    "scale_info": {
+      "abbreviation": "EXPSAT",
+      "citation": "Hoffman, R. R., Mueller, S. T., Klein, G., & Litman, J. (2018). Metrics for explainable AI: Challenges and prospects. arXiv preprint arXiv:1812.04608.\nHoffman, R. R., Mueller, S. T., Klein, G., & Litman, J. (2023). Measures for explainable AI: Explanation goodness, user satisfaction, mental models, curiosity, trust, and human-AI performance. Frontiers in Computer Science, 5, 1096257.\n",
+      "code": "EXPSAT",
+      "description": "Standard scale for evaluating user satisfaction in explanations provided by AI and XAI systems.",
+      "license": "CC",
+      "name": "Explanation Satisfaction Scale",
+      "url": "",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "scoring": {
+      "Overall": {
+        "description": "",
+        "item_coding": {
+          "Exsatisfaction001": 1,
+          "Exsatisfaction002": 1,
+          "Exsatisfaction003": 1,
+          "Exsatisfaction004": 1,
+          "Exsatisfaction005": 1,
+          "Exsatisfaction006": 1,
+          "Exsatisfaction007": 1
+        },
+        "items": [
+          "Exsatisfaction001",
+          "Exsatisfaction002",
+          "Exsatisfaction003",
+          "Exsatisfaction004",
+          "Exsatisfaction006",
+          "Exsatisfaction005",
+          "Exsatisfaction007"
+        ],
+        "method": "mean_coded"
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "Exsatisfaction001": "From the explanation, I know how the [software, algorithm, tool] works.",
+      "Exsatisfaction002": "This explanation of how the [software, algorithm, tool] works is satisfying.",
+      "Exsatisfaction003": "This explanation of how the [software, algorithm, tool] works has sufficient detail.",
+      "Exsatisfaction004": "This explanation of how the [software, algorithm, tool] works seems complete.",
+      "Exsatisfaction005": "This explanation of how the [software, algorithm, tool] works tells me how to use it.",
+      "Exsatisfaction006": "This explanation of how the [software, algorithm, tool] works is useful to my goals.",
+      "Exsatisfaction007": "This explanation of the [software, algorithm, tool] shows me how accurate the [software, algorithm, tool] is.",
+      "Exsatisfaction_response_1": "Strongly Disagree",
+      "Exsatisfaction_response_2": "Disagree",
+      "Exsatisfaction_response_3": "Neutral",
+      "Exsatisfaction_response_4": "Agree",
+      "Exsatisfaction_response_5": "Strongly Agree",
+      "debrief": "Thank you for completing this questionnaire.",
+      "question_head": "Indicate your response by selecting the most appropriate option."
+    }
+  }
+}

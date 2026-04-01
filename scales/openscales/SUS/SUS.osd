@@ -1,0 +1,207 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "System Usability Scale",
+      "code": "SUS",
+      "abbreviation": "SUS",
+      "description": "10-item scale measuring perceived system usability. Traditional SUS score (0-100) = 25 * (mean_coded - 1).",
+      "citation": "Brooke, J. (1996). SUS: A 'Quick and Dirty' Usability Scale. In P. W. Jordan, B. Thomas, I. L. McClelland, & B. Weerdmeester (Eds.), Usability Evaluation in Industry (pp. 189-194). https://doi.org/10.1201/9781498710411",
+      "license": "free to use",
+      "version": "1.0",
+      "url": "https://doi.org/10.1201/9781498710411"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "SUS_response_1",
+        "SUS_response_2",
+        "SUS_response_3",
+        "SUS_response_4",
+        "SUS_response_5"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "usability",
+        "name": "System Usability",
+        "abbreviation": "SUS",
+        "description": "Overall perceived usability. Traditional SUS score (0-100) = 25 * (mean - 1).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "SUS01",
+        "text_key": "SUS01",
+        "type": "likert"
+      },
+      {
+        "id": "SUS02",
+        "text_key": "SUS02",
+        "type": "likert"
+      },
+      {
+        "id": "SUS03",
+        "text_key": "SUS03",
+        "type": "likert"
+      },
+      {
+        "id": "SUS04",
+        "text_key": "SUS04",
+        "type": "likert"
+      },
+      {
+        "id": "SUS05",
+        "text_key": "SUS05",
+        "type": "likert"
+      },
+      {
+        "id": "SUS06",
+        "text_key": "SUS06",
+        "type": "likert"
+      },
+      {
+        "id": "SUS07",
+        "text_key": "SUS07",
+        "type": "likert"
+      },
+      {
+        "id": "SUS08",
+        "text_key": "SUS08",
+        "type": "likert"
+      },
+      {
+        "id": "SUS09",
+        "text_key": "SUS09",
+        "type": "likert"
+      },
+      {
+        "id": "SUS10",
+        "text_key": "SUS10",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "usability": {
+        "method": "mean_coded",
+        "items": [
+          "SUS01",
+          "SUS02",
+          "SUS03",
+          "SUS04",
+          "SUS05",
+          "SUS06",
+          "SUS07",
+          "SUS08",
+          "SUS09",
+          "SUS10"
+        ],
+        "description": "Mean usability score (1-5 scale). Traditional SUS (0-100) = 25 * (mean - 1).",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 1.0,
+              "max": 1.99,
+              "label": "Worst Imaginable"
+            },
+            {
+              "min": 2.0,
+              "max": 3.07,
+              "label": "Poor"
+            },
+            {
+              "min": 3.08,
+              "max": 3.9,
+              "label": "OK"
+            },
+            {
+              "min": 3.91,
+              "max": 4.42,
+              "label": "Good"
+            },
+            {
+              "min": 4.43,
+              "max": 5.0,
+              "label": "Excellent"
+            }
+          ]
+        },
+        "item_coding": {
+          "SUS01": 1,
+          "SUS02": -1,
+          "SUS03": 1,
+          "SUS04": -1,
+          "SUS05": 1,
+          "SUS06": -1,
+          "SUS07": 1,
+          "SUS08": -1,
+          "SUS09": 1,
+          "SUS10": -1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "The System Usability Scale (SUS) measures perceived usability of a system or product.",
+      "footer_refs": [
+        "Brooke, J. (1996). SUS: A 'Quick and Dirty' Usability Scale. In P. W. Jordan et al. (Eds.), Usability Evaluation in Industry (pp. 189-194).",
+        "See <a href='https://doi.org/10.1201/9781498710411'>https://doi.org/10.1201/9781498710411</a> for more information."
+      ]
+    },
+    "data_output": {
+      "individual_file": "SUS-{subnum}.csv",
+      "pooled_file": "SUS-pooled.csv",
+      "report_file": "SUS-report-{subnum}.html",
+      "columns": "subnum,order,time,qnum,ques,dim,valence,resp,rt",
+      "pooled_columns": "subnum,timestamp,time,SUS01,SUS02,SUS03,SUS04,SUS05,SUS06,SUS07,SUS08,SUS09,SUS10,usability"
+    }
+  },
+  "translations": {
+    "en": {
+      "LANGUAGE": "en",
+      "question_head": "Rate your agreement with the following statement.",
+      "SUS_response_1": "Strongly Disagree",
+      "SUS_response_2": "Mildly Disagree",
+      "SUS_response_3": "Agree and Disagree Equally",
+      "SUS_response_4": "Mildly Agree",
+      "SUS_response_5": "Strongly Agree",
+      "SUS01": "I think that I would like to use this system frequently.",
+      "SUS02": "I found the system unnecessarily complex.",
+      "SUS03": "I thought the system was easy to use.",
+      "SUS04": "I think that I would need the support of a technical person to be able to use this system.",
+      "SUS05": "I found the various functions in this system were well integrated.",
+      "SUS06": "I thought there was too much inconsistency in this system.",
+      "SUS07": "I would imagine that most people would learn to use this system very quickly.",
+      "SUS08": "I found the system very cumbersome to use.",
+      "SUS09": "I felt very confident using the system.",
+      "SUS10": "I needed to learn a lot of things before I could get going with this system.",
+      "debrief": "Thank you for completing the System Usability Scale."
+    }
+  }
+}

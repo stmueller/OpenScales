@@ -1,0 +1,548 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Michigan Alcohol Screening Test (MAST)",
+      "code": "MAST",
+      "abbreviation": "MAST",
+      "description": "24-item yes/no self-report screening test for alcohol use problems (Selzer, 1971). Items 1, 4, 6, 7 are reverse-scored (No = problem). Weighted scoring: most items score 2 points, items 3, 5, 9, 16 score 1 point, items 8, 19, 20 score 5 points. Total range 0–53. Norms: 0–3 no apparent problem, 4 suggests problem, 5+ indicates alcoholism. Public domain.",
+      "citation": "Selzer, M. L. (1971). The Michigan Alcoholism Screening Test: The quest for a new diagnostic instrument. American Journal of Psychiatry, 127(12), 1653–1658. https://pubmed.ncbi.nlm.nih.gov/5565851/",
+      "license": "Public Domain",
+      "license_explanation": "Public domain. Described as 'a public-domain screening tool' by Michigan 24th District Court. See CamCOPS IP documentation: https://camcops.readthedocs.io/en/latest/tasks/mast.html",
+      "license_url": "https://camcops.readthedocs.io/en/latest/tasks/mast.html",
+      "version": "1.0",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/5565851/"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total MAST Score",
+        "description": "Weighted sum of all 24 items (0–53). Higher = more alcohol-related problems."
+      }
+    ],
+    "items": [
+      {
+        "id": "mast_inst",
+        "text_key": "mast_inst",
+        "type": "inst"
+      },
+      {
+        "id": "q1",
+        "text_key": "q1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 0
+          },
+          {
+            "text_key": "no",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "text_key": "q2",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 2
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "text_key": "q3",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 1
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "text_key": "q4",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 0
+          },
+          {
+            "text_key": "no",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "text_key": "q5",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 1
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "text_key": "q6",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 0
+          },
+          {
+            "text_key": "no",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "text_key": "q7",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 0
+          },
+          {
+            "text_key": "no",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "text_key": "q8",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 5
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q9",
+        "text_key": "q9",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 1
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q10",
+        "text_key": "q10",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 2
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q11",
+        "text_key": "q11",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 2
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q12",
+        "text_key": "q12",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 2
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q13",
+        "text_key": "q13",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 2
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q14",
+        "text_key": "q14",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 2
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q15",
+        "text_key": "q15",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 2
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q16",
+        "text_key": "q16",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 1
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q17",
+        "text_key": "q17",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 2
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q18",
+        "text_key": "q18",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 2
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q19",
+        "text_key": "q19",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 5
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q20",
+        "text_key": "q20",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 5
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q21",
+        "text_key": "q21",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 2
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q22",
+        "text_key": "q22",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 2
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q23",
+        "text_key": "q23",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 2
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "id": "q24",
+        "text_key": "q24",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "yes",
+            "value": 2
+          },
+          {
+            "text_key": "no",
+            "value": 0
+          }
+        ]
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q5",
+          "q6",
+          "q7",
+          "q8",
+          "q9",
+          "q10",
+          "q11",
+          "q12",
+          "q13",
+          "q14",
+          "q15",
+          "q16",
+          "q17",
+          "q18",
+          "q19",
+          "q20",
+          "q21",
+          "q22",
+          "q23",
+          "q24"
+        ],
+        "description": "Weighted sum (0–53). Scoring direction and weights are embedded in option values.",
+        "item_coding": {
+          "q1": 1,
+          "q2": 1,
+          "q3": 1,
+          "q4": 1,
+          "q5": 1,
+          "q6": 1,
+          "q7": 1,
+          "q8": 1,
+          "q9": 1,
+          "q10": 1,
+          "q11": 1,
+          "q12": 1,
+          "q13": 1,
+          "q14": 1,
+          "q15": 1,
+          "q16": 1,
+          "q17": 1,
+          "q18": 1,
+          "q19": 1,
+          "q20": 1,
+          "q21": 1,
+          "q22": 1,
+          "q23": 1,
+          "q24": 1
+        },
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 3,
+              "label": "No apparent problem"
+            },
+            {
+              "min": 4,
+              "max": 4,
+              "label": "Suggests problem"
+            },
+            {
+              "min": 5,
+              "max": 53,
+              "label": "Indicates alcoholism"
+            }
+          ],
+          "source": "Selzer (1971). Score of 5+ indicates alcoholism."
+        }
+      }
+    },
+    "computed": {
+      "unweighted_total": {
+        "expression": "(answer.q1 > 0) + (answer.q2 > 0) + (answer.q3 > 0) + (answer.q4 > 0) + (answer.q5 > 0) + (answer.q6 > 0) + (answer.q7 > 0) + (answer.q8 > 0) + (answer.q9 > 0) + (answer.q10 > 0) + (answer.q11 > 0) + (answer.q12 > 0) + (answer.q13 > 0) + (answer.q14 > 0) + (answer.q15 > 0) + (answer.q16 > 0) + (answer.q17 > 0) + (answer.q18 > 0) + (answer.q19 > 0) + (answer.q20 > 0) + (answer.q21 > 0) + (answer.q22 > 0) + (answer.q23 > 0) + (answer.q24 > 0)",
+        "type": "number",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 2,
+              "label": "No apparent problem"
+            },
+            {
+              "min": 3,
+              "max": 5,
+              "label": "Early or middle problem drinker"
+            },
+            {
+              "min": 6,
+              "max": 24,
+              "label": "Problem drinker"
+            }
+          ],
+          "source": "Unweighted 1-point-per-item scoring (Oregon version). 0–2 no problem, 3–5 early/middle, 6+ problem."
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Michigan Alcohol Screening Test (MAST) Report",
+      "footer_refs": [
+        "Selzer, M. L. (1971). The Michigan Alcoholism Screening Test. American Journal of Psychiatry, 127(12), 1653–1658.",
+        "Weighted scoring (Selzer 1971): items 3, 5, 9, 16 = 1 pt; items 8, 19, 20 = 5 pts; all others = 2 pts. Items 1, 4, 6, 7 reverse-scored (No = problem). Total 0–53; 5+ indicates alcoholism.",
+        "Unweighted scoring (alternate): 1 point per problem response. Total 0–24; 0–2 no problem, 3–5 early/middle, 6+ problem drinker."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "mast_inst": "Please answer Yes or No for each item as it applies to you.",
+      "yes": "Yes",
+      "no": "No",
+      "q1": "Do you feel you are a normal drinker? (By normal we mean you drink less than or as much as most other people.)",
+      "q2": "Have you ever awakened the morning after some drinking the night before and found that you could not remember a part of the evening?",
+      "q3": "Does your spouse, a parent, or other near relative ever worry or complain about your drinking?",
+      "q4": "Can you stop drinking without a struggle after one or two drinks?",
+      "q5": "Do you ever feel guilty about your drinking?",
+      "q6": "Do friends or relatives think you are a normal drinker?",
+      "q7": "Are you able to stop drinking when you want to?",
+      "q8": "Have you ever attended a meeting of Alcoholics Anonymous (AA)?",
+      "q9": "Have you gotten into physical fights when drinking?",
+      "q10": "Has your drinking ever created problems between you and your spouse, a parent, or other relative?",
+      "q11": "Has your spouse (or other family member) ever gone to anyone for help about your drinking?",
+      "q12": "Have you ever lost friends because of drinking?",
+      "q13": "Have you ever gotten into trouble at work or school because of drinking?",
+      "q14": "Have you ever lost a job because of drinking?",
+      "q15": "Have you ever neglected your obligations, your family, or your work for two or more days in a row because you were drinking?",
+      "q16": "Do you drink before noon fairly often?",
+      "q17": "Have you ever been told you have liver trouble? Cirrhosis?",
+      "q18": "After heavy drinking have you ever had delirium tremens (D.T.'s), severe shaking, or heard voices or seen things that really were not there?",
+      "q19": "Have you ever gone to anyone for help about your drinking?",
+      "q20": "Have you ever been in a hospital because of drinking?",
+      "q21": "Have you ever been a patient in a psychiatric hospital or on a psychiatric ward of a general hospital where drinking was part of the problem that resulted in hospitalization?",
+      "q22": "Have you ever been seen at a psychiatric or mental health clinic, or gone to any doctor, social worker, or clergyman for help with an emotional problem, where drinking was part of the problem?",
+      "q23": "Have you ever been arrested for drunk driving, driving while intoxicated, or driving under the influence of alcoholic beverages?",
+      "q24": "Have you ever been arrested, or taken into custody even for a few hours, because of other drunk behavior?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

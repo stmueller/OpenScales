@@ -1,0 +1,287 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Scientific Bullshit Receptivity Scale",
+      "code": "SBR",
+      "abbreviation": "SBR",
+      "description": "20-item scale measuring receptivity to scientific bullshit. Ten items are plausible-sounding but scientifically nonsensical statements (bullshit items, dimension: sbr) created by taking existing physical laws and replacing central words with randomly selected physics glossary terms. Ten items are real scientific statements based on actual physical laws (dimension: factual). Participants rate how truthful each statement is on a 5-point scale (1 = Not at all truthful; 5 = Very truthful). The primary score is the mean rating of the 10 scientific bullshit items (alpha = .83); higher scores indicate greater receptivity to scientific bullshit. Note: the factual items were included in Studies 1 and 2 only, not Study 3.",
+      "citation": "Evans, A. M., Sleegers, W., & Mlakar, Z. (2020). Individual differences in receptivity to scientific bullshit. Judgment and Decision Making, 15(3), 401-412.",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1017/S1930297500007191"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item order (recommended: items were presented in randomized order in the original studies)"
+      },
+      "show_header": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Show scale title (default off: title would reveal the nature of the scale)"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "sbr",
+        "name": "Scientific Bullshit Receptivity"
+      },
+      {
+        "id": "factual",
+        "name": "Factual Science Ratings"
+      }
+    ],
+    "items": [
+      {
+        "id": "bs1",
+        "type": "likert",
+        "text_key": "bs1",
+        "dimension": "sbr",
+        "random_group": 1
+      },
+      {
+        "id": "bs2",
+        "type": "likert",
+        "text_key": "bs2",
+        "dimension": "sbr",
+        "random_group": 1
+      },
+      {
+        "id": "bs3",
+        "type": "likert",
+        "text_key": "bs3",
+        "dimension": "sbr",
+        "random_group": 1
+      },
+      {
+        "id": "bs4",
+        "type": "likert",
+        "text_key": "bs4",
+        "dimension": "sbr",
+        "random_group": 1
+      },
+      {
+        "id": "bs5",
+        "type": "likert",
+        "text_key": "bs5",
+        "dimension": "sbr",
+        "random_group": 1
+      },
+      {
+        "id": "bs6",
+        "type": "likert",
+        "text_key": "bs6",
+        "dimension": "sbr",
+        "random_group": 1
+      },
+      {
+        "id": "bs7",
+        "type": "likert",
+        "text_key": "bs7",
+        "dimension": "sbr",
+        "random_group": 1
+      },
+      {
+        "id": "bs8",
+        "type": "likert",
+        "text_key": "bs8",
+        "dimension": "sbr",
+        "random_group": 1
+      },
+      {
+        "id": "bs9",
+        "type": "likert",
+        "text_key": "bs9",
+        "dimension": "sbr",
+        "random_group": 1
+      },
+      {
+        "id": "bs10",
+        "type": "likert",
+        "text_key": "bs10",
+        "dimension": "sbr",
+        "random_group": 1
+      },
+      {
+        "id": "f1",
+        "type": "likert",
+        "text_key": "f1",
+        "dimension": "factual",
+        "random_group": 1
+      },
+      {
+        "id": "f2",
+        "type": "likert",
+        "text_key": "f2",
+        "dimension": "factual",
+        "random_group": 1
+      },
+      {
+        "id": "f3",
+        "type": "likert",
+        "text_key": "f3",
+        "dimension": "factual",
+        "random_group": 1
+      },
+      {
+        "id": "f4",
+        "type": "likert",
+        "text_key": "f4",
+        "dimension": "factual",
+        "random_group": 1
+      },
+      {
+        "id": "f5",
+        "type": "likert",
+        "text_key": "f5",
+        "dimension": "factual",
+        "random_group": 1
+      },
+      {
+        "id": "f6",
+        "type": "likert",
+        "text_key": "f6",
+        "dimension": "factual",
+        "random_group": 1
+      },
+      {
+        "id": "f7",
+        "type": "likert",
+        "text_key": "f7",
+        "dimension": "factual",
+        "random_group": 1
+      },
+      {
+        "id": "f8",
+        "type": "likert",
+        "text_key": "f8",
+        "dimension": "factual",
+        "random_group": 1
+      },
+      {
+        "id": "f9",
+        "type": "likert",
+        "text_key": "f9",
+        "dimension": "factual",
+        "random_group": 1
+      },
+      {
+        "id": "f10",
+        "type": "likert",
+        "text_key": "f10",
+        "dimension": "factual",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "sbr": {
+        "method": "mean_coded",
+        "items": [
+          "bs1",
+          "bs2",
+          "bs3",
+          "bs4",
+          "bs5",
+          "bs6",
+          "bs7",
+          "bs8",
+          "bs9",
+          "bs10"
+        ],
+        "description": "Mean of 10 scientific bullshit items (range 1-5). Higher scores indicate greater receptivity to scientific bullshit (alpha = .83).",
+        "item_coding": {
+          "bs1": 1,
+          "bs2": 1,
+          "bs3": 1,
+          "bs4": 1,
+          "bs5": 1,
+          "bs6": 1,
+          "bs7": 1,
+          "bs8": 1,
+          "bs9": 1,
+          "bs10": 1
+        }
+      },
+      "factual": {
+        "method": "mean_coded",
+        "items": [
+          "f1",
+          "f2",
+          "f3",
+          "f4",
+          "f5",
+          "f6",
+          "f7",
+          "f8",
+          "f9",
+          "f10"
+        ],
+        "description": "Mean of 10 real scientific statements (range 1-5). Used as a comparison/control measure. Higher scores indicate greater acceptance of true scientific facts. Note: factual items were excluded from Study 3.",
+        "item_coding": {
+          "f1": 1,
+          "f2": 1,
+          "f3": 1,
+          "f4": 1,
+          "f5": 1,
+          "f6": 1,
+          "f7": 1,
+          "f8": 1,
+          "f9": 1,
+          "f10": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "question_head": "Please read each statement and take a moment to think about what it might mean. Then please rate how \"truthful\" you think it is.",
+      "likert_1": "Not at all truthful",
+      "likert_2": "Somewhat truthful",
+      "likert_3": "Fairly truthful",
+      "likert_4": "Definitely truthful",
+      "likert_5": "Very truthful",
+      "bs1": "Energy can deteriorate based on closed-circuit alliterations of an afocal system.",
+      "bs2": "The entropy of an integral approaches constructive interference as its buoyancy approaches endothermal constant of quantum ground states.",
+      "bs3": "In all thermal equilibria, if no surface tension is applied nor any refraction imposed upon the object, the capacity of that atomic structure disperses throughout the object.",
+      "bs4": "There are no transverse waves when the total magnetic sublimation through a stiff photon is equal to its scattered matrix.",
+      "bs5": "The solubility induced in an electromagnetic field is proportional to the damped vibration of the binary infrasound it encloses.",
+      "bs6": "In the Kirchhoff's equation of nuclear transmutation, parity algorithm is the most accurate description that can be given of thermal conduction.",
+      "bs7": "A cyclic ionization whose only final result is to induce plasmatic solubility is impossible.",
+      "bs8": "The thermal conduction capacity is approximately equal to the total internal reflection of a set of linear actuators.",
+      "bs9": "The sum of the derivative differences encountered in an alternating current during any destructive interference is zero.",
+      "bs10": "For a dispersed force induced on a shortwave radiation, the acceleration produced is proportional to the amplitude of its separation from particle charge.",
+      "f1": "In a natural thermodynamic process, the sum of the entropies of the interacting thermodynamic systems increases.",
+      "f2": "The internal energy of a substance can be explained as the sum of the diverse kinetic energies of the erratic microscopic motions of its constituent atoms, and of the potential energy of interactions between them.",
+      "f3": "In all energy exchanges, if no energy enters or leaves an isolated system the entropy of that system increases.",
+      "f4": "When two initially isolated systems in separate but nearby regions of space, each in thermodynamic equilibrium with itself but not necessarily with each other, are then allowed to interact, they will eventually reach a mutual thermodynamic equilibrium.",
+      "f5": "The conservation of energy follows from the time-invariance of physical systems, and the fact that physical systems behave the same regardless of how they are oriented in space gives rise to the conservation of angular momentum.",
+      "f6": "The voltage induced in a closed circuit is proportional to the rate of change of the magnetic flux it encloses.",
+      "f7": "As the result of a measurement the wave function containing the probability information for a system collapses from a given initial state to a particular eigenstate.",
+      "f8": "The probability distribution of an observable in a given state can be found by computing the spectral decomposition of the corresponding operator.",
+      "f9": "A cyclic transformation whose only final result is to transform heat extracted from a source which is at the same temperature throughout into work is impossible.",
+      "f10": "For an unbalanced force acting on a body, the acceleration produced is proportional to the force impressed; the constant of proportionality is the inertial mass of the body."
+    }
+  }
+}

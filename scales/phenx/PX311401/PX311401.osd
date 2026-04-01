@@ -1,0 +1,74 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Relative Advantage of a Genomic Medicine Intervention over Current Practice",
+      "code": "PX311401",
+      "abbreviation": "PX311401",
+      "description": "Two questions from the Implementing GeNomics In pracTicE (IGNITE) Pre-implementation Provider Survey that healthcare providers can use to assess the relative advantage of a genomic intervention over their current practice. Responses are based upon a 5-point Likert scale from strongly agree (5) to st",
+      "domain": "Genomics & Genetics",
+      "citation": "Damschroder, L. J., Aron, D. C., Keith, R. E., Kirsh, S. R., Alexander, J. A., & Lowery, J. C. (2009). Fostering implementation of health services research findings into practice: A consolidated framework for advancing implementation science. Implementation Science, 4, 50. Orlando, L. A., Sperber, N. R., Volis, C., Nichols, M., Myers, R. A., Wu, R. R., . Rakhra-Burris, T., Levy, K. D., Levy, M., Pollin, T. I., Guan, Y., Horowitz, C. R., Ramos, M., Kimmel, S. E., McDonough, C. W., Madden, E. B., Damschroder, L. J. (2018). Developing a common framework for evaluating the implementation of genomic medicine interventions in clinical care: The IGNITE Network’s Common Measures Working Group. Genetics in Medicine, 20(6), 655–663. Orlando, L. A., Volis, C., Horowitz, C. R., Myers, R. A., Arwood, M. J., Cicali, E. J., McDonough, C. W., Pollin, T. I., Guan, Y., Levy, K. D., Ramirez, A., Quittner, A., Madden, E. B. (2018). IGNITE network: Response of patients to genomic medicine interventions. Molecular Genetics & Genomic Medicine, 7, e636. [PhenX: https://www.phenxtoolkit.org/protocols/view/311401]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/311401"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "lk_opt_1",
+        "lk_opt_2",
+        "lk_opt_3",
+        "lk_opt_4",
+        "lk_opt_5"
+      ]
+    },
+    "items": [
+      {
+        "id": "genomic_medicine_intervention_improve_assess_risk",
+        "text_key": "genomic_medicine_intervention_improve_assess_risk",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "genomic_medicine_intervention_improve_care",
+        "text_key": "genomic_medicine_intervention_improve_care",
+        "type": "likert",
+        "likert_points": 5
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "genomic_medicine_intervention_improve_assess_risk",
+          "genomic_medicine_intervention_improve_care"
+        ],
+        "item_coding": {
+          "genomic_medicine_intervention_improve_assess_risk": 1,
+          "genomic_medicine_intervention_improve_care": 1
+        },
+        "description": "Total score (sum of all items)"
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "lk_opt_1": "Strongly Agree",
+      "lk_opt_2": "Agree",
+      "lk_opt_3": "Neither Agree nor Disagree",
+      "lk_opt_4": "Disagree",
+      "lk_opt_5": "Strongly Disagree",
+      "genomic_medicine_intervention_improve_assess_risk": "[X genomic intervention] will be an improvement over how I currently assess risk.",
+      "genomic_medicine_intervention_improve_care": "[X genomic intervention] will improve my ability to care for patients."
+    }
+  }
+}

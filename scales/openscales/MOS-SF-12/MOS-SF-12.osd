@@ -1,0 +1,412 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "MOS 12-Item Short Form Health Survey",
+      "code": "MOS-SF-12",
+      "abbreviation": "MOS-SF-12",
+      "description": "12-item subset of the RAND 36-Item Health Survey (MOS-SFHF-36) covering physical functioning, role limitations (physical and emotional), bodily pain, general health, vitality, social functioning, and mental health. Items drawn from the public domain RAND-36. Mixed response formats. Higher scores indicate better health.",
+      "citation": "Ware, J. E., Kosinski, M., & Keller, S. D. (1996). A 12-Item Short-Form Health Survey: Construction of scales and preliminary tests of reliability and validity. Medical Care, 34(3), 220–233. Items from: Hays, R. D., Sherbourne, C. D., & Mazel, R. M. (1993). The RAND 36-Item Health Survey 1.0. Health Economics, 2(3), 217–227.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health/surveys/mos/36-item-short-form.html",
+      "domain": "Health",
+      "license_explanation": "Items are a subset of the RAND 36-Item Health Survey which is in the public domain. RAND explicitly states these instruments are available for use without permission or fee. This is NOT the proprietary SF-12v2 from QualityMetric.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": [
+        "sf_freq1",
+        "sf_freq2",
+        "sf_freq3",
+        "sf_freq4",
+        "sf_freq5",
+        "sf_freq6"
+      ],
+      "question_head": "sf_freq_head"
+    },
+    "dimensions": [
+      {
+        "id": "physical_functioning",
+        "name": "Physical Functioning",
+        "abbreviation": "PF",
+        "description": "Items 2, 3 (activity limitations). Higher = less limited."
+      },
+      {
+        "id": "role_physical",
+        "name": "Role Limitations (Physical)",
+        "abbreviation": "RP",
+        "description": "Items 4, 5 (role limitations due to physical health). Higher = less limited."
+      },
+      {
+        "id": "bodily_pain",
+        "name": "Bodily Pain",
+        "abbreviation": "BP",
+        "description": "Item 9. Higher = less pain."
+      },
+      {
+        "id": "general_health",
+        "name": "General Health",
+        "abbreviation": "GH",
+        "description": "Item 1. Higher = better health."
+      },
+      {
+        "id": "vitality",
+        "name": "Vitality",
+        "abbreviation": "VT",
+        "description": "Item 11 (energy). Higher = more vitality."
+      },
+      {
+        "id": "social_functioning",
+        "name": "Social Functioning",
+        "abbreviation": "SF",
+        "description": "Item 8. Higher = better social functioning."
+      },
+      {
+        "id": "role_emotional",
+        "name": "Role Limitations (Emotional)",
+        "abbreviation": "RE",
+        "description": "Items 6, 7 (role limitations due to emotional problems). Higher = less limited."
+      },
+      {
+        "id": "mental_health",
+        "name": "Mental Health",
+        "abbreviation": "MH",
+        "description": "Items 10, 12 (calm/peaceful, downhearted). Higher = better mental health."
+      }
+    ],
+    "items": [
+      {
+        "id": "sf12_inst",
+        "text_key": "sf12_inst",
+        "type": "inst"
+      },
+      {
+        "id": "sf12_1",
+        "text_key": "sf12_1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "gh_1",
+            "value": 5
+          },
+          {
+            "text_key": "gh_2",
+            "value": 4
+          },
+          {
+            "text_key": "gh_3",
+            "value": 3
+          },
+          {
+            "text_key": "gh_4",
+            "value": 2
+          },
+          {
+            "text_key": "gh_5",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf12_2",
+        "text_key": "sf12_2",
+        "type": "multi",
+        "question_head": "sf_pf_head",
+        "options": [
+          {
+            "text_key": "pf_1",
+            "value": 1
+          },
+          {
+            "text_key": "pf_2",
+            "value": 2
+          },
+          {
+            "text_key": "pf_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf12_3",
+        "text_key": "sf12_3",
+        "type": "multi",
+        "question_head": "sf_pf_head",
+        "options": [
+          {
+            "text_key": "pf_1",
+            "value": 1
+          },
+          {
+            "text_key": "pf_2",
+            "value": 2
+          },
+          {
+            "text_key": "pf_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sf12_4",
+        "text_key": "sf12_4",
+        "type": "multi",
+        "question_head": "sf_rp_head",
+        "options": [
+          {
+            "text_key": "yn_yes",
+            "value": 0
+          },
+          {
+            "text_key": "yn_no",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf12_5",
+        "text_key": "sf12_5",
+        "type": "multi",
+        "question_head": "sf_rp_head",
+        "options": [
+          {
+            "text_key": "yn_yes",
+            "value": 0
+          },
+          {
+            "text_key": "yn_no",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf12_6",
+        "text_key": "sf12_6",
+        "type": "multi",
+        "question_head": "sf_re_head",
+        "options": [
+          {
+            "text_key": "yn_yes",
+            "value": 0
+          },
+          {
+            "text_key": "yn_no",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf12_7",
+        "text_key": "sf12_7",
+        "type": "multi",
+        "question_head": "sf_re_head",
+        "options": [
+          {
+            "text_key": "yn_yes",
+            "value": 0
+          },
+          {
+            "text_key": "yn_no",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf12_8",
+        "text_key": "sf12_8",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "soc_1",
+            "value": 5
+          },
+          {
+            "text_key": "soc_2",
+            "value": 4
+          },
+          {
+            "text_key": "soc_3",
+            "value": 3
+          },
+          {
+            "text_key": "soc_4",
+            "value": 2
+          },
+          {
+            "text_key": "soc_5",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf12_9",
+        "text_key": "sf12_9",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pain_1",
+            "value": 6
+          },
+          {
+            "text_key": "pain_2",
+            "value": 5
+          },
+          {
+            "text_key": "pain_3",
+            "value": 4
+          },
+          {
+            "text_key": "pain_4",
+            "value": 3
+          },
+          {
+            "text_key": "pain_5",
+            "value": 2
+          },
+          {
+            "text_key": "pain_6",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sf12_10",
+        "text_key": "sf12_10",
+        "type": "likert"
+      },
+      {
+        "id": "sf12_11",
+        "text_key": "sf12_11",
+        "type": "likert"
+      },
+      {
+        "id": "sf12_12",
+        "text_key": "sf12_12",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "physical_functioning": {
+        "method": "mean_coded",
+        "items": [
+          "sf12_2",
+          "sf12_3"
+        ],
+        "description": "Physical Functioning (2 items). Higher = less limitation.",
+        "item_coding": {
+          "sf12_2": 1,
+          "sf12_3": 1
+        }
+      },
+      "role_physical": {
+        "method": "mean_coded",
+        "items": [
+          "sf12_4",
+          "sf12_5"
+        ],
+        "description": "Role Limitations — Physical (2 items). Higher = less limitation.",
+        "item_coding": {
+          "sf12_4": 1,
+          "sf12_5": 1
+        }
+      },
+      "role_emotional": {
+        "method": "mean_coded",
+        "items": [
+          "sf12_6",
+          "sf12_7"
+        ],
+        "description": "Role Limitations — Emotional (2 items). Higher = less limitation.",
+        "item_coding": {
+          "sf12_6": 1,
+          "sf12_7": 1
+        }
+      },
+      "mental_health": {
+        "method": "mean_coded",
+        "items": [
+          "sf12_10",
+          "sf12_12"
+        ],
+        "description": "Mental Health (2 items: calm/peaceful, downhearted). Item 12 reverse-coded. Higher = better mental health.",
+        "item_coding": {
+          "sf12_10": -1,
+          "sf12_12": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "MOS 12-Item Short Form Health Survey Report",
+      "footer_refs": [
+        "Items from the RAND 36-Item Health Survey 1.0 (public domain).",
+        "Higher scores indicate better health on all dimensions."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "sf12_inst": "This survey asks for your views about your health. This information will help keep track of how you feel and how well you are able to do your usual activities.",
+      "sf_pf_head": "The following items are about activities you might do during a typical day. Does your health now limit you in these activities? If so, how much?",
+      "sf_rp_head": "During the <b>past 4 weeks</b>, have you had any of the following problems with your work or other regular daily activities <b>as a result of your physical health</b>?",
+      "sf_re_head": "During the <b>past 4 weeks</b>, have you had any of the following problems with your work or other regular daily activities <b>as a result of any emotional problems</b> (such as feeling depressed or anxious)?",
+      "sf_freq_head": "These questions are about how you feel and how things have been with you during the <b>past 4 weeks</b>. How much of the time during the past 4 weeks...",
+      "sf_freq1": "All of the time",
+      "sf_freq2": "Most of the time",
+      "sf_freq3": "A good bit of the time",
+      "sf_freq4": "Some of the time",
+      "sf_freq5": "A little of the time",
+      "sf_freq6": "None of the time",
+      "gh_1": "Excellent",
+      "gh_2": "Very good",
+      "gh_3": "Good",
+      "gh_4": "Fair",
+      "gh_5": "Poor",
+      "pf_1": "Yes, limited a lot",
+      "pf_2": "Yes, limited a little",
+      "pf_3": "No, not limited at all",
+      "yn_yes": "Yes",
+      "yn_no": "No",
+      "soc_1": "Not at all",
+      "soc_2": "Slightly",
+      "soc_3": "Moderately",
+      "soc_4": "Quite a bit",
+      "soc_5": "Extremely",
+      "pain_1": "None",
+      "pain_2": "Very mild",
+      "pain_3": "Mild",
+      "pain_4": "Moderate",
+      "pain_5": "Severe",
+      "pain_6": "Very severe",
+      "sf12_1": "In general, would you say your health is:",
+      "sf12_2": "Moderate activities, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf",
+      "sf12_3": "Climbing several flights of stairs",
+      "sf12_4": "Accomplished less than you would like",
+      "sf12_5": "Were limited in the kind of work or other activities",
+      "sf12_6": "Accomplished less than you would like",
+      "sf12_7": "Didn't do work or other activities as carefully as usual",
+      "sf12_8": "During the past 4 weeks, to what extent has your physical health or emotional problems interfered with your normal social activities with family, friends, neighbors, or groups?",
+      "sf12_9": "How much bodily pain have you had during the past 4 weeks?",
+      "sf12_10": "...have you felt calm and peaceful?",
+      "sf12_11": "...did you have a lot of energy?",
+      "sf12_12": "...have you felt downhearted and blue?",
+      "debrief": "Thank you for completing this survey."
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Leadership",
+      "code": "IPIP-VIA-LEADERSHIP",
+      "abbreviation": "IPIP-VIA-LEADERSHIP",
+      "description": "IPIP representation of the VIA character strength 'Leadership'. 7-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "leadership",
+        "name": "Leadership",
+        "abbreviation": "LEADERSHIP",
+        "description": "IPIP VIA Leadership subscale (7 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_118",
+        "text_key": "ipip_via_118",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_119",
+        "text_key": "ipip_via_119",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_120",
+        "text_key": "ipip_via_120",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_121",
+        "text_key": "ipip_via_121",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_122",
+        "text_key": "ipip_via_122",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_123",
+        "text_key": "ipip_via_123",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_124",
+        "text_key": "ipip_via_124",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "leadership": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_118",
+          "ipip_via_119",
+          "ipip_via_120",
+          "ipip_via_121",
+          "ipip_via_122",
+          "ipip_via_123",
+          "ipip_via_124"
+        ],
+        "description": "Mean of 7 items (range 1–5; higher = stronger Leadership). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_118": 1,
+          "ipip_via_119": -1,
+          "ipip_via_120": -1,
+          "ipip_via_121": 1,
+          "ipip_via_122": -1,
+          "ipip_via_123": 1,
+          "ipip_via_124": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_118": "Am good at helping people work well together.",
+      "ipip_via_119": "Am not good at planning group activities.",
+      "ipip_via_120": "Am not good at taking charge of a group.",
+      "ipip_via_121": "Am told that I am a strong but fair leader.",
+      "ipip_via_122": "Have difficulty getting others to work together.",
+      "ipip_via_123": "Try to make my group members happy.",
+      "ipip_via_124": "Try to make sure everyone in a group feels included."
+    }
+  }
+}

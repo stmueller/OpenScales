@@ -1,0 +1,255 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Smartphone Distraction Scale",
+      "code": "SDS",
+      "abbreviation": "SDS",
+      "description": "16-item self-report scale measuring smartphone distraction across four dimensions: Attention Impulsiveness (distraction from notifications and the device itself), Online Vigilance (cognitive preoccupation with checking content and social validation), Multitasking (simultaneous smartphone use during other activities), and Emotion Regulation (using the phone to manage negative affect and avoid unpleasant tasks). Higher scores indicate greater smartphone distraction.",
+      "citation": "Throuvala, M. A., Pontes, H. M., Tsaousis, I., Griffiths, M. D., Rennoldson, M., & Dhuffar, M. K. (2021). Exploring the dimensions of smartphone distraction: Development, validation, measurement invariance, and latent mean differences of the Smartphone Distraction Scale (SDS). Frontiers in Psychiatry, 12, 642634.",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyt.2021.642634",
+      "domain": "Technology"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "attention",
+        "name": "Attention Impulsiveness",
+        "description": "Distraction caused by impulsive responses to phone notifications, apps, and the mere physical presence of the device."
+      },
+      {
+        "id": "vigilance",
+        "name": "Online Vigilance",
+        "description": "Cognitive preoccupation with checking phone content and monitoring social media for likes, comments, and posts."
+      },
+      {
+        "id": "multitasking",
+        "name": "Multitasking",
+        "description": "Using the smartphone simultaneously while engaged in other activities such as conversations, walking, or working."
+      },
+      {
+        "id": "emotion_reg",
+        "name": "Emotion Regulation",
+        "description": "Using the smartphone as a distraction strategy to avoid unpleasant tasks, negative thoughts, or emotional pressure."
+      }
+    ],
+    "items": [
+      {
+        "id": "inst",
+        "text_key": "inst",
+        "type": "inst"
+      },
+      {
+        "id": "sds1",
+        "text_key": "sds1",
+        "type": "likert",
+        "dimension": "attention"
+      },
+      {
+        "id": "sds2",
+        "text_key": "sds2",
+        "type": "likert",
+        "dimension": "attention"
+      },
+      {
+        "id": "sds3",
+        "text_key": "sds3",
+        "type": "likert",
+        "dimension": "attention"
+      },
+      {
+        "id": "sds4",
+        "text_key": "sds4",
+        "type": "likert",
+        "dimension": "attention"
+      },
+      {
+        "id": "sds5",
+        "text_key": "sds5",
+        "type": "likert",
+        "dimension": "vigilance"
+      },
+      {
+        "id": "sds6",
+        "text_key": "sds6",
+        "type": "likert",
+        "dimension": "vigilance"
+      },
+      {
+        "id": "sds7",
+        "text_key": "sds7",
+        "type": "likert",
+        "dimension": "vigilance"
+      },
+      {
+        "id": "sds8",
+        "text_key": "sds8",
+        "type": "likert",
+        "dimension": "vigilance"
+      },
+      {
+        "id": "sds9",
+        "text_key": "sds9",
+        "type": "likert",
+        "dimension": "multitasking"
+      },
+      {
+        "id": "sds10",
+        "text_key": "sds10",
+        "type": "likert",
+        "dimension": "multitasking"
+      },
+      {
+        "id": "sds11",
+        "text_key": "sds11",
+        "type": "likert",
+        "dimension": "multitasking"
+      },
+      {
+        "id": "sds12",
+        "text_key": "sds12",
+        "type": "likert",
+        "dimension": "multitasking"
+      },
+      {
+        "id": "sds13",
+        "text_key": "sds13",
+        "type": "likert",
+        "dimension": "emotion_reg"
+      },
+      {
+        "id": "sds14",
+        "text_key": "sds14",
+        "type": "likert",
+        "dimension": "emotion_reg"
+      },
+      {
+        "id": "sds15",
+        "text_key": "sds15",
+        "type": "likert",
+        "dimension": "emotion_reg"
+      },
+      {
+        "id": "sds16",
+        "text_key": "sds16",
+        "type": "likert",
+        "dimension": "emotion_reg"
+      }
+    ],
+    "scoring": {
+      "attention": {
+        "method": "mean_coded",
+        "items": [
+          "sds1",
+          "sds2",
+          "sds3",
+          "sds4"
+        ],
+        "description": "Mean of Attention Impulsiveness items (1–5). Higher scores indicate greater distraction from smartphone notifications, apps, and device presence.",
+        "item_coding": {
+          "sds1": 1,
+          "sds2": 1,
+          "sds3": 1,
+          "sds4": 1
+        }
+      },
+      "vigilance": {
+        "method": "mean_coded",
+        "items": [
+          "sds5",
+          "sds6",
+          "sds7",
+          "sds8"
+        ],
+        "description": "Mean of Online Vigilance items (1–5). Higher scores indicate greater preoccupation with checking phone content and monitoring social validation.",
+        "item_coding": {
+          "sds5": 1,
+          "sds6": 1,
+          "sds7": 1,
+          "sds8": 1
+        }
+      },
+      "multitasking": {
+        "method": "mean_coded",
+        "items": [
+          "sds9",
+          "sds10",
+          "sds11",
+          "sds12"
+        ],
+        "description": "Mean of Multitasking items (1–5). Higher scores indicate more frequent simultaneous smartphone use during other activities.",
+        "item_coding": {
+          "sds9": 1,
+          "sds10": 1,
+          "sds11": 1,
+          "sds12": 1
+        }
+      },
+      "emotion_reg": {
+        "method": "mean_coded",
+        "items": [
+          "sds13",
+          "sds14",
+          "sds15",
+          "sds16"
+        ],
+        "description": "Mean of Emotion Regulation items (1–5). Higher scores indicate greater use of the smartphone to avoid unpleasant tasks, negative thoughts, or emotional pressure.",
+        "item_coding": {
+          "sds13": 1,
+          "sds14": 1,
+          "sds15": 1,
+          "sds16": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Almost never",
+      "likert_2": "Rarely",
+      "likert_3": "Sometimes",
+      "likert_4": "Often",
+      "likert_5": "Almost always",
+      "question_head": "Below is a collection of statements about your everyday experience with your smartphone. Using the 1–5 scale below, please indicate how often you currently have each experience. Please answer according to what best reflects your everyday experience.",
+      "inst": "Below is a collection of statements about your everyday experience with your smartphone. Using the scale provided, please indicate how often you currently have each experience. Please answer according to what best reflects your everyday experience.",
+      "sds1": "I get distracted by my phone notifications.",
+      "sds2": "I get distracted by my phone apps.",
+      "sds3": "I get distracted by just having my phone next to me.",
+      "sds4": "I get distracted by my phone even when my full attention is required on other tasks.",
+      "sds5": "I get anxious if I don't check messages immediately on my phone.",
+      "sds6": "I think a lot about checking my phone when I can't access it.",
+      "sds7": "I get distracted with what I could post while doing other tasks.",
+      "sds8": "I get distracted thinking how many likes and comments I will get while doing other tasks.",
+      "sds9": "I use several applications on my phone while working.",
+      "sds10": "I can easily follow conversations while using my phone.",
+      "sds11": "I often walk and use my phone at the same time.",
+      "sds12": "I often talk to others while checking what's on my phone.",
+      "sds13": "Using my phone distracts me from doing unpleasant things.",
+      "sds14": "Using my phone distracts me from negative or unpleasant thoughts.",
+      "sds15": "Using my phone distracts me from tasks that are tedious or difficult.",
+      "sds16": "Using my phone distracts me when I'm under pressure.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

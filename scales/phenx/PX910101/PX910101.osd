@@ -1,0 +1,110 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Counts of Acute Bleeds in Hemophilia",
+      "code": "PX910101",
+      "abbreviation": "PX910101",
+      "description": "This protocol includes a bleeding log from the American Thrombosis and Hemostasis Network (ATHN) and consensus definitions from the International Societies for Thrombosis and Hemostasis (ISTH) network. The bleeding log includes six self-administered questions that capture date and location of bleed,",
+      "domain": "Hemophilia",
+      "citation": "Berntorp, E., Astermark, J., Bj rkman, S., Blanchette, V. S., Fischer, K., Giangrande, P. L., Gringeri, A., Ljung, R. C., Manco-Johnson, M. J., Morfini, M., Kilcoyne, R. F., Petrini, P., Rodriguez-Merchan, E. C., Schramm, W., Shapiro, A., van den Berg, H. M., & Hart, C. (2003). Consensus perspectives on prophylactic therapy for haemophilia: Summary statement. Haemophilia, 9 (Suppl. 1), 1-4. Oldenburg, J., Mahlangu, J. N., Kim, B., Schmitt, C., Callaghan, M. U., Young, G., Santagostino, E., Kruse-Jarres, R., Negrier, C., Kessler, C., Valente, N., Asikanius, E., Levy, G. G., Windyga, J., & Shima, M. (2017). Emicizumab prophylaxis in hemophilia A with inhibitors. New England Journal of Medicine, 377 (9), 809-818. [PhenX: https://www.phenxtoolkit.org/protocols/view/910101]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/910101"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "birthdate",
+        "text_key": "birthdate",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "birthdate_coded",
+        "text_key": "birthdate_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "birthdate",
+          "operator": "equals",
+          "value": ""
+        },
+        "options": [
+          {
+            "text_key": "birthdate_coded_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "birthdate_coded_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "age",
+        "text_key": "age",
+        "type": "short",
+        "visible_when": {
+          "item": "birthdate_coded",
+          "operator": "equals",
+          "value": 9
+        },
+        "input_type": "number",
+        "number_min": 0,
+        "number_max": 110
+      },
+      {
+        "id": "age_coded",
+        "text_key": "age_coded",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "birthdate_coded",
+              "operator": "equals",
+              "value": 9
+            },
+            {
+              "item": "age",
+              "operator": "greater_than",
+              "value": -1
+            },
+            {
+              "item": "age",
+              "operator": "less_than",
+              "value": 111
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "age_coded_opt_999",
+            "value": 999
+          },
+          {
+            "text_key": "age_coded_opt_7",
+            "value": 7
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "birthdate": "What is your birthdate?",
+      "birthdate_coded": "birthdate_coded",
+      "birthdate_coded_opt_9": "Don't know [ask follow-up question]",
+      "birthdate_coded_opt_7": "Refused",
+      "age": "About how old are you?",
+      "age_coded": "age_coded",
+      "age_coded_opt_999": "Don't know",
+      "age_coded_opt_7": "Refused"
+    }
+  }
+}

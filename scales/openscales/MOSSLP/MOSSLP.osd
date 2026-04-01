@@ -1,0 +1,423 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "MOS Sleep Scale",
+      "code": "MOSSLP",
+      "abbreviation": "MOS-Sleep",
+      "description": "12-item scale measuring sleep quality and quantity from the Medical Outcomes Study. Item 1 is sleep onset latency (multi, 5 options). Item 2 is sleep quantity (short, hours per night). Items 3–12 are 6-point frequency items (1=All of the time to 6=None of the time). Past 4 weeks recall. Public Domain (RAND Corporation).",
+      "citation": "Hays, R. D., & Stewart, A. L. (1992). Sleep measures. In A. L. Stewart & J. E. Ware Jr. (Eds.), Measuring Functioning and Well-Being (pp. 235–259). Duke University Press.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health/surveys/mos/sleep.html",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. RAND explicitly states these instruments are available for use without permission or fee.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": [
+        "mosslp_f1",
+        "mosslp_f2",
+        "mosslp_f3",
+        "mosslp_f4",
+        "mosslp_f5",
+        "mosslp_f6"
+      ],
+      "question_head": "mosslp_freq_head"
+    },
+    "dimensions": [
+      {
+        "id": "sleep_disturbance",
+        "name": "Sleep Disturbance",
+        "description": "Items 3, 7, 8 (sleep not quiet, trouble falling asleep, trouble falling back asleep)."
+      },
+      {
+        "id": "sleep_adequacy",
+        "name": "Sleep Adequacy",
+        "description": "Items 4, 12 (enough sleep to feel rested, get amount of sleep needed)."
+      },
+      {
+        "id": "somnolence",
+        "name": "Somnolence",
+        "description": "Items 6, 9, 11 (drowsy during day, trouble staying awake, take naps)."
+      },
+      {
+        "id": "snoring",
+        "name": "Snoring",
+        "description": "SLPSNR1: Item 10R (snore during sleep)."
+      },
+      {
+        "id": "sleep_shortness_breath",
+        "name": "Sleep Short of Breath/Headache",
+        "description": "SLPSOB1: Item 5R (awaken short of breath or with headache)."
+      },
+      {
+        "id": "sleep_problems_index_i",
+        "name": "Sleep Problems Index I",
+        "description": "SLP6: Items 4, 5R, 7R, 8R, 9R, 12."
+      },
+      {
+        "id": "sleep_problems_index_ii",
+        "name": "Sleep Problems Index II",
+        "description": "SLP9: Items 1, 3R, 4, 5R, 6R, 7R, 8R, 9R, 12."
+      }
+    ],
+    "items": [
+      {
+        "id": "mosslp_inst",
+        "text_key": "mosslp_inst",
+        "type": "inst"
+      },
+      {
+        "id": "mosslp1",
+        "text_key": "mosslp1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "mosslp1_opt1",
+            "value": 1
+          },
+          {
+            "text_key": "mosslp1_opt2",
+            "value": 2
+          },
+          {
+            "text_key": "mosslp1_opt3",
+            "value": 3
+          },
+          {
+            "text_key": "mosslp1_opt4",
+            "value": 4
+          },
+          {
+            "text_key": "mosslp1_opt5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "mosslp2",
+        "text_key": "mosslp2",
+        "type": "short",
+        "validation": {
+          "number_min": 0,
+          "number_min_error": "err_hours_min",
+          "number_max": 24,
+          "number_max_error": "err_hours_max"
+        }
+      },
+      {
+        "id": "mosslp3",
+        "text_key": "mosslp3",
+        "type": "likert"
+      },
+      {
+        "id": "mosslp4",
+        "text_key": "mosslp4",
+        "type": "likert"
+      },
+      {
+        "id": "mosslp5",
+        "text_key": "mosslp5",
+        "type": "likert"
+      },
+      {
+        "id": "mosslp6",
+        "text_key": "mosslp6",
+        "type": "likert"
+      },
+      {
+        "id": "mosslp7",
+        "text_key": "mosslp7",
+        "type": "likert"
+      },
+      {
+        "id": "mosslp8",
+        "text_key": "mosslp8",
+        "type": "likert"
+      },
+      {
+        "id": "mosslp9",
+        "text_key": "mosslp9",
+        "type": "likert"
+      },
+      {
+        "id": "mosslp10",
+        "text_key": "mosslp10",
+        "type": "likert"
+      },
+      {
+        "id": "mosslp11",
+        "text_key": "mosslp11",
+        "type": "likert"
+      },
+      {
+        "id": "mosslp12",
+        "text_key": "mosslp12",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "sleep_disturbance": {
+        "method": "mean_coded",
+        "items": [
+          "mosslp1",
+          "mosslp3",
+          "mosslp7",
+          "mosslp8"
+        ],
+        "description": "SLPD4: Sleep Disturbance (4 items: 1, 3R, 7R, 8R). Items 3, 7, 8 reverse-coded. Item 1 scored as-is (higher = longer onset = worse). Higher = more disturbance.",
+        "item_coding": {
+          "mosslp1": 1,
+          "mosslp3": -1,
+          "mosslp7": -1,
+          "mosslp8": -1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "snoring": {
+        "method": "mean_coded",
+        "items": [
+          "mosslp10"
+        ],
+        "description": "SLPSNR1: Snoring (1 item: 10R). Reverse-coded. Higher = more snoring.",
+        "item_coding": {
+          "mosslp10": -1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "sleep_shortness_breath": {
+        "method": "mean_coded",
+        "items": [
+          "mosslp5"
+        ],
+        "description": "SLPSOB1: Sleep Short of Breath/Headache (1 item: 5R). Reverse-coded. Higher = more problems.",
+        "item_coding": {
+          "mosslp5": -1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "sleep_adequacy": {
+        "method": "mean_coded",
+        "items": [
+          "mosslp4",
+          "mosslp12"
+        ],
+        "description": "SLPA2: Sleep Adequacy (2 items: 4R, 12R). Reverse-coded so higher = more adequate sleep (better).",
+        "item_coding": {
+          "mosslp4": -1,
+          "mosslp12": -1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "somnolence": {
+        "method": "mean_coded",
+        "items": [
+          "mosslp6",
+          "mosslp9",
+          "mosslp11"
+        ],
+        "description": "SLPS3: Somnolence (3 items: 6R, 9R, 11R). Reverse-coded. Higher = more daytime sleepiness.",
+        "item_coding": {
+          "mosslp6": -1,
+          "mosslp9": -1,
+          "mosslp11": -1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "sleep_problems_index_i": {
+        "method": "mean_coded",
+        "items": [
+          "mosslp4",
+          "mosslp5",
+          "mosslp7",
+          "mosslp8",
+          "mosslp9",
+          "mosslp12"
+        ],
+        "description": "SLP6: Sleep Problems Index I (6 items: 4, 5R, 7R, 8R, 9R, 12). Items 5, 7, 8, 9 reverse-coded; items 4, 12 forward (inadequate sleep = high score). Higher = more sleep problems.",
+        "item_coding": {
+          "mosslp4": 1,
+          "mosslp5": -1,
+          "mosslp7": -1,
+          "mosslp8": -1,
+          "mosslp9": -1,
+          "mosslp12": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      },
+      "sleep_problems_index_ii": {
+        "method": "mean_coded",
+        "items": [
+          "mosslp1",
+          "mosslp3",
+          "mosslp4",
+          "mosslp5",
+          "mosslp6",
+          "mosslp7",
+          "mosslp8",
+          "mosslp9",
+          "mosslp12"
+        ],
+        "description": "SLP9: Sleep Problems Index II (9 items: 1, 3R, 4, 5R, 6R, 7R, 8R, 9R, 12). Higher = more sleep problems.",
+        "item_coding": {
+          "mosslp1": 1,
+          "mosslp3": -1,
+          "mosslp4": 1,
+          "mosslp5": -1,
+          "mosslp6": -1,
+          "mosslp7": -1,
+          "mosslp8": -1,
+          "mosslp9": -1,
+          "mosslp12": 1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "divide",
+            "value": 5
+          },
+          {
+            "op": "multiply",
+            "value": 100
+          }
+        ]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "MOS Sleep Scale Report",
+      "footer_refs": [
+        "Hays, R. D., & Stewart, A. L. (1992). Sleep measures. In A. L. Stewart & J. E. Ware Jr. (Eds.), Measuring Functioning and Well-Being (pp. 235–259). Duke University Press.",
+        "Frequency items: 1 = All of the time, 6 = None of the time."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "mosslp_inst": "The following questions are about your sleep during the <b>past 4 weeks</b>.",
+      "mosslp_freq_head": "How often during the <b>past 4 weeks</b> did you...",
+      "mosslp_f1": "All of the time",
+      "mosslp_f2": "Most of the time",
+      "mosslp_f3": "A good bit of the time",
+      "mosslp_f4": "Some of the time",
+      "mosslp_f5": "A little of the time",
+      "mosslp_f6": "None of the time",
+      "mosslp1": "How long did it usually take for you to <u>fall asleep</u> during the <b>past 4 weeks</b>?",
+      "mosslp1_opt1": "0–15 minutes",
+      "mosslp1_opt2": "16–30 minutes",
+      "mosslp1_opt3": "31–45 minutes",
+      "mosslp1_opt4": "46–60 minutes",
+      "mosslp1_opt5": "More than 60 minutes",
+      "mosslp2": "On the average, how many hours did you sleep <u>each night</u> during the <b>past 4 weeks</b>? (Write in number of hours per night)",
+      "err_hours_min": "Hours cannot be negative.",
+      "err_hours_max": "Hours per night cannot exceed 24.",
+      "mosslp3": "...feel that your sleep was not quiet (moving restlessly, feeling tense, speaking, etc., while sleeping)?",
+      "mosslp4": "...get enough sleep to feel rested upon waking in the morning?",
+      "mosslp5": "...awaken short of breath or with a headache?",
+      "mosslp6": "...feel drowsy or sleepy during the day?",
+      "mosslp7": "...have trouble falling asleep?",
+      "mosslp8": "...awaken during your sleep time and have trouble falling asleep again?",
+      "mosslp9": "...have trouble staying awake during the day?",
+      "mosslp10": "...snore during your sleep?",
+      "mosslp11": "...take naps (5 minutes or longer) during the day?",
+      "mosslp12": "...get the amount of sleep you needed?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

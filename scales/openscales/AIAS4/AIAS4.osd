@@ -1,0 +1,108 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "AI Attitude Scale",
+      "code": "AIAS4",
+      "abbreviation": "AIAS-4",
+      "description": "4-item measure of general attitude toward artificial intelligence, covering perceived usefulness, adoption intention, and societal impact. Scores range from 1 to 10.",
+      "citation": "Grassini, S. (2023). Development and validation of the AI attitude scale (AIAS-4): A brief measure of general attitude toward artificial intelligence. Frontiers in Psychology, 14, 1191628. https://doi.org/10.3389/fpsyg.2023.1191628",
+      "license": "CC BY 4.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyg.2023.1191628",
+      "domain": "Technology"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 10,
+      "min": 1,
+      "max": 10,
+      "labels": [
+        "aias_r1",
+        "aias_r2",
+        "aias_r3",
+        "aias_r4",
+        "aias_r5",
+        "aias_r6",
+        "aias_r7",
+        "aias_r8",
+        "aias_r9",
+        "aias_r10"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "attitude",
+        "name": "AI Attitude",
+        "description": "Overall attitude toward artificial intelligence. Higher scores indicate more positive attitudes."
+      }
+    ],
+    "items": [
+      {
+        "id": "aias1",
+        "text_key": "aias1",
+        "type": "likert"
+      },
+      {
+        "id": "aias2",
+        "text_key": "aias2",
+        "type": "likert"
+      },
+      {
+        "id": "aias3",
+        "text_key": "aias3",
+        "type": "likert"
+      },
+      {
+        "id": "aias4",
+        "text_key": "aias4",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "attitude": {
+        "method": "mean_coded",
+        "items": [
+          "aias1",
+          "aias2",
+          "aias3",
+          "aias4"
+        ],
+        "description": "Mean of all 4 items (1-10 scale). Higher scores indicate more positive attitudes toward AI.",
+        "item_coding": {
+          "aias1": 1,
+          "aias2": 1,
+          "aias3": 1,
+          "aias4": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "aias_r1": "Not at all",
+      "aias_r2": "",
+      "aias_r3": "",
+      "aias_r4": "",
+      "aias_r5": "",
+      "aias_r6": "",
+      "aias_r7": "",
+      "aias_r8": "",
+      "aias_r9": "",
+      "aias_r10": "Completely agree",
+      "question_head": "Please rate your level of agreement with each of the following statements. (1 = Completely disagree, 10 = Completely agree)",
+      "aias1": "I believe that AI will improve my life.",
+      "aias2": "I believe that AI will improve my work.",
+      "aias3": "I think I will use AI technology in the future.",
+      "aias4": "I think AI technology is positive for humanity.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

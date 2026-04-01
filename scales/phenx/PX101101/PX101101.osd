@@ -1,0 +1,266 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Menstrual History",
+      "code": "PX101101",
+      "abbreviation": "PX101101",
+      "description": "Females answer questions about the frequency and regularity of her menstrual cycle and whether any irregularities were due to breastfeeding. Females also answer questions about whether their periods have stopped.",
+      "domain": "Puberty & Development",
+      "citation": "Carroll, J., Saxena, R., & Welt, C. K. (2012). Environmental and genetic factors influence age at menarche in women with polycystic ovary syndrome. Journal of Pediatric Endocrinology and Metabolism , 25 (5-6), 459-66. Solomon, C. G., Hu, F. B., Dunaif, A., Rich-Edwards, J., Willett, W. C., Hunter, D. J., . . . Manson, J. E. (2001). Long or highly irregular menstrual cycles as a marker for risk of type 2 diabetes mellitus. JAMA, 286 , 2421-2426. Solomon, C. G., Hu, F. B., Dunaif, A., Rich-Edwards, J. E., Stampfer, M. J., Willett. W. C., . . . Manson, J. E. (2002). Menstrual cycle irregularity and risk for future cardiovascular disease. Journal of Clinical Endocrinology and Metabolism, 87 , 2013-2017. Carroll, J., Saxena, R., & Welt, C. K. (2012). Environmental and genetic factors influence age at menarche in women with polycystic ovary syndrome. Journal of Pediatric Endocrinology and Metabolism, 25 (5-6), 459-66. [PhenX: https://www.phenxtoolkit.org/protocols/view/101101]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/101101"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "no_menstrual_period_3_more_months",
+        "text_key": "no_menstrual_period_3_more_months",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "no_menstrual_period_3_more_months_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "no_menstrual_period_3_more_months_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "no_menstrual_period_3_more_months_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "no_menstrual_period_3_more_months_opt__8",
+            "value": "_8"
+          }
+        ]
+      },
+      {
+        "id": "no_menstrual_period_breastfeeding",
+        "text_key": "no_menstrual_period_breastfeeding",
+        "type": "multi",
+        "visible_when": {
+          "item": "no_menstrual_period_3_more_months",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "options": [
+          {
+            "text_key": "no_menstrual_period_breastfeeding_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "no_menstrual_period_breastfeeding_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "no_menstrual_period_breastfeeding_opt__8",
+            "value": "_8"
+          }
+        ]
+      },
+      {
+        "id": "no_menstrual_period_breastfeeding_pregnant_always",
+        "text_key": "no_menstrual_period_breastfeeding_pregnant_always",
+        "type": "multi",
+        "visible_when": {
+          "item": "no_menstrual_period_breastfeeding",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "no_menstrual_period_breastfeeding_pregnant_always_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "no_menstrual_period_breastfeeding_pregnant_always_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "no_menstrual_period_breastfeeding_pregnant_always_opt__8",
+            "value": "_8"
+          }
+        ]
+      },
+      {
+        "id": "menstrual_cycle_pattern_age_18_22",
+        "text_key": "menstrual_cycle_pattern_age_18_22",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "menstrual_cycle_pattern_age_18_22_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "menstrual_cycle_pattern_age_18_22_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "menstrual_cycle_pattern_age_18_22_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "menstrual_cycle_pattern_age_18_22_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "menstrual_cycle_typical_days_average",
+        "text_key": "menstrual_cycle_typical_days_average",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt__8",
+            "value": "_8"
+          }
+        ]
+      },
+      {
+        "id": "menstrual_period_stop_permanently",
+        "text_key": "menstrual_period_stop_permanently",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "menstrual_period_stop_permanently_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "menstrual_period_stop_permanently_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "menstrual_period_stop_permanently_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "menstrual_period_stop_permanently_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "menstrual_period_stop_age",
+        "text_key": "menstrual_period_stop_age",
+        "type": "multi",
+        "visible_when": {
+          "item": "menstrual_period_stop_permanently",
+          "operator": "in",
+          "value": [
+            1,
+            2
+          ]
+        },
+        "options": [
+          {
+            "text_key": "menstrual_period_stop_age_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "menstrual_period_stop_age_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "menstrual_period_stop_age_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "menstrual_period_stop_age_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "menstrual_period_stop_age_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "menstrual_period_stop_age_opt_6",
+            "value": 6
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "no_menstrual_period_3_more_months": "Since the age of 18, have you ever experienced a time interval of 3 or more months when you did not have a menstrual period?",
+      "no_menstrual_period_3_more_months_opt_1": "No",
+      "no_menstrual_period_3_more_months_opt_2": "Yes One time only",
+      "no_menstrual_period_3_more_months_opt_3": "Yes More than once",
+      "no_menstrual_period_3_more_months_opt__8": "Don't know",
+      "no_menstrual_period_breastfeeding": "Were you breastfeeding at the time?",
+      "no_menstrual_period_breastfeeding_opt_1": "No",
+      "no_menstrual_period_breastfeeding_opt_2": "Yes",
+      "no_menstrual_period_breastfeeding_opt__8": "Don't know",
+      "no_menstrual_period_breastfeeding_pregnant_always": "Were you breastfeeding or pregnant every time this happened?",
+      "no_menstrual_period_breastfeeding_pregnant_always_opt_1": "No",
+      "no_menstrual_period_breastfeeding_pregnant_always_opt_2": "Yes",
+      "no_menstrual_period_breastfeeding_pregnant_always_opt__8": "Don't know",
+      "menstrual_cycle_pattern_age_18_22": "During ages 18-22 what was the pattern of your menstrual cycles? (excluding time around pregnancies)",
+      "menstrual_cycle_pattern_age_18_22_opt_1": "Regular (within 8 days)",
+      "menstrual_cycle_pattern_age_18_22_opt_2": "Usually irregular",
+      "menstrual_cycle_pattern_age_18_22_opt_3": "Always irregular",
+      "menstrual_cycle_pattern_age_18_22_opt_4": "No periods",
+      "menstrual_cycle_typical_days_average": "On average, during the last year, how many days were there in a typical menstrual cycle, that is, from the beginning of bleeding of one menstrual period to the beginning of bleeding of the next period?",
+      "menstrual_cycle_typical_days_average_opt_1": "Less than 21 days",
+      "menstrual_cycle_typical_days_average_opt_2": "21-25 days",
+      "menstrual_cycle_typical_days_average_opt_3": "26-32 days",
+      "menstrual_cycle_typical_days_average_opt_4": "33-35 days",
+      "menstrual_cycle_typical_days_average_opt_5": "36-90 days",
+      "menstrual_cycle_typical_days_average_opt_6": "More than 90 days",
+      "menstrual_cycle_typical_days_average_opt_7": "Too variable to say",
+      "menstrual_cycle_typical_days_average_opt__8": "Don't know",
+      "menstrual_period_stop_permanently": "Have your menstrual periods stopped permanently?",
+      "menstrual_period_stop_permanently_opt_1": "Yes, no menstrual periods",
+      "menstrual_period_stop_permanently_opt_2": "Yes, but have periods now due to female hormones",
+      "menstrual_period_stop_permanently_opt_3": "No",
+      "menstrual_period_stop_permanently_opt_4": "Not sure",
+      "menstrual_period_stop_age": "How old were you when your periods stopped?",
+      "menstrual_period_stop_age_opt_1": "Less than 35",
+      "menstrual_period_stop_age_opt_2": "35 - 39",
+      "menstrual_period_stop_age_opt_3": "40 - 44",
+      "menstrual_period_stop_age_opt_4": "45 - 49",
+      "menstrual_period_stop_age_opt_5": "50 - 54",
+      "menstrual_period_stop_age_opt_6": "55 or more"
+    }
+  }
+}

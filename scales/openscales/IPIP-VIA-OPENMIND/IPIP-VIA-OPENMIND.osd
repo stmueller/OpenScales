@@ -1,0 +1,164 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Judgment/Open-mindedness",
+      "code": "IPIP-VIA-OPENMIND",
+      "abbreviation": "IPIP-VIA-OPENMIND",
+      "description": "IPIP representation of the VIA character strength 'Judgment/Open-mindedness'. 9-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "judgment_openmindedness",
+        "name": "Judgment/Open-mindedness",
+        "abbreviation": "OPENMIND",
+        "description": "IPIP VIA Judgment/Open-mindedness subscale (9 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_029",
+        "text_key": "ipip_via_029",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_030",
+        "text_key": "ipip_via_030",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_031",
+        "text_key": "ipip_via_031",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_032",
+        "text_key": "ipip_via_032",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_033",
+        "text_key": "ipip_via_033",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_034",
+        "text_key": "ipip_via_034",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_035",
+        "text_key": "ipip_via_035",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_036",
+        "text_key": "ipip_via_036",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_037",
+        "text_key": "ipip_via_037",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "judgment_openmindedness": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_029",
+          "ipip_via_030",
+          "ipip_via_031",
+          "ipip_via_032",
+          "ipip_via_033",
+          "ipip_via_034",
+          "ipip_via_035",
+          "ipip_via_036",
+          "ipip_via_037"
+        ],
+        "description": "Mean of 9 items (range 1–5; higher = stronger Judgment/Open-mindedness). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_029": 1,
+          "ipip_via_030": 1,
+          "ipip_via_031": 1,
+          "ipip_via_032": -1,
+          "ipip_via_033": -1,
+          "ipip_via_034": 1,
+          "ipip_via_035": 1,
+          "ipip_via_036": 1,
+          "ipip_via_037": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_029": "Am a firm believer in thinking things through.",
+      "ipip_via_030": "Am valued by my friends for my good judgment.",
+      "ipip_via_031": "Am valued by others for my objectivity.",
+      "ipip_via_032": "Don't tend to think things through critically.",
+      "ipip_via_033": "Don't think about different possibilities when making decisions.",
+      "ipip_via_034": "Make decisions only after I have all of the facts.",
+      "ipip_via_035": "Try to have good reasons for my important decisions.",
+      "ipip_via_036": "Try to identify the reasons for my actions.",
+      "ipip_via_037": "Weigh the pro's and the con's."
+    }
+  }
+}

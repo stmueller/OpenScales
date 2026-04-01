@@ -1,0 +1,605 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Perceived Availability of Illegal Drugs and Alcohol",
+      "code": "PX550302",
+      "abbreviation": "PX550302",
+      "description": "The Monitoring the Future (MTF) project studies changes in the beliefs, attitudes, and behavior of young people in the United States. The MTF is a repeated series of surveys in which the same segments of the population (8th-, 10th-, and 12th-graders; college students; and young adults) are presented",
+      "domain": "Substance Use - Attitudes & Social Norms",
+      "citation": "Johnston, L. D., O’Malley, P. M., Bachman, J. G., & Schulenberg, J. E. (2011). Monitoring the Future national survey results on drug use, 1975-2010. Volume I: Secondary school students . Ann Arbor: Institute for Social Research, University of Michigan. Swaim, R. (2003). Individual and school level effects of perceived harm, perceived availability, and community size on marijuana use among 12th-grade students: A random effects Model. Prevention Science 4 (2), 89-98. [PhenX: https://www.phenxtoolkit.org/protocols/view/550302]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/550302"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "drug_availability_desc",
+        "text_key": "drug_availability_desc",
+        "type": "inst"
+      },
+      {
+        "id": "drug_availability_marijuana",
+        "text_key": "drug_availability_marijuana",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_marijuana_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_marijuana_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_marijuana_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_marijuana_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_marijuana_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_marijuana_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_lsd",
+        "text_key": "drug_availability_lsd",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_lsd_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_lsd_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_lsd_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_lsd_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_lsd_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_lsd_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_pcp",
+        "text_key": "drug_availability_pcp",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_pcp_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_pcp_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_pcp_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_pcp_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_pcp_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_pcp_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_mdma",
+        "text_key": "drug_availability_mdma",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_mdma_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_mdma_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_mdma_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_mdma_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_mdma_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_mdma_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_amphetamines",
+        "text_key": "drug_availability_amphetamines",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_amphetamines_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_amphetamines_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_amphetamines_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_amphetamines_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_amphetamines_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_amphetamines_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_sedatives",
+        "text_key": "drug_availability_sedatives",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_sedatives_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_sedatives_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_sedatives_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_sedatives_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_sedatives_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_sedatives_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_tranquilizers",
+        "text_key": "drug_availability_tranquilizers",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_tranquilizers_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_tranquilizers_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_tranquilizers_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_tranquilizers_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_tranquilizers_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_tranquilizers_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_crack",
+        "text_key": "drug_availability_crack",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_crack_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_crack_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_crack_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_crack_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_crack_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_crack_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_cocaine",
+        "text_key": "drug_availability_cocaine",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_cocaine_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_cocaine_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_cocaine_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_cocaine_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_cocaine_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_cocaine_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_heroin",
+        "text_key": "drug_availability_heroin",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_heroin_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_heroin_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_heroin_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_heroin_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_heroin_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_heroin_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_other_narcotic",
+        "text_key": "drug_availability_other_narcotic",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_other_narcotic_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_other_narcotic_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_other_narcotic_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_other_narcotic_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_other_narcotic_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_other_narcotic_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_crystal_meth",
+        "text_key": "drug_availability_crystal_meth",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_crystal_meth_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_crystal_meth_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_crystal_meth_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_crystal_meth_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_crystal_meth_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_crystal_meth_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_steroids",
+        "text_key": "drug_availability_steroids",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_steroids_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_steroids_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_steroids_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_steroids_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_steroids_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_steroids_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_cigarettes",
+        "text_key": "drug_availability_cigarettes",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_cigarettes_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_cigarettes_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_cigarettes_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_cigarettes_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_cigarettes_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_cigarettes_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "drug_availability_alcohol",
+        "text_key": "drug_availability_alcohol",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "drug_availability_alcohol_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_availability_alcohol_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_availability_alcohol_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "drug_availability_alcohol_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "drug_availability_alcohol_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "drug_availability_alcohol_opt_8",
+            "value": 8
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "drug_availability_desc": "How difficult do you think it would be for you to get the following drug if you wanted some? (Mark one circle)",
+      "drug_availability_marijuana": "Marijuana (pot, weed)",
+      "drug_availability_marijuana_opt_1": "Probably Impossible",
+      "drug_availability_marijuana_opt_2": "Very Difficult",
+      "drug_availability_marijuana_opt_3": "Fairly Difficult",
+      "drug_availability_marijuana_opt_4": "Fairly Easy",
+      "drug_availability_marijuana_opt_5": "Very Easy",
+      "drug_availability_marijuana_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_lsd": "LSD",
+      "drug_availability_lsd_opt_1": "Probably Impossible",
+      "drug_availability_lsd_opt_2": "Very Difficult",
+      "drug_availability_lsd_opt_3": "Fairly Difficult",
+      "drug_availability_lsd_opt_4": "Fairly Easy",
+      "drug_availability_lsd_opt_5": "Very Easy",
+      "drug_availability_lsd_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_pcp": "PCP (angel dust)",
+      "drug_availability_pcp_opt_1": "Probably Impossible",
+      "drug_availability_pcp_opt_2": "Very Difficult",
+      "drug_availability_pcp_opt_3": "Fairly Difficult",
+      "drug_availability_pcp_opt_4": "Fairly Easy",
+      "drug_availability_pcp_opt_5": "Very Easy",
+      "drug_availability_pcp_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_mdma": "MDMA (ecstasy)",
+      "drug_availability_mdma_opt_1": "Probably Impossible",
+      "drug_availability_mdma_opt_2": "Very Difficult",
+      "drug_availability_mdma_opt_3": "Fairly Difficult",
+      "drug_availability_mdma_opt_4": "Fairly Easy",
+      "drug_availability_mdma_opt_5": "Very Easy",
+      "drug_availability_mdma_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_amphetamines": "Amphetamines (uppers, pep pills, bennies, speed)",
+      "drug_availability_amphetamines_opt_1": "Probably Impossible",
+      "drug_availability_amphetamines_opt_2": "Very Difficult",
+      "drug_availability_amphetamines_opt_3": "Fairly Difficult",
+      "drug_availability_amphetamines_opt_4": "Fairly Easy",
+      "drug_availability_amphetamines_opt_5": "Very Easy",
+      "drug_availability_amphetamines_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_sedatives": "Sedatives/barbiturates (downers)",
+      "drug_availability_sedatives_opt_1": "Probably Impossible",
+      "drug_availability_sedatives_opt_2": "Very Difficult",
+      "drug_availability_sedatives_opt_3": "Fairly Difficult",
+      "drug_availability_sedatives_opt_4": "Fairly Easy",
+      "drug_availability_sedatives_opt_5": "Very Easy",
+      "drug_availability_sedatives_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_tranquilizers": "Tranquilizers (Librium, Valium, Xanax, etc.)",
+      "drug_availability_tranquilizers_opt_1": "Probably Impossible",
+      "drug_availability_tranquilizers_opt_2": "Very Difficult",
+      "drug_availability_tranquilizers_opt_3": "Fairly Difficult",
+      "drug_availability_tranquilizers_opt_4": "Fairly Easy",
+      "drug_availability_tranquilizers_opt_5": "Very Easy",
+      "drug_availability_tranquilizers_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_crack": "Crack cocaine",
+      "drug_availability_crack_opt_1": "Probably Impossible",
+      "drug_availability_crack_opt_2": "Very Difficult",
+      "drug_availability_crack_opt_3": "Fairly Difficult",
+      "drug_availability_crack_opt_4": "Fairly Easy",
+      "drug_availability_crack_opt_5": "Very Easy",
+      "drug_availability_crack_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_cocaine": "Cocaine in powder form",
+      "drug_availability_cocaine_opt_1": "Probably Impossible",
+      "drug_availability_cocaine_opt_2": "Very Difficult",
+      "drug_availability_cocaine_opt_3": "Fairly Difficult",
+      "drug_availability_cocaine_opt_4": "Fairly Easy",
+      "drug_availability_cocaine_opt_5": "Very Easy",
+      "drug_availability_cocaine_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_heroin": "Heroin",
+      "drug_availability_heroin_opt_1": "Probably Impossible",
+      "drug_availability_heroin_opt_2": "Very Difficult",
+      "drug_availability_heroin_opt_3": "Fairly Difficult",
+      "drug_availability_heroin_opt_4": "Fairly Easy",
+      "drug_availability_heroin_opt_5": "Very Easy",
+      "drug_availability_heroin_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_other_narcotic": "Some other narcotic (codeine, Vicodin, OxyContin, Percocet, etc.)",
+      "drug_availability_other_narcotic_opt_1": "Probably Impossible",
+      "drug_availability_other_narcotic_opt_2": "Very Difficult",
+      "drug_availability_other_narcotic_opt_3": "Fairly Difficult",
+      "drug_availability_other_narcotic_opt_4": "Fairly Easy",
+      "drug_availability_other_narcotic_opt_5": "Very Easy",
+      "drug_availability_other_narcotic_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_crystal_meth": "Crystal meth (ice)",
+      "drug_availability_crystal_meth_opt_1": "Probably Impossible",
+      "drug_availability_crystal_meth_opt_2": "Very Difficult",
+      "drug_availability_crystal_meth_opt_3": "Fairly Difficult",
+      "drug_availability_crystal_meth_opt_4": "Fairly Easy",
+      "drug_availability_crystal_meth_opt_5": "Very Easy",
+      "drug_availability_crystal_meth_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_steroids": "Steroids (anabolic steroids)",
+      "drug_availability_steroids_opt_1": "Probably Impossible",
+      "drug_availability_steroids_opt_2": "Very Difficult",
+      "drug_availability_steroids_opt_3": "Fairly Difficult",
+      "drug_availability_steroids_opt_4": "Fairly Easy",
+      "drug_availability_steroids_opt_5": "Very Easy",
+      "drug_availability_steroids_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_cigarettes": "Cigarettes",
+      "drug_availability_cigarettes_opt_1": "Probably Impossible",
+      "drug_availability_cigarettes_opt_2": "Very Difficult",
+      "drug_availability_cigarettes_opt_3": "Fairly Difficult",
+      "drug_availability_cigarettes_opt_4": "Fairly Easy",
+      "drug_availability_cigarettes_opt_5": "Very Easy",
+      "drug_availability_cigarettes_opt_8": "Can't Say, Drug Unfamiliar",
+      "drug_availability_alcohol": "Alcohol",
+      "drug_availability_alcohol_opt_1": "Probably Impossible",
+      "drug_availability_alcohol_opt_2": "Very Difficult",
+      "drug_availability_alcohol_opt_3": "Fairly Difficult",
+      "drug_availability_alcohol_opt_4": "Fairly Easy",
+      "drug_availability_alcohol_opt_5": "Very Easy",
+      "drug_availability_alcohol_opt_8": "Can't Say, Drug Unfamiliar"
+    }
+  }
+}

@@ -1,0 +1,1138 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Long COVID - Multisystem Inflammatory Syndrome - Child",
+      "code": "PX992501",
+      "abbreviation": "PX992501",
+      "description": "This protocol helps better describe and understand the patient experience and recovery of those with confirmed or suspected COVID-19, with a specific emphasis on MIS and body inflammation in children and adolescents.",
+      "domain": "Long COVID",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/992501]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/992501"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "multisystem_inflammatory_syndrome_feverrecord_id",
+        "text_key": "multisystem_inflammatory_syndrome_feverrecord_id",
+        "type": "short"
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_description",
+        "text_key": "multisystem_inflammatory_syndrome_description",
+        "type": "short"
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_fever",
+        "text_key": "multisystem_inflammatory_syndrome_fever",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_fever_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_fever_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_fever_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_fever_duration",
+        "text_key": "multisystem_inflammatory_syndrome_fever_duration",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_rash",
+        "text_key": "multisystem_inflammatory_syndrome_rash",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_rash_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_rash_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_rash_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_rash_type",
+        "text_key": "multisystem_inflammatory_syndrome_rash_type",
+        "type": "short",
+        "visible_when": {
+          "item": "multisystem_inflammatory_syndrome_rash",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_bilateral_conjunctivitis",
+        "text_key": "multisystem_inflammatory_syndrome_bilateral_conjunctivitis",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_bilateral_conjunctivitis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_bilateral_conjunctivitis_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_bilateral_conjunctivitis_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_bilateral_conjunctivitis_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_oral_mucosal_sign",
+        "text_key": "multisystem_inflammatory_syndrome_oral_mucosal_sign",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_oral_mucosal_sign_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_oral_mucosal_sign_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_oral_mucosal_sign_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_peripheral_cutaneous_sign",
+        "text_key": "multisystem_inflammatory_syndrome_peripheral_cutaneous_sign",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_peripheral_cutaneous_sign_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_peripheral_cutaneous_sign_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_peripheral_cutaneous_sign_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_hypotension",
+        "text_key": "multisystem_inflammatory_syndrome_hypotension",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hypotension_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hypotension_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hypotension_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_tachycardia",
+        "text_key": "multisystem_inflammatory_syndrome_tachycardia",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_tachycardia_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_tachycardia_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_tachycardia_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_prolonged_capillary_refill_time",
+        "text_key": "multisystem_inflammatory_syndrome_prolonged_capillary_refill_time",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_prolonged_capillary_refill_time_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_prolonged_capillary_refill_time_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_prolonged_capillary_refill_time_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_pale_mottled_skin",
+        "text_key": "multisystem_inflammatory_syndrome_pale_mottled_skin",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_pale_mottled_skin_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_pale_mottled_skin_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_pale_mottled_skin_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_cold_hands_feet",
+        "text_key": "multisystem_inflammatory_syndrome_cold_hands_feet",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_cold_hands_feet_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_cold_hands_feet_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_cold_hands_feet_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_urinary_output",
+        "text_key": "multisystem_inflammatory_syndrome_urinary_output",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_urinary_output_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_urinary_output_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_urinary_output_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_chest_pain",
+        "text_key": "multisystem_inflammatory_syndrome_chest_pain",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_chest_pain_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_chest_pain_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_chest_pain_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_tachypnoea",
+        "text_key": "multisystem_inflammatory_syndrome_tachypnoea",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_tachypnoea_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_tachypnoea_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_tachypnoea_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_respiratory_distress",
+        "text_key": "multisystem_inflammatory_syndrome_respiratory_distress",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_respiratory_distress_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_respiratory_distress_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_respiratory_distress_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_abdominal_pain",
+        "text_key": "multisystem_inflammatory_syndrome_abdominal_pain",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_abdominal_pain_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_abdominal_pain_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_abdominal_pain_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_diarrhoea",
+        "text_key": "multisystem_inflammatory_syndrome_diarrhoea",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_diarrhoea_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_diarrhoea_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_diarrhoea_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_vomiting",
+        "text_key": "multisystem_inflammatory_syndrome_vomiting",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_vomiting_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_vomiting_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_vomiting_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_cough",
+        "text_key": "multisystem_inflammatory_syndrome_cough",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_cough_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_cough_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_cough_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_fatigue_malaise",
+        "text_key": "multisystem_inflammatory_syndrome_fatigue_malaise",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_fatigue_malaise_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_fatigue_malaise_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_fatigue_malaise_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_sore_throat",
+        "text_key": "multisystem_inflammatory_syndrome_sore_throat",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_sore_throat_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_sore_throat_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_sore_throat_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_seizures",
+        "text_key": "multisystem_inflammatory_syndrome_seizures",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_seizures_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_seizures_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_seizures_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_runny_nose",
+        "text_key": "multisystem_inflammatory_syndrome_runny_nose",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_runny_nose_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_runny_nose_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_runny_nose_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_headache",
+        "text_key": "multisystem_inflammatory_syndrome_headache",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_headache_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_headache_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_headache_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_wheezing",
+        "text_key": "multisystem_inflammatory_syndrome_wheezing",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_wheezing_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_wheezing_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_wheezing_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_hypotonia",
+        "text_key": "multisystem_inflammatory_syndrome_hypotonia",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hypotonia_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hypotonia_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hypotonia_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_swollen_joints",
+        "text_key": "multisystem_inflammatory_syndrome_swollen_joints",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_swollen_joints_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_swollen_joints_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_swollen_joints_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_paralysis",
+        "text_key": "multisystem_inflammatory_syndrome_paralysis",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_paralysis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_paralysis_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_paralysis_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_cervical_lymphyadenopathy",
+        "text_key": "multisystem_inflammatory_syndrome_cervical_lymphyadenopathy",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_cervical_lymphyadenopathy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_cervical_lymphyadenopathy_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_cervical_lymphyadenopathy_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_irritability",
+        "text_key": "multisystem_inflammatory_syndrome_irritability",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_irritability_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_irritability_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_irritability_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_joint_pain",
+        "text_key": "multisystem_inflammatory_syndrome_joint_pain",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_joint_pain_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_joint_pain_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_joint_pain_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_photophobia",
+        "text_key": "multisystem_inflammatory_syndrome_photophobia",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_photophobia_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_photophobia_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_photophobia_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_muscle_aches",
+        "text_key": "multisystem_inflammatory_syndrome_muscle_aches",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_muscle_aches_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_muscle_aches_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_muscle_aches_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_hyposmia_anosmia",
+        "text_key": "multisystem_inflammatory_syndrome_hyposmia_anosmia",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hyposmia_anosmia_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hyposmia_anosmia_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hyposmia_anosmia_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_skin_ulcers",
+        "text_key": "multisystem_inflammatory_syndrome_skin_ulcers",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_skin_ulcers_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_skin_ulcers_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_skin_ulcers_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_hypogeusia",
+        "text_key": "multisystem_inflammatory_syndrome_hypogeusia",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hypogeusia_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hypogeusia_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hypogeusia_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_stiff_neck",
+        "text_key": "multisystem_inflammatory_syndrome_stiff_neck",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_stiff_neck_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_stiff_neck_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_stiff_neck_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_not_able_drink",
+        "text_key": "multisystem_inflammatory_syndrome_not_able_drink",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_not_able_drink_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_not_able_drink_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_not_able_drink_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_other",
+        "text_key": "multisystem_inflammatory_syndrome_other",
+        "type": "short"
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_bleeding",
+        "text_key": "multisystem_inflammatory_syndrome_bleeding",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_bleeding_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_bleeding_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_bleeding_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_bleeding_site",
+        "text_key": "multisystem_inflammatory_syndrome_bleeding_site",
+        "type": "short",
+        "visible_when": {
+          "item": "multisystem_inflammatory_syndrome_bleeding",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months",
+        "text_key": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_discharge_date",
+        "text_key": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_discharge_date",
+        "type": "short",
+        "visible_when": {
+          "item": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_related_similar_problems",
+        "text_key": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_related_similar_problems",
+        "type": "multi",
+        "visible_when": {
+          "item": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_related_similar_problems_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_related_similar_problems_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_related_similar_problems_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_history_covid_infection_previous_4_weeks_prior_illness",
+        "text_key": "multisystem_inflammatory_syndrome_history_covid_infection_previous_4_weeks_prior_illness",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_history_covid_infection_previous_4_weeks_prior_illness_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_history_covid_infection_previous_4_weeks_prior_illness_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_history_covid_infection_previous_4_weeks_prior_illness_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_history_covid_infection_previous_4_weeks_prior_illness_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_history_respiratory_infection_previous_4_weeks_prior_illness",
+        "text_key": "multisystem_inflammatory_syndrome_history_respiratory_infection_previous_4_weeks_prior_illness",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_history_respiratory_infection_previous_4_weeks_prior_illness_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_history_respiratory_infection_previous_4_weeks_prior_illness_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_history_respiratory_infection_previous_4_weeks_prior_illness_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_any_household_member_confirmed_covid_past_4_weeks",
+        "text_key": "multisystem_inflammatory_syndrome_any_household_member_confirmed_covid_past_4_weeks",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_any_household_member_confirmed_covid_past_4_weeks_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_any_household_member_confirmed_covid_past_4_weeks_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_any_household_member_confirmed_covid_past_4_weeks_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_past_history_kawasaki_disease",
+        "text_key": "multisystem_inflammatory_syndrome_past_history_kawasaki_disease",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_past_history_kawasaki_disease_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_past_history_kawasaki_disease_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_past_history_kawasaki_disease_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "multisystem_inflammatory_syndrome_family_history_kawasaki_disease",
+        "text_key": "multisystem_inflammatory_syndrome_family_history_kawasaki_disease",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "multisystem_inflammatory_syndrome_family_history_kawasaki_disease_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_family_history_kawasaki_disease_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "multisystem_inflammatory_syndrome_family_history_kawasaki_disease_opt_3",
+            "value": 3
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "multisystem_inflammatory_syndrome_feverrecord_id": "Record ID",
+      "multisystem_inflammatory_syndrome_description": "DescriptionThis protocol helps better describe and understand the patient experience and recovery of those with confirmed or suspected COVID-19, with a specific emphasis on MIS and body inflammation in children and adolescents.",
+      "multisystem_inflammatory_syndrome_fever": "Fever (measured or self-reported)",
+      "multisystem_inflammatory_syndrome_fever_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_fever_opt_2": "No",
+      "multisystem_inflammatory_syndrome_fever_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_fever_duration": "Duration of fever",
+      "multisystem_inflammatory_syndrome_rash": "Rash",
+      "multisystem_inflammatory_syndrome_rash_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_rash_opt_2": "No",
+      "multisystem_inflammatory_syndrome_rash_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_rash_type": "If yes type of rash",
+      "multisystem_inflammatory_syndrome_bilateral_conjunctivitis": "Bilateral conjunctivitis",
+      "multisystem_inflammatory_syndrome_bilateral_conjunctivitis_opt_1": "Yes, purulent",
+      "multisystem_inflammatory_syndrome_bilateral_conjunctivitis_opt_2": "Yes, non-purulent",
+      "multisystem_inflammatory_syndrome_bilateral_conjunctivitis_opt_3": "No",
+      "multisystem_inflammatory_syndrome_bilateral_conjunctivitis_opt_4": "Unknown",
+      "multisystem_inflammatory_syndrome_oral_mucosal_sign": "Oral mucosal inflammation signs",
+      "multisystem_inflammatory_syndrome_oral_mucosal_sign_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_oral_mucosal_sign_opt_2": "No",
+      "multisystem_inflammatory_syndrome_oral_mucosal_sign_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_peripheral_cutaneous_sign": "Peripheral cutaneous inflammation signs (hands or feet)",
+      "multisystem_inflammatory_syndrome_peripheral_cutaneous_sign_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_peripheral_cutaneous_sign_opt_2": "No",
+      "multisystem_inflammatory_syndrome_peripheral_cutaneous_sign_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_hypotension": "Hypotension (age-appropriate)",
+      "multisystem_inflammatory_syndrome_hypotension_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_hypotension_opt_2": "No",
+      "multisystem_inflammatory_syndrome_hypotension_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_tachycardia": "Tachycardia (age-appropriate)",
+      "multisystem_inflammatory_syndrome_tachycardia_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_tachycardia_opt_2": "No",
+      "multisystem_inflammatory_syndrome_tachycardia_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_prolonged_capillary_refill_time": "Prolonged capillary refill time",
+      "multisystem_inflammatory_syndrome_prolonged_capillary_refill_time_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_prolonged_capillary_refill_time_opt_2": "No",
+      "multisystem_inflammatory_syndrome_prolonged_capillary_refill_time_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_pale_mottled_skin": "Pale/mottled skin",
+      "multisystem_inflammatory_syndrome_pale_mottled_skin_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_pale_mottled_skin_opt_2": "No",
+      "multisystem_inflammatory_syndrome_pale_mottled_skin_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_cold_hands_feet": "Cold hands/feet",
+      "multisystem_inflammatory_syndrome_cold_hands_feet_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_cold_hands_feet_opt_2": "No",
+      "multisystem_inflammatory_syndrome_cold_hands_feet_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_urinary_output": "Urinary output < 2 mL/kg/hr",
+      "multisystem_inflammatory_syndrome_urinary_output_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_urinary_output_opt_2": "No",
+      "multisystem_inflammatory_syndrome_urinary_output_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_chest_pain": "Chest pain",
+      "multisystem_inflammatory_syndrome_chest_pain_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_chest_pain_opt_2": "No",
+      "multisystem_inflammatory_syndrome_chest_pain_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_tachypnoea": "Tachypnoea (age-appropriate)",
+      "multisystem_inflammatory_syndrome_tachypnoea_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_tachypnoea_opt_2": "No",
+      "multisystem_inflammatory_syndrome_tachypnoea_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_respiratory_distress": "Respiratory distress",
+      "multisystem_inflammatory_syndrome_respiratory_distress_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_respiratory_distress_opt_2": "No",
+      "multisystem_inflammatory_syndrome_respiratory_distress_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_abdominal_pain": "Abdominal pain",
+      "multisystem_inflammatory_syndrome_abdominal_pain_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_abdominal_pain_opt_2": "No",
+      "multisystem_inflammatory_syndrome_abdominal_pain_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_diarrhoea": "Diarrhoea",
+      "multisystem_inflammatory_syndrome_diarrhoea_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_diarrhoea_opt_2": "No",
+      "multisystem_inflammatory_syndrome_diarrhoea_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_vomiting": "Vomiting",
+      "multisystem_inflammatory_syndrome_vomiting_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_vomiting_opt_2": "No",
+      "multisystem_inflammatory_syndrome_vomiting_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_cough": "Cough",
+      "multisystem_inflammatory_syndrome_cough_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_cough_opt_2": "No",
+      "multisystem_inflammatory_syndrome_cough_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_fatigue_malaise": "Fatigue/malaise",
+      "multisystem_inflammatory_syndrome_fatigue_malaise_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_fatigue_malaise_opt_2": "No",
+      "multisystem_inflammatory_syndrome_fatigue_malaise_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_sore_throat": "Sore throat",
+      "multisystem_inflammatory_syndrome_sore_throat_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_sore_throat_opt_2": "No",
+      "multisystem_inflammatory_syndrome_sore_throat_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_seizures": "Seizures",
+      "multisystem_inflammatory_syndrome_seizures_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_seizures_opt_2": "No",
+      "multisystem_inflammatory_syndrome_seizures_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_runny_nose": "Runny nose",
+      "multisystem_inflammatory_syndrome_runny_nose_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_runny_nose_opt_2": "No",
+      "multisystem_inflammatory_syndrome_runny_nose_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_headache": "Headache",
+      "multisystem_inflammatory_syndrome_headache_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_headache_opt_2": "No",
+      "multisystem_inflammatory_syndrome_headache_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_wheezing": "Wheezing",
+      "multisystem_inflammatory_syndrome_wheezing_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_wheezing_opt_2": "No",
+      "multisystem_inflammatory_syndrome_wheezing_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_hypotonia": "Hypotonia/floppiness",
+      "multisystem_inflammatory_syndrome_hypotonia_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_hypotonia_opt_2": "No",
+      "multisystem_inflammatory_syndrome_hypotonia_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_swollen_joints": "Swollen joints",
+      "multisystem_inflammatory_syndrome_swollen_joints_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_swollen_joints_opt_2": "No",
+      "multisystem_inflammatory_syndrome_swollen_joints_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_paralysis": "Paralysis",
+      "multisystem_inflammatory_syndrome_paralysis_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_paralysis_opt_2": "No",
+      "multisystem_inflammatory_syndrome_paralysis_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_cervical_lymphyadenopathy": "Cervical lymphadenopathy",
+      "multisystem_inflammatory_syndrome_cervical_lymphyadenopathy_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_cervical_lymphyadenopathy_opt_2": "No",
+      "multisystem_inflammatory_syndrome_cervical_lymphyadenopathy_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_irritability": "Irritability",
+      "multisystem_inflammatory_syndrome_irritability_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_irritability_opt_2": "No",
+      "multisystem_inflammatory_syndrome_irritability_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_joint_pain": "Joint pain (arthralgia)",
+      "multisystem_inflammatory_syndrome_joint_pain_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_joint_pain_opt_2": "No",
+      "multisystem_inflammatory_syndrome_joint_pain_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_photophobia": "Photophobia",
+      "multisystem_inflammatory_syndrome_photophobia_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_photophobia_opt_2": "No",
+      "multisystem_inflammatory_syndrome_photophobia_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_muscle_aches": "Muscle aches",
+      "multisystem_inflammatory_syndrome_muscle_aches_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_muscle_aches_opt_2": "No",
+      "multisystem_inflammatory_syndrome_muscle_aches_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_hyposmia_anosmia": "Hyposmia/anosmia (loss of smell)",
+      "multisystem_inflammatory_syndrome_hyposmia_anosmia_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_hyposmia_anosmia_opt_2": "No",
+      "multisystem_inflammatory_syndrome_hyposmia_anosmia_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_skin_ulcers": "Skin ulcers",
+      "multisystem_inflammatory_syndrome_skin_ulcers_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_skin_ulcers_opt_2": "No",
+      "multisystem_inflammatory_syndrome_skin_ulcers_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_hypogeusia": "Hypogeusia (loss of taste)",
+      "multisystem_inflammatory_syndrome_hypogeusia_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_hypogeusia_opt_2": "No",
+      "multisystem_inflammatory_syndrome_hypogeusia_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_stiff_neck": "Stiff neck",
+      "multisystem_inflammatory_syndrome_stiff_neck_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_stiff_neck_opt_2": "No",
+      "multisystem_inflammatory_syndrome_stiff_neck_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_not_able_drink": "Not able to drink",
+      "multisystem_inflammatory_syndrome_not_able_drink_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_not_able_drink_opt_2": "No",
+      "multisystem_inflammatory_syndrome_not_able_drink_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_other": "Other? Specify",
+      "multisystem_inflammatory_syndrome_bleeding": "Bleeding (haemorrhage)",
+      "multisystem_inflammatory_syndrome_bleeding_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_bleeding_opt_2": "No",
+      "multisystem_inflammatory_syndrome_bleeding_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_bleeding_site": "If yes, specify site",
+      "multisystem_inflammatory_syndrome_hospital_admit_past_3_months": "Has the child been admitted to hospital in the last 3 months?",
+      "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_opt_2": "No",
+      "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_discharge_date": "If yes, date of discharge from hospital",
+      "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_related_similar_problems": "If yes, was it related to this illness episode or for the same or similar problems?",
+      "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_related_similar_problems_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_related_similar_problems_opt_2": "No",
+      "multisystem_inflammatory_syndrome_hospital_admit_past_3_months_related_similar_problems_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_history_covid_infection_previous_4_weeks_prior_illness": "History of COVID-19 infection in the previous 4 weeks prior to current illness?",
+      "multisystem_inflammatory_syndrome_history_covid_infection_previous_4_weeks_prior_illness_opt_1": "Yes - Lab confirmed",
+      "multisystem_inflammatory_syndrome_history_covid_infection_previous_4_weeks_prior_illness_opt_2": "Yes - Clinically diagnosed",
+      "multisystem_inflammatory_syndrome_history_covid_infection_previous_4_weeks_prior_illness_opt_3": "No",
+      "multisystem_inflammatory_syndrome_history_covid_infection_previous_4_weeks_prior_illness_opt_4": "Unknown",
+      "multisystem_inflammatory_syndrome_history_respiratory_infection_previous_4_weeks_prior_illness": "History of any respiratory infection in the previous 4 weeks prior to current illness?",
+      "multisystem_inflammatory_syndrome_history_respiratory_infection_previous_4_weeks_prior_illness_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_history_respiratory_infection_previous_4_weeks_prior_illness_opt_2": "No",
+      "multisystem_inflammatory_syndrome_history_respiratory_infection_previous_4_weeks_prior_illness_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_any_household_member_confirmed_covid_past_4_weeks": "Any household member (or other contact) with confirmed COVID-19 in previous 4 weeks?",
+      "multisystem_inflammatory_syndrome_any_household_member_confirmed_covid_past_4_weeks_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_any_household_member_confirmed_covid_past_4_weeks_opt_2": "No",
+      "multisystem_inflammatory_syndrome_any_household_member_confirmed_covid_past_4_weeks_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_past_history_kawasaki_disease": "Past history of Kawasaki disease?",
+      "multisystem_inflammatory_syndrome_past_history_kawasaki_disease_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_past_history_kawasaki_disease_opt_2": "No",
+      "multisystem_inflammatory_syndrome_past_history_kawasaki_disease_opt_3": "Unknown",
+      "multisystem_inflammatory_syndrome_family_history_kawasaki_disease": "Family history of Kawasaki disease?",
+      "multisystem_inflammatory_syndrome_family_history_kawasaki_disease_opt_1": "Yes",
+      "multisystem_inflammatory_syndrome_family_history_kawasaki_disease_opt_2": "No",
+      "multisystem_inflammatory_syndrome_family_history_kawasaki_disease_opt_3": "Unknown"
+    }
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Methods of Quitting Smoking Cigarettes - Adults",
+      "code": "PX330301",
+      "abbreviation": "PX330301",
+      "description": "These self-administered questions ask current smokers about their attempts to stop smoking cigarettes within the past 3 months and what method or methods they used to quit.",
+      "domain": "Tobacco Cessation",
+      "citation": "Hummel, K., Nagelhout, G. E., Fong, G. T., Vardavas, C. I., Papadakis, S., Herbe?, A., Mons, U., van den Putte, B., Borland, R., Fernández, E., de Vries, H., McNeill, A., Gravely, S., Przewo?niak, K., Kovacs, P., Trofor, A. C., & Willemsen, M. C. (2018). Quitting activity and use of cessation assistance reported by smokers in eight European countries: Findings from the EUREST-PLUS ITC Europe Surveys. Tobacco Induced Diseases, 16(Suppl 2), A6. Papadakis, S., Katsaounou, P. A., Kyriakos, C. N., Balmford, J., Tzavara, C. K., Girvalaki, C., Driezen, P., Filippidis, F. T., Herbec, A., Hummel, K., McNeill, A., Mons, U., Fernández, E., Fu, M., Trofor, A., Demjén, T., Zato?ski, W., Willemsen, M. C., Fong, G. T., & Vardavas, C. (in press). Quitting behaviours and cessation methods used in 8 European Countries in 2018: Findings from the EUREST-PLUS ITC Europe Surveys. European Journal of Public Health, 30(Suppl 3), iii26-iii33. Rodu, B., & Plurphanswat, N. (2017). Quit methods used by American smokers, 2013-2014. International Journal of Environmental Research and Public Health, 14(11), 1403. Soulakova, J. N., & Crockett, L. J. (2017). Unassisted quitting and smoking cessation methods used in the United States: Analyses of 2010-2011 Tobacco Use Supplement to the Current Population Survey data. Nicotine & Tobacco Research, 20(1), 30-39. Sutanto, E., Miller, C., Smith, D. M., OConnor, R. J., Quah, A., Cummings, K. M., Xu, S., Fong, G. T., Hyland, A., Ouimet, J., Yoshimi, I., Mochizuki, Y., Tabuchi, T., & Goniewicz, M. L. (2019). Prevalence, use behaviors, and preferences among users of heated tobacco products: Findings from the 2018 ITC Japan Survey. International Journal of Environmental Research and Public Health, 16(23), 4630. Verbiest, M., Brakema, E., van der Kleij, R., Sheals, K., Allistone, G., Williams, S., McEwen, A., & Chavannes, N. (2017). National guidelines for smoking cessation in primary care: A literature review and evidence analysis. NPJ Primary Care Respiratory Medicine, 27(1), 2. [PhenX: https://www.phenxtoolkit.org/protocols/view/330301]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/330301"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "methods_quitting_smoking_adult_times_stopped_quittingrecord_id",
+        "text_key": "methods_quitting_smoking_adult_times_stopped_quittingrecord_id",
+        "type": "short"
+      },
+      {
+        "id": "methods_quitting_smoking_adult_times_stopped_quitting",
+        "text_key": "methods_quitting_smoking_adult_times_stopped_quitting",
+        "type": "short",
+        "input_type": "number",
+        "number_min": 1,
+        "number_max": 99
+      },
+      {
+        "id": "methods_quitting_smoking_adult_times_stopped_quitting_enumerated",
+        "text_key": "methods_quitting_smoking_adult_times_stopped_quitting_enumerated",
+        "type": "multi",
+        "visible_when": {
+          "item": "methods_quitting_smoking_adult_times_stopped_quitting",
+          "operator": "equals",
+          "value": ""
+        },
+        "options": [
+          {
+            "text_key": "methods_quitting_smoking_adult_times_stopped_quitting_enumerated_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sec_when_you_last_tried_to_quit_smoking_did_",
+        "type": "section",
+        "text_key": "sec_when_you_last_tried_to_quit_smoking_did__title"
+      },
+      {
+        "id": "methods_quitting_smoking_adult_last_attempt_quit_surrender",
+        "text_key": "methods_quitting_smoking_adult_last_attempt_quit_surrender",
+        "type": "multi",
+        "visible_when": {
+          "item": "methods_quitting_smoking_adult_times_stopped_quitting",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_surrender_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_surrender_opt_2",
+            "value": 2
+          }
+        ],
+        "_matrix_group": "mat"
+      },
+      {
+        "id": "methods_quitting_smoking_adult_last_attempt_quit_cut_back",
+        "text_key": "methods_quitting_smoking_adult_last_attempt_quit_cut_back",
+        "type": "multi",
+        "visible_when": {
+          "item": "methods_quitting_smoking_adult_times_stopped_quitting",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_cut_back_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_cut_back_opt_2",
+            "value": 2
+          }
+        ],
+        "_matrix_group": "mat"
+      },
+      {
+        "id": "methods_quitting_smoking_adult_last_attempt_quit_substitute_electronic",
+        "text_key": "methods_quitting_smoking_adult_last_attempt_quit_substitute_electronic",
+        "type": "multi",
+        "visible_when": {
+          "item": "methods_quitting_smoking_adult_times_stopped_quitting",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_substitute_electronic_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_substitute_electronic_opt_2",
+            "value": 2
+          }
+        ],
+        "_matrix_group": "mat"
+      },
+      {
+        "id": "methods_quitting_smoking_adult_last_attempt_quit_nicotine_patch_gum",
+        "text_key": "methods_quitting_smoking_adult_last_attempt_quit_nicotine_patch_gum",
+        "type": "multi",
+        "visible_when": {
+          "item": "methods_quitting_smoking_adult_times_stopped_quitting",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_nicotine_patch_gum_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_nicotine_patch_gum_opt_2",
+            "value": 2
+          }
+        ],
+        "_matrix_group": "mat"
+      },
+      {
+        "id": "methods_quitting_smoking_adult_last_attempt_quit_switch_electronic",
+        "text_key": "methods_quitting_smoking_adult_last_attempt_quit_switch_electronic",
+        "type": "multi",
+        "visible_when": {
+          "item": "methods_quitting_smoking_adult_times_stopped_quitting",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_switch_electronic_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_switch_electronic_opt_2",
+            "value": 2
+          }
+        ],
+        "_matrix_group": "mat"
+      },
+      {
+        "id": "methods_quitting_smoking_adult_last_attempt_quit_switch_mild",
+        "text_key": "methods_quitting_smoking_adult_last_attempt_quit_switch_mild",
+        "type": "multi",
+        "visible_when": {
+          "item": "methods_quitting_smoking_adult_times_stopped_quitting",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_switch_mild_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_switch_mild_opt_2",
+            "value": 2
+          }
+        ],
+        "_matrix_group": "mat"
+      },
+      {
+        "id": "methods_quitting_smoking_adult_last_attempt_quit_help_doctor",
+        "text_key": "methods_quitting_smoking_adult_last_attempt_quit_help_doctor",
+        "type": "multi",
+        "visible_when": {
+          "item": "methods_quitting_smoking_adult_times_stopped_quitting",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_help_doctor_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_help_doctor_opt_2",
+            "value": 2
+          }
+        ],
+        "_matrix_group": "mat"
+      },
+      {
+        "id": "methods_quitting_smoking_adult_last_attempt_quit_medications",
+        "text_key": "methods_quitting_smoking_adult_last_attempt_quit_medications",
+        "type": "multi",
+        "visible_when": {
+          "item": "methods_quitting_smoking_adult_times_stopped_quitting",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_medications_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_medications_opt_2",
+            "value": 2
+          }
+        ],
+        "_matrix_group": "mat"
+      },
+      {
+        "id": "methods_quitting_smoking_adult_last_attempt_quit_help_website",
+        "text_key": "methods_quitting_smoking_adult_last_attempt_quit_help_website",
+        "type": "multi",
+        "visible_when": {
+          "item": "methods_quitting_smoking_adult_times_stopped_quitting",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_help_website_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_help_website_opt_2",
+            "value": 2
+          }
+        ],
+        "_matrix_group": "mat"
+      },
+      {
+        "id": "methods_quitting_smoking_adult_last_attempt_quit_help_telephone",
+        "text_key": "methods_quitting_smoking_adult_last_attempt_quit_help_telephone",
+        "type": "multi",
+        "visible_when": {
+          "item": "methods_quitting_smoking_adult_times_stopped_quitting",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_help_telephone_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "methods_quitting_smoking_adult_last_attempt_quit_help_telephone_opt_2",
+            "value": 2
+          }
+        ],
+        "_matrix_group": "mat"
+      }
+    ],
+    "_conversion_notes": [
+      "INFO  methods_quitting_smoking_adult_last_attempt_quit_surrender: member of matrix group 'mat' — consider converting to grid type manually",
+      "INFO  methods_quitting_smoking_adult_last_attempt_quit_cut_back: member of matrix group 'mat' — consider converting to grid type manually",
+      "INFO  methods_quitting_smoking_adult_last_attempt_quit_substitute_electronic: member of matrix group 'mat' — consider converting to grid type manually",
+      "INFO  methods_quitting_smoking_adult_last_attempt_quit_nicotine_patch_gum: member of matrix group 'mat' — consider converting to grid type manually",
+      "INFO  methods_quitting_smoking_adult_last_attempt_quit_switch_electronic: member of matrix group 'mat' — consider converting to grid type manually",
+      "INFO  methods_quitting_smoking_adult_last_attempt_quit_switch_mild: member of matrix group 'mat' — consider converting to grid type manually",
+      "INFO  methods_quitting_smoking_adult_last_attempt_quit_help_doctor: member of matrix group 'mat' — consider converting to grid type manually",
+      "INFO  methods_quitting_smoking_adult_last_attempt_quit_medications: member of matrix group 'mat' — consider converting to grid type manually",
+      "INFO  methods_quitting_smoking_adult_last_attempt_quit_help_website: member of matrix group 'mat' — consider converting to grid type manually",
+      "INFO  methods_quitting_smoking_adult_last_attempt_quit_help_telephone: member of matrix group 'mat' — consider converting to grid type manually"
+    ]
+  },
+  "translations": {
+    "en": {
+      "methods_quitting_smoking_adult_times_stopped_quittingrecord_id": "Record ID",
+      "methods_quitting_smoking_adult_times_stopped_quitting": "During the past 3 months, how many times have you stopped smoking for one day or longer because you were trying to quit smoking cigarettes for good?",
+      "methods_quitting_smoking_adult_times_stopped_quitting_enumerated": "methods_quitting_smoking_adult_times_stopped_quitting_enumerated",
+      "methods_quitting_smoking_adult_times_stopped_quitting_enumerated_opt_1": "Don't know/refused",
+      "sec_when_you_last_tried_to_quit_smoking_did__title": "When you last tried to quit smoking, did you do any of the following?",
+      "methods_quitting_smoking_adult_last_attempt_quit_surrender": "Gave up cigarettes all at once",
+      "methods_quitting_smoking_adult_last_attempt_quit_surrender_opt_1": "Yes",
+      "methods_quitting_smoking_adult_last_attempt_quit_surrender_opt_2": "No",
+      "methods_quitting_smoking_adult_last_attempt_quit_cut_back": "Gradually cut back on cigarettes",
+      "methods_quitting_smoking_adult_last_attempt_quit_cut_back_opt_1": "Yes",
+      "methods_quitting_smoking_adult_last_attempt_quit_cut_back_opt_2": "No",
+      "methods_quitting_smoking_adult_last_attempt_quit_substitute_electronic": "Substituted some regular cigarettes with e-cigarettes",
+      "methods_quitting_smoking_adult_last_attempt_quit_substitute_electronic_opt_1": "Yes",
+      "methods_quitting_smoking_adult_last_attempt_quit_substitute_electronic_opt_2": "No",
+      "methods_quitting_smoking_adult_last_attempt_quit_nicotine_patch_gum": "Used nicotine patch or nicotine gum",
+      "methods_quitting_smoking_adult_last_attempt_quit_nicotine_patch_gum_opt_1": "Yes",
+      "methods_quitting_smoking_adult_last_attempt_quit_nicotine_patch_gum_opt_2": "No",
+      "methods_quitting_smoking_adult_last_attempt_quit_switch_electronic": "Switched completely to e-cigarettes",
+      "methods_quitting_smoking_adult_last_attempt_quit_switch_electronic_opt_1": "Yes",
+      "methods_quitting_smoking_adult_last_attempt_quit_switch_electronic_opt_2": "No",
+      "methods_quitting_smoking_adult_last_attempt_quit_switch_mild": "Switched to \"mild\" cigarettes",
+      "methods_quitting_smoking_adult_last_attempt_quit_switch_mild_opt_1": "Yes",
+      "methods_quitting_smoking_adult_last_attempt_quit_switch_mild_opt_2": "No",
+      "methods_quitting_smoking_adult_last_attempt_quit_help_doctor": "Got help from a doctor or other health professional",
+      "methods_quitting_smoking_adult_last_attempt_quit_help_doctor_opt_1": "Yes",
+      "methods_quitting_smoking_adult_last_attempt_quit_help_doctor_opt_2": "No",
+      "methods_quitting_smoking_adult_last_attempt_quit_medications": "Used FDA-approved medications such as Zyban or Chantix",
+      "methods_quitting_smoking_adult_last_attempt_quit_medications_opt_1": "Yes",
+      "methods_quitting_smoking_adult_last_attempt_quit_medications_opt_2": "No",
+      "methods_quitting_smoking_adult_last_attempt_quit_help_website": "Got help from a website such as Smokefree.gov",
+      "methods_quitting_smoking_adult_last_attempt_quit_help_website_opt_1": "Yes",
+      "methods_quitting_smoking_adult_last_attempt_quit_help_website_opt_2": "No",
+      "methods_quitting_smoking_adult_last_attempt_quit_help_telephone": "Got help from a telephone quitline",
+      "methods_quitting_smoking_adult_last_attempt_quit_help_telephone_opt_1": "Yes",
+      "methods_quitting_smoking_adult_last_attempt_quit_help_telephone_opt_2": "No"
+    }
+  }
+}

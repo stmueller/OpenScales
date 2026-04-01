@@ -1,0 +1,352 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Injection Drug Use",
+      "code": "PX161101",
+      "abbreviation": "PX161101",
+      "description": "This protocol includes seven self-administered questions from the National Health and Nutrition Examination Survey (NHANES). Respondents answer questions regarding the use of a needle to inject drugs not prescribed by a doctor.",
+      "domain": "Immune System & Infectious Disease",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/161101]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/161101"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "used_needle_to_inject_drugs",
+        "text_key": "used_needle_to_inject_drugs",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "used_needle_to_inject_drugs_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "used_needle_to_inject_drugs_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "used_needle_to_inject_drugs_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "used_needle_to_inject_drugs_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "which_drugs_injected",
+        "text_key": "which_drugs_injected",
+        "type": "multi",
+        "visible_when": {
+          "item": "used_needle_to_inject_drugs",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "which_drugs_injected_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "which_drugs_injected_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "which_drugs_injected_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "which_drugs_injected_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "which_drugs_injected_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "which_drugs_injected_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "which_drugs_injected_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "age_first_used_needle",
+        "text_key": "age_first_used_needle",
+        "type": "short",
+        "visible_when": {
+          "item": "which_drugs_injected",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "age_first_used_needle_coded",
+        "text_key": "age_first_used_needle_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "used_needle_to_inject_drugs",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "age_first_used_needle_coded_opt_77",
+            "value": 77
+          },
+          {
+            "text_key": "age_first_used_needle_coded_opt_99",
+            "value": 99
+          }
+        ]
+      },
+      {
+        "id": "how_long_since_injected_drugs",
+        "text_key": "how_long_since_injected_drugs",
+        "type": "short",
+        "visible_when": {
+          "item": "used_needle_to_inject_drugs",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "how_long_since_injected_drugs_coded",
+        "text_key": "how_long_since_injected_drugs_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "used_needle_to_inject_drugs",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "how_long_since_injected_drugs_coded_opt_7777",
+            "value": 7777
+          },
+          {
+            "text_key": "how_long_since_injected_drugs_coded_opt_9999",
+            "value": 9999
+          }
+        ]
+      },
+      {
+        "id": "howlong_since_injected_drugs_units",
+        "text_key": "howlong_since_injected_drugs_units",
+        "type": "multi",
+        "visible_when": {
+          "item": "used_needle_to_inject_drugs",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "howlong_since_injected_drugs_units_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "howlong_since_injected_drugs_units_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "howlong_since_injected_drugs_units_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "howlong_since_injected_drugs_units_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "howlong_since_injected_drugs_units_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "howlong_since_injected_drugs_units_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "how_many_times_injected_drugs",
+        "text_key": "how_many_times_injected_drugs",
+        "type": "multi",
+        "visible_when": {
+          "item": "used_needle_to_inject_drugs",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "how_many_times_injected_drugs_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "how_many_times_injected_drugs_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "how_many_times_injected_drugs_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "how_many_times_injected_drugs_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "how_many_times_injected_drugs_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "how_many_times_injected_drugs_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "how_many_times_injected_drugs_opt_77",
+            "value": 77
+          },
+          {
+            "text_key": "how_many_times_injected_drugs_opt_99",
+            "value": 99
+          }
+        ]
+      },
+      {
+        "id": "how_often_injected",
+        "text_key": "how_often_injected",
+        "type": "multi",
+        "visible_when": {
+          "item": "used_needle_to_inject_drugs",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "how_often_injected_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "how_often_injected_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "how_often_injected_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "how_often_injected_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "how_often_injected_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "how_often_injected_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "how_often_injected_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "drug_treatment_program",
+        "text_key": "drug_treatment_program",
+        "type": "multi",
+        "visible_when": {
+          "item": "used_needle_to_inject_drugs",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "drug_treatment_program_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "drug_treatment_program_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "drug_treatment_program_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "drug_treatment_program_opt_9",
+            "value": 9
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "used_needle_to_inject_drugs": "Have you ever, even once, used a needle to inject a drug not prescribed by a doctor?",
+      "used_needle_to_inject_drugs_opt_1": "Yes",
+      "used_needle_to_inject_drugs_opt_2": "No",
+      "used_needle_to_inject_drugs_opt_7": "Refused",
+      "used_needle_to_inject_drugs_opt_9": "Don't Know",
+      "which_drugs_injected": "Which of the following drugs have you injected using a needle?",
+      "which_drugs_injected_opt_1": "Cocaine",
+      "which_drugs_injected_opt_2": "Heroin",
+      "which_drugs_injected_opt_3": "Methamphetamine",
+      "which_drugs_injected_opt_4": "Steroids",
+      "which_drugs_injected_opt_5": "Any other drugs",
+      "which_drugs_injected_opt_7": "Refused",
+      "which_drugs_injected_opt_9": "Don't Know",
+      "age_first_used_needle": "How old were you when you first used a needle to inject any drug not prescribed by a doctor?",
+      "age_first_used_needle_coded": "How old were you when you first used a needle to inject any drug not prescribed by a doctor?",
+      "age_first_used_needle_coded_opt_77": "Refused",
+      "age_first_used_needle_coded_opt_99": "Don't Know",
+      "how_long_since_injected_drugs": "How long ago has it been since you last used a needle to inject a drug not prescribed by a doctor?",
+      "how_long_since_injected_drugs_coded": "How long ago has it been since you last used a needle to inject a drug not prescribed by a doctor?",
+      "how_long_since_injected_drugs_coded_opt_7777": "Refused",
+      "how_long_since_injected_drugs_coded_opt_9999": "Don't Know",
+      "howlong_since_injected_drugs_units": "How long ago has it been since you last used a needle to inject a drug not prescribed by a doctor?",
+      "howlong_since_injected_drugs_units_opt_1": "Days",
+      "howlong_since_injected_drugs_units_opt_2": "Weeks",
+      "howlong_since_injected_drugs_units_opt_3": "Months",
+      "howlong_since_injected_drugs_units_opt_4": "Years",
+      "howlong_since_injected_drugs_units_opt_7": "Refused",
+      "howlong_since_injected_drugs_units_opt_9": "Don't Know",
+      "how_many_times_injected_drugs": "During your life, altogether how many times have you injected drugs not prescribed by a doctor?",
+      "how_many_times_injected_drugs_opt_1": "Once",
+      "how_many_times_injected_drugs_opt_2": "2-5 times",
+      "how_many_times_injected_drugs_opt_3": "6-19 times",
+      "how_many_times_injected_drugs_opt_4": "20-49 times",
+      "how_many_times_injected_drugs_opt_5": "50-99 times",
+      "how_many_times_injected_drugs_opt_6": "100 times or more",
+      "how_many_times_injected_drugs_opt_77": "Refused",
+      "how_many_times_injected_drugs_opt_99": "Don't Know",
+      "how_often_injected": "Think about the period of your life when you injected drugs the most often. How often did you inject then?",
+      "how_often_injected_opt_1": "More than once a day",
+      "how_often_injected_opt_2": "About once a day",
+      "how_often_injected_opt_3": "At least once a week but not every day",
+      "how_often_injected_opt_4": "At least once a month but not every week",
+      "how_often_injected_opt_5": "Less than once a month",
+      "how_often_injected_opt_7": "Refused",
+      "how_often_injected_opt_9": "Don't Know",
+      "drug_treatment_program": "Have you ever been in a drug treatment or drug rehabilitation program?",
+      "drug_treatment_program_opt_1": "Yes",
+      "drug_treatment_program_opt_2": "No",
+      "drug_treatment_program_opt_7": "Refused",
+      "drug_treatment_program_opt_9": "Don't Know"
+    }
+  }
+}

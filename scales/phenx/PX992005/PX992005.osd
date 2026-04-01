@@ -1,0 +1,1010 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Long COVID - Symptoms Due to COVID-19 - Speech, Language, and Hearing",
+      "code": "PX992005",
+      "abbreviation": "PX992005",
+      "description": "A self-administered questionnaire to better describe and understand the patient experience and recovery of those with confirmed or suspected COVID-19, with a specific emphasis on Long COVID experience especially with speech and language.",
+      "domain": "Long COVID",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/992005]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/992005"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_language_srecord_id",
+        "text_key": "long_covid_symptoms_speech_language_hearing_language_srecord_id",
+        "type": "short"
+      },
+      {
+        "id": "sec_speech_and_language_issues",
+        "type": "section",
+        "text_key": "sec_speech_and_language_issues_title"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_language_speech_issues",
+        "text_key": "long_covid_symptoms_speech_language_hearing_language_speech_issues",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_language_speech_issues_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_language_speech_issues_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_language_symptoms",
+        "text_key": "long_covid_symptoms_speech_language_hearing_language_symptoms",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "long_covid_symptoms_speech_language_hearing_language_speech_issues",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_10",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_language_symptoms_other",
+        "text_key": "long_covid_symptoms_speech_language_hearing_language_symptoms_other",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_speech_language_hearing_language_symptoms",
+          "operator": "in",
+          "value": [
+            10
+          ]
+        }
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_experience_symptoms",
+        "text_key": "long_covid_symptoms_speech_language_hearing_experience_symptoms",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "long_covid_symptoms_speech_language_hearing_language_speech_issues",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_10",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_multiple_languages",
+        "text_key": "long_covid_symptoms_speech_language_hearing_multiple_languages",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_multiple_languages_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_multiple_languages_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_describe_language_issues",
+        "text_key": "long_covid_symptoms_speech_language_hearing_describe_language_issues",
+        "type": "short"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_none",
+        "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_none",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_none_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sec_did_you_experience_these_symptoms_and_wh",
+        "type": "section",
+        "text_key": "sec_did_you_experience_these_symptoms_and_wh_title"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss",
+        "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_9",
+            "value": 9
+          }
+        ],
+        "_matrix_group": "symptoms"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus",
+        "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_9",
+            "value": 9
+          }
+        ],
+        "_matrix_group": "symptoms"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues",
+        "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_9",
+            "value": 9
+          }
+        ],
+        "_matrix_group": "symptoms"
+      },
+      {
+        "id": "sec_all_other_symptoms_checkbox",
+        "type": "section",
+        "text_key": "sec_all_other_symptoms_checkbox_title"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start",
+        "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "sec_how_severe_were_are_your_symptoms_over_t",
+        "type": "section",
+        "text_key": "sec_how_severe_were_are_your_symptoms_over_t_title"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1",
+        "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1_opt_6",
+            "value": 6
+          }
+        ],
+        "_matrix_group": "symptom_course"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2",
+        "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2_opt_6",
+            "value": 6
+          }
+        ],
+        "_matrix_group": "symptom_course"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3",
+        "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3_opt_6",
+            "value": 6
+          }
+        ],
+        "_matrix_group": "symptom_course"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4",
+        "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4_opt_6",
+            "value": 6
+          }
+        ],
+        "_matrix_group": "symptom_course"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2",
+        "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2_opt_6",
+            "value": 6
+          }
+        ],
+        "_matrix_group": "symptom_course"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3",
+        "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3_opt_6",
+            "value": 6
+          }
+        ],
+        "_matrix_group": "symptom_course"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4",
+        "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4_opt_6",
+            "value": 6
+          }
+        ],
+        "_matrix_group": "symptom_course"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5",
+        "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5_opt_6",
+            "value": 6
+          }
+        ],
+        "_matrix_group": "symptom_course"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6",
+        "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6_opt_6",
+            "value": 6
+          }
+        ],
+        "_matrix_group": "symptom_course"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7",
+        "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7_opt_6",
+            "value": 6
+          }
+        ],
+        "_matrix_group": "symptom_course"
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_relapse_symptoms",
+        "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_12",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_other",
+        "text_key": "long_covid_symptoms_speech_language_hearing_relapse_symptoms_other",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_speech_language_hearing_relapse_symptoms",
+          "operator": "in",
+          "value": [
+            12
+          ]
+        }
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms",
+        "text_key": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_10",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_other",
+        "text_key": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_other",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms",
+          "operator": "in",
+          "value": [
+            10
+          ]
+        }
+      }
+    ],
+    "_conversion_notes": [
+      "INFO  long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss: member of matrix group 'symptoms' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus: member of matrix group 'symptoms' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues: member of matrix group 'symptoms' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_speech_language_hearing_symptom_severity_week_1: member of matrix group 'symptom_course' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_speech_language_hearing_symptom_severity_week_2: member of matrix group 'symptom_course' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_speech_language_hearing_symptom_severity_week_3: member of matrix group 'symptom_course' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_speech_language_hearing_symptom_severity_week_4: member of matrix group 'symptom_course' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_speech_language_hearing_symptom_severity_month_2: member of matrix group 'symptom_course' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_speech_language_hearing_symptom_severity_month_3: member of matrix group 'symptom_course' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_speech_language_hearing_symptom_severity_month_4: member of matrix group 'symptom_course' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_speech_language_hearing_symptom_severity_month_5: member of matrix group 'symptom_course' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_speech_language_hearing_symptom_severity_month_6: member of matrix group 'symptom_course' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_speech_language_hearing_symptom_severity_month_7: member of matrix group 'symptom_course' — consider converting to grid type manually"
+    ]
+  },
+  "translations": {
+    "en": {
+      "long_covid_symptoms_speech_language_hearing_language_srecord_id": "Record ID",
+      "sec_speech_and_language_issues_title": "Speech and Language Issues",
+      "long_covid_symptoms_speech_language_hearing_language_speech_issues": "Have you experienced any issues with SPEECH AND LANGUAGE since the start of your COVID-19 illness?",
+      "long_covid_symptoms_speech_language_hearing_language_speech_issues_opt_1": "Yes",
+      "long_covid_symptoms_speech_language_hearing_language_speech_issues_opt_2": "No",
+      "long_covid_symptoms_speech_language_hearing_language_symptoms": "Which of the following speech and language symptoms have you experienced since the start of your COVID-19 illness?",
+      "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_1": "Difficulty finding the right words while speaking/writing",
+      "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_2": "Difficulty communicating verbally",
+      "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_3": "Difficulty speaking in complete sentences",
+      "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_4": "Speaking unrecognizable words",
+      "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_5": "Difficulty communicating in writing",
+      "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_6": "Difficulty processing/understanding what others say",
+      "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_7": "Difficulty reading/processing written text",
+      "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_8": "(If applicable) changes to your non-primary (second/third) language skills",
+      "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_9": "None of the above",
+      "long_covid_symptoms_speech_language_hearing_language_symptoms_opt_10": "Other",
+      "long_covid_symptoms_speech_language_hearing_language_symptoms_other": "Which of the following speech and language symptoms have you experienced since the start of your COVID-19 illness? Other",
+      "long_covid_symptoms_speech_language_hearing_experience_symptoms": "When did you experience these symptoms? Please mark symptoms for the first 4 weeks, then months (if applicable). Even if you have only experienced these symptoms for part of a week or month, please select it.",
+      "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_1": "Week 1",
+      "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_2": "Week 2",
+      "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_3": "Week 3",
+      "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_4": "Week 4",
+      "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_5": "Month 2",
+      "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_6": "Month 3",
+      "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_7": "Month 4",
+      "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_8": "Month 5",
+      "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_9": "Month 6",
+      "long_covid_symptoms_speech_language_hearing_experience_symptoms_opt_10": "Month 7",
+      "long_covid_symptoms_speech_language_hearing_multiple_languages": "Do you speak multiple languages?",
+      "long_covid_symptoms_speech_language_hearing_multiple_languages_opt_1": "Yes",
+      "long_covid_symptoms_speech_language_hearing_multiple_languages_opt_2": "No",
+      "long_covid_symptoms_speech_language_hearing_describe_language_issues": "Optional: Please use this space to describe examples of your language issues, including speech, writing, reading, and listening to words. Please include any changes to your speech/language that are not mentioned above. For instance, if you speak multiple languages and have noticed different problems with your primary and non-primary language.",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_none": "Did you experience these symptoms, and when did you experience them? Ear and Hearing Symptoms: None of the below ear and hearing symptoms apply to me",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_none_opt_1": "None of the below ear and hearing symptoms apply to me",
+      "sec_did_you_experience_these_symptoms_and_wh_title": "Did you experience these symptoms, and when did you experience them?",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss": "Hearing loss",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_1": "N/A",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_2": "Week 1",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_3": "Week 2",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_4": "Week 3",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_5": "Week 4",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_6": "Month 2",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_7": "Month 3",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_8": "Month 4",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_hearing_loss_opt_9": "Month 5",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus": "Tinnitus",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_1": "N/A",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_2": "Week 1",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_3": "Week 2",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_4": "Week 3",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_5": "Week 4",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_6": "Month 2",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_7": "Month 3",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_8": "Month 4",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_tinnitus_opt_9": "Month 5",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues": "Other ear/hearing issues",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_1": "N/A",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_2": "Week 1",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_3": "Week 2",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_4": "Week 3",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_5": "Week 4",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_6": "Month 2",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_7": "Month 3",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_8": "Month 4",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_other_issues_opt_9": "Month 5",
+      "sec_all_other_symptoms_checkbox_title": "All Other Symptoms - Checkbox",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start": "Have you experienced any of these symptoms since the start of your COVID-19 illness? (Please choose all options that apply): Ear and Hearing",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start_opt_1": "Ear Pain",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start_opt_2": "Changes to the ear canal (such as pressure, blockage, burning, swelling)",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start_opt_3": "Numbness/loss of sensation",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start_opt_4": "Sensitivity to noise",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start_opt_5": "Other ear/hearing symptoms",
+      "long_covid_symptoms_speech_language_hearing_ear_hearing_symptoms_start_opt_6": "None of the above",
+      "sec_how_severe_were_are_your_symptoms_over_t_title": "How severe were/are your symptoms over the course of the weeks/months? If you experienced multiple severities for symptoms within the time period, select the most severe within that time period.",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1": "Week 1",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1_opt_1": "No Symptom",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1_opt_2": "Very Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1_opt_3": "Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1_opt_4": "Moderate",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1_opt_5": "Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_1_opt_6": "Very Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2": "Week 2",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2_opt_1": "No Symptom",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2_opt_2": "Very Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2_opt_3": "Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2_opt_4": "Moderate",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2_opt_5": "Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_2_opt_6": "Very Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3": "Week 3",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3_opt_1": "No Symptom",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3_opt_2": "Very Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3_opt_3": "Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3_opt_4": "Moderate",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3_opt_5": "Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_3_opt_6": "Very Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4": "Week 4",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4_opt_1": "No Symptom",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4_opt_2": "Very Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4_opt_3": "Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4_opt_4": "Moderate",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4_opt_5": "Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_week_4_opt_6": "Very Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2": "Month 2",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2_opt_1": "No Symptom",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2_opt_2": "Very Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2_opt_3": "Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2_opt_4": "Moderate",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2_opt_5": "Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_2_opt_6": "Very Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3": "Month 3",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3_opt_1": "No Symptom",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3_opt_2": "Very Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3_opt_3": "Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3_opt_4": "Moderate",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3_opt_5": "Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_3_opt_6": "Very Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4": "Month 4",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4_opt_1": "No Symptom",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4_opt_2": "Very Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4_opt_3": "Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4_opt_4": "Moderate",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4_opt_5": "Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_4_opt_6": "Very Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5": "Month 5",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5_opt_1": "No Symptom",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5_opt_2": "Very Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5_opt_3": "Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5_opt_4": "Moderate",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5_opt_5": "Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_5_opt_6": "Very Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6": "Month 6",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6_opt_1": "No Symptom",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6_opt_2": "Very Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6_opt_3": "Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6_opt_4": "Moderate",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6_opt_5": "Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_6_opt_6": "Very Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7": "Month 7",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7_opt_1": "No Symptom",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7_opt_2": "Very Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7_opt_3": "Mild",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7_opt_4": "Moderate",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7_opt_5": "Severe",
+      "long_covid_symptoms_speech_language_hearing_symptom_severity_month_7_opt_6": "Very Severe",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms": "Which of these descriptions appropriately describes your experience with relapses, and your symptom course overall? Please select all that apply:",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_1": "My relapses happen in a regular pattern (monthly, daily, or weekly).",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_2": "My relapses happen in an irregular pattern (randomly).",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_3": "My relapses happen in response to a trigger (stress, alcohol, exercise/exertion, ect).",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_4": "My relapses are getting shorter/easier over time.",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_5": "My relapses are getting longer/harder over time.",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_6": "My relapse severity has stayed about the same over time.",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_7": "Overall, my symptoms have slowly gotten better over time.",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_8": "Overall, my symptoms have stayed about the same over time.",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_9": "Overall, my symptoms have slowly worsened over time.",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_10": "I got worse rapidly.",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_11": "I got better rapidly.",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms_opt_12": "Other",
+      "long_covid_symptoms_speech_language_hearing_relapse_symptoms_other": "Other",
+      "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms": "Which of these trigger a relapse or worsening of symptoms? Please select all that apply:",
+      "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_1": "Stress",
+      "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_2": "Alcohol",
+      "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_3": "Caffeine",
+      "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_4": "Heat",
+      "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_5": "Period/menstruation",
+      "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_6": "Week before period/menstruation",
+      "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_7": "Exercise",
+      "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_8": "Physical activity",
+      "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_9": "Mental activity",
+      "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_opt_10": "Other",
+      "long_covid_symptoms_speech_language_hearing_trigger_relapse_symptoms_other": "Which of these trigger a relapse or worsening of symptoms? Please select all that apply: Other"
+    }
+  }
+}

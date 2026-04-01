@@ -1,0 +1,917 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Pain - Body Map",
+      "code": "PX171701",
+      "abbreviation": "PX171701",
+      "description": "Individuals are presented with an image of a body and asked to indicate at which of the marked thirty-five locations they have felt persistent or recurrent pain for the last 3 months or longer (chronic pain). Alternatively, they can indicate no chronic pain.",
+      "domain": "Dermatology, Bone & Rheumatology",
+      "citation": "Goesling, J., DeJonckheere, M., Pierce, J., Williams, D. A., Brummett, C. M., Hassett, A. L., & Clauw, D. J. (2019). Opioid cessation and chronic pain: Perspectives of former opioid users. Pain, 160(5), 1131–1145. Hassett, A. L., Pierce, J., Goesling, J., Fritsch, L., Bakshi, R. R., Kohns, D. J., & Brummett, C. M. (2019). Initial validation of the electronic form of the Michigan Body Map. Regional Anesthesia & Pain Medicine, 45, 145–150. https://doi.org/10.1136/rapm-2019-101084 Katz, N., Dworkin, R. H., North, R., Thomson, S., Eldabe, S., Hayek, S. M., … Venkatesan, L. (2021). Research design considerations for randomized controlled trials of spinal cord stimulation for pain: Initiative on Methods, Measurement, and Pain Assessment in Clinical Trials/Institute of Neuromodulation/International Neuromodulation Society recommendations. Pain, 162(7), 1935–1956. McAfee, J., Boehnke, K. F., Moser, S. M., Brummett, C. M., Waljee, J. F., & Bonar, E. E. (2021). Perioperative cannabis use: A longitudinal study of associated clinical characteristics and surgical outcomes. Regional Anesthesia & Pain Medicine, 46(2), 137–144. Pierce, J., Hassett, A. L., Brummett, C. M., McAfee, J., Sieberg, C., Schrepf, A., & Harte, S. E. (2021). Characterizing pain and generalized sensory sensitivity according to trauma history among patients with knee osteoarthritis. Annals of Behavioral Medicine, 55(9), 853–869. Sato, S., Ukimoto, S., Kanamoto, T., Sasaki, N., Hashimoto, T., Saito, H., … Nakata, K. (2021). Chronic musculoskeletal pain, catastrophizing, and physical function in adult women were improved after 3-month aerobic-resistance circuit training. Scientific Reports, 11(1), 14939. University of Michigan Medical School. (2016, June 14). Michigan Body Map (MBM). Pain Research. Retrieved from https://medicine.umich.edu/dept/pain-research/clinical-research/michigan-body-map-mbm [PhenX: https://www.phenxtoolkit.org/protocols/view/171701]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/171701"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "pain_body_map_chronic_pain",
+        "text_key": "pain_body_map_chronic_pain",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "pain_body_map_chronic_pain_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_face",
+        "text_key": "pain_body_map_persistent_recurrent_face",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_face_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_face_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_jaw",
+        "text_key": "pain_body_map_persistent_recurrent_right_jaw",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_jaw_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_jaw_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_jaw",
+        "text_key": "pain_body_map_persistent_recurrent_left_jaw",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_jaw_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_jaw_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_chest",
+        "text_key": "pain_body_map_persistent_recurrent_right_chest",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_chest_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_chest_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_chest",
+        "text_key": "pain_body_map_persistent_recurrent_left_chest",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_chest_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_chest_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_upper_arm",
+        "text_key": "pain_body_map_persistent_recurrent_right_upper_arm",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_upper_arm_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_upper_arm_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_upper_arm",
+        "text_key": "pain_body_map_persistent_recurrent_left_upper_arm",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_upper_arm_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_upper_arm_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_elbow",
+        "text_key": "pain_body_map_persistent_recurrent_right_elbow",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_elbow_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_elbow_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_elbow",
+        "text_key": "pain_body_map_persistent_recurrent_left_elbow",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_elbow_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_elbow_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_lower_arm",
+        "text_key": "pain_body_map_persistent_recurrent_right_lower_arm",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_lower_arm_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_lower_arm_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_lower_arm",
+        "text_key": "pain_body_map_persistent_recurrent_left_lower_arm",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_lower_arm_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_lower_arm_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_wrist",
+        "text_key": "pain_body_map_persistent_recurrent_right_wrist",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_wrist_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_wrist_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_wrist",
+        "text_key": "pain_body_map_persistent_recurrent_left_wrist",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_wrist_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_wrist_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_abdomen",
+        "text_key": "pain_body_map_persistent_recurrent_abdomen",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_abdomen_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_abdomen_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_pelvis",
+        "text_key": "pain_body_map_persistent_recurrent_pelvis",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_pelvis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_pelvis_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_groin",
+        "text_key": "pain_body_map_persistent_recurrent_right_groin",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_groin_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_groin_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_groin",
+        "text_key": "pain_body_map_persistent_recurrent_left_groin",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_groin_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_groin_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_upper_leg",
+        "text_key": "pain_body_map_persistent_recurrent_right_upper_leg",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_upper_leg_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_upper_leg_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_upper_leg",
+        "text_key": "pain_body_map_persistent_recurrent_left_upper_leg",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_upper_leg_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_upper_leg_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_knee",
+        "text_key": "pain_body_map_persistent_recurrent_right_knee",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_knee_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_knee_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_knee",
+        "text_key": "pain_body_map_persistent_recurrent_left_knee",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_knee_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_knee_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_lower_leg",
+        "text_key": "pain_body_map_persistent_recurrent_right_lower_leg",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_lower_leg_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_lower_leg_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_lower_leg",
+        "text_key": "pain_body_map_persistent_recurrent_left_lower_leg",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_lower_leg_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_lower_leg_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_ankle",
+        "text_key": "pain_body_map_persistent_recurrent_right_ankle",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_ankle_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_ankle_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_ankle",
+        "text_key": "pain_body_map_persistent_recurrent_left_ankle",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_ankle_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_ankle_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_head",
+        "text_key": "pain_body_map_persistent_recurrent_head",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_head_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_head_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_neck",
+        "text_key": "pain_body_map_persistent_recurrent_neck",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_neck_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_neck_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_shoulder",
+        "text_key": "pain_body_map_persistent_recurrent_left_shoulder",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_shoulder_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_shoulder_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_shoulder",
+        "text_key": "pain_body_map_persistent_recurrent_right_shoulder",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_shoulder_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_shoulder_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_upper_back",
+        "text_key": "pain_body_map_persistent_recurrent_upper_back",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_upper_back_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_upper_back_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_lower_back",
+        "text_key": "pain_body_map_persistent_recurrent_lower_back",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_lower_back_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_lower_back_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_hip",
+        "text_key": "pain_body_map_persistent_recurrent_left_hip",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_hip_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_hip_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_hip",
+        "text_key": "pain_body_map_persistent_recurrent_right_hip",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_hip_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_hip_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_left_buttocks",
+        "text_key": "pain_body_map_persistent_recurrent_left_buttocks",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_buttocks_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_left_buttocks_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pain_body_map_persistent_recurrent_right_buttocks",
+        "text_key": "pain_body_map_persistent_recurrent_right_buttocks",
+        "type": "multi",
+        "visible_when": {
+          "item": "pain_body_map_chronic_pain",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "options": [
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_buttocks_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pain_body_map_persistent_recurrent_right_buttocks_opt_2",
+            "value": 2
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "pain_body_map_chronic_pain": "If you do not have chronic pain check here",
+      "pain_body_map_chronic_pain_opt_1": "No Chronic Pain",
+      "pain_body_map_persistent_recurrent_face": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Face",
+      "pain_body_map_persistent_recurrent_face_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_face_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_jaw": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt jaw",
+      "pain_body_map_persistent_recurrent_right_jaw_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_jaw_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_jaw": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt jaw",
+      "pain_body_map_persistent_recurrent_left_jaw_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_jaw_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_chest": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt chest/breast",
+      "pain_body_map_persistent_recurrent_right_chest_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_chest_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_chest": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt chest/breast",
+      "pain_body_map_persistent_recurrent_left_chest_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_chest_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_upper_arm": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt upper arm",
+      "pain_body_map_persistent_recurrent_right_upper_arm_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_upper_arm_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_upper_arm": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt upper arm",
+      "pain_body_map_persistent_recurrent_left_upper_arm_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_upper_arm_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_elbow": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt elbow",
+      "pain_body_map_persistent_recurrent_right_elbow_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_elbow_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_elbow": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt elbow",
+      "pain_body_map_persistent_recurrent_left_elbow_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_elbow_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_lower_arm": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt lower arm",
+      "pain_body_map_persistent_recurrent_right_lower_arm_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_lower_arm_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_lower_arm": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt lower arm",
+      "pain_body_map_persistent_recurrent_left_lower_arm_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_lower_arm_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_wrist": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt wrist/hand",
+      "pain_body_map_persistent_recurrent_right_wrist_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_wrist_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_wrist": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt wrist/hand",
+      "pain_body_map_persistent_recurrent_left_wrist_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_wrist_opt_2": "No",
+      "pain_body_map_persistent_recurrent_abdomen": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Abdomen",
+      "pain_body_map_persistent_recurrent_abdomen_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_abdomen_opt_2": "No",
+      "pain_body_map_persistent_recurrent_pelvis": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Pelvis",
+      "pain_body_map_persistent_recurrent_pelvis_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_pelvis_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_groin": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt groin",
+      "pain_body_map_persistent_recurrent_right_groin_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_groin_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_groin": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt groin",
+      "pain_body_map_persistent_recurrent_left_groin_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_groin_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_upper_leg": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt upper leg",
+      "pain_body_map_persistent_recurrent_right_upper_leg_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_upper_leg_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_upper_leg": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt upper leg",
+      "pain_body_map_persistent_recurrent_left_upper_leg_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_upper_leg_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_knee": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt knee",
+      "pain_body_map_persistent_recurrent_right_knee_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_knee_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_knee": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt knee",
+      "pain_body_map_persistent_recurrent_left_knee_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_knee_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_lower_leg": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt lower leg",
+      "pain_body_map_persistent_recurrent_right_lower_leg_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_lower_leg_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_lower_leg": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt lower leg",
+      "pain_body_map_persistent_recurrent_left_lower_leg_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_lower_leg_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_ankle": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt ankle/foot",
+      "pain_body_map_persistent_recurrent_right_ankle_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_ankle_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_ankle": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt ankle/foot",
+      "pain_body_map_persistent_recurrent_left_ankle_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_ankle_opt_2": "No",
+      "pain_body_map_persistent_recurrent_head": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Head",
+      "pain_body_map_persistent_recurrent_head_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_head_opt_2": "No",
+      "pain_body_map_persistent_recurrent_neck": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Neck",
+      "pain_body_map_persistent_recurrent_neck_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_neck_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_shoulder": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt shoulder",
+      "pain_body_map_persistent_recurrent_left_shoulder_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_shoulder_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_shoulder": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt shoulder",
+      "pain_body_map_persistent_recurrent_right_shoulder_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_shoulder_opt_2": "No",
+      "pain_body_map_persistent_recurrent_upper_back": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Upper back",
+      "pain_body_map_persistent_recurrent_upper_back_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_upper_back_opt_2": "No",
+      "pain_body_map_persistent_recurrent_lower_back": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lower back",
+      "pain_body_map_persistent_recurrent_lower_back_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_lower_back_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_hip": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt hip",
+      "pain_body_map_persistent_recurrent_left_hip_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_hip_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_hip": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt hip",
+      "pain_body_map_persistent_recurrent_right_hip_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_hip_opt_2": "No",
+      "pain_body_map_persistent_recurrent_left_buttocks": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Lt buttocks",
+      "pain_body_map_persistent_recurrent_left_buttocks_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_left_buttocks_opt_2": "No",
+      "pain_body_map_persistent_recurrent_right_buttocks": "Have you felt persistent or recurrent pain for the last 3 months or longer in the following place? Rt buttocks",
+      "pain_body_map_persistent_recurrent_right_buttocks_opt_1": "Yes",
+      "pain_body_map_persistent_recurrent_right_buttocks_opt_2": "No"
+    }
+  }
+}

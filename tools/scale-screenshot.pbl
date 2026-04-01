@@ -1,0 +1,1132 @@
+##############################################################################
+## scale-screenshot.pbl
+## Generates a screenshot of the first question of a scale definition.
+## Saves to <code>.pbl.png in the working directory.
+##
+## Usage:
+##   pebl2 scale-screenshot.pbl -v <scalecode>
+##   pebl2 scale-screenshot.pbl --pfile params/scalecode.pbl.par.json
+##
+## The script looks for scale definitions using the same path resolution
+## as ScaleRunner: <code>/<code>.json or definitions/<code>.json
+##############################################################################
+
+
+define ReadJSON(filename)
+{
+  jsonText <- FileReadText(filename)
+  jsonObj <- ParseJSON(jsonText)
+  return(jsonObj)
+}
+
+
+define Start(p)
+{
+  ## Set up parameters
+  parpairs <- [["scale", "sample"]]
+  gParams <- CreateParameters(parpairs, gParamFile)
+
+  ## Override scale code from command line if provided (-v <scalecode>)
+  if(IsList(p))
+  {
+    if(Length(p) > 0)
+    {
+      gParams.scale <- First(p)
+    }
+  }
+
+  scaleCode <- gParams.scale
+
+  ##########################################################################
+  ## Load scale definition (same path logic as ScaleRunner)
+  ##########################################################################
+  gScaleDef <- 0
+
+  filename <- scaleCode + "/" + scaleCode + ".json"
+  if(FileExists(filename))
+  {
+    gScaleDef <- ReadJSON(filename)
+  }
+
+  if(gScaleDef == 0)
+  {
+    filename <- "definitions/" + scaleCode + ".json"
+    if(FileExists(filename))
+    {
+      gScaleDef <- ReadJSON(filename)
+    }
+  }
+
+  if(gScaleDef == 0)
+  {
+    SignalFatalError("Scale definition not found for: " + scaleCode)
+  }
+
+  ##########################################################################
+  ## Load translations (same path logic as ScaleRunner)
+  ##########################################################################
+  gStrings <- MakeCustomObject("strings")
+  gStrings.debrief <- "Thank you for completing this questionnaire."
+
+  found <- 0
+
+  transFile <- scaleCode + "/" + scaleCode + ".pbl-en.json"
+  if(found == 0 and FileExists(transFile))
+  {
+    gStrings <- ReadTranslationJSON(transFile, "en")
+    found <- 1
+  }
+
+  if(found == 0)
+  {
+    transFile <- scaleCode + "/" + scaleCode + ".en.json"
+    if(FileExists(transFile))
+    {
+      gStrings <- ReadTranslationJSON(transFile, "en")
+      found <- 1
+    }
+  }
+
+  if(found == 0)
+  {
+    transFile <- "translations/" + scaleCode + ".pbl-en.json"
+    if(FileExists(transFile))
+    {
+      gStrings <- ReadTranslationJSON(transFile, "en")
+      found <- 1
+    }
+  }
+
+  if(found == 0)
+  {
+    transFile <- "translations/" + scaleCode + ".en.json"
+    if(FileExists(transFile))
+    {
+      gStrings <- ReadTranslationJSON(transFile, "en")
+      found <- 1
+    }
+  }
+
+  ##########################################################################
+  ## Initialize window and theme (same as ScaleRunner)
+  ##########################################################################
+  gSleepEasy <- 1
+  gWin <- MakeWindow("grey10")
+
+  gTheme <- CreateColorTheme()
+
+  gQuestFont <- MakeFont(gPEBLBaseFont, 0, 35, gTheme.instructionText, gTheme.textboxBg, 0)
+  gSmallFont <- MakeFont(gPEBLBaseFont, 0, 18, gTheme.questionText, gTheme.windowBg, 0)
+  gHeadFont <- MakeFont(gPEBLBaseFont, 0, 32, gTheme.questionText, gTheme.windowBg, 0)
+  gItemFont <- MakeFont(gPEBLBaseFont, 0, 48, gTheme.questionText, gTheme.windowBg, 0)
+  gVASLabelFont <- MakeFont(gPEBLBaseFont, 0, 24, gTheme.questionText, gTheme.windowBg, 0)
+  gHeaderFont <- MakeFont(gPEBLBaseFont, 1, 28, gTheme.headerText, gTheme.headerBg, 0)
+  gLikertNumFont <- MakeFont(gPEBLBaseFont, 0, 35, gTheme.likertNumber, gTheme.windowBg, 0)
+  gLikertLabelFont <- MakeFont(gPEBLBaseFont, 0, 18, gTheme.likertLabel, gTheme.windowBg, 0)
+
+  gParams.responsemode <- "none"
+  gLayout <- CreateLayout("scales", gWin, gParams)
+
+  CreateBranding()
+
+  ##########################################################################
+  ## Find the first non-instruction question
+  ## Support both "items" (OSD v2) and legacy "questions" key
+  ##########################################################################
+  gItemsList <- []
+  if(PropertyExists(gScaleDef, "items"))
+  {
+    gItemsList <- gScaleDef.items
+  } elseif(PropertyExists(gScaleDef, "questions")) {
+    gItemsList <- gScaleDef.questions
+  }
+
+  firstQ <- 0
+  loop(q, gItemsList)
+  {
+    if(firstQ == 0)
+    {
+      if(q.type != "inst")
+      {
+        firstQ <- q
+      }
+    }
+  }
+
+  if(firstQ == 0)
+  {
+    ## Fall back to first question of any type
+    if(Length(gItemsList) > 0)
+    {
+      firstQ <- First(gItemsList)
+    }
+  }
+
+  if(firstQ == 0)
+  {
+    SignalFatalError("No questions found in scale: " + scaleCode)
+  }
+
+  ##########################################################################
+  ## Render the question and take screenshot
+  ##########################################################################
+  outFile <- scaleCode + "/screenshot.png"
+
+  if(firstQ.type == "likert")
+  {
+    ScreenshotLikert(firstQ, gScaleDef, outFile)
+  } elseif(firstQ.type == "vas") {
+    ScreenshotVAS(firstQ, gScaleDef, outFile)
+  } elseif(firstQ.type == "grid") {
+    ScreenshotGrid(firstQ, gScaleDef, outFile)
+  } elseif(firstQ.type == "short") {
+    ScreenshotShortAnswer(firstQ, outFile)
+  } elseif(firstQ.type == "long") {
+    ScreenshotLongAnswer(firstQ, outFile)
+  } elseif(firstQ.type == "multi") {
+    ScreenshotMultiChoice(firstQ, outFile)
+  } elseif(firstQ.type == "multicheck") {
+    ScreenshotMultiCheck(firstQ, outFile)
+  } else {
+    ## Generic fallback: show question text centered
+    ScreenshotGeneric(firstQ, outFile)
+  }
+
+  Print("Screenshot saved to: " + outFile)
+}
+
+
+##############################################################################
+## LIKERT screenshot (mirrors ScaleRunner.DoLikert)
+##############################################################################
+define ScreenshotLikert(qdef, scaleDef, outFile)
+{
+  points <- ToNumber(GetQuestionPoints(qdef, scaleDef))
+
+  questionText <- GetProperty(gStrings, qdef.text_key)
+  questionHead <- ""
+  if(PropertyExists(scaleDef, "likert_options"))
+  {
+    if(PropertyExists(scaleDef.likert_options, "question_head"))
+    {
+      questionHead <- GetProperty(gStrings, scaleDef.likert_options.question_head)
+    }
+  }
+
+  ## Question head: formatted adaptive textbox below banner
+  headWidth <- Round(gVideoWidth * 0.75)
+  headHeight <- 80
+  headX <- Round((gVideoWidth - headWidth) / 2)
+  headY <- gLayout.stimulusRegion.y + 5
+
+  head <- MakeTextBox(questionHead, gHeadFont, headWidth, headHeight)
+  head.isadaptive <- 1
+  head.formatted <- 1
+  head.justify <- "CENTER"
+  AddObject(head, gWin)
+  Move(head, headX, headY)
+
+  ## Pre-calculate Likert response area position for question centering
+  numHeight <- 50
+  yval <- gVideoHeight/2 + 100
+
+  ## Item text: large adaptive textbox, vertically centered between head and Likert area
+  questWidth <- Round(gVideoWidth * 0.80)
+  questHeight <- 120
+  questX <- Round((gVideoWidth - questWidth) / 2)
+  availTop <- headY + head.height + 10
+  availBottom <- yval - numHeight/2 - 20
+  questY <- Round((availTop + availBottom) / 2) - 50
+  if(questY < availTop) { questY <- availTop }
+
+  quest <- MakeTextBox(questionText, gItemFont, questWidth, questHeight)
+  quest.isadaptive <- 1
+  quest.formatted <- 1
+  quest.justify <- "CENTER"
+  AddObject(quest, gWin)
+  Move(quest, questX, questY)
+
+  range <- GetQuestionRange(qdef, scaleDef)
+  minVal <- ToNumber(First(range))
+  maxVal <- ToNumber(Second(range))
+  labelKeys <- GetQuestionLabels(qdef, scaleDef)
+
+  skip <- 150
+  left <- gVideoWidth/2 - skip * ((points-1)/2)
+
+  ## Pass 1: measure adaptive label heights
+  labels <- []
+  maxLabelHeight <- 80
+
+  loop(i, Sequence(1, points, 1))
+  {
+    if(Length(labelKeys) >= i)
+    {
+      labelKey <- Nth(labelKeys, i)
+      labelText <- GetProperty(gStrings, labelKey)
+      optLabel <- MakeTextBox(labelText, gLikertLabelFont, skip-15, 80)
+      optLabel.isadaptive <- 1
+      optLabel.justify <- "CENTER"
+      AddObject(optLabel, gWin)
+      if(optLabel.height > maxLabelHeight)
+      {
+        maxLabelHeight <- optLabel.height
+      }
+      RemoveObject(optLabel, gWin)
+      PushOnEnd(labels, optLabel)
+    }
+  }
+
+  boxHeight <- numHeight + maxLabelHeight + 20
+
+  ## Pass 2: create and position everything
+  backs <- []
+  nums <- []
+
+  loop(i, Sequence(1, points, 1))
+  {
+    x <- left + skip * (i - 1)
+    displayValue <- minVal + (i - 1)
+
+    back <- Rectangle(x, yval + boxHeight/2 - numHeight/2, skip-10, boxHeight, gTheme.optionBg, 0)
+    back.color <- gTheme.optionBorder
+    AddObject(back, gWin)
+    PushOnEnd(backs, back)
+
+    num <- MakeLabel(displayValue+"", gLikertNumFont)
+    Move(num, x, yval)
+    AddObject(num, gWin)
+    PushOnEnd(nums, num)
+
+    if(Length(labels) >= i)
+    {
+      optLabel <- Nth(labels, i)
+      AddObject(optLabel, gWin)
+      Move(optLabel, x - optLabel.width/2, yval + numHeight/2 + 5)
+    }
+  }
+
+  ## Optional footer text
+  if(PropertyExists(scaleDef.likert_options, "response_footer"))
+  {
+    footerKey <- scaleDef.likert_options.response_footer
+    footerText <- GetProperty(gStrings, footerKey)
+    if(footerText != "" and footerText != 0)
+    {
+      footerWidth <- Round(gVideoWidth * 0.80)
+      footerX <- Round((gVideoWidth - footerWidth) / 2)
+      footerY <- yval + boxHeight + 15
+      footerFont <- MakeFont(gPEBLBaseFont, 0, 16, gTheme.questionText, gTheme.windowBg, 0)
+
+      footerObj <- MakeTextBox(footerText, footerFont, footerWidth, 40)
+      footerObj.isadaptive <- 1
+      footerObj.formatted <- 1
+      footerObj.justify <- "CENTER"
+      AddObject(footerObj, gWin)
+      Move(footerObj, footerX, footerY)
+    }
+  }
+
+  Draw()
+  WritePNG(outFile, gWin, [0, 0, gVideoWidth, gVideoHeight])
+}
+
+
+##############################################################################
+## VAS screenshot (mirrors ScaleRunner.DoVAS)
+##############################################################################
+define GetVASLabelSS(qdef, field, transField, defaultVal)
+{
+  ## Helper for screenshot tool: get VAS anchor label
+  label <- ""
+
+  if(PropertyExists(qdef, transField))
+  {
+    label <- GetProperty(gStrings, GetProperty(qdef, transField))
+  }
+
+  if(label == "" or label == 0)
+  {
+    if(PropertyExists(qdef, field))
+    {
+      label <- GetProperty(qdef, field)
+    }
+  }
+
+  if(label == "" or label == 0)
+  {
+    label <- defaultVal
+  }
+
+  return(label)
+}
+
+
+define ScreenshotVAS(qdef, scaleDef, outFile)
+{
+  ## Check if scale has pages with multiple VAS items
+  usedPage <- 0
+  if(PropertyExists(scaleDef, "pages"))
+  {
+    ## Find a page that contains this question and has multiple VAS items
+    loop(page, scaleDef.pages)
+    {
+      if(usedPage == 0)
+      {
+        pageQuestions <- []
+        loop(itemID, page.items)
+        {
+          loop(q, scaleDef.items)
+          {
+            if(q.id == itemID)
+            {
+              PushOnEnd(pageQuestions, q)
+            }
+          }
+        }
+
+        allVAS <- 1
+        loop(pq, pageQuestions)
+        {
+          if(pq.type != "vas")
+          {
+            allVAS <- 0
+          }
+        }
+
+        if(allVAS and Length(pageQuestions) > 1)
+        {
+          ScreenshotVASPage(pageQuestions, scaleDef, outFile)
+          usedPage <- 1
+        }
+      }
+    }
+  }
+
+  if(usedPage == 0)
+  {
+    ## Single VAS item screenshot
+    questionText <- GetProperty(gStrings, qdef.text_key)
+
+    ## Show question head if available
+    contentTop <- gLayout.stimulusRegion.y + 5
+    questionHead <- ""
+    if(PropertyExists(scaleDef, "likert_options"))
+    {
+      if(PropertyExists(scaleDef.likert_options, "question_head"))
+      {
+        questionHead <- GetProperty(gStrings, scaleDef.likert_options.question_head)
+      }
+    }
+
+    if(questionHead != "" and questionHead != 0)
+    {
+      headWidth <- Round(gVideoWidth * 0.75)
+      headHeight <- 60
+      headX <- Round((gVideoWidth - headWidth) / 2)
+
+      headBox <- MakeTextBox(questionHead, gHeadFont, headWidth, headHeight)
+      headBox.isadaptive <- 1
+      headBox.formatted <- 1
+      headBox.justify <- "CENTER"
+      AddObject(headBox, gWin)
+      Move(headBox, headX, contentTop)
+      contentTop <- contentTop + headBox.height + 10
+    }
+
+    ## Item text
+    questWidth <- Round(gVideoWidth * 0.80)
+    questHeight <- 60
+    questX <- Round((gVideoWidth - questWidth) / 2)
+
+    ques <- MakeTextBox(questionText, gItemFont, questWidth, questHeight)
+    ques.isadaptive <- 1
+    ques.formatted <- 1
+    ques.justify <- "CENTER"
+    AddObject(ques, gWin)
+    Move(ques, questX, contentTop)
+
+    ## Get anchor labels
+    minLabel <- GetVASLabelSS(qdef, "left", "min_label", "Min")
+    maxLabel <- GetVASLabelSS(qdef, "right", "max_label", "Max")
+
+    ## VAS configuration
+    vasHeight <- 400
+    vasWidth <- 50
+    numTicks <- 21
+
+    centerX <- gLayout.stimulusRegion.centerX
+    centerY <- gLayout.stimulusRegion.centerY + 50
+
+    vasTop <- centerY - vasHeight/2
+    vasBottom <- centerY + vasHeight/2
+
+    clickBox <- Rectangle(centerX, centerY, vasWidth, vasHeight, MakeColor("grey60"), 1)
+    AddObject(clickBox, gWin)
+
+    skip <- vasHeight / (numTicks - 1)
+    yPos <- vasBottom
+
+    loop(i, Sequence(1, numTicks, 1))
+    {
+      if(i == 1 or i == 11 or i == numTicks)
+      {
+        tickLine <- Line(centerX - 22, yPos, 45, 0, MakeColor("white"))
+      } else {
+        tickLine <- Line(centerX - 15, yPos, 30, 0, MakeColor("white"))
+      }
+      AddObject(tickLine, gWin)
+      yPos <- yPos - skip
+    }
+
+    vLine <- Line(centerX, vasTop, 0, vasHeight, MakeColor("white"))
+    AddObject(vLine, gWin)
+
+    ## Bigger anchor labels
+    minLab <- MakeLabel(minLabel, gVASLabelFont)
+    AddObject(minLab, gWin)
+    Move(minLab, centerX, vasBottom + 30)
+
+    maxLab <- MakeLabel(maxLabel, gVASLabelFont)
+    AddObject(maxLab, gWin)
+    Move(maxLab, centerX, vasTop - 30)
+
+    Draw()
+    WritePNG(outFile, gWin, [0, 0, gVideoWidth, gVideoHeight])
+  }
+}
+
+
+##############################################################################
+## VAS Page screenshot (multiple horizontal VAS sliders)
+##############################################################################
+define ScreenshotVASPage(questions, scaleDef, outFile)
+{
+  numItems <- Length(questions)
+  contentTop <- gLayout.stimulusRegion.y + 5
+
+  ## Question head
+  questionHead <- ""
+  if(PropertyExists(scaleDef, "likert_options"))
+  {
+    if(PropertyExists(scaleDef.likert_options, "question_head"))
+    {
+      questionHead <- GetProperty(gStrings, scaleDef.likert_options.question_head)
+    }
+  }
+
+  if(questionHead != "" and questionHead != 0)
+  {
+    headWidth <- Round(gVideoWidth * 0.80)
+    headHeight <- 60
+    headX <- Round((gVideoWidth - headWidth) / 2)
+
+    headBox <- MakeTextBox(questionHead, gHeadFont, headWidth, headHeight)
+    headBox.isadaptive <- 1
+    headBox.formatted <- 1
+    headBox.justify <- "CENTER"
+    AddObject(headBox, gWin)
+    Move(headBox, headX, contentTop)
+    contentTop <- contentTop + headBox.height + 15
+  }
+
+  ## Layout
+  labelWidth <- Round(gVideoWidth * 0.18)
+  sliderLeft <- labelWidth + 20
+  sliderWidth <- Round(gVideoWidth * 0.60)
+  sliderRight <- sliderLeft + sliderWidth
+
+  availHeight <- gVideoHeight - contentTop - 80
+  rowHeight <- Min([Round(availHeight / numItems), 55])
+
+  ## Anchor column headers
+  firstQ <- First(questions)
+  minLabel <- GetVASLabelSS(firstQ, "left", "min_label", "Min")
+  maxLabel <- GetVASLabelSS(firstQ, "right", "max_label", "Max")
+
+  minHead <- MakeLabel(minLabel, gVASLabelFont)
+  AddObject(minHead, gWin)
+  Move(minHead, sliderLeft, contentTop)
+
+  maxHead <- MakeLabel(maxLabel, gVASLabelFont)
+  AddObject(maxHead, gWin)
+  Move(maxHead, sliderRight, contentTop)
+
+  contentTop <- contentTop + 30
+
+  ## Draw each row
+  vasItemFont <- MakeFont(gPEBLBaseFont, 0, 24, gTheme.questionText, gTheme.windowBg, 0)
+  numTicks <- 11
+  midTick <- Round((numTicks + 1) / 2)
+
+  loop(qi, Sequence(1, numItems, 1))
+  {
+    qdef <- Nth(questions, qi)
+    rowY <- contentTop + (qi - 1) * rowHeight + rowHeight / 2
+
+    ## Item label (TextBox with word wrap)
+    itemText <- GetProperty(gStrings, qdef.text_key)
+    itemLab <- MakeTextBox(itemText, vasItemFont, labelWidth - 10, rowHeight)
+    itemLab.isadaptive <- 1
+    itemLab.justify <- "RIGHT"
+    AddObject(itemLab, gWin)
+    Move(itemLab, 5, rowY - itemLab.height / 2)
+
+    ## Horizontal track
+    trackLine <- Line(sliderLeft, rowY, sliderWidth, 0, MakeColor("grey60"))
+    AddObject(trackLine, gWin)
+
+    ## Tick marks
+    tickSkip <- sliderWidth / (numTicks - 1)
+    loop(ti, Sequence(1, numTicks, 1))
+    {
+      tickX <- sliderLeft + (ti - 1) * tickSkip
+      if(ti == 1 or ti == midTick or ti == numTicks)
+      {
+        tickLine <- Line(tickX, rowY - 10, 0, 20, MakeColor("grey60"))
+      } else {
+        tickLine <- Line(tickX, rowY - 6, 0, 12, MakeColor("grey60"))
+      }
+      AddObject(tickLine, gWin)
+    }
+  }
+
+  Draw()
+  WritePNG(outFile, gWin, [0, 0, gVideoWidth, gVideoHeight])
+}
+
+
+##############################################################################
+## Grid screenshot (mirrors ScaleRunner.DoGrid)
+##############################################################################
+define ScreenshotGrid(qdef, scaleDef, outFile)
+{
+  questionText <- GetProperty(gStrings, qdef.text_key)
+
+  gLayout.subheader.text <- "Click on each row to rate all items"
+
+  ## Get grid column labels (two formats supported)
+  optLabels <- []
+  numPoints <- 0
+
+  if(PropertyExists(qdef, "grid_options"))
+  {
+    ## Translation-key format: grid_options.labels are translation keys
+    gridOpts <- qdef.grid_options
+    numPoints <- ToNumber(gridOpts.points)
+    loop(labelKey, gridOpts.labels)
+    {
+      optText <- GetProperty(gStrings, labelKey)
+      PushOnEnd(optLabels, optText)
+    }
+  } elseif(PropertyExists(qdef, "columns")) {
+    ## Scale Builder format: columns array contains translation keys
+    numPoints <- Length(qdef.columns)
+    loop(colKey, qdef.columns)
+    {
+      if(PropertyExists(gStrings, colKey))
+      {
+        PushOnEnd(optLabels, GetProperty(gStrings, colKey))
+      } else {
+        PushOnEnd(optLabels, colKey)
+      }
+    }
+  }
+
+  ## Get row labels (two formats supported)
+  rowLabels <- []
+  if(PropertyExists(qdef, "subitems"))
+  {
+    ## Translation-key format: subitems with text_key
+    loop(subitem, qdef.subitems)
+    {
+      itemText <- GetProperty(gStrings, subitem.text_key)
+      PushOnEnd(rowLabels, itemText)
+    }
+  } elseif(PropertyExists(qdef, "rows")) {
+    ## Scale Builder format: rows array contains translation keys
+    loop(rowKey, qdef.rows)
+    {
+      if(PropertyExists(gStrings, rowKey))
+      {
+        PushOnEnd(rowLabels, GetProperty(gStrings, rowKey))
+      } else {
+        PushOnEnd(rowLabels, rowKey)
+      }
+    }
+  }
+
+  numItems <- Length(rowLabels)
+
+  ## Question text at top of stimulus region
+  quesWidth <- gLayout.stimulusRegion.width - 40
+  quesHeight <- 120
+  quesX <- gLayout.stimulusRegion.x + 20
+  quesY <- gLayout.stimulusRegion.y + 10
+
+  ques <- MakeTextBox(questionText, gQuestFont, quesWidth, quesHeight)
+  ques.isadaptive <- 1
+  ques.formatted <- 1
+  AddObject(ques, gWin)
+  Move(ques, quesX, quesY)
+
+  ## First pass: measure all row labels to find widest one
+  itemFont <- MakeFont(gPEBLBaseFont, 0, 18, gTheme.questionText, gTheme.windowBg, 0)
+  maxLabelWidth <- 0
+  labelObjects <- []
+
+  loop(itemText, rowLabels)
+  {
+    itemLabel <- MakeLabel(itemText, itemFont)
+    PushOnEnd(labelObjects, itemLabel)
+    if(itemLabel.width > maxLabelWidth)
+    {
+      maxLabelWidth <- itemLabel.width
+    }
+  }
+
+  ## Grid layout (matches ScaleRunner)
+  rowHeight <- 45
+  colWidth <- 90
+  labelColWidth <- maxLabelWidth + 20
+  gridWidth <- labelColWidth + (numPoints * colWidth)
+  startX <- (gVideoWidth - gridWidth) / 2
+  startY <- quesY + quesHeight + 60
+
+  tmp <- [ques]
+  headerFont <- MakeFont(gPEBLBaseFont, 1, 16, gTheme.questionText, gTheme.windowBg, 0)
+
+  ## Column headers
+  loop(i, Sequence(1, numPoints, 1))
+  {
+    optLabel <- MakeLabel(Nth(optLabels, i), headerFont)
+    AddObject(optLabel, gWin)
+    Move(optLabel, startX + labelColWidth + i * colWidth, startY - 10)
+    PushOnEnd(tmp, optLabel)
+  }
+
+  ## Rows
+  loop(itemIdx, Sequence(1, numItems, 1))
+  {
+    rowY <- startY + itemIdx * rowHeight
+
+    ## Row label (right-aligned within label column)
+    itemLabel <- Nth(labelObjects, itemIdx)
+    AddObject(itemLabel, gWin)
+    labelX <- startX + labelColWidth - 10 - (itemLabel.width / 2)
+    Move(itemLabel, labelX, rowY)
+    PushOnEnd(tmp, itemLabel)
+
+    ## Clickable boxes for each column
+    loop(optIdx, Sequence(1, numPoints, 1))
+    {
+      boxX <- startX + labelColWidth + optIdx * colWidth
+      box <- Rectangle(boxX, rowY, colWidth - 10, rowHeight - 10, MakeColor("grey40"), 0)
+      box.color <- MakeColor("grey60")
+      AddObject(box, gWin)
+      PushOnEnd(tmp, box)
+    }
+  }
+
+  Draw()
+  WritePNG(outFile, gWin, [0, 0, gVideoWidth, gVideoHeight])
+}
+
+
+##############################################################################
+## Short answer screenshot (mirrors ScaleRunner.DoShortAnswer)
+##############################################################################
+define ScreenshotShortAnswer(qdef, outFile)
+{
+  questionText <- GetProperty(gStrings, qdef.text_key)
+
+  gLayout.subheader.text <- "Respond below. Hit enter when finished."
+
+  ## Question text in stimulus region
+  boxWidth <- gLayout.stimulusRegion.width - 40
+  boxHeight <- 150
+  boxX <- gLayout.stimulusRegion.x + 20
+  boxY <- gLayout.stimulusRegion.y + 10
+
+  ques <- MakeTextBox(questionText, gQuestFont, boxWidth, boxHeight)
+  ques.isadaptive <- 1
+  ques.formatted <- 1
+  AddObject(ques, gWin)
+  Move(ques, boxX, boxY)
+
+  ## Text entry box (matches ScaleRunner)
+  tbWidth <- 800
+  tbHeight <- 60
+  tbX <- (gVideoWidth - tbWidth)/2
+  tbY <- boxY + boxHeight + 40
+  tb <- MakeTextBox("", gQuestFont, tbWidth, tbHeight)
+  AddObject(tb, gWin)
+  Move(tb, tbX, tbY)
+
+  Draw()
+  WritePNG(outFile, gWin, [0, 0, gVideoWidth, gVideoHeight])
+}
+
+
+##############################################################################
+## Long answer screenshot (mirrors ScaleRunner.DoLongAnswer)
+##############################################################################
+define ScreenshotLongAnswer(qdef, outFile)
+{
+  questionText <- GetProperty(gStrings, qdef.text_key)
+
+  gLayout.subheader.text <- "Type response below, and hit enter when finished."
+
+  ## Question text in stimulus region
+  quesWidth <- gLayout.stimulusRegion.width - 40
+  quesHeight <- 120
+  quesX <- gLayout.stimulusRegion.x + 20
+  quesY <- gLayout.stimulusRegion.y + 10
+
+  ques <- MakeTextBox(questionText, gQuestFont, quesWidth, quesHeight)
+  ques.isadaptive <- 1
+  ques.formatted <- 1
+  AddObject(ques, gWin)
+  Move(ques, quesX, quesY)
+
+  ## Text entry box (matches ScaleRunner)
+  tbWidth <- 800
+  tbHeight <- gVideoHeight - 470
+  tbX <- (gVideoWidth - tbWidth)/2
+  tbY <- quesY + quesHeight + 40
+  tb <- MakeTextBox("", gQuestFont, tbWidth, tbHeight)
+  AddObject(tb, gWin)
+  Move(tb, tbX, tbY)
+
+  Draw()
+  WritePNG(outFile, gWin, [0, 0, gVideoWidth, gVideoHeight])
+}
+
+
+##############################################################################
+## Multiple choice screenshot (mirrors ScaleRunner.DoMultiChoice)
+##############################################################################
+define ScreenshotMultiChoice(qdef, outFile)
+{
+  questionText <- GetProperty(gStrings, qdef.text_key)
+
+  gLayout.subheader.text <- "Click on the best answer to the question:"
+
+  ## Question text in stimulus region
+  boxWidth <- gLayout.stimulusRegion.width - 40
+  boxHeight <- 150
+  boxX <- gLayout.stimulusRegion.x + 20
+  boxY <- gLayout.stimulusRegion.y + 10
+
+  ques <- MakeTextBox(questionText, gQuestFont, boxWidth, boxHeight)
+  ques.isadaptive <- 1
+  ques.formatted <- 1
+  AddObject(ques, gWin)
+  Move(ques, boxX, boxY)
+
+  ## Build option list with translation fallback
+  ## Supports both plain string keys and object format {label_id/text_key, value}
+  opts <- []
+  loop(opt, qdef.options)
+  {
+    optKey <- opt
+    if(PropertyExists(opt, "label_id"))
+    {
+      optKey <- opt.label_id
+    } elseif(PropertyExists(opt, "text_key")) {
+      optKey <- opt.text_key
+    }
+    if(PropertyExists(gStrings, optKey))
+    {
+      optText <- GetProperty(gStrings, optKey)
+    } else {
+      optText <- optKey
+    }
+    PushOnEnd(opts, optText)
+  }
+
+  ## Create clickable options (matches ScaleRunner layout)
+  tmp <- [ques]
+  skip <- 50
+  left <- gLayout.stimulusRegion.x + 80
+  top <- boxY + boxHeight + 40
+  optionFont <- MakeFont(gPEBLBaseFont, 0, 22, gTheme.questionText, gTheme.windowBg, 0)
+  optionFont.bgcolor.alpha <- 0
+
+  optnum <- 1
+  loop(optText, opts)
+  {
+    ## Number label
+    optLabel <- MakeLabel(optnum + ".", optionFont)
+    AddObject(optLabel, gWin)
+    Move(optLabel, left, top + (optnum-1)*skip)
+    PushOnEnd(tmp, optLabel)
+
+    ## Clickable box
+    back <- Square(left, top + (optnum-1)*skip, 48, MakeColor("Grey60"), 0)
+    AddObject(back, gWin)
+    PushOnEnd(tmp, back)
+
+    ## Option text
+    textWidth <- gLayout.stimulusRegion.width - 200
+    text <- MakeTextBox(optText, optionFont, textWidth, skip - 10)
+    text.isadaptive <- 1
+    AddObject(text, gWin)
+    Move(text, left + 60, top + (optnum-1)*skip - (skip-10)/2)
+    PushOnEnd(tmp, text)
+
+    optnum <- optnum + 1
+  }
+
+  Draw()
+  WritePNG(outFile, gWin, [0, 0, gVideoWidth, gVideoHeight])
+}
+
+
+##############################################################################
+## Multi-check screenshot (mirrors ScaleRunner.DoMultiCheck)
+##############################################################################
+define ScreenshotMultiCheck(qdef, outFile)
+{
+  questionText <- GetProperty(gStrings, qdef.text_key)
+
+  gLayout.subheader.text <- "Click on all options that apply:"
+
+  ## Question text in stimulus region
+  boxWidth <- gLayout.stimulusRegion.width - 40
+  boxHeight <- 150
+  boxX <- gLayout.stimulusRegion.x + 20
+  boxY <- gLayout.stimulusRegion.y + 10
+
+  ques <- MakeTextBox(questionText, gQuestFont, boxWidth, boxHeight)
+  ques.isadaptive <- 1
+  ques.formatted <- 1
+  AddObject(ques, gWin)
+  Move(ques, boxX, boxY)
+
+  ## Build option list with translation fallback
+  ## Supports both plain string keys and object format {label_id/text_key, value}
+  opts <- []
+  loop(opt, qdef.options)
+  {
+    optKey <- opt
+    if(PropertyExists(opt, "label_id"))
+    {
+      optKey <- opt.label_id
+    } elseif(PropertyExists(opt, "text_key")) {
+      optKey <- opt.text_key
+    }
+    if(PropertyExists(gStrings, optKey))
+    {
+      optText <- GetProperty(gStrings, optKey)
+    } else {
+      optText <- optKey
+    }
+    PushOnEnd(opts, optText)
+  }
+
+  ## Create checkbox options (matches ScaleRunner layout)
+  tmp <- [ques]
+  skip <- 50
+  left <- gLayout.stimulusRegion.x + 60
+  top <- boxY + boxHeight + 40
+  optionFont <- MakeFont(gPEBLBaseFont, 0, 22, gTheme.questionText, gTheme.windowBg, 0)
+  optionFont.bgcolor.alpha <- 0
+
+  optnum <- 1
+  loop(optText, opts)
+  {
+    ## Checkbox square
+    back <- Square(left, top + (optnum-1)*skip, 44, MakeColor("Grey40"), 0)
+    AddObject(back, gWin)
+    PushOnEnd(tmp, back)
+
+    ## Option text
+    textWidth <- gLayout.stimulusRegion.width - 150
+    text <- MakeTextBox(optText, optionFont, textWidth, skip - 10)
+    text.isadaptive <- 1
+    AddObject(text, gWin)
+    Move(text, left + 60, top + (optnum-1)*skip - (skip-10)/2)
+    PushOnEnd(tmp, text)
+
+    optnum <- optnum + 1
+  }
+
+  Draw()
+  WritePNG(outFile, gWin, [0, 0, gVideoWidth, gVideoHeight])
+}
+
+
+##############################################################################
+## Generic fallback screenshot
+##############################################################################
+define ScreenshotGeneric(qdef, outFile)
+{
+  questionText <- GetProperty(gStrings, qdef.text_key)
+
+  boxWidth <- gLayout.stimulusRegion.width - 40
+  boxHeight <- 200
+  boxX <- gLayout.stimulusRegion.x + 20
+  boxY <- gLayout.stimulusRegion.y + 10
+
+  ques <- MakeTextBox(questionText, gQuestFont, boxWidth, boxHeight)
+  ques.isadaptive <- 1
+  ques.formatted <- 1
+  AddObject(ques, gWin)
+  Move(ques, boxX, boxY)
+
+  Draw()
+  WritePNG(outFile, gWin, [0, 0, gVideoWidth, gVideoHeight])
+}
+
+
+##############################################################################
+## Helper functions (from ScaleRunner, needed for standalone operation)
+##############################################################################
+
+define CreateColorTheme()
+{
+  theme <- MakeCustomObject("ColorTheme")
+  theme.windowBg <- MakeColor("grey10")
+  theme.headerBg <- MakeColor("navy")
+  theme.textboxBg <- MakeColor("white")
+  theme.textboxBorder <- MakeColor("grey20")
+  theme.buttonBg <- MakeColor("lightgrey")
+  theme.buttonBorder <- MakeColor("grey60")
+  theme.headerText <- MakeColor("white")
+  theme.instructionText <- MakeColor("black")
+  theme.questionText <- MakeColor("white")
+  theme.buttonText <- MakeColor("black")
+  theme.likertNumber <- MakeColor("white")
+  theme.likertLabel <- MakeColor("white")
+  theme.accent1 <- MakeColor("steelblue")
+  theme.accent2 <- MakeColor("royalblue")
+  theme.accent3 <- MakeColor("dodgerblue")
+  theme.optionBg <- MakeColor("white")
+  theme.optionBorder <- MakeColor("grey60")
+  theme.optionText <- MakeColor("black")
+  return(theme)
+}
+
+
+define CreateBranding()
+{
+  headerTop <- gLayout.zones.header.y
+  subheaderBottom <- gLayout.zones.subheader.y + gLayout.zones.subheader.height
+  combinedHeight <- subheaderBottom - headerTop
+  combinedCenterY <- headerTop + combinedHeight/2
+
+  gAccentLine1 <- Line(30, subheaderBottom, 0, gVideoHeight-100, gTheme.accent1)
+  gAccentLine2 <- Line(40, subheaderBottom, 0, gVideoHeight-100, gTheme.accent2)
+  gAccentLine3 <- Line(50, subheaderBottom, 0, gVideoHeight-100, gTheme.accent3)
+  AddObject(gAccentLine1, gWin)
+  AddObject(gAccentLine2, gWin)
+  AddObject(gAccentLine3, gWin)
+
+  if(PropertyExists(gScaleDef, "scale_info"))
+  {
+    displayTitle <- gScaleDef.scale_info.name
+    if(PropertyExists(gStrings, "display_title"))
+    {
+      customTitle <- GetProperty(gStrings, "display_title")
+      if(StringLength(customTitle) > 0)
+      {
+        displayTitle <- customTitle
+      }
+    }
+
+    gLayout.header.text <- displayTitle
+    gLayout.header.font.style <- 1
+    gLayout.header.font.fgcolor <- gTheme.headerText
+
+    gHeaderBar <- Rectangle(gVideoWidth/2, combinedCenterY, gVideoWidth, combinedHeight, gTheme.headerBg, 1)
+    AddObject(gHeaderBar, gWin)
+
+    RemoveObject(gLayout.header, gWin)
+    AddObject(gLayout.header, gWin)
+  }
+}
+
+
+define GetQuestionPoints(qdef, scaleDef)
+{
+  result <- 5
+  if(PropertyExists(qdef, "likert_points"))
+  {
+    result <- qdef.likert_points
+  } else {
+    if(PropertyExists(scaleDef, "likert_options"))
+    {
+      if(PropertyExists(scaleDef.likert_options, "points"))
+      {
+        result <- scaleDef.likert_options.points
+      }
+    }
+  }
+  return(result)
+}
+
+
+define GetQuestionRange(qdef, scaleDef)
+{
+  minVal <- 1
+  maxVal <- GetQuestionPoints(qdef, scaleDef)
+
+  if(PropertyExists(qdef, "min"))
+  {
+    minVal <- qdef.min
+  } else {
+    if(PropertyExists(scaleDef, "likert_options"))
+    {
+      if(PropertyExists(scaleDef.likert_options, "min"))
+      {
+        minVal <- scaleDef.likert_options.min
+      }
+    }
+  }
+
+  if(PropertyExists(qdef, "max"))
+  {
+    maxVal <- qdef.max
+  } else {
+    if(PropertyExists(scaleDef, "likert_options"))
+    {
+      if(PropertyExists(scaleDef.likert_options, "max"))
+      {
+        maxVal <- scaleDef.likert_options.max
+      }
+    }
+  }
+
+  return([minVal, maxVal])
+}
+
+
+define GetQuestionLabels(qdef, scaleDef)
+{
+  result <- []
+  found <- 0
+
+  if(found == 0 and PropertyExists(qdef, "labels"))
+  {
+    if(IsList(qdef.labels))
+    {
+      if(Length(qdef.labels) > 0)
+      {
+        result <- qdef.labels
+        found <- 1
+      }
+    }
+  }
+
+  if(found == 0 and PropertyExists(scaleDef, "likert_options"))
+  {
+    if(PropertyExists(scaleDef.likert_options, "labels"))
+    {
+      result <- scaleDef.likert_options.labels
+      found <- 1
+    }
+  }
+
+  return(result)
+}

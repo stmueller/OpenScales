@@ -1,0 +1,123 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "RAND Asthma Quality of Life 4-Item Ultra-Brief Form",
+      "code": "RAND-IAQL-4",
+      "abbreviation": "RAND-IAQL-4",
+      "description": "4-item ultra-brief form of the RAND-IAQL item bank. The 4 most informative items selected by IRT calibration for rapid screening of asthma-specific quality of life. Sum score range 0–16; IRT T-score conversion available from RAND.",
+      "citation": "Hays, R.D., Leake, B.D., Sherbourne, C.D., Coons, S.J., Spritzer, K.L., & Bjorner, J.B. (2012). Development of a measure of asthma-specific quality of life. Quality of Life Research, 21(7), 1103–1113.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://www.rand.org/health-care/surveys_tools/iaql.html",
+      "domain": "Quality of Life",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools/iaql.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 0,
+      "max": 4,
+      "labels": [
+        "iaql_r0",
+        "iaql_r1",
+        "iaql_r2",
+        "iaql_r3",
+        "iaql_r4"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "asthma_qol",
+        "name": "Asthma Quality of Life",
+        "description": "4-item ultra-brief score. Sum of items (range 0–16). IRT T-score conversion available from RAND."
+      }
+    ],
+    "items": [
+      {
+        "id": "iaql4_inst",
+        "text_key": "iaql4_inst",
+        "type": "inst"
+      },
+      {
+        "id": "iaql4_1",
+        "text_key": "iaql4_1",
+        "type": "likert",
+        "question_head": "iaql_head_a"
+      },
+      {
+        "id": "iaql4_2",
+        "text_key": "iaql4_2",
+        "type": "likert",
+        "question_head": "iaql_head_b"
+      },
+      {
+        "id": "iaql4_3",
+        "text_key": "iaql4_3",
+        "type": "likert",
+        "question_head": "iaql_head_b"
+      },
+      {
+        "id": "iaql4_4",
+        "text_key": "iaql4_4",
+        "type": "likert",
+        "question_head": "iaql_head_b"
+      }
+    ],
+    "scoring": {
+      "asthma_qol": {
+        "method": "sum_coded",
+        "items": [
+          "iaql4_1",
+          "iaql4_2",
+          "iaql4_3",
+          "iaql4_4"
+        ],
+        "description": "Sum of 4 items (range 0–16). Higher = greater negative impact of asthma. IRT T-score conversion available from RAND.",
+        "item_coding": {
+          "iaql4_1": 1,
+          "iaql4_2": 1,
+          "iaql4_3": 1,
+          "iaql4_4": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "RAND Asthma Quality of Life 4-Item Ultra-Brief Form (RAND-IAQL-4) Report",
+      "footer_refs": [
+        "Hays, R.D., et al. (2012). Quality of Life Research, 21(7), 1103–1113.",
+        "Public Domain (RAND Corporation)."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "iaql4_inst": "The following statements are about how asthma affects the quality of your life. For each statement, please mark the one box below that comes closest to the way asthma has affected your life.",
+      "iaql_head_a": "In the past 4 weeks, <b>because of my asthma</b>…",
+      "iaql_head_b": "In the past 4 weeks…",
+      "iaql_r0": "Not at all",
+      "iaql_r1": "A little bit",
+      "iaql_r2": "Somewhat",
+      "iaql_r3": "Quite a bit",
+      "iaql_r4": "Very much",
+      "iaql4_1": "I felt frustrated that I have to do things differently than people who don't have asthma.",
+      "iaql4_2": "I felt like I missed out on doing things with others because of my asthma.",
+      "iaql4_3": "I had to worry about asthma triggers.",
+      "iaql4_4": "I felt like I couldn't enjoy life because of my asthma.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

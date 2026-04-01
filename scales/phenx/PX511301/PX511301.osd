@@ -1,0 +1,151 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Medical Cannabis Provider-Patient Communication",
+      "code": "PX511301",
+      "abbreviation": "PX511301",
+      "description": "The National Cancer Institute (NCI) Supplement Cannabis Core Measures Questionnaire is a 37-item survey primarily used by NCI-designated cancer centers in regions with varying state cannabis laws to determine cannabis use and perceived harms and benefits among cancer patients. This protocol includes",
+      "domain": "Substance Use - Screening & Family History",
+      "citation": "Ellison, G. L., Alejandro Salicrup, L., Freedman, A. N., Fu, Y., Ross, S., Johnson, R. L., Bakos, A., & White, J. D. (2021). The National Cancer Institute and cannabis and cannabinoids research. Journal of the National Cancer Institute. Monographs, 2021 (58), 35-38. https://doi.org/10.1093/jncimonographs/lgab014 Ellison, G. L., Helzlsouer, K. J., Rosenfield, S. M., Kim, Y., Ashare, R. L., Blaes, A. H., Cullen, J., Doran, N., Ebbert, J. O., Egan, K. M., Heffner, J. L., Lee, R. T., McClure, E. A., McDaniels-Davidson, C., Meghani, S. H., Newcomb, P. A., Nugent, S., Hernandez-Ortega, N., Salz, T., Vidot, D. C., ... Zylla, D. M. (2024). Perceptions, prevalence, and patterns of cannabis use among cancer patients treated at 12 NCI-Designated Cancer Centers. Journal of the National Cancer Institute. Monographs, 2024 (66), 202-217. https://doi.org/10.1093/jncimonographs/lgae029 [PhenX: https://www.phenxtoolkit.org/protocols/view/511301]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/511301"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "medical_cannabis_provider_patient_communication_cancer_discuss",
+        "text_key": "medical_cannabis_provider_patient_communication_cancer_discuss",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_cancer_discuss_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_cancer_discuss_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "medical_cannabis_provider_patient_communication_provider_type_talk",
+        "text_key": "medical_cannabis_provider_patient_communication_provider_type_talk",
+        "type": "multi",
+        "visible_when": {
+          "item": "medical_cannabis_provider_patient_communication_cancer_discuss",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_type_talk_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_type_talk_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_type_talk_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_type_talk_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_type_talk_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_type_talk_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "medical_cannabis_provider_patient_communication_provider_recommend",
+        "text_key": "medical_cannabis_provider_patient_communication_provider_recommend",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_recommend_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_recommend_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "medical_cannabis_provider_patient_communication_provider_type_recommend",
+        "text_key": "medical_cannabis_provider_patient_communication_provider_type_recommend",
+        "type": "multi",
+        "visible_when": {
+          "item": "medical_cannabis_provider_patient_communication_provider_recommend",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_type_recommend_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_type_recommend_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_type_recommend_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_type_recommend_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_type_recommend_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "medical_cannabis_provider_patient_communication_provider_type_recommend_opt_6",
+            "value": 6
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "medical_cannabis_provider_patient_communication_cancer_discuss": "Have you discussed using cannabis for your cancer symptoms with a healthcare provider?",
+      "medical_cannabis_provider_patient_communication_cancer_discuss_opt_1": "Yes",
+      "medical_cannabis_provider_patient_communication_cancer_discuss_opt_2": "No",
+      "medical_cannabis_provider_patient_communication_provider_type_talk": "What type of healthcare provider have you talked to about cannabis? Select all that apply.",
+      "medical_cannabis_provider_patient_communication_provider_type_talk_opt_1": "Primary care provider",
+      "medical_cannabis_provider_patient_communication_provider_type_talk_opt_2": "Oncologist involved with your cancer treatment",
+      "medical_cannabis_provider_patient_communication_provider_type_talk_opt_3": "Nurse or physician's assistant involved with your cancer treatment",
+      "medical_cannabis_provider_patient_communication_provider_type_talk_opt_4": "Pharmacist",
+      "medical_cannabis_provider_patient_communication_provider_type_talk_opt_5": "Nutritionist or dietician",
+      "medical_cannabis_provider_patient_communication_provider_type_talk_opt_6": "Another healthcare professional",
+      "medical_cannabis_provider_patient_communication_provider_recommend": "At any time since your cancer diagnosis, has your doctor or another healthcare provider recommended that you use cannabis?",
+      "medical_cannabis_provider_patient_communication_provider_recommend_opt_1": "Yes",
+      "medical_cannabis_provider_patient_communication_provider_recommend_opt_2": "No",
+      "medical_cannabis_provider_patient_communication_provider_type_recommend": "What type of healthcare provider recommended you use cannabis? Select all that apply.",
+      "medical_cannabis_provider_patient_communication_provider_type_recommend_opt_1": "Primary care provider",
+      "medical_cannabis_provider_patient_communication_provider_type_recommend_opt_2": "Oncologist involved with your cancer treatment",
+      "medical_cannabis_provider_patient_communication_provider_type_recommend_opt_3": "Nurse or physician's assistant involved with your cancer treatment",
+      "medical_cannabis_provider_patient_communication_provider_type_recommend_opt_4": "Pharmacist",
+      "medical_cannabis_provider_patient_communication_provider_type_recommend_opt_5": "Nutritionist or dietician",
+      "medical_cannabis_provider_patient_communication_provider_type_recommend_opt_6": "Another healthcare professional"
+    }
+  }
+}

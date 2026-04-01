@@ -1,0 +1,163 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Rosenberg Self-Esteem Scale",
+      "code": "RSES",
+      "abbreviation": "RSES",
+      "description": "10-item measure of global self-esteem. Scored 0-30 with higher scores indicating higher self-esteem.",
+      "citation": "Rosenberg, M. (1965). Society and the Adolescent Self-Image. Princeton University Press.",
+      "license": "Public Domain",
+      "license_explanation": "The Morris Rosenberg Foundation grants permission for use of the scale for educational and professional research. See https://socy.umd.edu/about-us/using-rosenberg-self-esteem-scale",
+      "license_url": "https://socy.umd.edu/about-us/using-rosenberg-self-esteem-scale",
+      "version": "1.0",
+      "url": "https://socy.umd.edu/about-us/using-rosenberg-self-esteem-scale"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "max": 3,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "self_esteem",
+        "name": "Self-Esteem"
+      }
+    ],
+    "items": [
+      {
+        "id": "rses1",
+        "text_key": "rses1",
+        "type": "likert"
+      },
+      {
+        "id": "rses2",
+        "text_key": "rses2",
+        "type": "likert"
+      },
+      {
+        "id": "rses3",
+        "text_key": "rses3",
+        "type": "likert"
+      },
+      {
+        "id": "rses4",
+        "text_key": "rses4",
+        "type": "likert"
+      },
+      {
+        "id": "rses5",
+        "text_key": "rses5",
+        "type": "likert"
+      },
+      {
+        "id": "rses6",
+        "text_key": "rses6",
+        "type": "likert"
+      },
+      {
+        "id": "rses7",
+        "text_key": "rses7",
+        "type": "likert"
+      },
+      {
+        "id": "rses8",
+        "text_key": "rses8",
+        "type": "likert"
+      },
+      {
+        "id": "rses9",
+        "text_key": "rses9",
+        "type": "likert"
+      },
+      {
+        "id": "rses10",
+        "text_key": "rses10",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "self_esteem": {
+        "method": "sum_coded",
+        "items": [
+          "rses1",
+          "rses2",
+          "rses3",
+          "rses4",
+          "rses5",
+          "rses6",
+          "rses7",
+          "rses8",
+          "rses9",
+          "rses10"
+        ],
+        "description": "Sum of all items after reverse coding (0-30). Higher scores = higher self-esteem. Scores below 15 suggest low self-esteem.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 14,
+              "label": "Low Self-Esteem"
+            },
+            {
+              "min": 15,
+              "max": 25,
+              "label": "Normal Self-Esteem"
+            },
+            {
+              "min": 26,
+              "max": 30,
+              "label": "High Self-Esteem"
+            }
+          ]
+        },
+        "item_coding": {
+          "rses1": 1,
+          "rses2": 1,
+          "rses3": -1,
+          "rses4": 1,
+          "rses5": -1,
+          "rses6": 1,
+          "rses7": 1,
+          "rses8": -1,
+          "rses9": -1,
+          "rses10": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Strongly Disagree",
+      "likert_2": "Disagree",
+      "likert_3": "Agree",
+      "likert_4": "Strongly Agree",
+      "question_head": "Below is a list of statements dealing with your general feelings about yourself. Please indicate how much you agree or disagree with each statement.",
+      "rses1": "I feel that I'm a person of worth, at least on an equal plane with others.",
+      "rses2": "I feel that I have a number of good qualities.",
+      "rses3": "All in all, I am inclined to feel that I am a failure.",
+      "rses4": "I am able to do things as well as most other people.",
+      "rses5": "I feel I do not have much to be proud of.",
+      "rses6": "I take a positive attitude toward myself.",
+      "rses7": "On the whole, I am satisfied with myself.",
+      "rses8": "I wish I could have more respect for myself.",
+      "rses9": "I certainly feel useless at times.",
+      "rses10": "At times, I think I am no good at all.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

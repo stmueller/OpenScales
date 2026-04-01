@@ -1,0 +1,1279 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Dietary Supplements Use",
+      "code": "PX050501",
+      "abbreviation": "PX050501",
+      "description": "These self-administered questions ask how many times per week a supplement was taken and for how many years.",
+      "domain": "Diet & Nutrition",
+      "citation": "Murphy, S. P., Wilkens, L. R., Yonemori, K. M., & Steffen, A. (2009). Development of a supplement composition database for the SURE-QX, a publicly available questionnaire to quantify intakes from commonly consumed dietary supplements. Poster presented at the Eighth International Food Data Conference, Bangkok, Thailand. Murphy, S. P., Wilkens, L. R., Yonemori, K. M., & Steffen, A. (2009). Development of the SURE-QX, a publicly available questionnaire to quantify intakes from commonly consumed dietary supplements. Poster presented at the Seventh International Conference on Diet and Activity Methods, Washington, DC. [PhenX: https://www.phenxtoolkit.org/protocols/view/50501]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/50501"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "dietary_supplement",
+        "text_key": "dietary_supplement",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "dietary_supplement_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "dietary_supplement_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "one_a_day_frequency",
+        "text_key": "one_a_day_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "one_a_day_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "one_a_day_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "one_a_day_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "one_a_day_years",
+        "text_key": "one_a_day_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "one_a_day_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "one_a_day_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "one_a_day_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "one_a_day_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "b_complex_frequency",
+        "text_key": "b_complex_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "b_complex_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "b_complex_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "b_complex_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "b_complex_years",
+        "text_key": "b_complex_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "b_complex_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "b_complex_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "b_complex_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "b_complex_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "vitamin_c_frequency",
+        "text_key": "vitamin_c_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "vitamin_c_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vitamin_c_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vitamin_c_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "vitamin_c_years",
+        "text_key": "vitamin_c_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "vitamin_c_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vitamin_c_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vitamin_c_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "vitamin_c_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "vitamin_c_quantity",
+        "text_key": "vitamin_c_quantity",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "vitamin_c_frequency",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "vitamin_c_frequency",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "vitamin_c_frequency",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "vitamin_c_years",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "vitamin_c_years",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "vitamin_c_years",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "vitamin_c_years",
+              "operator": "equals",
+              "value": 4
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "vitamin_c_quantity_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vitamin_c_quantity_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vitamin_c_quantity_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "vitamin_c_quantity_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "vitamin_e_frequency",
+        "text_key": "vitamin_e_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "vitamin_e_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vitamin_e_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vitamin_e_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "vitamin_e_years",
+        "text_key": "vitamin_e_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "vitamin_e_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vitamin_e_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vitamin_e_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "vitamin_e_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "vitamin_e_quantity",
+        "text_key": "vitamin_e_quantity",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "vitamin_e_frequency",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "vitamin_e_frequency",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "vitamin_e_frequency",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "vitamin_e_years",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "vitamin_e_years",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "vitamin_e_years",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "vitamin_e_years",
+              "operator": "equals",
+              "value": 4
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "vitamin_e_quantity_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vitamin_e_quantity_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vitamin_e_quantity_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "vitamin_e_quantity_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "folic_acid_frequency",
+        "text_key": "folic_acid_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "folic_acid_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "folic_acid_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "folic_acid_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "vitamin_years",
+        "text_key": "vitamin_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "vitamin_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vitamin_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vitamin_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "vitamin_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "vitamin_b12_frequency",
+        "text_key": "vitamin_b12_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "vitamin_b12_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vitamin_b12_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vitamin_b12_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "vitamin_b12_years",
+        "text_key": "vitamin_b12_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "vitamin_b12_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vitamin_b12_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vitamin_b12_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "vitamin_b12_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "vitamin_b6_frequency",
+        "text_key": "vitamin_b6_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "vitamin_b6_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vitamin_b6_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vitamin_b6_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "vitamin_b6_years",
+        "text_key": "vitamin_b6_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "vitamin_b6_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vitamin_b6_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vitamin_b6_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "vitamin_b6_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "calcium_frequency",
+        "text_key": "calcium_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "calcium_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "calcium_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "calcium_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "calcium_years",
+        "text_key": "calcium_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "calcium_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "calcium_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "calcium_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "calcium_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "vitamin_d_frequency",
+        "text_key": "vitamin_d_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "vitamin_d_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vitamin_d_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vitamin_d_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "vitamin_d_years",
+        "text_key": "vitamin_d_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "vitamin_d_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "vitamin_d_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "vitamin_d_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "vitamin_d_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "selenium_frequency",
+        "text_key": "selenium_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "selenium_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "selenium_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "selenium_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "selenium_years",
+        "text_key": "selenium_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "selenium_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "selenium_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "selenium_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "selenium_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "iron_frequency",
+        "text_key": "iron_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "iron_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "iron_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "iron_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "iron_years",
+        "text_key": "iron_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "iron_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "iron_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "iron_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "iron_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "zinc_frequency",
+        "text_key": "zinc_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "zinc_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "zinc_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "zinc_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "zinc_years",
+        "text_key": "zinc_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "zinc_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "zinc_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "zinc_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "zinc_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "omega_3_frequency",
+        "text_key": "omega_3_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "omega_3_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "omega_3_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "omega_3_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "omega_3_years",
+        "text_key": "omega_3_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "omega_3_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "omega_3_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "omega_3_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "omega_3_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "flaxseed_frequency",
+        "text_key": "flaxseed_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "flaxseed_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "flaxseed_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "flaxseed_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "flaxseed_years",
+        "text_key": "flaxseed_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "flaxseed_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "flaxseed_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "flaxseed_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "flaxseed_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "garlic_frequency",
+        "text_key": "garlic_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "garlic_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "garlic_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "garlic_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "garlic_years",
+        "text_key": "garlic_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "garlic_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "garlic_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "garlic_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "garlic_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "glucosamine_frequency",
+        "text_key": "glucosamine_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "glucosamine_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "glucosamine_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "glucosamine_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "glucosamine_years",
+        "text_key": "glucosamine_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "glucosamine_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "glucosamine_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "glucosamine_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "glucosamine_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "q10_frequency",
+        "text_key": "q10_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "q10_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "q10_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "q10_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "q10_years",
+        "text_key": "q10_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "q10_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "q10_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "q10_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "q10_years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "saw_palmetto_frequency",
+        "text_key": "saw_palmetto_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "saw_palmetto_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "saw_palmetto_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "saw_palmetto_frequency_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "saw_palmetto_years",
+        "text_key": "saw_palmetto_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "dietary_supplement",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "saw_palmetto_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "saw_palmetto_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "saw_palmetto_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "saw_palmetto_years_opt_4",
+            "value": 4
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "dietary_supplement": "DID YOU TAKE ANY DIETARY SUPPLEMENTS DURING THE PAST YEAR, AT LEAST ONCE A WEEK?",
+      "dietary_supplement_opt_1": "YES",
+      "dietary_supplement_opt_2": "NO",
+      "one_a_day_frequency": "How often did you take Regular One-a-Day type, Centrum� or Thera-type MULTIPLE VITAMINS?",
+      "one_a_day_frequency_opt_1": "1 to 3 times a week",
+      "one_a_day_frequency_opt_2": "4 to 6 times a week",
+      "one_a_day_frequency_opt_3": "Once a day",
+      "one_a_day_years": "How many years did you take Regular One-a-Day type, Centrum� or Thera-type MULTIPLE VITAMINS?",
+      "one_a_day_years_opt_1": "1 year or less",
+      "one_a_day_years_opt_2": "2 to 4 years",
+      "one_a_day_years_opt_3": "5 to 9 years",
+      "one_a_day_years_opt_4": "10 years or more",
+      "b_complex_frequency": "How often did you take B-complex or Stress-tab type MULTIPLE VITAMINS?",
+      "b_complex_frequency_opt_1": "1 to 3 times a week",
+      "b_complex_frequency_opt_2": "4 to 6 times a week",
+      "b_complex_frequency_opt_3": "Once a day",
+      "b_complex_years": "How many years did you take B-complex or Stress-tab type MULTIPLE VITAMINS?",
+      "b_complex_years_opt_1": "1 year or less",
+      "b_complex_years_opt_2": "2 to 4 years",
+      "b_complex_years_opt_3": "5 to 9 years",
+      "b_complex_years_opt_4": "10 years or more",
+      "vitamin_c_frequency": "How often did you take Vitamin C?",
+      "vitamin_c_frequency_opt_1": "1 to 3 times a week",
+      "vitamin_c_frequency_opt_2": "4 to 6 times a week",
+      "vitamin_c_frequency_opt_3": "Once a day",
+      "vitamin_c_years": "How many years did you take Vitamin C?",
+      "vitamin_c_years_opt_1": "1 year or less",
+      "vitamin_c_years_opt_2": "2 to 4 years",
+      "vitamin_c_years_opt_3": "5 to 9 years",
+      "vitamin_c_years_opt_4": "10 years or more",
+      "vitamin_c_quantity": "When you took VITAMIN C, how much did you usually take?",
+      "vitamin_c_quantity_opt_1": "250 mg or less",
+      "vitamin_c_quantity_opt_2": "300 to 500 mg",
+      "vitamin_c_quantity_opt_3": "600 to 1000 mg",
+      "vitamin_c_quantity_opt_4": "More than 1000 mg",
+      "vitamin_e_frequency": "How often did you take Vitamin E?",
+      "vitamin_e_frequency_opt_1": "1 to 3 times a week",
+      "vitamin_e_frequency_opt_2": "4 to 6 times a week",
+      "vitamin_e_frequency_opt_3": "Once a day",
+      "vitamin_e_years": "How many years did you take Vitamin E?",
+      "vitamin_e_years_opt_1": "1 year or less",
+      "vitamin_e_years_opt_2": "2 to 4 years",
+      "vitamin_e_years_opt_3": "5 to 9 years",
+      "vitamin_e_years_opt_4": "10 years or more",
+      "vitamin_e_quantity": "When you took VITAMIN E, how much did you usually take?",
+      "vitamin_e_quantity_opt_1": "200 IU or less",
+      "vitamin_e_quantity_opt_2": "250 to 400 IU",
+      "vitamin_e_quantity_opt_3": "450 to 1000 IU",
+      "vitamin_e_quantity_opt_4": "More than 1000 IU",
+      "folic_acid_frequency": "How often did you take Folic acid, Folate?",
+      "folic_acid_frequency_opt_1": "1 to 3 times a week",
+      "folic_acid_frequency_opt_2": "4 to 6 times a week",
+      "folic_acid_frequency_opt_3": "Once a day",
+      "vitamin_years": "How many years did you take Folic acid, Folate?",
+      "vitamin_years_opt_1": "1 year or less",
+      "vitamin_years_opt_2": "2 to 4 years",
+      "vitamin_years_opt_3": "5 to 9 years",
+      "vitamin_years_opt_4": "10 years or more",
+      "vitamin_b12_frequency": "How often did you take Vitamin B-12?",
+      "vitamin_b12_frequency_opt_1": "1 to 3 times a week",
+      "vitamin_b12_frequency_opt_2": "4 to 6 times a week",
+      "vitamin_b12_frequency_opt_3": "Once a day",
+      "vitamin_b12_years": "How many years did you take Vitamin B-12?",
+      "vitamin_b12_years_opt_1": "1 year or less",
+      "vitamin_b12_years_opt_2": "2 to 4 years",
+      "vitamin_b12_years_opt_3": "5 to 9 years",
+      "vitamin_b12_years_opt_4": "10 years or more",
+      "vitamin_b6_frequency": "How often did you take Vitamin B-6?",
+      "vitamin_b6_frequency_opt_1": "1 to 3 times a week",
+      "vitamin_b6_frequency_opt_2": "4 to 6 times a week",
+      "vitamin_b6_frequency_opt_3": "Once a day",
+      "vitamin_b6_years": "How many years did you take Vitamin B-6?",
+      "vitamin_b6_years_opt_1": "1 year or less",
+      "vitamin_b6_years_opt_2": "2 to 4 years",
+      "vitamin_b6_years_opt_3": "5 to 9 years",
+      "vitamin_b6_years_opt_4": "10 years or more",
+      "calcium_frequency": "How often did you take Calcium, alone or combined with something else such as in a bone health supplement OR in an antacid?",
+      "calcium_frequency_opt_1": "1 to 3 times a week",
+      "calcium_frequency_opt_2": "4 to 6 times a week",
+      "calcium_frequency_opt_3": "Once a day",
+      "calcium_years": "How many years did you take Calcium, alone or combined with something else such as in a bone health supplement OR in an antacid?",
+      "calcium_years_opt_1": "1 year or less",
+      "calcium_years_opt_2": "2 to 4 years",
+      "calcium_years_opt_3": "5 to 9 years",
+      "calcium_years_opt_4": "10 years or more",
+      "vitamin_d_frequency": "How often did you take Vitamin D, alone?",
+      "vitamin_d_frequency_opt_1": "1 to 3 times a week",
+      "vitamin_d_frequency_opt_2": "4 to 6 times a week",
+      "vitamin_d_frequency_opt_3": "Once a day",
+      "vitamin_d_years": "How many years did you take Vitamin D, alone?",
+      "vitamin_d_years_opt_1": "1 year or less",
+      "vitamin_d_years_opt_2": "2 to 4 years",
+      "vitamin_d_years_opt_3": "5 to 9 years",
+      "vitamin_d_years_opt_4": "10 years or more",
+      "selenium_frequency": "How often did you take Selenium?",
+      "selenium_frequency_opt_1": "1 to 3 times a week",
+      "selenium_frequency_opt_2": "4 to 6 times a week",
+      "selenium_frequency_opt_3": "Once a day",
+      "selenium_years": "How many years did you take Selenium?",
+      "selenium_years_opt_1": "1 year or less",
+      "selenium_years_opt_2": "2 to 4 years",
+      "selenium_years_opt_3": "5 to 9 years",
+      "selenium_years_opt_4": "10 years or more",
+      "iron_frequency": "How often did you take Iron?",
+      "iron_frequency_opt_1": "1 to 3 times a week",
+      "iron_frequency_opt_2": "4 to 6 times a week",
+      "iron_frequency_opt_3": "Once a day",
+      "iron_years": "How many years did you take Iron?",
+      "iron_years_opt_1": "1 year or less",
+      "iron_years_opt_2": "2 to 4 years",
+      "iron_years_opt_3": "5 to 9 years",
+      "iron_years_opt_4": "10 years or more",
+      "zinc_frequency": "How often did you take Zinc?",
+      "zinc_frequency_opt_1": "1 to 3 times a week",
+      "zinc_frequency_opt_2": "4 to 6 times a week",
+      "zinc_frequency_opt_3": "Once a day",
+      "zinc_years": "How many years did you take Zinc?",
+      "zinc_years_opt_1": "1 year or less",
+      "zinc_years_opt_2": "2 to 4 years",
+      "zinc_years_opt_3": "5 to 9 years",
+      "zinc_years_opt_4": "10 years or more",
+      "omega_3_frequency": "How often did you take Fish oil or omega-3 Fatty acids?",
+      "omega_3_frequency_opt_1": "1 to 3 times a week",
+      "omega_3_frequency_opt_2": "4 to 6 times a week",
+      "omega_3_frequency_opt_3": "Once a day",
+      "omega_3_years": "How many years did you take Fish oil or omega-3 Fatty acids?",
+      "omega_3_years_opt_1": "1 year or less",
+      "omega_3_years_opt_2": "2 to 4 years",
+      "omega_3_years_opt_3": "5 to 9 years",
+      "omega_3_years_opt_4": "10 years or more",
+      "flaxseed_frequency": "How often did you take Flaxseed?",
+      "flaxseed_frequency_opt_1": "1 to 3 times a week",
+      "flaxseed_frequency_opt_2": "4 to 6 times a week",
+      "flaxseed_frequency_opt_3": "Once a day",
+      "flaxseed_years": "How many years did you take Flaxseed?",
+      "flaxseed_years_opt_1": "1 year or less",
+      "flaxseed_years_opt_2": "2 to 4 years",
+      "flaxseed_years_opt_3": "5 to 9 years",
+      "flaxseed_years_opt_4": "10 years or more",
+      "garlic_frequency": "How often did you take Garlic, as a pill, tablet, or capsule?",
+      "garlic_frequency_opt_1": "1 to 3 times a week",
+      "garlic_frequency_opt_2": "4 to 6 times a week",
+      "garlic_frequency_opt_3": "Once a day",
+      "garlic_years": "How many years did you take Garlic, as a pill, tablet, or capsule?",
+      "garlic_years_opt_1": "1 year or less",
+      "garlic_years_opt_2": "2 to 4 years",
+      "garlic_years_opt_3": "5 to 9 years",
+      "garlic_years_opt_4": "10 years or more",
+      "glucosamine_frequency": "How often did you take Glucosamine, alone or combined with something else?",
+      "glucosamine_frequency_opt_1": "1 to 3 times a week",
+      "glucosamine_frequency_opt_2": "4 to 6 times a week",
+      "glucosamine_frequency_opt_3": "Once a day",
+      "glucosamine_years": "How many years did you take Glucosamine, alone or combined with something else?",
+      "glucosamine_years_opt_1": "1 year or less",
+      "glucosamine_years_opt_2": "2 to 4 years",
+      "glucosamine_years_opt_3": "5 to 9 years",
+      "glucosamine_years_opt_4": "10 years or more",
+      "q10_frequency": "How often did you take Coenzyme Q-10?",
+      "q10_frequency_opt_1": "1 to 3 times a week",
+      "q10_frequency_opt_2": "4 to 6 times a week",
+      "q10_frequency_opt_3": "Once a day",
+      "q10_years": "How many years did you take Coenzyme Q-10?",
+      "q10_years_opt_1": "1 year or less",
+      "q10_years_opt_2": "2 to 4 years",
+      "q10_years_opt_3": "5 to 9 years",
+      "q10_years_opt_4": "10 years or more",
+      "saw_palmetto_frequency": "How often did you take Saw Palmetto?",
+      "saw_palmetto_frequency_opt_1": "1 to 3 times a week",
+      "saw_palmetto_frequency_opt_2": "4 to 6 times a week",
+      "saw_palmetto_frequency_opt_3": "Once a day",
+      "saw_palmetto_years": "How many years did you take Saw Palmetto?",
+      "saw_palmetto_years_opt_1": "1 year or less",
+      "saw_palmetto_years_opt_2": "2 to 4 years",
+      "saw_palmetto_years_opt_3": "5 to 9 years",
+      "saw_palmetto_years_opt_4": "10 years or more"
+    }
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Sources of Cannabis",
+      "code": "PX511001",
+      "abbreviation": "PX511001",
+      "description": "This questionnaire includes four self-administered items from the International Cannabis Policy Study Survey, Wave 6 (2023). Respondents are asked about marijuana obtained from family or friends, online, or from a store or dispensary.",
+      "domain": "Substance Use - Screening & Family History",
+      "citation": "Advanis Inc. (2022). The Canadian Cannabis Survey 2022 Methodological Report . Ottawa, Ontario, Canada: Health Canada. Retrieved from https://epe.lac-bac.gc.ca/100/200/301/pwgsc-tpsgc/por-ef/health/2022/124-21-e/POR124-21-Methodological_Report.pdf Hammond, D., Goodman, S., Wadsworth, E., Freeman, T. P., Kilmer, B., Schauer, G., Pacula, R. L., & Hall, W. (2022). Trends in the use of cannabis products in Canada and the USA, 2018-2020: Findings from the International Cannabis Policy Study. International Journal of Drug Policy, 105 , 103716. doi:10.1016/j.drugpo.2022.103716 Hammond, D., Goodman, S., Wadsworth, E., Rynard, V., Boudreau, C., & Hall, W. (2020). Evaluating the impacts of cannabis legalization: The International Cannabis Policy Study. International Journal of Drug Policy, 77 , 102698. doi:10.1016/j.drugpo.2020.102698 [PhenX: https://www.phenxtoolkit.org/protocols/view/511001]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/511001"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "sources_of_cannabis_marijuana_typrecord_id",
+        "text_key": "sources_of_cannabis_marijuana_typrecord_id",
+        "type": "short"
+      },
+      {
+        "id": "sources_of_cannabis_marijuana_type",
+        "text_key": "sources_of_cannabis_marijuana_type",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "sources_of_cannabis_marijuana_type_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sources_of_cannabis_marijuana_type_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sources_of_cannabis_marijuana_type_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sources_of_cannabis_marijuana_type_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sources_of_cannabis_marijuana_type_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sources_of_cannabis_marijuana_type_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sources_of_cannabis_marijuana_type_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "sources_of_cannabis_marijuana_type_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "sources_of_cannabis_marijuana_type_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "sources_of_cannabis_marijuana_type_other",
+        "text_key": "sources_of_cannabis_marijuana_type_other",
+        "type": "short",
+        "visible_when": {
+          "item": "sources_of_cannabis_marijuana_type",
+          "operator": "in",
+          "value": [
+            6
+          ]
+        }
+      },
+      {
+        "id": "sources_of_cannabis_family_friend_marijuana",
+        "text_key": "sources_of_cannabis_family_friend_marijuana",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sources_of_cannabis_marijuana_type",
+          "operator": "in",
+          "value": [
+            2
+          ]
+        },
+        "options": [
+          {
+            "text_key": "sources_of_cannabis_family_friend_marijuana_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sources_of_cannabis_family_friend_marijuana_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sources_of_cannabis_family_friend_marijuana_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sources_of_cannabis_family_friend_marijuana_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sources_of_cannabis_family_friend_marijuana_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sources_of_cannabis_family_friend_marijuana_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sources_of_cannabis_family_friend_marijuana_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "sources_of_cannabis_family_friend_marijuana_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "sources_of_cannabis_online_marijuana",
+        "text_key": "sources_of_cannabis_online_marijuana",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sources_of_cannabis_marijuana_type",
+          "operator": "in",
+          "value": [
+            4
+          ]
+        },
+        "options": [
+          {
+            "text_key": "sources_of_cannabis_online_marijuana_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sources_of_cannabis_online_marijuana_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sources_of_cannabis_online_marijuana_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sources_of_cannabis_online_marijuana_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "sources_of_cannabis_online_marijuana_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "sources_of_cannabis_online_marijuana_other",
+        "text_key": "sources_of_cannabis_online_marijuana_other",
+        "type": "short",
+        "visible_when": {
+          "item": "sources_of_cannabis_online_marijuana",
+          "operator": "in",
+          "value": [
+            3
+          ]
+        }
+      },
+      {
+        "id": "sources_of_cannabis_marijuana_physical_store",
+        "text_key": "sources_of_cannabis_marijuana_physical_store",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sources_of_cannabis_marijuana_type",
+          "operator": "in",
+          "value": [
+            5
+          ]
+        },
+        "options": [
+          {
+            "text_key": "sources_of_cannabis_marijuana_physical_store_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sources_of_cannabis_marijuana_physical_store_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sources_of_cannabis_marijuana_physical_store_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sources_of_cannabis_marijuana_physical_store_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sources_of_cannabis_marijuana_physical_store_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "sources_of_cannabis_marijuana_physical_store_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "sources_of_cannabis_marijuana_physical_store_other",
+        "text_key": "sources_of_cannabis_marijuana_physical_store_other",
+        "type": "short",
+        "visible_when": {
+          "item": "sources_of_cannabis_marijuana_physical_store",
+          "operator": "in",
+          "value": [
+            4
+          ]
+        }
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "sources_of_cannabis_marijuana_typrecord_id": "Record ID",
+      "sources_of_cannabis_marijuana_type": "In the past 12 months, have you gotten any type of marijuana from the following sources? SELECT ALL THAT APPLY.",
+      "sources_of_cannabis_marijuana_type_opt_1": "I made or grew my own",
+      "sources_of_cannabis_marijuana_type_opt_2": "From a family member or friend",
+      "sources_of_cannabis_marijuana_type_opt_3": "From a dealer (in person)",
+      "sources_of_cannabis_marijuana_type_opt_4": "Internet delivery service or mail order (delivered to me)",
+      "sources_of_cannabis_marijuana_type_opt_5": "From a store, co-operative or dispensary",
+      "sources_of_cannabis_marijuana_type_opt_6": "Other (please specify without providing any identifiable information):",
+      "sources_of_cannabis_marijuana_type_opt_7": "I haven't obtained marijuana from any source in the past 12 months",
+      "sources_of_cannabis_marijuana_type_opt_-77": "Don't Know",
+      "sources_of_cannabis_marijuana_type_opt_-88": "Refuse to answer",
+      "sources_of_cannabis_marijuana_type_other": "In the past 12 months, have you gotten any type of marijuana from the following sources? Other (please specify without providing any identifiable information):",
+      "sources_of_cannabis_family_friend_marijuana": "In the past 12 months, where did your family member or friend get the marijuana they gave to you? SELECT ALL THAT APPLY.",
+      "sources_of_cannabis_family_friend_marijuana_opt_1": "Made or grew my own",
+      "sources_of_cannabis_family_friend_marijuana_opt_2": "Internet",
+      "sources_of_cannabis_family_friend_marijuana_opt_3": "Dealer",
+      "sources_of_cannabis_family_friend_marijuana_opt_4": "Legal/authorized store, co-operative or dispensary",
+      "sources_of_cannabis_family_friend_marijuana_opt_5": "Illegal/unauthorized store, co-operative or dispensary",
+      "sources_of_cannabis_family_friend_marijuana_opt_6": "Other",
+      "sources_of_cannabis_family_friend_marijuana_opt_-77": "Don't Know",
+      "sources_of_cannabis_family_friend_marijuana_opt_-88": "Refuse to answer",
+      "sources_of_cannabis_online_marijuana": "Where did you buy your marijuana online in the past 12 months? SELECT ALL THAT APPLY.",
+      "sources_of_cannabis_online_marijuana_opt_1": "An authorized/legal website",
+      "sources_of_cannabis_online_marijuana_opt_2": "An unauthorized/illegal website, private delivery service, or dealer not affiliated with a dispensary/co-operative",
+      "sources_of_cannabis_online_marijuana_opt_3": "Other online source (please specify without providing any identifiable information):",
+      "sources_of_cannabis_online_marijuana_opt_-77": "Don't Know",
+      "sources_of_cannabis_online_marijuana_opt_-88": "Refuse to answer",
+      "sources_of_cannabis_online_marijuana_other": "Where did you buy your marijuana online in the past 12 months? Other online source (please specify without providing any identifiable information):",
+      "sources_of_cannabis_marijuana_physical_store": "From what type of PHYSICAL store or dispensary did you buy marijuana in the past 12 months? SELECT ALL THAT APPLY.",
+      "sources_of_cannabis_marijuana_physical_store_opt_1": "A legal medical dispensary or co-operative",
+      "sources_of_cannabis_marijuana_physical_store_opt_2": "A legal recreational store",
+      "sources_of_cannabis_marijuana_physical_store_opt_3": "An illegal or unauthorized store/dispensary",
+      "sources_of_cannabis_marijuana_physical_store_opt_4": "Other type of store/dispensary (please specify without providing any identifiable information):",
+      "sources_of_cannabis_marijuana_physical_store_opt_-77": "Don't Know",
+      "sources_of_cannabis_marijuana_physical_store_opt_-88": "Refuse to answer",
+      "sources_of_cannabis_marijuana_physical_store_other": "From what type of PHYSICAL store or dispensary did you buy marijuana in the past 12 months? Other type of store/dispensary (please specify without providing any identifiable information):"
+    }
+  }
+}

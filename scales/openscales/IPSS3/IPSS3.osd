@@ -1,0 +1,104 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Impostor Phenomenon Short Scale",
+      "code": "IPSS3",
+      "abbreviation": "IPSS-3",
+      "description": "3-item ultra-brief measure of impostor feelings. Unidimensional. 6-point scale (1=does not apply at all to 6=absolutely applies). Sum score range 3–18; higher scores indicate stronger impostor feelings.",
+      "citation": "Jansen, M. P. (2024). Impostor phenomenon short scale (IPSS-3): A novel measure to capture impostor feelings in large-scale and longitudinal surveys. Frontiers in Psychology, 15, 1358279. https://doi.org/10.3389/fpsyg.2024.1358279",
+      "license": "CC BY 4.0",
+      "license_explanation": "Published in Frontiers in Psychology under CC BY 4.0.",
+      "license_url": "https://doi.org/10.3389/fpsyg.2024.1358279",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyg.2024.1358279",
+      "domain": "Self & Coping"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": [
+        "ipss_r1",
+        "ipss_r2",
+        "ipss_r3",
+        "ipss_r4",
+        "ipss_r5",
+        "ipss_r6"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "impostor",
+        "name": "Impostor Feelings",
+        "description": "Sum of 3 items (range 3–18). Higher = stronger impostor feelings."
+      }
+    ],
+    "items": [
+      {
+        "id": "ipss1",
+        "text_key": "ipss1",
+        "type": "likert"
+      },
+      {
+        "id": "ipss2",
+        "text_key": "ipss2",
+        "type": "likert"
+      },
+      {
+        "id": "ipss3",
+        "text_key": "ipss3",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "impostor": {
+        "method": "sum_coded",
+        "items": [
+          "ipss1",
+          "ipss2",
+          "ipss3"
+        ],
+        "description": "Sum of 3 items (range 3–18).",
+        "item_coding": {
+          "ipss1": 1,
+          "ipss2": 1,
+          "ipss3": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Impostor Phenomenon Short Scale (IPSS-3) Report",
+      "footer_refs": [
+        "Jansen, M. P. (2024). Frontiers in Psychology, 15, 1358279."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "ipss_r1": "Does not apply at all",
+      "ipss_r2": "Mostly does not apply",
+      "ipss_r3": "Does not really apply",
+      "ipss_r4": "Applies a bit",
+      "ipss_r5": "Mostly applies",
+      "ipss_r6": "Absolutely applies",
+      "ipss1": "Though I am often successful, I become afraid of failing again at every request.",
+      "ipss2": "Sometimes I fear others will notice how much knowledge and how many skills I actually lack.",
+      "ipss3": "I often fear not being able to meet the expectations of others, even though I have already achieved a lot.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Self-Compassion Scale – Short Form",
+      "code": "SCSSF",
+      "abbreviation": "SCS-SF",
+      "description": "12-item short form of the Self-Compassion Scale (SCS; Neff, 2003), assessing six facets of self-compassion: Self-Kindness (items 2, 6), Self-Judgment (items 11, 12; negative), Common Humanity (items 5, 10), Isolation (items 4, 8; negative), Mindfulness (items 3, 7), and Over-Identification (items 1, 9; negative). Two items per facet. Items use a 5-point scale (1=Almost Never to 5=Almost Always). Facet subscale scores are the means of the two relevant items. The total Self-Compassion score is the mean of all 12 items after reverse-scoring the three negative facets (Self-Judgment, Isolation, Over-Identification). Higher total scores indicate greater self-compassion.",
+      "citation": "Raes, F., Pommier, E., Neff, K. D., & Van Gucht, D. (2011). Construction and factorial validation of a short form of the Self-Compassion Scale. Clinical Psychology & Psychotherapy, 18(3), 250–255. https://doi.org/10.1017/S0033291710001078",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://self-compassion.org/self-compassion-scales-for-researchers/",
+      "domain": "Self & Coping"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "scs_r1",
+        "scs_r2",
+        "scs_r3",
+        "scs_r4",
+        "scs_r5"
+      ],
+      "question_head": "scs_inst"
+    },
+    "dimensions": [
+      {
+        "id": "self_kindness",
+        "name": "Self-Kindness",
+        "abbreviation": "SK",
+        "description": "Warmth and understanding toward oneself when suffering rather than harsh self-criticism (items 2, 6). Mean range 1–5; higher = more self-kindness."
+      },
+      {
+        "id": "self_judgment",
+        "name": "Self-Judgment",
+        "abbreviation": "SJ",
+        "description": "Harsh self-criticism and disapproval toward one's flaws and inadequacies (items 11, 12; negative facet, reverse-scored for total). Mean range 1–5; higher raw scores = more self-judgment."
+      },
+      {
+        "id": "common_humanity",
+        "name": "Common Humanity",
+        "abbreviation": "CH",
+        "description": "Seeing one's suffering as part of the larger human experience (items 5, 10). Mean range 1–5; higher = greater sense of common humanity."
+      },
+      {
+        "id": "isolation",
+        "name": "Isolation",
+        "abbreviation": "IS",
+        "description": "Feeling isolated and alone when facing failures or painful feelings (items 4, 8; negative facet, reverse-scored for total). Mean range 1–5; higher raw scores = greater sense of isolation."
+      },
+      {
+        "id": "mindfulness",
+        "name": "Mindfulness",
+        "abbreviation": "MI",
+        "description": "Holding painful thoughts and feelings in balanced, non-over-identified awareness (items 3, 7). Mean range 1–5; higher = more mindful awareness."
+      },
+      {
+        "id": "over_identification",
+        "name": "Over-Identification",
+        "abbreviation": "OI",
+        "description": "Over-absorption in and exaggeration of painful thoughts and feelings (items 1, 9; negative facet, reverse-scored for total). Mean range 1–5; higher raw scores = greater over-identification."
+      }
+    ],
+    "items": [
+      {
+        "id": "scs1",
+        "text_key": "scs1",
+        "type": "likert",
+        "dimension": "over_identification"
+      },
+      {
+        "id": "scs2",
+        "text_key": "scs2",
+        "type": "likert",
+        "dimension": "self_kindness"
+      },
+      {
+        "id": "scs3",
+        "text_key": "scs3",
+        "type": "likert",
+        "dimension": "mindfulness"
+      },
+      {
+        "id": "scs4",
+        "text_key": "scs4",
+        "type": "likert",
+        "dimension": "isolation"
+      },
+      {
+        "id": "scs5",
+        "text_key": "scs5",
+        "type": "likert",
+        "dimension": "common_humanity"
+      },
+      {
+        "id": "scs6",
+        "text_key": "scs6",
+        "type": "likert",
+        "dimension": "self_kindness"
+      },
+      {
+        "id": "scs7",
+        "text_key": "scs7",
+        "type": "likert",
+        "dimension": "mindfulness"
+      },
+      {
+        "id": "scs8",
+        "text_key": "scs8",
+        "type": "likert",
+        "dimension": "isolation"
+      },
+      {
+        "id": "scs9",
+        "text_key": "scs9",
+        "type": "likert",
+        "dimension": "over_identification"
+      },
+      {
+        "id": "scs10",
+        "text_key": "scs10",
+        "type": "likert",
+        "dimension": "common_humanity"
+      },
+      {
+        "id": "scs11",
+        "text_key": "scs11",
+        "type": "likert",
+        "dimension": "self_judgment"
+      },
+      {
+        "id": "scs12",
+        "text_key": "scs12",
+        "type": "likert",
+        "dimension": "self_judgment"
+      }
+    ],
+    "scoring": {
+      "self_kindness": {
+        "method": "mean_coded",
+        "items": [
+          "scs2",
+          "scs6"
+        ],
+        "description": "Mean of items 2 and 6 (range 1–5). Both items are forward-scored. Higher scores indicate greater self-kindness toward oneself in difficult times.",
+        "item_coding": {
+          "scs2": 1,
+          "scs6": 1
+        }
+      },
+      "self_judgment": {
+        "method": "mean_coded",
+        "items": [
+          "scs11",
+          "scs12"
+        ],
+        "description": "Mean of items 11 and 12, reverse-scored (range 1–5). Higher scores indicate less self-judgment (more self-compassion).",
+        "item_coding": {
+          "scs11": -1,
+          "scs12": -1
+        }
+      },
+      "common_humanity": {
+        "method": "mean_coded",
+        "items": [
+          "scs5",
+          "scs10"
+        ],
+        "description": "Mean of items 5 and 10 (range 1–5). Both items are forward-scored. Higher scores indicate a greater sense that one's suffering is part of the shared human condition.",
+        "item_coding": {
+          "scs5": 1,
+          "scs10": 1
+        }
+      },
+      "isolation": {
+        "method": "mean_coded",
+        "items": [
+          "scs4",
+          "scs8"
+        ],
+        "description": "Mean of items 4 and 8, reverse-scored (range 1–5). Higher scores indicate less isolation (more self-compassion).",
+        "item_coding": {
+          "scs4": -1,
+          "scs8": -1
+        }
+      },
+      "mindfulness": {
+        "method": "mean_coded",
+        "items": [
+          "scs3",
+          "scs7"
+        ],
+        "description": "Mean of items 3 and 7 (range 1–5). Both items are forward-scored. Higher scores indicate a greater ability to hold painful feelings in balanced, non-over-identified awareness.",
+        "item_coding": {
+          "scs3": 1,
+          "scs7": 1
+        }
+      },
+      "over_identification": {
+        "method": "mean_coded",
+        "items": [
+          "scs1",
+          "scs9"
+        ],
+        "description": "Mean of items 1 and 9, reverse-scored (range 1–5). Higher scores indicate less over-identification (more self-compassion).",
+        "item_coding": {
+          "scs1": -1,
+          "scs9": -1
+        }
+      },
+      "total": {
+        "method": "mean_coded",
+        "items": [
+          "scs1",
+          "scs2",
+          "scs3",
+          "scs4",
+          "scs5",
+          "scs6",
+          "scs7",
+          "scs8",
+          "scs9",
+          "scs10",
+          "scs11",
+          "scs12"
+        ],
+        "description": "Total self-compassion score: mean of all 12 items after reverse-scoring the three negative facets — Self-Judgment (scs11, scs12), Isolation (scs4, scs8), and Over-Identification (scs1, scs9). Range 1–5. Higher scores indicate greater overall self-compassion.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 1.0,
+              "max": 2.49,
+              "label": "Low Self-Compassion"
+            },
+            {
+              "min": 2.5,
+              "max": 3.49,
+              "label": "Moderate Self-Compassion"
+            },
+            {
+              "min": 3.5,
+              "max": 5.0,
+              "label": "High Self-Compassion"
+            }
+          ]
+        },
+        "item_coding": {
+          "scs1": -1,
+          "scs2": 1,
+          "scs3": 1,
+          "scs4": -1,
+          "scs5": 1,
+          "scs6": 1,
+          "scs7": 1,
+          "scs8": -1,
+          "scs9": -1,
+          "scs10": 1,
+          "scs11": -1,
+          "scs12": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "scs_r1": "Almost never",
+      "scs_r2": "Rarely",
+      "scs_r3": "Sometimes",
+      "scs_r4": "Often",
+      "scs_r5": "Almost always",
+      "scs_inst": "HOW I TYPICALLY ACT TOWARDS MYSELF IN DIFFICULT TIMES\n\nPlease read each statement carefully before answering. To the left of each item, indicate how often you behave in the stated manner, using the following scale:",
+      "scs1": "When I fail at something important to me I become consumed by feelings of inadequacy.",
+      "scs2": "I try to be understanding and patient towards those aspects of my personality I don't like.",
+      "scs3": "When something painful happens I try to take a balanced view of the situation.",
+      "scs4": "When I'm feeling down, I tend to feel like most other people are probably happier than I am.",
+      "scs5": "I try to see my failings as part of the human condition.",
+      "scs6": "When I'm going through a very hard time, I give myself the caring and tenderness I need.",
+      "scs7": "When something upsets me I try to keep my emotions in balance.",
+      "scs8": "When I fail at something that's important to me, I tend to feel alone in my failure.",
+      "scs9": "When I'm feeling down I tend to obsess and fixate on everything that's wrong.",
+      "scs10": "When I feel inadequate in some way, I try to remind myself that feelings of inadequacy are shared by most people.",
+      "scs11": "I'm disapproving and judgmental about my own flaws and inadequacies.",
+      "scs12": "I'm intolerant and impatient towards those aspects of my personality I don't like.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

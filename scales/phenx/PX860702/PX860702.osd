@@ -1,0 +1,158 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Pain Quality Descriptors (Sensory) - Children",
+      "code": "PX860702",
+      "abbreviation": "PX860702",
+      "description": "The Patient-Reported Outcomes Measurement Information System (PROMIS ® ) Pediatric Short Form v2.0 - Pain Quality - Sensory 8a is a self-administered pain quality survey for 8- to 17-year-olds, assessing 8 descriptors of sensory pain quality across 5 severity anchors, with a recall period of the pas",
+      "domain": "Pain",
+      "citation": "Revicki, D. A., Cook, K. F., Amtmann, D., Harnam, N., Chen, W. H., & Keefe, F. J. (2014). Exploratory and confirmatory factor analysis of the PROMIS pain quality item bank. Quality of Life Research: An International Journal of Quality of Life Aspects of Treatment, Care and Rehabilitation, 23(1), 245-255. Singh, A., DasGupta, M., Simpson, P. M., & Panepinto, J. A. (2019). Use of the new pediatric PROMIS measures of pain and physical experiences for children with sickle cell disease. Pediatric Blood & Cancer, 66(5), e27633. [PhenX: https://www.phenxtoolkit.org/protocols/view/860702]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/860702"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "lk_opt_1",
+        "lk_opt_2",
+        "lk_opt_3",
+        "lk_opt_4",
+        "lk_opt_5"
+      ]
+    },
+    "items": [
+      {
+        "id": "protocol_instructions",
+        "text_key": "protocol_instructions",
+        "type": "inst"
+      },
+      {
+        "id": "sec_in_the_past_7_days_did_your_pain_feel",
+        "type": "section",
+        "text_key": "sec_in_the_past_7_days_did_your_pain_feel_title"
+      },
+      {
+        "id": "past_seven_days_sharp",
+        "text_key": "past_seven_days_sharp",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "past_seven_days"
+      },
+      {
+        "id": "past_seven_days_achy",
+        "text_key": "past_seven_days_achy",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "past_seven_days"
+      },
+      {
+        "id": "past_seven_days_burning",
+        "text_key": "past_seven_days_burning",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "past_seven_days"
+      },
+      {
+        "id": "past_seven_days_throbbing",
+        "text_key": "past_seven_days_throbbing",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "past_seven_days"
+      },
+      {
+        "id": "past_seven_days_stabbing",
+        "text_key": "past_seven_days_stabbing",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "past_seven_days"
+      },
+      {
+        "id": "past_seven_days_sore",
+        "text_key": "past_seven_days_sore",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "past_seven_days"
+      },
+      {
+        "id": "past_seven_days_tight",
+        "text_key": "past_seven_days_tight",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "past_seven_days"
+      },
+      {
+        "id": "past_seven_days_tingly",
+        "text_key": "past_seven_days_tingly",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "past_seven_days"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "past_seven_days_sharp",
+          "past_seven_days_achy",
+          "past_seven_days_burning",
+          "past_seven_days_throbbing",
+          "past_seven_days_stabbing",
+          "past_seven_days_sore",
+          "past_seven_days_tight",
+          "past_seven_days_tingly"
+        ],
+        "item_coding": {
+          "past_seven_days_sharp": 1,
+          "past_seven_days_achy": 1,
+          "past_seven_days_burning": 1,
+          "past_seven_days_throbbing": 1,
+          "past_seven_days_stabbing": 1,
+          "past_seven_days_sore": 1,
+          "past_seven_days_tight": 1,
+          "past_seven_days_tingly": 1
+        },
+        "description": "Total score (sum of all items)"
+      }
+    },
+    "_conversion_notes": [
+      "INFO  past_seven_days_sharp: member of matrix group 'past_seven_days' — consider converting to grid type manually",
+      "INFO  past_seven_days_achy: member of matrix group 'past_seven_days' — consider converting to grid type manually",
+      "INFO  past_seven_days_burning: member of matrix group 'past_seven_days' — consider converting to grid type manually",
+      "INFO  past_seven_days_throbbing: member of matrix group 'past_seven_days' — consider converting to grid type manually",
+      "INFO  past_seven_days_stabbing: member of matrix group 'past_seven_days' — consider converting to grid type manually",
+      "INFO  past_seven_days_sore: member of matrix group 'past_seven_days' — consider converting to grid type manually",
+      "INFO  past_seven_days_tight: member of matrix group 'past_seven_days' — consider converting to grid type manually",
+      "INFO  past_seven_days_tingly: member of matrix group 'past_seven_days' — consider converting to grid type manually"
+    ]
+  },
+  "translations": {
+    "en": {
+      "lk_opt_1": "Not at all",
+      "lk_opt_2": "A little bit",
+      "lk_opt_3": "Somewhat",
+      "lk_opt_4": "Quite a bit",
+      "lk_opt_5": "Very much",
+      "protocol_instructions": "Please respond to each item by marking one box per row.",
+      "sec_in_the_past_7_days_did_your_pain_feel_title": "In the past 7 days, did your pain feel...",
+      "past_seven_days_sharp": "sharp?",
+      "past_seven_days_achy": "achy?",
+      "past_seven_days_burning": "burning?",
+      "past_seven_days_throbbing": "throbbing?",
+      "past_seven_days_stabbing": "stabbing?",
+      "past_seven_days_sore": "sore?",
+      "past_seven_days_tight": "tight?",
+      "past_seven_days_tingly": "tingly?"
+    }
+  }
+}

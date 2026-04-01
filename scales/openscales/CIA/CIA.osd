@@ -1,0 +1,298 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Clinical Impairment Assessment 3.0",
+      "code": "CIA",
+      "abbreviation": "CIA 3.0",
+      "description": "16-item measure of psychosocial impairment due to eating disorder features over the past 28 days. Three subscales: Personal Impairment (6 items, range 0–18), Social Impairment (5 items, range 0–15), and Cognitive Impairment (5 items, range 0–15). Global score ranges from 0 to 48; a score of 16 or above may indicate clinical significance.",
+      "citation": "Bohn, K., Doll, H. A., Cooper, Z., O'Connor, M., Palmer, R. L., & Fairburn, C. G. (2008). The measurement of impairment due to eating disorder psychopathology. Behaviour Research and Therapy, 46(10), 1105-1110. https://doi.org/10.1016/j.brat.2008.06.012",
+      "license": "CC BY 3.0",
+      "version": "1.0",
+      "url": "https://doi.org/10.1016/j.brat.2008.06.012"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "max": 3,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "personal_impairment",
+        "name": "Personal Impairment",
+        "description": "Distress related to self-evaluation (6 items, range 0–18)."
+      },
+      {
+        "id": "social_impairment",
+        "name": "Social Impairment",
+        "description": "Interference with social functioning (5 items, range 0–15)."
+      },
+      {
+        "id": "cognitive_impairment",
+        "name": "Cognitive Impairment",
+        "description": "Interference with cognitive functioning (5 items, range 0–15)."
+      }
+    ],
+    "items": [
+      {
+        "id": "cia9",
+        "text_key": "cia9",
+        "type": "likert",
+        "dimension": "personal_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia11",
+        "text_key": "cia11",
+        "type": "likert",
+        "dimension": "personal_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia2",
+        "text_key": "cia2",
+        "type": "likert",
+        "dimension": "personal_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia14",
+        "text_key": "cia14",
+        "type": "likert",
+        "dimension": "personal_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia8",
+        "text_key": "cia8",
+        "type": "likert",
+        "dimension": "personal_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia16",
+        "text_key": "cia16",
+        "type": "likert",
+        "dimension": "personal_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia7",
+        "text_key": "cia7",
+        "type": "likert",
+        "dimension": "social_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia10",
+        "text_key": "cia10",
+        "type": "likert",
+        "dimension": "social_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia12",
+        "text_key": "cia12",
+        "type": "likert",
+        "dimension": "social_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia3",
+        "text_key": "cia3",
+        "type": "likert",
+        "dimension": "social_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia15",
+        "text_key": "cia15",
+        "type": "likert",
+        "dimension": "social_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia13",
+        "text_key": "cia13",
+        "type": "likert",
+        "dimension": "cognitive_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia5",
+        "text_key": "cia5",
+        "type": "likert",
+        "dimension": "cognitive_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia6",
+        "text_key": "cia6",
+        "type": "likert",
+        "dimension": "cognitive_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia4",
+        "text_key": "cia4",
+        "type": "likert",
+        "dimension": "cognitive_impairment",
+        "random_group": 1
+      },
+      {
+        "id": "cia1",
+        "text_key": "cia1",
+        "type": "likert",
+        "dimension": "cognitive_impairment",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "personal_impairment": {
+        "method": "sum_coded",
+        "items": [
+          "cia9",
+          "cia11",
+          "cia2",
+          "cia14",
+          "cia8",
+          "cia16"
+        ],
+        "description": "Sum of 6 personal impairment items (range 0–18). Mean in clinical sample: 10.2.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 10,
+              "label": "Below Average"
+            },
+            {
+              "min": 11,
+              "max": 18,
+              "label": "Above Average"
+            }
+          ]
+        },
+        "item_coding": {
+          "cia9": 1,
+          "cia11": 1,
+          "cia2": 1,
+          "cia14": 1,
+          "cia8": 1,
+          "cia16": 1
+        }
+      },
+      "social_impairment": {
+        "method": "sum_coded",
+        "items": [
+          "cia7",
+          "cia10",
+          "cia12",
+          "cia3",
+          "cia15"
+        ],
+        "description": "Sum of 5 social impairment items (range 0–15). Mean in clinical sample: 5.36.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 5,
+              "label": "Below Average"
+            },
+            {
+              "min": 6,
+              "max": 15,
+              "label": "Above Average"
+            }
+          ]
+        },
+        "item_coding": {
+          "cia7": 1,
+          "cia10": 1,
+          "cia12": 1,
+          "cia3": 1,
+          "cia15": 1
+        }
+      },
+      "cognitive_impairment": {
+        "method": "sum_coded",
+        "items": [
+          "cia13",
+          "cia5",
+          "cia6",
+          "cia4",
+          "cia1"
+        ],
+        "description": "Sum of 5 cognitive impairment items (range 0–15). Mean in clinical sample: 4.51.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 4,
+              "label": "Below Average"
+            },
+            {
+              "min": 5,
+              "max": 15,
+              "label": "Above Average"
+            }
+          ]
+        },
+        "item_coding": {
+          "cia13": 1,
+          "cia5": 1,
+          "cia6": 1,
+          "cia4": 1,
+          "cia1": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "not at all",
+      "likert_2": "a little",
+      "likert_3": "quite a bit",
+      "likert_4": "a lot",
+      "question_head": "Over the <b>past 28 days</b>, to what extent have your eating habits, exercising, or your feelings about your eating, shape or weight ...",
+      "cia1": "made it difficult to concentrate?",
+      "cia2": "made you feel critical of yourself?",
+      "cia3": "stopped you going out with others?",
+      "cia4": "affected your work performance (if applicable)?",
+      "cia5": "made you forgetful?",
+      "cia6": "affected your ability to make everyday decisions?",
+      "cia7": "interfered with meals with family or friends?",
+      "cia8": "made you upset?",
+      "cia9": "made you feel ashamed of yourself?",
+      "cia10": "made it difficult to eat out with others?",
+      "cia11": "made you feel guilty?",
+      "cia12": "interfered with you doing things you used to enjoy?",
+      "cia13": "made you absent-minded?",
+      "cia14": "made you feel a failure?",
+      "cia15": "interfered with your relationship with others?",
+      "cia16": "made you worry?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

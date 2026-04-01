@@ -1,0 +1,426 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Berlin Numeracy Test",
+      "code": "BNT",
+      "abbreviation": "BNT",
+      "description": "4-item adaptive test of statistical numeracy and risk literacy. Adaptive mode presents 2-3 questions based on correctness; non-adaptive mode presents all 4. Supports numeric free-entry or multiple-choice format.",
+      "citation": "Cokely, E. T., Galesic, M., Schulz, E., Ghazal, S., & Garcia-Retamero, R. (2012). Measuring risk literacy: The Berlin Numeracy Test. Judgment and Decision Making, 7(1), 25-47.",
+      "license": "free for research use",
+      "version": "1.0",
+      "url": "https://doi.org/10.1017/S1930297500001819",
+      "license_explanation": "Free for research use"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "adaptive": {
+        "type": "boolean",
+        "default": 1,
+        "description": "If true, uses adaptive branching (2-3 questions). If false, presents all 4 questions."
+      },
+      "format": {
+        "type": "choice",
+        "default": "number",
+        "options": [
+          "number",
+          "mc"
+        ],
+        "description": "Response format: 'number' for free numeric entry, 'mc' for multiple choice."
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Whether to shuffle question order (should be 0 for adaptive mode)"
+      }
+    },
+    "items": [
+      {
+        "id": "q1",
+        "text_key": "Q1",
+        "type": "short",
+        "visible_when": {
+          "parameter": "format",
+          "operator": "equals",
+          "value": "number"
+        },
+        "validation": {
+          "type": "number",
+          "min": 0,
+          "max": 100
+        }
+      },
+      {
+        "id": "q2",
+        "text_key": "Q2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "parameter": "format",
+              "operator": "equals",
+              "value": "number"
+            },
+            {
+              "any": [
+                {
+                  "parameter": "adaptive",
+                  "operator": "equals",
+                  "value": "0"
+                },
+                {
+                  "all": [
+                    {
+                      "parameter": "adaptive",
+                      "operator": "equals",
+                      "value": "1"
+                    },
+                    {
+                      "item": "q1",
+                      "operator": "not_equals",
+                      "value": "25"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "validation": {
+          "type": "number",
+          "min": 0,
+          "max": 100
+        }
+      },
+      {
+        "id": "q3",
+        "text_key": "Q3",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "parameter": "format",
+              "operator": "equals",
+              "value": "number"
+            },
+            {
+              "any": [
+                {
+                  "parameter": "adaptive",
+                  "operator": "equals",
+                  "value": "0"
+                },
+                {
+                  "all": [
+                    {
+                      "parameter": "adaptive",
+                      "operator": "equals",
+                      "value": "1"
+                    },
+                    {
+                      "item": "q1",
+                      "operator": "equals",
+                      "value": "25"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "validation": {
+          "type": "number",
+          "min": 0,
+          "max": 100
+        }
+      },
+      {
+        "id": "q4",
+        "text_key": "Q4",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "parameter": "format",
+              "operator": "equals",
+              "value": "number"
+            },
+            {
+              "any": [
+                {
+                  "parameter": "adaptive",
+                  "operator": "equals",
+                  "value": "0"
+                },
+                {
+                  "all": [
+                    {
+                      "parameter": "adaptive",
+                      "operator": "equals",
+                      "value": "1"
+                    },
+                    {
+                      "item": "q1",
+                      "operator": "equals",
+                      "value": "25"
+                    },
+                    {
+                      "item": "q3",
+                      "operator": "not_equals",
+                      "value": "20"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "validation": {
+          "type": "number",
+          "min": 0,
+          "max": 100
+        }
+      },
+      {
+        "id": "q1_mc",
+        "text_key": "Q1",
+        "type": "multi",
+        "options": [
+          "CHOICE_1A",
+          "CHOICE_1B",
+          "CHOICE_1C",
+          "CHOICE_1D"
+        ],
+        "visible_when": {
+          "parameter": "format",
+          "operator": "equals",
+          "value": "mc"
+        }
+      },
+      {
+        "id": "q2_mc",
+        "text_key": "Q2",
+        "type": "multi",
+        "options": [
+          "CHOICE_2A",
+          "CHOICE_2B",
+          "CHOICE_2C",
+          "CHOICE_2D"
+        ],
+        "visible_when": {
+          "all": [
+            {
+              "parameter": "format",
+              "operator": "equals",
+              "value": "mc"
+            },
+            {
+              "any": [
+                {
+                  "parameter": "adaptive",
+                  "operator": "equals",
+                  "value": "0"
+                },
+                {
+                  "all": [
+                    {
+                      "parameter": "adaptive",
+                      "operator": "equals",
+                      "value": "1"
+                    },
+                    {
+                      "item": "q1_mc",
+                      "operator": "not_equals",
+                      "value": "CHOICE_1B"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "q3_mc",
+        "text_key": "Q3",
+        "type": "multi",
+        "options": [
+          "CHOICE_3A",
+          "CHOICE_3B",
+          "CHOICE_3C",
+          "CHOICE_3D"
+        ],
+        "visible_when": {
+          "all": [
+            {
+              "parameter": "format",
+              "operator": "equals",
+              "value": "mc"
+            },
+            {
+              "any": [
+                {
+                  "parameter": "adaptive",
+                  "operator": "equals",
+                  "value": "0"
+                },
+                {
+                  "all": [
+                    {
+                      "parameter": "adaptive",
+                      "operator": "equals",
+                      "value": "1"
+                    },
+                    {
+                      "item": "q1_mc",
+                      "operator": "equals",
+                      "value": "CHOICE_1B"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "q4_mc",
+        "text_key": "Q4",
+        "type": "multi",
+        "options": [
+          "CHOICE_4A",
+          "CHOICE_4B",
+          "CHOICE_4C",
+          "CHOICE_4D"
+        ],
+        "visible_when": {
+          "all": [
+            {
+              "parameter": "format",
+              "operator": "equals",
+              "value": "mc"
+            },
+            {
+              "any": [
+                {
+                  "parameter": "adaptive",
+                  "operator": "equals",
+                  "value": "0"
+                },
+                {
+                  "all": [
+                    {
+                      "parameter": "adaptive",
+                      "operator": "equals",
+                      "value": "1"
+                    },
+                    {
+                      "item": "q1_mc",
+                      "operator": "equals",
+                      "value": "CHOICE_1B"
+                    },
+                    {
+                      "item": "q3_mc",
+                      "operator": "not_equals",
+                      "value": "CHOICE_3A"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "dimensions": [
+      {
+        "id": "numeracy",
+        "name": "Statistical Numeracy"
+      }
+    ],
+    "scoring": {
+      "numeracy": {
+        "method": "sum_correct",
+        "items": [
+          "q1",
+          "q2",
+          "q3",
+          "q4",
+          "q1_mc",
+          "q2_mc",
+          "q3_mc",
+          "q4_mc"
+        ],
+        "description": "Number of correct answers (0-4). Adaptive mode yields 0-3 answered, non-adaptive 0-4. Skipped items (NA) count as 0.",
+        "correct_answers": {
+          "q1": [
+            "25"
+          ],
+          "q2": [
+            "30"
+          ],
+          "q3": [
+            "20"
+          ],
+          "q4": [
+            "50"
+          ],
+          "q1_mc": [
+            "CHOICE_1B"
+          ],
+          "q2_mc": [
+            "CHOICE_2C"
+          ],
+          "q3_mc": [
+            "CHOICE_3A"
+          ],
+          "q4_mc": [
+            "CHOICE_4C"
+          ]
+        },
+        "item_coding": {
+          "q1": 1,
+          "q2": 1,
+          "q3": 1,
+          "q4": 1,
+          "q1_mc": 1,
+          "q2_mc": 1,
+          "q3_mc": 1,
+          "q4_mc": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "instructions": "Next, you will be asked to answer several logic and math problems. They can be difficult so read the problem carefully and try to determine your answer without guessing. Do not use a calculator but feel free to use scratch paper for notes. Press any key to begin.",
+      "Q1": "Out of 1,000 people in a small town 500 are members of a choir. Out of these 500 members in the choir 100 are men. Out of the 500 inhabitants that are not in the choir 300 are men. What is the probability that a randomly drawn man is a member of the choir? Please indicate the probability in percent.",
+      "Q2": "Imagine we are throwing a five-sided die 50 times. On average, out of these 50 throws how many times would this five-sided die show an odd number (1, 3 or 5)?",
+      "Q3": "Imagine we are throwing a loaded die (6 sides). The probability that the die shows a 6 is twice as high as the probability of each of the other numbers. On average, out of these 70 throws how many times would the die show the number 6?",
+      "Q4": "In a forest 20% of mushrooms are red, 50% brown and 30% white. A red mushroom is poisonous with a probability of 20%. A mushroom that is not red is poisonous with a probability of 5%. What is the probability that a poisonous mushroom in the forest is red? Please indicate the probability in percent.",
+      "CHOICE_1A": "a) 10%",
+      "CHOICE_1B": "b) 25%",
+      "CHOICE_1C": "c) 40%",
+      "CHOICE_1D": "d) None of the above",
+      "CHOICE_2A": "a) 5 out of 50 throws",
+      "CHOICE_2B": "b) 25 out of 50 throws",
+      "CHOICE_2C": "c) 30 out of 50 throws",
+      "CHOICE_2D": "d) None of the above",
+      "CHOICE_3A": "a) 20 out of 70 throws",
+      "CHOICE_3B": "b) 23 out of 70 throws",
+      "CHOICE_3C": "c) 35 out of 70 throws",
+      "CHOICE_3D": "d) None of the above",
+      "CHOICE_4A": "a) 4%",
+      "CHOICE_4B": "b) 20%",
+      "CHOICE_4C": "c) 50%",
+      "CHOICE_4D": "d) None of the above",
+      "debrief": "Thank you for participating."
+    }
+  }
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenScales Runner</title>
+  <link rel="stylesheet" href="scale-runner.css">
+  <style>
+    /* Page-level reset — keeps the runner centered on a neutral background */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin:     0;
+      padding:    0;
+      min-height: 100%;
+      background: #f3f4f6;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    #runner {
+      min-height: 100vh;
+      background: #ffffff;
+      box-shadow: 0 0 0 1px #e5e7eb;
+    }
+    /* Config error page */
+    #config-error {
+      max-width:  600px;
+      margin:     4rem auto;
+      padding:    2rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.1);
+      display: none;
+    }
+    #config-error h2 { color: #dc2626; margin-top: 0; }
+    #config-error code {
+      background: #f3f4f6;
+      padding:    2px 6px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    #config-error table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+    #config-error th, #config-error td {
+      text-align: left; padding: 0.4rem 0.6rem;
+      border-bottom: 1px solid #e5e7eb; font-size: 0.9rem;
+    }
+    #config-error th { font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<div id="runner"></div>
+<div id="config-error">
+  <h2>Configuration Error</h2>
+  <p>Either <code>osd</code> (a URL to a <code>.osd</code> bundle) or <code>scale</code> is required.</p>
+
+  <p><strong>Option A — remote .osd bundle</strong> (OSF, GitHub, GitLab, personal site):</p>
+  <pre><code>scale-runner.html?osd=https://osf.io/abc123/download&amp;lang=en&amp;participant=p001</code></pre>
+
+  <p><strong>Option B — locally-hosted split files</strong>:</p>
+  <pre><code>scale-runner.html?scale=PHQ9&amp;base=../scales&amp;participant=test001</code></pre>
+
+  <h3>All URL Parameters</h3>
+  <table>
+    <thead>
+      <tr><th>Parameter</th><th>Required</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>osd</code></td><td>One of <code>osd</code> or <code>scale</code></td><td>Full URL to a <code>.osd</code> bundle file. Works with OSF, GitHub raw, GitLab raw, or any web server. When provided, <code>scale</code> and <code>base</code> are ignored.</td></tr>
+      <tr><td><code>scale</code></td><td>One of <code>osd</code> or <code>scale</code></td><td>Scale code when using locally-hosted split files (e.g. <code>PHQ9</code>).</td></tr>
+      <tr><td><code>base</code></td><td>No</td><td>Base URL for split-file scale directories (default: <code>../scales</code>). Ignored when <code>osd</code> is set.</td></tr>
+      <tr><td><code>participant</code></td><td>No</td><td>Participant ID (default: random)</td></tr>
+      <tr><td><code>lang</code></td><td>No</td><td>Language code (default: <code>en</code>). Falls back to <code>en</code> if the requested language is not in the bundle.</td></tr>
+      <tr><td><code>collect</code></td><td>No</td><td>POST endpoint URL for saving results (e.g. <code>server/collect.php</code>)</td></tr>
+      <tr><td><code>token</code></td><td>No</td><td>peblhub authentication token</td></tr>
+      <tr><td><code>redirect</code></td><td>No</td><td>URL to redirect to after completion</td></tr>
+      <tr><td><code>demo</code></td><td>No</td><td>Demo mode — disables data saving; pass <code>demo=1</code></td></tr>
+      <tr><td><code>showtitle</code></td><td>No</td><td>Show scale name in header (default: <code>1</code>); pass <code>showtitle=0</code> to hide</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<script src="scale-runner.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  // ── Parse URL params ────────────────────────────────────────
+  const params   = new URLSearchParams(window.location.search);
+  const osd      = params.get('osd')         || '';   // full URL to a .osd bundle
+  const scale    = params.get('scale')       || '';   // scale code for split-file mode
+  const lang     = params.get('lang')        || params.get('language') || 'en';
+  const collect  = params.get('collect')     || params.get('collectURL') || '';
+  const token    = params.get('token')       || '';
+  const redirect = params.get('redirect')    || '';
+  const base     = params.get('base')        || '../scales';
+  const demo     = params.get('demo') === '1' || params.has('demo');
+  const showTitle = params.get('showtitle') !== '0';
+
+  // participant: use provided, or generate a random one for testing
+  let participant = params.get('participant') || params.get('subnum') || '';
+  if (!participant) {
+    participant = 'anon_' + Math.random().toString(36).slice(2, 10);
+  }
+
+  // Collect any extra params starting with "param_" to pass as scale params
+  const scaleParams = {};
+  for (const [k, v] of params.entries()) {
+    if (k.startsWith('param_')) {
+      scaleParams[k.slice(6)] = v;
+    }
+  }
+
+  // ── Validate ─────────────────────────────────────────────────
+  if (!osd && !scale) {
+    document.getElementById('runner').style.display = 'none';
+    document.getElementById('config-error').style.display = 'block';
+    return;
+  }
+
+  // ── Derive display title ──────────────────────────────────────
+  // For .osd mode the scale name comes from the bundle after load;
+  // use the filename stem as a placeholder until then.
+  const displayCode = scale || (osd ? osd.split('/').pop().replace(/\.osd$/i, '') : 'scale');
+  document.title = showTitle ? displayCode + ' — OpenScales' : 'Survey — OpenScales';
+  document.documentElement.lang = lang;
+
+  // ── Mount runner ─────────────────────────────────────────────
+  const container = document.getElementById('runner');
+
+  ScaleRunner.mount(container, {
+    // .osd bundle mode (remote URL) — osdURL takes precedence over scale+baseURL
+    ...(osd ? { osdURL: osd } : { scale, baseURL: base }),
+    participant,
+    language:   lang,
+    collectURL: (demo || !collect) ? null : collect,
+    token:      token || null,
+    demo:       demo,
+    showTitle:  showTitle,
+    params:     scaleParams,
+
+    onComplete: function (detail) {
+      // peblTestComplete is also dispatched on document by scale-runner.js.
+      // This callback is for additional shell-level handling.
+
+      if (redirect) {
+        // Append participant + status to redirect URL
+        const url = new URL(redirect, window.location.href);
+        url.searchParams.set('participant', participant);
+        url.searchParams.set('status', detail.status);
+        setTimeout(() => { window.location.href = url.toString(); }, 1500);
+      }
+
+      // Expose raw data for debugging
+      if (window.console && container._scaleData) {
+        console.group('ScaleRunner — completed');
+        console.log('Scores:',  detail.scores);
+        console.log('CSV (individual):',
+          (container._scaleData.csvLines || []).join('\n'));
+        console.log('CSV (pooled header):',
+          container._scaleData.pooledHdr);
+        console.log('CSV (pooled line):',
+          container._scaleData.pooledLine);
+        console.groupEnd();
+      }
+    }
+  });
+
+  // ── Listen for peblTestComplete (chain integration) ──────────
+  document.addEventListener('peblTestComplete', function (e) {
+    // peblhub chain shells (chain-launcher.html etc.) listen for this event
+    // on document and use it to advance to the next test in the chain.
+    // No extra work needed here — the event is already dispatched by the runner.
+    console.log('peblTestComplete fired:', e.detail);
+  });
+
+})();
+</script>
+</body>
+</html>

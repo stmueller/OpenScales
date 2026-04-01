@@ -1,0 +1,410 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Pediatric Quality of Life Inventory Generic Core Scales (Child Self-Report, Ages 8–12)",
+      "code": "PedsQL-23",
+      "abbreviation": "PedsQL-23",
+      "description": "23-item self-report measure of health-related quality of life for children aged 8–12 years. Covers 4 dimensions: Physical Functioning (8 items), Emotional Functioning (5 items), Social Functioning (5 items), and School Functioning (5 items). Response scale: 0=Never a problem to 4=Almost always a problem. Items are reverse-scored and linearly transformed to a 0–100 scale: (4 − response) / 4 × 100. Higher scores indicate better quality of life. A Total Score is the mean of all 23 items; a Physical Health Summary Score is the Physical Functioning subscale; a Psychosocial Health Summary Score is the mean of Emotional, Social, and School Functioning items. NOTE: Parallel parent-proxy report forms exist for children ages 2–18. Disease-specific PedsQL modules (e.g., asthma, cancer, diabetes) are available separately.",
+      "citation": "Varni, J.W., Seid, M., & Rode, C.A. (1999). The PedsQL: Measurement model for the Pediatric Quality of Life Inventory. Medical Care, 37(2), 126–139. https://doi.org/10.1097/00005650-199902000-00003",
+      "license": "Public Domain",
+      "version": "4.0",
+      "url": "https://www.rand.org/health-care/surveys_tools/pedsql.html",
+      "domain": "Quality of Life",
+      "license_explanation": "RAND Corporation places their health survey instruments in the public domain. RAND explicitly states these instruments are available for use without permission or fee.",
+      "license_url": "https://www.rand.org/health-care/surveys_tools.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 0,
+      "max": 4,
+      "labels": [
+        "pedsql_r0",
+        "pedsql_r1",
+        "pedsql_r2",
+        "pedsql_r3",
+        "pedsql_r4"
+      ],
+      "question_head": "pedsql_question_head"
+    },
+    "dimensions": [
+      {
+        "id": "physical",
+        "name": "Physical Functioning",
+        "abbreviation": "PF",
+        "description": "Problems with physical activities. Items: pedsql1–pedsql8.",
+        "enabled_param": null
+      },
+      {
+        "id": "emotional",
+        "name": "Emotional Functioning",
+        "abbreviation": "EF",
+        "description": "Problems with emotions and feelings. Items: pedsql9–pedsql13.",
+        "enabled_param": null
+      },
+      {
+        "id": "social",
+        "name": "Social Functioning",
+        "abbreviation": "SF",
+        "description": "Problems with getting along with others. Items: pedsql14–pedsql18.",
+        "enabled_param": null
+      },
+      {
+        "id": "school",
+        "name": "School Functioning",
+        "abbreviation": "SCH",
+        "description": "Problems with school. Items: pedsql19–pedsql23.",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "pedsql1",
+        "text_key": "pedsql1",
+        "type": "likert",
+        "dimension": "physical"
+      },
+      {
+        "id": "pedsql2",
+        "text_key": "pedsql2",
+        "type": "likert",
+        "dimension": "physical"
+      },
+      {
+        "id": "pedsql3",
+        "text_key": "pedsql3",
+        "type": "likert",
+        "dimension": "physical"
+      },
+      {
+        "id": "pedsql4",
+        "text_key": "pedsql4",
+        "type": "likert",
+        "dimension": "physical"
+      },
+      {
+        "id": "pedsql5",
+        "text_key": "pedsql5",
+        "type": "likert",
+        "dimension": "physical"
+      },
+      {
+        "id": "pedsql6",
+        "text_key": "pedsql6",
+        "type": "likert",
+        "dimension": "physical"
+      },
+      {
+        "id": "pedsql7",
+        "text_key": "pedsql7",
+        "type": "likert",
+        "dimension": "physical"
+      },
+      {
+        "id": "pedsql8",
+        "text_key": "pedsql8",
+        "type": "likert",
+        "dimension": "physical"
+      },
+      {
+        "id": "pedsql9",
+        "text_key": "pedsql9",
+        "type": "likert",
+        "dimension": "emotional"
+      },
+      {
+        "id": "pedsql10",
+        "text_key": "pedsql10",
+        "type": "likert",
+        "dimension": "emotional"
+      },
+      {
+        "id": "pedsql11",
+        "text_key": "pedsql11",
+        "type": "likert",
+        "dimension": "emotional"
+      },
+      {
+        "id": "pedsql12",
+        "text_key": "pedsql12",
+        "type": "likert",
+        "dimension": "emotional"
+      },
+      {
+        "id": "pedsql13",
+        "text_key": "pedsql13",
+        "type": "likert",
+        "dimension": "emotional"
+      },
+      {
+        "id": "pedsql14",
+        "text_key": "pedsql14",
+        "type": "likert",
+        "dimension": "social"
+      },
+      {
+        "id": "pedsql15",
+        "text_key": "pedsql15",
+        "type": "likert",
+        "dimension": "social"
+      },
+      {
+        "id": "pedsql16",
+        "text_key": "pedsql16",
+        "type": "likert",
+        "dimension": "social"
+      },
+      {
+        "id": "pedsql17",
+        "text_key": "pedsql17",
+        "type": "likert",
+        "dimension": "social"
+      },
+      {
+        "id": "pedsql18",
+        "text_key": "pedsql18",
+        "type": "likert",
+        "dimension": "social"
+      },
+      {
+        "id": "pedsql19",
+        "text_key": "pedsql19",
+        "type": "likert",
+        "dimension": "school"
+      },
+      {
+        "id": "pedsql20",
+        "text_key": "pedsql20",
+        "type": "likert",
+        "dimension": "school"
+      },
+      {
+        "id": "pedsql21",
+        "text_key": "pedsql21",
+        "type": "likert",
+        "dimension": "school"
+      },
+      {
+        "id": "pedsql22",
+        "text_key": "pedsql22",
+        "type": "likert",
+        "dimension": "school"
+      },
+      {
+        "id": "pedsql23",
+        "text_key": "pedsql23",
+        "type": "likert",
+        "dimension": "school"
+      }
+    ],
+    "scoring": {
+      "physical": {
+        "method": "mean_coded",
+        "items": [
+          "pedsql1",
+          "pedsql2",
+          "pedsql3",
+          "pedsql4",
+          "pedsql5",
+          "pedsql6",
+          "pedsql7",
+          "pedsql8"
+        ],
+        "description": "Mean of 8 physical functioning items. Reverse-coded (item_coding=-1: 4 − response) then transform to 0–100: mean_reversed × 25. Higher = better physical functioning.",
+        "item_coding": {
+          "pedsql1": -1,
+          "pedsql2": -1,
+          "pedsql3": -1,
+          "pedsql4": -1,
+          "pedsql5": -1,
+          "pedsql6": -1,
+          "pedsql7": -1,
+          "pedsql8": -1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ],
+        "norms": {
+          "source": "Varni et al. (2001). PedsQL 4.0 Generic Core Scales. Assessment, 8(3), 257–265. Healthy US children ages 8–12 (child self-report): mean ≈ 87.5 (SD 14.3).",
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 69,
+              "label": "At risk for impaired physical functioning"
+            },
+            {
+              "min": 70,
+              "max": 100,
+              "label": "Within typical range"
+            }
+          ]
+        }
+      },
+      "emotional": {
+        "method": "mean_coded",
+        "items": [
+          "pedsql9",
+          "pedsql10",
+          "pedsql11",
+          "pedsql12",
+          "pedsql13"
+        ],
+        "description": "Mean of 5 emotional functioning items. Reverse-coded (item_coding=-1: 4 − response) then transform to 0–100: mean_reversed × 25. Higher = better emotional functioning.",
+        "item_coding": {
+          "pedsql9": -1,
+          "pedsql10": -1,
+          "pedsql11": -1,
+          "pedsql12": -1,
+          "pedsql13": -1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ],
+        "norms": {
+          "source": "Varni et al. (2001). Healthy US children ages 8–12 (child self-report): mean ≈ 76.5 (SD 18.3).",
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 69,
+              "label": "At risk for impaired emotional functioning"
+            },
+            {
+              "min": 70,
+              "max": 100,
+              "label": "Within typical range"
+            }
+          ]
+        }
+      },
+      "social": {
+        "method": "mean_coded",
+        "items": [
+          "pedsql14",
+          "pedsql15",
+          "pedsql16",
+          "pedsql17",
+          "pedsql18"
+        ],
+        "description": "Mean of 5 social functioning items. Reverse-coded (item_coding=-1: 4 − response) then transform to 0–100: mean_reversed × 25. Higher = better social functioning.",
+        "item_coding": {
+          "pedsql14": -1,
+          "pedsql15": -1,
+          "pedsql16": -1,
+          "pedsql17": -1,
+          "pedsql18": -1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ],
+        "norms": {
+          "source": "Varni et al. (2001). Healthy US children ages 8–12 (child self-report): mean ≈ 86.4 (SD 16.4).",
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 69,
+              "label": "At risk for impaired social functioning"
+            },
+            {
+              "min": 70,
+              "max": 100,
+              "label": "Within typical range"
+            }
+          ]
+        }
+      },
+      "school": {
+        "method": "mean_coded",
+        "items": [
+          "pedsql19",
+          "pedsql20",
+          "pedsql21",
+          "pedsql22",
+          "pedsql23"
+        ],
+        "description": "Mean of 5 school functioning items. Reverse-coded (item_coding=-1: 4 − response) then transform to 0–100: mean_reversed × 25. Higher = better school functioning.",
+        "item_coding": {
+          "pedsql19": -1,
+          "pedsql20": -1,
+          "pedsql21": -1,
+          "pedsql22": -1,
+          "pedsql23": -1
+        },
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ],
+        "norms": {
+          "source": "Varni et al. (2001). Healthy US children ages 8–12 (child self-report): mean ≈ 77.2 (SD 16.5).",
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 69,
+              "label": "At risk for impaired school functioning"
+            },
+            {
+              "min": 70,
+              "max": 100,
+              "label": "Within typical range"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "pedsql_question_head": "In the past ONE month, how much of a problem has this been for you?",
+      "pedsql_r0": "Never",
+      "pedsql_r1": "Almost never",
+      "pedsql_r2": "Sometimes",
+      "pedsql_r3": "Often",
+      "pedsql_r4": "Almost always",
+      "pedsql_physical_head": "About my health and activities (check one number):",
+      "pedsql1": "It is hard for me to walk more than one block",
+      "pedsql2": "It is hard for me to run",
+      "pedsql3": "It is hard for me to do sports activity or exercise",
+      "pedsql4": "It is hard for me to lift something heavy",
+      "pedsql5": "It is hard for me to take a bath or shower by myself",
+      "pedsql6": "It is hard for me to do chores around the house",
+      "pedsql7": "I hurt or ache",
+      "pedsql8": "I have low energy",
+      "pedsql_emotional_head": "About my feelings (check one number):",
+      "pedsql9": "I feel afraid or scared",
+      "pedsql10": "I feel sad or blue",
+      "pedsql11": "I feel angry",
+      "pedsql12": "I have trouble sleeping",
+      "pedsql13": "I worry about what will happen to me",
+      "pedsql_social_head": "About how I get along with other people (check one number):",
+      "pedsql14": "I have trouble getting along with other kids",
+      "pedsql15": "Other kids do not want to be my friend",
+      "pedsql16": "Other kids tease me",
+      "pedsql17": "I cannot do things that other kids my age can do",
+      "pedsql18": "It is hard to keep up when I play with other kids",
+      "pedsql_school_head": "About school (check one number):",
+      "pedsql19": "It is hard to pay attention in class",
+      "pedsql20": "I forget things",
+      "pedsql21": "I have trouble keeping up with my schoolwork",
+      "pedsql22": "I miss school because of not feeling well",
+      "pedsql23": "I miss school to go to the doctor or hospital",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Use of Glasses and/or Contact Lenses as a Child",
+      "code": "PX111302",
+      "abbreviation": "PX111302",
+      "description": "The respondent is asked a series of 5 questions to assess their childs current and past use of glasses and contact lenses, duration of use, and reason for use.",
+      "domain": "Vision & Eye Health",
+      "citation": "Ip JM, Saw SM, Rose KA, Morgan IG, Kifley A, Wang JJ, Mitchell P. (2008). Role of Near Work in Myopia: Findings in a Sample of Australian School Children. Invest Ophthalmol Vis Sci , 49(7):2903-10. Ojaimi E, Rose KA, Smith W, Morgan IG, Martin FJ, Mitchell P. (2005). Methods for a population-based study of myopia and other eye conditions in school children: the Sydney Myopia Study. Ophthalmic Epidemiol , 12(1):59-69. [PhenX: https://www.phenxtoolkit.org/protocols/view/111302]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/111302"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "glasses_contact_lenses_correct_currently",
+        "text_key": "glasses_contact_lenses_correct_currently",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "glasses_contact_lenses_correct_currently_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "glasses_contact_lenses_correct_currently_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "glasses_contact_lenses_correct_currently_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "glasses_contact_lenses_frequency_currently",
+        "text_key": "glasses_contact_lenses_frequency_currently",
+        "type": "multi",
+        "visible_when": {
+          "item": "glasses_contact_lenses_correct_currently",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "options": [
+          {
+            "text_key": "glasses_contact_lenses_frequency_currently_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "glasses_contact_lenses_frequency_currently_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "glasses_contact_lenses_frequency_currently_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "glasses_contact_lenses_frequency_currently_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "glasses_contact_lenses_frequency_currently_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "glasses_contact_lenses_astigmatism",
+        "text_key": "glasses_contact_lenses_astigmatism",
+        "type": "multi",
+        "visible_when": {
+          "item": "glasses_contact_lenses_correct_currently",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "options": [
+          {
+            "text_key": "glasses_contact_lenses_astigmatism_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "glasses_contact_lenses_astigmatism_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "glasses_contact_lenses_astigmatism_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "glasses_contact_lenses_short_sightedness_myopia",
+        "text_key": "glasses_contact_lenses_short_sightedness_myopia",
+        "type": "multi",
+        "visible_when": {
+          "item": "glasses_contact_lenses_correct_currently",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "options": [
+          {
+            "text_key": "glasses_contact_lenses_short_sightedness_myopia_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "glasses_contact_lenses_short_sightedness_myopia_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "glasses_contact_lenses_short_sightedness_myopia_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "glasses_contact_lenses_long_sightedness_hyperopia",
+        "text_key": "glasses_contact_lenses_long_sightedness_hyperopia",
+        "type": "multi",
+        "visible_when": {
+          "item": "glasses_contact_lenses_correct_currently",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "options": [
+          {
+            "text_key": "glasses_contact_lenses_long_sightedness_hyperopia_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "glasses_contact_lenses_long_sightedness_hyperopia_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "glasses_contact_lenses_long_sightedness_hyperopia_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "glasses_contact_lenses_other",
+        "text_key": "glasses_contact_lenses_other",
+        "type": "multi",
+        "visible_when": {
+          "item": "glasses_contact_lenses_correct_currently",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "options": [
+          {
+            "text_key": "glasses_contact_lenses_other_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "glasses_contact_lenses_other_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "glasses_contact_lenses_other_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "glasses_contact_lenses_other_specify",
+        "text_key": "glasses_contact_lenses_other_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "glasses_contact_lenses_correct_currently",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "id": "glasses_contact_lenses_no_longer_need",
+        "text_key": "glasses_contact_lenses_no_longer_need",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "glasses_contact_lenses_no_longer_need_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "glasses_contact_lenses_no_longer_need_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "glasses_contact_lenses_no_longer_need_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "glasses_contact_lenses_first_date",
+        "text_key": "glasses_contact_lenses_first_date",
+        "type": "short",
+        "visible_when": {
+          "item": "glasses_contact_lenses_no_longer_need",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "glasses_contact_lenses_first_age",
+        "text_key": "glasses_contact_lenses_first_age",
+        "type": "short",
+        "visible_when": {
+          "item": "glasses_contact_lenses_no_longer_need",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "glasses_contact_lenses_stop_date",
+        "text_key": "glasses_contact_lenses_stop_date",
+        "type": "short",
+        "visible_when": {
+          "item": "glasses_contact_lenses_no_longer_need",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "glasses_contact_lenses_stop_reason",
+        "text_key": "glasses_contact_lenses_stop_reason",
+        "type": "short",
+        "visible_when": {
+          "item": "glasses_contact_lenses_no_longer_need",
+          "operator": "equals",
+          "value": 2
+        }
+      },
+      {
+        "id": "glasses_contact_lenses_frequency_before",
+        "text_key": "glasses_contact_lenses_frequency_before",
+        "type": "multi",
+        "visible_when": {
+          "item": "glasses_contact_lenses_no_longer_need",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "glasses_contact_lenses_frequency_before_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "glasses_contact_lenses_frequency_before_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "glasses_contact_lenses_frequency_before_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "glasses_contact_lenses_frequency_before_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "glasses_contact_lenses_frequency_before_opt_5",
+            "value": 5
+          }
+        ]
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "glasses_contact_lenses_correct_currently": "Does your child currently wear glasses or contact lenses to correct, or partially correct, his/her eyesight?",
+      "glasses_contact_lenses_correct_currently_opt_1": "No",
+      "glasses_contact_lenses_correct_currently_opt_2": "Glasses",
+      "glasses_contact_lenses_correct_currently_opt_3": "Contact lenses",
+      "glasses_contact_lenses_frequency_currently": "How often are the glasses or contact lenses worn?",
+      "glasses_contact_lenses_frequency_currently_opt_1": "All the time",
+      "glasses_contact_lenses_frequency_currently_opt_2": "Most of the time",
+      "glasses_contact_lenses_frequency_currently_opt_3": "Sometimes",
+      "glasses_contact_lenses_frequency_currently_opt_4": "Hardly ever",
+      "glasses_contact_lenses_frequency_currently_opt_5": "Only when eyes feel tired",
+      "glasses_contact_lenses_astigmatism": "Were the glasses/contact lenses prescribed for Astigmatism?",
+      "glasses_contact_lenses_astigmatism_opt_1": "Yes",
+      "glasses_contact_lenses_astigmatism_opt_2": "No",
+      "glasses_contact_lenses_astigmatism_opt_3": "DK",
+      "glasses_contact_lenses_short_sightedness_myopia": "Were the glasses/contact lenses prescribed for Short-sightedness/myopia?",
+      "glasses_contact_lenses_short_sightedness_myopia_opt_1": "Yes",
+      "glasses_contact_lenses_short_sightedness_myopia_opt_2": "No",
+      "glasses_contact_lenses_short_sightedness_myopia_opt_3": "DK",
+      "glasses_contact_lenses_long_sightedness_hyperopia": "Were the glasses/contact lenses prescribed for Long-sightedness/hyperopia?",
+      "glasses_contact_lenses_long_sightedness_hyperopia_opt_1": "Yes",
+      "glasses_contact_lenses_long_sightedness_hyperopia_opt_2": "No",
+      "glasses_contact_lenses_long_sightedness_hyperopia_opt_3": "DK",
+      "glasses_contact_lenses_other": "Were the glasses/contact lenses prescribed for Other?",
+      "glasses_contact_lenses_other_opt_1": "Yes",
+      "glasses_contact_lenses_other_opt_2": "No",
+      "glasses_contact_lenses_other_opt_3": "DK",
+      "glasses_contact_lenses_other_specify": "Specify other glasses/contact lenses prescribed.",
+      "glasses_contact_lenses_no_longer_need": "Has your child worn glasses or contact lenses in the past, but no longer needs to wear them?",
+      "glasses_contact_lenses_no_longer_need_opt_1": "No",
+      "glasses_contact_lenses_no_longer_need_opt_2": "Yes",
+      "glasses_contact_lenses_no_longer_need_opt_3": "Unsure",
+      "glasses_contact_lenses_first_date": "Please state the date when first prescribed.",
+      "glasses_contact_lenses_first_age": "Please state the age when first prescribed.",
+      "glasses_contact_lenses_stop_date": "Date stopped?",
+      "glasses_contact_lenses_stop_reason": "Reason stopped?",
+      "glasses_contact_lenses_frequency_before": "How often did you child wear their glasses/contact lenses?",
+      "glasses_contact_lenses_frequency_before_opt_1": "All the time",
+      "glasses_contact_lenses_frequency_before_opt_2": "Most of the time",
+      "glasses_contact_lenses_frequency_before_opt_3": "Sometimes",
+      "glasses_contact_lenses_frequency_before_opt_4": "Hardly ever",
+      "glasses_contact_lenses_frequency_before_opt_5": "Only when eyes feel tired"
+    }
+  }
+}

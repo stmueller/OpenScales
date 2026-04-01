@@ -1,0 +1,94 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Patient Health Questionnaire-2",
+      "code": "PHQ2",
+      "abbreviation": "PHQ-2",
+      "description": "2-item ultra-brief depression screening tool. Items 1-2 of the PHQ-9. Score ≥3 = positive screen for depression.",
+      "citation": "Kroenke, K., Spitzer, R. L., & Williams, J. B. (2003). The Patient Health Questionnaire-2: Validity of a two-item depression screener. Medical Care, 41(11), 1284-1292. https://doi.org/10.1097/01.MLR.0000093487.78664.3C",
+      "license": "free to use",
+      "license_explanation": "Pfizer released all PHQ and GAD-7 screeners without copyright restriction. The phqscreeners.com terms of use state: 'Content found at the PHQ Screeners site is expressly exempted from Pfizer's general copyright restrictions; content found on the PHQ Screeners site is free for download and use as stated within the PHQ Screeners site.' No permission is required to reproduce, translate, display, or distribute.",
+      "license_url": "https://www.phqscreeners.com/",
+      "version": "1.0",
+      "url": "https://doi.org/10.1097/01.MLR.0000093487.78664.3C"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "max": 3,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "depression",
+        "name": "Depression Screen"
+      }
+    ],
+    "items": [
+      {
+        "id": "phq2_1",
+        "text_key": "phq2_1",
+        "type": "likert"
+      },
+      {
+        "id": "phq2_2",
+        "text_key": "phq2_2",
+        "type": "likert"
+      }
+    ],
+    "scoring": {
+      "depression": {
+        "method": "sum_coded",
+        "items": [
+          "phq2_1",
+          "phq2_2"
+        ],
+        "description": "Sum of both items (0-6). Score ≥3 = positive screen for depression; recommend follow-up with PHQ-9.",
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 2,
+              "label": "Screen Negative"
+            },
+            {
+              "min": 3,
+              "max": 6,
+              "label": "Screen Positive — follow up with PHQ-9"
+            }
+          ]
+        },
+        "item_coding": {
+          "phq2_1": 1,
+          "phq2_2": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Not at all",
+      "likert_2": "Several days",
+      "likert_3": "More than half the days",
+      "likert_4": "Nearly every day",
+      "question_head": "Over the <b>last 2 weeks</b>, how often have you been bothered by any of the following problems?",
+      "phq2_1": "Little interest or pleasure in doing things",
+      "phq2_2": "Feeling down, depressed, or hopeless",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

@@ -1,0 +1,446 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Breast or Bottle Feeding Patterns",
+      "code": "PX080101",
+      "abbreviation": "PX080101",
+      "description": "These parent-reported, self-administered questions obtain information on the infants feeding schedule, frequency of adding supplemental foods, and feeding lengths.",
+      "domain": "Oral Health & Early Childhood",
+      "citation": "Warren, J. J., Weber-Gasparoni, K., Marshall, T. A., Drake, D. R., Dehkordi-Vakil, F., Dawson, D. V., & Tharp, K. M. (2009). A longitudinal study of dental caries risk among very young low SES children. Community Dentistry and Oral Epidemiology, 37 (2), 116–122. [PhenX: https://www.phenxtoolkit.org/protocols/view/80101]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/80101"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "items": [
+      {
+        "id": "feeding_frequency",
+        "text_key": "feeding_frequency",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "feeding_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "feeding_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "feeding_frequency_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "feeding_frequency_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "feeding_frequency_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "feeding_frequency_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "feeding_frequency_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "bed_with_feeding_frequency",
+        "text_key": "bed_with_feeding_frequency",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "bed_with_feeding_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "bed_with_feeding_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "bed_with_feeding_frequency_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "bed_with_feeding_frequency_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "bed_with_feeding_frequency_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "feeding_bottle_past_two_weeks",
+        "text_key": "feeding_bottle_past_two_weeks",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "feeding_bottle_past_two_weeks_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "feeding_bottle_past_two_weeks_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "feeding_bottle_vitamin_mineral",
+        "text_key": "feeding_bottle_vitamin_mineral",
+        "type": "multi",
+        "visible_when": {
+          "item": "feeding_bottle_past_two_weeks",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "feeding_bottle_vitamin_mineral_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "feeding_bottle_vitamin_mineral_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "feeding_bottle_vitamin_mineral_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "feeding_bottle_vitamin_mineral_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "feeding_bottle_vitamin_mineral_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "feeding_bottle_vitamin_mineral_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "feeding_bottle_baby_cereal",
+        "text_key": "feeding_bottle_baby_cereal",
+        "type": "multi",
+        "visible_when": {
+          "item": "feeding_bottle_past_two_weeks",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "feeding_bottle_baby_cereal_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "feeding_bottle_baby_cereal_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "feeding_bottle_baby_cereal_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "feeding_bottle_baby_cereal_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "feeding_bottle_baby_cereal_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "feeding_bottle_baby_cereal_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "feeding_bottle_sweetener",
+        "text_key": "feeding_bottle_sweetener",
+        "type": "multi",
+        "visible_when": {
+          "item": "feeding_bottle_past_two_weeks",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "feeding_bottle_sweetener_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "feeding_bottle_sweetener_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "feeding_bottle_sweetener_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "feeding_bottle_sweetener_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "feeding_bottle_sweetener_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "feeding_bottle_sweetener_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "feeding_bottle_medicine",
+        "text_key": "feeding_bottle_medicine",
+        "type": "multi",
+        "visible_when": {
+          "item": "feeding_bottle_past_two_weeks",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "feeding_bottle_medicine_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "feeding_bottle_medicine_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "feeding_bottle_medicine_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "feeding_bottle_medicine_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "feeding_bottle_medicine_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "feeding_bottle_medicine_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "feeding_bottle_other",
+        "text_key": "feeding_bottle_other",
+        "type": "multi",
+        "visible_when": {
+          "item": "feeding_bottle_past_two_weeks",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "feeding_bottle_other_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "feeding_bottle_other_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "feeding_bottle_other_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "feeding_bottle_other_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "feeding_bottle_other_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "feeding_bottle_other_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "feeding_bottle_other_item",
+        "text_key": "feeding_bottle_other_item",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "feeding_bottle_other",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "feeding_bottle_other",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "feeding_bottle_other",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "feeding_bottle_other",
+              "operator": "equals",
+              "value": 5
+            },
+            {
+              "item": "feeding_bottle_other",
+              "operator": "equals",
+              "value": 6
+            }
+          ]
+        }
+      },
+      {
+        "id": "breastfed_fed_past_7_days",
+        "text_key": "breastfed_fed_past_7_days",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "breastfed_fed_past_7_days_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breastfed_fed_past_7_days_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "breastfeeding_session_length",
+        "text_key": "breastfeeding_session_length",
+        "type": "multi",
+        "visible_when": {
+          "item": "breastfed_fed_past_7_days",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "breastfeeding_session_length_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breastfeeding_session_length_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "breastfeeding_session_length_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "breastfeeding_session_length_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "breastfeeding_session_length_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "breastfeeding_session_length_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "pumped_breast_milk_times",
+        "text_key": "pumped_breast_milk_times",
+        "type": "short",
+        "visible_when": {
+          "item": "breastfed_fed_past_7_days",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "feeding_frequency": "In the past 7 days, how many times was your baby usually fed in a 24-hour period? Please include breast feedings, bottles, meals, snacks, and night-time feedings.",
+      "feeding_frequency_opt_1": "1 to 2",
+      "feeding_frequency_opt_2": "3",
+      "feeding_frequency_opt_3": "4",
+      "feeding_frequency_opt_4": "5",
+      "feeding_frequency_opt_5": "6",
+      "feeding_frequency_opt_6": "7",
+      "feeding_frequency_opt_7": "8 or more",
+      "bed_with_feeding_frequency": "During the past 2 weeks, how often was your baby put to bed with a bottle of formula, breast milk, juice drink, or any other kind of milk?",
+      "bed_with_feeding_frequency_opt_1": "At most bedtimes, including naps",
+      "bed_with_feeding_frequency_opt_2": "At most night bedtimes, but not naps",
+      "bed_with_feeding_frequency_opt_3": "At most naps, but not night bedtimes",
+      "bed_with_feeding_frequency_opt_4": "Only occasionally at bedtimes, including naps",
+      "bed_with_feeding_frequency_opt_5": "Never",
+      "feeding_bottle_past_two_weeks": "Did you give your baby a bottle in the past 2 weeks?",
+      "feeding_bottle_past_two_weeks_opt_1": "Yes",
+      "feeding_bottle_past_two_weeks_opt_2": "No",
+      "feeding_bottle_vitamin_mineral": "How often have you added each of the following items to your baby's bottle or to pumped (or expressed) breast milk in the past 2 weeks?  Vitamins or minerals:",
+      "feeding_bottle_vitamin_mineral_opt_1": "Never",
+      "feeding_bottle_vitamin_mineral_opt_2": "Only Rarely",
+      "feeding_bottle_vitamin_mineral_opt_3": "Every Few Days",
+      "feeding_bottle_vitamin_mineral_opt_4": "About Once a Day",
+      "feeding_bottle_vitamin_mineral_opt_5": "At Most Feedings",
+      "feeding_bottle_vitamin_mineral_opt_6": "Every Feeding",
+      "feeding_bottle_baby_cereal": "How often have you added each of the following items to your baby's bottle or to pumped (or expressed) breast milk in the past 2 weeks?  Baby Cereal:",
+      "feeding_bottle_baby_cereal_opt_1": "Never",
+      "feeding_bottle_baby_cereal_opt_2": "Only Rarely",
+      "feeding_bottle_baby_cereal_opt_3": "Every Few Days",
+      "feeding_bottle_baby_cereal_opt_4": "About Once a Day",
+      "feeding_bottle_baby_cereal_opt_5": "At Most Feedings",
+      "feeding_bottle_baby_cereal_opt_6": "Every Feeding",
+      "feeding_bottle_sweetener": "How often have you added each of the following items to your baby's bottle or to pumped (or expressed) breast milk in the past 2 weeks?  Sweetener:",
+      "feeding_bottle_sweetener_opt_1": "Never",
+      "feeding_bottle_sweetener_opt_2": "Only Rarely",
+      "feeding_bottle_sweetener_opt_3": "Every Few Days",
+      "feeding_bottle_sweetener_opt_4": "About Once a Day",
+      "feeding_bottle_sweetener_opt_5": "At Most Feedings",
+      "feeding_bottle_sweetener_opt_6": "Every Feeding",
+      "feeding_bottle_medicine": "How often have you added each of the following items to your baby's bottle or to pumped (or expressed) breast milk in the past 2 weeks?  Medicine:",
+      "feeding_bottle_medicine_opt_1": "Never",
+      "feeding_bottle_medicine_opt_2": "Only Rarely",
+      "feeding_bottle_medicine_opt_3": "Every Few Days",
+      "feeding_bottle_medicine_opt_4": "About Once a Day",
+      "feeding_bottle_medicine_opt_5": "At Most Feedings",
+      "feeding_bottle_medicine_opt_6": "Every Feeding",
+      "feeding_bottle_other": "How often have you added each of the following items to your baby's bottle or to pumped (or expressed) breast milk in the past 2 weeks?  Other:",
+      "feeding_bottle_other_opt_1": "Never",
+      "feeding_bottle_other_opt_2": "Only Rarely",
+      "feeding_bottle_other_opt_3": "Every Few Days",
+      "feeding_bottle_other_opt_4": "About Once a Day",
+      "feeding_bottle_other_opt_5": "At Most Feedings",
+      "feeding_bottle_other_opt_6": "Every Feeding",
+      "feeding_bottle_other_item": "Specify the item(s) added.",
+      "breastfed_fed_past_7_days": "WAS YOUR BABY WAS BREASTFED OR FED BREAST MILK IN THE PAST 7 DAYS?",
+      "breastfed_fed_past_7_days_opt_1": "Yes",
+      "breastfed_fed_past_7_days_opt_2": "No",
+      "breastfeeding_session_length": "IF YOUR BABY WAS BREASTFED OR FED BREAST MILK IN THE PAST 7 DAYS, About how long did an average breastfeeding session last?",
+      "breastfeeding_session_length_opt_1": "Less than 10 minutes",
+      "breastfeeding_session_length_opt_2": "10 to 19 minutes",
+      "breastfeeding_session_length_opt_3": "20 to 29 minutes",
+      "breastfeeding_session_length_opt_4": "30 to 39 minutes",
+      "breastfeeding_session_length_opt_5": "40 to 49 minutes",
+      "breastfeeding_session_length_opt_6": "50 or more minutes",
+      "pumped_breast_milk_times": "How many times in the past 7 days was your baby fed pumped breast milk to drink? (Write in 0 if your baby was not fed pumped milk to drink.)"
+    }
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Scale of Positive and Negative Experience",
+      "code": "SPANE",
+      "version": "1.0",
+      "description": "12-item scale measuring positive (SPANE-P) and negative (SPANE-N) affect over the past four weeks, yielding an affect balance score (SPANE-B).",
+      "citation": "Diener, E., Wirtz, D., Tov, W., Kim-Prieto, C., Choi, D., Oishi, S., & Biswas-Diener, R. (2010). New well-being measures: Short scales to assess flourishing and positive and negative feelings. Social Indicators Research, 97(2), 143–156. https://doi.org/10.1007/s11205-009-9493-y",
+      "license": "free to use",
+      "abbreviation": "SPANE",
+      "url": "https://www.psytoolkit.org/survey-library/spane.html",
+      "license_explanation": "The scale is copyrighted but you are free to use it without permission or charge by all professionals (researchers and practitioners) as long as you give credit to the authors of the scale. Copyright Ed Diener and Robert Biswas-Diener.",
+      "license_url": "https://labs.psychology.illinois.edu/~ediener/scales.html"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "SPANE_P",
+        "name": "Spane P"
+      },
+      {
+        "id": "SPANE_N",
+        "name": "Spane N"
+      },
+      {
+        "id": "SPANE_B",
+        "name": "Spane B"
+      }
+    ],
+    "items": [
+      {
+        "id": "spane1",
+        "text_key": "spane1",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "spane2",
+        "text_key": "spane2",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "spane3",
+        "text_key": "spane3",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "spane4",
+        "text_key": "spane4",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "spane5",
+        "text_key": "spane5",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "spane6",
+        "text_key": "spane6",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "spane7",
+        "text_key": "spane7",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "spane8",
+        "text_key": "spane8",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "spane9",
+        "text_key": "spane9",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "spane10",
+        "text_key": "spane10",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "spane11",
+        "text_key": "spane11",
+        "type": "likert",
+        "likert_points": 5
+      },
+      {
+        "id": "spane12",
+        "text_key": "spane12",
+        "type": "likert",
+        "likert_points": 5
+      }
+    ],
+    "scoring": {
+      "SPANE_P": {
+        "method": "sum_coded",
+        "items": [
+          "spane1",
+          "spane3",
+          "spane5",
+          "spane7",
+          "spane10",
+          "spane12"
+        ],
+        "item_coding": {
+          "spane1": 1,
+          "spane3": 1,
+          "spane5": 1,
+          "spane7": 1,
+          "spane10": 1,
+          "spane12": 1
+        }
+      },
+      "SPANE_N": {
+        "method": "sum_coded",
+        "items": [
+          "spane2",
+          "spane4",
+          "spane6",
+          "spane8",
+          "spane9",
+          "spane11"
+        ],
+        "item_coding": {
+          "spane2": 1,
+          "spane4": 1,
+          "spane6": 1,
+          "spane8": 1,
+          "spane9": 1,
+          "spane11": 1
+        }
+      },
+      "SPANE_B": {
+        "method": "mean_coded",
+        "items": [],
+        "description": "PsyToolkit calc: calc $SPANE_P - $SPANE_N"
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Rarely or Never",
+      "likert_2": "Rarely",
+      "likert_3": "Sometimes",
+      "likert_4": "Often",
+      "likert_5": "Very Often or Always",
+      "question_head": "Please think about what you have been doing and experiencing during the past four weeks. Then report how much you experienced each of the following feelings, using the scale below.",
+      "spane1": "Positive",
+      "spane2": "Negative",
+      "spane3": "Good",
+      "spane4": "Bad",
+      "spane5": "Pleasant",
+      "spane6": "Unpleasant",
+      "spane7": "Happy",
+      "spane8": "Sad",
+      "spane9": "Afraid",
+      "spane10": "Joyful",
+      "spane11": "Angry",
+      "spane12": "Contented",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

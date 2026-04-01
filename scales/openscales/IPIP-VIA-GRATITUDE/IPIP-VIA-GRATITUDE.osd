@@ -1,0 +1,154 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Gratitude",
+      "code": "IPIP-VIA-GRATITUDE",
+      "abbreviation": "IPIP-VIA-GRATITUDE",
+      "description": "IPIP representation of the VIA character strength 'Gratitude'. 8-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "gratitude",
+        "name": "Gratitude",
+        "abbreviation": "GRATITUDE",
+        "description": "IPIP VIA Gratitude subscale (8 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_101",
+        "text_key": "ipip_via_101",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_102",
+        "text_key": "ipip_via_102",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_103",
+        "text_key": "ipip_via_103",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_104",
+        "text_key": "ipip_via_104",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_105",
+        "text_key": "ipip_via_105",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_106",
+        "text_key": "ipip_via_106",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_107",
+        "text_key": "ipip_via_107",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_108",
+        "text_key": "ipip_via_108",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "gratitude": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_101",
+          "ipip_via_102",
+          "ipip_via_103",
+          "ipip_via_104",
+          "ipip_via_105",
+          "ipip_via_106",
+          "ipip_via_107",
+          "ipip_via_108"
+        ],
+        "description": "Mean of 8 items (range 1–5; higher = stronger Gratitude). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_101": 1,
+          "ipip_via_102": -1,
+          "ipip_via_103": 1,
+          "ipip_via_104": 1,
+          "ipip_via_105": 1,
+          "ipip_via_106": -1,
+          "ipip_via_107": 1,
+          "ipip_via_108": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_101": "Am an extremely grateful person.",
+      "ipip_via_102": "Do not see the need to acknowledge others who are good to me.",
+      "ipip_via_103": "Express my thanks to those who care about me.",
+      "ipip_via_104": "Feel a profound sense of appreciation every day.",
+      "ipip_via_105": "Feel thankful for what I have received in life.",
+      "ipip_via_106": "Find few things in my life to be grateful for.",
+      "ipip_via_107": "Have been richly blessed in my life.",
+      "ipip_via_108": "Stop to count my blessings."
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Spirituality/Religiousness",
+      "code": "IPIP-VIA-SPIRITUALITY",
+      "abbreviation": "IPIP-VIA-SPIRITUALITY",
+      "description": "IPIP representation of the VIA character strength 'Spirituality/Religiousness'. 9-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "spirituality_religiousness",
+        "name": "Spirituality/Religiousness",
+        "abbreviation": "SPIRITUALITY",
+        "description": "IPIP VIA Spirituality/Religiousness subscale (9 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_057",
+        "text_key": "ipip_via_057",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_058",
+        "text_key": "ipip_via_058",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_059",
+        "text_key": "ipip_via_059",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_060",
+        "text_key": "ipip_via_060",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_061",
+        "text_key": "ipip_via_061",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_062",
+        "text_key": "ipip_via_062",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_063",
+        "text_key": "ipip_via_063",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_064",
+        "text_key": "ipip_via_064",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_065",
+        "text_key": "ipip_via_065",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "spirituality_religiousness": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_057",
+          "ipip_via_058",
+          "ipip_via_059",
+          "ipip_via_060",
+          "ipip_via_061",
+          "ipip_via_062",
+          "ipip_via_063",
+          "ipip_via_064",
+          "ipip_via_065"
+        ],
+        "description": "Mean of 9 items (range 1–5; higher = stronger Spirituality/Religiousness). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_057": 1,
+          "ipip_via_058": 1,
+          "ipip_via_059": 1,
+          "ipip_via_060": 1,
+          "ipip_via_061": -1,
+          "ipip_via_062": -1,
+          "ipip_via_063": 1,
+          "ipip_via_064": 1,
+          "ipip_via_065": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_057": "Am a spiritual person.",
+      "ipip_via_058": "Am who I am because of my faith.",
+      "ipip_via_059": "Believe in a universal power or God.",
+      "ipip_via_060": "Believe that each person has a purpose in life.",
+      "ipip_via_061": "Do not believe in a universal power or a God.",
+      "ipip_via_062": "Do not practice any religion.",
+      "ipip_via_063": "Have spent at least 30 minutes in the last 24 hours in prayer or meditation.",
+      "ipip_via_064": "Keep my faith even during hard times.",
+      "ipip_via_065": "Know that my beliefs make my life important."
+    }
+  }
+}

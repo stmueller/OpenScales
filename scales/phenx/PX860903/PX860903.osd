@@ -1,0 +1,202 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Physical Mobility - Hospitalized Individuals",
+      "code": "PX860903",
+      "abbreviation": "PX860903",
+      "description": "The Youth Acute Pain Functional Ability Questionnaire (YAPFAQ) is a 12-item self-administered questionnaire, with items prompting responses on a five-point rating scale (from \"Not Difficult\" to \"Extremely Difficult\") regarding how difficult a specified task is for a hospitalized patient. This protoc",
+      "domain": "Pain",
+      "citation": "Bernier, K. M., Strobel, M., & Lucas, R. (2018). Assessing the Effect of an Educational Intervention on Nurses and Patient Care Assistants Comprehension and documentation of functional ability in pediatric patients with sickle cell disease. Journal of Pediatric Nursing, 41, 117-122. Rabbitts, J. A., Aaron, R. V., Zempsky, W. T., & Palermo, T. M. (2017). Validation of the Youth Acute Pain Functional Ability Questionnaire in children and adolescents undergoing inpatient surgery. Journal of Pain, 18(10), 1209-1215. [PhenX: https://www.phenxtoolkit.org/protocols/view/860903]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/860903"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "lk_opt_1",
+        "lk_opt_2",
+        "lk_opt_3",
+        "lk_opt_4",
+        "lk_opt_5"
+      ]
+    },
+    "items": [
+      {
+        "id": "yapfaq_intro_text",
+        "text_key": "yapfaq_intro_text",
+        "type": "inst"
+      },
+      {
+        "id": "sec_today_how_difficult_are_these_things_for",
+        "type": "section",
+        "text_key": "sec_today_how_difficult_are_these_things_for_title"
+      },
+      {
+        "id": "take_bath_shower",
+        "text_key": "take_bath_shower",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "yapfaq"
+      },
+      {
+        "id": "change_hospital_gown_clothes",
+        "text_key": "change_hospital_gown_clothes",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "yapfaq"
+      },
+      {
+        "id": "wash_body",
+        "text_key": "wash_body",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "yapfaq"
+      },
+      {
+        "id": "get_up_bed",
+        "text_key": "get_up_bed",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "yapfaq"
+      },
+      {
+        "id": "walk_around_room",
+        "text_key": "walk_around_room",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "yapfaq"
+      },
+      {
+        "id": "wash_shampoo_hair",
+        "text_key": "wash_shampoo_hair",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "yapfaq"
+      },
+      {
+        "id": "go_outside_room",
+        "text_key": "go_outside_room",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "yapfaq"
+      },
+      {
+        "id": "up_without_need_rest",
+        "text_key": "up_without_need_rest",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "yapfaq"
+      },
+      {
+        "id": "change_pants",
+        "text_key": "change_pants",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "yapfaq"
+      },
+      {
+        "id": "homework_schoolwork",
+        "text_key": "homework_schoolwork",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "yapfaq"
+      },
+      {
+        "id": "turn_roll_over_bed",
+        "text_key": "turn_roll_over_bed",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "yapfaq"
+      },
+      {
+        "id": "change_shirt",
+        "text_key": "change_shirt",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "yapfaq"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "take_bath_shower",
+          "change_hospital_gown_clothes",
+          "wash_body",
+          "get_up_bed",
+          "walk_around_room",
+          "wash_shampoo_hair",
+          "go_outside_room",
+          "up_without_need_rest",
+          "change_pants",
+          "homework_schoolwork",
+          "turn_roll_over_bed",
+          "change_shirt"
+        ],
+        "item_coding": {
+          "take_bath_shower": 1,
+          "change_hospital_gown_clothes": 1,
+          "wash_body": 1,
+          "get_up_bed": 1,
+          "walk_around_room": 1,
+          "wash_shampoo_hair": 1,
+          "go_outside_room": 1,
+          "up_without_need_rest": 1,
+          "change_pants": 1,
+          "homework_schoolwork": 1,
+          "turn_roll_over_bed": 1,
+          "change_shirt": 1
+        },
+        "description": "Total score (sum of all items)"
+      }
+    },
+    "_conversion_notes": [
+      "INFO  take_bath_shower: member of matrix group 'yapfaq' — consider converting to grid type manually",
+      "INFO  change_hospital_gown_clothes: member of matrix group 'yapfaq' — consider converting to grid type manually",
+      "INFO  wash_body: member of matrix group 'yapfaq' — consider converting to grid type manually",
+      "INFO  get_up_bed: member of matrix group 'yapfaq' — consider converting to grid type manually",
+      "INFO  walk_around_room: member of matrix group 'yapfaq' — consider converting to grid type manually",
+      "INFO  wash_shampoo_hair: member of matrix group 'yapfaq' — consider converting to grid type manually",
+      "INFO  go_outside_room: member of matrix group 'yapfaq' — consider converting to grid type manually",
+      "INFO  up_without_need_rest: member of matrix group 'yapfaq' — consider converting to grid type manually",
+      "INFO  change_pants: member of matrix group 'yapfaq' — consider converting to grid type manually",
+      "INFO  homework_schoolwork: member of matrix group 'yapfaq' — consider converting to grid type manually",
+      "INFO  turn_roll_over_bed: member of matrix group 'yapfaq' — consider converting to grid type manually",
+      "INFO  change_shirt: member of matrix group 'yapfaq' — consider converting to grid type manually"
+    ]
+  },
+  "translations": {
+    "en": {
+      "lk_opt_1": "Not Difficult",
+      "lk_opt_2": "A Little Difficult",
+      "lk_opt_3": "Somewhat Difficult",
+      "lk_opt_4": "Very Difficult",
+      "lk_opt_5": "Extremely Difficult",
+      "yapfaq_intro_text": "When people are in the hospital they sometimes are too sick or uncomfortable to do all of their normal activities. We want you to think about how difficult it would be to do these things today-not whether or not you like to do these things, or whether you did them today.",
+      "sec_today_how_difficult_are_these_things_for_title": "Today how difficult are these things for you to do?",
+      "take_bath_shower": "Take a bath or shower?",
+      "change_hospital_gown_clothes": "Put on or change your hospital gown or clothes?",
+      "wash_body": "Wash your body?",
+      "get_up_bed": "Get up from the bed?",
+      "walk_around_room": "Walk around in the room?",
+      "wash_shampoo_hair": "Wash or shampoo your hair?",
+      "go_outside_room": "Go outside your room?",
+      "up_without_need_rest": "Be up without needing to rest?",
+      "change_pants": "Put on or change pants?",
+      "homework_schoolwork": "Do homework or schoolwork?",
+      "turn_roll_over_bed": "Turn over or roll over in bed?",
+      "change_shirt": "Put on or change your shirt?"
+    }
+  }
+}

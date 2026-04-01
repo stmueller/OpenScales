@@ -1,0 +1,164 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Prudence",
+      "code": "IPIP-VIA-PRUDENCE",
+      "abbreviation": "IPIP-VIA-PRUDENCE",
+      "description": "IPIP representation of the VIA character strength 'Prudence'. 9-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "prudence",
+        "name": "Prudence",
+        "abbreviation": "PRUDENCE",
+        "description": "IPIP VIA Prudence subscale (9 items).",
+        "enabled_param": null
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_196",
+        "text_key": "ipip_via_196",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_197",
+        "text_key": "ipip_via_197",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_198",
+        "text_key": "ipip_via_198",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_199",
+        "text_key": "ipip_via_199",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_200",
+        "text_key": "ipip_via_200",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_201",
+        "text_key": "ipip_via_201",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_202",
+        "text_key": "ipip_via_202",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_203",
+        "text_key": "ipip_via_203",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_204",
+        "text_key": "ipip_via_204",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "prudence": {
+        "method": "mean_coded",
+        "items": [
+          "ipip_via_196",
+          "ipip_via_197",
+          "ipip_via_198",
+          "ipip_via_199",
+          "ipip_via_200",
+          "ipip_via_201",
+          "ipip_via_202",
+          "ipip_via_203",
+          "ipip_via_204"
+        ],
+        "description": "Mean of 9 items (range 1–5; higher = stronger Prudence). Negatively-worded items are reverse-coded.",
+        "item_coding": {
+          "ipip_via_196": 1,
+          "ipip_via_197": -1,
+          "ipip_via_198": 1,
+          "ipip_via_199": 1,
+          "ipip_via_200": 1,
+          "ipip_via_201": 1,
+          "ipip_via_202": 1,
+          "ipip_via_203": 1,
+          "ipip_via_204": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Very Inaccurate",
+      "likert_2": "Moderately Inaccurate",
+      "likert_3": "Neither Accurate Nor Inaccurate",
+      "likert_4": "Moderately Accurate",
+      "likert_5": "Very Accurate",
+      "question_head": "<h3>How Accurately Can You Describe Yourself?</h3>\nDescribe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate how accurately this statement describes you.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "ipip_via_196": "Avoid activities that are physically dangerous.",
+      "ipip_via_197": "Behave in unusual and strange ways.",
+      "ipip_via_198": "Believe it is always better to be safe than sorry.",
+      "ipip_via_199": "Cannot imagine lying or cheating.",
+      "ipip_via_200": "Follow the rules.",
+      "ipip_via_201": "Have never deliberately hurt anyone.",
+      "ipip_via_202": "Keep straight right from wrong.",
+      "ipip_via_203": "Make careful choices.",
+      "ipip_via_204": "Think before I speak."
+    }
+  }
+}

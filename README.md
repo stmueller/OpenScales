@@ -128,7 +128,7 @@ python3 tools/validate_scale.py scales/openscales/PHQ9/
 The OSD format is designed to be implemented by any survey or experiment platform:
 
 - **[OpenScales Web Runner](https://openscales.net)** — Browser-based runner (JavaScript)
-- **[PEBL](https://pebl.org)** — Psychology Experiment Building Language (native desktop + WebAssembly)
+- **[PEBL](http://pebl.sf.net)** — Psychology Experiment Building Language (native desktop + WebAssembly)
 - **[Surveydown](https://surveydown.org)** — R/Quarto/Shiny (via converter)
 
 ## Export Targets

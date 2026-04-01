@@ -82,7 +82,7 @@ See [SPECIFICATION.md](SPECIFICATION.md) for all available fields, item types, s
 
 ### 3. Add a screenshot (optional)
 
-If you have [PEBL](https://pebl.org) installed, screenshots can be auto-generated. Otherwise, you can manually create a `screenshot.png` showing a representative question (recommended size: 1024x768).
+If you have [PEBL](http://pebl.sf.net) installed, screenshots can be auto-generated. Otherwise, you can manually create a `screenshot.png` showing a representative question (recommended size: 1024x768).
 
 ### 4. Validate your scale
 

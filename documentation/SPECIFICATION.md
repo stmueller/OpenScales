@@ -32,7 +32,7 @@ A runner declares its conformance level. When a scale uses features beyond the r
 ```
 {code}/
   {code}.json           — Scale definition (required)
-  {code}.en.json        — English translation (required)
+  {code}.en.json        — English translation (recommended)
   {code}.{lang}.json    — Additional translations (optional)
    -or-
    {code}.osd           — .json file containing scale definition and translations files.
@@ -485,6 +485,35 @@ The `scoring` object defines how dimension scores are computed:
 
 Where `min` and `max` are the response range for the item's type.
 
+**Value mapping (`value_map`):** For non-linear recoding that cannot be expressed as simple reverse coding, use the `value_map` field. Each key is an item ID (or `"default"` for a default that applies to all items in the dimension); its value is an **array** where position `i` gives the recoded value for raw response `min + i`. `value_map` is applied *before* `item_coding`, so an item can be both remapped and then reverse-coded if needed. Per-item entries override the `"default"` default.
+
+*RFQ example — same items, different recoding per subscale (7-point Likert, min=1):*
+```json
+{
+  "scoring": {
+    "RFQ_C": {
+      "method": "mean_coded",
+      "items": ["RFQ001", "RFQ002", "RFQ003", "RFQ004", "RFQ005", "RFQ006"],
+      "item_coding": { "RFQ001": 1, "RFQ002": 1, "RFQ003": 1, "RFQ004": 1, "RFQ005": 1, "RFQ006": 1 },
+      "value_map": {
+        "default": [3, 2, 1, 0, 0, 0, 0]
+      }
+    },
+    "RFQ_U": {
+      "method": "mean_coded",
+      "items": ["RFQ002", "RFQ004", "RFQ005", "RFQ006", "RFQ007", "RFQ008"],
+      "item_coding": { "RFQ002": 1, "RFQ004": 1, "RFQ005": 1, "RFQ006": 1, "RFQ007": 1, "RFQ008": 1 },
+      "value_map": {
+        "default":      [0, 0, 0, 0, 1, 2, 3],
+        "RFQ007": [3, 2, 1, 0, 0, 0, 0]
+      }
+    }
+  }
+}
+```
+
+Array index 0 corresponds to response value `min` (here 1), index 1 to `min+1` (here 2), etc. So for RFQ_C: response 1→3, 2→2, 3→1, 4–7→0. In the RFQ_U subscale, RFQ007 ("I always know what I feel") uses a per-item override with the opposite recoding pattern.
+
 **Additional scoring fields:**
 
 | Field | Type | Description |
@@ -492,6 +521,7 @@ Where `min` and `max` are the response range for the item's type.
 | `items` | array of strings | Item IDs to include. For `mean_coded`, `sum_coded`, `sd`, `max`, and `min`: only items listed in `item_coding` with a non-zero value are included in the computed score. |
 | `scores` | array of strings | Dimension IDs whose already-computed scores are used as inputs. May be used instead of or alongside `items`. `item_coding` applies to score references just as it does to item references (supporting reverse-coded subscales). |
 | `item_coding` | object | Per-item (or per-score) coding: `1` (forward), `-1` (reverse), `0` (exclude). Items and scores absent from `item_coding` are excluded. Using `0` explicitly is convenient when copying a full design vector. Coding is defined here in the scoring block — not on the item — so the same item can carry different codings in different dimensions. |
+| `value_map` | object | Optional per-item response remapping. Keys are item IDs (or `"default"` for a default); values are **arrays** where position `i` gives the recoded value for raw response `min + i` (i.e., index 0 = the scale minimum). Applied *before* `item_coding`. When present for an item, the raw response is looked up in the array; if the index is in range, the mapped value replaces the raw value for scoring. This supports non-linear recoding schemes (e.g., collapsing upper Likert points to zero) that cannot be expressed with simple reverse coding. The same item may have different `value_map` entries in different dimensions. Per-item entries override the `"default"` default. |
 | `weights` | object | Per-item (or per-score) weights for `weighted_sum` and `weighted_mean`. Keys are item or score IDs; values are numeric weights. Items absent from `weights` are excluded from the weighted calculation. |
 | `correct_answers` | object | Per-item correct answers (for `sum_correct`) |
 | `transform` | array of objects | Optional sequence of affine steps applied to the raw score after the scoring method is computed. See **Score Transforms** below. |
@@ -759,8 +789,9 @@ Translation files are JSON objects with flat key-value pairs:
 - Keys referenced by `text_key`, `likert_labels`, option `text_key`s, etc. MUST exist in the translation file
 - Values may contain **HTML-lite**: `<b>`, `<i>`, `<br>`, `<a href="...">` — a safe subset of inline HTML
 - A `LANGUAGE` key is optional but recommended for self-identification
-- Runners MUST load the translation file matching the requested language, falling back to English if unavailable
+- Runners MUST load the translation file matching the requested language, falling back to English if unavailable, then to the first available translation if English is also unavailable
 - Runners may load English first and then load the primary language file, so that incomplete translations fall back to English.
+- An English (`en`) translation is RECOMMENDED but not required. Scales without an English translation are valid; runners MUST handle their absence gracefully.
 
 #### C4a. Media Embedding
 

@@ -75,9 +75,9 @@ const ScaleRunner = (() => {
    *
    * 2. Split files (default):
    *    Fetches {dir}/{code}.json then {dir}/{code}.{lang}.json.
-   *    Falls back from requested language → "en" → empty strings.
+   *    Falls back from requested language → "en" → first available → empty strings.
    *
-   * In both modes, language fall-back order: requested → "en" → {}.
+   * In both modes, language fall-back order: requested → "en" → first available → {}.
    */
   async function loadScale(code, language, baseURL, osdURL) {
     language = language || 'en';
@@ -94,7 +94,7 @@ const ScaleRunner = (() => {
       if (!bundle.definition) throw new Error(`Invalid .osd file: missing "definition" key`);
       const scaleDef = bundle.definition;
       const allTrans = bundle.translations || {};
-      const strings  = allTrans[language] || allTrans['en'] || {};
+      const strings  = allTrans[language] || allTrans['en'] || Object.values(allTrans)[0] || {};
       return { scaleDef, strings };
     }
 
@@ -1547,6 +1547,7 @@ const ScaleRunner = (() => {
       const method  = scoreDef.method;
       const items   = scoreDef.items || [];
       const coding  = scoreDef.item_coding || {};
+      const vmap    = scoreDef.value_map || {};
       const weights = scoreDef.weights || {};
       const correct = scoreDef.correct_answers || {};
 
@@ -1573,21 +1574,32 @@ const ScaleRunner = (() => {
           continue;
         }
 
-        const numVal = parseFloat(rawVal);
-        if (isNaN(numVal)) continue;
+        const numRaw = parseFloat(rawVal);
+        if (isNaN(numRaw)) continue;
+
+        // Get question range (needed for value_map indexing and reverse coding)
+        const allItems = scaleDef.items || scaleDef.questions || [];
+        let qdef = allItems.find(q => q.id === itemId);
+        if (!qdef) {
+          const m = itemId.match(/^(.+)_(\d+)$/);
+          if (m) qdef = allItems.find(q => q.id === m[1] && q.type === 'grid');
+        }
+        const [rMin, rMax] = getQuestionRange(qdef || {}, scaleDef);
+
+        // Apply value_map before coding: per-item array overrides "*" default
+        // Array index i = recoded value for response min+i
+        let numVal = numRaw;
+        const itemMap = vmap[itemId] || vmap['default'];
+        if (Array.isArray(itemMap) && rMin !== null) {
+          const idx = Math.round(numRaw) - rMin;
+          if (idx >= 0 && idx < itemMap.length) numVal = itemMap[idx];
+        }
 
         const c = coding[itemId] !== undefined ? coding[itemId] : 1;
         if (c === 0) continue;
 
         let coded = numVal;
         if (c < 0) {
-          const allItems = scaleDef.items || scaleDef.questions || [];
-          let qdef = allItems.find(q => q.id === itemId);
-          if (!qdef) {
-            const m = itemId.match(/^(.+)_(\d+)$/);
-            if (m) qdef = allItems.find(q => q.id === m[1] && q.type === 'grid');
-          }
-          const [rMin, rMax] = getQuestionRange(qdef || {}, scaleDef);
           coded = (rMin !== null && rMax !== null) ? (rMin + rMax) - numVal : numVal;
         }
 
@@ -1748,12 +1760,20 @@ const ScaleRunner = (() => {
         if (!sd) return '';
         if (!sd.items || !sd.items.includes(qdef.id)) return '';
         if (responseVal === 'NA') return 'NA';
-        // Coded value
-        const numVal = parseFloat(responseVal);
-        if (isNaN(numVal)) return responseVal;
+        // Apply value_map (array format) then coding
+        const [rMin, rMax] = getQuestionRange(qdef, scaleDef);
+        let numVal = parseFloat(responseVal);
+        if (isNaN(numVal)) return String(responseVal);
+        const vm = sd.value_map;
+        if (vm) {
+          const m = vm[qdef.id] || vm['*'];
+          if (Array.isArray(m) && rMin !== null) {
+            const idx = Math.round(numVal) - rMin;
+            if (idx >= 0 && idx < m.length) numVal = m[idx];
+          }
+        }
         const coding = sd.item_coding && sd.item_coding[qdef.id];
         if (coding === -1) {
-          const [rMin, rMax] = getQuestionRange(qdef, scaleDef);
           if (rMin !== null && rMax !== null) return String((rMin + rMax) - numVal);
         }
         return String(numVal);
@@ -1782,8 +1802,16 @@ const ScaleRunner = (() => {
             const sd = (scaleDef.scoring || {})[dimId];
             if (!sd || !sd.items || !sd.items.includes(subId)) return '';
             if (subResp === 'NA') return 'NA';
-            const numVal = parseFloat(subResp);
-            if (isNaN(numVal)) return subResp;
+            let numVal = parseFloat(subResp);
+            if (isNaN(numVal)) return String(subResp);
+            const vm = sd.value_map;
+            if (vm) {
+              const m = vm[subId] || vm['*'];
+              if (Array.isArray(m) && gMin !== null) {
+                const idx = Math.round(numVal) - gMin;
+                if (idx >= 0 && idx < m.length) numVal = m[idx];
+              }
+            }
             const c = sd.item_coding && sd.item_coding[subId];
             if (c === -1 && gMin !== null && gMax !== null) {
               return String((gMin + gMax) - numVal);
@@ -2610,8 +2638,16 @@ const ScaleRunner = (() => {
             const sd = (scaleDef.scoring || {})[dim.id];
             if (!sd || !sd.items || !sd.items.includes(subId)) return '<td></td>';
             if (subResp === 'NA' || subResp === '') return '<td></td>';
-            const numVal = parseFloat(subResp);
+            let numVal = parseFloat(subResp);
             if (isNaN(numVal)) return `<td>${subResp}</td>`;
+            const vm = sd.value_map;
+            if (vm) {
+              const m = vm[subId] || vm['default'];
+              if (Array.isArray(m) && gMin !== null) {
+                const idx = Math.round(numVal) - gMin;
+                if (idx >= 0 && idx < m.length) numVal = m[idx];
+              }
+            }
             const c = sd.item_coding && sd.item_coding[subId];
             let coded = numVal;
             if (c === -1 && gMin !== null && gMax !== null) {
@@ -2643,13 +2679,21 @@ const ScaleRunner = (() => {
           return `<td>${isCorrect ? 1 : 0}</td>`;
         }
 
-        // Likert / coded methods: apply item_coding
-        const numVal = parseFloat(respVal);
+        // Likert / coded methods: apply value_map then item_coding
+        const [rMin, rMax] = getQuestionRange(qdef, scaleDef);
+        let numVal = parseFloat(respVal);
         if (isNaN(numVal)) return `<td>${respVal}</td>`;
+        const vm = sd.value_map;
+        if (vm) {
+          const m = vm[qdef.id] || vm['default'];
+          if (Array.isArray(m) && rMin !== null) {
+            const idx = Math.round(numVal) - rMin;
+            if (idx >= 0 && idx < m.length) numVal = m[idx];
+          }
+        }
         const c = sd.item_coding && sd.item_coding[qdef.id];
         let coded = numVal;
         if (c === -1) {
-          const [rMin, rMax] = getQuestionRange(qdef, scaleDef);
           if (rMin !== null && rMax !== null) coded = (rMin + rMax) - numVal;
         }
         return `<td>${coded}</td>`;

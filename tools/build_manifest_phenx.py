@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
-"""Build website/manifest_phenx.json from PhenX OSD output.
+"""Build website/manifest_phenx.json from scales/phenx/ OSD files.
 
-Scans data/phenx_448/osd_output/ and extracts metadata for the website.
-Also reads phenx_protocols.csv for scoring/branching flags.
+Scans scales/phenx/ for .osd bundles and extracts metadata for the website.
+Reads scales/phenx/EXCLUDE.csv to skip scales that should not be published
+(e.g., requires images, clinician-administered, no items).
+
+The EXCLUDE.csv file is the single source of truth for which PhenX scales
+are visible on the website. The .osd files remain in the repository regardless.
 
 Usage:
     python3 tools/build_manifest_phenx.py
@@ -10,93 +14,119 @@ Usage:
 import csv, json, os
 from pathlib import Path
 
-REPO_ROOT  = Path(__file__).parent.parent
-OSD_DIR    = REPO_ROOT / 'data' / 'phenx_448' / 'osd_output'
-CSV_PATH   = REPO_ROOT / 'data' / 'phenx_448' / 'phenx_protocols.csv'
-OUTPUT     = REPO_ROOT / 'website' / 'manifest_phenx.json'
+REPO_ROOT   = Path(__file__).parent.parent
+PHENX_DIR   = REPO_ROOT / 'scales' / 'phenx'
+EXCLUDE_CSV = PHENX_DIR / 'EXCLUDE.csv'
+OUTPUT      = REPO_ROOT / 'website' / 'manifest_phenx.json'
 
-# Load phenx_protocols.csv for scoring/branching/exclude flags.
-# Exclude any protocol that:
-#   - has a non-empty Exclude field (manually flagged), OR
-#   - needs manual scoring review (Scoring == 'needs_manual'), OR
-#   - has unresolved branching logic (Branching == 'needs_review')
-flags = {}
-excluded_pids = {}   # pid -> reason string
-if CSV_PATH.exists():
-    with open(CSV_PATH, encoding='utf-8') as f:
+# Also check for hardlinked copy in OpenScales_web
+OUTPUT_WEB  = REPO_ROOT.parent / 'OpenScales_web' / 'manifest_phenx.json'
+
+# Load exclusion list
+excluded = {}  # code -> reason
+if EXCLUDE_CSV.exists():
+    with open(EXCLUDE_CSV, encoding='utf-8') as f:
         for row in csv.DictReader(f):
-            pid = row['ProtocolID']
-            reason = row.get('Exclude', '').strip()
-            scoring   = row.get('Scoring', '').strip()
-            branching = row.get('Branching', '').strip()
-            if reason:
-                excluded_pids[pid] = reason
-            elif scoring == 'needs_manual':
-                excluded_pids[pid] = 'needs_manual_scoring'
-            elif branching == 'needs_review':
-                excluded_pids[pid] = 'needs_branching_review'
-            else:
-                flags[pid] = {
-                    'scoring':   scoring,
-                    'branching': branching,
-                }
+            code = row.get('code', '').strip()
+            reason = row.get('reason', '').strip()
+            if code:
+                excluded[code.upper()] = reason
 
 entries = []
-for pid_dir in sorted(OSD_DIR.iterdir()):
-    if not pid_dir.is_dir():
+skipped = 0
+
+for scale_dir in sorted(PHENX_DIR.iterdir()):
+    if not scale_dir.is_dir():
         continue
-    pid = pid_dir.name
-    if pid in excluded_pids:
-        continue   # needs_manual_scoring, needs_branching_review, or manually excluded
-    json_path = pid_dir / f'PX{pid}.json'
-    if not json_path.exists():
+
+    code = scale_dir.name
+
+    # Check exclusion list
+    if code.upper() in excluded:
+        skipped += 1
         continue
+
+    # Find .osd file
+    osd_path = scale_dir / f'{code}.osd'
+    if not osd_path.exists():
+        continue
+
     try:
-        d = json.loads(json_path.read_text(encoding='utf-8'))
-    except Exception:
+        bundle = json.loads(osd_path.read_text(encoding='utf-8'))
+    except Exception as exc:
+        print(f"  WARNING: Cannot parse {osd_path}: {exc}")
         continue
 
-    info = d.get('scale_info', {})
-    items = [i for i in d.get('items', []) if i.get('type') not in ('inst', 'section')]
-    dims  = d.get('dimensions', [])
-    scoring = d.get('scoring', {})
+    # Handle both bundle format (definition wrapper) and flat format
+    if 'definition' in bundle:
+        definition = bundle['definition']
+    else:
+        definition = bundle
 
-    # Language files
-    langs = sorted(set(
-        p.stem.split('.')[-1]
-        for p in pid_dir.iterdir()
-        if p.suffix == '.json' and '.' in p.stem and p.stem != f'PX{pid}'
-        and p.stem.startswith(f'PX{pid}.')
-    ))
+    info = definition.get('scale_info', {})
+    items = [i for i in definition.get('items', [])
+             if i.get('type') not in ('inst', 'section', 'image')]
+    dims = definition.get('dimensions', [])
+    scoring = definition.get('scoring', {})
+
+    # Get languages from translations
+    translations = bundle.get('translations', {})
+    if translations:
+        langs = sorted(translations.keys())
+    else:
+        # Check for separate translation files
+        langs = sorted(set(
+            p.stem.split('.')[-1]
+            for p in scale_dir.iterdir()
+            if p.suffix == '.json' and '.' in p.stem
+            and p.stem.startswith(f'{code}.')
+        ))
     if not langs:
         langs = ['en']
 
-    f = flags.get(pid, {})
     entry = {
-        'code':          f'PX{pid}',
-        'name':          info.get('name', f'PhenX Protocol {pid}'),
-        'abbreviation':  info.get('abbreviation', f'PX{pid}'),
-        'description':   info.get('description', ''),
-        'citation':      info.get('citation', ''),
-        'license':       info.get('license', 'PhenX Toolkit freely available protocol'),
-        'version':       info.get('version', '1.0'),
-        'url':           info.get('url', ''),
-        'domain':        info.get('domain', 'Other'),
-        'items_count':   len(items),
-        'dimensions':    [{'id': d2.get('id'), 'name': d2.get('name')} for d2 in dims],
-        'has_scoring':   bool(scoring),
-        'scoring_flag':  f.get('scoring', ''),
-        'branching_flag':f.get('branching', ''),
-        'languages':     langs,
-        'has_screenshot':False,
-        'repo':          'phenx',
+        'code':         info.get('code', code),
+        'name':         info.get('name', code),
+        'abbreviation': info.get('abbreviation', ''),
+        'description':  info.get('description', ''),
+        'citation':     info.get('citation', ''),
+        'license':      info.get('license', 'PhenX Toolkit freely available protocol'),
+        'version':      info.get('version', '1.0'),
+        'url':          info.get('url', ''),
+        'domain':       info.get('domain', 'Health'),
+        'n_items':      len(items),
+        'dimensions':   [{'id': d.get('id'), 'name': d.get('name')} for d in dims],
+        'has_scoring':  bool(scoring),
+        'languages':    langs,
+        'repo':         'phenx',
     }
     entries.append(entry)
 
 entries.sort(key=lambda e: e['name'].lower())
+
+# Write manifest
 OUTPUT.write_text(json.dumps(entries, indent=2, ensure_ascii=False), encoding='utf-8')
-print(f"Written {len(entries)} entries to {OUTPUT}")
-if excluded_pids:
-    from collections import Counter
-    reasons = Counter(excluded_pids.values())
-    print(f"Excluded {len(excluded_pids)} protocol(s): {dict(reasons)}")
+
+# Copy to web directory if it exists and is not the same file
+if OUTPUT_WEB.exists() and not os.path.samefile(OUTPUT, OUTPUT_WEB):
+    OUTPUT_WEB.write_text(json.dumps(entries, indent=2, ensure_ascii=False), encoding='utf-8')
+    print(f"Also copied to {OUTPUT_WEB}")
+
+# Summary
+domains = sorted(set(e['domain'] for e in entries))
+langs_all = sorted(set(l for e in entries for l in e['languages']))
+
+print(f"\nWrote {OUTPUT}")
+print(f"  Scales found   : {len(entries)}")
+print(f"  Excluded        : {skipped} (from EXCLUDE.csv)")
+print(f"  Domains covered: {len(domains)}  ({', '.join(domains)})")
+print(f"  Languages found: {len(langs_all)}  ({', '.join(langs_all[:15])}{'...' if len(langs_all) > 15 else ''})")
+print()
+for e in entries:
+    lang_str = ', '.join(e['languages'])
+    print(f"  [{e['domain']:20s}]  {e['code']:12s} {e['name']}  ({e['n_items']} items) [{lang_str}]")
+
+if excluded:
+    print(f"\n  Excluded protocols ({len(excluded)}):")
+    for code, reason in sorted(excluded.items()):
+        print(f"    {code}: {reason}")

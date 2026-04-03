@@ -70,6 +70,7 @@ Every definition MUST include a `scale_info` object.
 |-------|------|-------------|
 | `abbreviation` | string | Common abbreviation (e.g., "SUS", "PHQ-9") |
 | `description` | string | Brief description of what the scale measures |
+| `domain` | string | Top-level content domain. Use one of the **recommended domain values** below when possible. Custom values are permitted but discouraged for repository scales. |
 | `citation` | string | Full academic citation with DOI |
 | `license` | string | Short license label shown as a pill/badge in browse views. Keep brief — one to four words. See **Recommended license values** below. |
 | `license_explanation` | string | Full license terms or usage conditions displayed on the scale detail page. Should capture the substance of the license grant (who granted it, what they said, when) so the record is self-contained even if external URLs go dead. |
@@ -112,6 +113,27 @@ Use these standardized values where applicable:
 | `published measure` | Published in literature; no explicit license; restricted by default |
 
 When using `Public Domain`, document the basis in `license_explanation` — either that it is a U.S. government work, or cite the specific statement where the author/rights holder dedicated it to the public domain.
+
+#### Recommended `domain` values
+
+The `domain` field classifies the scale's primary content area. Use one of the following standard values for scales contributed to the OpenScales repository. Custom values are permitted for scales outside the repository.
+
+| Domain | Description | Examples |
+|--------|-------------|----------|
+| `Attitudes & Beliefs` | Beliefs, attitudes toward science, conspiracy, paranormal | GCBS, PSBS, BISS |
+| `Cognition` | Cognitive ability, numeracy, decision-making, reasoning, maximizing | BNT, CRT, DOSPERT, MI |
+| `Education` | Academic motivation, learning strategies, math anxiety, student engagement | mAMAS, MSLQ, USEI |
+| `Health` | Physical health, quality of life, pain, sleep, patient satisfaction, physical activity, diet | SF-36, PHQ-15, QOLIE, IPAQ |
+| `Mental Health` | Depression, anxiety, PTSD, psychosis, OCD, autism screening, clinical assessment | PHQ-9, GAD-7, DASS, PCL-5 |
+| `Personality` | Personality traits, character strengths, temperament, interpersonal style | IPIP-NEO, Big Five, HEXACO, SD3 |
+| `Self & Coping` | Self-esteem, coping, mindfulness, emotion regulation, resilience, grit | COPE, FFMQ, ERQ, RSES, BRS |
+| `Social` | Loneliness, social support, relationships, parenting, social desirability | UCLA-3, MSPSS, SOCQ, PRIM+19 |
+| `Substance Use` | Alcohol, drug, tobacco, and caffeine screening and assessment | AUDIT, CAGE, MAST, DAST |
+| `Technology` | AI attitudes, smartphone use, internet use, UX, gaming | AIAS-4, SUS, UEQ, SDS |
+| `Well-being` | Life satisfaction, happiness, flourishing, positive affect, subjective well-being | SWLS, WHO-5, PANAS, MHT |
+| `Work` | Burnout, job satisfaction, organizational trust, work-life balance | BAT, CBI, EMTL, WNBC |
+
+Scales that span multiple domains (e.g., a workplace mental health measure) should use the domain that best describes the primary construct being measured. If none of the above fits, a custom value may be used, but consider whether the scale fits an existing category first.
 
 #### Per-scale license evidence files
 

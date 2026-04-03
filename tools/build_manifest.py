@@ -22,24 +22,24 @@ OUTPUT_FILE = REPO_ROOT / "website" / "manifest.json"
 # Domain keyword mapping — first match wins.
 # Match against: name.lower() + ' ' + description.lower() + ' ' + code.lower()
 DOMAIN_MAP = [
-    (['depression', 'depressive', 'cesd', 'phq', 'dass'], 'Mood'),
+    (['depression', 'depressive', 'cesd', 'phq', 'dass'], 'Mental Health'),
     (['anxiety', 'worry', 'gad', 'pswq', 'ptsd', 'trauma', 'post-traumatic', 'perceived stress', 'psq',
-      'paranoid', 'paranoia', 'agoraphob', 'phobia', 'panic'], 'Anxiety'),
+      'paranoid', 'paranoia', 'agoraphob', 'phobia', 'panic', 'obsessive', 'compulsive', 'ocd', 'moci',
+      'autism', 'adhd', 'dissociat', 'borderline', 'misophonia', 'distress'], 'Mental Health'),
     (['personality', 'big five', 'ipip', 'bfi', 'hexaco', 'neo-pi'], 'Personality'),
-    (['sleep', 'insomnia', 'somnolence'], 'Sleep'),
+    (['sleep', 'insomnia', 'somnolence'], 'Health'),
     (['alcohol', 'drinking', 'substance', 'drug', 'marijuana', 'cannabis', 'smoking'], 'Substance Use'),
     (['cardiac', 'cardiovascular', 'health', 'physical', 'pain', 'quality of life', 'qol',
       'kidney', 'epilepsy', 'vision', 'asthma', 'fatigue', 'simulator sickness'], 'Health'),
     (['well-being', 'wellbeing', 'flourishing', 'satisfaction', 'happiness', 'who-5', 'who5',
       'positive functioning', 'positive self', 'psychological functioning'], 'Well-being'),
     (['social', 'support', 'loneliness', 'relationship', 'interpersonal'], 'Social'),
-    (['obsessive', 'compulsive', 'ocd', 'moci'], 'OCD'),
     (['smartphone', 'gaming', 'internet', 'media', 'screen', 'addiction'], 'Technology'),
     (['self-esteem', 'resilience', 'coping', 'efficacy', 'self-monitoring',
-      'grit', 'optimism', 'locus of control'], 'Self & Coping'),
+      'grit', 'optimism', 'locus of control', 'emotion regulation', 'mindfulness'], 'Self & Coping'),
     (['usability', 'user experience', 'ux', 'sus', 'ueq', 'explanation',
-      'cognitive load', 'cognitive reflection'], 'UX'),
-    (['eating', 'body image', 'weight', 'cia', 'clinical impairment'], 'Eating'),
+      'cognitive load', 'cognitive reflection'], 'Technology'),
+    (['eating', 'body image', 'weight', 'cia', 'clinical impairment'], 'Mental Health'),
     (['trust', 'ai', 'xai'], 'Technology'),
 ]
 

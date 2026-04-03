@@ -28,6 +28,17 @@ cp website/manifest_private.json ../OpenScales_web/manifest_private.json
 
 Note: `website/manifest.json` and `../OpenScales_web/manifest.json` are the same file (hardlinked), so the openscales manifest does not need copying.
 
+## PhenX exclusions
+
+The PhenX manifest builder reads `scales/phenx/EXCLUDE.csv` to skip scales that should not appear on the website (e.g., requires images/diagrams, clinician-administered, no items). The .osd files remain in the repository.
+
+To exclude a PhenX scale, add a row to `EXCLUDE.csv`:
+```csv
+PX100101,Requires images (pubertal development diagrams)
+```
+
+Then rebuild: `python3 tools/build_manifest_phenx.py`
+
 ## When to rebuild
 
 - After adding, removing, or moving a scale between repositories

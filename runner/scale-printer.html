@@ -280,7 +280,7 @@
     const min = item.likert_min || likertOpts.min || 1;
     const max = item.likert_max || likertOpts.max || points;
     const labels = item.likert_labels || likertOpts.labels || [];
-    const reverse = item.likert_reverse || false;
+    const reverse = item.likert_reverse !== undefined ? item.likert_reverse : (likertOpts.likert_reverse || false);
 
     let vals = [];
     for (let v = min; v <= max; v++) vals.push(v);

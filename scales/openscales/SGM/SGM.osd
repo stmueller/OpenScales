@@ -1,0 +1,110 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Stress-Related Growth Measure",
+      "code": "SGM",
+      "abbreviation": "SGM",
+      "description": "5-item measure of stress-related growth. 5-point Likert scale (1=Not suitable for me to 5=Very suitable for me). Single total score computed as the sum of all items.",
+      "citation": "Yildirim, M., & Arslan, G. (2021). Frontiers in Psychology. [APA PsycTests: https://doi.org/10.1037/t86073-000]",
+      "license": "CC BY 4.0",
+      "license_url": "https://doi.org/10.3389/fpsyg.2021.648236",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyg.2021.648236"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Stress-Related Growth"
+      }
+    ],
+    "items": [
+      {
+        "id": "srgm1",
+        "text_key": "srgm1",
+        "type": "likert",
+        "dimension": "total"
+      },
+      {
+        "id": "srgm2",
+        "text_key": "srgm2",
+        "type": "likert",
+        "dimension": "total"
+      },
+      {
+        "id": "srgm3",
+        "text_key": "srgm3",
+        "type": "likert",
+        "dimension": "total"
+      },
+      {
+        "id": "srgm4",
+        "text_key": "srgm4",
+        "type": "likert",
+        "dimension": "total"
+      },
+      {
+        "id": "srgm5",
+        "text_key": "srgm5",
+        "type": "likert",
+        "dimension": "total"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": [
+          "srgm1",
+          "srgm2",
+          "srgm3",
+          "srgm4",
+          "srgm5"
+        ],
+        "description": "Total Stress-Related Growth: sum of all 5 items. Range 5-25.",
+        "item_coding": {
+          "srgm1": 1,
+          "srgm2": 1,
+          "srgm3": 1,
+          "srgm4": 1,
+          "srgm5": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Not suitable for me",
+      "likert_2": "Slightly suitable for me",
+      "likert_3": "Somewhat suitable for me",
+      "likert_4": "Suitable for me",
+      "likert_5": "Very suitable for me",
+      "question_head": "Consider your current or past negative experiences (e.g., COVID-19, traumatic situations), and indicate how well the statement describes your response to the situation.",
+      "srgm1": "I am aware of the situation and focus on how I should behave.",
+      "srgm2": "I empathize with others and seek how to help them.",
+      "srgm3": "I live in the present moment and focus on the future.",
+      "srgm4": "I look for an alternative solution to adjust to new changes.",
+      "srgm5": "I pursuit for calmness, patience, and social connection.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

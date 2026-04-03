@@ -1,0 +1,140 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Mental Health Test",
+      "code": "MHT",
+      "abbreviation": "MHT",
+      "description": "18-item complex mental health measure in a positive psychological framework. Five subscales: Well-being (W), Savoring (S), Creative and Executive Efficiency (C), Self-regulation (SR), and Resilience (R). 6-point Likert (1=Strongly disagree to 6=Strongly agree); item 18 uses a different format (1=Very bad to 6=Very good). SR items (2,8,16) and Resilience item 13 are reverse coded using 7-x transformation. Higher scores indicate better mental health.",
+      "citation": "Zábó, V., Oláh, A., & Vargha, A. (2022). A new complex mental health test in a positive psychological framework. Frontiers in Psychology, 13. https://doi.org/10.3389/fpsyg.2022.775622. [APA PsycTests: https://doi.org/10.1037/t95738-000]",
+      "license": "CC BY 4.0",
+      "license_explanation": "Published in Frontiers in Psychology under Creative Commons Attribution 4.0 International License.",
+      "license_url": "https://doi.org/10.3389/fpsyg.2022.775622",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyg.2022.775622",
+      "domain": "Well-being"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": ["likert_1", "likert_2", "likert_3", "likert_4", "likert_5", "likert_6"],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "wellbeing",
+        "name": "Well-being",
+        "description": "General well-being (items 1, 14, 18). Mean score, range 1-6."
+      },
+      {
+        "id": "savoring",
+        "name": "Savoring",
+        "description": "Ability to savor positive experiences (items 3, 10, 12). Mean score, range 1-6."
+      },
+      {
+        "id": "creative",
+        "name": "Creative and Executive Efficiency",
+        "description": "Creative thinking and problem-solving (items 5, 7, 9, 15, 17). Mean score, range 1-6."
+      },
+      {
+        "id": "selfregulation",
+        "name": "Self-regulation",
+        "description": "Emotional self-regulation (items 2, 8, 16, all reverse coded). Mean score after 7-x inversion, range 1-6."
+      },
+      {
+        "id": "resilience",
+        "name": "Resilience",
+        "description": "Ability to recover from setbacks (items 4, 11, 13). Item 13 is reverse coded. Item 6 removed per authors. Mean score, range 1-6."
+      }
+    ],
+    "items": [
+      {"id": "mht1", "text_key": "mht1", "type": "likert"},
+      {"id": "mht2", "text_key": "mht2", "type": "likert"},
+      {"id": "mht3", "text_key": "mht3", "type": "likert"},
+      {"id": "mht4", "text_key": "mht4", "type": "likert"},
+      {"id": "mht5", "text_key": "mht5", "type": "likert"},
+      {"id": "mht6", "text_key": "mht6", "type": "likert"},
+      {"id": "mht7", "text_key": "mht7", "type": "likert"},
+      {"id": "mht8", "text_key": "mht8", "type": "likert"},
+      {"id": "mht9", "text_key": "mht9", "type": "likert"},
+      {"id": "mht10", "text_key": "mht10", "type": "likert"},
+      {"id": "mht11", "text_key": "mht11", "type": "likert"},
+      {"id": "mht12", "text_key": "mht12", "type": "likert"},
+      {"id": "mht13", "text_key": "mht13", "type": "likert"},
+      {"id": "mht14", "text_key": "mht14", "type": "likert"},
+      {"id": "mht15", "text_key": "mht15", "type": "likert"},
+      {"id": "mht16", "text_key": "mht16", "type": "likert"},
+      {"id": "mht17", "text_key": "mht17", "type": "likert"},
+      {"id": "mht18", "text_key": "mht18", "type": "likert", "likert_labels": ["mht18_1", "mht18_2", "mht18_3", "mht18_4", "mht18_5", "mht18_6"]}
+    ],
+    "scoring": {
+      "wellbeing": {
+        "method": "mean_coded",
+        "items": ["mht1", "mht14", "mht18"],
+        "description": "Well-being: mean of items 1, 14, 18 (range 1-6).",
+        "item_coding": {"mht1": 1, "mht14": 1, "mht18": 1}
+      },
+      "savoring": {
+        "method": "mean_coded",
+        "items": ["mht3", "mht10", "mht12"],
+        "description": "Savoring: mean of items 3, 10, 12 (range 1-6).",
+        "item_coding": {"mht3": 1, "mht10": 1, "mht12": 1}
+      },
+      "creative": {
+        "method": "mean_coded",
+        "items": ["mht5", "mht7", "mht9", "mht15", "mht17"],
+        "description": "Creative and Executive Efficiency: mean of items 5, 7, 9, 15, 17 (range 1-6).",
+        "item_coding": {"mht5": 1, "mht7": 1, "mht9": 1, "mht15": 1, "mht17": 1}
+      },
+      "selfregulation": {
+        "method": "mean_coded",
+        "items": ["mht2", "mht8", "mht16"],
+        "description": "Self-regulation: mean of items 2, 8, 16 after reverse coding (7-x). Range 1-6.",
+        "item_coding": {"mht2": -1, "mht8": -1, "mht16": -1}
+      },
+      "resilience": {
+        "method": "mean_coded",
+        "items": ["mht4", "mht11", "mht13"],
+        "description": "Resilience: mean of items 4, 11, 13. Item 13 reverse coded (7-x). Item 6 removed per authors. Range 1-6.",
+        "item_coding": {"mht4": 1, "mht11": 1, "mht13": -1}
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "Strongly disagree",
+      "likert_2": "Disagree",
+      "likert_3": "Slightly disagree",
+      "likert_4": "Slightly agree",
+      "likert_5": "Agree",
+      "likert_6": "Strongly agree",
+      "question_head": "Please consider each statement carefully and indicate the response with which you most agree. There are no right or wrong answers.",
+      "mht1": "Joy is present more than sorrow in my everyday life.",
+      "mht2": "I easily become impatient.",
+      "mht3": "It's easy for me to revive the joy from pleasant memories.",
+      "mht4": "I tend to bounce back quickly after hard times.",
+      "mht5": "I often have ideas that are taken further by others.",
+      "mht6": "I have a hard time making it through stressful events.",
+      "mht7": "Others describe me as a problem solver.",
+      "mht8": "I am impulsive: I act first and think second.",
+      "mht9": "I can successfully achieve targets which I set for myself.",
+      "mht10": "I like to store memories of fun times that I go through so that I can recall them later.",
+      "mht11": "It does not take me long to recover from a stressful event.",
+      "mht12": "I can make myself feel good by imagining what a happy time that is about to happen will be like.",
+      "mht13": "I tend to take a long time to get over set-backs in my life.",
+      "mht14": "My general psychological state is good.",
+      "mht15": "I am good at work that needs new and original ideas.",
+      "mht16": "I become frustrated when something does not happen the way I planned it.",
+      "mht17": "I often know what people are thinking and feeling.",
+      "mht18": "How do you feel about your life as a whole?",
+      "mht18_1": "Very bad",
+      "mht18_2": "Bad",
+      "mht18_3": "Somewhat bad",
+      "mht18_4": "Somewhat good",
+      "mht18_5": "Good",
+      "mht18_6": "Very good",
+      "debrief": "Thank you for completing the Mental Health Test."
+    }
+  }
+}

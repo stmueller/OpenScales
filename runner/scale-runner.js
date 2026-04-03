@@ -766,7 +766,7 @@ const ScaleRunner = (() => {
     const pts     = qdef.likert_points || opts.points || 5;
     const [min]   = getQuestionRange(qdef, scaleDef);
     const labels  = qdef.likert_labels || opts.labels || [];
-    const reverse = qdef.likert_reverse || false;
+    const reverse = qdef.likert_reverse !== undefined ? qdef.likert_reverse : (opts.likert_reverse || false);
 
     const row = document.createElement('div');
     row.className = 'sr-likert-row';

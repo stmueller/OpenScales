@@ -1,0 +1,253 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Sociotype Questionnaire",
+      "code": "SOCQ",
+      "abbreviation": "SOCQ",
+      "description": "16-item measure of social relationships across four domains. Four subscales: Family (items 1-4), Friends (items 5-8), Acquaintances (items 9-12), Peers/Colleagues (items 13-16). Scored 0 (never) to 5 (always); items 10 and 12 are reverse scored. Higher scores indicate stronger social connections.",
+      "citation": "Marijuan, P. C., Montero-Marin, J., Navarro, J., Garcia-Campayo, J., & del Moral, R. (2017). The 'sociotype' construct. PLOS ONE. https://doi.org/10.1371/journal.pone.0185551. [APA PsycTests: https://doi.org/10.1037/t67623-000]",
+      "license": "CC BY 4.0",
+      "license_explanation": "Items published in Marijuan et al. (2017), PLOS ONE, which publishes under CC BY 4.0.",
+      "license_url": "https://doi.org/10.1371/journal.pone.0189568",
+      "version": "1.0",
+      "url": "https://doi.org/10.1371/journal.pone.0189568",
+      "domain": "Social"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 0,
+      "max": 5,
+      "labels": [
+        "likert_0",
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "family",
+        "name": "Family",
+        "description": "Quality and frequency of family relationships."
+      },
+      {
+        "id": "friends",
+        "name": "Friends",
+        "description": "Quality and frequency of friendships."
+      },
+      {
+        "id": "acquaintances",
+        "name": "Acquaintances",
+        "description": "Ease and quality of interactions with acquaintances."
+      },
+      {
+        "id": "peers",
+        "name": "Peers",
+        "description": "Quality and perceived value in peer relationships."
+      }
+    ],
+    "items": [
+      {
+        "id": "socq1",
+        "text_key": "socq1",
+        "type": "likert",
+        "dimension": "family"
+      },
+      {
+        "id": "socq2",
+        "text_key": "socq2",
+        "type": "likert",
+        "dimension": "family"
+      },
+      {
+        "id": "socq3",
+        "text_key": "socq3",
+        "type": "likert",
+        "dimension": "family"
+      },
+      {
+        "id": "socq4",
+        "text_key": "socq4",
+        "type": "likert",
+        "dimension": "family"
+      },
+      {
+        "id": "socq5",
+        "text_key": "socq5",
+        "type": "likert",
+        "dimension": "friends"
+      },
+      {
+        "id": "socq6",
+        "text_key": "socq6",
+        "type": "likert",
+        "dimension": "friends"
+      },
+      {
+        "id": "socq7",
+        "text_key": "socq7",
+        "type": "likert",
+        "dimension": "friends"
+      },
+      {
+        "id": "socq8",
+        "text_key": "socq8",
+        "type": "likert",
+        "dimension": "friends"
+      },
+      {
+        "id": "socq9",
+        "text_key": "socq9",
+        "type": "likert",
+        "dimension": "acquaintances"
+      },
+      {
+        "id": "socq10",
+        "text_key": "socq10",
+        "type": "likert",
+        "dimension": "acquaintances"
+      },
+      {
+        "id": "socq11",
+        "text_key": "socq11",
+        "type": "likert",
+        "dimension": "acquaintances"
+      },
+      {
+        "id": "socq12",
+        "text_key": "socq12",
+        "type": "likert",
+        "dimension": "acquaintances"
+      },
+      {
+        "id": "socq13",
+        "text_key": "socq13",
+        "type": "likert",
+        "dimension": "peers"
+      },
+      {
+        "id": "socq14",
+        "text_key": "socq14",
+        "type": "likert",
+        "dimension": "peers"
+      },
+      {
+        "id": "socq15",
+        "text_key": "socq15",
+        "type": "likert",
+        "dimension": "peers"
+      },
+      {
+        "id": "socq16",
+        "text_key": "socq16",
+        "type": "likert",
+        "dimension": "peers"
+      }
+    ],
+    "scoring": {
+      "family": {
+        "method": "sum_coded",
+        "items": [
+          "socq1",
+          "socq2",
+          "socq3",
+          "socq4"
+        ],
+        "description": "Family subscale: sum of items 1-4 (range 4-24). Higher scores indicate stronger family relationships.",
+        "item_coding": {
+          "socq1": 1,
+          "socq2": 1,
+          "socq3": 1,
+          "socq4": 1
+        }
+      },
+      "friends": {
+        "method": "sum_coded",
+        "items": [
+          "socq5",
+          "socq6",
+          "socq7",
+          "socq8"
+        ],
+        "description": "Friends subscale: sum of items 5-8 (range 4-24). Higher scores indicate stronger friendships.",
+        "item_coding": {
+          "socq5": 1,
+          "socq6": 1,
+          "socq7": 1,
+          "socq8": 1
+        }
+      },
+      "acquaintances": {
+        "method": "sum_coded",
+        "items": [
+          "socq9",
+          "socq10",
+          "socq11",
+          "socq12"
+        ],
+        "description": "Acquaintances subscale: sum of items 9-12 (range 4-24). Items 10 and 12 are reverse scored. Higher scores indicate easier acquaintance interactions.",
+        "item_coding": {
+          "socq9": 1,
+          "socq10": -1,
+          "socq11": 1,
+          "socq12": -1
+        }
+      },
+      "peers": {
+        "method": "sum_coded",
+        "items": [
+          "socq13",
+          "socq14",
+          "socq15",
+          "socq16"
+        ],
+        "description": "Peers subscale: sum of items 13-16 (range 4-24). Higher scores indicate stronger peer relationships.",
+        "item_coding": {
+          "socq13": 1,
+          "socq14": 1,
+          "socq15": 1,
+          "socq16": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_0": "Never",
+      "likert_1": "Hardly Ever",
+      "likert_2": "Sometimes",
+      "likert_3": "Often",
+      "likert_4": "Usually",
+      "likert_5": "Always",
+      "question_head": "Please indicate how often each of the following statements applies to you.",
+      "socq1": "I speak and relate with my family.",
+      "socq2": "My family is important for me.",
+      "socq3": "The family members care about me.",
+      "socq4": "I have fun and laugh with my family.",
+      "socq5": "I speak and relate with my friends.",
+      "socq6": "I have friends to tell and share problems.",
+      "socq7": "I consider important to maintain relationships with friends.",
+      "socq8": "I have fun and laugh with my friends.",
+      "socq9": "I speak and relate comfortably with acquaintances.",
+      "socq10": "It costs me make conversation with people I do not know.",
+      "socq11": "It is easy for me to win support from acquaintances.",
+      "socq12": "Relations with my acquaintances are forced.",
+      "socq13": "I speak and relate satisfactorily with my peers.",
+      "socq14": "I have personal trust in my peers.",
+      "socq15": "When talking with peers they take me into account.",
+      "socq16": "I feel valued by my peers.",
+      "debrief": "Thank you for completing the Sociotype Questionnaire."
+    }
+  }
+}

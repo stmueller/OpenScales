@@ -1,0 +1,210 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Cravings for Rest and Volitional Energy Expenditure Scale",
+      "code": "CRAVE",
+      "abbreviation": "CRAVE",
+      "description": "13-item scale measuring cravings for rest and volitional energy expenditure. Uses an 11-point scale (0-10). Two subscales: Cravings for Rest (5 items) and Volitional Energy Expenditure (8 items). Assesses current state desire for physical activity versus rest.",
+      "citation": "Stults-Kolehmainen, M. A., Blacutt, M., Fogelman, N., Gilson, T. A., Stanforth, P. R., Divin, A. L., Bartholomew, J. B., Filgueiras, A., Ciccolo, J. T., Chamberlin, J. M., & Sinha, R. (2021). Frontiers in Psychology. https://doi.org/10.3389/fpsyg.2021.613267. [APA PsycTests: https://doi.org/10.1037/t86675-000]",
+      "license": "CC BY 4.0",
+      "license_explanation": "Items published in Stults-Kolehmainen et al. (2021), Frontiers in Psychology, which publishes under CC BY 4.0.",
+      "license_url": "https://doi.org/10.3389/fpsyg.2021.568286",
+      "version": "1.0",
+      "url": "https://doi.org/10.3389/fpsyg.2021.568286",
+      "domain": "Health & Well-being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 11,
+      "min": 0,
+      "max": 10,
+      "labels": [
+        "likert_0",
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5",
+        "likert_6",
+        "likert_7",
+        "likert_8",
+        "likert_9",
+        "likert_10"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "rest",
+        "name": "Cravings for Rest",
+        "description": "Desire to rest, be still, or do nothing active."
+      },
+      {
+        "id": "vee",
+        "name": "Volitional Energy Expenditure",
+        "description": "Desire to be physically active, exercise, or move."
+      }
+    ],
+    "items": [
+      {
+        "id": "crve1",
+        "text_key": "crve1",
+        "type": "likert",
+        "dimension": "vee"
+      },
+      {
+        "id": "crve2",
+        "text_key": "crve2",
+        "type": "likert",
+        "dimension": "vee"
+      },
+      {
+        "id": "crve3",
+        "text_key": "crve3",
+        "type": "likert",
+        "dimension": "rest"
+      },
+      {
+        "id": "crve4",
+        "text_key": "crve4",
+        "type": "likert",
+        "dimension": "rest"
+      },
+      {
+        "id": "crve5",
+        "text_key": "crve5",
+        "type": "likert",
+        "dimension": "rest"
+      },
+      {
+        "id": "crve6",
+        "text_key": "crve6",
+        "type": "likert",
+        "dimension": "rest"
+      },
+      {
+        "id": "crve7",
+        "text_key": "crve7",
+        "type": "likert",
+        "dimension": "rest"
+      },
+      {
+        "id": "crve8",
+        "text_key": "crve8",
+        "type": "likert",
+        "dimension": "vee"
+      },
+      {
+        "id": "crve9",
+        "text_key": "crve9",
+        "type": "likert",
+        "dimension": "vee"
+      },
+      {
+        "id": "crve10",
+        "text_key": "crve10",
+        "type": "likert",
+        "dimension": "vee"
+      },
+      {
+        "id": "crve11",
+        "text_key": "crve11",
+        "type": "likert",
+        "dimension": "vee"
+      },
+      {
+        "id": "crve12",
+        "text_key": "crve12",
+        "type": "likert",
+        "dimension": "vee"
+      },
+      {
+        "id": "crve13",
+        "text_key": "crve13",
+        "type": "likert",
+        "dimension": "vee"
+      }
+    ],
+    "scoring": {
+      "rest": {
+        "method": "sum_coded",
+        "items": [
+          "crve3",
+          "crve4",
+          "crve5",
+          "crve6",
+          "crve7"
+        ],
+        "description": "Cravings for Rest: sum of items 3-7 (range 0-50). Higher scores indicate greater desire for rest.",
+        "item_coding": {
+          "crve3": 1,
+          "crve4": 1,
+          "crve5": 1,
+          "crve6": 1,
+          "crve7": 1
+        }
+      },
+      "vee": {
+        "method": "sum_coded",
+        "items": [
+          "crve1",
+          "crve2",
+          "crve8",
+          "crve9",
+          "crve10",
+          "crve11",
+          "crve12",
+          "crve13"
+        ],
+        "description": "Volitional Energy Expenditure: sum of items 1,2,8-13 (range 0-80). Higher scores indicate greater desire for physical activity.",
+        "item_coding": {
+          "crve1": 1,
+          "crve2": 1,
+          "crve8": 1,
+          "crve9": 1,
+          "crve10": 1,
+          "crve11": 1,
+          "crve12": 1,
+          "crve13": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_0": "0 - Not at all",
+      "likert_1": "1",
+      "likert_2": "2",
+      "likert_3": "3",
+      "likert_4": "4",
+      "likert_5": "5",
+      "likert_6": "6",
+      "likert_7": "7",
+      "likert_8": "8",
+      "likert_9": "9",
+      "likert_10": "10 - More than ever",
+      "question_head": "Indicate how much you WANT or DESIRE to perform the following activities. Do NOT think about how much you 'should' desire each activity. Think about how you actually want/desire to behave at this very moment.",
+      "crve1": "At this very moment (right now) I want/desire to... move my body",
+      "crve2": "At this very moment (right now) I want/desire to... be physically active",
+      "crve3": "At this very moment (right now) I want/desire to... do nothing active",
+      "crve4": "At this very moment (right now) I want/desire to... just sit down",
+      "crve5": "At this very moment (right now) I want/desire to... take a nap",
+      "crve6": "At this very moment (right now) I want/desire to... rest",
+      "crve7": "At this very moment (right now) I want/desire to... be still",
+      "crve8": "At this very moment (right now) I want/desire to... exercise",
+      "crve9": "At this very moment (right now) I want/desire to... play a sport or game that is physically active",
+      "crve10": "At this very moment (right now) I want/desire to... go for a walk",
+      "crve11": "At this very moment (right now) I want/desire to... go for a run or jog",
+      "crve12": "At this very moment (right now) I want/desire to... participate in physical activities with others",
+      "crve13": "At this very moment (right now) I want/desire to... stretch",
+      "debrief": "Thank you for completing the Cravings for Rest and Volitional Energy Expenditure Scale."
+    }
+  }
+}

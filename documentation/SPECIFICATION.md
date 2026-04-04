@@ -439,7 +439,7 @@ See **C4 Media Embedding** for the preferred approach.
 
 #### Dimensions
 
-Dimensions group items into subscales:
+Dimensions declare the subscales/factors that the scale will compute. Each dimension has a **1:1 correspondence** with a scoring block — the dimension `id` must match a key in the `scoring` object. The `dimensions` array provides display metadata (name, description, ordering) while the `scoring` object provides computation logic.
 
 ```json
 {
@@ -456,10 +456,12 @@ Dimensions group items into subscales:
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `id` | string | yes | Unique identifier |
-| `name` | string | yes | Display name |
+| `id` | string | yes | Unique identifier. Must match a key in `scoring`. |
+| `name` | string | yes | Display name (used in reports, CSV column headers, and UI) |
 | `abbreviation` | string | no | Short label |
-| `description` | string | no | What the dimension measures |
+| `description` | string | no | What the dimension measures (displayed on scale detail pages) |
+
+Scoring blocks whose key does not match any dimension `id` are treated as **composite scores** — they are computed and included in summary output but do not generate per-item coded-value columns in CSV/reports. This is useful for total scores derived from subscale scores (using the `scores` field).
 
 Questions reference dimensions via their `dimension` field.
 
@@ -469,22 +471,15 @@ Implementing scoring blocks is a core ability expected of all scale runners. A r
 
 Additional runtime functionality — thresholding a score, deriving a risk flag, computing a BMI from height and weight — may be expressed using computed variables (S7). Computed variables require an expression evaluator and are therefore Standard conformance. The two mechanisms are complementary and flow in one direction: items → scoring blocks → computed variables. A scoring block may not reference a computed variable; a computed variable may reference `score.*`.
 
-The `scoring` object defines how dimension scores are computed:
+The `scoring` object defines how dimension scores are computed. Each key must match a dimension `id` (or be a composite score not linked to a dimension):
 
 ```json
 {
   "scoring": {
     "extraversion": {
-      "method": "mean_coded",
-      "items": ["q1", "q2", "q3", "q4", "q5"],
       "description": "Mean extraversion score (1-5 scale)",
-      "item_coding": {
-        "q1": 1,
-        "q2": -1,
-        "q3": 1,
-        "q4": -1,
-        "q5": 1
-      }
+      "method": "mean_coded",
+      "items": {"q1": 1, "q2": -1, "q3": 1, "q4": -1, "q5": 1}
     }
   }
 }
@@ -547,7 +542,7 @@ Array index 0 corresponds to response value `min` (here 1), index 1 to `min+1` (
 | `weights` | object | Per-item (or per-score) weights for `weighted_sum` and `weighted_mean`. Keys are item or score IDs; values are numeric weights. Items absent from `weights` are excluded from the weighted calculation. |
 | `correct_answers` | object | Per-item correct answers (for `sum_correct`) |
 | `transform` | array of objects | Optional sequence of affine steps applied to the raw score after the scoring method is computed. See **Score Transforms** below. |
-| `description` | string | Description of the score |
+| `description` | string | Optional description of the score computation (e.g., range, direction). Primarily for documentation; runners may display it but should prefer the dimension's `description` for user-facing text. |
 
 #### Score Transforms
 

@@ -778,6 +778,7 @@
     ],
     "scoring": {
       "svo_angle": {
+        "description": "The SVO angle cannot be computed from a simple coded sum. Raw response values (e.g., '85_85') must be parsed to extract Self (S_i) and Other (O_i) payoffs for each primary item i. SVO angle = arctan(mean(O_1..O_6) / mean(S_1..S_6)) × (180/π). Classification: Altruistic > 57.15°; Prosocial 22.45° to 57.15°; Individualistic -12.04° to 22.45°; Competitive < -12.04°. See Murphy, Ackermann, & Handgraaf (2011) for the full scoring procedure.",
         "method": "sum_coded",
         "items": [
           "p1",
@@ -786,18 +787,10 @@
           "p4",
           "p5",
           "p6"
-        ],
-        "description": "The SVO angle cannot be computed from a simple coded sum. Raw response values (e.g., '85_85') must be parsed to extract Self (S_i) and Other (O_i) payoffs for each primary item i. SVO angle = arctan(mean(O_1..O_6) / mean(S_1..S_6)) × (180/π). Classification: Altruistic > 57.15°; Prosocial 22.45° to 57.15°; Individualistic -12.04° to 22.45°; Competitive < -12.04°. See Murphy, Ackermann, & Handgraaf (2011) for the full scoring procedure.",
-        "item_coding": {
-          "p1": 1,
-          "p2": 1,
-          "p3": 1,
-          "p4": 1,
-          "p5": 1,
-          "p6": 1
-        }
+        ]
       },
       "inequality_aversion": {
+        "description": "Inequality aversion score computed from the 9 secondary items. For each secondary item, compute the normalized distance between the chosen allocation and the equality-maximizing allocation (where Self = Other). Average across all 9 items. Only interpretable for respondents classified as prosocial on the primary items. Raw response values must be parsed to extract Self and Other payoffs. See Murphy et al. (2011) and the secondary-items tutorial (https://ryanomurphy.com/resources/SVO_second_item_tutorial.pdf) for the full scoring procedure.",
         "method": "sum_coded",
         "items": [
           "s1",
@@ -809,21 +802,10 @@
           "s7",
           "s8",
           "s9"
-        ],
-        "description": "Inequality aversion score computed from the 9 secondary items. For each secondary item, compute the normalized distance between the chosen allocation and the equality-maximizing allocation (where Self = Other). Average across all 9 items. Only interpretable for respondents classified as prosocial on the primary items. Raw response values must be parsed to extract Self and Other payoffs. See Murphy et al. (2011) and the secondary-items tutorial (https://ryanomurphy.com/resources/SVO_second_item_tutorial.pdf) for the full scoring procedure.",
-        "item_coding": {
-          "s1": 1,
-          "s2": 1,
-          "s3": 1,
-          "s4": 1,
-          "s5": 1,
-          "s6": 1,
-          "s7": 1,
-          "s8": 1,
-          "s9": 1
-        }
+        ]
       },
       "joint_gain": {
+        "description": "Joint gain maximization score computed from the 9 secondary items. For each secondary item, compute the normalized distance between the chosen allocation and the joint-gain-maximizing allocation (where Self + Other is largest). Average across all 9 items. Only interpretable for respondents classified as prosocial on the primary items. Raw response values must be parsed to extract Self and Other payoffs. See Murphy et al. (2011) and the secondary-items tutorial (https://ryanomurphy.com/resources/SVO_second_item_tutorial.pdf) for the full scoring procedure.",
         "method": "sum_coded",
         "items": [
           "s1",
@@ -835,19 +817,7 @@
           "s7",
           "s8",
           "s9"
-        ],
-        "description": "Joint gain maximization score computed from the 9 secondary items. For each secondary item, compute the normalized distance between the chosen allocation and the joint-gain-maximizing allocation (where Self + Other is largest). Average across all 9 items. Only interpretable for respondents classified as prosocial on the primary items. Raw response values must be parsed to extract Self and Other payoffs. See Murphy et al. (2011) and the secondary-items tutorial (https://ryanomurphy.com/resources/SVO_second_item_tutorial.pdf) for the full scoring procedure.",
-        "item_coding": {
-          "s1": 1,
-          "s2": 1,
-          "s3": 1,
-          "s4": 1,
-          "s5": 1,
-          "s6": 1,
-          "s7": 1,
-          "s8": 1,
-          "s9": 1
-        }
+        ]
       }
     },
     "report": {

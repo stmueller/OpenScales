@@ -475,6 +475,7 @@
     ],
     "scoring": {
       "anxiety": {
+        "description": "Mean of 9 anxiety items. Transform: (mean−1)/5×100. Higher = less anxiety.",
         "method": "mean_coded",
         "items": [
           "mhi2",
@@ -487,18 +488,6 @@
           "mhi27",
           "mhi37"
         ],
-        "description": "Mean of 9 anxiety items. Transform: (mean−1)/5×100. Higher = less anxiety.",
-        "item_coding": {
-          "mhi2": 1,
-          "mhi3": 1,
-          "mhi4": 1,
-          "mhi9": 1,
-          "mhi14": 1,
-          "mhi15": 1,
-          "mhi22": 1,
-          "mhi27": 1,
-          "mhi37": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -515,6 +504,7 @@
         ]
       },
       "depression": {
+        "description": "Mean of 4 depression items. Transform: (mean−1)/5×100. Higher = less depression.",
         "method": "mean_coded",
         "items": [
           "mhi6",
@@ -522,13 +512,6 @@
           "mhi12",
           "mhi17"
         ],
-        "description": "Mean of 4 depression items. Transform: (mean−1)/5×100. Higher = less depression.",
-        "item_coding": {
-          "mhi6": 1,
-          "mhi11": 1,
-          "mhi12": 1,
-          "mhi17": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -545,21 +528,9 @@
         ]
       },
       "loss_of_control": {
-        "method": "mean_coded",
-        "items": [
-          "mhi5",
-          "mhi13",
-          "mhi18",
-          "mhi20",
-          "mhi24",
-          "mhi26",
-          "mhi28",
-          "mhi32",
-          "mhi35",
-          "mhi38"
-        ],
         "description": "Mean of 10 loss-of-control items. mhi13 reverse-coded. Transform: (mean−1)/5×100. Higher = better control.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "mhi5": 1,
           "mhi13": -1,
           "mhi18": 1,
@@ -587,21 +558,9 @@
         ]
       },
       "positive_affect": {
-        "method": "mean_coded",
-        "items": [
-          "mhi1",
-          "mhi7",
-          "mhi8",
-          "mhi19",
-          "mhi23",
-          "mhi29",
-          "mhi30",
-          "mhi31",
-          "mhi33",
-          "mhi34"
-        ],
         "description": "Mean of 10 positive affect items. All reverse-coded. Transform: (mean−1)/5×100. Higher = greater positive affect.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "mhi1": -1,
           "mhi7": -1,
           "mhi8": -1,
@@ -629,16 +588,9 @@
         ]
       },
       "emotional_ties": {
-        "method": "mean_coded",
-        "items": [
-          "mhi10",
-          "mhi16",
-          "mhi21",
-          "mhi25",
-          "mhi36"
-        ],
         "description": "Mean of 5 emotional ties items. mhi16, mhi25, mhi36 reverse-coded. Transform: (mean−1)/5×100. Higher = stronger ties.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "mhi10": 1,
           "mhi16": -1,
           "mhi21": 1,
@@ -661,34 +613,9 @@
         ]
       },
       "psychological_distress": {
-        "method": "mean_coded",
-        "items": [
-          "mhi2",
-          "mhi3",
-          "mhi4",
-          "mhi9",
-          "mhi14",
-          "mhi15",
-          "mhi22",
-          "mhi27",
-          "mhi37",
-          "mhi6",
-          "mhi11",
-          "mhi12",
-          "mhi17",
-          "mhi5",
-          "mhi13",
-          "mhi18",
-          "mhi20",
-          "mhi24",
-          "mhi26",
-          "mhi28",
-          "mhi32",
-          "mhi35",
-          "mhi38"
-        ],
         "description": "Composite: Anxiety + Depression + Loss of Control (23 items). Transform: (mean−1)/5×100. Higher = less distress.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "mhi2": 1,
           "mhi3": 1,
           "mhi4": 1,
@@ -729,26 +656,9 @@
         ]
       },
       "psychological_wellbeing": {
-        "method": "mean_coded",
-        "items": [
-          "mhi1",
-          "mhi7",
-          "mhi8",
-          "mhi19",
-          "mhi23",
-          "mhi29",
-          "mhi30",
-          "mhi31",
-          "mhi33",
-          "mhi34",
-          "mhi10",
-          "mhi16",
-          "mhi21",
-          "mhi25",
-          "mhi36"
-        ],
         "description": "Composite: Positive Affect + Emotional Ties (15 items). Transform: (mean−1)/5×100. Higher = greater well-being.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "mhi1": -1,
           "mhi7": -1,
           "mhi8": -1,

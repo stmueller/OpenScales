@@ -37,78 +37,237 @@
     }
   ],
   "items": [
-    { "id": "d1",  "text_key": "d1",  "type": "likert" },
-    { "id": "d2",  "text_key": "d2",  "type": "likert" },
-    { "id": "d3",  "text_key": "d3",  "type": "likert" },
-    { "id": "d4",  "text_key": "d4",  "type": "likert" },
-    { "id": "d5",  "text_key": "d5",  "type": "likert" },
-    { "id": "d6",  "text_key": "d6",  "type": "likert" },
-    { "id": "d7",  "text_key": "d7",  "type": "likert" },
-    { "id": "d8",  "text_key": "d8",  "type": "likert" },
-    { "id": "d9",  "text_key": "d9",  "type": "likert" },
-    { "id": "d10", "text_key": "d10", "type": "likert" },
-    { "id": "d11", "text_key": "d11", "type": "likert" },
-    { "id": "d12", "text_key": "d12", "type": "likert" },
-    { "id": "d13", "text_key": "d13", "type": "likert" },
-    { "id": "d14", "text_key": "d14", "type": "likert" },
-    { "id": "d15", "text_key": "d15", "type": "likert" },
-    { "id": "d16", "text_key": "d16", "type": "likert" },
-    { "id": "d17", "text_key": "d17", "type": "likert" },
-    { "id": "d18", "text_key": "d18", "type": "likert" },
-    { "id": "d19", "text_key": "d19", "type": "likert" },
-    { "id": "d20", "text_key": "d20", "type": "likert" },
-    { "id": "d21", "text_key": "d21", "type": "likert" }
+    {
+      "id": "d1",
+      "text_key": "d1",
+      "type": "likert"
+    },
+    {
+      "id": "d2",
+      "text_key": "d2",
+      "type": "likert"
+    },
+    {
+      "id": "d3",
+      "text_key": "d3",
+      "type": "likert"
+    },
+    {
+      "id": "d4",
+      "text_key": "d4",
+      "type": "likert"
+    },
+    {
+      "id": "d5",
+      "text_key": "d5",
+      "type": "likert"
+    },
+    {
+      "id": "d6",
+      "text_key": "d6",
+      "type": "likert"
+    },
+    {
+      "id": "d7",
+      "text_key": "d7",
+      "type": "likert"
+    },
+    {
+      "id": "d8",
+      "text_key": "d8",
+      "type": "likert"
+    },
+    {
+      "id": "d9",
+      "text_key": "d9",
+      "type": "likert"
+    },
+    {
+      "id": "d10",
+      "text_key": "d10",
+      "type": "likert"
+    },
+    {
+      "id": "d11",
+      "text_key": "d11",
+      "type": "likert"
+    },
+    {
+      "id": "d12",
+      "text_key": "d12",
+      "type": "likert"
+    },
+    {
+      "id": "d13",
+      "text_key": "d13",
+      "type": "likert"
+    },
+    {
+      "id": "d14",
+      "text_key": "d14",
+      "type": "likert"
+    },
+    {
+      "id": "d15",
+      "text_key": "d15",
+      "type": "likert"
+    },
+    {
+      "id": "d16",
+      "text_key": "d16",
+      "type": "likert"
+    },
+    {
+      "id": "d17",
+      "text_key": "d17",
+      "type": "likert"
+    },
+    {
+      "id": "d18",
+      "text_key": "d18",
+      "type": "likert"
+    },
+    {
+      "id": "d19",
+      "text_key": "d19",
+      "type": "likert"
+    },
+    {
+      "id": "d20",
+      "text_key": "d20",
+      "type": "likert"
+    },
+    {
+      "id": "d21",
+      "text_key": "d21",
+      "type": "likert"
+    }
   ],
   "scoring": {
     "depression": {
-      "method": "sum_coded",
-      "items": ["d3", "d5", "d10", "d13", "d16", "d17", "d21"],
       "description": "Sum of 7 depression items (0-21); multiply by 2 to compare with DASS-42 norms. Severity (x2): 0-9 normal, 10-13 mild, 14-20 moderate, 21-27 severe, 28+ extremely severe.",
+      "method": "sum_coded",
+      "items": [
+        "d3",
+        "d5",
+        "d10",
+        "d13",
+        "d16",
+        "d17",
+        "d21"
+      ],
       "norms": {
         "thresholds": [
-          { "min": 0,  "max": 4,  "label": "Normal" },
-          { "min": 5,  "max": 6,  "label": "Mild" },
-          { "min": 7,  "max": 10, "label": "Moderate" },
-          { "min": 11, "max": 13, "label": "Severe" },
-          { "min": 14, "max": 21, "label": "Extremely Severe" }
+          {
+            "min": 0,
+            "max": 4,
+            "label": "Normal"
+          },
+          {
+            "min": 5,
+            "max": 6,
+            "label": "Mild"
+          },
+          {
+            "min": 7,
+            "max": 10,
+            "label": "Moderate"
+          },
+          {
+            "min": 11,
+            "max": 13,
+            "label": "Severe"
+          },
+          {
+            "min": 14,
+            "max": 21,
+            "label": "Extremely Severe"
+          }
         ]
-      },
-      "item_coding": {
-        "d3": 1, "d5": 1, "d10": 1, "d13": 1, "d16": 1, "d17": 1, "d21": 1
       }
     },
     "anxiety": {
-      "method": "sum_coded",
-      "items": ["d2", "d4", "d7", "d9", "d15", "d19", "d20"],
       "description": "Sum of 7 anxiety items (0-21); multiply by 2 to compare with DASS-42 norms. Severity (x2): 0-7 normal, 8-9 mild, 10-14 moderate, 15-19 severe, 20+ extremely severe.",
+      "method": "sum_coded",
+      "items": [
+        "d2",
+        "d4",
+        "d7",
+        "d9",
+        "d15",
+        "d19",
+        "d20"
+      ],
       "norms": {
         "thresholds": [
-          { "min": 0,  "max": 3,  "label": "Normal" },
-          { "min": 4,  "max": 4,  "label": "Mild" },
-          { "min": 5,  "max": 7,  "label": "Moderate" },
-          { "min": 8,  "max": 9,  "label": "Severe" },
-          { "min": 10, "max": 21, "label": "Extremely Severe" }
+          {
+            "min": 0,
+            "max": 3,
+            "label": "Normal"
+          },
+          {
+            "min": 4,
+            "max": 4,
+            "label": "Mild"
+          },
+          {
+            "min": 5,
+            "max": 7,
+            "label": "Moderate"
+          },
+          {
+            "min": 8,
+            "max": 9,
+            "label": "Severe"
+          },
+          {
+            "min": 10,
+            "max": 21,
+            "label": "Extremely Severe"
+          }
         ]
-      },
-      "item_coding": {
-        "d2": 1, "d4": 1, "d7": 1, "d9": 1, "d15": 1, "d19": 1, "d20": 1
       }
     },
     "stress": {
-      "method": "sum_coded",
-      "items": ["d1", "d6", "d8", "d11", "d12", "d14", "d18"],
       "description": "Sum of 7 stress items (0-21); multiply by 2 to compare with DASS-42 norms. Severity (x2): 0-14 normal, 15-18 mild, 19-25 moderate, 26-33 severe, 34+ extremely severe.",
+      "method": "sum_coded",
+      "items": [
+        "d1",
+        "d6",
+        "d8",
+        "d11",
+        "d12",
+        "d14",
+        "d18"
+      ],
       "norms": {
         "thresholds": [
-          { "min": 0,  "max": 7,  "label": "Normal" },
-          { "min": 8,  "max": 9,  "label": "Mild" },
-          { "min": 10, "max": 12, "label": "Moderate" },
-          { "min": 13, "max": 16, "label": "Severe" },
-          { "min": 17, "max": 21, "label": "Extremely Severe" }
+          {
+            "min": 0,
+            "max": 7,
+            "label": "Normal"
+          },
+          {
+            "min": 8,
+            "max": 9,
+            "label": "Mild"
+          },
+          {
+            "min": 10,
+            "max": 12,
+            "label": "Moderate"
+          },
+          {
+            "min": 13,
+            "max": 16,
+            "label": "Severe"
+          },
+          {
+            "min": 17,
+            "max": 21,
+            "label": "Extremely Severe"
+          }
         ]
-      },
-      "item_coding": {
-        "d1": 1, "d6": 1, "d8": 1, "d11": 1, "d12": 1, "d14": 1, "d18": 1
       }
     }
   }

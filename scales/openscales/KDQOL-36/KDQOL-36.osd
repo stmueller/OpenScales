@@ -357,15 +357,9 @@
     ],
     "scoring": {
       "burden_kidney": {
-        "method": "mean_coded",
-        "items": [
-          "kdqol36_burden_grid_1",
-          "kdqol36_burden_grid_2",
-          "kdqol36_burden_grid_3",
-          "kdqol36_burden_grid_4"
-        ],
         "description": "Mean of 4 burden items (1=Definitely true … 5=Definitely false; all negative-worded so reverse-code). Higher = less burden. Reverse code: (1+5)−response, then (mean−1)/4×100 → 0–100.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "kdqol36_burden_grid_1": -1,
           "kdqol36_burden_grid_2": -1,
           "kdqol36_burden_grid_3": -1,
@@ -387,23 +381,9 @@
         ]
       },
       "symptoms_problems": {
-        "method": "mean_coded",
-        "items": [
-          "kdqol36_symp_grid_1",
-          "kdqol36_symp_grid_2",
-          "kdqol36_symp_grid_3",
-          "kdqol36_symp_grid_4",
-          "kdqol36_symp_grid_5",
-          "kdqol36_symp_grid_6",
-          "kdqol36_symp_grid_7",
-          "kdqol36_symp_grid_8",
-          "kdqol36_symp_grid_9",
-          "kdqol36_symp_grid_10",
-          "kdqol36_symp_grid_11",
-          "kdqol36_symp_grid_12"
-        ],
         "description": "Mean of 12 symptom items (items 28a/28b optional, not scored). Columns: 1=Not at all…5=Extremely; reverse-coded so 5=not bothered. Transform: (mean−1)/4×100 → 0–100.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "kdqol36_symp_grid_1": -1,
           "kdqol36_symp_grid_2": -1,
           "kdqol36_symp_grid_3": -1,
@@ -433,19 +413,9 @@
         ]
       },
       "effects_daily_life": {
-        "method": "mean_coded",
-        "items": [
-          "kdqol36_eff_grid_1",
-          "kdqol36_eff_grid_2",
-          "kdqol36_eff_grid_3",
-          "kdqol36_eff_grid_4",
-          "kdqol36_eff_grid_5",
-          "kdqol36_eff_grid_6",
-          "kdqol36_eff_grid_7",
-          "kdqol36_eff_grid_8"
-        ],
         "description": "Mean of 8 effects items. Values pre-reversed (Not limited=5). 0–100: (mean − 1) / 4 × 100.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "kdqol36_eff_grid_1": -1,
           "kdqol36_eff_grid_2": -1,
           "kdqol36_eff_grid_3": -1,
@@ -471,20 +441,9 @@
         ]
       },
       "sf12_physical": {
-        "method": "sum_coded",
-        "items": [
-          "kdqol36_1",
-          "kdqol36_2",
-          "kdqol36_3",
-          "kdqol36_4",
-          "kdqol36_5",
-          "kdqol36_8",
-          "kdqol36_mh_grid_1",
-          "kdqol36_mh_grid_2",
-          "kdqol36_mh_grid_3"
-        ],
         "description": "SF-12 Physical Component Summary (PCS). Computed from relevant SF-12 items using the SF-12 scoring algorithm (Ware et al., 1996). Score is standardized to a mean of 50 (SD=10).",
-        "item_coding": {
+        "method": "sum_coded",
+        "items": {
           "kdqol36_1": 1,
           "kdqol36_2": 1,
           "kdqol36_3": 1,
@@ -497,18 +456,9 @@
         }
       },
       "sf12_mental": {
-        "method": "sum_coded",
-        "items": [
-          "kdqol36_1",
-          "kdqol36_6",
-          "kdqol36_7",
-          "kdqol36_8",
-          "kdqol36_mh_grid_1",
-          "kdqol36_mh_grid_2",
-          "kdqol36_mh_grid_3"
-        ],
         "description": "SF-12 Mental Component Summary (MCS). Computed from relevant SF-12 items using the SF-12 scoring algorithm (Ware et al., 1996). Score is standardized to a mean of 50 (SD=10).",
-        "item_coding": {
+        "method": "sum_coded",
+        "items": {
           "kdqol36_1": 1,
           "kdqol36_6": 1,
           "kdqol36_7": 1,
@@ -519,14 +469,11 @@
         }
       },
       "overall_health": {
+        "description": "SF-12 social functioning item. Response: 1=All of the time to 5=None of the time. Part of the SF-12 algorithm (see sf12_physical and sf12_mental).",
         "method": "sum_coded",
         "items": [
           "kdqol36_12"
-        ],
-        "description": "SF-12 social functioning item. Response: 1=All of the time to 5=None of the time. Part of the SF-12 algorithm (see sf12_physical and sf12_mental).",
-        "item_coding": {
-          "kdqol36_12": 1
-        }
+        ]
       }
     }
   },

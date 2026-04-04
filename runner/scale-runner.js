@@ -1524,6 +1524,35 @@ const ScaleRunner = (() => {
    * Compute dimension scores from responseMap.
    * Returns {scores: {dimId: numericScore | null}, transformedScores: {dimId: number}}.
    */
+  // Helper: normalize scoring items — accepts array (all forward) or object (explicit coding)
+  // Also supports legacy item_coding field for backward compatibility.
+  function getScoringItems(sd) {
+    if (!sd) return [];
+    const items = sd.items;
+    if (Array.isArray(items)) return items;
+    if (items && typeof items === 'object') return Object.keys(items).filter(k => items[k] !== 0);
+    // Legacy fallback: item_coding without items
+    if (sd.item_coding) return Object.keys(sd.item_coding).filter(k => sd.item_coding[k] !== 0);
+    return [];
+  }
+
+  // Helper: get coding for an item (1=forward, -1=reverse, 0=exclude)
+  function getItemCoding(sd, itemId) {
+    const items = sd.items;
+    if (items && typeof items === 'object' && !Array.isArray(items)) {
+      return items[itemId] !== undefined ? items[itemId] : 0;
+    }
+    // Array format or legacy: check item_coding, default to 1
+    if (sd.item_coding && sd.item_coding[itemId] !== undefined) return sd.item_coding[itemId];
+    return 1;
+  }
+
+  // Helper: check if an item ID is in a scoring definition's item list
+  function isInScoring(sd, itemId) {
+    if (!sd) return false;
+    return getScoringItems(sd).includes(itemId);
+  }
+
   function computeScores(scaleDef, responseMap) {
     // Expand grid responses: responseMap['gridId'] = "3 4 2" → 'gridId_1'=3, 'gridId_2'=4, ...
     const expandedMap = Object.assign({}, responseMap);
@@ -1545,8 +1574,8 @@ const ScaleRunner = (() => {
     // Helper: score one item-based dimension into scores/codedValuesByDim
     function scoreDimension(dimId, scoreDef) {
       const method  = scoreDef.method;
-      const items   = scoreDef.items || [];
-      const coding  = scoreDef.item_coding || {};
+      const items   = getScoringItems(scoreDef);
+      const coding  = {}; // built from getItemCoding
       const vmap    = scoreDef.value_map || {};
       const weights = scoreDef.weights || {};
       const correct = scoreDef.correct_answers || {};
@@ -1595,7 +1624,7 @@ const ScaleRunner = (() => {
           if (idx >= 0 && idx < itemMap.length) numVal = itemMap[idx];
         }
 
-        const c = coding[itemId] !== undefined ? coding[itemId] : 1;
+        const c = getItemCoding(scoreDef, itemId);
         if (c === 0) continue;
 
         let coded = numVal;
@@ -1618,7 +1647,7 @@ const ScaleRunner = (() => {
       if (scoreDef.scores) {
         const tScores = codedValuesByDim._transformedScores || {};
         for (const scoreId of scoreDef.scores) {
-          const c = coding[scoreId] !== undefined ? coding[scoreId] : 1;
+          const c = getItemCoding(scoreDef, scoreId);
           if (c === 0) continue;
           // prefer transformed output, fall back to raw
           const val = tScores[scoreId] !== undefined ? tScores[scoreId] : scores[scoreId];
@@ -1758,7 +1787,7 @@ const ScaleRunner = (() => {
       const dimCols = dims.map(dimId => {
         const sd = (scaleDef.scoring || {})[dimId];
         if (!sd) return '';
-        if (!sd.items || !sd.items.includes(qdef.id)) return '';
+        if (!isInScoring(sd, qdef.id)) return '';
         if (responseVal === 'NA') return 'NA';
         // Apply value_map (array format) then coding
         const [rMin, rMax] = getQuestionRange(qdef, scaleDef);
@@ -1772,7 +1801,7 @@ const ScaleRunner = (() => {
             if (idx >= 0 && idx < m.length) numVal = m[idx];
           }
         }
-        const coding = sd.item_coding && sd.item_coding[qdef.id];
+        const coding = getItemCoding(sd, qdef.id);
         if (coding === -1) {
           if (rMin !== null && rMax !== null) return String((rMin + rMax) - numVal);
         }
@@ -1782,7 +1811,7 @@ const ScaleRunner = (() => {
       // Transformed score columns — show dim-level transformed score for items in that dim
       const tDimCols = tDims.map(dimId => {
         const sd = (scaleDef.scoring || {})[dimId];
-        if (!sd || !sd.items || !sd.items.includes(qdef.id)) return '';
+        if (!sd || !isInScoring(sd, qdef.id)) return '';
         if (responseVal === 'NA') return 'NA';
         const tScore = (transformedScores || {})[dimId];
         return tScore !== undefined ? String(Math.round(tScore * 100) / 100) : 'NA';
@@ -1800,7 +1829,7 @@ const ScaleRunner = (() => {
 
           const subDimCols = dims.map(dimId => {
             const sd = (scaleDef.scoring || {})[dimId];
-            if (!sd || !sd.items || !sd.items.includes(subId)) return '';
+            if (!isInScoring(sd, subId)) return '';
             if (subResp === 'NA') return 'NA';
             let numVal = parseFloat(subResp);
             if (isNaN(numVal)) return String(subResp);
@@ -1812,7 +1841,7 @@ const ScaleRunner = (() => {
                 if (idx >= 0 && idx < m.length) numVal = m[idx];
               }
             }
-            const c = sd.item_coding && sd.item_coding[subId];
+            const c = getItemCoding(sd, subId);
             if (c === -1 && gMin !== null && gMax !== null) {
               return String((gMin + gMax) - numVal);
             }
@@ -1821,7 +1850,7 @@ const ScaleRunner = (() => {
 
           const subTDimCols = tDims.map(dimId => {
             const sd = (scaleDef.scoring || {})[dimId];
-            if (!sd || !sd.items || !sd.items.includes(subId)) return '';
+            if (!isInScoring(sd, subId)) return '';
             if (subResp === 'NA') return 'NA';
             const tScore = (transformedScores || {})[dimId];
             return tScore !== undefined ? String(Math.round(tScore * 100) / 100) : 'NA';
@@ -2636,7 +2665,7 @@ const ScaleRunner = (() => {
 
           const subDimCells = dims.map(dim => {
             const sd = (scaleDef.scoring || {})[dim.id];
-            if (!sd || !sd.items || !sd.items.includes(subId)) return '<td></td>';
+            if (!isInScoring(sd, subId)) return '<td></td>';
             if (subResp === 'NA' || subResp === '') return '<td></td>';
             let numVal = parseFloat(subResp);
             if (isNaN(numVal)) return `<td>${subResp}</td>`;
@@ -2648,7 +2677,7 @@ const ScaleRunner = (() => {
                 if (idx >= 0 && idx < m.length) numVal = m[idx];
               }
             }
-            const c = sd.item_coding && sd.item_coding[subId];
+            const c = getItemCoding(sd, subId);
             let coded = numVal;
             if (c === -1 && gMin !== null && gMax !== null) {
               coded = (gMin + gMax) - numVal;
@@ -2662,7 +2691,7 @@ const ScaleRunner = (() => {
       // Per-dimension coded values
       const dimCells = dims.map(dim => {
         const sd = (scaleDef.scoring || {})[dim.id];
-        if (!sd || !sd.items || !sd.items.includes(qdef.id)) return '<td></td>';
+        if (!sd || !isInScoring(sd, qdef.id)) return '<td></td>';
         if (respVal === 'NA' || respVal === '') return '<td></td>';
 
         // sum_correct: show 1 (correct) or 0 (incorrect), not the raw response
@@ -2679,7 +2708,7 @@ const ScaleRunner = (() => {
           return `<td>${isCorrect ? 1 : 0}</td>`;
         }
 
-        // Likert / coded methods: apply value_map then item_coding
+        // Likert / coded methods: apply value_map then coding
         const [rMin, rMax] = getQuestionRange(qdef, scaleDef);
         let numVal = parseFloat(respVal);
         if (isNaN(numVal)) return `<td>${respVal}</td>`;
@@ -2691,7 +2720,7 @@ const ScaleRunner = (() => {
             if (idx >= 0 && idx < m.length) numVal = m[idx];
           }
         }
-        const c = sd.item_coding && sd.item_coding[qdef.id];
+        const c = getItemCoding(sd, qdef.id);
         let coded = numVal;
         if (c === -1) {
           if (rMin !== null && rMax !== null) coded = (rMin + rMax) - numVal;

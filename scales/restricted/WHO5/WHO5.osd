@@ -68,6 +68,7 @@
     ],
     "scoring": {
       "wellbeing": {
+        "description": "Raw sum of items (0-25). Percentage well-being score = raw x 4 (0-100). Scores <=50 suggest possible depression.",
         "method": "sum_coded",
         "items": [
           "who1",
@@ -76,7 +77,12 @@
           "who4",
           "who5"
         ],
-        "description": "Raw sum of items (0-25). Percentage well-being score = raw x 4 (0-100). Scores <=50 suggest possible depression.",
+        "transform": [
+          {
+            "op": "multiply",
+            "value": 4
+          }
+        ],
         "norms": {
           "thresholds": [
             {
@@ -90,20 +96,7 @@
               "label": "Good Well-Being"
             }
           ]
-        },
-        "item_coding": {
-          "who1": 1,
-          "who2": 1,
-          "who3": 1,
-          "who4": 1,
-          "who5": 1
-        },
-        "transform": [
-          {
-            "op": "multiply",
-            "value": 4
-          }
-        ]
+        }
       }
     }
   },

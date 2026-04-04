@@ -531,20 +531,9 @@
     ],
     "scoring": {
       "attitudes": {
-        "method": "mean_coded",
-        "items": [
-          "context_general_q1",
-          "context_general_q2",
-          "context_workplace_q1",
-          "context_workplace_q2",
-          "att1",
-          "att2",
-          "att3",
-          "att4",
-          "att5"
-        ],
         "description": "Mean of attitude items after reverse-scoring att3 and att5. Branch items (context_general_q* or context_workplace_q*) contribute only one pair depending on parameter; NA responses are excluded from the mean.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "context_general_q1": 1,
           "context_general_q2": 1,
           "context_workplace_q1": 1,
@@ -576,18 +565,13 @@
         }
       },
       "wellbeing": {
+        "description": "Mean of 3 VAS items. Range 0-100. Higher = greater subjective well-being. Transformed: divided by 10 to produce 0-10 scale.",
         "method": "mean_coded",
         "items": [
           "wb1",
           "wb2",
           "wb3"
         ],
-        "description": "Mean of 3 VAS items. Range 0-100. Higher = greater subjective well-being. Transformed: divided by 10 to produce 0-10 scale.",
-        "item_coding": {
-          "wb1": 1,
-          "wb2": 1,
-          "wb3": 1
-        },
         "transform": [
           {
             "op": "divide",

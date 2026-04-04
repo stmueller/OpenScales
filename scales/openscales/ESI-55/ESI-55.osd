@@ -1160,6 +1160,7 @@
     ],
     "scoring": {
       "health_perceptions": {
+        "description": "Health Perceptions (items 1, 42-46; true/false).",
         "method": "mean_coded",
         "items": [
           "esi1",
@@ -1168,18 +1169,10 @@
           "esi44",
           "esi45",
           "esi46"
-        ],
-        "description": "Health Perceptions (items 1, 42-46; true/false).",
-        "item_coding": {
-          "esi1": 1,
-          "esi42": 1,
-          "esi43": 1,
-          "esi44": 1,
-          "esi45": 1,
-          "esi46": 1
-        }
+        ]
       },
       "energy_fatigue": {
+        "description": "Mean of 4 energy/fatigue items. Values pre-reversed so higher = more energy. 0–100: (mean − 1) / 5 × 100.",
         "method": "mean_coded",
         "items": [
           "esi23",
@@ -1187,13 +1180,6 @@
           "esi29",
           "esi31"
         ],
-        "description": "Mean of 4 energy/fatigue items. Values pre-reversed so higher = more energy. 0–100: (mean − 1) / 5 × 100.",
-        "item_coding": {
-          "esi23": 1,
-          "esi27": 1,
-          "esi29": 1,
-          "esi31": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -1210,30 +1196,23 @@
         ]
       },
       "overall_qol": {
+        "description": "Overall Quality of Life (items 2, 48).",
         "method": "mean_coded",
         "items": [
           "esi3",
           "esi48"
-        ],
-        "description": "Overall Quality of Life (items 2, 48).",
-        "item_coding": {
-          "esi3": 1,
-          "esi48": 1
-        }
+        ]
       },
       "social_function": {
+        "description": "Social Function (items 24, 34).",
         "method": "mean_coded",
         "items": [
           "esi17",
           "esi34"
-        ],
-        "description": "Social Function (items 24, 34).",
-        "item_coding": {
-          "esi17": 1,
-          "esi34": 1
-        }
+        ]
       },
       "emotional_wellbeing": {
+        "description": "Mean of 5 emotional well-being items. Values pre-reversed so higher = better. 0–100: (mean − 1) / 5 × 100.",
         "method": "mean_coded",
         "items": [
           "esi24",
@@ -1243,15 +1222,6 @@
           "esi30",
           "esi39"
         ],
-        "description": "Mean of 5 emotional well-being items. Values pre-reversed so higher = better. 0–100: (mean − 1) / 5 × 100.",
-        "item_coding": {
-          "esi24": 1,
-          "esi25": 1,
-          "esi26": 1,
-          "esi28": 1,
-          "esi30": 1,
-          "esi39": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -1268,6 +1238,7 @@
         ]
       },
       "cognitive_function": {
+        "description": "Cognitive Function (items 35, 36, 38; 6-pt freq).",
         "method": "mean_coded",
         "items": [
           "esi35",
@@ -1275,17 +1246,10 @@
           "esi38",
           "esi49",
           "esi50"
-        ],
-        "description": "Cognitive Function (items 35, 36, 38; 6-pt freq).",
-        "item_coding": {
-          "esi35": 1,
-          "esi36": 1,
-          "esi38": 1,
-          "esi49": 1,
-          "esi50": 1
-        }
+        ]
       },
       "physical_function": {
+        "description": "Mean of 10 physical function items (1–3 scale). Higher = less limitation. 0–100: (mean − 1) / 2 × 100.",
         "method": "mean_coded",
         "items": [
           "esi5",
@@ -1299,19 +1263,6 @@
           "esi13",
           "esi14"
         ],
-        "description": "Mean of 10 physical function items (1–3 scale). Higher = less limitation. 0–100: (mean − 1) / 2 × 100.",
-        "item_coding": {
-          "esi5": 1,
-          "esi6": 1,
-          "esi7": 1,
-          "esi8": 1,
-          "esi9": 1,
-          "esi10": 1,
-          "esi11": 1,
-          "esi12": 1,
-          "esi13": 1,
-          "esi14": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -1328,6 +1279,7 @@
         ]
       },
       "role_physical": {
+        "description": "Mean of 2 role limitation (physical) items (Yes=0, No=1). 0–100: mean × 100.",
         "method": "mean_coded",
         "items": [
           "esi15",
@@ -1336,14 +1288,6 @@
           "esi18_rp",
           "esi18_rp_e"
         ],
-        "description": "Mean of 2 role limitation (physical) items (Yes=0, No=1). 0–100: mean × 100.",
-        "item_coding": {
-          "esi15": 1,
-          "esi16": 1,
-          "esi17_rp": 1,
-          "esi18_rp": 1,
-          "esi18_rp_e": 1
-        },
         "transform": [
           {
             "op": "multiply",
@@ -1352,6 +1296,7 @@
         ]
       },
       "role_emotional": {
+        "description": "Mean of 3 role limitation (emotional) items (Yes=0, No=1). 0–100: mean × 100.",
         "method": "mean_coded",
         "items": [
           "esi19",
@@ -1360,14 +1305,6 @@
           "esi21_re_d",
           "esi22"
         ],
-        "description": "Mean of 3 role limitation (emotional) items (Yes=0, No=1). 0–100: mean × 100.",
-        "item_coding": {
-          "esi19": 1,
-          "esi21": 1,
-          "esi21_re_c": 1,
-          "esi21_re_d": 1,
-          "esi22": 1
-        },
         "transform": [
           {
             "op": "multiply",
@@ -1376,30 +1313,23 @@
         ]
       },
       "pain": {
+        "description": "Pain (items 40-41).",
         "method": "mean_coded",
         "items": [
           "esi40",
           "esi41"
-        ],
-        "description": "Pain (items 40-41).",
-        "item_coding": {
-          "esi40": 1,
-          "esi41": 1
-        }
+        ]
       },
       "epilepsy_specific": {
+        "description": "Epilepsy-Specific (items 37, 47).",
         "method": "mean_coded",
         "items": [
           "esi37",
           "esi47"
-        ],
-        "description": "Epilepsy-Specific (items 37, 47).",
-        "item_coding": {
-          "esi37": 1,
-          "esi47": 1
-        }
+        ]
       },
       "role_memory": {
+        "description": "Role Limitations — Memory/Speech/Language (items 51-55, yes/no).",
         "method": "mean_coded",
         "items": [
           "esi51",
@@ -1407,15 +1337,7 @@
           "esi53",
           "esi54",
           "esi55"
-        ],
-        "description": "Role Limitations — Memory/Speech/Language (items 51-55, yes/no).",
-        "item_coding": {
-          "esi51": 1,
-          "esi52": 1,
-          "esi53": 1,
-          "esi54": 1,
-          "esi55": 1
-        }
+        ]
       }
     }
   },

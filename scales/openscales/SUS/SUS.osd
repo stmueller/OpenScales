@@ -95,20 +95,30 @@
     ],
     "scoring": {
       "usability": {
-        "method": "mean_coded",
-        "items": [
-          "SUS01",
-          "SUS02",
-          "SUS03",
-          "SUS04",
-          "SUS05",
-          "SUS06",
-          "SUS07",
-          "SUS08",
-          "SUS09",
-          "SUS10"
-        ],
         "description": "Mean usability score (1-5 scale). Traditional SUS (0-100) = 25 * (mean - 1).",
+        "method": "mean_coded",
+        "items": {
+          "SUS01": 1,
+          "SUS02": -1,
+          "SUS03": 1,
+          "SUS04": -1,
+          "SUS05": 1,
+          "SUS06": -1,
+          "SUS07": 1,
+          "SUS08": -1,
+          "SUS09": 1,
+          "SUS10": -1
+        },
+        "transform": [
+          {
+            "op": "subtract",
+            "value": 1
+          },
+          {
+            "op": "multiply",
+            "value": 25
+          }
+        ],
         "norms": {
           "thresholds": [
             {
@@ -137,29 +147,7 @@
               "label": "Excellent"
             }
           ]
-        },
-        "item_coding": {
-          "SUS01": 1,
-          "SUS02": -1,
-          "SUS03": 1,
-          "SUS04": -1,
-          "SUS05": 1,
-          "SUS06": -1,
-          "SUS07": 1,
-          "SUS08": -1,
-          "SUS09": 1,
-          "SUS10": -1
-        },
-        "transform": [
-          {
-            "op": "subtract",
-            "value": 1
-          },
-          {
-            "op": "multiply",
-            "value": 25
-          }
-        ]
+        }
       }
     },
     "report": {

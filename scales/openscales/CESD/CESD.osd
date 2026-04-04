@@ -143,45 +143,9 @@
     ],
     "scoring": {
       "depression": {
-        "method": "sum_coded",
-        "items": [
-          "cesd1",
-          "cesd2",
-          "cesd3",
-          "cesd4",
-          "cesd5",
-          "cesd6",
-          "cesd7",
-          "cesd8",
-          "cesd9",
-          "cesd10",
-          "cesd11",
-          "cesd12",
-          "cesd13",
-          "cesd14",
-          "cesd15",
-          "cesd16",
-          "cesd17",
-          "cesd18",
-          "cesd19",
-          "cesd20"
-        ],
         "description": "Sum of all items after reverse coding positive affect items cesd4, cesd8, cesd12, cesd16 (0-60). Scores of 16 or higher indicate clinically significant depressive symptoms.",
-        "norms": {
-          "thresholds": [
-            {
-              "min": 0,
-              "max": 15,
-              "label": "Below Clinical Threshold"
-            },
-            {
-              "min": 16,
-              "max": 60,
-              "label": "Clinically Significant Depressive Symptoms"
-            }
-          ]
-        },
-        "item_coding": {
+        "method": "sum_coded",
+        "items": {
           "cesd1": 1,
           "cesd2": 1,
           "cesd3": 1,
@@ -202,6 +166,20 @@
           "cesd18": 1,
           "cesd19": 1,
           "cesd20": 1
+        },
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 15,
+              "label": "Below Clinical Threshold"
+            },
+            {
+              "min": 16,
+              "max": 60,
+              "label": "Clinically Significant Depressive Symptoms"
+            }
+          ]
         }
       }
     }

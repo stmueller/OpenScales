@@ -196,6 +196,7 @@
     ],
     "scoring": {
       "avoidance": {
+        "description": "Avoidance and Rule-Driven Behaviour. Mean of 8 items (0–5).",
         "method": "mean_coded",
         "items": [
           "q9",
@@ -206,30 +207,12 @@
           "q20",
           "q22",
           "q23"
-        ],
-        "description": "Avoidance and Rule-Driven Behaviour. Mean of 8 items (0–5).",
-        "item_coding": {
-          "q9": 1,
-          "q10": 1,
-          "q11": 1,
-          "q15": 1,
-          "q16": 1,
-          "q20": 1,
-          "q22": 1,
-          "q23": 1
-        }
+        ]
       },
       "weight_control": {
-        "method": "mean_coded",
-        "items": [
-          "q2",
-          "q6",
-          "q8",
-          "q13",
-          "q18"
-        ],
         "description": "Weight Control Exercise. Mean of 5 items (0–5). Item 8 reverse-scored.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "q2": 1,
           "q6": 1,
           "q8": -1,
@@ -238,6 +221,7 @@
         }
       },
       "mood": {
+        "description": "Mood Improvement. Mean of 5 items (0–5).",
         "method": "mean_coded",
         "items": [
           "q1",
@@ -245,61 +229,43 @@
           "q14",
           "q17",
           "q24"
-        ],
-        "description": "Mood Improvement. Mean of 5 items (0–5).",
-        "item_coding": {
-          "q1": 1,
-          "q4": 1,
-          "q14": 1,
-          "q17": 1,
-          "q24": 1
-        }
+        ]
       },
       "lack_enjoyment": {
-        "method": "mean_coded",
-        "items": [
-          "q5",
-          "q12",
-          "q21"
-        ],
         "description": "Lack of Exercise Enjoyment. Mean of 3 items (0–5). Item 12 reverse-scored.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "q5": 1,
           "q12": -1,
           "q21": 1
         }
       },
       "rigidity": {
+        "description": "Exercise Rigidity. Mean of 3 items (0–5).",
         "method": "mean_coded",
         "items": [
           "q3",
           "q7",
           "q19"
-        ],
-        "description": "Exercise Rigidity. Mean of 3 items (0–5).",
-        "item_coding": {
-          "q3": 1,
-          "q7": 1,
-          "q19": 1
-        }
+        ]
       },
       "total": {
+        "description": "Sum of 5 subscale means (0–25).",
         "method": "sum_coded",
-        "scores": [
+        "items": [
           "avoidance",
           "weight_control",
           "mood",
           "lack_enjoyment",
           "rigidity"
         ],
-        "description": "Sum of 5 subscale means (0–25).",
-        "item_coding": {
-          "avoidance": 1,
-          "weight_control": 1,
-          "mood": 1,
-          "lack_enjoyment": 1,
-          "rigidity": 1
-        }
+        "scores": [
+          "avoidance",
+          "weight_control",
+          "mood",
+          "lack_enjoyment",
+          "rigidity"
+        ]
       }
     }
   },

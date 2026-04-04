@@ -859,14 +859,11 @@
     ],
     "scoring": {
       "general_health": {
+        "description": "Single item (0–4; higher = better health). Multiply by 25 for 0–100 score.",
         "method": "sum_coded",
         "items": [
           "vfq1"
         ],
-        "description": "Single item (0–4; higher = better health). Multiply by 25 for 0–100 score.",
-        "item_coding": {
-          "vfq1": 1
-        },
         "transform": [
           {
             "op": "multiply",
@@ -875,14 +872,11 @@
         ]
       },
       "general_vision": {
+        "description": "Single item (0–5; higher = better vision). Multiply by 20 for 0–100 score.",
         "method": "sum_coded",
         "items": [
           "vfq2"
         ],
-        "description": "Single item (0–5; higher = better vision). Multiply by 20 for 0–100 score.",
-        "item_coding": {
-          "vfq2": 1
-        },
         "transform": [
           {
             "op": "multiply",
@@ -891,16 +885,12 @@
         ]
       },
       "ocular_pain": {
+        "description": "Mean of 2 items (0–4 each; higher = less pain/discomfort). Multiply mean by 25 for 0–100 score.",
         "method": "mean_coded",
         "items": [
           "vfq4",
           "vfq19"
         ],
-        "description": "Mean of 2 items (0–4 each; higher = less pain/discomfort). Multiply mean by 25 for 0–100 score.",
-        "item_coding": {
-          "vfq4": 1,
-          "vfq19": 1
-        },
         "transform": [
           {
             "op": "multiply",
@@ -909,18 +899,13 @@
         ]
       },
       "near_activities": {
+        "description": "Mean of 3 items (0–4 each; higher = less difficulty). Multiply mean by 25 for 0–100 score.",
         "method": "mean_coded",
         "items": [
           "vfq5",
           "vfq6",
           "vfq7"
         ],
-        "description": "Mean of 3 items (0–4 each; higher = less difficulty). Multiply mean by 25 for 0–100 score.",
-        "item_coding": {
-          "vfq5": 1,
-          "vfq6": 1,
-          "vfq7": 1
-        },
         "transform": [
           {
             "op": "multiply",
@@ -929,18 +914,13 @@
         ]
       },
       "distance_activities": {
+        "description": "Mean of 3 items (0–4 each; higher = less difficulty). Multiply mean by 25 for 0–100 score.",
         "method": "mean_coded",
         "items": [
           "vfq8",
           "vfq9",
           "vfq14"
         ],
-        "description": "Mean of 3 items (0–4 each; higher = less difficulty). Multiply mean by 25 for 0–100 score.",
-        "item_coding": {
-          "vfq8": 1,
-          "vfq9": 1,
-          "vfq14": 1
-        },
         "transform": [
           {
             "op": "multiply",
@@ -949,16 +929,12 @@
         ]
       },
       "social_functioning": {
+        "description": "Mean of 2 items (0–4 each; higher = less limitation). Multiply mean by 25 for 0–100 score.",
         "method": "mean_coded",
         "items": [
           "vfq11",
           "vfq13"
         ],
-        "description": "Mean of 2 items (0–4 each; higher = less limitation). Multiply mean by 25 for 0–100 score.",
-        "item_coding": {
-          "vfq11": 1,
-          "vfq13": 1
-        },
         "transform": [
           {
             "op": "multiply",
@@ -967,6 +943,7 @@
         ]
       },
       "mental_health": {
+        "description": "Mean of 4 items (0–4 each; higher = better mental health). Multiply mean by 25 for 0–100 score.",
         "method": "mean_coded",
         "items": [
           "vfq3",
@@ -974,13 +951,6 @@
           "vfq22",
           "vfq25"
         ],
-        "description": "Mean of 4 items (0–4 each; higher = better mental health). Multiply mean by 25 for 0–100 score.",
-        "item_coding": {
-          "vfq3": 1,
-          "vfq21": 1,
-          "vfq22": 1,
-          "vfq25": 1
-        },
         "transform": [
           {
             "op": "multiply",
@@ -989,16 +959,12 @@
         ]
       },
       "role_difficulties": {
+        "description": "Mean of 2 items (0–4 each; higher = fewer role difficulties). Multiply mean by 25 for 0–100 score.",
         "method": "mean_coded",
         "items": [
           "vfq17",
           "vfq18"
         ],
-        "description": "Mean of 2 items (0–4 each; higher = fewer role difficulties). Multiply mean by 25 for 0–100 score.",
-        "item_coding": {
-          "vfq17": 1,
-          "vfq18": 1
-        },
         "transform": [
           {
             "op": "multiply",
@@ -1007,18 +973,13 @@
         ]
       },
       "dependency": {
+        "description": "Mean of 3 items (0–4 each; higher = less dependency). Multiply mean by 25 for 0–100 score.",
         "method": "mean_coded",
         "items": [
           "vfq20",
           "vfq23",
           "vfq24"
         ],
-        "description": "Mean of 3 items (0–4 each; higher = less dependency). Multiply mean by 25 for 0–100 score.",
-        "item_coding": {
-          "vfq20": 1,
-          "vfq23": 1,
-          "vfq24": 1
-        },
         "transform": [
           {
             "op": "multiply",
@@ -1027,14 +988,11 @@
         ]
       },
       "driving": {
+        "description": "Driving difficulty (vfq15c; vfq15/15a/15b are screening items). Multiply mean by 25 for 0–100 score. Score is N/A if respondent does not currently drive. Per RAND manual: if stopped driving mainly due to eyesight (vfq15b=1 or 3), recode driving score to 0.",
         "method": "mean_coded",
         "items": [
           "vfq15c"
         ],
-        "description": "Driving difficulty (vfq15c; vfq15/15a/15b are screening items). Multiply mean by 25 for 0–100 score. Score is N/A if respondent does not currently drive. Per RAND manual: if stopped driving mainly due to eyesight (vfq15b=1 or 3), recode driving score to 0.",
-        "item_coding": {
-          "vfq15c": 1
-        },
         "transform": [
           {
             "op": "multiply",
@@ -1043,14 +1001,11 @@
         ]
       },
       "color_vision": {
+        "description": "Single item (0–4; higher = less difficulty). Multiply by 25 for 0–100 score.",
         "method": "sum_coded",
         "items": [
           "vfq12"
         ],
-        "description": "Single item (0–4; higher = less difficulty). Multiply by 25 for 0–100 score.",
-        "item_coding": {
-          "vfq12": 1
-        },
         "transform": [
           {
             "op": "multiply",
@@ -1059,14 +1014,11 @@
         ]
       },
       "peripheral_vision": {
+        "description": "Single item (0–4; higher = less difficulty). Multiply by 25 for 0–100 score.",
         "method": "sum_coded",
         "items": [
           "vfq10"
         ],
-        "description": "Single item (0–4; higher = less difficulty). Multiply by 25 for 0–100 score.",
-        "item_coding": {
-          "vfq10": 1
-        },
         "transform": [
           {
             "op": "multiply",

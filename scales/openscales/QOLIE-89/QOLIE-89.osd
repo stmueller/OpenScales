@@ -847,16 +847,14 @@
     ],
     "scoring": {
       "overall_health": {
-        "method": "mean_coded",
-        "items": [
-          "qolie89_3"
-        ],
         "description": "Item 3: change in health over past year (5-pt: Much better=1…Much worse=5, coding=-1, pre-reversed: Much better=5→Much worse=1). Standalone item, not part of a multi-item subscale in the QOLIE-89 scoring manual.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "qolie89_3": -1
         }
       },
       "physical_function": {
+        "description": "Mean of 10 physical function items (SF-36 physical functioning). 3-pt scale: Yes limited a lot=1, Yes limited a little=2, No not limited=3. All coding=+1. Transform: (mean−1)/2×100 → 0–100 (100=no limitation).",
         "method": "mean_coded",
         "items": [
           "qolie89_pf_grid_1",
@@ -870,19 +868,6 @@
           "qolie89_pf_grid_9",
           "qolie89_pf_grid_10"
         ],
-        "description": "Mean of 10 physical function items (SF-36 physical functioning). 3-pt scale: Yes limited a lot=1, Yes limited a little=2, No not limited=3. All coding=+1. Transform: (mean−1)/2×100 → 0–100 (100=no limitation).",
-        "item_coding": {
-          "qolie89_pf_grid_1": 1,
-          "qolie89_pf_grid_2": 1,
-          "qolie89_pf_grid_3": 1,
-          "qolie89_pf_grid_4": 1,
-          "qolie89_pf_grid_5": 1,
-          "qolie89_pf_grid_6": 1,
-          "qolie89_pf_grid_7": 1,
-          "qolie89_pf_grid_8": 1,
-          "qolie89_pf_grid_9": 1,
-          "qolie89_pf_grid_10": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -899,6 +884,7 @@
         ]
       },
       "role_limitations_physical": {
+        "description": "Mean of 5 role limitation (physical) items (Yes=col1=1, No=col2=2). 0–100: (mean−1)×100.",
         "method": "mean_coded",
         "items": [
           "qolie89_rp_grid_1",
@@ -907,14 +893,6 @@
           "qolie89_rp_grid_4",
           "qolie89_rp_grid_5"
         ],
-        "description": "Mean of 5 role limitation (physical) items (Yes=col1=1, No=col2=2). 0–100: (mean−1)×100.",
-        "item_coding": {
-          "qolie89_rp_grid_1": 1,
-          "qolie89_rp_grid_2": 1,
-          "qolie89_rp_grid_3": 1,
-          "qolie89_rp_grid_4": 1,
-          "qolie89_rp_grid_5": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -927,6 +905,7 @@
         ]
       },
       "role_limitations_emotional": {
+        "description": "Mean of 5 role limitation (emotional) items. 0–100: (mean−1)×100.",
         "method": "mean_coded",
         "items": [
           "qolie89_re_grid_1",
@@ -935,14 +914,6 @@
           "qolie89_re_grid_4",
           "qolie89_re_grid_5"
         ],
-        "description": "Mean of 5 role limitation (emotional) items. 0–100: (mean−1)×100.",
-        "item_coding": {
-          "qolie89_re_grid_1": 1,
-          "qolie89_re_grid_2": 1,
-          "qolie89_re_grid_3": 1,
-          "qolie89_re_grid_4": 1,
-          "qolie89_re_grid_5": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -955,13 +926,9 @@
         ]
       },
       "pain": {
-        "method": "mean_coded",
-        "items": [
-          "qolie89_21",
-          "qolie89_22"
-        ],
         "description": "Pain: item 21 (severity, 6-pt: None=1…Very severe=6, coding=-1) and item 22 (interference, 5-pt: Not at all=1…Extremely=5, coding=-1). Both runners reverse-code as (rMin+rMax)−raw → coded range 1–6 and 1–5. Worst mean=1, best mean=(6+5)/2=5.5. Transform: (mean−1)/4.5×100 → 0–100.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "qolie89_21": -1,
           "qolie89_22": -1
         },
@@ -981,16 +948,9 @@
         ]
       },
       "emotional_wellbeing": {
-        "method": "mean_coded",
-        "items": [
-          "qolie89_ew_grid_2",
-          "qolie89_ew_grid_3",
-          "qolie89_ew_grid_4",
-          "qolie89_ew_grid_6",
-          "qolie89_ew_grid_8"
-        ],
         "description": "Emotional Well-Being: items 23,25,27 (negative, coding=+1); items 24,26 (positive, coding=-1). All 6-pt freq. Reversal gives coded range 1–6 for all items. Worst mean=1, best mean=6. Transform: (mean−1)/5×100 → 0–100.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "qolie89_ew_grid_2": 1,
           "qolie89_ew_grid_3": 1,
           "qolie89_ew_grid_4": -1,
@@ -1013,15 +973,9 @@
         ]
       },
       "energy_fatigue": {
-        "method": "mean_coded",
-        "items": [
-          "qolie89_ew_grid_1",
-          "qolie89_ew_grid_5",
-          "qolie89_ew_grid_7",
-          "qolie89_ew_grid_9"
-        ],
         "description": "Energy/Fatigue: pep(row1),energy(row5) coding=-1; worn-out(row7),tired(row9) coding=+1. All 6-pt freq. Reversal gives coded range 1–6 for all items. Worst mean=1, best mean=6. Transform: (mean−1)/5×100 → 0–100.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "qolie89_ew_grid_1": -1,
           "qolie89_ew_grid_5": -1,
           "qolie89_ew_grid_7": 1,
@@ -1043,17 +997,9 @@
         ]
       },
       "health_perceptions": {
-        "method": "mean_coded",
-        "items": [
-          "qolie89_1",
-          "qolie89_hp_grid_1",
-          "qolie89_hp_grid_2",
-          "qolie89_hp_grid_3",
-          "qolie89_hp_grid_4",
-          "qolie89_hp_grid_5"
-        ],
         "description": "Health Perceptions: items 1,44–48. Item 1 is multi (option values pre-reversed: Excellent=5=best); hp_grid items 5-pt. Reversal gives coded range 1–5 for all. Worst mean=1, best mean=5. Transform: (mean−1)/4×100 → 0–100.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "qolie89_hp_grid_1": 1,
           "qolie89_hp_grid_2": -1,
           "qolie89_hp_grid_3": 1,
@@ -1077,6 +1023,7 @@
         ]
       },
       "attention_concentration": {
+        "description": "Items 37,38,41 (freq grid rows 2,3,6; 6-pt, coding=+1), items 60–64 (concentration grid, 6-pt, coding=+1), item 73 (complicated projects, 5-pt, coding=+1). Mixed scales: 6-pt and 5-pt. Approximate transform [subtract:1,divide:5,multiply:100].",
         "method": "mean_coded",
         "items": [
           "qolie89_q36_grid_2",
@@ -1089,18 +1036,6 @@
           "qolie89_conc_grid_5",
           "qolie89_q73"
         ],
-        "description": "Items 37,38,41 (freq grid rows 2,3,6; 6-pt, coding=+1), items 60–64 (concentration grid, 6-pt, coding=+1), item 73 (complicated projects, 5-pt, coding=+1). Mixed scales: 6-pt and 5-pt. Approximate transform [subtract:1,divide:5,multiply:100].",
-        "item_coding": {
-          "qolie89_q36_grid_2": 1,
-          "qolie89_q36_grid_3": 1,
-          "qolie89_q36_grid_6": 1,
-          "qolie89_conc_grid_1": 1,
-          "qolie89_conc_grid_2": 1,
-          "qolie89_conc_grid_3": 1,
-          "qolie89_conc_grid_4": 1,
-          "qolie89_conc_grid_5": 1,
-          "qolie89_q73": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -1117,6 +1052,7 @@
         ]
       },
       "language": {
+        "description": "Items 55–59: language frequency (6-pt, All=1…None=6). coding=+1, transform [subtract:1,divide:5,multiply:100].",
         "method": "mean_coded",
         "items": [
           "qolie89_lang_grid_1",
@@ -1125,14 +1061,6 @@
           "qolie89_lang_grid_4",
           "qolie89_lang_grid_5"
         ],
-        "description": "Items 55–59: language frequency (6-pt, All=1…None=6). coding=+1, transform [subtract:1,divide:5,multiply:100].",
-        "item_coding": {
-          "qolie89_lang_grid_1": 1,
-          "qolie89_lang_grid_2": 1,
-          "qolie89_lang_grid_3": 1,
-          "qolie89_lang_grid_4": 1,
-          "qolie89_lang_grid_5": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -1149,16 +1077,9 @@
         ]
       },
       "seizure_worry": {
-        "method": "mean_coded",
-        "items": [
-          "qolie89_q36_grid_5",
-          "qolie89_q69",
-          "qolie89_q70",
-          "qolie89_q71",
-          "qolie89_bother_grid_1"
-        ],
         "description": "Item 40 (freq grid row 5, 6-pt, coding=+1), item 69 (fearful, 4-pt: 1=Very fearful→4=Not fearful, coding=+1), item 70 (hurt worry, 3-pt: 1=Worry a lot→3=Don't worry, coding=+1), item 71 (embarrassment worry, 4-pt, coding=+1), item 74 (bothered by seizures, 5-pt: 1=Not bothered→5=Extremely, coding=-1). Mixed scales — worst coded mean = 1, best = 4.4, range = 3.4. Transform: (mean−1)/3.4×100 → 0–100.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "qolie89_q36_grid_5": 1,
           "qolie89_q69": 1,
           "qolie89_q70": 1,
@@ -1181,14 +1102,9 @@
         ]
       },
       "medication_effects": {
-        "method": "mean_coded",
-        "items": [
-          "qolie89_q72",
-          "qolie89_bother_grid_6",
-          "qolie89_bother_grid_7"
-        ],
         "description": "Item 72 (medication worry, 4-pt: 1=Very worried→4=Not worried, coding=+1), item 79 (physical meds bother, 5-pt, coding=-1), item 80 (mental meds bother, 5-pt, coding=-1). Mixed scales — worst coded mean = 1, best = 14/3 ≈ 4.667, range = 11/3 ≈ 3.667. Transform: (mean−1)/(11/3)×100 → 0–100.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "qolie89_q72": 1,
           "qolie89_bother_grid_6": -1,
           "qolie89_bother_grid_7": -1
@@ -1209,16 +1125,12 @@
         ]
       },
       "health_discouragement": {
+        "description": "Items 39 and 42 (freq grid rows 4 and 7): discouraged by health / by epilepsy. 6-pt freq, coding=+1, transform [subtract:1,divide:5,multiply:100].",
         "method": "mean_coded",
         "items": [
           "qolie89_q36_grid_4",
           "qolie89_q36_grid_7"
         ],
-        "description": "Items 39 and 42 (freq grid rows 4 and 7): discouraged by health / by epilepsy. 6-pt freq, coding=+1, transform [subtract:1,divide:5,multiply:100].",
-        "item_coding": {
-          "qolie89_q36_grid_4": 1,
-          "qolie89_q36_grid_7": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -1235,22 +1147,9 @@
         ]
       },
       "work_driving_social": {
-        "method": "mean_coded",
-        "items": [
-          "qolie89_37",
-          "qolie89_q36_grid_1",
-          "qolie89_q36_grid_8",
-          "qolie89_act_grid_1",
-          "qolie89_act_grid_2",
-          "qolie89_act_grid_3",
-          "qolie89_act_grid_4",
-          "qolie89_bother_grid_3",
-          "qolie89_bother_grid_4",
-          "qolie89_bother_grid_5",
-          "qolie89_q85"
-        ],
         "description": "11 items: item 26 (SF social 5-pt, coding=-1), items 36,43 (freq 6-pt, coding=+1), items 65–68 (activity limitation 5-pt, coding=-1), items 76–78 (bother 5-pt, coding=-1), item 85 (social comparison 5-pt, coding=+1). Worst coded mean = 1, best = 57/11 ≈ 5.182, range = 46/11 ≈ 4.182. Transform: (mean−1)/(46/11)×100 → 0–100.",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "qolie89_37": -1,
           "qolie89_q36_grid_1": 1,
           "qolie89_q36_grid_8": 1,
@@ -1279,6 +1178,7 @@
         ]
       },
       "social_support": {
+        "description": "Items 81–83 (social satisfaction, 5-pt Poor=1…Excellent=5, coding=+1) and item 86 (support available, 5-pt pre-reversed: Yes as much wanted=5…No=1, coding=+1). Transform [subtract:1,divide:4,multiply:100].",
         "method": "mean_coded",
         "items": [
           "qolie89_socsup_grid_1",
@@ -1286,13 +1186,6 @@
           "qolie89_socsup_grid_3",
           "qolie89_q86"
         ],
-        "description": "Items 81–83 (social satisfaction, 5-pt Poor=1…Excellent=5, coding=+1) and item 86 (support available, 5-pt pre-reversed: Yes as much wanted=5…No=1, coding=+1). Transform [subtract:1,divide:4,multiply:100].",
-        "item_coding": {
-          "qolie89_socsup_grid_1": 1,
-          "qolie89_socsup_grid_2": 1,
-          "qolie89_socsup_grid_3": 1,
-          "qolie89_q86": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -1309,16 +1202,12 @@
         ]
       },
       "overall_qol": {
+        "description": "Item 2 (0–10 overall QoL, coding=+1, higher=better) and item 49 (5-pt QoL ladder, pre-reversed: Very well=5→Very bad=1, coding=+1). Different raw scales — worst mean ≈ 0.5, best ≈ 7.5. Approximate transform: (mean−0.5)/7×100 → 0–100. See RAND Table 2 for exact per-item recoding.",
         "method": "mean_coded",
         "items": [
           "qolie89_2",
           "qolie89_q49"
         ],
-        "description": "Item 2 (0–10 overall QoL, coding=+1, higher=better) and item 49 (5-pt QoL ladder, pre-reversed: Very well=5→Very bad=1, coding=+1). Different raw scales — worst mean ≈ 0.5, best ≈ 7.5. Approximate transform: (mean−0.5)/7×100 → 0–100. See RAND Table 2 for exact per-item recoding.",
-        "item_coding": {
-          "qolie89_2": 1,
-          "qolie89_q49": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -1335,16 +1224,12 @@
         ]
       },
       "social_isolation": {
+        "description": "Items 87–88: felt left out / isolated. 6-pt freq (All=1…Never=6), coding=+1, transform [subtract:1,divide:5,multiply:100].",
         "method": "mean_coded",
         "items": [
           "qolie89_q87",
           "qolie89_q88"
         ],
-        "description": "Items 87–88: felt left out / isolated. 6-pt freq (All=1…Never=6), coding=+1, transform [subtract:1,divide:5,multiply:100].",
-        "item_coding": {
-          "qolie89_q87": 1,
-          "qolie89_q88": 1
-        },
         "transform": [
           {
             "op": "subtract",
@@ -1361,17 +1246,9 @@
         ]
       },
       "memory": {
-        "method": "mean_coded",
-        "items": [
-          "qolie89_q50",
-          "qolie89_mem_grid_1",
-          "qolie89_mem_grid_2",
-          "qolie89_mem_grid_3",
-          "qolie89_mem_grid_4",
-          "qolie89_bother_grid_2"
-        ],
         "description": "Item 50 (4-pt: 1=Yes a great deal→4=Not at all, coding=+1), items 51–54 (6-pt freq All=1…None=6, coding=+1), item 75 (bother 5-pt, coding=-1). Worst coded mean = 1, best = 33/6 = 5.5, range = 4.5. Transform: (mean−1)/4.5×100 → 0–100 (approximate; RAND Table 2 converts each item to 0–100 first).",
-        "item_coding": {
+        "method": "mean_coded",
+        "items": {
           "qolie89_q50": 1,
           "qolie89_mem_grid_1": 1,
           "qolie89_mem_grid_2": 1,
@@ -1395,6 +1272,7 @@
         ]
       },
       "total": {
+        "description": "Weighted composite overall QOLIE-89 score. Inputs are the transformed (0–100) subscale scores for each of the 17 subscales, combined using the regression-derived weights from Table 3 of the QOLIE-89 scoring manual (Devinsky et al. 1995). The raw composite is then converted to a T-score: T = 50 + 10 × (composite − 67.9) / 15.55, based on normative data (mean=67.9, SD=15.55) from the development sample. Higher T-score = better quality of life.",
         "method": "weighted_sum",
         "scores": [
           "health_perceptions",
@@ -1434,7 +1312,6 @@
           "social_support": 0.02,
           "social_isolation": 0.04
         },
-        "description": "Weighted composite overall QOLIE-89 score. Inputs are the transformed (0–100) subscale scores for each of the 17 subscales, combined using the regression-derived weights from Table 3 of the QOLIE-89 scoring manual (Devinsky et al. 1995). The raw composite is then converted to a T-score: T = 50 + 10 × (composite − 67.9) / 15.55, based on normative data (mean=67.9, SD=15.55) from the development sample. Higher T-score = better quality of life.",
         "transform": [
           {
             "op": "subtract",

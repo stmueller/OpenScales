@@ -218,13 +218,30 @@
             "value": 5
           }
         ]
-      },
-      {
-        "id": "scd_pain_menstruation_quality_of_life_scoring",
-        "text_key": "scd_pain_menstruation_quality_of_life_scoring",
-        "type": "inst"
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 7 items.",
+        "method": "sum_coded",
+        "items": [
+          "scd_pain_menstruation_quality_of_life_days_during_period",
+          "scd_pain_menstruation_quality_of_life_nights_slept_poorly_period",
+          "scd_pain_menstruation_quality_of_life_days_trouble_care_self_period",
+          "scd_pain_menstruation_quality_of_life_days_missed_school_work_period",
+          "scd_pain_menstruation_quality_of_life_days_left_school_work_period",
+          "scd_pain_menstruation_quality_of_life_days_unable_do_things_enjoy_period",
+          "scd_pain_menstruation_quality_of_life_days_sad_mad_upset_period"
+        ]
+      }
+    },
+    "_scoring_notes": "Scoring: \"None\" = 0, \"A Few\" = 1, \"Some\" = 2, \"Many\" = 3, and \"Every\" = 4.Scores range from 0 to 28; that is, no pain burden to severe pain burden."
   },
   "translations": {
     "en": {

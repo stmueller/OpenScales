@@ -340,11 +340,6 @@
             "value": 2
           }
         ]
-      },
-      {
-        "id": "prolonged_grief_disorder_outro",
-        "text_key": "prolonged_grief_disorder_outro",
-        "type": "inst"
       }
     ],
     "_conversion_notes": [
@@ -358,7 +353,35 @@
       "INFO  prolonged_grief_disorder_emotionally_numb_detach: member of matrix group 'group_feel_since_death' — consider converting to grid type manually",
       "INFO  prolonged_grief_disorder_life_meaningless: member of matrix group 'group_feel_since_death' — consider converting to grid type manually",
       "INFO  prolonged_grief_disorder_alone_without_deceased: member of matrix group 'group_feel_since_death' — consider converting to grid type manually"
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 13 items.",
+        "method": "sum_coded",
+        "items": [
+          "prolonged_grief_disorder_lost_someone_significant",
+          "prolonged_grief_disorder_months_significant_other_died",
+          "prolonged_grief_disorder_longing_person_died",
+          "prolonged_grief_disorder_trouble_doing_normal_things",
+          "prolonged_grief_disorder_confused_role_life",
+          "prolonged_grief_disorder_trouble_believe_person_really_gone",
+          "prolonged_grief_disorder_avoid_reminder_person_really_gone",
+          "prolonged_grief_disorder_emotional_pain",
+          "prolonged_grief_disorder_trouble_engage_life",
+          "prolonged_grief_disorder_emotionally_numb_detach",
+          "prolonged_grief_disorder_life_meaningless",
+          "prolonged_grief_disorder_alone_without_deceased",
+          "prolonged_grief_disorder_significant_impariment_function"
+        ]
+      }
+    },
+    "_scoring_notes": "Scoring: A summary score for the symptom items is calculated by totaling each individual item score from 1 (not at all) to 5 (overwhelmingly) across items 3 through 12.  Symptom scores can range from 10 to 50. A score of 30 or greater indicates syndromal-level PGD."
   },
   "translations": {
     "en": {

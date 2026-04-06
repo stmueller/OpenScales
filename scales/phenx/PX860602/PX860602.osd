@@ -31,11 +31,6 @@
         "type": "inst"
       },
       {
-        "id": "protocol_scoring",
-        "text_key": "protocol_scoring",
-        "type": "inst"
-      },
-      {
         "id": "pain_location_body_map_head",
         "text_key": "pain_location_body_map_head",
         "type": "multi",
@@ -478,7 +473,43 @@
       "INFO  pain_location_body_map_upper_back: member of matrix group 'mat' — consider converting to grid type manually",
       "INFO  pain_location_body_map_mid_back: member of matrix group 'mat' — consider converting to grid type manually",
       "INFO  pain_location_body_map_lower_back: member of matrix group 'mat' — consider converting to grid type manually"
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 21 items.",
+        "method": "sum_coded",
+        "items": [
+          "pain_location_body_map_head",
+          "pain_location_body_map_face",
+          "pain_location_body_map_throat",
+          "pain_location_body_map_shoulder",
+          "pain_location_body_map_chest",
+          "pain_location_body_map_upper_arm",
+          "pain_location_body_map_elbow",
+          "pain_location_body_map_forearm",
+          "pain_location_body_map_wrist",
+          "pain_location_body_map_hand",
+          "pain_location_body_map_abdomen",
+          "pain_location_body_map_hip",
+          "pain_location_body_map_groin",
+          "pain_location_body_map_thigh",
+          "pain_location_body_map_knee",
+          "pain_location_body_map_calf",
+          "pain_location_body_map_ankle",
+          "pain_location_body_map_foot",
+          "pain_location_body_map_upper_back",
+          "pain_location_body_map_mid_back",
+          "pain_location_body_map_lower_back"
+        ]
+      }
+    },
+    "_scoring_notes": "Scoring the pain chart. 21 areas are identified on the map as listed below.  Any mark in an area results in a score (yes or 1) for that area.  Any area left blank gets a score of No or 0.  Laterality is ignored: for example, a mark on the left foot, the right foot, or both feet all score the same (Yes for Foot).  Investigators can score the map more finely if desired, or add demarcations or enlargements of areas of interest.  This system is the suggested minimum."
   },
   "translations": {
     "en": {

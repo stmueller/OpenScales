@@ -533,11 +533,6 @@
           }
         ],
         "_matrix_group": "greene_climacteric_scale"
-      },
-      {
-        "id": "perimenopausal_symptoms_scoring",
-        "text_key": "perimenopausal_symptoms_scoring",
-        "type": "inst"
       }
     ],
     "_conversion_notes": [
@@ -562,7 +557,43 @@
       "INFO  perimenopausal_symptoms_hot_flushes: member of matrix group 'greene_climacteric_scale' — consider converting to grid type manually",
       "INFO  perimenopausal_symptoms_sweating_night: member of matrix group 'greene_climacteric_scale' — consider converting to grid type manually",
       "INFO  perimenopausal_symptoms_loss_interest_sex: member of matrix group 'greene_climacteric_scale' — consider converting to grid type manually"
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 21 items.",
+        "method": "sum_coded",
+        "items": [
+          "perimenopausal_symptoms_heart_beating_quickly_strongly",
+          "perimenopausal_symptoms_feel_tense_nervous",
+          "perimenopausal_symptoms_difficulty_sleeping",
+          "perimenopausal_symptoms_excitable",
+          "perimenopausal_symptoms_attacks_panic",
+          "perimenopausal_symptoms_difficulty_concentrating",
+          "feeling_tired_or_lacking_in_energy",
+          "perimenopausal_symptoms_loss_interest",
+          "perimenopausal_symptoms_feel_unhappy_depressed",
+          "perimenopausal_symptoms_crying_spells",
+          "perimenopausal_symptoms_irritability",
+          "erimenopausal_symptoms_feeling_dizzy_faint",
+          "perimenopausal_symptoms_pressure_tightness_head_body",
+          "perimenopausal_symptoms_parts_body_feel_numb_tingling",
+          "perimenopausal_symptoms_headaches",
+          "perimenopausal_symptoms_muscle_joint_pains",
+          "perimenopausal_symptoms_loss_feeling_hands_feet",
+          "perimenopausal_symptoms_breathing_difficulties",
+          "perimenopausal_symptoms_hot_flushes",
+          "perimenopausal_symptoms_sweating_night",
+          "perimenopausal_symptoms_loss_interest_sex"
+        ]
+      }
+    },
+    "_scoring_notes": "ScoringPsychological (P), sum items 1-11 = __________Somatic (S), sum items 12-18 = _____Vasomotor (V), sum items 19-20 = _____Anxiety (A), sum items 1-6 = ______Depressed Mood (D), sum items 7-11 = ______Sexuality, item 21 = ______"
   },
   "translations": {
     "en": {

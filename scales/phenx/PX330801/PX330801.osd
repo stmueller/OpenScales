@@ -360,11 +360,6 @@
           }
         ],
         "_matrix_group": "mat"
-      },
-      {
-        "id": "instructions",
-        "text_key": "instructions",
-        "type": "inst"
       }
     ],
     "_conversion_notes": [
@@ -380,7 +375,44 @@
       "INFO  self_efficacy_smoking_refrain_external_stimuli_others: member of matrix group 'mat' — consider converting to grid type manually",
       "INFO  self_efficacy_smoking_refrain_external_stimuli_meal: member of matrix group 'mat' — consider converting to grid type manually",
       "INFO  self_efficacy_smoking_refrain_external_stimuli_coffee_tea: member of matrix group 'mat' — consider converting to grid type manually"
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "internal_stimuli",
+        "name": "Internal Stimuli"
+      },
+      {
+        "id": "external_stimuli",
+        "name": "External Stimuli"
+      }
+    ],
+    "scoring": {
+      "internal_stimuli": {
+        "description": "Internal Stimuli: mean self-efficacy for resisting smoking during internal states (6 items).",
+        "method": "mean_coded",
+        "items": [
+          "self_efficacy_smoking_refrain_internal_stimuli_nervous",
+          "self_efficacy_smoking_refrain_internal_stimuli_depressed",
+          "self_efficacy_smoking_refrain_internal_stimuli_angry",
+          "self_efficacy_smoking_refrain_internal_stimuli_anxious",
+          "self_efficacy_smoking_refrain_internal_stimuli_difficult_problem",
+          "self_efficacy_smoking_refrain_internal_stimuli_urge"
+        ]
+      },
+      "external_stimuli": {
+        "description": "External Stimuli: mean self-efficacy for resisting smoking during external situations (6 items).",
+        "method": "mean_coded",
+        "items": [
+          "self_efficacy_smoking_refrain_external_stimuli_social_drinking",
+          "self_efficacy_smoking_refrain_external_stimuli_celebrating",
+          "self_efficacy_smoking_refrain_external_stimuli_drinking",
+          "self_efficacy_smoking_refrain_external_stimuli_others",
+          "self_efficacy_smoking_refrain_external_stimuli_meal",
+          "self_efficacy_smoking_refrain_external_stimuli_coffee_tea"
+        ]
+      }
+    },
+    "_scoring_notes": "<div class=\"rich-text-field-label\"><p>Scoring Instructions</p> <ul> <li>Sum the points for each subscale to compute two composite scores.</li> <li>Composite scores are standardized to mean = 0 and SD = 1.</li> <li>Valid answers to at least two questions were necessary to compute each score.</li> </ul> <p>Please see Etter et al. (2000) for a complete description of the statistical analysis used for these questions. Also, Table 5 contains information on assessment of construct validity.</p></div>"
   },
   "translations": {
     "en": {

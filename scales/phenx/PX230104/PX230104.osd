@@ -903,11 +903,6 @@
         ]
       },
       {
-        "id": "scoring_230104",
-        "text_key": "scoring_230104",
-        "type": "inst"
-      },
-      {
         "id": "restraint_230104",
         "text_key": "restraint_230104",
         "type": "inst"
@@ -930,7 +925,76 @@
     ],
     "_conversion_notes": [
       "SKIP  q19_21_230104: field type 'file' not supported in OSD"
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "restraint",
+        "name": "Restraint"
+      },
+      {
+        "id": "eating_concern",
+        "name": "Eating Concern"
+      },
+      {
+        "id": "shape_concern",
+        "name": "Shape Concern"
+      },
+      {
+        "id": "weight_concern",
+        "name": "Weight Concern"
+      }
+    ],
+    "scoring": {
+      "restraint": {
+        "description": "Restraint: mean_coded of 5 items.",
+        "method": "mean_coded",
+        "items": [
+          "psychopathologyquestionnaire_limit_foodinstake_influence_weightshape",
+          "psychopathologyquestionnaire_longperiods_fasting_influence_weightshape",
+          "psychopathologyquestionnaire_dietaryrestrictions_influence_weightshape",
+          "psychopathologyquestionnaire_dietaryrules_influence_weightshape",
+          "psychopathologyquestionnaire_emptystomach_influence_weightshape"
+        ]
+      },
+      "eating_concern": {
+        "description": "Eating Concern: mean_coded of 5 items.",
+        "method": "mean_coded",
+        "items": [
+          "psychopathologyquestionnaire_thinkingfoodeating_distraction",
+          "psychopathologyquestionnaire_fear_losingcontrol_eating",
+          "psychopathologyquestionnaire_eat_secretly",
+          "ppq_eat_affect_shape",
+          "psychopathologyquestionnaire_others_seeing_you_eat"
+        ]
+      },
+      "shape_concern": {
+        "description": "Shape Concern: mean_coded of 9 items.",
+        "method": "mean_coded",
+        "items": [
+          "psychopathologyquestionnaire_desire_flat_stomach",
+          "psychopathologyquestionnaire_thinkingweightshape_distraction",
+          "psychopathologyquestionnaire_fear_gainweight",
+          "psychopathologyquestionnaire_felt_fat",
+          "psychopathologyquestionnaire_judgeyourself_influence_shape",
+          "psychopathologyquestionnaire_dissatisfaction_shape",
+          "psychopathologyquestionnaire_uncomfortable_seeing_body",
+          "psychopathologyquestionnaire_uncomfortable_others_seeing_body",
+          "psychopathologyquestionnaire_present_weight"
+        ]
+      },
+      "weight_concern": {
+        "description": "Weight Concern: mean_coded of 5 items.",
+        "method": "mean_coded",
+        "items": [
+          "psychopathologyquestionnaire_thinkingweightshape_distraction",
+          "psychopathologyquestionnaire_desire_lose_weight",
+          "psychopathologyquestionnaire_judgeyourself_influence_weight",
+          "psychopathologyquestionnaire_upset_weigh_yourself",
+          "psychopathologyquestionnaire_dissatisfaction_weight"
+        ]
+      }
+    },
+    "_scoring_notes": "Scoring: The EDE, and its self-reported versions, EDE-Q, generate two types of data. First they provide frequency data on key behavioral features of eating disorders in terms of number of episodes of the behavior and in some instances number of days on which the behavior has occurred. Second, they provide subscale scores reflecting the severity of aspects of the psychopathology of eating disorders. The subscales are Restraint, Eating Concern, Shape Concern and Weight Concern. To obtain a particular subscale score, the ratings for the relevant items (listed below) are added together and the sum divided by the total number of items forming the subscales. If ratings are only available on some items, a score may nevertheless be obtained by dividing the resulting total by the number of rated items so long as more than half the items have been rated. To obtain an overall or \"global\" score, the four subscales scores are summed and the resulting total divided by the number of subscales (i.e. four). Subscales score are reported as means and standard deviations."
   },
   "translations": {
     "en": {

@@ -174,13 +174,33 @@
             "value": 2
           }
         ]
-      },
-      {
-        "id": "scoring_510203",
-        "text_key": "scoring_510203",
-        "type": "inst"
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 10 items.",
+        "method": "sum_coded",
+        "items": [
+          "normal_drinker",
+          "friends_think_you_normal_drinker",
+          "ever_attended_alcoholics_anonymous",
+          "lost_friends_because_of_drinking",
+          "drinking_cause_trouble_at_work",
+          "neglected_obligations_because_of_drinking",
+          "ever_had_delirium_tremens",
+          "gone_for_help_about_drinking",
+          "been_hospitalized_because_of_drinking",
+          "arrested_for_drunk_driving"
+        ]
+      }
+    },
+    "_scoring_notes": "Scoring Procedure and InterpretationIf an item was answered in the critical direction, add the number of points indicated for that item:Item #;  Critical direction;  Points to add#1; NO;   2#2;  NO;  2#3;  YES;  5#4;  YES;  2#5;  YES:  2#6;  YES;  2#7:  YES:  2#8:  YES;  5#9:  YES:  5#10: YES:  2A score of 6 or more indicates a probable diagnosis of alcoholism, except for questions 3, 8, or 9, which are by themselves diagnostic."
   },
   "translations": {
     "en": {

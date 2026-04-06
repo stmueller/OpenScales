@@ -21,11 +21,6 @@
     },
     "items": [
       {
-        "id": "psoriatric_arthritis_screening_intro",
-        "text_key": "psoriatric_arthritis_screening_intro",
-        "type": "inst"
-      },
-      {
         "id": "psoriatic_arthritis_screening_swollen_joint_ever",
         "text_key": "psoriatic_arthritis_screening_swollen_joint_ever",
         "type": "multi",
@@ -99,16 +94,31 @@
             "value": 0
           }
         ]
-      },
-      {
-        "id": "psoriatric_arthritis_screening_outro",
-        "text_key": "psoriatric_arthritis_screening_outro",
-        "type": "inst"
       }
     ],
     "_conversion_notes": [
       "SKIP  psoriatic_arthritis_screening_total: field type 'calc' not supported in OSD"
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 5 items.",
+        "method": "sum_coded",
+        "items": [
+          "psoriatic_arthritis_screening_swollen_joint_ever",
+          "psoriatic_arthritis_screening_doctor_told_arthritis",
+          "psoriatic_arthritis_screening_finger_toe_nail_pit_hole",
+          "psoriatic_arthritis_screening_pain_heel",
+          "psoriatic_arthritis_screening_finger_toe_swollen_completely_no_reason"
+        ]
+      }
+    },
+    "_scoring_notes": "Please answer the questions below and score 1 point for each question answered 'Yes' A total score of 3 or more out of 5 is positive and indicates referral to rheumatology should be considered."
   },
   "translations": {
     "en": {

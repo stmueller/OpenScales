@@ -385,13 +385,34 @@
             "value": 6
           }
         ]
-      },
-      {
-        "id": "internal_stigma_sickle_cell_disease_scoring",
-        "text_key": "internal_stigma_sickle_cell_disease_scoring",
-        "type": "inst"
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 11 items.",
+        "method": "sum_coded",
+        "items": [
+          "internal_stigma_sickle_cell_disease_social_exclusion_people_backed_away",
+          "internal_stigma_sickle_cell_disease_social_exclusion_telling_others_mistake",
+          "internal_stigma_sickle_cell_disease_social_exclusion_people_afraid",
+          "internal_stigma_sickle_cell_disease_internalized_stigma_feel_guilty",
+          "internal_stigma_sickle_cell_disease_internalized_stigma_feel_bad_person",
+          "internal_stigma_sickle_cell_disease_internalized_stigma_feel_not_good_as_others",
+          "internal_stigma_sickle_cell_disease_disclosure_concerns_no_one_knows",
+          "internal_stigma_sickle_cell_disease_disclosure_concerns_careful_who_tell",
+          "internal_stigma_sickle_cell_disease_disclosure_concerns_telling_someone_risky",
+          "internal_stigma_sickle_cell_disease_expected_discrimination_lose_job_employers_learn",
+          "internal_stigma_sickle_cell_disease_expected_discrimination_against"
+        ]
+      }
+    },
+    "_scoring_notes": "ScoringEach item is assigned a value ranging from 1 to 6. A total stigma scale score is computed by adding the values for each of the 11 items. Subscale scores are computed by adding the values for the items that constitute each subscale: Social Exclusion, Internalized Stigma, Disclosure Concerns, and Expected Discrimination. Higher scores indicate greater levels of stigma."
   },
   "translations": {
     "en": {

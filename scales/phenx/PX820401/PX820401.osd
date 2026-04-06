@@ -267,13 +267,32 @@
             "value": 5
           }
         ]
-      },
-      {
-        "id": "scoring_820401",
-        "text_key": "scoring_820401",
-        "type": "inst"
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 9 items.",
+        "method": "sum_coded",
+        "items": [
+          "selfefficacyscd_sure_something_reduce_pain",
+          "selfefficacyscd_sure_doing_daytoday",
+          "selfefficacyscd_sure_preventpain_interfering_sleep",
+          "selfefficacyscd_sure_reducepain_nonmedication",
+          "selfefficacyscd_sure_control_frequency_gettired",
+          "selfefficacyscd_sure_dosomething_feelbetter",
+          "selfefficacyscd_life_management_daytodayy",
+          "selfefficacyscd_sure_managediseasesymptoms",
+          "selfefficacyscd_sure_dealfrustration_havingdisease"
+        ]
+      }
+    },
+    "_scoring_notes": "Scoring:Responses from individual items are summed to give an overall score, with higher scores indicating greater self-efficacy."
   },
   "translations": {
     "en": {

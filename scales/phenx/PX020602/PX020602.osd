@@ -254,11 +254,6 @@
         "number_max": 11
       },
       {
-        "id": "handedness_score",
-        "text_key": "handedness_score",
-        "type": "short"
-      },
-      {
         "id": "handedness",
         "text_key": "handedness",
         "type": "multi",
@@ -277,7 +272,38 @@
           }
         ]
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 16 items.",
+        "method": "sum_coded",
+        "items": [
+          "hand_write",
+          "hand_draw",
+          "hand_throw",
+          "hand_hold_racquet",
+          "hand_clean_teeth",
+          "hand_hammer",
+          "hand_strike_match",
+          "hand_use_eraser",
+          "hand_deal_card",
+          "hand_thread_needle",
+          "hand_cut_food",
+          "hand_total_right",
+          "hand_total_left",
+          "hand_total_both",
+          "handedness_score",
+          "handedness"
+        ]
+      }
+    },
+    "_scoring_notes": "SCORE = 100 x (TOTAL_RIGHT - TOTAL_LEFT) / (TOTAL_RIGHT + TOTAL_LEFT + TOTAL_BOTH)"
   },
   "translations": {
     "en": {

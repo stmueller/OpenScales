@@ -523,11 +523,6 @@
           }
         ],
         "_matrix_group": "pain_coping_adult"
-      },
-      {
-        "id": "pain_coping_adult_scoring",
-        "text_key": "pain_coping_adult_scoring",
-        "type": "inst"
       }
     ],
     "_conversion_notes": [
@@ -545,7 +540,36 @@
       "INFO  pain_coping_adult_years_ahead: member of matrix group 'pain_coping_adult' — consider converting to grid type manually",
       "INFO  pain_coping_adult_challenge: member of matrix group 'pain_coping_adult' — consider converting to grid type manually",
       "INFO  pain_coping_adult_do_enjoy: member of matrix group 'pain_coping_adult' — consider converting to grid type manually"
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 14 items.",
+        "method": "sum_coded",
+        "items": [
+          "pain_coping_adult_think_enjoy",
+          "pain_coping_adult_other_sensation",
+          "pain_coping_adult_never_better",
+          "pain_coping_adult_dont_pay_attention",
+          "pain_coping_adult_pray",
+          "pain_coping_adult_stand_in_way",
+          "pain_coping_adult_chores_projects",
+          "pain_coping_adult_replay_pleasant_experiences",
+          "pain_coping_adult_pretend",
+          "pain_coping_adult_cant_stand",
+          "pain_coping_adult_ignore",
+          "pain_coping_adult_years_ahead",
+          "pain_coping_adult_challenge",
+          "pain_coping_adult_do_enjoy"
+        ]
+      }
+    },
+    "_scoring_notes": "All items are scored on a scale from 0 to 6 with 0 = Never do, 3= Sometimes do that, and 6 = Always do that. Items 1 and 8, the CSQ Diverting Attention, items 2 and 9, Reinterpreting Pain Sensations, items 3 and 10, Catastrophizing, items 4 and 11, Ignoring Sensations, items 5 and 12, Praying or Hoping, items 6 and 13, Coping Self-Statements and items 7 and 14, Increased Behavioral Activities."
   },
   "translations": {
     "en": {

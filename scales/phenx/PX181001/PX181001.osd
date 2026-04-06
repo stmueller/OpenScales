@@ -484,13 +484,43 @@
             "value": 4
           }
         ]
-      },
-      {
-        "id": "scoring_181001",
-        "text_key": "scoring_181001",
-        "type": "inst"
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 20 items. Items [1, 5, 6, 9, 10, 15, 16, 19, 20] reverse-coded.",
+        "method": "sum_coded",
+        "items": {
+          "in_tune_with_people": -1,
+          "lack_companionship": 1,
+          "no_one_can_turn_to": 1,
+          "feel_alone": 1,
+          "part_of_group_of_friends": -1,
+          "lot_in_common_with_people": -1,
+          "no_longer_close_to_anyone": 1,
+          "interests_and_ideas_not_shared": 1,
+          "outgoing_and_friendly": -1,
+          "close_to_people": -1,
+          "left_out": 1,
+          "relationships_with_others_not_meaningful": 1,
+          "no_one_knows": 1,
+          "isolated_from_others": 1,
+          "companionship_when_you_want_it": -1,
+          "people_who_really_understand_you": -1,
+          "feel_shy": 1,
+          "people_around_not_with_you": 1,
+          "people_you_can_talk_to": -1,
+          "people_you_can_turn_to": -1
+        }
+      }
+    },
+    "_scoring_notes": "Scoring:Items 1, 5, 6, 9, 10, 15, 16, 19, and 20 should be reversed. Sum the total of all items. Higher scores indicate greater degrees of loneliness."
   },
   "translations": {
     "en": {

@@ -569,13 +569,73 @@
             "value": 5
           }
         ]
+      }
+    ],
+    "dimensions": [
+      {
+        "id": "intrinsic_health",
+        "name": "Intrinsic Health Concerns"
       },
       {
-        "id": "scoring_710502",
-        "text_key": "scoring_710502",
-        "type": "inst"
+        "id": "intrinsic_self_control",
+        "name": "Intrinsic Self-Control"
+      },
+      {
+        "id": "extrinsic_immediate",
+        "name": "Extrinsic Immediate Reinforcement"
+      },
+      {
+        "id": "extrinsic_social",
+        "name": "Extrinsic Social Pressure"
       }
-    ]
+    ],
+    "scoring": {
+      "intrinsic_health": {
+        "description": "Intrinsic Health Concerns: mean_coded of 5 items.",
+        "method": "mean_coded",
+        "items": [
+          "quit_smoking_concerend_illness",
+          "quit_smoking_physical_symptoms",
+          "quit_smoking_effect_body",
+          "quit_smoking_know_died",
+          "quit_smoking_concerned_shorten_life"
+        ]
+      },
+      "intrinsic_self_control": {
+        "description": "Intrinsic Self-Control: mean_coded of 5 items.",
+        "method": "mean_coded",
+        "items": [
+          "quit_smoking_show_myself",
+          "quit_smoking_like_myself_better",
+          "quit_smoking_feel_control",
+          "quit_smoking_prove_accomplishment",
+          "quit_smoking_prove_not_addicted"
+        ]
+      },
+      "extrinsic_immediate": {
+        "description": "Extrinsic Immediate Reinforcement: mean_coded of 5 items.",
+        "method": "mean_coded",
+        "items": [
+          "quit_smoking_wont_smell",
+          "quit_smoking_save_money",
+          "quit_smoking_wont_burn_holes",
+          "quit_smoking_save_money_cigarettes",
+          "quit_smoking_not_clean"
+        ]
+      },
+      "extrinsic_social": {
+        "description": "Extrinsic Social Pressure: mean_coded of 5 items.",
+        "method": "mean_coded",
+        "items": [
+          "quit_smoking_family_nagging",
+          "quit_smoking_ultimatum",
+          "quit_smoking_receive_gift",
+          "quit_smoking_people_close_upset",
+          "quit_smoking_financial_reward"
+        ]
+      }
+    },
+    "_scoring_notes": "SCORINGDimension ItemsIntrinsic, Health Concerns 1, 5, 9, 13, 17Intrinsic, Self-Control 2, 6, 10, 14, 18Extrinsic, Immediate Reinforcement 3, 7, 11, 15, 19Extrinsic, Social Pressure 4, 8, 12, 16, 20COMPUTATIONWe score the scaled as average ratings across the relevant sub-dimension items. Items with missing ratings can be excluded from the denominator. For example, the health concerns score = Sum of items (1 + 5 + 9 + 13 + 17)/5If item #9 is missing data, the calculation would be the sum of items (1 + 5 + 13 + 17)/4Level of intrinsic relative to extrinsic motivation is calculated as a difference score with the extrinsic scale score subtracted from the intrinsic score."
   },
   "translations": {
     "en": {

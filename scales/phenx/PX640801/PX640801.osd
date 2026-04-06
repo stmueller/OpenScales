@@ -208,16 +208,42 @@
             "value": 4
           }
         ]
-      },
-      {
-        "id": "scoring_640801",
-        "text_key": "scoring_640801",
-        "type": "inst"
       }
     ],
     "_conversion_notes": [
       "SKIP  info_640801: field type 'file' not supported in OSD"
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 7 items.",
+        "method": "sum_coded",
+        "items": [
+          "insomnia_falling_asleep",
+          "insomnia_staying_asleep",
+          "insomnia_waking_up_early",
+          "insomnia_satisfieddissatisfied_sleep_pattern",
+          "insomnia_noticeable_impairing_qol",
+          "insomnia_worried_distressed",
+          "insomnia_interfere_dailyfunctioning"
+        ],
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 7,
+              "label": "No clinically significant insomnia"
+            }
+          ]
+        }
+      }
+    },
+    "_scoring_notes": "Guidelines for Scoring/Interpretation:Add the scores for all seven items (questions 1 + 2 + 3 + 4 + 5 +6 + 7) = _______ your total scoreTotal score categories:0-7 = No clinically significant insomnia8-14 = Sub-threshold insomnia15-21 = Clinical insomnia (moderate severity)22-28 = Clinical insomnia (severe)"
   },
   "translations": {
     "en": {

@@ -84,13 +84,27 @@
             "value": 2
           }
         ]
-      },
-      {
-        "id": "scoring_630201",
-        "text_key": "scoring_630201",
-        "type": "inst"
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 4 items.",
+        "method": "sum_coded",
+        "items": [
+          "ptsd_experience_upsetting_nightmares",
+          "ptsd_experience_upsetting_avoid",
+          "ptsd_experience_upsetting_onguard",
+          "ptsd_experience_upsetting_numb"
+        ]
+      }
+    },
+    "_scoring_notes": "The results of the PC-PTSD should be considered \"positive\" if a patient answers \"yes\" to any three items.\""
   },
   "translations": {
     "en": {

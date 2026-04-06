@@ -93,28 +93,25 @@
             "value": 5
           }
         ]
-      },
-      {
-        "id": "sec_scoring",
-        "type": "section",
-        "text_key": "sec_scoring_title"
-      },
-      {
-        "id": "scoring_inst_1",
-        "text_key": "scoring_inst_1",
-        "type": "inst"
-      },
-      {
-        "id": "scoring150901",
-        "text_key": "scoring150901",
-        "type": "inst"
-      },
-      {
-        "id": "scoring_example",
-        "text_key": "scoring_example",
-        "type": "inst"
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 2 items.",
+        "method": "sum_coded",
+        "items": [
+          "on_the_job_activity",
+          "leisure_time_activity"
+        ]
+      }
+    },
+    "_scoring_notes": "Scoring Using the color-coded scoring table, determine the intersection of the respondent's on-the-job activity (A-E) response on the vertical axis, with their leisure-time activity (F-J) response on the horizontal axis, to indicate their current activity category. Each color represents a different activity category, as follows: Red=Inactive, Yellow=Light-intensity Activity, Green=Moderate-Intensity Activity, Blue=Hard-Intensity Activity, Lavender=Very Hard-Intensity Activity. scoring150901 ExamplesExample #1: a person that works in an office mainly sitting at a desk all day, and rides a bicycle for 30 minutes/day, 5x/week would choose \"B\" as their on-the-job activity \"J\" as their leisure time activity. The intersection of these two responses on the color-coded table would place them in a very hard intensity activity category (lavender color).Example #2: a person who works full-time as a carpenter performing some hard labor during the day, and plays golf once a week on the weekends; would choose \"D\" as their on-the-job activity and \"G\" as their leisure-time activity. The intersection of these two responses on the color-coded table would place them in a moderate-intensity activity category (green color)."
   },
   "translations": {
     "en": {

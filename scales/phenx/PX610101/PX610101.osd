@@ -427,13 +427,36 @@
             "value": 5
           }
         ]
-      },
-      {
-        "id": "scoring_610101",
-        "text_key": "scoring_610101",
-        "type": "inst"
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 13 items.",
+        "method": "sum_coded",
+        "items": [
+          "impairment_youth_getting_into_trouble",
+          "impairment_youth_getting_along_mother",
+          "impairment_youth_getting_along_father",
+          "impairment_youth_feeling_sad",
+          "impairment_youth_school_behavior",
+          "impairment_youth_having_fun",
+          "impairment_youth_getting_along_adults",
+          "impairment_youth_feeling_nervous",
+          "impairment_youth_getting_along_siblings",
+          "impairment_youth_getting_along_peers",
+          "impairment_youth_sports_hobbies",
+          "impairment_youth_school_work",
+          "impairment_youth_home_behavior"
+        ]
+      }
+    },
+    "_scoring_notes": "Scoring:Responses are summed to give a total score. Scores can range from 0 to 52 with higher scores indicating more impairment."
   },
   "translations": {
     "en": {

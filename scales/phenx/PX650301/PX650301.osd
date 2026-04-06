@@ -241,16 +241,54 @@
         "text_key": "eatingscale_child_always_havefood_inmouth",
         "type": "likert",
         "likert_points": 5
-      },
-      {
-        "id": "scoring_650301",
-        "text_key": "scoring_650301",
-        "type": "inst"
       }
     ],
     "_conversion_notes": [
       "SKIP  instructions_650301: field type 'file' not supported in OSD"
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "enjoyment_of_food",
+        "name": "Enjoyment of Food"
+      },
+      {
+        "id": "slowness_in_eating",
+        "name": "Slowness in Eating"
+      },
+      {
+        "id": "food_fussiness",
+        "name": "Food Fussiness"
+      }
+    ],
+    "scoring": {
+      "enjoyment_of_food": {
+        "description": "Enjoyment of Food: mean_coded of 4 items.",
+        "method": "mean_coded",
+        "items": [
+          "eatingscale_child_refuses_new_food",
+          "eatingscale_child_getsfull_before_mealfinished",
+          "eatingscale_child_eats_more_favoritefood",
+          "eatingscale_child_always_havefood_inmouth"
+        ]
+      },
+      "slowness_in_eating": {
+        "description": "Slowness in Eating: mean_coded of 3 items.",
+        "method": "mean_coded",
+        "items": [
+          "eatingscale_child_refuses_new_food",
+          "eatingscale_child_difficult_toplease_meals",
+          "eatingscale_child_eats_less_whenupset"
+        ]
+      },
+      "food_fussiness": {
+        "description": "Food Fussiness: mean_coded of 1 items.",
+        "method": "mean_coded",
+        "items": [
+          "eatingscale_child_difficult_toplease_meals"
+        ]
+      }
+    },
+    "_scoring_notes": "SCORING OF THE CEBQ(Never = 1, Rarely = 2, Sometimes = 3, Often = 4, Always = 5)� Food responsiveness = mean of items labelled FR� Emotional overeating = mean of items labelled EOE� Enjoyment of food = mean of items labelled EF� Desire to drink = mean of items labelled DD� Satiety responsiveness = mean of items labelled SR� Slowness in eating = mean of items labelled SE� Emotional undereating = mean of items labelled EUE� Food fussiness = mean of items labelled FF*Reversed items"
   },
   "translations": {
     "en": {

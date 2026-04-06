@@ -793,11 +793,6 @@
             "value": 5
           }
         ]
-      },
-      {
-        "id": "access_health_technology_outro",
-        "text_key": "access_health_technology_outro",
-        "type": "inst"
       }
     ],
     "_conversion_notes": [
@@ -830,7 +825,63 @@
       "INFO  access_health_technology_medical_records_online_different_provider: member of matrix group 'mat6' — consider converting to grid type manually",
       "INFO  access_health_technology_medical_records_online_family_person: member of matrix group 'mat6' — consider converting to grid type manually",
       "INFO  access_health_technology_medical_records_online_service_app: member of matrix group 'mat6' — consider converting to grid type manually"
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 41 items.",
+        "method": "sum_coded",
+        "items": [
+          "access_health_technology_mobile_device_track_health_goal",
+          "access_health_technology_mobile_device_treatment_illness",
+          "access_health_technology_mobile_device_assist_healthcare_provider",
+          "access_health_technology_electronic_device_past_year_health_monitoring",
+          "access_health_technology_electronic_device_share_information_past_year",
+          "access_health_technology_internet_past_year_social_media",
+          "access_health_technology_internet_past_year_share_health_information",
+          "access_health_technology_internet_past_year_blog",
+          "access_health_technology_internet_past_year_forum",
+          "access_health_technology_internet_past_year_youtube",
+          "access_health_technology_text_message_doctor_past_year",
+          "access_health_technology_medical_records_computer",
+          "access_health_technology_medical_records_safeguards",
+          "access_health_technology_health_information_privacy",
+          "access_health_technology_medical_records_online_access",
+          "access_health_technology_medical_records_online_access_details",
+          "access_health_technology_medical_records_online_access_details_specify",
+          "access_health_technology_medical_records_accessed_past_year",
+          "access_health_technology_medical_records_online_access_direct_communication",
+          "access_health_technology_medical_records_online_access_lack_means",
+          "access_health_technology_medical_records_online_access_necessity",
+          "access_health_technology_medical_records_online_access_privacy_concerns",
+          "access_health_technology_medical_records_online_access_nonexistent",
+          "access_health_technology_medical_records_online_access_other",
+          "access_health_technology_medical_records_online_access_other_specify",
+          "access_health_technology_medical_records_online_past_year_medication",
+          "access_health_technology_medical_records_online_past_year_paperwork",
+          "access_health_technology_medical_records_online_past_year_inaccuracy",
+          "access_health_technology_medical_records_online_past_year_secure_messaging",
+          "access_health_technology_medical_records_online_past_year_download",
+          "access_health_technology_medical_records_online_past_year_add_information",
+          "access_health_technology_medical_records_online_past_year_decision_making",
+          "access_health_technology_medical_records_online_history",
+          "access_health_technology_medical_records_online_allergy",
+          "access_health_technology_medical_records_online_office_visit",
+          "access_health_technology_medical_records_online_clinical_notes",
+          "access_health_technology_medical_records_online_immunization",
+          "access_health_technology_medical_records_online_different_provider",
+          "access_health_technology_medical_records_online_family_person",
+          "access_health_technology_medical_records_online_service_app",
+          "access_health_technology_medical_records_online_useful"
+        ]
+      }
+    },
+    "_scoring_notes": "Scoring and InterpretationRefer to the \"HINTS5 Cycle 2 Methodology Report\" for details on methodology, sampling, and procedures for Cycle 2, sections 4 and 5: <a href=\"https://hints.cancer.gov/data/methodology-reports.aspx\">https://hints.cancer.gov/data/methodology-reports.aspx</a>"
   },
   "translations": {
     "en": {

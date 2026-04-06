@@ -528,18 +528,49 @@
           "value": 1
         },
         "input_type": "number"
-      },
-      {
-        "id": "scoring_130501",
-        "text_key": "scoring_130501",
-        "type": "inst",
-        "visible_when": {
-          "item": "severe_headaches_last_year",
-          "operator": "equals",
-          "value": 1
-        }
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 26 items.",
+        "method": "sum_coded",
+        "items": [
+          "severe_headaches_last_year",
+          "current_age",
+          "gender",
+          "headache_complications_numbness_enum",
+          "severe_headaches_average_frequency",
+          "severe_headache_pain_type",
+          "how_affected_by_headaches",
+          "how_long_unable_to_work",
+          "headache_frequency_last_three_months",
+          "number_days_miss_school",
+          "number_days_reduced_productivity",
+          "number_days_no_house_work",
+          "number_days_housework_reduced_half",
+          "number_days_miss_activities",
+          "age_headaches_began",
+          "ever_goneto_hospital_for_headaches",
+          "usual_headache_treatment",
+          "headache_prescription_medication_daily_basis",
+          "any_other_daily_medication_prescription_depression_enum",
+          "last_took_daily_headache_medication",
+          "consider_headaches_tobe_migraines",
+          "diagnosed_with_headache_type_migraine_enum",
+          "age_diagnosed_with_migraines",
+          "height_feet",
+          "height_inches",
+          "weight"
+        ]
+      }
+    },
+    "_scoring_notes": "Scoring InstructionsIn Lipton et al. (2001), respondents were classified as suffering from migraine if they fulfill the criteria for migraine with aura and migraine without aura established in 1998 by the International Headache Society (IHS) (Headache Classification Committee of the International Headache Society, 1998). This included one or more severe headache in the last year with \"unilateral or pulsatile pain, and either nausea, vomiting, or phonophobia with photophobia; or visual or sensory aura before the headache\" (Lipton et al., 2001). These criteria were updated by the International Headache Society in 2004 (Headache Classification Subcommittee of the International Headache Society, 2004)."
   },
   "translations": {
     "en": {

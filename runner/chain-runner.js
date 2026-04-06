@@ -434,7 +434,8 @@ const ChainRunner = (() => {
     }
 
     // Base URL for resolving relative .osd paths
-    const oscBaseURL = oscURL.substring(0, oscURL.lastIndexOf('/'));
+    const lastSlash = oscURL.lastIndexOf('/');
+    const oscBaseURL = lastSlash >= 0 ? oscURL.substring(0, lastSlash) : '.';
 
     // Resolve parameters
     let params;
@@ -557,6 +558,12 @@ const ChainRunner = (() => {
             await uploadSessionLog(dataConfig, params, sessionLog);
           }
 
+          // Mark study as completed in localStorage (for duplicate prevention)
+          try {
+            const studyKey = 'openscales_' + (osc.study_info?.code || 'study');
+            localStorage.setItem(studyKey + '_completed', new Date().toISOString());
+          } catch (e) { /* localStorage may be unavailable */ }
+
           const redirectURL = substituteParams(step.url, params, true);
           const delay = (step.delay || 0) * 1000;
 
@@ -581,6 +588,12 @@ const ChainRunner = (() => {
     if (dataConfig.session_log !== false) {
       await uploadSessionLog(dataConfig, params, sessionLog);
     }
+
+    // Mark study as completed in localStorage (for duplicate prevention)
+    try {
+      const studyKey = 'openscales_' + (osc.study_info?.code || 'study');
+      localStorage.setItem(studyKey + '_completed', new Date().toISOString());
+    } catch (e) { /* localStorage may be unavailable */ }
 
     // Show completion
     container.innerHTML = '<div style="max-width:600px;margin:4rem auto;padding:2rem;text-align:center;">' +

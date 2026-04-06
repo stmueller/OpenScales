@@ -643,13 +643,36 @@
         "type": "short",
         "input_type": "number",
         "number_min": 0
-      },
-      {
-        "id": "psoriatric_arthritis_impact_disease_outro",
-        "text_key": "psoriatric_arthritis_impact_disease_outro",
-        "type": "inst"
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: mean_coded of all 13 items.",
+        "method": "mean_coded",
+        "items": [
+          "psoriatic_arthritis_impact_of_disease_pain",
+          "psoriatic_arthritis_impact_of_disease_fatigue",
+          "psoriatic_arthritis_impact_of_disease_skin_problems",
+          "psoriatic_arthritis_impact_of_disease_work_leisure_activities",
+          "psoriatic_arthritis_impact_of_disease_functional_capacity",
+          "psoriatic_arthritis_impact_of_disease_discomfort",
+          "psoriatic_arthritis_impact_of_disease_sleep_disturbance",
+          "psoriatic_arthritis_impact_of_disease_coping",
+          "psoriatic_arthritis_impact_of_disease_anxiety_fear_uncertainty",
+          "psoriatic_arthritis_impact_of_disease_embarrassment_shame",
+          "psoriatic_arthritis_impact_of_disease_social_participation",
+          "psoriatic_arthritis_impact_of_disease_depression",
+          "psoriatric_arthritis_impact_disease_score"
+        ]
+      }
+    },
+    "_scoring_notes": "Thank you for Answering This QuestionnairePsAID12 SCORING AND CALCULATION RULESThe PsAID is calculated based on 12 Numerical rating scales (NRS) questions. Each NRS is assessed as a number between 0 and 10.CalculationPsAID final value = (PsAID1 (pain) NRS value (range 0-10) x 3)+ (PsAID2 (fatigue) NRS value (range 0-10) x 2)+ (PsAID3 (skin) NRS value (range 0-10) x 2)+ (PsAID4 (Work and/or leisure activities) NRS value (range 0-10) x 2)+ (PsAID5 (function) NRS value (range 0-10) x 2)+ (PsAID6 (discomfort) NRS value (range 0-10) x 2)+ (PsAID7 (sleep) NRS value (range 0-10) x 2)+ (PsAID8 (coping) NRS value (range 0-10) x 1)+ (PsAID9 (anxiety) NRS value (range 0-10) x 1)+ (PsAID10 (embarrassment) NRS value (range 0-10) x 1)+ (PsAID11 (social life) NRS value (range 0-10) x 1)+ (PsAID12 (depression) NRS value (range 0-10) x 1)The total is divided by 20.Thus, the range of the final PsAID value is 0-10 where higher figures indicate worse status.Missing data imputationIf one of the 12 NRS values composing the PsAID is missing, the imputation is as follows:calculate the mean value of the 11 other (non-missing) NRS (range, 0-10) impute this value for the missing NRS.Then, calculate the PsAID as explained above.If 2 or more of the NRS are missing, the PsAID is considered as missing value (no imputation)."
   },
   "translations": {
     "en": {

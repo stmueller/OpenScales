@@ -65,13 +65,25 @@
             "value": 4
           }
         ]
-      },
-      {
-        "id": "scoring_instructions",
-        "text_key": "scoring_instructions",
-        "type": "inst"
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 2 items.",
+        "method": "sum_coded",
+        "items": [
+          "heaviness_smoking_index_wake_wait_first_cigarette",
+          "heaviness_smoking_index_cigarettes_daily"
+        ]
+      }
+    },
+    "_scoring_notes": "<div class=\"rich-text-field-label\"><p>Note on how to score the results:</p> <ul> <li><span style=\"font-weight: normal;\">A six-point scale is calculated from the time to first cigarette after waking (3, 2, 1, or 0 points) and number of cigarettes smoked per day (0, 1, 2, or 3 points).</span></li> <li><span style=\"font-weight: normal;\">Sum the points for each round of 2 questions asked.</span></li> <li><span style=\"font-weight: normal;\">Nicotine dependence is categorized into a three-category variable: low (0-1), medium (2-4), and high (5-6).</span></li> </ul></div>"
   },
   "translations": {
     "en": {

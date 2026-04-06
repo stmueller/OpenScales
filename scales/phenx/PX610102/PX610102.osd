@@ -366,13 +366,38 @@
         "text_key": "impairment_reduced_days_past_month",
         "type": "short",
         "input_type": "number"
-      },
-      {
-        "id": "scoring_610102",
-        "text_key": "scoring_610102",
-        "type": "inst"
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 15 items.",
+        "method": "sum_coded",
+        "items": [
+          "impairment_standing_long_periods",
+          "impairment_household_responsibilities",
+          "impairment_learning_new_task",
+          "impairment_joining_community_activities",
+          "impairment_emotionally_affected",
+          "impairment_concentrating_ten_minutes",
+          "impairment_walking_long_distances",
+          "impairment_washing_self",
+          "impairment_getting_dressed",
+          "impairment_dealing_new_people",
+          "impairment_maintaining_friendship",
+          "impairment_work",
+          "impairment_difficult_days_past_month",
+          "impairment_unable_days_past_month",
+          "impairment_reduced_days_past_month"
+        ]
+      }
+    },
+    "_scoring_notes": "Scoring:There are two basic options for computing the summary scores for the WHODAS 2.0 short version.Simple:The scores assigned to each of the items-\"none\" (1), \"mild\" (2) \"moderate\" (3), \"severe\" (4) and \"extreme\" (5) -are summed. This method is referred to as simple scoring because the scores from each of the items are simply added up without recoding or collapsing of response categories; thus, there is no weighting of individual items. This approach is practical to use as a hand-scoring approach and may be the method of choice in busy clinical settings or in paper-pencil interview situations. As a result, the simple sum of the scores of the items across all domains constitutes a statistic that is sufficient to describe the degree of functional limitations.Complex:The more complex method of scoring is called \"item-response-theory\" (IRT)-based scoring. It takes into account multiple levels of difficulty for each WHODAS 2.0 item. It takes the coding for each item response as \"none,\" \"mild,\" \"moderate,\" \"severe,\" and \"extreme\" separately and then uses an algorithm to determine the summary score by differentially weighting the items and the levels of severity. The SPSS algorithm is available from WHO. The scoring has three steps:� Step 1 - Summing of recoded item scores within each domain.� Step 2 - Summing of all six domain scores.� Step 3 - Converting the summary score into a metric ranging from 0 to 100 (where 0 = no disability; 100 = full disability)."
   },
   "translations": {
     "en": {

@@ -304,13 +304,31 @@
             "value": 7
           }
         ]
-      },
-      {
-        "id": "scoring_520301",
-        "text_key": "scoring_520301",
-        "type": "inst"
       }
-    ]
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 8 items. Items [2, 7] reverse-coded.",
+        "method": "sum_coded",
+        "items": {
+          "all_want_is_drink": 1,
+          "do_not_need_drink": -1,
+          "difficult_to_turn_downdrink": 1,
+          "having_a_drink_perfect": 1,
+          "want_drink_almost_taste": 1,
+          "nothing_better_than_drink": 1,
+          "chance_to_drink_would_not": -1,
+          "crave_a_drink": 1
+        }
+      }
+    },
+    "_scoring_notes": "Scoring Procedure and InterpretationEach item is scored on a 1 to 7 scale (Strongly Disagree = 1 and Strongly Agree = 7). Items 2 and 7 are reverse scored. A total score is computed by averaging the item scores. Higher scores reflect greater craving."
   },
   "translations": {
     "en": {

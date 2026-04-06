@@ -1,0 +1,146 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "NIMH Demographics Questionnaire",
+      "code": "DEMO-NIMH",
+      "abbreviation": "DEMO-NIMH",
+      "description": "Standard NIMH demographic questions covering biological sex, gender identity, Hispanic/Latino heritage, race/ethnicity (multi-select), and age. Based on the PEBL GetNIMHDemographics() function with updated sex/gender items per current NIH guidelines.",
+      "citation": "Adapted from NIH/NIMH demographic reporting requirements. See NOT-OD-15-089 for NIH inclusion reporting guidelines.",
+      "license": "Public Domain",
+      "license_explanation": "Standard demographic questions based on US federal reporting categories. No copyright.",
+      "version": "1.0",
+      "url": "https://grants.nih.gov/grants/guide/notice-files/NOT-OD-15-089.html",
+      "domain": "Demographics"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-06",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "dimensions": [],
+    "items": [
+      {
+        "id": "demo_inst",
+        "text_key": "demo_inst",
+        "type": "inst"
+      },
+      {
+        "id": "bio_sex",
+        "text_key": "bio_sex",
+        "type": "multi",
+        "options": [
+          {"text_key": "bio_sex_male", "value": "male"},
+          {"text_key": "bio_sex_female", "value": "female"},
+          {"text_key": "bio_sex_pnts", "value": "prefer_not_to_say"}
+        ]
+      },
+      {
+        "id": "gender",
+        "text_key": "gender",
+        "type": "multi",
+        "options": [
+          {"text_key": "gender_man", "value": "man"},
+          {"text_key": "gender_woman", "value": "woman"},
+          {"text_key": "gender_nonbinary", "value": "nonbinary"},
+          {"text_key": "gender_other", "value": "other"},
+          {"text_key": "gender_pnts", "value": "prefer_not_to_say"}
+        ]
+      },
+      {
+        "id": "ethnicity",
+        "text_key": "ethnicity",
+        "type": "multi",
+        "options": [
+          {"text_key": "ethnicity_hisp", "value": "hispanic"},
+          {"text_key": "ethnicity_not_hisp", "value": "not_hispanic"},
+          {"text_key": "ethnicity_pnts", "value": "prefer_not_to_say"}
+        ]
+      },
+      {
+        "id": "race",
+        "text_key": "race",
+        "type": "check",
+        "options": [
+          {"text_key": "race_amind", "value": "american_indian"},
+          {"text_key": "race_asian", "value": "asian"},
+          {"text_key": "race_black", "value": "black"},
+          {"text_key": "race_pacis", "value": "pacific_islander"},
+          {"text_key": "race_white", "value": "white"},
+          {"text_key": "race_other", "value": "other"},
+          {"text_key": "race_pnts", "value": "prefer_not_to_say"}
+        ]
+      },
+      {
+        "id": "age",
+        "text_key": "age",
+        "type": "text",
+        "input_type": "number",
+        "min": 0,
+        "max": 120,
+        "placeholder": ""
+      }
+    ],
+    "scoring": {}
+  },
+  "translations": {
+    "en": {
+      "demo_inst": "Please answer the following questions about yourself. This information is used for research purposes only and will be kept confidential.",
+      "bio_sex": "What is your biological sex (sex assigned at birth)?",
+      "bio_sex_male": "Male",
+      "bio_sex_female": "Female",
+      "bio_sex_intersex": "Intersex",
+      "bio_sex_pnts": "Prefer not to say",
+      "gender": "What is your gender identity?",
+      "gender_man": "Man",
+      "gender_woman": "Woman",
+      "gender_nonbinary": "Non-binary / Genderqueer",
+      "gender_other": "Other / Self-describe",
+      "gender_pnts": "Prefer not to say",
+      "ethnicity": "Are you of Hispanic or Latino/Latina heritage?",
+      "ethnicity_hisp": "Yes",
+      "ethnicity_not_hisp": "No",
+      "ethnicity_pnts": "Prefer not to say",
+      "race": "What is your race? (Select all that apply)",
+      "race_amind": "American Indian or Alaska Native",
+      "race_asian": "Asian",
+      "race_black": "Black or African American",
+      "race_pacis": "Native Hawaiian or Other Pacific Islander",
+      "race_white": "White",
+      "race_other": "Other",
+      "race_pnts": "Prefer not to say",
+      "age": "How old are you (in years)?",
+      "debrief": "Thank you."
+    },
+    "es": {
+      "demo_inst": "Por favor responda las siguientes preguntas sobre usted. Esta información se utiliza únicamente con fines de investigación y se mantendrá confidencial.",
+      "bio_sex": "¿Cuál es su sexo biológico (sexo asignado al nacer)?",
+      "bio_sex_male": "Masculino",
+      "bio_sex_female": "Femenino",
+      "bio_sex_intersex": "Intersexual",
+      "bio_sex_pnts": "Prefiero no decir",
+      "gender": "¿Cuál es su identidad de género?",
+      "gender_man": "Hombre",
+      "gender_woman": "Mujer",
+      "gender_nonbinary": "No binario / Género fluido",
+      "gender_other": "Otro / Auto-describir",
+      "gender_pnts": "Prefiero no decir",
+      "ethnicity": "¿Es usted de herencia hispana o latina?",
+      "ethnicity_hisp": "Sí",
+      "ethnicity_not_hisp": "No",
+      "ethnicity_pnts": "Prefiero no decir",
+      "race": "¿Cuál es su raza? (Seleccione todas las que apliquen)",
+      "race_amind": "Indígena americano o nativo de Alaska",
+      "race_asian": "Asiático",
+      "race_black": "Negro o afroamericano",
+      "race_pacis": "Nativo de Hawái u otra isla del Pacífico",
+      "race_white": "Blanco",
+      "race_other": "Otro",
+      "race_pnts": "Prefiero no decir",
+      "age": "¿Cuántos años tiene?",
+      "debrief": "Gracias."
+    }
+  }
+}

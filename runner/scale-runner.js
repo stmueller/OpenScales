@@ -2474,27 +2474,34 @@ const ScaleRunner = (() => {
       }
       main.appendChild(debrief);
 
-      // Report download link
-      const rptBlob = new Blob([reportHTML], { type: 'text/html' });
-      const rptURL  = URL.createObjectURL(rptBlob);
-      const rptLink = document.createElement('a');
-      rptLink.href      = rptURL;
-      rptLink.download  = `${config.scale}-${state.participant}-report.html`;
-      rptLink.className = 'sr-report-link';
-      rptLink.textContent = 'Download report';
-      main.appendChild(rptLink);
+      // Show download links only when running standalone (no chain callback)
+      // and either no upload endpoint or upload failed.
+      const inChain = typeof config.onComplete === 'function';
+      const showDownloads = !inChain && (!config.collectURL || !uploadOK);
 
-      // Trial-by-trial CSV download link
-      const csvBlob = new Blob([csvLines.join('\r\n') + '\r\n'], { type: 'text/csv' });
-      const csvURL  = URL.createObjectURL(csvBlob);
-      const csvLink = document.createElement('a');
-      csvLink.href      = csvURL;
-      csvLink.download  = `${config.scale}-${state.participant}.csv`;
-      csvLink.className = 'sr-report-link';
-      csvLink.textContent = 'Download trial-by-trial data';
-      main.appendChild(csvLink);
+      if (showDownloads) {
+        // Report download link
+        const rptBlob = new Blob([reportHTML], { type: 'text/html' });
+        const rptURL  = URL.createObjectURL(rptBlob);
+        const rptLink = document.createElement('a');
+        rptLink.href      = rptURL;
+        rptLink.download  = `${config.scale}-${state.participant}-report.html`;
+        rptLink.className = 'sr-report-link';
+        rptLink.textContent = 'Download report';
+        main.appendChild(rptLink);
 
-      if (!uploadOK && config.collectURL) {
+        // Trial-by-trial CSV download link
+        const csvBlob = new Blob([csvLines.join('\r\n') + '\r\n'], { type: 'text/csv' });
+        const csvURL  = URL.createObjectURL(csvBlob);
+        const csvLink = document.createElement('a');
+        csvLink.href      = csvURL;
+        csvLink.download  = `${config.scale}-${state.participant}.csv`;
+        csvLink.className = 'sr-report-link';
+        csvLink.textContent = 'Download trial-by-trial data';
+        main.appendChild(csvLink);
+      }
+
+      if (!uploadOK && config.collectURL && !inChain) {
         const note = el('p', 'sr-upload-note',
           'Note: Your responses could not be uploaded automatically. ' +
           'Please contact the researcher.');

@@ -38,58 +38,22 @@
       {
         "id": "covid_vaccination_child_number_vaccines",
         "text_key": "covid_vaccination_child_number_vaccines",
-        "type": "multi",
+        "type": "likert",
         "visible_when": {
           "item": "covid_vaccination_child_had_vaccine",
           "operator": "equals",
           "value": 1
-        },
-        "options": [
-          {
-            "text_key": "covid_vaccination_child_number_vaccines_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "covid_vaccination_child_number_vaccines_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "covid_vaccination_child_number_vaccines_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "covid_vaccination_child_number_vaccines_opt_4",
-            "value": 4
-          }
-        ]
+        }
       },
       {
         "id": "covid_vaccination_child_vaccine_first_type",
         "text_key": "covid_vaccination_child_vaccine_first_type",
-        "type": "multi",
+        "type": "likert",
         "visible_when": {
           "item": "covid_vaccination_child_had_vaccine",
           "operator": "equals",
           "value": 1
-        },
-        "options": [
-          {
-            "text_key": "covid_vaccination_child_vaccine_first_type_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "covid_vaccination_child_vaccine_first_type_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "covid_vaccination_child_vaccine_first_type_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "covid_vaccination_child_vaccine_first_type_opt_4",
-            "value": 4
-          }
-        ]
+        }
       },
       {
         "id": "covid_vaccination_child_vaccine_first_date",
@@ -105,7 +69,7 @@
       {
         "id": "covid_vaccination_child_vaccine_second_type",
         "text_key": "covid_vaccination_child_vaccine_second_type",
-        "type": "multi",
+        "type": "likert",
         "visible_when": {
           "item": "covid_vaccination_child_number_vaccines",
           "operator": "in",
@@ -113,25 +77,7 @@
             2,
             3
           ]
-        },
-        "options": [
-          {
-            "text_key": "covid_vaccination_child_vaccine_second_type_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "covid_vaccination_child_vaccine_second_type_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "covid_vaccination_child_vaccine_second_type_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "covid_vaccination_child_vaccine_second_type_opt_4",
-            "value": 4
-          }
-        ]
+        }
       },
       {
         "id": "covid_vaccination_child_vaccine_second_date",
@@ -150,30 +96,12 @@
       {
         "id": "covid_vaccination_child_vaccine_third_type",
         "text_key": "covid_vaccination_child_vaccine_third_type",
-        "type": "multi",
+        "type": "likert",
         "visible_when": {
           "item": "covid_vaccination_child_number_vaccines",
           "operator": "equals",
           "value": 3
-        },
-        "options": [
-          {
-            "text_key": "covid_vaccination_child_vaccine_third_type_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "covid_vaccination_child_vaccine_third_type_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "covid_vaccination_child_vaccine_third_type_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "covid_vaccination_child_vaccine_third_type_opt_4",
-            "value": 4
-          }
-        ]
+        }
       },
       {
         "id": "covid_vaccination_child_vaccine_third_date",
@@ -186,7 +114,18 @@
         },
         "input_type": "date"
       }
-    ]
+    ],
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4"
+      ]
+    }
   },
   "translations": {
     "en": {
@@ -215,7 +154,11 @@
       "covid_vaccination_child_vaccine_third_type_opt_2": "AstraZeneca",
       "covid_vaccination_child_vaccine_third_type_opt_3": "Moderna",
       "covid_vaccination_child_vaccine_third_type_opt_4": "Unsure",
-      "covid_vaccination_child_vaccine_third_date": "When did you have the third vaccine?"
+      "covid_vaccination_child_vaccine_third_date": "When did you have the third vaccine?",
+      "likert_1": "1",
+      "likert_2": "2",
+      "likert_3": "3",
+      "likert_4": "Unsure"
     }
   }
 }

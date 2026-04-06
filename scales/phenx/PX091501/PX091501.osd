@@ -103,34 +103,12 @@
       {
         "id": "sleep_apnea_snore_frequency",
         "text_key": "sleep_apnea_snore_frequency",
-        "type": "multi",
+        "type": "likert",
         "visible_when": {
           "item": "sleep_apnea_snore",
           "operator": "equals",
           "value": 1
-        },
-        "options": [
-          {
-            "text_key": "sleep_apnea_snore_frequency_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "sleep_apnea_snore_frequency_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "sleep_apnea_snore_frequency_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "sleep_apnea_snore_frequency_opt_4",
-            "value": 4
-          },
-          {
-            "text_key": "sleep_apnea_snore_frequency_opt_5",
-            "value": 5
-          }
-        ]
+        }
       },
       {
         "id": "sleep_apnea_snore_bother_other",
@@ -159,83 +137,17 @@
       {
         "id": "sleep_apnea_quit_breathing_sleep",
         "text_key": "sleep_apnea_quit_breathing_sleep",
-        "type": "multi",
-        "options": [
-          {
-            "text_key": "sleep_apnea_quit_breathing_sleep_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "sleep_apnea_quit_breathing_sleep_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "sleep_apnea_quit_breathing_sleep_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "sleep_apnea_quit_breathing_sleep_opt_4",
-            "value": 4
-          },
-          {
-            "text_key": "sleep_apnea_quit_breathing_sleep_opt_5",
-            "value": 5
-          }
-        ]
+        "type": "likert"
       },
       {
         "id": "sleep_apnea_tired_fatigued_after",
         "text_key": "sleep_apnea_tired_fatigued_after",
-        "type": "multi",
-        "options": [
-          {
-            "text_key": "sleep_apnea_tired_fatigued_after_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "sleep_apnea_tired_fatigued_after_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "sleep_apnea_tired_fatigued_after_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "sleep_apnea_tired_fatigued_after_opt_4",
-            "value": 4
-          },
-          {
-            "text_key": "sleep_apnea_tired_fatigued_after_opt_5",
-            "value": 5
-          }
-        ]
+        "type": "likert"
       },
       {
         "id": "sleep_apnea_tired_fatigued_waking",
         "text_key": "sleep_apnea_tired_fatigued_waking",
-        "type": "multi",
-        "options": [
-          {
-            "text_key": "sleep_apnea_tired_fatigued_waking_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "sleep_apnea_tired_fatigued_waking_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "sleep_apnea_tired_fatigued_waking_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "sleep_apnea_tired_fatigued_waking_opt_4",
-            "value": 4
-          },
-          {
-            "text_key": "sleep_apnea_tired_fatigued_waking_opt_5",
-            "value": 5
-          }
-        ]
+        "type": "likert"
       },
       {
         "id": "sleep_apnea_nodded_asleep_driving",
@@ -255,34 +167,12 @@
       {
         "id": "sleep_apnea_asleep_driving_frequency",
         "text_key": "sleep_apnea_asleep_driving_frequency",
-        "type": "multi",
+        "type": "likert",
         "visible_when": {
           "item": "sleep_apnea_nodded_asleep_driving",
           "operator": "equals",
           "value": 1
-        },
-        "options": [
-          {
-            "text_key": "sleep_apnea_asleep_driving_frequency_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "sleep_apnea_asleep_driving_frequency_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "sleep_apnea_asleep_driving_frequency_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "sleep_apnea_asleep_driving_frequency_opt_4",
-            "value": 4
-          },
-          {
-            "text_key": "sleep_apnea_asleep_driving_frequency_opt_5",
-            "value": 5
-          }
-        ]
+        }
       },
       {
         "id": "sleep_apnea_high_blood_pressure",
@@ -303,7 +193,19 @@
           }
         ]
       }
-    ]
+    ],
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ]
+    }
   },
   "translations": {
     "en": {
@@ -362,7 +264,12 @@
       "sleep_apnea_high_blood_pressure": "CATEGORY 3  Do you have high blood pressure?",
       "sleep_apnea_high_blood_pressure_opt_1": "Yes",
       "sleep_apnea_high_blood_pressure_opt_2": "No",
-      "sleep_apnea_high_blood_pressure_opt_3": "Don't know"
+      "sleep_apnea_high_blood_pressure_opt_3": "Don't know",
+      "likert_1": "Nearly every day",
+      "likert_2": "3-4 times a week",
+      "likert_3": "1-2 times a week",
+      "likert_4": "1-2 times a month",
+      "likert_5": "Never or nearly never"
     }
   }
 }

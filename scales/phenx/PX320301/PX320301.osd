@@ -28,169 +28,37 @@
       {
         "id": "past_week_thinking_slow",
         "text_key": "past_week_thinking_slow",
-        "type": "multi",
-        "options": [
-          {
-            "text_key": "past_week_thinking_slow_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "past_week_thinking_slow_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "past_week_thinking_slow_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "past_week_thinking_slow_opt_4",
-            "value": 4
-          },
-          {
-            "text_key": "past_week_thinking_slow_opt_5",
-            "value": 5
-          }
-        ],
+        "type": "likert",
         "_matrix_group": "mat1"
       },
       {
         "id": "past_week_brain_not_working",
         "text_key": "past_week_brain_not_working",
-        "type": "multi",
-        "options": [
-          {
-            "text_key": "past_week_brain_not_working_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "past_week_brain_not_working_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "past_week_brain_not_working_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "past_week_brain_not_working_opt_4",
-            "value": 4
-          },
-          {
-            "text_key": "past_week_brain_not_working_opt_5",
-            "value": 5
-          }
-        ],
+        "type": "likert",
         "_matrix_group": "mat1"
       },
       {
         "id": "past_week_work_harder_keep_track",
         "text_key": "past_week_work_harder_keep_track",
-        "type": "multi",
-        "options": [
-          {
-            "text_key": "past_week_work_harder_keep_track_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "past_week_work_harder_keep_track_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "past_week_work_harder_keep_track_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "past_week_work_harder_keep_track_opt_4",
-            "value": 4
-          },
-          {
-            "text_key": "past_week_work_harder_keep_track_opt_5",
-            "value": 5
-          }
-        ],
+        "type": "likert",
         "_matrix_group": "mat1"
       },
       {
         "id": "past_week_trouble_multitasking",
         "text_key": "past_week_trouble_multitasking",
-        "type": "multi",
-        "options": [
-          {
-            "text_key": "past_week_trouble_multitasking_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "past_week_trouble_multitasking_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "past_week_trouble_multitasking_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "past_week_trouble_multitasking_opt_4",
-            "value": 4
-          },
-          {
-            "text_key": "past_week_trouble_multitasking_opt_5",
-            "value": 5
-          }
-        ],
+        "type": "likert",
         "_matrix_group": "mat1"
       },
       {
         "id": "past_week_trouble_concentrating",
         "text_key": "past_week_trouble_concentrating",
-        "type": "multi",
-        "options": [
-          {
-            "text_key": "past_week_trouble_concentrating_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "past_week_trouble_concentrating_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "past_week_trouble_concentrating_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "past_week_trouble_concentrating_opt_4",
-            "value": 4
-          },
-          {
-            "text_key": "past_week_trouble_concentrating_opt_5",
-            "value": 5
-          }
-        ],
+        "type": "likert",
         "_matrix_group": "mat1"
       },
       {
         "id": "past_week_work_hard_pay_attention",
         "text_key": "past_week_work_hard_pay_attention",
-        "type": "multi",
-        "options": [
-          {
-            "text_key": "past_week_work_hard_pay_attention_opt_1",
-            "value": 1
-          },
-          {
-            "text_key": "past_week_work_hard_pay_attention_opt_2",
-            "value": 2
-          },
-          {
-            "text_key": "past_week_work_hard_pay_attention_opt_3",
-            "value": 3
-          },
-          {
-            "text_key": "past_week_work_hard_pay_attention_opt_4",
-            "value": 4
-          },
-          {
-            "text_key": "past_week_work_hard_pay_attention_opt_5",
-            "value": 5
-          }
-        ],
+        "type": "likert",
         "_matrix_group": "mat1"
       }
     ],
@@ -201,7 +69,19 @@
       "INFO  past_week_trouble_multitasking: member of matrix group 'mat1' — consider converting to grid type manually",
       "INFO  past_week_trouble_concentrating: member of matrix group 'mat1' — consider converting to grid type manually",
       "INFO  past_week_work_hard_pay_attention: member of matrix group 'mat1' — consider converting to grid type manually"
-    ]
+    ],
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "likert_1",
+        "likert_2",
+        "likert_3",
+        "likert_4",
+        "likert_5"
+      ]
+    }
   },
   "translations": {
     "en": {
@@ -241,7 +121,12 @@
       "past_week_work_hard_pay_attention_opt_2": "Rarely (Once)",
       "past_week_work_hard_pay_attention_opt_3": "Sometimes (Two or three times)",
       "past_week_work_hard_pay_attention_opt_4": "Often (About once a day)",
-      "past_week_work_hard_pay_attention_opt_5": "Very often (Several times a day)"
+      "past_week_work_hard_pay_attention_opt_5": "Very often (Several times a day)",
+      "likert_1": "Never",
+      "likert_2": "Rarely (Once)",
+      "likert_3": "Sometimes (Two or three times)",
+      "likert_4": "Often (About once a day)",
+      "likert_5": "Very often (Several times a day)"
     }
   }
 }

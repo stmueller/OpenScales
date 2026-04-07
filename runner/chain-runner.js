@@ -332,6 +332,7 @@ const ChainRunner = (() => {
         participant: params.pid || params.participant || 'anon',
         language: params.lang || 'en',
         collectURL: null,   // chain runner handles upload
+        hideDownloads: true, // chain runner handles display
         demo: false,
         showTitle: false,
         params: step.parameters || {},
@@ -370,6 +371,7 @@ const ChainRunner = (() => {
         participant: params.pid || params.participant || 'anon',
         language: params.lang || scaleParams.lang || 'en',
         collectURL: null,   // chain runner handles upload
+        hideDownloads: true, // chain runner handles display
         demo: false,
         showTitle: true,
         params: scaleParams,

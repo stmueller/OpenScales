@@ -2474,9 +2474,10 @@ const ScaleRunner = (() => {
       }
       main.appendChild(debrief);
 
-      // Show download links only when running standalone (no chain callback)
-      // and either no upload endpoint or upload failed.
-      const inChain = typeof config.onComplete === 'function';
+      // Show download links only when running standalone and data isn't being
+      // saved elsewhere. Hide when: (a) running inside a chain runner
+      // (config.hideDownloads explicitly set), or (b) data uploaded successfully.
+      const inChain = config.hideDownloads === true;
       const showDownloads = !inChain && (!config.collectURL || !uploadOK);
 
       if (showDownloads) {

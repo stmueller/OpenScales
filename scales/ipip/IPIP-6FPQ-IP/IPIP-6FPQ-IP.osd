@@ -1,0 +1,171 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP 6FPQ: Independence",
+      "code": "IPIP-6FPQ-IP",
+      "abbreviation": "6FPQ-IP",
+      "description": "IPIP items measuring independence, from the IPIP Six-Factor Personality Questionnaire.",
+      "citation": "Jackson, D. N., Ashton, M. C., & Tomes, J. L. (1996). The six-factor model of personality: Facets from the Big Five. Personality and Individual Differences, 21(3), 391–402. https://doi.org/10.1016/0191-8869(96)00083-5",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/new6FPQKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "independence_sum",
+        "name": "Independence (sum)"
+      },
+      {
+        "id": "independence_mean",
+        "name": "Independence (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_6fpq_ip_001",
+        "text_key": "ipip_text_believe_appearances_are_important",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_ip_002",
+        "text_key": "ipip_E85",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_ip_003",
+        "text_key": "ipip_E134",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_ip_004",
+        "text_key": "ipip_text_feel_it_s_ok_that_some_people_don_t_like",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_ip_005",
+        "text_key": "ipip_P401",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_ip_006",
+        "text_key": "ipip_H980",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_ip_007",
+        "text_key": "ipip_H974",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_ip_008",
+        "text_key": "ipip_H404",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_ip_009",
+        "text_key": "ipip_H961",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_ip_010",
+        "text_key": "ipip_H1057",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "independence_sum": {
+        "description": "Cronbach's alpha = 0.69",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_6fpq_ip_001": -1,
+          "ipip_ipip_6fpq_ip_002": 1,
+          "ipip_ipip_6fpq_ip_003": 1,
+          "ipip_ipip_6fpq_ip_004": 1,
+          "ipip_ipip_6fpq_ip_005": -1,
+          "ipip_ipip_6fpq_ip_006": -1,
+          "ipip_ipip_6fpq_ip_007": -1,
+          "ipip_ipip_6fpq_ip_008": 1,
+          "ipip_ipip_6fpq_ip_009": -1,
+          "ipip_ipip_6fpq_ip_010": -1
+        }
+      },
+      "independence_mean": {
+        "description": "Cronbach's alpha = 0.69",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_6fpq_ip_001": -1,
+          "ipip_ipip_6fpq_ip_002": 1,
+          "ipip_ipip_6fpq_ip_003": 1,
+          "ipip_ipip_6fpq_ip_004": 1,
+          "ipip_ipip_6fpq_ip_005": -1,
+          "ipip_ipip_6fpq_ip_006": -1,
+          "ipip_ipip_6fpq_ip_007": -1,
+          "ipip_ipip_6fpq_ip_008": 1,
+          "ipip_ipip_6fpq_ip_009": -1,
+          "ipip_ipip_6fpq_ip_010": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_text_believe_appearances_are_important": "Believe appearances are important.",
+      "ipip_E85": "Don't care about dressing nicely.",
+      "ipip_E134": "Don't care what others think.",
+      "ipip_text_feel_it_s_ok_that_some_people_don_t_like": "Feel it's OK that some people don't like me.",
+      "ipip_P401": "Love to be complimented.",
+      "ipip_H980": "Need reassurance.",
+      "ipip_H974": "Need the approval of others.",
+      "ipip_H404": "Sail my own course.",
+      "ipip_H961": "Seek support.",
+      "ipip_H1057": "Want to be liked."
+    }
+  }
+}

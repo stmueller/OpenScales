@@ -1,0 +1,278 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Depression Scale",
+      "code": "IPIP-Depression",
+      "abbreviation": "IPIP-DEP",
+      "description": "IPIP items measuring depressive symptoms, designed to approximate the CES-D.",
+      "citation": "Radloff, L. S. (1977). The CES-D Scale: A self-report depression scale for research in the general population. Applied Psychological Measurement, 1(3), 385-401.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newSingleConstructsKey.htm#Depression",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "depression_sum",
+        "name": "Depression (sum)"
+      },
+      {
+        "id": "depression_mean",
+        "name": "Depression (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_depression_001",
+        "text_key": "ipip_N20",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_002",
+        "text_key": "ipip_N03",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_003",
+        "text_key": "ipip_N17",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_004",
+        "text_key": "ipip_N08",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_005",
+        "text_key": "ipip_N21",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_006",
+        "text_key": "ipip_N14",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_007",
+        "text_key": "ipip_N10",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_008",
+        "text_key": "ipip_N16",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_009",
+        "text_key": "ipip_N19",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_010",
+        "text_key": "ipip_N09",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_011",
+        "text_key": "ipip_N04",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_012",
+        "text_key": "ipip_N22",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_013",
+        "text_key": "ipip_N02",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_014",
+        "text_key": "ipip_N18",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_015",
+        "text_key": "ipip_N13",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_016",
+        "text_key": "ipip_N23",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_017",
+        "text_key": "ipip_N07",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_018",
+        "text_key": "ipip_N24",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_019",
+        "text_key": "ipip_N12",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_020",
+        "text_key": "ipip_text_thought_my_life_had_been_a_failure",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_021",
+        "text_key": "ipip_N01",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_depression_022",
+        "text_key": "ipip_N06",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "depression_sum": {
+        "description": "Cronbach's alpha = 0.93",
+        "method": "sum",
+        "items": {
+          "ipip_depression_001": 1,
+          "ipip_depression_002": 1,
+          "ipip_depression_003": -1,
+          "ipip_depression_004": 1,
+          "ipip_depression_005": 1,
+          "ipip_depression_006": -1,
+          "ipip_depression_007": -1,
+          "ipip_depression_008": 1,
+          "ipip_depression_009": 1,
+          "ipip_depression_010": 1,
+          "ipip_depression_011": 1,
+          "ipip_depression_012": 1,
+          "ipip_depression_013": 1,
+          "ipip_depression_014": 1,
+          "ipip_depression_015": 1,
+          "ipip_depression_016": 1,
+          "ipip_depression_017": 1,
+          "ipip_depression_018": 1,
+          "ipip_depression_019": 1,
+          "ipip_depression_020": 1,
+          "ipip_depression_021": 1,
+          "ipip_depression_022": 1
+        }
+      },
+      "depression_mean": {
+        "description": "Cronbach's alpha = 0.93",
+        "method": "mean_coded",
+        "items": {
+          "ipip_depression_001": 1,
+          "ipip_depression_002": 1,
+          "ipip_depression_003": -1,
+          "ipip_depression_004": 1,
+          "ipip_depression_005": 1,
+          "ipip_depression_006": -1,
+          "ipip_depression_007": -1,
+          "ipip_depression_008": 1,
+          "ipip_depression_009": 1,
+          "ipip_depression_010": 1,
+          "ipip_depression_011": 1,
+          "ipip_depression_012": 1,
+          "ipip_depression_013": 1,
+          "ipip_depression_014": 1,
+          "ipip_depression_015": 1,
+          "ipip_depression_016": 1,
+          "ipip_depression_017": 1,
+          "ipip_depression_018": 1,
+          "ipip_depression_019": 1,
+          "ipip_depression_020": 1,
+          "ipip_depression_021": 1,
+          "ipip_depression_022": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_N20": "Could not get going.",
+      "ipip_N03": "Did not feel like eating, even though I should have been hungry.",
+      "ipip_N17": "Enjoyed life.",
+      "ipip_N08": "Felt depressed.",
+      "ipip_N21": "Felt fearful.",
+      "ipip_N14": "Felt happy.",
+      "ipip_N10": "Felt hopeful about the future.",
+      "ipip_N16": "Felt lonely.",
+      "ipip_N19": "Felt sad.",
+      "ipip_N09": "Felt that everything I did was an effort.",
+      "ipip_N04": "Felt that I could not shake off the blues, even with help from my family or friends.",
+      "ipip_N22": "Felt that people disliked me.",
+      "ipip_N02": "Had a poor appetite.",
+      "ipip_N18": "Had crying spells.",
+      "ipip_N13": "Had restless sleep.",
+      "ipip_N23": "Had thoughts about death.",
+      "ipip_N07": "Had trouble keeping my mind on what I was doing.",
+      "ipip_N24": "Talked less than usual.",
+      "ipip_N12": "Thought about killing myself.",
+      "ipip_text_thought_my_life_had_been_a_failure": "Thought my life had been a failure.",
+      "ipip_N01": "Was bothered by things that usually don't bother me.",
+      "ipip_N06": "Was down in the dumps."
+    }
+  }
+}

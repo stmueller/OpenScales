@@ -1,0 +1,198 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP HPI-HIC: Aesthetic Appreciation/Artistic Interests",
+      "code": "IPIP-HPIHIC-Aes",
+      "abbreviation": "HIC-Aes",
+      "description": "IPIP items measuring aesthetic appreciation/artistic interests, from the IPIP Hogan Personality Inventory — Homogeneous Item Composites.",
+      "citation": "Hogan, R., & Hogan, J. (1992). Hogan Personality Inventory manual. Hogan Assessment Systems.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newHPIHICKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "aesthetic_appreciation_artistic_interests_sum",
+        "name": "Aesthetic Appreciation/Artistic Interests (sum)"
+      },
+      {
+        "id": "aesthetic_appreciation_artistic_interests_mean",
+        "name": "Aesthetic Appreciation/Artistic Interests (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_hpihic_aes_001",
+        "text_key": "ipip_X235",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpihic_aes_002",
+        "text_key": "ipip_X81",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "aesthetic_appreciation_artistic_interests_sum": {
+        "description": "Cronbach's alpha = 0.77",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_hpihic_aes_001": -1,
+          "ipip_ipip_hpihic_aes_002": 1
+        }
+      },
+      "aesthetic_appreciation_artistic_interests_mean": {
+        "description": "Cronbach's alpha = 0.77",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_hpihic_aes_001": -1,
+          "ipip_ipip_hpihic_aes_002": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_X235": "Do not enjoy going to art museums.",
+      "ipip_X81": "Like music."
+    },
+    "hr": {
+      "ipip_question_head": "<h3>Koliko točno možete opisati sebe?</h3><p>Na sljedećim stranicama nalaze se tvrdnje koje opisuju uobičajeno ponašanje ljudi. Molimo vas da, koristeći se priloženom ljestvicom, procijenite koliko pojedini iskaz vjerno opisuje baš vas.</p>",
+      "ipip_likert_3": "Ni točno ni netočno",
+      "ipip_likert_1": "Posve netočno",
+      "ipip_debrief": "Hvala vam na sudjelovanju.",
+      "ipip_likert_4": "Uglavnom točno",
+      "ipip_likert_2": "Uglavnom netočno",
+      "ipip_likert_5": "Posve točno",
+      "ipip_X235": "Ne volim posjećivati muzeje umjetnosti.",
+      "ipip_X81": "Volim glazbu."
+    },
+    "fr": {
+      "ipip_likert_5": "Tout à fait en accord",
+      "ipip_likert_2": "En désaccord",
+      "ipip_debrief": "Merci d'avoir complété ce questionnaire.",
+      "ipip_likert_3": "Neutre / Indifférent(e)",
+      "ipip_question_head": "<h3>Comment vous décririez-vous ?</h3><p>Décrivez-vous tel(le) que vous êtes généralement maintenant, et non tel(le) que vous souhaiteriez être à l'avenir. Décrivez-vous honnêtement, par rapport aux autres personnes du même sexe et à peu près du même âge que vous. Vos réponses resteront strictement confidentielles. Indiquez votre niveau d'accord avec chaque énoncé à l'aide de l'échelle suivante :</p>",
+      "ipip_likert_4": "En accord",
+      "ipip_likert_1": "Tout à fait en désaccord",
+      "ipip_X81": "J'aime la musique.",
+      "ipip_X235": "Je n'apprécie pas aller à des musées d'art."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_X81": "Volim muziku.",
+      "ipip_X235": "Ne prijaju mi odlasci u muzeje."
+    },
+    "sv": {
+      "ipip_likert_1": "Mycket inexakt",
+      "ipip_debrief": "Tack för att du fyllde i denna enkät.",
+      "ipip_question_head": "<h3>Hur exakt kan du beskriva dig själv?</h3><p>Beskriv dig själv som du i allmänhet är nu, inte som du önskar vara i framtiden. Beskriv dig själv så ärligt som du ser dig själv, i förhållande till andra människor du känner av samma kön och ungefär samma ålder. För att du ska kunna beskriva dig själv på ett ärligt sätt kommer dina svar att hållas i absolut sekretess. Ange hur exakt påståendet passar dig enligt följande skala:</p>",
+      "ipip_likert_5": "Mycket exakt",
+      "ipip_likert_2": "Måttligt inexakt",
+      "ipip_likert_3": "Varken exakt eller inexakt",
+      "ipip_likert_4": "Måttligt exakt",
+      "ipip_X81": "Gillar musik",
+      "ipip_X235": "Gillar inte att gå på konstmuseum"
+    },
+    "tr": {
+      "ipip_likert_1": "Çok yanlış",
+      "ipip_debrief": "Bu anketi tamamladığınız için teşekkür ederiz.",
+      "ipip_question_head": "<h3>Kendinizi ne kadar doğru tanımlayabilirsiniz?</h3><p>Kendinizi şu anda genellikle nasıl olduğunuza göre tanımlayın, gelecekte nasıl olmak istediğinize göre değil. Kendinizi dürüstçe, sizinle aynı cinsiyette ve yaklaşık aynı yaşta tanıdığınız diğer insanlara kıyasla göründüğü şekilde tanımlayın. Kendinizi dürüstçe tanımlayabilmeniz için cevaplarınız tamamen gizli tutulacaktır. Aşağıdaki ölçeği kullanarak her bir ifadenin sizin için doğruluğunu belirtin:</p>",
+      "ipip_likert_5": "Çok doğru",
+      "ipip_likert_2": "Biraz yanlış",
+      "ipip_likert_3": "Ne doğru ne yanlış",
+      "ipip_likert_4": "Biraz doğru",
+      "ipip_X81": "Müziği severim.",
+      "ipip_X235": "Sanat müzelerine gitmekten hoşlanmam."
+    },
+    "et": {
+      "ipip_likert_1": "Väga ebatäpne",
+      "ipip_likert_3": "Ei ole täpne ega ebatäpne",
+      "ipip_likert_2": "Mõõdukalt ebatäpne",
+      "ipip_likert_5": "Väga täpne",
+      "ipip_debrief": "Tänan teid küsimustiku täitmise eest.",
+      "ipip_question_head": "<h3>Kui täpselt saate ennast kirjeldada?</h3><p>Kirjeldage ennast sellisena, nagu te üldiselt praegu olete, mitte sellisena, nagu te tulevikus sooviksite olla. Kirjeldage ennast nii, nagu te ennast ausalt näete, võrreldes teiste inimestega, kes on teie sugupoolega ja ligikaudu teie vanuses. Et saaksid ennast ausalt kirjeldada, hoitakse sinu vastuseid täielikult konfidentsiaalsena. Näita punkti abil, kui täpselt see väide sinu kohta kehtib, kasutades järgmist hindamisskaala:</p>",
+      "ipip_likert_4": "Mõõdukalt täpne",
+      "ipip_X235": "Ma ei armasta käia kunstimuuseumides",
+      "ipip_X81": "Mulle meeldib muusika"
+    },
+    "he": {
+      "ipip_likert_2": "לא מדויק במידה מתונה",
+      "ipip_likert_5": "מדויק מאוד",
+      "ipip_likert_4": "מדויק במידה מתונה",
+      "ipip_likert_1": "לא מדויק בכלל",
+      "ipip_question_head": "<h3>עד כמה תוכל לתאר את עצמך?</h3><p>תאר את עצמך כפי שאתה בדרך כלל עכשיו, לא כפי שתרצה להיות בעתיד. תאר את עצמך כפי שאתה רואה את עצמך בכנות, ביחס לאנשים אחרים שאתה מכיר מאותו המין שלך ובגילך. כדי שתוכל לתאר את עצמך בצורה כנה, תגובותיך ישמרו בסודיות מוחלטת. ציין עד כמה הפריט מדויק עבורך, תוך שימוש בסולם הדירוג הבא:</p>",
+      "ipip_likert_3": "לא מדויק ולא לא מדויק",
+      "ipip_debrief": "תודה על מילוי השאלון.",
+      "ipip_X235": "לא נהנה ללכת למוזאונים לאומנות",
+      "ipip_X81": "אוהב מוסיקה"
+    },
+    "ja": {
+      "ipip_question_head": "<h3>あなた自身をどの程度正確に表現できますか？</h3><p>将来こうなりたいという姿ではなく、現在の自分を描写してください。自分自身を正直に見つめ、同性で同年代の人々と比較しながら描写してください。正直に答えていただけるよう、回答は厳密に秘密が守られます。以下の評定尺度を用いて、各項目がどの程度あなた自身に当てはまるかを示してください：</p>",
+      "ipip_likert_4": "まあ当てはまる",
+      "ipip_likert_2": "あまり当てはまらない",
+      "ipip_likert_3": "どちらでもない",
+      "ipip_likert_1": "全く当てはまらない",
+      "ipip_likert_5": "非常によく当てはまる",
+      "ipip_debrief": "このアンケートへのご協力ありがとうございました。",
+      "ipip_X235": "美 術館に行っても楽しめない",
+      "ipip_X81": "音 楽は好きだ"
+    },
+    "ko": {
+      "ipip_likert_1": "전혀 그렇지 않다",
+      "ipip_likert_2": "그렇지 않은 편이다",
+      "ipip_question_head": "<h3>자신을 얼마나 정확하게 묘사할 수 있습니까?</h3><p>미래에 되고 싶은 모습이 아닌, 현재의 자신을 묘사해 주십시오. 같은 성별과 비슷한 연령대의 다른 사람들과 비교하여 솔직하게 자신을 묘사해 주십시오. 솔직하게 응답하실 수 있도록 모든 응답은 철저히 비밀이 보장됩니다. 아래 평정 척도를 사용하여 각 문항이 자신에게 얼마나 해당하는지 표시해 주십시오:</p>",
+      "ipip_likert_3": "보통이다",
+      "ipip_likert_4": "그런 편이다",
+      "ipip_debrief": "설문에 참여해 주셔서 감사합니다.",
+      "ipip_likert_5": "매우 그렇다",
+      "ipip_X81": "나는 음악을 좋아한다.",
+      "ipip_X235": "나는 미술관에 가는 것을 즐기지 않는다."
+    }
+  }
+}

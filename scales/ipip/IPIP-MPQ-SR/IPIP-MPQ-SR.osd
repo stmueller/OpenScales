@@ -1,0 +1,240 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP MPQ: Neuroticism",
+      "code": "IPIP-MPQ-SR",
+      "abbreviation": "MPQ-SR",
+      "description": "IPIP items measuring neuroticism, from the IPIP Multidimensional Personality Questionnaire.",
+      "citation": "Tellegen, A., & Waller, N. G. (2008). Exploring personality through test construction: Development of the Multidimensional Personality Questionnaire. In G. J. Boyle, G. Matthews, & D. H. Saklofske (Eds.), The SAGE Handbook of Personality Theory and Assessment (Vol. 2, pp. 261–292). SAGE.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newMPQKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "neuroticism_sum",
+        "name": "Neuroticism (sum)"
+      },
+      {
+        "id": "neuroticism_mean",
+        "name": "Neuroticism (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_mpq_sr_001",
+        "text_key": "ipip_X138",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_sr_002",
+        "text_key": "ipip_E141",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_sr_003",
+        "text_key": "ipip_E150",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_sr_004",
+        "text_key": "ipip_X107",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_sr_005",
+        "text_key": "ipip_E92",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_sr_006",
+        "text_key": "ipip_H948",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "neuroticism_sum": {
+        "description": "Cronbach's alpha = 0.84",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_mpq_sr_001": -1,
+          "ipip_ipip_mpq_sr_002": -1,
+          "ipip_ipip_mpq_sr_003": -1,
+          "ipip_ipip_mpq_sr_004": 1,
+          "ipip_ipip_mpq_sr_005": 1,
+          "ipip_ipip_mpq_sr_006": 1
+        }
+      },
+      "neuroticism_mean": {
+        "description": "Cronbach's alpha = 0.84",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_mpq_sr_001": -1,
+          "ipip_ipip_mpq_sr_002": -1,
+          "ipip_ipip_mpq_sr_003": -1,
+          "ipip_ipip_mpq_sr_004": 1,
+          "ipip_ipip_mpq_sr_005": 1,
+          "ipip_ipip_mpq_sr_006": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_X138": "Am not easily bothered by things.",
+      "ipip_E141": "Am relaxed most of the time.",
+      "ipip_E150": "Don't worry about things that have already happened.",
+      "ipip_X107": "Get stressed out easily.",
+      "ipip_E92": "Have frequent mood swings.",
+      "ipip_H948": "Panic easily."
+    },
+    "hr": {
+      "ipip_question_head": "<h3>Koliko točno možete opisati sebe?</h3><p>Na sljedećim stranicama nalaze se tvrdnje koje opisuju uobičajeno ponašanje ljudi. Molimo vas da, koristeći se priloženom ljestvicom, procijenite koliko pojedini iskaz vjerno opisuje baš vas.</p>",
+      "ipip_likert_3": "Ni točno ni netočno",
+      "ipip_likert_1": "Posve netočno",
+      "ipip_debrief": "Hvala vam na sudjelovanju.",
+      "ipip_likert_4": "Uglavnom točno",
+      "ipip_likert_2": "Uglavnom netočno",
+      "ipip_likert_5": "Posve točno",
+      "ipip_E92": "Često mijenjam raspoloženja.",
+      "ipip_X107": "Lako se uznemirim.",
+      "ipip_H948": "Lako se uspaničim.",
+      "ipip_E141": "Uglavnom sam opušten.",
+      "ipip_X138": "Malo što mi smeta.",
+      "ipip_E150": "Ne brinu me stvari koje su se već dogodile."
+    },
+    "fr": {
+      "ipip_likert_5": "Tout à fait en accord",
+      "ipip_likert_2": "En désaccord",
+      "ipip_debrief": "Merci d'avoir complété ce questionnaire.",
+      "ipip_likert_3": "Neutre / Indifférent(e)",
+      "ipip_question_head": "<h3>Comment vous décririez-vous ?</h3><p>Décrivez-vous tel(le) que vous êtes généralement maintenant, et non tel(le) que vous souhaiteriez être à l'avenir. Décrivez-vous honnêtement, par rapport aux autres personnes du même sexe et à peu près du même âge que vous. Vos réponses resteront strictement confidentielles. Indiquez votre niveau d'accord avec chaque énoncé à l'aide de l'échelle suivante :</p>",
+      "ipip_likert_4": "En accord",
+      "ipip_likert_1": "Tout à fait en désaccord",
+      "ipip_E92": "J'ai des sautes d'humeur fréquentes.",
+      "ipip_X107": "Je deviens stressé facilement.",
+      "ipip_E150": "Je ne me préoccupe pas de choses qui ont déjà eu lieu.",
+      "ipip_X138": "Je ne suis pas facilement dérangé par les choses.",
+      "ipip_H948": "Je panique facilement.",
+      "ipip_E141": "Je suis détendu la plupart du temps."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_E150": "Ne brinem o onome što se već dogodilo.",
+      "ipip_X107": "Lako se podlegnem stresu.",
+      "ipip_E141": "Većinu vremena sam opušten.",
+      "ipip_X138": "Ne potresam se lako zbog stvari.",
+      "ipip_H948": "Lako se uspaničim",
+      "ipip_E92": "Imam česte promene raspoloženja."
+    },
+    "sv": {
+      "ipip_likert_1": "Mycket inexakt",
+      "ipip_debrief": "Tack för att du fyllde i denna enkät.",
+      "ipip_question_head": "<h3>Hur exakt kan du beskriva dig själv?</h3><p>Beskriv dig själv som du i allmänhet är nu, inte som du önskar vara i framtiden. Beskriv dig själv så ärligt som du ser dig själv, i förhållande till andra människor du känner av samma kön och ungefär samma ålder. För att du ska kunna beskriva dig själv på ett ärligt sätt kommer dina svar att hållas i absolut sekretess. Ange hur exakt påståendet passar dig enligt följande skala:</p>",
+      "ipip_likert_5": "Mycket exakt",
+      "ipip_likert_2": "Måttligt inexakt",
+      "ipip_likert_3": "Varken exakt eller inexakt",
+      "ipip_likert_4": "Måttligt exakt",
+      "ipip_E150": "Oroar mig inte för sådant som redan inträffat",
+      "ipip_X107": "Blir lätt stressad",
+      "ipip_E141": "Är avslappnad för det mesta",
+      "ipip_X138": "Blir sällan störd av saker",
+      "ipip_H948": "Blir lätt panikslagen",
+      "ipip_E92": "Har ofta förekommande humörsvängningar"
+    },
+    "et": {
+      "ipip_likert_1": "Väga ebatäpne",
+      "ipip_likert_3": "Ei ole täpne ega ebatäpne",
+      "ipip_likert_2": "Mõõdukalt ebatäpne",
+      "ipip_likert_5": "Väga täpne",
+      "ipip_debrief": "Tänan teid küsimustiku täitmise eest.",
+      "ipip_question_head": "<h3>Kui täpselt saate ennast kirjeldada?</h3><p>Kirjeldage ennast sellisena, nagu te üldiselt praegu olete, mitte sellisena, nagu te tulevikus sooviksite olla. Kirjeldage ennast nii, nagu te ennast ausalt näete, võrreldes teiste inimestega, kes on teie sugupoolega ja ligikaudu teie vanuses. Et saaksid ennast ausalt kirjeldada, hoitakse sinu vastuseid täielikult konfidentsiaalsena. Näita punkti abil, kui täpselt see väide sinu kohta kehtib, kasutades järgmist hindamisskaala:</p>",
+      "ipip_likert_4": "Mõõdukalt täpne",
+      "ipip_X138": "Ma ei hakka kergesti muretsema",
+      "ipip_H948": "Ma satun kergesti paanikasse",
+      "ipip_E92": "Mu meeleolu kõigub tihti",
+      "ipip_X107": "Ma lähen kergesti pingesse",
+      "ipip_E141": "Ma tunnen ennast muretult",
+      "ipip_E150": "Ma ei muretse juba juhtunud asjade pärast"
+    },
+    "he": {
+      "ipip_likert_2": "לא מדויק במידה מתונה",
+      "ipip_likert_5": "מדויק מאוד",
+      "ipip_likert_4": "מדויק במידה מתונה",
+      "ipip_likert_1": "לא מדויק בכלל",
+      "ipip_question_head": "<h3>עד כמה תוכל לתאר את עצמך?</h3><p>תאר את עצמך כפי שאתה בדרך כלל עכשיו, לא כפי שתרצה להיות בעתיד. תאר את עצמך כפי שאתה רואה את עצמך בכנות, ביחס לאנשים אחרים שאתה מכיר מאותו המין שלך ובגילך. כדי שתוכל לתאר את עצמך בצורה כנה, תגובותיך ישמרו בסודיות מוחלטת. ציין עד כמה הפריט מדויק עבורך, תוך שימוש בסולם הדירוג הבא:</p>",
+      "ipip_likert_3": "לא מדויק ולא לא מדויק",
+      "ipip_debrief": "תודה על מילוי השאלון.",
+      "ipip_E150": "לא דואג יותר מדי מדברים שכבר קרו",
+      "ipip_H948": "נכנס לפאניקה בקלות",
+      "ipip_X138": "לא מוטרד מדברים בקלות",
+      "ipip_X107": "נלחץ בקלות",
+      "ipip_E141": "רוב הזמן רגוע",
+      "ipip_E92": "יש לי תנודות תכופות במצב הרוח"
+    },
+    "ko": {
+      "ipip_likert_1": "전혀 그렇지 않다",
+      "ipip_likert_2": "그렇지 않은 편이다",
+      "ipip_question_head": "<h3>자신을 얼마나 정확하게 묘사할 수 있습니까?</h3><p>미래에 되고 싶은 모습이 아닌, 현재의 자신을 묘사해 주십시오. 같은 성별과 비슷한 연령대의 다른 사람들과 비교하여 솔직하게 자신을 묘사해 주십시오. 솔직하게 응답하실 수 있도록 모든 응답은 철저히 비밀이 보장됩니다. 아래 평정 척도를 사용하여 각 문항이 자신에게 얼마나 해당하는지 표시해 주십시오:</p>",
+      "ipip_likert_3": "보통이다",
+      "ipip_likert_4": "그런 편이다",
+      "ipip_debrief": "설문에 참여해 주셔서 감사합니다.",
+      "ipip_likert_5": "매우 그렇다",
+      "ipip_X107": "나는 쉽게 스트레스를 받는다.",
+      "ipip_H948": "나는 쉽게 공황 상태에 빠진다.",
+      "ipip_E92": "나는 감정 기복이 심하다.",
+      "ipip_E141": "나는 대부분의 시간을 느긋하게 보낸다.",
+      "ipip_E150": "나는 이미 일어난 일에 대해 걱정하지 않는다.",
+      "ipip_X138": "나는 주변 상황에 쉽게 영향을 받지 않는다."
+    }
+  }
+}

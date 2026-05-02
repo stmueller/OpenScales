@@ -1,0 +1,135 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP ORAIS: Love of Learning",
+      "code": "IPIP-ORAIS-Love-of-Learning",
+      "abbreviation": "IPIP-ORAIS-love_of_",
+      "description": "IPIP items measuring love of learning, from the IPIP Oregon Avocational Interest Scales.",
+      "citation": "Goldberg, L. R. (2010). Personality, demographics, and self-reported behavioral acts: The development of avocational interest markers. In C. R. Agnew, D. E. Carlston, W. G. Graziano, & J. R. Kelly (Eds.), Then a miracle occurs: Focusing on behavior in social psychological theory and research (pp. 205–234). Oxford University Press.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newORAISKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "love_of_learning_sum",
+        "name": "Love of Learning (sum)"
+      },
+      {
+        "id": "love_of_learning_mean",
+        "name": "Love of Learning (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_orais_love_of_learning_001",
+        "text_key": "ipip_text_looked_something_up_in_an_encyclopedia",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_love_of_learning_002",
+        "text_key": "ipip_text_looked_up_a_word_in_a_dictionary",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_love_of_learning_003",
+        "text_key": "ipip_text_read_a_news_magazine",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_love_of_learning_004",
+        "text_key": "ipip_text_read_poetry",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_love_of_learning_005",
+        "text_key": "ipip_text_read_the_editorial_page_of_a_newspaper",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_love_of_learning_006",
+        "text_key": "ipip_text_watched_an_educational_channel_on_tv",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "love_of_learning_sum": {
+        "description": "Cronbach's alpha = 0.61",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_orais_love_of_learning_001": 1,
+          "ipip_ipip_orais_love_of_learning_002": 1,
+          "ipip_ipip_orais_love_of_learning_003": 1,
+          "ipip_ipip_orais_love_of_learning_004": 1,
+          "ipip_ipip_orais_love_of_learning_005": 1,
+          "ipip_ipip_orais_love_of_learning_006": 1
+        }
+      },
+      "love_of_learning_mean": {
+        "description": "Cronbach's alpha = 0.61",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_orais_love_of_learning_001": 1,
+          "ipip_ipip_orais_love_of_learning_002": 1,
+          "ipip_ipip_orais_love_of_learning_003": 1,
+          "ipip_ipip_orais_love_of_learning_004": 1,
+          "ipip_ipip_orais_love_of_learning_005": 1,
+          "ipip_ipip_orais_love_of_learning_006": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_text_looked_something_up_in_an_encyclopedia": "Looked something up in an encyclopedia.",
+      "ipip_text_looked_up_a_word_in_a_dictionary": "Looked up a word in a dictionary.",
+      "ipip_text_read_a_news_magazine": "Read a news magazine.",
+      "ipip_text_read_poetry": "Read poetry.",
+      "ipip_text_read_the_editorial_page_of_a_newspaper": "Read the editorial page of a newspaper.",
+      "ipip_text_watched_an_educational_channel_on_tv": "Watched an educational channel on TV."
+    }
+  }
+}

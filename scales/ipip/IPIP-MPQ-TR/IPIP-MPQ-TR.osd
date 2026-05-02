@@ -1,0 +1,171 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP MPQ: Conservatism",
+      "code": "IPIP-MPQ-TR",
+      "abbreviation": "MPQ-TR",
+      "description": "IPIP items measuring conservatism, from the IPIP Multidimensional Personality Questionnaire.",
+      "citation": "Tellegen, A., & Waller, N. G. (2008). Exploring personality through test construction: Development of the Multidimensional Personality Questionnaire. In G. J. Boyle, G. Matthews, & D. H. Saklofske (Eds.), The SAGE Handbook of Personality Theory and Assessment (Vol. 2, pp. 261–292). SAGE.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newMPQKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "conservatism_sum",
+        "name": "Conservatism (sum)"
+      },
+      {
+        "id": "conservatism_mean",
+        "name": "Conservatism (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_mpq_tr_001",
+        "text_key": "ipip_X35",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_tr_002",
+        "text_key": "ipip_X123",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_tr_003",
+        "text_key": "ipip_text_believe_laws_should_be_strictly_enforced",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_tr_004",
+        "text_key": "ipip_X219",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_tr_005",
+        "text_key": "ipip_X184",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_tr_006",
+        "text_key": "ipip_X157",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_tr_007",
+        "text_key": "ipip_P488",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_tr_008",
+        "text_key": "ipip_X254",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_tr_009",
+        "text_key": "ipip_X126",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_mpq_tr_010",
+        "text_key": "ipip_X218",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "conservatism_sum": {
+        "description": "Cronbach's alpha = 0.83",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_mpq_tr_001": 1,
+          "ipip_ipip_mpq_tr_002": -1,
+          "ipip_ipip_mpq_tr_003": 1,
+          "ipip_ipip_mpq_tr_004": -1,
+          "ipip_ipip_mpq_tr_005": -1,
+          "ipip_ipip_mpq_tr_006": 1,
+          "ipip_ipip_mpq_tr_007": -1,
+          "ipip_ipip_mpq_tr_008": 1,
+          "ipip_ipip_mpq_tr_009": 1,
+          "ipip_ipip_mpq_tr_010": -1
+        }
+      },
+      "conservatism_mean": {
+        "description": "Cronbach's alpha = 0.83",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_mpq_tr_001": 1,
+          "ipip_ipip_mpq_tr_002": -1,
+          "ipip_ipip_mpq_tr_003": 1,
+          "ipip_ipip_mpq_tr_004": -1,
+          "ipip_ipip_mpq_tr_005": -1,
+          "ipip_ipip_mpq_tr_006": 1,
+          "ipip_ipip_mpq_tr_007": -1,
+          "ipip_ipip_mpq_tr_008": 1,
+          "ipip_ipip_mpq_tr_009": 1,
+          "ipip_ipip_mpq_tr_010": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_X35": "Believe in one true religion.",
+      "ipip_X123": "Believe in the importance of art.",
+      "ipip_text_believe_laws_should_be_strictly_enforced": "Believe laws should be strictly enforced.",
+      "ipip_X219": "Believe that criminals should receive help rather than punishment.",
+      "ipip_X184": "Believe that there is no absolute right and wrong.",
+      "ipip_X157": "Believe that we should be tough on crime.",
+      "ipip_P488": "Don't consider myself religious.",
+      "ipip_X254": "Like to stand during the national anthem.",
+      "ipip_X126": "Tend to vote for conservative political candidates.",
+      "ipip_X218": "Tend to vote for liberal political candidates."
+    }
+  }
+}

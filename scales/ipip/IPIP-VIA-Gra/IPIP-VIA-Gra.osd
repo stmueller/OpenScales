@@ -1,0 +1,194 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Gratitude",
+      "code": "IPIP-VIA-Gra",
+      "abbreviation": "IPIP-VIA-Gra",
+      "description": "IPIP representation of the VIA character strength 'Gratitude'. 8-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "gratitude_sum",
+        "name": "Gratitude (sum)"
+      },
+      {
+        "id": "gratitude_mean",
+        "name": "Gratitude (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_101",
+        "text_key": "ipip_V175",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_102",
+        "text_key": "ipip_V213",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_103",
+        "text_key": "ipip_V26",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_104",
+        "text_key": "ipip_V315",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_105",
+        "text_key": "ipip_V245",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_106",
+        "text_key": "ipip_V248",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_107",
+        "text_key": "ipip_V33",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_108",
+        "text_key": "ipip_V104",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "gratitude_sum": {
+        "description": "Mean of 8 items (range 1–5; higher = stronger Gratitude). Negatively-worded items are reverse-coded.",
+        "method": "sum",
+        "items": {
+          "ipip_via_101": 1,
+          "ipip_via_102": -1,
+          "ipip_via_103": 1,
+          "ipip_via_104": 1,
+          "ipip_via_105": 1,
+          "ipip_via_106": -1,
+          "ipip_via_107": 1,
+          "ipip_via_108": 1
+        }
+      },
+      "gratitude_mean": {
+        "description": "Mean of 8 items (range 1–5; higher = stronger Gratitude). Negatively-worded items are reverse-coded.",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_101": 1,
+          "ipip_via_102": -1,
+          "ipip_via_103": 1,
+          "ipip_via_104": 1,
+          "ipip_via_105": 1,
+          "ipip_via_106": -1,
+          "ipip_via_107": 1,
+          "ipip_via_108": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_V175": "Am an extremely grateful person.",
+      "ipip_V213": "Do not see the need to acknowledge others who are good to me.",
+      "ipip_V26": "Express my thanks to those who care about me.",
+      "ipip_V315": "Feel a profound sense of appreciation every day.",
+      "ipip_V245": "Feel thankful for what I have received in life.",
+      "ipip_V248": "Find few things in my life to be grateful for.",
+      "ipip_V33": "Have been richly blessed in my life.",
+      "ipip_V104": "Stop to count my blessings."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_V315": "Svakog dana osećam duboku zahvalnost.",
+      "ipip_V213": "Nemam potrebu da pokažem zahvalnost ljudima koji su dobri prema meni.",
+      "ipip_V175": "Veoma sam zahvalna osoba.",
+      "ipip_V26": "Pokazujem zahvalnost onima koji brinu o meni.",
+      "ipip_V33": "Imam puno sreće u životu.",
+      "ipip_V104": "Trudim se da ne zaboravim stvari na kojima mogu biti zahvalan.",
+      "ipip_V245": "Osećam zahvalnost za ono što sam u životu dobio.",
+      "ipip_V248": "Ima malo stvari na kojima treba da budem zahvalan."
+    },
+    "hu": {
+      "ipip_likert_5": "Teljes mértékben jellemző",
+      "ipip_likert_4": "Meglehetősen jellemző",
+      "ipip_question_head": "<h3>Mennyire pontosan tudja leírni önmagát?</h3><p>Írja le magát olyannak, amilyen általában most, nem amilyen a jövőben szeretne lenni. Írja le magát őszintén, ahogyan valóban látja magát, azonos nemű és közel azonos korú ismerőseihez viszonyítva. Hogy őszintén tudjon válaszolni, válaszait szigorúan bizalmasan kezeljük. Az alábbi értékelési skála segítségével jelölje meg, mennyire jellemző Önre az egyes állítás:</p>",
+      "ipip_likert_3": "Közepesen jellemző",
+      "ipip_likert_1": "Egyáltalán nem jellemző",
+      "ipip_debrief": "Köszönjük a kérdőív kitöltését.",
+      "ipip_likert_2": "Kevéssé jellemző",
+      "ipip_V26": "Köszönetet mondok mindazoknak, akik törődnek velem.",
+      "ipip_V213": "Nem érzem szükségét annak, hogy elismerjem azokat, akik jók hozzám.",
+      "ipip_V175": "Rendkívüli módon hálás ember vagyok.",
+      "ipip_V315": "Minden nap a nagyrabecsülés nagyszerű érzését érzem.",
+      "ipip_V245": "Hálás vagyok azért, amit eddig kaptam az életben.",
+      "ipip_V248": "Csak néhány olyan dolgot találok az életemben, amiért hálás lehetek.",
+      "ipip_V104": "Már nem számolom a kapott áldásokat.",
+      "ipip_V33": "Engem már bőven megáldott az élet."
+    }
+  }
+}

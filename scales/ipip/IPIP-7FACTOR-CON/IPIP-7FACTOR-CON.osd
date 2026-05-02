@@ -1,0 +1,171 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP 7-Factor: Conscientiousness",
+      "code": "IPIP-7FACTOR-CON",
+      "abbreviation": "7F-CON",
+      "description": "IPIP items measuring conscientiousness, from the IPIP Seven-Factor Personality Scale.",
+      "citation": "Tellegen, A., & Waller, N. G. (2008). Exploring personality through test construction: Development of the Multidimensional Personality Questionnaire. In G. J. Boyle, G. Matthews, & D. H. Saklofske (Eds.), The SAGE Handbook of Personality Theory and Assessment (Vol. 2, pp. 261–292). SAGE.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/new7factorKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "conscientiousness_sum",
+        "name": "Conscientiousness (sum)"
+      },
+      {
+        "id": "conscientiousness_mean",
+        "name": "Conscientiousness (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_7factor_con_001",
+        "text_key": "ipip_H871",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_7factor_con_002",
+        "text_key": "ipip_text_believe_laws_should_be_strictly_enforced",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_7factor_con_003",
+        "text_key": "ipip_text_break_rules",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_7factor_con_004",
+        "text_key": "ipip_H870",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_7factor_con_005",
+        "text_key": "ipip_H250",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_7factor_con_006",
+        "text_key": "ipip_H1413",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_7factor_con_007",
+        "text_key": "ipip_E46",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_7factor_con_008",
+        "text_key": "ipip_X118",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_7factor_con_009",
+        "text_key": "ipip_H1362",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_7factor_con_010",
+        "text_key": "ipip_X150",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "conscientiousness_sum": {
+        "description": "Cronbach's alpha = 0.75",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_7factor_con_001": -1,
+          "ipip_ipip_7factor_con_002": 1,
+          "ipip_ipip_7factor_con_003": -1,
+          "ipip_ipip_7factor_con_004": -1,
+          "ipip_ipip_7factor_con_005": 1,
+          "ipip_ipip_7factor_con_006": -1,
+          "ipip_ipip_7factor_con_007": -1,
+          "ipip_ipip_7factor_con_008": 1,
+          "ipip_ipip_7factor_con_009": 1,
+          "ipip_ipip_7factor_con_010": 1
+        }
+      },
+      "conscientiousness_mean": {
+        "description": "Cronbach's alpha = 0.75",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_7factor_con_001": -1,
+          "ipip_ipip_7factor_con_002": 1,
+          "ipip_ipip_7factor_con_003": -1,
+          "ipip_ipip_7factor_con_004": -1,
+          "ipip_ipip_7factor_con_005": 1,
+          "ipip_ipip_7factor_con_006": -1,
+          "ipip_ipip_7factor_con_007": -1,
+          "ipip_ipip_7factor_con_008": 1,
+          "ipip_ipip_7factor_con_009": 1,
+          "ipip_ipip_7factor_con_010": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_H871": "Act wild and crazy.",
+      "ipip_text_believe_laws_should_be_strictly_enforced": "Believe laws should be strictly enforced.",
+      "ipip_text_break_rules": "Break rules.",
+      "ipip_H870": "Do crazy things.",
+      "ipip_H250": "Do things by the book.",
+      "ipip_H1413": "Do things in a half-way manner.",
+      "ipip_E46": "Jump into things without thinking.",
+      "ipip_X118": "Like order.",
+      "ipip_H1362": "Pay attention to details.",
+      "ipip_X150": "Try to follow the rules."
+    }
+  }
+}

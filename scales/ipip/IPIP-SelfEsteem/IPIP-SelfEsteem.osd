@@ -1,0 +1,208 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Self-Esteem Scale",
+      "code": "IPIP-SelfEsteem",
+      "abbreviation": "IPIP-SE",
+      "description": "IPIP items measuring self-esteem, designed to approximate the Rosenberg Self-Esteem Scale.",
+      "citation": "Rosenberg, M. (1965). Society and the Adolescent Self-Image. Princeton University Press.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newSingleConstructsKey.htm#Self-esteem",
+      "domain": "Self & Coping"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "selfesteem_sum",
+        "name": "Self-esteem (sum)"
+      },
+      {
+        "id": "selfesteem_mean",
+        "name": "Self-esteem (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_selfesteem_001",
+        "text_key": "ipip_P388",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_002",
+        "text_key": "ipip_X15",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_003",
+        "text_key": "ipip_X129",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_004",
+        "text_key": "ipip_H954",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_005",
+        "text_key": "ipip_X205",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_006",
+        "text_key": "ipip_P379",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_007",
+        "text_key": "ipip_H357",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_008",
+        "text_key": "ipip_P473",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_009",
+        "text_key": "ipip_X224",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_selfesteem_010",
+        "text_key": "ipip_X156",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "selfesteem_sum": {
+        "description": "Cronbach's alpha = 0.84",
+        "method": "sum",
+        "items": {
+          "ipip_selfesteem_001": -1,
+          "ipip_selfesteem_002": -1,
+          "ipip_selfesteem_003": 1,
+          "ipip_selfesteem_004": -1,
+          "ipip_selfesteem_005": -1,
+          "ipip_selfesteem_006": 1,
+          "ipip_selfesteem_007": 1,
+          "ipip_selfesteem_008": 1,
+          "ipip_selfesteem_009": -1,
+          "ipip_selfesteem_010": 1
+        }
+      },
+      "selfesteem_mean": {
+        "description": "Cronbach's alpha = 0.84",
+        "method": "mean_coded",
+        "items": {
+          "ipip_selfesteem_001": -1,
+          "ipip_selfesteem_002": -1,
+          "ipip_selfesteem_003": 1,
+          "ipip_selfesteem_004": -1,
+          "ipip_selfesteem_005": -1,
+          "ipip_selfesteem_006": 1,
+          "ipip_selfesteem_007": 1,
+          "ipip_selfesteem_008": 1,
+          "ipip_selfesteem_009": -1,
+          "ipip_selfesteem_010": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_P388": "Am less capable than most people.",
+      "ipip_X15": "Dislike myself.",
+      "ipip_X129": "Feel comfortable with myself.",
+      "ipip_H954": "Feel that I'm unable to deal with things.",
+      "ipip_X205": "Feel that my life lacks direction.",
+      "ipip_P379": "Just know that I will be a success.",
+      "ipip_H357": "Know my strengths.",
+      "ipip_P473": "Like to take responsibility for making decisions.",
+      "ipip_X224": "Question my ability to do my work properly.",
+      "ipip_X156": "Seldom feel blue."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_P388": "Manje sam sposoban od većine ljudi.",
+      "ipip_X129": "Osećam se prijatno kad provodim vreme sam.",
+      "ipip_H954": "Imam osećaj da nisam u stanju da se nosim sa stvarima.",
+      "ipip_P379": "Jednostavno znam da ću biti uspešan/na.",
+      "ipip_X205": "Osećam da moj život nema usmerenje.",
+      "ipip_X224": "Sumnjam u svoju sposobnost da obavim posao kako treba.",
+      "ipip_H357": "Svestan sam svojih kvaliteta.",
+      "ipip_X15": "Ne sviđam se sam sebi.",
+      "ipip_P473": "Volim da preuzmem odgovornost za donošenje odluka.",
+      "ipip_X156": "Retko se osećam tužno."
+    },
+    "sv": {
+      "ipip_likert_1": "Mycket inexakt",
+      "ipip_debrief": "Tack för att du fyllde i denna enkät.",
+      "ipip_question_head": "<h3>Hur exakt kan du beskriva dig själv?</h3><p>Beskriv dig själv som du i allmänhet är nu, inte som du önskar vara i framtiden. Beskriv dig själv så ärligt som du ser dig själv, i förhållande till andra människor du känner av samma kön och ungefär samma ålder. För att du ska kunna beskriva dig själv på ett ärligt sätt kommer dina svar att hållas i absolut sekretess. Ange hur exakt påståendet passar dig enligt följande skala:</p>",
+      "ipip_likert_5": "Mycket exakt",
+      "ipip_likert_2": "Måttligt inexakt",
+      "ipip_likert_3": "Varken exakt eller inexakt",
+      "ipip_likert_4": "Måttligt exakt",
+      "ipip_P388": "Är mindre kapabel än de flesta",
+      "ipip_X129": "Känner mig trygg med mig själv",
+      "ipip_H954": "Tycker att jag har svårt att handskas med saker",
+      "ipip_P379": "Vet bara att jag kommer att lyckas",
+      "ipip_X205": "Känns som om mitt liv saknar inriktning",
+      "ipip_X224": "Ifrågasätter min förmåga att göra mitt jobb ordentligt",
+      "ipip_H357": "Känner mina starka sidor",
+      "ipip_X15": "Tycker illa om mig själv",
+      "ipip_P473": "Gillar att ta ansvar för beslutsfattande",
+      "ipip_X156": "Känner mig sällan nere"
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Modesty/Humility",
+      "code": "IPIP-VIA-Mod",
+      "abbreviation": "IPIP-VIA-Mod",
+      "description": "IPIP representation of the VIA character strength 'Modesty/Humility'. 9-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "modesty_humility_sum",
+        "name": "Modesty/Humility (sum)"
+      },
+      {
+        "id": "modesty_humility_mean",
+        "name": "Modesty/Humility (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_134",
+        "text_key": "ipip_text_am_humble_about_the_good_things_that_hav",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_135",
+        "text_key": "ipip_V179",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_136",
+        "text_key": "ipip_V42",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_137",
+        "text_key": "ipip_text_don_t_act_as_if_i_m_a_special_person",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_138",
+        "text_key": "ipip_V145",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_139",
+        "text_key": "ipip_V249",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_140",
+        "text_key": "ipip_V68",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_141",
+        "text_key": "ipip_V214",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_142",
+        "text_key": "ipip_V321",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "modesty_humility_sum": {
+        "description": "Mean of 9 items (range 1–5; higher = stronger Modesty/Humility). Negatively-worded items are reverse-coded.",
+        "method": "sum",
+        "items": {
+          "ipip_via_134": 1,
+          "ipip_via_135": 1,
+          "ipip_via_136": 1,
+          "ipip_via_137": 1,
+          "ipip_via_138": 1,
+          "ipip_via_139": 1,
+          "ipip_via_140": -1,
+          "ipip_via_141": -1,
+          "ipip_via_142": 1
+        }
+      },
+      "modesty_humility_mean": {
+        "description": "Mean of 9 items (range 1–5; higher = stronger Modesty/Humility). Negatively-worded items are reverse-coded.",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_134": 1,
+          "ipip_via_135": 1,
+          "ipip_via_136": 1,
+          "ipip_via_137": 1,
+          "ipip_via_138": 1,
+          "ipip_via_139": 1,
+          "ipip_via_140": -1,
+          "ipip_via_141": -1,
+          "ipip_via_142": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_text_am_humble_about_the_good_things_that_hav": "Am humble about the good things that have happened to me.",
+      "ipip_V179": "Am proud that I am an ordinary person.",
+      "ipip_V42": "Believe that others are drawn to me because I am humble.",
+      "ipip_text_don_t_act_as_if_i_m_a_special_person": "Don't act as if I'm a special person.",
+      "ipip_V145": "Don't brag about my accomplishments.",
+      "ipip_V249": "Don't call attention to myself.",
+      "ipip_V68": "Like to stand out in a crowd.",
+      "ipip_V214": "Like to talk about myself.",
+      "ipip_V321": "Would never be described as arrogant."
+    }
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP CPI: Hope/Optimism",
+      "code": "IPIP-CPI-Hop",
+      "abbreviation": "CPI-Hop",
+      "description": "IPIP items measuring hope/optimism, from the IPIP California Psychological Inventory.",
+      "citation": "Gough, H. G. (1987). California Psychological Inventory administrator's guide. Consulting Psychologists Press.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newCPIKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "hope_optimism_sum",
+        "name": "Hope/Optimism (sum)"
+      },
+      {
+        "id": "hope_optimism_mean",
+        "name": "Hope/Optimism (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_cpi_hop_001",
+        "text_key": "ipip_X138",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hop_002",
+        "text_key": "ipip_H2017",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hop_003",
+        "text_key": "ipip_H999",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hop_004",
+        "text_key": "ipip_H947",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hop_005",
+        "text_key": "ipip_H617",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hop_006",
+        "text_key": "ipip_X120",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hop_007",
+        "text_key": "ipip_H1183",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hop_008",
+        "text_key": "ipip_X191",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hop_009",
+        "text_key": "ipip_H633",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hop_010",
+        "text_key": "ipip_text_take_offense_easily",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "hope_optimism_sum": {
+        "description": "Cronbach's alpha = 0.8",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_cpi_hop_001": 1,
+          "ipip_ipip_cpi_hop_002": 1,
+          "ipip_ipip_cpi_hop_003": -1,
+          "ipip_ipip_cpi_hop_004": -1,
+          "ipip_ipip_cpi_hop_005": -1,
+          "ipip_ipip_cpi_hop_006": -1,
+          "ipip_ipip_cpi_hop_007": -1,
+          "ipip_ipip_cpi_hop_008": 1,
+          "ipip_ipip_cpi_hop_009": -1,
+          "ipip_ipip_cpi_hop_010": -1
+        }
+      },
+      "hope_optimism_mean": {
+        "description": "Cronbach's alpha = 0.8",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_cpi_hop_001": 1,
+          "ipip_ipip_cpi_hop_002": 1,
+          "ipip_ipip_cpi_hop_003": -1,
+          "ipip_ipip_cpi_hop_004": -1,
+          "ipip_ipip_cpi_hop_005": -1,
+          "ipip_ipip_cpi_hop_006": -1,
+          "ipip_ipip_cpi_hop_007": -1,
+          "ipip_ipip_cpi_hop_008": 1,
+          "ipip_ipip_cpi_hop_009": -1,
+          "ipip_ipip_cpi_hop_010": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_X138": "Am not easily bothered by things.",
+      "ipip_H2017": "Enjoy my work.",
+      "ipip_H999": "Fear for the worst.",
+      "ipip_H947": "Feel desperate.",
+      "ipip_H617": "Feel short-changed in life.",
+      "ipip_X120": "Get caught up in my problems.",
+      "ipip_H1183": "Habitually blow my chances.",
+      "ipip_X191": "Keep my cool.",
+      "ipip_H633": "See difficulties everywhere.",
+      "ipip_text_take_offense_easily": "Take offense easily."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_H999": "Plašim se najgoreg.",
+      "ipip_X191": "Trudim se da ostanem pribran.",
+      "ipip_H2017": "Uživam u svom poslu.",
+      "ipip_H633": "Svuda vidim potešokće.",
+      "ipip_H617": "Osećam se uskraćeno u životu.",
+      "ipip_X138": "Ne potresam se lako zbog stvari.",
+      "ipip_text_take_offense_easily": "Lako se uvredim.",
+      "ipip_X120": "Lako se \"zapetljam\" u probleme.",
+      "ipip_H947": "Često se osećam očajno.",
+      "ipip_H1183": "Obično prokockam svoje šanse."
+    },
+    "sv": {
+      "ipip_likert_1": "Mycket inexakt",
+      "ipip_debrief": "Tack för att du fyllde i denna enkät.",
+      "ipip_question_head": "<h3>Hur exakt kan du beskriva dig själv?</h3><p>Beskriv dig själv som du i allmänhet är nu, inte som du önskar vara i framtiden. Beskriv dig själv så ärligt som du ser dig själv, i förhållande till andra människor du känner av samma kön och ungefär samma ålder. För att du ska kunna beskriva dig själv på ett ärligt sätt kommer dina svar att hållas i absolut sekretess. Ange hur exakt påståendet passar dig enligt följande skala:</p>",
+      "ipip_likert_5": "Mycket exakt",
+      "ipip_likert_2": "Måttligt inexakt",
+      "ipip_likert_3": "Varken exakt eller inexakt",
+      "ipip_likert_4": "Måttligt exakt",
+      "ipip_H999": "Fruktar det värsta",
+      "ipip_X191": "Håller mig kall och oberörd",
+      "ipip_H2017": "Tycker om mitt arbete",
+      "ipip_H633": "Ser svårigheter överallt",
+      "ipip_H617": "Känner mig olyckligt lottad",
+      "ipip_X138": "Blir sällan störd av saker",
+      "ipip_text_take_offense_easily": "Tar lätt illa upp",
+      "ipip_X120": "Fastnar i mina problem",
+      "ipip_H947": "Känner mig desperat",
+      "ipip_H1183": "Missar mina chanser för jämnan"
+    }
+  }
+}

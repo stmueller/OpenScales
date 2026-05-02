@@ -1,0 +1,209 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP ADHD Screening Scale",
+      "code": "IPIP-ADHD",
+      "abbreviation": "IPIP-ADHD",
+      "description": "IPIP items measuring ADHD-related symptoms.",
+      "citation": "Span, S. A., Earleywine, M., & Strybel, T. Z. (2002). Confirming the factor structure of attention deficit hyperactivity disorder symptoms in adult, nonclinical samples. Journal of Clinical Psychology, 58(5), 497-507.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newSingleConstructsKey.htm#ADHD",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "adhd_sum",
+        "name": "ADHD (sum)"
+      },
+      {
+        "id": "adhd_mean",
+        "name": "ADHD (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_adhd_001",
+        "text_key": "ipip_R15",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_adhd_002",
+        "text_key": "ipip_R10",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_adhd_003",
+        "text_key": "ipip_R41",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_adhd_004",
+        "text_key": "ipip_R12",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_adhd_005",
+        "text_key": "ipip_R66",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_adhd_006",
+        "text_key": "ipip_R54",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_adhd_007",
+        "text_key": "ipip_R65",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_adhd_008",
+        "text_key": "ipip_R67",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_adhd_009",
+        "text_key": "ipip_R2",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_adhd_010",
+        "text_key": "ipip_R40",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_adhd_011",
+        "text_key": "ipip_text_have_difficulty_keeping_my_attention_on_",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_adhd_012",
+        "text_key": "ipip_R75",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "adhd_sum": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "sum",
+        "items": [
+          "ipip_adhd_001",
+          "ipip_adhd_002",
+          "ipip_adhd_003",
+          "ipip_adhd_004",
+          "ipip_adhd_005",
+          "ipip_adhd_006",
+          "ipip_adhd_007",
+          "ipip_adhd_008",
+          "ipip_adhd_009",
+          "ipip_adhd_010",
+          "ipip_adhd_011",
+          "ipip_adhd_012"
+        ]
+      },
+      "adhd_mean": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "mean_coded",
+        "items": [
+          "ipip_adhd_001",
+          "ipip_adhd_002",
+          "ipip_adhd_003",
+          "ipip_adhd_004",
+          "ipip_adhd_005",
+          "ipip_adhd_006",
+          "ipip_adhd_007",
+          "ipip_adhd_008",
+          "ipip_adhd_009",
+          "ipip_adhd_010",
+          "ipip_adhd_011",
+          "ipip_adhd_012"
+        ]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_R15": "Am often fidgety.",
+      "ipip_R10": "Begin to answer before the other person finishes the question.",
+      "ipip_R41": "Don't enjoy doing quiet leisure activities.",
+      "ipip_R12": "Don't finish the things that I start.",
+      "ipip_R66": "Don't pay enough attention when others are speaking to me.",
+      "ipip_R54": "Feel restless a lot of the time.",
+      "ipip_R65": "Find it difficult to organize tasks and activities.",
+      "ipip_R67": "Find it difficult to sit still for long periods of time.",
+      "ipip_R2": "Forget things.",
+      "ipip_R40": "Have been told I'm not listening when others are speaking to me.",
+      "ipip_text_have_difficulty_keeping_my_attention_on_": "Have difficulty keeping my attention on a task.",
+      "ipip_R75": "Make careless mistakes."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_R75": "Pravim nesmotrene greške.",
+      "ipip_text_have_difficulty_keeping_my_attention_on_": "Teško mi je da se koncentrišem na zadatak koji obavljam.",
+      "ipip_R2": "Zaboravljam stvari.",
+      "ipip_R41": "Ne prijaju mi mirne opuštajuće aktivnosti.",
+      "ipip_R67": "Teško mi je da sedim mirno dugo vremena.",
+      "ipip_R15": "Često sam uzvrpoljen.",
+      "ipip_R40": "Ponekad mi kažu da ne slušam druge dok mi pričaju.",
+      "ipip_R65": "Teško mi je da organizujem zadatke i aktivnosti.",
+      "ipip_R54": "Osećam nemir većinu vremena.",
+      "ipip_R12": "Stvari koje počnem, često ne završim.",
+      "ipip_R66": "Ne obraćam dovoljno pažnje na ono što mi drugi ljudi govore.",
+      "ipip_R10": "Odgovaram pre nego što druga osoba završi pitanje."
+    }
+  }
+}

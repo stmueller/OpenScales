@@ -1,0 +1,3310 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP-NEO-120 Personality Inventory",
+      "code": "IPIP-NEO-120",
+      "abbreviation": "NEO-120",
+      "description": "120-item IPIP measure of the 30 NEO PI-R facets (4 items per facet). Provides domain scores for Neuroticism, Extraversion, Openness, Agreeableness, and Conscientiousness, plus scores for all 30 facets. Shorter alternative to the IPIP-NEO-300.",
+      "citation": "Johnson, J. A. (2014). Measuring thirty facets of the Five Factor Model with a 120-item measure: The IPIP-NEO-120. Journal of Research in Personality, 51, 78-89. https://doi.org/10.1016/j.jrp.2014.05.003",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/30FacetNEO-PI-RItems.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order. Default off: items follow facet order."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "neuroticism_sum",
+        "name": "Neuroticism (sum)"
+      },
+      {
+        "id": "neuroticism_mean",
+        "name": "Neuroticism (mean)"
+      },
+      {
+        "id": "extraversion_sum",
+        "name": "Extraversion (sum)"
+      },
+      {
+        "id": "extraversion_mean",
+        "name": "Extraversion (mean)"
+      },
+      {
+        "id": "openness_sum",
+        "name": "Openness (sum)"
+      },
+      {
+        "id": "openness_mean",
+        "name": "Openness (mean)"
+      },
+      {
+        "id": "agreeableness_sum",
+        "name": "Agreeableness (sum)"
+      },
+      {
+        "id": "agreeableness_mean",
+        "name": "Agreeableness (mean)"
+      },
+      {
+        "id": "conscientiousness_sum",
+        "name": "Conscientiousness (sum)"
+      },
+      {
+        "id": "conscientiousness_mean",
+        "name": "Conscientiousness (mean)"
+      },
+      {
+        "id": "n1_sum",
+        "name": "N1: Anxiety (sum)"
+      },
+      {
+        "id": "n1_mean",
+        "name": "N1: Anxiety (mean)"
+      },
+      {
+        "id": "n2_sum",
+        "name": "N2: Anger (sum)"
+      },
+      {
+        "id": "n2_mean",
+        "name": "N2: Anger (mean)"
+      },
+      {
+        "id": "n3_sum",
+        "name": "N3: Depression (sum)"
+      },
+      {
+        "id": "n3_mean",
+        "name": "N3: Depression (mean)"
+      },
+      {
+        "id": "n4_sum",
+        "name": "N4: Self (sum)"
+      },
+      {
+        "id": "n4_mean",
+        "name": "N4: Self (mean)"
+      },
+      {
+        "id": "n5_sum",
+        "name": "N5: Immoderation (sum)"
+      },
+      {
+        "id": "n5_mean",
+        "name": "N5: Immoderation (mean)"
+      },
+      {
+        "id": "n6_sum",
+        "name": "N6: Vulnerability (sum)"
+      },
+      {
+        "id": "n6_mean",
+        "name": "N6: Vulnerability (mean)"
+      },
+      {
+        "id": "e1_sum",
+        "name": "E1: Friendliness (sum)"
+      },
+      {
+        "id": "e1_mean",
+        "name": "E1: Friendliness (mean)"
+      },
+      {
+        "id": "e2_sum",
+        "name": "E2: Gregariousness (sum)"
+      },
+      {
+        "id": "e2_mean",
+        "name": "E2: Gregariousness (mean)"
+      },
+      {
+        "id": "e3_sum",
+        "name": "E3: Assertiveness (sum)"
+      },
+      {
+        "id": "e3_mean",
+        "name": "E3: Assertiveness (mean)"
+      },
+      {
+        "id": "e4_sum",
+        "name": "E4: Activity Level (sum)"
+      },
+      {
+        "id": "e4_mean",
+        "name": "E4: Activity Level (mean)"
+      },
+      {
+        "id": "e5_sum",
+        "name": "E5: Excitement (sum)"
+      },
+      {
+        "id": "e5_mean",
+        "name": "E5: Excitement (mean)"
+      },
+      {
+        "id": "e6_sum",
+        "name": "E6: Cheerfulness (sum)"
+      },
+      {
+        "id": "e6_mean",
+        "name": "E6: Cheerfulness (mean)"
+      },
+      {
+        "id": "o1_sum",
+        "name": "O1: Imagination (sum)"
+      },
+      {
+        "id": "o1_mean",
+        "name": "O1: Imagination (mean)"
+      },
+      {
+        "id": "o2_sum",
+        "name": "O2: Artistic Interests (sum)"
+      },
+      {
+        "id": "o2_mean",
+        "name": "O2: Artistic Interests (mean)"
+      },
+      {
+        "id": "o3_sum",
+        "name": "O3: Emotionality (sum)"
+      },
+      {
+        "id": "o3_mean",
+        "name": "O3: Emotionality (mean)"
+      },
+      {
+        "id": "o4_sum",
+        "name": "O4: Adventurousness (sum)"
+      },
+      {
+        "id": "o4_mean",
+        "name": "O4: Adventurousness (mean)"
+      },
+      {
+        "id": "o5_sum",
+        "name": "O5: Intellect (sum)"
+      },
+      {
+        "id": "o5_mean",
+        "name": "O5: Intellect (mean)"
+      },
+      {
+        "id": "o6_sum",
+        "name": "O6: Liberalism (sum)"
+      },
+      {
+        "id": "o6_mean",
+        "name": "O6: Liberalism (mean)"
+      },
+      {
+        "id": "a1_sum",
+        "name": "A1: Trust (sum)"
+      },
+      {
+        "id": "a1_mean",
+        "name": "A1: Trust (mean)"
+      },
+      {
+        "id": "a2_sum",
+        "name": "A2: Morality (sum)"
+      },
+      {
+        "id": "a2_mean",
+        "name": "A2: Morality (mean)"
+      },
+      {
+        "id": "a3_sum",
+        "name": "A3: Altruism (sum)"
+      },
+      {
+        "id": "a3_mean",
+        "name": "A3: Altruism (mean)"
+      },
+      {
+        "id": "a4_sum",
+        "name": "A4: Cooperation (sum)"
+      },
+      {
+        "id": "a4_mean",
+        "name": "A4: Cooperation (mean)"
+      },
+      {
+        "id": "a5_sum",
+        "name": "A5: Modesty (sum)"
+      },
+      {
+        "id": "a5_mean",
+        "name": "A5: Modesty (mean)"
+      },
+      {
+        "id": "a6_sum",
+        "name": "A6: Sympathy (sum)"
+      },
+      {
+        "id": "a6_mean",
+        "name": "A6: Sympathy (mean)"
+      },
+      {
+        "id": "c1_sum",
+        "name": "C1: Self (sum)"
+      },
+      {
+        "id": "c1_mean",
+        "name": "C1: Self (mean)"
+      },
+      {
+        "id": "c2_sum",
+        "name": "C2: Orderliness (sum)"
+      },
+      {
+        "id": "c2_mean",
+        "name": "C2: Orderliness (mean)"
+      },
+      {
+        "id": "c3_sum",
+        "name": "C3: Dutifulness (sum)"
+      },
+      {
+        "id": "c3_mean",
+        "name": "C3: Dutifulness (mean)"
+      },
+      {
+        "id": "c4_sum",
+        "name": "C4: Achievement (sum)"
+      },
+      {
+        "id": "c4_mean",
+        "name": "C4: Achievement (mean)"
+      },
+      {
+        "id": "c5_sum",
+        "name": "C5: Self (sum)"
+      },
+      {
+        "id": "c5_mean",
+        "name": "C5: Self (mean)"
+      },
+      {
+        "id": "c6_sum",
+        "name": "C6: Cautiousness (sum)"
+      },
+      {
+        "id": "c6_mean",
+        "name": "C6: Cautiousness (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "i1",
+        "text_key": "ipip_H1157",
+        "type": "likert",
+        "scoring": {
+          "n1": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i2",
+        "text_key": "ipip_H999",
+        "type": "likert",
+        "scoring": {
+          "n1": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i3",
+        "text_key": "ipip_H968",
+        "type": "likert",
+        "scoring": {
+          "n1": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i4",
+        "text_key": "ipip_X107",
+        "type": "likert",
+        "scoring": {
+          "n1": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i5",
+        "text_key": "ipip_H754",
+        "type": "likert",
+        "scoring": {
+          "n2": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i6",
+        "text_key": "ipip_H761",
+        "type": "likert",
+        "scoring": {
+          "n2": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i7",
+        "text_key": "ipip_H755",
+        "type": "likert",
+        "scoring": {
+          "n2": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i8",
+        "text_key": "ipip_X23",
+        "type": "likert",
+        "scoring": {
+          "n2": -1,
+          "neuroticism": -1
+        }
+      },
+      {
+        "id": "i9",
+        "text_key": "ipip_X74",
+        "type": "likert",
+        "scoring": {
+          "n3": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i10",
+        "text_key": "ipip_X15",
+        "type": "likert",
+        "scoring": {
+          "n3": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i11",
+        "text_key": "ipip_H640",
+        "type": "likert",
+        "scoring": {
+          "n3": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i12",
+        "text_key": "ipip_X129",
+        "type": "likert",
+        "scoring": {
+          "n3": -1,
+          "neuroticism": -1
+        }
+      },
+      {
+        "id": "i13",
+        "text_key": "ipip_H592",
+        "type": "likert",
+        "scoring": {
+          "n4": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i14",
+        "text_key": "ipip_H655",
+        "type": "likert",
+        "scoring": {
+          "n4": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i15",
+        "text_key": "ipip_H656",
+        "type": "likert",
+        "scoring": {
+          "n4": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i16",
+        "text_key": "ipip_X209",
+        "type": "likert",
+        "scoring": {
+          "n4": -1,
+          "neuroticism": -1
+        }
+      },
+      {
+        "id": "i17",
+        "text_key": "ipip_X133",
+        "type": "likert",
+        "scoring": {
+          "n5": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i18",
+        "text_key": "ipip_X274",
+        "type": "likert",
+        "scoring": {
+          "n5": -1,
+          "neuroticism": -1
+        }
+      },
+      {
+        "id": "i19",
+        "text_key": "ipip_X181",
+        "type": "likert",
+        "scoring": {
+          "n5": -1,
+          "neuroticism": -1
+        }
+      },
+      {
+        "id": "i20",
+        "text_key": "ipip_X251",
+        "type": "likert",
+        "scoring": {
+          "n5": -1,
+          "neuroticism": -1
+        }
+      },
+      {
+        "id": "i21",
+        "text_key": "ipip_H948",
+        "type": "likert",
+        "scoring": {
+          "n6": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i22",
+        "text_key": "ipip_H959",
+        "type": "likert",
+        "scoring": {
+          "n6": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i23",
+        "text_key": "ipip_H954",
+        "type": "likert",
+        "scoring": {
+          "n6": 1,
+          "neuroticism": 1
+        }
+      },
+      {
+        "id": "i24",
+        "text_key": "ipip_X79",
+        "type": "likert",
+        "scoring": {
+          "n6": -1,
+          "neuroticism": -1
+        }
+      },
+      {
+        "id": "i25",
+        "text_key": "ipip_H29",
+        "type": "likert",
+        "scoring": {
+          "e1": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i26",
+        "text_key": "ipip_X112",
+        "type": "likert",
+        "scoring": {
+          "e1": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i27",
+        "text_key": "ipip_H648",
+        "type": "likert",
+        "scoring": {
+          "e1": -1,
+          "extraversion": -1
+        }
+      },
+      {
+        "id": "i28",
+        "text_key": "ipip_H704",
+        "type": "likert",
+        "scoring": {
+          "e1": -1,
+          "extraversion": -1
+        }
+      },
+      {
+        "id": "i29",
+        "text_key": "ipip_H78",
+        "type": "likert",
+        "scoring": {
+          "e2": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i30",
+        "text_key": "ipip_X83",
+        "type": "likert",
+        "scoring": {
+          "e2": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i31",
+        "text_key": "ipip_H587",
+        "type": "likert",
+        "scoring": {
+          "e2": -1,
+          "extraversion": -1
+        }
+      },
+      {
+        "id": "i32",
+        "text_key": "ipip_H650",
+        "type": "likert",
+        "scoring": {
+          "e2": -1,
+          "extraversion": -1
+        }
+      },
+      {
+        "id": "i33",
+        "text_key": "ipip_H334",
+        "type": "likert",
+        "scoring": {
+          "e3": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i34",
+        "text_key": "ipip_H524",
+        "type": "likert",
+        "scoring": {
+          "e3": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i35",
+        "text_key": "ipip_text_take_control_of_things",
+        "type": "likert",
+        "scoring": {
+          "e3": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i36",
+        "text_key": "ipip_H976",
+        "type": "likert",
+        "scoring": {
+          "e3": -1,
+          "extraversion": -1
+        }
+      },
+      {
+        "id": "i37",
+        "text_key": "ipip_H58",
+        "type": "likert",
+        "scoring": {
+          "e4": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i38",
+        "text_key": "ipip_H54",
+        "type": "likert",
+        "scoring": {
+          "e4": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i39",
+        "text_key": "ipip_H79",
+        "type": "likert",
+        "scoring": {
+          "e4": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i40",
+        "text_key": "ipip_E113",
+        "type": "likert",
+        "scoring": {
+          "e4": -1,
+          "extraversion": -1
+        }
+      },
+      {
+        "id": "i41",
+        "text_key": "ipip_H438",
+        "type": "likert",
+        "scoring": {
+          "e5": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i42",
+        "text_key": "ipip_H446",
+        "type": "likert",
+        "scoring": {
+          "e5": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i43",
+        "text_key": "ipip_E35",
+        "type": "likert",
+        "scoring": {
+          "e5": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i44",
+        "text_key": "ipip_H871",
+        "type": "likert",
+        "scoring": {
+          "e5": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i45",
+        "text_key": "ipip_H32",
+        "type": "likert",
+        "scoring": {
+          "e6": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i46",
+        "text_key": "ipip_H1094",
+        "type": "likert",
+        "scoring": {
+          "e6": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i47",
+        "text_key": "ipip_text_love_life",
+        "type": "likert",
+        "scoring": {
+          "e6": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i48",
+        "text_key": "ipip_H42",
+        "type": "likert",
+        "scoring": {
+          "e6": 1,
+          "extraversion": 1
+        }
+      },
+      {
+        "id": "i49",
+        "text_key": "ipip_X14",
+        "type": "likert",
+        "scoring": {
+          "o1": 1,
+          "openness": 1
+        }
+      },
+      {
+        "id": "i50",
+        "text_key": "ipip_X238",
+        "type": "likert",
+        "scoring": {
+          "o1": 1,
+          "openness": 1
+        }
+      },
+      {
+        "id": "i51",
+        "text_key": "ipip_X71",
+        "type": "likert",
+        "scoring": {
+          "o1": 1,
+          "openness": 1
+        }
+      },
+      {
+        "id": "i52",
+        "text_key": "ipip_E163",
+        "type": "likert",
+        "scoring": {
+          "o1": 1,
+          "openness": 1
+        }
+      },
+      {
+        "id": "i53",
+        "text_key": "ipip_E105",
+        "type": "likert",
+        "scoring": {
+          "o2": 1,
+          "openness": 1
+        }
+      },
+      {
+        "id": "i54",
+        "text_key": "ipip_X123",
+        "type": "likert",
+        "scoring": {
+          "o2": 1,
+          "openness": 1
+        }
+      },
+      {
+        "id": "i55",
+        "text_key": "ipip_X45",
+        "type": "likert",
+        "scoring": {
+          "o2": -1,
+          "openness": -1
+        }
+      },
+      {
+        "id": "i56",
+        "text_key": "ipip_X235",
+        "type": "likert",
+        "scoring": {
+          "o2": -1,
+          "openness": -1
+        }
+      },
+      {
+        "id": "i57",
+        "text_key": "ipip_X92",
+        "type": "likert",
+        "scoring": {
+          "o3": 1,
+          "openness": 1
+        }
+      },
+      {
+        "id": "i58",
+        "text_key": "ipip_E136",
+        "type": "likert",
+        "scoring": {
+          "o3": 1,
+          "openness": 1
+        }
+      },
+      {
+        "id": "i59",
+        "text_key": "ipip_X10",
+        "type": "likert",
+        "scoring": {
+          "o3": -1,
+          "openness": -1
+        }
+      },
+      {
+        "id": "i60",
+        "text_key": "ipip_E156",
+        "type": "likert",
+        "scoring": {
+          "o3": -1,
+          "openness": -1
+        }
+      },
+      {
+        "id": "i61",
+        "text_key": "ipip_X204",
+        "type": "likert",
+        "scoring": {
+          "o4": 1,
+          "openness": 1
+        }
+      },
+      {
+        "id": "i62",
+        "text_key": "ipip_X30",
+        "type": "likert",
+        "scoring": {
+          "o4": -1,
+          "openness": -1
+        }
+      },
+      {
+        "id": "i63",
+        "text_key": "ipip_H1063",
+        "type": "likert",
+        "scoring": {
+          "o4": -1,
+          "openness": -1
+        }
+      },
+      {
+        "id": "i64",
+        "text_key": "ipip_H312",
+        "type": "likert",
+        "scoring": {
+          "o4": -1,
+          "openness": -1
+        }
+      },
+      {
+        "id": "i65",
+        "text_key": "ipip_X211",
+        "type": "likert",
+        "scoring": {
+          "o5": 1,
+          "openness": 1
+        }
+      },
+      {
+        "id": "i66",
+        "text_key": "ipip_X248",
+        "type": "likert",
+        "scoring": {
+          "o5": -1,
+          "openness": -1
+        }
+      },
+      {
+        "id": "i67",
+        "text_key": "ipip_X176",
+        "type": "likert",
+        "scoring": {
+          "o5": -1,
+          "openness": -1
+        }
+      },
+      {
+        "id": "i68",
+        "text_key": "ipip_X239",
+        "type": "likert",
+        "scoring": {
+          "o5": -1,
+          "openness": -1
+        }
+      },
+      {
+        "id": "i69",
+        "text_key": "ipip_X218",
+        "type": "likert",
+        "scoring": {
+          "o6": 1,
+          "openness": 1
+        }
+      },
+      {
+        "id": "i70",
+        "text_key": "ipip_X184",
+        "type": "likert",
+        "scoring": {
+          "o6": 1,
+          "openness": 1
+        }
+      },
+      {
+        "id": "i71",
+        "text_key": "ipip_X126",
+        "type": "likert",
+        "scoring": {
+          "o6": -1,
+          "openness": -1
+        }
+      },
+      {
+        "id": "i72",
+        "text_key": "ipip_X157",
+        "type": "likert",
+        "scoring": {
+          "o6": -1,
+          "openness": -1
+        }
+      },
+      {
+        "id": "i73",
+        "text_key": "ipip_H113",
+        "type": "likert",
+        "scoring": {
+          "a1": 1,
+          "agreeableness": 1
+        }
+      },
+      {
+        "id": "i74",
+        "text_key": "ipip_H549",
+        "type": "likert",
+        "scoring": {
+          "a1": 1,
+          "agreeableness": 1
+        }
+      },
+      {
+        "id": "i75",
+        "text_key": "ipip_text_trust_what_people_say",
+        "type": "likert",
+        "scoring": {
+          "a1": 1,
+          "agreeableness": 1
+        }
+      },
+      {
+        "id": "i76",
+        "text_key": "ipip_H1195",
+        "type": "likert",
+        "scoring": {
+          "a1": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i77",
+        "text_key": "ipip_H416",
+        "type": "likert",
+        "scoring": {
+          "a2": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i78",
+        "text_key": "ipip_X198",
+        "type": "likert",
+        "scoring": {
+          "a2": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i79",
+        "text_key": "ipip_H427",
+        "type": "likert",
+        "scoring": {
+          "a2": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i80",
+        "text_key": "ipip_H494",
+        "type": "likert",
+        "scoring": {
+          "a2": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i81",
+        "text_key": "ipip_H1100",
+        "type": "likert",
+        "scoring": {
+          "a3": 1,
+          "agreeableness": 1
+        }
+      },
+      {
+        "id": "i82",
+        "text_key": "ipip_H1108",
+        "type": "likert",
+        "scoring": {
+          "a3": 1,
+          "agreeableness": 1
+        }
+      },
+      {
+        "id": "i83",
+        "text_key": "ipip_X203",
+        "type": "likert",
+        "scoring": {
+          "a3": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i84",
+        "text_key": "ipip_H918",
+        "type": "likert",
+        "scoring": {
+          "a3": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i85",
+        "text_key": "ipip_H453",
+        "type": "likert",
+        "scoring": {
+          "a4": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i86",
+        "text_key": "ipip_H809",
+        "type": "likert",
+        "scoring": {
+          "a4": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i87",
+        "text_key": "ipip_H1103",
+        "type": "likert",
+        "scoring": {
+          "a4": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i88",
+        "text_key": "ipip_H699",
+        "type": "likert",
+        "scoring": {
+          "a4": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i89",
+        "text_key": "ipip_H736",
+        "type": "likert",
+        "scoring": {
+          "a5": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i90",
+        "text_key": "ipip_H2043",
+        "type": "likert",
+        "scoring": {
+          "a5": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i91",
+        "text_key": "ipip_H738",
+        "type": "likert",
+        "scoring": {
+          "a5": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i92",
+        "text_key": "ipip_H746",
+        "type": "likert",
+        "scoring": {
+          "a5": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i93",
+        "text_key": "ipip_X259",
+        "type": "likert",
+        "scoring": {
+          "a6": 1,
+          "agreeableness": 1
+        }
+      },
+      {
+        "id": "i94",
+        "text_key": "ipip_text_feel_sympathy_for_those_who_are_worse_of",
+        "type": "likert",
+        "scoring": {
+          "a6": 1,
+          "agreeableness": 1
+        }
+      },
+      {
+        "id": "i95",
+        "text_key": "ipip_X227",
+        "type": "likert",
+        "scoring": {
+          "a6": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i96",
+        "text_key": "ipip_E166",
+        "type": "likert",
+        "scoring": {
+          "a6": -1,
+          "agreeableness": -1
+        }
+      },
+      {
+        "id": "i97",
+        "text_key": "ipip_H1285",
+        "type": "likert",
+        "scoring": {
+          "c1": 1,
+          "conscientiousness": 1
+        }
+      },
+      {
+        "id": "i98",
+        "text_key": "ipip_text_excel_in_what_i_do",
+        "type": "likert",
+        "scoring": {
+          "c1": 1,
+          "conscientiousness": 1
+        }
+      },
+      {
+        "id": "i99",
+        "text_key": "ipip_H1354",
+        "type": "likert",
+        "scoring": {
+          "c1": 1,
+          "conscientiousness": 1
+        }
+      },
+      {
+        "id": "i100",
+        "text_key": "ipip_H1333",
+        "type": "likert",
+        "scoring": {
+          "c1": 1,
+          "conscientiousness": 1
+        }
+      },
+      {
+        "id": "i101",
+        "text_key": "ipip_H244",
+        "type": "likert",
+        "scoring": {
+          "c2": 1,
+          "conscientiousness": 1
+        }
+      },
+      {
+        "id": "i102",
+        "text_key": "ipip_X82",
+        "type": "likert",
+        "scoring": {
+          "c2": -1,
+          "conscientiousness": -1
+        }
+      },
+      {
+        "id": "i103",
+        "text_key": "ipip_H822",
+        "type": "likert",
+        "scoring": {
+          "c2": -1,
+          "conscientiousness": -1
+        }
+      },
+      {
+        "id": "i104",
+        "text_key": "ipip_text_leave_my_belongings_around",
+        "type": "likert",
+        "scoring": {
+          "c2": -1,
+          "conscientiousness": -1
+        }
+      },
+      {
+        "id": "i105",
+        "text_key": "ipip_H149",
+        "type": "likert",
+        "scoring": {
+          "c3": 1,
+          "conscientiousness": 1
+        }
+      },
+      {
+        "id": "i106",
+        "text_key": "ipip_H145",
+        "type": "likert",
+        "scoring": {
+          "c3": 1,
+          "conscientiousness": 1
+        }
+      },
+      {
+        "id": "i107",
+        "text_key": "ipip_text_break_rules",
+        "type": "likert",
+        "scoring": {
+          "c3": -1,
+          "conscientiousness": -1
+        }
+      },
+      {
+        "id": "i108",
+        "text_key": "ipip_H1018",
+        "type": "likert",
+        "scoring": {
+          "c3": -1,
+          "conscientiousness": -1
+        }
+      },
+      {
+        "id": "i109",
+        "text_key": "ipip_H2014",
+        "type": "likert",
+        "scoring": {
+          "c4": 1,
+          "conscientiousness": 1
+        }
+      },
+      {
+        "id": "i110",
+        "text_key": "ipip_H1206",
+        "type": "likert",
+        "scoring": {
+          "c4": 1,
+          "conscientiousness": 1
+        }
+      },
+      {
+        "id": "i111",
+        "text_key": "ipip_X167",
+        "type": "likert",
+        "scoring": {
+          "c4": -1,
+          "conscientiousness": -1
+        }
+      },
+      {
+        "id": "i112",
+        "text_key": "ipip_X115",
+        "type": "likert",
+        "scoring": {
+          "c4": -1,
+          "conscientiousness": -1
+        }
+      },
+      {
+        "id": "i113",
+        "text_key": "ipip_X87",
+        "type": "likert",
+        "scoring": {
+          "c5": 1,
+          "conscientiousness": 1
+        }
+      },
+      {
+        "id": "i114",
+        "text_key": "ipip_H258",
+        "type": "likert",
+        "scoring": {
+          "c5": 1,
+          "conscientiousness": 1
+        }
+      },
+      {
+        "id": "i115",
+        "text_key": "ipip_H1186",
+        "type": "likert",
+        "scoring": {
+          "c5": -1,
+          "conscientiousness": -1
+        }
+      },
+      {
+        "id": "i116",
+        "text_key": "ipip_H621",
+        "type": "likert",
+        "scoring": {
+          "c5": -1,
+          "conscientiousness": -1
+        }
+      },
+      {
+        "id": "i117",
+        "text_key": "ipip_E46",
+        "type": "likert",
+        "scoring": {
+          "c6": -1,
+          "conscientiousness": -1
+        }
+      },
+      {
+        "id": "i118",
+        "text_key": "ipip_H853",
+        "type": "likert",
+        "scoring": {
+          "c6": -1,
+          "conscientiousness": -1
+        }
+      },
+      {
+        "id": "i119",
+        "text_key": "ipip_H862",
+        "type": "likert",
+        "scoring": {
+          "c6": -1,
+          "conscientiousness": -1
+        }
+      },
+      {
+        "id": "i120",
+        "text_key": "ipip_H846",
+        "type": "likert",
+        "scoring": {
+          "c6": -1,
+          "conscientiousness": -1
+        }
+      }
+    ]
+  },
+  "scoring": {
+    "dimensions": [
+      {
+        "id": "neuroticism_sum",
+        "items": {
+          "i1": 1,
+          "i2": 1,
+          "i3": 1,
+          "i4": 1,
+          "i5": 1,
+          "i6": 1,
+          "i7": 1,
+          "i8": -1,
+          "i9": 1,
+          "i10": 1,
+          "i11": 1,
+          "i12": -1,
+          "i13": 1,
+          "i14": 1,
+          "i15": 1,
+          "i16": -1,
+          "i17": 1,
+          "i18": -1,
+          "i19": -1,
+          "i20": -1,
+          "i21": 1,
+          "i22": 1,
+          "i23": 1,
+          "i24": -1
+        }
+      },
+      {
+        "id": "neuroticism_mean",
+        "items": {
+          "i1": 1,
+          "i2": 1,
+          "i3": 1,
+          "i4": 1,
+          "i5": 1,
+          "i6": 1,
+          "i7": 1,
+          "i8": -1,
+          "i9": 1,
+          "i10": 1,
+          "i11": 1,
+          "i12": -1,
+          "i13": 1,
+          "i14": 1,
+          "i15": 1,
+          "i16": -1,
+          "i17": 1,
+          "i18": -1,
+          "i19": -1,
+          "i20": -1,
+          "i21": 1,
+          "i22": 1,
+          "i23": 1,
+          "i24": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "extraversion_sum",
+        "items": {
+          "i25": 1,
+          "i26": 1,
+          "i27": -1,
+          "i28": -1,
+          "i29": 1,
+          "i30": 1,
+          "i31": -1,
+          "i32": -1,
+          "i33": 1,
+          "i34": 1,
+          "i35": 1,
+          "i36": -1,
+          "i37": 1,
+          "i38": 1,
+          "i39": 1,
+          "i40": -1,
+          "i41": 1,
+          "i42": 1,
+          "i43": 1,
+          "i44": 1,
+          "i45": 1,
+          "i46": 1,
+          "i47": 1,
+          "i48": 1
+        }
+      },
+      {
+        "id": "extraversion_mean",
+        "items": {
+          "i25": 1,
+          "i26": 1,
+          "i27": -1,
+          "i28": -1,
+          "i29": 1,
+          "i30": 1,
+          "i31": -1,
+          "i32": -1,
+          "i33": 1,
+          "i34": 1,
+          "i35": 1,
+          "i36": -1,
+          "i37": 1,
+          "i38": 1,
+          "i39": 1,
+          "i40": -1,
+          "i41": 1,
+          "i42": 1,
+          "i43": 1,
+          "i44": 1,
+          "i45": 1,
+          "i46": 1,
+          "i47": 1,
+          "i48": 1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "openness_sum",
+        "items": {
+          "i49": 1,
+          "i50": 1,
+          "i51": 1,
+          "i52": 1,
+          "i53": 1,
+          "i54": 1,
+          "i55": -1,
+          "i56": -1,
+          "i57": 1,
+          "i58": 1,
+          "i59": -1,
+          "i60": -1,
+          "i61": 1,
+          "i62": -1,
+          "i63": -1,
+          "i64": -1,
+          "i65": 1,
+          "i66": -1,
+          "i67": -1,
+          "i68": -1,
+          "i69": 1,
+          "i70": 1,
+          "i71": -1,
+          "i72": -1
+        }
+      },
+      {
+        "id": "openness_mean",
+        "items": {
+          "i49": 1,
+          "i50": 1,
+          "i51": 1,
+          "i52": 1,
+          "i53": 1,
+          "i54": 1,
+          "i55": -1,
+          "i56": -1,
+          "i57": 1,
+          "i58": 1,
+          "i59": -1,
+          "i60": -1,
+          "i61": 1,
+          "i62": -1,
+          "i63": -1,
+          "i64": -1,
+          "i65": 1,
+          "i66": -1,
+          "i67": -1,
+          "i68": -1,
+          "i69": 1,
+          "i70": 1,
+          "i71": -1,
+          "i72": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "agreeableness_sum",
+        "items": {
+          "i73": 1,
+          "i74": 1,
+          "i75": 1,
+          "i76": -1,
+          "i77": -1,
+          "i78": -1,
+          "i79": -1,
+          "i80": -1,
+          "i81": 1,
+          "i82": 1,
+          "i83": -1,
+          "i84": -1,
+          "i85": -1,
+          "i86": -1,
+          "i87": -1,
+          "i88": -1,
+          "i89": -1,
+          "i90": -1,
+          "i91": -1,
+          "i92": -1,
+          "i93": 1,
+          "i94": 1,
+          "i95": -1,
+          "i96": -1
+        }
+      },
+      {
+        "id": "agreeableness_mean",
+        "items": {
+          "i73": 1,
+          "i74": 1,
+          "i75": 1,
+          "i76": -1,
+          "i77": -1,
+          "i78": -1,
+          "i79": -1,
+          "i80": -1,
+          "i81": 1,
+          "i82": 1,
+          "i83": -1,
+          "i84": -1,
+          "i85": -1,
+          "i86": -1,
+          "i87": -1,
+          "i88": -1,
+          "i89": -1,
+          "i90": -1,
+          "i91": -1,
+          "i92": -1,
+          "i93": 1,
+          "i94": 1,
+          "i95": -1,
+          "i96": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "conscientiousness_sum",
+        "items": {
+          "i97": 1,
+          "i98": 1,
+          "i99": 1,
+          "i100": 1,
+          "i101": 1,
+          "i102": -1,
+          "i103": -1,
+          "i104": -1,
+          "i105": 1,
+          "i106": 1,
+          "i107": -1,
+          "i108": -1,
+          "i109": 1,
+          "i110": 1,
+          "i111": -1,
+          "i112": -1,
+          "i113": 1,
+          "i114": 1,
+          "i115": -1,
+          "i116": -1,
+          "i117": -1,
+          "i118": -1,
+          "i119": -1,
+          "i120": -1
+        }
+      },
+      {
+        "id": "conscientiousness_mean",
+        "items": {
+          "i97": 1,
+          "i98": 1,
+          "i99": 1,
+          "i100": 1,
+          "i101": 1,
+          "i102": -1,
+          "i103": -1,
+          "i104": -1,
+          "i105": 1,
+          "i106": 1,
+          "i107": -1,
+          "i108": -1,
+          "i109": 1,
+          "i110": 1,
+          "i111": -1,
+          "i112": -1,
+          "i113": 1,
+          "i114": 1,
+          "i115": -1,
+          "i116": -1,
+          "i117": -1,
+          "i118": -1,
+          "i119": -1,
+          "i120": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "n1_sum",
+        "items": {
+          "i1": 1,
+          "i2": 1,
+          "i3": 1,
+          "i4": 1
+        }
+      },
+      {
+        "id": "n1_mean",
+        "items": {
+          "i1": 1,
+          "i2": 1,
+          "i3": 1,
+          "i4": 1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "n2_sum",
+        "items": {
+          "i5": 1,
+          "i6": 1,
+          "i7": 1,
+          "i8": -1
+        }
+      },
+      {
+        "id": "n2_mean",
+        "items": {
+          "i5": 1,
+          "i6": 1,
+          "i7": 1,
+          "i8": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "n3_sum",
+        "items": {
+          "i9": 1,
+          "i10": 1,
+          "i11": 1,
+          "i12": -1
+        }
+      },
+      {
+        "id": "n3_mean",
+        "items": {
+          "i9": 1,
+          "i10": 1,
+          "i11": 1,
+          "i12": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "n4_sum",
+        "items": {
+          "i13": 1,
+          "i14": 1,
+          "i15": 1,
+          "i16": -1
+        }
+      },
+      {
+        "id": "n4_mean",
+        "items": {
+          "i13": 1,
+          "i14": 1,
+          "i15": 1,
+          "i16": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "n5_sum",
+        "items": {
+          "i17": 1,
+          "i18": -1,
+          "i19": -1,
+          "i20": -1
+        }
+      },
+      {
+        "id": "n5_mean",
+        "items": {
+          "i17": 1,
+          "i18": -1,
+          "i19": -1,
+          "i20": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "n6_sum",
+        "items": {
+          "i21": 1,
+          "i22": 1,
+          "i23": 1,
+          "i24": -1
+        }
+      },
+      {
+        "id": "n6_mean",
+        "items": {
+          "i21": 1,
+          "i22": 1,
+          "i23": 1,
+          "i24": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "e1_sum",
+        "items": {
+          "i25": 1,
+          "i26": 1,
+          "i27": -1,
+          "i28": -1
+        }
+      },
+      {
+        "id": "e1_mean",
+        "items": {
+          "i25": 1,
+          "i26": 1,
+          "i27": -1,
+          "i28": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "e2_sum",
+        "items": {
+          "i29": 1,
+          "i30": 1,
+          "i31": -1,
+          "i32": -1
+        }
+      },
+      {
+        "id": "e2_mean",
+        "items": {
+          "i29": 1,
+          "i30": 1,
+          "i31": -1,
+          "i32": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "e3_sum",
+        "items": {
+          "i33": 1,
+          "i34": 1,
+          "i35": 1,
+          "i36": -1
+        }
+      },
+      {
+        "id": "e3_mean",
+        "items": {
+          "i33": 1,
+          "i34": 1,
+          "i35": 1,
+          "i36": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "e4_sum",
+        "items": {
+          "i37": 1,
+          "i38": 1,
+          "i39": 1,
+          "i40": -1
+        }
+      },
+      {
+        "id": "e4_mean",
+        "items": {
+          "i37": 1,
+          "i38": 1,
+          "i39": 1,
+          "i40": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "e5_sum",
+        "items": {
+          "i41": 1,
+          "i42": 1,
+          "i43": 1,
+          "i44": 1
+        }
+      },
+      {
+        "id": "e5_mean",
+        "items": {
+          "i41": 1,
+          "i42": 1,
+          "i43": 1,
+          "i44": 1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "e6_sum",
+        "items": {
+          "i45": 1,
+          "i46": 1,
+          "i47": 1,
+          "i48": 1
+        }
+      },
+      {
+        "id": "e6_mean",
+        "items": {
+          "i45": 1,
+          "i46": 1,
+          "i47": 1,
+          "i48": 1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "o1_sum",
+        "items": {
+          "i49": 1,
+          "i50": 1,
+          "i51": 1,
+          "i52": 1
+        }
+      },
+      {
+        "id": "o1_mean",
+        "items": {
+          "i49": 1,
+          "i50": 1,
+          "i51": 1,
+          "i52": 1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "o2_sum",
+        "items": {
+          "i53": 1,
+          "i54": 1,
+          "i55": -1,
+          "i56": -1
+        }
+      },
+      {
+        "id": "o2_mean",
+        "items": {
+          "i53": 1,
+          "i54": 1,
+          "i55": -1,
+          "i56": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "o3_sum",
+        "items": {
+          "i57": 1,
+          "i58": 1,
+          "i59": -1,
+          "i60": -1
+        }
+      },
+      {
+        "id": "o3_mean",
+        "items": {
+          "i57": 1,
+          "i58": 1,
+          "i59": -1,
+          "i60": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "o4_sum",
+        "items": {
+          "i61": 1,
+          "i62": -1,
+          "i63": -1,
+          "i64": -1
+        }
+      },
+      {
+        "id": "o4_mean",
+        "items": {
+          "i61": 1,
+          "i62": -1,
+          "i63": -1,
+          "i64": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "o5_sum",
+        "items": {
+          "i65": 1,
+          "i66": -1,
+          "i67": -1,
+          "i68": -1
+        }
+      },
+      {
+        "id": "o5_mean",
+        "items": {
+          "i65": 1,
+          "i66": -1,
+          "i67": -1,
+          "i68": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "o6_sum",
+        "items": {
+          "i69": 1,
+          "i70": 1,
+          "i71": -1,
+          "i72": -1
+        }
+      },
+      {
+        "id": "o6_mean",
+        "items": {
+          "i69": 1,
+          "i70": 1,
+          "i71": -1,
+          "i72": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "a1_sum",
+        "items": {
+          "i73": 1,
+          "i74": 1,
+          "i75": 1,
+          "i76": -1
+        }
+      },
+      {
+        "id": "a1_mean",
+        "items": {
+          "i73": 1,
+          "i74": 1,
+          "i75": 1,
+          "i76": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "a2_sum",
+        "items": {
+          "i77": -1,
+          "i78": -1,
+          "i79": -1,
+          "i80": -1
+        }
+      },
+      {
+        "id": "a2_mean",
+        "items": {
+          "i77": -1,
+          "i78": -1,
+          "i79": -1,
+          "i80": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "a3_sum",
+        "items": {
+          "i81": 1,
+          "i82": 1,
+          "i83": -1,
+          "i84": -1
+        }
+      },
+      {
+        "id": "a3_mean",
+        "items": {
+          "i81": 1,
+          "i82": 1,
+          "i83": -1,
+          "i84": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "a4_sum",
+        "items": {
+          "i85": -1,
+          "i86": -1,
+          "i87": -1,
+          "i88": -1
+        }
+      },
+      {
+        "id": "a4_mean",
+        "items": {
+          "i85": -1,
+          "i86": -1,
+          "i87": -1,
+          "i88": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "a5_sum",
+        "items": {
+          "i89": -1,
+          "i90": -1,
+          "i91": -1,
+          "i92": -1
+        }
+      },
+      {
+        "id": "a5_mean",
+        "items": {
+          "i89": -1,
+          "i90": -1,
+          "i91": -1,
+          "i92": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "a6_sum",
+        "items": {
+          "i93": 1,
+          "i94": 1,
+          "i95": -1,
+          "i96": -1
+        }
+      },
+      {
+        "id": "a6_mean",
+        "items": {
+          "i93": 1,
+          "i94": 1,
+          "i95": -1,
+          "i96": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "c1_sum",
+        "items": {
+          "i97": 1,
+          "i98": 1,
+          "i99": 1,
+          "i100": 1
+        }
+      },
+      {
+        "id": "c1_mean",
+        "items": {
+          "i97": 1,
+          "i98": 1,
+          "i99": 1,
+          "i100": 1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "c2_sum",
+        "items": {
+          "i101": 1,
+          "i102": -1,
+          "i103": -1,
+          "i104": -1
+        }
+      },
+      {
+        "id": "c2_mean",
+        "items": {
+          "i101": 1,
+          "i102": -1,
+          "i103": -1,
+          "i104": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "c3_sum",
+        "items": {
+          "i105": 1,
+          "i106": 1,
+          "i107": -1,
+          "i108": -1
+        }
+      },
+      {
+        "id": "c3_mean",
+        "items": {
+          "i105": 1,
+          "i106": 1,
+          "i107": -1,
+          "i108": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "c4_sum",
+        "items": {
+          "i109": 1,
+          "i110": 1,
+          "i111": -1,
+          "i112": -1
+        }
+      },
+      {
+        "id": "c4_mean",
+        "items": {
+          "i109": 1,
+          "i110": 1,
+          "i111": -1,
+          "i112": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "c5_sum",
+        "items": {
+          "i113": 1,
+          "i114": 1,
+          "i115": -1,
+          "i116": -1
+        }
+      },
+      {
+        "id": "c5_mean",
+        "items": {
+          "i113": 1,
+          "i114": 1,
+          "i115": -1,
+          "i116": -1
+        },
+        "transform": "mean"
+      },
+      {
+        "id": "c6_sum",
+        "items": {
+          "i117": -1,
+          "i118": -1,
+          "i119": -1,
+          "i120": -1
+        }
+      },
+      {
+        "id": "c6_mean",
+        "items": {
+          "i117": -1,
+          "i118": -1,
+          "i119": -1,
+          "i120": -1
+        },
+        "transform": "mean"
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_H1157": "Worry about things.",
+      "ipip_H999": "Fear for the worst.",
+      "ipip_H968": "Am afraid of many things.",
+      "ipip_X107": "Get stressed out easily.",
+      "ipip_H754": "Get angry easily.",
+      "ipip_H761": "Get irritated easily.",
+      "ipip_H755": "Lose my temper.",
+      "ipip_X23": "Am not easily annoyed.",
+      "ipip_X15": "Dislike myself.",
+      "ipip_H640": "Am often down in the dumps.",
+      "ipip_X129": "Feel comfortable with myself.",
+      "ipip_H592": "Find it difficult to approach others.",
+      "ipip_H655": "Am afraid to draw attention to myself.",
+      "ipip_H656": "Only feel comfortable with friends.",
+      "ipip_X209": "Am not bothered by difficult social situations.",
+      "ipip_X133": "Go on binges.",
+      "ipip_X274": "Easily resist temptations.",
+      "ipip_X181": "Rarely Overindulge",
+      "ipip_X251": "Am able to control my cravings.",
+      "ipip_H948": "Panic easily.",
+      "ipip_H959": "Become overwhelmed by events.",
+      "ipip_H954": "Feel that I'm unable to deal with things.",
+      "ipip_X79": "Remain calm under pressure.",
+      "ipip_H29": "Make friends easily.",
+      "ipip_H648": "Avoid contacts with others.",
+      "ipip_H704": "Keep others at a distance.",
+      "ipip_H587": "Prefer to be alone.",
+      "ipip_H650": "Avoid crowds.",
+      "ipip_H334": "Take charge.",
+      "ipip_H524": "Try to lead others.",
+      "ipip_text_take_control_of_things": "Take control of things.",
+      "ipip_H976": "Wait for others to lead the way.",
+      "ipip_H58": "Am always busy.",
+      "ipip_H54": "Am always on the go.",
+      "ipip_H79": "Do a lot in my spare time.",
+      "ipip_E113": "Like to take it easy.",
+      "ipip_H438": "Love excitement.",
+      "ipip_H446": "Seek adventure.",
+      "ipip_E35": "Enjoy being reckless.",
+      "ipip_H871": "Act wild and crazy.",
+      "ipip_H32": "Radiate joy.",
+      "ipip_H1094": "Have a lot of fun.",
+      "ipip_text_love_life": "Love life.",
+      "ipip_H42": "Look at the bright side of life.",
+      "ipip_X14": "Have a vivid imagination.",
+      "ipip_X238": "Enjoy wild flights of fantasy.",
+      "ipip_X71": "Love to daydream.",
+      "ipip_E163": "Like to get lost in thought.",
+      "ipip_E105": "See beauty in things that others might not notice.",
+      "ipip_X123": "Believe in the importance of art.",
+      "ipip_X45": "Do not like poetry.",
+      "ipip_X235": "Do not enjoy going to art museums.",
+      "ipip_X92": "Experience my emotions intensely.",
+      "ipip_E136": "Feel others' emotions.",
+      "ipip_X10": "Rarely notice my emotional reactions.",
+      "ipip_E156": "Don't understand people who get emotional.",
+      "ipip_X204": "Prefer variety to routine.",
+      "ipip_X30": "Prefer to stick with things that I know.",
+      "ipip_H1063": "Dislike changes.",
+      "ipip_H312": "Am attached to conventional ways.",
+      "ipip_X211": "Love to read challenging material.",
+      "ipip_X248": "Avoid philosophical discussions.",
+      "ipip_X176": "Have difficulty understanding abstract ideas.",
+      "ipip_X239": "Am not interested in theoretical discussions.",
+      "ipip_X218": "Tend to vote for liberal political candidates.",
+      "ipip_X184": "Believe that there is no absolute right and wrong.",
+      "ipip_X126": "Tend to vote for conservative political candidates.",
+      "ipip_X157": "Believe that we should be tough on crime.",
+      "ipip_H113": "Trust others.",
+      "ipip_H549": "Believe that others have good intentions.",
+      "ipip_text_trust_what_people_say": "Trust what people say.",
+      "ipip_H1195": "Distrust people.",
+      "ipip_H416": "Use others for my own ends.",
+      "ipip_X198": "Cheat to get ahead.",
+      "ipip_H427": "Take advantage of others.",
+      "ipip_H494": "Obstruct others' plans.",
+      "ipip_H1100": "Am concerned about others.",
+      "ipip_H1108": "Love to help others.",
+      "ipip_X203": "Am indifferent to the feelings of others.",
+      "ipip_H918": "Take no time for others.",
+      "ipip_H453": "Love a good fight.",
+      "ipip_H809": "Yell at people.",
+      "ipip_H1103": "Insult people.",
+      "ipip_H699": "Get back at others.",
+      "ipip_H736": "Believe that I am better than others.",
+      "ipip_H2043": "Think highly of myself.",
+      "ipip_H738": "Have a high opinion of myself.",
+      "ipip_H746": "Boast about my virtues.",
+      "ipip_X259": "Sympathize with the homeless.",
+      "ipip_text_feel_sympathy_for_those_who_are_worse_of": "Feel sympathy for those who are worse off than myself.",
+      "ipip_X227": "Am not interested in other people's problems.",
+      "ipip_E166": "Try not to think about the needy.",
+      "ipip_H1285": "Complete tasks successfully.",
+      "ipip_text_excel_in_what_i_do": "Excel in what I do.",
+      "ipip_H1354": "Handle tasks smoothly.",
+      "ipip_H1333": "Know how to get things done.",
+      "ipip_H244": "Like to tidy up.",
+      "ipip_X82": "Often forget to put things back in their proper place.",
+      "ipip_H822": "Leave a mess in my room.",
+      "ipip_text_leave_my_belongings_around": "Leave my belongings around.",
+      "ipip_H149": "Keep my promises.",
+      "ipip_H145": "Tell the truth.",
+      "ipip_text_break_rules": "Break rules.",
+      "ipip_H1018": "Break my promises.",
+      "ipip_H2014": "Do more than what's expected of me.",
+      "ipip_H1206": "Work hard.",
+      "ipip_X167": "Put little time and effort into my work.",
+      "ipip_X115": "Do just enough work to get by.",
+      "ipip_X87": "Am always prepared.",
+      "ipip_H258": "Carry out my plans.",
+      "ipip_H1186": "Waste my time.",
+      "ipip_H621": "Have difficulty starting tasks.",
+      "ipip_E46": "Jump into things without thinking.",
+      "ipip_H853": "Make rash decisions.",
+      "ipip_H862": "Rush into things.",
+      "ipip_H846": "Act without thinking.",
+      "ipip_X112": "Feel comfortable around people.",
+      "ipip_H78": "Love large parties.",
+      "ipip_X74": "Often feel blue.",
+      "ipip_X83": "Talk to a lot of different people at parties."
+    },
+    "fr": {
+      "ipip_likert_2": "En désaccord",
+      "ipip_debrief": "Merci d'avoir complété ce questionnaire.",
+      "ipip_likert_5": "Tout à fait en accord",
+      "ipip_likert_3": "Neutre / Indifférent(e)",
+      "ipip_likert_1": "Tout à fait en désaccord",
+      "ipip_question_head": "<h3>Comment vous décririez-vous ?</h3><p>Décrivez-vous tel(le) que vous êtes généralement maintenant, et non tel(le) que vous souhaiteriez être à l'avenir. Décrivez-vous honnêtement, par rapport aux autres personnes du même sexe et à peu près du même âge que vous. Vos réponses resteront strictement confidentielles. Indiquez votre niveau d'accord avec chaque énoncé à l'aide de l'échelle suivante :</p>",
+      "ipip_likert_4": "En accord",
+      "ipip_X274": "Je résiste facilement à la tentation.",
+      "ipip_text_take_control_of_things": "Je prends le contrôle des choses.",
+      "ipip_H918": "Je ne prends pas de temps pour les autres.",
+      "ipip_X133": "Je fais des excès.",
+      "ipip_H640": "Il m'arrive souvent de broyer du noir.",
+      "ipip_H312": "Je suis attaché aux méthodes conventionnelles.",
+      "ipip_H862": "Je me précipite dans l'action.",
+      "ipip_X14": "J'ai une imagination débordante.",
+      "ipip_X45": "Je n'aime pas la poésie.",
+      "ipip_H704": "Je garde les autres à distance.",
+      "ipip_X211": "J'adore lire des documents stimulants.",
+      "ipip_H648": "J'évite le contact avec les autres.",
+      "ipip_H145": "Je dis la vérité.",
+      "ipip_E163": "J'aime me perdre dans mes pensées.",
+      "ipip_H427": "Je profite des autres.",
+      "ipip_H244": "J'aime faire du rangement.",
+      "ipip_X126": "J’ai tendance à promouvoir des valeurs sociales libérales.",
+      "ipip_H976": "J'attends que les autres prennent les devants.",
+      "ipip_H549": "Je crois que les autres ont de bonnes intentions.",
+      "ipip_H954": "Je me sens incapable de gérer les choses.",
+      "ipip_H453": "J'adore une bonne bagarre.",
+      "ipip_H592": "J'éprouve de la difficulté à aborder les autres.",
+      "ipip_H1195": "Je ne fais pas confiance aux autres.",
+      "ipip_H809": "Je crie après les gens.",
+      "ipip_H1100": "Je me préoccupe des autres.",
+      "ipip_H1206": "Je travaille fort.",
+      "ipip_X129": "Je suis à l'aise avec moi-même.",
+      "ipip_X259": "Je sympathise avec les sans-abri.",
+      "ipip_H1354": "Je gère les tâches facilement.",
+      "ipip_X248": "J'évite les discussions philosophiques.",
+      "ipip_X227": "Je ne suis pas intéressé par les problèmes des autres.",
+      "ipip_H650": "J'évite les foules.",
+      "ipip_H948": "Je panique facilement.",
+      "ipip_text_trust_what_people_say": "J'ai confiance en ce que les gens disent.",
+      "ipip_H1103": "J'insulte les gens.",
+      "ipip_X30": "Je préfère m'en tenir aux choses connues.",
+      "ipip_X198": "Je triche pour avancer.",
+      "ipip_H846": "J'agis sans penser.",
+      "ipip_X82": "J'oublie souvent de remettre les choses à leur place.",
+      "ipip_H2014": "Je fais plus que ce que l'on attend de moi.",
+      "ipip_X10": "Je suis rarement sensible à mes réactions émotives.",
+      "ipip_H587": "Je préfère être seul.",
+      "ipip_E136": "Je ressens les émotions des autres.",
+      "ipip_X204": "Je préfère la variété à la routine.",
+      "ipip_X83": "Je parle à plusieurs personnes dans les partys.",
+      "ipip_H1285": "Je complète les tâches avec succès.",
+      "ipip_H1108": "J'adore aider les autres.",
+      "ipip_X123": "Je crois en l'importance de l'art.",
+      "ipip_E35": "J'agis de manière effrénée.",
+      "ipip_X15": "Je ne m'aime pas.",
+      "ipip_X235": "Je n'apprécie pas aller à des musées d'art.",
+      "ipip_H113": "Je fais confiance aux autres.",
+      "ipip_X112": "Je me sens confortable avec les gens.",
+      "ipip_H968": "J'ai peur de plusieurs choses.",
+      "ipip_X92": "Je vis mes émotions intensément.",
+      "ipip_X87": "Je suis toujours préparé.",
+      "ipip_H446": "Je recherche l'aventure.",
+      "ipip_H655": "J'ai peur d'attirer l'attention vers moi.",
+      "ipip_X239": "Je ne suis pas intéressé par les discussions théoriques.",
+      "ipip_E105": "Je vois une beauté dans les choses que d'autres pourraient ne pas remarquer.",
+      "ipip_H258": "Je réalise mes objectifs.",
+      "ipip_X251": "Je suis capable de contrôler mes envies.",
+      "ipip_text_leave_my_belongings_around": "Je laisse traîner mes choses.",
+      "ipip_H1333": "Je sais comment faire avancer les choses.",
+      "ipip_H1018": "Je ne tiens pas mes promesses.",
+      "ipip_E166": "Je tente de ne pas penser aux gens dans le besoin.",
+      "ipip_text_excel_in_what_i_do": "J'excelle dans ce que je fais.",
+      "ipip_X181": "Je fais rarement des excès.",
+      "ipip_H79": "Je fais beaucoup de choses dans mes temps libres.",
+      "ipip_H334": "J'aime prendre en charge.",
+      "ipip_X23": "Je ne suis pas facilement agacé.",
+      "ipip_H438": "J'adore les sensations fortes.",
+      "ipip_X203": "Je suis indifférent aux sentiments des autres.",
+      "ipip_X107": "Je deviens stressé facilement.",
+      "ipip_X74": "Je me sens souvent triste.",
+      "ipip_H754": "Je me mets en colère facilement.",
+      "ipip_H78": "J'adore les grandes fêtes.",
+      "ipip_X176": "J'ai de la difficulté à comprendre les idées abstraites.",
+      "ipip_X157": "Je crois que nous devrions être sévères à propos des crimes.",
+      "ipip_text_break_rules": "J'enfreins les règles.",
+      "ipip_H1186": "Je perds mon temps.",
+      "ipip_H822": "Je laisse ma chambre en désordre.",
+      "ipip_H1157": "Je m'inquiète à propos de choses.",
+      "ipip_E46": "Je me lance dans les choses sans réfléchir.",
+      "ipip_X218": "J’ai tendance à promouvoir des valeurs sociales traditionnelles.",
+      "ipip_H1063": "Je n'aime pas les changements.",
+      "ipip_H959": "Je me sens dépassé par les événements.",
+      "ipip_H738": "J'ai une très bonne opinion de moi-même.",
+      "ipip_H755": "Je perds patience.",
+      "ipip_H871": "J'agis de façon téméraire.",
+      "ipip_X79": "Je demeure calme sous pression.",
+      "ipip_X238": "J'aime me perdre dans mes idées.",
+      "ipip_E156": "Je ne comprends pas les gens émotifs.",
+      "ipip_text_feel_sympathy_for_those_who_are_worse_of": "J'ai de la sympathie pour les gens plus démunis que moi.",
+      "ipip_H746": "Je me vante de mes vertus.",
+      "ipip_H621": "J'ai de la difficulté à commencer les tâches.",
+      "ipip_H761": "Je suis irritable facilement.",
+      "ipip_H42": "Je regarde le bon côté de la vie.",
+      "ipip_H149": "Je tiens mes promesses.",
+      "ipip_H32": "Je respire la joie.",
+      "ipip_X115": "Je fais juste assez de travail pour m'en sortir.",
+      "ipip_H54": "Je suis toujours en mouvement.",
+      "ipip_text_love_life": "J'adore la vie.",
+      "ipip_H699": "Je m'en prends aux autres.",
+      "ipip_X184": "60",
+      "ipip_H416": "J'utilise les autres pour mes propres fins.",
+      "ipip_H1094": "J'ai beaucoup de plaisir.",
+      "ipip_X167": "Je mets peu de temps et d'efforts dans mon travail.",
+      "ipip_H29": "Je me fais des amis facilement.",
+      "ipip_H853": "Je prends des décisions impulsives.",
+      "ipip_H524": "J'essaie de diriger les autres.",
+      "ipip_X71": "J'adore rêvasser.",
+      "ipip_H736": "Je crois être meilleur que les autres.",
+      "ipip_X209": "Je ne suis pas dérangé par les situations sociales difficiles.",
+      "ipip_H999": "Je crains le pire.",
+      "ipip_H58": "Je suis toujours occupé.",
+      "ipip_H656": "Je me sens seulement à l'aise avec mes amis.",
+      "ipip_H2043": "J'ai une très grande estime de moi-même.",
+      "ipip_E113": "J'aime prendre ça mollo.",
+      "ipip_H494": "J'entrave les plans des autres."
+    },
+    "hr": {
+      "ipip_likert_2": "Uglavnom netočno",
+      "ipip_debrief": "Hvala vam na sudjelovanju.",
+      "ipip_likert_5": "Posve točno",
+      "ipip_likert_3": "Ni točno ni netočno",
+      "ipip_likert_1": "Posve netočno",
+      "ipip_question_head": "<h3>Koliko točno možete opisati sebe?</h3><p>Na sljedećim stranicama nalaze se tvrdnje koje opisuju uobičajeno ponašanje ljudi. Molimo vas da, koristeći se priloženom ljestvicom, procijenite koliko pojedini iskaz vjerno opisuje baš vas.</p>",
+      "ipip_likert_4": "Uglavnom točno",
+      "ipip_X274": "Lako odolijevam iskušenjima.",
+      "ipip_text_take_control_of_things": "Preuzimam kontrolu nad događajima.",
+      "ipip_H918": "Nemam vremena za druge.",
+      "ipip_X133": "Volim tulumariti.",
+      "ipip_H640": "Često sam turoban.",
+      "ipip_H312": "Privržen sam uhodanom načinu života.",
+      "ipip_H862": "Srljam u stvari.",
+      "ipip_X14": "Imam živu maštu.",
+      "ipip_X45": "Ne volim poeziju.",
+      "ipip_H704": "Držim ljude na distanci.",
+      "ipip_X211": "Volim čitati izazovne sadržaje.",
+      "ipip_H648": "Izbjegavam susrete s drugima.",
+      "ipip_H145": "Govorim istinu.",
+      "ipip_E163": "Sviđa mi se kada se izgubim u mislima.",
+      "ipip_H427": "Iskorištavam druge.",
+      "ipip_H244": "Volim pospremati.",
+      "ipip_X126": "Sklon sam glasovanju za konzervativne političke kandidate.",
+      "ipip_H976": "Čekam da drugi preuzmu vodstvo.",
+      "ipip_H549": "Vjerujem da drugi imaju dobre namjere.",
+      "ipip_H954": "Osjećam da se ne mogu nositi s nekim stvarima.",
+      "ipip_H453": "Volim se svađati.",
+      "ipip_H592": "Teško pristupam drugima.",
+      "ipip_H1195": "Nemam povjerenja u ljude.",
+      "ipip_H809": "Vičem na ljude.",
+      "ipip_H1100": "Brinem se za druge ljude.",
+      "ipip_H1206": "Naporno radim.",
+      "ipip_X129": "Osjećam se ugodno u vlastitoj koži.",
+      "ipip_X259": "Suosjećam s beskućnicima.",
+      "ipip_H1354": "S lakoćom obavljam zadatke.",
+      "ipip_X248": "Izbjegavam filozofske rasprave.",
+      "ipip_X227": "Ne zanimaju me tuđi problemi.",
+      "ipip_H650": "Izbjegavam gužvu.",
+      "ipip_H948": "Lako se uspaničim.",
+      "ipip_text_trust_what_people_say": "Vjerujem onome što ljudi govore.",
+      "ipip_H1103": "Vrijeđam ljude.",
+      "ipip_X30": "Volim se držati stvari koje poznajem.",
+      "ipip_X198": "Varam kako bih napredovao.",
+      "ipip_H846": "Djelujem bez razmišljanja.",
+      "ipip_X82": "Često zaboravljam vratiti stvari na njihovo mjesto.",
+      "ipip_H2014": "Radim više nego što se od mene očekuje.",
+      "ipip_X10": "Rijetko primjećujem svoje emocionalne reakcije.",
+      "ipip_H587": "Volim biti sam.",
+      "ipip_E136": "Osjećam tuđe emocije.",
+      "ipip_X204": "Više volim raznolikost nego rutinu.",
+      "ipip_X83": "Na zabavama razgovaram s mnogo različitih ljudi.",
+      "ipip_H1285": "Uspješno završavam zadatke.",
+      "ipip_H1108": "Volim pomagati drugima.",
+      "ipip_X123": "Smatram da je umjetnost važna.",
+      "ipip_E35": "Volim biti nepromišljen.",
+      "ipip_X15": "Ne volim sebe.",
+      "ipip_X235": "Ne volim posjećivati muzeje umjetnosti.",
+      "ipip_H113": "Imam povjerenja u druge.",
+      "ipip_X112": "Ugodno se osjećam među ljudima.",
+      "ipip_H968": "Bojim se mnogih stvari.",
+      "ipip_X92": "Snažno doživljavam emocije.",
+      "ipip_X87": "Uvijek sam pripravan.",
+      "ipip_H446": "Tražim pustolovinu.",
+      "ipip_H655": "Bojim se privući pažnju.",
+      "ipip_X239": "Ne zanimaju me teorijske rasprave.",
+      "ipip_E105": "Vidim ljepotu u stvarima koju drugi ne zamjećuju.",
+      "ipip_H258": "Izvršavam svoje planove.",
+      "ipip_X251": "Mogu kontrolirati svoje porive.",
+      "ipip_text_leave_my_belongings_around": "Ostavljam stvari uokolo.",
+      "ipip_H1333": "Znam kako obaviti stvari.",
+      "ipip_H1018": "Ne pridržavam se obećanja.",
+      "ipip_E166": "Trudim se ne razmišljati o ljudima u nevolji.",
+      "ipip_text_excel_in_what_i_do": "Ističem se u onom što radim.",
+      "ipip_X181": "Rijetko si previše ugađam.",
+      "ipip_H79": "Mnogo toga radim u slobodno vrijeme.",
+      "ipip_H334": "Preuzimam odgovornost.",
+      "ipip_X23": "Ne gubim lako strpljenje.",
+      "ipip_H438": "Volim uzbuđenje.",
+      "ipip_X203": "Ravnodušan sam prema tuđim osjećajima.",
+      "ipip_X107": "Lako se uznemirim.",
+      "ipip_X74": "Često sam potišten.",
+      "ipip_H754": "Lako se razljutim.",
+      "ipip_H78": "Volim velike zabave.",
+      "ipip_X176": "Teško razumijem apstraktne ideje.",
+      "ipip_X157": "Smatram da zločin treba strogo kažnjavati.",
+      "ipip_text_break_rules": "Kršim pravila.",
+      "ipip_H1186": "Tratim svoje vrijeme.",
+      "ipip_H822": "Ostavljam nered u svojoj sobi.",
+      "ipip_H1157": "Zabrinut sam.",
+      "ipip_E46": "Ulijećem u stvari bez razmišljanja.",
+      "ipip_X218": "Sklon sam glasovanju za liberalne političke kandidate.",
+      "ipip_H1063": "Ne volim promjene.",
+      "ipip_H959": "Neki me događaji shrvaju.",
+      "ipip_H738": "Imam visoko mišljenje o sebi.",
+      "ipip_H755": "Lako izgubim živce.",
+      "ipip_H871": "Ponašam se neobuzdano i luckasto.",
+      "ipip_X79": "Smiren sam i pod pritiskom.",
+      "ipip_X238": "Uživam u neobuzdanom maštanju.",
+      "ipip_E156": "Ne razumijem ljude koji se prepuštaju osjećajima.",
+      "ipip_text_feel_sympathy_for_those_who_are_worse_of": "Suosjećam s onima kojima je gore nego meni.",
+      "ipip_H746": "Ističem svoje vrline.",
+      "ipip_H621": "Teško mi je započeti zadatke.",
+      "ipip_H761": "Lako se uzrujam.",
+      "ipip_H42": "Gledam na život s optimizmom.",
+      "ipip_H149": "Ispunjavam svoja obećanja.",
+      "ipip_H32": "Zračim veseljem.",
+      "ipip_X115": "Radim taman onoliko koliko je potrebno.",
+      "ipip_H54": "Uvijek sam u pokretu.",
+      "ipip_text_love_life": "Volim život.",
+      "ipip_H699": "Osvećujem se.",
+      "ipip_X184": "Vjerujem da ne postoji apsolutna istina.",
+      "ipip_H416": "Iskorištavam druge za vlastiti probitak.",
+      "ipip_H1094": "Puno se zabavljam.",
+      "ipip_X167": "Ulažem malo vremena i truda u svoj posao.",
+      "ipip_H29": "Lako sklapam prijateljstva.",
+      "ipip_H853": "Donosim brzoplete odluke.",
+      "ipip_H524": "Nastojim voditi druge.",
+      "ipip_X71": "Volim sanjariti.",
+      "ipip_H736": "Vjerujem da sam bolji od drugih.",
+      "ipip_X209": "Ne opterećuju me teške socijalne situacije.",
+      "ipip_H999": "Strah me najgoreg.",
+      "ipip_H58": "Uvijek sam zaposlen.",
+      "ipip_H656": "Osjećam se ugodno samo u krugu prijatelja.",
+      "ipip_H2043": "Jako cijenim sebe.",
+      "ipip_E113": "Ležerno pristupam stvarima.",
+      "ipip_H494": "Ometam tuđe planove."
+    },
+    "hy": {
+      "ipip_likert_2": "Չափավոր ճիշտ չէ",
+      "ipip_debrief": "Շնորհակալություն հարցաշարը լրացնելու համար:",
+      "ipip_likert_5": "Շատ ճիշտ է",
+      "ipip_likert_3": "Ոչ ճիշտ, ոչ անճիշտ",
+      "ipip_likert_1": "Բոլորովին ճիշտ չէ",
+      "ipip_question_head": "<h3>Որքանո՞վ ճշգրիտ կարող եք նկարագրել ձեզ:</h3><p>Նկարագրեք ձեզ այնպիսին, ինչպիսին հիմա եք, ոչ թե այնպիսին, ինչպիսին ցանկանում եք լինել ապագայում: Նկարագրեք ձեզ ազնվորեն, ինչպես ձեզ եք տեսնում, ձեր հետ նույն սեռի և մոտ նույն տարիքի ծանոթ մարդկանց համեմատ: Որպեսզի կարողանաք ձեզ ազնվորեն նկարագրել, ձեր պատասխանները կպահվեն լիակատար գաղտնիության մեջ: Հետևյալ գնահատման սանդղակի օգնությամբ նշեք, որքանով է յուրաքանչյուր հայտարարությունը ճիշտ ձեր համար:</p>",
+      "ipip_likert_4": "Չափավոր ճիշտ է",
+      "ipip_X274": "Հեշտությամբ եմ դիմակայում գայթակղություններին:",
+      "ipip_text_take_control_of_things": "Վերահսկողության տակ եմ վերցնում երևույթները։",
+      "ipip_H918": "Ժամանակ չեմ տրամադրում ուրիշներին։",
+      "ipip_X133": "Մի բանի չափն անցնում եմ։",
+      "ipip_H640": "Հաճախ եմ վհատվում:",
+      "ipip_H312": "Հավատարիմ եմ բոլորի կողմից ընդունված վարվելակերպին։",
+      "ipip_H862": "Շտապում եմ գործել՝ առանց մտածելու:",
+      "ipip_X14": "Ունեմ վառ երակայություն:",
+      "ipip_X45": "Չեմ սիրում պոեզիան:",
+      "ipip_H704": "Հեռավորության վրա եմ պահում այլ մարդկանց:",
+      "ipip_X211": "Սիրում եմ կարդալ խրթին նյութեր:",
+      "ipip_H648": "Խուսափում եմ ուրիշների հետ շփումից:",
+      "ipip_H145": "Ասում եմ ճշմարտությունը:",
+      "ipip_E163": "Սիրում եմ սուզվել մտքերի մեջ:",
+      "ipip_H427": "Օգտվում եմ ուրիշ մարդկանցից։",
+      "ipip_H244": "Սիրում եմ մաքրտել։",
+      "ipip_X126": "Հակված եմ քվեարկել պահպանողական քաղաքական թեքնածուների օգտին:",
+      "ipip_H976": "Սպասում եմ, որ մեկ ուրիշն առաջնորդի նախաձեռնությունները:",
+      "ipip_H549": "Հավատում եմ, որ ուրիշները լավ մտադրություններ ունեն:",
+      "ipip_H954": "Զգում եմ, որ անկարող եմ հաղթահարել դժվարությունները:",
+      "ipip_H453": "Սիրում եմ մի լավ կռիվ տալ։",
+      "ipip_H592": "Դժվարանում եմ ուրիշ մարդկանց մոտենալ։",
+      "ipip_H1195": "Չեմ վստահում մարդկանց։",
+      "ipip_H809": "Բղավում եմ մարդկանց վրա:",
+      "ipip_H1100": "Մտահոգվում եմ այլոց մասին:",
+      "ipip_H1206": "Տքնաջան աշխատում եմ:",
+      "ipip_X129": "Հարմար եմ զգում ինքս իմ եսի հետ։",
+      "ipip_X259": "Կարեկցում եմ անօթևան մարդկանց:",
+      "ipip_H1354": "Առաջադրանքները սահուն կերպով եմ կատարում:",
+      "ipip_X248": "Խուսափում եմ փիլիսոփայական քննարկումներից:",
+      "ipip_X227": "Չեմ հետաքրքրվում այլ մարդկանց խնդիրներով:",
+      "ipip_H650": "Խուսափում եմ ամբոխներից:",
+      "ipip_H948": "Հեշտությամբ եմ խուճապի մատնվում:",
+      "ipip_text_trust_what_people_say": "Վստահում եմ այլ մարդկանց խոսքերին:",
+      "ipip_H1103": "Վիրավորում եմ մարդկանց:",
+      "ipip_X30": "Նախընտրում եմ հավատարիմ մնալ ինձ ծանոթ բաներին:",
+      "ipip_X198": "Խաբում եմ մարդկանց՝ առաջադիմելու համար:",
+      "ipip_H846": "Գործում եմ՝ առանց մտածելու:",
+      "ipip_X82": "Հաճախ մոռանում եմ իրերն իրենց ճիշտ տեղը դնել:",
+      "ipip_H2014": "Անում եմ ավելին, քան ակնկալում են ինձանից:",
+      "ipip_X10": "Հազվադեպ եմ նկատում իմ հուզական ռեակցիաները:",
+      "ipip_H587": "Նախընտրում եմ լինել միայնակ:",
+      "ipip_E136": "Զգում եմ այլոց հույզերը:",
+      "ipip_X204": "Նախընտրում եմ զանազանություն, քան միապաղաղություն:",
+      "ipip_X83": "Խնջույքների ժամանակ խոսում եմ մեծ քանակությամբ տարբեր մարդկանց հետ:",
+      "ipip_H1285": "Հաջողությամբ եմ կատարում բոլոր առաջադրանքները:",
+      "ipip_H1108": "Սիրում եմ օգնել ուրիշներին։",
+      "ipip_X123": "Հավատում եմ արվեստի կարևորությանը:",
+      "ipip_E35": "Վայելում եմ խենթ լինելը:",
+      "ipip_X15": "Չեմ հավանում ինքս ինձ:",
+      "ipip_X235": "Չեմ սիրում այցելել գեղարվեստական թանգարաններ:",
+      "ipip_H113": "Մարդկանց վստահում եմ։",
+      "ipip_X112": "Ինձ հարմարավետ եմ զգում մարդկանց շրջապատում:",
+      "ipip_H968": "Վախենում եմ բազմաթիվ բաներից:",
+      "ipip_X92": "Ուժեղ եմ ապրում իմ զգացմունքները։",
+      "ipip_X87": "Միշտ պատրաստված եմ:",
+      "ipip_H446": "Փնտրում եմ արկածներ:",
+      "ipip_H655": "Վախենում եմ ինձ վրա ուշադրություն կենտրոնացնել։",
+      "ipip_X239": "Հետաքրքրված չեմ տեսական քննարկումներով:",
+      "ipip_E105": "Տեսնում եմ գեղեցկությունն այնտեղ, որտեղ այլ մարդիկ կարող են այն չնկատել:",
+      "ipip_H258": "Իրականացնում եմ ծրագրերս:",
+      "ipip_X251": "Կարողանում եմ տիրապետել ցանկություններս:",
+      "ipip_text_leave_my_belongings_around": "Ամենուր թողնում եմ իրերս:",
+      "ipip_H1333": "Գիտեմ, թե ինչպես է պետք հաջողությամբ ամեն բան իրականացնել:",
+      "ipip_H1018": "Խախտում եմ խոստումներս:",
+      "ipip_E166": "Փորձում եմ չմտածել կարիքավորների մասին:",
+      "ipip_text_excel_in_what_i_do": "Գերազանցում այն ամենում, ինչ անում եմ:",
+      "ipip_X181": "Հազվադեպ եմ դուրս գալիս հաճելի բաների ընդունելի օգտագործման սահմաններից:",
+      "ipip_H79": "Ազատ ժամանակ ես շատ բան եմ անում:",
+      "ipip_H334": "Վերցնում եմ կառավարման ղեկը:",
+      "ipip_X23": "Ինձ հեշտ չէ հունից հանելը։",
+      "ipip_H438": "Սիրում եմ ոգևորվածությունը:",
+      "ipip_X203": "Անտարբեր եմ այլոց զգացմունքների հանդեպ։",
+      "ipip_X107": "Հեշտությամբ եմ սթրեսի ենթարկվում:",
+      "ipip_X74": "Հաճախ եմ տխրում։",
+      "ipip_H754": "Հեշտությամբ եմ զայրանում:",
+      "ipip_H78": "Սիրում եմ մեծ խնջույքներ։",
+      "ipip_X176": "Դժվարություն եմ ունենում վերացական գաղափարները հասկանալիս:",
+      "ipip_X157": "Համարում եմ, որ մենք պետք է ավելի խիստ վերաբերմունք ցուցաբերենք հանցագործությունների նկատմամբ:",
+      "ipip_text_break_rules": "Խախտում եմ կանոնները:",
+      "ipip_H1186": "Վատնում եմ ժամանակս:",
+      "ipip_H822": "Անկարգ վիճակում եմ թողնում սենյակս:",
+      "ipip_H1157": "Անհանգստանում եմ տարբեր բաների պատճառով։",
+      "ipip_E46": "Առանց երկար մտածելու` խառնվում եմ ինչ-որ բանի մեջ:",
+      "ipip_X218": "Հակված եմ քվեարկել լիբերալ քաղաքական թեքնածուների օգտին:",
+      "ipip_H1063": "Չեմ սիրում փոփոխություններ:",
+      "ipip_H959": "Հուզականորեն ծանրաբեռվում եմ իրադարձություններից։",
+      "ipip_H738": "Բարձր կարծիք ունեմ սեփական անձիս մասին:",
+      "ipip_H755": "Կորցնում եմ ինքնատիրապետումս:",
+      "ipip_H871": "Ինձ պահում եմ խենթ ու խելահեղ կերպով։",
+      "ipip_X79": "Ճնշման տակ պահմանում եմ հանգստություն։",
+      "ipip_X238": "Վայելում եմ երևակայության խելահեղ թռիչքները:",
+      "ipip_E156": "Չեմ հասկանում մարդկանց, ովքեր հուզվում են:",
+      "ipip_text_feel_sympathy_for_those_who_are_worse_of": "Կարեկցում եմ մարդկանց, ովքեր ապրում են ավելի վատ, քան ես:",
+      "ipip_H746": "Գլուխ եմ գովում իմ արժանիքների մասին։",
+      "ipip_H621": "Դժվարությամբ եմ սկսում առաջադրանքի կատարումը:",
+      "ipip_H761": "Հեշտությամբ եմ նյարդայնանում:",
+      "ipip_H42": "Նայում եմ կյանքի լուսավոր կողմին:",
+      "ipip_H149": "Պահում եմ խոստումներս:",
+      "ipip_H32": "Զվարճություն եմ ճառագայթում:",
+      "ipip_X115": "Կատարում եմ նվազագույնը՝ միայն թե աշխատանքն ավարտին հասցնելու համար:",
+      "ipip_H54": "Միշտ ինչ-որ բան ունեմ անելու։",
+      "ipip_text_love_life": "Սիրում եմ կյանքը:",
+      "ipip_H699": "Վրեժ եմ լուծում ուրիշներից:",
+      "ipip_X184": "Համարում եմ, որ գոյություն չունի բացարձակ ճիշտ և բացարձակ սխալ:",
+      "ipip_H416": "Օգտագործում եմ մարդկանց իմ անձնական շահերի համար:",
+      "ipip_H1094": "Ուրախ ժամանակ շատ եմ անցկացնում:",
+      "ipip_X167": "Քիչ ժամանակ և ջանք եմ ներդնում իմ աշխատանքի մեջ:",
+      "ipip_H29": "Հեշտությամբ եմ ընկերներ ձեռք բերում:",
+      "ipip_H853": "Կայացնում եմ հապճեպ որոշումներ:",
+      "ipip_H524": "Փորձում եմ առաջնորդել մարդկանց:",
+      "ipip_X71": "Սիրում եմ երազել:",
+      "ipip_H736": "Համարում եմ, որ ես մյուսներից ավելի լավն եմ:",
+      "ipip_X209": "Բարդ սոցիալական իրավիճակները ինձ չեն անհանգստացնում։",
+      "ipip_H999": "Ակնկալում եմ վատագույնը:",
+      "ipip_H58": "Ես միշտ զբաղված եմ:",
+      "ipip_H656": "Հարմարավետ եմ ինձ զգում միայն ընկերներիս հետ։",
+      "ipip_H2043": "Լավ կարծիք ունեմ իմ մասին:",
+      "ipip_E113": "Սիրում եմ թեթև տանել:",
+      "ipip_H494": "Խոչընդոտում եմ մարդկանց ծրագրերին:"
+    },
+    "it": {
+      "ipip_likert_2": "Moderatamente inaccurato",
+      "ipip_debrief": "Grazie per aver completato questo questionario.",
+      "ipip_likert_5": "Molto accurato",
+      "ipip_likert_3": "Né accurato né inaccurato",
+      "ipip_likert_1": "Molto inaccurato",
+      "ipip_question_head": "<h3>Quanto accuratamente può descriversi?</h3><p>Si descriva com'è generalmente ora, non come vorrebbe essere in futuro. Si descriva onestamente, in relazione ad altre persone dello stesso sesso e all'incirca della stessa età. Per potersi descrivere in modo onesto, le risposte saranno mantenute in assoluta riservatezza. Indichi l'accuratezza di ciascuna affermazione nel descriverla, utilizzando la seguente scala:</p>",
+      "ipip_likert_4": "Moderatamente accurato",
+      "ipip_X274": "Resisto facilmente alle tentazioni",
+      "ipip_text_take_control_of_things": "Prendo il controllo delle cose",
+      "ipip_H918": "Non dedico tempo agli altri",
+      "ipip_X133": "A volte mi abbuffo",
+      "ipip_H640": "Sono spesso giù di corda",
+      "ipip_H312": "Sono legato alle tradizioni",
+      "ipip_H862": "Mi butto",
+      "ipip_X14": "Ho una fervida immaginazione",
+      "ipip_X45": "Non mi piace la poesia",
+      "ipip_H704": "Tengo gli altri a distanza",
+      "ipip_X211": "Mi piace leggere cose difficili",
+      "ipip_H648": "Evito il contatto con gli altri",
+      "ipip_H145": "Dico la verità",
+      "ipip_E163": "Mi piace perdermi nei miei pensieri",
+      "ipip_H427": "Approfitto degli altri",
+      "ipip_H244": "Mi piace mettere in ordine",
+      "ipip_X126": "Tendo a votare per la destra",
+      "ipip_H976": "Aspetto che siano gli altri a guidare",
+      "ipip_H549": "Creo che gli altri abbiano buone intenzioni",
+      "ipip_H954": "Sento che non sono capace di affrontare le cose",
+      "ipip_H453": "Amo un buon litigio",
+      "ipip_H592": "Mi risulta difficile avvicinare gli altri",
+      "ipip_H1195": "Non mi fido degli altri",
+      "ipip_H809": "Urlo contro le persone",
+      "ipip_H1100": "Mi preoccupo per gli altri",
+      "ipip_H1206": "Lavoro sodo",
+      "ipip_X129": "Mi sento a mio agio con me stesso",
+      "ipip_X259": "Provo comprensione per i senzatetto",
+      "ipip_H1354": "Gestisco le cose facilmente",
+      "ipip_X248": "Evito discussioni filosofiche",
+      "ipip_X227": "Non sono interessato ai problemi degli altri",
+      "ipip_H650": "Evito la folla",
+      "ipip_H948": "Vado facilmente nel panico",
+      "ipip_text_trust_what_people_say": "Mi fido di ciò che le persone dicono",
+      "ipip_H1103": "Offendo le persone",
+      "ipip_X30": "Preferisco le cose che conosco bene",
+      "ipip_X198": "Imbroglio per andare avanti",
+      "ipip_H846": "Agisco senza pensarci",
+      "ipip_X82": "A volte mi dimentico di rimettere le cose al loro posto",
+      "ipip_H2014": "Faccio più di quanto ci si aspetta da me",
+      "ipip_X10": "Raramente mi accorgo delle mie emozioni",
+      "ipip_H587": "Preferisco stare solo",
+      "ipip_E136": "Sento le emozioni degli altri",
+      "ipip_X204": "Preferisco la varietà alla routine",
+      "ipip_X83": "Alle feste parlo con molte persone diverse",
+      "ipip_H1285": "Porto a termine i miei compiti con successo",
+      "ipip_H1108": "Amo aiutare gli altri",
+      "ipip_X123": "Credo nell'importanza dell'arte",
+      "ipip_E35": "Mi piace essere spericolato",
+      "ipip_X15": "Non mi piaccio",
+      "ipip_X235": "Non mi piacciono i musei",
+      "ipip_H113": "Mi fido degli altri",
+      "ipip_X112": "Sono a mio agio con le altre persone",
+      "ipip_H968": "Ho paura di molte cose",
+      "ipip_X92": "Vivo le mie emozioni intensamente",
+      "ipip_X87": "Sono sempre pronto",
+      "ipip_H446": "Cerco l'avventura",
+      "ipip_H655": "Ho paura di attirare l'attenzione",
+      "ipip_X239": "Non mi piacciono le discussioni teoriche",
+      "ipip_E105": "Vedo la bellezza dove gli altri potrebbero non vederla",
+      "ipip_H258": "Porto a termine i miei piani",
+      "ipip_X251": "So controllare i miei impulsi",
+      "ipip_text_leave_my_belongings_around": "Lascio in giro le mie cose",
+      "ipip_H1333": "So come fare le cose",
+      "ipip_H1018": "Non mantengo le promesse",
+      "ipip_E166": "Cerco di non pensare a chi ha più bisogno",
+      "ipip_text_excel_in_what_i_do": "Sono bravo in ciò che faccio",
+      "ipip_X181": "Esagero molto raramente",
+      "ipip_H79": "Nel tempo libero faccio un sacco di cose",
+      "ipip_H334": "Prendo il comando",
+      "ipip_X23": "Non mi infastidisco facilmente",
+      "ipip_H438": "Amo le sensazioni forti",
+      "ipip_X203": "Le emozioni degli altri mi lasciano indifferente",
+      "ipip_X107": "Mi stresso facilmente",
+      "ipip_X74": "Mi sento spesso giù di morale",
+      "ipip_H754": "Mi arrabbio facilmente",
+      "ipip_H78": "Amo le grandi feste",
+      "ipip_X176": "Faccio fatica a capire concetti astratti",
+      "ipip_X157": "Credo che dovremmo andarci giù pesante con il crimine",
+      "ipip_text_break_rules": "Violo le regole",
+      "ipip_H1186": "Spreco il mio tempo",
+      "ipip_H822": "Lascio la mia camera in disordine",
+      "ipip_H1157": "Mi preoccupo spesso",
+      "ipip_E46": "Mi butto senza pensarci",
+      "ipip_X218": "Tendo a votare per la sinistra",
+      "ipip_H1063": "Non mi piacciono i cambiamenti",
+      "ipip_H959": "A volte sono sopraffatto dagli eventi",
+      "ipip_H738": "Ho un'alta opinione di me stesso",
+      "ipip_H755": "Perdo la pazienza",
+      "ipip_H871": "Agisco in modo impulsivo e stravagante",
+      "ipip_X79": "Resto calmo sotto pressione",
+      "ipip_X238": "Mi piace viaggiare con la mente",
+      "ipip_E156": "Non capisco le persone che si emozionano",
+      "ipip_text_feel_sympathy_for_those_who_are_worse_of": "Sono vicino a quelli più poveri di me",
+      "ipip_H746": "Mi vanto delle mie virtù",
+      "ipip_H621": "Faccio fatica a iniziare le mie attività",
+      "ipip_H761": "Mi irrito facilmente",
+      "ipip_H42": "Vedo il lato positivo della vita",
+      "ipip_H149": "Mantengo le promesse",
+      "ipip_H32": "Sprizzo felicità",
+      "ipip_X115": "Faccio quello che basta per tirare avanti",
+      "ipip_H54": "Sono sempre in movimento",
+      "ipip_text_love_life": "Amo la vita",
+      "ipip_H699": "Mi vendico",
+      "ipip_X184": "Credo che giusto e sbagliato siano relativi",
+      "ipip_H416": "Uso gli altri per i miei fini",
+      "ipip_H1094": "Mi diverto",
+      "ipip_X167": "Metto poco impegno nel mio lavoro",
+      "ipip_H29": "Faccio amicizia facilmente",
+      "ipip_H853": "Prendo decisioni veloci",
+      "ipip_H524": "Provo a guidare gli altri",
+      "ipip_X71": "Amo sognare a occhi aperti",
+      "ipip_H736": "Credo di essere migliore degli altri",
+      "ipip_X209": "Le situazioni sociali difficili non mi disturbano",
+      "ipip_H999": "Temo il peggio",
+      "ipip_H58": "Sono sempre occupato",
+      "ipip_H656": "Mi trovo a mio agio solo con gli amici",
+      "ipip_H2043": "Ho un'alta considerazione di me stesso",
+      "ipip_E113": "Me la prendo comoda",
+      "ipip_H494": "Ostacolo i progetti degli altri"
+    },
+    "sr": {
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_X274": "Lako odolevam iskušenjima.",
+      "ipip_text_take_control_of_things": "Preuzimam kontrolu nad stvarima.",
+      "ipip_H918": "Ne trošim vreme na druge.",
+      "ipip_X133": "Znam da budem neumeren u raznim stvarima.",
+      "ipip_H640": "Često sam snužden.",
+      "ipip_H312": "Konzervativna sam osoba.",
+      "ipip_H862": "Nepromišljeno se upuštam u razne stvari.",
+      "ipip_X14": "Imam bujnu maštu.",
+      "ipip_X45": "Ne volim poeziju.",
+      "ipip_H704": "Držim druge ljude na distanci.",
+      "ipip_X211": "Volim da čitam zahtevna štiva.",
+      "ipip_H648": "Izbegavam kontakte sa drugima.",
+      "ipip_H145": "Govorim istinu.",
+      "ipip_E163": "Volim da odlutam u mislima.",
+      "ipip_H427": "Često iskorišćavam druge ljude.",
+      "ipip_H244": "Volim da spremam.",
+      "ipip_X126": "Sklon sam da glasam za konzervativne političare.",
+      "ipip_H976": "Prepuštam vođstvo drugima.",
+      "ipip_H549": "Verujem da drugi ljudi imaju dobre namere.",
+      "ipip_H954": "Imam osećaj da nisam u stanju da se nosim sa stvarima.",
+      "ipip_H453": "Volim dobru svađu.",
+      "ipip_H592": "Tesko mi je da pridjem drugim ljudima",
+      "ipip_H1195": "Ne verujem ljudima.",
+      "ipip_H809": "Umem da se izvičem na druge.",
+      "ipip_H1100": "Brinem za druge ljude.",
+      "ipip_H1206": "Vredno radim.",
+      "ipip_X129": "Osećam se prijatno kad provodim vreme sam.",
+      "ipip_X259": "Saosećam sa beskućnicima.",
+      "ipip_H1354": "Glatko obavljam svoje zadatke.",
+      "ipip_X248": "Izbegavam filozofske diskusije.",
+      "ipip_X227": "Ne zanimaju me tuđi problemi.",
+      "ipip_H650": "Izbegavam gužvu.",
+      "ipip_H948": "Lako se uspaničim",
+      "ipip_text_trust_what_people_say": "Verujem u ono što drugi kažu.",
+      "ipip_H1103": "Često vređam druge ljude.",
+      "ipip_X30": "Radije se držim stvari koje znam.",
+      "ipip_X198": "Varam da bih napredovao.",
+      "ipip_H846": "Često nešto uradim bez razmišljanja.",
+      "ipip_X82": "Često zaboravim da vratim stvari na svoje mesto.",
+      "ipip_H2014": "Radim više nego što se od mene očekuje.",
+      "ipip_X10": "Retko obraćam pažnju na svoje emocionalne reakcije.",
+      "ipip_H587": "Najviše volim da budem sam.",
+      "ipip_E136": "Osećam emocije drugih ljudi.",
+      "ipip_X204": "Više volim raznolikost od rutine.",
+      "ipip_X83": "Na zabavama pričam sa puno različitih ljudi.",
+      "ipip_H1285": "Obavljam zadatke uspešno.",
+      "ipip_H1108": "Volim da pomažem drugima.",
+      "ipip_X123": "Verujem da je umetnost važna.",
+      "ipip_E35": "Uživam da se ponašam bahato.",
+      "ipip_X15": "Ne sviđam se sam sebi.",
+      "ipip_X235": "Ne prijaju mi odlasci u muzeje.",
+      "ipip_H113": "Verujem drugim ljudima.",
+      "ipip_X112": "Osećam se prijatno kada sam u društvu drugih ljudi.",
+      "ipip_H968": "Plašim se mnogih stvari.",
+      "ipip_X92": "Intenzivno doživljavam svoje emocije.",
+      "ipip_X87": "Uvek sam spreman na sve.",
+      "ipip_H446": "Tragam za pustolovinama.",
+      "ipip_H655": "Plašim se da skrećem pažnju na sebe.",
+      "ipip_X239": "Ne zanimaju me teorijske rasprave.",
+      "ipip_E105": "Vidim lepotu u stvarima koje drugi možda ne primećuju.",
+      "ipip_H258": "Ostvarujem svoje planove.",
+      "ipip_X251": "Mogu da kontrolišem svoje želje.",
+      "ipip_text_leave_my_belongings_around": "Često ostavljam svoje stvari svuda unaokolo.",
+      "ipip_H1333": "Znam kako da obavim posao.",
+      "ipip_H1018": "Često prekršim obećanja..",
+      "ipip_E166": "Trudim se da ne razmišljam o siromašnima.",
+      "ipip_text_excel_in_what_i_do": "Ističem se u onome što radim.",
+      "ipip_X181": "Retko preterujem sa zadovoljstvima.",
+      "ipip_H79": "U slobodno vreme radim mnoge stvari.",
+      "ipip_H334": "Često preuzimam stvari na sebe.",
+      "ipip_X23": "Nije me lako iznervirati",
+      "ipip_H438": "Volim uzbuđenje.",
+      "ipip_X203": "Ravnodušan sam prema tuđim emocijama.",
+      "ipip_X107": "Lako se podlegnem stresu.",
+      "ipip_X74": "Često se osećam potišteno.",
+      "ipip_H754": "Lako pobesnim.",
+      "ipip_H78": "Volim velike žurke.",
+      "ipip_X176": "Imam poteškoća u razumevanju apstraktnih ideja.",
+      "ipip_X157": "Verujem da treba da budemo nepopustljivi prema kriminalu.",
+      "ipip_text_break_rules": "Često prekršim pravila..",
+      "ipip_H1186": "Često traćim svoje vreme.",
+      "ipip_H822": "Ostavljam nered u svojoj sobi.",
+      "ipip_H1157": "Često sam zabrinut.",
+      "ipip_E46": "U mnoge stvari se upuštam bez razmišljanja.",
+      "ipip_X218": "Sklon sam da glasam za liberalne političare.",
+      "ipip_H1063": "Ne volim promene.",
+      "ipip_H959": "Neki događaji me preopterete.",
+      "ipip_H738": "Imam visoko mišljenje o sebi.",
+      "ipip_H755": "Često gubim živce.",
+      "ipip_H871": "Često se ponašam divlje i razuzdano.",
+      "ipip_X79": "Ostajem smiren/a kada sam pod pritiskom.",
+      "ipip_X238": "Uživam u neobuzdanim maštarijama.",
+      "ipip_E156": "Ne razumem ljude koji su osetljivi.",
+      "ipip_text_feel_sympathy_for_those_who_are_worse_of": "Saosećam sa ljudima kojima je gore nego meni.",
+      "ipip_H746": "Hvalim se svojim vrlinama.",
+      "ipip_H621": "Imam poteskoća da započnem neki posao.",
+      "ipip_H761": "Lako se iznerviram.",
+      "ipip_H42": "Gledam na život sa vedrije strane.",
+      "ipip_H149": "Održavam svoja obećanja.",
+      "ipip_H32": "Zračim radošću.",
+      "ipip_X115": "Radim tek toliko koliko je potrebno.",
+      "ipip_H54": "Uvek sam u pokretu.",
+      "ipip_text_love_life": "Volim život.",
+      "ipip_H699": "Vraćam drugima \"milo za drago\".",
+      "ipip_X184": "Verujem da ne postoji apsolutno dobro i zlo.",
+      "ipip_H416": "Koristim druge da bih ostvario svoje ciljeve.",
+      "ipip_H1094": "Umem dobro da se zabavljam.",
+      "ipip_X167": "Ulažem malo vremena i truda u svoj posao.",
+      "ipip_H29": "Lako sklapam prijateljstva.",
+      "ipip_H853": "Često donosim ishitrene odluke.",
+      "ipip_H524": "Pokušavam da predvodim druge.",
+      "ipip_X71": "Volim da sanjarim.",
+      "ipip_H736": "Mislim da sam bolji od drugih.",
+      "ipip_X209": "Ne uznemiravaju me teška društvena pitanja.",
+      "ipip_H999": "Plašim se najgoreg.",
+      "ipip_H58": "Uvek sam zauzet.",
+      "ipip_H656": "Osećam se prijatno samo u društvu prijatelja.",
+      "ipip_H2043": "Imam visoko mišljenje o sebi.",
+      "ipip_E113": "Volim da budem opušten.",
+      "ipip_H494": "Kvarim tuđe planove."
+    },
+    "es_mx": {
+      "ipip_likert_1": "Muy impreciso",
+      "ipip_debrief": "Gracias por completar este cuestionario.",
+      "ipip_likert_5": "Muy preciso",
+      "ipip_likert_3": "Ni preciso ni impreciso",
+      "ipip_question_head": "<h3>¿Con qué precisión puede describirse a sí mismo/a?</h3><p>Descríbase tal como es generalmente ahora, no como le gustaría ser en el futuro. Descríbase honestamente, en relación con otras personas del mismo sexo y aproximadamente de su misma edad que usted conoce. Para que pueda describirse honestamente, sus respuestas se mantendrán en absoluta confidencialidad. Indique la precisión de cada afirmación para describirle, usando la siguiente escala:</p>",
+      "ipip_likert_2": "Moderadamente impreciso",
+      "ipip_likert_4": "Moderadamente preciso",
+      "ipip_X274": "Resisto sin dificultad a las tentaciones.",
+      "ipip_X112": "Me siento cómodo entre personas.",
+      "ipip_H959": "Me abrumo por acontecimientos.",
+      "ipip_X203": "Soy indiferente a los sentimientos de los demás.",
+      "ipip_H862": "Me precipito a las cosas.",
+      "ipip_H954": "Creo que soy incapaz de lidiar con cosas.",
+      "ipip_H54": "Siempre estoy activo.",
+      "ipip_H427": "Tomo ventaja de los demás.",
+      "ipip_H1285": "Completo tareas exitosamente.",
+      "ipip_H42": "Veo el lado positivo de la vida.",
+      "ipip_H58": "Siempre estoy ocupado.",
+      "ipip_X204": "Prefiero la variedad en vez de la rutina.",
+      "ipip_H1206": "Trabajo duro.",
+      "ipip_H918": "No tengo tiempo para lo demás.",
+      "ipip_X209": "No me molestan las situaciones sociales difíciles.",
+      "ipip_H2043": "Pienso muy bien de mí mismo.",
+      "ipip_H761": "Me irrito fácilmente.",
+      "ipip_X184": "Creo que no existe el mal o el bien absoluto.",
+      "ipip_X23": "No me molestan fácilmente.",
+      "ipip_H948": "Me asusto fácilmente.",
+      "ipip_H494": "Obstaculizo los planes de otros.",
+      "ipip_H699": "Cuando me la hacen me la pagan.",
+      "ipip_H853": "Tomo decisiones rápidas.",
+      "ipip_H145": "Digo la verdad.",
+      "ipip_X235": "No disfruto ir a museos de arte.",
+      "ipip_text_excel_in_what_i_do": "Sobresalgo en lo que hago.",
+      "ipip_H1354": "Realizo las tareas sin problemas.",
+      "ipip_X218": "Tiendo a votar por políticos liberales.",
+      "ipip_H755": "Pierdo el temperamento.",
+      "ipip_H1108": "Me gusta ayudar a otros.",
+      "ipip_H621": "Dificultad para comenzar tareas.",
+      "ipip_H656": "Solo me siento cómodo con mis amigos.",
+      "ipip_E136": "Siento las emociones de los otros",
+      "ipip_H587": "Prefiero estar solo.",
+      "ipip_H736": "Creo que soy mejor que otros.",
+      "ipip_E113": "Me gusta tomar las cosas con calma.",
+      "ipip_X167": "Invierto poco tiempo y esfuerzo en mi trabajo.",
+      "ipip_text_leave_my_belongings_around": "Dejo mis pertenecías regadas.",
+      "ipip_H1094": "Me divierto mucho.",
+      "ipip_X238": "Disfruto fantasear.",
+      "ipip_X92": "Experimento mis emociones intensamente.",
+      "ipip_X227": "Desinterés en los problemas de los demás.",
+      "ipip_H312": "Soy apegado a las formas convencionales.",
+      "ipip_H754": "Me enojo fácilmente.",
+      "ipip_H968": "Tengo miedo a muchas cosas.",
+      "ipip_H1333": "Se cómo hacer las cosas.",
+      "ipip_H846": "Actúo sin pensar.",
+      "ipip_X157": "Creo que se debe de ser fuertes contra el crimen.",
+      "ipip_H976": "Espero a que otros guíen el camino.",
+      "ipip_H334": "Tomo el mando.",
+      "ipip_H1018": "Rompo mis promesas.",
+      "ipip_H446": "Me gusta buscar aventuras.",
+      "ipip_H1100": "Me preocupo por los demás.",
+      "ipip_X133": "Tiendo a excederme.",
+      "ipip_H822": "Dejo un desorden en mi espacio.",
+      "ipip_text_feel_sympathy_for_those_who_are_worse_of": "Siento empatía por aquellos que están más necesitados que yo.",
+      "ipip_H244": "Me gusta ordenar y organizar las cosas.",
+      "ipip_X71": "Me gusta soñar despierto.",
+      "ipip_X82": "A menudo olvido poner las cosas en su lugar.",
+      "ipip_X181": "Rara vez cedo a los excesos.",
+      "ipip_E105": "Veo la belleza en las cosas que otros no notan.",
+      "ipip_X83": "En las reuniones hablo con muchas personas distintas.",
+      "ipip_H258": "Llevo a cabo mis planes.",
+      "ipip_E35": "Disfruto ser imprudente.",
+      "ipip_X115": "Hago el trabajo mínimo para salir adelante.",
+      "ipip_H453": "Me gusta una buena confrontación.",
+      "ipip_H1195": "Desconfío de la gente.",
+      "ipip_H999": "Temo lo peor.",
+      "ipip_X87": "Siempre estoy preparado.",
+      "ipip_H416": "Uso a otros para mi propio interés.",
+      "ipip_H1103": "Insulto a las personas.",
+      "ipip_X79": "Mantengo la calma bajo presión.",
+      "ipip_E156": "No comprendo a la gente que se pone muy emocional.",
+      "ipip_E163": "Me gusta perderme en mis pensamientos.",
+      "ipip_H2014": "Hago más de lo que se espera de mi.",
+      "ipip_X198": "Hago trampa para avanzar.",
+      "ipip_X129": "Me siento cómodo conmigo mismo.",
+      "ipip_H592": "Me resulta difícil acercarme a otros.",
+      "ipip_H738": "Tengo una opinión alta de mí mismo.",
+      "ipip_H809": "Grito a la gente.",
+      "ipip_H29": "Hago amigos fácilmente.",
+      "ipip_X74": "A menudo me siento desanimado.",
+      "ipip_X211": "Me encanta leer temas desafiantes.",
+      "ipip_H871": "Me comporto de manera desenfrenada y descontrolada.",
+      "ipip_X14": "Tengo una imaginación vivida.",
+      "ipip_H650": "Evito las multitudes.",
+      "ipip_H79": "Hago muchas cosas en mi tiempo libre.",
+      "ipip_X259": "Tengo empatía por las personas sin hogar.",
+      "ipip_X107": "Me estreso fácilmente.",
+      "ipip_X176": "Se me dificulta entender las ideas abstractas.",
+      "ipip_H524": "Trato de guiar a otros.",
+      "ipip_text_trust_what_people_say": "Confío en lo que la gente dice.",
+      "ipip_H746": "Alardeo de mis virtudes.",
+      "ipip_X248": "Evito discusiones filosóficas.",
+      "ipip_H549": "Creo que los demás tienen buenas intenciones.",
+      "ipip_text_love_life": "Amo la vida.",
+      "ipip_text_take_control_of_things": "Tomo el control de las cosas.",
+      "ipip_H1157": "Me preocupo por las cosas.",
+      "ipip_H1063": "No me agradan los cambios.",
+      "ipip_H78": "Me encantan las fiestas grandes.",
+      "ipip_H438": "Me encanta la emoción.",
+      "ipip_X251": "Soy capaz de controlar mis antojos.",
+      "ipip_H113": "Confío en los demás.",
+      "ipip_X239": "No tengo interés en las discusiones teóricas o hipotéticas.",
+      "ipip_X30": "Prefiero apegarme a las cosas que sé.",
+      "ipip_text_break_rules": "Rompo las reglas.",
+      "ipip_H149": "Mantengo mis promesas.",
+      "ipip_X45": "No me gusta la poesía.",
+      "ipip_H640": "A menudo me siento abrumado.",
+      "ipip_E46": "Me aviento a hacer cosas sin pensar.",
+      "ipip_X10": "Raramente me doy cuenta de mis relaciones emocionales.",
+      "ipip_X123": "Creo en la importancia del arte.",
+      "ipip_H648": "Evito tener contacto con otros.",
+      "ipip_X15": "No me agrado.",
+      "ipip_H1186": "Pierdo mi tiempo.",
+      "ipip_H655": "Tengo miedo de llamar la atención.",
+      "ipip_E166": "Intento no pensar en las personas necesitadas.",
+      "ipip_H32": "Irradio alegría.",
+      "ipip_X126": "Tiendo a votar por candidatos políticos conservadores.",
+      "ipip_H704": "Mantengo a los demás a distancia."
+    },
+    "da": {
+      "ipip_likert_1": "Meget Unøjagtigt",
+      "ipip_likert_5": "Meget Nøjagtigt",
+      "ipip_likert_2": "Lidt Unøjagtigt",
+      "ipip_debrief": "Tak fordi du udfyldte dette spørgeskema.",
+      "ipip_likert_3": "Hverken Nøjagtigt Eller Unøjagtigt",
+      "ipip_likert_4": "Lidt Nøjagtigt",
+      "ipip_question_head": "<h3>Beskriv dig selv</h3><p>Beskriv dig selv, som du generelt er nu; ikke som du ønsker at være fremover. Beskriv dig selv, sådan som du ærligt ser dig selv, i forhold til andre du kender af samme køn og på nogenlunde samme alder. For at du kan beskrive dig selv på en ærlig måde, vil dine svar være fuldstændigt fortrolige. Angiv nøjagtigheden af hvert udsagn, som det gælder for dig, ved hjælp af følgende skala:</p>",
+      "ipip_H416": "Bruger andre til at opnå mine egne mål.",
+      "ipip_H954": "Føler, at jeg har svært ved at håndtere mange ting.",
+      "ipip_X227": "Er ikke interesseret i andres problemer.",
+      "ipip_X129": "Har det godt med mig selv.",
+      "ipip_X167": "Bruger mindst muligt tid og energi på opgaver.",
+      "ipip_X107": "Bliver let stresset.",
+      "ipip_X274": "Har let ved at modstå fristelser.",
+      "ipip_H1354": "Håndterer opgaver med lethed.",
+      "ipip_X87": "Er altid velforberedt.",
+      "ipip_X74": "Er ofte nedtrykt.",
+      "ipip_H32": "Udstråler glæde.",
+      "ipip_H809": "Råber ad folk.",
+      "ipip_H42": "Fokuserer på de positive ting i tilværelsen.",
+      "ipip_H648": "Undgår kontakt med andre.",
+      "ipip_X238": "Nyder at fortabe mig i vilde fantasier.",
+      "ipip_X211": "Elsker at læse svære tekster.",
+      "ipip_H54": "Er altid i gang m ed noget.",
+      "ipip_E156": "Forstår ikke dem, der bliver følelsesladede.",
+      "ipip_H549": "Tror generelt, andre vil mig det bedste.",
+      "ipip_H1100": "Bekymrer mig om andre.",
+      "ipip_H446": "Søger eventyr.",
+      "ipip_X14": "Har en livlig fantasi.",
+      "ipip_H438": "Elsker spænding.",
+      "ipip_text_trust_what_people_say": "Stoler på, hvad andre siger.",
+      "ipip_H524": "Forsøger at lede andre.",
+      "ipip_E113": "Kan godt lide at slappe af.",
+      "ipip_X218": "Ser mig selv som mest venstreorienteret.",
+      "ipip_E163": "Kan godt lide at fortabe mig i mine tanker.",
+      "ipip_X203": "Er ligeglad med andres følelser.",
+      "ipip_H494": "Stiller hindringer i vejen for andre.",
+      "ipip_H853": "Tager forhastede beslutninger.",
+      "ipip_H755": "Mister let besindelsen.",
+      "ipip_H1018": "Bryder mine løfter.",
+      "ipip_X83": "Taler med mange forskellige mennesker til fester.",
+      "ipip_X15": "Bryder mig ikke om mig selv.",
+      "ipip_H79": "Laver en masse i min fritid.",
+      "ipip_X112": "Har det godt sammen med andre.",
+      "ipip_E35": "Nyder at tage vilde chancer.",
+      "ipip_X198": "Snyder for at få et forspring.",
+      "ipip_text_break_rules": "Bryder reglerne.",
+      "ipip_H640": "Er ofte nede i kulkælderen",
+      "ipip_H959": "Bliver let overvældet af begivenheder.",
+      "ipip_X115": "Arbejder kun så meget, at jeg lige kan klare mig.",
+      "ipip_H312": "Holder mig til traditionerne.",
+      "ipip_X79": "Bevarer roen i pressede situationer.",
+      "ipip_H453": "Elsker en god fight.",
+      "ipip_H656": "Har det kun rart med mine venner.",
+      "ipip_H1206": "Arbejder hårdt.",
+      "ipip_X184": "Mener ikke, der er noget absolut rigtigt eller forkert.",
+      "ipip_text_love_life": "Elsker livet.",
+      "ipip_X10": "Lægger sjældent mærke til mine følelsesmæssige reaktioner.",
+      "ipip_H2014": "Gør mere, end hvad der forventes af mig.",
+      "ipip_X126": "Ser mig selv som mest højreorienteret.",
+      "ipip_H862": "Kaster mig ud i ting.",
+      "ipip_H1157": "Bekymrer mig om mange ting.",
+      "ipip_H948": "Går let i panik.",
+      "ipip_H871": "Opfører mig vildt.",
+      "ipip_H1103": "Fornærmer folk.",
+      "ipip_text_feel_sympathy_for_those_who_are_worse_of": "Føler sympati for dem, der har det værre end mig selv.",
+      "ipip_text_leave_my_belongings_around": "Efterlader mine ting rundt omkring.",
+      "ipip_H78": "Elsker store fester.",
+      "ipip_H334": "Tager føringen.",
+      "ipip_H822": "Roder derhjemme.",
+      "ipip_H999": "Frygter det værste.",
+      "ipip_X251": "Kan styre mine behov",
+      "ipip_X259": "Har sympati for de hjemløse.",
+      "ipip_H592": "Har svært ved at indlede en samtale.",
+      "ipip_H1094": "Har det ofte sjovt.",
+      "ipip_X82": "Glemmer tit at sætte tingene på plads igen.",
+      "ipip_H650": "Undgår folkemængder.",
+      "ipip_H699": "Tager hævn over andre.",
+      "ipip_X235": "Bryder mig ikke om at gå på kunstmuseer.",
+      "ipip_E105": "Ser det smukke i ting, andre måske ikke lægger mærke til.",
+      "ipip_X181": "Spiser og drikker sjældent for meget.",
+      "ipip_text_excel_in_what_i_do": "Udmærker mig i de ting, jeg laver.",
+      "ipip_X157": "Synes, vi skal slå hårdt ned på kriminalitet.",
+      "ipip_X123": "Tror på betydningen af kunst.",
+      "ipip_H621": "Har svært ved at gå i gang med opgaver.",
+      "ipip_H587": "Foretrækker at være alene.",
+      "ipip_X204": "Foretrækker afveksling frem for rutine.",
+      "ipip_X23": "Bliver sjældent irriteret.",
+      "ipip_H58": "Har altid travlt.",
+      "ipip_H761": "Bliver let irriteret.",
+      "ipip_H244": "Kan godt lide at rydde op.",
+      "ipip_H704": "Holder andre på afstand.",
+      "ipip_H976": "Venter på, at andre viser vejen frem.",
+      "ipip_X248": "Undgår filosofiske diskussioner.",
+      "ipip_text_take_control_of_things": "Tager kontrollen.",
+      "ipip_H846": "Handler uden at tænke.",
+      "ipip_H746": "Praler med mine gode sider.",
+      "ipip_H736": "Mener, jeg er bedre end andre.",
+      "ipip_E136": "Fornemmer andres følelser.",
+      "ipip_X30": "Foretrækker at holde mig til det, jeg kender.",
+      "ipip_H2043": "Har høje tanker om mig selv.",
+      "ipip_H427": "Udnytter andre.",
+      "ipip_H1333": "Ved, hvordan man får tingene gjort.",
+      "ipip_H145": "Fortæller sandheden.",
+      "ipip_X92": "Oplever mine følelser intenst.",
+      "ipip_H149": "Holder mine løfter.",
+      "ipip_H754": "Bliver let vred.",
+      "ipip_H113": "Har tillid til andre.",
+      "ipip_H1285": "Fuldfører opgaver med success.",
+      "ipip_X45": "Bryder mig ikke om poesi.",
+      "ipip_H258": "Fører mine planer ud i livet.",
+      "ipip_H738": "Er meget glad for mig selv.",
+      "ipip_H1186": "Spilder min tid.",
+      "ipip_H1195": "Nærer mistillid til andre.",
+      "ipip_E166": "Forsøger at lade være med at tænke på de fattige.",
+      "ipip_E46": "Springer ud i ting uden at tænke mig om.",
+      "ipip_H918": "Bruger ikke tid på andres problemer.",
+      "ipip_X71": "Elsker at dagdrømme.",
+      "ipip_X209": "Har ikke noget imod komplekse sociale situationer.",
+      "ipip_X133": "Går amok med mad og drikke.",
+      "ipip_H655": "Er bange for at gøre opmærksom på mig selv.",
+      "ipip_X176": "Har svært ved at forstå abstrakte ideer.",
+      "ipip_H1108": "Elsker at hjælpe andre.",
+      "ipip_H1063": "Bryder mig ikke om forandringer.",
+      "ipip_X239": "Er ikke interesseret i teoretiske diskussioner.",
+      "ipip_H968": "Er bange for mange ting.",
+      "ipip_H29": "Har let ved at få venner."
+    }
+  }
+}

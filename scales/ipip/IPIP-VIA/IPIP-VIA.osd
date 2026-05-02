@@ -1,0 +1,2670 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strengths (VIA)",
+      "code": "IPIP-VIA",
+      "abbreviation": "IPIP-VIA",
+      "description": "IPIP representation of the Values in Action character strengths inventory measuring 24 character strengths.",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "equity_fairness_sum",
+        "name": "Equity/Fairness (sum)"
+      },
+      {
+        "id": "equity_fairness_mean",
+        "name": "Equity/Fairness (mean)"
+      },
+      {
+        "id": "forgiveness_mercy_sum",
+        "name": "Forgiveness/Mercy (sum)"
+      },
+      {
+        "id": "forgiveness_mercy_mean",
+        "name": "Forgiveness/Mercy (mean)"
+      },
+      {
+        "id": "bravery_courage_valor_sum",
+        "name": "Bravery/Courage/Valor (sum)"
+      },
+      {
+        "id": "bravery_courage_valor_mean",
+        "name": "Bravery/Courage/Valor (mean)"
+      },
+      {
+        "id": "judgment_openmindedness_sum",
+        "name": "Judgment/Open-mindedness (sum)"
+      },
+      {
+        "id": "judgment_openmindedness_mean",
+        "name": "Judgment/Open-mindedness (mean)"
+      },
+      {
+        "id": "industriousness_perseverance_persistence_sum",
+        "name": "Industriousness/Perseverance/Persistence (sum)"
+      },
+      {
+        "id": "industriousness_perseverance_persistence_mean",
+        "name": "Industriousness/Perseverance/Persistence (mean)"
+      },
+      {
+        "id": "selfcontrol_selfregulation_sum",
+        "name": "Self-control/Self-regulation (sum)"
+      },
+      {
+        "id": "selfcontrol_selfregulation_mean",
+        "name": "Self-control/Self-regulation (mean)"
+      },
+      {
+        "id": "spirituality_religiousness_sum",
+        "name": "Spirituality/Religiousness (sum)"
+      },
+      {
+        "id": "spirituality_religiousness_mean",
+        "name": "Spirituality/Religiousness (mean)"
+      },
+      {
+        "id": "love_of_learning_sum",
+        "name": "Love of Learning (sum)"
+      },
+      {
+        "id": "love_of_learning_mean",
+        "name": "Love of Learning (mean)"
+      },
+      {
+        "id": "creativity_originality_sum",
+        "name": "Creativity/Originality (sum)"
+      },
+      {
+        "id": "creativity_originality_mean",
+        "name": "Creativity/Originality (mean)"
+      },
+      {
+        "id": "social_personal_emotional_intelligence_sum",
+        "name": "Social/Personal/Emotional Intelligence (sum)"
+      },
+      {
+        "id": "social_personal_emotional_intelligence_mean",
+        "name": "Social/Personal/Emotional Intelligence (mean)"
+      },
+      {
+        "id": "curiosity_sum",
+        "name": "Curiosity (sum)"
+      },
+      {
+        "id": "curiosity_mean",
+        "name": "Curiosity (mean)"
+      },
+      {
+        "id": "gratitude_sum",
+        "name": "Gratitude (sum)"
+      },
+      {
+        "id": "gratitude_mean",
+        "name": "Gratitude (mean)"
+      },
+      {
+        "id": "wisdom_perspective_sum",
+        "name": "Wisdom/Perspective (sum)"
+      },
+      {
+        "id": "wisdom_perspective_mean",
+        "name": "Wisdom/Perspective (mean)"
+      },
+      {
+        "id": "leadership_sum",
+        "name": "Leadership (sum)"
+      },
+      {
+        "id": "leadership_mean",
+        "name": "Leadership (mean)"
+      },
+      {
+        "id": "honesty_integrity_authenticity_sum",
+        "name": "Honesty/Integrity/Authenticity (sum)"
+      },
+      {
+        "id": "honesty_integrity_authenticity_mean",
+        "name": "Honesty/Integrity/Authenticity (mean)"
+      },
+      {
+        "id": "modesty_humility_sum",
+        "name": "Modesty/Humility (sum)"
+      },
+      {
+        "id": "modesty_humility_mean",
+        "name": "Modesty/Humility (mean)"
+      },
+      {
+        "id": "aesthetic_appreciation_artistic_interests_sum",
+        "name": "Aesthetic Appreciation/Artistic Interests (sum)"
+      },
+      {
+        "id": "aesthetic_appreciation_artistic_interests_mean",
+        "name": "Aesthetic Appreciation/Artistic Interests (mean)"
+      },
+      {
+        "id": "kindness_generosity_sum",
+        "name": "Kindness/Generosity (sum)"
+      },
+      {
+        "id": "kindness_generosity_mean",
+        "name": "Kindness/Generosity (mean)"
+      },
+      {
+        "id": "hope_optimism_sum",
+        "name": "Hope/Optimism (sum)"
+      },
+      {
+        "id": "hope_optimism_mean",
+        "name": "Hope/Optimism (mean)"
+      },
+      {
+        "id": "humor_playfulness_sum",
+        "name": "Humor/Playfulness (sum)"
+      },
+      {
+        "id": "humor_playfulness_mean",
+        "name": "Humor/Playfulness (mean)"
+      },
+      {
+        "id": "teamwork_citizenship_sum",
+        "name": "Teamwork/Citizenship (sum)"
+      },
+      {
+        "id": "teamwork_citizenship_mean",
+        "name": "Teamwork/Citizenship (mean)"
+      },
+      {
+        "id": "capacity_for_love_sum",
+        "name": "Capacity for Love (sum)"
+      },
+      {
+        "id": "capacity_for_love_mean",
+        "name": "Capacity for Love (mean)"
+      },
+      {
+        "id": "prudence_sum",
+        "name": "Prudence (sum)"
+      },
+      {
+        "id": "prudence_mean",
+        "name": "Prudence (mean)"
+      },
+      {
+        "id": "vitality_enthusiasm_zest_sum",
+        "name": "Vitality/Enthusiasm/Zest (sum)"
+      },
+      {
+        "id": "vitality_enthusiasm_zest_mean",
+        "name": "Vitality/Enthusiasm/Zest (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_001",
+        "text_key": "ipip_V20",
+        "type": "likert",
+        "dimension": "equity_fairness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_002",
+        "text_key": "ipip_V95",
+        "type": "likert",
+        "dimension": "equity_fairness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_003",
+        "text_key": "ipip_V202",
+        "type": "likert",
+        "dimension": "equity_fairness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_004",
+        "text_key": "ipip_V307",
+        "type": "likert",
+        "dimension": "equity_fairness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_005",
+        "text_key": "ipip_V120",
+        "type": "likert",
+        "dimension": "equity_fairness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_006",
+        "text_key": "ipip_V188",
+        "type": "likert",
+        "dimension": "equity_fairness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_007",
+        "text_key": "ipip_H427",
+        "type": "likert",
+        "dimension": "equity_fairness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_008",
+        "text_key": "ipip_H186",
+        "type": "likert",
+        "dimension": "equity_fairness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_009",
+        "text_key": "ipip_V241",
+        "type": "likert",
+        "dimension": "equity_fairness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_010",
+        "text_key": "ipip_V149",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_011",
+        "text_key": "ipip_V193",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_012",
+        "text_key": "ipip_V297",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_013",
+        "text_key": "ipip_V253",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_014",
+        "text_key": "ipip_V328",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_015",
+        "text_key": "ipip_V72",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_016",
+        "text_key": "ipip_V21",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_017",
+        "text_key": "ipip_V114",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_018",
+        "text_key": "ipip_V269",
+        "type": "likert",
+        "dimension": "forgiveness_mercy",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_019",
+        "text_key": "ipip_V341",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_020",
+        "text_key": "ipip_text_avoid_dealing_with_awkward_situations",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_021",
+        "text_key": "ipip_V29",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_022",
+        "text_key": "ipip_V160",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_023",
+        "text_key": "ipip_V228",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_024",
+        "text_key": "ipip_V53",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_025",
+        "text_key": "ipip_V82",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_026",
+        "text_key": "ipip_V130",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_027",
+        "text_key": "ipip_V11",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_028",
+        "text_key": "ipip_V298",
+        "type": "likert",
+        "dimension": "bravery_courage_valor",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_029",
+        "text_key": "ipip_V223",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_030",
+        "text_key": "ipip_V333",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_031",
+        "text_key": "ipip_V154",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_032",
+        "text_key": "ipip_V118",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_033",
+        "text_key": "ipip_V25",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_034",
+        "text_key": "ipip_V57",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_035",
+        "text_key": "ipip_V292",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_036",
+        "text_key": "ipip_V4",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_037",
+        "text_key": "ipip_V257",
+        "type": "likert",
+        "dimension": "judgment_openmindedness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_038",
+        "text_key": "ipip_text_am_a_goal_oriented_person",
+        "type": "likert",
+        "dimension": "industriousness_perseverance_persistence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_039",
+        "text_key": "ipip_V161",
+        "type": "likert",
+        "dimension": "industriousness_perseverance_persistence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_040",
+        "text_key": "ipip_V313",
+        "type": "likert",
+        "dimension": "industriousness_perseverance_persistence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_041",
+        "text_key": "ipip_V49",
+        "type": "likert",
+        "dimension": "industriousness_perseverance_persistence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_042",
+        "text_key": "ipip_V261",
+        "type": "likert",
+        "dimension": "industriousness_perseverance_persistence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_043",
+        "text_key": "ipip_V12",
+        "type": "likert",
+        "dimension": "industriousness_perseverance_persistence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_044",
+        "text_key": "ipip_V126",
+        "type": "likert",
+        "dimension": "industriousness_perseverance_persistence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_045",
+        "text_key": "ipip_H1144",
+        "type": "likert",
+        "dimension": "industriousness_perseverance_persistence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_046",
+        "text_key": "ipip_V98",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_047",
+        "text_key": "ipip_V64",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_048",
+        "text_key": "ipip_text_can_always_say_enough_is_enough",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_049",
+        "text_key": "ipip_V219",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_050",
+        "text_key": "ipip_V59",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_051",
+        "text_key": "ipip_V275",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_052",
+        "text_key": "ipip_V9",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_053",
+        "text_key": "ipip_V170",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_054",
+        "text_key": "ipip_V329",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_055",
+        "text_key": "ipip_V23",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_056",
+        "text_key": "ipip_V224",
+        "type": "likert",
+        "dimension": "selfcontrol_selfregulation",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_057",
+        "text_key": "ipip_V46",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_058",
+        "text_key": "ipip_V210",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_059",
+        "text_key": "ipip_V39",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_060",
+        "text_key": "ipip_V280",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_061",
+        "text_key": "ipip_V282",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_062",
+        "text_key": "ipip_V66",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_063",
+        "text_key": "ipip_V177",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_064",
+        "text_key": "ipip_V84",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_065",
+        "text_key": "ipip_V319",
+        "type": "likert",
+        "dimension": "spirituality_religiousness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_066",
+        "text_key": "ipip_V140",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_067",
+        "text_key": "ipip_V75",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_068",
+        "text_key": "ipip_V256",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_069",
+        "text_key": "ipip_V186",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_070",
+        "text_key": "ipip_V38",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_071",
+        "text_key": "ipip_V332",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_072",
+        "text_key": "ipip_V2",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_073",
+        "text_key": "ipip_V117",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_074",
+        "text_key": "ipip_V291",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_075",
+        "text_key": "ipip_V222",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_076",
+        "text_key": "ipip_V5",
+        "type": "likert",
+        "dimension": "creativity_originality",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_077",
+        "text_key": "ipip_V226",
+        "type": "likert",
+        "dimension": "creativity_originality",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_078",
+        "text_key": "ipip_V189",
+        "type": "likert",
+        "dimension": "creativity_originality",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_079",
+        "text_key": "ipip_V155",
+        "type": "likert",
+        "dimension": "creativity_originality",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_080",
+        "text_key": "ipip_V122",
+        "type": "likert",
+        "dimension": "creativity_originality",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_081",
+        "text_key": "ipip_V259",
+        "type": "likert",
+        "dimension": "creativity_originality",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_082",
+        "text_key": "ipip_V335",
+        "type": "likert",
+        "dimension": "creativity_originality",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_083",
+        "text_key": "ipip_V71",
+        "type": "likert",
+        "dimension": "creativity_originality",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_084",
+        "text_key": "ipip_V80",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_085",
+        "text_key": "ipip_V225",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_086",
+        "text_key": "ipip_V43",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_087",
+        "text_key": "ipip_V191",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_088",
+        "text_key": "ipip_V119",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_089",
+        "text_key": "ipip_V157",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_090",
+        "text_key": "ipip_V295",
+        "type": "likert",
+        "dimension": "social_personal_emotional_intelligence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_091",
+        "text_key": "ipip_V67",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_092",
+        "text_key": "ipip_V151",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_093",
+        "text_key": "ipip_V37",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_094",
+        "text_key": "ipip_V115",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_095",
+        "text_key": "ipip_V268",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_096",
+        "text_key": "ipip_V254",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_097",
+        "text_key": "ipip_V1",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_098",
+        "text_key": "ipip_V342",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_099",
+        "text_key": "ipip_text_love_to_hear_about_other_countries_and_c",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_100",
+        "text_key": "ipip_V289",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_101",
+        "text_key": "ipip_V175",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_102",
+        "text_key": "ipip_V213",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_103",
+        "text_key": "ipip_V26",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_104",
+        "text_key": "ipip_V315",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_105",
+        "text_key": "ipip_V245",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_106",
+        "text_key": "ipip_V248",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_107",
+        "text_key": "ipip_V33",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_108",
+        "text_key": "ipip_V104",
+        "type": "likert",
+        "dimension": "gratitude",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_109",
+        "text_key": "ipip_V339",
+        "type": "likert",
+        "dimension": "wisdom_perspective",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_110",
+        "text_key": "ipip_V192",
+        "type": "likert",
+        "dimension": "wisdom_perspective",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_111",
+        "text_key": "ipip_V262",
+        "type": "likert",
+        "dimension": "wisdom_perspective",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_112",
+        "text_key": "ipip_V288",
+        "type": "likert",
+        "dimension": "wisdom_perspective",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_113",
+        "text_key": "ipip_V8",
+        "type": "likert",
+        "dimension": "wisdom_perspective",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_114",
+        "text_key": "ipip_text_have_a_mature_view_on_life",
+        "type": "likert",
+        "dimension": "wisdom_perspective",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_115",
+        "text_key": "ipip_V81",
+        "type": "likert",
+        "dimension": "wisdom_perspective",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_116",
+        "text_key": "ipip_text_have_been_described_as_wise_beyond_my_ye",
+        "type": "likert",
+        "dimension": "wisdom_perspective",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_117",
+        "text_key": "ipip_V44",
+        "type": "likert",
+        "dimension": "wisdom_perspective",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_118",
+        "text_key": "ipip_V96",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_119",
+        "text_key": "ipip_V135",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_120",
+        "text_key": "ipip_V105",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_121",
+        "text_key": "ipip_V239",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_122",
+        "text_key": "ipip_V54",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_123",
+        "text_key": "ipip_V274",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_124",
+        "text_key": "ipip_V35",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_125",
+        "text_key": "ipip_H686",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_126",
+        "text_key": "ipip_V196",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_127",
+        "text_key": "ipip_V10",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_128",
+        "text_key": "ipip_V86",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_129",
+        "text_key": "ipip_V163",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_130",
+        "text_key": "ipip_V238",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_131",
+        "text_key": "ipip_H149",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_132",
+        "text_key": "ipip_V143",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_133",
+        "text_key": "ipip_V305",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_134",
+        "text_key": "ipip_text_am_humble_about_the_good_things_that_hav",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_135",
+        "text_key": "ipip_V179",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_136",
+        "text_key": "ipip_V42",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_137",
+        "text_key": "ipip_text_don_t_act_as_if_i_m_a_special_person",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_138",
+        "text_key": "ipip_V145",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_139",
+        "text_key": "ipip_V249",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_140",
+        "text_key": "ipip_V68",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_141",
+        "text_key": "ipip_V214",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_142",
+        "text_key": "ipip_V321",
+        "type": "likert",
+        "dimension": "modesty_humility",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_143",
+        "text_key": "ipip_V278",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_144",
+        "text_key": "ipip_V243",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_145",
+        "text_key": "ipip_V60",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_146",
+        "text_key": "ipip_V316",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_147",
+        "text_key": "ipip_V102",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_148",
+        "text_key": "ipip_text_fail_to_notice_beauty_until_others_comme",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_149",
+        "text_key": "ipip_V52",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_150",
+        "text_key": "ipip_V174",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_151",
+        "text_key": "ipip_V24",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_152",
+        "text_key": "ipip_V195",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_153",
+        "text_key": "ipip_V272",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_154",
+        "text_key": "ipip_V233",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_155",
+        "text_key": "ipip_V6",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_156",
+        "text_key": "ipip_V88",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_157",
+        "text_key": "ipip_V164",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_158",
+        "text_key": "ipip_V303",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_159",
+        "text_key": "ipip_V129",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_160",
+        "text_key": "ipip_V40",
+        "type": "likert",
+        "dimension": "kindness_generosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_161",
+        "text_key": "ipip_V281",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_162",
+        "text_key": "ipip_V65",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_163",
+        "text_key": "ipip_V36",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_164",
+        "text_key": "ipip_V206",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_165",
+        "text_key": "ipip_V28",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_166",
+        "text_key": "ipip_V106",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_167",
+        "text_key": "ipip_V317",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_168",
+        "text_key": "ipip_V246",
+        "type": "likert",
+        "dimension": "hope_optimism",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_169",
+        "text_key": "ipip_V76",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_170",
+        "text_key": "ipip_V45",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_171",
+        "text_key": "ipip_V285",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_172",
+        "text_key": "ipip_V251",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_173",
+        "text_key": "ipip_text_keep_my_sense_of_humor_even_in_gloomy_si",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_174",
+        "text_key": "ipip_V180",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_175",
+        "text_key": "ipip_V146",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_176",
+        "text_key": "ipip_V48",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_177",
+        "text_key": "ipip_V111",
+        "type": "likert",
+        "dimension": "humor_playfulness",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_178",
+        "text_key": "ipip_V16",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_179",
+        "text_key": "ipip_V27",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_180",
+        "text_key": "ipip_V299",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_181",
+        "text_key": "ipip_H2016",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_182",
+        "text_key": "ipip_V306",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_183",
+        "text_key": "ipip_V183",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_184",
+        "text_key": "ipip_V73",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_185",
+        "text_key": "ipip_text_support_my_teammates_or_fellow_group_mem",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_186",
+        "text_key": "ipip_V132",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_187",
+        "text_key": "ipip_text_am_the_most_important_person_in_someone_",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_188",
+        "text_key": "ipip_V17",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_189",
+        "text_key": "ipip_V234",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_190",
+        "text_key": "ipip_V13",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_191",
+        "text_key": "ipip_V199",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_192",
+        "text_key": "ipip_text_have_difficulty_accepting_love_from_anyo",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_193",
+        "text_key": "ipip_V304",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_194",
+        "text_key": "ipip_V90",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_195",
+        "text_key": "ipip_V55",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_196",
+        "text_key": "ipip_V172",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_197",
+        "text_key": "ipip_V103",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_198",
+        "text_key": "ipip_V62",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_199",
+        "text_key": "ipip_V18",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_200",
+        "text_key": "ipip_V113",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_201",
+        "text_key": "ipip_V15",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_202",
+        "text_key": "ipip_V242",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_203",
+        "text_key": "ipip_V311",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_204",
+        "text_key": "ipip_V100",
+        "type": "likert",
+        "dimension": "prudence",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_205",
+        "text_key": "ipip_V326",
+        "type": "likert",
+        "dimension": "vitality_enthusiasm_zest",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_206",
+        "text_key": "ipip_V286",
+        "type": "likert",
+        "dimension": "vitality_enthusiasm_zest",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_207",
+        "text_key": "ipip_text_can_t_wait_to_get_started_on_a_project",
+        "type": "likert",
+        "dimension": "vitality_enthusiasm_zest",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_208",
+        "text_key": "ipip_V133",
+        "type": "likert",
+        "dimension": "vitality_enthusiasm_zest",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_209",
+        "text_key": "ipip_V211",
+        "type": "likert",
+        "dimension": "vitality_enthusiasm_zest",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_210",
+        "text_key": "ipip_V78",
+        "type": "likert",
+        "dimension": "vitality_enthusiasm_zest",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_211",
+        "text_key": "ipip_V182",
+        "type": "likert",
+        "dimension": "vitality_enthusiasm_zest",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_212",
+        "text_key": "ipip_V148",
+        "type": "likert",
+        "dimension": "vitality_enthusiasm_zest",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_213",
+        "text_key": "ipip_V50",
+        "type": "likert",
+        "dimension": "vitality_enthusiasm_zest",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "equity_fairness_sum": {
+        "description": "Cronbach's alpha = 0.70",
+        "method": "sum",
+        "items": {
+          "ipip_via_001": 1,
+          "ipip_via_002": 1,
+          "ipip_via_003": 1,
+          "ipip_via_004": 1,
+          "ipip_via_005": 1,
+          "ipip_via_006": 1,
+          "ipip_via_007": -1,
+          "ipip_via_008": 1,
+          "ipip_via_009": -1
+        }
+      },
+      "equity_fairness_mean": {
+        "description": "Cronbach's alpha = 0.70",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_001": 1,
+          "ipip_via_002": 1,
+          "ipip_via_003": 1,
+          "ipip_via_004": 1,
+          "ipip_via_005": 1,
+          "ipip_via_006": 1,
+          "ipip_via_007": -1,
+          "ipip_via_008": 1,
+          "ipip_via_009": -1
+        }
+      },
+      "forgiveness_mercy_sum": {
+        "description": "Cronbach's alpha = 0.76",
+        "method": "sum",
+        "items": {
+          "ipip_via_010": 1,
+          "ipip_via_011": 1,
+          "ipip_via_012": -1,
+          "ipip_via_013": 1,
+          "ipip_via_014": 1,
+          "ipip_via_015": -1,
+          "ipip_via_016": 1,
+          "ipip_via_017": 1,
+          "ipip_via_018": 1
+        }
+      },
+      "forgiveness_mercy_mean": {
+        "description": "Cronbach's alpha = 0.76",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_010": 1,
+          "ipip_via_011": 1,
+          "ipip_via_012": -1,
+          "ipip_via_013": 1,
+          "ipip_via_014": 1,
+          "ipip_via_015": -1,
+          "ipip_via_016": 1,
+          "ipip_via_017": 1,
+          "ipip_via_018": 1
+        }
+      },
+      "bravery_courage_valor_sum": {
+        "description": "Cronbach's alpha = 0.75",
+        "method": "sum",
+        "items": {
+          "ipip_via_019": 1,
+          "ipip_via_020": -1,
+          "ipip_via_021": -1,
+          "ipip_via_022": 1,
+          "ipip_via_023": 1,
+          "ipip_via_024": -1,
+          "ipip_via_025": 1,
+          "ipip_via_026": -1,
+          "ipip_via_027": 1,
+          "ipip_via_028": 1
+        }
+      },
+      "bravery_courage_valor_mean": {
+        "description": "Cronbach's alpha = 0.75",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_019": 1,
+          "ipip_via_020": -1,
+          "ipip_via_021": -1,
+          "ipip_via_022": 1,
+          "ipip_via_023": 1,
+          "ipip_via_024": -1,
+          "ipip_via_025": 1,
+          "ipip_via_026": -1,
+          "ipip_via_027": 1,
+          "ipip_via_028": 1
+        }
+      },
+      "judgment_openmindedness_sum": {
+        "description": "Cronbach's alpha = 0.80",
+        "method": "sum",
+        "items": {
+          "ipip_via_029": 1,
+          "ipip_via_030": 1,
+          "ipip_via_031": 1,
+          "ipip_via_032": -1,
+          "ipip_via_033": -1,
+          "ipip_via_034": 1,
+          "ipip_via_035": 1,
+          "ipip_via_036": 1,
+          "ipip_via_037": 1
+        }
+      },
+      "judgment_openmindedness_mean": {
+        "description": "Cronbach's alpha = 0.80",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_029": 1,
+          "ipip_via_030": 1,
+          "ipip_via_031": 1,
+          "ipip_via_032": -1,
+          "ipip_via_033": -1,
+          "ipip_via_034": 1,
+          "ipip_via_035": 1,
+          "ipip_via_036": 1,
+          "ipip_via_037": 1
+        }
+      },
+      "industriousness_perseverance_persistence_sum": {
+        "description": "Cronbach's alpha = 0.81",
+        "method": "sum",
+        "items": {
+          "ipip_via_038": 1,
+          "ipip_via_039": 1,
+          "ipip_via_040": -1,
+          "ipip_via_041": -1,
+          "ipip_via_042": 1,
+          "ipip_via_043": 1,
+          "ipip_via_044": 1,
+          "ipip_via_045": -1
+        }
+      },
+      "industriousness_perseverance_persistence_mean": {
+        "description": "Cronbach's alpha = 0.81",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_038": 1,
+          "ipip_via_039": 1,
+          "ipip_via_040": -1,
+          "ipip_via_041": -1,
+          "ipip_via_042": 1,
+          "ipip_via_043": 1,
+          "ipip_via_044": 1,
+          "ipip_via_045": -1
+        }
+      },
+      "selfcontrol_selfregulation_sum": {
+        "description": "Cronbach's alpha = 0.75",
+        "method": "sum",
+        "items": {
+          "ipip_via_046": 1,
+          "ipip_via_047": -1,
+          "ipip_via_048": 1,
+          "ipip_via_049": 1,
+          "ipip_via_050": -1,
+          "ipip_via_051": -1,
+          "ipip_via_052": -1,
+          "ipip_via_053": 1,
+          "ipip_via_054": -1,
+          "ipip_via_055": 1,
+          "ipip_via_056": -1
+        }
+      },
+      "selfcontrol_selfregulation_mean": {
+        "description": "Cronbach's alpha = 0.75",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_046": 1,
+          "ipip_via_047": -1,
+          "ipip_via_048": 1,
+          "ipip_via_049": 1,
+          "ipip_via_050": -1,
+          "ipip_via_051": -1,
+          "ipip_via_052": -1,
+          "ipip_via_053": 1,
+          "ipip_via_054": -1,
+          "ipip_via_055": 1,
+          "ipip_via_056": -1
+        }
+      },
+      "spirituality_religiousness_sum": {
+        "description": "Cronbach's alpha = 0.91",
+        "method": "sum",
+        "items": {
+          "ipip_via_057": 1,
+          "ipip_via_058": 1,
+          "ipip_via_059": 1,
+          "ipip_via_060": 1,
+          "ipip_via_061": -1,
+          "ipip_via_062": -1,
+          "ipip_via_063": 1,
+          "ipip_via_064": 1,
+          "ipip_via_065": 1
+        }
+      },
+      "spirituality_religiousness_mean": {
+        "description": "Cronbach's alpha = 0.91",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_057": 1,
+          "ipip_via_058": 1,
+          "ipip_via_059": 1,
+          "ipip_via_060": 1,
+          "ipip_via_061": -1,
+          "ipip_via_062": -1,
+          "ipip_via_063": 1,
+          "ipip_via_064": 1,
+          "ipip_via_065": 1
+        }
+      },
+      "love_of_learning_sum": {
+        "description": "Cronbach's alpha = 0.77",
+        "method": "sum",
+        "items": {
+          "ipip_via_066": 1,
+          "ipip_via_067": 1,
+          "ipip_via_068": 1,
+          "ipip_via_069": -1,
+          "ipip_via_070": -1,
+          "ipip_via_071": -1,
+          "ipip_via_072": 1,
+          "ipip_via_073": 1,
+          "ipip_via_074": 1,
+          "ipip_via_075": 1
+        }
+      },
+      "love_of_learning_mean": {
+        "description": "Cronbach's alpha = 0.77",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_066": 1,
+          "ipip_via_067": 1,
+          "ipip_via_068": 1,
+          "ipip_via_069": -1,
+          "ipip_via_070": -1,
+          "ipip_via_071": -1,
+          "ipip_via_072": 1,
+          "ipip_via_073": 1,
+          "ipip_via_074": 1,
+          "ipip_via_075": 1
+        }
+      },
+      "creativity_originality_sum": {
+        "description": "Cronbach's alpha = 0.85",
+        "method": "sum",
+        "items": {
+          "ipip_via_076": 1,
+          "ipip_via_077": 1,
+          "ipip_via_078": -1,
+          "ipip_via_079": 1,
+          "ipip_via_080": -1,
+          "ipip_via_081": 1,
+          "ipip_via_082": -1,
+          "ipip_via_083": 1
+        }
+      },
+      "creativity_originality_mean": {
+        "description": "Cronbach's alpha = 0.85",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_076": 1,
+          "ipip_via_077": 1,
+          "ipip_via_078": -1,
+          "ipip_via_079": 1,
+          "ipip_via_080": -1,
+          "ipip_via_081": 1,
+          "ipip_via_082": -1,
+          "ipip_via_083": 1
+        }
+      },
+      "social_personal_emotional_intelligence_sum": {
+        "description": "Cronbach's alpha = 0.76",
+        "method": "sum",
+        "items": {
+          "ipip_via_084": 1,
+          "ipip_via_085": 1,
+          "ipip_via_086": -1,
+          "ipip_via_087": 1,
+          "ipip_via_088": 1,
+          "ipip_via_089": 1,
+          "ipip_via_090": 1
+        }
+      },
+      "social_personal_emotional_intelligence_mean": {
+        "description": "Cronbach's alpha = 0.76",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_084": 1,
+          "ipip_via_085": 1,
+          "ipip_via_086": -1,
+          "ipip_via_087": 1,
+          "ipip_via_088": 1,
+          "ipip_via_089": 1,
+          "ipip_via_090": 1
+        }
+      },
+      "curiosity_sum": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "sum",
+        "items": {
+          "ipip_via_091": 1,
+          "ipip_via_092": 1,
+          "ipip_via_093": 1,
+          "ipip_via_094": -1,
+          "ipip_via_095": 1,
+          "ipip_via_096": -1,
+          "ipip_via_097": 1,
+          "ipip_via_098": -1,
+          "ipip_via_099": 1,
+          "ipip_via_100": 1
+        }
+      },
+      "curiosity_mean": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_091": 1,
+          "ipip_via_092": 1,
+          "ipip_via_093": 1,
+          "ipip_via_094": -1,
+          "ipip_via_095": 1,
+          "ipip_via_096": -1,
+          "ipip_via_097": 1,
+          "ipip_via_098": -1,
+          "ipip_via_099": 1,
+          "ipip_via_100": 1
+        }
+      },
+      "gratitude_sum": {
+        "description": "Cronbach's alpha = 0.79",
+        "method": "sum",
+        "items": {
+          "ipip_via_101": 1,
+          "ipip_via_102": -1,
+          "ipip_via_103": 1,
+          "ipip_via_104": 1,
+          "ipip_via_105": 1,
+          "ipip_via_106": -1,
+          "ipip_via_107": 1,
+          "ipip_via_108": 1
+        }
+      },
+      "gratitude_mean": {
+        "description": "Cronbach's alpha = 0.79",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_101": 1,
+          "ipip_via_102": -1,
+          "ipip_via_103": 1,
+          "ipip_via_104": 1,
+          "ipip_via_105": 1,
+          "ipip_via_106": -1,
+          "ipip_via_107": 1,
+          "ipip_via_108": 1
+        }
+      },
+      "wisdom_perspective_sum": {
+        "description": "Cronbach's alpha = 0.75",
+        "method": "sum",
+        "items": {
+          "ipip_via_109": 1,
+          "ipip_via_110": -1,
+          "ipip_via_111": -1,
+          "ipip_via_112": 1,
+          "ipip_via_113": 1,
+          "ipip_via_114": 1,
+          "ipip_via_115": 1,
+          "ipip_via_116": 1,
+          "ipip_via_117": -1
+        }
+      },
+      "wisdom_perspective_mean": {
+        "description": "Cronbach's alpha = 0.75",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_109": 1,
+          "ipip_via_110": -1,
+          "ipip_via_111": -1,
+          "ipip_via_112": 1,
+          "ipip_via_113": 1,
+          "ipip_via_114": 1,
+          "ipip_via_115": 1,
+          "ipip_via_116": 1,
+          "ipip_via_117": -1
+        }
+      },
+      "leadership_sum": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "sum",
+        "items": {
+          "ipip_via_118": 1,
+          "ipip_via_119": -1,
+          "ipip_via_120": -1,
+          "ipip_via_121": 1,
+          "ipip_via_122": -1,
+          "ipip_via_123": 1,
+          "ipip_via_124": 1
+        }
+      },
+      "leadership_mean": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_118": 1,
+          "ipip_via_119": -1,
+          "ipip_via_120": -1,
+          "ipip_via_121": 1,
+          "ipip_via_122": -1,
+          "ipip_via_123": 1,
+          "ipip_via_124": 1
+        }
+      },
+      "honesty_integrity_authenticity_sum": {
+        "description": "Cronbach's alpha = 0.72",
+        "method": "sum",
+        "items": {
+          "ipip_via_125": -1,
+          "ipip_via_126": 1,
+          "ipip_via_127": 1,
+          "ipip_via_128": 1,
+          "ipip_via_129": 1,
+          "ipip_via_130": -1,
+          "ipip_via_131": 1,
+          "ipip_via_132": -1,
+          "ipip_via_133": -1
+        }
+      },
+      "honesty_integrity_authenticity_mean": {
+        "description": "Cronbach's alpha = 0.72",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_125": -1,
+          "ipip_via_126": 1,
+          "ipip_via_127": 1,
+          "ipip_via_128": 1,
+          "ipip_via_129": 1,
+          "ipip_via_130": -1,
+          "ipip_via_131": 1,
+          "ipip_via_132": -1,
+          "ipip_via_133": -1
+        }
+      },
+      "modesty_humility_sum": {
+        "description": "Cronbach's alpha = 0.70",
+        "method": "sum",
+        "items": {
+          "ipip_via_134": 1,
+          "ipip_via_135": 1,
+          "ipip_via_136": 1,
+          "ipip_via_137": 1,
+          "ipip_via_138": 1,
+          "ipip_via_139": 1,
+          "ipip_via_140": -1,
+          "ipip_via_141": -1,
+          "ipip_via_142": 1
+        }
+      },
+      "modesty_humility_mean": {
+        "description": "Cronbach's alpha = 0.70",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_134": 1,
+          "ipip_via_135": 1,
+          "ipip_via_136": 1,
+          "ipip_via_137": 1,
+          "ipip_via_138": 1,
+          "ipip_via_139": 1,
+          "ipip_via_140": -1,
+          "ipip_via_141": -1,
+          "ipip_via_142": 1
+        }
+      },
+      "aesthetic_appreciation_artistic_interests_sum": {
+        "description": "Cronbach's alpha = 0.77",
+        "method": "sum",
+        "items": {
+          "ipip_via_143": 1,
+          "ipip_via_144": 1,
+          "ipip_via_145": 1,
+          "ipip_via_146": 1,
+          "ipip_via_147": 1,
+          "ipip_via_148": -1,
+          "ipip_via_149": 1,
+          "ipip_via_150": 1
+        }
+      },
+      "aesthetic_appreciation_artistic_interests_mean": {
+        "description": "Cronbach's alpha = 0.77",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_143": 1,
+          "ipip_via_144": 1,
+          "ipip_via_145": 1,
+          "ipip_via_146": 1,
+          "ipip_via_147": 1,
+          "ipip_via_148": -1,
+          "ipip_via_149": 1,
+          "ipip_via_150": 1
+        }
+      },
+      "kindness_generosity_sum": {
+        "description": "Cronbach's alpha = 0.72",
+        "method": "sum",
+        "items": {
+          "ipip_via_151": 1,
+          "ipip_via_152": -1,
+          "ipip_via_153": 1,
+          "ipip_via_154": 1,
+          "ipip_via_155": -1,
+          "ipip_via_156": 1,
+          "ipip_via_157": 1,
+          "ipip_via_158": 1,
+          "ipip_via_159": 1,
+          "ipip_via_160": -1
+        }
+      },
+      "kindness_generosity_mean": {
+        "description": "Cronbach's alpha = 0.72",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_151": 1,
+          "ipip_via_152": -1,
+          "ipip_via_153": 1,
+          "ipip_via_154": 1,
+          "ipip_via_155": -1,
+          "ipip_via_156": 1,
+          "ipip_via_157": 1,
+          "ipip_via_158": 1,
+          "ipip_via_159": 1,
+          "ipip_via_160": -1
+        }
+      },
+      "hope_optimism_sum": {
+        "description": "Cronbach's alpha = 0.73",
+        "method": "sum",
+        "items": {
+          "ipip_via_161": -1,
+          "ipip_via_162": 1,
+          "ipip_via_163": -1,
+          "ipip_via_164": -1,
+          "ipip_via_165": 1,
+          "ipip_via_166": 1,
+          "ipip_via_167": 1,
+          "ipip_via_168": 1
+        }
+      },
+      "hope_optimism_mean": {
+        "description": "Cronbach's alpha = 0.73",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_161": -1,
+          "ipip_via_162": 1,
+          "ipip_via_163": -1,
+          "ipip_via_164": -1,
+          "ipip_via_165": 1,
+          "ipip_via_166": 1,
+          "ipip_via_167": 1,
+          "ipip_via_168": 1
+        }
+      },
+      "humor_playfulness_sum": {
+        "description": "Cronbach's alpha = 0.84",
+        "method": "sum",
+        "items": {
+          "ipip_via_169": -1,
+          "ipip_via_170": -1,
+          "ipip_via_171": -1,
+          "ipip_via_172": 1,
+          "ipip_via_173": 1,
+          "ipip_via_174": 1,
+          "ipip_via_175": 1,
+          "ipip_via_176": 1,
+          "ipip_via_177": 1
+        }
+      },
+      "humor_playfulness_mean": {
+        "description": "Cronbach's alpha = 0.84",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_169": -1,
+          "ipip_via_170": -1,
+          "ipip_via_171": -1,
+          "ipip_via_172": 1,
+          "ipip_via_173": 1,
+          "ipip_via_174": 1,
+          "ipip_via_175": 1,
+          "ipip_via_176": 1,
+          "ipip_via_177": 1
+        }
+      },
+      "teamwork_citizenship_sum": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "sum",
+        "items": {
+          "ipip_via_178": -1,
+          "ipip_via_179": 1,
+          "ipip_via_180": -1,
+          "ipip_via_181": 1,
+          "ipip_via_182": 1,
+          "ipip_via_183": -1,
+          "ipip_via_184": -1,
+          "ipip_via_185": 1,
+          "ipip_via_186": -1
+        }
+      },
+      "teamwork_citizenship_mean": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_178": -1,
+          "ipip_via_179": 1,
+          "ipip_via_180": -1,
+          "ipip_via_181": 1,
+          "ipip_via_182": 1,
+          "ipip_via_183": -1,
+          "ipip_via_184": -1,
+          "ipip_via_185": 1,
+          "ipip_via_186": -1
+        }
+      },
+      "capacity_for_love_sum": {
+        "description": "Cronbach's alpha = 0.70",
+        "method": "sum",
+        "items": {
+          "ipip_via_187": 1,
+          "ipip_via_188": 1,
+          "ipip_via_189": 1,
+          "ipip_via_190": -1,
+          "ipip_via_191": -1,
+          "ipip_via_192": -1,
+          "ipip_via_193": 1,
+          "ipip_via_194": 1,
+          "ipip_via_195": 1
+        }
+      },
+      "capacity_for_love_mean": {
+        "description": "Cronbach's alpha = 0.70",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_187": 1,
+          "ipip_via_188": 1,
+          "ipip_via_189": 1,
+          "ipip_via_190": -1,
+          "ipip_via_191": -1,
+          "ipip_via_192": -1,
+          "ipip_via_193": 1,
+          "ipip_via_194": 1,
+          "ipip_via_195": 1
+        }
+      },
+      "prudence_sum": {
+        "description": "Cronbach's alpha = 0.73",
+        "method": "sum",
+        "items": {
+          "ipip_via_196": 1,
+          "ipip_via_197": -1,
+          "ipip_via_198": 1,
+          "ipip_via_199": 1,
+          "ipip_via_200": 1,
+          "ipip_via_201": 1,
+          "ipip_via_202": 1,
+          "ipip_via_203": 1,
+          "ipip_via_204": 1
+        }
+      },
+      "prudence_mean": {
+        "description": "Cronbach's alpha = 0.73",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_196": 1,
+          "ipip_via_197": -1,
+          "ipip_via_198": 1,
+          "ipip_via_199": 1,
+          "ipip_via_200": 1,
+          "ipip_via_201": 1,
+          "ipip_via_202": 1,
+          "ipip_via_203": 1,
+          "ipip_via_204": 1
+        }
+      },
+      "vitality_enthusiasm_zest_sum": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "sum",
+        "items": {
+          "ipip_via_205": 1,
+          "ipip_via_206": 1,
+          "ipip_via_207": 1,
+          "ipip_via_208": 1,
+          "ipip_via_209": -1,
+          "ipip_via_210": -1,
+          "ipip_via_211": 1,
+          "ipip_via_212": 1,
+          "ipip_via_213": 1
+        }
+      },
+      "vitality_enthusiasm_zest_mean": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_205": 1,
+          "ipip_via_206": 1,
+          "ipip_via_207": 1,
+          "ipip_via_208": 1,
+          "ipip_via_209": -1,
+          "ipip_via_210": -1,
+          "ipip_via_211": 1,
+          "ipip_via_212": 1,
+          "ipip_via_213": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_V20": "Admit when I am wrong.",
+      "ipip_V95": "Am a good listener.",
+      "ipip_V202": "Am committed to principles of justice and equality.",
+      "ipip_V307": "Believe that everyone should have a say.",
+      "ipip_V120": "Believe that everyone's rights are equally important.",
+      "ipip_V188": "Give everyone a chance.",
+      "ipip_H427": "Take advantage of others.",
+      "ipip_H186": "Treat all people equally.",
+      "ipip_V241": "Treat others differently if I don't like them.",
+      "ipip_V149": "Allow others to make a fresh start.",
+      "ipip_V193": "Believe that it is best to forgive and forget.",
+      "ipip_V297": "Do not give anyone a second chance to hurt me.",
+      "ipip_V253": "Don't try to get even.",
+      "ipip_V328": "Hate to see anyone suffer, even my worst enemy.",
+      "ipip_V72": "Hold grudges.",
+      "ipip_V21": "Let bygones be bygones.",
+      "ipip_V114": "Never seek vengeance.",
+      "ipip_V269": "Try to respond with understanding when someone treats me badly.",
+      "ipip_V341": "Am a brave person.",
+      "ipip_text_avoid_dealing_with_awkward_situations": "Avoid dealing with awkward situations.",
+      "ipip_V29": "Avoid dealing with uncomfortable emotions.",
+      "ipip_V160": "Call for action while others talk.",
+      "ipip_V228": "Can face my fears.",
+      "ipip_V53": "Do not stand up for my beliefs.",
+      "ipip_V82": "Don't hesitate to express an unpopular opinion.",
+      "ipip_V130": "Don't speak my mind freely when there might be negative results.",
+      "ipip_V11": "Have taken frequent stands in the face of strong opposition.",
+      "ipip_V298": "Speak up in protest when I hear someone say mean things.",
+      "ipip_V223": "Am a firm believer in thinking things through.",
+      "ipip_V333": "Am valued by my friends for my good judgment.",
+      "ipip_V154": "Am valued by others for my objectivity.",
+      "ipip_V118": "Don't tend to think things through critically.",
+      "ipip_V25": "Don't think about different possibilities when making decisions.",
+      "ipip_V57": "Make decisions only after I have all of the facts.",
+      "ipip_V292": "Try to have good reasons for my important decisions.",
+      "ipip_V4": "Try to identify the reasons for my actions.",
+      "ipip_V257": "Weigh the pro's and the con's.",
+      "ipip_text_am_a_goal_oriented_person": "Am a goal-oriented person.",
+      "ipip_V161": "Am a hard worker.",
+      "ipip_V313": "Do not tend to stick with what I decide to do.",
+      "ipip_V49": "Don't finish what I start.",
+      "ipip_V261": "Don't get sidetracked when I work.",
+      "ipip_V12": "Don't quit a task before it is finished.",
+      "ipip_V126": "Finish things despite obstacles in the way.",
+      "ipip_H1144": "Give up easily.",
+      "ipip_V98": "Am a highly disciplined person.",
+      "ipip_V64": "Am not very good at getting things done.",
+      "ipip_text_can_always_say_enough_is_enough": "Can always say \"enough is enough.\"",
+      "ipip_V219": "Can stay on a diet.",
+      "ipip_V59": "Can't resist eating candy or cookies if they are around.",
+      "ipip_V275": "Do my tasks only just before they need to be done.",
+      "ipip_V9": "Do not exercise on a regular basis.",
+      "ipip_V170": "Forego things that are bad for me in the long run even if they make me feel good in the short run.",
+      "ipip_V329": "Give in to my urges.",
+      "ipip_V23": "Have no trouble eating healthy foods.",
+      "ipip_V224": "Let myself be taken over by urges to spend or eat too much.",
+      "ipip_V46": "Am a spiritual person.",
+      "ipip_V210": "Am who I am because of my faith.",
+      "ipip_V39": "Believe in a universal power or God.",
+      "ipip_V280": "Believe that each person has a purpose in life.",
+      "ipip_V282": "Do not believe in a universal power or a God.",
+      "ipip_V66": "Do not practice any religion.",
+      "ipip_V177": "Have spent at least 30 minutes in the last 24 hours in prayer or meditation.",
+      "ipip_V84": "Keep my faith even during hard times.",
+      "ipip_V319": "Know that my beliefs make my life important.",
+      "ipip_V140": "Am a true life-long learner.",
+      "ipip_V75": "Am thrilled when I learn something new.",
+      "ipip_V256": "Consult the library or the Internet immediately if I want to know something.",
+      "ipip_V186": "Do not like to visit museums.",
+      "ipip_V38": "Don't like to learn new things.",
+      "ipip_V332": "Don't read nonfiction books for fun.",
+      "ipip_V2": "Go out of my way to attend educational events.",
+      "ipip_V117": "Look forward to the opportunity to learn and grow.",
+      "ipip_V291": "Read a large variety of books.",
+      "ipip_V222": "Read all the time.",
+      "ipip_V5": "Am able to come up with new and different ideas.",
+      "ipip_V226": "Am an original thinker.",
+      "ipip_V189": "Am not considered to have new and different ideas.",
+      "ipip_V155": "Come up with new ways to do things.",
+      "ipip_V122": "Don't pride myself on being original.",
+      "ipip_V259": "Have an imagination that stretches beyond that of my friends.",
+      "ipip_V335": "Have no special urge to do something original.",
+      "ipip_V71": "Like to think of new ways to do things.",
+      "ipip_V80": "Am able to fit into any situation.",
+      "ipip_V225": "Am good at sensing what others are feeling.",
+      "ipip_V43": "Don't know how to handle myself in a new social situation.",
+      "ipip_V191": "Get along well with people I have just met.",
+      "ipip_V119": "Have the ability to make others feel interesting.",
+      "ipip_V157": "Know what makes others tick.",
+      "ipip_V295": "Know what to say to make people feel good.",
+      "ipip_V67": "Am always busy with something interesting.",
+      "ipip_V151": "Am excited by many different activities.",
+      "ipip_V37": "Am never bored.",
+      "ipip_V115": "Am not all that curious about the world.",
+      "ipip_V268": "Can find something of interest in any situation.",
+      "ipip_V254": "Find it difficult to entertain myself.",
+      "ipip_V1": "Find the world a very interesting place.",
+      "ipip_V342": "Have few interests.",
+      "ipip_text_love_to_hear_about_other_countries_and_c": "Love to hear about other countries and cultures.",
+      "ipip_V289": "Think that my life is extremely interesting.",
+      "ipip_V175": "Am an extremely grateful person.",
+      "ipip_V213": "Do not see the need to acknowledge others who are good to me.",
+      "ipip_V26": "Express my thanks to those who care about me.",
+      "ipip_V315": "Feel a profound sense of appreciation every day.",
+      "ipip_V245": "Feel thankful for what I have received in life.",
+      "ipip_V248": "Find few things in my life to be grateful for.",
+      "ipip_V33": "Have been richly blessed in my life.",
+      "ipip_V104": "Stop to count my blessings.",
+      "ipip_V339": "Am considered to be a wise person.",
+      "ipip_V192": "Am not good at figuring out what really matters.",
+      "ipip_V262": "Am rarely consulted for advice by others.",
+      "ipip_V288": "Consider myself to be a wise person.",
+      "ipip_V8": "Have a broad outlook on what is going on.",
+      "ipip_text_have_a_mature_view_on_life": "Have a mature view on life.",
+      "ipip_V81": "Have an excellent view of the world.",
+      "ipip_text_have_been_described_as_wise_beyond_my_ye": "Have been described as wise beyond my years.",
+      "ipip_V44": "Lose sight of what is most important in life.",
+      "ipip_V96": "Am good at helping people work well together.",
+      "ipip_V135": "Am not good at planning group activities.",
+      "ipip_V105": "Am not good at taking charge of a group.",
+      "ipip_V239": "Am told that I am a strong but fair leader.",
+      "ipip_V54": "Have difficulty getting others to work together.",
+      "ipip_V274": "Try to make my group members happy.",
+      "ipip_V35": "Try to make sure everyone in a group feels included.",
+      "ipip_H686": "Am hard to understand.",
+      "ipip_V196": "Am true to my own values.",
+      "ipip_V10": "Am trusted to keep secrets.",
+      "ipip_V86": "Believe that honesty is the basis for trust.",
+      "ipip_V163": "Can be trusted to keep my promises.",
+      "ipip_V238": "Feel like an imposter.",
+      "ipip_H149": "Keep my promises.",
+      "ipip_V143": "Lie to get myself out of trouble.",
+      "ipip_V305": "Like to exaggerate my troubles.",
+      "ipip_text_am_humble_about_the_good_things_that_hav": "Am humble about the good things that have happened to me.",
+      "ipip_V179": "Am proud that I am an ordinary person.",
+      "ipip_V42": "Believe that others are drawn to me because I am humble.",
+      "ipip_text_don_t_act_as_if_i_m_a_special_person": "Don't act as if I'm a special person.",
+      "ipip_V145": "Don't brag about my accomplishments.",
+      "ipip_V249": "Don't call attention to myself.",
+      "ipip_V68": "Like to stand out in a crowd.",
+      "ipip_V214": "Like to talk about myself.",
+      "ipip_V321": "Would never be described as arrogant.",
+      "ipip_V278": "Am in awe of simple things in life that others might take for granted.",
+      "ipip_V243": "Appreciate all forms of art.",
+      "ipip_V60": "Can become tearful thinking of the goodness of others.",
+      "ipip_V316": "Crave the experience of great art.",
+      "ipip_V102": "Experience deep emotions when I see beautiful things.",
+      "ipip_text_fail_to_notice_beauty_until_others_comme": "Fail to notice beauty until others comment on it.",
+      "ipip_V52": "Feel it's important to live in a world of beauty.",
+      "ipip_V174": "Have been left speechless by the beauty depicted in a movie.",
+      "ipip_V24": "Am never too busy to help a friend.",
+      "ipip_V195": "Am only kind to others if they have been kind to me.",
+      "ipip_V272": "Call my friends when they are sick.",
+      "ipip_V233": "Get as excited about the good fortunes of others as I am about my own.",
+      "ipip_V6": "Get impatient when others talk to me about their problems.",
+      "ipip_V88": "Go out of my way to cheer up people who appear down.",
+      "ipip_V164": "Helped a neighbor in the last month.",
+      "ipip_V303": "Love to let others share the spotlight.",
+      "ipip_V129": "Love to make other people happy.",
+      "ipip_V40": "Try not to do favors for others.",
+      "ipip_V281": "Am not confident that my way of doing things will work out for the best.",
+      "ipip_V65": "Can find the positive in what seems negative to others.",
+      "ipip_V36": "Expect the worst.",
+      "ipip_V206": "Have no plan for my life five years from now.",
+      "ipip_V28": "Look on the bright side.",
+      "ipip_V106": "Remain hopeful despite challenges.",
+      "ipip_V317": "Think about what is good in my life when I feel down.",
+      "ipip_V246": "Will succeed with the goals I set for myself.",
+      "ipip_V76": "Am not fun to be with.",
+      "ipip_V45": "Am not known for my sense of humor.",
+      "ipip_V285": "Do not go out of my way to make others smile or laugh.",
+      "ipip_V251": "Have a great sense of humor.",
+      "ipip_text_keep_my_sense_of_humor_even_in_gloomy_si": "Keep my sense of humor even in gloomy situations.",
+      "ipip_V180": "Try to add some humor to whatever I do.",
+      "ipip_V146": "Try to have fun in all kinds of situations.",
+      "ipip_V48": "Try to tease my friends out of their gloomy moods.",
+      "ipip_V111": "Use laughter to brighten the days of others.",
+      "ipip_V16": "Am not good at working with a group.",
+      "ipip_V27": "Don't miss group meetings or team practices.",
+      "ipip_V299": "Don't think it's important to socialize with others.",
+      "ipip_H2016": "Enjoy being part of a group.",
+      "ipip_V306": "Feel I must respect the decisions made by my group.",
+      "ipip_V183": "Keep to myself.",
+      "ipip_V73": "Prefer to do everything alone.",
+      "ipip_text_support_my_teammates_or_fellow_group_mem": "Support my teammates or fellow group members.",
+      "ipip_V132": "Work best when I am alone.",
+      "ipip_text_am_the_most_important_person_in_someone_": "Am the most important person in someone else's life.",
+      "ipip_V17": "Am willing to take risks to establish a relationship.",
+      "ipip_V234": "Can express love to someone else.",
+      "ipip_V13": "Do not easily share my feelings with others.",
+      "ipip_V199": "Feel isolated from other people.",
+      "ipip_text_have_difficulty_accepting_love_from_anyo": "Have difficulty accepting love from anyone.",
+      "ipip_V304": "Know someone whom I really care about as a person.",
+      "ipip_V90": "Know that some others accept my shortcomings.",
+      "ipip_V55": "Know that there are people in my life who care as much for me as for themselves.",
+      "ipip_V172": "Avoid activities that are physically dangerous.",
+      "ipip_V103": "Behave in unusual and strange ways.",
+      "ipip_V62": "Believe it is always better to be safe than sorry.",
+      "ipip_V18": "Cannot imagine lying or cheating.",
+      "ipip_V113": "Follow the rules.",
+      "ipip_V15": "Have never deliberately hurt anyone.",
+      "ipip_V242": "Keep straight right from wrong.",
+      "ipip_V311": "Make careful choices.",
+      "ipip_V100": "Think before I speak.",
+      "ipip_V326": "Awaken with a sense of excitement about the day's possibilities.",
+      "ipip_V286": "Can hardly wait to see what life has in store for me in the years ahead.",
+      "ipip_text_can_t_wait_to_get_started_on_a_project": "Can't wait to get started on a project.",
+      "ipip_V133": "Don't approach things halfheartedly.",
+      "ipip_V211": "Don't have much energy.",
+      "ipip_V78": "Dread getting up in the morning.",
+      "ipip_V182": "Look forward to each new day.",
+      "ipip_V148": "Love what I do.",
+      "ipip_V50": "Prefer to participate fully rather than view life from the sidelines."
+    }
+  }
+}

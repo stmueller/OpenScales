@@ -1,0 +1,2700 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP-HEXACO Personality Inventory",
+      "code": "IPIP-HEXACO",
+      "abbreviation": "IPIP-HEXACO",
+      "description": "IPIP representation of the HEXACO-PI measuring 6 domains and 24 facets, including Honesty-Humility.",
+      "citation": "Lee, K., & Ashton, M. C. (2004). Psychometric properties of the HEXACO personality inventory. Multivariate Behavioral Research, 39(2), 329-358.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newHEXACO_PI_key.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "gentleness_sum",
+        "name": "Gentleness (sum)"
+      },
+      {
+        "id": "gentleness_mean",
+        "name": "Gentleness (mean)"
+      },
+      {
+        "id": "prudence_sum",
+        "name": "Prudence (sum)"
+      },
+      {
+        "id": "prudence_mean",
+        "name": "Prudence (mean)"
+      },
+      {
+        "id": "sincerity_sum",
+        "name": "Sincerity (sum)"
+      },
+      {
+        "id": "sincerity_mean",
+        "name": "Sincerity (mean)"
+      },
+      {
+        "id": "flexibility_sum",
+        "name": "Flexibility (sum)"
+      },
+      {
+        "id": "flexibility_mean",
+        "name": "Flexibility (mean)"
+      },
+      {
+        "id": "equity_fairness_sum",
+        "name": "Equity/Fairness (sum)"
+      },
+      {
+        "id": "equity_fairness_mean",
+        "name": "Equity/Fairness (mean)"
+      },
+      {
+        "id": "fearfulness_sum",
+        "name": "Fearfulness (sum)"
+      },
+      {
+        "id": "fearfulness_mean",
+        "name": "Fearfulness (mean)"
+      },
+      {
+        "id": "unconventionality_sum",
+        "name": "Unconventionality (sum)"
+      },
+      {
+        "id": "unconventionality_mean",
+        "name": "Unconventionality (mean)"
+      },
+      {
+        "id": "sentimentality_sum",
+        "name": "Sentimentality (sum)"
+      },
+      {
+        "id": "sentimentality_mean",
+        "name": "Sentimentality (mean)"
+      },
+      {
+        "id": "patience_sum",
+        "name": "Patience (sum)"
+      },
+      {
+        "id": "patience_mean",
+        "name": "Patience (mean)"
+      },
+      {
+        "id": "diligence_sum",
+        "name": "Diligence (sum)"
+      },
+      {
+        "id": "diligence_mean",
+        "name": "Diligence (mean)"
+      },
+      {
+        "id": "creativity_originality_sum",
+        "name": "Creativity/Originality (sum)"
+      },
+      {
+        "id": "creativity_originality_mean",
+        "name": "Creativity/Originality (mean)"
+      },
+      {
+        "id": "social_boldness_sum",
+        "name": "Social Boldness (sum)"
+      },
+      {
+        "id": "social_boldness_mean",
+        "name": "Social Boldness (mean)"
+      },
+      {
+        "id": "sociability_sum",
+        "name": "Sociability (sum)"
+      },
+      {
+        "id": "sociability_mean",
+        "name": "Sociability (mean)"
+      },
+      {
+        "id": "forgiveness_mercy_sum",
+        "name": "Forgiveness/Mercy (sum)"
+      },
+      {
+        "id": "forgiveness_mercy_mean",
+        "name": "Forgiveness/Mercy (mean)"
+      },
+      {
+        "id": "inquisitiveness_sum",
+        "name": "Inquisitiveness (sum)"
+      },
+      {
+        "id": "inquisitiveness_mean",
+        "name": "Inquisitiveness (mean)"
+      },
+      {
+        "id": "modesty_humility_sum",
+        "name": "Modesty/Humility (sum)"
+      },
+      {
+        "id": "modesty_humility_mean",
+        "name": "Modesty/Humility (mean)"
+      },
+      {
+        "id": "greed_avoidance_sum",
+        "name": "Greed Avoidance (sum)"
+      },
+      {
+        "id": "greed_avoidance_mean",
+        "name": "Greed Avoidance (mean)"
+      },
+      {
+        "id": "expressiveness_sum",
+        "name": "Expressiveness (sum)"
+      },
+      {
+        "id": "expressiveness_mean",
+        "name": "Expressiveness (mean)"
+      },
+      {
+        "id": "organization_sum",
+        "name": "Organization (sum)"
+      },
+      {
+        "id": "organization_mean",
+        "name": "Organization (mean)"
+      },
+      {
+        "id": "anxiety_sum",
+        "name": "Anxiety (sum)"
+      },
+      {
+        "id": "anxiety_mean",
+        "name": "Anxiety (mean)"
+      },
+      {
+        "id": "liveliness_sum",
+        "name": "Liveliness (sum)"
+      },
+      {
+        "id": "liveliness_mean",
+        "name": "Liveliness (mean)"
+      },
+      {
+        "id": "conformity_dependence_need_for_approval_sum",
+        "name": "Conformity/Dependence/Need for approval (sum)"
+      },
+      {
+        "id": "conformity_dependence_need_for_approval_mean",
+        "name": "Conformity/Dependence/Need for approval (mean)"
+      },
+      {
+        "id": "perfectionism_sum",
+        "name": "Perfectionism (sum)"
+      },
+      {
+        "id": "perfectionism_mean",
+        "name": "Perfectionism (mean)"
+      },
+      {
+        "id": "aesthetic_appreciation_artistic_interests_sum",
+        "name": "Aesthetic Appreciation/Artistic Interests (sum)"
+      },
+      {
+        "id": "aesthetic_appreciation_artistic_interests_mean",
+        "name": "Aesthetic Appreciation/Artistic Interests (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_hexaco_001",
+        "text_key": "ipip_H106",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_002",
+        "text_key": "ipip_E65",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_003",
+        "text_key": "ipip_D100",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_004",
+        "text_key": "ipip_H279",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_005",
+        "text_key": "ipip_H1067",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_006",
+        "text_key": "ipip_H22",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_007",
+        "text_key": "ipip_text_have_a_sharp_tongue",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_008",
+        "text_key": "ipip_E120",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_009",
+        "text_key": "ipip_H1124",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_010",
+        "text_key": "ipip_E144",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_011",
+        "text_key": "ipip_Q253",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_012",
+        "text_key": "ipip_H252",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_013",
+        "text_key": "ipip_H1351",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_014",
+        "text_key": "ipip_Q243",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_015",
+        "text_key": "ipip_E57",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_016",
+        "text_key": "ipip_E46",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_017",
+        "text_key": "ipip_Q66",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_018",
+        "text_key": "ipip_R75",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_019",
+        "text_key": "ipip_X263",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_020",
+        "text_key": "ipip_H853",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_021",
+        "text_key": "ipip_P342",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_022",
+        "text_key": "ipip_Q35",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_023",
+        "text_key": "ipip_Q49",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_024",
+        "text_key": "ipip_P399",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_025",
+        "text_key": "ipip_Q6",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_026",
+        "text_key": "ipip_X113",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_027",
+        "text_key": "ipip_P491",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_028",
+        "text_key": "ipip_Q125",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_029",
+        "text_key": "ipip_A141",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_030",
+        "text_key": "ipip_X91",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_031",
+        "text_key": "ipip_H1070",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_032",
+        "text_key": "ipip_E82",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_033",
+        "text_key": "ipip_H1068",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_034",
+        "text_key": "ipip_H687",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_035",
+        "text_key": "ipip_text_am_hard_to_reason_with",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_036",
+        "text_key": "ipip_H277",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_037",
+        "text_key": "ipip_H292",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_038",
+        "text_key": "ipip_R24",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_039",
+        "text_key": "ipip_Q54",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_040",
+        "text_key": "ipip_D39",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_041",
+        "text_key": "ipip_A108",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_042",
+        "text_key": "ipip_Q22",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_043",
+        "text_key": "ipip_X198",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_044",
+        "text_key": "ipip_E80",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_045",
+        "text_key": "ipip_A119",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_046",
+        "text_key": "ipip_X150",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_047",
+        "text_key": "ipip_D102",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_048",
+        "text_key": "ipip_X136",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_049",
+        "text_key": "ipip_P367",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_050",
+        "text_key": "ipip_D86",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_051",
+        "text_key": "ipip_R44",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_052",
+        "text_key": "ipip_Q95",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_053",
+        "text_key": "ipip_Q50",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_054",
+        "text_key": "ipip_Q126",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_055",
+        "text_key": "ipip_R53",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_056",
+        "text_key": "ipip_R69",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_057",
+        "text_key": "ipip_Q5",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_058",
+        "text_key": "ipip_Q31",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_059",
+        "text_key": "ipip_R52",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_060",
+        "text_key": "ipip_Q136",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_061",
+        "text_key": "ipip_R35",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_062",
+        "text_key": "ipip_H691",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_063",
+        "text_key": "ipip_text_enjoy_being_thought_of_as_a_normal_mains",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_064",
+        "text_key": "ipip_D73",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_065",
+        "text_key": "ipip_R6",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_066",
+        "text_key": "ipip_D88",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_067",
+        "text_key": "ipip_Q207",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_068",
+        "text_key": "ipip_H690",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_069",
+        "text_key": "ipip_E171",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_070",
+        "text_key": "ipip_D46",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_071",
+        "text_key": "ipip_X253",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_072",
+        "text_key": "ipip_D93",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_073",
+        "text_key": "ipip_Q256",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_074",
+        "text_key": "ipip_E136",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_075",
+        "text_key": "ipip_D116",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_076",
+        "text_key": "ipip_A56",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_077",
+        "text_key": "ipip_D65",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_078",
+        "text_key": "ipip_X29",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_079",
+        "text_key": "ipip_Q210",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_080",
+        "text_key": "ipip_D63",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_081",
+        "text_key": "ipip_D68",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_082",
+        "text_key": "ipip_H754",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_083",
+        "text_key": "ipip_H761",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_084",
+        "text_key": "ipip_X95",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_085",
+        "text_key": "ipip_H755",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_086",
+        "text_key": "ipip_D113",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_087",
+        "text_key": "ipip_X265",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_088",
+        "text_key": "ipip_X231",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_089",
+        "text_key": "ipip_X163",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_090",
+        "text_key": "ipip_H1285",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_091",
+        "text_key": "ipip_X115",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_092",
+        "text_key": "ipip_P385",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_093",
+        "text_key": "ipip_Q197",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_094",
+        "text_key": "ipip_H627",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_095",
+        "text_key": "ipip_Q204",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_096",
+        "text_key": "ipip_A41",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_097",
+        "text_key": "ipip_Q220",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_098",
+        "text_key": "ipip_H1206",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_099",
+        "text_key": "ipip_H53",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_100",
+        "text_key": "ipip_H1227",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_101",
+        "text_key": "ipip_H1230",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_102",
+        "text_key": "ipip_X272",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_103",
+        "text_key": "ipip_X14",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_104",
+        "text_key": "ipip_H1382",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_105",
+        "text_key": "ipip_H1313",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_106",
+        "text_key": "ipip_P405",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_107",
+        "text_key": "ipip_X225",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_108",
+        "text_key": "ipip_D11",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_109",
+        "text_key": "ipip_P364",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_110",
+        "text_key": "ipip_X78",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_111",
+        "text_key": "ipip_X112",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_112",
+        "text_key": "ipip_H592",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_113",
+        "text_key": "ipip_P434",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_114",
+        "text_key": "ipip_Q14",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_115",
+        "text_key": "ipip_Q134",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_116",
+        "text_key": "ipip_H1039",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_117",
+        "text_key": "ipip_H154",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_118",
+        "text_key": "ipip_Q45",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_119",
+        "text_key": "ipip_H596",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_120",
+        "text_key": "ipip_H2016",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_121",
+        "text_key": "ipip_H704",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_122",
+        "text_key": "ipip_H1095",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_123",
+        "text_key": "ipip_H29",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_124",
+        "text_key": "ipip_D82",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_125",
+        "text_key": "ipip_D20",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_126",
+        "text_key": "ipip_D70",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_127",
+        "text_key": "ipip_D101",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_128",
+        "text_key": "ipip_H137",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_129",
+        "text_key": "ipip_Q202",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_130",
+        "text_key": "ipip_H1195",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_131",
+        "text_key": "ipip_Q189",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_132",
+        "text_key": "ipip_X210",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_133",
+        "text_key": "ipip_Q154",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_134",
+        "text_key": "ipip_H711",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_135",
+        "text_key": "ipip_X217",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_136",
+        "text_key": "ipip_Q183",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_137",
+        "text_key": "ipip_E126",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_138",
+        "text_key": "ipip_Q69",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_139",
+        "text_key": "ipip_X109",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_140",
+        "text_key": "ipip_Q222",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_141",
+        "text_key": "ipip_Q82",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_142",
+        "text_key": "ipip_Q160",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_143",
+        "text_key": "ipip_X174",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_144",
+        "text_key": "ipip_H1276",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_145",
+        "text_key": "ipip_X211",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_146",
+        "text_key": "ipip_H1392",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_147",
+        "text_key": "ipip_R71",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_148",
+        "text_key": "ipip_Q103",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_149",
+        "text_key": "ipip_P441",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_150",
+        "text_key": "ipip_P469",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_151",
+        "text_key": "ipip_H736",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_152",
+        "text_key": "ipip_H746",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_153",
+        "text_key": "ipip_X125",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_154",
+        "text_key": "ipip_Q175",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_155",
+        "text_key": "ipip_H1150",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_156",
+        "text_key": "ipip_Q12",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_157",
+        "text_key": "ipip_Q165",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_158",
+        "text_key": "ipip_Q179",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_159",
+        "text_key": "ipip_H1325",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_160",
+        "text_key": "ipip_P371",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_161",
+        "text_key": "ipip_P445",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_162",
+        "text_key": "ipip_Q161",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_163",
+        "text_key": "ipip_P370",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_164",
+        "text_key": "ipip_H747",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_165",
+        "text_key": "ipip_H744",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_166",
+        "text_key": "ipip_Q19",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_167",
+        "text_key": "ipip_Q226",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_168",
+        "text_key": "ipip_H1302",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_169",
+        "text_key": "ipip_H34",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_170",
+        "text_key": "ipip_H1146",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_171",
+        "text_key": "ipip_X68",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_172",
+        "text_key": "ipip_X56",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_173",
+        "text_key": "ipip_D30",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_174",
+        "text_key": "ipip_H584",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_175",
+        "text_key": "ipip_H548",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_176",
+        "text_key": "ipip_R11",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_177",
+        "text_key": "ipip_Q121",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_178",
+        "text_key": "ipip_E7",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_179",
+        "text_key": "ipip_R12",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_180",
+        "text_key": "ipip_E119",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_181",
+        "text_key": "ipip_Q104",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_182",
+        "text_key": "ipip_H822",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_183",
+        "text_key": "ipip_text_leave_my_belongings_around",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_184",
+        "text_key": "ipip_X118",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_185",
+        "text_key": "ipip_H244",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_186",
+        "text_key": "ipip_X82",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_187",
+        "text_key": "ipip_text_want_everything_to_be_just_right",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_188",
+        "text_key": "ipip_H1046",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_189",
+        "text_key": "ipip_R37",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_190",
+        "text_key": "ipip_X79",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_191",
+        "text_key": "ipip_C4",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_192",
+        "text_key": "ipip_C8",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_193",
+        "text_key": "ipip_Q191",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_194",
+        "text_key": "ipip_H1094",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_195",
+        "text_key": "ipip_Q236",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_196",
+        "text_key": "ipip_Q138",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_197",
+        "text_key": "ipip_Q151",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_198",
+        "text_key": "ipip_X74",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_199",
+        "text_key": "ipip_Q111",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_200",
+        "text_key": "ipip_Q65",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_201",
+        "text_key": "ipip_H965",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_202",
+        "text_key": "ipip_H975",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_203",
+        "text_key": "ipip_H995",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_204",
+        "text_key": "ipip_H980",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_205",
+        "text_key": "ipip_H974",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_206",
+        "text_key": "ipip_H966",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_207",
+        "text_key": "ipip_H961",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_208",
+        "text_key": "ipip_A101",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_209",
+        "text_key": "ipip_A80",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_210",
+        "text_key": "ipip_H1057",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_211",
+        "text_key": "ipip_H288",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_212",
+        "text_key": "ipip_H1293",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_213",
+        "text_key": "ipip_H271",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_214",
+        "text_key": "ipip_H1356",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_215",
+        "text_key": "ipip_H1362",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_216",
+        "text_key": "ipip_Q36",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_217",
+        "text_key": "ipip_A96",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_218",
+        "text_key": "ipip_H241",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_219",
+        "text_key": "ipip_X243",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_220",
+        "text_key": "ipip_X86",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_221",
+        "text_key": "ipip_X144",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_222",
+        "text_key": "ipip_text_enjoy_feeling_close_to_the_earth",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_223",
+        "text_key": "ipip_Q228",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_224",
+        "text_key": "ipip_D71",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_225",
+        "text_key": "ipip_H1157",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_226",
+        "text_key": "ipip_X107",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_227",
+        "text_key": "ipip_H948",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_228",
+        "text_key": "ipip_D79",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_229",
+        "text_key": "ipip_D87",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_230",
+        "text_key": "ipip_E150",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_231",
+        "text_key": "ipip_X123",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_232",
+        "text_key": "ipip_Q51",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_233",
+        "text_key": "ipip_E105",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_234",
+        "text_key": "ipip_D4",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_235",
+        "text_key": "ipip_X45",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_236",
+        "text_key": "ipip_H2011",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_237",
+        "text_key": "ipip_E156",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_238",
+        "text_key": "ipip_H286",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_239",
+        "text_key": "ipip_H1002",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_hexaco_240",
+        "text_key": "ipip_X83",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "gentleness_sum": {
+        "description": "Cronbach's alpha = 0.81",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_001": 1,
+          "ipip_hexaco_002": -1,
+          "ipip_hexaco_003": -1,
+          "ipip_hexaco_004": -1,
+          "ipip_hexaco_005": -1,
+          "ipip_hexaco_006": 1,
+          "ipip_hexaco_007": -1,
+          "ipip_hexaco_008": 1,
+          "ipip_hexaco_009": -1,
+          "ipip_hexaco_010": 1
+        }
+      },
+      "gentleness_mean": {
+        "description": "Cronbach's alpha = 0.81",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_001": 1,
+          "ipip_hexaco_002": -1,
+          "ipip_hexaco_003": -1,
+          "ipip_hexaco_004": -1,
+          "ipip_hexaco_005": -1,
+          "ipip_hexaco_006": 1,
+          "ipip_hexaco_007": -1,
+          "ipip_hexaco_008": 1,
+          "ipip_hexaco_009": -1,
+          "ipip_hexaco_010": 1
+        }
+      },
+      "prudence_sum": {
+        "description": "Cronbach's alpha = 0.80",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_011": -1,
+          "ipip_hexaco_012": 1,
+          "ipip_hexaco_013": 1,
+          "ipip_hexaco_014": -1,
+          "ipip_hexaco_015": -1,
+          "ipip_hexaco_016": -1,
+          "ipip_hexaco_017": -1,
+          "ipip_hexaco_018": -1,
+          "ipip_hexaco_019": 1,
+          "ipip_hexaco_020": -1
+        }
+      },
+      "prudence_mean": {
+        "description": "Cronbach's alpha = 0.80",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_011": -1,
+          "ipip_hexaco_012": 1,
+          "ipip_hexaco_013": 1,
+          "ipip_hexaco_014": -1,
+          "ipip_hexaco_015": -1,
+          "ipip_hexaco_016": -1,
+          "ipip_hexaco_017": -1,
+          "ipip_hexaco_018": -1,
+          "ipip_hexaco_019": 1,
+          "ipip_hexaco_020": -1
+        }
+      },
+      "sincerity_sum": {
+        "description": "Cronbach's alpha = 0.81",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_021": -1,
+          "ipip_hexaco_022": 1,
+          "ipip_hexaco_023": -1,
+          "ipip_hexaco_024": -1,
+          "ipip_hexaco_025": -1,
+          "ipip_hexaco_026": -1,
+          "ipip_hexaco_027": -1,
+          "ipip_hexaco_028": -1,
+          "ipip_hexaco_029": -1,
+          "ipip_hexaco_030": -1
+        }
+      },
+      "sincerity_mean": {
+        "description": "Cronbach's alpha = 0.81",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_021": -1,
+          "ipip_hexaco_022": 1,
+          "ipip_hexaco_023": -1,
+          "ipip_hexaco_024": -1,
+          "ipip_hexaco_025": -1,
+          "ipip_hexaco_026": -1,
+          "ipip_hexaco_027": -1,
+          "ipip_hexaco_028": -1,
+          "ipip_hexaco_029": -1,
+          "ipip_hexaco_030": -1
+        }
+      },
+      "flexibility_sum": {
+        "description": "Cronbach's alpha = 0.73",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_031": 1,
+          "ipip_hexaco_032": -1,
+          "ipip_hexaco_033": 1,
+          "ipip_hexaco_034": -1,
+          "ipip_hexaco_035": -1,
+          "ipip_hexaco_036": -1,
+          "ipip_hexaco_037": -1,
+          "ipip_hexaco_038": -1,
+          "ipip_hexaco_039": -1,
+          "ipip_hexaco_040": -1
+        }
+      },
+      "flexibility_mean": {
+        "description": "Cronbach's alpha = 0.73",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_031": 1,
+          "ipip_hexaco_032": -1,
+          "ipip_hexaco_033": 1,
+          "ipip_hexaco_034": -1,
+          "ipip_hexaco_035": -1,
+          "ipip_hexaco_036": -1,
+          "ipip_hexaco_037": -1,
+          "ipip_hexaco_038": -1,
+          "ipip_hexaco_039": -1,
+          "ipip_hexaco_040": -1
+        }
+      },
+      "equity_fairness_sum": {
+        "description": "Cronbach's alpha = 0.77",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_041": -1,
+          "ipip_hexaco_042": -1,
+          "ipip_hexaco_043": -1,
+          "ipip_hexaco_044": 1,
+          "ipip_hexaco_045": -1,
+          "ipip_hexaco_046": 1,
+          "ipip_hexaco_047": 1,
+          "ipip_hexaco_048": 1,
+          "ipip_hexaco_049": 1,
+          "ipip_hexaco_050": -1
+        }
+      },
+      "equity_fairness_mean": {
+        "description": "Cronbach's alpha = 0.77",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_041": -1,
+          "ipip_hexaco_042": -1,
+          "ipip_hexaco_043": -1,
+          "ipip_hexaco_044": 1,
+          "ipip_hexaco_045": -1,
+          "ipip_hexaco_046": 1,
+          "ipip_hexaco_047": 1,
+          "ipip_hexaco_048": 1,
+          "ipip_hexaco_049": 1,
+          "ipip_hexaco_050": -1
+        }
+      },
+      "fearfulness_sum": {
+        "description": "Cronbach's alpha = 0.84",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_051": 1,
+          "ipip_hexaco_052": -1,
+          "ipip_hexaco_053": 1,
+          "ipip_hexaco_054": -1,
+          "ipip_hexaco_055": -1,
+          "ipip_hexaco_056": -1,
+          "ipip_hexaco_057": 1,
+          "ipip_hexaco_058": -1,
+          "ipip_hexaco_059": 1,
+          "ipip_hexaco_060": 1
+        }
+      },
+      "fearfulness_mean": {
+        "description": "Cronbach's alpha = 0.84",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_051": 1,
+          "ipip_hexaco_052": -1,
+          "ipip_hexaco_053": 1,
+          "ipip_hexaco_054": -1,
+          "ipip_hexaco_055": -1,
+          "ipip_hexaco_056": -1,
+          "ipip_hexaco_057": 1,
+          "ipip_hexaco_058": -1,
+          "ipip_hexaco_059": 1,
+          "ipip_hexaco_060": 1
+        }
+      },
+      "unconventionality_sum": {
+        "description": "Cronbach's alpha = 0.84",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_061": 1,
+          "ipip_hexaco_062": 1,
+          "ipip_hexaco_063": -1,
+          "ipip_hexaco_064": 1,
+          "ipip_hexaco_065": -1,
+          "ipip_hexaco_066": -1,
+          "ipip_hexaco_067": 1,
+          "ipip_hexaco_068": 1,
+          "ipip_hexaco_069": -1,
+          "ipip_hexaco_070": -1
+        }
+      },
+      "unconventionality_mean": {
+        "description": "Cronbach's alpha = 0.84",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_061": 1,
+          "ipip_hexaco_062": 1,
+          "ipip_hexaco_063": -1,
+          "ipip_hexaco_064": 1,
+          "ipip_hexaco_065": -1,
+          "ipip_hexaco_066": -1,
+          "ipip_hexaco_067": 1,
+          "ipip_hexaco_068": 1,
+          "ipip_hexaco_069": -1,
+          "ipip_hexaco_070": -1
+        }
+      },
+      "sentimentality_sum": {
+        "description": "Cronbach's alpha = 0.79",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_071": 1,
+          "ipip_hexaco_072": -1,
+          "ipip_hexaco_073": 1,
+          "ipip_hexaco_074": 1,
+          "ipip_hexaco_075": 1,
+          "ipip_hexaco_076": -1,
+          "ipip_hexaco_077": -1,
+          "ipip_hexaco_078": -1,
+          "ipip_hexaco_236": 1,
+          "ipip_hexaco_237": -1
+        }
+      },
+      "sentimentality_mean": {
+        "description": "Cronbach's alpha = 0.79",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_071": 1,
+          "ipip_hexaco_072": -1,
+          "ipip_hexaco_073": 1,
+          "ipip_hexaco_074": 1,
+          "ipip_hexaco_075": 1,
+          "ipip_hexaco_076": -1,
+          "ipip_hexaco_077": -1,
+          "ipip_hexaco_078": -1,
+          "ipip_hexaco_236": 1,
+          "ipip_hexaco_237": -1
+        }
+      },
+      "patience_sum": {
+        "description": "Cronbach's alpha = 0.88",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_079": -1,
+          "ipip_hexaco_080": 1,
+          "ipip_hexaco_081": 1,
+          "ipip_hexaco_082": -1,
+          "ipip_hexaco_083": -1,
+          "ipip_hexaco_084": -1,
+          "ipip_hexaco_085": -1,
+          "ipip_hexaco_086": 1,
+          "ipip_hexaco_087": 1,
+          "ipip_hexaco_088": 1
+        }
+      },
+      "patience_mean": {
+        "description": "Cronbach's alpha = 0.88",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_079": -1,
+          "ipip_hexaco_080": 1,
+          "ipip_hexaco_081": 1,
+          "ipip_hexaco_082": -1,
+          "ipip_hexaco_083": -1,
+          "ipip_hexaco_084": -1,
+          "ipip_hexaco_085": -1,
+          "ipip_hexaco_086": 1,
+          "ipip_hexaco_087": 1,
+          "ipip_hexaco_088": 1
+        }
+      },
+      "diligence_sum": {
+        "description": "Cronbach's alpha = 0.81",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_089": 1,
+          "ipip_hexaco_090": 1,
+          "ipip_hexaco_091": -1,
+          "ipip_hexaco_092": -1,
+          "ipip_hexaco_093": 1,
+          "ipip_hexaco_094": -1,
+          "ipip_hexaco_095": 1,
+          "ipip_hexaco_096": -1,
+          "ipip_hexaco_097": -1,
+          "ipip_hexaco_098": 1
+        }
+      },
+      "diligence_mean": {
+        "description": "Cronbach's alpha = 0.81",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_089": 1,
+          "ipip_hexaco_090": 1,
+          "ipip_hexaco_091": -1,
+          "ipip_hexaco_092": -1,
+          "ipip_hexaco_093": 1,
+          "ipip_hexaco_094": -1,
+          "ipip_hexaco_095": 1,
+          "ipip_hexaco_096": -1,
+          "ipip_hexaco_097": -1,
+          "ipip_hexaco_098": 1
+        }
+      },
+      "creativity_originality_sum": {
+        "description": "Cronbach's alpha = 0.85",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_099": 1,
+          "ipip_hexaco_100": 1,
+          "ipip_hexaco_101": 1,
+          "ipip_hexaco_102": -1,
+          "ipip_hexaco_103": 1,
+          "ipip_hexaco_104": -1,
+          "ipip_hexaco_105": 1,
+          "ipip_hexaco_106": -1,
+          "ipip_hexaco_107": 1,
+          "ipip_hexaco_108": -1
+        }
+      },
+      "creativity_originality_mean": {
+        "description": "Cronbach's alpha = 0.85",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_099": 1,
+          "ipip_hexaco_100": 1,
+          "ipip_hexaco_101": 1,
+          "ipip_hexaco_102": -1,
+          "ipip_hexaco_103": 1,
+          "ipip_hexaco_104": -1,
+          "ipip_hexaco_105": 1,
+          "ipip_hexaco_106": -1,
+          "ipip_hexaco_107": 1,
+          "ipip_hexaco_108": -1
+        }
+      },
+      "social_boldness_sum": {
+        "description": "Cronbach's alpha = 0.86",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_109": 1,
+          "ipip_hexaco_110": 1,
+          "ipip_hexaco_111": 1,
+          "ipip_hexaco_112": -1,
+          "ipip_hexaco_113": -1,
+          "ipip_hexaco_114": 1,
+          "ipip_hexaco_115": 1,
+          "ipip_hexaco_116": -1,
+          "ipip_hexaco_117": -1,
+          "ipip_hexaco_118": -1
+        }
+      },
+      "social_boldness_mean": {
+        "description": "Cronbach's alpha = 0.86",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_109": 1,
+          "ipip_hexaco_110": 1,
+          "ipip_hexaco_111": 1,
+          "ipip_hexaco_112": -1,
+          "ipip_hexaco_113": -1,
+          "ipip_hexaco_114": 1,
+          "ipip_hexaco_115": 1,
+          "ipip_hexaco_116": -1,
+          "ipip_hexaco_117": -1,
+          "ipip_hexaco_118": -1
+        }
+      },
+      "sociability_sum": {
+        "description": "Cronbach's alpha = 0.85",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_119": -1,
+          "ipip_hexaco_120": 1,
+          "ipip_hexaco_121": -1,
+          "ipip_hexaco_122": 1,
+          "ipip_hexaco_123": 1,
+          "ipip_hexaco_124": -1,
+          "ipip_hexaco_125": -1,
+          "ipip_hexaco_126": 1,
+          "ipip_hexaco_127": -1,
+          "ipip_hexaco_240": 1
+        }
+      },
+      "sociability_mean": {
+        "description": "Cronbach's alpha = 0.85",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_119": -1,
+          "ipip_hexaco_120": 1,
+          "ipip_hexaco_121": -1,
+          "ipip_hexaco_122": 1,
+          "ipip_hexaco_123": 1,
+          "ipip_hexaco_124": -1,
+          "ipip_hexaco_125": -1,
+          "ipip_hexaco_126": 1,
+          "ipip_hexaco_127": -1,
+          "ipip_hexaco_240": 1
+        }
+      },
+      "forgiveness_mercy_sum": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_128": 1,
+          "ipip_hexaco_129": 1,
+          "ipip_hexaco_130": -1,
+          "ipip_hexaco_131": -1,
+          "ipip_hexaco_132": -1,
+          "ipip_hexaco_133": -1,
+          "ipip_hexaco_134": -1,
+          "ipip_hexaco_135": -1,
+          "ipip_hexaco_136": 1,
+          "ipip_hexaco_137": 1
+        }
+      },
+      "forgiveness_mercy_mean": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_128": 1,
+          "ipip_hexaco_129": 1,
+          "ipip_hexaco_130": -1,
+          "ipip_hexaco_131": -1,
+          "ipip_hexaco_132": -1,
+          "ipip_hexaco_133": -1,
+          "ipip_hexaco_134": -1,
+          "ipip_hexaco_135": -1,
+          "ipip_hexaco_136": 1,
+          "ipip_hexaco_137": 1
+        }
+      },
+      "inquisitiveness_sum": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_138": 1,
+          "ipip_hexaco_139": -1,
+          "ipip_hexaco_140": -1,
+          "ipip_hexaco_141": -1,
+          "ipip_hexaco_142": 1,
+          "ipip_hexaco_143": 1,
+          "ipip_hexaco_144": 1,
+          "ipip_hexaco_145": 1,
+          "ipip_hexaco_146": -1,
+          "ipip_hexaco_147": 1
+        }
+      },
+      "inquisitiveness_mean": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_138": 1,
+          "ipip_hexaco_139": -1,
+          "ipip_hexaco_140": -1,
+          "ipip_hexaco_141": -1,
+          "ipip_hexaco_142": 1,
+          "ipip_hexaco_143": 1,
+          "ipip_hexaco_144": 1,
+          "ipip_hexaco_145": 1,
+          "ipip_hexaco_146": -1,
+          "ipip_hexaco_147": 1
+        }
+      },
+      "modesty_humility_sum": {
+        "description": "Cronbach's alpha = 0.81",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_148": 1,
+          "ipip_hexaco_149": -1,
+          "ipip_hexaco_150": -1,
+          "ipip_hexaco_151": -1,
+          "ipip_hexaco_152": -1,
+          "ipip_hexaco_153": 1,
+          "ipip_hexaco_154": 1,
+          "ipip_hexaco_155": -1,
+          "ipip_hexaco_156": 1,
+          "ipip_hexaco_157": -1
+        }
+      },
+      "modesty_humility_mean": {
+        "description": "Cronbach's alpha = 0.81",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_148": 1,
+          "ipip_hexaco_149": -1,
+          "ipip_hexaco_150": -1,
+          "ipip_hexaco_151": -1,
+          "ipip_hexaco_152": -1,
+          "ipip_hexaco_153": 1,
+          "ipip_hexaco_154": 1,
+          "ipip_hexaco_155": -1,
+          "ipip_hexaco_156": 1,
+          "ipip_hexaco_157": -1
+        }
+      },
+      "greed_avoidance_sum": {
+        "description": "Cronbach's alpha = 0.69",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_158": -1,
+          "ipip_hexaco_159": -1,
+          "ipip_hexaco_160": 1,
+          "ipip_hexaco_161": -1,
+          "ipip_hexaco_162": -1,
+          "ipip_hexaco_163": -1,
+          "ipip_hexaco_164": -1,
+          "ipip_hexaco_165": -1,
+          "ipip_hexaco_166": -1,
+          "ipip_hexaco_167": 1
+        }
+      },
+      "greed_avoidance_mean": {
+        "description": "Cronbach's alpha = 0.69",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_158": -1,
+          "ipip_hexaco_159": -1,
+          "ipip_hexaco_160": 1,
+          "ipip_hexaco_161": -1,
+          "ipip_hexaco_162": -1,
+          "ipip_hexaco_163": -1,
+          "ipip_hexaco_164": -1,
+          "ipip_hexaco_165": -1,
+          "ipip_hexaco_166": -1,
+          "ipip_hexaco_167": 1
+        }
+      },
+      "expressiveness_sum": {
+        "description": "Cronbach's alpha = 0.84",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_168": 1,
+          "ipip_hexaco_169": 1,
+          "ipip_hexaco_170": -1,
+          "ipip_hexaco_171": -1,
+          "ipip_hexaco_172": -1,
+          "ipip_hexaco_173": 1,
+          "ipip_hexaco_174": -1,
+          "ipip_hexaco_175": -1,
+          "ipip_hexaco_176": 1,
+          "ipip_hexaco_177": 1
+        }
+      },
+      "expressiveness_mean": {
+        "description": "Cronbach's alpha = 0.84",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_168": 1,
+          "ipip_hexaco_169": 1,
+          "ipip_hexaco_170": -1,
+          "ipip_hexaco_171": -1,
+          "ipip_hexaco_172": -1,
+          "ipip_hexaco_173": 1,
+          "ipip_hexaco_174": -1,
+          "ipip_hexaco_175": -1,
+          "ipip_hexaco_176": 1,
+          "ipip_hexaco_177": 1
+        }
+      },
+      "organization_sum": {
+        "description": "Cronbach's alpha = 0.85",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_178": -1,
+          "ipip_hexaco_179": -1,
+          "ipip_hexaco_180": 1,
+          "ipip_hexaco_181": 1,
+          "ipip_hexaco_182": -1,
+          "ipip_hexaco_183": -1,
+          "ipip_hexaco_184": 1,
+          "ipip_hexaco_185": 1,
+          "ipip_hexaco_186": -1,
+          "ipip_hexaco_187": 1
+        }
+      },
+      "organization_mean": {
+        "description": "Cronbach's alpha = 0.85",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_178": -1,
+          "ipip_hexaco_179": -1,
+          "ipip_hexaco_180": 1,
+          "ipip_hexaco_181": 1,
+          "ipip_hexaco_182": -1,
+          "ipip_hexaco_183": -1,
+          "ipip_hexaco_184": 1,
+          "ipip_hexaco_185": 1,
+          "ipip_hexaco_186": -1,
+          "ipip_hexaco_187": 1
+        }
+      },
+      "anxiety_sum": {
+        "description": "Cronbach's alpha = 0.85",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_188": -1,
+          "ipip_hexaco_189": 1,
+          "ipip_hexaco_190": -1,
+          "ipip_hexaco_224": 1,
+          "ipip_hexaco_225": 1,
+          "ipip_hexaco_226": 1,
+          "ipip_hexaco_227": 1,
+          "ipip_hexaco_228": -1,
+          "ipip_hexaco_229": -1,
+          "ipip_hexaco_230": -1
+        }
+      },
+      "anxiety_mean": {
+        "description": "Cronbach's alpha = 0.85",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_188": -1,
+          "ipip_hexaco_189": 1,
+          "ipip_hexaco_190": -1,
+          "ipip_hexaco_224": 1,
+          "ipip_hexaco_225": 1,
+          "ipip_hexaco_226": 1,
+          "ipip_hexaco_227": 1,
+          "ipip_hexaco_228": -1,
+          "ipip_hexaco_229": -1,
+          "ipip_hexaco_230": -1
+        }
+      },
+      "liveliness_sum": {
+        "description": "Cronbach's alpha = 0.82",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_191": 1,
+          "ipip_hexaco_192": 1,
+          "ipip_hexaco_193": 1,
+          "ipip_hexaco_194": 1,
+          "ipip_hexaco_195": 1,
+          "ipip_hexaco_196": 1,
+          "ipip_hexaco_197": 1,
+          "ipip_hexaco_198": -1,
+          "ipip_hexaco_199": 1,
+          "ipip_hexaco_200": -1
+        }
+      },
+      "liveliness_mean": {
+        "description": "Cronbach's alpha = 0.82",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_191": 1,
+          "ipip_hexaco_192": 1,
+          "ipip_hexaco_193": 1,
+          "ipip_hexaco_194": 1,
+          "ipip_hexaco_195": 1,
+          "ipip_hexaco_196": 1,
+          "ipip_hexaco_197": 1,
+          "ipip_hexaco_198": -1,
+          "ipip_hexaco_199": 1,
+          "ipip_hexaco_200": -1
+        }
+      },
+      "conformity_dependence_need_for_approval_sum": {
+        "description": "Cronbach's alpha = 0.73",
+        "method": "sum",
+        "items": [
+          "ipip_hexaco_201",
+          "ipip_hexaco_202",
+          "ipip_hexaco_203",
+          "ipip_hexaco_204",
+          "ipip_hexaco_205",
+          "ipip_hexaco_206",
+          "ipip_hexaco_207",
+          "ipip_hexaco_208",
+          "ipip_hexaco_209",
+          "ipip_hexaco_210"
+        ]
+      },
+      "conformity_dependence_need_for_approval_mean": {
+        "description": "Cronbach's alpha = 0.73",
+        "method": "mean_coded",
+        "items": [
+          "ipip_hexaco_201",
+          "ipip_hexaco_202",
+          "ipip_hexaco_203",
+          "ipip_hexaco_204",
+          "ipip_hexaco_205",
+          "ipip_hexaco_206",
+          "ipip_hexaco_207",
+          "ipip_hexaco_208",
+          "ipip_hexaco_209",
+          "ipip_hexaco_210"
+        ]
+      },
+      "perfectionism_sum": {
+        "description": "Cronbach's alpha = 0.80",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_211": 1,
+          "ipip_hexaco_212": 1,
+          "ipip_hexaco_213": 1,
+          "ipip_hexaco_214": 1,
+          "ipip_hexaco_215": 1,
+          "ipip_hexaco_216": -1,
+          "ipip_hexaco_217": -1,
+          "ipip_hexaco_218": 1,
+          "ipip_hexaco_238": 1,
+          "ipip_hexaco_239": 1
+        }
+      },
+      "perfectionism_mean": {
+        "description": "Cronbach's alpha = 0.80",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_211": 1,
+          "ipip_hexaco_212": 1,
+          "ipip_hexaco_213": 1,
+          "ipip_hexaco_214": 1,
+          "ipip_hexaco_215": 1,
+          "ipip_hexaco_216": -1,
+          "ipip_hexaco_217": -1,
+          "ipip_hexaco_218": 1,
+          "ipip_hexaco_238": 1,
+          "ipip_hexaco_239": 1
+        }
+      },
+      "aesthetic_appreciation_artistic_interests_sum": {
+        "description": "Cronbach's alpha = 0.83",
+        "method": "sum",
+        "items": {
+          "ipip_hexaco_219": -1,
+          "ipip_hexaco_220": -1,
+          "ipip_hexaco_221": -1,
+          "ipip_hexaco_222": 1,
+          "ipip_hexaco_223": 1,
+          "ipip_hexaco_231": 1,
+          "ipip_hexaco_232": 1,
+          "ipip_hexaco_233": 1,
+          "ipip_hexaco_234": -1,
+          "ipip_hexaco_235": -1
+        }
+      },
+      "aesthetic_appreciation_artistic_interests_mean": {
+        "description": "Cronbach's alpha = 0.83",
+        "method": "mean_coded",
+        "items": {
+          "ipip_hexaco_219": -1,
+          "ipip_hexaco_220": -1,
+          "ipip_hexaco_221": -1,
+          "ipip_hexaco_222": 1,
+          "ipip_hexaco_223": 1,
+          "ipip_hexaco_231": 1,
+          "ipip_hexaco_232": 1,
+          "ipip_hexaco_233": 1,
+          "ipip_hexaco_234": -1,
+          "ipip_hexaco_235": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_H106": "Accept people as they are.",
+      "ipip_E65": "Am quick to judge others.",
+      "ipip_D100": "Become frustrated and angry with people when they don't live up to my expectations.",
+      "ipip_H279": "Criticize others' shortcomings.",
+      "ipip_H1067": "Find fault with everything.",
+      "ipip_H22": "Have a good word for everyone.",
+      "ipip_text_have_a_sharp_tongue": "Have a sharp tongue.",
+      "ipip_E120": "Rarely complain.",
+      "ipip_H1124": "Speak ill of others.",
+      "ipip_E144": "Take things as they come.",
+      "ipip_Q253": "Act impulsively when something is bothering me.",
+      "ipip_H252": "Avoid mistakes.",
+      "ipip_H1351": "Do things according to a plan.",
+      "ipip_Q243": "Do things without thinking of the consequences.",
+      "ipip_E57": "Don't know why I do some of the things I do.",
+      "ipip_E46": "Jump into things without thinking.",
+      "ipip_Q66": "Make a fool of myself.",
+      "ipip_R75": "Make careless mistakes.",
+      "ipip_X263": "Make plans and stick to them.",
+      "ipip_H853": "Make rash decisions.",
+      "ipip_P342": "Act like different people in different situations.",
+      "ipip_Q35": "Don't pretend to be more than I am.",
+      "ipip_Q49": "Find it necessary to please the people who have power.",
+      "ipip_P399": "Let people push me around to help them feel important.",
+      "ipip_Q6": "Play a role in order to impress people.",
+      "ipip_X113": "Pretend to be concerned for others.",
+      "ipip_P491": "Put on a show to impress people.",
+      "ipip_Q125": "Switch my loyalties when I feel like it.",
+      "ipip_A141": "Tell other people what they want to hear so that they will do what I want them to do.",
+      "ipip_X91": "Use flattery to get ahead.",
+      "ipip_H1070": "Adjust easily.",
+      "ipip_E82": "Am annoyed by others' mistakes.",
+      "ipip_H1068": "Am good at taking advice.",
+      "ipip_H687": "Am hard to convince.",
+      "ipip_text_am_hard_to_reason_with": "Am hard to reason with.",
+      "ipip_H277": "Am hard to satisfy.",
+      "ipip_H292": "Can't stand being contradicted.",
+      "ipip_R24": "Get upset if others change the way that I have arranged things.",
+      "ipip_Q54": "React strongly to criticism.",
+      "ipip_D39": "When interacting with a group of people, am often bothered by at least one of them.",
+      "ipip_A108": "Admire a really clever scam.",
+      "ipip_Q22": "Cheat on people who have trusted me.",
+      "ipip_X198": "Cheat to get ahead.",
+      "ipip_E80": "Return extra change when a cashier makes a mistake.",
+      "ipip_A119": "Steal things.",
+      "ipip_X150": "Try to follow the rules.",
+      "ipip_D102": "Would feel very badly for a long time if I were to steal from someone.",
+      "ipip_X136": "Would never cheat on my taxes.",
+      "ipip_P367": "Would never take things that aren't mine.",
+      "ipip_D86": "Would not regret my behavior if I were to take advantage of someone impulsively.",
+      "ipip_R44": "Am a physical coward.",
+      "ipip_Q95": "Am willing to take risks.",
+      "ipip_Q50": "Begin to panic when there is danger.",
+      "ipip_Q126": "Face danger confidently.",
+      "ipip_R53": "Like to do frightening things.",
+      "ipip_R69": "Love dangerous situations.",
+      "ipip_Q5": "Tremble in dangerous situations.",
+      "ipip_Q31": "Would be good at rescuing people from a burning building.",
+      "ipip_R52": "Would fear walking in a high-crime part of a city.",
+      "ipip_Q136": "Would never go riding down a stretch of rapids in a canoe.",
+      "ipip_R35": "Am considered to be kind of eccentric.",
+      "ipip_H691": "Do things that others find strange.",
+      "ipip_text_enjoy_being_thought_of_as_a_normal_mains": "Enjoy being thought of as a normal 'mainstream' person.",
+      "ipip_D73": "Know that my ideas sometimes surprise people.",
+      "ipip_R6": "Like to be thought of as a normal kind of person.",
+      "ipip_D88": "Like to be viewed as proper and conventional.",
+      "ipip_Q207": "Rebel against authority.",
+      "ipip_H690": "Swim against the current.",
+      "ipip_E171": "Try to avoid complex people.",
+      "ipip_D46": "Would hate to be considered odd or strange.",
+      "ipip_X253": "Am deeply moved by others' misfortunes.",
+      "ipip_D93": "Am seldom bothered by the apparent suffering of strangers.",
+      "ipip_Q256": "Am sensitive to the needs of others.",
+      "ipip_E136": "Feel others' emotions.",
+      "ipip_D116": "Immediately feel sad when hearing of an unhappy event.",
+      "ipip_A56": "Rarely cry during sad movies.",
+      "ipip_D65": "Seldom feel weepy while reading the sad part of a story.",
+      "ipip_X29": "Seldom get emotional.",
+      "ipip_Q210": "Am easily annoyed.",
+      "ipip_D63": "Am usually a patient person.",
+      "ipip_D68": "Find that it takes a lot to make me feel angry at someone.",
+      "ipip_H754": "Get angry easily.",
+      "ipip_H761": "Get irritated easily.",
+      "ipip_X95": "Get upset easily.",
+      "ipip_H755": "Lose my temper.",
+      "ipip_D113": "Rarely feel angry with people.",
+      "ipip_X265": "Rarely get irritated.",
+      "ipip_X231": "Seldom get mad.",
+      "ipip_X163": "Am exacting in my work.",
+      "ipip_H1285": "Complete tasks successfully.",
+      "ipip_X115": "Do just enough work to get by.",
+      "ipip_P385": "Do too little work.",
+      "ipip_Q197": "Get started quickly on doing a job.",
+      "ipip_H627": "Hang around doing nothing.",
+      "ipip_Q204": "Push myself very hard to succeed.",
+      "ipip_A41": "Quickly lose interest in the tasks I start.",
+      "ipip_Q220": "Stop when work becomes too difficult.",
+      "ipip_H1206": "Work hard.",
+      "ipip_H53": "Am full of ideas.",
+      "ipip_H1227": "Carry the conversation to a higher level.",
+      "ipip_H1230": "Come up with something new.",
+      "ipip_X272": "Do not have a good imagination.",
+      "ipip_X14": "Have a vivid imagination.",
+      "ipip_H1382": "Have difficulty imagining things.",
+      "ipip_H1313": "Have excellent ideas.",
+      "ipip_P405": "Have trouble guessing how others will react.",
+      "ipip_X225": "Love to think up new ways of doing things.",
+      "ipip_D11": "Seldom experience sudden intuitive insights.",
+      "ipip_P364": "Am good at making impromptu speeches.",
+      "ipip_X78": "Don't mind being the center of attention.",
+      "ipip_X112": "Feel comfortable around people.",
+      "ipip_H592": "Find it difficult to approach others.",
+      "ipip_P434": "Hate being the center of attention.",
+      "ipip_Q14": "Have a strong personality.",
+      "ipip_Q134": "Have leadership abilities.",
+      "ipip_H1039": "Have little to say.",
+      "ipip_H154": "Keep in the background.",
+      "ipip_Q45": "Would be afraid to give a speech in public.",
+      "ipip_H596": "Am hard to get to know.",
+      "ipip_H2016": "Enjoy being part of a group.",
+      "ipip_H704": "Keep others at a distance.",
+      "ipip_H1095": "Love to chat.",
+      "ipip_H29": "Make friends easily.",
+      "ipip_D82": "Rarely enjoy being with people.",
+      "ipip_D20": "Seem to derive less enjoyment from interacting with people than others do.",
+      "ipip_D70": "Usually like to spend my free time with people.",
+      "ipip_D101": "Would not enjoy a job that involves a lot of social interaction.",
+      "ipip_H137": "Am inclined to forgive others.",
+      "ipip_Q202": "Am nice to people I should be angry at.",
+      "ipip_H1195": "Distrust people.",
+      "ipip_Q189": "Feel that most people can't be trusted.",
+      "ipip_X210": "Find it hard to forgive others.",
+      "ipip_Q154": "Get back at people who insult me.",
+      "ipip_H711": "Get even with others.",
+      "ipip_X217": "Hold a grudge.",
+      "ipip_Q183": "Love my enemies.",
+      "ipip_E126": "Try to forgive and forget.",
+      "ipip_Q69": "Am interested in science.",
+      "ipip_X109": "Avoid difficult reading material.",
+      "ipip_Q222": "Don't bother worrying about political and social problems.",
+      "ipip_Q82": "Don't know much about history.",
+      "ipip_Q160": "Enjoy intellectual games.",
+      "ipip_X174": "Find political discussions interesting.",
+      "ipip_H1276": "Have a rich vocabulary.",
+      "ipip_X211": "Love to read challenging material.",
+      "ipip_H1392": "Will not probe deeply into a subject.",
+      "ipip_R71": "Would love to explore strange places.",
+      "ipip_Q103": "Am just an ordinary person.",
+      "ipip_P441": "Am likely to show off if I get the chance.",
+      "ipip_P469": "Am more capable than most others.",
+      "ipip_H736": "Believe that I am better than others.",
+      "ipip_H746": "Boast about my virtues.",
+      "ipip_X125": "Consider myself an average person.",
+      "ipip_Q175": "Don't think that I'm better than other people.",
+      "ipip_H1150": "Like to attract attention.",
+      "ipip_Q12": "See myself as an average person.",
+      "ipip_Q165": "Would like to have more power than other people.",
+      "ipip_Q179": "Am mainly interested in money.",
+      "ipip_H1325": "Am out for my own personal gain.",
+      "ipip_P371": "Don't strive for elegance in my appearance.",
+      "ipip_P445": "Have a strong need for power.",
+      "ipip_Q161": "Love luxury.",
+      "ipip_P370": "Prefer to eat at expensive restaurants.",
+      "ipip_H747": "Seek status.",
+      "ipip_H744": "Try to impress others.",
+      "ipip_Q19": "Wish to stay young forever.",
+      "ipip_Q226": "Would not enjoy being a famous celebrity.",
+      "ipip_H1302": "Am never at a loss for words.",
+      "ipip_H34": "Am the life of the party.",
+      "ipip_H1146": "Bottle up my feelings.",
+      "ipip_X68": "Don't like to draw attention to myself.",
+      "ipip_X56": "Don't talk a lot.",
+      "ipip_D30": "Have an intense, boisterous laugh.",
+      "ipip_H584": "Say little.",
+      "ipip_H548": "Speak softly.",
+      "ipip_R11": "Talk a lot.",
+      "ipip_Q121": "Tell people about it when I'm irritated.",
+      "ipip_E7": "Am not bothered by disorder.",
+      "ipip_R12": "Don't finish the things that I start.",
+      "ipip_E119": "Get chores done right away.",
+      "ipip_Q104": "Keep things tidy.",
+      "ipip_H822": "Leave a mess in my room.",
+      "ipip_text_leave_my_belongings_around": "Leave my belongings around.",
+      "ipip_X118": "Like order.",
+      "ipip_H244": "Like to tidy up.",
+      "ipip_X82": "Often forget to put things back in their proper place.",
+      "ipip_text_want_everything_to_be_just_right": "Want everything to be 'just right.'",
+      "ipip_H1046": "Am not easily disturbed by events.",
+      "ipip_R37": "Get upset by unpleasant thoughts that come into my mind.",
+      "ipip_X79": "Remain calm under pressure.",
+      "ipip_C4": "Am usually active and full of energy.",
+      "ipip_C8": "Feel healthy and vibrant most of the time.",
+      "ipip_Q191": "Feel that I have a lot of inner strength.",
+      "ipip_H1094": "Have a lot of fun.",
+      "ipip_Q236": "Have great stamina.",
+      "ipip_Q138": "Laugh a lot.",
+      "ipip_Q151": "Maintain high energy throughout the day.",
+      "ipip_X74": "Often feel blue.",
+      "ipip_Q111": "Smile a lot.",
+      "ipip_Q65": "Tire out quickly.",
+      "ipip_H965": "Can't do without the company of others.",
+      "ipip_H975": "Let myself be influenced by others.",
+      "ipip_H995": "Need protection.",
+      "ipip_H980": "Need reassurance.",
+      "ipip_H974": "Need the approval of others.",
+      "ipip_H966": "Often need help.",
+      "ipip_H961": "Seek support.",
+      "ipip_A101": "Show my sadness.",
+      "ipip_A80": "Suspect that my facial expressions give me away when I feel sad.",
+      "ipip_H1057": "Want to be liked.",
+      "ipip_H288": "Demand quality.",
+      "ipip_H1293": "Detect mistakes.",
+      "ipip_H271": "Dislike imperfect work.",
+      "ipip_H1356": "Have an eye for detail.",
+      "ipip_H1362": "Pay attention to details.",
+      "ipip_Q36": "Pay too little attention to details.",
+      "ipip_A96": "Prefer to just let things happen.",
+      "ipip_H241": "Want everything to add up perfectly.",
+      "ipip_X243": "Do not enjoy watching dance performances.",
+      "ipip_X86": "Do not like art.",
+      "ipip_X144": "Do not like concerts.",
+      "ipip_text_enjoy_feeling_close_to_the_earth": "Enjoy feeling 'close to the earth.'",
+      "ipip_Q228": "Have read the great literary classics.",
+      "ipip_D71": "Often worry about things that turn out to be unimportant.",
+      "ipip_H1157": "Worry about things.",
+      "ipip_X107": "Get stressed out easily.",
+      "ipip_H948": "Panic easily.",
+      "ipip_D79": "Rarely worry.",
+      "ipip_D87": "Rarely feel depressed.",
+      "ipip_E150": "Don't worry about things that have already happened.",
+      "ipip_X123": "Believe in the importance of art.",
+      "ipip_Q51": "Get deeply immersed in music.",
+      "ipip_E105": "See beauty in things that others might not notice.",
+      "ipip_D4": "Seldom notice the emotional aspects of paintings and pictures.",
+      "ipip_X45": "Do not like poetry.",
+      "ipip_H2011": "Cry during movies.",
+      "ipip_E156": "Don't understand people who get emotional.",
+      "ipip_H286": "Continue until everything is perfect.",
+      "ipip_H1002": "Want every detail taken care of.",
+      "ipip_X83": "Talk to a lot of different people at parties."
+    }
+  }
+}

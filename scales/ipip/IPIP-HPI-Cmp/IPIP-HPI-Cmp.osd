@@ -1,0 +1,216 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP HPI: Competence",
+      "code": "IPIP-HPI-Cmp",
+      "abbreviation": "HPI-Cmp",
+      "description": "IPIP items measuring competence, from the IPIP Hogan Personality Inventory.",
+      "citation": "Hogan, R., & Hogan, J. (1992). Hogan Personality Inventory manual. Hogan Assessment Systems.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newHPIKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "competence_sum",
+        "name": "Competence (sum)"
+      },
+      {
+        "id": "competence_mean",
+        "name": "Competence (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_hpi_cmp_001",
+        "text_key": "ipip_H554",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpi_cmp_002",
+        "text_key": "ipip_X105",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpi_cmp_003",
+        "text_key": "ipip_H258",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpi_cmp_004",
+        "text_key": "ipip_H1285",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpi_cmp_005",
+        "text_key": "ipip_X115",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpi_cmp_006",
+        "text_key": "ipip_X205",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpi_cmp_007",
+        "text_key": "ipip_H555",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpi_cmp_008",
+        "text_key": "ipip_H627",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpi_cmp_009",
+        "text_key": "ipip_H896",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "competence_sum": {
+        "description": "Cronbach's alpha = 0.8",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_hpi_cmp_001": 1,
+          "ipip_ipip_hpi_cmp_002": -1,
+          "ipip_ipip_hpi_cmp_003": 1,
+          "ipip_ipip_hpi_cmp_004": 1,
+          "ipip_ipip_hpi_cmp_005": -1,
+          "ipip_ipip_hpi_cmp_006": -1,
+          "ipip_ipip_hpi_cmp_007": 1,
+          "ipip_ipip_hpi_cmp_008": -1,
+          "ipip_ipip_hpi_cmp_009": -1
+        }
+      },
+      "competence_mean": {
+        "description": "Cronbach's alpha = 0.8",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_hpi_cmp_001": 1,
+          "ipip_ipip_hpi_cmp_002": -1,
+          "ipip_ipip_hpi_cmp_003": 1,
+          "ipip_ipip_hpi_cmp_004": 1,
+          "ipip_ipip_hpi_cmp_005": -1,
+          "ipip_ipip_hpi_cmp_006": -1,
+          "ipip_ipip_hpi_cmp_007": 1,
+          "ipip_ipip_hpi_cmp_008": -1,
+          "ipip_ipip_hpi_cmp_009": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_H554": "Accomplish a lot of work.",
+      "ipip_X105": "Am not sure where my life is going.",
+      "ipip_H258": "Carry out my plans.",
+      "ipip_H1285": "Complete tasks successfully.",
+      "ipip_X115": "Do just enough work to get by.",
+      "ipip_X205": "Feel that my life lacks direction.",
+      "ipip_H555": "Get things done quickly.",
+      "ipip_H627": "Hang around doing nothing.",
+      "ipip_H896": "Mess things up."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_H627": "Provodim vreme ne radeći ništa.",
+      "ipip_X205": "Osećam da moj život nema usmerenje.",
+      "ipip_H1285": "Obavljam zadatke uspešno.",
+      "ipip_H555": "Brzo obavljam stvari.",
+      "ipip_X105": "Nisam siguran u kom pravcu ide moj život.",
+      "ipip_X115": "Radim tek toliko koliko je potrebno.",
+      "ipip_H554": "Obavljam dosta posla.",
+      "ipip_H258": "Ostvarujem svoje planove.",
+      "ipip_H896": "Često nešto zabrljam."
+    },
+    "sv": {
+      "ipip_likert_1": "Mycket inexakt",
+      "ipip_debrief": "Tack för att du fyllde i denna enkät.",
+      "ipip_question_head": "<h3>Hur exakt kan du beskriva dig själv?</h3><p>Beskriv dig själv som du i allmänhet är nu, inte som du önskar vara i framtiden. Beskriv dig själv så ärligt som du ser dig själv, i förhållande till andra människor du känner av samma kön och ungefär samma ålder. För att du ska kunna beskriva dig själv på ett ärligt sätt kommer dina svar att hållas i absolut sekretess. Ange hur exakt påståendet passar dig enligt följande skala:</p>",
+      "ipip_likert_5": "Mycket exakt",
+      "ipip_likert_2": "Måttligt inexakt",
+      "ipip_likert_3": "Varken exakt eller inexakt",
+      "ipip_likert_4": "Måttligt exakt",
+      "ipip_H627": "Står bara och hänger och gör inget",
+      "ipip_X205": "Känns som om mitt liv saknar inriktning",
+      "ipip_H1285": "Fullföljer mina uppgifter framgångsrikt",
+      "ipip_H555": "Får saker snabbt gjort",
+      "ipip_X105": "Är inte säker på vart mitt liv är på väg",
+      "ipip_X115": "Gör bara så mycket som jag måste",
+      "ipip_H554": "Får en massa arbete gjort",
+      "ipip_H258": "Genomför mina planer",
+      "ipip_H896": "Konstrar till saker"
+    },
+    "tr": {
+      "ipip_likert_1": "Çok yanlış",
+      "ipip_debrief": "Bu anketi tamamladığınız için teşekkür ederiz.",
+      "ipip_question_head": "<h3>Kendinizi ne kadar doğru tanımlayabilirsiniz?</h3><p>Kendinizi şu anda genellikle nasıl olduğunuza göre tanımlayın, gelecekte nasıl olmak istediğinize göre değil. Kendinizi dürüstçe, sizinle aynı cinsiyette ve yaklaşık aynı yaşta tanıdığınız diğer insanlara kıyasla göründüğü şekilde tanımlayın. Kendinizi dürüstçe tanımlayabilmeniz için cevaplarınız tamamen gizli tutulacaktır. Aşağıdaki ölçeği kullanarak her bir ifadenin sizin için doğruluğunu belirtin:</p>",
+      "ipip_likert_5": "Çok doğru",
+      "ipip_likert_2": "Biraz yanlış",
+      "ipip_likert_3": "Ne doğru ne yanlış",
+      "ipip_likert_4": "Biraz doğru",
+      "ipip_H627": "Hiçbir şey yapmadan etrafta dolanırım.",
+      "ipip_X205": "Hayatımın bir yönü olmadığını hissediyorum.",
+      "ipip_H1285": "Görevimi başarıyla tamamlarım.",
+      "ipip_H555": "İşlerin çabucak yapılmasını sağlarım.",
+      "ipip_X105": "Hayatımın ne yöne gittiğinden emin değilim.",
+      "ipip_X115": "Sadece idare edecek kadar iş yaparım.",
+      "ipip_H554": "Birçok işi başarabilirim.",
+      "ipip_H258": "Planlarımı sonuna kadar takip ederim.",
+      "ipip_H896": "Her işi elime yüzüme bulaştırırım."
+    }
+  }
+}

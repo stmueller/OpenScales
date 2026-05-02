@@ -1,0 +1,209 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP JPI: Activity-Level",
+      "code": "IPIP-JPI-Enl",
+      "abbreviation": "JPI-Enl",
+      "description": "IPIP items measuring activity-level, from the IPIP Jackson Personality Inventory.",
+      "citation": "Jackson, D. N. (1994). Jackson Personality Inventory — Revised manual. Sigma Assessment Systems.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newJPIKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "activity_level_sum",
+        "name": "Activity-Level (sum)"
+      },
+      {
+        "id": "activity_level_mean",
+        "name": "Activity-Level (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_jpi_enl_001",
+        "text_key": "ipip_H554",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_enl_002",
+        "text_key": "ipip_H58",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_enl_003",
+        "text_key": "ipip_H54",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_enl_004",
+        "text_key": "ipip_H647",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_enl_005",
+        "text_key": "ipip_H457",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_enl_006",
+        "text_key": "ipip_H79",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_enl_007",
+        "text_key": "ipip_P385",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_enl_008",
+        "text_key": "ipip_H627",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_enl_009",
+        "text_key": "ipip_P477",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_enl_010",
+        "text_key": "ipip_H969",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "activity_level_sum": {
+        "description": "Cronbach's alpha = 0.81",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_jpi_enl_001": 1,
+          "ipip_ipip_jpi_enl_002": 1,
+          "ipip_ipip_jpi_enl_003": 1,
+          "ipip_ipip_jpi_enl_004": -1,
+          "ipip_ipip_jpi_enl_005": 1,
+          "ipip_ipip_jpi_enl_006": 1,
+          "ipip_ipip_jpi_enl_007": -1,
+          "ipip_ipip_jpi_enl_008": -1,
+          "ipip_ipip_jpi_enl_009": -1,
+          "ipip_ipip_jpi_enl_010": -1
+        }
+      },
+      "activity_level_mean": {
+        "description": "Cronbach's alpha = 0.81",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_jpi_enl_001": 1,
+          "ipip_ipip_jpi_enl_002": 1,
+          "ipip_ipip_jpi_enl_003": 1,
+          "ipip_ipip_jpi_enl_004": -1,
+          "ipip_ipip_jpi_enl_005": 1,
+          "ipip_ipip_jpi_enl_006": 1,
+          "ipip_ipip_jpi_enl_007": -1,
+          "ipip_ipip_jpi_enl_008": -1,
+          "ipip_ipip_jpi_enl_009": -1,
+          "ipip_ipip_jpi_enl_010": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_H554": "Accomplish a lot of work.",
+      "ipip_H58": "Am always busy.",
+      "ipip_H54": "Am always on the go.",
+      "ipip_H647": "Am easily discouraged.",
+      "ipip_H457": "Can manage many things at the same time.",
+      "ipip_H79": "Do a lot in my spare time.",
+      "ipip_P385": "Do too little work.",
+      "ipip_H627": "Hang around doing nothing.",
+      "ipip_P477": "Have a slow pace to my life.",
+      "ipip_H969": "Need a push to get started."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_H58": "Uvek sam zauzet.",
+      "ipip_H54": "Uvek sam u pokretu.",
+      "ipip_H79": "U slobodno vreme radim mnoge stvari.",
+      "ipip_H627": "Provodim vreme ne radeći ništa.",
+      "ipip_H969": "Potreban mi je podsticaj da bih nešto započeo.",
+      "ipip_P477": "Živim laganim životom.",
+      "ipip_H647": "Lako se obeshrabrim.",
+      "ipip_P385": "Premalo radim.",
+      "ipip_H457": "Mogu da obavljam više stvari istovremeno.",
+      "ipip_H554": "Obavljam dosta posla."
+    },
+    "sv": {
+      "ipip_likert_1": "Mycket inexakt",
+      "ipip_debrief": "Tack för att du fyllde i denna enkät.",
+      "ipip_question_head": "<h3>Hur exakt kan du beskriva dig själv?</h3><p>Beskriv dig själv som du i allmänhet är nu, inte som du önskar vara i framtiden. Beskriv dig själv så ärligt som du ser dig själv, i förhållande till andra människor du känner av samma kön och ungefär samma ålder. För att du ska kunna beskriva dig själv på ett ärligt sätt kommer dina svar att hållas i absolut sekretess. Ange hur exakt påståendet passar dig enligt följande skala:</p>",
+      "ipip_likert_5": "Mycket exakt",
+      "ipip_likert_2": "Måttligt inexakt",
+      "ipip_likert_3": "Varken exakt eller inexakt",
+      "ipip_likert_4": "Måttligt exakt",
+      "ipip_H58": "Är alltid upptagen",
+      "ipip_H54": "Är alltid på gång",
+      "ipip_H79": "Gör massor på min fritid",
+      "ipip_H627": "Står bara och hänger och gör inget",
+      "ipip_H969": "Behöver en knuff för att komma igång",
+      "ipip_P477": "Har ett långsamt tempo i livet",
+      "ipip_H647": "Blir lätt modfälld",
+      "ipip_P385": "Gör lite arbete",
+      "ipip_H457": "Kan hantera många saker på en gång",
+      "ipip_H554": "Får en massa arbete gjort"
+    }
+  }
+}

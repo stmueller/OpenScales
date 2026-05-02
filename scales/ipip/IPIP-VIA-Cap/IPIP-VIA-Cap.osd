@@ -1,0 +1,206 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Capacity for Love",
+      "code": "IPIP-VIA-Cap",
+      "abbreviation": "IPIP-VIA-Cap",
+      "description": "IPIP representation of the VIA character strength 'Capacity for Love'. 9-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "capacity_for_love_sum",
+        "name": "Capacity for Love (sum)"
+      },
+      {
+        "id": "capacity_for_love_mean",
+        "name": "Capacity for Love (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_187",
+        "text_key": "ipip_text_am_the_most_important_person_in_someone_",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_188",
+        "text_key": "ipip_V17",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_189",
+        "text_key": "ipip_V234",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_190",
+        "text_key": "ipip_V13",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_191",
+        "text_key": "ipip_V199",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_192",
+        "text_key": "ipip_text_have_difficulty_accepting_love_from_anyo",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_193",
+        "text_key": "ipip_V304",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_194",
+        "text_key": "ipip_V90",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_195",
+        "text_key": "ipip_V55",
+        "type": "likert",
+        "dimension": "capacity_for_love",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "capacity_for_love_sum": {
+        "description": "Mean of 9 items (range 1–5; higher = stronger Capacity for Love). Negatively-worded items are reverse-coded.",
+        "method": "sum",
+        "items": {
+          "ipip_via_187": 1,
+          "ipip_via_188": 1,
+          "ipip_via_189": 1,
+          "ipip_via_190": -1,
+          "ipip_via_191": -1,
+          "ipip_via_192": -1,
+          "ipip_via_193": 1,
+          "ipip_via_194": 1,
+          "ipip_via_195": 1
+        }
+      },
+      "capacity_for_love_mean": {
+        "description": "Mean of 9 items (range 1–5; higher = stronger Capacity for Love). Negatively-worded items are reverse-coded.",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_187": 1,
+          "ipip_via_188": 1,
+          "ipip_via_189": 1,
+          "ipip_via_190": -1,
+          "ipip_via_191": -1,
+          "ipip_via_192": -1,
+          "ipip_via_193": 1,
+          "ipip_via_194": 1,
+          "ipip_via_195": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_text_am_the_most_important_person_in_someone_": "Am the most important person in someone else's life.",
+      "ipip_V17": "Am willing to take risks to establish a relationship.",
+      "ipip_V234": "Can express love to someone else.",
+      "ipip_V13": "Do not easily share my feelings with others.",
+      "ipip_V199": "Feel isolated from other people.",
+      "ipip_text_have_difficulty_accepting_love_from_anyo": "Have difficulty accepting love from anyone.",
+      "ipip_V304": "Know someone whom I really care about as a person.",
+      "ipip_V90": "Know that some others accept my shortcomings.",
+      "ipip_V55": "Know that there are people in my life who care as much for me as for themselves."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_text_have_difficulty_accepting_love_from_anyo": "Teško mi je da prihvatim ljubav od bilo koga.",
+      "ipip_V199": "Osećam se izolovano od drugih.",
+      "ipip_V13": "Ne delim lako svoja osećanja s drugim ljudima.",
+      "ipip_V234": "Umem da pokažem ljubav prema drugoj osobi.",
+      "ipip_V90": "Znam da neki ljudi prihvataju moje mane.",
+      "ipip_text_am_the_most_important_person_in_someone_": "Ja sam najvažnija osoba u nečijem životu.",
+      "ipip_V304": "Poznajem nekoga do koga mi je lično veoma stalo.",
+      "ipip_V17": "Spreman sam da preuzmem rizik kako bih uspostavio vezu sa nekim.",
+      "ipip_V55": "Znam da u mom zivotu postoje ljudi koji o meni brinu isto kao o sebi samima."
+    },
+    "hu": {
+      "ipip_likert_5": "Teljes mértékben jellemző",
+      "ipip_likert_4": "Meglehetősen jellemző",
+      "ipip_question_head": "<h3>Mennyire pontosan tudja leírni önmagát?</h3><p>Írja le magát olyannak, amilyen általában most, nem amilyen a jövőben szeretne lenni. Írja le magát őszintén, ahogyan valóban látja magát, azonos nemű és közel azonos korú ismerőseihez viszonyítva. Hogy őszintén tudjon válaszolni, válaszait szigorúan bizalmasan kezeljük. Az alábbi értékelési skála segítségével jelölje meg, mennyire jellemző Önre az egyes állítás:</p>",
+      "ipip_likert_3": "Közepesen jellemző",
+      "ipip_likert_1": "Egyáltalán nem jellemző",
+      "ipip_debrief": "Köszönjük a kérdőív kitöltését.",
+      "ipip_likert_2": "Kevéssé jellemző",
+      "ipip_V90": "Tudom, hogy vannak néhányan, akik elfogadják a hiányosságaimat.",
+      "ipip_V199": "Elszigeteltnek érzem magam a többi embertől.",
+      "ipip_text_have_difficulty_accepting_love_from_anyo": "Nehezemre esik bárki szeretetét elfogadnom.",
+      "ipip_V55": "Tudom, hogy vannak olyanok az életemben, akik legalább annyit törődnek velem, mint másokkal.",
+      "ipip_V234": "Ki tudom mutatni a szeretetet valaki iránt.",
+      "ipip_V17": "Hajlandó vagyok kockázatokat vállalni egy kapcsolat kialakításáért.",
+      "ipip_text_am_the_most_important_person_in_someone_": "Én vagyok a legfontosabb ember valaki életében.",
+      "ipip_V13": "Nehezem osztom meg az érzéseimet másokkal.",
+      "ipip_V304": "Ismerek valakit, aki iránt mint ember, igazán érdeklődöm."
+    }
+  }
+}

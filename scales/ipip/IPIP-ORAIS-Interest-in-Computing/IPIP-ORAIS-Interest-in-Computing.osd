@@ -1,0 +1,135 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP ORAIS: Interest in Computing",
+      "code": "IPIP-ORAIS-Interest-in-Computing",
+      "abbreviation": "IPIP-ORAIS-interest",
+      "description": "IPIP items measuring interest in computing, from the IPIP Oregon Avocational Interest Scales.",
+      "citation": "Goldberg, L. R. (2010). Personality, demographics, and self-reported behavioral acts: The development of avocational interest markers. In C. R. Agnew, D. E. Carlston, W. G. Graziano, & J. R. Kelly (Eds.), Then a miracle occurs: Focusing on behavior in social psychological theory and research (pp. 205–234). Oxford University Press.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newORAISKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "interest_in_computing_sum",
+        "name": "Interest in Computing (sum)"
+      },
+      {
+        "id": "interest_in_computing_mean",
+        "name": "Interest in Computing (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_orais_interest_in_computing_001",
+        "text_key": "ipip_text_looked_up_information_on_the_internet",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_interest_in_computing_002",
+        "text_key": "ipip_text_played_a_computer_game",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_interest_in_computing_003",
+        "text_key": "ipip_text_read_news_on_the_internet",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_interest_in_computing_004",
+        "text_key": "ipip_text_sent_a_message_by_electronic_mail_e_mail",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_interest_in_computing_005",
+        "text_key": "ipip_text_surfed_the_internet",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_interest_in_computing_006",
+        "text_key": "ipip_text_used_a_computer",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "interest_in_computing_sum": {
+        "description": "Cronbach's alpha = 0.89",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_orais_interest_in_computing_001": 1,
+          "ipip_ipip_orais_interest_in_computing_002": 1,
+          "ipip_ipip_orais_interest_in_computing_003": 1,
+          "ipip_ipip_orais_interest_in_computing_004": 1,
+          "ipip_ipip_orais_interest_in_computing_005": 1,
+          "ipip_ipip_orais_interest_in_computing_006": 1
+        }
+      },
+      "interest_in_computing_mean": {
+        "description": "Cronbach's alpha = 0.89",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_orais_interest_in_computing_001": 1,
+          "ipip_ipip_orais_interest_in_computing_002": 1,
+          "ipip_ipip_orais_interest_in_computing_003": 1,
+          "ipip_ipip_orais_interest_in_computing_004": 1,
+          "ipip_ipip_orais_interest_in_computing_005": 1,
+          "ipip_ipip_orais_interest_in_computing_006": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_text_looked_up_information_on_the_internet": "Looked up information on the Internet.",
+      "ipip_text_played_a_computer_game": "Played a computer game.",
+      "ipip_text_read_news_on_the_internet": "Read news on the Internet.",
+      "ipip_text_sent_a_message_by_electronic_mail_e_mail": "Sent a message by electronic mail (e-mail).",
+      "ipip_text_surfed_the_internet": "Surfed the Internet.",
+      "ipip_text_used_a_computer": "Used a computer."
+    }
+  }
+}

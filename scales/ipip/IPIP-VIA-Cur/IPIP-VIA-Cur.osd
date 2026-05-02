@@ -1,0 +1,218 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Curiosity",
+      "code": "IPIP-VIA-Cur",
+      "abbreviation": "IPIP-VIA-Cur",
+      "description": "IPIP representation of the VIA character strength 'Curiosity'. 10-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "curiosity_sum",
+        "name": "Curiosity (sum)"
+      },
+      {
+        "id": "curiosity_mean",
+        "name": "Curiosity (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_091",
+        "text_key": "ipip_V67",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_092",
+        "text_key": "ipip_V151",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_093",
+        "text_key": "ipip_V37",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_094",
+        "text_key": "ipip_V115",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_095",
+        "text_key": "ipip_V268",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_096",
+        "text_key": "ipip_V254",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_097",
+        "text_key": "ipip_V1",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_098",
+        "text_key": "ipip_V342",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_099",
+        "text_key": "ipip_text_love_to_hear_about_other_countries_and_c",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_100",
+        "text_key": "ipip_V289",
+        "type": "likert",
+        "dimension": "curiosity",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "curiosity_sum": {
+        "description": "Mean of 10 items (range 1–5; higher = stronger Curiosity). Negatively-worded items are reverse-coded.",
+        "method": "sum",
+        "items": {
+          "ipip_via_091": 1,
+          "ipip_via_092": 1,
+          "ipip_via_093": 1,
+          "ipip_via_094": -1,
+          "ipip_via_095": 1,
+          "ipip_via_096": -1,
+          "ipip_via_097": 1,
+          "ipip_via_098": -1,
+          "ipip_via_099": 1,
+          "ipip_via_100": 1
+        }
+      },
+      "curiosity_mean": {
+        "description": "Mean of 10 items (range 1–5; higher = stronger Curiosity). Negatively-worded items are reverse-coded.",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_091": 1,
+          "ipip_via_092": 1,
+          "ipip_via_093": 1,
+          "ipip_via_094": -1,
+          "ipip_via_095": 1,
+          "ipip_via_096": -1,
+          "ipip_via_097": 1,
+          "ipip_via_098": -1,
+          "ipip_via_099": 1,
+          "ipip_via_100": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_V67": "Am always busy with something interesting.",
+      "ipip_V151": "Am excited by many different activities.",
+      "ipip_V37": "Am never bored.",
+      "ipip_V115": "Am not all that curious about the world.",
+      "ipip_V268": "Can find something of interest in any situation.",
+      "ipip_V254": "Find it difficult to entertain myself.",
+      "ipip_V1": "Find the world a very interesting place.",
+      "ipip_V342": "Have few interests.",
+      "ipip_text_love_to_hear_about_other_countries_and_c": "Love to hear about other countries and cultures.",
+      "ipip_V289": "Think that my life is extremely interesting."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_V37": "Nikada mi nije dosadno.",
+      "ipip_V268": "U svakoj situaciji mogu da nađem nešto što me interesuje.",
+      "ipip_text_love_to_hear_about_other_countries_and_c": "Volim da slušam o različitim zemljama i kulturama.",
+      "ipip_V115": "Nisam mnogo zainteresovan za svet oko sebe.",
+      "ipip_V342": "Imam samo nekoliko interesovanja.",
+      "ipip_V1": "Mislim da je svet veoma zanimljivo mesto.",
+      "ipip_V67": "Uvek se zanimam nečim interesantnim.",
+      "ipip_V289": "Mislim da je moj život jako zanimljiv.",
+      "ipip_V254": "Teško mi je da se zabavim.",
+      "ipip_V151": "Uzbuđuju me različite aktivnosti."
+    },
+    "hu": {
+      "ipip_likert_5": "Teljes mértékben jellemző",
+      "ipip_likert_4": "Meglehetősen jellemző",
+      "ipip_question_head": "<h3>Mennyire pontosan tudja leírni önmagát?</h3><p>Írja le magát olyannak, amilyen általában most, nem amilyen a jövőben szeretne lenni. Írja le magát őszintén, ahogyan valóban látja magát, azonos nemű és közel azonos korú ismerőseihez viszonyítva. Hogy őszintén tudjon válaszolni, válaszait szigorúan bizalmasan kezeljük. Az alábbi értékelési skála segítségével jelölje meg, mennyire jellemző Önre az egyes állítás:</p>",
+      "ipip_likert_3": "Közepesen jellemző",
+      "ipip_likert_1": "Egyáltalán nem jellemző",
+      "ipip_debrief": "Köszönjük a kérdőív kitöltését.",
+      "ipip_likert_2": "Kevéssé jellemző",
+      "ipip_V289": "Úgy gondolom, az életem rendkívüli módon érdekes.",
+      "ipip_V37": "Soha nem unatkozom.",
+      "ipip_V67": "Mindig lekötöm magam valami érdekessel.",
+      "ipip_V115": "Nem igazán vagyok kíváncsi a világra.",
+      "ipip_V1": "A világot nagyon érdekes helynek találom.",
+      "ipip_V254": "Nehezemre esik, hogy szórakoztassam magam.",
+      "ipip_text_love_to_hear_about_other_countries_and_c": "Szeretek más országokról és kultúrákról hallani.",
+      "ipip_V342": "Kevés dolog érdekel.",
+      "ipip_V268": "Bármilyen helyzetben találok valami érdekeset.",
+      "ipip_V151": "Számos, különböző tevékenység hoz izgalomba."
+    }
+  }
+}

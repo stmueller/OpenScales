@@ -1,0 +1,135 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP TCI: Conservatism",
+      "code": "IPIP-TCI-ST4",
+      "abbreviation": "TCI-ST4",
+      "description": "IPIP items measuring conservatism, from the IPIP Temperament and Character Inventory.",
+      "citation": "Cloninger, C. R., Przybeck, T. R., Svrakic, D. M., & Wetzel, R. D. (1994). The Temperament and Character Inventory (TCI): A guide to its development and use. Center for Psychobiology of Personality.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newTCIKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "conservatism_sum",
+        "name": "Conservatism (sum)"
+      },
+      {
+        "id": "conservatism_mean",
+        "name": "Conservatism (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_tci_st4_001",
+        "text_key": "ipip_X207",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_st4_002",
+        "text_key": "ipip_text_believe_kids_need_tough_love",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_st4_003",
+        "text_key": "ipip_X162",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_st4_004",
+        "text_key": "ipip_X184",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_st4_005",
+        "text_key": "ipip_X256",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_st4_006",
+        "text_key": "ipip_text_sacrifice_myself_for_others",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "conservatism_sum": {
+        "description": "Cronbach's alpha = 0.71",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_tci_st4_001": 1,
+          "ipip_ipip_tci_st4_002": 1,
+          "ipip_ipip_tci_st4_003": 1,
+          "ipip_ipip_tci_st4_004": -1,
+          "ipip_ipip_tci_st4_005": -1,
+          "ipip_ipip_tci_st4_006": 1
+        }
+      },
+      "conservatism_mean": {
+        "description": "Cronbach's alpha = 0.71",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_tci_st4_001": 1,
+          "ipip_ipip_tci_st4_002": 1,
+          "ipip_ipip_tci_st4_003": 1,
+          "ipip_ipip_tci_st4_004": -1,
+          "ipip_ipip_tci_st4_005": -1,
+          "ipip_ipip_tci_st4_006": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_X207": "Believe in the importance of tradition.",
+      "ipip_text_believe_kids_need_tough_love": "Believe kids need tough love.",
+      "ipip_X162": "Believe that there are universal truths.",
+      "ipip_X256": "Dislike movies with happy Hollywood endings.",
+      "ipip_text_sacrifice_myself_for_others": "Sacrifice myself for others.",
+      "ipip_X184": "Believe that there is no absolute right or wrong."
+    }
+  }
+}

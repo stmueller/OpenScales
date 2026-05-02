@@ -1,0 +1,206 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Honesty/Integrity",
+      "code": "IPIP-VIA-Hon",
+      "abbreviation": "IPIP-VIA-Hon",
+      "description": "IPIP representation of the VIA character strength 'Honesty/Integrity'. 9-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "honesty_integrity_authenticity_sum",
+        "name": "Honesty/Integrity (sum)"
+      },
+      {
+        "id": "honesty_integrity_authenticity_mean",
+        "name": "Honesty/Integrity (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_125",
+        "text_key": "ipip_H686",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_126",
+        "text_key": "ipip_V196",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_127",
+        "text_key": "ipip_V10",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_128",
+        "text_key": "ipip_V86",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_129",
+        "text_key": "ipip_V163",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_130",
+        "text_key": "ipip_V238",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_131",
+        "text_key": "ipip_H149",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_132",
+        "text_key": "ipip_V143",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_133",
+        "text_key": "ipip_V305",
+        "type": "likert",
+        "dimension": "honesty_integrity_authenticity",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "honesty_integrity_authenticity_sum": {
+        "description": "Mean of 9 items (range 1–5; higher = stronger Honesty/Integrity). Negatively-worded items are reverse-coded.",
+        "method": "sum",
+        "items": {
+          "ipip_via_125": -1,
+          "ipip_via_126": 1,
+          "ipip_via_127": 1,
+          "ipip_via_128": 1,
+          "ipip_via_129": 1,
+          "ipip_via_130": -1,
+          "ipip_via_131": 1,
+          "ipip_via_132": -1,
+          "ipip_via_133": -1
+        }
+      },
+      "honesty_integrity_authenticity_mean": {
+        "description": "Mean of 9 items (range 1–5; higher = stronger Honesty/Integrity). Negatively-worded items are reverse-coded.",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_125": -1,
+          "ipip_via_126": 1,
+          "ipip_via_127": 1,
+          "ipip_via_128": 1,
+          "ipip_via_129": 1,
+          "ipip_via_130": -1,
+          "ipip_via_131": 1,
+          "ipip_via_132": -1,
+          "ipip_via_133": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_H686": "Am hard to understand.",
+      "ipip_V196": "Am true to my own values.",
+      "ipip_V10": "Am trusted to keep secrets.",
+      "ipip_V86": "Believe that honesty is the basis for trust.",
+      "ipip_V163": "Can be trusted to keep my promises.",
+      "ipip_V238": "Feel like an imposter.",
+      "ipip_H149": "Keep my promises.",
+      "ipip_V143": "Lie to get myself out of trouble.",
+      "ipip_V305": "Like to exaggerate my troubles."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_V305": "Volim da preuveličam svoje probleme.",
+      "ipip_V143": "Često slažem da bih se izvukao/la iz nevolje.",
+      "ipip_V86": "Verujem da je iskrenost osnova poverenja.",
+      "ipip_H686": "Teško me je razumeti.",
+      "ipip_V163": "Drugi mi mogu verovati da ću ispuniti obećano.",
+      "ipip_H149": "Održavam svoja obećanja.",
+      "ipip_V10": "Umem da čuvam tajne.",
+      "ipip_V238": "Osećam se kao uljez.",
+      "ipip_V196": "Lojalan sam svojim vrednostima."
+    },
+    "hu": {
+      "ipip_likert_5": "Teljes mértékben jellemző",
+      "ipip_likert_4": "Meglehetősen jellemző",
+      "ipip_question_head": "<h3>Mennyire pontosan tudja leírni önmagát?</h3><p>Írja le magát olyannak, amilyen általában most, nem amilyen a jövőben szeretne lenni. Írja le magát őszintén, ahogyan valóban látja magát, azonos nemű és közel azonos korú ismerőseihez viszonyítva. Hogy őszintén tudjon válaszolni, válaszait szigorúan bizalmasan kezeljük. Az alábbi értékelési skála segítségével jelölje meg, mennyire jellemző Önre az egyes állítás:</p>",
+      "ipip_likert_3": "Közepesen jellemző",
+      "ipip_likert_1": "Egyáltalán nem jellemző",
+      "ipip_debrief": "Köszönjük a kérdőív kitöltését.",
+      "ipip_likert_2": "Kevéssé jellemző",
+      "ipip_H686": "Engem nehezen lehet megérteni.",
+      "ipip_V10": "Megbízható vagyok a titoktartásban.",
+      "ipip_V196": "Hű vagyok a saját értékeimhez.",
+      "ipip_V238": "Szélhámosnak érzem magam.",
+      "ipip_V86": "Úgy hiszem, az őszinteség a bizalom alapja.",
+      "ipip_V143": "Hazudok, hogy kijussak a bajból.",
+      "ipip_V305": "Szeretem eltúlozni a bajaimat.",
+      "ipip_V163": "Bennem lehet bízni, hogy megtartom az ígéreteimet.",
+      "ipip_H149": "Betartom az ígéreteimet."
+    }
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP TCI: Conformity/Dependence/Need for approval",
+      "code": "IPIP-TCI-RD4",
+      "abbreviation": "TCI-RD4",
+      "description": "IPIP items measuring conformity/dependence/need for approval, from the IPIP Temperament and Character Inventory.",
+      "citation": "Cloninger, C. R., Przybeck, T. R., Svrakic, D. M., & Wetzel, R. D. (1994). The Temperament and Character Inventory (TCI): A guide to its development and use. Center for Psychobiology of Personality.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newTCIKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "conformity_dependence_need_for_approval_sum",
+        "name": "Conformity/Dependence/Need for approval (sum)"
+      },
+      {
+        "id": "conformity_dependence_need_for_approval_mean",
+        "name": "Conformity/Dependence/Need for approval (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_tci_rd4_001",
+        "text_key": "ipip_H698",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_rd4_002",
+        "text_key": "ipip_H1028",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_rd4_003",
+        "text_key": "ipip_H319",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_rd4_004",
+        "text_key": "ipip_text_follow_orders",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_rd4_005",
+        "text_key": "ipip_H424",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_rd4_006",
+        "text_key": "ipip_E31",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_rd4_007",
+        "text_key": "ipip_H60",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_rd4_008",
+        "text_key": "ipip_E3",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "conformity_dependence_need_for_approval_sum": {
+        "description": "Cronbach's alpha = 0.67",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_tci_rd4_001": -1,
+          "ipip_ipip_tci_rd4_002": 1,
+          "ipip_ipip_tci_rd4_003": 1,
+          "ipip_ipip_tci_rd4_004": 1,
+          "ipip_ipip_tci_rd4_005": -1,
+          "ipip_ipip_tci_rd4_006": 1,
+          "ipip_ipip_tci_rd4_007": -1,
+          "ipip_ipip_tci_rd4_008": 1
+        }
+      },
+      "conformity_dependence_need_for_approval_mean": {
+        "description": "Cronbach's alpha = 0.67",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_tci_rd4_001": -1,
+          "ipip_ipip_tci_rd4_002": 1,
+          "ipip_ipip_tci_rd4_003": 1,
+          "ipip_ipip_tci_rd4_004": 1,
+          "ipip_ipip_tci_rd4_005": -1,
+          "ipip_ipip_tci_rd4_006": 1,
+          "ipip_ipip_tci_rd4_007": -1,
+          "ipip_ipip_tci_rd4_008": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_H698": "Believe only in myself.",
+      "ipip_H1028": "Do what others want me to do.",
+      "ipip_H319": "Follow directions.",
+      "ipip_text_follow_orders": "Follow orders.",
+      "ipip_H424": "Give in to no one.",
+      "ipip_E31": "Hate to seem pushy.",
+      "ipip_H60": "Quickly recognize possibilities.",
+      "ipip_E3": "Try to please everyone."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_H424": "Ne dajem se nikome.",
+      "ipip_H1028": "Radim ono što drugi traže od mene.",
+      "ipip_E31": "Ne volim da delujem nametljivo.",
+      "ipip_H698": "Verujem samo u sebe.",
+      "ipip_text_follow_orders": "Pratim naređenja.",
+      "ipip_E3": "Trudim se da ugodim svima.",
+      "ipip_H60": "Brzo prepoznam dobru priliku.",
+      "ipip_H319": "Pratim uputstva."
+    },
+    "sv": {
+      "ipip_likert_1": "Mycket inexakt",
+      "ipip_debrief": "Tack för att du fyllde i denna enkät.",
+      "ipip_question_head": "<h3>Hur exakt kan du beskriva dig själv?</h3><p>Beskriv dig själv som du i allmänhet är nu, inte som du önskar vara i framtiden. Beskriv dig själv så ärligt som du ser dig själv, i förhållande till andra människor du känner av samma kön och ungefär samma ålder. För att du ska kunna beskriva dig själv på ett ärligt sätt kommer dina svar att hållas i absolut sekretess. Ange hur exakt påståendet passar dig enligt följande skala:</p>",
+      "ipip_likert_5": "Mycket exakt",
+      "ipip_likert_2": "Måttligt inexakt",
+      "ipip_likert_3": "Varken exakt eller inexakt",
+      "ipip_likert_4": "Måttligt exakt",
+      "ipip_H424": "Ger inte efter för någon",
+      "ipip_H1028": "Gör vad andra vill att jag skall göra",
+      "ipip_E31": "Ogillar att verka påstridig",
+      "ipip_H698": "Tror bara på mig själv",
+      "ipip_text_follow_orders": "Åtlyder regler",
+      "ipip_E3": "Försöker att vara alla till lags",
+      "ipip_H60": "Upptäcker möjligheter direkt",
+      "ipip_H319": "Följer anvisningar"
+    }
+  }
+}

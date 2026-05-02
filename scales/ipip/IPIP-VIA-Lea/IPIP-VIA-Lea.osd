@@ -1,0 +1,182 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Leadership",
+      "code": "IPIP-VIA-Lea",
+      "abbreviation": "IPIP-VIA-Lea",
+      "description": "IPIP representation of the VIA character strength 'Leadership'. 7-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "leadership_sum",
+        "name": "Leadership (sum)"
+      },
+      {
+        "id": "leadership_mean",
+        "name": "Leadership (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_118",
+        "text_key": "ipip_V96",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_119",
+        "text_key": "ipip_V135",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_120",
+        "text_key": "ipip_V105",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_121",
+        "text_key": "ipip_V239",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_122",
+        "text_key": "ipip_V54",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_123",
+        "text_key": "ipip_V274",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_124",
+        "text_key": "ipip_V35",
+        "type": "likert",
+        "dimension": "leadership",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "leadership_sum": {
+        "description": "Mean of 7 items (range 1–5; higher = stronger Leadership). Negatively-worded items are reverse-coded.",
+        "method": "sum",
+        "items": {
+          "ipip_via_118": 1,
+          "ipip_via_119": -1,
+          "ipip_via_120": -1,
+          "ipip_via_121": 1,
+          "ipip_via_122": -1,
+          "ipip_via_123": 1,
+          "ipip_via_124": 1
+        }
+      },
+      "leadership_mean": {
+        "description": "Mean of 7 items (range 1–5; higher = stronger Leadership). Negatively-worded items are reverse-coded.",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_118": 1,
+          "ipip_via_119": -1,
+          "ipip_via_120": -1,
+          "ipip_via_121": 1,
+          "ipip_via_122": -1,
+          "ipip_via_123": 1,
+          "ipip_via_124": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_V96": "Am good at helping people work well together.",
+      "ipip_V135": "Am not good at planning group activities.",
+      "ipip_V105": "Am not good at taking charge of a group.",
+      "ipip_V239": "Am told that I am a strong but fair leader.",
+      "ipip_V54": "Have difficulty getting others to work together.",
+      "ipip_V274": "Try to make my group members happy.",
+      "ipip_V35": "Try to make sure everyone in a group feels included."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_V54": "Teško mi je da navedem druge da sarađuju.",
+      "ipip_V96": "Dobar sam u podsticanju timskog rada.",
+      "ipip_V135": "Nisam dobar u planiranju grupnih aktivnosti.",
+      "ipip_V274": "Trudim se da ljudi u mojoj grupi budu srećni.",
+      "ipip_V35": "Trudim se da se svi u mojoj grupi osećaju prihvaćeno.",
+      "ipip_V239": "Kažu mi da sam strog, ali pravedan kao vođa.",
+      "ipip_V105": "Nisam dobar u preuzimanju inicijative u grupi."
+    },
+    "hu": {
+      "ipip_likert_5": "Teljes mértékben jellemző",
+      "ipip_likert_4": "Meglehetősen jellemző",
+      "ipip_question_head": "<h3>Mennyire pontosan tudja leírni önmagát?</h3><p>Írja le magát olyannak, amilyen általában most, nem amilyen a jövőben szeretne lenni. Írja le magát őszintén, ahogyan valóban látja magát, azonos nemű és közel azonos korú ismerőseihez viszonyítva. Hogy őszintén tudjon válaszolni, válaszait szigorúan bizalmasan kezeljük. Az alábbi értékelési skála segítségével jelölje meg, mennyire jellemző Önre az egyes állítás:</p>",
+      "ipip_likert_3": "Közepesen jellemző",
+      "ipip_likert_1": "Egyáltalán nem jellemző",
+      "ipip_debrief": "Köszönjük a kérdőív kitöltését.",
+      "ipip_likert_2": "Kevéssé jellemző",
+      "ipip_V239": "Azt mondják rólam, hogy szikár, de igazságos vezető vagyok.",
+      "ipip_V105": "Nem vagyok jó csoportfelelősnek.",
+      "ipip_V274": "Igyekszem a csapattagokat boldoggá tenni.",
+      "ipip_V135": "Nem vagyok jó a csoporttevékenységek megtervezésében.",
+      "ipip_V96": "Jó vagyok abban, hogy segítsem az embereket jól együtt dogozni.",
+      "ipip_V54": "Nehezen tudok másokat együtt dolgoztatni.",
+      "ipip_V35": "Igyekszem biztosítani, hogy mindenki a csoporthoz tartozónak érezze magát."
+    }
+  }
+}

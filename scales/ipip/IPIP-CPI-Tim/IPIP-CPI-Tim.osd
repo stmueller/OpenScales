@@ -1,0 +1,171 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP CPI: Timidity",
+      "code": "IPIP-CPI-Tim",
+      "abbreviation": "CPI-Tim",
+      "description": "IPIP items measuring timidity, from the IPIP California Psychological Inventory.",
+      "citation": "Gough, H. G. (1987). California Psychological Inventory administrator's guide. Consulting Psychologists Press.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newCPIKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "timidity_sum",
+        "name": "Timidity (sum)"
+      },
+      {
+        "id": "timidity_mean",
+        "name": "Timidity (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_cpi_tim_001",
+        "text_key": "ipip_text_break_rules",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_tim_002",
+        "text_key": "ipip_H876",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_tim_003",
+        "text_key": "ipip_E35",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_tim_004",
+        "text_key": "ipip_text_enjoy_crude_jokes",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_tim_005",
+        "text_key": "ipip_H1327",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_tim_006",
+        "text_key": "ipip_H1178",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_tim_007",
+        "text_key": "ipip_H98",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_tim_008",
+        "text_key": "ipip_H894",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_tim_009",
+        "text_key": "ipip_H294",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_tim_010",
+        "text_key": "ipip_text_would_never_go_hang_gliding_or_bungee_ju",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "timidity_sum": {
+        "description": "Cronbach's alpha = 0.77",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_cpi_tim_001": -1,
+          "ipip_ipip_cpi_tim_002": -1,
+          "ipip_ipip_cpi_tim_003": -1,
+          "ipip_ipip_cpi_tim_004": -1,
+          "ipip_ipip_cpi_tim_005": -1,
+          "ipip_ipip_cpi_tim_006": -1,
+          "ipip_ipip_cpi_tim_007": -1,
+          "ipip_ipip_cpi_tim_008": -1,
+          "ipip_ipip_cpi_tim_009": 1,
+          "ipip_ipip_cpi_tim_010": 1
+        }
+      },
+      "timidity_mean": {
+        "description": "Cronbach's alpha = 0.77",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_cpi_tim_001": -1,
+          "ipip_ipip_cpi_tim_002": -1,
+          "ipip_ipip_cpi_tim_003": -1,
+          "ipip_ipip_cpi_tim_004": -1,
+          "ipip_ipip_cpi_tim_005": -1,
+          "ipip_ipip_cpi_tim_006": -1,
+          "ipip_ipip_cpi_tim_007": -1,
+          "ipip_ipip_cpi_tim_008": -1,
+          "ipip_ipip_cpi_tim_009": 1,
+          "ipip_ipip_cpi_tim_010": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_text_break_rules": "Break rules.",
+      "ipip_H876": "Do dangerous things.",
+      "ipip_E35": "Enjoy being reckless.",
+      "ipip_text_enjoy_crude_jokes": "Enjoy crude jokes.",
+      "ipip_H1327": "Know how to get around the rules.",
+      "ipip_H1178": "Laugh at others.",
+      "ipip_H98": "Play tricks on others.",
+      "ipip_H894": "Seek danger.",
+      "ipip_H294": "Stick to the rules.",
+      "ipip_text_would_never_go_hang_gliding_or_bungee_ju": "Would never go hang gliding or bungee jumping."
+    }
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP TCI: Recklessness",
+      "code": "IPIP-TCI-NS2",
+      "abbreviation": "TCI-NS2",
+      "description": "IPIP items measuring recklessness, from the IPIP Temperament and Character Inventory.",
+      "citation": "Cloninger, C. R., Przybeck, T. R., Svrakic, D. M., & Wetzel, R. D. (1994). The Temperament and Character Inventory (TCI): A guide to its development and use. Center for Psychobiology of Personality.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newTCIKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "recklessness_sum",
+        "name": "Recklessness (sum)"
+      },
+      {
+        "id": "recklessness_mean",
+        "name": "Recklessness (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_tci_ns2_001",
+        "text_key": "ipip_H1356",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_ns2_002",
+        "text_key": "ipip_H473",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_ns2_003",
+        "text_key": "ipip_E46",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_ns2_004",
+        "text_key": "ipip_E122",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_ns2_005",
+        "text_key": "ipip_H668",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_ns2_006",
+        "text_key": "ipip_H853",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_ns2_007",
+        "text_key": "ipip_H1218",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_ns2_008",
+        "text_key": "ipip_H862",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_ns2_009",
+        "text_key": "ipip_H892",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_ns2_010",
+        "text_key": "ipip_H213",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "recklessness_sum": {
+        "description": "Cronbach's alpha = 0.72",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_tci_ns2_001": -1,
+          "ipip_ipip_tci_ns2_002": -1,
+          "ipip_ipip_tci_ns2_003": 1,
+          "ipip_ipip_tci_ns2_004": 1,
+          "ipip_ipip_tci_ns2_005": -1,
+          "ipip_ipip_tci_ns2_006": 1,
+          "ipip_ipip_tci_ns2_007": -1,
+          "ipip_ipip_tci_ns2_008": 1,
+          "ipip_ipip_tci_ns2_009": -1,
+          "ipip_ipip_tci_ns2_010": -1
+        }
+      },
+      "recklessness_mean": {
+        "description": "Cronbach's alpha = 0.72",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_tci_ns2_001": -1,
+          "ipip_ipip_tci_ns2_002": -1,
+          "ipip_ipip_tci_ns2_003": 1,
+          "ipip_ipip_tci_ns2_004": 1,
+          "ipip_ipip_tci_ns2_005": -1,
+          "ipip_ipip_tci_ns2_006": 1,
+          "ipip_ipip_tci_ns2_007": -1,
+          "ipip_ipip_tci_ns2_008": 1,
+          "ipip_ipip_tci_ns2_009": -1,
+          "ipip_ipip_tci_ns2_010": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_H1356": "Have an eye for detail.",
+      "ipip_H473": "Investigate all possibilities.",
+      "ipip_E46": "Jump into things without thinking.",
+      "ipip_E122": "Like to act on a whim.",
+      "ipip_H668": "Like to sleep on things before acting.",
+      "ipip_H853": "Make rash decisions.",
+      "ipip_H1218": "Reflect on things before acting.",
+      "ipip_H862": "Rush into things.",
+      "ipip_H892": "Take precautions.",
+      "ipip_H213": "Think twice before doing something."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_H1356": "Imam oko za detalje.",
+      "ipip_H668": "Pre nego što počnem nešto da radim, volim da stvar \"prespava\".",
+      "ipip_E46": "U mnoge stvari se upuštam bez razmišljanja.",
+      "ipip_H213": "Pre nego što nešto uradim dobro razmislim.",
+      "ipip_H862": "Nepromišljeno se upuštam u razne stvari.",
+      "ipip_H473": "Kad nešto radim, razmatram sve mogućnosti.",
+      "ipip_H1218": "Promislim pre nego što nešto uradim.",
+      "ipip_H853": "Često donosim ishitrene odluke.",
+      "ipip_E122": "Volim da radim stvari iz hira.",
+      "ipip_H892": "Oprezan sam."
+    },
+    "sv": {
+      "ipip_likert_1": "Mycket inexakt",
+      "ipip_debrief": "Tack för att du fyllde i denna enkät.",
+      "ipip_question_head": "<h3>Hur exakt kan du beskriva dig själv?</h3><p>Beskriv dig själv som du i allmänhet är nu, inte som du önskar vara i framtiden. Beskriv dig själv så ärligt som du ser dig själv, i förhållande till andra människor du känner av samma kön och ungefär samma ålder. För att du ska kunna beskriva dig själv på ett ärligt sätt kommer dina svar att hållas i absolut sekretess. Ange hur exakt påståendet passar dig enligt följande skala:</p>",
+      "ipip_likert_5": "Mycket exakt",
+      "ipip_likert_2": "Måttligt inexakt",
+      "ipip_likert_3": "Varken exakt eller inexakt",
+      "ipip_likert_4": "Måttligt exakt",
+      "ipip_H1356": "Har ett öga för detaljer",
+      "ipip_H668": "Vill gärna sova på saken innan jag agerar",
+      "ipip_E46": "Kastar mig över saker utan att tänka efter",
+      "ipip_H213": "Tänker två gånger innan jag gör något",
+      "ipip_H862": "Kastar mig över saker",
+      "ipip_H473": "Undersöker alla möjligheter",
+      "ipip_H1218": "Tänker över saker innan jag handlar",
+      "ipip_H853": "Tar överilade beslut",
+      "ipip_E122": "Tycker om att följa ett infall",
+      "ipip_H892": "Uppställer försiktighetsåtgärder"
+    }
+  }
+}

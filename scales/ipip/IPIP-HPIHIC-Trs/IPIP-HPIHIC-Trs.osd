@@ -1,0 +1,135 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP HPI-HIC: Trust",
+      "code": "IPIP-HPIHIC-Trs",
+      "abbreviation": "HIC-Trs",
+      "description": "IPIP items measuring trust, from the IPIP Hogan Personality Inventory — Homogeneous Item Composites.",
+      "citation": "Hogan, R., & Hogan, J. (1992). Hogan Personality Inventory manual. Hogan Assessment Systems.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newHPIHICKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "trust_sum",
+        "name": "Trust (sum)"
+      },
+      {
+        "id": "trust_mean",
+        "name": "Trust (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_hpihic_trs_001",
+        "text_key": "ipip_H114",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpihic_trs_002",
+        "text_key": "ipip_text_believe_that_people_are_essentially_evil",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpihic_trs_003",
+        "text_key": "ipip_H1195",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpihic_trs_004",
+        "text_key": "ipip_H604",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpihic_trs_005",
+        "text_key": "ipip_H113",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_hpihic_trs_006",
+        "text_key": "ipip_text_trust_what_people_say",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "trust_sum": {
+        "description": "Cronbach's alpha = 0.74",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_hpihic_trs_001": 1,
+          "ipip_ipip_hpihic_trs_002": -1,
+          "ipip_ipip_hpihic_trs_003": -1,
+          "ipip_ipip_hpihic_trs_004": -1,
+          "ipip_ipip_hpihic_trs_005": 1,
+          "ipip_ipip_hpihic_trs_006": 1
+        }
+      },
+      "trust_mean": {
+        "description": "Cronbach's alpha = 0.74",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_hpihic_trs_001": 1,
+          "ipip_ipip_hpihic_trs_002": -1,
+          "ipip_ipip_hpihic_trs_003": -1,
+          "ipip_ipip_hpihic_trs_004": -1,
+          "ipip_ipip_hpihic_trs_005": 1,
+          "ipip_ipip_hpihic_trs_006": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_H114": "Believe in human goodness.",
+      "ipip_text_believe_that_people_are_essentially_evil": "Believe that people are essentially evil",
+      "ipip_H1195": "Distrust people.",
+      "ipip_H604": "Suspect hidden motives in others.",
+      "ipip_H113": "Trust others.",
+      "ipip_text_trust_what_people_say": "Trust what people say."
+    }
+  }
+}

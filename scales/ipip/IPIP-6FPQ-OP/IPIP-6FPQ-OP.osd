@@ -1,0 +1,209 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP 6FPQ: Intellectual Openness",
+      "code": "IPIP-6FPQ-OP",
+      "abbreviation": "6FPQ-OP",
+      "description": "IPIP items measuring intellectual openness, from the IPIP Six-Factor Personality Questionnaire.",
+      "citation": "Jackson, D. N., Ashton, M. C., & Tomes, J. L. (1996). The six-factor model of personality: Facets from the Big Five. Personality and Individual Differences, 21(3), 391–402. https://doi.org/10.1016/0191-8869(96)00083-5",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/new6FPQKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "intellectual_openness_sum",
+        "name": "Intellectual Openness (sum)"
+      },
+      {
+        "id": "intellectual_openness_mean",
+        "name": "Intellectual Openness (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_6fpq_op_001",
+        "text_key": "ipip_H2021",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_op_002",
+        "text_key": "ipip_X228",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_op_003",
+        "text_key": "ipip_X239",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_op_004",
+        "text_key": "ipip_X62",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_op_005",
+        "text_key": "ipip_H1227",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_op_006",
+        "text_key": "ipip_X30",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_op_007",
+        "text_key": "ipip_X204",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_op_008",
+        "text_key": "ipip_E77",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_op_009",
+        "text_key": "ipip_E171",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_6fpq_op_010",
+        "text_key": "ipip_H1213",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "intellectual_openness_sum": {
+        "description": "Cronbach's alpha = 0.8",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_6fpq_op_001": 1,
+          "ipip_ipip_6fpq_op_002": -1,
+          "ipip_ipip_6fpq_op_003": -1,
+          "ipip_ipip_6fpq_op_004": 1,
+          "ipip_ipip_6fpq_op_005": 1,
+          "ipip_ipip_6fpq_op_006": -1,
+          "ipip_ipip_6fpq_op_007": 1,
+          "ipip_ipip_6fpq_op_008": -1,
+          "ipip_ipip_6fpq_op_009": -1,
+          "ipip_ipip_6fpq_op_010": 1
+        }
+      },
+      "intellectual_openness_mean": {
+        "description": "Cronbach's alpha = 0.8",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_6fpq_op_001": 1,
+          "ipip_ipip_6fpq_op_002": -1,
+          "ipip_ipip_6fpq_op_003": -1,
+          "ipip_ipip_6fpq_op_004": 1,
+          "ipip_ipip_6fpq_op_005": 1,
+          "ipip_ipip_6fpq_op_006": -1,
+          "ipip_ipip_6fpq_op_007": 1,
+          "ipip_ipip_6fpq_op_008": -1,
+          "ipip_ipip_6fpq_op_009": -1,
+          "ipip_ipip_6fpq_op_010": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_H2021": "Am interested in many things.",
+      "ipip_X228": "Am not interested in abstract ideas.",
+      "ipip_X239": "Am not interested in theoretical discussions.",
+      "ipip_X62": "Am open to change.",
+      "ipip_H1227": "Carry the conversation to a higher level.",
+      "ipip_X30": "Prefer to stick with things that I know.",
+      "ipip_X204": "Prefer variety to routine.",
+      "ipip_E77": "Rarely look for a deeper meaning in things.",
+      "ipip_E171": "Try to avoid complex people.",
+      "ipip_H1213": "Want to increase my knowledge."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_H2021": "Interesuju me mnoge stvari.",
+      "ipip_X204": "Više volim raznolikost od rutine.",
+      "ipip_X62": "Otvoren sam za promene.",
+      "ipip_X30": "Radije se držim stvari koje znam.",
+      "ipip_E77": "Retko tragam za nekim dubljim smislom.",
+      "ipip_E171": "Nastojim da izbegavam \"teške\" ljude.",
+      "ipip_H1227": "Podižem razgovor na viši nivo.",
+      "ipip_H1213": "Želim da uvećam svoje znanje.",
+      "ipip_X239": "Ne zanimaju me teorijske rasprave.",
+      "ipip_X228": "Ne zanimaju me apstraktne ideje."
+    },
+    "sv": {
+      "ipip_likert_1": "Mycket inexakt",
+      "ipip_debrief": "Tack för att du fyllde i denna enkät.",
+      "ipip_question_head": "<h3>Hur exakt kan du beskriva dig själv?</h3><p>Beskriv dig själv som du i allmänhet är nu, inte som du önskar vara i framtiden. Beskriv dig själv så ärligt som du ser dig själv, i förhållande till andra människor du känner av samma kön och ungefär samma ålder. För att du ska kunna beskriva dig själv på ett ärligt sätt kommer dina svar att hållas i absolut sekretess. Ange hur exakt påståendet passar dig enligt följande skala:</p>",
+      "ipip_likert_5": "Mycket exakt",
+      "ipip_likert_2": "Måttligt inexakt",
+      "ipip_likert_3": "Varken exakt eller inexakt",
+      "ipip_likert_4": "Måttligt exakt",
+      "ipip_H2021": "Är intresserad av många olika saker",
+      "ipip_X204": "Föredrar variation framför rutin",
+      "ipip_X62": "Är öppen för förändring",
+      "ipip_X30": "Föredrar att hålla mig till saker jag känner till",
+      "ipip_E77": "Ser sällan efter en djupare mening i saker",
+      "ipip_E171": "Försöker undvika komplicerade personer",
+      "ipip_H1227": "För konversationen till en högre nivå",
+      "ipip_H1213": "Vill öka mina kunskaper",
+      "ipip_X239": "Är inte intresserad av teoretiska diskussioner",
+      "ipip_X228": "Är inte intresserad av abstrakta idéer"
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP JPI: Empathy",
+      "code": "IPIP-JPI-Emp",
+      "abbreviation": "JPI-Emp",
+      "description": "IPIP items measuring empathy, from the IPIP Jackson Personality Inventory.",
+      "citation": "Jackson, D. N. (1994). Jackson Personality Inventory — Revised manual. Sigma Assessment Systems.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newJPIKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "empathy_sum",
+        "name": "Empathy (sum)"
+      },
+      {
+        "id": "empathy_mean",
+        "name": "Empathy (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_jpi_emp_001",
+        "text_key": "ipip_X253",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_emp_002",
+        "text_key": "ipip_text_am_easily_moved_to_tears",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_emp_003",
+        "text_key": "ipip_H2012",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_emp_004",
+        "text_key": "ipip_E156",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_emp_005",
+        "text_key": "ipip_X92",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_emp_006",
+        "text_key": "ipip_text_feel_spiritally_connected_to_other_peopl",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_emp_007",
+        "text_key": "ipip_X29",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_jpi_emp_008",
+        "text_key": "ipip_H988",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "empathy_sum": {
+        "description": "Cronbach's alpha = 0.8",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_jpi_emp_001": 1,
+          "ipip_ipip_jpi_emp_002": 1,
+          "ipip_ipip_jpi_emp_003": 1,
+          "ipip_ipip_jpi_emp_004": -1,
+          "ipip_ipip_jpi_emp_005": 1,
+          "ipip_ipip_jpi_emp_006": 1,
+          "ipip_ipip_jpi_emp_007": -1,
+          "ipip_ipip_jpi_emp_008": 1
+        }
+      },
+      "empathy_mean": {
+        "description": "Cronbach's alpha = 0.8",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_jpi_emp_001": 1,
+          "ipip_ipip_jpi_emp_002": 1,
+          "ipip_ipip_jpi_emp_003": 1,
+          "ipip_ipip_jpi_emp_004": -1,
+          "ipip_ipip_jpi_emp_005": 1,
+          "ipip_ipip_jpi_emp_006": 1,
+          "ipip_ipip_jpi_emp_007": -1,
+          "ipip_ipip_jpi_emp_008": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_X253": "Am deeply moved by others' misfortunes.",
+      "ipip_text_am_easily_moved_to_tears": "Am easily moved to tears.",
+      "ipip_H2012": "Cry easily.",
+      "ipip_E156": "Don't understand people who get emotional.",
+      "ipip_X92": "Experience my emotions intensely.",
+      "ipip_text_feel_spiritally_connected_to_other_peopl": "Feel spiritally connected to other people.",
+      "ipip_X29": "Seldom get emotional.",
+      "ipip_H988": "Suffer from others' sorrows."
+    }
+  }
+}

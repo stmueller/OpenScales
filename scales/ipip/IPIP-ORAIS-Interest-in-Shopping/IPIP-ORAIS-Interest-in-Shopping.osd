@@ -1,0 +1,144 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP ORAIS: Interest in Shopping",
+      "code": "IPIP-ORAIS-Interest-in-Shopping",
+      "abbreviation": "IPIP-ORAIS-interest",
+      "description": "IPIP items measuring interest in shopping, from the IPIP Oregon Avocational Interest Scales.",
+      "citation": "Goldberg, L. R. (2010). Personality, demographics, and self-reported behavioral acts: The development of avocational interest markers. In C. R. Agnew, D. E. Carlston, W. G. Graziano, & J. R. Kelly (Eds.), Then a miracle occurs: Focusing on behavior in social psychological theory and research (pp. 205–234). Oxford University Press.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newORAISKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "interest_in_shopping_sum",
+        "name": "Interest in Shopping (sum)"
+      },
+      {
+        "id": "interest_in_shopping_mean",
+        "name": "Interest in Shopping (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_orais_interest_in_shopping_001",
+        "text_key": "ipip_text_bought_something_other_than_groceries",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_interest_in_shopping_002",
+        "text_key": "ipip_text_checked_the_sales_ads_in_a_newspaper",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_interest_in_shopping_003",
+        "text_key": "ipip_text_read_newspaper_ads_for_non_grocery_items",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_interest_in_shopping_004",
+        "text_key": "ipip_text_shopped_on_the_web",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_interest_in_shopping_005",
+        "text_key": "ipip_text_spent_10_minutes_or_more_in_a_non_grocer",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_interest_in_shopping_006",
+        "text_key": "ipip_text_spent_an_hour_or_more_in_a_non_grocery_s",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_orais_interest_in_shopping_007",
+        "text_key": "ipip_text_used_ebay_to_buy_or_sell_something",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "interest_in_shopping_sum": {
+        "description": "Cronbach's alpha = 0.66",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_orais_interest_in_shopping_001": 1,
+          "ipip_ipip_orais_interest_in_shopping_002": 1,
+          "ipip_ipip_orais_interest_in_shopping_003": 1,
+          "ipip_ipip_orais_interest_in_shopping_004": 1,
+          "ipip_ipip_orais_interest_in_shopping_005": 1,
+          "ipip_ipip_orais_interest_in_shopping_006": 1,
+          "ipip_ipip_orais_interest_in_shopping_007": 1
+        }
+      },
+      "interest_in_shopping_mean": {
+        "description": "Cronbach's alpha = 0.66",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_orais_interest_in_shopping_001": 1,
+          "ipip_ipip_orais_interest_in_shopping_002": 1,
+          "ipip_ipip_orais_interest_in_shopping_003": 1,
+          "ipip_ipip_orais_interest_in_shopping_004": 1,
+          "ipip_ipip_orais_interest_in_shopping_005": 1,
+          "ipip_ipip_orais_interest_in_shopping_006": 1,
+          "ipip_ipip_orais_interest_in_shopping_007": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_text_bought_something_other_than_groceries": "Bought something other than groceries.",
+      "ipip_text_checked_the_sales_ads_in_a_newspaper": "Checked the sales ads in a newspaper.",
+      "ipip_text_read_newspaper_ads_for_non_grocery_items": "Read newspaper ads for non-grocery items.",
+      "ipip_text_shopped_on_the_web": "Shopped on the web.",
+      "ipip_text_spent_10_minutes_or_more_in_a_non_grocer": "Spent 10 minutes or more in a non-grocery store.",
+      "ipip_text_spent_an_hour_or_more_in_a_non_grocery_s": "Spent an hour or more in a non-grocery store.",
+      "ipip_text_used_ebay_to_buy_or_sell_something": "Used eBay to buy or sell something."
+    }
+  }
+}

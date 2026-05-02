@@ -1,0 +1,218 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Love of Learning",
+      "code": "IPIP-VIA-Lov",
+      "abbreviation": "IPIP-VIA-Lov",
+      "description": "IPIP representation of the VIA character strength 'Love of Learning'. 10-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "love_of_learning_sum",
+        "name": "Love of Learning (sum)"
+      },
+      {
+        "id": "love_of_learning_mean",
+        "name": "Love of Learning (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_066",
+        "text_key": "ipip_V140",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_067",
+        "text_key": "ipip_V75",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_068",
+        "text_key": "ipip_V256",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_069",
+        "text_key": "ipip_V186",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_070",
+        "text_key": "ipip_V38",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_071",
+        "text_key": "ipip_V332",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_072",
+        "text_key": "ipip_V2",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_073",
+        "text_key": "ipip_V117",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_074",
+        "text_key": "ipip_V291",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_075",
+        "text_key": "ipip_V222",
+        "type": "likert",
+        "dimension": "love_of_learning",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "love_of_learning_sum": {
+        "description": "Mean of 10 items (range 1–5; higher = stronger Love of Learning). Negatively-worded items are reverse-coded.",
+        "method": "sum",
+        "items": {
+          "ipip_via_066": 1,
+          "ipip_via_067": 1,
+          "ipip_via_068": 1,
+          "ipip_via_069": -1,
+          "ipip_via_070": -1,
+          "ipip_via_071": -1,
+          "ipip_via_072": 1,
+          "ipip_via_073": 1,
+          "ipip_via_074": 1,
+          "ipip_via_075": 1
+        }
+      },
+      "love_of_learning_mean": {
+        "description": "Mean of 10 items (range 1–5; higher = stronger Love of Learning). Negatively-worded items are reverse-coded.",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_066": 1,
+          "ipip_via_067": 1,
+          "ipip_via_068": 1,
+          "ipip_via_069": -1,
+          "ipip_via_070": -1,
+          "ipip_via_071": -1,
+          "ipip_via_072": 1,
+          "ipip_via_073": 1,
+          "ipip_via_074": 1,
+          "ipip_via_075": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_V140": "Am a true life-long learner.",
+      "ipip_V75": "Am thrilled when I learn something new.",
+      "ipip_V256": "Consult the library or the Internet immediately if I want to know something.",
+      "ipip_V186": "Do not like to visit museums.",
+      "ipip_V38": "Don't like to learn new things.",
+      "ipip_V332": "Don't read nonfiction books for fun.",
+      "ipip_V2": "Go out of my way to attend educational events.",
+      "ipip_V117": "Look forward to the opportunity to learn and grow.",
+      "ipip_V291": "Read a large variety of books.",
+      "ipip_V222": "Read all the time."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_V2": "Uložim veliki trud kako bih prisustvovao obrazovnim događajima.",
+      "ipip_V38": "Ne volim da učim nove stvari.",
+      "ipip_V75": "Oduševim se kada naučim nešto novo.",
+      "ipip_V332": "Ne čitam knjige radi zabave.",
+      "ipip_V291": "Čitam raznovrsnu literaturu.",
+      "ipip_V222": "Stalno čitam.",
+      "ipip_V140": "Trudim se da stičem znanja tokom celog života.",
+      "ipip_V186": "Ne volim da idem u muzeje.",
+      "ipip_V117": "Radujem se prilikama da učim i napredujem.",
+      "ipip_V256": "Čim poželim nešto da saznam, potražim na Internetu ili u biblioteci."
+    },
+    "hu": {
+      "ipip_likert_5": "Teljes mértékben jellemző",
+      "ipip_likert_4": "Meglehetősen jellemző",
+      "ipip_question_head": "<h3>Mennyire pontosan tudja leírni önmagát?</h3><p>Írja le magát olyannak, amilyen általában most, nem amilyen a jövőben szeretne lenni. Írja le magát őszintén, ahogyan valóban látja magát, azonos nemű és közel azonos korú ismerőseihez viszonyítva. Hogy őszintén tudjon válaszolni, válaszait szigorúan bizalmasan kezeljük. Az alábbi értékelési skála segítségével jelölje meg, mennyire jellemző Önre az egyes állítás:</p>",
+      "ipip_likert_3": "Közepesen jellemző",
+      "ipip_likert_1": "Egyáltalán nem jellemző",
+      "ipip_debrief": "Köszönjük a kérdőív kitöltését.",
+      "ipip_likert_2": "Kevéssé jellemző",
+      "ipip_V117": "Alig várom a lehetőséget, hogy tanuljak és fejlődjek.",
+      "ipip_V38": "Nem szeretek új dolgokat tanulni.",
+      "ipip_V140": "Én egy igazi élethosszig tanuló vagyok.",
+      "ipip_V186": "Nem szeretek múzeumokba járni.",
+      "ipip_V256": "Rögtön utána nézek a könyvtárban vagy az interneten, ha valami újat akarok megtudni.",
+      "ipip_V2": "Mindent megteszek, hogy részt vegyek az oktatási eseményeken.",
+      "ipip_V291": "Sokféle könyveket olvasok.",
+      "ipip_V222": "Állandóan olvasok.",
+      "ipip_V332": "Nem olvasok szépirodalmi könyveket szórakozásból.",
+      "ipip_V75": "Nagyon örülök, amikor valami újat tanulok."
+    }
+  }
+}

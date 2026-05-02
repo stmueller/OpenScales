@@ -1,0 +1,198 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP CPI: Happiness",
+      "code": "IPIP-CPI-Hap",
+      "abbreviation": "CPI-Hap",
+      "description": "IPIP items measuring happiness, from the IPIP California Psychological Inventory.",
+      "citation": "Gough, H. G. (1987). California Psychological Inventory administrator's guide. Consulting Psychologists Press.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newCPIKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "happiness_sum",
+        "name": "Happiness (sum)"
+      },
+      {
+        "id": "happiness_mean",
+        "name": "Happiness (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_cpi_hap_001",
+        "text_key": "ipip_X197",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hap_002",
+        "text_key": "ipip_X105",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hap_003",
+        "text_key": "ipip_H640",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hap_004",
+        "text_key": "ipip_H959",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hap_005",
+        "text_key": "ipip_H1",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hap_006",
+        "text_key": "ipip_H914",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hap_007",
+        "text_key": "ipip_E159",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hap_008",
+        "text_key": "ipip_H639",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_cpi_hap_009",
+        "text_key": "ipip_text_love_life",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "happiness_sum": {
+        "description": "Cronbach's alpha = 0.77",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_cpi_hap_001": 1,
+          "ipip_ipip_cpi_hap_002": -1,
+          "ipip_ipip_cpi_hap_003": -1,
+          "ipip_ipip_cpi_hap_004": -1,
+          "ipip_ipip_cpi_hap_005": 1,
+          "ipip_ipip_cpi_hap_006": -1,
+          "ipip_ipip_cpi_hap_007": -1,
+          "ipip_ipip_cpi_hap_008": -1,
+          "ipip_ipip_cpi_hap_009": 1
+        }
+      },
+      "happiness_mean": {
+        "description": "Cronbach's alpha = 0.77",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_cpi_hap_001": 1,
+          "ipip_ipip_cpi_hap_002": -1,
+          "ipip_ipip_cpi_hap_003": -1,
+          "ipip_ipip_cpi_hap_004": -1,
+          "ipip_ipip_cpi_hap_005": 1,
+          "ipip_ipip_cpi_hap_006": -1,
+          "ipip_ipip_cpi_hap_007": -1,
+          "ipip_ipip_cpi_hap_008": -1,
+          "ipip_ipip_cpi_hap_009": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_X197": "Am comfortable in unfamiliar situations.",
+      "ipip_X105": "Am not sure where my life is going.",
+      "ipip_H640": "Am often down in the dumps.",
+      "ipip_H959": "Become overwhelmed by events.",
+      "ipip_H1": "Feel at ease with people.",
+      "ipip_H914": "Feel attacked by others.",
+      "ipip_E159": "Feel that people have a hard time understanding me.",
+      "ipip_H639": "Have a dark outlook on the future.",
+      "ipip_text_love_life": "Love life."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_H914": "Često se osećam napadnuto od strane drugih.",
+      "ipip_text_love_life": "Volim život.",
+      "ipip_H640": "Često sam snužden.",
+      "ipip_X197": "Osećam se prijatno u nepoznatim situacijama.",
+      "ipip_H959": "Neki događaji me preopterete.",
+      "ipip_H639": "Imam tmuran pogled na budućnost.",
+      "ipip_X105": "Nisam siguran u kom pravcu ide moj život.",
+      "ipip_E159": "Imam osećaj da je ljudima teško da me razumeju.",
+      "ipip_H1": "Osećam se opušteno u društvu drugih."
+    },
+    "sv": {
+      "ipip_likert_1": "Mycket inexakt",
+      "ipip_debrief": "Tack för att du fyllde i denna enkät.",
+      "ipip_question_head": "<h3>Hur exakt kan du beskriva dig själv?</h3><p>Beskriv dig själv som du i allmänhet är nu, inte som du önskar vara i framtiden. Beskriv dig själv så ärligt som du ser dig själv, i förhållande till andra människor du känner av samma kön och ungefär samma ålder. För att du ska kunna beskriva dig själv på ett ärligt sätt kommer dina svar att hållas i absolut sekretess. Ange hur exakt påståendet passar dig enligt följande skala:</p>",
+      "ipip_likert_5": "Mycket exakt",
+      "ipip_likert_2": "Måttligt inexakt",
+      "ipip_likert_3": "Varken exakt eller inexakt",
+      "ipip_likert_4": "Måttligt exakt",
+      "ipip_H914": "Känner mig attackerad av andra",
+      "ipip_text_love_life": "Älskar livet",
+      "ipip_H640": "Är ofta nere (deppig)",
+      "ipip_X197": "Känner mig väl tillmods i nya situationer",
+      "ipip_H959": "Blir överväldigad av händelser",
+      "ipip_H639": "Har en mörk syn på framtiden",
+      "ipip_X105": "Är inte säker på vart mitt liv är på väg",
+      "ipip_E159": "Känns som andra människor har svårt att förstå mig",
+      "ipip_H1": "Känner mig obesvärad med människor"
+    }
+  }
+}

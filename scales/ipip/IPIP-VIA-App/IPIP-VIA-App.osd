@@ -1,0 +1,194 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Aesthetic Appreciation",
+      "code": "IPIP-VIA-App",
+      "abbreviation": "IPIP-VIA-App",
+      "description": "IPIP representation of the VIA character strength 'Aesthetic Appreciation'. 8-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "aesthetic_appreciation_artistic_interests_sum",
+        "name": "Aesthetic Appreciation (sum)"
+      },
+      {
+        "id": "aesthetic_appreciation_artistic_interests_mean",
+        "name": "Aesthetic Appreciation (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_143",
+        "text_key": "ipip_V278",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_144",
+        "text_key": "ipip_V243",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_145",
+        "text_key": "ipip_V60",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_146",
+        "text_key": "ipip_V316",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_147",
+        "text_key": "ipip_V102",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_148",
+        "text_key": "ipip_text_fail_to_notice_beauty_until_others_comme",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_149",
+        "text_key": "ipip_V52",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_150",
+        "text_key": "ipip_V174",
+        "type": "likert",
+        "dimension": "aesthetic_appreciation_artistic_interests",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "aesthetic_appreciation_artistic_interests_sum": {
+        "description": "Mean of 8 items (range 1–5; higher = stronger Aesthetic Appreciation). Negatively-worded items are reverse-coded.",
+        "method": "sum",
+        "items": {
+          "ipip_via_143": 1,
+          "ipip_via_144": 1,
+          "ipip_via_145": 1,
+          "ipip_via_146": 1,
+          "ipip_via_147": 1,
+          "ipip_via_148": -1,
+          "ipip_via_149": 1,
+          "ipip_via_150": 1
+        }
+      },
+      "aesthetic_appreciation_artistic_interests_mean": {
+        "description": "Mean of 8 items (range 1–5; higher = stronger Aesthetic Appreciation). Negatively-worded items are reverse-coded.",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_143": 1,
+          "ipip_via_144": 1,
+          "ipip_via_145": 1,
+          "ipip_via_146": 1,
+          "ipip_via_147": 1,
+          "ipip_via_148": -1,
+          "ipip_via_149": 1,
+          "ipip_via_150": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_V278": "Am in awe of simple things in life that others might take for granted.",
+      "ipip_V243": "Appreciate all forms of art.",
+      "ipip_V60": "Can become tearful thinking of the goodness of others.",
+      "ipip_V316": "Crave the experience of great art.",
+      "ipip_V102": "Experience deep emotions when I see beautiful things.",
+      "ipip_text_fail_to_notice_beauty_until_others_comme": "Fail to notice beauty until others comment on it.",
+      "ipip_V52": "Feel it's important to live in a world of beauty.",
+      "ipip_V174": "Have been left speechless by the beauty depicted in a movie."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_V278": "Očaravaju me jednostavne stvari koje bi drugi možda uzeli zdravo za gotovo.",
+      "ipip_V102": "Doživim snažne emocije kada vidim lepe stvari.",
+      "ipip_V243": "Cenim sve vrste umetnosti.",
+      "ipip_V52": "Osećam da je važno živeti u svetu punom lepote.",
+      "ipip_V174": "Lepota u filmu me je ostavila bez teksta.",
+      "ipip_text_fail_to_notice_beauty_until_others_comme": "Ne primećujem lepe stvari dok ih drugi ne prokomentarišu.",
+      "ipip_V316": "Čeznem za iskustvima velike umetnosti.",
+      "ipip_V60": "Umem se rastužiti razmišljanjem o dobrobiti drugih."
+    },
+    "hu": {
+      "ipip_likert_5": "Teljes mértékben jellemző",
+      "ipip_likert_4": "Meglehetősen jellemző",
+      "ipip_question_head": "<h3>Mennyire pontosan tudja leírni önmagát?</h3><p>Írja le magát olyannak, amilyen általában most, nem amilyen a jövőben szeretne lenni. Írja le magát őszintén, ahogyan valóban látja magát, azonos nemű és közel azonos korú ismerőseihez viszonyítva. Hogy őszintén tudjon válaszolni, válaszait szigorúan bizalmasan kezeljük. Az alábbi értékelési skála segítségével jelölje meg, mennyire jellemző Önre az egyes állítás:</p>",
+      "ipip_likert_3": "Közepesen jellemző",
+      "ipip_likert_1": "Egyáltalán nem jellemző",
+      "ipip_debrief": "Köszönjük a kérdőív kitöltését.",
+      "ipip_likert_2": "Kevéssé jellemző",
+      "ipip_V102": "Mély érzelmeket élek meg, ha szép dolgokat látok.",
+      "ipip_V243": "A művészet minden formáját nagyra értékelem.",
+      "ipip_V52": "Úgy érzem, fontos, hogy a szépség világában éljünk.",
+      "ipip_V174": "Elakad a szavam, ha a moziban valami szépet mutatnak.",
+      "ipip_V278": "Áhítatot érzek az élet olyan dolgai iránt, amiket mások esetleg természetesnek vesznek.",
+      "ipip_text_fail_to_notice_beauty_until_others_comme": "Nem veszem észre a szépséget addig, míg mások nem tesznek megjegyzést rá.",
+      "ipip_V60": "Könnyekig meg tudok hatódni mások jóságától.",
+      "ipip_V316": "Vágyom a kiváló művészet megtapasztalására."
+    }
+  }
+}

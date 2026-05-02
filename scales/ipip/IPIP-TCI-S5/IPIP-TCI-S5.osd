@@ -1,0 +1,171 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP TCI: Impulse-Control",
+      "code": "IPIP-TCI-S5",
+      "abbreviation": "TCI-S5",
+      "description": "IPIP items measuring impulse-control, from the IPIP Temperament and Character Inventory.",
+      "citation": "Cloninger, C. R., Przybeck, T. R., Svrakic, D. M., & Wetzel, R. D. (1994). The Temperament and Character Inventory (TCI): A guide to its development and use. Center for Psychobiology of Personality.",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newTCIKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-05-02",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Auto-generated from TedoneItemAssignmentTable30APR21.xlsx"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "impulse_control_sum",
+        "name": "Impulse-Control (sum)"
+      },
+      {
+        "id": "impulse_control_mean",
+        "name": "Impulse-Control (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_ipip_tci_s5_001",
+        "text_key": "ipip_X251",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_s5_002",
+        "text_key": "ipip_H258",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_s5_003",
+        "text_key": "ipip_text_do_things_i_later_regret",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_s5_004",
+        "text_key": "ipip_E57",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_s5_005",
+        "text_key": "ipip_X274",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_s5_006",
+        "text_key": "ipip_X196",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_s5_007",
+        "text_key": "ipip_H1183",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_s5_008",
+        "text_key": "ipip_H1467",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_s5_009",
+        "text_key": "ipip_X181",
+        "type": "likert",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_ipip_tci_s5_010",
+        "text_key": "ipip_H1186",
+        "type": "likert",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "impulse_control_sum": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "sum",
+        "items": {
+          "ipip_ipip_tci_s5_001": 1,
+          "ipip_ipip_tci_s5_002": 1,
+          "ipip_ipip_tci_s5_003": -1,
+          "ipip_ipip_tci_s5_004": -1,
+          "ipip_ipip_tci_s5_005": 1,
+          "ipip_ipip_tci_s5_006": 1,
+          "ipip_ipip_tci_s5_007": -1,
+          "ipip_ipip_tci_s5_008": -1,
+          "ipip_ipip_tci_s5_009": 1,
+          "ipip_ipip_tci_s5_010": -1
+        }
+      },
+      "impulse_control_mean": {
+        "description": "Cronbach's alpha = 0.78",
+        "method": "mean_coded",
+        "items": {
+          "ipip_ipip_tci_s5_001": 1,
+          "ipip_ipip_tci_s5_002": 1,
+          "ipip_ipip_tci_s5_003": -1,
+          "ipip_ipip_tci_s5_004": -1,
+          "ipip_ipip_tci_s5_005": 1,
+          "ipip_ipip_tci_s5_006": 1,
+          "ipip_ipip_tci_s5_007": -1,
+          "ipip_ipip_tci_s5_008": -1,
+          "ipip_ipip_tci_s5_009": 1,
+          "ipip_ipip_tci_s5_010": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_X251": "Am able to control my cravings.",
+      "ipip_H258": "Carry out my plans.",
+      "ipip_text_do_things_i_later_regret": "Do things I later regret.",
+      "ipip_E57": "Don't know why I do some of the things I do.",
+      "ipip_X274": "Easily resist temptations.",
+      "ipip_X196": "Follow through with my plans.",
+      "ipip_H1183": "Habitually blow my chances.",
+      "ipip_H1467": "Make a mess of things.",
+      "ipip_X181": "Rarely overindulge.",
+      "ipip_H1186": "Waste my time."
+    }
+  }
+}

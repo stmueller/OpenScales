@@ -1,0 +1,188 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "IPIP Character Strength: Teamwork/Citizenship",
+      "code": "IPIP-VIA-Cit",
+      "abbreviation": "IPIP-VIA-Cit",
+      "description": "IPIP representation of the VIA character strength 'Teamwork/Citizenship'. 9-item subscale from the full IPIP-VIA inventory. Each item is rated on a 5-point accuracy scale. Part of the Values in Action framework (Peterson & Seligman, 2004).",
+      "citation": "Peterson, C., & Seligman, M. E. P. (2004). Character Strengths and Virtues: A Handbook and Classification. Oxford University Press. IPIP items: Goldberg et al. (2006). https://ipip.ori.org/newVIAKey.htm",
+      "license": "Public Domain",
+      "version": "1.0",
+      "url": "https://ipip.ori.org/newVIAKey.htm",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "ipip_likert_1",
+        "ipip_likert_2",
+        "ipip_likert_3",
+        "ipip_likert_4",
+        "ipip_likert_5"
+      ],
+      "question_head": "ipip_question_head"
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Randomize item presentation order within the scale."
+      }
+    },
+    "dimensions": [
+      {
+        "id": "teamwork_citizenship_sum",
+        "name": "Teamwork/Citizenship (sum)"
+      },
+      {
+        "id": "teamwork_citizenship_mean",
+        "name": "Teamwork/Citizenship (mean)"
+      }
+    ],
+    "items": [
+      {
+        "id": "ipip_via_178",
+        "text_key": "ipip_V16",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_179",
+        "text_key": "ipip_V27",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_180",
+        "text_key": "ipip_V299",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_181",
+        "text_key": "ipip_H2016",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_182",
+        "text_key": "ipip_V306",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_183",
+        "text_key": "ipip_V183",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_184",
+        "text_key": "ipip_V73",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_185",
+        "text_key": "ipip_text_support_my_teammates_or_fellow_group_mem",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      },
+      {
+        "id": "ipip_via_186",
+        "text_key": "ipip_V132",
+        "type": "likert",
+        "dimension": "teamwork_citizenship",
+        "random_group": 1
+      }
+    ],
+    "scoring": {
+      "teamwork_citizenship_sum": {
+        "description": "Mean of 9 items (range 1–5; higher = stronger Teamwork/Citizenship). Negatively-worded items are reverse-coded.",
+        "method": "sum",
+        "items": {
+          "ipip_via_178": -1,
+          "ipip_via_179": 1,
+          "ipip_via_180": -1,
+          "ipip_via_181": 1,
+          "ipip_via_182": 1,
+          "ipip_via_183": -1,
+          "ipip_via_184": -1,
+          "ipip_via_185": 1,
+          "ipip_via_186": -1
+        }
+      },
+      "teamwork_citizenship_mean": {
+        "description": "Mean of 9 items (range 1–5; higher = stronger Teamwork/Citizenship). Negatively-worded items are reverse-coded.",
+        "method": "mean_coded",
+        "items": {
+          "ipip_via_178": -1,
+          "ipip_via_179": 1,
+          "ipip_via_180": -1,
+          "ipip_via_181": 1,
+          "ipip_via_182": 1,
+          "ipip_via_183": -1,
+          "ipip_via_184": -1,
+          "ipip_via_185": 1,
+          "ipip_via_186": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ipip_likert_1": "Very Inaccurate",
+      "ipip_likert_2": "Moderately Inaccurate",
+      "ipip_likert_3": "Neither Accurate Nor Inaccurate",
+      "ipip_likert_4": "Moderately Accurate",
+      "ipip_likert_5": "Very Accurate",
+      "ipip_question_head": "<h3>How Accurately Can You Describe Yourself?</h3><p>Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. So that you can describe yourself in an honest manner, your responses will be kept in absolute confidence. Indicate the accuracy of the item as it applies to you, using the following rating scale:</p>",
+      "ipip_debrief": "Thank you for completing this questionnaire.",
+      "ipip_V16": "Am not good at working with a group.",
+      "ipip_V27": "Don't miss group meetings or team practices.",
+      "ipip_V299": "Don't think it's important to socialize with others.",
+      "ipip_H2016": "Enjoy being part of a group.",
+      "ipip_V306": "Feel I must respect the decisions made by my group.",
+      "ipip_V183": "Keep to myself.",
+      "ipip_V73": "Prefer to do everything alone.",
+      "ipip_text_support_my_teammates_or_fellow_group_mem": "Support my teammates or fellow group members.",
+      "ipip_V132": "Work best when I am alone."
+    },
+    "sr": {
+      "ipip_likert_1": "Potpuno netačno",
+      "ipip_debrief": "Hvala vam što ste popunili ovaj upitnik.",
+      "ipip_question_head": "<h3>Kako tačno možete da opišete sebe?</h3><p>Opišite sebe onakvi kakvi generalno jeste sada, a ne onakvi kakvi biste želeli da budete u budućnosti. Opišite sebe onako kako iskreno vidite sebe, u poređenju sa drugim ljudima istog pola i otprilike iste starosti. Da biste mogli da se opišete na iskren način, vaši odgovori će biti čuvani u apsolutnoj tajnosti. Označite tačnost svake tvrdnje koja se odnosi na vas, koristeći sledeću skalu:</p>",
+      "ipip_likert_5": "Potpuno tačno",
+      "ipip_likert_2": "Uglavnom netačno",
+      "ipip_likert_3": "Ni tačno ni netačno",
+      "ipip_likert_4": "Uglavnom tačno",
+      "ipip_V16": "Nisam dobar u radu u grupi.",
+      "ipip_V183": "U poslu se najradije oslanjam na sebe.",
+      "ipip_V306": "Osećam da moram poštovati odluke svoje grupe.",
+      "ipip_V132": "Najbolje radim sam.",
+      "ipip_V299": "Mislim da nije bitno družiti se s drugima.",
+      "ipip_H2016": "Uživam da budem deo grupe.",
+      "ipip_V27": "Ne izostajem sa grupnih sastanaka ili timskih vežbi.",
+      "ipip_V73": "Najviše volim da sve radim sam.",
+      "ipip_text_support_my_teammates_or_fellow_group_mem": "Članovi mog tima ili grupe imaju moju podršku."
+    }
+  }
+}

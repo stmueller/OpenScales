@@ -94,7 +94,7 @@ const ScaleRunner = (() => {
       if (!bundle.definition) throw new Error(`Invalid .osd file: missing "definition" key`);
       const scaleDef = bundle.definition;
       const allTrans = bundle.translations || {};
-      const strings  = allTrans[language] || allTrans['en'] || Object.values(allTrans)[0] || {};
+      const strings  = allTrans[language] || allTrans['en'] || allTrans['default'] || Object.values(allTrans)[0] || {};
       return { scaleDef, strings };
     }
 
@@ -107,7 +107,7 @@ const ScaleRunner = (() => {
     const scaleDef = await defRes.json();
 
     let strings = {};
-    const langs = language === 'en' ? ['en'] : [language, 'en'];
+    const langs = language === 'en' ? ['en', 'default'] : [language, 'en', 'default'];
     for (const lang of langs) {
       try {
         const res = await fetch(`${dir}/${code}.${lang}.json`);
@@ -297,8 +297,9 @@ const ScaleRunner = (() => {
             const fixedItems = [], freeItems = [];
             const fixedPositions = [];
             qs.forEach((q, i) => {
-              // Pin if random_group===0 OR id is in the explicit fixed list
-              const pinned = (q.random_group === 0) || fixedIds.has(q.id);
+              // Pin if random_group===0, inst/section/image type, or id in fixed list
+              const isFixed = q.type === 'inst' || q.type === 'section' || q.type === 'image';
+              const pinned = isFixed || (q.random_group === 0) || fixedIds.has(q.id);
               if (pinned) { fixedItems.push({ q, i }); fixedPositions.push(i); }
               else freeItems.push(q);
             });
@@ -334,9 +335,18 @@ const ScaleRunner = (() => {
    */
   function shuffleByGroup(questions) {
     // Collect groups
+    // Per spec: items with no explicit random_group default to group 1 (shuffled)
+    // EXCEPT inst items and items with visible_when, which default to group 0 (fixed).
     const groups = {};
     questions.forEach((q, i) => {
-      const g = q.random_group !== undefined ? q.random_group : 0;
+      let g;
+      if (q.random_group !== undefined) {
+        g = q.random_group;
+      } else if (q.type === 'inst' || q.type === 'section' || q.type === 'image' || q.visible_when) {
+        g = 0;
+      } else {
+        g = 1;
+      }
       if (!groups[g]) groups[g] = [];
       groups[g].push({ q, i });
     });
@@ -368,6 +378,12 @@ const ScaleRunner = (() => {
    */
   function evaluateCondition(condition, responseMap, params) {
     if (!condition) return true;
+
+    // Bare string shorthand: "param_name" → truthy param check
+    if (typeof condition === 'string') {
+      const val = (params || {})[condition];
+      return val !== undefined && val !== null && val !== 0 && val !== '0' && val !== false && val !== '';
+    }
 
     // Compound: all (AND)
     if (condition.all) {
@@ -452,17 +468,30 @@ const ScaleRunner = (() => {
   }
 
   /**
+   * Resolve the effective response-scale options for a likert item.
+   * Resolution order: item response_scale → likert_options default.
+   * (Per-item likert_labels/likert_points are handled by callers directly.)
+   */
+  function getEffectiveOpts(qdef, scaleDef) {
+    if (qdef.response_scale && scaleDef.response_scales &&
+        scaleDef.response_scales[qdef.response_scale]) {
+      return scaleDef.response_scales[qdef.response_scale];
+    }
+    return scaleDef.likert_options || {};
+  }
+
+  /**
    * Get [min, max] numeric range for a question's response.
-   * Cascade: question-level → likert_options → type defaults.
+   * Cascade: question-level → response_scale / likert_options → type defaults.
    */
   function getQuestionRange(qdef, scaleDef) {
     if (qdef.type === 'likert') {
       const qMin = qdef.likert_min;
       const qMax = qdef.likert_max;
-      const sMin = scaleDef.likert_options && scaleDef.likert_options.min;
-      const sMax = scaleDef.likert_options && scaleDef.likert_options.max;
-      const pts  = qdef.likert_points ||
-        (scaleDef.likert_options && scaleDef.likert_options.points) || 5;
+      const opts = getEffectiveOpts(qdef, scaleDef);
+      const sMin = opts.min;
+      const sMax = opts.max;
+      const pts  = qdef.likert_points || opts.points || 5;
       const min = qMin !== undefined ? qMin : (sMin !== undefined ? sMin : 1);
       const max = qMax !== undefined ? qMax : (sMax !== undefined ? sMax : pts);
       return [min, max];
@@ -638,8 +667,8 @@ const ScaleRunner = (() => {
    * Build a DOM fragment for item text, splitting on <img> if present.
    * Returns a <div> containing: [text-above] [img?] [text-below].
    *
-   * Remote media policy (C4a): remote URLs are blocked for images unless
-   * the tag carries remote="true" or params.allow_remote_media is truthy.
+   * Remote media policy (C4a): remote URLs are allowed by default.
+   * Set params.allow_remote_media = false (or remote="false" on the tag) to block.
    */
   function buildItemTextEl(rawText, baseURL, params) {
     const wrap = document.createElement('div');
@@ -660,13 +689,12 @@ const ScaleRunner = (() => {
 
     if (media.src) {
       const isRemoteURL = /^https?:\/\//i.test(media.src);
-      const remoteAllowed = media.remote || (params && params.allow_remote_media);
+      const remoteBlocked = media.remote === 'false' || (params && params.allow_remote_media === false);
 
-      if (isRemoteURL && !remoteAllowed) {
+      if (isRemoteURL && remoteBlocked) {
         // Block remote image — show placeholder and warn
         console.warn(
-          '[ScaleRunner] Remote image blocked (add remote="true" to <img> or set ' +
-          'allow_remote_media parameter): ' + media.src
+          '[ScaleRunner] Remote image blocked (allow_remote_media=false): ' + media.src
         );
         const placeholder = document.createElement('div');
         placeholder.className = 'sr-media-placeholder';
@@ -762,7 +790,7 @@ const ScaleRunner = (() => {
   }
 
   function renderLikert(qdef, strings, scaleDef, state, wrap, onResponse, prevResponse) {
-    const opts    = scaleDef.likert_options || {};
+    const opts    = getEffectiveOpts(qdef, scaleDef);
     const pts     = qdef.likert_points || opts.points || 5;
     const [min]   = getQuestionRange(qdef, scaleDef);
     const labels  = qdef.likert_labels || opts.labels || [];
@@ -2163,8 +2191,9 @@ const ScaleRunner = (() => {
           state.sectionRevisable   = q.revisable !== false;  // default true
           state.sectionFirstVisibleIndex = -1;               // reset for new section
 
-          // Update header section title
-          const secTitle = q.text_key ? resolveText(q.text_key, strings, state.params, state.responseMap, state.aliasMap) : '';
+          // Update header section title — treat missing key (resolves to key itself) as blank
+          const _secRaw = q.text_key ? resolveText(q.text_key, strings, state.params, state.responseMap, state.aliasMap) : '';
+          const secTitle = (_secRaw === q.text_key) ? '' : _secRaw;
           if (secTitle) {
             sectionTitleEl.textContent = secTitle;
             sectionTitleEl.hidden = false;
@@ -2214,7 +2243,7 @@ const ScaleRunner = (() => {
       state.timestamps[qi] = nowMs();
 
       // Question-head instruction line (render before item text)
-      const opts = scaleDef.likert_options || {};
+      const opts = getEffectiveOpts(qdef, scaleDef);
       const headKey = qdef.question_head || (qdef.type === 'likert' && opts.question_head);
       if (headKey) {
         const headText = resolveText(headKey, strings, state.params, state.responseMap, state.aliasMap);

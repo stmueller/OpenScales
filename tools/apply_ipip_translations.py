@@ -65,15 +65,17 @@ def load_masters(lang_filter=None):
         if lang_filter and lang != lang_filter:
             continue
         data = json.loads(f.read_text(encoding="utf-8"))
-        masters[lang] = data
+        masters[lang] = data  # _translator key is preserved; coverage checks ignore it
     return masters
 
 
 def item_keys_from_osd(data):
-    """Return set of text_keys used by items (excludes shared keys)."""
+    """Return set of text_keys used by likert items (excludes shared keys and section markers)."""
     items = data.get("definition", {}).get("items", [])
     keys = set()
     for item in items:
+        if item.get("type") == "section":
+            continue
         tk = item.get("text_key", "")
         if tk and tk not in SHARED_KEYS:
             keys.add(tk)
@@ -133,8 +135,10 @@ def apply_translations(osd_path, masters, dry_run, verbose):
                     changed = True
             continue
 
-        # Build full translation dict: shared keys + all item keys
+        # Build full translation dict: attribution + shared keys + all item keys
         lang_trans = {}
+        if "_translator" in master:
+            lang_trans["_translator"] = master["_translator"]
         for sk in SHARED_KEYS:
             if sk in master:
                 lang_trans[sk] = master[sk]

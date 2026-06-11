@@ -609,7 +609,19 @@ def main():
             all_questions, all_translations, code
         )
     else:
-        # Generic scale
+        # Generic scale — infer likert_options from actual items
+        likert_items = [q for q in all_questions if q.get("type") == "likert"]
+        if likert_items:
+            points = likert_items[0].get("likert_points", 7)
+            labels = likert_items[0].get("likert_labels", [])
+        else:
+            points = 7
+            labels = []
+        # Strip per-item likert_points/likert_labels (hoisted to likert_options)
+        for q in all_questions:
+            q.pop("likert_points", None)
+            q.pop("likert_labels", None)
+
         pages = paginate_questions(all_questions, args.items_per_page)
         translations = all_translations
         translations["debrief"] = "Thank you for completing this questionnaire."
@@ -619,15 +631,14 @@ def main():
             "scale_info": {
                 "name": code,
                 "code": code,
-                "description": f"Scale converted from Qualtrics survey.",
+                "description": "Scale converted from Qualtrics survey.",
                 "license": "",
                 "version": "1.0",
             },
             "likert_options": {
-                "points": 7,
+                "points": points,
                 "min": 1,
-                "max": 7,
-                "labels": [],
+                "labels": labels,
                 "question_head": "question_head"
             },
             "dimensions": [],
@@ -635,6 +646,15 @@ def main():
             "items": all_questions,
             "scoring": {}
         }
+
+    # Wrap into OSD v1.0 envelope
+    osd = {
+        "osd_version": "1.0",
+        "definition": scale_json,
+        "translations": {
+            "en": translations
+        }
+    }
 
     # Write output
     output_dir = args.output
@@ -646,22 +666,17 @@ def main():
 
     os.makedirs(output_dir, exist_ok=True)
 
-    scale_path = os.path.join(output_dir, f"{code}.json")
-    with open(scale_path, "w", encoding="utf-8") as f:
-        json.dump(scale_json, f, indent=2, ensure_ascii=False)
-        f.write("\n")
-
-    trans_path = os.path.join(output_dir, f"{code}.en.json")
-    with open(trans_path, "w", encoding="utf-8") as f:
-        json.dump(translations, f, indent=2, ensure_ascii=False)
+    osd_path = os.path.join(output_dir, f"{code}.osd")
+    with open(osd_path, "w", encoding="utf-8") as f:
+        json.dump(osd, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
     print(f"\nOutput:")
-    print(f"  {scale_path}")
-    print(f"  {trans_path}")
-    print(f"  {len(scale_json.get('items', []))} items, "
-          f"{len(scale_json.get('pages', []))} pages, "
-          f"{len(scale_json.get('dimensions', []))} dimensions")
+    print(f"  {osd_path}")
+    n_items = len(scale_json.get('items', []))
+    n_pages = len(scale_json.get('pages', []))
+    n_dims  = len(scale_json.get('dimensions', []))
+    print(f"  {n_items} items, {n_pages} pages, {n_dims} dimensions")
 
 
 if __name__ == "__main__":

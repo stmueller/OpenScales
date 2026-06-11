@@ -1,0 +1,117 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "EFMLS",
+      "name": "Eudaimonic Functions of Music Listening Scale",
+      "abbreviation": "EFMLS",
+      "description": "7-item scale measuring eudaimonic functions of music listening, including transcendence, flow, and peak experience.",
+      "citation": "Groarke, J. M., & Hogan, M. J. (2020). The eudaimonic functions of music listening scale: An instrument to measure transcendence, flow and peak experience in music. Frontiers in Psychology, 11, 566296. https://doi.org/10.3389/fpsyg.2020.566296",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2020.566296",
+      "version": "1.0",
+      "domain": "Well-being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {"type": "boolean", "default": 1, "description": "Show scale title to respondents"},
+      "shuffle_questions": {"type": "boolean", "default": 0, "description": "Randomize item presentation order"}
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": ["EFMLS_r1", "EFMLS_r2", "EFMLS_r3", "EFMLS_r4", "EFMLS_r5"],
+      "question_head": "EFMLS_head"
+    },
+    "dimensions": [
+      {
+        "id": "peak_experience",
+        "name": "Peak Experience",
+        "description": "Life-changing or transformative experiences arising from music listening."
+      },
+      {
+        "id": "flow",
+        "name": "Flow",
+        "description": "Loss of track of time and absorption while listening to music."
+      },
+      {
+        "id": "transcendence",
+        "name": "Transcendence",
+        "description": "Sense of opening to another world, connection with something larger, and transcending everyday experience through music."
+      }
+    ],
+    "items": [
+      {"id": "EFMLS001", "type": "likert", "text_key": "EFMLS001", "dimension": "peak_experience"},
+      {"id": "EFMLS002", "type": "likert", "text_key": "EFMLS002", "dimension": "peak_experience"},
+      {"id": "EFMLS003", "type": "likert", "text_key": "EFMLS003", "dimension": "flow"},
+      {"id": "EFMLS004", "type": "likert", "text_key": "EFMLS004", "dimension": "flow"},
+      {"id": "EFMLS005", "type": "likert", "text_key": "EFMLS005", "dimension": "transcendence"},
+      {"id": "EFMLS006", "type": "likert", "text_key": "EFMLS006", "dimension": "transcendence"},
+      {"id": "EFMLS007", "type": "likert", "text_key": "EFMLS007", "dimension": "transcendence"}
+    ],
+    "scoring": {
+      "peak_experience": {
+        "method": "mean_coded",
+        "description": "Mean of items 1-2. Item 2 is reverse-scored (negatively worded). Higher scores indicate more peak experiences from music.",
+        "items": {
+          "EFMLS001": 1,
+          "EFMLS002": -1
+        }
+      },
+      "flow": {
+        "method": "mean_coded",
+        "description": "Mean of items 3-4. Item 4 is reverse-scored (negatively worded). Higher scores indicate greater flow experiences while listening to music.",
+        "items": {
+          "EFMLS003": 1,
+          "EFMLS004": -1
+        }
+      },
+      "transcendence": {
+        "method": "mean_coded",
+        "description": "Mean of items 5-7. All forward-scored. Higher scores indicate greater transcendence experiences through music.",
+        "items": {
+          "EFMLS005": 1,
+          "EFMLS006": 1,
+          "EFMLS007": 1
+        }
+      },
+      "total": {
+        "method": "mean_coded",
+        "description": "Overall eudaimonic music listening score: mean of all 7 items (after reverse-scoring items 2 and 4).",
+        "items": {
+          "EFMLS001": 1,
+          "EFMLS002": -1,
+          "EFMLS003": 1,
+          "EFMLS004": -1,
+          "EFMLS005": 1,
+          "EFMLS006": 1,
+          "EFMLS007": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "EFMLS_head": "Please indicate how much you agree or disagree with each of the following statements about your experiences when listening to music.",
+      "EFMLS_r1": "Strongly disagree",
+      "EFMLS_r2": "Disagree",
+      "EFMLS_r3": "Neither agree nor disagree",
+      "EFMLS_r4": "Agree",
+      "EFMLS_r5": "Strongly agree",
+      "EFMLS001": "I have had life changing experiences listening to music.",
+      "EFMLS002": "I have NOT had a life changing experience as a result of listening to music.",
+      "EFMLS003": "I can lose track of time when listening to music.",
+      "EFMLS004": "I do NOT lose track of time when I'm listening to music.",
+      "EFMLS005": "Listening to music opens up another world of experience.",
+      "EFMLS006": "Listening to music I can feel a connection with something larger than myself.",
+      "EFMLS007": "When listening to music, I feel I can transcend everyday experience."
+    }
+  }
+}

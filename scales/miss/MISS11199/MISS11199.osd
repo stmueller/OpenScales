@@ -1,0 +1,236 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Self-Compassion Scale – Preadolescent",
+      "code": "MISS11199",
+      "abbreviation": "SCS-P / SCS-P-PR",
+      "description": "Two scales of self-compassion for preadolescents aged 9–12, modelled on Neff's Self-Compassion Scale. The self-report version (SCS-P, 25 items) is completed by the child; the parent-report version (SCS-P-PR, 24 items) is completed by a parent about the child. Both yield two subscales: Compassionate Self-Responding (CSR) and Uncompassionate Self-Responding (USR). The version is selected via the 'respondent' parameter.",
+      "citation": "Barclay-Timmis, V. S., Burton, L. J., & Beccaria, G. (2023). The development and psychometric evaluation of two new scales of self-compassion for preadolescents. Measurement Instruments for the Social Sciences, 5, Article e11199. https://doi.org/10.5964/miss.11199",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/11199",
+      "domain": "Mental Health",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-07",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Response anchor labels inferred from Neff's SCS family (Almost never / Almost always); not stated verbatim in the source paper. USR items are negatively worded and scored directly (no reverse coding). Item 25 ('I am kind towards those things about myself I don't like') is present in the SCS-P (child) but was not retained in the SCS-P-PR (parent)."
+    },
+    "parameters": {
+      "respondent": {
+        "type": "choice",
+        "default": "child",
+        "options": ["child", "parent"],
+        "description": "Who is completing the scale. 'child' administers the SCS-P (self-report by child, 25 items); 'parent' administers the SCS-P-PR (parent-report of child, 24 items)."
+      }
+    },
+    "branches": [
+      {
+        "id": "form",
+        "method": "parameter",
+        "parameter": "respondent",
+        "arms": [
+          {"id": "child",  "sections": ["sec_child_inst",  "sec_child_items"]},
+          {"id": "parent", "sections": ["sec_parent_inst", "sec_parent_items"]}
+        ]
+      }
+    ],
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["scsp_r1", "scsp_r2", "scsp_r3", "scsp_r4", "scsp_r5"],
+      "question_head": "scsp_question_head"
+    },
+    "dimensions": [
+      {
+        "id": "child_csr",
+        "name": "Compassionate Self-Responding (child)",
+        "abbreviation": "CSR",
+        "description": "Child self-report. Higher scores indicate more compassionate self-responding. Range 12–60."
+      },
+      {
+        "id": "child_usr",
+        "name": "Uncompassionate Self-Responding (child)",
+        "abbreviation": "USR",
+        "description": "Child self-report. Higher scores indicate more uncompassionate self-responding. Range 13–65."
+      },
+      {
+        "id": "parent_csr",
+        "name": "Compassionate Self-Responding (parent)",
+        "abbreviation": "CSR-PR",
+        "description": "Parent report of child. Higher scores indicate more compassionate self-responding. Range 10–50."
+      },
+      {
+        "id": "parent_usr",
+        "name": "Uncompassionate Self-Responding (parent)",
+        "abbreviation": "USR-PR",
+        "description": "Parent report of child. Higher scores indicate more uncompassionate self-responding. Range 14–70."
+      }
+    ],
+    "items": [
+      {"id": "sec_child_inst",  "type": "section"},
+      {
+        "id": "scsp_inst_child",
+        "text_key": "scsp_inst_child",
+        "type": "inst"
+      },
+      {"id": "sec_child_items", "type": "section"},
+      {"id": "scsp1",  "type": "likert", "text_key": "scsp1_child",  "dimension": "child_usr"},
+      {"id": "scsp2",  "type": "likert", "text_key": "scsp2_child",  "dimension": "child_usr"},
+      {"id": "scsp3",  "type": "likert", "text_key": "scsp3_child",  "dimension": "child_csr"},
+      {"id": "scsp4",  "type": "likert", "text_key": "scsp4_child",  "dimension": "child_usr"},
+      {"id": "scsp5",  "type": "likert", "text_key": "scsp5_child",  "dimension": "child_usr"},
+      {"id": "scsp6",  "type": "likert", "text_key": "scsp6_child",  "dimension": "child_csr"},
+      {"id": "scsp7",  "type": "likert", "text_key": "scsp7_child",  "dimension": "child_usr"},
+      {"id": "scsp8",  "type": "likert", "text_key": "scsp8_child",  "dimension": "child_csr"},
+      {"id": "scsp9",  "type": "likert", "text_key": "scsp9_child",  "dimension": "child_csr"},
+      {"id": "scsp10", "type": "likert", "text_key": "scsp10_child", "dimension": "child_usr"},
+      {"id": "scsp11", "type": "likert", "text_key": "scsp11_child", "dimension": "child_csr"},
+      {"id": "scsp12", "type": "likert", "text_key": "scsp12_child", "dimension": "child_usr"},
+      {"id": "scsp13", "type": "likert", "text_key": "scsp13_child", "dimension": "child_csr"},
+      {"id": "scsp14", "type": "likert", "text_key": "scsp14_child", "dimension": "child_csr"},
+      {"id": "scsp15", "type": "likert", "text_key": "scsp15_child", "dimension": "child_usr"},
+      {"id": "scsp16", "type": "likert", "text_key": "scsp16_child", "dimension": "child_csr"},
+      {"id": "scsp17", "type": "likert", "text_key": "scsp17_child", "dimension": "child_usr"},
+      {"id": "scsp18", "type": "likert", "text_key": "scsp18_child", "dimension": "child_csr"},
+      {"id": "scsp19", "type": "likert", "text_key": "scsp19_child", "dimension": "child_usr"},
+      {"id": "scsp20", "type": "likert", "text_key": "scsp20_child", "dimension": "child_usr"},
+      {"id": "scsp21", "type": "likert", "text_key": "scsp21_child", "dimension": "child_csr"},
+      {"id": "scsp22", "type": "likert", "text_key": "scsp22_child", "dimension": "child_csr"},
+      {"id": "scsp23", "type": "likert", "text_key": "scsp23_child", "dimension": "child_usr"},
+      {"id": "scsp24", "type": "likert", "text_key": "scsp24_child", "dimension": "child_usr"},
+      {"id": "scsp25", "type": "likert", "text_key": "scsp25_child", "dimension": "child_csr"},
+
+      {"id": "sec_parent_inst",  "type": "section"},
+      {
+        "id": "scspr_inst_parent",
+        "text_key": "scsp_inst_parent",
+        "type": "inst"
+      },
+      {"id": "sec_parent_items", "type": "section"},
+      {"id": "scspr1",  "type": "likert", "text_key": "scsp1_parent",  "dimension": "parent_usr"},
+      {"id": "scspr2",  "type": "likert", "text_key": "scsp2_parent",  "dimension": "parent_usr"},
+      {"id": "scspr3",  "type": "likert", "text_key": "scsp3_parent",  "dimension": "parent_csr"},
+      {"id": "scspr4",  "type": "likert", "text_key": "scsp4_parent",  "dimension": "parent_usr"},
+      {"id": "scspr5",  "type": "likert", "text_key": "scsp5_parent",  "dimension": "parent_usr"},
+      {"id": "scspr6",  "type": "likert", "text_key": "scsp6_parent",  "dimension": "parent_csr"},
+      {"id": "scspr7",  "type": "likert", "text_key": "scsp7_parent",  "dimension": "parent_usr"},
+      {"id": "scspr8",  "type": "likert", "text_key": "scsp8_parent",  "dimension": "parent_csr"},
+      {"id": "scspr9",  "type": "likert", "text_key": "scsp9_parent",  "dimension": "parent_usr"},
+      {"id": "scspr10", "type": "likert", "text_key": "scsp10_parent", "dimension": "parent_usr"},
+      {"id": "scspr11", "type": "likert", "text_key": "scsp11_parent", "dimension": "parent_csr"},
+      {"id": "scspr12", "type": "likert", "text_key": "scsp12_parent", "dimension": "parent_usr"},
+      {"id": "scspr13", "type": "likert", "text_key": "scsp13_parent", "dimension": "parent_csr"},
+      {"id": "scspr14", "type": "likert", "text_key": "scsp14_parent", "dimension": "parent_csr"},
+      {"id": "scspr15", "type": "likert", "text_key": "scsp15_parent", "dimension": "parent_usr"},
+      {"id": "scspr16", "type": "likert", "text_key": "scsp16_parent", "dimension": "parent_csr"},
+      {"id": "scspr17", "type": "likert", "text_key": "scsp17_parent", "dimension": "parent_usr"},
+      {"id": "scspr18", "type": "likert", "text_key": "scsp18_parent", "dimension": "parent_csr"},
+      {"id": "scspr19", "type": "likert", "text_key": "scsp19_parent", "dimension": "parent_usr"},
+      {"id": "scspr20", "type": "likert", "text_key": "scsp20_parent", "dimension": "parent_usr"},
+      {"id": "scspr21", "type": "likert", "text_key": "scsp21_parent", "dimension": "parent_csr"},
+      {"id": "scspr22", "type": "likert", "text_key": "scsp22_parent", "dimension": "parent_csr"},
+      {"id": "scspr23", "type": "likert", "text_key": "scsp23_parent", "dimension": "parent_usr"},
+      {"id": "scspr24", "type": "likert", "text_key": "scsp24_parent", "dimension": "parent_usr"}
+    ],
+    "scoring": {
+      "child_csr": {
+        "description": "Compassionate Self-Responding (child self-report). Sum of 12 CSR items. Range 12–60.",
+        "method": "sum_coded",
+        "items": ["scsp3","scsp6","scsp8","scsp9","scsp11","scsp13","scsp14","scsp16","scsp18","scsp21","scsp22","scsp25"]
+      },
+      "child_usr": {
+        "description": "Uncompassionate Self-Responding (child self-report). Sum of 13 USR items. Range 13–65.",
+        "method": "sum_coded",
+        "items": ["scsp1","scsp2","scsp4","scsp5","scsp7","scsp10","scsp12","scsp15","scsp17","scsp19","scsp20","scsp23","scsp24"]
+      },
+      "parent_csr": {
+        "description": "Compassionate Self-Responding (parent report). Sum of 10 CSR items. Range 10–50.",
+        "method": "sum_coded",
+        "items": ["scspr3","scspr6","scspr8","scspr11","scspr13","scspr14","scspr16","scspr18","scspr21","scspr22"]
+      },
+      "parent_usr": {
+        "description": "Uncompassionate Self-Responding (parent report). Sum of 14 USR items. Range 14–70.",
+        "method": "sum_coded",
+        "items": ["scspr1","scspr2","scspr4","scspr5","scspr7","scspr9","scspr10","scspr12","scspr15","scspr17","scspr19","scspr20","scspr23","scspr24"]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Self-Compassion Scale – Preadolescent Report",
+      "footer_refs": [
+        "Barclay-Timmis, V. S., Burton, L. J., & Beccaria, G. (2023). The development and psychometric evaluation of two new scales of self-compassion for preadolescents. Measurement Instruments for the Social Sciences, 5, Article e11199. https://doi.org/10.5964/miss.11199",
+        "CSR = Compassionate Self-Responding; USR = Uncompassionate Self-Responding. Higher CSR indicates more compassionate self-responding; higher USR indicates more uncompassionate self-responding. The two subscales are treated as distinct constructs; no total score is recommended."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "scsp_r1": "Almost never",
+      "scsp_r2": "Rarely",
+      "scsp_r3": "Sometimes",
+      "scsp_r4": "Often",
+      "scsp_r5": "Almost always",
+      "scsp_question_head": "How often does each of the following statements seem true for you?",
+      "scsp_inst_child": "Below are some statements about how you think and feel about yourself when you are going through hard times. Please read each statement and circle the number that shows how often it is true for you.",
+      "scsp_inst_parent": "We want to know more about how your child acts towards themselves in difficult times. Please read each statement. Then, circle the number that tells how often each statement is true for your child.",
+      "scsp1_child": "I am hard on myself when I'm not good at something",
+      "scsp2_child": "When I'm feeling sad, I can't stop thinking about everything that's wrong",
+      "scsp3_child": "When I have problems, I remind myself that everybody has problems from time to time",
+      "scsp4_child": "My weaknesses make me feel very different from everyone else",
+      "scsp5_child": "When I fail at something important to me, I feel like I'm not good enough",
+      "scsp6_child": "When I feel sad, I remind myself that I am not the only person in the world feeling like this",
+      "scsp7_child": "When things go wrong, I am really hard on myself",
+      "scsp8_child": "When something upsets me I try to stay calm",
+      "scsp9_child": "When I feel like I'm not good enough, I remind myself that everyone feels that way sometimes",
+      "scsp10_child": "I get frustrated or upset about parts of my personality that I don't like",
+      "scsp11_child": "When I'm going through a very hard time, I'm nice to myself",
+      "scsp12_child": "When I'm feeling sad, I feel like most kids are happier than I am",
+      "scsp13_child": "When something bad happens, I try to focus on the good things as well",
+      "scsp14_child": "When I fail at something, I remind myself that it's ok to make mistakes",
+      "scsp15_child": "I get down on myself when I see things about me that I don't like",
+      "scsp16_child": "When I fail at something really important, I remind myself that it is not the end of the world",
+      "scsp17_child": "When things are going bad, it feels like everyone else has it easier",
+      "scsp18_child": "I am kind to myself when I feel unhappy",
+      "scsp19_child": "When something upsets me I get carried away with my feelings",
+      "scsp20_child": "When I am upset, I am hard on myself",
+      "scsp21_child": "When I am feeling down, I can still think about positive things",
+      "scsp22_child": "When I make a mistake, I remind myself that it's ok to make mistakes",
+      "scsp23_child": "I over-react when things go wrong",
+      "scsp24_child": "When I fail at something important to me, I feel like I'm all alone",
+      "scsp25_child": "I am kind towards those things about myself I don't like",
+      "scsp1_parent": "They are hard on themselves when they are not good at something",
+      "scsp2_parent": "When they are feeling sad, they fixate on everything that's wrong",
+      "scsp3_parent": "When they have problems, they are able to see that everybody has problems from time to time",
+      "scsp4_parent": "Their weaknesses make them feel like they are very different from everyone else",
+      "scsp5_parent": "When they fail at something important to them, they feel as if they are not good enough",
+      "scsp6_parent": "When they feel sad, they remind themselves that they are not the only person in the world feeling that way",
+      "scsp7_parent": "When things go wrong, they are really hard on themselves",
+      "scsp8_parent": "When something upsets them, they try to stay calm",
+      "scsp9_parent": "When they feel like they are not good enough, they remind themselves that everyone feels that way sometimes",
+      "scsp10_parent": "They get frustrated or upset about parts of their personality that they don't like",
+      "scsp11_parent": "When they are going through a very hard time, they are nice to themselves",
+      "scsp12_parent": "When they are feeling sad, they feel most kids are happier than they are",
+      "scsp13_parent": "When something bad happens, they try to focus on the good things as well",
+      "scsp14_parent": "When they fail at something, they remember that everybody fails sometimes too",
+      "scsp15_parent": "They get down on themselves when they see things about themselves that they don't like",
+      "scsp16_parent": "When they fail at something really important, they remind themselves that it is not the end of the world",
+      "scsp17_parent": "When things are going bad, they feel like everyone else has it easier",
+      "scsp18_parent": "They are kind to themselves when they feel unhappy",
+      "scsp19_parent": "When something upsets them, they get carried away with their feelings",
+      "scsp20_parent": "When they are upset, they are hard on themselves",
+      "scsp21_parent": "When they are feeling down, they can still think about positive things",
+      "scsp22_parent": "When they make a mistake, they remind themselves that it's ok to make mistakes",
+      "scsp23_parent": "They over-react when things go wrong",
+      "scsp24_parent": "When they fail at something that's important to them, they feel like they are all alone",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

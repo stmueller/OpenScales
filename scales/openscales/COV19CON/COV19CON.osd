@@ -1,0 +1,96 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "COV19CON",
+      "name": "COVID-19 Conspiracy Measure",
+      "abbreviation": "COV19CON",
+      "description": "6-item measure assessing beliefs in conspiracy theories about COVID-19. A 3-item short version uses only the first three items. Items rated on a 10-point scale from do not agree at all (1) to fully agree (10).",
+      "citation": "De Coninck, D., Frissen, T., Matthijs, K., d'Haenens, L., Lits, G., Champagne-Poirier, O., Carignan, M.-E., David, M. D., Pignard-Cheynel, N., Salerno, S., & Généreux, M. (2021). Beliefs in conspiracy theories and misinformation about COVID-19: Comparative perspectives on the role of anxiety, depression and exposure to and trust in information sources. Frontiers in Psychology, 12. https://doi.org/10.3389/fpsyg.2021.646394",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2021.646394",
+      "version": "1.0",
+      "domain": "Social"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 10,
+      "min": 1,
+      "labels": [
+        "COV19CON_r1", "COV19CON_r2", "COV19CON_r3", "COV19CON_r4",
+        "COV19CON_r5", "COV19CON_r6", "COV19CON_r7", "COV19CON_r8",
+        "COV19CON_r9", "COV19CON_r10"
+      ],
+      "question_head": "COV19CON_head"
+    },
+    "dimensions": [
+      {
+        "id": "ConspiracyBeliefs",
+        "name": "Conspiracy Beliefs",
+        "description": "Degree of belief in conspiracy theories about the COVID-19 pandemic"
+      }
+    ],
+    "items": [
+      { "id": "COV19CON001", "type": "likert", "text_key": "COV19CON001", "dimension": "ConspiracyBeliefs" },
+      { "id": "COV19CON002", "type": "likert", "text_key": "COV19CON002", "dimension": "ConspiracyBeliefs" },
+      { "id": "COV19CON003", "type": "likert", "text_key": "COV19CON003", "dimension": "ConspiracyBeliefs" },
+      { "id": "COV19CON004", "type": "likert", "text_key": "COV19CON004", "dimension": "ConspiracyBeliefs" },
+      { "id": "COV19CON005", "type": "likert", "text_key": "COV19CON005", "dimension": "ConspiracyBeliefs" },
+      { "id": "COV19CON006", "type": "likert", "text_key": "COV19CON006", "dimension": "ConspiracyBeliefs" }
+    ],
+    "scoring": {
+      "ConspiracyBeliefs": {
+        "method": "mean_coded",
+        "description": "Mean of all 6 items. The first 3 items (COV19CON001–COV19CON003) can be used as a short-form score.",
+        "items": {
+          "COV19CON001": 1,
+          "COV19CON002": 1,
+          "COV19CON003": 1,
+          "COV19CON004": 1,
+          "COV19CON005": 1,
+          "COV19CON006": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "COV19CON_head": "To what extent do you agree with the following statements regarding the coronavirus crisis?",
+      "COV19CON_r1": "Do not agree at all",
+      "COV19CON_r2": "2",
+      "COV19CON_r3": "3",
+      "COV19CON_r4": "4",
+      "COV19CON_r5": "5",
+      "COV19CON_r6": "6",
+      "COV19CON_r7": "7",
+      "COV19CON_r8": "8",
+      "COV19CON_r9": "9",
+      "COV19CON_r10": "Fully agree",
+      "COV19CON001": "I believe that my government is hiding important information about the coronavirus.",
+      "COV19CON002": "I believe that the pharmaceutical industry is involved in the spread of the coronavirus.",
+      "COV19CON003": "I believe that the medication already exists to prevent or treat the coronavirus.",
+      "COV19CON004": "I believe the coronavirus was made intentionally in a laboratory.",
+      "COV19CON005": "I believe the coronavirus was made by mistake in a laboratory.",
+      "COV19CON006": "I believe there is a link between 5G technology and the coronavirus."
+    }
+  }
+}

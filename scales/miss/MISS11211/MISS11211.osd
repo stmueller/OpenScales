@@ -1,0 +1,136 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Tolerance for Ambiguity Scale – German Version",
+      "code": "MISS11211",
+      "abbreviation": "TAS-DE",
+      "description": "German translation of the 12-item Tolerance for Ambiguity Scale (TAS; Herman et al., 2010), validated in a three-wave online panel study in Germany (n = 1,370). Measures the ability to deal with ambiguous stimuli or situations across four sub-dimensions: Valuing Diverse Others, Change, Challenging Perspectives, and Unfamiliarity. Higher scores indicate greater tolerance for ambiguity. Reverse-coded items reflect intolerance.",
+      "citation": "Lietz, A. (2023). Measuring tolerance for ambiguity: A German-language adaption and validation of the Tolerance for Ambiguity Scale (TAS). Measurement Instruments for the Social Sciences, 5, Article e11211. https://doi.org/10.5964/miss.11211\n\nOriginal scale: Herman, J. L., Stevens, M. J., Bird, A., Mendenhall, M., & Oddou, G. (2010). The tolerance for ambiguity scale: Towards a more refined measure for international management research. International Journal of Intercultural Relations, 34(1), 58–65. https://doi.org/10.1016/j.ijintrel.2009.09.004",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/11211",
+      "domain": "Personality",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-07",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "German is the only language included — the original English TAS (Herman et al., 2010) is not CC-licensed and has been omitted. German anchors verbatim from Lietz (2023). Item 9 showed a low factor loading (.19) on Challenging Perspectives in the German validation; the best-fitting model (M5) excludes it, but all 12 items are encoded here. Reversal applied at scoring only (coding = -1). Reverse-coded items: 1, 4, 5, 6, 7, 11, 12."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["tas_r1", "tas_r2", "tas_r3", "tas_r4", "tas_r5"]
+    },
+    "dimensions": [
+      {
+        "id": "valuing",
+        "name": "Valuing Diverse Others",
+        "abbreviation": "VDO",
+        "description": "Tolerance for people with different values and backgrounds. Mean of items 1(R), 2, 3, 7(R). Range 1–5; higher = more tolerant."
+      },
+      {
+        "id": "change",
+        "name": "Change",
+        "abbreviation": "CHG",
+        "description": "Tolerance for unpredictability and change. Mean of items 4(R), 5(R), 6(R). Range 1–5; higher = more tolerant."
+      },
+      {
+        "id": "challenging",
+        "name": "Challenging Perspectives",
+        "abbreviation": "CP",
+        "description": "Openness to having one's own perspectives questioned. Mean of items 8, 9. Range 1–5; higher = more tolerant. Note: item 9 showed low factor loading in the German validation."
+      },
+      {
+        "id": "unfamiliarity",
+        "name": "Unfamiliarity",
+        "abbreviation": "UNF",
+        "description": "Tolerance for unfamiliar situations and environments. Mean of items 10, 11(R), 12(R). Range 1–5; higher = more tolerant."
+      },
+      {
+        "id": "total",
+        "name": "Total Tolerance for Ambiguity",
+        "abbreviation": "TA",
+        "description": "Mean of all 12 items. Range 1–5; higher = more tolerance for ambiguity. One-dimensional use is also supported by the data."
+      }
+    ],
+    "items": [
+      {"id": "tas1",  "type": "likert", "text_key": "tas1",  "dimension": "valuing"},
+      {"id": "tas2",  "type": "likert", "text_key": "tas2",  "dimension": "valuing"},
+      {"id": "tas3",  "type": "likert", "text_key": "tas3",  "dimension": "valuing"},
+      {"id": "tas4",  "type": "likert", "text_key": "tas4",  "dimension": "change"},
+      {"id": "tas5",  "type": "likert", "text_key": "tas5",  "dimension": "change"},
+      {"id": "tas6",  "type": "likert", "text_key": "tas6",  "dimension": "change"},
+      {"id": "tas7",  "type": "likert", "text_key": "tas7",  "dimension": "valuing"},
+      {"id": "tas8",  "type": "likert", "text_key": "tas8",  "dimension": "challenging"},
+      {"id": "tas9",  "type": "likert", "text_key": "tas9",  "dimension": "challenging"},
+      {"id": "tas10", "type": "likert", "text_key": "tas10", "dimension": "unfamiliarity"},
+      {"id": "tas11", "type": "likert", "text_key": "tas11", "dimension": "unfamiliarity"},
+      {"id": "tas12", "type": "likert", "text_key": "tas12", "dimension": "unfamiliarity"}
+    ],
+    "scoring": {
+      "valuing": {
+        "description": "Mean of Valuing Diverse Others items (1R, 2, 3, 7R). Range 1–5.",
+        "method": "mean_coded",
+        "items": {"tas1": -1, "tas2": 1, "tas3": 1, "tas7": -1}
+      },
+      "change": {
+        "description": "Mean of Change items (4R, 5R, 6R). Range 1–5.",
+        "method": "mean_coded",
+        "items": {"tas4": -1, "tas5": -1, "tas6": -1}
+      },
+      "challenging": {
+        "description": "Mean of Challenging Perspectives items (8, 9). Range 1–5.",
+        "method": "mean_coded",
+        "items": {"tas8": 1, "tas9": 1}
+      },
+      "unfamiliarity": {
+        "description": "Mean of Unfamiliarity items (10, 11R, 12R). Range 1–5.",
+        "method": "mean_coded",
+        "items": {"tas10": 1, "tas11": -1, "tas12": -1}
+      },
+      "total": {
+        "description": "Mean of all 12 items (reverse-coded where indicated). Range 1–5.",
+        "method": "mean_coded",
+        "items": {"tas1": -1, "tas2": 1, "tas3": 1, "tas4": -1, "tas5": -1, "tas6": -1, "tas7": -1, "tas8": 1, "tas9": 1, "tas10": 1, "tas11": -1, "tas12": -1}
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Tolerance for Ambiguity Scale – German Version (TAS-DE) Report",
+      "footer_refs": [
+        "Lietz, A. (2023). Measuring tolerance for ambiguity: A German-language adaption and validation of the Tolerance for Ambiguity Scale (TAS). Measurement Instruments for the Social Sciences, 5, Article e11211. https://doi.org/10.5964/miss.11211",
+        "Herman, J. L., Stevens, M. J., Bird, A., Mendenhall, M., & Oddou, G. (2010). The tolerance for ambiguity scale: Towards a more refined measure for international management research. International Journal of Intercultural Relations, 34(1), 58–65. https://doi.org/10.1016/j.ijintrel.2009.09.004",
+        "Higher scores indicate greater tolerance for ambiguity. Reverse-coded items: 1, 4, 5, 6, 7, 11, 12."
+      ]
+    }
+  },
+  "translations": {
+    "de": {
+      "tas_r1": "Trifft überhaupt nicht zu",
+      "tas_r2": "Trifft eher nicht zu",
+      "tas_r3": "Weder noch",
+      "tas_r4": "Trifft eher zu",
+      "tas_r5": "Trifft voll zu",
+      "tas1":  "Ich vermeide Situationen, in denen Menschen nicht meine Werte teilen.",
+      "tas2":  "Ich kann es genießen mit Menschen zusammen zu sein, die ganz andere Werte haben als ich.",
+      "tas3":  "Ich kann mich bei allen möglichen Menschen wohlfühlen.",
+      "tas4":  "Eine gute Arbeit ist eine Arbeit, bei der immer klar ist, was zu tun ist und wie es zu tun ist.",
+      "tas5":  "Wer ein ruhiges, geregeltes Leben ohne viele Überraschungen oder unerwartete Ereignisse führt, kann wirklich dankbar sein.",
+      "tas6":  "Das Gewohnte ist immer dem Unbekannten vorzuziehen.",
+      "tas7":  "Je eher alle ähnliche Werte und Ideale annehmen, desto besser.",
+      "tas8":  "Wenn ich die Wahl habe, besuche ich eher ein anderes Land als Urlaub zuhause zu machen.",
+      "tas9":  "Ein(e) gute(r) Lehrer(in) hat die Eigenschaft, einen dazu zu bringen, die eigenen Sichtweisen zu hinterfragen.",
+      "tas10": "Ich würde gerne eine Zeit lang im Ausland leben.",
+      "tas11": "Ich umgebe mich gerne mit Dingen, die mir vertraut sind.",
+      "tas12": "Ich mag Feiern lieber, auf denen ich die meisten Leute kenne, als solche, auf denen ich fast niemanden kenne.",
+      "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
+    }
+  }
+}

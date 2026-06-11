@@ -1,0 +1,106 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "EWWB",
+      "name": "Eudaimonic Workplace Well-Being Scale",
+      "abbreviation": "EWWS",
+      "description": "8-item scale measuring eudaimonic well-being within the workplace across two dimensions: Interpersonal (sense of connection and belonging with co-workers) and Intrapersonal (sense of purpose, energy, and personal development at work). Items rated on a 5-point scale from strongly disagree (1) to strongly agree (5).",
+      "citation": "Bartels, A. L., Peterson, S. J., & Reina, C. S. (2019). Understanding well-being at work: Development and validation of the Eudaimonic Workplace Well-being Scale. PLoS ONE, 14(4). https://doi.org/10.1371/journal.pone.0215957",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1371/journal.pone.0215957",
+      "version": "1.0",
+      "domain": "Work & Organizational"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "EWWB_r1", "EWWB_r2", "EWWB_r3", "EWWB_r4", "EWWB_r5"
+      ],
+      "question_head": "EWWB_head"
+    },
+    "dimensions": [
+      {
+        "id": "Interpersonal",
+        "name": "Interpersonal",
+        "description": "Sense of connection, closeness, and belonging with people in the workplace"
+      },
+      {
+        "id": "Intrapersonal",
+        "name": "Intrapersonal",
+        "description": "Sense of emotional energy, purpose, importance, and personal development at work"
+      }
+    ],
+    "items": [
+      { "id": "EWWB001", "type": "likert", "text_key": "EWWB001", "dimension": "Interpersonal" },
+      { "id": "EWWB002", "type": "likert", "text_key": "EWWB002", "dimension": "Interpersonal" },
+      { "id": "EWWB003", "type": "likert", "text_key": "EWWB003", "dimension": "Interpersonal" },
+      { "id": "EWWB004", "type": "likert", "text_key": "EWWB004", "dimension": "Interpersonal" },
+      { "id": "EWWB005", "type": "likert", "text_key": "EWWB005", "dimension": "Intrapersonal" },
+      { "id": "EWWB006", "type": "likert", "text_key": "EWWB006", "dimension": "Intrapersonal" },
+      { "id": "EWWB007", "type": "likert", "text_key": "EWWB007", "dimension": "Intrapersonal" },
+      { "id": "EWWB008", "type": "likert", "text_key": "EWWB008", "dimension": "Intrapersonal" }
+    ],
+    "scoring": {
+      "Interpersonal": {
+        "method": "mean_coded",
+        "description": "Mean of Interpersonal dimension items (1-4). No reverse-scored items.",
+        "items": {
+          "EWWB001": 1,
+          "EWWB002": 1,
+          "EWWB003": 1,
+          "EWWB004": 1
+        }
+      },
+      "Intrapersonal": {
+        "method": "mean_coded",
+        "description": "Mean of Intrapersonal dimension items (5-8). No reverse-scored items.",
+        "items": {
+          "EWWB005": 1,
+          "EWWB006": 1,
+          "EWWB007": 1,
+          "EWWB008": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "EWWB_head": "This portion of the survey consists of a number of statements that may describe how you feel within your workplace. Please indicate your agreement with the following statements.",
+      "EWWB_r1": "Strongly disagree",
+      "EWWB_r2": "Disagree",
+      "EWWB_r3": "Neither agree nor disagree",
+      "EWWB_r4": "Agree",
+      "EWWB_r5": "Strongly agree",
+      "EWWB001": "Among the people I work with, I feel there is a sense of brotherhood/sisterhood.",
+      "EWWB002": "I feel close to the people in my work environment.",
+      "EWWB003": "I feel connected to others within the work environment.",
+      "EWWB004": "I consider the people I work with to be my friends.",
+      "EWWB005": "I am emotionally energized at work.",
+      "EWWB006": "I feel that I have a purpose at my work.",
+      "EWWB007": "My work is very important to me.",
+      "EWWB008": "I feel I am able to continually develop as a person in my job."
+    }
+  }
+}

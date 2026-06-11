@@ -164,15 +164,25 @@ class TSVWriter:
 # Conversion helpers
 # ---------------------------------------------------------------------------
 
+def _get_effective_scale(question, definition):
+    """Resolve the effective response scale opts for a likert question."""
+    rs_id = question.get("response_scale")
+    if rs_id:
+        rs = definition.get("response_scales", {}).get(rs_id)
+        if rs:
+            return rs
+    return definition.get("likert_options", {})
+
+
 def _get_likert_label_pairs(question, definition, primary_translations):
     """Return list of (numeric_value, label_key) for a likert question."""
-    likert_opts = definition.get("likert_options", {})
-    points = question.get("likert_points", likert_opts.get("points", 5))
+    eff = _get_effective_scale(question, definition)
+    points = question.get("likert_points", eff.get("points", 5))
     min_val = question.get("likert_min")
     if min_val is None or (isinstance(min_val, int) and min_val < 0):
-        min_val = likert_opts.get("min", 1)
+        min_val = eff.get("min", 1)
 
-    label_keys = question.get("likert_labels") or likert_opts.get("labels") or []
+    label_keys = question.get("likert_labels") or eff.get("labels") or []
     # Pad to length if needed
     while len(label_keys) < points:
         label_keys.append(None)

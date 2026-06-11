@@ -1,0 +1,138 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Hate Crime Beliefs Scale – Universal",
+      "code": "MISS16239",
+      "abbreviation": "HCBS-U",
+      "description": "A 13-item context-independent scale measuring attitudes toward hate crime across three dimensions: Denial (8 items; minimizing the significance of hate crime), Sentencing (3 items; support for enhanced penalties), and Compassion (2 items; concern for victims). Developed and validated in German and English across three pre-registered studies (Germany and U.S.). Higher Denial scores indicate greater minimization; higher Sentencing and Compassion scores indicate more supportive attitudes toward hate crime recognition.",
+      "citation": "Bender, R., Wagner, D., & Asbrock, F. (2025). Assessing attitudes towards hate crime: Adaptation and validation of the Hate Crime Beliefs Scale. Measurement Instruments for the Social Sciences, 7, Article e16239. https://doi.org/10.5964/miss.16239",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/16239",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-07",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "German and English items verbatim from Table 1 of Bender et al. (2025). Two Compassion items with low factor loadings (harsh punishment deters future hate crime; laws punish acts against specific groups) were excluded from the final scale and are not encoded. No reverse-coded items. Scale is context-independent — no specific target groups are named in items."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["hcbs_r1", "hcbs_r2", "hcbs_r3", "hcbs_r4", "hcbs_r5"]
+    },
+    "dimensions": [
+      {
+        "id": "denial",
+        "name": "Denial",
+        "abbreviation": "DEN",
+        "description": "Minimizing the significance, media coverage, and legal response to hate crime. Mean of 8 items, range 1–5; higher = greater denial."
+      },
+      {
+        "id": "sentencing",
+        "name": "Sentencing",
+        "abbreviation": "SEN",
+        "description": "Support for enhanced penalties for hate crime offenders. Mean of 3 items, range 1–5; higher = stronger support for harsher sentencing."
+      },
+      {
+        "id": "compassion",
+        "name": "Compassion",
+        "abbreviation": "COM",
+        "description": "Recognition of psychological harm and broader threat posed by hate crime. Mean of 2 items, range 1–5; higher = greater compassion for victims."
+      }
+    ],
+    "items": [
+      {"id": "hcbs_dn1", "type": "likert", "text_key": "hcbs_dn1", "dimension": "denial"},
+      {"id": "hcbs_dn2", "type": "likert", "text_key": "hcbs_dn2", "dimension": "denial"},
+      {"id": "hcbs_dn3", "type": "likert", "text_key": "hcbs_dn3", "dimension": "denial"},
+      {"id": "hcbs_dn4", "type": "likert", "text_key": "hcbs_dn4", "dimension": "denial"},
+      {"id": "hcbs_dn5", "type": "likert", "text_key": "hcbs_dn5", "dimension": "denial"},
+      {"id": "hcbs_dn6", "type": "likert", "text_key": "hcbs_dn6", "dimension": "denial"},
+      {"id": "hcbs_dn7", "type": "likert", "text_key": "hcbs_dn7", "dimension": "denial"},
+      {"id": "hcbs_dn8", "type": "likert", "text_key": "hcbs_dn8", "dimension": "denial"},
+      {"id": "hcbs_se1", "type": "likert", "text_key": "hcbs_se1", "dimension": "sentencing"},
+      {"id": "hcbs_se2", "type": "likert", "text_key": "hcbs_se2", "dimension": "sentencing"},
+      {"id": "hcbs_se3", "type": "likert", "text_key": "hcbs_se3", "dimension": "sentencing"},
+      {"id": "hcbs_co1", "type": "likert", "text_key": "hcbs_co1", "dimension": "compassion"},
+      {"id": "hcbs_co2", "type": "likert", "text_key": "hcbs_co2", "dimension": "compassion"}
+    ],
+    "scoring": {
+      "denial": {
+        "description": "Mean of 8 Denial items. Range 1–5; higher = greater minimization of hate crime.",
+        "method": "mean_coded",
+        "items": ["hcbs_dn1", "hcbs_dn2", "hcbs_dn3", "hcbs_dn4", "hcbs_dn5", "hcbs_dn6", "hcbs_dn7", "hcbs_dn8"]
+      },
+      "sentencing": {
+        "description": "Mean of 3 Sentencing items. Range 1–5; higher = stronger support for enhanced penalties.",
+        "method": "mean_coded",
+        "items": ["hcbs_se1", "hcbs_se2", "hcbs_se3"]
+      },
+      "compassion": {
+        "description": "Mean of 2 Compassion items. Range 1–5; higher = greater recognition of harm to victims.",
+        "method": "mean_coded",
+        "items": ["hcbs_co1", "hcbs_co2"]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Hate Crime Beliefs Scale – Universal (HCBS-U) Report",
+      "footer_refs": [
+        "Bender, R., Wagner, D., & Asbrock, F. (2025). Assessing attitudes towards hate crime: Adaptation and validation of the Hate Crime Beliefs Scale. Measurement Instruments for the Social Sciences, 7, Article e16239. https://doi.org/10.5964/miss.16239",
+        "Higher Denial scores indicate greater minimization of hate crime. Higher Sentencing and Compassion scores indicate more supportive attitudes toward hate crime recognition and victim welfare."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "hcbs_r1": "Strongly disagree",
+      "hcbs_r2": "Disagree",
+      "hcbs_r3": "Neither agree nor disagree",
+      "hcbs_r4": "Agree",
+      "hcbs_r5": "Strongly agree",
+      "instructions": "The following section addresses the topic of hate crime. Hate crime, or bias crime, involves criminal acts in which the victims are selected based on certain characteristics which identify them as a member of a specific group in society. These characteristics include place of origin, skin color, sexual orientation, religion, gender or gender identity, physical or mental disability, age, political ideology, and social status, or other characteristics that can be used to divide individuals into groups. Please rate the statements below using the following 5-point scale.",
+      "hcbs_dn1": "Hate crime receives too much attention.",
+      "hcbs_dn2": "Hate crime victims receive too much attention.",
+      "hcbs_dn3": "Law enforcement agencies spend too much time pursuing hate crime.",
+      "hcbs_dn4": "The media makes hate crime into a bigger deal than it actually is.",
+      "hcbs_dn5": "Hate crime law protection of specific groups is unnecessary.",
+      "hcbs_dn6": "Hate crime receives too much attention in the news.",
+      "hcbs_dn7": "Charging someone with a separate hate crime charge is excessive prosecution.",
+      "hcbs_dn8": "The statistical recording of hate crime by law enforcement authorities is unnecessary.",
+      "hcbs_se1": "Evidence of bias motivation in a crime should be an aggravating factor in sentencing.",
+      "hcbs_se2": "Hate crime offenders should receive harsher sentences.",
+      "hcbs_se3": "Offenders who target people based on specific characteristics should receive harsher sentences.",
+      "hcbs_co1": "Hate crime perpetrators can cause psychological trauma to their victims.",
+      "hcbs_co2": "Crimes against individuals with a specific characteristic threaten all individuals with the same characteristic.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "de": {
+      "hcbs_r1": "Stimme überhaupt nicht zu",
+      "hcbs_r2": "Stimme eher nicht zu",
+      "hcbs_r3": "Weder noch",
+      "hcbs_r4": "Stimme eher zu",
+      "hcbs_r5": "Stimme voll und ganz zu",
+      "instructions": "Im Folgenden geht es um das Thema Hasskriminalität. Bei Hasskriminalität (engl. \"hate crime\"), oder auch Vorurteilskriminalität oder vorurteilsgeleitete Verbrechen, werden Opfer aufgrund bestimmter Merkmale ausgewählt, die darauf hinweisen, dass sie einer bestimmten Gruppe in der Gesellschaft angehören. Zu diesen Merkmalen gehören z.B. Herkunft, Hautfarbe, sexuelle Orientierung, Religion, Geschlecht oder geschlechtliche Identität, eventuelle Behinderungen, Alter, politische Weltanschauung oder sozialer Status. Es sind auch andere Merkmale denkbar, anhand derer Menschen in Gruppen eingeteilt werden können. Wie beurteilen Sie die folgenden Aussagen?",
+      "hcbs_dn1": "Hasskriminalität erhält zu viel Aufmerksamkeit.",
+      "hcbs_dn2": "Opfer von Hasskriminalität erhalten zu viel Aufmerksamkeit.",
+      "hcbs_dn3": "Strafverfolgungsbehörden investieren zu viel Zeit in die Verfolgung von Hasskriminalität.",
+      "hcbs_dn4": "Die Medien machen aus Hasskriminalität eine größere Sache als sie eigentlich ist.",
+      "hcbs_dn5": "Der Schutz bestimmter Gruppen durch Gesetze gegen Hasskriminalität ist unnötig.",
+      "hcbs_dn6": "Hasskriminalität erhält in den Nachrichten zu viel Aufmerksamkeit.",
+      "hcbs_dn7": "Wenn jemand zusätzlich zur eigentlichen Tat eine Anklage wegen \"Hasskriminalität\" erhält, ist das übermäßige Strafverfolgung.",
+      "hcbs_dn8": "Die statistische Erfassung von Hasskriminalität durch Strafverfolgungsbehörden ist unnötig.",
+      "hcbs_se1": "Eine vorurteilsgeleitete Motivation bei einer Straftat sollte sich bei der Verurteilung strafverschärfend auswirken.",
+      "hcbs_se2": "Täter von Hasskriminalität sollten eine härtere Strafe erhalten.",
+      "hcbs_se3": "Täter, die Menschen aufgrund eines bestimmten Merkmals angreifen, sollten eine härtere Strafe erhalten.",
+      "hcbs_co1": "Täter von Hasskriminalität können ihre Opfer langfristig traumatisieren.",
+      "hcbs_co2": "Straftaten gegen Menschen mit einem bestimmten Merkmal bedrohen gleichzeitig auch alle anderen Menschen mit diesem Merkmal.",
+      "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
+    }
+  }
+}

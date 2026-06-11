@@ -1,0 +1,92 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "WL6",
+      "name": "Wellbeing Literacy 6-item Scale",
+      "abbreviation": "WL6",
+      "description": "6-item scale measuring wellbeing literacy — the capacity to comprehend and communicate about wellbeing. Items reflect vocabulary, knowledge, skills, comprehending, composing, and multimodal communication about wellbeing. Rated on a 7-point Likert scale from strongly disagree (1) to strongly agree (7).",
+      "citation": "Hou, H., Chin, T.-C., Slemp, G. R., & Oades, L. G. (2021). Wellbeing literacy: Conceptualization, measurement, and preliminary empirical findings from students, parents and school staff. International Journal of Environmental Research and Public Health, 18. https://doi.org/10.3390/ijerph18041485",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3390/ijerph18041485",
+      "version": "1.0",
+      "domain": "Well-being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "WL6_r1", "WL6_r2", "WL6_r3", "WL6_r4",
+        "WL6_r5", "WL6_r6", "WL6_r7"
+      ],
+      "question_head": "WL6_head"
+    },
+    "dimensions": [
+      {
+        "id": "WellbeingLiteracy",
+        "name": "Wellbeing Literacy",
+        "description": "Overall capacity to comprehend and communicate about wellbeing"
+      }
+    ],
+    "items": [
+      { "id": "WL6001", "type": "likert", "text_key": "WL6001", "dimension": "WellbeingLiteracy" },
+      { "id": "WL6002", "type": "likert", "text_key": "WL6002", "dimension": "WellbeingLiteracy" },
+      { "id": "WL6003", "type": "likert", "text_key": "WL6003", "dimension": "WellbeingLiteracy" },
+      { "id": "WL6004", "type": "likert", "text_key": "WL6004", "dimension": "WellbeingLiteracy" },
+      { "id": "WL6005", "type": "likert", "text_key": "WL6005", "dimension": "WellbeingLiteracy" },
+      { "id": "WL6006", "type": "likert", "text_key": "WL6006", "dimension": "WellbeingLiteracy" }
+    ],
+    "scoring": {
+      "WellbeingLiteracy": {
+        "method": "mean_coded",
+        "description": "Mean of all 6 items. Higher scores indicate greater wellbeing literacy.",
+        "items": {
+          "WL6001": 1,
+          "WL6002": 1,
+          "WL6003": 1,
+          "WL6004": 1,
+          "WL6005": 1,
+          "WL6006": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "WL6_head": "Please indicate your level of agreement with the following statements.",
+      "WL6_r1": "Strongly disagree",
+      "WL6_r2": "2",
+      "WL6_r3": "3",
+      "WL6_r4": "4",
+      "WL6_r5": "5",
+      "WL6_r6": "6",
+      "WL6_r7": "Strongly agree",
+      "WL6001": "I have many words I can think of to communicate about wellbeing.",
+      "WL6002": "I know a lot about wellbeing.",
+      "WL6003": "I know how to improve my wellbeing.",
+      "WL6004": "I have the skills to understand information about wellbeing.",
+      "WL6005": "I have the skills to express myself about wellbeing.",
+      "WL6006": "I can communicate about wellbeing in multiple ways (e.g., writing, listening, drawing) to suit the needs of my audience."
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "SVDS",
+      "name": "Short-Video Dependence Scale",
+      "abbreviation": "SVDS",
+      "description": "20-item scale measuring dependence on short-video platforms (e.g., TikTok, Reels) across four subscales: Withdrawal and Tolerance (5 items), Preoccupation and Persistence (5 items), Damage and Hindrance (5 items), and Deception and Escape (5 items). Scored on a 5-point frequency scale (1=Does not apply to 5=Always). Higher scores indicate greater short-video dependence.",
+      "citation": "Jiang, A., Li, S., Wang, H., Ni, H., Chen, H., Dai, J., Xu, X., Li, M., & Dong, G.-H. (2025). Assessing short-video dependence for e-mental health: Development and validation study of the Short-Video Dependence Scale. Journal of Medical Internet Research, 27. https://doi.org/10.2196/66341",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.2196/66341",
+      "version": "1.0",
+      "domain": "Technology"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["SVDS_r1", "SVDS_r2", "SVDS_r3", "SVDS_r4", "SVDS_r5"],
+      "question_head": "SVDS_head"
+    },
+    "dimensions": [
+      {
+        "id": "WithdrawalTolerance",
+        "name": "Withdrawal and Tolerance",
+        "description": "Symptoms of maladaptation following cessation and reduced effects due to prolonged use"
+      },
+      {
+        "id": "PreoccupationPersistence",
+        "name": "Preoccupation and Persistence",
+        "description": "Persistent thoughts and behaviors related to short-video use"
+      },
+      {
+        "id": "DamageHindrance",
+        "name": "Damage and Hindrance",
+        "description": "Negative impact on physical and mental health hindering personal growth"
+      },
+      {
+        "id": "DeceptionEscape",
+        "name": "Deception and Escape",
+        "description": "Concealment of short-video use and using short videos to avoid problems"
+      }
+    ],
+    "items": [
+      { "id": "SVDS001", "type": "likert", "text_key": "SVDS001", "dimension": "WithdrawalTolerance" },
+      { "id": "SVDS002", "type": "likert", "text_key": "SVDS002", "dimension": "WithdrawalTolerance" },
+      { "id": "SVDS003", "type": "likert", "text_key": "SVDS003", "dimension": "WithdrawalTolerance" },
+      { "id": "SVDS004", "type": "likert", "text_key": "SVDS004", "dimension": "WithdrawalTolerance" },
+      { "id": "SVDS005", "type": "likert", "text_key": "SVDS005", "dimension": "WithdrawalTolerance" },
+      { "id": "SVDS006", "type": "likert", "text_key": "SVDS006", "dimension": "PreoccupationPersistence" },
+      { "id": "SVDS007", "type": "likert", "text_key": "SVDS007", "dimension": "PreoccupationPersistence" },
+      { "id": "SVDS008", "type": "likert", "text_key": "SVDS008", "dimension": "PreoccupationPersistence" },
+      { "id": "SVDS009", "type": "likert", "text_key": "SVDS009", "dimension": "PreoccupationPersistence" },
+      { "id": "SVDS010", "type": "likert", "text_key": "SVDS010", "dimension": "PreoccupationPersistence" },
+      { "id": "SVDS011", "type": "likert", "text_key": "SVDS011", "dimension": "DamageHindrance" },
+      { "id": "SVDS012", "type": "likert", "text_key": "SVDS012", "dimension": "DamageHindrance" },
+      { "id": "SVDS013", "type": "likert", "text_key": "SVDS013", "dimension": "DamageHindrance" },
+      { "id": "SVDS014", "type": "likert", "text_key": "SVDS014", "dimension": "DamageHindrance" },
+      { "id": "SVDS016", "type": "likert", "text_key": "SVDS016", "dimension": "DamageHindrance" },
+      { "id": "SVDS017", "type": "likert", "text_key": "SVDS017", "dimension": "DeceptionEscape" },
+      { "id": "SVDS018", "type": "likert", "text_key": "SVDS018", "dimension": "DeceptionEscape" },
+      { "id": "SVDS019", "type": "likert", "text_key": "SVDS019", "dimension": "DeceptionEscape" },
+      { "id": "SVDS020", "type": "likert", "text_key": "SVDS020", "dimension": "DeceptionEscape" },
+      { "id": "SVDS021", "type": "likert", "text_key": "SVDS021", "dimension": "DeceptionEscape" }
+    ],
+    "scoring": {
+      "SVDS": {
+        "method": "mean_coded",
+        "description": "Mean of all 20 items; higher scores indicate greater short-video dependence.",
+        "items": {
+          "SVDS001": 1, "SVDS002": 1, "SVDS003": 1, "SVDS004": 1, "SVDS005": 1,
+          "SVDS006": 1, "SVDS007": 1, "SVDS008": 1, "SVDS009": 1, "SVDS010": 1,
+          "SVDS011": 1, "SVDS012": 1, "SVDS013": 1, "SVDS014": 1, "SVDS016": 1,
+          "SVDS017": 1, "SVDS018": 1, "SVDS019": 1, "SVDS020": 1, "SVDS021": 1
+        }
+      },
+      "WithdrawalTolerance": {
+        "method": "mean_coded",
+        "description": "Mean of items 1–5",
+        "items": { "SVDS001": 1, "SVDS002": 1, "SVDS003": 1, "SVDS004": 1, "SVDS005": 1 }
+      },
+      "PreoccupationPersistence": {
+        "method": "mean_coded",
+        "description": "Mean of items 6–10",
+        "items": { "SVDS006": 1, "SVDS007": 1, "SVDS008": 1, "SVDS009": 1, "SVDS010": 1 }
+      },
+      "DamageHindrance": {
+        "method": "mean_coded",
+        "description": "Mean of items 11–14, 16",
+        "items": { "SVDS011": 1, "SVDS012": 1, "SVDS013": 1, "SVDS014": 1, "SVDS016": 1 }
+      },
+      "DeceptionEscape": {
+        "method": "mean_coded",
+        "description": "Mean of items 17–21",
+        "items": { "SVDS017": 1, "SVDS018": 1, "SVDS019": 1, "SVDS020": 1, "SVDS021": 1 }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "SVDS_head": "The following statements describe certain psychological states of individuals. Please indicate the extent to which each statement reflects your situation.",
+      "SVDS_r1": "Does not apply",
+      "SVDS_r2": "Rarely",
+      "SVDS_r3": "Occasionally",
+      "SVDS_r4": "Often",
+      "SVDS_r5": "Always",
+      "SVDS001": "Even if advised to watch fewer short videos, I find it difficult to do so.",
+      "SVDS002": "In my spare time, I don't know what to do other than watching short videos.",
+      "SVDS003": "If I go without watching short videos for a long time, I fear missing out on popular videos or news.",
+      "SVDS004": "Even if I didn't plan to watch short videos, I would subconsciously open the app.",
+      "SVDS005": "While studying or working, I often think about watching short videos.",
+      "SVDS006": "I have tried to spend less time watching short videos, but I can't seem to do it.",
+      "SVDS007": "Compared to last year, I spend more time watching short videos every day.",
+      "SVDS008": "When I try to watch fewer videos, I feel bored or agitated.",
+      "SVDS009": "My life seems uninteresting without short videos.",
+      "SVDS010": "If asked to refrain from watching short videos for a week, I would find it difficult to resist the urge.",
+      "SVDS011": "Watching short videos has had a negative impact on my academic or work performance.",
+      "SVDS012": "It has also negatively affected my physical health, such as eye strain, staying up late.",
+      "SVDS013": "I feel a decreased sense of self-worth due to my inability to control my time spent watching short videos.",
+      "SVDS014": "After watching short videos, I find it harder to focus on self-improvement.",
+      "SVDS016": "Even if I want to go to bed early, I still can't resist watching short videos.",
+      "SVDS017": "When I watch short videos, it seems as if all of life's problems disappear.",
+      "SVDS018": "I have tried to hide the negative effects that watching short videos has had on me from others.",
+      "SVDS019": "I tend to downplay my short video viewing time when asked.",
+      "SVDS020": "After watching short videos, I tend to interact less with family and friends in real life.",
+      "SVDS021": "The actual amount of time I spend watching short videos is more than I realize."
+    }
+  }
+}

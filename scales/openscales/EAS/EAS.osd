@@ -1,0 +1,95 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "EAS",
+      "name": "Environmental Activism Scale",
+      "abbreviation": "EAS",
+      "description": "10-item scale measuring willingness to engage in environmental activism, including donating to environmental organizations, joining activist groups, raising funds, and persuading others. Items 3, 4, 5, 6, 7, and 10 are reverse-scored. Rated on a 7-point scale (1=Strongly disagree to 7=Strongly agree).",
+      "citation": "Tam, K.-P. (2022). Gratitude to nature: Presenting a theory of its conceptualization, measurement, and effects on pro-environmental behavior. Journal of Environmental Psychology, 79, 1–14. https://doi.org/10.1016/j.jenvp.2021.101754",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1016/j.jenvp.2021.101754",
+      "version": "1.0",
+      "domain": "Environment"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-10",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": ["EAS_r1", "EAS_r2", "EAS_r3", "EAS_r4", "EAS_r5", "EAS_r6", "EAS_r7"],
+      "question_head": "EAS_head"
+    },
+    "dimensions": [
+      {
+        "id": "EAS",
+        "name": "Environmental Activism",
+        "description": "Willingness to donate, join, and advocate for environmental organizations and causes"
+      }
+    ],
+    "items": [
+      { "id": "EAS001", "type": "likert", "text_key": "EAS001", "dimension": "EAS" },
+      { "id": "EAS002", "type": "likert", "text_key": "EAS002", "dimension": "EAS" },
+      { "id": "EAS003", "type": "likert", "text_key": "EAS003", "dimension": "EAS" },
+      { "id": "EAS004", "type": "likert", "text_key": "EAS004", "dimension": "EAS" },
+      { "id": "EAS005", "type": "likert", "text_key": "EAS005", "dimension": "EAS" },
+      { "id": "EAS006", "type": "likert", "text_key": "EAS006", "dimension": "EAS" },
+      { "id": "EAS007", "type": "likert", "text_key": "EAS007", "dimension": "EAS" },
+      { "id": "EAS008", "type": "likert", "text_key": "EAS008", "dimension": "EAS" },
+      { "id": "EAS009", "type": "likert", "text_key": "EAS009", "dimension": "EAS" },
+      { "id": "EAS010", "type": "likert", "text_key": "EAS010", "dimension": "EAS" }
+    ],
+    "scoring": {
+      "EAS": {
+        "method": "mean_coded",
+        "description": "Mean of all 10 items; items 3, 4, 5, 6, 7, 10 reverse-scored. Higher scores indicate greater environmental activism.",
+        "items": {
+          "EAS001": 1, "EAS002": 1, "EAS003": -1, "EAS004": -1,
+          "EAS005": 1, "EAS006": -1, "EAS007": -1, "EAS008": 1,
+          "EAS009": 1, "EAS010": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "EAS_head": "Listed below are some statements about environmental protection. Please indicate your agreement or disagreement with each statement.",
+      "EAS_r1": "Strongly disagree",
+      "EAS_r2": "2",
+      "EAS_r3": "3",
+      "EAS_r4": "4",
+      "EAS_r5": "5",
+      "EAS_r6": "6",
+      "EAS_r7": "Strongly agree",
+      "EAS001": "If I ever get extra income, I will donate some money to an environmentalist organization.",
+      "EAS002": "I would like to join and actively participate in an environmentalist group.",
+      "EAS003": "I don't think I would help to raise funds for environmental protection.",
+      "EAS004": "I would not get involved in an environmentalist organization.",
+      "EAS005": "Environmental protection costs a lot of money. I am prepared to help out in a fund-raising effort.",
+      "EAS006": "I do not want to donate money to support an environmentalist group.",
+      "EAS007": "I would not go out of my way to help in recycling campaigns.",
+      "EAS008": "I would like to persuade others that the natural environment is important.",
+      "EAS009": "I would like to support an environmentalist organization.",
+      "EAS010": "I would never try to persuade others that environmental protection is important."
+    }
+  }
+}

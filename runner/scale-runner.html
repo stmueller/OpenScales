@@ -102,10 +102,34 @@
   }
 
   // Collect any extra params starting with "param_" to pass as scale params
+  // Coerce "0"/"1" strings to numbers so boolean checks like !!params.x work correctly.
   const scaleParams = {};
   for (const [k, v] of params.entries()) {
     if (k.startsWith('param_')) {
-      scaleParams[k.slice(6)] = v;
+      scaleParams[k.slice(6)] = (v === '0' || v === '1') ? Number(v) : v;
+    }
+  }
+
+  // ── Draft preview (from Survey Builder) ──────────────────────
+  if (params.get('draft') === 'preview') {
+    const raw = localStorage.getItem('survey_builder_preview');
+    if (raw) {
+      let draftOSD;
+      try { draftOSD = JSON.parse(raw); } catch(e) { /* fall through */ }
+      if (draftOSD) {
+        const blob = new Blob([JSON.stringify(draftOSD)], { type: 'application/json' });
+        const blobURL = URL.createObjectURL(blob);
+        const container = document.getElementById('runner');
+        ScaleRunner.mount(container, {
+          osdURL:     blobURL,
+          participant: 'preview',
+          language:   lang,
+          demo:       true,
+          showTitle:  true,
+          onComplete: () => { URL.revokeObjectURL(blobURL); }
+        });
+        return;
+      }
     }
   }
 

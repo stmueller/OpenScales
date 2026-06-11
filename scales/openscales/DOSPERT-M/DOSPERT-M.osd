@@ -41,6 +41,40 @@
       ],
       "question_head": "rt_head"
     },
+    "response_scales": {
+      "rp": {
+        "name": "Risk Perception",
+        "points": 7,
+        "min": 1,
+        "max": 7,
+        "labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ],
+        "question_head": "rp_head"
+      },
+      "eb": {
+        "name": "Expected Benefits",
+        "points": 7,
+        "min": 1,
+        "max": 7,
+        "labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "question_head": "eb_head"
+      }
+    },
     "randomize_sections": {
       "method": "shuffle",
       "fixed": [
@@ -89,37 +123,19 @@
         "type": "likert",
         "text_key": "m1",
         "dimension": "rp_medical",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb_m1",
         "type": "likert",
         "text_key": "m1",
         "dimension": "eb_medical",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec2",
@@ -138,37 +154,19 @@
         "type": "likert",
         "text_key": "m2",
         "dimension": "rp_medical",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb_m2",
         "type": "likert",
         "text_key": "m2",
         "dimension": "eb_medical",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec3",
@@ -187,37 +185,19 @@
         "type": "likert",
         "text_key": "m3",
         "dimension": "rp_medical",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb_m3",
         "type": "likert",
         "text_key": "m3",
         "dimension": "eb_medical",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec4",
@@ -236,37 +216,19 @@
         "type": "likert",
         "text_key": "m4",
         "dimension": "rp_medical",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb_m4",
         "type": "likert",
         "text_key": "m4",
         "dimension": "eb_medical",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec5",
@@ -285,37 +247,19 @@
         "type": "likert",
         "text_key": "m5",
         "dimension": "rp_medical",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb_m5",
         "type": "likert",
         "text_key": "m5",
         "dimension": "eb_medical",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec6",
@@ -334,37 +278,19 @@
         "type": "likert",
         "text_key": "m6",
         "dimension": "rp_medical",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb_m6",
         "type": "likert",
         "text_key": "m6",
         "dimension": "eb_medical",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       }
     ],
     "scoring": {

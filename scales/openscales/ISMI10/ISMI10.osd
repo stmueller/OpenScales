@@ -1,0 +1,110 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "ISMI10",
+      "name": "Internalized Stigma of Mental Illness – 10",
+      "abbreviation": "ISMI-10",
+      "description": "10-item unidimensional short-form of the ISMI measuring internalized stigma of mental illness. Higher scores indicate greater internalized stigma. English version is public domain (Boyd, VA medical employee). Dutch translation (CC BY 4.0) validated by van Beukering et al. (2022).",
+      "citation": "van Beukering, I. E., Bakker, M., Bogaers, R. I., Janssens, K. M. E., Gürbüz, S., Joosen, M. C. W., & Brouwers, E. P. M. (2022). Psychometric properties of the Internalized Stigma of Mental Illness (ISMI-10) scale in a Dutch sample of employees with mental illness. BMC Psychiatry, 22. https://doi.org/10.1186/s12888-022-04284-5",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1186/s12888-022-04284-5",
+      "version": "1.0",
+      "domain": "Social"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Show scale title to respondents (off by default — title reveals stigma focus)"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default":  0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "labels": [
+        "ISMI10_r1", "ISMI10_r2", "ISMI10_r3", "ISMI10_r4"
+      ],
+      "question_head": "ISMI10_head"
+    },
+    "dimensions": [
+      {
+        "id": "InternalizedStigma",
+        "name": "Internalized Stigma",
+        "description": "Degree to which a person with mental illness endorses stigmatizing beliefs about themselves"
+      }
+    ],
+    "items": [
+      { "id": "ISMI10001", "type": "likert", "text_key": "ISMI10001", "dimension": "InternalizedStigma" },
+      { "id": "ISMI10002", "type": "likert", "text_key": "ISMI10002", "dimension": "InternalizedStigma" },
+      { "id": "ISMI10003", "type": "likert", "text_key": "ISMI10003", "dimension": "InternalizedStigma" },
+      { "id": "ISMI10004", "type": "likert", "text_key": "ISMI10004", "dimension": "InternalizedStigma" },
+      { "id": "ISMI10005", "type": "likert", "text_key": "ISMI10005", "dimension": "InternalizedStigma" },
+      { "id": "ISMI10006", "type": "likert", "text_key": "ISMI10006", "dimension": "InternalizedStigma" },
+      { "id": "ISMI10007", "type": "likert", "text_key": "ISMI10007", "dimension": "InternalizedStigma" },
+      { "id": "ISMI10008", "type": "likert", "text_key": "ISMI10008", "dimension": "InternalizedStigma" },
+      { "id": "ISMI10009", "type": "likert", "text_key": "ISMI10009", "dimension": "InternalizedStigma" },
+      { "id": "ISMI10010", "type": "likert", "text_key": "ISMI10010", "dimension": "InternalizedStigma" }
+    ],
+    "scoring": {
+      "InternalizedStigma": {
+        "method": "mean_coded",
+        "description": "Mean internalized stigma score (range 1–4). Items 2 and 9 are reverse-scored.",
+        "items": {
+          "ISMI10001": 1, "ISMI10002": -1, "ISMI10003": 1, "ISMI10004": 1,
+          "ISMI10005": 1, "ISMI10006": 1, "ISMI10007": 1, "ISMI10008": 1,
+          "ISMI10009": -1, "ISMI10010": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "nl": {
+      "ISMI10_head": "Geef voor elke stelling aan of u het er (1) sterk mee oneens, (2) oneens, (3) eens of (4) sterk mee eens bent.",
+      "ISMI10_r1": "Sterk oneens",
+      "ISMI10_r2": "Oneens",
+      "ISMI10_r3": "Eens",
+      "ISMI10_r4": "Sterk mee eens",
+      "ISMI10001": "Mensen met psychische aandoeningen hebben de neiging gewelddadig te zijn.",
+      "ISMI10002": "Mensen met psychische aandoeningen leveren een belangrijke bijdrage aan de maatschappij.",
+      "ISMI10003": "Ik ga minder om met anderen als ik gewend was omdat ik door mijn psychische aandoening er mogelijk \"raar\" uitzie of mij \"raar\" gedraag.",
+      "ISMI10004": "Het hebben van een psychische aandoening heeft mijn leven verpest.",
+      "ISMI10005": "Ik ga sociale situaties uit de weg om mijn familie en vrienden niet in verlegenheid te brengen.",
+      "ISMI10006": "Mensen zonder psychische aandoeningen kunnen mij onmogelijk begrijpen.",
+      "ISMI10007": "Mensen negeren mij of nemen mij minder serieus, enkel omdat ik een psychische aandoening heb.",
+      "ISMI10008": "Ik kan niets bijdragen aan de maatschappij omdat ik een psychische aandoening heb.",
+      "ISMI10009": "Ik kan een goed, volwaardig leven hebben, ondanks mijn psychische aandoening.",
+      "ISMI10010": "Anderen denken dat ik niet veel in het leven kan bereiken omdat ik een psychische aandoening heb."
+    },
+    "en": {
+      "ISMI10_head": "Please indicate how much you agree or disagree with each statement.",
+      "ISMI10_r1": "Strongly disagree",
+      "ISMI10_r2": "Disagree",
+      "ISMI10_r3": "Agree",
+      "ISMI10_r4": "Strongly agree",
+      "ISMI10001": "Mentally ill people tend to be violent.",
+      "ISMI10002": "People with mental illness make important contributions to society.",
+      "ISMI10003": "I don't socialize as much as I used to because my mental illness might make me look or behave \"weird.\"",
+      "ISMI10004": "Having a mental illness has spoiled my life.",
+      "ISMI10005": "I stay away from social situations in order to protect my family or friends from embarrassment.",
+      "ISMI10006": "People without mental illness could not possibly understand me.",
+      "ISMI10007": "People ignore me or take me less seriously just because I have a mental illness.",
+      "ISMI10008": "I can't contribute anything to society because I have a mental illness.",
+      "ISMI10009": "I can have a good, fulfilling life, despite my mental illness.",
+      "ISMI10010": "Others think that I can't achieve much in life because I have a mental illness."
+    }
+  }
+}

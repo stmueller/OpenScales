@@ -1,0 +1,158 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "SPASA",
+      "name": "Self-Perceived Anhedonia Scale for Adults",
+      "abbreviation": "SPAS-A",
+      "description": "20-item scale measuring self-perceived anhedonia across four domains: Social Anhedonia, Physical Anhedonia, Cognitive Anhedonia, and Emotional Anhedonia.",
+      "citation": "Apostol, O. A., Cioca, I. E., Morcov, M.-V., Sporea, C., Morcov, C.-G., Pellegrini, A., & Bordea, E.-N. (2025). Development and validation of the Self-Perceived Anhedonia Scale for Adults: A novel tool for assessing pleasure deficits. Psychiatry International, 6(2), 1–23. https://doi.org/10.3390/psychiatryint6020043",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3390/psychiatryint6020043",
+      "version": "1.0",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "SPASA_r1", "SPASA_r2", "SPASA_r3", "SPASA_r4", "SPASA_r5"
+      ],
+      "question_head": "SPASA_head"
+    },
+    "dimensions": [
+      {
+        "id": "SOC",
+        "name": "Social Anhedonia",
+        "description": "Diminished pleasure and connection in social contexts"
+      },
+      {
+        "id": "PHYS",
+        "name": "Physical Anhedonia",
+        "description": "Diminished pleasure in physical activities and bodily experiences"
+      },
+      {
+        "id": "COG",
+        "name": "Cognitive Anhedonia",
+        "description": "Diminished pleasure in intellectual and creative engagement"
+      },
+      {
+        "id": "EMOT",
+        "name": "Emotional Anhedonia",
+        "description": "Diminished capacity to experience, share, or anticipate positive emotions"
+      }
+    ],
+    "items": [
+      { "id": "SPASA001", "type": "likert", "text_key": "SPASA001", "dimension": "SOC" },
+      { "id": "SPASA002", "type": "likert", "text_key": "SPASA002", "dimension": "SOC" },
+      { "id": "SPASA003", "type": "likert", "text_key": "SPASA003", "dimension": "SOC" },
+      { "id": "SPASA004", "type": "likert", "text_key": "SPASA004", "dimension": "SOC" },
+      { "id": "SPASA005", "type": "likert", "text_key": "SPASA005", "dimension": "SOC" },
+      { "id": "SPASA006", "type": "likert", "text_key": "SPASA006", "dimension": "PHYS" },
+      { "id": "SPASA007", "type": "likert", "text_key": "SPASA007", "dimension": "PHYS" },
+      { "id": "SPASA008", "type": "likert", "text_key": "SPASA008", "dimension": "PHYS" },
+      { "id": "SPASA009", "type": "likert", "text_key": "SPASA009", "dimension": "PHYS" },
+      { "id": "SPASA010", "type": "likert", "text_key": "SPASA010", "dimension": "PHYS" },
+      { "id": "SPASA011", "type": "likert", "text_key": "SPASA011", "dimension": "COG" },
+      { "id": "SPASA012", "type": "likert", "text_key": "SPASA012", "dimension": "COG" },
+      { "id": "SPASA013", "type": "likert", "text_key": "SPASA013", "dimension": "COG" },
+      { "id": "SPASA014", "type": "likert", "text_key": "SPASA014", "dimension": "COG" },
+      { "id": "SPASA015", "type": "likert", "text_key": "SPASA015", "dimension": "COG" },
+      { "id": "SPASA016", "type": "likert", "text_key": "SPASA016", "dimension": "EMOT" },
+      { "id": "SPASA017", "type": "likert", "text_key": "SPASA017", "dimension": "EMOT" },
+      { "id": "SPASA018", "type": "likert", "text_key": "SPASA018", "dimension": "EMOT" },
+      { "id": "SPASA019", "type": "likert", "text_key": "SPASA019", "dimension": "EMOT" },
+      { "id": "SPASA020", "type": "likert", "text_key": "SPASA020", "dimension": "EMOT" }
+    ],
+    "scoring": {
+      "SOC": {
+        "method": "sum_coded",
+        "description": "Social Anhedonia — sum of items 1–5",
+        "items": {
+          "SPASA001": 1, "SPASA002": 1, "SPASA003": 1, "SPASA004": 1, "SPASA005": 1
+        }
+      },
+      "PHYS": {
+        "method": "sum_coded",
+        "description": "Physical Anhedonia — sum of items 6–10",
+        "items": {
+          "SPASA006": 1, "SPASA007": 1, "SPASA008": 1, "SPASA009": 1, "SPASA010": 1
+        }
+      },
+      "COG": {
+        "method": "sum_coded",
+        "description": "Cognitive Anhedonia — sum of items 11–15",
+        "items": {
+          "SPASA011": 1, "SPASA012": 1, "SPASA013": 1, "SPASA014": 1, "SPASA015": 1
+        }
+      },
+      "EMOT": {
+        "method": "sum_coded",
+        "description": "Emotional Anhedonia — sum of items 16–20",
+        "items": {
+          "SPASA016": 1, "SPASA017": 1, "SPASA018": 1, "SPASA019": 1, "SPASA020": 1
+        }
+      },
+      "TOTAL": {
+        "method": "sum_coded",
+        "description": "Total Self-Perceived Anhedonia — sum of all 20 items (20–40: absence; 41–80: moderate; 81–100: pronounced anhedonia)",
+        "items": {
+          "SPASA001": 1, "SPASA002": 1, "SPASA003": 1, "SPASA004": 1, "SPASA005": 1,
+          "SPASA006": 1, "SPASA007": 1, "SPASA008": 1, "SPASA009": 1, "SPASA010": 1,
+          "SPASA011": 1, "SPASA012": 1, "SPASA013": 1, "SPASA014": 1, "SPASA015": 1,
+          "SPASA016": 1, "SPASA017": 1, "SPASA018": 1, "SPASA019": 1, "SPASA020": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "SPASA_head": "Using the scale below, please indicate how often you feel each of the following.",
+      "SPASA_r1": "Never",
+      "SPASA_r2": "Rarely",
+      "SPASA_r3": "Sometimes",
+      "SPASA_r4": "Often",
+      "SPASA_r5": "Always",
+      "SPASA001": "Socially isolated.",
+      "SPASA002": "Unable to be part of social groups.",
+      "SPASA003": "Rejected by others during social activities.",
+      "SPASA004": "Emotionally disconnected from the community around you.",
+      "SPASA005": "Lacking in social support.",
+      "SPASA006": "Exhausted even after adequate sleep.",
+      "SPASA007": "Lacking vitality in daily activities.",
+      "SPASA008": "Lacking energy to enjoy physical activities.",
+      "SPASA009": "No pleasure in eating.",
+      "SPASA010": "Unable to savor food.",
+      "SPASA011": "Unable to focus enough to read or learn.",
+      "SPASA012": "Lacking intellectual curiosity.",
+      "SPASA013": "Unable to find meaning or significance in what you learn or experience.",
+      "SPASA014": "Unable to appreciate the beauty or complexity of things around you.",
+      "SPASA015": "Unable to use your creativity or imagination.",
+      "SPASA016": "Unable to deeply experience positive emotions.",
+      "SPASA017": "Unable to share positive emotions with others.",
+      "SPASA018": "Unable to manage negative emotions effectively.",
+      "SPASA019": "Unable to identify or express your emotions.",
+      "SPASA020": "Unable to anticipate pleasure or joy."
+    }
+  }
+}

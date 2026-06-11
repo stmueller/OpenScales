@@ -1,0 +1,153 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Extended DCA-Transparency Scale – Short Version",
+      "code": "MISS11209",
+      "abbreviation": "DCA-T-S",
+      "description": "A 10-item short version of the 20-item Extended DCA-Transparency Scale measuring perceived supervisor transparency across five dimensions: Disclosure, Clarity, Accuracy, Timeliness, and Relevance. Two items per dimension; each dimension scored as an unweighted mean. The referent ('supervisor') can be adapted to the specific context.",
+      "citation": "Hossiep, C. R., Märtins, J., & Schewe, G. (2024). Measuring organizational transparency with 10 items: Validation of a German short scale. Measurement Instruments for the Social Sciences, 6, Article e11209. https://doi.org/10.5964/miss.11209",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/11209",
+      "domain": "Organizational",
+      "version": "1.0"
+    },
+    "parameters": {
+      "supervisor": {
+        "type": "string",
+        "default": "my supervisor",
+        "description": "Label for the referent whose transparency is being rated (e.g. 'my supervisor', 'my manager', 'my team leader'). Replaces {supervisor} in all item texts."
+      }
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-07",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "German is the primary language; English translations are author-provided (unofficial). Response scale anchors (Strongly disagree / Strongly agree) are inferred — not stated verbatim in the source paper. Short form of the 20-item DCA-transparency scale (Hossiep et al., 2021)."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["dcat_r1", "dcat_r2", "dcat_r3", "dcat_r4", "dcat_r5"]
+    },
+    "dimensions": [
+      {
+        "id": "disclosure",
+        "name": "Disclosure",
+        "description": "Extent to which the supervisor shares sufficient information. Mean of 2 items, range 1–5."
+      },
+      {
+        "id": "clarity",
+        "name": "Clarity",
+        "description": "Extent to which information from the supervisor is understandable and unambiguous. Mean of 2 items, range 1–5."
+      },
+      {
+        "id": "accuracy",
+        "name": "Accuracy",
+        "description": "Extent to which information from the supervisor is true and correct. Mean of 2 items, range 1–5."
+      },
+      {
+        "id": "timeliness",
+        "name": "Timeliness",
+        "description": "Extent to which information from the supervisor is provided in a timely manner. Mean of 2 items, range 1–5."
+      },
+      {
+        "id": "relevance",
+        "name": "Relevance",
+        "description": "Extent to which topics communicated by the supervisor matter to the respondent. Mean of 2 items, range 1–5."
+      }
+    ],
+    "items": [
+      {"id": "dcat1",  "type": "likert", "text_key": "dcat1",  "dimension": "disclosure"},
+      {"id": "dcat2",  "type": "likert", "text_key": "dcat2",  "dimension": "disclosure"},
+      {"id": "dcat3",  "type": "likert", "text_key": "dcat3",  "dimension": "clarity"},
+      {"id": "dcat4",  "type": "likert", "text_key": "dcat4",  "dimension": "clarity"},
+      {"id": "dcat5",  "type": "likert", "text_key": "dcat5",  "dimension": "accuracy"},
+      {"id": "dcat6",  "type": "likert", "text_key": "dcat6",  "dimension": "accuracy"},
+      {"id": "dcat7",  "type": "likert", "text_key": "dcat7",  "dimension": "timeliness"},
+      {"id": "dcat8",  "type": "likert", "text_key": "dcat8",  "dimension": "timeliness"},
+      {"id": "dcat9",  "type": "likert", "text_key": "dcat9",  "dimension": "relevance"},
+      {"id": "dcat10", "type": "likert", "text_key": "dcat10", "dimension": "relevance"}
+    ],
+    "scoring": {
+      "disclosure": {
+        "description": "Mean of Disclosure items. Range 1–5; higher = more perceived disclosure.",
+        "method": "mean_coded",
+        "items": ["dcat1", "dcat2"]
+      },
+      "clarity": {
+        "description": "Mean of Clarity items. Range 1–5; higher = more perceived clarity.",
+        "method": "mean_coded",
+        "items": ["dcat3", "dcat4"]
+      },
+      "accuracy": {
+        "description": "Mean of Accuracy items. Range 1–5; higher = more perceived accuracy.",
+        "method": "mean_coded",
+        "items": ["dcat5", "dcat6"]
+      },
+      "timeliness": {
+        "description": "Mean of Timeliness items. Range 1–5; higher = more perceived timeliness.",
+        "method": "mean_coded",
+        "items": ["dcat7", "dcat8"]
+      },
+      "relevance": {
+        "description": "Mean of Relevance items. Range 1–5; higher = more perceived relevance.",
+        "method": "mean_coded",
+        "items": ["dcat9", "dcat10"]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Extended DCA-Transparency Scale – Short Version Report",
+      "footer_refs": [
+        "Hossiep, C. R., Märtins, J., & Schewe, G. (2024). Measuring organizational transparency with 10 items: Validation of a German short scale. Measurement Instruments for the Social Sciences, 6, Article e11209. https://doi.org/10.5964/miss.11209",
+        "No total score is recommended. Each of the five dimensions (Disclosure, Clarity, Accuracy, Timeliness, Relevance) is interpreted independently as the mean of its two items."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "dcat_r1": "Strongly disagree",
+      "dcat_r2": "Disagree",
+      "dcat_r3": "Neither agree nor disagree",
+      "dcat_r4": "Agree",
+      "dcat_r5": "Strongly agree",
+      "dcat1":  "I have all the information I need from {supervisor}.",
+      "dcat2":  "A sufficient amount of information is presented by {supervisor}.",
+      "dcat3":  "The information presented by {supervisor} is understandable.",
+      "dcat4":  "The information from {supervisor} is clear.",
+      "dcat5":  "The information from {supervisor} appears to be true.",
+      "dcat6":  "The information from {supervisor} appears correct.",
+      "dcat7":  "The information from {supervisor} is provided ahead of time.",
+      "dcat8":  "The information from {supervisor} comes at an appropriate time.",
+      "dcat9":  "I care about the topic {supervisor} informs me about.",
+      "dcat10": "The topic {supervisor} informs me about is close to my heart.",
+      "supervisor": "my supervisor",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "de": {
+      "dcat_r1": "Stimme überhaupt nicht zu",
+      "dcat_r2": "Stimme nicht zu",
+      "dcat_r3": "Weder noch",
+      "dcat_r4": "Stimme zu",
+      "dcat_r5": "Stimme voll zu",
+      "dcat1":  "Ich habe alle Informationen, die ich von {supervisor} brauche.",
+      "dcat2":  "Eine ausreichende Menge an Informationen wird von {supervisor} vorgelegt.",
+      "dcat3":  "Die von {supervisor} bereitgestellten Informationen sind verständlich.",
+      "dcat4":  "Die Informationen von {supervisor} sind eindeutig.",
+      "dcat5":  "Die Informationen von {supervisor} scheinen wahr zu sein.",
+      "dcat6":  "Die Informationen von {supervisor} erscheinen korrekt.",
+      "dcat7":  "Die Informationen von {supervisor} kommen mit ausreichend Vorlauf.",
+      "dcat8":  "Die Informationen von {supervisor} kommen zeitlich angemessen.",
+      "dcat9":  "Das Thema, über das mich {supervisor} informiert, ist mir wichtig.",
+      "dcat10": "Das Thema, über das mich {supervisor} informiert, liegt mir am Herzen.",
+      "supervisor": "meiner Führungskraft",
+      "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
+    }
+  }
+}

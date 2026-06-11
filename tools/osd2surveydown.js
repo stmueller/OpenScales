@@ -17,6 +17,14 @@ class OSD2Surveydown {
         this.likertOptions = this.defn.likert_options || {};
     }
 
+    getEffectiveScale(item) {
+        const rsId = item.response_scale;
+        if (rsId && this.defn.response_scales && this.defn.response_scales[rsId]) {
+            return this.defn.response_scales[rsId];
+        }
+        return this.defn.likert_options || {};
+    }
+
     resolveText(key) {
         return this.translations[key] || key;
     }
@@ -34,7 +42,7 @@ class OSD2Surveydown {
     // ── Item converters ──────────────────────────────────────────────
 
     convertLikert(item) {
-        const lo = this.likertOptions;
+        const lo = this.getEffectiveScale(item);
         const points = item.likert_points || lo.points || 5;
         const minVal = item.likert_min || lo.min || 1;
         const maxVal = item.likert_max || lo.max || points;

@@ -44,9 +44,19 @@ def yaml_escape(text):
     return text
 
 
+def get_effective_scale(item, defn):
+    """Resolve effective response scale for a likert item."""
+    rs_id = item.get('response_scale')
+    if rs_id:
+        rs = defn.get('response_scales', {}).get(rs_id)
+        if rs:
+            return rs
+    return defn.get('likert_options', {})
+
+
 def convert_likert(item, defn, translations):
     """Convert a likert item to surveydown mc_buttons question."""
-    likert_opts = defn.get('likert_options', {})
+    likert_opts = get_effective_scale(item, defn)
 
     # Get item-level overrides
     points = item.get('likert_points', likert_opts.get('points', 5))

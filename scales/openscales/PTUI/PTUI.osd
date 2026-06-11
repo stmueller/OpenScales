@@ -1,0 +1,173 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "PTUI",
+      "name": "Positive Time Use Inventory",
+      "abbreviation": "PTUI",
+      "description": "25-item scale measuring positive time use across four dimensions: Self-Congruence, Balance, Efficiency, and Mastery, with a composite Positive Time Use index.",
+      "citation": "Osin, E., & Boniwell, I. (2024). Positive time use: A missing link between time perspective, time management, and well-being. Frontiers in Psychology, 15. https://doi.org/10.3389/fpsyg.2024.1087932",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2024.1087932",
+      "version": "1.0",
+      "domain": "Well-being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "PTUI_r1", "PTUI_r2", "PTUI_r3", "PTUI_r4", "PTUI_r5"
+      ],
+      "question_head": "PTUI_head"
+    },
+    "dimensions": [
+      {
+        "id": "SC",
+        "name": "Self-Congruence",
+        "description": "Degree to which daily activities align with personal values, meaning, and goals"
+      },
+      {
+        "id": "BAL",
+        "name": "Balance",
+        "description": "Perceived balance between different areas and demands of life"
+      },
+      {
+        "id": "EFF",
+        "name": "Efficiency",
+        "description": "Ability to accomplish tasks and manage time effectively without procrastination"
+      },
+      {
+        "id": "MAS",
+        "name": "Mastery",
+        "description": "Sense of control, purposefulness, and mastery over one's time"
+      }
+    ],
+    "items": [
+      { "id": "PTUI001", "type": "likert", "text_key": "PTUI001", "dimension": "SC" },
+      { "id": "PTUI002", "type": "likert", "text_key": "PTUI002", "dimension": "MAS" },
+      { "id": "PTUI003", "type": "likert", "text_key": "PTUI003", "dimension": "BAL" },
+      { "id": "PTUI004", "type": "likert", "text_key": "PTUI004", "dimension": "EFF" },
+      { "id": "PTUI005", "type": "likert", "text_key": "PTUI005", "dimension": "SC" },
+      { "id": "PTUI006", "type": "likert", "text_key": "PTUI006", "dimension": "MAS" },
+      { "id": "PTUI007", "type": "likert", "text_key": "PTUI007", "dimension": "BAL" },
+      { "id": "PTUI008", "type": "likert", "text_key": "PTUI008", "dimension": "EFF" },
+      { "id": "PTUI009", "type": "likert", "text_key": "PTUI009", "dimension": "SC" },
+      { "id": "PTUI010", "type": "likert", "text_key": "PTUI010", "dimension": "MAS" },
+      { "id": "PTUI011", "type": "likert", "text_key": "PTUI011", "dimension": "BAL" },
+      { "id": "PTUI012", "type": "likert", "text_key": "PTUI012", "dimension": "EFF" },
+      { "id": "PTUI013", "type": "likert", "text_key": "PTUI013", "dimension": "SC" },
+      { "id": "PTUI014", "type": "likert", "text_key": "PTUI014", "dimension": "MAS" },
+      { "id": "PTUI015", "type": "likert", "text_key": "PTUI015", "dimension": "BAL" },
+      { "id": "PTUI016", "type": "likert", "text_key": "PTUI016", "dimension": "EFF" },
+      { "id": "PTUI017", "type": "likert", "text_key": "PTUI017", "dimension": "SC" },
+      { "id": "PTUI018", "type": "likert", "text_key": "PTUI018", "dimension": "MAS" },
+      { "id": "PTUI019", "type": "likert", "text_key": "PTUI019", "dimension": "BAL" },
+      { "id": "PTUI020", "type": "likert", "text_key": "PTUI020", "dimension": "EFF" },
+      { "id": "PTUI021", "type": "likert", "text_key": "PTUI021", "dimension": "SC" },
+      { "id": "PTUI022", "type": "likert", "text_key": "PTUI022", "dimension": "MAS" },
+      { "id": "PTUI023", "type": "likert", "text_key": "PTUI023", "dimension": "BAL" },
+      { "id": "PTUI024", "type": "likert", "text_key": "PTUI024", "dimension": "EFF" },
+      { "id": "PTUI025", "type": "likert", "text_key": "PTUI025", "dimension": "SC" }
+    ],
+    "scoring": {
+      "SC": {
+        "method": "mean_coded",
+        "description": "Self-Congruence — mean of items 1, 5, 9, 13, 17, 21, 25; items 9 and 17 reverse-scored",
+        "items": {
+          "PTUI001": 1, "PTUI005": 1, "PTUI009": -1,
+          "PTUI013": 1, "PTUI017": -1, "PTUI021": 1, "PTUI025": 1
+        }
+      },
+      "BAL": {
+        "method": "mean_coded",
+        "description": "Balance — mean of items 3, 7, 11, 15, 19, 23; item 7 reverse-scored",
+        "items": {
+          "PTUI003": 1, "PTUI007": -1, "PTUI011": 1,
+          "PTUI015": 1, "PTUI019": 1, "PTUI023": 1
+        }
+      },
+      "EFF": {
+        "method": "mean_coded",
+        "description": "Efficiency — mean of items 4, 8, 12, 16, 20, 24; items 4, 12, 16, 20, 24 reverse-scored",
+        "items": {
+          "PTUI004": -1, "PTUI008": 1, "PTUI012": -1,
+          "PTUI016": -1, "PTUI020": -1, "PTUI024": -1
+        }
+      },
+      "MAS": {
+        "method": "mean_coded",
+        "description": "Mastery — mean of items 2, 6, 10, 14, 18, 22; items 2, 6, 10, 14, 18, 22 reverse-scored",
+        "items": {
+          "PTUI002": -1, "PTUI006": -1, "PTUI010": -1,
+          "PTUI014": -1, "PTUI018": 1, "PTUI022": -1
+        }
+      },
+      "PTU": {
+        "method": "mean_coded",
+        "description": "Positive Time Use index — mean of all 25 items after inverting all reverse-scored items",
+        "items": {
+          "PTUI001": 1, "PTUI002": -1, "PTUI003": 1, "PTUI004": -1, "PTUI005": 1,
+          "PTUI006": -1, "PTUI007": -1, "PTUI008": 1, "PTUI009": -1, "PTUI010": -1,
+          "PTUI011": 1, "PTUI012": -1, "PTUI013": 1, "PTUI014": -1, "PTUI015": 1,
+          "PTUI016": -1, "PTUI017": -1, "PTUI018": 1, "PTUI019": 1, "PTUI020": -1,
+          "PTUI021": 1, "PTUI022": -1, "PTUI023": 1, "PTUI024": -1, "PTUI025": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "PTUI_head": "Please read each item and, as honestly as you can, answer the question: \"How characteristic or true is this of you?\" Please give your answer by choosing a number.",
+      "PTUI_r1": "Very untrue",
+      "PTUI_r2": "Mostly untrue",
+      "PTUI_r3": "Neutral",
+      "PTUI_r4": "Mostly true",
+      "PTUI_r5": "Very true",
+      "PTUI001": "Looking at a typical day in my life, I think that most things I do have some purpose.",
+      "PTUI002": "I often do not have enough time to accomplish my tasks.",
+      "PTUI003": "I am comfortable with the work-life boundaries in my life.",
+      "PTUI004": "I find that during the day I am often not sure what to do next.",
+      "PTUI005": "I like what I do.",
+      "PTUI006": "I am often anxious about time.",
+      "PTUI007": "I never have time for myself.",
+      "PTUI008": "I rarely procrastinate.",
+      "PTUI009": "I often feel that what I do is meaningless.",
+      "PTUI010": "I feel time is slipping away through my fingers.",
+      "PTUI011": "I have a balance between what I want to do and what I have to do.",
+      "PTUI012": "I take a long time to 'get going'.",
+      "PTUI013": "I live my life in accordance with my goals.",
+      "PTUI014": "I feel overwhelmed by my responsibilities.",
+      "PTUI015": "I feel I have a balance of activities in my life.",
+      "PTUI016": "I waste a lot of time.",
+      "PTUI017": "My daily activities often seem trivial and unimportant to me.",
+      "PTUI018": "I usually feel in control of my time.",
+      "PTUI019": "I take some time for myself on a daily basis.",
+      "PTUI020": "I tend to change rather aimlessly from one activity to another during the day.",
+      "PTUI021": "I feel I am making progress.",
+      "PTUI022": "I often feel guilty about not having done something.",
+      "PTUI023": "I feel that different areas of my life are well-balanced.",
+      "PTUI024": "Days often go by without me having done a thing.",
+      "PTUI025": "If I should die today, I would feel that my life has been worthwhile."
+    }
+  }
+}

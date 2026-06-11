@@ -182,8 +182,18 @@ def validate_questions(definition, result):
         # Type-specific validation
         if qtype == "likert":
             if "likert_points" not in q:
-                # Check if scale-level likert_options provides a default
-                if "likert_options" not in definition or "points" not in definition.get("likert_options", {}):
+                rs_id = q.get("response_scale")
+                has_named_scale = (
+                    rs_id and
+                    "response_scales" in definition and
+                    rs_id in definition["response_scales"] and
+                    "points" in definition["response_scales"][rs_id]
+                )
+                has_default = (
+                    "likert_options" in definition and
+                    "points" in definition.get("likert_options", {})
+                )
+                if not has_named_scale and not has_default:
                     result.warn(f"Question '{qid}' (likert) has no likert_points and no scale-level default")
 
         elif qtype in ("multi", "multicheck"):
@@ -295,6 +305,11 @@ def validate_translations(definition, translations, question_ids, result):
             required_keys.add(q["text_key"])
         if "likert_labels" in q:
             required_keys.update(q["likert_labels"])
+        rs_id = q.get("response_scale")
+        if rs_id:
+            rs = definition.get("response_scales", {}).get(rs_id, {})
+            if "labels" in rs:
+                required_keys.update(rs["labels"])
         if "options" in q and isinstance(q["options"], list):
             for opt in q["options"]:
                 if isinstance(opt, dict) and "text_key" in opt:

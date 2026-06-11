@@ -1,0 +1,147 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "AWESF",
+      "name": "Awe Experience Scale – Short Form",
+      "abbreviation": "AWE-SF",
+      "description": "12-item short form measuring six facets of awe experience: time dilation, self-loss, connectedness, vastness, physiological changes, and need for accommodation.",
+      "citation": "Graziosi, M., Rohde, J. S., Lake, S., Lucas, P., Kaufman, S. B., & Yaden, D. B. (2024). Developing a short form of the Awe Experience Scale (AWE-SF) in psychedelic samples. PLoS ONE, 19(12). https://doi.org/10.1371/journal.pone.0314469",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1371/journal.pone.0314469",
+      "version": "1.0",
+      "domain": "Well-being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default":  0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "AWESF_r1", "AWESF_r2", "AWESF_r3", "AWESF_r4",
+        "AWESF_r5", "AWESF_r6", "AWESF_r7"
+      ],
+      "question_head": "AWESF_head"
+    },
+    "dimensions": [
+      {
+        "id": "Time",
+        "name": "Time",
+        "description": "Sense of time slowing down during awe experience"
+      },
+      {
+        "id": "SelfLoss",
+        "name": "Self-Loss",
+        "description": "Diminished or shrunken sense of self"
+      },
+      {
+        "id": "Connectedness",
+        "name": "Connectedness",
+        "description": "Sense of connection to everything and all living things"
+      },
+      {
+        "id": "Vastness",
+        "name": "Vastness",
+        "description": "Perception of grandeur and something greater than oneself"
+      },
+      {
+        "id": "PhysioChanges",
+        "name": "Physiological Changes",
+        "description": "Bodily responses such as jaw drop or goosebumps"
+      },
+      {
+        "id": "Accommodation",
+        "name": "Accommodation",
+        "description": "Cognitive challenge in processing the experience"
+      }
+    ],
+    "items": [
+      { "id": "AWESF001", "type": "likert", "text_key": "AWESF001", "dimension": "Time" },
+      { "id": "AWESF002", "type": "likert", "text_key": "AWESF002", "dimension": "Time" },
+      { "id": "AWESF003", "type": "likert", "text_key": "AWESF003", "dimension": "SelfLoss" },
+      { "id": "AWESF004", "type": "likert", "text_key": "AWESF004", "dimension": "SelfLoss" },
+      { "id": "AWESF005", "type": "likert", "text_key": "AWESF005", "dimension": "Connectedness" },
+      { "id": "AWESF006", "type": "likert", "text_key": "AWESF006", "dimension": "Connectedness" },
+      { "id": "AWESF007", "type": "likert", "text_key": "AWESF007", "dimension": "Vastness" },
+      { "id": "AWESF008", "type": "likert", "text_key": "AWESF008", "dimension": "Vastness" },
+      { "id": "AWESF009", "type": "likert", "text_key": "AWESF009", "dimension": "PhysioChanges" },
+      { "id": "AWES010", "type": "likert", "text_key": "AWES010", "dimension": "PhysioChanges" },
+      { "id": "AWES011", "type": "likert", "text_key": "AWES011", "dimension": "Accommodation" },
+      { "id": "AWES012", "type": "likert", "text_key": "AWES012", "dimension": "Accommodation" }
+    ],
+    "scoring": {
+      "Time": {
+        "method": "mean_coded",
+        "description": "Time dilation subscale — mean of items 1–2",
+        "items": { "AWESF001": 1, "AWESF002": 1 }
+      },
+      "SelfLoss": {
+        "method": "mean_coded",
+        "description": "Self-Loss subscale — mean of items 3–4",
+        "items": { "AWESF003": 1, "AWESF004": 1 }
+      },
+      "Connectedness": {
+        "method": "mean_coded",
+        "description": "Connectedness subscale — mean of items 5–6",
+        "items": { "AWESF005": 1, "AWESF006": 1 }
+      },
+      "Vastness": {
+        "method": "mean_coded",
+        "description": "Vastness subscale — mean of items 7–8",
+        "items": { "AWESF007": 1, "AWESF008": 1 }
+      },
+      "PhysioChanges": {
+        "method": "mean_coded",
+        "description": "Physiological Changes subscale — mean of items 9–10",
+        "items": { "AWESF009": 1, "AWES010": 1 }
+      },
+      "Accommodation": {
+        "method": "mean_coded",
+        "description": "Accommodation subscale — mean of items 11–12",
+        "items": { "AWES011": 1, "AWES012": 1 }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "AWESF_head": "Please indicate how much each statement describes your experience.",
+      "AWESF_r1": "Strongly disagree",
+      "AWESF_r2": "Moderately disagree",
+      "AWESF_r3": "Somewhat disagree",
+      "AWESF_r4": "Neutral",
+      "AWESF_r5": "Somewhat agree",
+      "AWESF_r6": "Moderately agree",
+      "AWESF_r7": "Strongly agree",
+      "AWESF001": "I sensed things momentarily slow down.",
+      "AWESF002": "I noticed time slowing.",
+      "AWESF003": "I felt my sense of self was diminished.",
+      "AWESF004": "I felt my sense of self shrink.",
+      "AWESF005": "I had the sense of being connected to everything.",
+      "AWESF006": "I felt a sense of communion with all living things.",
+      "AWESF007": "I felt that I was in the presence of something grand.",
+      "AWESF008": "I experienced something greater than myself.",
+      "AWESF009": "I felt my jaw drop.",
+      "AWES010": "I had goosebumps.",
+      "AWES011": "I felt challenged to mentally process what I was experiencing.",
+      "AWES012": "I found it hard to comprehend the experience in full."
+    }
+  }
+}

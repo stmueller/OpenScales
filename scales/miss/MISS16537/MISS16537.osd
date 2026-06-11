@@ -1,0 +1,102 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Modern Comprehensive F Scale",
+      "code": "MISS16537",
+      "abbreviation": "MCF-9",
+      "description": "A 9-item unidimensional scale measuring authoritarianism, integrating all nine facets of the California F Scale (Adorno et al., 1950): Anti-intraception, Superstition and Stereotypy, Power and Toughness, Destructiveness and Cynicism, Projectivity, Sexuality and Gender Roles, Authoritarian Aggression, Authoritarian Submission, and Conventionalism. Validated in Germany (N=469) and the U.S. (N=314) with good reliability (ω=.87/.90). Three items are reverse-coded. Higher scores indicate greater authoritarianism.",
+      "citation": "Sorrentino, A., Prott, K., Hoffmann, L., Heidemeyer, P., Grau, I., & Banse, R. (2025). A new measure of authoritarianism: Development and validation of the Short Modern Comprehensive F Scale in Germany and the U.S. Measurement Instruments for the Social Sciences, 7, Article e16537. https://doi.org/10.5964/miss.16537\n\nOriginal scale: Adorno, T. W., Frenkel-Brunswik, E., Levinson, D. J., & Sanford, R. N. (1950). The authoritarian personality. Harper.",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/16537",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-07",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English and German items verbatim from Table 1 of Sorrentino et al. (2025). Reverse-coded items: mcf2 (Superstition and Stereotypy), mcf7 (Authoritarian Aggression), mcf8 (Authoritarian Submission). Reversal applied at scoring only. 5-point Likert: 1=strongly disagree to 5=strongly agree."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["mcf_r1", "mcf_r2", "mcf_r3", "mcf_r4", "mcf_r5"]
+    },
+    "dimensions": [
+      {
+        "id": "authoritarianism",
+        "name": "Authoritarianism",
+        "abbreviation": "AUTH",
+        "description": "Unidimensional authoritarianism score integrating nine California F Scale facets. Mean of 9 items (3 reverse-coded), range 1–5; higher = greater authoritarianism."
+      }
+    ],
+    "items": [
+      {"id": "mcf1", "type": "likert", "text_key": "mcf1", "dimension": "authoritarianism"},
+      {"id": "mcf2", "type": "likert", "text_key": "mcf2", "dimension": "authoritarianism"},
+      {"id": "mcf3", "type": "likert", "text_key": "mcf3", "dimension": "authoritarianism"},
+      {"id": "mcf4", "type": "likert", "text_key": "mcf4", "dimension": "authoritarianism"},
+      {"id": "mcf5", "type": "likert", "text_key": "mcf5", "dimension": "authoritarianism"},
+      {"id": "mcf6", "type": "likert", "text_key": "mcf6", "dimension": "authoritarianism"},
+      {"id": "mcf7", "type": "likert", "text_key": "mcf7", "dimension": "authoritarianism"},
+      {"id": "mcf8", "type": "likert", "text_key": "mcf8", "dimension": "authoritarianism"},
+      {"id": "mcf9", "type": "likert", "text_key": "mcf9", "dimension": "authoritarianism"}
+    ],
+    "scoring": {
+      "authoritarianism": {
+        "description": "Mean of all 9 items; items 2, 7, 8 reverse-coded. Range 1–5; higher = greater authoritarianism.",
+        "method": "mean_coded",
+        "items": {"mcf1": 1, "mcf2": -1, "mcf3": 1, "mcf4": 1, "mcf5": 1, "mcf6": 1, "mcf7": -1, "mcf8": -1, "mcf9": 1}
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Modern Comprehensive F Scale (MCF-9) Report",
+      "footer_refs": [
+        "Sorrentino, A., Prott, K., Hoffmann, L., Heidemeyer, P., Grau, I., & Banse, R. (2025). A new measure of authoritarianism: Development and validation of the Short Modern Comprehensive F Scale in Germany and the U.S. Measurement Instruments for the Social Sciences, 7, Article e16537. https://doi.org/10.5964/miss.16537",
+        "Higher scores indicate greater authoritarianism. Items 2, 7, and 8 are reverse-coded."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "mcf_r1": "Strongly disagree",
+      "mcf_r2": "Disagree",
+      "mcf_r3": "Neither agree nor disagree",
+      "mcf_r4": "Agree",
+      "mcf_r5": "Strongly agree",
+      "mcf1": "Learning a practical vocation is more beneficial to society than theoretical studies.",
+      "mcf2": "I trust in science.",
+      "mcf3": "Children have to be shaped by a firm hand.",
+      "mcf4": "When push comes to shove, those who are prepared will survive.",
+      "mcf5": "We need to be prepared for a wave of break-ins, robberies and other crimes in the future.",
+      "mcf6": "The discussions about sexual harassment have led to a situation where even friendly gestures and compliments are hyped up as \"sexual assault\".",
+      "mcf7": "Social support does more than harsh prison sentences.",
+      "mcf8": "The democratic politicians of today are better than the dictators of the past.",
+      "mcf9": "The conservative values and norms are still the best way to live.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "de": {
+      "mcf_r1": "Stimme überhaupt nicht zu",
+      "mcf_r2": "Stimme eher nicht zu",
+      "mcf_r3": "Weder noch",
+      "mcf_r4": "Stimme eher zu",
+      "mcf_r5": "Stimme voll und ganz zu",
+      "mcf1": "Das Erlernen eines praktischen Berufes bringt der Gesellschaft mehr als ein theoretisches Studium.",
+      "mcf2": "Ich habe Vertrauen in die Wissenschaft.",
+      "mcf3": "Kinder müssen durch eine harte Hand geformt werden.",
+      "mcf4": "Wenn es hart auf hart kommt, werden diejenigen überleben, die vorbereitet sind.",
+      "mcf5": "Wir müssen uns in Zukunft auf eine Welle von Einbrüchen, Überfällen und anderen Verbrechen gefasst machen.",
+      "mcf6": "Die Diskussion über sexuelle Belästigung hat dazu geführt, dass selbst freundliche Gesten und Komplimente zum \"sexuellen Übergriff\" aufgebauscht werden.",
+      "mcf7": "Soziale Unterstützung bringt mehr als harte Gefängnisstrafen.",
+      "mcf8": "Moderne, demokratische Politiker sind besser als frühere Diktatoren.",
+      "mcf9": "Die konservativen Werte und Normen sind nach wie vor der beste Weg zu leben.",
+      "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
+    }
+  }
+}

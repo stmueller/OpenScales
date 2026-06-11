@@ -1,0 +1,94 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "OTHNS",
+      "name": "Otherness Scale",
+      "abbreviation": "OTHNS",
+      "description": "10-item scale measuring attitudes toward strangers and outgroups, including perceptions of threat, discomfort, and potential for intergroup connection.",
+      "citation": "Mateus, C., Jabba, D., Erazo, A. M., Aguaded, I., Campis, R., & Parody, A. (2024). Otherness measuring scale: Design and validation for social sciences. BMC Psychology, 12(1). https://doi.org/10.1186/s40359-023-01505-8",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1186/s40359-023-01505-8",
+      "version": "1.0",
+      "domain": "Social"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "OTHNS_r1", "OTHNS_r2", "OTHNS_r3", "OTHNS_r4", "OTHNS_r5"
+      ],
+      "question_head": "OTHNS_head"
+    },
+    "dimensions": [
+      {
+        "id": "OTHNS",
+        "name": "Otherness",
+        "description": "Attitudes toward strangers and outgroups, including threat perception and potential for connection"
+      }
+    ],
+    "items": [
+      { "id": "OTHNS001", "type": "likert", "text_key": "OTHNS001", "dimension": "OTHNS" },
+      { "id": "OTHNS002", "type": "likert", "text_key": "OTHNS002", "dimension": "OTHNS" },
+      { "id": "OTHNS003", "type": "likert", "text_key": "OTHNS003", "dimension": "OTHNS" },
+      { "id": "OTHNS004", "type": "likert", "text_key": "OTHNS004", "dimension": "OTHNS" },
+      { "id": "OTHNS005", "type": "likert", "text_key": "OTHNS005", "dimension": "OTHNS" },
+      { "id": "OTHNS006", "type": "likert", "text_key": "OTHNS006", "dimension": "OTHNS" },
+      { "id": "OTHNS007", "type": "likert", "text_key": "OTHNS007", "dimension": "OTHNS" },
+      { "id": "OTHNS008", "type": "likert", "text_key": "OTHNS008", "dimension": "OTHNS" },
+      { "id": "OTHNS009", "type": "likert", "text_key": "OTHNS009", "dimension": "OTHNS" },
+      { "id": "OTHNS010", "type": "likert", "text_key": "OTHNS010", "dimension": "OTHNS" }
+    ],
+    "scoring": {
+      "OTHNS": {
+        "method": "mean_coded",
+        "description": "Otherness total — mean of all 10 items; items 9 and 10 are positively worded (lower otherness) and reverse-scored",
+        "items": {
+          "OTHNS001": 1, "OTHNS002": 1, "OTHNS003": 1, "OTHNS004": 1,
+          "OTHNS005": 1, "OTHNS006": 1, "OTHNS007": 1, "OTHNS008": 1,
+          "OTHNS009": -1, "OTHNS010": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "OTHNS_head": "Please indicate your level of agreement with each statement.",
+      "OTHNS_r1": "Strongly disagree",
+      "OTHNS_r2": "Disagree",
+      "OTHNS_r3": "Neither agree nor disagree",
+      "OTHNS_r4": "Agree",
+      "OTHNS_r5": "Strongly agree",
+      "OTHNS001": "If I see someone who dresses or wears their hair in strange ways, it causes me discomfort.",
+      "OTHNS002": "It seems threatening to let immigrants enter the country.",
+      "OTHNS003": "Strangers, generally speaking, seem annoying to me.",
+      "OTHNS004": "I am afraid of being in a place with strangers.",
+      "OTHNS005": "I believe that others corrupt identity and culture.",
+      "OTHNS006": "I think strangers can be very harmful.",
+      "OTHNS007": "I generally feel that others are indifferent to me.",
+      "OTHNS008": "I believe that others may be able to harm their fellow human beings to achieve their achievements.",
+      "OTHNS009": "I think that people can establish bonds of friendship, even if they belong to racial minorities or identity groups.",
+      "OTHNS010": "I think people tend to group with other people."
+    }
+  }
+}

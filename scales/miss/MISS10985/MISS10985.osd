@@ -1,0 +1,91 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Social Desirability–Gamma Short Scale (English Adaptation)",
+      "code": "MISS10985",
+      "abbreviation": "KSE-G-E",
+      "description": "A 6-item short scale measuring social desirability across two subscales: PQ+ (Exaggerating Positive Qualities, 3 items) and NQ− (Minimizing Negative Qualities, 3 items). Adapted into English from the German KSE-G (Kemper et al., 2014). Validated in English-speaking samples. Higher PQ+ scores indicate greater tendency to claim positive attributes; higher NQ− scores indicate greater tendency to deny negative behaviors.",
+      "citation": "Nießen, D., Partsch, M. V., Kemper, C. J., & Rammstedt, B. (2019). An English-language adaptation of the Social Desirability–Gamma Short Scale (KSE-G). Measurement Instruments for the Social Sciences, 1, Article e10985. https://doi.org/10.1186/s42409-018-0005-1",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/10985",
+      "domain": "Personality",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-08",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English items verbatim from Table 2. NQ− items (kse4, kse5, kse6) are reverse-coded at scoring. 5-point scale: 1=Doesn’t apply at all to 5=Applies completely."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["kse_r1", "kse_r2", "kse_r3", "kse_r4", "kse_r5"]
+    },
+    "dimensions": [
+      {
+        "id": "pq_plus",
+        "name": "Exaggerating Positive Qualities",
+        "abbreviation": "PQ+",
+        "description": "Tendency to claim socially desirable positive attributes. Mean of 3 items, range 1–5; higher = greater positive self-presentation."
+      },
+      {
+        "id": "nq_minus",
+        "name": "Minimizing Negative Qualities",
+        "abbreviation": "NQ−",
+        "description": "Tendency to deny socially undesirable behaviors. Mean of 3 items (reverse-coded), range 1–5; higher = greater denial of negative qualities."
+      }
+    ],
+    "items": [
+      {"id": "kse1", "type": "likert", "text_key": "kse1", "dimension": "pq_plus"},
+      {"id": "kse2", "type": "likert", "text_key": "kse2", "dimension": "pq_plus"},
+      {"id": "kse3", "type": "likert", "text_key": "kse3", "dimension": "pq_plus"},
+      {"id": "kse4", "type": "likert", "text_key": "kse4", "dimension": "nq_minus"},
+      {"id": "kse5", "type": "likert", "text_key": "kse5", "dimension": "nq_minus"},
+      {"id": "kse6", "type": "likert", "text_key": "kse6", "dimension": "nq_minus"}
+    ],
+    "scoring": {
+      "pq_plus": {
+        "description": "Mean of PQ+ items. Range 1–5; higher = greater tendency to claim positive attributes.",
+        "method": "mean_coded",
+        "items": {"kse1": 1, "kse2": 1, "kse3": 1}
+      },
+      "nq_minus": {
+        "description": "Mean of NQ− items (reverse-coded). Range 1–5; higher = greater tendency to deny negative qualities.",
+        "method": "mean_coded",
+        "items": {"kse4": -1, "kse5": -1, "kse6": -1}
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Social Desirability–Gamma Short Scale (KSE-G-E) Report",
+      "footer_refs": [
+        "Nießen, D., Partsch, M. V., Kemper, C. J., & Rammstedt, B. (2019). An English-language adaptation of the Social Desirability–Gamma Short Scale (KSE-G). Measurement Instruments for the Social Sciences, 1, Article e10985. https://doi.org/10.1186/s42409-018-0005-1",
+        "Higher PQ+ scores indicate greater tendency to claim positive attributes; higher NQ− scores indicate greater tendency to deny negative behaviors. NQ− items are reverse-coded."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "kse_r1": "Doesn’t apply at all",
+      "kse_r2": "Hardly applies",
+      "kse_r3": "Somewhat applies",
+      "kse_r4": "Mostly applies",
+      "kse_r5": "Applies completely",
+      "instructions": "The following statements may apply more or less to you personally. Please indicate to what extent they apply to you.",
+      "kse1": "In an argument, I always remain objective and stick to the facts.",
+      "kse2": "Even if I am feeling stressed, I am always friendly and polite to others.",
+      "kse3": "When talking to someone, I always listen carefully to what the other person says.",
+      "kse4": "It has happened that I have taken advantage of someone in the past.",
+      "kse5": "I have occasionally thrown litter away in the countryside or on the road.",
+      "kse6": "Sometimes I only help people if I expect to get something in return.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

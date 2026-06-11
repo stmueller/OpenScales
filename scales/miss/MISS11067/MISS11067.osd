@@ -1,0 +1,78 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Optimism–Pessimism Short Scale–2 (English Adaptation)",
+      "code": "MISS11067",
+      "abbreviation": "SOP2",
+      "description": "A 2-item ultra-short scale measuring dispositional optimism–pessimism. Item 1 assesses optimism, item 2 assesses pessimism (reverse-coded). Each item begins with a brief definition of the construct to ensure shared understanding. Validated in English (UK) and German samples with scalar measurement invariance. Higher scores indicate greater dispositional optimism. Completion time approximately 20 seconds.",
+      "citation": "Nießen, D., Groskurth, K., Kemper, C. J., Rammstedt, B., & Lechner, C. M. (2022). The Optimism–Pessimism Short Scale–2 (SOP2): A comprehensive validation of the English-language adaptation. Measurement Instruments for the Social Sciences, 4, Article e11067. https://doi.org/10.1186/s42409-021-00027-6",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "doi": "10.5964/miss.11067",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/11067",
+      "domain": "Personality",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-08",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English items verbatim from paper. Item sop2_pes (pessimism) reverse-coded at scoring: recoded = 8 − raw. Each item has its own response anchors: sop2_opt anchored 'Not at all optimistic' to 'Very optimistic'; sop2_pes anchored 'Not at all pessimistic' to 'Very pessimistic'. 7-point scale. No shared instruction text precedes items — each item contains its own definitional stem."
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": ["sop2_r1", "sop2_r2", "sop2_r3", "sop2_r4", "sop2_r5", "sop2_r6", "sop2_r7"]
+    },
+    "dimensions": [
+      {
+        "id": "optimism_pessimism",
+        "name": "Optimism–Pessimism",
+        "abbreviation": "OP",
+        "description": "Dispositional optimism–pessimism. Mean of 2 items (pessimism item reverse-coded), range 1–7; higher = greater dispositional optimism."
+      }
+    ],
+    "items": [
+      {"id": "sop2_opt", "type": "likert", "text_key": "sop2_opt", "dimension": "optimism_pessimism", "coding": 1},
+      {"id": "sop2_pes", "type": "likert", "text_key": "sop2_pes", "dimension": "optimism_pessimism", "coding": -1}
+    ],
+    "scoring": {
+      "optimism_pessimism": {
+        "description": "Mean of 2 items with sop2_pes reverse-coded (recoded = 8 − raw). Range 1–7; higher = greater dispositional optimism.",
+        "method": "mean_coded",
+        "items": {"sop2_opt": 1, "sop2_pes": -1}
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Optimism–Pessimism Short Scale–2 (SOP2) Report",
+      "footer_refs": [
+        "Nießen, D., Groskurth, K., Kemper, C. J., Rammstedt, B., & Lechner, C. M. (2022). The Optimism–Pessimism Short Scale–2 (SOP2): A comprehensive validation of the English-language adaptation. Measurement Instruments for the Social Sciences, 4, Article e11067. https://doi.org/10.1186/s42409-021-00027-6",
+        "Higher scores indicate greater dispositional optimism."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "sop2_r1": "1 (Not at all)",
+      "sop2_r2": "2",
+      "sop2_r3": "3",
+      "sop2_r4": "4",
+      "sop2_r5": "5",
+      "sop2_r6": "6",
+      "sop2_r7": "7 (Very much)",
+      "sop2_opt_min": "Not at all optimistic",
+      "sop2_opt_max": "Very optimistic",
+      "sop2_pes_min": "Not at all pessimistic",
+      "sop2_pes_max": "Very pessimistic",
+      "sop2_opt": "The next question deals with optimism. Optimists are people who look to the future with confidence and who mostly expect good things to happen. How would you describe yourself? How optimistic are you in general?",
+      "sop2_pes": "The next question is about pessimism. Pessimists are people who are full of doubt when they look to the future and who mostly expect bad things to happen. How would you describe yourself? How pessimistic are you in general?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

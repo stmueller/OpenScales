@@ -1,0 +1,135 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Conspiracy Mentality Scale",
+      "code": "MISS11429",
+      "abbreviation": "CMS",
+      "description": "An 11-item scale measuring general conspiracy mentality — the tendency to believe conspiracy theories — across two subscales: Conspiracy Theory Ideation (7 items) and Skepticism (4 items). Validated in French and Italian in this paper; English items published verbatim.",
+      "citation": "Stojanov, A., & Hannawa, A. (2023). Toward French and Italian language validations of the Conspiracy Mentality Scale (CMS). Measurement Instruments for the Social Sciences, 5, Article e11429. https://doi.org/10.5964/miss.11429\n\nOriginal scale: Stojanov, A., & Halberstadt, J. (2019). Does lack of control lead to conspiracy beliefs? A meta-analysis. European Journal of Social Psychology. https://doi.org/10.1002/ejsp.2588",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/11429",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-07",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English items and French/Italian translations are published verbatim in Table 1 of Stojanov & Hannawa (2023). No participant-facing instructions stated in the paper. No reverse-coded items."
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": ["cms_r1", "cms_r2", "cms_r3", "cms_r4"]
+    },
+    "dimensions": [
+      {
+        "id": "ideation",
+        "name": "Conspiracy Theory Ideation",
+        "abbreviation": "CTI",
+        "description": "Tendency to believe in specific conspiracy narratives. Mean of 7 items, range 1–4; higher = stronger conspiracy ideation."
+      },
+      {
+        "id": "skepticism",
+        "name": "Skepticism",
+        "abbreviation": "SKP",
+        "description": "General skepticism toward official accounts. Mean of 4 items, range 1–4; higher = more skepticism."
+      }
+    ],
+    "items": [
+      {"id": "cms_i1", "type": "likert", "text_key": "cms_i1", "dimension": "ideation"},
+      {"id": "cms_i2", "type": "likert", "text_key": "cms_i2", "dimension": "ideation"},
+      {"id": "cms_i3", "type": "likert", "text_key": "cms_i3", "dimension": "ideation"},
+      {"id": "cms_i4", "type": "likert", "text_key": "cms_i4", "dimension": "ideation"},
+      {"id": "cms_i5", "type": "likert", "text_key": "cms_i5", "dimension": "ideation"},
+      {"id": "cms_i6", "type": "likert", "text_key": "cms_i6", "dimension": "ideation"},
+      {"id": "cms_i7", "type": "likert", "text_key": "cms_i7", "dimension": "ideation"},
+      {"id": "cms_s1", "type": "likert", "text_key": "cms_s1", "dimension": "skepticism"},
+      {"id": "cms_s2", "type": "likert", "text_key": "cms_s2", "dimension": "skepticism"},
+      {"id": "cms_s3", "type": "likert", "text_key": "cms_s3", "dimension": "skepticism"},
+      {"id": "cms_s4", "type": "likert", "text_key": "cms_s4", "dimension": "skepticism"}
+    ],
+    "scoring": {
+      "ideation": {
+        "description": "Mean of 7 Conspiracy Theory Ideation items. Range 1–4; higher = more conspiracy ideation.",
+        "method": "mean_coded",
+        "items": ["cms_i1", "cms_i2", "cms_i3", "cms_i4", "cms_i5", "cms_i6", "cms_i7"]
+      },
+      "skepticism": {
+        "description": "Mean of 4 Skepticism items. Range 1–4; higher = more skepticism.",
+        "method": "mean_coded",
+        "items": ["cms_s1", "cms_s2", "cms_s3", "cms_s4"]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Conspiracy Mentality Scale (CMS) Report",
+      "footer_refs": [
+        "Stojanov, A., & Hannawa, A. (2023). Toward French and Italian language validations of the Conspiracy Mentality Scale (CMS). Measurement Instruments for the Social Sciences, 5, Article e11429. https://doi.org/10.5964/miss.11429",
+        "Stojanov, A., & Halberstadt, J. (2019). Does lack of control lead to conspiracy beliefs? A meta-analysis. European Journal of Social Psychology. https://doi.org/10.1002/ejsp.2588"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "cms_r1": "Untrue",
+      "cms_r2": "Rather untrue",
+      "cms_r3": "Rather true",
+      "cms_r4": "True",
+      "cms_i1": "The government or covert organizations are responsible for events that are unusual or unexplained.",
+      "cms_i2": "Many so called \"coincidences\" are in fact clues as to how things really happened.",
+      "cms_i3": "Some things that everyone accepts as true are in fact hoaxes created by people in power.",
+      "cms_i4": "Many situations or events can be explained by illegal or harmful acts by the government or other powerful people.",
+      "cms_i5": "The alternative explanations for important societal events are closer to the truth than the official story.",
+      "cms_i6": "Events throughout history are carefully planned and orchestrated by individuals for their own betterment.",
+      "cms_i7": "Events on the news may not have actually happened.",
+      "cms_s1": "Some things are not as they seem.",
+      "cms_s2": "There are people who don't want the truth to come out.",
+      "cms_s3": "People will do crazy things to cover up the truth.",
+      "cms_s4": "Many things happen without the public's knowledge.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "fr": {
+      "cms_r1": "Faux",
+      "cms_r2": "Plutôt faux",
+      "cms_r3": "Plutôt vrai",
+      "cms_r4": "Vrai",
+      "cms_i1": "Le gouvernement ou des organisations secrètes sont responsables d'événements inhabituels ou inexpliqués.",
+      "cms_i2": "Beaucoup de soi-disant «coïncidences» sont en fait des indices sur la façon dont les choses se sont réellement passées.",
+      "cms_i3": "Certaines choses que tout le monde accepte comme \"vraies\" sont en fait des mensonges inventés par les personnes au pouvoir qui essaient de duper les gens.",
+      "cms_i4": "De nombreuses situations ou événements peuvent s'expliquer par des actes illégaux ou dommageables provenant du gouvernement ou d'autres personnalités puissantes.",
+      "cms_i5": "Les explications alternatives d'événements sociétaux importants sont plus proches de la vérité que l'histoire officielle.",
+      "cms_i6": "Les événements à travers l'histoire sont soigneusement planifiés et orchestrés par des individus dans leur propre intérêt.",
+      "cms_i7": "Les événements de l'actualité ne se sont peut-être pas réellement produits.",
+      "cms_s1": "Certaines choses ne sont pas ce qu'elles semblent être.",
+      "cms_s2": "Il y a des gens qui ne veulent pas que la vérité éclate.",
+      "cms_s3": "Les gens feront des choses folles pour dissimuler la vérité.",
+      "cms_s4": "Beaucoup de choses se passent à l'insu du grand public.",
+      "debrief": "Merci d'avoir complété ce questionnaire."
+    },
+    "it": {
+      "cms_r1": "Falso",
+      "cms_r2": "Piuttosto falso",
+      "cms_r3": "Piuttosto vero",
+      "cms_r4": "Vero",
+      "cms_i1": "Il governo o le organizzazioni segrete sono responsabili di eventi insoliti o inspiegabili.",
+      "cms_i2": "Molte cosiddette \"coincidenze\" sono in realtà degli indizi su come le cose siano realmente accadute.",
+      "cms_i3": "Alcune cose che tutti accettano come vere sono in realtà bufale create da persone al potere.",
+      "cms_i4": "Molte situazioni o eventi possono essere spiegati con atti illegali o dannosi del governo o di altre persone potenti.",
+      "cms_i5": "Le spiegazioni alternative per importanti eventi sociali sono più vicine alla verità rispetto alla storia ufficiale.",
+      "cms_i6": "Gli eventi nel corso della storia sono attentamente pianificati e orchestrati da individui per il proprio interesse.",
+      "cms_i7": "Gli eventi nei notiziari potrebbero non essere realmente accaduti.",
+      "cms_s1": "Alcune cose non sono come sembrano.",
+      "cms_s2": "Ci sono persone che non vogliono che la verità venga fuori.",
+      "cms_s3": "La gente farà cose assurde per nascondere la verità.",
+      "cms_s4": "Molte cose accadono all'insaputa del pubblico.",
+      "debrief": "Grazie per aver completato questo questionario."
+    }
+  }
+}

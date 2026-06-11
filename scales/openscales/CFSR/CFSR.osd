@@ -1,0 +1,132 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "CFSR",
+      "name": "Coping Flexibility Scale – Revised",
+      "abbreviation": "CFS-R",
+      "description": "12-item scale measuring coping flexibility across three components: abandonment of ineffective strategies, re-coping with alternative strategies, and meta-cognitive awareness of coping effectiveness.",
+      "citation": "Kato, T. (2020). Examination of the coping flexibility hypothesis using the Coping Flexibility Scale-Revised. Frontiers in Psychology, 11. https://doi.org/10.3389/fpsyg.2020.561731",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2020.561731",
+      "version": "1.0",
+      "domain": "Self & Coping"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default":  0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "labels": [
+        "CFSR_r0", "CFSR_r1", "CFSR_r2", "CFSR_r3"
+      ],
+      "question_head": "CFSR_head"
+    },
+    "dimensions": [
+      {
+        "id": "AB",
+        "name": "Abandonment",
+        "description": "Ability to stop using ineffective coping strategies"
+      },
+      {
+        "id": "RC",
+        "name": "Re-Coping",
+        "description": "Ability to generate and use alternative coping strategies"
+      },
+      {
+        "id": "MC",
+        "name": "Meta-Coping",
+        "description": "Awareness of whether coping strategies are working"
+      }
+    ],
+    "items": [
+      { "id": "CFSR001", "type": "likert", "text_key": "CFSR001", "dimension": "RC" },
+      { "id": "CFSR002", "type": "likert", "text_key": "CFSR002", "dimension": "AB" },
+      { "id": "CFSR003", "type": "likert", "text_key": "CFSR003", "dimension": "AB" },
+      { "id": "CFSR004", "type": "likert", "text_key": "CFSR004", "dimension": "MC" },
+      { "id": "CFSR005", "type": "likert", "text_key": "CFSR005", "dimension": "RC" },
+      { "id": "CFSR006", "type": "likert", "text_key": "CFSR006", "dimension": "RC" },
+      { "id": "CFSR007", "type": "likert", "text_key": "CFSR007", "dimension": "MC" },
+      { "id": "CFSR008", "type": "likert", "text_key": "CFSR008", "dimension": "AB" },
+      { "id": "CFSR009", "type": "likert", "text_key": "CFSR009", "dimension": "AB" },
+      { "id": "CFSR010", "type": "likert", "text_key": "CFSR010", "dimension": "RC" },
+      { "id": "CFSR011", "type": "likert", "text_key": "CFSR011", "dimension": "MC" },
+      { "id": "CFSR012", "type": "likert", "text_key": "CFSR012", "dimension": "MC" }
+    ],
+    "scoring": {
+      "AB": {
+        "method": "mean_coded",
+        "description": "Abandonment — ability to stop ineffective coping strategies",
+        "items": { "CFSR002": 1, "CFSR003": 1, "CFSR008": 1, "CFSR009": 1 }
+      },
+      "RC": {
+        "method": "mean_coded",
+        "description": "Re-Coping — generating alternative coping strategies",
+        "items": { "CFSR001": 1, "CFSR005": 1, "CFSR006": 1, "CFSR010": 1 }
+      },
+      "MC": {
+        "method": "mean_coded",
+        "description": "Meta-Coping — awareness of coping effectiveness",
+        "items": { "CFSR004": 1, "CFSR007": 1, "CFSR011": 1, "CFSR012": 1 }
+      }
+    }
+  },
+  "translations": {
+    "ja": {
+      "CFSR_head": "以下の質問に対して、「よくあてはまる」「あてはまる」「少しあてはまる」「あてはまらない」から選択して下さい。",
+      "CFSR_r0": "あてはまらない",
+      "CFSR_r1": "少しあてはまる",
+      "CFSR_r2": "あてはまる",
+      "CFSR_r3": "よくあてはまる",
+      "CFSR001": "ストレス状況が改善しなかった場合、別の対処の方法を考える",
+      "CFSR002": "状況を悪化させた対処方法は、繰り返し用いない",
+      "CFSR003": "状況が悪化させた対処方法を使用し続けることを、断念できる",
+      "CFSR004": "ストレスに対して、明確な目的をもって対処する",
+      "CFSR005": "うまく対処できなかった時、代わりの方法を用いて対処する",
+      "CFSR006": "ストレス状況が悪化したら、別の方法を用いて対処できる",
+      "CFSR007": "ストレス対処が成功したか、失敗したか、分かる",
+      "CFSR008": "効果的でなかった対処方法は、用いるのをやめる",
+      "CFSR009": "失敗した対処方法は、その使用をやめることができる",
+      "CFSR010": "ストレス対処に失敗しても、別の対処方法を思いつく",
+      "CFSR011": "どの対処方法が効果的で、どの対処方法が効果的でないか分かる",
+      "CFSR012": "使用した対処がうまく機能しているか、把握できる"
+    },
+    "en": {
+      "CFSR_head": "Please rate how applicable each statement is to you when dealing with stress.",
+      "CFSR_r0": "Not applicable",
+      "CFSR_r1": "Somewhat applicable",
+      "CFSR_r2": "Applicable",
+      "CFSR_r3": "Very applicable",
+      "CFSR001": "If the situation has not improved, I consider a different coping strategy.",
+      "CFSR002": "I do not repeat using a coping strategy that made the situation worse.",
+      "CFSR003": "I can stop using a coping strategy that has made the situation worse.",
+      "CFSR004": "I cope with stress by establishing clear objectives.",
+      "CFSR005": "If I did not cope well, I use an alternative coping strategy.",
+      "CFSR006": "Even if the stressful situation has worsened, I can cope by using another strategy.",
+      "CFSR007": "I know if a coping strategy has been successful or unsuccessful.",
+      "CFSR008": "I can stop using a coping strategy that has been ineffective.",
+      "CFSR009": "I can stop using a failed coping strategy.",
+      "CFSR010": "Even if I fail to cope with stress, I can come up with a new coping strategy.",
+      "CFSR011": "I know which coping strategies are effective and which strategies are ineffective.",
+      "CFSR012": "I can grasp if a coping strategy that I have used has been working well."
+    }
+  }
+}

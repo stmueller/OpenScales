@@ -1,0 +1,131 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "BPS",
+      "name": "Bedtime Procrastination Scale for Adolescents",
+      "abbreviation": "BPS",
+      "description": "15-item scale measuring two dimensions of sleep procrastination in adolescents: Bedtime Procrastination (8 items, items 2/6/8 reverse-scored) and While-in-Bed Procrastination (7 items). Higher scores indicate more procrastination. Validated in Portuguese adolescents.",
+      "citation": "Magalhães, P., Cruz, V., Teixeira, S., Fuentes, S., & Rosário, P. (2020). An exploratory study on sleep procrastination: Bedtime vs. while-in-bed procrastination. International Journal of Environmental Research and Public Health, 17(16), 5892. https://doi.org/10.3390/ijerph17165892",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3390/ijerph17165892",
+      "version": "1.0",
+      "domain": "Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default":  0,
+        "description": "Randomize item presentation order"
+      },
+      "show_bedtime": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include Bedtime Procrastination subscale (items 1–8)"
+      },
+      "show_while_in_bed": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include While-in-Bed Procrastination subscale (items 9–15)"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "BPS_r1", "BPS_r2", "BPS_r3", "BPS_r4", "BPS_r5"
+      ],
+      "question_head": "BPS_head"
+    },
+    "dimensions": [
+      {
+        "id": "BedtimeProc",
+        "name": "Bedtime Procrastination",
+        "description": "Tendency to delay going to bed without external reasons"
+      },
+      {
+        "id": "WhileInBed",
+        "name": "While-in-Bed Procrastination",
+        "description": "Tendency to engage in non-sleep activities while in bed before falling asleep"
+      }
+    ],
+    "items": [
+      { "id": "BPS_sec1", "type": "section", "text_key": "BPS_sec1_head", "visible_when": "show_bedtime" },
+      { "id": "BPS001", "type": "likert", "text_key": "BPS001", "dimension": "BedtimeProc" },
+      { "id": "BPS002", "type": "likert", "text_key": "BPS002", "dimension": "BedtimeProc" },
+      { "id": "BPS003", "type": "likert", "text_key": "BPS003", "dimension": "BedtimeProc" },
+      { "id": "BPS004", "type": "likert", "text_key": "BPS004", "dimension": "BedtimeProc" },
+      { "id": "BPS005", "type": "likert", "text_key": "BPS005", "dimension": "BedtimeProc" },
+      { "id": "BPS006", "type": "likert", "text_key": "BPS006", "dimension": "BedtimeProc" },
+      { "id": "BPS007", "type": "likert", "text_key": "BPS007", "dimension": "BedtimeProc" },
+      { "id": "BPS008", "type": "likert", "text_key": "BPS008", "dimension": "BedtimeProc" },
+      { "id": "BPS_sec2", "type": "section", "text_key": "BPS_sec2_head", "visible_when": "show_while_in_bed" },
+      { "id": "BPS009", "type": "likert", "text_key": "BPS009", "dimension": "WhileInBed", "question_head": "BPS_wib_head" },
+      { "id": "BPS010", "type": "likert", "text_key": "BPS010", "dimension": "WhileInBed", "question_head": "BPS_wib_head" },
+      { "id": "BPS011", "type": "likert", "text_key": "BPS011", "dimension": "WhileInBed", "question_head": "BPS_wib_head" },
+      { "id": "BPS012", "type": "likert", "text_key": "BPS012", "dimension": "WhileInBed", "question_head": "BPS_wib_head" },
+      { "id": "BPS013", "type": "likert", "text_key": "BPS013", "dimension": "WhileInBed", "question_head": "BPS_wib_head" },
+      { "id": "BPS014", "type": "likert", "text_key": "BPS014", "dimension": "WhileInBed", "question_head": "BPS_wib_head" },
+      { "id": "BPS015", "type": "likert", "text_key": "BPS015", "dimension": "WhileInBed", "question_head": "BPS_wib_head" }
+    ],
+    "scoring": {
+      "BedtimeProc": {
+        "method": "sum_coded",
+        "description": "Bedtime Procrastination total score (range 8–40). Items 2, 6, 8 are reverse-scored.",
+        "items": {
+          "BPS001": 1, "BPS002": -1, "BPS003": 1, "BPS004": 1,
+          "BPS005": 1, "BPS006": -1, "BPS007": 1, "BPS008": -1
+        }
+      },
+      "WhileInBed": {
+        "method": "sum_coded",
+        "description": "While-in-Bed Procrastination total score (range 7–35). All items positively scored.",
+        "items": {
+          "BPS009": 1, "BPS010": 1, "BPS011": 1, "BPS012": 1,
+          "BPS013": 1, "BPS014": 1, "BPS015": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "BPS_head": "Please indicate how often each statement describes you.",
+      "BPS_r1": "Almost never",
+      "BPS_r2": "Rarely",
+      "BPS_r3": "Neutral",
+      "BPS_r4": "Frequently",
+      "BPS_r5": "Almost always",
+      "BPS_sec1_head": "Bedtime Procrastination",
+      "BPS001": "I go to bed later than I had intended.",
+      "BPS002": "I go to bed early if I have to get up early in the morning.",
+      "BPS003": "Often I am still doing other things when it is time to go to bed.",
+      "BPS004": "I easily get distracted by things when I actually would like to go to bed.",
+      "BPS005": "I do not go to bed on time.",
+      "BPS006": "I have a regular bedtime which I keep to.",
+      "BPS007": "I want to go to bed on time but I just don't.",
+      "BPS008": "I can easily stop with my activities when it is time to go to bed.",
+      "BPS_sec2_head": "In Bed Procrastination",
+      "BPS_wib_head": "While in bed, before I fall asleep I…",
+      "BPS009": "…Watch videos on YouTube.",
+      "BPS010": "…Watch TV.",
+      "BPS011": "…Watch movies and series.",
+      "BPS012": "…Listen to music.",
+      "BPS013": "…Send texts, make video calls/calls.",
+      "BPS014": "…Play games (tablet, computer, mobile phone).",
+      "BPS015": "…Eat snacks (cookies, cereals, milk, chips, chocolate)."
+    }
+  }
+}

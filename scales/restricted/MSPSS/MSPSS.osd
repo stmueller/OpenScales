@@ -1,0 +1,145 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Multidimensional Scale of Perceived Social Support",
+      "code": "MSPSS",
+      "abbreviation": "MSPSS",
+      "description": "12-item self-report measure of perceived social support from three sources: Significant Other (items 1,2,5,10), Family (items 3,4,8,11), and Friends (items 6,7,9,12). Uses a 7-point Likert scale (1=Very Strongly Disagree to 7=Very Strongly Agree). Scoring is the mean per subscale and mean of all 12 items for the total scale. Widely validated across cultures and languages.",
+      "citation": "Zimet, G. D., Dahlem, N. W., Zimet, S. G., & Farley, G. K. (1988). The Multidimensional Scale of Perceived Social Support. Journal of Personality Assessment, 52(1), 30–41.",
+      "license": "Free for research and professional use with attribution; not open-licensed",
+      "license_url": "https://gzimet.wixsite.com/mspss",
+      "url": "https://gzimet.wixsite.com/mspss",
+      "domain": "Social Support",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English items and scoring from the official MSPSS document posted by author Gregory Zimet at https://gzimet.wixsite.com/mspss (freely available for research use with attribution). Igbo translation from Iorfa et al. (2020) MISS article e11061 (CC BY 4.0), items retrieved from supplementary DOCX Appendix 1. Subscales: SO=Significant Other (items 1,2,5,10), Fam=Family (items 3,4,8,11), Fri=Friends (items 6,7,9,12). Additional translations reviewed in Patel et al. (2018) https://doi.org/10.1186/s12955-018-0912-0."
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": ["mspss_r1","mspss_r2","mspss_r3","mspss_r4","mspss_r5","mspss_r6","mspss_r7"],
+      "question_head": "mspss_qhead"
+    },
+    "dimensions": [
+      {
+        "id": "significant_other",
+        "name": "Significant Other",
+        "abbreviation": "SO",
+        "description": "Perceived support from a special person. Mean of items 1, 2, 5, 10; range 1–7; higher = greater perceived support."
+      },
+      {
+        "id": "family",
+        "name": "Family",
+        "abbreviation": "Fam",
+        "description": "Perceived support from family members. Mean of items 3, 4, 8, 11; range 1–7; higher = greater perceived support."
+      },
+      {
+        "id": "friends",
+        "name": "Friends",
+        "abbreviation": "Fri",
+        "description": "Perceived support from friends. Mean of items 6, 7, 9, 12; range 1–7; higher = greater perceived support."
+      }
+    ],
+    "items": [
+      {"id": "mspss1",  "type": "likert", "text_key": "mspss1",  "dimension": "significant_other"},
+      {"id": "mspss2",  "type": "likert", "text_key": "mspss2",  "dimension": "significant_other"},
+      {"id": "mspss3",  "type": "likert", "text_key": "mspss3",  "dimension": "family"},
+      {"id": "mspss4",  "type": "likert", "text_key": "mspss4",  "dimension": "family"},
+      {"id": "mspss5",  "type": "likert", "text_key": "mspss5",  "dimension": "significant_other"},
+      {"id": "mspss6",  "type": "likert", "text_key": "mspss6",  "dimension": "friends"},
+      {"id": "mspss7",  "type": "likert", "text_key": "mspss7",  "dimension": "friends"},
+      {"id": "mspss8",  "type": "likert", "text_key": "mspss8",  "dimension": "family"},
+      {"id": "mspss9",  "type": "likert", "text_key": "mspss9",  "dimension": "friends"},
+      {"id": "mspss10", "type": "likert", "text_key": "mspss10", "dimension": "significant_other"},
+      {"id": "mspss11", "type": "likert", "text_key": "mspss11", "dimension": "family"},
+      {"id": "mspss12", "type": "likert", "text_key": "mspss12", "dimension": "friends"}
+    ],
+    "scoring": {
+      "significant_other": {
+        "description": "Mean of mspss1, mspss2, mspss5, mspss10. Range 1–7; higher = greater perceived support from significant other.",
+        "method": "mean_coded",
+        "items": ["mspss1", "mspss2", "mspss5", "mspss10"]
+      },
+      "family": {
+        "description": "Mean of mspss3, mspss4, mspss8, mspss11. Range 1–7; higher = greater perceived family support.",
+        "method": "mean_coded",
+        "items": ["mspss3", "mspss4", "mspss8", "mspss11"]
+      },
+      "friends": {
+        "description": "Mean of mspss6, mspss7, mspss9, mspss12. Range 1–7; higher = greater perceived support from friends.",
+        "method": "mean_coded",
+        "items": ["mspss6", "mspss7", "mspss9", "mspss12"]
+      },
+      "total": {
+        "description": "Mean of all 12 items. Range 1–7; higher = greater overall perceived social support.",
+        "method": "mean_coded",
+        "items": ["mspss1","mspss2","mspss3","mspss4","mspss5","mspss6","mspss7","mspss8","mspss9","mspss10","mspss11","mspss12"]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Perceived Social Support Report",
+      "footer_refs": [
+        "Zimet, G. D., Dahlem, N. W., Zimet, S. G., & Farley, G. K. (1988). The Multidimensional Scale of Perceived Social Support. Journal of Personality Assessment, 52(1), 30–41.",
+        "Iorfa, S. K., et al. (2020). Igbo translation and validation of the MSPSS. Measurement Instruments for the Social Sciences, 3, e11061. https://doi.org/10.5964/miss.11061"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "mspss_r1": "Very Strongly Disagree",
+      "mspss_r2": "Strongly Disagree",
+      "mspss_r3": "Mildly Disagree",
+      "mspss_r4": "Neutral",
+      "mspss_r5": "Mildly Agree",
+      "mspss_r6": "Strongly Agree",
+      "mspss_r7": "Very Strongly Agree",
+      "mspss_qhead": "We are interested in how you feel about the following statements. Read each statement carefully. Indicate how you feel about each statement.",
+      "mspss1":  "There is a special person who is around when I am in need.",
+      "mspss2":  "There is a special person with whom I can share joys and sorrows.",
+      "mspss3":  "My family really tries to help me.",
+      "mspss4":  "I get the emotional help & support I need from my family.",
+      "mspss5":  "I have a special person who is a real source of comfort to me.",
+      "mspss6":  "My friends really try to help me.",
+      "mspss7":  "I can count on my friends when things go wrong.",
+      "mspss8":  "I can talk about my problems with my family.",
+      "mspss9":  "I have friends with whom I can share my joys and sorrows.",
+      "mspss10": "There is a special person in my life who cares about my feelings.",
+      "mspss11": "My family is willing to help me make decisions.",
+      "mspss12": "I can talk about my problems with my friends.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "ig": {
+      "mspss_r1": "I jusiri ike kpam kpam",
+      "mspss_r2": "I jusiri ike",
+      "mspss_r3": "I juru aju ntakiri",
+      "mspss_r4": "Onweghi ebe i kwu akwu",
+      "mspss_r5": "I kwenyere ntakiri",
+      "mspss_r6": "I kwenye siri ike",
+      "mspss_r7": "I kwenyesiri ike kpam kpam",
+      "mspss_qhead": "Anyị nwere mmasị na etú i si na-eche banyere ihe ndị na-eso okwu a edeputara. Kpachara anya guo ma o bu gee nti na ihe nkwuputa a edeputara n'otu n'otu. Na-egosi etú ị na-eche banyere nkwupụta a n'otu n'otu.",
+      "mspss1":  "O nwere onye dikarisiri iche na ano m nso mgbe m no na mkpa.",
+      "mspss2":  "O nwere onye dikarisiri iche na eso m ekere oke na obi uto m ma o bu n'iru uju m.",
+      "mspss3":  "Ndi ezi n'ulo m na agbali si ike i nyere m aka.",
+      "mspss4":  "A na m enweta agba m ume na nkwado m choro na ezi n'ulo m.",
+      "mspss5":  "E nwere m onye dikarisiri iche na aburu m ezi nkasi obi.",
+      "mspss6":  "Ndi enyi m na-agbali n'ezie i nyere m aka.",
+      "mspss7":  "E nwere m ike i chekwube ma o bu i dabere na ndi enyi m mgbe ihe mebie.",
+      "mspss8":  "Mu na ndi ezi n'ulo m nwere ike ikpa maka nsogbu m.",
+      "mspss9":  "E nwere m ndi enyi nwere ike iso m kere oke mgbe m no na ọṅụ ma o bu mgbe m na eri uju.",
+      "mspss10": "O nwere onye dikarisiri iche na ndu m, ihe banyere m gbasara/na emetuta na obi.",
+      "mspss11": "Ndi ezi n'ulo m di njikere i nyere m aka ime mkpebi.",
+      "mspss12": "Mu na ndi enyi m nwere ike ikpa maka nsogbu m.",
+      "debrief": "Daalụ maka imecha ajụjụ ọnụ a."
+    }
+  }
+}

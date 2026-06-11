@@ -1,0 +1,129 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "AUTH",
+      "name": "Authenticity Scale",
+      "abbreviation": "AUTH",
+      "description": "11-item scale measuring authentic living, self-alienation, and resistance to external influence. Validated Russian adaptation of Wood et al.'s Authenticity Scale.",
+      "citation": "Nartova-Bochaver, S., Reznichenko, S., & Maltby, J. (2021). The Authenticity Scale: Validation in Russian culture. Frontiers in Psychology, 11. https://doi.org/10.3389/fpsyg.2020.609617",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2020.609617",
+      "version": "1.0",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default":  0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "AUTH_r1", "AUTH_r2", "AUTH_r3", "AUTH_r4",
+        "AUTH_r5", "AUTH_r6", "AUTH_r7"
+      ],
+      "question_head": "AUTH_head"
+    },
+    "dimensions": [
+      {
+        "id": "AL",
+        "name": "Authentic Living",
+        "description": "Acting in accordance with one's own values and beliefs"
+      },
+      {
+        "id": "AEI",
+        "name": "Accepting External Influence",
+        "description": "Tendency to be influenced by others' opinions and expectations"
+      },
+      {
+        "id": "SA",
+        "name": "Self-Alienation",
+        "description": "Lack of awareness of or connection to one's inner experience"
+      }
+    ],
+    "items": [
+      { "id": "AUTH001", "type": "likert", "text_key": "AUTH001", "dimension": "AEI" },
+      { "id": "AUTH002", "type": "likert", "text_key": "AUTH002", "dimension": "SA" },
+      { "id": "AUTH003", "type": "likert", "text_key": "AUTH003", "dimension": "AEI" },
+      { "id": "AUTH004", "type": "likert", "text_key": "AUTH004", "dimension": "AEI" },
+      { "id": "AUTH005", "type": "likert", "text_key": "AUTH005", "dimension": "AEI" },
+      { "id": "AUTH006", "type": "likert", "text_key": "AUTH006", "dimension": "SA" },
+      { "id": "AUTH007", "type": "likert", "text_key": "AUTH007", "dimension": "AL" },
+      { "id": "AUTH008", "type": "likert", "text_key": "AUTH008", "dimension": "AL" },
+      { "id": "AUTH009", "type": "likert", "text_key": "AUTH009", "dimension": "SA" },
+      { "id": "AUTH010", "type": "likert", "text_key": "AUTH010", "dimension": "AL" },
+      { "id": "AUTH011", "type": "likert", "text_key": "AUTH011", "dimension": "SA" }
+    ],
+    "scoring": {
+      "AL": {
+        "method": "mean_coded",
+        "description": "Authentic Living — mean of AL items (negatively worded, reverse-scored)",
+        "items": {
+          "AUTH007": -1,
+          "AUTH008": -1,
+          "AUTH010": -1
+        }
+      },
+      "AEI": {
+        "method": "mean_coded",
+        "description": "Accepting External Influence — mean of AEI items (item 1 moved from AL to AEI in Russian adaptation)",
+        "items": {
+          "AUTH001": 1,
+          "AUTH003": 1,
+          "AUTH004": 1,
+          "AUTH005": 1
+        }
+      },
+      "SA": {
+        "method": "mean_coded",
+        "description": "Self-Alienation — mean of SA items",
+        "items": {
+          "AUTH002": 1,
+          "AUTH006": 1,
+          "AUTH009": 1,
+          "AUTH011": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "AUTH_head": "Please rate how well each statement describes you.",
+      "AUTH_r1": "Does not describe me at all",
+      "AUTH_r2": "2",
+      "AUTH_r3": "3",
+      "AUTH_r4": "4",
+      "AUTH_r5": "5",
+      "AUTH_r6": "6",
+      "AUTH_r7": "Describes me very well",
+      "AUTH001": "I think it is better to be popular than to be yourself.",
+      "AUTH002": "I don't know how I really feel inside.",
+      "AUTH003": "I am strongly influenced by the opinions of others.",
+      "AUTH004": "I always feel I need to do what others expect me to do.",
+      "AUTH005": "Other people influence me greatly.",
+      "AUTH006": "I feel as if I don't know myself very well.",
+      "AUTH007": "I do not always succeed in upholding what I believe in.",
+      "AUTH008": "I can't say that I am true to myself in most situations.",
+      "AUTH009": "I feel out of touch with the \"real me.\"",
+      "AUTH010": "I don't live in accordance with my values and beliefs.",
+      "AUTH011": "I feel alienated from myself."
+    }
+  }
+}

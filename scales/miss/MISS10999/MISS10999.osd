@@ -1,0 +1,134 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Metacognitive Prospective Memory Inventory – Short Version",
+      "code": "MISS10999",
+      "abbreviation": "MPMI-s",
+      "description": "A 22-item short form of the Metacognitive Prospective Memory Inventory measuring self-reported prospective memory (PM) across three subscales: Prospective Memory Abilities (PMA, 8 items), Internal PM Strategies (PMSi, 7 items; mental/cognitive strategies), and External PM Strategies (PMSe, 7 items; external aids). 5-point frequency scale. Higher PMA scores indicate better PM abilities; higher PMSi and PMSe scores indicate more frequent strategy use. Validated in German with English translations provided in paper. Age-specific reference data recommended.",
+      "citation": "Rummel, J., Danner, D., & Kuhlmann, B. G. (2019). The short version of the Metacognitive Prospective Memory Inventory (MPMI-s): Factor structure, reliability, validity, and reference data. Measurement Instruments for the Social Sciences, 1, Article e10999. https://doi.org/10.1186/s42409-019-0008-6",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/10999",
+      "domain": "Cognitive",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-08",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English item translations verbatim from Table 1; German original in Additional File 1. 5-point scale: 1=Rarely to 5=Often. PMA items are mixed-direction: some are positively worded (good memory = agree = high score) and some negatively worded (forgetting = agree = low ability). Specifically pma1, pma4, pma5, pma8 describe forgetting/failure and should be reverse-coded so that higher score = better ability across all PMA items. PMSi and PMSe items all describe strategy use (higher = more frequent use; no reverse coding needed)."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["mpmi_r1", "mpmi_r2", "mpmi_r3", "mpmi_r4", "mpmi_r5"]
+    },
+    "dimensions": [
+      {
+        "id": "pma",
+        "name": "Prospective Memory Abilities",
+        "abbreviation": "PMA",
+        "description": "Self-rated prospective memory ability in everyday situations. Mean of 8 items (4 reverse-coded), range 1–5; higher = better prospective memory abilities."
+      },
+      {
+        "id": "pmsi",
+        "name": "Internal Prospective Memory Strategies",
+        "abbreviation": "PMSi",
+        "description": "Use of internal/mental strategies to remember future intentions. Mean of 7 items, range 1–5; higher = more frequent internal strategy use."
+      },
+      {
+        "id": "pmse",
+        "name": "External Prospective Memory Strategies",
+        "abbreviation": "PMSe",
+        "description": "Use of external aids (lists, calendars, reminders) to remember future intentions. Mean of 7 items, range 1–5; higher = more frequent external strategy use."
+      }
+    ],
+    "items": [
+      {"id": "pma1", "type": "likert", "text_key": "pma1", "dimension": "pma", "reverse": true},
+      {"id": "pma2", "type": "likert", "text_key": "pma2", "dimension": "pma"},
+      {"id": "pma3", "type": "likert", "text_key": "pma3", "dimension": "pma"},
+      {"id": "pma4", "type": "likert", "text_key": "pma4", "dimension": "pma", "reverse": true},
+      {"id": "pma5", "type": "likert", "text_key": "pma5", "dimension": "pma", "reverse": true},
+      {"id": "pma6", "type": "likert", "text_key": "pma6", "dimension": "pma"},
+      {"id": "pma7", "type": "likert", "text_key": "pma7", "dimension": "pma"},
+      {"id": "pma8", "type": "likert", "text_key": "pma8", "dimension": "pma", "reverse": true},
+      {"id": "pmsi1", "type": "likert", "text_key": "pmsi1", "dimension": "pmsi"},
+      {"id": "pmsi2", "type": "likert", "text_key": "pmsi2", "dimension": "pmsi"},
+      {"id": "pmsi3", "type": "likert", "text_key": "pmsi3", "dimension": "pmsi"},
+      {"id": "pmsi4", "type": "likert", "text_key": "pmsi4", "dimension": "pmsi"},
+      {"id": "pmsi5", "type": "likert", "text_key": "pmsi5", "dimension": "pmsi"},
+      {"id": "pmsi6", "type": "likert", "text_key": "pmsi6", "dimension": "pmsi"},
+      {"id": "pmsi7", "type": "likert", "text_key": "pmsi7", "dimension": "pmsi"},
+      {"id": "pmse1", "type": "likert", "text_key": "pmse1", "dimension": "pmse"},
+      {"id": "pmse2", "type": "likert", "text_key": "pmse2", "dimension": "pmse"},
+      {"id": "pmse3", "type": "likert", "text_key": "pmse3", "dimension": "pmse"},
+      {"id": "pmse4", "type": "likert", "text_key": "pmse4", "dimension": "pmse"},
+      {"id": "pmse5", "type": "likert", "text_key": "pmse5", "dimension": "pmse"},
+      {"id": "pmse6", "type": "likert", "text_key": "pmse6", "dimension": "pmse"},
+      {"id": "pmse7", "type": "likert", "text_key": "pmse7", "dimension": "pmse"}
+    ],
+    "scoring": {
+      "pma": {
+        "description": "Mean of 8 items with reverse coding for forgetting/failure items. Range 1–5; higher = better prospective memory abilities.",
+        "method": "mean_coded",
+        "items": {"pma1": -1, "pma2": 1, "pma3": 1, "pma4": -1, "pma5": -1, "pma6": 1, "pma7": 1, "pma8": -1}
+      },
+      "pmsi": {
+        "description": "Mean of 7 items. Range 1–5; higher = more frequent internal strategy use.",
+        "method": "mean_coded",
+        "items": ["pmsi1", "pmsi2", "pmsi3", "pmsi4", "pmsi5", "pmsi6", "pmsi7"]
+      },
+      "pmse": {
+        "description": "Mean of 7 items. Range 1–5; higher = more frequent external strategy use.",
+        "method": "mean_coded",
+        "items": ["pmse1", "pmse2", "pmse3", "pmse4", "pmse5", "pmse6", "pmse7"]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Metacognitive Prospective Memory Inventory – Short Version (MPMI-s) Report",
+      "footer_refs": [
+        "Rummel, J., Danner, D., & Kuhlmann, B. G. (2019). The short version of the Metacognitive Prospective Memory Inventory (MPMI-s): Factor structure, reliability, validity, and reference data. Measurement Instruments for the Social Sciences, 1, Article e10999. https://doi.org/10.1186/s42409-019-0008-6",
+        "Higher PMA scores indicate better prospective memory abilities. Higher PMSi and PMSe scores indicate more frequent strategy use."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "mpmi_r1": "Rarely",
+      "mpmi_r2": "Rather rarely",
+      "mpmi_r3": "Sometimes",
+      "mpmi_r4": "Rather often",
+      "mpmi_r5": "Often",
+      "instructions": "Please indicate how often each of the following statements applies to you.",
+      "pma1": "I forget to cancel contracts on time, like trial subscriptions for newspapers.",
+      "pma2": "I remember to run errands that need to be completed within a specific timeframe, like picking up my laundry from the dry cleaner before it closes.",
+      "pma3": "If I've borrowed something from someone for a while, I remember to give it back to that person the next time we see each other.",
+      "pma4": "I forget to call a friend again after I could not reach him or her on the first try.",
+      "pma5": "I receive overdue notifications because I forget to pay bills on time.",
+      "pma6": "I am able to remind myself of phone calls I need to make, such as calling a friend on his or her birthday.",
+      "pma7": "I remember my appointments which are coming up in a few days without writing them down.",
+      "pma8": "I do not send e-mails or letters on time, even when I wrote myself a reminder to do so.",
+      "pmsi1": "Even when I'm busy doing other things, I deliberately try to keep unfinished tasks in mind so that I do not forget them.",
+      "pmsi2": "In the morning, I go through the day's tasks in my head so that I do not forget to remember something.",
+      "pmsi3": "When I have to complete steps in a specific order, such as when I am baking, I visualize the sequence of steps before starting.",
+      "pmsi4": "After completing a task, I check once again whether I took care of everything, like turning off the stove after cooking.",
+      "pmsi5": "In my mind, I make a list of things that I still have to complete.",
+      "pmsi6": "I think of my to-do list while I am busy doing something else, like washing dishes or working out.",
+      "pmsi7": "Before I go shopping, I picture where the products I need are located in the store, so that I do not forget to pick them up when I walk through the aisles.",
+      "pmse1": "I write myself a to-do list to remind me of things that I still need to accomplish.",
+      "pmse2": "I write shopping lists.",
+      "pmse3": "When I have to take something with me the next morning, like a letter or a library book, I put it in my bag the evening before so that I will not forget it the next day.",
+      "pmse4": "I keep a calendar with all of my appointments.",
+      "pmse5": "To help me remember to do things, I stick \"Post-it\" notes in obvious places.",
+      "pmse6": "If I put things in particular places so that I'm reminded of tasks I need to do (for example, putting a full trash bag in front of the door so I do not forget to take it out).",
+      "pmse7": "For things that I need to do on a regular basis, I plan to do them at the same time each day (for example, always taking my medication in the evening before brushing my teeth).",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

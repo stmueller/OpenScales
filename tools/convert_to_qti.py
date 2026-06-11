@@ -167,20 +167,30 @@ def _xml_footer():
     return '</qti-assessment-item>\n'
 
 
+def _get_effective_scale(question, definition):
+    """Resolve the effective response scale opts for a likert question."""
+    rs_id = question.get("response_scale")
+    if rs_id:
+        rs = definition.get("response_scales", {}).get(rs_id)
+        if rs:
+            return rs
+    return definition.get("likert_options", {})
+
+
 def _build_likert_item(qid, text, question, definition, translations, scoring):
     """Build a likert item as qti-choice-interaction."""
-    likert_opts = definition.get("likert_options", {})
+    eff = _get_effective_scale(question, definition)
     labels = []
     if "likert_labels" in question:
         labels = [get_text(translations, lbl) for lbl in question["likert_labels"]]
-    elif likert_opts.get("labels"):
-        labels = [get_text(translations, lbl) for lbl in likert_opts["labels"]]
+    elif eff.get("labels"):
+        labels = [get_text(translations, lbl) for lbl in eff["labels"]]
     else:
-        points = question.get("likert_points", likert_opts.get("points", 5))
-        min_val = likert_opts.get("min", 1)
+        points = question.get("likert_points", eff.get("points", 5))
+        min_val = eff.get("min", 1)
         labels = [str(min_val + i) for i in range(points)]
 
-    min_val = likert_opts.get("min", 1)
+    min_val = eff.get("min", 1)
 
     xml = _xml_header(qid, strip_html(text)[:80])
     xml += (

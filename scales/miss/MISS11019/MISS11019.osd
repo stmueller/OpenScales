@@ -1,0 +1,74 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Interpersonal Trust Short Scale (English Adaptation)",
+      "code": "MISS11019",
+      "abbreviation": "KUSIV3",
+      "description": "A 3-item unidimensional ultra-short scale measuring interpersonal trust as a psychological disposition — the general tendency to believe that other people have good intentions. Adapted into English from the German KUSIV3. Item 2 is reverse-coded. Validated in English-speaking samples. Higher scores indicate greater interpersonal trust. Completion time approximately 30 seconds.",
+      "citation": "Nießen, D., Beierlein, C., Rammstedt, B., & Lechner, C. M. (2020). An English-language adaptation of the Interpersonal Trust Short Scale (KUSIV3). Measurement Instruments for the Social Sciences, 2, Article e11019. https://doi.org/10.1186/s42409-020-00016-1",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/11019",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-08",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English items verbatim from Table 2. Item kusiv2 is reverse-coded at scoring. 5-point scale: 1=Do not agree at all to 5=Completely agree."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["kusiv_r1", "kusiv_r2", "kusiv_r3", "kusiv_r4", "kusiv_r5"]
+    },
+    "dimensions": [
+      {
+        "id": "trust",
+        "name": "Interpersonal Trust",
+        "abbreviation": "TRUST",
+        "description": "General tendency to trust other people. Mean of 3 items (item 2 reverse-coded), range 1–5; higher = greater interpersonal trust."
+      }
+    ],
+    "items": [
+      {"id": "kusiv1", "type": "likert", "text_key": "kusiv1", "dimension": "trust"},
+      {"id": "kusiv2", "type": "likert", "text_key": "kusiv2", "dimension": "trust"},
+      {"id": "kusiv3", "type": "likert", "text_key": "kusiv3", "dimension": "trust"}
+    ],
+    "scoring": {
+      "trust": {
+        "description": "Mean of all 3 items (kusiv2 reverse-coded). Range 1–5; higher = greater interpersonal trust.",
+        "method": "mean_coded",
+        "items": {"kusiv1": 1, "kusiv2": -1, "kusiv3": 1}
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Interpersonal Trust Short Scale (KUSIV3) Report",
+      "footer_refs": [
+        "Nießen, D., Beierlein, C., Rammstedt, B., & Lechner, C. M. (2020). An English-language adaptation of the Interpersonal Trust Short Scale (KUSIV3). Measurement Instruments for the Social Sciences, 2, Article e11019. https://doi.org/10.1186/s42409-020-00016-1",
+        "Higher scores indicate greater interpersonal trust. Item 2 is reverse-coded."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "kusiv_r1": "Do not agree at all",
+      "kusiv_r2": "Hardly agree",
+      "kusiv_r3": "Somewhat agree",
+      "kusiv_r4": "Mostly agree",
+      "kusiv_r5": "Completely agree",
+      "instructions": "We would like to ask you some questions about your attitude towards other people. Please indicate the extent to which you agree or disagree with each of the statements below.",
+      "kusiv1": "I am convinced that most people have good intentions.",
+      "kusiv2": "You can't rely on anyone these days.",
+      "kusiv3": "In general, people can be trusted.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

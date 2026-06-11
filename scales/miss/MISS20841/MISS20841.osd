@@ -1,0 +1,73 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Relationship Disillusionment Scale – Short Form",
+      "code": "MISS20841",
+      "abbreviation": "RDS-3",
+      "description": "A 3-item unidimensional short form of the Relationship Disillusionment Scale (RDS), measuring the perception that one's romantic relationship is not meeting expectations and getting worse, and that one views one's partner increasingly negatively. Each item represents one of three core disillusionment facets: perceived deterioration, disappointment, and reduced positive regard. Developed and validated across three U.S. datasets; performs comparably to full-length RDS versions (11+ items). Higher scores indicate greater relationship disillusionment.",
+      "citation": "Dover, C. R., Reifman, A., Rezvani Shakib, M., Pickett, A. S. M., Oldham, C. R., & Niehuis, S. (2026). Shortening the Relationship Disillusionment Scale to a Three-Item Measure (RDS-3). Measurement Instruments for the Social Sciences, 8, Article e20841. https://doi.org/10.5964/miss.20841",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/20841",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-07",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English items verbatim from Dover et al. (2026). No reverse-coded items. 5-point Likert: 1=Strongly Disagree to 5=Strongly Agree. Scale targets adults in romantic relationships or marriages. Higher scores indicate greater relationship disillusionment."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["rds_r1", "rds_r2", "rds_r3", "rds_r4", "rds_r5"]
+    },
+    "dimensions": [
+      {
+        "id": "disillusionment",
+        "name": "Relationship Disillusionment",
+        "abbreviation": "RDS",
+        "description": "Unidimensional relationship disillusionment: perceived deterioration, disappointment, and reduced positive regard for partner. Mean of 3 items, range 1–5; higher = greater disillusionment."
+      }
+    ],
+    "items": [
+      {"id": "rds1", "type": "likert", "text_key": "rds1", "dimension": "disillusionment"},
+      {"id": "rds2", "type": "likert", "text_key": "rds2", "dimension": "disillusionment"},
+      {"id": "rds3", "type": "likert", "text_key": "rds3", "dimension": "disillusionment"}
+    ],
+    "scoring": {
+      "disillusionment": {
+        "description": "Mean of all 3 items. Range 1–5; higher = greater relationship disillusionment.",
+        "method": "mean_coded",
+        "items": ["rds1", "rds2", "rds3"]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Relationship Disillusionment Scale – Short Form (RDS-3) Report",
+      "footer_refs": [
+        "Dover, C. R., Reifman, A., Rezvani Shakib, M., Pickett, A. S. M., Oldham, C. R., & Niehuis, S. (2026). Shortening the Relationship Disillusionment Scale to a Three-Item Measure (RDS-3). Measurement Instruments for the Social Sciences, 8, Article e20841. https://doi.org/10.5964/miss.20841",
+        "Higher scores indicate greater relationship disillusionment."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "rds_r1": "Strongly disagree",
+      "rds_r2": "Disagree",
+      "rds_r3": "Neither agree nor disagree",
+      "rds_r4": "Agree",
+      "rds_r5": "Strongly agree",
+      "rds1": "Our relationship has changed for the worse.",
+      "rds2": "I am very disappointed in my marriage/relationship.",
+      "rds3": "I feel no longer quite as positively about my spouse/partner as I once did.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

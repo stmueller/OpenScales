@@ -1,0 +1,141 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "DASSY",
+      "name": "Depression Anxiety Stress Scales for Youth",
+      "abbreviation": "DASS-Y",
+      "description": "21-item scale measuring depression, anxiety, and stress symptoms in adolescents and children, adapted from the adult DASS. Respondents rate how true each statement was for them during the past week.",
+      "citation": "Szabo, M., & Lovibond, P. F. (2022). Development and psychometric properties of the DASS-Youth (DASS-Y): An extension of the Depression Anxiety Stress Scales (DASS) to adolescents and children. Frontiers in Psychology, 13. https://doi.org/10.3389/fpsyg.2022.766890",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2022.766890",
+      "version": "1.0",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "max": 3,
+      "labels": [
+        "DASSY_r0", "DASSY_r1", "DASSY_r2", "DASSY_r3"
+      ],
+      "question_head": "DASSY_head"
+    },
+    "dimensions": [
+      {
+        "id": "Depression",
+        "name": "Depression",
+        "description": "Dysphoria, hopelessness, anhedonia, and low self-worth"
+      },
+      {
+        "id": "Anxiety",
+        "name": "Anxiety",
+        "description": "Autonomic arousal, fear, and physical anxiety symptoms"
+      },
+      {
+        "id": "Stress",
+        "name": "Stress",
+        "description": "Tension, irritability, and difficulty relaxing"
+      }
+    ],
+    "items": [
+      { "id": "DASSY001", "type": "likert", "text_key": "DASSY001", "dimension": "Depression" },
+      { "id": "DASSY002", "type": "likert", "text_key": "DASSY002", "dimension": "Depression" },
+      { "id": "DASSY003", "type": "likert", "text_key": "DASSY003", "dimension": "Depression" },
+      { "id": "DASSY004", "type": "likert", "text_key": "DASSY004", "dimension": "Depression" },
+      { "id": "DASSY005", "type": "likert", "text_key": "DASSY005", "dimension": "Depression" },
+      { "id": "DASSY006", "type": "likert", "text_key": "DASSY006", "dimension": "Depression" },
+      { "id": "DASSY007", "type": "likert", "text_key": "DASSY007", "dimension": "Depression" },
+      { "id": "DASSY008", "type": "likert", "text_key": "DASSY008", "dimension": "Anxiety" },
+      { "id": "DASSY009", "type": "likert", "text_key": "DASSY009", "dimension": "Anxiety" },
+      { "id": "DASSY010", "type": "likert", "text_key": "DASSY010", "dimension": "Anxiety" },
+      { "id": "DASSY011", "type": "likert", "text_key": "DASSY011", "dimension": "Anxiety" },
+      { "id": "DASSY012", "type": "likert", "text_key": "DASSY012", "dimension": "Anxiety" },
+      { "id": "DASSY013", "type": "likert", "text_key": "DASSY013", "dimension": "Anxiety" },
+      { "id": "DASSY014", "type": "likert", "text_key": "DASSY014", "dimension": "Anxiety" },
+      { "id": "DASSY015", "type": "likert", "text_key": "DASSY015", "dimension": "Stress" },
+      { "id": "DASSY016", "type": "likert", "text_key": "DASSY016", "dimension": "Stress" },
+      { "id": "DASSY017", "type": "likert", "text_key": "DASSY017", "dimension": "Stress" },
+      { "id": "DASSY018", "type": "likert", "text_key": "DASSY018", "dimension": "Stress" },
+      { "id": "DASSY019", "type": "likert", "text_key": "DASSY019", "dimension": "Stress" },
+      { "id": "DASSY020", "type": "likert", "text_key": "DASSY020", "dimension": "Stress" },
+      { "id": "DASSY021", "type": "likert", "text_key": "DASSY021", "dimension": "Stress" }
+    ],
+    "scoring": {
+      "Depression": {
+        "method": "sum_coded",
+        "description": "Depression subscale — sum of items 1–7",
+        "items": {
+          "DASSY001": 1, "DASSY002": 1, "DASSY003": 1, "DASSY004": 1,
+          "DASSY005": 1, "DASSY006": 1, "DASSY007": 1
+        }
+      },
+      "Anxiety": {
+        "method": "sum_coded",
+        "description": "Anxiety subscale — sum of items 8–14",
+        "items": {
+          "DASSY008": 1, "DASSY009": 1, "DASSY010": 1, "DASSY011": 1,
+          "DASSY012": 1, "DASSY013": 1, "DASSY014": 1
+        }
+      },
+      "Stress": {
+        "method": "sum_coded",
+        "description": "Stress subscale — sum of items 15–21",
+        "items": {
+          "DASSY015": 1, "DASSY016": 1, "DASSY017": 1, "DASSY018": 1,
+          "DASSY019": 1, "DASSY020": 1, "DASSY021": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "DASSY_head": "Please read each statement and indicate how true it was for you during the past week.",
+      "DASSY_r0": "Not true",
+      "DASSY_r1": "Sometimes true",
+      "DASSY_r2": "Often true",
+      "DASSY_r3": "Very true",
+      "DASSY001": "I hated my life.",
+      "DASSY002": "I hated myself.",
+      "DASSY003": "I felt that life was terrible.",
+      "DASSY004": "I felt like I was no good.",
+      "DASSY005": "I could not stop feeling sad.",
+      "DASSY006": "I did not enjoy anything.",
+      "DASSY007": "There was nothing nice I could look forward to.",
+      "DASSY008": "I felt like I was about to panic.",
+      "DASSY009": "I felt terrified.",
+      "DASSY010": "I felt scared for no good reason.",
+      "DASSY011": "I could feel my heart beating.",
+      "DASSY012": "I had trouble breathing.",
+      "DASSY013": "My hands felt shaky.",
+      "DASSY014": "I felt dizzy, like I was about to faint.",
+      "DASSY015": "I got upset about little things.",
+      "DASSY016": "I was easily irritated.",
+      "DASSY017": "I found myself over-reacting to situations.",
+      "DASSY018": "I was easily annoyed.",
+      "DASSY019": "I was stressing about lots of things.",
+      "DASSY020": "I got annoyed when people interrupted.",
+      "DASSY021": "I found it difficult to relax."
+    }
+  }
+}

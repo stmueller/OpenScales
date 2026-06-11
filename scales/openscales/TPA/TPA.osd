@@ -1,0 +1,153 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "TPA",
+      "name": "Test of Passive Aggression",
+      "abbreviation": "TPA",
+      "description": "24-item scale measuring passive-aggressive behavior across two subscales: Self-Directed Passive Aggression (TPA-SD, 12 items) — behaviors that deprive oneself of positive experiences when emotionally distressed — and Other-Directed Passive Aggression (TPA-OD, 12 items) — withdrawal of support, care, or communication toward others. Items are rated on a 5-point scale estimating the probability of reacting in the described manner in general. Items 7 and 8 in the original numbering are reverse-scored (marked with * in the source).",
+      "citation": "Schanz, C. G., Equit, M., Schäfer, S. K., Käfer, M., Mattheus, H. K., & Michael, T. (2021). Development and psychometric properties of the test of passive aggression. Frontiers in Psychology, 12. https://doi.org/10.3389/fpsyg.2021.579183",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2021.579183",
+      "version": "1.0",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "The 24-item final version retains items 2,3,5,9,10,11,12,13,14,15,16,17,18,19,20,22,23,29,30,32,33,34,35,36 from the original 36-item pool. Items 7 and 8 (original numbering) are reverse-scored in the full item pool; item 7 (TPA-OD) was removed, leaving item 8 removed as well per exclusion criteria. The two items marked * (originally items 7 and 8) — item 7 was removed; item 8 (TPA-SD reverse) was also removed. No reverse-scored items remain in the final 24-item version."
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": ["TPA_r1", "TPA_r2", "TPA_r3", "TPA_r4", "TPA_r5"],
+      "question_head": "TPA_head"
+    },
+    "dimensions": [
+      {
+        "id": "TPA_SD",
+        "name": "Self-Directed Passive Aggression",
+        "description": "Passive-aggressive behaviors directed against oneself (e.g., denying pleasurable activities when distressed)"
+      },
+      {
+        "id": "TPA_OD",
+        "name": "Other-Directed Passive Aggression",
+        "description": "Passive-aggressive behaviors directed toward others (e.g., withdrawing support, ignoring needs)"
+      }
+    ],
+    "items": [
+      { "id": "TPA002", "type": "likert", "text_key": "TPA002", "dimension": "TPA_SD" },
+      { "id": "TPA003", "type": "likert", "text_key": "TPA003", "dimension": "TPA_OD" },
+      { "id": "TPA005", "type": "likert", "text_key": "TPA005", "dimension": "TPA_OD" },
+      { "id": "TPA009", "type": "likert", "text_key": "TPA009", "dimension": "TPA_SD" },
+      { "id": "TPA010", "type": "likert", "text_key": "TPA010", "dimension": "TPA_SD" },
+      { "id": "TPA011", "type": "likert", "text_key": "TPA011", "dimension": "TPA_OD" },
+      { "id": "TPA012", "type": "likert", "text_key": "TPA012", "dimension": "TPA_SD" },
+      { "id": "TPA013", "type": "likert", "text_key": "TPA013", "dimension": "TPA_OD" },
+      { "id": "TPA014", "type": "likert", "text_key": "TPA014", "dimension": "TPA_SD" },
+      { "id": "TPA015", "type": "likert", "text_key": "TPA015", "dimension": "TPA_SD" },
+      { "id": "TPA016", "type": "likert", "text_key": "TPA016", "dimension": "TPA_SD" },
+      { "id": "TPA017", "type": "likert", "text_key": "TPA017", "dimension": "TPA_SD" },
+      { "id": "TPA018", "type": "likert", "text_key": "TPA018", "dimension": "TPA_SD" },
+      { "id": "TPA019", "type": "likert", "text_key": "TPA019", "dimension": "TPA_OD" },
+      { "id": "TPA020", "type": "likert", "text_key": "TPA020", "dimension": "TPA_OD" },
+      { "id": "TPA022", "type": "likert", "text_key": "TPA022", "dimension": "TPA_OD" },
+      { "id": "TPA023", "type": "likert", "text_key": "TPA023", "dimension": "TPA_OD" },
+      { "id": "TPA029", "type": "likert", "text_key": "TPA029", "dimension": "TPA_OD" },
+      { "id": "TPA030", "type": "likert", "text_key": "TPA030", "dimension": "TPA_SD" },
+      { "id": "TPA032", "type": "likert", "text_key": "TPA032", "dimension": "TPA_SD" },
+      { "id": "TPA033", "type": "likert", "text_key": "TPA033", "dimension": "TPA_OD" },
+      { "id": "TPA034", "type": "likert", "text_key": "TPA034", "dimension": "TPA_OD" },
+      { "id": "TPA035", "type": "likert", "text_key": "TPA035", "dimension": "TPA_SD" },
+      { "id": "TPA036", "type": "likert", "text_key": "TPA036", "dimension": "TPA_OD" }
+    ],
+    "scoring": {
+      "TPA_SD": {
+        "method": "mean_coded",
+        "description": "Mean of Self-Directed Passive Aggression items; higher scores indicate greater self-directed passive aggression.",
+        "items": {
+          "TPA002": 1,
+          "TPA009": 1,
+          "TPA010": 1,
+          "TPA012": 1,
+          "TPA014": 1,
+          "TPA015": 1,
+          "TPA016": 1,
+          "TPA017": 1,
+          "TPA018": 1,
+          "TPA030": 1,
+          "TPA032": 1,
+          "TPA035": 1
+        }
+      },
+      "TPA_OD": {
+        "method": "mean_coded",
+        "description": "Mean of Other-Directed Passive Aggression items; higher scores indicate greater other-directed passive aggression.",
+        "items": {
+          "TPA003": 1,
+          "TPA005": 1,
+          "TPA011": 1,
+          "TPA013": 1,
+          "TPA019": 1,
+          "TPA020": 1,
+          "TPA022": 1,
+          "TPA023": 1,
+          "TPA029": 1,
+          "TPA033": 1,
+          "TPA034": 1,
+          "TPA036": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "TPA_head": "Please estimate the probability that you would react in the described manner in each of the following situations.",
+      "TPA_r1": "Very unlikely",
+      "TPA_r2": "Unlikely",
+      "TPA_r3": "Neither likely nor unlikely",
+      "TPA_r4": "Likely",
+      "TPA_r5": "Very likely",
+      "TPA002": "If I am successful at something, I overthink that success until I find something bad about it.",
+      "TPA003": "If I want to teach someone a lesson, I do not respond to his/her contact attempts and ignore his/her messages.",
+      "TPA005": "If someone has hurt my feelings, I refuse to support that person in difficult situations.",
+      "TPA009": "If I feel I have upset someone close to me, I subsequently forgo planned enjoyable activities, such as a good meal or wellness.",
+      "TPA010": "When someone takes time to support me in a stressful situation, I resist accepting the help because I cannot imagine truly deserving this support.",
+      "TPA011": "If I could help a person I do not like with a problem, I refuse from doing it.",
+      "TPA012": "When I plan my free time, I do not do what I assume is enjoyable for me, but rather I go by what other people, such as friends or family members, want me to do.",
+      "TPA013": "If I am angry at someone, I ignore that person and their needs.",
+      "TPA014": "If I am feeling down, I throw myself into taking care of everyday responsibilities, for e.g., work or housekeeping, instead of consciously doing something good for myself.",
+      "TPA015": "If I fail at something, I cancel planned leisure activities, for e.g., going to the cinema or going for shopping.",
+      "TPA016": "If I feel the need for interpersonal affection or an uplifting activity, I still continue in my daily routine instead of fulfilling that need.",
+      "TPA017": "If I have made a mistake, I refuse emotional support from other people afterwards.",
+      "TPA018": "If I am sad, I refuse to participate in activities that could cheer me up.",
+      "TPA019": "If someone at work/at university annoys me, I reduce my involvement in our teamwork.",
+      "TPA020": "If I am dissatisfied with someone's behavior, I do not address him/her directly, but react coolly or disinterestedly to his/her behavior.",
+      "TPA022": "If I am angry at someone, I will not provide that person with emotional support.",
+      "TPA023": "When someone important to me has hurt me emotionally, I suspend existing habits with him/her, such as going for walks together or talking on the phone regularly.",
+      "TPA029": "If I am upset with a friend, I exclude him/her from enjoyable activities, for e.g., from trips or going to the cinema.",
+      "TPA030": "Even though I've had a particular wish for years, such as going on vacation or trying a new leisure activity, I always miss out on opportunities to fulfill that wish.",
+      "TPA032": "When I doubt whether I have done a task well, I refuse to be complimented or rewarded by other people for this accomplishment.",
+      "TPA033": "After an argument with my partner, I refuse to show him/her any tenderness.",
+      "TPA034": "If I am upset with someone at work/at study, I do not give that person praise that they would have actually deserved.",
+      "TPA035": "When someone gives a kind comment to me, I am convinced that person just wants to be nice.",
+      "TPA036": "If a friend has disappointed me, I wait until he/she makes the first step toward me before getting back to him/her."
+    }
+  }
+}

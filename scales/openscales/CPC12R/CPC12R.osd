@@ -1,0 +1,147 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "CPC12R",
+      "name": "Compound Psychological Capital Scale – Revised",
+      "abbreviation": "CPC-12R",
+      "description": "12-item revised measure of psychological capital (PsyCap) comprising four facets: optimism, hope, self-efficacy, and resilience. Higher scores indicate greater psychological capital.",
+      "citation": "Dudášová, L., Procházka, J., Vaculík, M., & Lorenz, T. (2021). Measuring psychological capital: Revision of the Compound Psychological Capital Scale (CPC-12). PLOS ONE, 16(3), e0247114. https://doi.org/10.1371/journal.pone.0247114",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1371/journal.pone.0247114",
+      "version": "1.0",
+      "domain": "Well-being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default":  0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "labels": [
+        "CPC12R_r1", "CPC12R_r2", "CPC12R_r3",
+        "CPC12R_r4", "CPC12R_r5", "CPC12R_r6"
+      ],
+      "question_head": "CPC12R_head"
+    },
+    "dimensions": [
+      {
+        "id": "Optimism",
+        "name": "Optimism",
+        "description": "Positive expectations about the future"
+      },
+      {
+        "id": "Hope",
+        "name": "Hope",
+        "description": "Ability to find pathways to goals and motivate oneself to use them"
+      },
+      {
+        "id": "SelfEfficacy",
+        "name": "Self-Efficacy",
+        "description": "Confidence in one's ability to succeed at challenging tasks"
+      },
+      {
+        "id": "Resilience",
+        "name": "Resilience",
+        "description": "Ability to bounce back from adversity and persist despite difficulty"
+      }
+    ],
+    "items": [
+      { "id": "CPC12R001", "type": "likert", "text_key": "CPC12R001", "dimension": "Optimism" },
+      { "id": "CPC12R002", "type": "likert", "text_key": "CPC12R002", "dimension": "Optimism" },
+      { "id": "CPC12R003", "type": "likert", "text_key": "CPC12R003", "dimension": "Optimism" },
+      { "id": "CPC12R004", "type": "likert", "text_key": "CPC12R004", "dimension": "Hope" },
+      { "id": "CPC12R005", "type": "likert", "text_key": "CPC12R005", "dimension": "Hope" },
+      { "id": "CPC12R006", "type": "likert", "text_key": "CPC12R006", "dimension": "SelfEfficacy" },
+      { "id": "CPC12R007", "type": "likert", "text_key": "CPC12R007", "dimension": "SelfEfficacy" },
+      { "id": "CPC12R008", "type": "likert", "text_key": "CPC12R008", "dimension": "SelfEfficacy" },
+      { "id": "CPC12R009", "type": "likert", "text_key": "CPC12R009", "dimension": "Resilience" },
+      { "id": "CPC12R010", "type": "likert", "text_key": "CPC12R010", "dimension": "Resilience" },
+      { "id": "CPC12R011", "type": "likert", "text_key": "CPC12R011", "dimension": "Resilience" },
+      { "id": "CPC12R012", "type": "likert", "text_key": "CPC12R012", "dimension": "Resilience" }
+    ],
+    "scoring": {
+      "Optimism": {
+        "method": "mean_coded",
+        "description": "Optimism — mean of items 1–3",
+        "items": { "CPC12R001": 1, "CPC12R002": 1, "CPC12R003": 1 }
+      },
+      "Hope": {
+        "method": "mean_coded",
+        "description": "Hope — mean of items 4–5",
+        "items": { "CPC12R004": 1, "CPC12R005": 1 }
+      },
+      "SelfEfficacy": {
+        "method": "mean_coded",
+        "description": "Self-Efficacy — mean of items 6–8",
+        "items": { "CPC12R006": 1, "CPC12R007": 1, "CPC12R008": 1 }
+      },
+      "Resilience": {
+        "method": "mean_coded",
+        "description": "Resilience — mean of items 9–12",
+        "items": { "CPC12R009": 1, "CPC12R010": 1, "CPC12R011": 1, "CPC12R012": 1 }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "CPC12R_head": "Please indicate how much you agree or disagree with each statement.",
+      "CPC12R_r1": "Strongly disagree",
+      "CPC12R_r2": "Disagree",
+      "CPC12R_r3": "Slightly disagree",
+      "CPC12R_r4": "Slightly agree",
+      "CPC12R_r5": "Agree",
+      "CPC12R_r6": "Strongly agree",
+      "CPC12R001": "I am looking forward to the life ahead of me.",
+      "CPC12R002": "Overall, I expect more good things to happen to me than bad.",
+      "CPC12R003": "The future holds a lot of good in store for me.",
+      "CPC12R004": "If I should find myself in a jam, I could think of many ways to get out of it.",
+      "CPC12R005": "I can think of many ways to reach my current goals.",
+      "CPC12R006": "Right now, I see myself as being pretty successful.",
+      "CPC12R007": "I am confident that I could deal efficiently with unexpected events.",
+      "CPC12R008": "I can solve most problems if I invest the necessary effort.",
+      "CPC12R009": "I can remain calm when facing difficulties because I can rely on my coping abilities.",
+      "CPC12R010": "I consider myself a person who can withstand a lot.",
+      "CPC12R011": "Failure does not discourage me.",
+      "CPC12R012": "I tend to bounce back quickly after serious life difficulties."
+    },
+    "cs": {
+      "CPC12R_head": "Označte, do jaké míry souhlasíte či nesouhlasíte s každým výrokem.",
+      "CPC12R_r1": "silně nesouhlasím",
+      "CPC12R_r2": "nesouhlasím",
+      "CPC12R_r3": "spíše nesouhlasím",
+      "CPC12R_r4": "spíše souhlasím",
+      "CPC12R_r5": "souhlasím",
+      "CPC12R_r6": "silně souhlasím",
+      "CPC12R001": "Těším se na život, který mám před sebou.",
+      "CPC12R002": "Očekávám, že se mi stane více dobrých než špatných věcí.",
+      "CPC12R003": "Věřím, že mi budoucnost přinese mnoho dobrého.",
+      "CPC12R004": "Pokud bych se ocitl/a v nesnázích, dokázal/a bych přijít na více způsobů, jak se z nich dostat.",
+      "CPC12R005": "Napadá mě mnoho způsobů, jak dosáhnout svých cílů.",
+      "CPC12R006": "V této chvíli se pokládám za poměrně úspěšného/úspěšnou.",
+      "CPC12R007": "Věřím, že si dokážu s neočekávanými událostmi poradit.",
+      "CPC12R008": "Pokud investuji potřebné úsilí, zvládnu vyřešit většinu problémů, se kterými se setkám.",
+      "CPC12R009": "Dokážu zachovat klid i v obtížných situacích, protože se mohu spolehnout, že je zvládnu.",
+      "CPC12R010": "Považuji se za člověka, který hodně vydrží.",
+      "CPC12R011": "Neúspěch mě neodradí.",
+      "CPC12R012": "Po vážných životních těžkostech se dám zase rychle do pořádku."
+    }
+  }
+}

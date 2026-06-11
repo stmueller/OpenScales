@@ -1,0 +1,149 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "DFQ18",
+      "name": "Divine Forgiveness Questionnaire",
+      "abbreviation": "DFQ-18",
+      "description": "18-item scale measuring the experience of God's forgiveness across Abrahamic religions, comprising three subscales: Moral Fortification (items 1-7), Self-Acceptance (items 8-13), and Absolution (items 14-18). No reverse-scored items.",
+      "citation": "Bartholomaeus, J., Mandrell, J., & Strelan, P. (2025). The Divine Forgiveness Questionnaire: Developing and validating a measure of the experience of God's forgiveness across the Abrahamic religions. Psychology of Religion and Spirituality. https://doi.org/10.1037/rel0000603",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1037/rel0000603",
+      "version": "1.0",
+      "domain": "Other"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "labels": ["DFQ18_r1", "DFQ18_r2", "DFQ18_r3", "DFQ18_r4", "DFQ18_r5", "DFQ18_r6"],
+      "question_head": "DFQ18_head"
+    },
+    "dimensions": [
+      {
+        "id": "moral_fortification",
+        "name": "Moral Fortification",
+        "description": "God's forgiveness strengthens moral character and accountability (items 1-7)"
+      },
+      {
+        "id": "self_acceptance",
+        "name": "Self-Acceptance",
+        "description": "God's forgiveness promotes self-acceptance and emotional peace (items 8-13)"
+      },
+      {
+        "id": "absolution",
+        "name": "Absolution",
+        "description": "God's forgiveness removes sin, guilt, and shame (items 14-18)"
+      },
+      {
+        "id": "total",
+        "name": "Total Divine Forgiveness",
+        "description": "Mean of all items reflecting overall experience of divine forgiveness"
+      }
+    ],
+    "items": [
+      {"id": "DFQ18001", "type": "likert", "text_key": "DFQ18001", "dimension": "moral_fortification"},
+      {"id": "DFQ18002", "type": "likert", "text_key": "DFQ18002", "dimension": "moral_fortification"},
+      {"id": "DFQ18003", "type": "likert", "text_key": "DFQ18003", "dimension": "moral_fortification"},
+      {"id": "DFQ18004", "type": "likert", "text_key": "DFQ18004", "dimension": "moral_fortification"},
+      {"id": "DFQ18005", "type": "likert", "text_key": "DFQ18005", "dimension": "moral_fortification"},
+      {"id": "DFQ18006", "type": "likert", "text_key": "DFQ18006", "dimension": "moral_fortification"},
+      {"id": "DFQ18007", "type": "likert", "text_key": "DFQ18007", "dimension": "moral_fortification"},
+      {"id": "DFQ18008", "type": "likert", "text_key": "DFQ18008", "dimension": "self_acceptance"},
+      {"id": "DFQ18009", "type": "likert", "text_key": "DFQ18009", "dimension": "self_acceptance"},
+      {"id": "DFQ18010", "type": "likert", "text_key": "DFQ18010", "dimension": "self_acceptance"},
+      {"id": "DFQ18011", "type": "likert", "text_key": "DFQ18011", "dimension": "self_acceptance"},
+      {"id": "DFQ18012", "type": "likert", "text_key": "DFQ18012", "dimension": "self_acceptance"},
+      {"id": "DFQ18013", "type": "likert", "text_key": "DFQ18013", "dimension": "self_acceptance"},
+      {"id": "DFQ18014", "type": "likert", "text_key": "DFQ18014", "dimension": "absolution"},
+      {"id": "DFQ18015", "type": "likert", "text_key": "DFQ18015", "dimension": "absolution"},
+      {"id": "DFQ18016", "type": "likert", "text_key": "DFQ18016", "dimension": "absolution"},
+      {"id": "DFQ18017", "type": "likert", "text_key": "DFQ18017", "dimension": "absolution"},
+      {"id": "DFQ18018", "type": "likert", "text_key": "DFQ18018", "dimension": "absolution"}
+    ],
+    "scoring": {
+      "moral_fortification": {
+        "method": "mean_coded",
+        "description": "Mean of items 1-7; higher scores indicate stronger moral fortification through divine forgiveness",
+        "items": {
+          "DFQ18001": 1, "DFQ18002": 1, "DFQ18003": 1, "DFQ18004": 1,
+          "DFQ18005": 1, "DFQ18006": 1, "DFQ18007": 1
+        }
+      },
+      "self_acceptance": {
+        "method": "mean_coded",
+        "description": "Mean of items 8-13; higher scores indicate greater self-acceptance through divine forgiveness",
+        "items": {
+          "DFQ18008": 1, "DFQ18009": 1, "DFQ18010": 1,
+          "DFQ18011": 1, "DFQ18012": 1, "DFQ18013": 1
+        }
+      },
+      "absolution": {
+        "method": "mean_coded",
+        "description": "Mean of items 14-18; higher scores indicate greater sense of absolution through divine forgiveness",
+        "items": {
+          "DFQ18014": 1, "DFQ18015": 1, "DFQ18016": 1, "DFQ18017": 1, "DFQ18018": 1
+        }
+      },
+      "total": {
+        "method": "mean_coded",
+        "description": "Mean of all 18 items; higher scores indicate stronger overall experience of divine forgiveness",
+        "items": {
+          "DFQ18001": 1, "DFQ18002": 1, "DFQ18003": 1, "DFQ18004": 1,
+          "DFQ18005": 1, "DFQ18006": 1, "DFQ18007": 1, "DFQ18008": 1,
+          "DFQ18009": 1, "DFQ18010": 1, "DFQ18011": 1, "DFQ18012": 1,
+          "DFQ18013": 1, "DFQ18014": 1, "DFQ18015": 1, "DFQ18016": 1,
+          "DFQ18017": 1, "DFQ18018": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "DFQ18_head": "The following statements relate to the experience of God's forgiveness. Please indicate the extent to which these statements align with your experience. Please be as honest as you can and remember there are no right or wrong answers. God's forgiveness...",
+      "DFQ18_r1": "Strongly disagree",
+      "DFQ18_r2": "Disagree",
+      "DFQ18_r3": "Slightly disagree",
+      "DFQ18_r4": "Slightly agree",
+      "DFQ18_r5": "Agree",
+      "DFQ18_r6": "Strongly agree",
+      "DFQ18001": "God's forgiveness helps me to be a better person.",
+      "DFQ18002": "God's forgiveness builds my faith.",
+      "DFQ18003": "God's forgiveness helps me to acknowledge my transgressions.",
+      "DFQ18004": "God's forgiveness holds me accountable.",
+      "DFQ18005": "God's forgiveness helps me to be honest.",
+      "DFQ18006": "God's forgiveness gives me strength.",
+      "DFQ18007": "God's forgiveness humbles me.",
+      "DFQ18008": "When God forgives me, I am able to let go.",
+      "DFQ18009": "When God forgives me, I am accepted.",
+      "DFQ18010": "When God forgives me, I am able to love myself.",
+      "DFQ18011": "When God forgives me, I can forgive myself.",
+      "DFQ18012": "When God forgives me, I am at peace.",
+      "DFQ18013": "When God forgives me, my mental health improves.",
+      "DFQ18014": "When God forgives me, my sin is abolished.",
+      "DFQ18015": "When God forgives me, my sin is removed.",
+      "DFQ18016": "When God forgives me, my guilt is erased.",
+      "DFQ18017": "When God forgives me, I forget my sins.",
+      "DFQ18018": "When God forgives me, my shame is removed."
+    }
+  }
+}

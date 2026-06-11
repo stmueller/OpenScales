@@ -14,7 +14,7 @@ Open Scale Definition (OSD) is a JSON-based specification for defining psycholog
 - Rich question types (Likert, VAS, multiple choice, grids, short/long answer, and more)
 - Conversion to REDCap, Qualtrics, LimeSurvey, PsyToolkit, QTI 3.0, and Surveydown
 
-See [SPECIFICATION.md](documentation/SPECIFICATION.md) for the full format specification (v1.0.12).
+See [SPECIFICATION.md](documentation/SPECIFICATION.md) for the full format specification (v1.0.14).
 
 ## Repository Structure
 
@@ -32,6 +32,8 @@ OpenScales/
       GAD7/GAD7.osd           — Generalized Anxiety Disorder-7
       ...
     phenx/                    — 410 PhenX Toolkit scales (auto-converted)
+    miss/                     — Scales from Measurement Instruments for the Social Sciences journal
+      20841/20841.osd         — Indexed by MISS article ID; DOI: 10.5964/miss.{id}
     restricted/               — 6 scales with research-use restrictions
   tools/
     convert_to_redcap.py      — Export to REDCap Data Dictionary CSV
@@ -121,6 +123,7 @@ python3 tools/validate_scale.py scales/openscales/PHQ9/
 |------------|-------|-------------|
 | **Open Scales** | 171 | Fully open scales — public domain, Creative Commons, or explicitly free to use |
 | **PhenX Toolkit** | 410 | Scales from the [PhenX Toolkit](https://www.phenxtoolkit.org/), auto-converted to OSD |
+| **MISS** | — | Scales from [*Measurement Instruments for the Social Sciences*](https://miss.psychopen.eu/) (CC BY 4.0); indexed by article ID |
 | **Restricted** | 6 | Scales with research-use restrictions (free for research, commercial use may require permission) |
 
 ## Compatible Runners

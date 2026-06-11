@@ -1,0 +1,95 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "RFQR7",
+      "name": "Reflective Functioning Questionnaire – Revised-7",
+      "abbreviation": "RFQ-R-7",
+      "description": "7-item scale measuring hypomentalization — impaired ability to reflect on mental states in oneself and others. Higher scores indicate poorer reflective functioning.",
+      "citation": "Horváth, Z., Demetrovics, O., Paksi, B., Unoka, Z., & Demetrovics, Z. (2023). The Reflective Functioning Questionnaire-Revised-7 (RFQ-R-7): A new measurement model assessing hypomentalization. PLoS ONE, 18(2). https://doi.org/10.1371/journal.pone.0282000",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1371/journal.pone.0282000",
+      "version": "1.0",
+      "domain": "Self & Coping"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default":  0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "RFQR7_r1", "RFQR7_r2", "RFQR7_r3", "RFQR7_r4",
+        "RFQR7_r5", "RFQR7_r6", "RFQR7_r7"
+      ],
+      "question_head": "RFQR7_head"
+    },
+    "dimensions": [
+      {
+        "id": "Hypomentalization",
+        "name": "Hypomentalization",
+        "description": "Impaired reflective functioning — difficulty understanding mental states in self and others"
+      }
+    ],
+    "items": [
+      { "id": "RFQR7001", "type": "likert", "text_key": "RFQR7001", "dimension": "Hypomentalization" },
+      { "id": "RFQR7002", "type": "likert", "text_key": "RFQR7002", "dimension": "Hypomentalization" },
+      { "id": "RFQR7003", "type": "likert", "text_key": "RFQR7003", "dimension": "Hypomentalization" },
+      { "id": "RFQR7004", "type": "likert", "text_key": "RFQR7004", "dimension": "Hypomentalization" },
+      { "id": "RFQR7005", "type": "likert", "text_key": "RFQR7005", "dimension": "Hypomentalization" },
+      { "id": "RFQR7006", "type": "likert", "text_key": "RFQR7006", "dimension": "Hypomentalization" },
+      { "id": "RFQR7007", "type": "likert", "text_key": "RFQR7007", "dimension": "Hypomentalization" }
+    ],
+    "scoring": {
+      "Hypomentalization": {
+        "method": "sum_coded",
+        "description": "Total hypomentalization score (range 7–49). Higher = poorer reflective functioning.",
+        "items": {
+          "RFQR7001": 1,
+          "RFQR7002": 1,
+          "RFQR7003": 1,
+          "RFQR7004": 1,
+          "RFQR7005": 1,
+          "RFQR7006": 1,
+          "RFQR7007": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "RFQR7_head": "Please read each statement and indicate how much you agree or disagree. Answer based on your first reaction — do not think too long about your response.",
+      "RFQR7_r1": "Strongly disagree",
+      "RFQR7_r2": "2",
+      "RFQR7_r3": "3",
+      "RFQR7_r4": "4",
+      "RFQR7_r5": "5",
+      "RFQR7_r6": "6",
+      "RFQR7_r7": "Strongly agree",
+      "RFQR7001": "People's thoughts are a mystery to me.",
+      "RFQR7002": "I don't always know why I do what I do.",
+      "RFQR7003": "When I get angry I say things without really knowing why I am saying them.",
+      "RFQR7004": "When I get angry I say things that I later regret.",
+      "RFQR7005": "If I feel insecure I can behave in ways that put others' backs up.",
+      "RFQR7006": "Sometimes I do things without really knowing why.",
+      "RFQR7007": "Strong feelings often cloud my thinking."
+    }
+  }
+}

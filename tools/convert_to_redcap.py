@@ -155,28 +155,38 @@ def make_row(**kwargs):
     return row
 
 
+def get_effective_scale(question, definition):
+    """Resolve the effective response scale opts for a likert question."""
+    rs_id = question.get("response_scale")
+    if rs_id:
+        rs = definition.get("response_scales", {}).get(rs_id)
+        if rs:
+            return rs
+    return definition.get("likert_options", {})
+
+
 def get_likert_labels(question, definition, translations):
     """Get likert labels for a question (per-item or scale-level)."""
     if "likert_labels" in question:
         return [get_text(translations, lbl) for lbl in question["likert_labels"]]
-    likert_opts = definition.get("likert_options", {})
-    if likert_opts.get("labels"):
-        return [get_text(translations, lbl) for lbl in likert_opts["labels"]]
-    points = question.get("likert_points", likert_opts.get("points", 5))
-    min_val = likert_opts.get("min", 1)
+    eff = get_effective_scale(question, definition)
+    if eff.get("labels"):
+        return [get_text(translations, lbl) for lbl in eff["labels"]]
+    points = question.get("likert_points", eff.get("points", 5))
+    min_val = eff.get("min", 1)
     return [str(min_val + i) for i in range(points)]
 
 
 def get_likert_min(question, definition):
     """Get the minimum numeric value for likert scoring."""
-    return definition.get("likert_options", {}).get("min", 1)
+    return get_effective_scale(question, definition).get("min", 1)
 
 
 def get_likert_max(question, definition):
     """Get the maximum numeric value for likert scoring."""
-    likert_opts = definition.get("likert_options", {})
-    points = question.get("likert_points", likert_opts.get("points", 5))
-    min_val = likert_opts.get("min", 1)
+    eff = get_effective_scale(question, definition)
+    points = question.get("likert_points", eff.get("points", 5))
+    min_val = eff.get("min", 1)
     return min_val + points - 1
 
 
@@ -577,14 +587,16 @@ def _identify_matrix_groups(questions, definition):
     """Identify contiguous likert groups for REDCap matrix display."""
     groups = {}
     current_group = []
-    current_points = None
+    current_key = None
     group_counter = 0
 
     for q in questions:
         if q.get("type") == "likert":
-            points = q.get("likert_points",
-                           definition.get("likert_options", {}).get("points", 5))
-            if current_group and points == current_points:
+            eff = get_effective_scale(q, definition)
+            points = q.get("likert_points", eff.get("points", 5))
+            rs_id = q.get("response_scale")
+            key = (points, rs_id)
+            if current_group and key == current_key:
                 current_group.append(q["id"])
             else:
                 if len(current_group) > 1:
@@ -593,7 +605,7 @@ def _identify_matrix_groups(questions, definition):
                     for qid in current_group:
                         groups[qid] = group_name
                 current_group = [q["id"]]
-                current_points = points
+                current_key = key
         else:
             if len(current_group) > 1:
                 group_counter += 1
@@ -601,7 +613,7 @@ def _identify_matrix_groups(questions, definition):
                 for qid in current_group:
                     groups[qid] = group_name
             current_group = []
-            current_points = None
+            current_key = None
 
     # Handle trailing group
     if len(current_group) > 1:

@@ -1,0 +1,307 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "AIAP",
+      "name": "AI Attitudes and Perceptions Scale",
+      "abbreviation": "AIAP",
+      "description": "Multi-factor instrument measuring perceptions of and attitudes toward AI across 9 subscales: Transparency (4 items), Intelligence (8 items), Interdependence (4 items), Autonomy (5 items), Conspiracy Beliefs (10 items), Threat to Self (3 items), Threat to Society (3 items), Lack of Control (2 items), and Powerlessness (3 items). Each subscale is toggled via a show_* parameter; section-level visible_when hides the entire block when disabled.",
+      "citation": "Zhao, Q., van Prooijen, J. W., Jiang, X., & Spadaro, G. (2025). Suspicious of AI? Perceived autonomy and interdependence predict AI-related conspiracy beliefs. British Journal of Social Psychology, 64(2). https://doi.org/10.1111/bjso.12883",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1111/bjso.12883",
+      "version": "1.0",
+      "domain": "Technology"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order within sections"
+      },
+      "show_transparency": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include Transparency of AI subscale (4 items)"
+      },
+      "show_intelligence": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include Intelligence of AI subscale (8 items)"
+      },
+      "show_interdependence": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include Interdependence of AI subscale (4 items)"
+      },
+      "show_autonomy": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include Autonomy of AI subscale (5 items)"
+      },
+      "show_conspiracy": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include AI Conspiracy Beliefs subscale (10 items)"
+      },
+      "show_threat_self": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include Perceived Threat to Self subscale (3 items)"
+      },
+      "show_threat_society": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include Perceived Threat to Society subscale (3 items)"
+      },
+      "show_lack_control": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include Lack of Control subscale (2 items)"
+      },
+      "show_powerlessness": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Include Powerlessness subscale (3 items)"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "AIAP_ra1", "AIAP_ra2", "AIAP_ra3", "AIAP_ra4",
+        "AIAP_ra5", "AIAP_ra6", "AIAP_ra7"
+      ],
+      "question_head": "AIAP_head_agree"
+    },
+    "dimensions": [
+      {
+        "id": "Transparency",
+        "name": "Transparency",
+        "description": "Perceived transparency of AI decision-making for lay people"
+      },
+      {
+        "id": "Intelligence",
+        "name": "Intelligence",
+        "description": "Perceived AI intelligence relative to humans"
+      },
+      {
+        "id": "Interdependence",
+        "name": "Interdependence",
+        "description": "Perceived alignment of AI and human interests"
+      },
+      {
+        "id": "Autonomy",
+        "name": "Autonomy",
+        "description": "Perceived ability of AI to operate independently of humans"
+      },
+      {
+        "id": "Conspiracy",
+        "name": "Conspiracy",
+        "description": "Belief that AI is used for surveillance, manipulation, or control by powerful groups"
+      },
+      {
+        "id": "ThreatSelf",
+        "name": "Threat to Self",
+        "description": "Perceived personal threat from AI"
+      },
+      {
+        "id": "ThreatSociety",
+        "name": "Threat to Society",
+        "description": "Perceived societal threat from AI"
+      },
+      {
+        "id": "LackControl",
+        "name": "Lack of Control",
+        "description": "Perceived loss of control over important life domains due to AI"
+      },
+      {
+        "id": "Powerlessness",
+        "name": "Powerlessness",
+        "description": "Feelings of powerlessness, hopelessness, and helplessness due to AI"
+      }
+    ],
+    "items": [
+      { "id": "AIAPsec1",  "type": "section", "text_key": "AIAPsec_transparency",   "visible_when": "show_transparency" },
+      { "id": "AIAPT001", "type": "likert",  "text_key": "AIAPT001", "dimension": "Transparency",   "question_head": "AIAP_head_agree" },
+      { "id": "AIAPT002", "type": "likert",  "text_key": "AIAPT002", "dimension": "Transparency",   "question_head": "AIAP_head_agree" },
+      { "id": "AIAPT003", "type": "likert",  "text_key": "AIAPT003", "dimension": "Transparency",   "question_head": "AIAP_head_agree" },
+      { "id": "AIAPT004", "type": "likert",  "text_key": "AIAPT004", "dimension": "Transparency",   "question_head": "AIAP_head_agree" },
+
+      { "id": "AIAPsec2",  "type": "section", "text_key": "AIAPsec_intelligence",   "visible_when": "show_intelligence" },
+      { "id": "AIAPI001", "type": "likert",  "text_key": "AIAPI001", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
+      { "id": "AIAPI002", "type": "likert",  "text_key": "AIAPI002", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
+      { "id": "AIAPI003", "type": "likert",  "text_key": "AIAPI003", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
+      { "id": "AIAPI004", "type": "likert",  "text_key": "AIAPI004", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
+      { "id": "AIAPI005", "type": "likert",  "text_key": "AIAPI005", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
+      { "id": "AIAPI006", "type": "likert",  "text_key": "AIAPI006", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
+      { "id": "AIAPI007", "type": "likert",  "text_key": "AIAPI007", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
+      { "id": "AIAPI008", "type": "likert",  "text_key": "AIAPI008", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
+
+      { "id": "AIAPsec3",  "type": "section", "text_key": "AIAPsec_interdependence", "visible_when": "show_interdependence" },
+      { "id": "AIAPN001", "type": "likert",  "text_key": "AIAPN001", "dimension": "Interdependence", "question_head": "AIAP_head_agree" },
+      { "id": "AIAPN002", "type": "likert",  "text_key": "AIAPN002", "dimension": "Interdependence", "question_head": "AIAP_head_agree" },
+      { "id": "AIAPN003", "type": "likert",  "text_key": "AIAPN003", "dimension": "Interdependence", "question_head": "AIAP_head_agree" },
+      { "id": "AIAPN004", "type": "likert",  "text_key": "AIAPN004", "dimension": "Interdependence", "question_head": "AIAP_head_agree" },
+
+      { "id": "AIAPsec4",  "type": "section", "text_key": "AIAPsec_autonomy",        "visible_when": "show_autonomy" },
+      { "id": "AIAPA001", "type": "likert",  "text_key": "AIAPA001", "dimension": "Autonomy",       "question_head": "AIAP_head_agree" },
+      { "id": "AIAPA002", "type": "likert",  "text_key": "AIAPA002", "dimension": "Autonomy",       "question_head": "AIAP_head_agree" },
+      { "id": "AIAPA003", "type": "likert",  "text_key": "AIAPA003", "dimension": "Autonomy",       "question_head": "AIAP_head_agree" },
+      { "id": "AIAPA004", "type": "likert",  "text_key": "AIAPA004", "dimension": "Autonomy",       "question_head": "AIAP_head_agree" },
+      { "id": "AIAPA005", "type": "likert",  "text_key": "AIAPA005", "dimension": "Autonomy",       "question_head": "AIAP_head_agree" },
+
+      { "id": "AIAPsec5",  "type": "section", "text_key": "AIAPsec_conspiracy",      "visible_when": "show_conspiracy" },
+      { "id": "AIAPC001", "type": "likert",  "text_key": "AIAPC001", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+      { "id": "AIAPC002", "type": "likert",  "text_key": "AIAPC002", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+      { "id": "AIAPC003", "type": "likert",  "text_key": "AIAPC003", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+      { "id": "AIAPC004", "type": "likert",  "text_key": "AIAPC004", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+      { "id": "AIAPC005", "type": "likert",  "text_key": "AIAPC005", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+      { "id": "AIAPC006", "type": "likert",  "text_key": "AIAPC006", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+      { "id": "AIAPC007", "type": "likert",  "text_key": "AIAPC007", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+      { "id": "AIAPC008", "type": "likert",  "text_key": "AIAPC008", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+      { "id": "AIAPC009", "type": "likert",  "text_key": "AIAPC009", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+      { "id": "AIAPC010", "type": "likert",  "text_key": "AIAPC010", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+
+      { "id": "AIAPsec6",  "type": "section", "text_key": "AIAPsec_threat_self",     "visible_when": "show_threat_self" },
+      { "id": "AIAPS001", "type": "likert",  "text_key": "AIAPS001", "dimension": "ThreatSelf",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+      { "id": "AIAPS002", "type": "likert",  "text_key": "AIAPS002", "dimension": "ThreatSelf",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+      { "id": "AIAPS003", "type": "likert",  "text_key": "AIAPS003", "dimension": "ThreatSelf",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+
+      { "id": "AIAPsec7",  "type": "section", "text_key": "AIAPsec_threat_society",  "visible_when": "show_threat_society" },
+      { "id": "AIAPG001", "type": "likert",  "text_key": "AIAPG001", "dimension": "ThreatSociety",  "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+      { "id": "AIAPG002", "type": "likert",  "text_key": "AIAPG002", "dimension": "ThreatSociety",  "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+      { "id": "AIAPG003", "type": "likert",  "text_key": "AIAPG003", "dimension": "ThreatSociety",  "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
+
+      { "id": "AIAPsec8",  "type": "section", "text_key": "AIAPsec_lack_control",    "visible_when": "show_lack_control" },
+      { "id": "AIAPL001", "type": "likert",  "text_key": "AIAPL001", "dimension": "LackControl",    "question_head": "AIAP_head_experience" },
+      { "id": "AIAPL002", "type": "likert",  "text_key": "AIAPL002", "dimension": "LackControl",    "question_head": "AIAP_head_experience" },
+
+      { "id": "AIAPsec9",  "type": "section", "text_key": "AIAPsec_powerlessness",   "visible_when": "show_powerlessness" },
+      { "id": "AIAPP001", "type": "likert",  "text_key": "AIAPP001", "dimension": "Powerlessness",  "question_head": "AIAP_head_experience" },
+      { "id": "AIAPP002", "type": "likert",  "text_key": "AIAPP002", "dimension": "Powerlessness",  "question_head": "AIAP_head_experience" },
+      { "id": "AIAPP003", "type": "likert",  "text_key": "AIAPP003", "dimension": "Powerlessness",  "question_head": "AIAP_head_experience" }
+    ],
+    "scoring": {
+      "Transparency": {
+        "method": "mean_coded",
+        "description": "Transparency — mean of 4 items (higher = more perceived transparency)",
+        "items": { "AIAPT001": 1, "AIAPT002": 1, "AIAPT003": 1, "AIAPT004": 1 }
+      },
+      "Intelligence": {
+        "method": "mean_coded",
+        "description": "Intelligence — mean of 8 items (higher = AI seen as more capable than humans)",
+        "items": { "AIAPI001": 1, "AIAPI002": 1, "AIAPI003": 1, "AIAPI004": 1, "AIAPI005": 1, "AIAPI006": 1, "AIAPI007": 1, "AIAPI008": 1 }
+      },
+      "Interdependence": {
+        "method": "mean_coded",
+        "description": "Interdependence — mean of 4 items (higher = AI seen as more aligned with human interests)",
+        "items": { "AIAPN001": 1, "AIAPN002": 1, "AIAPN003": 1, "AIAPN004": 1 }
+      },
+      "Autonomy": {
+        "method": "mean_coded",
+        "description": "Autonomy — mean of 5 items (higher = AI seen as more independent of humans)",
+        "items": { "AIAPA001": 1, "AIAPA002": 1, "AIAPA003": 1, "AIAPA004": 1, "AIAPA005": 1 }
+      },
+      "Conspiracy": {
+        "method": "mean_coded",
+        "description": "Conspiracy — mean of 10 items (higher = stronger conspiracy beliefs about AI)",
+        "items": { "AIAPC001": 1, "AIAPC002": 1, "AIAPC003": 1, "AIAPC004": 1, "AIAPC005": 1, "AIAPC006": 1, "AIAPC007": 1, "AIAPC008": 1, "AIAPC009": 1, "AIAPC010": 1 }
+      },
+      "ThreatSelf": {
+        "method": "mean_coded",
+        "description": "Threat to Self — mean of 3 items",
+        "items": { "AIAPS001": 1, "AIAPS002": 1, "AIAPS003": 1 }
+      },
+      "ThreatSociety": {
+        "method": "mean_coded",
+        "description": "Threat to Society — mean of 3 items",
+        "items": { "AIAPG001": 1, "AIAPG002": 1, "AIAPG003": 1 }
+      },
+      "LackControl": {
+        "method": "mean_coded",
+        "description": "Lack of Control — mean of 2 items",
+        "items": { "AIAPL001": 1, "AIAPL002": 1 }
+      },
+      "Powerlessness": {
+        "method": "mean_coded",
+        "description": "Powerlessness — mean of 3 items",
+        "items": { "AIAPP001": 1, "AIAPP002": 1, "AIAPP003": 1 }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "AIAP_head_agree":     "Please indicate to what extent you agree or disagree with these statements about Artificial Intelligence (AI).",
+      "AIAP_head_compare":   "Please indicate how you think Artificial Intelligence (AI) compares to humans on these capabilities.",
+      "AIAP_head_conspire":  "Please indicate to what extent you agree or disagree with these statements about Artificial Intelligence (AI).",
+      "AIAP_head_experience":"Please indicate to what extent you experience the following.",
+      "AIAP_ra1": "Not at all", "AIAP_ra2": "2", "AIAP_ra3": "3", "AIAP_ra4": "4", "AIAP_ra5": "5", "AIAP_ra6": "6", "AIAP_ra7": "Very much",
+      "AIAP_ri1": "Far worse than humans", "AIAP_ri2": "2", "AIAP_ri3": "3", "AIAP_ri4": "4", "AIAP_ri5": "5", "AIAP_ri6": "6", "AIAP_ri7": "Far better than humans",
+      "AIAP_rc1": "Completely disagree", "AIAP_rc2": "2", "AIAP_rc3": "3", "AIAP_rc4": "4", "AIAP_rc5": "5", "AIAP_rc6": "6", "AIAP_rc7": "Completely agree",
+      "AIAPsec_transparency":   "Transparency of AI",
+      "AIAPsec_intelligence":   "Intelligence of AI",
+      "AIAPsec_interdependence":"Interdependence of AI",
+      "AIAPsec_autonomy":       "Autonomy of AI",
+      "AIAPsec_conspiracy":     "AI Conspiracy Beliefs",
+      "AIAPsec_threat_self":    "Perceived Threat to Self",
+      "AIAPsec_threat_society": "Perceived Threat to Society",
+      "AIAPsec_lack_control":   "Lack of Control",
+      "AIAPsec_powerlessness":  "Powerlessness",
+      "AIAPT001": "In general, AI's decisions are easy to understand for lay people.",
+      "AIAPT002": "In general, lay people can understand why AI reaches certain conclusions.",
+      "AIAPT003": "In general, it is clear to lay people how AI works.",
+      "AIAPT004": "In general, AI's decision-making processes are fully transparent for lay people.",
+      "AIAPI001": "In general, AI's ability to solve problems is …",
+      "AIAPI002": "In general, AI's reasoning skills are …",
+      "AIAPI003": "In general, AI's ability to learn and adapt is …",
+      "AIAPI004": "In general, AI's creativity is …",
+      "AIAPI005": "In general, AI's common sense is …",
+      "AIAPI006": "In general, AI's self-awareness is …",
+      "AIAPI007": "In general, AI's ability to apply their capabilities to other domains is …",
+      "AIAPI008": "In general, AI's intelligence is …",
+      "AIAPN001": "In general, the interests of AI and humans are aligned.",
+      "AIAPN002": "In general, AI would make decisions to favor human beings.",
+      "AIAPN003": "In general, AI would treat human's interests as its own.",
+      "AIAPN004": "In general, AI would try its best to optimize human's interests.",
+      "AIAPA001": "In general, AI could operate independently without any help from human beings.",
+      "AIAPA002": "In general, AI could make decisions on their own, without any human interference.",
+      "AIAPA003": "In general, AI could solve problems on their own, without any human interference.",
+      "AIAPA004": "In general, AI could learn abilities on their own, without any human interference.",
+      "AIAPA005": "In general, AI could adapt to situations on its own, without any human interference.",
+      "AIAPC001": "AI gains the ability to control and manipulate human actions, leading to a dystopian future where machines rule over humans.",
+      "AIAPC002": "AI technology is being used by governments and corporations to constantly monitor and track individuals, infringing on their privacy rights.",
+      "AIAPC003": "Advanced AI systems are being used to manipulate human thoughts and emotions, potentially leading to mass mind control.",
+      "AIAPC004": "AI is being used to design and release harmful viruses or bioweapons, leveraging its capabilities to create dangerous pathogens.",
+      "AIAPC005": "AI is being used to manipulate voting patterns and sway elections by spreading targeted misinformation and fake news.",
+      "AIAPC006": "AI develops its own hidden motivations and agendas that are not aligned with human interests, potentially leading to unforeseen bad consequences for humanity.",
+      "AIAPC007": "AI is being used to fabricate or suppress scientific discoveries to serve the interests of powerful groups.",
+      "AIAPC008": "AI deliberately causes major disasters, such as stock market crashes, power grid failures, or transportation system breakdowns, to destabilize human societies.",
+      "AIAPC009": "AI intentionally collects human information in order to monitor and control humanity.",
+      "AIAPC010": "AI deliberately interferes in elections, prompting pro-AI candidates to win.",
+      "AIAPS001": "Because of AI, I am often scared that something is going to happen to me.",
+      "AIAPS002": "Because of AI, I often feel in danger.",
+      "AIAPS003": "Because of AI, I worry that something bad is going to happen to me.",
+      "AIAPG001": "Because of AI, I am often scared that something is going to happen to society.",
+      "AIAPG002": "Because of AI, I often feel that society is in danger.",
+      "AIAPG003": "Because of AI, I worry that something bad is going to happen to society.",
+      "AIAPL001": "Because of AI, do you experience important areas of your life (i.e., work, free time, family, etc.) to be uncontrollable, meaning that you cannot, or barely can, influence them?",
+      "AIAPL002": "Because of AI, do you experience these important areas of your life as unpredictable or inscrutable?",
+      "AIAPP001": "Because of AI, do you feel powerless?",
+      "AIAPP002": "Because of AI, do you feel hopeless?",
+      "AIAPP003": "Because of AI, do you feel helpless?"
+    }
+  }
+}

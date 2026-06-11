@@ -1,0 +1,115 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "PSI20",
+      "name": "Prefrontal Symptoms Inventory – Short Form",
+      "abbreviation": "PSI-20",
+      "description": "20-item scale assessing prefrontal and executive function symptoms in daily life, including difficulties with initiation, concentration, decision-making, emotional regulation, and inhibitory control.",
+      "citation": "Sosa, M. A., Pedrero-Pérez, E. J., & Ruiz-Sánchez de León, J. M. (2025). Translation and validation of the abbreviated Prefrontal Symptoms Inventory (PSI20): A tool for assessing prefrontal symptoms in English-speaking populations. Journal of Neuropsychology, 19(2), 200-215. https://doi.org/10.1111/jnp.12397",
+      "license": "CC BY 4.0",
+      "license_url": "https://dx.doi.org/10.6084/m9.figshare.26936113.v1",
+      "url": "https://doi.org/10.1111/jnp.12397",
+      "version": "1.0",
+      "domain": "Cognitive"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default":  0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "PSI20_r1", "PSI20_r2", "PSI20_r3", "PSI20_r4", "PSI20_r5"
+      ],
+      "question_head": "PSI20_head"
+    },
+    "dimensions": [
+      {
+        "id": "PrefrontalSymptoms",
+        "name": "Prefrontal Symptoms",
+        "description": "Total score reflecting frequency of prefrontal/executive function difficulties in daily life"
+      }
+    ],
+    "items": [
+      { "id": "PSI20001", "type": "likert", "text_key": "PSI20001", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20002", "type": "likert", "text_key": "PSI20002", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20003", "type": "likert", "text_key": "PSI20003", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20004", "type": "likert", "text_key": "PSI20004", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20005", "type": "likert", "text_key": "PSI20005", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20006", "type": "likert", "text_key": "PSI20006", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20007", "type": "likert", "text_key": "PSI20007", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20008", "type": "likert", "text_key": "PSI20008", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20009", "type": "likert", "text_key": "PSI20009", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20010", "type": "likert", "text_key": "PSI20010", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20011", "type": "likert", "text_key": "PSI20011", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20012", "type": "likert", "text_key": "PSI20012", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20013", "type": "likert", "text_key": "PSI20013", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20014", "type": "likert", "text_key": "PSI20014", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20015", "type": "likert", "text_key": "PSI20015", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20016", "type": "likert", "text_key": "PSI20016", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20017", "type": "likert", "text_key": "PSI20017", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20018", "type": "likert", "text_key": "PSI20018", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20019", "type": "likert", "text_key": "PSI20019", "dimension": "PrefrontalSymptoms" },
+      { "id": "PSI20020", "type": "likert", "text_key": "PSI20020", "dimension": "PrefrontalSymptoms" }
+    ],
+    "scoring": {
+      "PrefrontalSymptoms": {
+        "method": "sum_coded",
+        "description": "Total prefrontal symptoms score (range 20–100). Higher = more frequent symptoms.",
+        "items": {
+          "PSI20001": 1, "PSI20002": 1, "PSI20003": 1, "PSI20004": 1, "PSI20005": 1,
+          "PSI20006": 1, "PSI20007": 1, "PSI20008": 1, "PSI20009": 1, "PSI20010": 1,
+          "PSI20011": 1, "PSI20012": 1, "PSI20013": 1, "PSI20014": 1, "PSI20015": 1,
+          "PSI20016": 1, "PSI20017": 1, "PSI20018": 1, "PSI20019": 1, "PSI20020": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "PSI20_head": "Please indicate how often each of the following happens to you.",
+      "PSI20_r1": "Never or almost never",
+      "PSI20_r2": "Rarely",
+      "PSI20_r3": "Sometimes yes, sometimes no",
+      "PSI20_r4": "Many times",
+      "PSI20_r5": "Always or almost always",
+      "PSI20001": "I have trouble starting an activity. I lack initiative.",
+      "PSI20002": "I find it hard to concentrate on something.",
+      "PSI20003": "I cannot do two things at the same time (for example, prepare food and talk).",
+      "PSI20004": "I laugh or cry too easily.",
+      "PSI20005": "I get very angry over insignificant things. I get irritated very easily.",
+      "PSI20006": "I find it hard to change the subject in conversations.",
+      "PSI20007": "I am lethargic, as if asleep.",
+      "PSI20008": "I have difficulty making decisions.",
+      "PSI20009": "I forget that I have to do things but I remember them when somebody reminds me.",
+      "PSI20010": "I do not do things until someone tells me that I have to do them.",
+      "PSI20011": "I have difficulties following the plot of a film or a book.",
+      "PSI20012": "I have difficulty thinking or planning ahead.",
+      "PSI20013": "I can go from laughter to tears easily.",
+      "PSI20014": "I tell inappropriate jokes in inappropriate situations.",
+      "PSI20015": "I find it hard to get going. I lack energy.",
+      "PSI20016": "I find it hard to plan things in advance.",
+      "PSI20017": "I mention very personal issues in front of others.",
+      "PSI20018": "I do or say embarrassing things.",
+      "PSI20019": "I have emotional outbursts without an important reason.",
+      "PSI20020": "I make inappropriate sexual comments."
+    }
+  }
+}

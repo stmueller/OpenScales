@@ -1,0 +1,122 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "PPTS",
+      "name": "Procrastination and Precrastination Traits Scale",
+      "abbreviation": "PPTS",
+      "description": "18-item scale measuring both extremes of temporal task management: procrastination (delaying tasks) and precrastination (completing tasks ahead of schedule, sometimes at a cost). Higher scores on each subscale indicate stronger trait expression.",
+      "citation": "Husain, W., Trabelsi, K., Ammar, A., Saif, Z., & Jahrami, H. (2025). The development and validation of a one-off scale to measure procrastination and precrastination traits in young adults. BMC Psychology, 13(1). https://doi.org/10.1186/s40359-025-03072-6",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1186/s40359-025-03072-6",
+      "version": "1.0",
+      "domain": "Self & Coping"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order (off by default — procrastination and precrastination items are interleaved by design)"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "PPTS_r1", "PPTS_r2", "PPTS_r3", "PPTS_r4", "PPTS_r5"
+      ],
+      "question_head": "PPTS_head"
+    },
+    "dimensions": [
+      {
+        "id": "Proc",
+        "name": "Procrastination",
+        "description": "Tendency to delay or postpone tasks"
+      },
+      {
+        "id": "Prec",
+        "name": "Precrastination",
+        "description": "Tendency to complete tasks ahead of schedule, sometimes at a cost"
+      }
+    ],
+    "items": [
+      { "id": "PPTS001", "type": "likert", "text_key": "PPTS001", "dimension": "Proc" },
+      { "id": "PPTS002", "type": "likert", "text_key": "PPTS002", "dimension": "Proc" },
+      { "id": "PPTS003", "type": "likert", "text_key": "PPTS003", "dimension": "Proc" },
+      { "id": "PPTS004", "type": "likert", "text_key": "PPTS004", "dimension": "Proc" },
+      { "id": "PPTS005", "type": "likert", "text_key": "PPTS005", "dimension": "Proc" },
+      { "id": "PPTS006", "type": "likert", "text_key": "PPTS006", "dimension": "Proc" },
+      { "id": "PPTS007", "type": "likert", "text_key": "PPTS007", "dimension": "Proc" },
+      { "id": "PPTS008", "type": "likert", "text_key": "PPTS008", "dimension": "Proc" },
+      { "id": "PPTS009", "type": "likert", "text_key": "PPTS009", "dimension": "Proc" },
+      { "id": "PPTS010", "type": "likert", "text_key": "PPTS010", "dimension": "Proc" },
+      { "id": "PPTS011", "type": "likert", "text_key": "PPTS011", "dimension": "Prec" },
+      { "id": "PPTS012", "type": "likert", "text_key": "PPTS012", "dimension": "Prec" },
+      { "id": "PPTS013", "type": "likert", "text_key": "PPTS013", "dimension": "Prec" },
+      { "id": "PPTS014", "type": "likert", "text_key": "PPTS014", "dimension": "Prec" },
+      { "id": "PPTS015", "type": "likert", "text_key": "PPTS015", "dimension": "Prec" },
+      { "id": "PPTS016", "type": "likert", "text_key": "PPTS016", "dimension": "Prec" },
+      { "id": "PPTS017", "type": "likert", "text_key": "PPTS017", "dimension": "Prec" },
+      { "id": "PPTS018", "type": "likert", "text_key": "PPTS018", "dimension": "Prec" }
+    ],
+    "scoring": {
+      "Proc": {
+        "method": "mean_coded",
+        "description": "Procrastination — mean of 10 items",
+        "items": {
+          "PPTS001": 1, "PPTS002": 1, "PPTS003": 1, "PPTS004": 1, "PPTS005": 1,
+          "PPTS006": 1, "PPTS007": 1, "PPTS008": 1, "PPTS009": 1, "PPTS010": 1
+        }
+      },
+      "Prec": {
+        "method": "mean_coded",
+        "description": "Precrastination — mean of 8 items",
+        "items": {
+          "PPTS011": 1, "PPTS012": 1, "PPTS013": 1, "PPTS014": 1,
+          "PPTS015": 1, "PPTS016": 1, "PPTS017": 1, "PPTS018": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "PPTS_head": "Please indicate how often each statement applies to you.",
+      "PPTS_r1": "Never",
+      "PPTS_r2": "Rarely",
+      "PPTS_r3": "Sometimes",
+      "PPTS_r4": "Often",
+      "PPTS_r5": "Always",
+      "PPTS001": "I delay getting started on important tasks, even when I know I shouldn't.",
+      "PPTS002": "I keep putting off unpleasant chores or obligations.",
+      "PPTS003": "I find myself aimlessly browsing instead of working.",
+      "PPTS004": "I wait until the last minute to prepare for tests or deadlines.",
+      "PPTS005": "I tell myself I'll get more done \"tomorrow\" rather than following through today.",
+      "PPTS006": "I waste time on unimportant distractions instead of priorities.",
+      "PPTS007": "I procrastinate on health habits like exercise, diet, or appointments.",
+      "PPTS008": "I unnecessarily delay making even small decisions.",
+      "PPTS009": "I leave emails, messages or calls unanswered for too long.",
+      "PPTS010": "My spaces become cluttered and disorganized from postponing cleaning/organizing.",
+      "PPTS011": "I complete tasks as soon as possible to get them out of the way.",
+      "PPTS012": "I take care of chores or obligations immediately rather than delaying.",
+      "PPTS013": "I tackle unpleasant tasks right away without postponing.",
+      "PPTS014": "I try to get things done ahead of schedule when possible.",
+      "PPTS015": "I don't postpone making decisions, even on small matters.",
+      "PPTS016": "I reply to messages, emails, or calls promptly without delay.",
+      "PPTS017": "I keep my work and living spaces consistently neat and organized.",
+      "PPTS018": "I don't wait for deadlines to start on important tasks or goals."
+    }
+  }
+}

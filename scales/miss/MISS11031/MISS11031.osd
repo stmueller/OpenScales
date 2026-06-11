@@ -1,0 +1,88 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Political Efficacy Short Scale (English Adaptation)",
+      "code": "MISS11031",
+      "abbreviation": "PESS",
+      "description": "A 4-item scale measuring political efficacy across two subscales: Internal Political Efficacy (2 items; belief in one's own political competence) and External Political Efficacy (2 items; belief in the responsiveness of political institutions). Adapted into English from the German PEKS (Beierlein et al., 2014). Validated in UK and German samples. No reverse-coded items. Higher scores indicate greater perceived political efficacy.",
+      "citation": "Groskurth, K., Nießen, D., Rammstedt, B., & Lechner, C. M. (2021). An English-language adaptation and validation of the Political Efficacy Short Scale (PESS). Measurement Instruments for the Social Sciences, 3, Article e11031. https://doi.org/10.1186/s42409-020-00018-z",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "doi": "10.5964/miss.11031",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/11031",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-08",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English items verbatim from paper. No reverse-coded items. 5-point Likert: 1=Do not agree at all to 5=Completely agree. Authors recommend reporting internal and external subscales separately rather than a total score. Translated from German PEKS using TRAPD approach."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["pess_r1", "pess_r2", "pess_r3", "pess_r4", "pess_r5"]
+    },
+    "dimensions": [
+      {
+        "id": "internal_efficacy",
+        "name": "Internal Political Efficacy",
+        "abbreviation": "INT",
+        "description": "Belief in one's own political competence and understanding. Mean of 2 items, range 1–5; higher = stronger sense of internal political efficacy."
+      },
+      {
+        "id": "external_efficacy",
+        "name": "External Political Efficacy",
+        "abbreviation": "EXT",
+        "description": "Belief in the responsiveness of political institutions to citizens. Mean of 2 items, range 1–5; higher = stronger sense of external political efficacy."
+      }
+    ],
+    "items": [
+      {"id": "pess1", "type": "likert", "text_key": "pess1", "dimension": "internal_efficacy"},
+      {"id": "pess2", "type": "likert", "text_key": "pess2", "dimension": "external_efficacy"},
+      {"id": "pess3", "type": "likert", "text_key": "pess3", "dimension": "internal_efficacy"},
+      {"id": "pess4", "type": "likert", "text_key": "pess4", "dimension": "external_efficacy"}
+    ],
+    "scoring": {
+      "internal_efficacy": {
+        "description": "Mean of items pess1 and pess3. Range 1–5; higher = stronger sense of internal political efficacy.",
+        "method": "mean_coded",
+        "items": ["pess1", "pess3"]
+      },
+      "external_efficacy": {
+        "description": "Mean of items pess2 and pess4. Range 1–5; higher = stronger sense of external political efficacy.",
+        "method": "mean_coded",
+        "items": ["pess2", "pess4"]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Political Efficacy Short Scale (PESS) Report",
+      "footer_refs": [
+        "Groskurth, K., Nießen, D., Rammstedt, B., & Lechner, C. M. (2021). An English-language adaptation and validation of the Political Efficacy Short Scale (PESS). Measurement Instruments for the Social Sciences, 3, Article e11031. https://doi.org/10.1186/s42409-020-00018-z",
+        "Higher scores indicate greater perceived political efficacy. Authors recommend reporting internal and external subscales separately."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "pess_r1": "Do not agree at all",
+      "pess_r2": "Hardly agree",
+      "pess_r3": "Somewhat agree",
+      "pess_r4": "Mostly agree",
+      "pess_r5": "Completely agree",
+      "instructions": "In the following we are interested in your opinion concerning politics. You can agree to the statements below to a greater or lesser extent. Please indicate to what extent you agree or disagree with each of the statements.",
+      "pess1": "I am good at understanding and assessing important political issues.",
+      "pess2": "Politicians strive to keep in close touch with the people.",
+      "pess3": "I have the confidence to take active part in a discussion about political issues.",
+      "pess4": "Politicians care about what ordinary people think.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "DISS",
+      "name": "Dissociation-Integration of Self States Scale",
+      "abbreviation": "D-ISS",
+      "description": "25-item scale measuring dissociation versus integration of self-states across five dimensions: acceptance, awareness, integration, difference, and control.",
+      "citation": "Lord, C., Kennedy, F., Smart, K., & Maguire, T. (2025). Developing a scale to measure dissociation between self-states (the Dissociation-Integration of Self States Scale, D-ISS Scale). The Cognitive Behaviour Therapist, 18. https://doi.org/10.1017/S1754470X25000042",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1017/S1754470X25000042",
+      "version": "1.0",
+      "domain": "Clinical"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {"type": "boolean", "default": 1, "description": "Show scale title to respondents"},
+      "shuffle_questions": {"type": "boolean", "default": 0, "description": "Randomize item presentation order"}
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 0,
+      "max": 4,
+      "labels": ["DISS_r1", "DISS_r2", "DISS_r3", "DISS_r4", "DISS_r5"],
+      "question_head": "DISS_head"
+    },
+    "dimensions": [
+      {
+        "id": "acceptance",
+        "name": "Acceptance",
+        "description": "Acceptance of self-states rather than hatred, rejection, or desire to eliminate them. Higher scores indicate greater acceptance."
+      },
+      {
+        "id": "awareness",
+        "name": "Awareness",
+        "description": "Awareness of having different self-states and ability to recognize transitions. Higher scores indicate greater awareness."
+      },
+      {
+        "id": "integration",
+        "name": "Integration",
+        "description": "Sense that self-states are connected and form a unified whole. Higher scores indicate greater integration."
+      },
+      {
+        "id": "difference",
+        "name": "Difference",
+        "description": "Degree to which self-states are experienced as distinct and separate. Higher scores indicate less pathological difference (i.e., fewer differences)."
+      },
+      {
+        "id": "control",
+        "name": "Control",
+        "description": "Sense of control over movement between self-states. Higher scores indicate greater perceived control."
+      }
+    ],
+    "items": [
+      {"id": "DISS001", "type": "likert", "text_key": "DISS001", "dimension": "acceptance"},
+      {"id": "DISS002", "type": "likert", "text_key": "DISS002", "dimension": "acceptance"},
+      {"id": "DISS003", "type": "likert", "text_key": "DISS003", "dimension": "acceptance"},
+      {"id": "DISS004", "type": "likert", "text_key": "DISS004", "dimension": "acceptance"},
+      {"id": "DISS005", "type": "likert", "text_key": "DISS005", "dimension": "acceptance"},
+      {"id": "DISS006", "type": "likert", "text_key": "DISS006", "dimension": "awareness"},
+      {"id": "DISS007", "type": "likert", "text_key": "DISS007", "dimension": "awareness"},
+      {"id": "DISS008", "type": "likert", "text_key": "DISS008", "dimension": "awareness"},
+      {"id": "DISS009", "type": "likert", "text_key": "DISS009", "dimension": "awareness"},
+      {"id": "DISS010", "type": "likert", "text_key": "DISS010", "dimension": "awareness"},
+      {"id": "DISS011", "type": "likert", "text_key": "DISS011", "dimension": "integration"},
+      {"id": "DISS012", "type": "likert", "text_key": "DISS012", "dimension": "integration"},
+      {"id": "DISS013", "type": "likert", "text_key": "DISS013", "dimension": "integration"},
+      {"id": "DISS014", "type": "likert", "text_key": "DISS014", "dimension": "integration"},
+      {"id": "DISS015", "type": "likert", "text_key": "DISS015", "dimension": "integration"},
+      {"id": "DISS016", "type": "likert", "text_key": "DISS016", "dimension": "difference"},
+      {"id": "DISS017", "type": "likert", "text_key": "DISS017", "dimension": "difference"},
+      {"id": "DISS018", "type": "likert", "text_key": "DISS018", "dimension": "difference"},
+      {"id": "DISS019", "type": "likert", "text_key": "DISS019", "dimension": "difference"},
+      {"id": "DISS020", "type": "likert", "text_key": "DISS020", "dimension": "difference"},
+      {"id": "DISS021", "type": "likert", "text_key": "DISS021", "dimension": "control"},
+      {"id": "DISS022", "type": "likert", "text_key": "DISS022", "dimension": "control"},
+      {"id": "DISS023", "type": "likert", "text_key": "DISS023", "dimension": "control"},
+      {"id": "DISS024", "type": "likert", "text_key": "DISS024", "dimension": "control"},
+      {"id": "DISS025", "type": "likert", "text_key": "DISS025", "dimension": "control"}
+    ],
+    "scoring": {
+      "acceptance": {
+        "method": "mean_coded",
+        "description": "Mean of Acceptance items (1-5). All items are reverse-scored (R): agreement = dissociation/pathology. Higher final score = more acceptance.",
+        "items": {
+          "DISS001": -1,
+          "DISS002": -1,
+          "DISS003": -1,
+          "DISS004": -1,
+          "DISS005": -1
+        }
+      },
+      "awareness": {
+        "method": "mean_coded",
+        "description": "Mean of Awareness items (6-10). Items 6-9 forward-scored; item 10 reverse-scored. Higher score = greater awareness.",
+        "items": {
+          "DISS006": 1,
+          "DISS007": 1,
+          "DISS008": 1,
+          "DISS009": 1,
+          "DISS010": -1
+        }
+      },
+      "integration": {
+        "method": "mean_coded",
+        "description": "Mean of Integration items (11-15). All items forward-scored. Higher score = greater integration.",
+        "items": {
+          "DISS011": 1,
+          "DISS012": 1,
+          "DISS013": 1,
+          "DISS014": 1,
+          "DISS015": 1
+        }
+      },
+      "difference": {
+        "method": "mean_coded",
+        "description": "Mean of Difference items (16-20). All items reverse-scored (R): agreement = more difference/dissociation. Higher final score = less pathological difference.",
+        "items": {
+          "DISS016": -1,
+          "DISS017": -1,
+          "DISS018": -1,
+          "DISS019": -1,
+          "DISS020": -1
+        }
+      },
+      "control": {
+        "method": "mean_coded",
+        "description": "Mean of Control items (21-25). Items 21 and 25 forward-scored; items 22-24 reverse-scored. Higher score = greater control.",
+        "items": {
+          "DISS021": 1,
+          "DISS022": -1,
+          "DISS023": -1,
+          "DISS024": -1,
+          "DISS025": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "DISS_head": "Please rate how much you agree or disagree with each statement about your self-states.",
+      "DISS_r1": "Strongly agree",
+      "DISS_r2": "Agree",
+      "DISS_r3": "Neither agree nor disagree",
+      "DISS_r4": "Disagree",
+      "DISS_r5": "Strongly disagree",
+      "DISS001": "I hate some self-states.",
+      "DISS002": "I would like some self-states to disappear.",
+      "DISS003": "I would like to get rid of some self-states.",
+      "DISS004": "I feel like punishing some self-states.",
+      "DISS005": "The self-states cause problems in my life.",
+      "DISS006": "I am very aware of having different self-states.",
+      "DISS007": "I am aware of all my different self-states.",
+      "DISS008": "I know when I have shifted from one self-state to another.",
+      "DISS009": "I can tell when I have been in one self-state and then in another.",
+      "DISS010": "I am not aware of all the self-states.",
+      "DISS011": "I feel that the self-states are combined to form me as a whole.",
+      "DISS012": "I am formed of all the self-states.",
+      "DISS013": "The self-states are all aspects of me as a person.",
+      "DISS014": "The self-states feel connected together in some way.",
+      "DISS015": "The self-states are integrated together.",
+      "DISS016": "The different self-states have different names.",
+      "DISS017": "When I'm in one self-state I often don't remember what happened when I was in a different self-state.",
+      "DISS018": "Some self-states are male and some are female.",
+      "DISS019": "Some self-states are children, some are more grown up.",
+      "DISS020": "Some self-states are dangerous to me or other people.",
+      "DISS021": "I have control over moving between self-states.",
+      "DISS022": "I have no choice over whether I move between self-states.",
+      "DISS023": "I cannot control whether I end up in one self-state or another.",
+      "DISS024": "I have no choice about what self-state I am in.",
+      "DISS025": "I can choose what self-state I am in in any situation."
+    }
+  }
+}

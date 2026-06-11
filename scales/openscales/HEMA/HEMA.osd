@@ -1,0 +1,118 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "HEMA",
+      "name": "Hedonic and Eudaimonic Motives for Activities Scale--Revised",
+      "abbreviation": "HEMA-R",
+      "description": "11-item scale measuring hedonic motives (seeking pleasure, enjoyment, relaxation, and comfort) and eudaimonic motives (seeking excellence, self-development, values, and contribution to others) when approaching daily activities. Items rated on a 7-point scale from never (1) to always (7). Chinese version validated by Lin & Chan (2020).",
+      "citation": "Lin, L., & Chan, H.-W. (2020). The associations between happiness motives and well-being in China: The mediating role of psychological need satisfaction and frustration. Frontiers in Psychology, 11. https://doi.org/10.3389/fpsyg.2020.02198",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2020.02198",
+      "version": "1.0",
+      "domain": "Well-being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "HEMA_r1", "HEMA_r2", "HEMA_r3", "HEMA_r4",
+        "HEMA_r5", "HEMA_r6", "HEMA_r7"
+      ],
+      "question_head": "HEMA_head"
+    },
+    "dimensions": [
+      {
+        "id": "Eudaimonic",
+        "name": "Eudaimonic Motives",
+        "description": "Motivation to pursue excellence, personal growth, values, and contribution to others"
+      },
+      {
+        "id": "Hedonic",
+        "name": "Hedonic Motives",
+        "description": "Motivation to seek pleasure, enjoyment, relaxation, and comfort in daily activities"
+      }
+    ],
+    "items": [
+      { "id": "HEMA001", "type": "likert", "text_key": "HEMA001", "dimension": "Eudaimonic" },
+      { "id": "HEMA002", "type": "likert", "text_key": "HEMA002", "dimension": "Hedonic" },
+      { "id": "HEMA003", "type": "likert", "text_key": "HEMA003", "dimension": "Eudaimonic" },
+      { "id": "HEMA004", "type": "likert", "text_key": "HEMA004", "dimension": "Hedonic" },
+      { "id": "HEMA005", "type": "likert", "text_key": "HEMA005", "dimension": "Eudaimonic" },
+      { "id": "HEMA006", "type": "likert", "text_key": "HEMA006", "dimension": "Hedonic" },
+      { "id": "HEMA007", "type": "likert", "text_key": "HEMA007", "dimension": "Eudaimonic" },
+      { "id": "HEMA008", "type": "likert", "text_key": "HEMA008", "dimension": "Hedonic" },
+      { "id": "HEMA009", "type": "likert", "text_key": "HEMA009", "dimension": "Eudaimonic" },
+      { "id": "HEMA010", "type": "likert", "text_key": "HEMA010", "dimension": "Hedonic" },
+      { "id": "HEMA011", "type": "likert", "text_key": "HEMA011", "dimension": "Hedonic" }
+    ],
+    "scoring": {
+      "Eudaimonic": {
+        "method": "mean_coded",
+        "description": "Mean of eudaimonic motive items (items 1, 3, 5, 7, 9; original item numbers 1, 3, 5, 7, 9).",
+        "items": {
+          "HEMA001": 1,
+          "HEMA003": 1,
+          "HEMA005": 1,
+          "HEMA007": 1,
+          "HEMA009": 1
+        }
+      },
+      "Hedonic": {
+        "method": "mean_coded",
+        "description": "Mean of hedonic motive items (items 2, 4, 6, 8, 10, 11; original item numbers 2, 4, 6, 8, 10, 11).",
+        "items": {
+          "HEMA002": 1,
+          "HEMA004": 1,
+          "HEMA006": 1,
+          "HEMA008": 1,
+          "HEMA010": 1,
+          "HEMA011": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "HEMA_head": "When you approach your daily activities, how often do you have the following intentions?",
+      "HEMA_r1": "Never",
+      "HEMA_r2": "2",
+      "HEMA_r3": "3",
+      "HEMA_r4": "4",
+      "HEMA_r5": "5",
+      "HEMA_r6": "6",
+      "HEMA_r7": "Always",
+      "HEMA001": "Seeking to pursue excellence or a personal ideal.",
+      "HEMA002": "Seeking enjoyment.",
+      "HEMA003": "Seeking to use the best in yourself.",
+      "HEMA004": "Seeking pleasure.",
+      "HEMA005": "Seeking to develop a skill, learn, or gain insight into something.",
+      "HEMA006": "Seeking fun.",
+      "HEMA007": "Seeking to do what you believe in.",
+      "HEMA008": "Seeking relaxation.",
+      "HEMA009": "Seeking to contribute to others or the surrounding world.",
+      "HEMA010": "Seeking to take it easy.",
+      "HEMA011": "Seeking to have things comfortable."
+    }
+  }
+}

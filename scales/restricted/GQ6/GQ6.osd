@@ -1,0 +1,93 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "GQ6",
+      "name": "Gratitude Questionnaire-6",
+      "abbreviation": "GQ-6",
+      "description": "6-item scale measuring dispositional gratitude — the tendency to notice and appreciate the positive in life. One of the most widely used gratitude measures.",
+      "citation": "McCullough, M. E., Emmons, R. A., & Tsang, J. A. (2002). The grateful disposition: A conceptual and empirical topography. Journal of Personality and Social Psychology, 82(1), 112–127. https://doi.org/10.1037/0022-3514.82.1.112",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1037/0022-3514.82.1.112",
+      "version": "1.0",
+      "domain": "Well-being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Original scale by McCullough et al. (2002). CC BY 4.0 license via German validation: Hudecek et al. (2020), Frontiers in Psychology. https://doi.org/10.3389/fpsyg.2020.590108"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default":  0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "GQ6_r1", "GQ6_r2", "GQ6_r3", "GQ6_r4",
+        "GQ6_r5", "GQ6_r6", "GQ6_r7"
+      ],
+      "question_head": "GQ6_head"
+    },
+    "dimensions": [
+      {
+        "id": "Gratitude",
+        "name": "Gratitude",
+        "description": "Dispositional tendency to feel and express gratitude"
+      }
+    ],
+    "items": [
+      { "id": "GQ6001", "type": "likert", "text_key": "GQ6001", "dimension": "Gratitude" },
+      { "id": "GQ6002", "type": "likert", "text_key": "GQ6002", "dimension": "Gratitude" },
+      { "id": "GQ6003", "type": "likert", "text_key": "GQ6003", "dimension": "Gratitude" },
+      { "id": "GQ6004", "type": "likert", "text_key": "GQ6004", "dimension": "Gratitude" },
+      { "id": "GQ6005", "type": "likert", "text_key": "GQ6005", "dimension": "Gratitude" },
+      { "id": "GQ6006", "type": "likert", "text_key": "GQ6006", "dimension": "Gratitude" }
+    ],
+    "scoring": {
+      "Gratitude": {
+        "method": "sum_coded",
+        "description": "Total gratitude score (range 6–42). Items 3 and 6 are reverse-scored.",
+        "items": {
+          "GQ6001": 1,
+          "GQ6002": 1,
+          "GQ6003": -1,
+          "GQ6004": 1,
+          "GQ6005": 1,
+          "GQ6006": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "GQ6_head": "Using the scale below, indicate how much you agree with each statement.",
+      "GQ6_r1": "Strongly disagree",
+      "GQ6_r2": "2",
+      "GQ6_r3": "3",
+      "GQ6_r4": "4",
+      "GQ6_r5": "5",
+      "GQ6_r6": "6",
+      "GQ6_r7": "Strongly agree",
+      "GQ6001": "I have so much in life to be thankful for.",
+      "GQ6002": "If I had to list everything that I felt grateful for, it would be a very long list.",
+      "GQ6003": "When I look at the world, I don't see much to be grateful for.",
+      "GQ6004": "I am grateful to a wide variety of people.",
+      "GQ6005": "As I get older I find myself more able to appreciate the people, events, and situations that have been part of my life history.",
+      "GQ6006": "Long amounts of time can go by before I feel grateful to something or someone."
+    }
+  }
+}

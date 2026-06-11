@@ -48,6 +48,11 @@
         "id": "cognitive_impairment",
         "name": "Cognitive Impairment",
         "description": "Preoccupation with gaming, preference for gaming over other activities, and irritability when asked to stop."
+      },
+      {
+        "id": "total",
+        "name": "Total",
+        "description": "Total gaming disorder risk score (all 18 items)."
       }
     ],
     "items": [
@@ -162,8 +167,8 @@
     ],
     "scoring": {
       "out_of_control": {
-        "description": "Out of Control (6 items).",
-        "method": "mean_coded",
+        "description": "Out of Control subscale (6 items, range 0–18).",
+        "method": "sum_coded",
         "items": [
           "ghas1",
           "ghas2",
@@ -174,8 +179,8 @@
         ]
       },
       "social_impairment": {
-        "description": "Social Impairment (7 items).",
-        "method": "mean_coded",
+        "description": "Impairment of Social Functioning subscale (7 items, range 0–21).",
+        "method": "sum_coded",
         "items": [
           "ghas9",
           "ghas26",
@@ -187,9 +192,33 @@
         ]
       },
       "cognitive_impairment": {
-        "description": "Cognitive Impairment (5 items).",
-        "method": "mean_coded",
+        "description": "Cognitive Impairment subscale (5 items, range 0–15).",
+        "method": "sum_coded",
         "items": [
+          "ghas8",
+          "ghas10",
+          "ghas11",
+          "ghas12",
+          "ghas14"
+        ]
+      },
+      "total": {
+        "description": "Total gaming disorder risk score (18 items, range 0–54). Cutoffs: 0–18 no risk, 19–36 moderate risk, 37–54 high risk.",
+        "method": "sum_coded",
+        "items": [
+          "ghas1",
+          "ghas2",
+          "ghas3",
+          "ghas5",
+          "ghas18",
+          "ghas21",
+          "ghas9",
+          "ghas26",
+          "ghas27",
+          "ghas28",
+          "ghas30",
+          "ghas33",
+          "ghas34",
           "ghas8",
           "ghas10",
           "ghas11",

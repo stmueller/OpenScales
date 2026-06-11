@@ -1,0 +1,207 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "(Dis-)Embedded Identification Scale",
+      "code": "MISS13783",
+      "abbreviation": "DEIS",
+      "description": "Four 5-item measures of collective identification examining how individuals identify with a subordinate ingroup and a superordinate (in)group: Embedded Identification (strong identification with both), Dis-Embedded Identification (strong subgroup ID, weak superordinate ID), Subordinate Ingroup Identification, and Superordinate (In)Group Identification. Items use configurable group-name placeholders. Validated in two samples (young Germans and Muslims in England). Bipolar −3 to +3 rating scale.",
+      "citation": "Paffrath, J. (2024). The measurement of (dis-)embedded identification. Measurement Instruments for the Social Sciences, 6, Article e13783. https://doi.org/10.5964/miss.13783",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/13783",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-07",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Items and response anchors verbatim from Appendix Tables A–D of Paffrath (2024). All items use placeholders ({subIN}, {supIN}, {subIN_member}, {supIN_member}, {subIN_char}, {supIN_char}) that must be configured via parameters before deployment. Bipolar −3 (very inaccurate) to +3 (very accurate) rating. No reverse-coded items."
+    },
+    "parameters": {
+      "subIN": {
+        "default": "the subgroup",
+        "description": "Name of the subordinate ingroup (e.g., 'the Muslim community', 'the young generation')",
+        "type": "string"
+      },
+      "supIN": {
+        "default": "the larger group",
+        "description": "Name of the superordinate (in)group (e.g., 'German society', 'English society')",
+        "type": "string"
+      },
+      "subIN_member": {
+        "default": "subgroup member",
+        "description": "Member label for the subordinate ingroup (e.g., 'member of the young generation', 'Muslim')",
+        "type": "string"
+      },
+      "supIN_member": {
+        "default": "larger group member",
+        "description": "Member label for the superordinate (in)group (e.g., 'member of German society')",
+        "type": "string"
+      },
+      "subIN_char": {
+        "default": "subgroup member",
+        "description": "Characteristic adjective/noun for the subordinate ingroup (e.g., 'Muslim', 'young')",
+        "type": "string"
+      },
+      "supIN_char": {
+        "default": "larger group member",
+        "description": "Characteristic adjective/noun for the superordinate (in)group (e.g., 'German', 'English')",
+        "type": "string"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": -3,
+      "max": 3,
+      "labels": ["deis_r1", "deis_r2", "deis_r3", "deis_r4", "deis_r5", "deis_r6", "deis_r7"],
+      "suppress_likert_numbers": true
+    },
+    "dimensions": [
+      {
+        "id": "embedded",
+        "name": "Embedded Identification",
+        "abbreviation": "EMBID",
+        "description": "Strong identification with both the subordinate ingroup and the superordinate (in)group. Mean of 5 items, range −3 to +3; higher = stronger embedded identification."
+      },
+      {
+        "id": "disembedded",
+        "name": "Dis-Embedded Identification",
+        "abbreviation": "DISID",
+        "description": "Strong identification with the subordinate ingroup but weak identification with the superordinate (in)group. Mean of 5 items, range −3 to +3; higher = stronger dis-embedded identification."
+      },
+      {
+        "id": "subgroup",
+        "name": "Subordinate Ingroup Identification",
+        "abbreviation": "SUBID",
+        "description": "Identification with the subordinate ingroup only. Mean of 5 items, range −3 to +3; higher = stronger subordinate ingroup identification."
+      },
+      {
+        "id": "superordinate",
+        "name": "Superordinate (In)Group Identification",
+        "abbreviation": "SUPID",
+        "description": "Identification with the superordinate (in)group only. Mean of 5 items, range −3 to +3; higher = stronger superordinate identification."
+      }
+    ],
+    "items": [
+      {"id": "embIDa", "type": "likert", "text_key": "embIDa", "dimension": "embedded"},
+      {"id": "embIDb", "type": "likert", "text_key": "embIDb", "dimension": "embedded"},
+      {"id": "embIDc", "type": "likert", "text_key": "embIDc", "dimension": "embedded"},
+      {"id": "embIDd", "type": "likert", "text_key": "embIDd", "dimension": "embedded"},
+      {"id": "embIDe", "type": "likert", "text_key": "embIDe", "dimension": "embedded"},
+      {"id": "disIDa", "type": "likert", "text_key": "disIDa", "dimension": "disembedded"},
+      {"id": "disIDb", "type": "likert", "text_key": "disIDb", "dimension": "disembedded"},
+      {"id": "disIDc", "type": "likert", "text_key": "disIDc", "dimension": "disembedded"},
+      {"id": "disIDd", "type": "likert", "text_key": "disIDd", "dimension": "disembedded"},
+      {"id": "disIDe", "type": "likert", "text_key": "disIDe", "dimension": "disembedded"},
+      {"id": "subIDa", "type": "likert", "text_key": "subIDa", "dimension": "subgroup"},
+      {"id": "subIDb", "type": "likert", "text_key": "subIDb", "dimension": "subgroup"},
+      {"id": "subIDc", "type": "likert", "text_key": "subIDc", "dimension": "subgroup"},
+      {"id": "subIDd", "type": "likert", "text_key": "subIDd", "dimension": "subgroup"},
+      {"id": "subIDe", "type": "likert", "text_key": "subIDe", "dimension": "subgroup"},
+      {"id": "supIDa", "type": "likert", "text_key": "supIDa", "dimension": "superordinate"},
+      {"id": "supIDb", "type": "likert", "text_key": "supIDb", "dimension": "superordinate"},
+      {"id": "supIDc", "type": "likert", "text_key": "supIDc", "dimension": "superordinate"},
+      {"id": "supIDd", "type": "likert", "text_key": "supIDd", "dimension": "superordinate"},
+      {"id": "supIDe", "type": "likert", "text_key": "supIDe", "dimension": "superordinate"}
+    ],
+    "scoring": {
+      "embedded": {
+        "description": "Mean of 5 Embedded Identification items. Range −3 to +3; higher = stronger embedded identification.",
+        "method": "mean_coded",
+        "items": ["embIDa", "embIDb", "embIDc", "embIDd", "embIDe"]
+      },
+      "disembedded": {
+        "description": "Mean of 5 Dis-Embedded Identification items. Range −3 to +3; higher = stronger dis-embedded identification.",
+        "method": "mean_coded",
+        "items": ["disIDa", "disIDb", "disIDc", "disIDd", "disIDe"]
+      },
+      "subgroup": {
+        "description": "Mean of 5 Subordinate Ingroup Identification items. Range −3 to +3; higher = stronger subordinate ingroup identification.",
+        "method": "mean_coded",
+        "items": ["subIDa", "subIDb", "subIDc", "subIDd", "subIDe"]
+      },
+      "superordinate": {
+        "description": "Mean of 5 Superordinate (In)Group Identification items. Range −3 to +3; higher = stronger superordinate identification.",
+        "method": "mean_coded",
+        "items": ["supIDa", "supIDb", "supIDc", "supIDd", "supIDe"]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "(Dis-)Embedded Identification Scale (DEIS) Report",
+      "footer_refs": [
+        "Paffrath, J. (2024). The measurement of (dis-)embedded identification. Measurement Instruments for the Social Sciences, 6, Article e13783. https://doi.org/10.5964/miss.13783",
+        "Higher scores indicate stronger identification. Bipolar scale: −3 = very inaccurate, +3 = very accurate."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "deis_r1": "Very inaccurate (−3)",
+      "deis_r2": "−2",
+      "deis_r3": "−1",
+      "deis_r4": "0",
+      "deis_r5": "+1",
+      "deis_r6": "+2",
+      "deis_r7": "Very accurate (+3)",
+      "instructions": "Please rate the following statements.",
+      "embIDa": "I identify with {subIN} and likewise with {supIN}—of which {subIN} is a part.",
+      "embIDb": "I feel connected to {subIN} and likewise to {supIN}.",
+      "embIDc": "I am glad to be a {subIN_member} as well as a {supIN_member}.",
+      "embIDd": "I see myself as a {subIN_char} {supIN_member}.",
+      "embIDe": "I feel {subIN_char} as well as {supIN_char}.",
+      "disIDa": "I primarily identify with {subIN}, but only secondarily with {supIN}—of which {subIN} is no part.",
+      "disIDb": "I feel significantly connected to {subIN}, but only insignificantly to {supIN}.",
+      "disIDc": "I am rather glad to be a {subIN_member} than a {supIN_member}.",
+      "disIDd": "I see myself as an \"un-{supIN_char}\" {subIN_member}.",
+      "disIDe": "I feel rather {subIN_char} than {supIN_char}.",
+      "subIDa": "I identify with {subIN}.",
+      "subIDb": "I feel connected to {subIN}.",
+      "subIDc": "I am glad to be a {subIN_member}.",
+      "subIDd": "I see myself as a {subIN_member}.",
+      "subIDe": "I feel {subIN_char}.",
+      "supIDa": "I identify with {supIN}.",
+      "supIDb": "I feel connected to {supIN}.",
+      "supIDc": "I am glad to be a {supIN_member}.",
+      "supIDd": "I see myself as a {supIN_member}.",
+      "supIDe": "I feel {supIN_char}.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "de": {
+      "deis_r1": "Sehr unzutreffend (−3)",
+      "deis_r2": "−2",
+      "deis_r3": "−1",
+      "deis_r4": "0",
+      "deis_r5": "+1",
+      "deis_r6": "+2",
+      "deis_r7": "Sehr zutreffend (+3)",
+      "instructions": "Bitte bewerten Sie die folgenden Aussagen.",
+      "embIDa": "Ich identifiziere mich mit {subIN} und ebenso mit {supIN} – von der {subIN} ein Teil ist.",
+      "embIDb": "Ich fühle mich mit {subIN} und ebenso mit {supIN} verbunden.",
+      "embIDc": "Ich bin froh ein {subIN_member} sowie ein {supIN_member} zu sein.",
+      "embIDd": "Ich sehe mich selbst als ein {subIN_char} {supIN_member}.",
+      "embIDe": "Ich fühle mich {subIN_char} sowie {supIN_char}.",
+      "disIDa": "Ich identifiziere mich hauptsächlich mit {subIN}, aber nur nebensächlich mit {supIN} – von der {subIN} kein Teil ist.",
+      "disIDb": "Ich fühle mich bedeutend mit {subIN}, aber nur unbedeutend mit {supIN} verbunden.",
+      "disIDc": "Ich bin eher froh ein {subIN_member} als ein {supIN_member} zu sein.",
+      "disIDd": "Ich sehe mich selbst als ein \"un{supIN_char}\" {subIN_member}.",
+      "disIDe": "Ich fühle mich eher {subIN_char} als {supIN_char}.",
+      "subIDa": "Ich identifiziere mich mit {subIN}.",
+      "subIDb": "Ich fühle mich mit {subIN} verbunden.",
+      "subIDc": "Ich bin froh ein {subIN_member} zu sein.",
+      "subIDd": "Ich sehe mich selbst als ein {subIN_member}.",
+      "subIDe": "Ich fühle mich {subIN_char}.",
+      "supIDa": "Ich identifiziere mich mit {supIN}.",
+      "supIDb": "Ich fühle mich mit {supIN} verbunden.",
+      "supIDc": "Ich bin froh ein {supIN_member} zu sein.",
+      "supIDd": "Ich sehe mich selbst als ein {supIN_member}.",
+      "supIDe": "Ich fühle mich {supIN_char}.",
+      "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
+    }
+  }
+}

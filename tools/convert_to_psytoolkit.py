@@ -82,6 +82,23 @@ def escape_psytoolkit(text):
     return text.replace("\n", "<br>\n")
 
 
+def get_effective_scale(question, definition):
+    """Resolve the effective response scale opts for a likert question."""
+    rs_id = question.get("response_scale")
+    if rs_id:
+        rs = definition.get("response_scales", {}).get(rs_id)
+        if rs:
+            return rs, rs_id
+    return definition.get("likert_options", {}), None
+
+
+def _psytoolkit_scale_name(code, rs_id):
+    """Return the PsyToolkit scale name for a given response_scale id (or None for default)."""
+    if rs_id:
+        return f"{code.lower()}_{rs_id}"
+    return code.lower()
+
+
 def generate_psytoolkit(definition, translations):
     """Generate PsyToolkit survey text from OSD format."""
     lines = []
@@ -90,6 +107,7 @@ def generate_psytoolkit(definition, translations):
     questions = definition.get("items") or definition.get("questions", [])
     scoring = definition.get("scoring", {})
     likert_opts = definition.get("likert_options", {})
+    response_scales = definition.get("response_scales", {})
 
     # Track which scale definitions and labels we've emitted
     emitted_scales = set()
@@ -97,14 +115,13 @@ def generate_psytoolkit(definition, translations):
     # Deferred feedback blocks (inst questions referencing score variables)
     deferred_feedback = []
 
-    # Collect all likert questions to group them by their response scale
-    # Most scales have one global likert scale, so we emit it first
-    if likert_opts and likert_opts.get("labels"):
-        scale_name = code.lower()
-        labels = likert_opts["labels"]
-        points = likert_opts.get("points", len(labels))
-        min_val = likert_opts.get("min", 1)
-
+    def emit_scale_block(opts, scale_name):
+        """Emit a PsyToolkit scale: block for the given opts dict."""
+        labels = opts.get("labels", [])
+        if not labels:
+            return
+        points = opts.get("points", len(labels))
+        min_val = opts.get("min", 1)
         lines.append(f"scale: {scale_name}")
         for i, label_key in enumerate(labels):
             label_text = get_text(translations, label_key)
@@ -113,19 +130,36 @@ def generate_psytoolkit(definition, translations):
         lines.append("")
         emitted_scales.add(scale_name)
 
-    # Separate questions into groups by type for output
-    # PsyToolkit works best with one block per logical group
+    # Emit default scale first (if it has labels)
+    if likert_opts and likert_opts.get("labels"):
+        emit_scale_block(likert_opts, code.lower())
 
-    # Find contiguous runs of likert questions (the main block)
+    # Emit named response scales
+    for rs_id, rs_opts in response_scales.items():
+        rs_name = _psytoolkit_scale_name(code, rs_id)
+        if rs_name not in emitted_scales:
+            emit_scale_block(rs_opts, rs_name)
+
+    # Find contiguous runs of likert questions (grouped by response_scale)
+    # so that each block uses a consistent scale definition
     likert_runs = []
     current_run = []
+    current_rs_id = "DEFAULT_SENTINEL"
     for q in questions:
         if q.get("type") == "likert":
-            current_run.append(q)
+            rs_id = q.get("response_scale")
+            if current_run and rs_id == current_rs_id:
+                current_run.append(q)
+            else:
+                if current_run:
+                    likert_runs.append(current_run)
+                current_run = [q]
+                current_rs_id = rs_id
         else:
             if current_run:
                 likert_runs.append(current_run)
                 current_run = []
+                current_rs_id = "DEFAULT_SENTINEL"
             # Non-likert questions get individual treatment
             likert_runs.append([q])
     if current_run:
@@ -144,13 +178,15 @@ def generate_psytoolkit(definition, translations):
         # --- Likert block ---
         if first_type == "likert" and len(run) > 1:
             block_counter += 1
-            block_label = code.lower()
-            scale_name = code.lower()
+            _, rs_id = get_effective_scale(run[0], definition)
+            scale_name = _psytoolkit_scale_name(code, rs_id)
+            block_label = f"{code.lower()}_block{block_counter}"
 
-            # Question head
+            # Question head from effective scale
+            eff_opts, _ = get_effective_scale(run[0], definition)
             question_head = ""
-            if likert_opts.get("question_head"):
-                question_head = get_text(translations, likert_opts["question_head"])
+            if eff_opts.get("question_head"):
+                question_head = get_text(translations, eff_opts["question_head"])
 
             lines.append(f"l: {block_label}")
             lines.append(f"t: scale {scale_name}")
@@ -182,7 +218,8 @@ def generate_psytoolkit(definition, translations):
         elif first_type == "likert" and len(run) == 1:
             q = run[0]
             block_label = q["id"].lower()
-            scale_name = code.lower()
+            _, rs_id = get_effective_scale(q, definition)
+            scale_name = _psytoolkit_scale_name(code, rs_id)
 
             text = get_text(translations, q.get("text_key", q["id"]))
             is_reverse = q.get("coding") == -1

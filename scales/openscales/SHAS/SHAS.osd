@@ -1,0 +1,108 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "SHAS",
+      "name": "Short Home Attachment Scale",
+      "abbreviation": "SHAS",
+      "description": "7-item scale measuring emotional attachment to one's home, including place identity, place dependence, and affective bonds with the home environment.",
+      "citation": "Nartova-Bochaver, S., Reznichenko, S., Bardadymov, V., Khachaturova, M., Yerofeyeva, V., Khachatryan, N., Kryazh, I., Kamble, S., & Zulkarnain, Z. (2022). Measurement invariance of the short home attachment scale: A cross-cultural study. Frontiers in Psychology, 13. https://doi.org/10.3389/fpsyg.2022.834421",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2022.834421",
+      "version": "1.0",
+      "domain": "Well-being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": [
+        "SHAS_r1", "SHAS_r2", "SHAS_r3", "SHAS_r4", "SHAS_r5", "SHAS_r6", "SHAS_r7"
+      ],
+      "question_head": "SHAS_head"
+    },
+    "dimensions": [
+      {
+        "id": "SHAS",
+        "name": "Home Attachment",
+        "description": "Overall emotional attachment to one's home"
+      }
+    ],
+    "items": [
+      { "id": "SHAS001", "type": "likert", "text_key": "SHAS001", "dimension": "SHAS" },
+      { "id": "SHAS002", "type": "likert", "text_key": "SHAS002", "dimension": "SHAS" },
+      { "id": "SHAS003", "type": "likert", "text_key": "SHAS003", "dimension": "SHAS" },
+      { "id": "SHAS004", "type": "likert", "text_key": "SHAS004", "dimension": "SHAS" },
+      { "id": "SHAS005", "type": "likert", "text_key": "SHAS005", "dimension": "SHAS" },
+      { "id": "SHAS006", "type": "likert", "text_key": "SHAS006", "dimension": "SHAS" },
+      { "id": "SHAS007", "type": "likert", "text_key": "SHAS007", "dimension": "SHAS" }
+    ],
+    "scoring": {
+      "SHAS": {
+        "method": "mean_coded",
+        "description": "Home Attachment total — mean of all 7 items",
+        "items": {
+          "SHAS001": 1, "SHAS002": 1, "SHAS003": 1, "SHAS004": 1,
+          "SHAS005": 1, "SHAS006": 1, "SHAS007": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "SHAS_head": "Please rate your level of agreement with each statement based on your own feelings and experience.",
+      "SHAS_r1": "Strongly disagree",
+      "SHAS_r2": "2",
+      "SHAS_r3": "3",
+      "SHAS_r4": "4",
+      "SHAS_r5": "5",
+      "SHAS_r6": "6",
+      "SHAS_r7": "Strongly agree",
+      "SHAS001": "My home is the best place for what I like to do.",
+      "SHAS002": "My home is a really special place to me.",
+      "SHAS003": "No other place can compare to my home.",
+      "SHAS004": "I identify strongly with my home.",
+      "SHAS005": "I get more satisfaction from being in my home than from visiting any other place.",
+      "SHAS006": "I am very attached to my home.",
+      "SHAS007": "I am ready to invest my heart and soul into my home."
+    },
+    "ru": {
+      "_translator": "Nartova-Bochaver, S. et al. (2022). https://doi.org/10.3389/fpsyg.2022.834421",
+      "SHAS_head": "Опросник измеряет отношение людей к своему дому. Пожалуйста, оцените степень вашего согласия с каждым утверждением. Пожалуйста, ответьте на каждое утверждение, основываясь на собственных ощущениях и опыте.",
+      "SHAS_r1": "Совершенно не согласен(а)",
+      "SHAS_r2": "2",
+      "SHAS_r3": "3",
+      "SHAS_r4": "4",
+      "SHAS_r5": "5",
+      "SHAS_r6": "6",
+      "SHAS_r7": "Полностью согласен(на)",
+      "SHAS001": "Мой дом — лучшее место заниматься тем, что мне нравится.",
+      "SHAS002": "Мой дом — это особенное место для меня.",
+      "SHAS003": "Ни одно другое место не может сравниться с моим домом.",
+      "SHAS004": "Мой дом и я очень похожи друг на друга.",
+      "SHAS005": "Я получаю большее удовлетворение, находясь в собственном доме, нежели в других местах.",
+      "SHAS006": "Я очень привязан(а) к своему дому.",
+      "SHAS007": "Я готов(а) вкладывать силы и душу в дом, где я живу."
+    }
+  }
+}

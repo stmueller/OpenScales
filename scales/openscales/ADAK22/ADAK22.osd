@@ -1,0 +1,153 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "ADAK22",
+      "name": "Antidepressant Knowledge Inventory",
+      "abbreviation": "ADAK-22",
+      "description": "22-item scale measuring knowledge about antidepressant medication across four domains: Mechanism of Action (8 items), Side Effects (7 items), Usage in Special Groups (3 items), and Miscellaneous (4 items). Items are rated on a 5-point agreement scale; scored as mean endorsement per subscale. Item 14 from the original paper is absent (not included in published instrument). Note: items represent statements of varying accuracy; higher scores reflect greater agreement with each statement, not necessarily greater knowledge accuracy.",
+      "citation": "Abdallat, M., Murshidi, R., Taha, H., Jaber, D. Z., Hammouri, M., Al-Huneidy, L., Aljayeh, M., Ghanem, H. H., Bedros, A. W., Al-Omairi, J., Abbas, R., Abu-usba, M. I., Alkayed, Z., Banimustafa, R., & Al-Ani, A. (2023). An investigation of knowledge and attitudes towards antidepressants: A cross-sectional survey of Jordan's six medical schools. BMC Psychiatry, 23(1). https://doi.org/10.1186/s12888-023-05037-8",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1186/s12888-023-05037-8",
+      "version": "1.0",
+      "domain": "Clinical"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-10",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["ADAK22_r1", "ADAK22_r2", "ADAK22_r3", "ADAK22_r4", "ADAK22_r5"],
+      "question_head": "ADAK22_head"
+    },
+    "dimensions": [
+      {
+        "id": "mechanism",
+        "name": "Mechanism of Action",
+        "description": "Knowledge about how antidepressants work pharmacologically (items 1–8)"
+      },
+      {
+        "id": "side_effects",
+        "name": "Side Effects",
+        "description": "Knowledge about antidepressant side effects and tolerability (items 9–13, 15–16)"
+      },
+      {
+        "id": "special_groups",
+        "name": "Usage in Special Groups",
+        "description": "Knowledge about antidepressant use in vulnerable or special populations (items 17–19)"
+      },
+      {
+        "id": "miscellaneous",
+        "name": "Miscellaneous",
+        "description": "General knowledge about antidepressant treatment and use (items 20–23)"
+      }
+    ],
+    "items": [
+      {"id": "ADAK22001", "type": "likert", "text_key": "ADAK22001", "dimension": "mechanism"},
+      {"id": "ADAK22002", "type": "likert", "text_key": "ADAK22002", "dimension": "mechanism"},
+      {"id": "ADAK22003", "type": "likert", "text_key": "ADAK22003", "dimension": "mechanism"},
+      {"id": "ADAK22004", "type": "likert", "text_key": "ADAK22004", "dimension": "mechanism"},
+      {"id": "ADAK22005", "type": "likert", "text_key": "ADAK22005", "dimension": "mechanism"},
+      {"id": "ADAK22006", "type": "likert", "text_key": "ADAK22006", "dimension": "mechanism"},
+      {"id": "ADAK22007", "type": "likert", "text_key": "ADAK22007", "dimension": "mechanism"},
+      {"id": "ADAK22008", "type": "likert", "text_key": "ADAK22008", "dimension": "mechanism"},
+      {"id": "ADAK22009", "type": "likert", "text_key": "ADAK22009", "dimension": "side_effects"},
+      {"id": "ADAK22010", "type": "likert", "text_key": "ADAK22010", "dimension": "side_effects"},
+      {"id": "ADAK22011", "type": "likert", "text_key": "ADAK22011", "dimension": "side_effects"},
+      {"id": "ADAK22012", "type": "likert", "text_key": "ADAK22012", "dimension": "side_effects"},
+      {"id": "ADAK22013", "type": "likert", "text_key": "ADAK22013", "dimension": "side_effects"},
+      {"id": "ADAK22014", "type": "likert", "text_key": "ADAK22014", "dimension": "side_effects"},
+      {"id": "ADAK22015", "type": "likert", "text_key": "ADAK22015", "dimension": "side_effects"},
+      {"id": "ADAK22016", "type": "likert", "text_key": "ADAK22016", "dimension": "special_groups"},
+      {"id": "ADAK22017", "type": "likert", "text_key": "ADAK22017", "dimension": "special_groups"},
+      {"id": "ADAK22018", "type": "likert", "text_key": "ADAK22018", "dimension": "special_groups"},
+      {"id": "ADAK22019", "type": "likert", "text_key": "ADAK22019", "dimension": "miscellaneous"},
+      {"id": "ADAK22020", "type": "likert", "text_key": "ADAK22020", "dimension": "miscellaneous"},
+      {"id": "ADAK22021", "type": "likert", "text_key": "ADAK22021", "dimension": "miscellaneous"},
+      {"id": "ADAK22022", "type": "likert", "text_key": "ADAK22022", "dimension": "miscellaneous"}
+    ],
+    "scoring": {
+      "mechanism": {
+        "method": "mean_coded",
+        "description": "Mean of Mechanism of Action items (original items 1–8); higher score = greater agreement with these statements",
+        "items": {
+          "ADAK22001": 1, "ADAK22002": 1, "ADAK22003": 1, "ADAK22004": 1,
+          "ADAK22005": 1, "ADAK22006": 1, "ADAK22007": 1, "ADAK22008": 1
+        }
+      },
+      "side_effects": {
+        "method": "mean_coded",
+        "description": "Mean of Side Effects items (original items 9–13, 15–16; item 14 absent from published instrument); higher score = greater agreement",
+        "items": {
+          "ADAK22009": 1, "ADAK22010": 1, "ADAK22011": 1, "ADAK22012": 1,
+          "ADAK22013": 1, "ADAK22014": 1, "ADAK22015": 1
+        }
+      },
+      "special_groups": {
+        "method": "mean_coded",
+        "description": "Mean of Usage in Special Groups items (original items 17–19); higher score = greater agreement",
+        "items": {
+          "ADAK22016": 1, "ADAK22017": 1, "ADAK22018": 1
+        }
+      },
+      "miscellaneous": {
+        "method": "mean_coded",
+        "description": "Mean of Miscellaneous items (original items 20–23); higher score = greater agreement",
+        "items": {
+          "ADAK22019": 1, "ADAK22020": 1, "ADAK22021": 1, "ADAK22022": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ADAK22_head": "Please indicate how much you agree or disagree with each statement about antidepressant medications.",
+      "ADAK22_r1": "Strongly disagree",
+      "ADAK22_r2": "Disagree",
+      "ADAK22_r3": "Neutral",
+      "ADAK22_r4": "Agree",
+      "ADAK22_r5": "Strongly agree",
+      "ADAK22001": "Antidepressants are drugs that require continuous regular use, and are not used as \"per needed\".",
+      "ADAK22002": "Antidepressants show their effects after a few weeks.",
+      "ADAK22003": "All antidepressants aim to increase level of monoamines.",
+      "ADAK22004": "Everyone responds the same to a particular antidepressant.",
+      "ADAK22005": "Antidepressants provide symptomatic treatment.",
+      "ADAK22006": "A period of 9–12 months is the typical duration of first course of antidepressants.",
+      "ADAK22007": "It takes at least 4 to 6 weeks at full dose before the antidepressant medication is deemed non-efficacious.",
+      "ADAK22008": "Treatment with a single antidepressant leads to remission in approximately half of patients.",
+      "ADAK22009": "Antidepressants are addictive.",
+      "ADAK22010": "Antidepressants are associated with sexual side effects (such as decreased libido, delayed ejaculation).",
+      "ADAK22011": "Serotonin syndrome is a rare but serious complication of antidepressant use.",
+      "ADAK22012": "SSRIs have side effects of GI complaints.",
+      "ADAK22013": "Antidepressants discontinuation needs tapering due to associated withdrawal effects.",
+      "ADAK22014": "All antidepressants are associated with drug-drug interactions.",
+      "ADAK22015": "Serotonin syndrome can result from taking a single serotonergic agent or by taking multiple agents in combination.",
+      "ADAK22016": "We can use antidepressants in pregnant women.",
+      "ADAK22017": "Antidepressants are safe during breastfeeding.",
+      "ADAK22018": "Antidepressants can't be used in ages 0–6.",
+      "ADAK22019": "It's difficult to predict which patient will respond to which antidepressant, so trials of several antidepressants may be necessary before an effective agent is found.",
+      "ADAK22020": "MAOIs (monoamine oxidase inhibitors) are the first-line treatment for major depressive disorder.",
+      "ADAK22021": "SSRIs are the most common antidepressants in clinical use.",
+      "ADAK22022": "There are modalities of depression treatment other than medications."
+    }
+  }
+}

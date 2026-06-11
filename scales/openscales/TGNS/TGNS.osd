@@ -1,0 +1,196 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "TGNS",
+      "name": "Trait Gratitude to Nature Scale",
+      "abbreviation": "TGNS",
+      "description": "8-item scale measuring dispositional gratitude toward the natural world across four aspects: Expression (items 1-2; desire to show thankfulness), Intensity (items 3-4; depth of felt gratitude), Span (items 5-6; breadth of gratitude across life domains), and Frequency (items 7-8; how often gratitude is triggered).",
+      "citation": "Tam, K.-P. (2022). Gratitude to nature: Presenting a theory of its conceptualization, measurement, and effects on pro-environmental behavior. Journal of Environmental Psychology, 79, 1–14. https://doi.org/10.1016/j.jenvp.2021.101754",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1016/j.jenvp.2021.101754",
+      "version": "1.0",
+      "domain": "Environment"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "TGNS_r1",
+        "TGNS_r2",
+        "TGNS_r3",
+        "TGNS_r4",
+        "TGNS_r5",
+        "TGNS_r6",
+        "TGNS_r7"
+      ],
+      "question_head": "TGNS_head",
+      "max": 7
+    },
+    "dimensions": [
+      {
+        "id": "GratitudeToNature",
+        "name": "Gratitude to Nature",
+        "description": "Overall dispositional tendency to feel grateful toward the natural world"
+      },
+      {
+        "id": "Expression",
+        "name": "Expression",
+        "description": "Desire to express and show thankfulness to nature"
+      },
+      {
+        "id": "Intensity",
+        "name": "Intensity",
+        "description": "Depth and strength of felt gratitude toward nature"
+      },
+      {
+        "id": "Span",
+        "name": "Span",
+        "description": "Breadth of gratitude across life domains and experiences"
+      },
+      {
+        "id": "Frequency",
+        "name": "Frequency",
+        "description": "How often gratitude toward nature is experienced"
+      }
+    ],
+    "items": [
+      {
+        "id": "TGNS001",
+        "type": "likert",
+        "text_key": "TGNS001",
+        "dimension": "Expression"
+      },
+      {
+        "id": "TGNS002",
+        "type": "likert",
+        "text_key": "TGNS002",
+        "dimension": "Expression"
+      },
+      {
+        "id": "TGNS003",
+        "type": "likert",
+        "text_key": "TGNS003",
+        "dimension": "Intensity"
+      },
+      {
+        "id": "TGNS004",
+        "type": "likert",
+        "text_key": "TGNS004",
+        "dimension": "Intensity"
+      },
+      {
+        "id": "TGNS005",
+        "type": "likert",
+        "text_key": "TGNS005",
+        "dimension": "Span"
+      },
+      {
+        "id": "TGNS006",
+        "type": "likert",
+        "text_key": "TGNS006",
+        "dimension": "Span"
+      },
+      {
+        "id": "TGNS007",
+        "type": "likert",
+        "text_key": "TGNS007",
+        "dimension": "Frequency"
+      },
+      {
+        "id": "TGNS008",
+        "type": "likert",
+        "text_key": "TGNS008",
+        "dimension": "Frequency"
+      }
+    ],
+    "scoring": {
+      "GratitudeToNature": {
+        "method": "mean_coded",
+        "description": "Mean of all 8 items; higher scores indicate greater dispositional gratitude to nature.",
+        "items": {
+          "TGNS001": 1,
+          "TGNS002": 1,
+          "TGNS003": 1,
+          "TGNS004": 1,
+          "TGNS005": 1,
+          "TGNS006": 1,
+          "TGNS007": 1,
+          "TGNS008": 1
+        }
+      },
+      "Expression": {
+        "method": "mean_coded",
+        "description": "Mean of items 1-2",
+        "items": {
+          "TGNS001": 1,
+          "TGNS002": 1
+        }
+      },
+      "Intensity": {
+        "method": "mean_coded",
+        "description": "Mean of items 3-4",
+        "items": {
+          "TGNS003": 1,
+          "TGNS004": 1
+        }
+      },
+      "Span": {
+        "method": "mean_coded",
+        "description": "Mean of items 5-6",
+        "items": {
+          "TGNS005": 1,
+          "TGNS006": 1
+        }
+      },
+      "Frequency": {
+        "method": "mean_coded",
+        "description": "Mean of items 7-8",
+        "items": {
+          "TGNS007": 1,
+          "TGNS008": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "TGNS_head": "The statements below describe some feelings toward nature. For each statement, please check the box that best represents your agreement or disagreement with it.",
+      "TGNS_r1": "Strongly disagree",
+      "TGNS_r2": "2",
+      "TGNS_r3": "3",
+      "TGNS_r4": "4",
+      "TGNS_r5": "5",
+      "TGNS_r6": "6",
+      "TGNS_r7": "Strongly agree",
+      "TGNS001": "I want to give thanks to nature for its support to my life.",
+      "TGNS002": "It is important for me to do something to show my thankfulness to the natural world for the resources I can use.",
+      "TGNS003": "I am deeply grateful to nature for all it provides me with.",
+      "TGNS004": "I have a strong sense of gratitude toward the natural world for its support to me.",
+      "TGNS005": "If I were to list the reasons why I feel grateful toward nature, it would be a very long list.",
+      "TGNS006": "As I look back on my life, I feel that I have been richly blessed by the natural world.",
+      "TGNS007": "Even something as simple as seeing a beautiful flower can make me feel grateful toward nature.",
+      "TGNS008": "Whenever I eat something delicious, I feel grateful toward the natural world for its provisions."
+    }
+  }
+}

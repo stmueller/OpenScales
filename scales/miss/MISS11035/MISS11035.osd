@@ -1,0 +1,99 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Challenged Sense of Belonging Scale",
+      "code": "MISS11035",
+      "abbreviation": "CSBS",
+      "description": "A 4-item unidimensional scale measuring challenged (eroded) sense of belonging across four facets: Identification (no place in the world), Participation (not participating with others), Congruence (torn between worlds), and Connectedness (disconnected from those around). Validated in English, Arabic, and Farsi/Dari with refugee and asylum seeker samples in Germany (N=3,783). All items are negatively worded; higher scores indicate greater challenge to sense of belonging. NOTE: Response anchors run 1=Strongly agree to 5=Strongly disagree (reversed from typical convention).",
+      "citation": "Fuchs, L. M., Jacobsen, J., Walther, L., Hahn, E., Ta, T. M. T., Bajbouj, M., & von Scheve, C. (2021). The Challenged Sense of Belonging Scale (CSBS)—A validation study in English, Arabic, and Farsi/Dari among refugees and asylum seekers in Germany. Measurement Instruments for the Social Sciences, 3, Article e11035. https://doi.org/10.1186/s42409-021-00021-y",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/11035",
+      "domain": "Social / Developmental",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-08",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Items verbatim from paper in English, German, and Arabic. Farsi/Dari not reproduced (script rendering issues). Response scale 1=Strongly agree to 5=Strongly disagree — note this is reversed from typical Likert convention; higher raw scores = more challenged belonging. No reverse-coded items. Validated with refugee/asylum seeker populations; generalizability to other populations unknown."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["csbs_r1", "csbs_r2", "csbs_r3", "csbs_r4", "csbs_r5"]
+    },
+    "dimensions": [
+      {
+        "id": "belonging",
+        "name": "Challenged Sense of Belonging",
+        "abbreviation": "CSB",
+        "description": "Overall challenged/eroded sense of belonging. Sum of 4 items, range 4–20; higher = greater challenge to sense of belonging."
+      }
+    ],
+    "items": [
+      {"id": "csbs1", "type": "likert", "text_key": "csbs1", "dimension": "belonging"},
+      {"id": "csbs2", "type": "likert", "text_key": "csbs2", "dimension": "belonging"},
+      {"id": "csbs3", "type": "likert", "text_key": "csbs3", "dimension": "belonging"},
+      {"id": "csbs4", "type": "likert", "text_key": "csbs4", "dimension": "belonging"}
+    ],
+    "scoring": {
+      "belonging": {
+        "description": "Sum of all 4 items. Range 4–20; higher = greater challenge to sense of belonging. Note: response scale runs 1=Strongly agree to 5=Strongly disagree (atypical direction).",
+        "method": "sum_coded",
+        "items": ["csbs1", "csbs2", "csbs3", "csbs4"]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Challenged Sense of Belonging Scale (CSBS) Report",
+      "footer_refs": [
+        "Fuchs, L. M., Jacobsen, J., Walther, L., Hahn, E., Ta, T. M. T., Bajbouj, M., & von Scheve, C. (2021). The Challenged Sense of Belonging Scale (CSBS)—A validation study in English, Arabic, and Farsi/Dari among refugees and asylum seekers in Germany. Measurement Instruments for the Social Sciences, 3, Article e11035. https://doi.org/10.1186/s42409-021-00021-y",
+        "Higher scores indicate greater challenge to sense of belonging. Response scale is reversed from typical convention: 1=Strongly agree, 5=Strongly disagree."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "csbs_r1": "Strongly agree",
+      "csbs_r2": "Agree",
+      "csbs_r3": "Neither agree nor disagree",
+      "csbs_r4": "Disagree",
+      "csbs_r5": "Strongly disagree",
+      "csbs1": "I am troubled by a feeling I have no place in this world.",
+      "csbs2": "I don't feel that I participate with anyone or any group.",
+      "csbs3": "I feel torn between worlds.",
+      "csbs4": "I feel disconnected from those around me.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "de": {
+      "csbs_r1": "Stimme voll und ganz zu",
+      "csbs_r2": "Stimme zu",
+      "csbs_r3": "Weder noch",
+      "csbs_r4": "Stimme nicht zu",
+      "csbs_r5": "Stimme überhaupt nicht zu",
+      "csbs1": "Mich beunruhigt das Gefühl, dass ich nirgends auf dieser Welt hingehöre.",
+      "csbs2": "Ich habe nicht das Gefühl, am Leben anderer Menschen oder Gruppen teilzuhaben.",
+      "csbs3": "Ich fühle mich zwischen Welten hin- und hergerissen.",
+      "csbs4": "Ich fühle mich nicht verbunden mit den Menschen, die mich umgeben.",
+      "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
+    },
+    "ar": {
+      "csbs_r1": "أوافق بشدة",
+      "csbs_r2": "أوافق",
+      "csbs_r3": "لا أوافق ولا أرفض",
+      "csbs_r4": "لا أوافق",
+      "csbs_r5": "لا أوافق بشدة",
+      "csbs1": "يقلقني الشعور بأنني لا أنتمي إلى أي مكان في هذا العالم.",
+      "csbs2": "لا أشعر بأنني أشارك أحداً أو أي مجموعة.",
+      "csbs3": "أشعر بأنني ممزق بين عالمين.",
+      "csbs4": "أشعر بأنني منفصل عن من حولي.",
+      "debrief": "شكراً لإكمالك هذا الاستبيان."
+    }
+  }
+}

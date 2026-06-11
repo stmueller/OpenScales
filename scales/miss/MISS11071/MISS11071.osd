@@ -1,0 +1,213 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Self-Appraisal of Masking Instrument",
+      "code": "MISS11071",
+      "abbreviation": "SAMI",
+      "description": "A 5-item instrument measuring self-appraisals of wearing a face mask during the COVID-19 pandemic. Two versions: Prospective (how respondents think they would feel wearing a mask) and Retrospective (how they did feel). Items cover pride in contributing to public health, self-consciousness about being judged, feeling silly, fear of being perceived as dangerous, and concern about racist aggression. Items are NOT intended to be summed into a composite score — each captures a distinct self-appraisal consideration. Validated in the USA in English only. Predictive validity demonstrated: prospective masking emotions predicted voting behavior 27 weeks later.",
+      "citation": "Block Jr., R., & Plutzer, E. (2022). The Self-Appraisal of Masking Instrument. Measurement Instruments for the Social Sciences, 4(1), Article e11071. https://doi.org/10.1186/s42409-022-00032-3",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/11071",
+      "domain": "Social / Health",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-08",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English items verbatim from Block Jr & Plutzer (2022). Authors explicitly state items should NOT be combined into an additive scale — each measures a distinct self-appraisal. 3-point response scale differs between versions: Prospective uses 'Definitely would feel / Possibly would feel / Definitely would not feel'; Retrospective uses 'Very much / Somewhat / Not at all'. Both versions encoded using separate likert_options label sets via item-level option overrides. No reverse-coded items. Validated in USA English-speaking population only; authors note adaptation needed for other cultures/languages. Pride item (sami1) shows weak correlation with others (item-to-rest ≤ 0.15). The prospective version is encoded as the primary; retrospective stem and response labels are provided as alternate translation keys (stem_retrospective, retro_r1–retro_r3)."
+    },
+    "parameters": {
+      "version": {
+        "type": "string",
+        "default": "prospective",
+        "options": ["prospective", "retrospective"],
+        "description": "Prospective: asked of non-wearers (would feel); Retrospective: asked of mask-wearers (did feel). Affects question stem, item text, and response labels."
+      }
+    },
+    "likert_options": {
+      "points": 3,
+      "min": 1,
+      "max": 3,
+      "labels": ["sami_r1", "sami_r2", "sami_r3"],
+      "question_head": "sami_head"
+    },
+    "dimensions": [
+      {
+        "id": "pride",
+        "name": "Contribution Pride",
+        "abbreviation": "SAMI-P",
+        "description": "Feeling proud about contributing to public health by wearing a mask."
+      },
+      {
+        "id": "self_conscious",
+        "name": "Self-Consciousness",
+        "abbreviation": "SAMI-SC",
+        "description": "Feeling self-conscious that others are judging the mask wearer."
+      },
+      {
+        "id": "silly",
+        "name": "Silliness",
+        "abbreviation": "SAMI-Si",
+        "description": "Feeling silly when wearing a mask."
+      },
+      {
+        "id": "dangerous",
+        "name": "Fear of Appearing Dangerous",
+        "abbreviation": "SAMI-D",
+        "description": "Fearing that others perceive the mask wearer as dangerous."
+      },
+      {
+        "id": "racism",
+        "name": "Racism Concern",
+        "abbreviation": "SAMI-R",
+        "description": "Concern that wearing a mask would subject the wearer to racist aggression."
+      }
+    ],
+    "items": [
+      {
+        "type": "section", "id": "prospective",
+        "title_key": "sami_head",
+        "visible_when": {"parameter": "version", "operator": "equals", "value": "prospective"}
+      },
+      {"id": "sami1", "type": "multi", "text_key": "sami1", "dimension": "pride",
+        "options": [
+          {"value": 3, "text_key": "sami_r3"},
+          {"value": 2, "text_key": "sami_r2"},
+          {"value": 1, "text_key": "sami_r1"}
+        ]
+      },
+      {"id": "sami2", "type": "multi", "text_key": "sami2", "dimension": "self_conscious",
+        "options": [
+          {"value": 3, "text_key": "sami_r3"},
+          {"value": 2, "text_key": "sami_r2"},
+          {"value": 1, "text_key": "sami_r1"}
+        ]
+      },
+      {"id": "sami3", "type": "multi", "text_key": "sami3", "dimension": "silly",
+        "options": [
+          {"value": 3, "text_key": "sami_r3"},
+          {"value": 2, "text_key": "sami_r2"},
+          {"value": 1, "text_key": "sami_r1"}
+        ]
+      },
+      {"id": "sami4", "type": "multi", "text_key": "sami4", "dimension": "dangerous",
+        "options": [
+          {"value": 3, "text_key": "sami_r3"},
+          {"value": 2, "text_key": "sami_r2"},
+          {"value": 1, "text_key": "sami_r1"}
+        ]
+      },
+      {"id": "sami5", "type": "multi", "text_key": "sami5", "dimension": "racism",
+        "options": [
+          {"value": 3, "text_key": "sami_r3"},
+          {"value": 2, "text_key": "sami_r2"},
+          {"value": 1, "text_key": "sami_r1"}
+        ]
+      },
+      {
+        "type": "section", "id": "retrospective",
+        "title_key": "stem_retrospective",
+        "visible_when": {"parameter": "version", "operator": "equals", "value": "retrospective"}
+      },
+      {"id": "sami1r", "type": "multi", "text_key": "sami1_retro", "dimension": "pride",
+        "options": [
+          {"value": 3, "text_key": "retro_r3"},
+          {"value": 2, "text_key": "retro_r2"},
+          {"value": 1, "text_key": "retro_r1"}
+        ]
+      },
+      {"id": "sami2r", "type": "multi", "text_key": "sami2_retro", "dimension": "self_conscious",
+        "options": [
+          {"value": 3, "text_key": "retro_r3"},
+          {"value": 2, "text_key": "retro_r2"},
+          {"value": 1, "text_key": "retro_r1"}
+        ]
+      },
+      {"id": "sami3r", "type": "multi", "text_key": "sami3_retro", "dimension": "silly",
+        "options": [
+          {"value": 3, "text_key": "retro_r3"},
+          {"value": 2, "text_key": "retro_r2"},
+          {"value": 1, "text_key": "retro_r1"}
+        ]
+      },
+      {"id": "sami4r", "type": "multi", "text_key": "sami4_retro", "dimension": "dangerous",
+        "options": [
+          {"value": 3, "text_key": "retro_r3"},
+          {"value": 2, "text_key": "retro_r2"},
+          {"value": 1, "text_key": "retro_r1"}
+        ]
+      },
+      {"id": "sami5r", "type": "multi", "text_key": "sami5_retro", "dimension": "racism",
+        "options": [
+          {"value": 3, "text_key": "retro_r3"},
+          {"value": 2, "text_key": "retro_r2"},
+          {"value": 1, "text_key": "retro_r1"}
+        ]
+      }
+    ],
+    "scoring": {
+      "pride": {
+        "description": "Contribution pride (prospective: sami1; retrospective: sami1r). Range 1–3; higher = more pride.",
+        "method": "sum_coded",
+        "items": {"sami1": 1, "sami1r": 1}
+      },
+      "self_conscious": {
+        "description": "Self-consciousness (prospective: sami2; retrospective: sami2r). Range 1–3; higher = more self-consciousness.",
+        "method": "sum_coded",
+        "items": {"sami2": 1, "sami2r": 1}
+      },
+      "silly": {
+        "description": "Silliness (prospective: sami3; retrospective: sami3r). Range 1–3; higher = stronger feeling of silliness.",
+        "method": "sum_coded",
+        "items": {"sami3": 1, "sami3r": 1}
+      },
+      "dangerous": {
+        "description": "Fear of appearing dangerous (prospective: sami4; retrospective: sami4r). Range 1–3; higher = greater fear.",
+        "method": "sum_coded",
+        "items": {"sami4": 1, "sami4r": 1}
+      },
+      "racism": {
+        "description": "Racism concern (prospective: sami5; retrospective: sami5r). Range 1–3; higher = greater concern.",
+        "method": "sum_coded",
+        "items": {"sami5": 1, "sami5r": 1}
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Self-Appraisal of Masking Instrument (SAMI) Report",
+      "footer_refs": [
+        "Block Jr., R., & Plutzer, E. (2022). The Self-Appraisal of Masking Instrument. Measurement Instruments for the Social Sciences, 4(1), Article e11071. https://doi.org/10.1186/s42409-022-00032-3",
+        "Note: Items are NOT intended to be combined into a composite score. Each item measures a distinct self-appraisal of mask-wearing."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "sami_head": "How do you think you would feel if you did wear a mask when shopping at a supermarket or commuting to work?",
+      "sami_r1": "Definitely would not feel this way",
+      "sami_r2": "Possibly would feel this way",
+      "sami_r3": "Definitely would feel this way",
+      "stem_retrospective": "How did you feel when you did wear a mask?",
+      "retro_r1": "Not at all",
+      "retro_r2": "Somewhat",
+      "retro_r3": "Very much",
+      "sami1": "I would feel proud I am contributing to stopping the spread of COVID-19.",
+      "sami2": "I would feel self-conscious that others were judging me.",
+      "sami3": "I would feel silly.",
+      "sami4": "I would be fearful that someone might think I was dangerous.",
+      "sami5": "I would be worried that a mask would subject me to racist aggression.",
+      "sami1_retro": "I felt proud I am contributing to stopping the spread of COVID-19.",
+      "sami2_retro": "I felt self-conscious that others were judging me.",
+      "sami3_retro": "I felt silly.",
+      "sami4_retro": "I was fearful that someone might think I was dangerous.",
+      "sami5_retro": "I worried that a mask would subject me to racist aggression.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

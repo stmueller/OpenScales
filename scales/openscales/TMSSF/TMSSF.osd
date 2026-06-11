@@ -1,0 +1,106 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "TMSSF",
+      "name": "Team Mindset Scale--Short-Form",
+      "abbreviation": "TMS-SF",
+      "description": "8-item short-form scale measuring two dimensions of team mindset: Team Growth Mindset (belief that team abilities develop through collaboration) and Team Fixed Mindset (belief that team performance relies on fixed individual abilities or leadership). Rated on a 5-point Likert scale from strongly disagree (1) to strongly agree (5).",
+      "citation": "Kim, M., Han, S. J., & Kim, J. (2023). A short-form of team mindset scale: Using psychometric properties of the items. Frontiers in Psychology, 13. https://doi.org/10.3389/fpsyg.2022.1063541",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2022.1063541",
+      "version": "1.0",
+      "domain": "Work & Organizational"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "TMSSF_r1", "TMSSF_r2", "TMSSF_r3", "TMSSF_r4", "TMSSF_r5"
+      ],
+      "question_head": "TMSSF_head"
+    },
+    "dimensions": [
+      {
+        "id": "GrowthMindset",
+        "name": "Team Growth Mindset",
+        "description": "Belief that the team can develop and improve through collaboration and shared learning"
+      },
+      {
+        "id": "FixedMindset",
+        "name": "Team Fixed Mindset",
+        "description": "Belief that team performance depends on fixed individual ability or designated leaders"
+      }
+    ],
+    "items": [
+      { "id": "TMSSF001", "type": "likert", "text_key": "TMSSF001", "dimension": "GrowthMindset" },
+      { "id": "TMSSF002", "type": "likert", "text_key": "TMSSF002", "dimension": "GrowthMindset" },
+      { "id": "TMSSF003", "type": "likert", "text_key": "TMSSF003", "dimension": "GrowthMindset" },
+      { "id": "TMSSF004", "type": "likert", "text_key": "TMSSF004", "dimension": "GrowthMindset" },
+      { "id": "TMSSF005", "type": "likert", "text_key": "TMSSF005", "dimension": "FixedMindset" },
+      { "id": "TMSSF006", "type": "likert", "text_key": "TMSSF006", "dimension": "FixedMindset" },
+      { "id": "TMSSF007", "type": "likert", "text_key": "TMSSF007", "dimension": "FixedMindset" },
+      { "id": "TMSSF008", "type": "likert", "text_key": "TMSSF008", "dimension": "FixedMindset" }
+    ],
+    "scoring": {
+      "GrowthMindset": {
+        "method": "mean_coded",
+        "description": "Mean of Team Growth Mindset items (1-4). Higher scores indicate stronger growth mindset.",
+        "items": {
+          "TMSSF001": 1,
+          "TMSSF002": 1,
+          "TMSSF003": 1,
+          "TMSSF004": 1
+        }
+      },
+      "FixedMindset": {
+        "method": "mean_coded",
+        "description": "Mean of Team Fixed Mindset items (5-8). Higher scores indicate stronger fixed mindset.",
+        "items": {
+          "TMSSF005": 1,
+          "TMSSF006": 1,
+          "TMSSF007": 1,
+          "TMSSF008": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "TMSSF_head": "Please indicate your level of agreement with the following statements about your team.",
+      "TMSSF_r1": "Strongly disagree",
+      "TMSSF_r2": "Disagree",
+      "TMSSF_r3": "Neither agree nor disagree",
+      "TMSSF_r4": "Agree",
+      "TMSSF_r5": "Strongly agree",
+      "TMSSF001": "Our team always looked for better ideas.",
+      "TMSSF002": "Our team was enthusiastic and said, \"let's go for it\".",
+      "TMSSF003": "Our team benefited from learning each other's opinions.",
+      "TMSSF004": "Our team can achieve more collectively than an individual can.",
+      "TMSSF005": "Our team felt that contrary opinions made us less efficient.",
+      "TMSSF006": "Our team relied on a key individual to solve challenges.",
+      "TMSSF007": "Our team kept one solution throughout the whole time.",
+      "TMSSF008": "Our team can achieve more by letting the leader lead than we can by figuring it out collectively."
+    }
+  }
+}

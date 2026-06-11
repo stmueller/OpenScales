@@ -1,0 +1,145 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "DOES",
+      "name": "DOES Scale",
+      "abbreviation": "DOES",
+      "description": "20-item scale measuring sensory processing sensitivity as a trait constellation across four facets: Depth of processing (D), Overstimulation (O), Emotional sensitivity/Empathy (E), and Sensitivity to subtleties (S). Uses a 4-point agreement scale.",
+      "citation": "Gubler, D. A., Janelt, T., Roth, M., Schlegel, K., Guggisberg, J., & Troche, S. J. (2025). The DOES Scale: Measuring sensory processing sensitivity as a trait constellation. Journal of Personality Assessment, 107(2), 205-220. https://doi.org/10.1080/00223891.2024.2405536",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1080/00223891.2024.2405536",
+      "version": "1.0",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "labels": ["DOES_r1", "DOES_r2", "DOES_r3", "DOES_r4"],
+      "question_head": "DOES_head"
+    },
+    "dimensions": [
+      {
+        "id": "depth",
+        "name": "Depth of Processing",
+        "description": "Tendency to process information deeply and reflect intensely (D facet)"
+      },
+      {
+        "id": "overstimulation",
+        "name": "Overstimulation",
+        "description": "Tendency to become overwhelmed by strong or multiple stimuli (O facet)"
+      },
+      {
+        "id": "emotional",
+        "name": "Emotional Sensitivity and Empathy",
+        "description": "Heightened emotional reactivity and empathic resonance (E facet)"
+      },
+      {
+        "id": "subtleties",
+        "name": "Sensitivity to Subtleties",
+        "description": "Heightened awareness of subtle sensory details (S facet)"
+      }
+    ],
+    "items": [
+      {"id": "DOES001", "type": "likert", "text_key": "DOES001", "dimension": "subtleties"},
+      {"id": "DOES002", "type": "likert", "text_key": "DOES002", "dimension": "emotional"},
+      {"id": "DOES003", "type": "likert", "text_key": "DOES003", "dimension": "overstimulation"},
+      {"id": "DOES004", "type": "likert", "text_key": "DOES004", "dimension": "depth"},
+      {"id": "DOES005", "type": "likert", "text_key": "DOES005", "dimension": "subtleties"},
+      {"id": "DOES006", "type": "likert", "text_key": "DOES006", "dimension": "emotional"},
+      {"id": "DOES007", "type": "likert", "text_key": "DOES007", "dimension": "overstimulation"},
+      {"id": "DOES008", "type": "likert", "text_key": "DOES008", "dimension": "depth"},
+      {"id": "DOES009", "type": "likert", "text_key": "DOES009", "dimension": "subtleties"},
+      {"id": "DOES010", "type": "likert", "text_key": "DOES010", "dimension": "emotional"},
+      {"id": "DOES011", "type": "likert", "text_key": "DOES011", "dimension": "overstimulation"},
+      {"id": "DOES012", "type": "likert", "text_key": "DOES012", "dimension": "depth"},
+      {"id": "DOES013", "type": "likert", "text_key": "DOES013", "dimension": "subtleties"},
+      {"id": "DOES014", "type": "likert", "text_key": "DOES014", "dimension": "emotional"},
+      {"id": "DOES015", "type": "likert", "text_key": "DOES015", "dimension": "overstimulation"},
+      {"id": "DOES016", "type": "likert", "text_key": "DOES016", "dimension": "depth"},
+      {"id": "DOES017", "type": "likert", "text_key": "DOES017", "dimension": "subtleties"},
+      {"id": "DOES018", "type": "likert", "text_key": "DOES018", "dimension": "emotional"},
+      {"id": "DOES019", "type": "likert", "text_key": "DOES019", "dimension": "subtleties"},
+      {"id": "DOES020", "type": "likert", "text_key": "DOES020", "dimension": "depth"}
+    ],
+    "scoring": {
+      "depth": {
+        "method": "mean_coded",
+        "description": "Mean of Depth of Processing items (4, 8, 12, 16, 20); higher scores indicate deeper processing tendency",
+        "items": {
+          "DOES004": 1, "DOES008": 1, "DOES012": 1, "DOES016": 1, "DOES020": 1
+        }
+      },
+      "overstimulation": {
+        "method": "mean_coded",
+        "description": "Mean of Overstimulation items (3, 7, 11, 15, [and 5 from pattern]); higher scores indicate greater overstimulation",
+        "items": {
+          "DOES003": 1, "DOES007": 1, "DOES011": 1, "DOES015": 1
+        }
+      },
+      "emotional": {
+        "method": "mean_coded",
+        "description": "Mean of Emotional Sensitivity and Empathy items (2, 6, 10, 14, 18); higher scores indicate greater emotional sensitivity",
+        "items": {
+          "DOES002": 1, "DOES006": 1, "DOES010": 1, "DOES014": 1, "DOES018": 1
+        }
+      },
+      "subtleties": {
+        "method": "mean_coded",
+        "description": "Mean of Sensitivity to Subtleties items (1, 5, 9, 13, 17, 19); higher scores indicate greater sensitivity to subtle stimuli",
+        "items": {
+          "DOES001": 1, "DOES005": 1, "DOES009": 1, "DOES013": 1, "DOES017": 1, "DOES019": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "DOES_head": "Below you will find a series of statements that one can use to describe oneself. Assess the extent to which the statements apply to you personally. Please make sure that you answer all the statements quickly and honestly. There are no right or wrong answers. If you are not sure, choose the response that most closely applies to you.",
+      "DOES_r1": "Strongly disagree",
+      "DOES_r2": "Disagree",
+      "DOES_r3": "Agree",
+      "DOES_r4": "Strongly agree",
+      "DOES001": "During a walk, I notice sounds around me clearly.",
+      "DOES002": "The moods of other people are highly contagious to me.",
+      "DOES003": "Events where I am exposed to multiple impressions overwhelm me.",
+      "DOES004": "It is difficult for me to switch off mentally.",
+      "DOES005": "I clearly perceive the kind of textiles I wear on my skin.",
+      "DOES006": "I am intensely moved by deep conversations.",
+      "DOES007": "I often feel exhausted after being out with a lot of people.",
+      "DOES008": "I have intense thoughts about situations that I will experience in the future.",
+      "DOES009": "I am aware when the light in a room is glaring or bright.",
+      "DOES010": "When others quarrel, it greatly affects me.",
+      "DOES011": "When there is a lot going on around me, I am easily overwhelmed.",
+      "DOES012": "After experiencing something positive or negative, I think about what happened for a long time.",
+      "DOES013": "I notice slight differences in temperature quickly.",
+      "DOES014": "Emotional film scenes touch me deeply.",
+      "DOES015": "I am very disturbed by sounds that occur at the same time.",
+      "DOES016": "I spend a lot of time thinking about everyday experiences.",
+      "DOES017": "I can perceive smells very clearly.",
+      "DOES018": "When I listen to beautiful music, I can become completely absorbed in it.",
+      "DOES019": "I often find odors like perfume or strong food smells unbearable.",
+      "DOES020": "It often happens to me that I lose myself for hours in new ideas."
+    }
+  }
+}

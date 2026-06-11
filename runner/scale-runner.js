@@ -278,11 +278,17 @@ const ScaleRunner = (() => {
       const marker = sec.marker;
       const secId  = marker && marker.id;
 
+      // Check section-level visible_when against params
+      const secVisibleWhen = marker && marker.visible_when;
+      const secHidden = secVisibleWhen && !evaluateCondition(secVisibleWhen, {}, params);
+
       // Include section marker itself
       if (marker) {
-        marker._excluded = secId && excludedSections.has(secId);
+        marker._excluded = (secId && excludedSections.has(secId)) || secHidden;
         result.push(marker);
       }
+
+      if (secHidden) continue;
 
       let qs = [...sec.questions];
 
@@ -795,6 +801,7 @@ const ScaleRunner = (() => {
     const [min]   = getQuestionRange(qdef, scaleDef);
     const labels  = qdef.likert_labels || opts.labels || [];
     const reverse = qdef.likert_reverse !== undefined ? qdef.likert_reverse : (opts.likert_reverse || false);
+    const suppressNums = opts.suppress_likert_numbers || scaleDef.suppress_likert_numbers || false;
 
     const row = document.createElement('div');
     row.className = 'sr-likert-row';
@@ -818,11 +825,12 @@ const ScaleRunner = (() => {
         labelEl.textContent = String(val);
       }
 
-      const numEl = document.createElement('span');
-      numEl.className = 'sr-likert-num';
-      numEl.textContent = String(val);
-
-      btn.appendChild(numEl);
+      if (!suppressNums) {
+        const numEl = document.createElement('span');
+        numEl.className = 'sr-likert-num';
+        numEl.textContent = String(val);
+        btn.appendChild(numEl);
+      }
       btn.appendChild(labelEl);
 
       // Pre-select if this was the previously recorded response
@@ -853,7 +861,12 @@ const ScaleRunner = (() => {
   }
 
   function renderMulti(qdef, strings, scaleDef, state, wrap, onResponse, prevResponse) {
-    const options = qdef.options || [];
+    let options = qdef.options || [];
+    if (qdef.shuffle_options) {
+      const pinned = options.filter(o => o.pin_last);
+      const free   = options.filter(o => !o.pin_last);
+      options = [...shuffle(free), ...pinned];
+    }
     const list = document.createElement('ol');
     list.className = 'sr-option-list';
 
@@ -898,7 +911,12 @@ const ScaleRunner = (() => {
   }
 
   function renderMulticheck(qdef, strings, scaleDef, state, wrap, onResponse, prevResponse) {
-    const options  = qdef.options || [];
+    let options  = qdef.options || [];
+    if (qdef.shuffle_options) {
+      const pinned = options.filter(o => o.pin_last);
+      const free   = options.filter(o => !o.pin_last);
+      options = [...shuffle(free), ...pinned];
+    }
     const v        = qdef.validation || {};
     // min_selected / max_selected may appear at question level or inside validation
     const minSel   = qdef.min_selected !== undefined ? qdef.min_selected : (v.min_selected !== undefined ? v.min_selected : 1);
@@ -1583,15 +1601,25 @@ const ScaleRunner = (() => {
 
   function computeScores(scaleDef, responseMap) {
     // Expand grid responses: responseMap['gridId'] = "3 4 2" → 'gridId_1'=3, 'gridId_2'=4, ...
+    // Expand multicheck responses: responseMap['qId'] = ['v1','v2'] → 'qId_v1'=1, 'qId_v2'=0, ...
     const expandedMap = Object.assign({}, responseMap);
     (scaleDef.items || scaleDef.questions || []).forEach(qdef => {
-      if (qdef.type !== 'grid') return;
-      const gridVal = responseMap[qdef.id];
-      if (gridVal === undefined || gridVal === null || gridVal === 'NA') return;
-      const parts = String(gridVal).split(' ');
-      (qdef.rows || []).forEach((_, ri) => {
-        expandedMap[`${qdef.id}_${ri + 1}`] = parts[ri] !== undefined ? parts[ri] : 'NA';
-      });
+      if (qdef.type === 'grid') {
+        const gridVal = responseMap[qdef.id];
+        if (gridVal === undefined || gridVal === null || gridVal === 'NA') return;
+        const parts = String(gridVal).split(' ');
+        (qdef.rows || []).forEach((_, ri) => {
+          expandedMap[`${qdef.id}_${ri + 1}`] = parts[ri] !== undefined ? parts[ri] : 'NA';
+        });
+      } else if (qdef.type === 'multicheck') {
+        const raw = responseMap[qdef.id];
+        if (raw === undefined || raw === null || raw === 'NA') return;
+        const selected = new Set(Array.isArray(raw) ? raw.map(String) : String(raw).split(',').map(s => s.trim()));
+        (qdef.options || []).forEach(opt => {
+          const val = opt.value !== undefined ? String(opt.value) : String(opt);
+          expandedMap[`${qdef.id}_${val}`] = selected.has(val) ? 1 : 0;
+        });
+      }
     });
     responseMap = expandedMap;
 
@@ -1815,6 +1843,21 @@ const ScaleRunner = (() => {
       const dimCols = dims.map(dimId => {
         const sd = (scaleDef.scoring || {})[dimId];
         if (!sd) return '';
+        if (qdef.type === 'multicheck') {
+          // Sum per-option scores for this dimension
+          const selected = new Set(Array.isArray(responseVal) ? responseVal.map(String)
+            : (responseVal === 'NA' ? [] : String(responseVal).split(',').map(s => s.trim())));
+          let optSum = 0, anyInDim = false;
+          (qdef.options || []).forEach(opt => {
+            const v = opt.value !== undefined ? String(opt.value) : String(opt);
+            const subId = `${qdef.id}_${v}`;
+            if (!isInScoring(sd, subId)) return;
+            anyInDim = true;
+            if (responseVal !== 'NA' && selected.has(v)) optSum++;
+          });
+          if (!anyInDim) return '';
+          return responseVal === 'NA' ? 'NA' : String(optSum);
+        }
         if (!isInScoring(sd, qdef.id)) return '';
         if (responseVal === 'NA') return 'NA';
         // Apply value_map (array format) then coding
@@ -1839,7 +1882,13 @@ const ScaleRunner = (() => {
       // Transformed score columns — show dim-level transformed score for items in that dim
       const tDimCols = tDims.map(dimId => {
         const sd = (scaleDef.scoring || {})[dimId];
-        if (!sd || !isInScoring(sd, qdef.id)) return '';
+        if (qdef.type === 'multicheck') {
+          const anyInDim = (qdef.options || []).some(opt => {
+            const v = opt.value !== undefined ? String(opt.value) : String(opt);
+            return isInScoring(sd, `${qdef.id}_${v}`);
+          });
+          if (!anyInDim) return '';
+        } else if (!sd || !isInScoring(sd, qdef.id)) return '';
         if (responseVal === 'NA') return 'NA';
         const tScore = (transformedScores || {})[dimId];
         return tScore !== undefined ? String(Math.round(tScore * 100) / 100) : 'NA';
@@ -1889,6 +1938,35 @@ const ScaleRunner = (() => {
             qdef.text_key, subText, subResp, String(rt), ...subDimCols, ...subTDimCols
           ]));
         });
+      } else if (qdef.type === 'multicheck') {
+        // Expand one row per option, recording 1/0 for selected/not-selected
+        const selected = new Set(Array.isArray(responseVal) ? responseVal.map(String)
+          : (responseVal === 'NA' ? [] : String(responseVal).split(',').map(s => s.trim())));
+        (qdef.options || []).forEach(opt => {
+          const val = opt.value !== undefined ? String(opt.value) : String(opt);
+          const subId = `${qdef.id}_${val}`;
+          const subResp = responseVal === 'NA' ? 'NA' : (selected.has(val) ? '1' : '0');
+          const optText = resolveText(opt.text_key || val, strings, params, responseMap, aliasMap);
+
+          const subDimCols = dims.map(dimId => {
+            const sd = (scaleDef.scoring || {})[dimId];
+            if (!isInScoring(sd, subId)) return '';
+            if (subResp === 'NA') return 'NA';
+            return subResp;
+          });
+          const subTDimCols = tDims.map(dimId => {
+            const sd = (scaleDef.scoring || {})[dimId];
+            if (!isInScoring(sd, subId)) return '';
+            if (subResp === 'NA') return 'NA';
+            const tScore = (transformedScores || {})[dimId];
+            return tScore !== undefined ? String(Math.round(tScore * 100) / 100) : 'NA';
+          });
+
+          lines.push(csvRow([
+            participant, String(ord), String(ts), subId,
+            qdef.text_key, optText, subResp, String(rt), ...subDimCols, ...subTDimCols
+          ]));
+        });
       } else {
         lines.push(csvRow([
           participant, String(ord), String(ts), qdef.id,
@@ -1910,6 +1988,11 @@ const ScaleRunner = (() => {
       if (qdef.type === 'section' || qdef.type === 'inst' || qdef.type === 'image') return;
       if (qdef.type === 'grid') {
         (qdef.rows || []).forEach((_, ri) => qIds.push(`${qdef.id}_${ri + 1}`));
+      } else if (qdef.type === 'multicheck') {
+        (qdef.options || []).forEach(opt => {
+          const val = opt.value !== undefined ? String(opt.value) : String(opt);
+          qIds.push(`${qdef.id}_${val}`);
+        });
       } else {
         qIds.push(qdef.id);
       }
@@ -1939,6 +2022,12 @@ const ScaleRunner = (() => {
       if (qdef.type === 'grid') {
         const parts = (typeof val === 'string' ? val : '').split(' ');
         (qdef.rows || []).forEach((_, ri) => qVals.push(parts[ri] || 'NA'));
+      } else if (qdef.type === 'multicheck') {
+        const selected = new Set(Array.isArray(val) ? val.map(String) : (val === 'NA' ? [] : String(val).split(',').map(s => s.trim())));
+        (qdef.options || []).forEach(opt => {
+          const v = opt.value !== undefined ? String(opt.value) : String(opt);
+          qVals.push(val === 'NA' ? 'NA' : (selected.has(v) ? '1' : '0'));
+        });
       } else {
         qVals.push(val);
       }
@@ -2136,7 +2225,7 @@ const ScaleRunner = (() => {
     if (config.demo) {
       const demoBanner = el('div', 'sr-demo-banner',
         '🔍 <strong>Demo mode</strong> — responses are not saved or uploaded.');
-      container.insertBefore(demoBanner, main);
+      container.insertBefore(demoBanner, header);
     }
 
     const progressBar  = el('div', 'sr-progress-bar');

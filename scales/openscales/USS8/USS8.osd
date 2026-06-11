@@ -1,0 +1,135 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "USS8",
+      "name": "Unrechtsempfindlichkeits-Skalen / Justice Sensitivity Scales–8",
+      "abbreviation": "USS-8 / JSS-8",
+      "description": "8-item scale measuring four perspectives of justice sensitivity: Victim (sensitivity when personally disadvantaged), Observer (sensitivity to injustice toward others), Beneficiary (sensitivity when advantaged at others' expense), and Perpetrator (sensitivity when causing injustice). Each subscale has 2 items rated on a 6-point scale. Originally published in German as the USS (Unrechtsempfindlichkeits-Skalen); the JSS-8 is the validated English adaptation.",
+      "citation": "Schmitt, M., Baumert, A., Gollwitzer, M., & Maes, J. (2010). The Justice Sensitivity Inventory: Factorial validity, location in the personality facet space, demographic differences and external correlates. Social Justice Research, 23(2–3), 211–238. https://doi.org/10.1007/s11211-010-0115-2\n\nGroskurth, K., Beierlein, C., Nießen, D., Baumert, A., Rammstedt, B., & Lechner, C. M. (2023). An English-language adaptation and validation of the Justice Sensitivity Short Scales–8 (JSS-8). PLoS ONE, 18(11). https://doi.org/10.1371/journal.pone.0293748",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://majournals.bib.uni-mannheim.de/mda/article/view/2013.015\nhttps://doi.org/10.1371/journal.pone.0293748",
+      "version": "1.0",
+      "domain": "Social"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-10",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": ["USS8_r1", "USS8_r2", "USS8_r3", "USS8_r4", "USS8_r5", "USS8_r6"],
+      "question_head": "USS8_head"
+    },
+    "dimensions": [
+      {
+        "id": "victim",
+        "name": "Victim Sensitivity",
+        "description": "Sensitivity to injustice when one is personally disadvantaged"
+      },
+      {
+        "id": "observer",
+        "name": "Observer Sensitivity",
+        "description": "Sensitivity when witnessing injustice toward others"
+      },
+      {
+        "id": "beneficiary",
+        "name": "Beneficiary Sensitivity",
+        "description": "Sensitivity when one benefits at the expense of others"
+      },
+      {
+        "id": "perpetrator",
+        "name": "Perpetrator Sensitivity",
+        "description": "Sensitivity when one personally causes injustice to others"
+      }
+    ],
+    "items": [
+      {"id": "USS8001", "type": "likert", "text_key": "USS8001", "dimension": "victim"},
+      {"id": "USS8002", "type": "likert", "text_key": "USS8002", "dimension": "victim"},
+      {"id": "USS8003", "type": "likert", "text_key": "USS8003", "dimension": "observer"},
+      {"id": "USS8004", "type": "likert", "text_key": "USS8004", "dimension": "observer"},
+      {"id": "USS8005", "type": "likert", "text_key": "USS8005", "dimension": "beneficiary"},
+      {"id": "USS8006", "type": "likert", "text_key": "USS8006", "dimension": "beneficiary"},
+      {"id": "USS8007", "type": "likert", "text_key": "USS8007", "dimension": "perpetrator"},
+      {"id": "USS8008", "type": "likert", "text_key": "USS8008", "dimension": "perpetrator"}
+    ],
+    "scoring": {
+      "victim": {
+        "method": "mean_coded",
+        "description": "Mean of items 1–2; higher scores indicate greater sensitivity to being treated unjustly",
+        "items": {"USS8001": 1, "USS8002": 1}
+      },
+      "observer": {
+        "method": "mean_coded",
+        "description": "Mean of items 3–4; higher scores indicate greater sensitivity to injustice toward others",
+        "items": {"USS8003": 1, "USS8004": 1}
+      },
+      "beneficiary": {
+        "method": "mean_coded",
+        "description": "Mean of items 5–6; higher scores indicate greater sensitivity when benefiting at others' expense",
+        "items": {"USS8005": 1, "USS8006": 1}
+      },
+      "perpetrator": {
+        "method": "mean_coded",
+        "description": "Mean of items 7–8; higher scores indicate greater sensitivity when causing injustice",
+        "items": {"USS8007": 1, "USS8008": 1}
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "_translator": "Groskurth, K., Beierlein, C., Nießen, D., Baumert, A., Rammstedt, B., & Lechner, C. M. (2023). https://doi.org/10.1371/journal.pone.0293748",
+      "USS8_head": "People react very differently to unfair situations. We would like to know how you react in unfair situations. The following statements describe various unfair situations. Please indicate to what extent each statement applies to you. If you have not personally experienced a situation, please answer as you would expect to react.",
+      "USS8_r1": "Does not apply at all",
+      "USS8_r2": "2",
+      "USS8_r3": "3",
+      "USS8_r4": "4",
+      "USS8_r5": "5",
+      "USS8_r6": "Applies completely",
+      "USS8001": "It bothers me when others are undeservedly better off than me.",
+      "USS8002": "It troubles me when I have to toil for things that come easily to others.",
+      "USS8003": "I am outraged when someone is undeservedly worse off than others.",
+      "USS8004": "It troubles me when someone has to work hard for things that come easily to others.",
+      "USS8005": "I feel guilty when I am undeservedly better off than others.",
+      "USS8006": "It troubles me when things come easily to me that others have to work hard to get.",
+      "USS8007": "I feel guilty when I profit at the expense of others.",
+      "USS8008": "It troubles me when I obtain things through tricks that others have to work hard to get."
+    },
+    "de": {
+      "_translator": "Baumert, A., Gollwitzer, M., Maes, J., & Schmitt, M. (2013). Original German authors. https://majournals.bib.uni-mannheim.de/mda/article/view/2013.015",
+      "USS8_head": "Menschen reagieren auf ungerechte Situationen sehr unterschiedlich. Wir möchten gerne wissen, wie Sie auf ungerechte Situationen reagieren. Die folgenden Aussagen beschreiben verschiedene ungerechte Situationen. Bitte geben Sie an, inwieweit jede Aussage auf Sie zutrifft. Falls Sie eine Situation nicht selbst erlebt haben, antworten Sie bitte so, wie Sie erwarten würden zu reagieren.",
+      "USS8_r1": "Trifft überhaupt nicht zu",
+      "USS8_r2": "2",
+      "USS8_r3": "3",
+      "USS8_r4": "4",
+      "USS8_r5": "5",
+      "USS8_r6": "Trifft voll und ganz zu",
+      "USS8001": "Es ärgert mich, wenn es anderen unverdient besser geht als mir.",
+      "USS8002": "Es macht mir zu schaffen, wenn ich mich für Dinge abrackern muss, die anderen in den Schoß fallen.",
+      "USS8003": "Ich bin empört, wenn es jemandem unverdient schlechter geht als anderen.",
+      "USS8004": "Es macht mir zu schaffen, wenn sich jemand für Dinge abrackern muss, die anderen in den Schoß fallen.",
+      "USS8005": "Ich habe Schuldgefühle, wenn es mir unverdient besser geht als anderen.",
+      "USS8006": "Es macht mir zu schaffen, wenn mir Dinge in den Schoß fallen, für die andere sich abrackern müssen.",
+      "USS8007": "Ich habe Schuldgefühle, wenn ich mich auf Kosten anderer bereichere.",
+      "USS8008": "Es macht mir zu schaffen, wenn ich mir durch Tricks Dinge verschaffe, für die sich andere abrackern müssen."
+    }
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Nuclear Weapons Knowledge Scale",
+      "code": "MISS11063",
+      "abbreviation": "NWKS",
+      "description": "A 10-item objective knowledge test measuring public factual knowledge about nuclear weapons. Items cover nuclear-armed states (6 items: USA, Russia, China, India, Pakistan, Israel), cities bombed with atomic weapons in World War 2 (2 items: Hiroshima, Nagasaki), and immediate effects of a nuclear detonation (2 items: fire, blast). All items are binary-scored (1=correct, 0=incorrect). Total score range 0–10; higher = greater knowledge. Validated in 8-country European/American sample.",
+      "citation": "Fialho, F. A. S. (2021). Public knowledge about nuclear weapons: A cross-national measure. Measurement Instruments for the Social Sciences, 3, Article e11063. https://doi.org/10.5964/miss.11063",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/11063",
+      "domain": "Cognitive",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-10",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Three multicheck questions; each option gets a unique value key. Scoring expands responses to {questionId}_{value} = 1/0 per option. Correct options: possessors=usa,russia,china,india,pakistan,israel; cities=hiroshima,nagasaki; effects=fire,blast."
+    },
+    "dimensions": [
+      {
+        "id": "possessors",
+        "name": "Nuclear Weapons Possessors",
+        "abbreviation": "P",
+        "description": "Knowledge of which countries currently possess nuclear weapons (6 items). Sum 0–6."
+      },
+      {
+        "id": "cities",
+        "name": "Atomic Bombing Sites WWII",
+        "abbreviation": "C",
+        "description": "Knowledge of which cities were bombed with atomic weapons in WWII (2 items). Sum 0–2."
+      },
+      {
+        "id": "effects",
+        "name": "Nuclear Detonation Effects",
+        "abbreviation": "E",
+        "description": "Knowledge of immediate effects of a nuclear weapon detonation (2 items). Sum 0–2."
+      }
+    ],
+    "items": [
+      {
+        "id": "nwks_possessors",
+        "type": "multicheck",
+        "text_key": "nwks_p_select",
+        "dimension": "possessors",
+        "shuffle_options": true,
+        "options": [
+          {"value": "usa",       "text_key": "nwks_p_usa"},
+          {"value": "russia",    "text_key": "nwks_p_russia"},
+          {"value": "china",     "text_key": "nwks_p_china"},
+          {"value": "india",     "text_key": "nwks_p_india"},
+          {"value": "pakistan",  "text_key": "nwks_p_pakistan"},
+          {"value": "israel",    "text_key": "nwks_p_israel"},
+          {"value": "france",    "text_key": "nwks_p_france"},
+          {"value": "nkorea",    "text_key": "nwks_p_nkorea"},
+          {"value": "uk",        "text_key": "nwks_p_uk"},
+          {"value": "argentina", "text_key": "nwks_p_argentina"},
+          {"value": "safrica",   "text_key": "nwks_p_safrica"},
+          {"value": "australia", "text_key": "nwks_p_australia"},
+          {"value": "belarus",   "text_key": "nwks_p_belarus"},
+          {"value": "iran",      "text_key": "nwks_p_iran"},
+          {"value": "egypt",     "text_key": "nwks_p_egypt"},
+          {"value": "none",      "text_key": "nwks_none", "pin_last": true}
+        ]
+      },
+      {
+        "id": "nwks_cities",
+        "type": "multicheck",
+        "text_key": "nwks_c_select",
+        "dimension": "cities",
+        "shuffle_options": true,
+        "options": [
+          {"value": "hiroshima", "text_key": "nwks_c_hiroshima"},
+          {"value": "nagasaki",  "text_key": "nwks_c_nagasaki"},
+          {"value": "tokyo",     "text_key": "nwks_c_tokyo"},
+          {"value": "kyoto",     "text_key": "nwks_c_kyoto"},
+          {"value": "seoul",     "text_key": "nwks_c_seoul"},
+          {"value": "pyongyang", "text_key": "nwks_c_pyongyang"},
+          {"value": "idk",       "text_key": "nwks_idk", "pin_last": true}
+        ]
+      },
+      {
+        "id": "nwks_effects",
+        "type": "multicheck",
+        "text_key": "nwks_e_select",
+        "dimension": "effects",
+        "shuffle_options": true,
+        "options": [
+          {"value": "fire",      "text_key": "nwks_e_fire"},
+          {"value": "blast",     "text_key": "nwks_e_blast"},
+          {"value": "mutations", "text_key": "nwks_e_mutations"},
+          {"value": "erosion",   "text_key": "nwks_e_erosion"},
+          {"value": "hurricanes","text_key": "nwks_e_hurricanes"},
+          {"value": "fertility", "text_key": "nwks_e_fertility"},
+          {"value": "famine",    "text_key": "nwks_e_famine"},
+          {"value": "none",      "text_key": "nwks_none", "pin_last": true}
+        ]
+      }
+    ],
+    "scoring": {
+      "possessors": {
+        "description": "6-item possessor subscale: 1 point each for correctly selecting USA, Russia, China, India, Pakistan, Israel. Range 0–6.",
+        "method": "sum_coded",
+        "items": {
+          "nwks_possessors_usa":      1,
+          "nwks_possessors_russia":   1,
+          "nwks_possessors_china":    1,
+          "nwks_possessors_india":    1,
+          "nwks_possessors_pakistan": 1,
+          "nwks_possessors_israel":   1
+        }
+      },
+      "cities": {
+        "description": "2-item cities subscale: 1 point each for correctly selecting Hiroshima and Nagasaki. Range 0–2.",
+        "method": "sum_coded",
+        "items": {
+          "nwks_cities_hiroshima": 1,
+          "nwks_cities_nagasaki":  1
+        }
+      },
+      "effects": {
+        "description": "2-item effects subscale: 1 point each for correctly selecting fire and blast. Range 0–2.",
+        "method": "sum_coded",
+        "items": {
+          "nwks_effects_fire":  1,
+          "nwks_effects_blast": 1
+        }
+      },
+      "total": {
+        "description": "Total nuclear weapons knowledge score: sum of all 10 items. Range 0–10; higher = greater knowledge.",
+        "method": "sum_coded",
+        "items": {
+          "nwks_possessors_usa":      1,
+          "nwks_possessors_russia":   1,
+          "nwks_possessors_china":    1,
+          "nwks_possessors_india":    1,
+          "nwks_possessors_pakistan": 1,
+          "nwks_possessors_israel":   1,
+          "nwks_cities_hiroshima":    1,
+          "nwks_cities_nagasaki":     1,
+          "nwks_effects_fire":        1,
+          "nwks_effects_blast":       1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Nuclear Weapons Knowledge Scale (NWKS) Report",
+      "footer_refs": [
+        "Fialho, F. A. S. (2021). Public knowledge about nuclear weapons: A cross-national measure. Measurement Instruments for the Social Sciences, 3, e11063. https://doi.org/10.5964/miss.11063"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "nwks_p_select": "Some countries around the world have built nuclear weapons. Of the countries listed below, which, if any, do you believe to be currently in possession of nuclear weapons? Please select all that apply.",
+      "nwks_p_usa":      "USA",
+      "nwks_p_russia":   "Russia",
+      "nwks_p_china":    "China",
+      "nwks_p_india":    "India",
+      "nwks_p_pakistan": "Pakistan",
+      "nwks_p_israel":   "Israel",
+      "nwks_p_france":   "France",
+      "nwks_p_nkorea":   "North Korea",
+      "nwks_p_uk":       "UK",
+      "nwks_p_argentina":"Argentina",
+      "nwks_p_safrica":  "South Africa",
+      "nwks_p_australia":"Australia",
+      "nwks_p_belarus":  "Belarus",
+      "nwks_p_iran":     "Iran",
+      "nwks_p_egypt":    "Egypt",
+      "nwks_none":       "None of these",
+      "nwks_idk":        "I do not know",
+      "nwks_c_select": "Nuclear weapons were used during the Second World War. Identify which city or cities on which they were dropped. Please select all that apply.",
+      "nwks_c_hiroshima":"Hiroshima",
+      "nwks_c_nagasaki": "Nagasaki",
+      "nwks_c_tokyo":    "Tokyo",
+      "nwks_c_kyoto":    "Kyoto",
+      "nwks_c_seoul":    "Seoul",
+      "nwks_c_pyongyang":"Pyongyang",
+      "nwks_e_select": "As far as you know, which of the following, if any, are the likely immediate effects of a nuclear weapon explosion? Please select all that apply.",
+      "nwks_e_fire":      "Fire",
+      "nwks_e_blast":     "A blast",
+      "nwks_e_mutations": "Genetic mutations",
+      "nwks_e_erosion":   "Erosion",
+      "nwks_e_hurricanes":"Hurricanes",
+      "nwks_e_fertility": "Loss of fertility",
+      "nwks_e_famine":    "Famine",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "COV19MIS",
+      "name": "COVID-19 Misinformation Measure",
+      "abbreviation": "COV19MIS",
+      "description": "5-item measure assessing beliefs in misinformation about COVID-19 transmission and prevention. Items rated on a 10-point scale from do not agree at all (1) to fully agree (10). Higher scores indicate stronger endorsement of misinformation.",
+      "citation": "De Coninck, D., Frissen, T., Matthijs, K., d'Haenens, L., Lits, G., Champagne-Poirier, O., Carignan, M.-E., David, M. D., Pignard-Cheynel, N., Salerno, S., & Généreux, M. (2021). Beliefs in conspiracy theories and misinformation about COVID-19: Comparative perspectives on the role of anxiety, depression and exposure to and trust in information sources. Frontiers in Psychology, 12. https://doi.org/10.3389/fpsyg.2021.646394",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2021.646394",
+      "version": "1.0",
+      "domain": "Social"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 10,
+      "min": 1,
+      "labels": [
+        "COV19MIS_r1", "COV19MIS_r2", "COV19MIS_r3", "COV19MIS_r4",
+        "COV19MIS_r5", "COV19MIS_r6", "COV19MIS_r7", "COV19MIS_r8",
+        "COV19MIS_r9", "COV19MIS_r10"
+      ],
+      "question_head": "COV19MIS_head"
+    },
+    "dimensions": [
+      {
+        "id": "MisinformationBeliefs",
+        "name": "Misinformation Beliefs",
+        "description": "Degree of endorsement of false beliefs about COVID-19 transmission and prevention"
+      }
+    ],
+    "items": [
+      { "id": "COV19MIS001", "type": "likert", "text_key": "COV19MIS001", "dimension": "MisinformationBeliefs" },
+      { "id": "COV19MIS002", "type": "likert", "text_key": "COV19MIS002", "dimension": "MisinformationBeliefs" },
+      { "id": "COV19MIS003", "type": "likert", "text_key": "COV19MIS003", "dimension": "MisinformationBeliefs" },
+      { "id": "COV19MIS004", "type": "likert", "text_key": "COV19MIS004", "dimension": "MisinformationBeliefs" },
+      { "id": "COV19MIS005", "type": "likert", "text_key": "COV19MIS005", "dimension": "MisinformationBeliefs" }
+    ],
+    "scoring": {
+      "MisinformationBeliefs": {
+        "method": "mean_coded",
+        "description": "Mean of all 5 items. Higher scores indicate stronger endorsement of COVID-19 misinformation.",
+        "items": {
+          "COV19MIS001": 1,
+          "COV19MIS002": 1,
+          "COV19MIS003": 1,
+          "COV19MIS004": 1,
+          "COV19MIS005": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "COV19MIS_head": "To what extent do you agree with the following statements regarding the coronavirus crisis?",
+      "COV19MIS_r1": "Do not agree at all",
+      "COV19MIS_r2": "2",
+      "COV19MIS_r3": "3",
+      "COV19MIS_r4": "4",
+      "COV19MIS_r5": "5",
+      "COV19MIS_r6": "6",
+      "COV19MIS_r7": "7",
+      "COV19MIS_r8": "8",
+      "COV19MIS_r9": "9",
+      "COV19MIS_r10": "Fully agree",
+      "COV19MIS001": "I believe the coronavirus is not transmitted in warm countries.",
+      "COV19MIS002": "I believe that the coronavirus will disappear after the outbreak.",
+      "COV19MIS003": "I believe that the sun or temperatures higher than 25C degrees prevent the coronavirus disease.",
+      "COV19MIS004": "I believe that the new coronavirus can be transmitted through mosquito bites.",
+      "COV19MIS005": "I believe that spraying alcohol or chlorine all over my body will kill the new coronavirus."
+    }
+  }
+}

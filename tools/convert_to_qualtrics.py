@@ -100,11 +100,21 @@ def html_to_qualtrics(text):
     return text.replace("\n", "<br>")
 
 
+def get_effective_scale(question, definition):
+    """Resolve effective response scale for a likert item."""
+    rs_id = question.get("response_scale")
+    if rs_id:
+        rs = definition.get("response_scales", {}).get(rs_id)
+        if rs:
+            return rs
+    return definition.get("likert_options", {})
+
+
 def get_likert_labels(question, definition, translations):
     """Get likert labels for a question (per-item or scale-level)."""
     if "likert_labels" in question:
         return [get_text(translations, lbl) for lbl in question["likert_labels"]]
-    likert_opts = definition.get("likert_options", {})
+    likert_opts = get_effective_scale(question, definition)
     if likert_opts.get("labels"):
         return [get_text(translations, lbl) for lbl in likert_opts["labels"]]
     points = question.get("likert_points", likert_opts.get("points", 5))
@@ -114,7 +124,7 @@ def get_likert_labels(question, definition, translations):
 
 def get_likert_min(question, definition):
     """Get the minimum numeric value for likert scoring."""
-    return definition.get("likert_options", {}).get("min", 1)
+    return get_effective_scale(question, definition).get("min", 1)
 
 
 def is_reverse_coded(question, scoring):
@@ -140,13 +150,14 @@ def _group_questions(questions, definition):
         if qtype == "likert":
             points = q.get("likert_points",
                            definition.get("likert_options", {}).get("points", 5))
-            if current_likert_run and points == current_points:
+            group_key = (points, q.get("response_scale"))
+            if current_likert_run and group_key == current_points:
                 current_likert_run.append(q)
             else:
                 if current_likert_run:
                     groups.append(current_likert_run)
                 current_likert_run = [q]
-                current_points = points
+                current_points = group_key
         else:
             if current_likert_run:
                 groups.append(current_likert_run)
@@ -163,7 +174,7 @@ def _group_questions(questions, definition):
 def _emit_likert_matrix(lines, group, definition, translations, scoring):
     """Emit a group of likert items as a Qualtrics Matrix question."""
     first_id = group[0]["id"]
-    likert_opts = definition.get("likert_options", {})
+    likert_opts = get_effective_scale(group[0], definition)
 
     question_head = ""
     if likert_opts.get("question_head"):

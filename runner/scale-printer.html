@@ -233,8 +233,9 @@
       qNum++;
       const text = t(item.text_key || item.id, strings);
 
-      // Question head
-      const qHeadKey = item.question_head || likertOpts.question_head || '';
+      // Question head (use effective scale for likert items)
+      const effOpts = type === 'likert' ? getEffectiveOpts(item, defn) : likertOpts;
+      const qHeadKey = item.question_head || effOpts.question_head || '';
       const qHead = qHeadKey ? t(qHeadKey, strings) : '';
       if (qHead && qHead !== currentQHead) {
         html += `<div class="question-head">${qHead}</div>`;
@@ -245,7 +246,7 @@
       html += `<div class="item-text"><span class="item-number">${qNum}.</span> ${text}</div>`;
 
       if (type === 'likert') {
-        html += renderLikert(item, likertOpts, strings);
+        html += renderLikert(item, effOpts, strings);
       } else if (type === 'vas') {
         html += renderVAS(item, strings);
       } else if (type === 'multi') {
@@ -273,6 +274,14 @@
 
     document.getElementById('output').innerHTML = html;
     document.title = `${info.name || info.code || 'Scale'} — Printable`;
+  }
+
+  function getEffectiveOpts(item, defn) {
+    const rsId = item.response_scale;
+    if (rsId && defn.response_scales && defn.response_scales[rsId]) {
+      return defn.response_scales[rsId];
+    }
+    return defn.likert_options || {};
   }
 
   function renderLikert(item, likertOpts, strings) {

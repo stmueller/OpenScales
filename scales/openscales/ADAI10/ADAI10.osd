@@ -1,0 +1,97 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "ADAI10",
+      "name": "Antidepressant Attitude Inventory",
+      "abbreviation": "ADAI-10",
+      "description": "10-item scale measuring attitudes toward antidepressant medication. Adapted from the Drug Attitudes Inventory (DAI-10) with items modified to refer specifically to antidepressants. Items are scored dichotomously; positive statements scored 1 for True, negative statements scored 1 for False (reverse-keyed). Total score reflects overall attitude positivity toward antidepressants.",
+      "citation": "Abdallat, M., Murshidi, R., Taha, H., Jaber, D. Z., Hammouri, M., Al-Huneidy, L., Aljayeh, M., Ghanem, H. H., Bedros, A. W., Al-Omairi, J., Abbas, R., Abu-usba, M. I., Alkayed, Z., Banimustafa, R., & Al-Ani, A. (2023). An investigation of knowledge and attitudes towards antidepressants: A cross-sectional survey of Jordan's six medical schools. BMC Psychiatry, 23(1). https://doi.org/10.1186/s12888-023-05037-8",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1186/s12888-023-05037-8",
+      "version": "1.0",
+      "domain": "Clinical"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-10",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 2,
+      "min": 0,
+      "max": 1,
+      "labels": ["ADAI10_r0", "ADAI10_r1"],
+      "question_head": "ADAI10_head"
+    },
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Attitude Score",
+        "description": "Sum of all coded items; positive score indicates favorable attitudes toward antidepressants"
+      }
+    ],
+    "items": [
+      {"id": "ADAI10001", "type": "likert", "text_key": "ADAI10001", "dimension": "total"},
+      {"id": "ADAI10002", "type": "likert", "text_key": "ADAI10002", "dimension": "total"},
+      {"id": "ADAI10003", "type": "likert", "text_key": "ADAI10003", "dimension": "total"},
+      {"id": "ADAI10004", "type": "likert", "text_key": "ADAI10004", "dimension": "total"},
+      {"id": "ADAI10005", "type": "likert", "text_key": "ADAI10005", "dimension": "total"},
+      {"id": "ADAI10006", "type": "likert", "text_key": "ADAI10006", "dimension": "total"},
+      {"id": "ADAI10007", "type": "likert", "text_key": "ADAI10007", "dimension": "total"},
+      {"id": "ADAI10008", "type": "likert", "text_key": "ADAI10008", "dimension": "total"},
+      {"id": "ADAI10009", "type": "likert", "text_key": "ADAI10009", "dimension": "total"},
+      {"id": "ADAI10010", "type": "likert", "text_key": "ADAI10010", "dimension": "total"}
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "description": "Sum of coded item responses. Positive items: True (1) = +1, False (0) = 0. Negative items: True (1) = -1, False (0) = 0 (reverse-coded using -1 weight). Higher score indicates more positive attitude toward antidepressants.",
+        "items": {
+          "ADAI10001": 1,
+          "ADAI10002": -1,
+          "ADAI10003": 1,
+          "ADAI10004": 1,
+          "ADAI10005": -1,
+          "ADAI10006": -1,
+          "ADAI10007": 1,
+          "ADAI10008": -1,
+          "ADAI10009": 1,
+          "ADAI10010": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ADAI10_head": "Please indicate whether each statement is True or False for you.",
+      "ADAI10_r0": "False",
+      "ADAI10_r1": "True",
+      "ADAI10001": "I think that the good things about antidepressants outweigh the bad.",
+      "ADAI10002": "If someone has to use antidepressants, they will feel strange, \"doped up\", on them.",
+      "ADAI10003": "If I need to take an antidepressant, I will take it of my own free will.",
+      "ADAI10004": "If someone has to take antidepressants, it will make them feel more relaxed.",
+      "ADAI10005": "If someone has to take antidepressants, it will make them feel tired and sluggish.",
+      "ADAI10006": "If you have to take antidepressants, you will only take them when you feel ill.",
+      "ADAI10007": "If someone has to take antidepressants, they will feel more normal on them.",
+      "ADAI10008": "I think it is unnatural for someone's mind and body to be controlled by antidepressants.",
+      "ADAI10009": "I think those who take antidepressants have clearer thoughts on them.",
+      "ADAI10010": "I think taking antidepressants will prevent those who take them from having a breakdown."
+    }
+  }
+}

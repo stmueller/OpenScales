@@ -1,0 +1,143 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "WCS",
+      "name": "Workplace Compassion Scale",
+      "abbreviation": "WCS",
+      "description": "12-item multidimensional scale measuring compassion in the workplace across four dimensions: Noticing (N), Empathizing (E), Sensemaking (S), and Acting (A). Items rated on a 7-point scale from almost never true (1) to almost always true (7).",
+      "citation": "Mandliya, A., & Pandey, J. (2023). The development and validation of multidimensional workplace compassion scale: Linking its conceptualization and measurement. Frontiers in Psychology, 14. https://doi.org/10.3389/fpsyg.2023.1142309",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2023.1142309",
+      "version": "1.0",
+      "domain": "Work & Organizational"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "WCS_r1", "WCS_r2", "WCS_r3", "WCS_r4",
+        "WCS_r5", "WCS_r6", "WCS_r7"
+      ],
+      "question_head": "WCS_head"
+    },
+    "dimensions": [
+      {
+        "id": "Noticing",
+        "name": "Noticing",
+        "description": "Ability to perceive and recognize distress or pain in co-workers"
+      },
+      {
+        "id": "Empathizing",
+        "name": "Empathizing",
+        "description": "Ability to feel and share the distress experienced by co-workers"
+      },
+      {
+        "id": "Sensemaking",
+        "name": "Sensemaking",
+        "description": "Effort to understand the context and circumstances of co-workers' suffering"
+      },
+      {
+        "id": "Acting",
+        "name": "Acting",
+        "description": "Taking action to help relieve co-workers' distress or pain"
+      }
+    ],
+    "items": [
+      { "id": "WCS001", "type": "likert", "text_key": "WCS001", "dimension": "Empathizing" },
+      { "id": "WCS002", "type": "likert", "text_key": "WCS002", "dimension": "Acting" },
+      { "id": "WCS003", "type": "likert", "text_key": "WCS003", "dimension": "Noticing" },
+      { "id": "WCS004", "type": "likert", "text_key": "WCS004", "dimension": "Empathizing" },
+      { "id": "WCS005", "type": "likert", "text_key": "WCS005", "dimension": "Noticing" },
+      { "id": "WCS006", "type": "likert", "text_key": "WCS006", "dimension": "Sensemaking" },
+      { "id": "WCS007", "type": "likert", "text_key": "WCS007", "dimension": "Empathizing" },
+      { "id": "WCS008", "type": "likert", "text_key": "WCS008", "dimension": "Sensemaking" },
+      { "id": "WCS009", "type": "likert", "text_key": "WCS009", "dimension": "Acting" },
+      { "id": "WCS010", "type": "likert", "text_key": "WCS010", "dimension": "Noticing" },
+      { "id": "WCS011", "type": "likert", "text_key": "WCS011", "dimension": "Sensemaking" },
+      { "id": "WCS012", "type": "likert", "text_key": "WCS012", "dimension": "Acting" }
+    ],
+    "scoring": {
+      "Noticing": {
+        "method": "mean_coded",
+        "description": "Mean of Noticing items (N1=item 10, N2=item 5, N3=item 3).",
+        "items": {
+          "WCS003": 1,
+          "WCS005": 1,
+          "WCS010": 1
+        }
+      },
+      "Empathizing": {
+        "method": "mean_coded",
+        "description": "Mean of Empathizing items (E1=item 4, E2=item 1, E3=item 7).",
+        "items": {
+          "WCS001": 1,
+          "WCS004": 1,
+          "WCS007": 1
+        }
+      },
+      "Sensemaking": {
+        "method": "mean_coded",
+        "description": "Mean of Sensemaking items (S1=item 8, S2=item 6, S3=item 11).",
+        "items": {
+          "WCS006": 1,
+          "WCS008": 1,
+          "WCS011": 1
+        }
+      },
+      "Acting": {
+        "method": "mean_coded",
+        "description": "Mean of Acting items (A1=item 9, A2=item 2, A3=item 12).",
+        "items": {
+          "WCS002": 1,
+          "WCS009": 1,
+          "WCS012": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "WCS_head": "Below are statements describing how you might relate to other people at work. Please indicate how true the following statements are for you, using the response scale from almost never true to almost always true. The term co-worker here signifies the respondent's supervisor, subordinate, team member, or any other person who works in the same workplace/organization.",
+      "WCS_r1": "Almost never true",
+      "WCS_r2": "Usually not true",
+      "WCS_r3": "Rarely true",
+      "WCS_r4": "Occasionally true",
+      "WCS_r5": "Often true",
+      "WCS_r6": "Usually true",
+      "WCS_r7": "Almost always true",
+      "WCS001": "I experience pain from people's distress in my workplace.",
+      "WCS002": "When I see someone in distress in my workplace, I try to act as quickly as possible.",
+      "WCS003": "I recognize people's feelings of distress without them having to tell me in my workplace.",
+      "WCS004": "I can feel the distress as my own when I see someone in my workplace experiencing it.",
+      "WCS005": "I notice the feeling of discomfort experienced by people in my workplace.",
+      "WCS006": "I try to assess the prior circumstances leading to the person's suffering in my workplace.",
+      "WCS007": "I feel the pain experienced by people in my workplace.",
+      "WCS008": "I try to assess the outcomes of my actions toward the person's distress in my workplace.",
+      "WCS009": "I initiate offering help to people in my workplace, when I hear the story of their pain.",
+      "WCS010": "I notice my co-worker's feelings of distress or pain without them having to tell me.",
+      "WCS011": "I try to understand the context of the person's distress in my workplace.",
+      "WCS012": "When I see someone in my workplace in pain, I try to help them."
+    }
+  }
+}

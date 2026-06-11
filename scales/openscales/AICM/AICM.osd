@@ -1,0 +1,102 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "AICM",
+      "name": "AI Conspiracy Measure",
+      "abbreviation": "AICM",
+      "description": "10-item unidimensional scale measuring conspiracy beliefs about artificial intelligence, including beliefs that AI is used to control, monitor, manipulate, and destabilize human societies. Items are rated on a 7-point agreement scale. Note: these items also appear as the Conspiracy Beliefs subscale within the broader AI Attitudes and Perceptions Scale (AIAP) from the same paper; the AICM is the standalone extraction of that subscale as registered separately by APA PsycTests.",
+      "citation": "Zhao, Q., van Prooijen, J. W., Jiang, X., & Spadaro, G. (2025). Suspicious of AI? Perceived autonomy and interdependence predict AI-related conspiracy beliefs. British Journal of Social Psychology, 64(2). https://doi.org/10.1111/bjso.12883",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1111/bjso.12883",
+      "version": "1.0",
+      "domain": "Technology"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "These 10 items are identical to the Conspiracy Beliefs subscale in the AIAP (AI Attitudes and Perceptions Scale) from the same source paper. The AICM is registered as a standalone instrument by APA PsycTests (doi: 10.1037/t9999-97260-000)."
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": ["AICM_r1", "AICM_r2", "AICM_r3", "AICM_r4", "AICM_r5", "AICM_r6", "AICM_r7"],
+      "question_head": "AICM_head"
+    },
+    "dimensions": [
+      {
+        "id": "AIConspiracy",
+        "name": "AI Conspiracy Beliefs",
+        "description": "Beliefs that AI systems are being used for malevolent, conspiratorial purposes against humanity"
+      }
+    ],
+    "items": [
+      { "id": "AICM001", "type": "likert", "text_key": "AICM001", "dimension": "AIConspiracy" },
+      { "id": "AICM002", "type": "likert", "text_key": "AICM002", "dimension": "AIConspiracy" },
+      { "id": "AICM003", "type": "likert", "text_key": "AICM003", "dimension": "AIConspiracy" },
+      { "id": "AICM004", "type": "likert", "text_key": "AICM004", "dimension": "AIConspiracy" },
+      { "id": "AICM005", "type": "likert", "text_key": "AICM005", "dimension": "AIConspiracy" },
+      { "id": "AICM006", "type": "likert", "text_key": "AICM006", "dimension": "AIConspiracy" },
+      { "id": "AICM007", "type": "likert", "text_key": "AICM007", "dimension": "AIConspiracy" },
+      { "id": "AICM008", "type": "likert", "text_key": "AICM008", "dimension": "AIConspiracy" },
+      { "id": "AICM009", "type": "likert", "text_key": "AICM009", "dimension": "AIConspiracy" },
+      { "id": "AICM010", "type": "likert", "text_key": "AICM010", "dimension": "AIConspiracy" }
+    ],
+    "scoring": {
+      "AIConspiracy": {
+        "method": "mean_coded",
+        "description": "Mean of all 10 items; higher scores indicate stronger AI conspiracy beliefs.",
+        "items": {
+          "AICM001": 1,
+          "AICM002": 1,
+          "AICM003": 1,
+          "AICM004": 1,
+          "AICM005": 1,
+          "AICM006": 1,
+          "AICM007": 1,
+          "AICM008": 1,
+          "AICM009": 1,
+          "AICM010": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "AICM_head": "Please indicate to what extent you agree or disagree with these statements about Artificial Intelligence (AI).",
+      "AICM_r1": "Completely disagree",
+      "AICM_r2": "2",
+      "AICM_r3": "3",
+      "AICM_r4": "4",
+      "AICM_r5": "5",
+      "AICM_r6": "6",
+      "AICM_r7": "Completely agree",
+      "AICM001": "AI gains the ability to control and manipulate human actions, leading to a dystopian future where machines rule over humans.",
+      "AICM002": "AI technology is being used by governments and corporations to constantly monitor and track individuals, infringing on their privacy rights.",
+      "AICM003": "Advanced AI systems are being used to manipulate human thoughts and emotions, potentially leading to mass mind control.",
+      "AICM004": "AI is being used to design and release harmful viruses or bioweapons, leveraging its capabilities to create dangerous pathogens.",
+      "AICM005": "AI is being used to manipulate voting patterns and sway elections by spreading targeted misinformation and fake news.",
+      "AICM006": "AI develops its own hidden motivations and agendas that are not aligned with human interests, potentially leading to unforeseen bad consequences for humanity.",
+      "AICM007": "AI is being used to fabricate or suppress scientific discoveries to serve the interests of powerful groups.",
+      "AICM008": "AI deliberately causes major disasters, such as stock market crashes, power grid failures, or transportation system breakdowns, to destabilize human societies.",
+      "AICM009": "AI intentionally collects human information in order to monitor and control humanity.",
+      "AICM010": "AI deliberately interferes in elections, prompting pro-AI candidates to win."
+    }
+  }
+}

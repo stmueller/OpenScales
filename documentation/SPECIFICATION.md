@@ -1,4 +1,4 @@
-# Open Scale Definition (OSD) Specification v1.0.11
+# Open Scale Definition (OSD) Specification v1.0.14
 
 *Part of the [OpenScales Project](README.md)*
 
@@ -261,12 +261,70 @@ Optional common fields:
     "min": 1,
     "max": 5,
     "labels": ["likert_1", "likert_2", "likert_3", "likert_4", "likert_5"],
-    "question_head": "question_head"
+    "question_head": "question_head",
+    "suppress_likert_numbers": false
   }
 }
 ```
 
+The `suppress_likert_numbers` field (default `false`) controls whether the numeric value is displayed beneath each response button. Set to `true` when the label text already contains the number (e.g. bipolar scales with endpoints like "Very inaccurate (−3)" and intermediate labels "−2", "−1", etc.), to avoid displaying the number twice. When `true`, buttons show only the label text; when `false` (default), buttons show both the number and the label text. May also be set at the top level of `definition` as a shorthand (equivalent to setting it in `likert_options`).
+
 The `question_head` references a translation key for a question stem or instructions displayed above scored items (`likert`, `vas`, `grid`, `multi`, `multicheck`). It is particularly useful when a block of items shares a common introductory question. An item-level `question_head` field (see Common Item Fields) overrides this scale-level default for individual items. `question_head` is optional; omit it (or omit `likert_options` entirely) for scales where each item is self-contained.
+
+**Named additional response scales** can be defined via `response_scales` when a scale uses more than one Likert response format. `response_scales` is an object whose keys are short identifiers and whose values have the same structure as `likert_options`. Items reference a named scale using the `response_scale` field; items without `response_scale` use `likert_options` as usual.
+
+```json
+{
+  "likert_options": {
+    "points": 7, "min": 1, "max": 7,
+    "labels": ["rt_l1","rt_l2","rt_l3","rt_l4","rt_l5","rt_l6","rt_l7"],
+    "question_head": "rt_head"
+  },
+  "response_scales": {
+    "rp": {
+      "name": "Risk Perception",
+      "points": 7, "min": 1, "max": 7,
+      "labels": ["rp_l1","rp_l2","rp_l3","rp_l4","rp_l5","rp_l6","rp_l7"],
+      "question_head": "rp_head"
+    },
+    "eb": {
+      "name": "Expected Benefits",
+      "points": 7, "min": 1, "max": 7,
+      "labels": ["eb_l1","eb_l2","eb_l3","eb_l4","eb_l5","eb_l6","eb_l7"],
+      "question_head": "eb_head"
+    }
+  }
+}
+```
+
+`response_scales` fields:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `name` | string | No | Human-readable label for the scale (used by editors and ScaleBuilder UI) |
+| `points` | integer | Yes | Number of response options |
+| `min` | integer | Yes | Numeric value of the first option |
+| `max` | integer | Yes | Numeric value of the last option |
+| `labels` | array of strings | Yes | Translation keys, one per point |
+| `question_head` | string | No | Translation key for a shared question stem for items using this scale |
+
+Items reference a named scale with `"response_scale": "<id>"`:
+
+```json
+{
+  "id": "rp1",
+  "type": "likert",
+  "text_key": "rp1",
+  "response_scale": "rp"
+}
+```
+
+**Resolution order** for runners when determining a `likert` item's response scale:
+1. Item has `likert_labels` and/or `likert_points` → use those (per-item override, e.g. semantic differential)
+2. Item has `response_scale` → look up in `response_scales` dict
+3. Fall back to `likert_options`
+
+`likert_labels` / `likert_points` per-item overrides remain valid for items where every item has a truly unique response format (e.g. semantic differential scales where each item has distinct endpoint labels). `response_scales` is the preferred mechanism whenever multiple items share the same non-default response format.
 
 #### `vas` Type
 
@@ -412,6 +470,15 @@ Object options with numeric values (useful when the value is used directly in sc
 | Field | Type | Description |
 |-------|------|-------------|
 | `options` | array | Each entry is either an object `{"value": ..., "text_key": "..."}` or a plain string. A plain string is treated as both the stored response value and the translation key. The `value` in an object may be a string or number; numeric values are useful when the stored value is also the scoring value (e.g. a 0–5 ordinal scale). |
+| `shuffle_options` | boolean | `false` | When `true`, the options list is presented in a randomized order each time the item is shown. Options with `"pin_last": true` are always displayed at the bottom regardless of shuffle order (useful for "None of the above" or "I don't know" anchors). |
+
+Each option object may include:
+
+| Option field | Type | Description |
+|-------------|------|-------------|
+| `value` | string or number | The stored response value. |
+| `text_key` | string | Translation key for the option label. |
+| `pin_last` | boolean | `false` | When `shuffle_options` is active, this option is held at the end of the list rather than shuffled. |
 
 For `multi`, exactly one option is selected. For `multicheck`, zero or more options may be selected.
 
@@ -806,9 +873,11 @@ Translation files are JSON objects with flat key-value pairs:
 - Keys referenced by `text_key`, `likert_labels`, option `text_key`s, etc. MUST exist in the translation file
 - Values may contain **HTML-lite**: `<b>`, `<i>`, `<br>`, `<a href="...">` — a safe subset of inline HTML
 - A `LANGUAGE` key is optional but recommended for self-identification
-- Runners MUST load the translation file matching the requested language, falling back to English if unavailable, then to the first available translation if English is also unavailable
-- Runners may load English first and then load the primary language file, so that incomplete translations fall back to English.
-- An English (`en`) translation is RECOMMENDED but not required. Scales without an English translation are valid; runners MUST handle their absence gracefully.
+- Runners MUST load the translation entry matching the requested language, falling back to `en` if unavailable, then to `default` if `en` is also unavailable, then to the first available entry if none of the above exist
+- Runners may load `en` first and then overlay the primary language entry, so that incomplete translations fall back gracefully to English
+- An English (`en`) translation is RECOMMENDED but not required. Scales without an English translation are valid; runners MUST handle their absence gracefully
+
+**`default` language code:** The reserved code `default` is used for scales that have only one language and where that language is unspecified — for example, an internally-used survey that will never be translated, or a scale whose language is known to its authors but not relevant to declare. A `default` entry in the `translations` object is treated as the lowest-priority fallback: used only when no language-specific entry and no `en` entry exists. When the language of the content is known (e.g. `es`), that BCP 47 code SHOULD be used instead. Builders and converters that do not have a language specified SHOULD emit strings under `default` rather than under `en`.
 
 #### C4a. Media Embedding
 
@@ -1792,12 +1861,6 @@ Sections that are runner-specific should be placed under a namespaced `runner_hi
 ```json
 {
   "runner_hints": {
-    "pebl": {
-      "data_output": {
-        "individual_file": "PHQ9-{subnum}.csv",
-        "pooled_file": "PHQ9-pooled.csv"
-      }
-    },
     "web": {
       "theme": "clinical",
       "progress_bar": true
@@ -1806,7 +1869,7 @@ Sections that are runner-specific should be placed under a namespaced `runner_hi
 }
 ```
 
-For backward compatibility, fields like `data_output` and `report` MAY appear at the top level. Runners that don't recognize these fields MUST ignore them.
+For backward compatibility, a top-level `report` field MAY appear. Runners that don't recognize top-level fields MUST ignore them.
 
 ---
 
@@ -1838,31 +1901,9 @@ For simple conditions, the structured object format is preferred. The expression
 
 ---
 
-## Data Output (Runner Hint)
+## Data Output (DEPRECATED)
 
-The `data_output` section is a runner hint specifying output file conventions:
-
-```json
-{
-  "data_output": {
-    "individual_file": "SUS-{subnum}.csv",
-    "pooled_file": "SUS-pooled.csv",
-    "report_file": "SUS-report-{subnum}.html",
-    "columns": "subnum,order,time,qnum,ques,dim,valence,resp,rt",
-    "pooled_columns": "subnum,timestamp,time,SUS01,SUS02,...,usability"
-  }
-}
-```
-
-| Field | Description |
-|-------|-------------|
-| `individual_file` | Per-participant data file pattern |
-| `pooled_file` | Aggregated data file |
-| `report_file` | Per-participant report file pattern |
-| `columns` | Column headers for individual file |
-| `pooled_columns` | Column headers for pooled file |
-
-`{subnum}` is replaced with the participant identifier. `{code}` is replaced with the scale code.
+> **Deprecated.** The `data_output` field MUST NOT be used in new OSD files and should be removed from existing ones. The PEBL desktop runner auto-generates all output file names and column layouts from the scale definition; specifying them in the OSD is unnecessary and was an oversight. The JS runner has never referenced this field. Existing files that contain `data_output` are not broken — runners MUST ignore fields they do not recognize — but it carries no effect and should be cleaned up.
 
 ---
 
@@ -1901,3 +1942,6 @@ The `data_output` section is a runner hint specifying output file conventions:
 | 1.0.10 | 2026-03-03 | C3: added `weighted_mean` scoring method — Σ(weight × value) ÷ Σ(weights), complementing the existing `weighted_sum`; `weights` field now applies to both methods and may reference `scores` inputs as well as `items`; clarified that `weighted_sum`/`weighted_mean` inputs absent from `weights` are excluded (not zero-weighted); when `scores` are weighted inputs, the transformed output of each score is used; added QOLIE-89 example illustrating weighted composite of subscale 0–100 scores followed by T-score normalization; added ScaleBuilder UI note: weights editor with per-item numeric inputs, running weight-sum display, and zero/negative-weight warning; C2: `grid` type: added adaptive rendering note — narrow screens SHOULD present each row as an independent question; wide screens MAY show full matrix and paginate |
 | 1.0.11 | 2026-03-19 | C3: added `answer_categories` — top-level scoring container for named answer-category sets, enabling multiple `sum_correct` dimensions to score the same `short`-answer items against different answer sets; added `answer_category` field on scoring blocks to reference a named category; use case: CRT-2 scoring both correct answers and intuitive-lure errors from the same free-text responses |
 | 1.0.12 | 2026-04-01 | C1: added `implementation` object — metadata about who created the .osd file and licensing for the digital implementation (distinct from scale content license); fields: `author`, `organization`, `date`, `license`, `license_url`, `notes` |
+| 1.0.13 | 2026-04-11 | C4: added `default` as a reserved language code for single-language scales where the language is unspecified; runner fallback order updated to: requested lang → `en` → `default` → first available; builders and converters without a specified language SHOULD emit strings under `default` rather than `en` |
+| 1.0.14 | 2026-04-11 | C2: added `response_scales` — a named dictionary of additional Likert response scale definitions, with the same structure as `likert_options`; added `response_scale` item field (string) referencing a key in `response_scales`; runner resolution order: per-item `likert_labels`/`likert_points` → `response_scale` lookup → `likert_options` default; `likert_labels`/`likert_points` per-item overrides retained for semantic-differential items where every item has truly unique endpoint labels; `response_scales` is the preferred mechanism when multiple items share the same non-default response format |
+| 1.0.15 | 2026-06-10 | C2: added `suppress_likert_numbers` boolean field in `likert_options` (default `false`) — when `true`, the numeric value is not displayed beneath response buttons; intended for scales where label text already encodes the number (e.g. bipolar scales with endpoints "Very inaccurate (−3)" and intermediate labels "−2", "−1", etc.) to avoid double-display; may also be set at the top level of `definition` as shorthand; runners MUST respect this field and omit the numeric element entirely when set |

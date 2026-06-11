@@ -1,0 +1,103 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "NIS",
+      "name": "Nature Interest Scale",
+      "abbreviation": "NIS",
+      "description": "9-item scale measuring individual interest in nature across emotional, cognitive, and value-based dimensions.",
+      "citation": "Kleespies, M. W., Doderer, L., Dierkes, P. W., & Wenzel, V. (2021). Nature Interest Scale—Development and evaluation of a measurement instrument for individual interest in nature. Frontiers in Psychology, 12, 774333. https://doi.org/10.3389/fpsyg.2021.774333",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2021.774333",
+      "version": "1.0",
+      "domain": "Environment"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {"type": "boolean", "default": 1, "description": "Show scale title to respondents"},
+      "shuffle_questions": {"type": "boolean", "default": 0, "description": "Randomize item presentation order"}
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": ["NIS_r1", "NIS_r2", "NIS_r3", "NIS_r4", "NIS_r5"],
+      "question_head": "NIS_head"
+    },
+    "dimensions": [
+      {
+        "id": "emotional",
+        "name": "Emotional Interest",
+        "description": "Positive emotional engagement with nature, including excitement and flow-like experiences."
+      },
+      {
+        "id": "cognitive",
+        "name": "Cognitive Interest",
+        "description": "Desire to acquire knowledge about nature and engage with nature-related topics in free time."
+      },
+      {
+        "id": "value",
+        "name": "Value",
+        "description": "Personal value assigned to nature involvement, including perceived meaningfulness and importance."
+      }
+    ],
+    "items": [
+      {"id": "NIS001", "type": "likert", "text_key": "NIS001", "dimension": "emotional"},
+      {"id": "NIS002", "type": "likert", "text_key": "NIS002", "dimension": "emotional"},
+      {"id": "NIS003", "type": "likert", "text_key": "NIS003", "dimension": "emotional"},
+      {"id": "NIS004", "type": "likert", "text_key": "NIS004", "dimension": "cognitive"},
+      {"id": "NIS005", "type": "likert", "text_key": "NIS005", "dimension": "cognitive"},
+      {"id": "NIS006", "type": "likert", "text_key": "NIS006", "dimension": "cognitive"},
+      {"id": "NIS007", "type": "likert", "text_key": "NIS007", "dimension": "value"},
+      {"id": "NIS008", "type": "likert", "text_key": "NIS008", "dimension": "value"},
+      {"id": "NIS009", "type": "likert", "text_key": "NIS009", "dimension": "value"}
+    ],
+    "scoring": {
+      "emotional": {
+        "method": "mean_coded",
+        "description": "Mean of EMO items (1-3): emotional engagement with nature.",
+        "items": {"NIS001": 1, "NIS002": 1, "NIS003": 1}
+      },
+      "cognitive": {
+        "method": "mean_coded",
+        "description": "Mean of COG items (4-6): cognitive interest and desire to learn about nature.",
+        "items": {"NIS004": 1, "NIS005": 1, "NIS006": 1}
+      },
+      "value": {
+        "method": "mean_coded",
+        "description": "Mean of VALUE items (7-9): personal value assigned to nature.",
+        "items": {"NIS007": 1, "NIS008": 1, "NIS009": 1}
+      },
+      "total": {
+        "method": "mean_coded",
+        "description": "Overall nature interest score: mean of all 9 items.",
+        "items": {"NIS001": 1, "NIS002": 1, "NIS003": 1, "NIS004": 1, "NIS005": 1, "NIS006": 1, "NIS007": 1, "NIS008": 1, "NIS009": 1}
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "NIS_head": "Please indicate how much you agree or disagree with each of the following statements.",
+      "NIS_r1": "Strongly disagree",
+      "NIS_r2": "Disagree",
+      "NIS_r3": "Neither agree nor disagree",
+      "NIS_r4": "Agree",
+      "NIS_r5": "Strongly agree",
+      "NIS001": "I find it exciting to deal with nature.",
+      "NIS002": "Learning about nature is fun for me.",
+      "NIS003": "When I am engaged in nature, I am very concentrated and forget everything around me.",
+      "NIS004": "I would like to know much more about nature.",
+      "NIS005": "I would like to learn more about nature.",
+      "NIS006": "In my free time I often deal with topics related to nature.",
+      "NIS007": "I find it meaningful to be involved with nature.",
+      "NIS008": "I think it's important to be well informed about nature.",
+      "NIS009": "The subject of nature is important to me."
+    }
+  }
+}

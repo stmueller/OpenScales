@@ -1,0 +1,93 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "GQ6",
+      "name": "Gratitude Questionnaire-6 (German)",
+      "abbreviation": "GQ-6",
+      "description": "6-item scale measuring dispositional gratitude — the tendency to notice and appreciate the positive in life. German translation (GQ-6-G) validated by Hudecek et al. (2020). Original English by McCullough et al. (2002) is APA-licensed; only the German translation is included here under CC BY 4.0.",
+      "citation": "Hudecek, M. F. C., Ścigała, K. A., Trautwein, U., & Zettler, I. (2020). Validation of the German version of the Gratitude Questionnaire (GQ-6-G). Frontiers in Psychology, 11. https://doi.org/10.3389/fpsyg.2020.590108",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2020.590108",
+      "version": "1.0",
+      "domain": "Well-being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Original scale by McCullough et al. (2002). CC BY 4.0 license via German validation: Hudecek et al. (2020), Frontiers in Psychology. https://doi.org/10.3389/fpsyg.2020.590108"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default":  0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "GQ6_r1", "GQ6_r2", "GQ6_r3", "GQ6_r4",
+        "GQ6_r5", "GQ6_r6", "GQ6_r7"
+      ],
+      "question_head": "GQ6_head"
+    },
+    "dimensions": [
+      {
+        "id": "Gratitude",
+        "name": "Gratitude",
+        "description": "Dispositional tendency to feel and express gratitude"
+      }
+    ],
+    "items": [
+      { "id": "GQ6001", "type": "likert", "text_key": "GQ6001", "dimension": "Gratitude" },
+      { "id": "GQ6002", "type": "likert", "text_key": "GQ6002", "dimension": "Gratitude" },
+      { "id": "GQ6003", "type": "likert", "text_key": "GQ6003", "dimension": "Gratitude" },
+      { "id": "GQ6004", "type": "likert", "text_key": "GQ6004", "dimension": "Gratitude" },
+      { "id": "GQ6005", "type": "likert", "text_key": "GQ6005", "dimension": "Gratitude" },
+      { "id": "GQ6006", "type": "likert", "text_key": "GQ6006", "dimension": "Gratitude" }
+    ],
+    "scoring": {
+      "Gratitude": {
+        "method": "sum_coded",
+        "description": "Total gratitude score (range 6–42). Items 3 and 6 are reverse-scored.",
+        "items": {
+          "GQ6001": 1,
+          "GQ6002": 1,
+          "GQ6003": -1,
+          "GQ6004": 1,
+          "GQ6005": 1,
+          "GQ6006": -1
+        }
+      }
+    }
+  },
+  "translations": {
+    "de": {
+      "GQ6_head": "Bitte geben Sie an, inwieweit Sie den folgenden Aussagen zustimmen.",
+      "GQ6_r1": "Stimme überhaupt nicht zu",
+      "GQ6_r2": "2",
+      "GQ6_r3": "3",
+      "GQ6_r4": "4",
+      "GQ6_r5": "5",
+      "GQ6_r6": "6",
+      "GQ6_r7": "Stimme vollständig zu",
+      "GQ6001": "Es gibt so viel in meinem Leben, für das ich dankbar bin.",
+      "GQ6002": "Wenn ich alles auflisten müsste, für das ich dankbar bin, wäre dies eine sehr lange Liste.",
+      "GQ6003": "Wenn ich die Welt betrachte, dann sehe ich nicht viel, für das ich dankbar bin.",
+      "GQ6004": "Ich bin einer Vielzahl an Menschen dankbar.",
+      "GQ6005": "Je älter ich werde, desto mehr bin ich in der Lage, für die Menschen, die Ereignisse und die Situationen, die ein Teil meiner Lebensgeschichte gewesen sind, dankbar zu sein.",
+      "GQ6006": "Eine lange Zeit kann verstreichen, bis ich für etwas oder jemandem dankbar bin."
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "ERSS",
+      "name": "Emotion Regulation Strategies Scale",
+      "abbreviation": "ERSS",
+      "description": "19-item scale measuring four cognitive and behavioral emotion regulation strategies: Situation Modification (3 items), Attentional Deployment (4 items, 2 reverse-scored), Cognitive Reappraisal (7 items), and Suppression (5 items). Rated on a 7-point Likert scale.",
+      "citation": "Torrence, B. S., & Connelly, S. (2019). Emotion regulation tendencies and leadership performance: An examination of cognitive and behavioral regulation strategies. Frontiers in Psychology, 10. https://doi.org/10.3389/fpsyg.2019.01486",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2019.01486",
+      "version": "1.0",
+      "domain": "Emotion"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": ["ERSS_r1", "ERSS_r2", "ERSS_r3", "ERSS_r4", "ERSS_r5", "ERSS_r6", "ERSS_r7"],
+      "question_head": "ERSS_head"
+    },
+    "dimensions": [
+      {
+        "id": "situation_modification",
+        "name": "Situation Modification",
+        "description": "Managing emotions by actively changing aspects of the situation"
+      },
+      {
+        "id": "attentional_deployment",
+        "name": "Attentional Deployment",
+        "description": "Managing emotions by shifting or directing attention away from emotional stimuli"
+      },
+      {
+        "id": "cognitive_reappraisal",
+        "name": "Cognitive Reappraisal",
+        "description": "Managing emotions by changing one's perspective or interpretation of the situation"
+      },
+      {
+        "id": "suppression",
+        "name": "Suppression",
+        "description": "Managing emotions by inhibiting or concealing emotional expression"
+      }
+    ],
+    "items": [
+      {"id": "ERSS001", "type": "likert", "text_key": "ERSS001", "dimension": "situation_modification"},
+      {"id": "ERSS002", "type": "likert", "text_key": "ERSS002", "dimension": "situation_modification"},
+      {"id": "ERSS003", "type": "likert", "text_key": "ERSS003", "dimension": "situation_modification"},
+      {"id": "ERSS004", "type": "likert", "text_key": "ERSS004", "dimension": "attentional_deployment"},
+      {"id": "ERSS005", "type": "likert", "text_key": "ERSS005", "dimension": "attentional_deployment"},
+      {"id": "ERSS006", "type": "likert", "text_key": "ERSS006", "dimension": "attentional_deployment"},
+      {"id": "ERSS007", "type": "likert", "text_key": "ERSS007", "dimension": "attentional_deployment"},
+      {"id": "ERSS008", "type": "likert", "text_key": "ERSS008", "dimension": "cognitive_reappraisal"},
+      {"id": "ERSS009", "type": "likert", "text_key": "ERSS009", "dimension": "cognitive_reappraisal"},
+      {"id": "ERSS010", "type": "likert", "text_key": "ERSS010", "dimension": "cognitive_reappraisal"},
+      {"id": "ERSS011", "type": "likert", "text_key": "ERSS011", "dimension": "cognitive_reappraisal"},
+      {"id": "ERSS012", "type": "likert", "text_key": "ERSS012", "dimension": "cognitive_reappraisal"},
+      {"id": "ERSS013", "type": "likert", "text_key": "ERSS013", "dimension": "cognitive_reappraisal"},
+      {"id": "ERSS014", "type": "likert", "text_key": "ERSS014", "dimension": "cognitive_reappraisal"},
+      {"id": "ERSS015", "type": "likert", "text_key": "ERSS015", "dimension": "suppression"},
+      {"id": "ERSS016", "type": "likert", "text_key": "ERSS016", "dimension": "suppression"},
+      {"id": "ERSS017", "type": "likert", "text_key": "ERSS017", "dimension": "suppression"},
+      {"id": "ERSS018", "type": "likert", "text_key": "ERSS018", "dimension": "suppression"},
+      {"id": "ERSS019", "type": "likert", "text_key": "ERSS019", "dimension": "suppression"}
+    ],
+    "scoring": {
+      "situation_modification": {
+        "method": "mean_coded",
+        "description": "Mean of items 1-3; higher scores indicate greater use of situation modification",
+        "items": {
+          "ERSS001": 1, "ERSS002": 1, "ERSS003": 1
+        }
+      },
+      "attentional_deployment": {
+        "method": "mean_coded",
+        "description": "Mean of items 4-7 with items 6 and 7 reverse-scored; higher scores indicate greater attentional deployment",
+        "items": {
+          "ERSS004": 1, "ERSS005": 1, "ERSS006": -1, "ERSS007": -1
+        }
+      },
+      "cognitive_reappraisal": {
+        "method": "mean_coded",
+        "description": "Mean of items 8-14; higher scores indicate greater use of cognitive reappraisal",
+        "items": {
+          "ERSS008": 1, "ERSS009": 1, "ERSS010": 1, "ERSS011": 1,
+          "ERSS012": 1, "ERSS013": 1, "ERSS014": 1
+        }
+      },
+      "suppression": {
+        "method": "mean_coded",
+        "description": "Mean of items 15-19; higher scores indicate greater use of emotional suppression",
+        "items": {
+          "ERSS015": 1, "ERSS016": 1, "ERSS017": 1, "ERSS018": 1, "ERSS019": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ERSS_head": "Please indicate the degree to which you agree or disagree with each of the following statements.",
+      "ERSS_r1": "Strongly disagree",
+      "ERSS_r2": "Disagree",
+      "ERSS_r3": "Somewhat disagree",
+      "ERSS_r4": "Neither agree nor disagree",
+      "ERSS_r5": "Somewhat agree",
+      "ERSS_r6": "Agree",
+      "ERSS_r7": "Strongly agree",
+      "ERSS001": "When I want to feel more positive emotion, I can change aspects of the situation in order to do that.",
+      "ERSS002": "I can change the emotional nature of a situation by injecting humor into the situation.",
+      "ERSS003": "I manage my emotions by changing aspects of the situation.",
+      "ERSS004": "I am able to distract myself from strong emotions.",
+      "ERSS005": "When I am in an emotional situation, I manage my emotions by focusing on non-emotional aspects of the situation.",
+      "ERSS006": "It is hard for me to stop thinking about the emotions I am feeling.",
+      "ERSS007": "When experiencing negative emotions, I am unable to think about anything but that emotion.",
+      "ERSS008": "When I want to feel more positive emotions, I can change my perspective on the situation.",
+      "ERSS009": "When I want to feel less negative emotions, I can change my perspective on the situation.",
+      "ERSS010": "I can control my negative emotions by changing the way I think about the situation.",
+      "ERSS011": "I can control my positive emotions by changing the way I think about the situation.",
+      "ERSS012": "I manage my emotions by changing my perspective on the situation I am in.",
+      "ERSS013": "I can increase my feelings of positive emotions by thinking about different aspects of the situation.",
+      "ERSS014": "I can decrease my feelings of negative emotions by thinking about different aspects of the situation.",
+      "ERSS015": "I generally try not to show my negative emotions.",
+      "ERSS016": "I keep my emotions to myself.",
+      "ERSS017": "I manage my emotions by not expressing them.",
+      "ERSS018": "I do not express my negative emotions.",
+      "ERSS019": "I generally try not to show my positive emotions."
+    }
+  }
+}

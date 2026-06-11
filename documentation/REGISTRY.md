@@ -10,6 +10,7 @@ The website uses manifest JSON files to know which scales are available. These m
 | Restricted | `scales/restricted/` | `tools/build_manifest_restricted.py` | `website/manifest_restricted.json` |
 | Private | `scales/private/` | `tools/build_manifest_private.py` | `website/manifest_private.json` |
 | PhenX | `data/phenx_448/osd_output/` | `tools/build_manifest_phenx.py` | `website/manifest_phenx.json` |
+| MISS | `scales/miss/` | `tools/build_manifest_miss.py` | `website/manifest_miss.json` |
 
 ## How to rebuild
 
@@ -20,6 +21,7 @@ From the OpenScales root directory:
 python3 tools/build_manifest.py
 python3 tools/build_manifest_restricted.py
 python3 tools/build_manifest_private.py
+python3 tools/build_manifest_miss.py
 
 # Copy to web server directory if needed (restricted/private are separate files)
 cp website/manifest_restricted.json ../OpenScales_web/manifest_restricted.json

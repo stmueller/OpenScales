@@ -1,0 +1,120 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Fraboni Scale of Ageism – Short Form (Portuguese)",
+      "code": "MISS11993",
+      "abbreviation": "FSA-SF",
+      "description": "A 9-item Portuguese short form of the Fraboni Scale of Ageism (FSA; Fraboni et al., 1990), measuring the affective component of attitudes toward older adults across three subscales: Avoidance, Stereotypes, and Discrimination. Higher scores indicate greater ageism. Portuguese translation only — the original English FSA is copyrighted.",
+      "citation": "Neto, J., & Neto, F. (2024). Measuring ageism: Psychometric analysis of the Portuguese short form of the Fraboni Scale (FSA-SF). Measurement Instruments for the Social Sciences, 6, Article e11993. https://doi.org/10.5964/miss.11993\n\nOriginal scale: Fraboni, M., Saltstone, R., & Hughes, S. (1990). The Fraboni Scale of Ageism (FSA): An attempt at a more precise measure of ageism. Canadian Journal on Aging, 9(1), 56–66. https://doi.org/10.1017/S0714980800016093",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/11993",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-07",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Portuguese translation only — the original English FSA is copyrighted and cannot be included. Response scale (1 = strongly disagree to 7 = strongly agree) stated in the paper. No reverse-coded items; higher scores = more ageism."
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": ["fsa_r1", "fsa_r2", "fsa_r3", "fsa_r4", "fsa_r5", "fsa_r6", "fsa_r7"]
+    },
+    "dimensions": [
+      {
+        "id": "avoidance",
+        "name": "Avoidance",
+        "abbreviation": "AVO",
+        "description": "Tendency to avoid contact with older adults. Mean of 3 items, range 1–7; higher = more avoidance."
+      },
+      {
+        "id": "stereotypes",
+        "name": "Stereotypes",
+        "abbreviation": "STE",
+        "description": "Negative stereotyped beliefs about older adults. Mean of 3 items, range 1–7; higher = more stereotyping."
+      },
+      {
+        "id": "discrimination",
+        "name": "Discrimination",
+        "abbreviation": "DIS",
+        "description": "Discriminatory attitudes toward older adults. Mean of 3 items, range 1–7; higher = more discrimination."
+      },
+      {
+        "id": "ageism",
+        "name": "Ageism (Total)",
+        "abbreviation": "AGE",
+        "description": "Second-order factor: mean of all 9 items, range 1–7; higher = more ageism overall."
+      }
+    ],
+    "items": [
+      {"id": "fsa1", "type": "likert", "text_key": "fsa1", "dimension": "avoidance"},
+      {"id": "fsa2", "type": "likert", "text_key": "fsa2", "dimension": "avoidance"},
+      {"id": "fsa3", "type": "likert", "text_key": "fsa3", "dimension": "avoidance"},
+      {"id": "fsa4", "type": "likert", "text_key": "fsa4", "dimension": "stereotypes"},
+      {"id": "fsa5", "type": "likert", "text_key": "fsa5", "dimension": "stereotypes"},
+      {"id": "fsa6", "type": "likert", "text_key": "fsa6", "dimension": "stereotypes"},
+      {"id": "fsa7", "type": "likert", "text_key": "fsa7", "dimension": "discrimination"},
+      {"id": "fsa8", "type": "likert", "text_key": "fsa8", "dimension": "discrimination"},
+      {"id": "fsa9", "type": "likert", "text_key": "fsa9", "dimension": "discrimination"}
+    ],
+    "scoring": {
+      "avoidance": {
+        "description": "Mean of Avoidance items (1–3). Range 1–7; higher = more avoidance.",
+        "method": "mean_coded",
+        "items": ["fsa1", "fsa2", "fsa3"]
+      },
+      "stereotypes": {
+        "description": "Mean of Stereotypes items (4–6). Range 1–7; higher = more stereotyping.",
+        "method": "mean_coded",
+        "items": ["fsa4", "fsa5", "fsa6"]
+      },
+      "discrimination": {
+        "description": "Mean of Discrimination items (7–9). Range 1–7; higher = more discrimination.",
+        "method": "mean_coded",
+        "items": ["fsa7", "fsa8", "fsa9"]
+      },
+      "ageism": {
+        "description": "Mean of all 9 items (second-order Ageism factor). Range 1–7; higher = more ageism.",
+        "method": "mean_coded",
+        "scores": ["avoidance", "stereotypes", "discrimination"]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Fraboni Scale of Ageism – Short Form (FSA-SF) Report",
+      "footer_refs": [
+        "Neto, J., & Neto, F. (2024). Measuring ageism: Psychometric analysis of the Portuguese short form of the Fraboni Scale (FSA-SF). Measurement Instruments for the Social Sciences, 6, Article e11993. https://doi.org/10.5964/miss.11993",
+        "Higher scores indicate greater ageism. Portuguese translation only — original English FSA is copyrighted."
+      ]
+    }
+  },
+  "translations": {
+    "pt": {
+      "fsa_r1": "Discordo totalmente",
+      "fsa_r2": "Discordo muito",
+      "fsa_r3": "Discordo",
+      "fsa_r4": "Nem concordo nem discordo",
+      "fsa_r5": "Concordo",
+      "fsa_r6": "Concordo muito",
+      "fsa_r7": "Concordo totalmente",
+      "fsa1": "Preferia não ir a um convívio numa associação de pessoas idosas, no caso de ser convidado.",
+      "fsa2": "Pessoalmente não gostaria de passar muito tempo com uma pessoa idosa.",
+      "fsa3": "Preferia não viver com uma pessoa idosa.",
+      "fsa4": "Conversas complexas e interessantes é algo que não se pode esperar da maior parte das pessoas idosas.",
+      "fsa5": "A maior parte das pessoas idosas deveriam ser consideradas como tendo pouca higiene pessoal.",
+      "fsa6": "A maior parte das pessoas idosas podem ser irritantes porque repetem as mesmas histórias muitas vezes.",
+      "fsa7": "As pessoas idosas não necessitam de utilizar as instalações desportivas da nossa comunidade.",
+      "fsa8": "Não deveria confiar na maior parte das pessoas idosas para cuidarem das crianças.",
+      "fsa9": "É melhor que as pessoas idosas vivam onde não aborreçam ninguém.",
+      "debrief": "Obrigado por completar este questionário."
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "HSPS20H",
+      "name": "Highly Sensitive Person Scale--Hungarian Version (HSPS-20-H)",
+      "abbreviation": "HSPS-20-H",
+      "description": "20-item scale measuring sensory processing sensitivity (high sensitivity), with three subscales: Stress Sensitivity, Sensory Sensitivity, and Aesthetic Sensitivity. Hungarian adaptation of the original HSPS by Aron & Aron (1997). Items rated on a 7-point scale (1 = not at all, 4 = moderately, 7 = completely).",
+      "citation": "Reddington, K., Nagybányai Nagy, O., Baier, A., & Köteles, F. (2025). Highly Sensitive Person Scale--Hungarian Version [Database record]. APA PsycTests. https://dx.doi.org/10.1037/t9999-97334-000",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://dx.doi.org/10.1556/0406.2025.00089",
+      "version": "1.0",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "HSPS20H_r1", "HSPS20H_r2", "HSPS20H_r3", "HSPS20H_r4",
+        "HSPS20H_r5", "HSPS20H_r6", "HSPS20H_r7"
+      ],
+      "question_head": "HSPS20H_head"
+    },
+    "dimensions": [
+      {
+        "id": "StressSensitivity",
+        "name": "Stress Sensitivity",
+        "description": "Tendency to become overwhelmed or distressed by demanding situations and change"
+      },
+      {
+        "id": "SensorySensitivity",
+        "name": "Sensory Sensitivity",
+        "description": "Sensitivity to external sensory stimuli such as light, sounds, textures"
+      },
+      {
+        "id": "AestheticSensitivity",
+        "name": "Aesthetic Sensitivity",
+        "description": "Appreciation of art, music, and aesthetic experiences; rich inner life"
+      }
+    ],
+    "items": [
+      { "id": "HSPS20H001", "type": "likert", "text_key": "HSPS20H001", "dimension": "SensorySensitivity" },
+      { "id": "HSPS20H002", "type": "likert", "text_key": "HSPS20H002", "dimension": "SensorySensitivity" },
+      { "id": "HSPS20H003", "type": "likert", "text_key": "HSPS20H003", "dimension": "SensorySensitivity" },
+      { "id": "HSPS20H004", "type": "likert", "text_key": "HSPS20H004", "dimension": "SensorySensitivity" },
+      { "id": "HSPS20H005", "type": "likert", "text_key": "HSPS20H005", "dimension": "AestheticSensitivity" },
+      { "id": "HSPS20H006", "type": "likert", "text_key": "HSPS20H006", "dimension": "SensorySensitivity" },
+      { "id": "HSPS20H007", "type": "likert", "text_key": "HSPS20H007", "dimension": "AestheticSensitivity" },
+      { "id": "HSPS20H008", "type": "likert", "text_key": "HSPS20H008", "dimension": "SensorySensitivity" },
+      { "id": "HSPS20H009", "type": "likert", "text_key": "HSPS20H009", "dimension": "StressSensitivity" },
+      { "id": "HSPS20H010", "type": "likert", "text_key": "HSPS20H010", "dimension": "StressSensitivity" },
+      { "id": "HSPS20H011", "type": "likert", "text_key": "HSPS20H011", "dimension": "StressSensitivity" },
+      { "id": "HSPS20H012", "type": "likert", "text_key": "HSPS20H012", "dimension": "StressSensitivity" },
+      { "id": "HSPS20H013", "type": "likert", "text_key": "HSPS20H013", "dimension": "StressSensitivity" },
+      { "id": "HSPS20H014", "type": "likert", "text_key": "HSPS20H014", "dimension": "StressSensitivity" },
+      { "id": "HSPS20H015", "type": "likert", "text_key": "HSPS20H015", "dimension": "AestheticSensitivity" },
+      { "id": "HSPS20H016", "type": "likert", "text_key": "HSPS20H016", "dimension": "StressSensitivity" },
+      { "id": "HSPS20H017", "type": "likert", "text_key": "HSPS20H017", "dimension": "StressSensitivity" },
+      { "id": "HSPS20H018", "type": "likert", "text_key": "HSPS20H018", "dimension": "SensorySensitivity" },
+      { "id": "HSPS20H019", "type": "likert", "text_key": "HSPS20H019", "dimension": "StressSensitivity" },
+      { "id": "HSPS20H020", "type": "likert", "text_key": "HSPS20H020", "dimension": "StressSensitivity" }
+    ],
+    "scoring": {
+      "StressSensitivity": {
+        "method": "mean_coded",
+        "description": "Mean of items 9, 10, 11, 12, 13, 14, 16, 17, 19, 20. No reverse-scored items.",
+        "items": {
+          "HSPS20H009": 1, "HSPS20H010": 1, "HSPS20H011": 1,
+          "HSPS20H012": 1, "HSPS20H013": 1, "HSPS20H014": 1,
+          "HSPS20H016": 1, "HSPS20H017": 1, "HSPS20H019": 1,
+          "HSPS20H020": 1
+        }
+      },
+      "SensorySensitivity": {
+        "method": "mean_coded",
+        "description": "Mean of items 1, 2, 3, 4, 6, 8, 18. No reverse-scored items.",
+        "items": {
+          "HSPS20H001": 1, "HSPS20H002": 1, "HSPS20H003": 1,
+          "HSPS20H004": 1, "HSPS20H006": 1, "HSPS20H008": 1,
+          "HSPS20H018": 1
+        }
+      },
+      "AestheticSensitivity": {
+        "method": "mean_coded",
+        "description": "Mean of items 5, 7, 15. No reverse-scored items.",
+        "items": {
+          "HSPS20H005": 1, "HSPS20H007": 1, "HSPS20H015": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "hu": {
+      "HSPS20H_head": "Kérünk, válaszolj meg minden kérdést a következő 1-től 7-ig terjedő skálán aszerint, ahogy Önmagadra leginkább jellemzőnek érzed!",
+      "HSPS20H_r1": "Egyáltalán nem",
+      "HSPS20H_r2": "2",
+      "HSPS20H_r3": "3",
+      "HSPS20H_r4": "Közepesen",
+      "HSPS20H_r5": "5",
+      "HSPS20H_r6": "6",
+      "HSPS20H_r7": "Teljes mértékben",
+      "HSPS20H001": "Könnyen túlterhelnek az érzékszerveidre ható erős ingerek?",
+      "HSPS20H002": "Mozgalmas napokon szoktad-e úgy érezni, hogy szükséged van arra, hogy lepihenj vagy elvonulj a túl sok inger elől egy besötétített szobába vagy bárhová, ahol nyugalom van?",
+      "HSPS20H003": "Különösen érzékeny vagy a koffein hatására?",
+      "HSPS20H004": "Könnyen túlingerelnek az olyan dolgok, mint az erős fény, erős szagok, durva anyagok vagy egy közeli sziréna?",
+      "HSPS20H005": "Gazdag és sokrétű belső életed van?",
+      "HSPS20H006": "A hangos zajok kényelmetlenül érintenek?",
+      "HSPS20H007": "Mélyen megérint a művészet és a zene?",
+      "HSPS20H008": "Az idegrendszered néha annyira kimerül, hogy úgy érzed, egyedül kell lenned?",
+      "HSPS20H009": "Ijedős vagy?",
+      "HSPS20H010": "Megzavar, ha rövid idő alatt sok mindent kell elintézned?",
+      "HSPS20H011": "Idegesít, amikor mások arra próbálnak rábírni, hogy egyszerre túl sok mindent csinálj?",
+      "HSPS20H012": "Zaklatott leszel, ha sok minden történik körülötted?",
+      "HSPS20H013": "Az éhség erős reakciót vált ki belőled, megzavarja a koncentrációd és a hangulatod?",
+      "HSPS20H014": "Az életedben történő változások rendszerint felzaklatnak?",
+      "HSPS20H015": "Észreveszed és élvezed a kifinomult illatokat, ízeket, hangokat és műalkotásokat?",
+      "HSPS20H016": "Kellemetlennek találod, ha egyszerre sok minden történik?",
+      "HSPS20H017": "Elsődlegesen fontos-e számodra úgy alakítani az életed, hogy elkerüld a felkavaró, túlterhelő helyzeteket?",
+      "HSPS20H018": "Zavarnak az olyan erős ingerek, mint a hangos zajok vagy kaotikus jelenetek?",
+      "HSPS20H019": "Versenyhelyzetben vagy amikor egy feladat végzése közben figyelnek, idegessé és bizonytalanná válsz-e, s így a szokásosnál sokkal rosszabbul teljesítesz?",
+      "HSPS20H020": "Gyermekkorodban szüleid és tanáraid érzékeny, félénk gyereknek tartottak?"
+    }
+  }
+}

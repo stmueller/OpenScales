@@ -1,0 +1,126 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "BMCQ",
+      "name": "Body-Mind Connection Questionnaire",
+      "abbreviation": "BMCQ",
+      "description": "13-item scale measuring three aspects of mind-body connection: values for physical and mental wellbeing, ability to articulate sensations and emotions, and interoceptive attention.",
+      "citation": "Van Bael, K., Ball, M., Scarfo, J., & Suleyman, E. (2023). Assessment of the mind-body connection: Preliminary psychometric evidence for a new self-report questionnaire. BMC Psychology, 11(1). https://doi.org/10.1186/s40359-023-01302-3",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1186/s40359-023-01302-3",
+      "version": "1.0",
+      "domain": "Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default":  0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "BMCQ_r1", "BMCQ_r2", "BMCQ_r3", "BMCQ_r4",
+        "BMCQ_r5", "BMCQ_r6", "BMCQ_r7"
+      ],
+      "question_head": "BMCQ_head"
+    },
+    "dimensions": [
+      {
+        "id": "BMV",
+        "name": "Body-Mind Values",
+        "description": "Valuing and attending to physical and mental wellbeing"
+      },
+      {
+        "id": "SEA",
+        "name": "Sensation-Emotion Articulation",
+        "description": "Ability to identify and describe bodily sensations linked to emotions"
+      },
+      {
+        "id": "IA",
+        "name": "Interoceptive Attention",
+        "description": "Capacity to direct focused attention toward bodily sensations"
+      }
+    ],
+    "items": [
+      { "id": "BMCQ001", "type": "likert", "text_key": "BMCQ001", "dimension": "BMV" },
+      { "id": "BMCQ002", "type": "likert", "text_key": "BMCQ002", "dimension": "BMV" },
+      { "id": "BMCQ003", "type": "likert", "text_key": "BMCQ003", "dimension": "BMV" },
+      { "id": "BMCQ004", "type": "likert", "text_key": "BMCQ004", "dimension": "BMV" },
+      { "id": "BMCQ005", "type": "likert", "text_key": "BMCQ005", "dimension": "BMV" },
+      { "id": "BMCQ006", "type": "likert", "text_key": "BMCQ006", "dimension": "BMV" },
+      { "id": "BMCQ007", "type": "likert", "text_key": "BMCQ007", "dimension": "SEA" },
+      { "id": "BMCQ008", "type": "likert", "text_key": "BMCQ008", "dimension": "SEA" },
+      { "id": "BMCQ009", "type": "likert", "text_key": "BMCQ009", "dimension": "SEA" },
+      { "id": "BMCQ010", "type": "likert", "text_key": "BMCQ010", "dimension": "IA" },
+      { "id": "BMCQ011", "type": "likert", "text_key": "BMCQ011", "dimension": "IA" },
+      { "id": "BMCQ012", "type": "likert", "text_key": "BMCQ012", "dimension": "IA" },
+      { "id": "BMCQ013", "type": "likert", "text_key": "BMCQ013", "dimension": "IA" }
+    ],
+    "scoring": {
+      "BMV": {
+        "method": "mean_coded",
+        "description": "Body-Mind Values — mean of 6 items; item 6 reverse-scored",
+        "items": {
+          "BMCQ001": 1, "BMCQ002": 1, "BMCQ003": 1,
+          "BMCQ004": 1, "BMCQ005": 1, "BMCQ006": -1
+        }
+      },
+      "SEA": {
+        "method": "mean_coded",
+        "description": "Sensation-Emotion Articulation — mean of 3 items; all reverse-scored",
+        "items": {
+          "BMCQ007": -1, "BMCQ008": -1, "BMCQ009": -1
+        }
+      },
+      "IA": {
+        "method": "mean_coded",
+        "description": "Interoceptive Attention — mean of 4 items",
+        "items": {
+          "BMCQ010": 1, "BMCQ011": 1, "BMCQ012": 1, "BMCQ013": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "BMCQ_head": "Please indicate how true each statement is of you.",
+      "BMCQ_r1": "Not at all true of me",
+      "BMCQ_r2": "2",
+      "BMCQ_r3": "3",
+      "BMCQ_r4": "4",
+      "BMCQ_r5": "5",
+      "BMCQ_r6": "6",
+      "BMCQ_r7": "Very true of me",
+      "BMCQ001": "Feeling physically well is something that I prioritise in life.",
+      "BMCQ002": "I value being well-balanced in my body and my mind.",
+      "BMCQ003": "Feeling mentally well is something that I prioritise in life.",
+      "BMCQ004": "I am usually proactive in addressing the needs of my body.",
+      "BMCQ005": "Where possible, I always attend to what my body is telling me.",
+      "BMCQ006": "I feel disconnected from my body.",
+      "BMCQ007": "If I were asked to, I'd find it hard to describe changes in my body associated with positive and negative emotions.",
+      "BMCQ008": "I find it hard to identify changes in my body associated with positive and negative emotions.",
+      "BMCQ009": "I tend to focus on things happening in my physical environment rather than what is happening inside of me.",
+      "BMCQ010": "I can direct my focus toward how specific parts of my body feel.",
+      "BMCQ011": "It is easy for me to focus on specific sensations if they are suddenly experienced.",
+      "BMCQ012": "It is easy for me to focus on specific sensations if I purposefully think about them.",
+      "BMCQ013": "I consider myself in touch with my body and mind."
+    }
+  }
+}

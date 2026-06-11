@@ -1,0 +1,89 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Trust in Science Short Scale",
+      "code": "MISS16225",
+      "abbreviation": "TiSS",
+      "description": "A 4-item unidimensional short scale measuring trust in science and scientists, developed from the Trust in Science and Scientists Inventory (Nadelson et al., 2014). Validated in adults (N = 449) and adolescents aged ~13+ (N = 298 parent-adolescent dyads) with excellent model fit, reliability (ω = .835), and measurement invariance across gender and age. Higher scores indicate greater trust in science.",
+      "citation": "Steger, D., & Schütz, A. (2025). Assessing trust in science: Development and validation of a short scale for adolescents and adults. Measurement Instruments for the Social Sciences, 7, Article e16225. https://doi.org/10.5964/miss.16225\n\nOriginal item source: Nadelson, L., Jorcyk, C., Yang, D., Jarratt Smith, M., Matson, S., Cornell, K., & Husting, V. (2014). I just don't trust them: The development and validation of an assessment instrument to measure trust in science and scientists. School Science and Mathematics, 114(2), 76–86. https://doi.org/10.1111/ssm.12051",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/16225",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-07",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Items are a 4-item subset of the 8-item Trust in Science and Scientists Inventory (Nadelson et al., 2014). English items verbatim per Nadelson et al. (2014); German items from Appendix of Steger & Schütz (2025), slightly adapted from Schoor & Schütz (2021) for adolescent readability. No reverse-coded items. Validated for adults and adolescents aged ~13+."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["tiss_r1", "tiss_r2", "tiss_r3", "tiss_r4", "tiss_r5"]
+    },
+    "dimensions": [
+      {
+        "id": "trust_science",
+        "name": "Trust in Science",
+        "abbreviation": "TiS",
+        "description": "Unidimensional trust in science and scientists. Mean of 4 items, range 1–5; higher = greater trust."
+      }
+    ],
+    "items": [
+      {"id": "tiss1", "type": "likert", "text_key": "tiss1", "dimension": "trust_science"},
+      {"id": "tiss2", "type": "likert", "text_key": "tiss2", "dimension": "trust_science"},
+      {"id": "tiss3", "type": "likert", "text_key": "tiss3", "dimension": "trust_science"},
+      {"id": "tiss4", "type": "likert", "text_key": "tiss4", "dimension": "trust_science"}
+    ],
+    "scoring": {
+      "trust_science": {
+        "description": "Mean of all 4 items. Range 1–5; higher = greater trust in science.",
+        "method": "mean_coded",
+        "items": ["tiss1", "tiss2", "tiss3", "tiss4"]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Trust in Science Short Scale (TiSS) Report",
+      "footer_refs": [
+        "Steger, D., & Schütz, A. (2025). Assessing trust in science: Development and validation of a short scale for adolescents and adults. Measurement Instruments for the Social Sciences, 7, Article e16225. https://doi.org/10.5964/miss.16225",
+        "Higher scores indicate greater trust in science."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "tiss_r1": "Strongly disagree",
+      "tiss_r2": "Somewhat disagree",
+      "tiss_r3": "Neither agree nor disagree",
+      "tiss_r4": "Somewhat agree",
+      "tiss_r5": "Strongly agree",
+      "instructions": "Please indicate how much you agree with each of the following statements. Select the response that best applies to you.",
+      "tiss1": "I trust the work of scientists to make life better for people.",
+      "tiss2": "We should trust that scientists are being honest in their work.",
+      "tiss3": "Scientific theories are trustworthy.",
+      "tiss4": "We can trust scientists to share their discoveries even if they don't like their findings.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "de": {
+      "tiss_r1": "Stimme überhaupt nicht zu",
+      "tiss_r2": "Stimme eher nicht zu",
+      "tiss_r3": "Teils/teils",
+      "tiss_r4": "Stimme eher zu",
+      "tiss_r5": "Stimme voll und ganz zu",
+      "instructions": "Geben Sie zu den folgenden Aussagen bitte an, wie sehr Sie jeweils zustimmen. Bitte die zutreffende Antwort markieren.",
+      "tiss1": "Ich vertraue darauf, dass die Wissenschaft das Leben der Menschen besser macht.",
+      "tiss2": "Wir sollten darauf vertrauen, dass Wissenschaftlerinnen und Wissenschaftler bei ihrer Arbeit ehrlich sind.",
+      "tiss3": "Wissenschaftliche Theorien sind vertrauenswürdig.",
+      "tiss4": "Wir können darauf vertrauen, dass Wissenschaftlerinnen und Wissenschaftler ihre Entdeckungen veröffentlichen, auch wenn ihnen ihre Ergebnisse nicht gefallen.",
+      "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Affirmative Character Scale",
+      "code": "MISS16923",
+      "abbreviation": "Aff-Scale",
+      "description": "A 17-item scale measuring affirmative social character — adaptive authoritarian tendencies aligned with 21st-century meritocracy and flexible capitalism. Five subscales: Affirmation (3 items; uncritical acceptance of performance norms), Self-Optimization (5 items; self-discipline and self-tracking), Flexibility and Mobility (2 items; globalized adaptability), Solutionism (3 items; belief in technological fixes), and Libertarianism (4 items; market over state, entrepreneurial ideology). Note: the abstract states '28 items' but the final EFA-selected instrument comprises 17 items (confirmed in the Methods text). Validated in a German quota sample (N=1,196). Authors note the scale requires further refinement and revalidation. English translations of German items provided in the paper; no German verbatim reproduced.",
+      "citation": "Jäger, D. W. G. F., Knasmüller, F., Brunner, M., & Heller, A. (2025). The affirmative character scale: A tool to explore new forms of authoritarianism. Measurement Instruments for the Social Sciences, 7, Article e16923. https://doi.org/10.5964/miss.16923",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/16923",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-08",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English item translations verbatim from Table 1 of Jäger et al. (2025); German original items not reproduced in the paper. Scale validated in German-speaking sample only. Authors explicitly flag need for further validation. Affirmation and Flexibility/Mobility subscales have low item counts (3 and 2 respectively); Libertarianism shows lower reliability (α=.631). Item aff_so4 ('I eat healthily to stay fit') has poor discriminatory power per authors. No reverse-coded items. 6-point Likert: 1=Strongly disagree to 6=Strongly agree."
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "max": 6,
+      "labels": ["aff_r1", "aff_r2", "aff_r3", "aff_r4", "aff_r5", "aff_r6"]
+    },
+    "dimensions": [
+      {
+        "id": "affirmation",
+        "name": "Affirmation",
+        "abbreviation": "AFF",
+        "description": "Uncritical acceptance of social norms and performance demands; passive affirmation of existing conditions. Mean of 3 items, range 1–6; higher = stronger affirmation orientation."
+      },
+      {
+        "id": "self_optimization",
+        "name": "Self-Optimization",
+        "abbreviation": "SO",
+        "description": "Self-discipline, performance orientation, and self-tracking (Quantified Self) as central life strategies. Mean of 5 items, range 1–6; higher = stronger self-optimization orientation."
+      },
+      {
+        "id": "flexibility_mobility",
+        "name": "Flexibility and Mobility",
+        "abbreviation": "FM",
+        "description": "Willingness to adapt to globalized society through flexible living and mobility. Mean of 2 items, range 1–6; higher = stronger flexibility/mobility orientation."
+      },
+      {
+        "id": "solutionism",
+        "name": "Solutionism",
+        "abbreviation": "SOL",
+        "description": "Conviction that technology and apps can solve social and personal problems. Mean of 3 items, range 1–6; higher = stronger solutionist orientation."
+      },
+      {
+        "id": "libertarianism",
+        "name": "Libertarianism",
+        "abbreviation": "LIB",
+        "description": "Preference for market over state, entrepreneurial ideology, and continuous performance assessment. Mean of 4 items, range 1–6; higher = stronger libertarian orientation."
+      }
+    ],
+    "items": [
+      {"id": "aff_af1", "type": "likert", "text_key": "aff_af1", "dimension": "affirmation"},
+      {"id": "aff_af2", "type": "likert", "text_key": "aff_af2", "dimension": "affirmation"},
+      {"id": "aff_af3", "type": "likert", "text_key": "aff_af3", "dimension": "affirmation"},
+      {"id": "aff_so1", "type": "likert", "text_key": "aff_so1", "dimension": "self_optimization"},
+      {"id": "aff_so2", "type": "likert", "text_key": "aff_so2", "dimension": "self_optimization"},
+      {"id": "aff_so3", "type": "likert", "text_key": "aff_so3", "dimension": "self_optimization"},
+      {"id": "aff_so4", "type": "likert", "text_key": "aff_so4", "dimension": "self_optimization"},
+      {"id": "aff_so5", "type": "likert", "text_key": "aff_so5", "dimension": "self_optimization"},
+      {"id": "aff_fm1", "type": "likert", "text_key": "aff_fm1", "dimension": "flexibility_mobility"},
+      {"id": "aff_fm2", "type": "likert", "text_key": "aff_fm2", "dimension": "flexibility_mobility"},
+      {"id": "aff_sl1", "type": "likert", "text_key": "aff_sl1", "dimension": "solutionism"},
+      {"id": "aff_sl2", "type": "likert", "text_key": "aff_sl2", "dimension": "solutionism"},
+      {"id": "aff_sl3", "type": "likert", "text_key": "aff_sl3", "dimension": "solutionism"},
+      {"id": "aff_lb1", "type": "likert", "text_key": "aff_lb1", "dimension": "libertarianism"},
+      {"id": "aff_lb2", "type": "likert", "text_key": "aff_lb2", "dimension": "libertarianism"},
+      {"id": "aff_lb3", "type": "likert", "text_key": "aff_lb3", "dimension": "libertarianism"},
+      {"id": "aff_lb4", "type": "likert", "text_key": "aff_lb4", "dimension": "libertarianism"}
+    ],
+    "scoring": {
+      "affirmation": {
+        "description": "Mean of 3 Affirmation items. Range 1–6; higher = stronger affirmation of performance norms.",
+        "method": "mean_coded",
+        "items": ["aff_af1", "aff_af2", "aff_af3"]
+      },
+      "self_optimization": {
+        "description": "Mean of 5 Self-Optimization items. Range 1–6; higher = stronger self-optimization orientation. Note: aff_so4 ('I eat healthily to stay fit') has low discriminatory power per authors.",
+        "method": "mean_coded",
+        "items": ["aff_so1", "aff_so2", "aff_so3", "aff_so4", "aff_so5"]
+      },
+      "flexibility_mobility": {
+        "description": "Mean of 2 Flexibility and Mobility items. Range 1–6; higher = stronger flexibility/mobility orientation.",
+        "method": "mean_coded",
+        "items": ["aff_fm1", "aff_fm2"]
+      },
+      "solutionism": {
+        "description": "Mean of 3 Solutionism items. Range 1–6; higher = stronger belief in technological solutions.",
+        "method": "mean_coded",
+        "items": ["aff_sl1", "aff_sl2", "aff_sl3"]
+      },
+      "libertarianism": {
+        "description": "Mean of 4 Libertarianism items. Range 1–6; higher = stronger libertarian orientation.",
+        "method": "mean_coded",
+        "items": ["aff_lb1", "aff_lb2", "aff_lb3", "aff_lb4"]
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Affirmative Character Scale (Aff-Scale) Report",
+      "footer_refs": [
+        "Jäger, D. W. G. F., Knasmüller, F., Brunner, M., & Heller, A. (2025). The affirmative character scale: A tool to explore new forms of authoritarianism. Measurement Instruments for the Social Sciences, 7, Article e16923. https://doi.org/10.5964/miss.16923",
+        "Higher scores indicate stronger affirmative character orientation. Scale validated in German sample only; further validation needed per authors."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "aff_r1": "Strongly disagree",
+      "aff_r2": "Disagree",
+      "aff_r3": "Somewhat disagree",
+      "aff_r4": "Somewhat agree",
+      "aff_r5": "Agree",
+      "aff_r6": "Strongly agree",
+      "aff_af1": "Those who are unwilling to be flexible and adaptable rightly fail.",
+      "aff_af2": "Criticizing the demands of a performance-oriented society is pointless; one should focus on keeping up instead.",
+      "aff_af3": "Education should primarily aim to prepare children to meet the professional challenges of the future.",
+      "aff_so1": "It is important to stay mentally and physically fit in order to succeed in life.",
+      "aff_so2": "Anyone who wants to grow should track their physical activity so they can work on their weaknesses.",
+      "aff_so3": "Anyone who wants to grow should track their emotional state to identify and address their weaknesses.",
+      "aff_so4": "I eat healthily to stay fit.",
+      "aff_so5": "You should work on being mentally resilient in order to cope with life.",
+      "aff_fm1": "I feel at home anywhere in the world.",
+      "aff_fm2": "I would love to travel the whole world.",
+      "aff_sl1": "I am convinced that, in the case of a mental illness, a smartphone app that measures my mood and gives me tips can help.",
+      "aff_sl2": "Most problems can be solved with an app.",
+      "aff_sl3": "What influencers say is important to me.",
+      "aff_lb1": "In the economy, the state should have less influence, and the market more.",
+      "aff_lb2": "Entrepreneurs like Elon Musk or Bill Gates have contributed much more to solving the problems of humanity's history than philosophy and religion.",
+      "aff_lb3": "Technological innovations are the key to a better life.",
+      "aff_lb4": "Continuous comparisons, like school grades, intelligence tests, or performance assessments, are important to know where one stands.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

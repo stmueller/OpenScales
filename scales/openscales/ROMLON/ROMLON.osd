@@ -1,0 +1,86 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "ROMLON",
+      "name": "Romantic Loneliness Scale",
+      "abbreviation": "RomLon",
+      "description": "4-item scale measuring loneliness stemming from the absence of romance in dating, hookup, and marital relationships. Items are rated on a 7-point scale from extremely false (1) to extremely true (7). Two items were discarded during development, leaving 4 retained items.",
+      "citation": "Husain, W., Husain, M. A., Ijaz, F., Farrukh, J., Batool, F., Tahir, N., Trabelsi, K., Ammar, A., & Jahrami, H. (2025). The Romantic Loneliness Scale (RomLon scale): The development and validation of a novel and brief measure to assess loneliness stemming from the absence of romance in dating, hookups, and marital relationships. BMC Psychology, 13(1). https://doi.org/10.1186/s40359-025-03208-8",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1186/s40359-025-03208-8",
+      "version": "1.0",
+      "domain": "Relationships"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "ROMLON_r1", "ROMLON_r2", "ROMLON_r3", "ROMLON_r4",
+        "ROMLON_r5", "ROMLON_r6", "ROMLON_r7"
+      ],
+      "question_head": "ROMLON_head"
+    },
+    "dimensions": [
+      {
+        "id": "RomanticLoneliness",
+        "name": "Romantic Loneliness",
+        "description": "Overall loneliness due to the absence of romantic relationships and connection"
+      }
+    ],
+    "items": [
+      { "id": "ROMLON001", "type": "likert", "text_key": "ROMLON001", "dimension": "RomanticLoneliness" },
+      { "id": "ROMLON002", "type": "likert", "text_key": "ROMLON002", "dimension": "RomanticLoneliness" },
+      { "id": "ROMLON003", "type": "likert", "text_key": "ROMLON003", "dimension": "RomanticLoneliness" },
+      { "id": "ROMLON004", "type": "likert", "text_key": "ROMLON004", "dimension": "RomanticLoneliness" }
+    ],
+    "scoring": {
+      "RomanticLoneliness": {
+        "method": "mean_coded",
+        "description": "Mean of all 4 retained items. Higher scores indicate greater romantic loneliness.",
+        "items": {
+          "ROMLON001": 1,
+          "ROMLON002": 1,
+          "ROMLON003": 1,
+          "ROMLON004": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "ROMLON_head": "Please indicate how true each of the following statements is for you.",
+      "ROMLON_r1": "Extremely false",
+      "ROMLON_r2": "False",
+      "ROMLON_r3": "Slightly false",
+      "ROMLON_r4": "Not sure",
+      "ROMLON_r5": "Slightly true",
+      "ROMLON_r6": "True",
+      "ROMLON_r7": "Extremely true",
+      "ROMLON001": "I easily become captivated by romantic thoughts.",
+      "ROMLON002": "I feel sad when I think about being romantically alone.",
+      "ROMLON003": "I feel left out when I see other couples expressing affection.",
+      "ROMLON004": "I feel like others are having better romantic experiences than I am."
+    }
+  }
+}

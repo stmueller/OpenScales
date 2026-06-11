@@ -1,0 +1,148 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "International Survey Attitude Scale",
+      "code": "MISS11011",
+      "abbreviation": "ISAS",
+      "description": "A 9-item scale measuring attitudes toward surveys across three subscales: Survey Enjoyment (3 items; intrinsic interest in surveys), Survey Value (3 items; perceived societal importance), and Survey Burden (3 items; perceived intrusiveness and effort). Validated in English, Dutch, and German samples with measurement equivalence. One Value item (V3) and all three Burden items are negatively worded. Authors recommend using subscales separately rather than a single total score.",
+      "citation": "de Leeuw, E., Hox, J., Silber, H., Struminskaya, B., & Vis, C. (2019). Development of an International Survey Attitude Scale: Measurement equivalence, reliability, and predictive validity. Measurement Instruments for the Social Sciences, 1, Article e11011. https://doi.org/10.1186/s42409-019-0012-x",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/11011",
+      "doi": "10.5964/miss.11011",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-08",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English (master), Dutch, and German items verbatim from paper. 7-point Likert: 1=Totally disagree to 7=Totally agree. isas_v3 (waste of time) is reverse-coded for the Value subscale. isas_b1/b2/b3 are reverse-coded for Burden subscale (higher Burden score = greater burden perceived). For a global attitude score all Burden items and isas_v3 should be reverse-coded; authors do not recommend total score. No instruction stem provided in paper."
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": ["isas_r1", "isas_r2", "isas_r3", "isas_r4", "isas_r5", "isas_r6", "isas_r7"]
+    },
+    "dimensions": [
+      {
+        "id": "enjoyment",
+        "name": "Survey Enjoyment",
+        "abbreviation": "ENJ",
+        "description": "Intrinsic enjoyment of surveys. Mean of 3 items, range 1–7; higher = greater enjoyment."
+      },
+      {
+        "id": "value",
+        "name": "Survey Value",
+        "abbreviation": "VAL",
+        "description": "Perceived societal value of surveys. Mean of 3 items (item isas_v3 reverse-coded), range 1–7; higher = greater perceived value."
+      },
+      {
+        "id": "burden",
+        "name": "Survey Burden",
+        "abbreviation": "BUR",
+        "description": "Perceived burden and intrusiveness of surveys. Mean of 3 items (all reverse-coded), range 1–7; higher = greater perceived burden."
+      }
+    ],
+    "items": [
+      {"id": "isas_e1", "type": "likert", "text_key": "isas_e1", "dimension": "enjoyment"},
+      {"id": "isas_e2", "type": "likert", "text_key": "isas_e2", "dimension": "enjoyment"},
+      {"id": "isas_e3", "type": "likert", "text_key": "isas_e3", "dimension": "enjoyment"},
+      {"id": "isas_v1", "type": "likert", "text_key": "isas_v1", "dimension": "value"},
+      {"id": "isas_v2", "type": "likert", "text_key": "isas_v2", "dimension": "value"},
+      {"id": "isas_v3", "type": "likert", "text_key": "isas_v3", "dimension": "value"},
+      {"id": "isas_b1", "type": "likert", "text_key": "isas_b1", "dimension": "burden"},
+      {"id": "isas_b2", "type": "likert", "text_key": "isas_b2", "dimension": "burden"},
+      {"id": "isas_b3", "type": "likert", "text_key": "isas_b3", "dimension": "burden"}
+    ],
+    "scoring": {
+      "enjoyment": {
+        "description": "Mean of 3 Enjoyment items. Range 1–7; higher = greater survey enjoyment.",
+        "method": "mean_coded",
+        "items": ["isas_e1", "isas_e2", "isas_e3"]
+      },
+      "value": {
+        "description": "Mean of 3 Value items with isas_v3 reverse-coded. Range 1–7; higher = greater perceived value of surveys.",
+        "method": "mean_coded",
+        "items": {"isas_v1": 1, "isas_v2": 1, "isas_v3": -1}
+      },
+      "burden": {
+        "description": "Mean of 3 Burden items, all reverse-coded. Range 1–7; higher = greater perceived burden.",
+        "method": "mean_coded",
+        "items": {"isas_b1": -1, "isas_b2": -1, "isas_b3": -1}
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "International Survey Attitude Scale (ISAS) Report",
+      "footer_refs": [
+        "de Leeuw, E., Hox, J., Silber, H., Struminskaya, B., & Vis, C. (2019). Development of an International Survey Attitude Scale: Measurement equivalence, reliability, and predictive validity. Measurement Instruments for the Social Sciences, 1, Article e11011. https://doi.org/10.1186/s42409-019-0012-x",
+        "Authors recommend using subscales separately rather than a single total score. Higher scores on Enjoyment and Value indicate more positive attitudes; higher scores on Burden indicate greater perceived burden."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "isas_r1": "Totally disagree",
+      "isas_r2": "2",
+      "isas_r3": "3",
+      "isas_r4": "4",
+      "isas_r5": "5",
+      "isas_r6": "6",
+      "isas_r7": "Totally agree",
+      "isas_e1": "I really enjoy responding to questionnaires through the mail or Internet.",
+      "isas_e2": "I really enjoy being interviewed for a survey.",
+      "isas_e3": "Surveys are interesting in themselves.",
+      "isas_v1": "Surveys are important for society.",
+      "isas_v2": "A lot can be learned from information collected through surveys.",
+      "isas_v3": "Completing surveys is a waste of time.",
+      "isas_b1": "I receive far too many requests to participate in surveys.",
+      "isas_b2": "Opinion polls are an invasion of privacy.",
+      "isas_b3": "It is exhaustive to answer so many questions in a survey.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "de": {
+      "isas_r1": "Stimme überhaupt nicht zu",
+      "isas_r2": "2",
+      "isas_r3": "3",
+      "isas_r4": "4",
+      "isas_r5": "5",
+      "isas_r6": "6",
+      "isas_r7": "Stimme voll und ganz zu",
+      "isas_e1": "Es macht mir Spaß, Fragebögen zu beantworten, die per Post oder Internet zugeschickt werden.",
+      "isas_e2": "Es macht mir Spaß, für Umfragen interviewt zu werden.",
+      "isas_e3": "Ich finde Umfragen an sich interessant.",
+      "isas_v1": "Ich bin der Meinung, dass Umfragen für die Gesellschaft wichtig sind.",
+      "isas_v2": "Ich finde, aus Umfragen können wichtige Erkenntnisse gewonnen werden.",
+      "isas_v3": "Meiner Meinung nach ist die Teilnahme an Umfragen Zeitverschwendung.",
+      "isas_b1": "Ich werde viel zu oft darum gebeten, an Umfragen teilzunehmen.",
+      "isas_b2": "Ich empfinde Meinungsumfragen als einen Eingriff in meine Privatsphäre.",
+      "isas_b3": "Ich finde es anstrengend bei einer Befragung viele Fragen zu beantworten.",
+      "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
+    },
+    "nl": {
+      "isas_r1": "Helemaal mee oneens",
+      "isas_r2": "2",
+      "isas_r3": "3",
+      "isas_r4": "4",
+      "isas_r5": "5",
+      "isas_r6": "6",
+      "isas_r7": "Helemaal mee eens",
+      "isas_e1": "Ik vind het echt leuk om vragenlijsten te beantwoorden, schriftelijk of via internet.",
+      "isas_e2": "Ik vind het echt leuk om geïnterviewd te worden voor een onderzoek.",
+      "isas_e3": "Vragenlijstonderzoek op zich is interessant.",
+      "isas_v1": "Vragenlijstonderzoek is belangrijk voor de maatschappij.",
+      "isas_v2": "Met gegevens uit vragenlijstonderzoek kan men veel wijzer worden.",
+      "isas_v3": "Vragenlijsten invullen voor onderzoek is tijdverspilling.",
+      "isas_b1": "Ik krijg veel te veel verzoeken om deel te nemen aan enquêtes.",
+      "isas_b2": "Opiniepeilingen zijn een schending van de privacy.",
+      "isas_b3": "Het is vermoeiend om veel vragen te beantwoorden bij een enquête.",
+      "debrief": "Bedankt voor het invullen van deze vragenlijst."
+    }
+  }
+}

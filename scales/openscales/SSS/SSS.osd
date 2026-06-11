@@ -1,0 +1,101 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "SSS",
+      "name": "Spirituality of Science Scale",
+      "abbreviation": "SSS",
+      "description": "10-item unidimensional scale measuring the extent to which individuals experience science as a source of spiritual or transcendent meaning, including peak experiences, deep connection, awe, and purpose derived from scientific engagement.",
+      "citation": "Preston, J. L., Coleman, T. J., III, & Shin, F. (2025). Spirituality of science: Implications for meaning, well-being, and learning. Personality and Social Psychology Bulletin, 51(4), 632–643. https://doi.org/10.1177/01461672231191356",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1177/01461672231191356",
+      "version": "1.0",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": ["SSS_r1", "SSS_r2", "SSS_r3", "SSS_r4", "SSS_r5", "SSS_r6", "SSS_r7"],
+      "question_head": "SSS_head"
+    },
+    "dimensions": [
+      {
+        "id": "SpiritualityOfScience",
+        "name": "Spirituality of Science",
+        "description": "The experience of science as a source of spiritual meaning and transcendence"
+      }
+    ],
+    "items": [
+      { "id": "SSS001", "type": "likert", "text_key": "SSS001", "dimension": "SpiritualityOfScience" },
+      { "id": "SSS002", "type": "likert", "text_key": "SSS002", "dimension": "SpiritualityOfScience" },
+      { "id": "SSS003", "type": "likert", "text_key": "SSS003", "dimension": "SpiritualityOfScience" },
+      { "id": "SSS004", "type": "likert", "text_key": "SSS004", "dimension": "SpiritualityOfScience" },
+      { "id": "SSS005", "type": "likert", "text_key": "SSS005", "dimension": "SpiritualityOfScience" },
+      { "id": "SSS006", "type": "likert", "text_key": "SSS006", "dimension": "SpiritualityOfScience" },
+      { "id": "SSS007", "type": "likert", "text_key": "SSS007", "dimension": "SpiritualityOfScience" },
+      { "id": "SSS008", "type": "likert", "text_key": "SSS008", "dimension": "SpiritualityOfScience" },
+      { "id": "SSS009", "type": "likert", "text_key": "SSS009", "dimension": "SpiritualityOfScience" },
+      { "id": "SSS010", "type": "likert", "text_key": "SSS010", "dimension": "SpiritualityOfScience" }
+    ],
+    "scoring": {
+      "SpiritualityOfScience": {
+        "method": "mean_coded",
+        "description": "Mean of all 10 items; higher scores indicate greater spirituality of science.",
+        "items": {
+          "SSS001": 1,
+          "SSS002": 1,
+          "SSS003": 1,
+          "SSS004": 1,
+          "SSS005": 1,
+          "SSS006": 1,
+          "SSS007": 1,
+          "SSS008": 1,
+          "SSS009": 1,
+          "SSS010": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "SSS_head": "Please indicate how much you agree or disagree with each of the following statements.",
+      "SSS_r1": "Strongly disagree",
+      "SSS_r2": "2",
+      "SSS_r3": "3",
+      "SSS_r4": "4",
+      "SSS_r5": "5",
+      "SSS_r6": "6",
+      "SSS_r7": "Strongly agree",
+      "SSS001": "Science makes me step outside myself to a larger sense of fulfillment.",
+      "SSS002": "I have had a \"peak\" experience while engaged in science.",
+      "SSS003": "Thinking about science brings me deep joy.",
+      "SSS004": "Science helps to show greater meaning in life.",
+      "SSS005": "There is an order to science that transcends human thinking.",
+      "SSS006": "I have lost track of time while engaged in science.",
+      "SSS007": "Science makes me feel deeply connected to everything.",
+      "SSS008": "Science reveals the beauty of the world we live in.",
+      "SSS009": "All things are connected through science.",
+      "SSS010": "Science is a source of spirituality."
+    }
+  }
+}

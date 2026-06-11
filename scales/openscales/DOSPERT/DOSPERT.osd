@@ -41,6 +41,40 @@
       ],
       "question_head": "rt_head"
     },
+    "response_scales": {
+      "rp": {
+        "name": "Risk Perception",
+        "points": 7,
+        "min": 1,
+        "max": 7,
+        "labels": [
+          "rp_l1",
+          "rp_l2",
+          "rp_l3",
+          "rp_l4",
+          "rp_l5",
+          "rp_l6",
+          "rp_l7"
+        ],
+        "question_head": "rp_head"
+      },
+      "eb": {
+        "name": "Expected Benefits",
+        "points": 7,
+        "min": 1,
+        "max": 7,
+        "labels": [
+          "eb_l1",
+          "eb_l2",
+          "eb_l3",
+          "eb_l4",
+          "eb_l5",
+          "eb_l6",
+          "eb_l7"
+        ],
+        "question_head": "eb_head"
+      }
+    },
     "randomize_sections": {
       "method": "shuffle",
       "fixed": [
@@ -137,37 +171,19 @@
         "type": "likert",
         "text_key": "q1",
         "dimension": "rp_social",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb1",
         "type": "likert",
         "text_key": "q1",
         "dimension": "eb_social",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec2",
@@ -186,37 +202,19 @@
         "type": "likert",
         "text_key": "q2",
         "dimension": "rp_recreational",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb2",
         "type": "likert",
         "text_key": "q2",
         "dimension": "eb_recreational",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec3",
@@ -235,37 +233,19 @@
         "type": "likert",
         "text_key": "q3",
         "dimension": "rp_financial",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb3",
         "type": "likert",
         "text_key": "q3",
         "dimension": "eb_financial",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec4",
@@ -284,37 +264,19 @@
         "type": "likert",
         "text_key": "q4",
         "dimension": "rp_financial",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb4",
         "type": "likert",
         "text_key": "q4",
         "dimension": "eb_financial",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec5",
@@ -333,37 +295,19 @@
         "type": "likert",
         "text_key": "q5",
         "dimension": "rp_health_safety",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb5",
         "type": "likert",
         "text_key": "q5",
         "dimension": "eb_health_safety",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec6",
@@ -382,37 +326,19 @@
         "type": "likert",
         "text_key": "q6",
         "dimension": "rp_ethical",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb6",
         "type": "likert",
         "text_key": "q6",
         "dimension": "eb_ethical",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec7",
@@ -431,37 +357,19 @@
         "type": "likert",
         "text_key": "q7",
         "dimension": "rp_social",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb7",
         "type": "likert",
         "text_key": "q7",
         "dimension": "eb_social",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec8",
@@ -480,37 +388,19 @@
         "type": "likert",
         "text_key": "q8",
         "dimension": "rp_financial",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb8",
         "type": "likert",
         "text_key": "q8",
         "dimension": "eb_financial",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec9",
@@ -529,37 +419,19 @@
         "type": "likert",
         "text_key": "q9",
         "dimension": "rp_ethical",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb9",
         "type": "likert",
         "text_key": "q9",
         "dimension": "eb_ethical",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec10",
@@ -578,37 +450,19 @@
         "type": "likert",
         "text_key": "q10",
         "dimension": "rp_ethical",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb10",
         "type": "likert",
         "text_key": "q10",
         "dimension": "eb_ethical",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec11",
@@ -627,37 +481,19 @@
         "type": "likert",
         "text_key": "q11",
         "dimension": "rp_recreational",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb11",
         "type": "likert",
         "text_key": "q11",
         "dimension": "eb_recreational",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec12",
@@ -676,37 +512,19 @@
         "type": "likert",
         "text_key": "q12",
         "dimension": "rp_financial",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb12",
         "type": "likert",
         "text_key": "q12",
         "dimension": "eb_financial",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec13",
@@ -725,37 +543,19 @@
         "type": "likert",
         "text_key": "q13",
         "dimension": "rp_recreational",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb13",
         "type": "likert",
         "text_key": "q13",
         "dimension": "eb_recreational",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec14",
@@ -774,37 +574,19 @@
         "type": "likert",
         "text_key": "q14",
         "dimension": "rp_financial",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb14",
         "type": "likert",
         "text_key": "q14",
         "dimension": "eb_financial",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec15",
@@ -823,37 +605,19 @@
         "type": "likert",
         "text_key": "q15",
         "dimension": "rp_health_safety",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb15",
         "type": "likert",
         "text_key": "q15",
         "dimension": "eb_health_safety",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec16",
@@ -872,37 +636,19 @@
         "type": "likert",
         "text_key": "q16",
         "dimension": "rp_ethical",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb16",
         "type": "likert",
         "text_key": "q16",
         "dimension": "eb_ethical",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec17",
@@ -921,37 +667,19 @@
         "type": "likert",
         "text_key": "q17",
         "dimension": "rp_health_safety",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb17",
         "type": "likert",
         "text_key": "q17",
         "dimension": "eb_health_safety",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec18",
@@ -970,37 +698,19 @@
         "type": "likert",
         "text_key": "q18",
         "dimension": "rp_financial",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb18",
         "type": "likert",
         "text_key": "q18",
         "dimension": "eb_financial",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec19",
@@ -1019,37 +729,19 @@
         "type": "likert",
         "text_key": "q19",
         "dimension": "rp_recreational",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb19",
         "type": "likert",
         "text_key": "q19",
         "dimension": "eb_recreational",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec20",
@@ -1068,37 +760,19 @@
         "type": "likert",
         "text_key": "q20",
         "dimension": "rp_health_safety",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb20",
         "type": "likert",
         "text_key": "q20",
         "dimension": "eb_health_safety",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec21",
@@ -1117,37 +791,19 @@
         "type": "likert",
         "text_key": "q21",
         "dimension": "rp_social",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb21",
         "type": "likert",
         "text_key": "q21",
         "dimension": "eb_social",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec22",
@@ -1166,37 +822,19 @@
         "type": "likert",
         "text_key": "q22",
         "dimension": "rp_social",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb22",
         "type": "likert",
         "text_key": "q22",
         "dimension": "eb_social",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec23",
@@ -1215,37 +853,19 @@
         "type": "likert",
         "text_key": "q23",
         "dimension": "rp_health_safety",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb23",
         "type": "likert",
         "text_key": "q23",
         "dimension": "eb_health_safety",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec24",
@@ -1264,37 +884,19 @@
         "type": "likert",
         "text_key": "q24",
         "dimension": "rp_recreational",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb24",
         "type": "likert",
         "text_key": "q24",
         "dimension": "eb_recreational",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec25",
@@ -1313,37 +915,19 @@
         "type": "likert",
         "text_key": "q25",
         "dimension": "rp_recreational",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb25",
         "type": "likert",
         "text_key": "q25",
         "dimension": "eb_recreational",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec26",
@@ -1362,37 +946,19 @@
         "type": "likert",
         "text_key": "q26",
         "dimension": "rp_health_safety",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb26",
         "type": "likert",
         "text_key": "q26",
         "dimension": "eb_health_safety",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec27",
@@ -1411,37 +977,19 @@
         "type": "likert",
         "text_key": "q27",
         "dimension": "rp_social",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb27",
         "type": "likert",
         "text_key": "q27",
         "dimension": "eb_social",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec28",
@@ -1460,37 +1008,19 @@
         "type": "likert",
         "text_key": "q28",
         "dimension": "rp_social",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb28",
         "type": "likert",
         "text_key": "q28",
         "dimension": "eb_social",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec29",
@@ -1509,37 +1039,19 @@
         "type": "likert",
         "text_key": "q29",
         "dimension": "rp_ethical",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb29",
         "type": "likert",
         "text_key": "q29",
         "dimension": "eb_ethical",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       },
       {
         "id": "sec30",
@@ -1558,37 +1070,19 @@
         "type": "likert",
         "text_key": "q30",
         "dimension": "rp_ethical",
-        "question_head": "rp_head",
-        "likert_labels": [
-          "rp_l1",
-          "rp_l2",
-          "rp_l3",
-          "rp_l4",
-          "rp_l5",
-          "rp_l6",
-          "rp_l7"
-        ]
+        "response_scale": "rp"
       },
       {
         "id": "eb30",
         "type": "likert",
         "text_key": "q30",
         "dimension": "eb_ethical",
-        "question_head": "eb_head",
-        "likert_labels": [
-          "eb_l1",
-          "eb_l2",
-          "eb_l3",
-          "eb_l4",
-          "eb_l5",
-          "eb_l6",
-          "eb_l7"
-        ],
         "visible_when": {
           "parameter": "show_expected_benefits",
           "operator": "equals",
           "value": true
-        }
+        },
+        "response_scale": "eb"
       }
     ],
     "scoring": {

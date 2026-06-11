@@ -1,0 +1,132 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "PMFM",
+      "name": "Philosophical Moral-Framing Measure",
+      "abbreviation": "PMFM",
+      "description": "12-item scale measuring four philosophical moral orientations: Deontology, Utilitarianism, Virtue Theory, and Egoism.",
+      "citation": "Friedland, J., Emich, K., & Cole, B. M. (2020). Uncovering the moral heuristics of altruism: A philosophical scale. PLoS ONE, 15(3). https://doi.org/10.1371/journal.pone.0229124",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1371/journal.pone.0229124",
+      "version": "1.0",
+      "domain": "Other"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-09",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": {
+      "show_header": {
+        "type": "boolean",
+        "default": 1,
+        "description": "Show scale title to respondents"
+      },
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": 0,
+        "description": "Randomize item presentation order"
+      }
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "PMFM_r1", "PMFM_r2", "PMFM_r3", "PMFM_r4", "PMFM_r5"
+      ],
+      "question_head": "PMFM_head"
+    },
+    "dimensions": [
+      {
+        "id": "DEONT",
+        "name": "Deontology",
+        "description": "Rule-based moral reasoning emphasizing duties and intentions"
+      },
+      {
+        "id": "UTIL",
+        "name": "Utilitarianism",
+        "description": "Consequentialist moral reasoning emphasizing outcomes and happiness"
+      },
+      {
+        "id": "VIRTUE",
+        "name": "Virtue Theory",
+        "description": "Character-based moral reasoning emphasizing personal development and fulfillment"
+      },
+      {
+        "id": "EGOISM",
+        "name": "Egoism",
+        "description": "Self-interest-based moral reasoning prioritizing personal gain"
+      }
+    ],
+    "items": [
+      { "id": "PMFM001", "type": "likert", "text_key": "PMFM001", "dimension": "DEONT" },
+      { "id": "PMFM002", "type": "likert", "text_key": "PMFM002", "dimension": "DEONT" },
+      { "id": "PMFM003", "type": "likert", "text_key": "PMFM003", "dimension": "DEONT" },
+      { "id": "PMFM004", "type": "likert", "text_key": "PMFM004", "dimension": "DEONT" },
+      { "id": "PMFM005", "type": "likert", "text_key": "PMFM005", "dimension": "UTIL" },
+      { "id": "PMFM006", "type": "likert", "text_key": "PMFM006", "dimension": "UTIL" },
+      { "id": "PMFM007", "type": "likert", "text_key": "PMFM007", "dimension": "UTIL" },
+      { "id": "PMFM008", "type": "likert", "text_key": "PMFM008", "dimension": "UTIL" },
+      { "id": "PMFM009", "type": "likert", "text_key": "PMFM009", "dimension": "VIRTUE" },
+      { "id": "PMFM010", "type": "likert", "text_key": "PMFM010", "dimension": "VIRTUE" },
+      { "id": "PMFM011", "type": "likert", "text_key": "PMFM011", "dimension": "VIRTUE" },
+      { "id": "PMFM012", "type": "likert", "text_key": "PMFM012", "dimension": "EGOISM" }
+    ],
+    "scoring": {
+      "DEONT": {
+        "method": "mean_coded",
+        "description": "Deontology — mean of items 1–4 (theoretical categorization)",
+        "items": {
+          "PMFM001": 1, "PMFM002": 1, "PMFM003": 1, "PMFM004": 1
+        }
+      },
+      "UTIL": {
+        "method": "mean_coded",
+        "description": "Utilitarianism — mean of items 5–8 (theoretical categorization)",
+        "items": {
+          "PMFM005": 1, "PMFM006": 1, "PMFM007": 1, "PMFM008": 1
+        }
+      },
+      "VIRTUE": {
+        "method": "mean_coded",
+        "description": "Virtue Theory — mean of items 9–11 (theoretical categorization)",
+        "items": {
+          "PMFM009": 1, "PMFM010": 1, "PMFM011": 1
+        }
+      },
+      "EGOISM": {
+        "method": "mean_coded",
+        "description": "Egoism — item 12 (theoretical categorization)",
+        "items": {
+          "PMFM012": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "PMFM_head": "Please indicate the extent to which you agree or disagree with each statement.",
+      "PMFM_r1": "Strongly agree",
+      "PMFM_r2": "Agree",
+      "PMFM_r3": "Neither agree nor disagree",
+      "PMFM_r4": "Disagree",
+      "PMFM_r5": "Strongly disagree",
+      "PMFM001": "I try to never break any moral rules.",
+      "PMFM002": "I try to think and act logically in every situation.",
+      "PMFM003": "I think no one should ever have to suffer for the benefit of others.",
+      "PMFM004": "A good intention is more important than a good result.",
+      "PMFM005": "I try to do whatever brings the most happiness for the most people.",
+      "PMFM006": "The results of my actions matter more than why or how I go about doing them.",
+      "PMFM007": "It matters more to feel good than to think and act logically.",
+      "PMFM008": "I sometimes break a moral rule if doing so will achieve the best result.",
+      "PMFM009": "When I choose to act ethically, I am also choosing to become a better person.",
+      "PMFM010": "Acting ethically is more personally fulfilling to me than acting unethically.",
+      "PMFM011": "Too much of anything is bad.",
+      "PMFM012": "I tend to place my own interests before those of others."
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Four-Item Mentalising Index – German (FIMI-G)",
+      "code": "MISS12249",
+      "abbreviation": "FIMI-G",
+      "description": "A 4-item German translation of the Four-Item Mentalising Index (FIMI; Clutterbuck et al., 2021), measuring self-reported mentalising ability — the social-cognitive ability to understand and infer the non-emotional mental states of oneself and others. Unidimensional; higher scores indicate better mentalising ability. Item 2 is reverse-coded. German is the validated language; original English items are not reproduced here as the source (Clutterbuck et al., 2021) is not open access.",
+      "citation": "Bertrams, A., Blaise, M., & Krispenz, A. (2024). German translation of the Four-Item Mentalising Index (FIMI-G). Measurement Instruments for the Social Sciences, 6, Article e12249. https://doi.org/10.5964/miss.12249\n\nOriginal scale: Clutterbuck, R. A., Callan, M. J., Taylor, E. C., Livingston, L. A., & Shah, P. (2021). Development and validation of the Four-Item Mentalising Index. Psychological Assessment, 33(7), 629–636. https://doi.org/10.1037/pas0001004",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/12249",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-07",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "German items and response anchors are verbatim from Table 1 of Bertrams et al. (2024). The English column in Table 1 gives content descriptors only, not verbatim items; original English FIMI items are from Clutterbuck et al. (2021) which is not open access and is not reproduced here. Item 2 is reverse-coded at scoring only; it is presented as written. Instructions verbatim from Table 1 note."
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": ["fimi_r1", "fimi_r2", "fimi_r3", "fimi_r4"]
+    },
+    "dimensions": [
+      {
+        "id": "mentalising",
+        "name": "Mentalising",
+        "abbreviation": "MEN",
+        "description": "Unidimensional mentalising ability score. Mean of 4 items (item 2 reverse-coded), range 1–4; higher = better mentalising ability."
+      }
+    ],
+    "items": [
+      {"id": "fimi1", "type": "likert", "text_key": "fimi1", "dimension": "mentalising"},
+      {"id": "fimi2", "type": "likert", "text_key": "fimi2", "dimension": "mentalising"},
+      {"id": "fimi3", "type": "likert", "text_key": "fimi3", "dimension": "mentalising"},
+      {"id": "fimi4", "type": "likert", "text_key": "fimi4", "dimension": "mentalising"}
+    ],
+    "scoring": {
+      "mentalising": {
+        "description": "Mean of all 4 items; item 2 reverse-coded. Range 1–4; higher = better mentalising ability.",
+        "method": "mean_coded",
+        "items": {"fimi1": 1, "fimi2": -1, "fimi3": 1, "fimi4": 1}
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Four-Item Mentalising Index – German (FIMI-G) Report",
+      "footer_refs": [
+        "Bertrams, A., Blaise, M., & Krispenz, A. (2024). German translation of the Four-Item Mentalising Index (FIMI-G). Measurement Instruments for the Social Sciences, 6, Article e12249. https://doi.org/10.5964/miss.12249",
+        "Higher scores indicate better mentalising ability. Item 2 is reverse-coded."
+      ]
+    }
+  },
+  "translations": {
+    "de": {
+      "fimi_r1": "Starke Ablehnung",
+      "fimi_r2": "Leichte Ablehnung",
+      "fimi_r3": "Leichte Zustimmung",
+      "fimi_r4": "Starke Zustimmung",
+      "instructions": "Lesen Sie bitte jede Aussage und geben Sie an, inwieweit Sie zustimmen oder nicht zustimmen",
+      "fimi1": "Ich finde es einfach, mich in die Lage eines anderen zu versetzen.",
+      "fimi2": "Ich finde es manchmal schwierig, die Dinge aus der Sicht anderer zu sehen.",
+      "fimi3": "Ich versuche manchmal, meine Freunde besser zu verstehen, indem ich mir vorstelle, wie die Dinge aus ihrer Perspektive aussehen.",
+      "fimi4": "Ich kann in der Regel die Sichtweise einer anderen Person verstehen, auch wenn sie sich von meiner eigenen unterscheidet.",
+      "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
+    }
+  }
+}

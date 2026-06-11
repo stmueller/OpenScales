@@ -1,0 +1,104 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "MESx",
+      "name": "Moral Expansiveness Scale – Short Form",
+      "abbreviation": "MESx",
+      "description": "10-item short form of the Moral Expansiveness Scale (MES). One entity exemplar is selected from each of the 10 original MES categories (family & friends, ingroup, outgroup, revered, marginalized, villains, high-sentience animals, low-sentience animals, plants, environment) based on highest factor loading within each category. Respondents place each entity into one of four nested moral circles scored 0–3. A single total score (range 0–30) indexes the breadth of moral concern. Psychometrically valid alternative to the full MES; unrelated to political conservatism unlike the full scale.",
+      "citation": "Crimston, C. R., Hornsey, M. J., Bain, P. G., & Bastian, B. (2018). Moral expansiveness short form: Validity and reliability of the MESx. PLoS ONE, 13(10), e0205373. https://doi.org/10.1371/journal.pone.0205373",
+      "license": "CC BY 4.0",
+      "license_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205373",
+      "license_explanation": "Published as open access under CC BY 4.0 in Crimston et al. (2018) PLoS ONE. Item texts are factual entity labels (common nouns).",
+      "url": "https://doi.org/10.1371/journal.pone.0205373",
+      "version": "1.0",
+      "domain": "Morality & Ethics"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-11",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Items selected by highest factor loading within each of the 10 original MES categories (Table 1, Crimston et al. 2018). Original task uses drag-and-drop circles; implemented here as 4-point ordered Likert scored 0–3 matching original scale values. Single total score only; no subscales defined for the short form."
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "labels": ["mesx_r1", "mesx_r2", "mesx_r3", "mesx_r4"],
+      "question_head": "mesx_head",
+      "suppress_likert_numbers": true
+    },
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Moral Expansiveness",
+        "description": "Sum of all 10 items. Range 0–30; higher = broader moral circle."
+      }
+    ],
+    "items": [
+      { "id": "mesx_inst",        "type": "inst", "text_key": "mesx_inst" },
+      { "id": "mesx_circles_head","type": "inst", "text_key": "mesx_circles_head" },
+      { "id": "mesx_circle1",     "type": "inst", "text_key": "mesx_circle1" },
+      { "id": "mesx_circle2",     "type": "inst", "text_key": "mesx_circle2" },
+      { "id": "mesx_circle3",     "type": "inst", "text_key": "mesx_circle3" },
+      { "id": "mesx_circle4",     "type": "inst", "text_key": "mesx_circle4" },
+      { "id": "mesx01", "type": "likert", "text_key": "mesx01", "dimension": "total" },
+      { "id": "mesx02", "type": "likert", "text_key": "mesx02", "dimension": "total" },
+      { "id": "mesx03", "type": "likert", "text_key": "mesx03", "dimension": "total" },
+      { "id": "mesx04", "type": "likert", "text_key": "mesx04", "dimension": "total" },
+      { "id": "mesx05", "type": "likert", "text_key": "mesx05", "dimension": "total" },
+      { "id": "mesx06", "type": "likert", "text_key": "mesx06", "dimension": "total" },
+      { "id": "mesx07", "type": "likert", "text_key": "mesx07", "dimension": "total" },
+      { "id": "mesx08", "type": "likert", "text_key": "mesx08", "dimension": "total" },
+      { "id": "mesx09", "type": "likert", "text_key": "mesx09", "dimension": "total" },
+      { "id": "mesx10", "type": "likert", "text_key": "mesx10", "dimension": "total" }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "description": "Sum of all 10 items. Range 0–30; higher = more expansive moral circle.",
+        "items": {
+          "mesx01": 1, "mesx02": 1, "mesx03": 1, "mesx04": 1, "mesx05": 1,
+          "mesx06": 1, "mesx07": 1, "mesx08": 1, "mesx09": 1, "mesx10": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Moral Expansiveness Scale – Short Form (MESx) Report",
+      "footer_refs": [
+        "Crimston, C. R., Hornsey, M. J., Bain, P. G., & Bastian, B. (2018). Moral expansiveness short form: Validity and reliability of the MESx. PLoS ONE, 13(10), e0205373. https://doi.org/10.1371/journal.pone.0205373",
+        "Crimston, D., Bain, P. G., Hornsey, M. J., & Bastian, B. (2016). Moral expansiveness: Examining variability in the capacity to include others in the moral circle. Journal of Personality and Social Psychology, 111(4), 636–653. https://doi.org/10.1037/pspp0000086",
+        "Scoring: Inner Circle = 3, Outer Circle = 2, Fringes = 1, Outside = 0. Total range 0–30."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "mesx_inst": "Moral Circles\n\nPeople sometimes talk about 'circles of moral concern'. These circles are simple ways to make sense of the levels of moral consideration we have for different entities (e.g., people, animals, and the environment).\n\nWhere we place these entities within our moral circles is important and has direct consequences for how we treat them. For example, you might have close family or friends that are central to your moral world — this means you would be willing to make personal sacrifices for them. However, if we do not include an entity within our moral circles, this means we do not believe they are deserving of moral care and consideration, and wouldn't want to make sacrifices for them.\n\nOn the following page you are given the opportunity to organise a range of entities and place them within your own moral circles that reflect your individual views and feelings.",
+      "mesx_circles_head": "Please read the four moral boundary descriptions below carefully before completing the moral circle task.",
+      "mesx_circle1": "Inner Circle of Moral Concern: These entities deserve the highest level of moral concern and standing. You have a moral obligation to ensure their welfare and feel a sense of personal responsibility for their treatment.",
+      "mesx_circle2": "Outer Circle of Moral Concern: These entities deserve moderate moral concern and standing. You are concerned about their moral treatment; however, your sense of obligation and personal responsibility is greatly reduced.",
+      "mesx_circle3": "Fringes of Moral Concern: These entities deserve minimal moral concern and standing, but you are not morally obligated or personally responsible for their moral treatment.",
+      "mesx_circle4": "Outside the Moral Boundary: These entities deserve no moral concern or standing. Feeling concern or personal responsibility for their moral treatment is extreme or nonsensical.",
+      "mesx_head": "Having carefully read these descriptions, please consider the level of moral concern you personally have for each of the entities below. Please note, there are no right or wrong answers — we just want to know your opinion.",
+      "mesx_r1": "Inner Circle of Moral Concern",
+      "mesx_r2": "Outer Circle of Moral Concern",
+      "mesx_r3": "Fringes of Moral Concern",
+      "mesx_r4": "Outside the Moral Boundary",
+      "mesx01": "family member",
+      "mesx02": "citizen of your country",
+      "mesx03": "somebody with different religious beliefs",
+      "mesx04": "charity/aid worker",
+      "mesx05": "mentally challenged individual",
+      "mesx06": "murderer",
+      "mesx07": "dolphin",
+      "mesx08": "fish",
+      "mesx09": "old-growth forest",
+      "mesx10": "apple tree",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

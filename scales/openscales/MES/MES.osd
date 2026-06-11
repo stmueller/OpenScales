@@ -1,0 +1,164 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "MES",
+      "name": "Moral Expansiveness Scale",
+      "abbreviation": "MES",
+      "description": "30-item measure of the breadth of an individual's moral circle — i.e., which entities are considered deserving of moral care and consideration. Respondents place each entity into one of four nested moral circles: Inner Circle (score 3), Outer Circle (2), Fringes of Moral Concern (1), or Outside the Moral Boundary (0). Covers 18 human targets (close relations through stigmatized groups), 6 animals, and 6 nature entities. Higher scores indicate broader moral concern. Originally implemented as a drag-and-drop task; this implementation uses a 4-point ordered response format.",
+      "citation": "Crimston, D., Bain, P. G., Hornsey, M. J., & Bastian, B. (2016). Moral expansiveness: Examining variability in the capacity to include others in the moral circle. Journal of Personality and Social Psychology, 111(4), 636–653. https://doi.org/10.1037/pspp0000086",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_explanation": "Item texts reproduced from the Qualtrics survey export shared publicly by the authors via the University of Queensland psychology survey pool. Items are factual entity labels (common nouns) and are not independently copyrightable.",
+      "url": "https://doi.org/10.1037/pspp0000086",
+      "version": "1.0",
+      "domain": "Morality & Ethics"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-11",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Original task uses nested graphical circles (drag-and-drop). This implementation renders each entity as a 4-point ordered Likert item with the same four category labels scored 0–3 as in the original. Scoring: sum or mean of all 30 items (MES total), plus subscale sums for Humans (items 1–18), Animals (19–24), and Nature (25–30)."
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 0,
+      "labels": ["mes_r1", "mes_r2", "mes_r3", "mes_r4"],
+      "question_head": "mes_head",
+      "suppress_likert_numbers": true
+    },
+    "dimensions": [
+      {
+        "id": "humans",
+        "name": "Human Targets",
+        "description": "Moral concern for 18 human entities ranging from close relations to stigmatized outgroups. Sum of items 1–18, range 0–54."
+      },
+      {
+        "id": "animals",
+        "name": "Animal Targets",
+        "description": "Moral concern for 6 animal species. Sum of items 19–24, range 0–18."
+      },
+      {
+        "id": "nature",
+        "name": "Nature Targets",
+        "description": "Moral concern for 6 nature entities. Sum of items 25–30, range 0–18."
+      },
+      {
+        "id": "total",
+        "name": "Total Moral Expansiveness",
+        "description": "Sum of all 30 items. Range 0–90; higher = broader moral circle."
+      }
+    ],
+    "items": [
+      { "id": "mes01", "type": "likert", "text_key": "mes01", "dimension": "humans" },
+      { "id": "mes02", "type": "likert", "text_key": "mes02", "dimension": "humans" },
+      { "id": "mes03", "type": "likert", "text_key": "mes03", "dimension": "humans" },
+      { "id": "mes04", "type": "likert", "text_key": "mes04", "dimension": "humans" },
+      { "id": "mes05", "type": "likert", "text_key": "mes05", "dimension": "humans" },
+      { "id": "mes06", "type": "likert", "text_key": "mes06", "dimension": "humans" },
+      { "id": "mes07", "type": "likert", "text_key": "mes07", "dimension": "humans" },
+      { "id": "mes08", "type": "likert", "text_key": "mes08", "dimension": "humans" },
+      { "id": "mes09", "type": "likert", "text_key": "mes09", "dimension": "humans" },
+      { "id": "mes10", "type": "likert", "text_key": "mes10", "dimension": "humans" },
+      { "id": "mes11", "type": "likert", "text_key": "mes11", "dimension": "humans" },
+      { "id": "mes12", "type": "likert", "text_key": "mes12", "dimension": "humans" },
+      { "id": "mes13", "type": "likert", "text_key": "mes13", "dimension": "humans" },
+      { "id": "mes14", "type": "likert", "text_key": "mes14", "dimension": "humans" },
+      { "id": "mes15", "type": "likert", "text_key": "mes15", "dimension": "humans" },
+      { "id": "mes16", "type": "likert", "text_key": "mes16", "dimension": "humans" },
+      { "id": "mes17", "type": "likert", "text_key": "mes17", "dimension": "humans" },
+      { "id": "mes18", "type": "likert", "text_key": "mes18", "dimension": "humans" },
+      { "id": "mes19", "type": "likert", "text_key": "mes19", "dimension": "animals" },
+      { "id": "mes20", "type": "likert", "text_key": "mes20", "dimension": "animals" },
+      { "id": "mes21", "type": "likert", "text_key": "mes21", "dimension": "animals" },
+      { "id": "mes22", "type": "likert", "text_key": "mes22", "dimension": "animals" },
+      { "id": "mes23", "type": "likert", "text_key": "mes23", "dimension": "animals" },
+      { "id": "mes24", "type": "likert", "text_key": "mes24", "dimension": "animals" },
+      { "id": "mes25", "type": "likert", "text_key": "mes25", "dimension": "nature" },
+      { "id": "mes26", "type": "likert", "text_key": "mes26", "dimension": "nature" },
+      { "id": "mes27", "type": "likert", "text_key": "mes27", "dimension": "nature" },
+      { "id": "mes28", "type": "likert", "text_key": "mes28", "dimension": "nature" },
+      { "id": "mes29", "type": "likert", "text_key": "mes29", "dimension": "nature" },
+      { "id": "mes30", "type": "likert", "text_key": "mes30", "dimension": "nature" }
+    ],
+    "scoring": {
+      "humans": {
+        "method": "sum_coded",
+        "description": "Sum of Human target items (1–18). Range 0–54; higher = broader moral concern for humans.",
+        "items": {"mes01":1,"mes02":1,"mes03":1,"mes04":1,"mes05":1,"mes06":1,
+                  "mes07":1,"mes08":1,"mes09":1,"mes10":1,"mes11":1,"mes12":1,
+                  "mes13":1,"mes14":1,"mes15":1,"mes16":1,"mes17":1,"mes18":1}
+      },
+      "animals": {
+        "method": "sum_coded",
+        "description": "Sum of Animal target items (19–24). Range 0–18; higher = broader moral concern for animals.",
+        "items": {"mes19":1,"mes20":1,"mes21":1,"mes22":1,"mes23":1,"mes24":1}
+      },
+      "nature": {
+        "method": "sum_coded",
+        "description": "Sum of Nature target items (25–30). Range 0–18; higher = broader moral concern for nature.",
+        "items": {"mes25":1,"mes26":1,"mes27":1,"mes28":1,"mes29":1,"mes30":1}
+      },
+      "total": {
+        "method": "sum_coded",
+        "description": "Sum of all 30 items. Range 0–90; higher = more expansive moral circle.",
+        "items": {"mes01":1,"mes02":1,"mes03":1,"mes04":1,"mes05":1,"mes06":1,
+                  "mes07":1,"mes08":1,"mes09":1,"mes10":1,"mes11":1,"mes12":1,
+                  "mes13":1,"mes14":1,"mes15":1,"mes16":1,"mes17":1,"mes18":1,
+                  "mes19":1,"mes20":1,"mes21":1,"mes22":1,"mes23":1,"mes24":1,
+                  "mes25":1,"mes26":1,"mes27":1,"mes28":1,"mes29":1,"mes30":1}
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Moral Expansiveness Scale (MES) Report",
+      "footer_refs": [
+        "Crimston, D., Bain, P. G., Hornsey, M. J., & Bastian, B. (2016). Moral expansiveness: Examining variability in the capacity to include others in the moral circle. Journal of Personality and Social Psychology, 111(4), 636–653. https://doi.org/10.1037/pspp0000086",
+        "Scoring: each entity placed into Inner Circle = 3, Outer Circle = 2, Fringes = 1, Outside = 0. Subscales: Humans (items 1–18, range 0–54), Animals (19–24, range 0–18), Nature (25–30, range 0–18), Total (0–90)."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "mes_head": "For each entity below, please indicate your level of moral concern by selecting the category that best reflects where you would place it.",
+      "mes_r1": "Inner Circle of Moral Concern",
+      "mes_r2": "Outer Circle of Moral Concern",
+      "mes_r3": "Fringes of Moral Concern",
+      "mes_r4": "Outside the Moral Boundary",
+      "mes01": "family member",
+      "mes02": "close friend",
+      "mes03": "partner/spouse",
+      "mes04": "citizen of your country",
+      "mes05": "somebody from your neighbourhood",
+      "mes06": "co-worker",
+      "mes07": "foreign citizen",
+      "mes08": "supporter of opposing political party",
+      "mes09": "somebody with different religious beliefs",
+      "mes10": "Elected leader of your country (position, not specific individual)",
+      "mes11": "soldier of your country",
+      "mes12": "charity worker",
+      "mes13": "refugee",
+      "mes14": "LGBT individual",
+      "mes15": "mentally challenged individual",
+      "mes16": "murderer",
+      "mes17": "terrorist",
+      "mes18": "child molester",
+      "mes19": "chimpanzee",
+      "mes20": "dolphin",
+      "mes21": "cow",
+      "mes22": "chicken",
+      "mes23": "bee",
+      "mes24": "fish",
+      "mes25": "redwood tree",
+      "mes26": "apple tree",
+      "mes27": "rose bush",
+      "mes28": "national park",
+      "mes29": "old-growth forest",
+      "mes30": "coral reef",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

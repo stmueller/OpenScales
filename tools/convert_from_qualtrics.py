@@ -61,9 +61,17 @@ def get_blocks(qsf):
     blocks = {}
     for e in get_elements_by_type(qsf, "BL"):
         payload = e.get("Payload", {})
-        for key, block in payload.items():
-            block_id = block.get("ID", key)
-            blocks[block_id] = block
+        # Payload may be a list (older QSF format) or a dict
+        if isinstance(payload, list):
+            items = payload
+        else:
+            items = payload.values()
+        for block in items:
+            if not isinstance(block, dict):
+                continue
+            block_id = block.get("ID", "")
+            if block_id:
+                blocks[block_id] = block
     return blocks
 
 
@@ -212,6 +220,50 @@ def convert_db_question(question, code_prefix, item_num):
     return q, translations
 
 
+def convert_likert_matrix(question, code_prefix, start_index=1):
+    """Convert a Qualtrics Matrix/Likert question to OSD items.
+
+    Each row (Choice) becomes a separate likert item. The column headers
+    (Answers) become the shared likert labels. Handles both standard grids
+    and DND (drag-and-drop) variants.
+
+    Returns:
+        (questions_list, translations_dict, item_count)
+    """
+    questions = []
+    translations = {}
+    choices = question.get("Choices", {})
+    choice_order = question.get("ChoiceOrder", sorted(choices.keys(), key=int))
+    answers = question.get("Answers", {})
+    answer_order = question.get("AnswerOrder", sorted(answers.keys(), key=lambda x: int(x) if str(x).isdigit() else 0))
+    recode = question.get("RecodeValues", {})
+
+    num_points = len(answer_order)
+    shared_labels = []
+    for i, ans_key in enumerate(answer_order):
+        ans = answers.get(str(ans_key), {})
+        lkey = f"{code_prefix}_r{i+1}"
+        shared_labels.append(lkey)
+        translations[lkey] = strip_html(ans.get("Display", str(ans_key)))
+
+    for idx, choice_key in enumerate(choice_order):
+        choice = choices.get(str(choice_key), {})
+        item_num = start_index + idx
+        item_id = f"{code_prefix}_{item_num:02d}"
+        text = strip_html(choice.get("Display", ""))
+        translations[f"{item_id}_text"] = text
+        questions.append({
+            "id": item_id,
+            "text_key": f"{item_id}_text",
+            "type": "likert",
+            "likert_points": num_points,
+            "likert_labels": shared_labels,
+            "coding": 1,
+        })
+
+    return questions, translations, len(choice_order)
+
+
 def convert_question(question, code_prefix, item_num):
     """Convert a single Qualtrics question to OSD format.
 
@@ -223,6 +275,9 @@ def convert_question(question, code_prefix, item_num):
 
     if qtype == "Matrix" and selector == "Bipolar":
         return convert_bipolar_matrix(question, code_prefix, item_num)
+
+    elif qtype == "Matrix" and selector == "Likert":
+        return convert_likert_matrix(question, code_prefix, item_num)
 
     elif qtype == "MC":
         q, trans = convert_mc_question(question, code_prefix, item_num)
@@ -604,7 +659,7 @@ def main():
     print(f"\nOutput:")
     print(f"  {scale_path}")
     print(f"  {trans_path}")
-    print(f"  {len(scale_json['questions'])} questions, "
+    print(f"  {len(scale_json.get('items', []))} items, "
           f"{len(scale_json.get('pages', []))} pages, "
           f"{len(scale_json.get('dimensions', []))} dimensions")
 

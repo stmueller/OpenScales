@@ -1,0 +1,200 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Acceptance and Action Questionnaire for Hoarding",
+      "code": "AAQH",
+      "version": "1.0",
+      "description": "14-item measure of psychological flexibility related to hoarding, with separate subscales for saving and acquisition behaviors.",
+      "citation": "Krafft, J., Potts, S., Schoendorff, B., & Levin, M. E. (2019). A randomized controlled trial of brief acceptance and commitment therapy for psychosis inpatients. Journal of Contextual Behavioral Science, 12, 248–254.",
+      "license": "CC BY 4.0",
+      "abbreviation": "AAQH",
+      "domain": "Self & Coping",
+      "url": "https://www.utahact.com/measures-we-developed.html",
+      "license_explanation": "CC BY 4.0 license granted by Mike Levin (personal communication).",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-04-01",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": [
+        "lk_1",
+        "lk_2",
+        "lk_3",
+        "lk_4",
+        "lk_5",
+        "lk_6",
+        "lk_7"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "aaqh_saving",
+        "name": "AAQH-Saving"
+      },
+      {
+        "id": "aaqh_acquisition",
+        "name": "AAQH-Acquisition"
+      },
+      {
+        "id": "total",
+        "name": "Total"
+      }
+    ],
+    "items": [
+      {
+        "id": "aaqh_1",
+        "text_key": "aaqh_1",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "aaqh_2",
+        "text_key": "aaqh_2",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "aaqh_3",
+        "text_key": "aaqh_3",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "aaqh_4",
+        "text_key": "aaqh_4",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "aaqh_5",
+        "text_key": "aaqh_5",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "aaqh_6",
+        "text_key": "aaqh_6",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "aaqh_7",
+        "text_key": "aaqh_7",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "aaqh_8",
+        "text_key": "aaqh_8",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "aaqh_9",
+        "text_key": "aaqh_9",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "aaqh_10",
+        "text_key": "aaqh_10",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "aaqh_11",
+        "text_key": "aaqh_11",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "aaqh_12",
+        "text_key": "aaqh_12",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "aaqh_13",
+        "text_key": "aaqh_13",
+        "type": "likert",
+        "likert_points": 7
+      },
+      {
+        "id": "aaqh_14",
+        "text_key": "aaqh_14",
+        "type": "likert",
+        "likert_points": 7
+      }
+    ],
+    "scoring": {
+      "aaqh_saving": {
+        "method": "sum_coded",
+        "items": [
+          "aaqh_1",
+          "aaqh_3",
+          "aaqh_5",
+          "aaqh_7",
+          "aaqh_9",
+          "aaqh_11",
+          "aaqh_13"
+        ]
+      },
+      "aaqh_acquisition": {
+        "method": "sum_coded",
+        "items": [
+          "aaqh_2",
+          "aaqh_4",
+          "aaqh_6",
+          "aaqh_8",
+          "aaqh_10",
+          "aaqh_12",
+          "aaqh_14"
+        ]
+      },
+      "total": {
+        "method": "sum_coded",
+        "subscales": [
+          "aaqh_saving",
+          "aaqh_acquisition"
+        ]
+      }
+    },
+    "_manual_notes": "The AAQH-Saving subscale comprises odd-numbered items (1,3,5,7,9,11,13) and the AAQH-Acquisition subscale comprises even-numbered items (2,4,6,8,10,12,14). All items are forward-scored. The total score is the sum of both subscales."
+  },
+  "translations": {
+    "en": {
+      "lk_1": "Never true",
+      "lk_2": "Very seldom true",
+      "lk_3": "Seldom true",
+      "lk_4": "Sometimes true",
+      "lk_5": "Frequently true",
+      "lk_6": "Almost always true",
+      "lk_7": "Always true",
+      "question_head": "Below you will find a list of statements that have to do with how you feel about the things you own. Please rate how true each statement is for you within the past week.",
+      "aaqh_1": "I need to stop feeling so attached to my things.",
+      "aaqh_2": "I get lost in my thoughts about buying or finding something I really want.",
+      "aaqh_3": "I can't stand feeling like I might make a mistake if I get rid of something.",
+      "aaqh_4": "My thoughts or feelings about my things control my actions.",
+      "aaqh_5": "I have a hard time getting rid of things even when I know I should.",
+      "aaqh_6": "My things are a central part of who I am.",
+      "aaqh_7": "My thoughts or feelings make it hard for me to get rid of my things.",
+      "aaqh_8": "I need to get rid of my urges to acquire new things.",
+      "aaqh_9": "I struggle to get rid of items that feel important to me.",
+      "aaqh_10": "I am always thinking about my things.",
+      "aaqh_11": "If I am worried I might need something in the future, I keep it.",
+      "aaqh_12": "I continue to collect items, even when they cause problems for me.",
+      "aaqh_13": "I keep my things because I am attached to them.",
+      "aaqh_14": "I collect or buy objects when I feel distressed."
+    }
+  }
+}

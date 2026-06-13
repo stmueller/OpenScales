@@ -1,0 +1,77 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "ESS-BSTS",
+      "name": "Breyer Social Trust Scale",
+      "abbreviation": "BSTS",
+      "description": "3-item measure of generalized social trust using items from the European Social Survey (ESS) Round 5 (2010/2011). Respondents rate the trustworthiness, fairness, and helpfulness of most people on 0–10 scales. The composite score is the mean of the three items. Higher scores indicate greater social trust. Items are the classic ESS social trust battery (ppltrst, pplfair, pplhlp) validated and documented as a scale by Breyer (2015).",
+      "citation": "Breyer, B. (2015). Soziales Vertrauen [Social Trust Scale]. Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis235",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://ess.sikt.no/en/study/412db4fe-c77a-4e98-8ea4-6c19007f551b",
+      "license_explanation": "ESS Round 5 data and documentation are available under CC BY-SA 4.0 per https://ess.sikt.no/en/study/412db4fe-c77a-4e98-8ea4-6c19007f551b. Item texts are from the ESS source questionnaire (https://europeansocialsurvey.org/methodology/source-questionnaire). The BSTS documentation is published in ZIS under CC BY-SA 4.0.",
+      "url": "https://zis.gesis.org/skala/Breyer-Social-Trust-Scale-%28ESS%29?lang=en",
+      "version": "1.0",
+      "domain": "Social"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-13",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "notes": "Items ppltrst, pplfair, pplhlp from ESS Round 5 source questionnaire. National translations for 27 languages available from ESS country documentation: https://ess.sikt.no/en/study/412db4fe-c77a-4e98-8ea4-6c19007f551b. Scoring: mean of 3 items, range 0–10."
+    },
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Social Trust",
+        "description": "Mean of all three items. Range 0–10; higher = greater generalized social trust."
+      }
+    ],
+    "items": [
+      { "id": "bsts_inst", "type": "inst", "text_key": "bsts_inst" },
+      { "id": "ppltrst", "type": "vas", "text_key": "ppltrst", "dimension": "total",
+        "min_value": 0, "max_value": 10,
+        "left_label": "bsts_trst_lo", "right_label": "bsts_trst_hi" },
+      { "id": "pplfair", "type": "vas", "text_key": "pplfair", "dimension": "total",
+        "min_value": 0, "max_value": 10,
+        "left_label": "bsts_fair_lo", "right_label": "bsts_fair_hi" },
+      { "id": "pplhlp", "type": "vas", "text_key": "pplhlp", "dimension": "total",
+        "min_value": 0, "max_value": 10,
+        "left_label": "bsts_hlp_lo", "right_label": "bsts_hlp_hi" }
+    ],
+    "scoring": {
+      "total": {
+        "method": "mean_coded",
+        "description": "Mean of ppltrst, pplfair, pplhlp. Range 0–10; higher = greater social trust.",
+        "items": { "ppltrst": 1, "pplfair": 1, "pplhlp": 1 }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Breyer Social Trust Scale (BSTS) Report",
+      "footer_refs": [
+        "Breyer, B. (2015). Soziales Vertrauen [Social Trust Scale]. Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis235",
+        "Items from: European Social Survey Round 5 (2010/2011). https://ess.sikt.no/en/study/412db4fe-c77a-4e98-8ea4-6c19007f551b",
+        "Scoring: mean of three 0–10 items (ppltrst, pplfair, pplhlp). Higher = greater generalized social trust."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "bsts_inst": "Please answer the following questions using a score from 0 to 10.",
+      "ppltrst": "Generally speaking, would you say that most people can be trusted, or that you can't be too careful in dealing with people?",
+      "bsts_trst_lo": "You can't be too careful",
+      "bsts_trst_hi": "Most people can be trusted",
+      "pplfair": "Do you think that most people would try to take advantage of you if they got the chance, or would they try to be fair?",
+      "bsts_fair_lo": "Most people would try to take advantage of me",
+      "bsts_fair_hi": "Most people would try to be fair",
+      "pplhlp": "Would you say that most of the time people try to be helpful or that they are mostly looking out for themselves?",
+      "bsts_hlp_lo": "People mostly look out for themselves",
+      "bsts_hlp_hi": "People mostly try to be helpful",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

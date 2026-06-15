@@ -4,23 +4,27 @@
     "scale_info": {
       "code": "ESS-BSTS",
       "name": "Breyer Social Trust Scale",
-      "abbreviation": "BSTS",
+      "abbreviation": "ESS-BSTS",
       "description": "3-item measure of generalized social trust using items from the European Social Survey (ESS) Round 5 (2010/2011). Respondents rate the trustworthiness, fairness, and helpfulness of most people on 0–10 scales. The composite score is the mean of the three items. Higher scores indicate greater social trust. Items are the classic ESS social trust battery (ppltrst, pplfair, pplhlp) validated and documented as a scale by Breyer (2015).",
-      "citation": "Breyer, B. (2015). Soziales Vertrauen [Social Trust Scale]. Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis235",
+      "citation": "Breyer, B. (2015). Soziales Vertrauen [Social Trust Scale]. Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis235\nEuropean Social Survey European Research Infrastructure (ESS ERIC) (2025) ESS round 11 - 2023. Social inequalities in health, Gender in contemporary Europe. Sikt - Norwegian Agency for Shared Services in Education and Research. https://doi.org/10.21338/ess11-2023.",
       "license": "CC BY-SA 4.0",
       "license_url": "https://ess.sikt.no/en/study/412db4fe-c77a-4e98-8ea4-6c19007f551b",
       "license_explanation": "ESS Round 5 data and documentation are available under CC BY-SA 4.0 per https://ess.sikt.no/en/study/412db4fe-c77a-4e98-8ea4-6c19007f551b. Item texts are from the ESS source questionnaire (https://europeansocialsurvey.org/methodology/source-questionnaire). The BSTS documentation is published in ZIS under CC BY-SA 4.0.",
       "url": "https://zis.gesis.org/skala/Breyer-Social-Trust-Scale-%28ESS%29?lang=en",
-      "version": "1.0",
+      "version": "1.1",
       "domain": "Social"
     },
     "implementation": {
       "author": "Shane T. Mueller",
       "organization": "OpenScales Project",
-      "date": "2026-06-13",
+      "date": "2026-06-14",
       "license": "CC BY-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "notes": "Items ppltrst, pplfair, pplhlp from ESS Round 5 source questionnaire. National translations for 27 languages available from ESS country documentation: https://ess.sikt.no/en/study/412db4fe-c77a-4e98-8ea4-6c19007f551b. Scoring: mean of 3 items, range 0–10."
+      "notes": "Items ppltrst, pplfair, pplhlp from ESS Round 5 source questionnaire. Translations for 35 languages extracted from ESS Round 4–10 national questionnaires (CC BY 4.0, https://ess.sikt.no). Scoring: mean of 3 items, range 0–10."
+    },
+    "likert_options": {
+      "points": 11,
+      "min": 0
     },
     "dimensions": [
       {
@@ -30,27 +34,91 @@
       }
     ],
     "items": [
-      { "id": "bsts_inst", "type": "inst", "text_key": "bsts_inst" },
-      { "id": "ppltrst", "type": "vas", "text_key": "ppltrst", "dimension": "total",
-        "min_value": 0, "max_value": 10,
-        "left_label": "bsts_trst_lo", "right_label": "bsts_trst_hi" },
-      { "id": "pplfair", "type": "vas", "text_key": "pplfair", "dimension": "total",
-        "min_value": 0, "max_value": 10,
-        "left_label": "bsts_fair_lo", "right_label": "bsts_fair_hi" },
-      { "id": "pplhlp", "type": "vas", "text_key": "pplhlp", "dimension": "total",
-        "min_value": 0, "max_value": 10,
-        "left_label": "bsts_hlp_lo", "right_label": "bsts_hlp_hi" }
+      {
+        "id": "ppltrst",
+        "type": "likert",
+        "text_key": "ppltrst",
+        "dimension": "total",
+        "likert_options": {
+          "labels": [
+            "bsts_trst_lo",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "bsts_trst_hi"
+          ]
+        },
+        "question_head": "bsts_head"
+      },
+      {
+        "id": "pplfair",
+        "type": "likert",
+        "text_key": "pplfair",
+        "dimension": "total",
+        "likert_options": {
+          "labels": [
+            "bsts_fair_lo",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "bsts_fair_hi"
+          ]
+        },
+        "question_head": "bsts_head"
+      },
+      {
+        "id": "pplhlp",
+        "type": "likert",
+        "text_key": "pplhlp",
+        "dimension": "total",
+        "likert_options": {
+          "labels": [
+            "bsts_hlp_lo",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "bsts_hlp_hi"
+          ]
+        },
+        "question_head": "bsts_head"
+      }
     ],
     "scoring": {
       "total": {
         "method": "mean_coded",
         "description": "Mean of ppltrst, pplfair, pplhlp. Range 0–10; higher = greater social trust.",
-        "items": { "ppltrst": 1, "pplfair": 1, "pplhlp": 1 }
+        "items": {
+          "ppltrst": 1,
+          "pplfair": 1,
+          "pplhlp": 1
+        }
       }
     },
     "report": {
       "template": "standard",
-      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
       "header": "Breyer Social Trust Scale (BSTS) Report",
       "footer_refs": [
         "Breyer, B. (2015). Soziales Vertrauen [Social Trust Scale]. Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis235",
@@ -61,7 +129,6 @@
   },
   "translations": {
     "en": {
-      "bsts_inst": "Please answer the following questions using a score from 0 to 10.",
       "ppltrst": "Generally speaking, would you say that most people can be trusted, or that you can't be too careful in dealing with people?",
       "bsts_trst_lo": "You can't be too careful",
       "bsts_trst_hi": "Most people can be trusted",
@@ -71,7 +138,450 @@
       "pplhlp": "Would you say that most of the time people try to be helpful or that they are mostly looking out for themselves?",
       "bsts_hlp_lo": "People mostly look out for themselves",
       "bsts_hlp_hi": "People mostly try to be helpful",
-      "debrief": "Thank you for completing this questionnaire."
+      "debrief": "Thank you for completing this questionnaire.",
+      "bsts_head": "Please answer the following questions using a score from 0 to 10."
+    },
+    "at": {
+      "ppltrst": "Würden Sie ganz generell sagen, dass man den meisten Menschen vertrauen kann oder, dass man im Umgang mit anderen Menschen nicht vorsichtig genug sein kann?",
+      "bsts_trst_lo": "Man kann nicht vorsichtig genug sein",
+      "bsts_trst_hi": "Den meisten Menschen kann man vertrauen",
+      "pplfair": "Glauben Sie, dass die meisten Menschen versuchen, Sie auszunutzen, wenn sie die Möglichkeit dazu hätten, oder würden sie sich Ihnen gegenüber fair verhalten?",
+      "bsts_fair_lo": "Die meisten Menschen würden versuchen mich auszunutzen",
+      "bsts_fair_hi": "Die meisten Menschen würden versuchen sich fair zu verhalten",
+      "pplhlp": "Würden Sie sagen, dass die meisten Menschen im Großen und Ganzen versuchen, hilfsbereit zu sein, oder sind sie meistens nur auf den eigenen Vorteil bedacht?",
+      "bsts_hlp_lo": "Die meisten Menschen sind nur auf den eigenen Vorteil bedacht",
+      "bsts_hlp_hi": "Die meisten Menschen versuchen hilfsbereit zu sein",
+      "debrief": "Vielen Dank für Ihre Teilnahme.",
+      "bsts_head": "Bitte beantworten Sie die folgenden Fragen auf einer Skala von 0 bis 10."
+    },
+    "de": {
+      "ppltrst": "Ganz allgemein gesprochen: Glauben Sie, dass man den meisten Menschen vertrauen kann, oder dass man im Umgang mit anderen Menschen nicht vorsichtig genug sein kann?",
+      "bsts_trst_lo": "Man kann nicht vorsichtig genug sein",
+      "bsts_trst_hi": "Den meisten Menschen kann man vertrauen",
+      "pplfair": "Glauben Sie, dass die meisten Menschen versuchen, Sie auszunutzen, wenn sie die Gelegenheit dazu haben, oder versuchen die meisten Menschen, sich fair zu verhalten?",
+      "bsts_fair_lo": "Die meisten Menschen versuchen, mich auszunutzen",
+      "bsts_fair_hi": "Die meisten Menschen versuchen, sich fair zu verhalten",
+      "pplhlp": "Und glauben Sie, dass die Menschen meistens versuchen, hilfsbereit zu sein, oder dass die Menschen meistens auf den eigenen Vorteil bedacht sind?",
+      "bsts_hlp_lo": "Die Menschen sind meistens auf den eigenen Vorteil bedacht",
+      "bsts_hlp_hi": "Die Menschen versuchen meistens, hilfsbereit zu sein",
+      "debrief": "Vielen Dank für Ihre Teilnahme.",
+      "bsts_head": "Bitte beantworten Sie die folgenden Fragen auf einer Skala von 0 bis 10."
+    },
+    "bg": {
+      "ppltrst": "КАЗАНО НАЙ-ОБЩО, СМЯТАТЕ ЛИ, ЧЕ ВИНАГИ ТРЯБВА ДА ИМАТЕ «ЕДНО НА УМ», ИЛИ ЧЕ НА ПОВЕЧЕТО ХОРА МОЖЕ ДА СЕ ВЯРВА?",
+      "bsts_trst_lo": "Винаги трябва да имате «едно на ум»",
+      "bsts_trst_hi": "На повечето хора може да се вярва",
+      "pplfair": "А БИХТЕ ЛИ КАЗАЛИ, ЧЕ ПОВЕЧЕТО ХОРА БИХА СЕ ОПИТАЛИ ДА ВИ ИЗМАМЯТ ИЛИ ДА СЕ ВЪЗПОЛЗВАТ ОТ ВАС, АКО ИМАТ ТАЗИ ВЪЗМОЖНОСТ ИЛИ ЧЕ ПОВЕЧЕТО ХОРА БИХА СЕ ОПИТАЛИ ДА СА ЧЕСТНИ С ВАС?",
+      "bsts_fair_lo": "Повечето хора биха се опитали да Ви измамят или да се възползват от Вас",
+      "bsts_fair_hi": "Повечето хора биха се опитали да са честни",
+      "pplhlp": "БИХТЕ ЛИ КАЗАЛИ, ЧЕ ПОВЕЧЕТО ХОРА СЕ ИНТЕРЕСУВАТ НАЙ-ВЕЧЕ ОТ СЕБЕ СИ ИЛИ ПЪК СЕ ОПИТВАТ ДА БЪДАТ ПОЛЕЗНИ НА ДРУГИТЕ?",
+      "bsts_hlp_lo": "Повечето хора се интересуват най-вече от себе си",
+      "bsts_hlp_hi": "Повечето хора се опитват да бъдат полезни на другите",
+      "debrief": "Благодарим Ви за участието.",
+      "bsts_head": "Моля, отговорете на следните въпроси, като използвате скала от 0 до 10."
+    },
+    "cs": {
+      "ppltrst": "Obecně vzato, řekl(a) byste, že se většině lidí dá důvěřovat, nebo že člověk nemůže být při jednání s lidmi nikdy dost opatrný?",
+      "bsts_trst_lo": "Člověk nemůže být nikdy dost opatrný",
+      "bsts_trst_hi": "Většině lidí se dá důvěřovat",
+      "pplfair": "Myslíte si, že by se vás většina lidí snažila podvést, pokud by měli možnost, nebo by se snažili být poctiví?",
+      "bsts_fair_lo": "Většina lidí by se mě snažila podvést",
+      "bsts_fair_hi": "Většina lidí by se snažila být poctivá",
+      "pplhlp": "Řekl(a) byste, že se většina lidí snaží pomáhat druhým, nebo že se většinou starají o sebe?",
+      "bsts_hlp_lo": "Lidé se většinou starají o sebe",
+      "bsts_hlp_hi": "Lidé se většinou snaží pomáhat",
+      "debrief": "Děkujeme za vyplnění tohoto dotazníku.",
+      "bsts_head": "Prosím, odpovězte na následující otázky na stupnici od 0 do 10."
+    },
+    "el": {
+      "ppltrst": "Χρησιμοποιώντας αυτή την κάρτα, γενικά, πιστεύετε ότι μπορούμε να έχουμε εμπιστοσύνη στους περισσότερους ανθρώπους, ή ότι πρέπει να είμαστε πάντα επιφυλακτικοί στις σχέσεις μας με τους ανθρώπους;",
+      "bsts_trst_lo": "Πρέπει να είμαστε πάντα επιφυλακτικοί στις σχέσεις μας με τους ανθρώπους",
+      "bsts_trst_hi": "Μπορούμε να έχουμε εμπιστοσύνη στους περισσότερους ανθρώπους",
+      "pplfair": "Χρησιμοποιώντας αυτή την κάρτα, πιστεύετε πως οι περισσότεροι άνθρωποι θα προσπαθούσαν να σας εκμεταλλευτούν αν είχαν την ευκαιρία, ή θα προσπαθούσαν να είναι δίκαιοι απέναντί σας;",
+      "bsts_fair_lo": "Οι περισσότεροι άνθρωποι θα προσπαθούσαν να με εκμεταλλευτούν",
+      "bsts_fair_hi": "Οι περισσότεροι άνθρωποι θα προσπαθούσαν να είναι δίκαιοι απέναντί μου",
+      "pplhlp": "Θα λέγατε ότι τις περισσότερες φορές οι άνθρωποι προσπαθούν να βοηθάνε τον άλλον, ή ότι νοιάζονται κυρίως για τον εαυτό τους;",
+      "bsts_hlp_lo": "Οι άνθρωποι τις περισσότερες φορές νοιάζονται κυρίως για τον εαυτό τους",
+      "bsts_hlp_hi": "Οι άνθρωποι τις περισσότερες φορές προσπαθούν να βοηθάνε τον άλλον",
+      "debrief": "Ευχαριστούμε για τη συμμετοχή σας.",
+      "bsts_head": "Παρακαλώ απαντήστε στις παρακάτω ερωτήσεις χρησιμοποιώντας μια βαθμολογία από 0 έως 10."
+    },
+    "et": {
+      "ppltrst": "Üldiselt hinnates, kas Teie arvates võib enamikku inimesi usaldada?",
+      "bsts_trst_lo": "Enamikku inimesi ei saa usaldada",
+      "bsts_trst_hi": "Enamikku inimesi võib usaldada",
+      "pplfair": "Mida Te arvate, kas enamus inimesi püüaks Teid võimaluse korral ära kasutada või püüaksid nad käituda ausalt?",
+      "bsts_fair_lo": "Enamus inimesi püüaks mind ära kasutada",
+      "bsts_fair_hi": "Enamus inimesi püüaks käituda ausalt",
+      "pplhlp": "Mida Te arvate, kas enamuse ajast püüavad inimesed olla teiste suhtes abivalmid või hoolivad nad ennekõike iseendast?",
+      "bsts_hlp_lo": "Inimesed hoolivad ennekõike iseendast",
+      "bsts_hlp_hi": "Inimesed püüavad enamasti teiste suhtes abivalmid olla",
+      "debrief": "Täname teid küsimustiku täitmise eest.",
+      "bsts_head": "Palun vastake järgmistele küsimustele, kasutades skaalat 0 kuni 10."
+    },
+    "fi": {
+      "ppltrst": "Voiko mielestäsi ihmisiin luottaa, vai onko niin, ettei ihmisten suhteen voi olla liian varovainen?",
+      "bsts_trst_lo": "Ei voi olla liian varovainen",
+      "bsts_trst_hi": "Useimpiin ihmisiin voi luottaa",
+      "pplfair": "Oletko sitä mieltä, että useimmat ihmiset tilaisuuden tullen yrittäisivät käyttää sinua hyväkseen vai luuletko, että ihmiset yrittäisivät olla reiluja?",
+      "bsts_fair_lo": "Useimmat ihmiset yrittäisivät käyttää minua hyväkseen",
+      "bsts_fair_hi": "Useimmat ihmiset yrittäisivät olla reiluja",
+      "pplhlp": "Katsotko, että useimmiten ihmiset pyrkivät olemaan auttavaisia toisia kohtaan vai että enimmäkseen he ajattelevat vain omaa etuaan?",
+      "bsts_hlp_lo": "Ihmiset ajattelevat enimmäkseen omaa etuaan",
+      "bsts_hlp_hi": "Ihmiset yrittävät enimmäkseen olla auttavaisia",
+      "debrief": "Kiitos osallistumisestasi.",
+      "bsts_head": "Vastaa seuraaviin kysymyksiin asteikolla 0–10."
+    },
+    "fr": {
+      "ppltrst": "D'une manière générale, sur une échelle de 0 à 10, diriez-vous que l'on peut faire confiance à la plupart des gens ou que l'on n'est jamais assez prudent quand on a affaire aux autres ?",
+      "bsts_trst_lo": "On n'est jamais assez prudent",
+      "bsts_trst_hi": "On peut faire confiance aux gens",
+      "pplfair": "À l'aide de cette liste de réponses, diriez-vous que la plupart des gens cherchent à profiter de vous quand ils le peuvent ou qu'ils font leur possible pour se conduire correctement ?",
+      "bsts_fair_lo": "La plupart des gens cherchent à profiter de moi",
+      "bsts_fair_hi": "La plupart des gens font leur possible pour se conduire correctement",
+      "pplhlp": "Diriez-vous que la plupart du temps les gens essaient de rendre service ou qu'ils se préoccupent surtout d'eux-mêmes ?",
+      "bsts_hlp_lo": "Les gens se préoccupent surtout d'eux-mêmes",
+      "bsts_hlp_hi": "Les gens essaient de rendre service",
+      "debrief": "Merci d'avoir participé à ce questionnaire.",
+      "bsts_head": "Veuillez répondre aux questions suivantes sur une échelle de 0 à 10."
+    },
+    "he": {
+      "ppltrst": "באופן כללי, האם לדעתך ניתן לתת אמון ברוב האנשים, או שתמיד יש מקום לחשדנות מסוימת בקשרים עם אנשים?",
+      "bsts_trst_lo": "תמיד יש מקום לחשדנות מסוימת",
+      "bsts_trst_hi": "ניתן לתת אמון ברוב האנשים",
+      "pplfair": "האם לדעתך רוב האנשים ינסו לנצל אותך אם יש להם ההזדמנות, או יש להם הנטייה להיות הוגנים כלפיך?",
+      "bsts_fair_lo": "רוב האנשים ינסו לנצל",
+      "bsts_fair_hi": "יש להם הנטייה להיות הוגנים",
+      "pplhlp": "האם לדעתך, בדרך כלל, אנשים משתדלים לעזור לאחרים או שבדרך כלל הם דואגים לעצמם?",
+      "bsts_hlp_lo": "אנשים בדרך כלל דואגים לעצמם",
+      "bsts_hlp_hi": "אנשים בדרך כלל משתדלים לעזור לאחרים",
+      "debrief": "תודה על מילוי השאלון.",
+      "bsts_head": "אנא ענה על השאלות הבאות באמצעות ציון מ-0 עד 10."
+    },
+    "ar": {
+      "ppltrst": "بشكل عام، حسب رأيك، هل يمكن الثقة بمعظم الناس، أو أن هنالك دائماً مكان لشكوك معينة في العلاقات مع الناس؟",
+      "bsts_trst_lo": "هنالك دائماً مكان لشكوك معينة",
+      "bsts_trst_hi": "يمكن الثقة بمعظم الناس",
+      "pplfair": "هل، حسب رأيك، معظم الناس سيُحاولون استغلالك إذا كانت لديهم الفرصة لذلك، أو أنهم سيحاولون أن يكونوا منصفين تجاهك؟",
+      "bsts_fair_lo": "معظم الناس سيُحاولون استغلالي",
+      "bsts_fair_hi": "معظم الناس سيحاولون أن يكونوا منصفين تجاهي",
+      "pplhlp": "هل، حسب رأيك، بشكل عام، يحاول الناس مساعدة الآخرين أو أنهم بشكل عام يهتمون بأنفسهم؟",
+      "bsts_hlp_lo": "الناس بشكل عام يهتمون بأنفسهم",
+      "bsts_hlp_hi": "الناس بشكل عام يحاولون مساعدة الآخرين",
+      "debrief": "شكراً لك على إكمال هذا الاستبيان.",
+      "bsts_head": "يرجى الإجابة على الأسئلة التالية باستخدام درجة من 0 إلى 10."
+    },
+    "hr": {
+      "ppltrst": "Koristeći ovu karticu, općenito govoreći, smatrate li da se većini ljudi može vjerovati ili da nikada ne možete biti previše oprezni kada se radi o ljudima?",
+      "bsts_trst_lo": "Nikada ne možeš biti previše oprezan",
+      "bsts_trst_hi": "Većini ljudi može se vjerovati",
+      "pplfair": "Koristeći ovu karticu, navedite mislite li da bi vas većina ljudi pokušala iskoristiti kada bi za to imali priliku, ili bi pokušali biti fer i korektni?",
+      "bsts_fair_lo": "Većina ljudi pokušala bi me iskoristiti",
+      "bsts_fair_hi": "Većina ljudi pokušala bi biti fer",
+      "pplhlp": "Smatrate li da ljudi većinom pokušavaju pomoći drugima ili da se uglavnom brinu o sebi?",
+      "bsts_hlp_lo": "Ljudi se uglavnom brinu o sebi",
+      "bsts_hlp_hi": "Ljudi uglavnom pokušavaju pomoći drugima",
+      "debrief": "Hvala Vam na sudjelovanju.",
+      "bsts_head": "Molimo odgovorite na sljedeća pitanja koristeći ljestvicu od 0 do 10."
+    },
+    "hu": {
+      "ppltrst": "Általánosságban Ön mit mondana? A legtöbb emberben meg lehet bízni, vagy inkább azt, hogy nem lehetünk eléggé óvatosak az emberi kapcsolatokban?",
+      "bsts_trst_lo": "Nem lehetünk eléggé óvatosak",
+      "bsts_trst_hi": "A legtöbb ember megbízható",
+      "pplfair": "Gondolja, hogy a legtöbb ember, megpróbálná kihasználni Önt, ha alkalma nyílna rá, vagy igyekeznének tisztességesek lenni?",
+      "bsts_fair_lo": "A legtöbb ember meg próbálná kihasználni",
+      "bsts_fair_hi": "A legtöbb ember igyekezne tisztességes lenni",
+      "pplhlp": "Ön szerint az emberek inkább csak magukkal törődnek, vagy általában segítőkészek?",
+      "bsts_hlp_lo": "Az emberek inkább csak magukkal törődnek",
+      "bsts_hlp_hi": "Az emberek általában segítőkészek",
+      "debrief": "Köszönjük a részvételt.",
+      "bsts_head": "Kérjük, válaszoljon a következő kérdésekre egy 0-tól 10-ig terjedő skálán."
+    },
+    "is": {
+      "ppltrst": "Telur þú almennt að flestu fólki sé treystandi eða finnst þér að aldrei sé of varlega farið í samskiptum við fólk?",
+      "bsts_trst_lo": "Það er aldrei of varlega farið",
+      "bsts_trst_hi": "Flestu fólki er treystandi",
+      "pplfair": "Telur þú að flestir myndu reyna að notfæra sér þig ef þeir gætu, eða telur þú að flestir myndu reyna að koma fram af sanngirni?",
+      "bsts_fair_lo": "Flestir myndu reyna að notfæra sér mig",
+      "bsts_fair_hi": "Flestir myndu reyna að koma fram af sanngirni",
+      "pplhlp": "Telur þú að fólk reyni oftast að vera hjálpsamt, eða telur þú að oftast hugsi fólk aðallega um sjálft sig?",
+      "bsts_hlp_lo": "Fólk hugsar aðallega um sjálft sig",
+      "bsts_hlp_hi": "Fólk reynir oftast að vera hjálpsamt",
+      "debrief": "Þakka þér fyrir þátttökuna.",
+      "bsts_head": "Vinsamlegast svaraðu eftirfarandi spurningum með stig frá 0 til 10."
+    },
+    "it": {
+      "ppltrst": "In generale, Lei ritiene che si possa avere fiducia nella maggior parte delle persone, o che sia meglio essere diffidenti?",
+      "bsts_trst_lo": "È meglio essere diffidenti",
+      "bsts_trst_hi": "Ci si può fidare della maggior parte della gente",
+      "pplfair": "Pensa che la maggior parte delle persone tenterebbe di approfittare di Lei se ne avesse l'opportunità, o cercherebbe di agire correttamente?",
+      "bsts_fair_lo": "La maggior parte delle persone tenterebbe di approfittarne",
+      "bsts_fair_hi": "La maggior parte delle persone agirebbe correttamente",
+      "pplhlp": "Ritiene che la maggior parte delle persone di solito cerchi di rendersi utile o curi, soprattutto, il proprio interesse?",
+      "bsts_hlp_lo": "Le persone per lo più curano il loro interesse",
+      "bsts_hlp_hi": "Le persone per lo più cercano di rendersi utili",
+      "debrief": "La ringraziamo per aver completato questo questionario.",
+      "bsts_head": "Per favore risponda alle seguenti domande usando un punteggio da 0 a 10."
+    },
+    "lt": {
+      "ppltrst": "Apskritai dauguma žmonių galima pasitikėti, ar su žmonėmis reikia būti labai atsargiam/-iai?",
+      "bsts_trst_lo": "Su žmonėmis reikia būti labai atsargiam/-iai",
+      "bsts_trst_hi": "Dauguma žmonių galima pasitikėti",
+      "pplfair": "Kaip jūs manote, ar dauguma žmonių, progai pasitaikius, stengtųsi jumis pasinaudoti, ar stengtųsi būti sąžiningi su jumis?",
+      "bsts_fair_lo": "Dauguma žmonių stengtųsi manimi pasinaudoti",
+      "bsts_fair_hi": "Dauguma žmonių stengtųsi būti sąžiningi su manimi",
+      "pplhlp": "Kaip jūs manote, ar žmonės dažniausiai stengiasi padėti kitiems, ar rūpinasi tik savimi?",
+      "bsts_hlp_lo": "Žmonės dažniausiai rūpinasi tik savimi",
+      "bsts_hlp_hi": "Žmonės dažniausiai stengiasi padėti kitiems",
+      "debrief": "Dėkojame, kad užpildėte šį klausimyną.",
+      "bsts_head": "Prašome atsakyti į šiuos klausimus, naudodami skalę nuo 0 iki 10."
+    },
+    "lv": {
+      "ppltrst": "Vispārīgi runājot, vai jūs teiktu, ka lielākajai daļai cilvēku var uzticēties vai piesardzības nekad nevar būt par daudz attiecībās ar cilvēkiem?",
+      "bsts_trst_lo": "Piesardzības nekad nevar būt par daudz",
+      "bsts_trst_hi": "Lielākajai daļai cilvēku var uzticēties",
+      "pplfair": "Kā jums šķiet, vai lielākā daļa cilvēku mēģinātu jūs izmantot, krāpt, ja viņiem būtu šāda iespēja, vai arī viņi censtos būt godīgi?",
+      "bsts_fair_lo": "Lielākā daļa cilvēku mēģinātu mani izmantot, krāpt",
+      "bsts_fair_hi": "Lielākā daļa cilvēku censtos būt godīgi",
+      "pplhlp": "Kā jums šķiet, vai lielākoties cilvēki mēģina būt izpalīdzīgi, vai arī viņi lielākoties rūpējas tikai par sevi?",
+      "bsts_hlp_lo": "Cilvēki pārsvarā rūpējas tikai par sevi",
+      "bsts_hlp_hi": "Cilvēki lielākoties mēģina būt izpalīdzīgi",
+      "debrief": "Paldies par anketas aizpildīšanu.",
+      "bsts_head": "Lūdzu, atbildiet uz šādiem jautājumiem, izmantojot skalas no 0 līdz 10."
+    },
+    "mk": {
+      "ppltrst": "Општо земено, дали би рекле дека на повеќето луѓе може да им се верува, или пак сметате дека со луѓето треба да се биде многу внимателен?",
+      "bsts_trst_lo": "Со луѓето треба да се биде многу внимателен",
+      "bsts_trst_hi": "На повеќето луѓе може да им се верува",
+      "pplfair": "Дали мислите дека повеќето луѓе би се обиделе да Ве искористат доколку имаат можност или дека би се обиделе да бидат фер кон Вас?",
+      "bsts_fair_lo": "Повеќето луѓе би се обиделе да ме искористат",
+      "bsts_fair_hi": "Повеќето луѓе би се обиделе да бидат фер",
+      "pplhlp": "Дали би рекле дека луѓето најчесто се обидуваат да им помогнат на другите или дека најчесто си гледаат само за себе?",
+      "bsts_hlp_lo": "Луѓето најчесто си гледаат само за себе",
+      "bsts_hlp_hi": "Луѓето најчесто се обидуваат да им помогнат на другите",
+      "debrief": "Ви благодариме за пополнувањето на овој прашалник.",
+      "bsts_head": "Ве молиме одговорете на следните прашања на скала од 0 до 10."
+    },
+    "cnr": {
+      "ppltrst": "Uopšteno govoreći, da li biste rekli da se većini ljudi može vjerovati, ili da nikada ne možete biti dovoljno oprezni u odnosima sa ljudima?",
+      "bsts_trst_lo": "Nikada ne možete biti dovoljno oprezni",
+      "bsts_trst_hi": "Većini ljudi se može vjerovati",
+      "pplfair": "Da li mislite da bi većina ljudi pokušala da vas iskoristi ukoliko bi im se ukazala prilika, ili bi bili pošteni prema vama?",
+      "bsts_fair_lo": "Većina ljudi bi pokušala da me iskoristi",
+      "bsts_fair_hi": "Većina ljudi bi bila poštena",
+      "pplhlp": "Da li biste rekli da ljudi najčešće pokušavaju da pomognu drugima ili da uglavnom brinu samo o sebi?",
+      "bsts_hlp_lo": "Ljudi uglavnom brinu samo o sebi",
+      "bsts_hlp_hi": "Ljudi uglavnom pokušavaju da pomognu drugima",
+      "debrief": "Hvala Vam na učešću.",
+      "bsts_head": "Molimo Vas da odgovorite na sljedeća pitanja koristeći skalu od 0 do 10."
+    },
+    "nl": {
+      "ppltrst": "Denkt u, in het algemeen, dat de meeste mensen te vertrouwen zijn, of dat je niet voorzichtig genoeg kunt zijn in de omgang met mensen?",
+      "bsts_trst_lo": "Je kunt niet voorzichtig genoeg zijn",
+      "bsts_trst_hi": "De meeste mensen zijn te vertrouwen",
+      "pplfair": "Denkt u dat de meeste mensen zouden proberen misbruik van u te maken als zij daartoe de kans krijgen, of zouden zij proberen eerlijk te zijn?",
+      "bsts_fair_lo": "De meeste mensen zouden proberen misbruik van mij te maken",
+      "bsts_fair_hi": "De meeste mensen zouden proberen eerlijk te zijn",
+      "pplhlp": "Denkt u dat mensen meestal behulpzaam proberen te zijn of denkt u dat zij meestal aan zichzelf denken?",
+      "bsts_hlp_lo": "Mensen denken meestal aan zichzelf",
+      "bsts_hlp_hi": "Mensen proberen meestal behulpzaam te zijn",
+      "debrief": "Dank u voor het invullen van deze vragenlijst.",
+      "bsts_head": "Wilt u de volgende vragen beantwoorden met behulp van een score van 0 tot 10."
+    },
+    "no": {
+      "ppltrst": "Vil du stort sett si at folk flest er til å stole på, eller at en ikke kan være for forsiktig når en har med andre å gjøre?",
+      "bsts_trst_lo": "En kan ikke være for forsiktig",
+      "bsts_trst_hi": "Folk flest er til å stole på",
+      "pplfair": "Tror du at folk flest vil prøve å utnytte deg hvis de fikk sjansen, eller vil de prøve å behandle deg rimelig og rettferdig?",
+      "bsts_fair_lo": "Folk flest vil prøve å utnytte meg",
+      "bsts_fair_hi": "Folk flest vil prøve å være rimelige og rettferdige",
+      "pplhlp": "Vil du si at folk stort sett prøver å være hjelpsomme, eller tenker de mest på seg selv?",
+      "bsts_hlp_lo": "Folk tenker mest på seg selv",
+      "bsts_hlp_hi": "Folk forsøker stort sett å være hjelpsomme",
+      "debrief": "Takk for at du deltok.",
+      "bsts_head": "Vennligst svar på følgende spørsmål ved å bruke en skala fra 0 til 10."
+    },
+    "pl": {
+      "ppltrst": "Czy, ogólnie biorąc, uważa Pan, że większości ludzi można ufać, czy też, że w kontaktach z ludźmi ostrożności nigdy za wiele?",
+      "bsts_trst_lo": "Ostrożności nigdy za wiele",
+      "bsts_trst_hi": "Większości ludzi można ufać",
+      "pplfair": "Czy uważa Pan, że gdyby nadarzyła się okazja, większość ludzi starałaby się Pana wykorzystać, czy też starałaby się postępować uczciwie?",
+      "bsts_fair_lo": "Większość ludzi starałaby się mnie wykorzystać",
+      "bsts_fair_hi": "Większość ludzi starałaby się postępować uczciwie",
+      "pplhlp": "Czy uważa Pan, że ludzie przede wszystkim starają się służyć pomocą innym, czy też, że przede wszystkim dbają o własny interes?",
+      "bsts_hlp_lo": "Ludzie przede wszystkim dbają o własny interes",
+      "bsts_hlp_hi": "Ludzie przede wszystkim starają się służyć pomocą innym",
+      "debrief": "Dziękujemy za wypełnienie kwestionariusza.",
+      "bsts_head": "Proszę odpowiedzieć na poniższe pytania, używając oceny od 0 do 10."
+    },
+    "pt": {
+      "ppltrst": "De uma forma geral, acha que todo o cuidado é pouco quando se lida com as pessoas ou acha que se pode confiar na maioria das pessoas?",
+      "bsts_trst_lo": "Todo o cuidado é pouco",
+      "bsts_trst_hi": "A maioria das pessoas é de confiança",
+      "pplfair": "Acha que a maior parte das pessoas tenta aproveitar-se de si sempre que pode, ou pensa que a maior parte das pessoas é honesta?",
+      "bsts_fair_lo": "Tentam aproveitar-se de mim",
+      "bsts_fair_hi": "A maior parte das pessoas é honesta",
+      "pplhlp": "Acha que, na maior parte das vezes, as pessoas estão preocupadas com elas próprias ou acha que tentam ajudar os outros?",
+      "bsts_hlp_lo": "As pessoas estão preocupadas com elas próprias",
+      "bsts_hlp_hi": "As pessoas tentam ajudar os outros",
+      "debrief": "Obrigado por completar este questionário.",
+      "bsts_head": "Por favor responda às seguintes perguntas usando uma pontuação de 0 a 10."
+    },
+    "ro": {
+      "ppltrst": "În general vorbind, credeți că poți avea încredere în majoritatea oamenilor sau că trebuie să fii prudent în relațiile cu ceilalți oameni?",
+      "bsts_trst_lo": "Trebuie să fii prudent în relația cu oamenii",
+      "bsts_trst_hi": "Poți avea încredere în majoritatea oamenilor",
+      "pplfair": "Credeți că majoritatea oamenilor ar încerca să profite de pe urma altora atunci când au ocazia sau că cei mai mulți oameni ar fi cinstiți?",
+      "bsts_fair_lo": "Cei mai mulți oameni ar încerca să profite de pe urma altora",
+      "bsts_fair_hi": "Majoritatea oamenilor ar fi cinstiți",
+      "pplhlp": "Ați spune că de cele mai multe ori oamenii își urmăresc propriile interese sau că de cele mai multe ori oamenii încearcă să îi ajute pe cei din jur?",
+      "bsts_hlp_lo": "De cele mai multe ori oamenii își urmăresc propriile interese",
+      "bsts_hlp_hi": "De cele mai multe ori oamenii încearcă să îi ajute pe ceilalți",
+      "debrief": "Vă mulțumim pentru completarea acestui chestionar.",
+      "bsts_head": "Vă rugăm să răspundeți la următoarele întrebări pe o scală de la 0 la 10."
+    },
+    "ru": {
+      "ppltrst": "Скажите, пожалуйста, Вы считаете, что большинству людей можно доверять или Вы склоняетесь к мнению, что даже излишняя осторожность в отношениях с людьми не помешает?",
+      "bsts_trst_lo": "Даже излишняя осторожность не помешает",
+      "bsts_trst_hi": "Большинству людей можно доверять",
+      "pplfair": "Как Вы думаете, большинство людей постарались бы Вас использовать, если бы им представилась такая возможность, или же, на Ваш взгляд, люди постараются вести себя с Вами честно?",
+      "bsts_fair_lo": "Большинство людей постарались бы меня использовать",
+      "bsts_fair_hi": "Большинство людей постараются вести себя честно",
+      "pplhlp": "По Вашему мнению, в большинстве случаев люди стараются помогать друг другу или они чаще всего заботятся только о себе?",
+      "bsts_hlp_lo": "Чаще всего люди заботятся только о себе",
+      "bsts_hlp_hi": "В большинстве случаев люди стараются помогать друг другу",
+      "debrief": "Спасибо за заполнение анкеты.",
+      "bsts_head": "Пожалуйста, ответьте на следующие вопросы, используя шкалу от 0 до 10."
+    },
+    "sk": {
+      "ppltrst": "Vo všeobecnosti, povedali by ste, že väčšine ľudí možno veriť, alebo že sa treba mať na pozore, keď sa jedná s ľuďmi?",
+      "bsts_trst_lo": "Treba sa mať na pozore",
+      "bsts_trst_hi": "Väčšine ľudí sa dá veriť",
+      "pplfair": "Myslíte si, že väčšina ľudí by sa Vás pokúsila využiť, keby mali príležitosť alebo by sa snažili byť čestní?",
+      "bsts_fair_lo": "Väčšina ľudí by sa ma pokúsila využiť",
+      "bsts_fair_hi": "Väčšina ľudí by sa snažila byť čestnými",
+      "pplhlp": "Povedali by ste, že väčšinou sa ľudia snažia pomôcť iným alebo sa väčšinou starajú len o seba?",
+      "bsts_hlp_lo": "Ľudia sa väčšinou starajú len o seba",
+      "bsts_hlp_hi": "Ľudia sa väčšinou snažia pomôcť iným",
+      "debrief": "Ďakujeme za vyplnenie tohto dotazníka.",
+      "bsts_head": "Prosím, odpovedzte na nasledujúce otázky na škále od 0 do 10."
+    },
+    "sl": {
+      "ppltrst": "Če govorimo na splošno, ali bi rekli, da večini ljudi lahko zaupamo, ali menite, da je treba biti z ljudmi zelo previden?",
+      "bsts_trst_lo": "Treba je biti zelo previden",
+      "bsts_trst_hi": "Večini ljudi lahko zaupamo",
+      "pplfair": "Ali menite, da bi vas večina ljudi skušala izkoristiti, če bi za to dobila priložnost, ali pa bi večina skušala ravnati pošteno?",
+      "bsts_fair_lo": "Večina bi me skušala izkoristiti",
+      "bsts_fair_hi": "Večina bi skušala ravnati pošteno",
+      "pplhlp": "Kaj menite, ali so ljudje večinoma pripravljeni pomagati drugim, ali pa večinoma gledajo predvsem nase?",
+      "bsts_hlp_lo": "Večinoma gledajo predvsem nase",
+      "bsts_hlp_hi": "Večinoma so pripravljeni pomagati drugim",
+      "debrief": "Hvala za izpolnitev tega vprašalnika.",
+      "bsts_head": "Prosimo, odgovorite na naslednja vprašanja na lestvici od 0 do 10."
+    },
+    "sq": {
+      "ppltrst": "Duke folur në përgjithësi, nëse shumicës së njerëzve mund t'u besohet apo duhet të jesh shumë i kujdesshëm në marrëdhënie me ta?",
+      "bsts_trst_lo": "Duhet të jesh shumë i kujdesshëm në marrëdhëniet me njerëzit",
+      "bsts_trst_hi": "Shumicës së njerëzve mund t'u besohet",
+      "pplfair": "A mendoni se shumica e njerëzve, po të kishin mundësinë, do të përpiqeshin të përfitonin prej jush apo do të përpiqeshin të ishin të drejtë?",
+      "bsts_fair_lo": "Shumica e njerëzve do të përpiqeshin të përfitonin prej meje",
+      "bsts_fair_hi": "Shumica e njerëzve do të përpiqeshin të ishin të drejtë",
+      "pplhlp": "A do të thoshit se në të shumtën e rasteve njerëzit mundohen të ndihmojnë apo që njerëzit në të shumtën e rasteve kujdesen për veten e tyre?",
+      "bsts_hlp_lo": "Njerëzit në të shumtën e rasteve kujdesen për veten e tyre",
+      "bsts_hlp_hi": "Në të shumtën e rasteve njerëzit mundohen të ndihmojnë",
+      "debrief": "Faleminderit për plotësimin e këtij pyetësori.",
+      "bsts_head": "Ju lutem përgjigjuni pyetjeve të mëposhtme duke përdorur një pikë nga 0 deri në 10."
+    },
+    "sr": {
+      "ppltrst": "Da li biste rekli, uopšte uzev, da se većini ljudi može verovati ili da nikada ne možete biti dovoljno oprezni u odnosu sa ljudima?",
+      "bsts_trst_lo": "Nikada ne možete biti dovoljno oprezni",
+      "bsts_trst_hi": "Većini ljudi se može verovati",
+      "pplfair": "Da li smatrate da bi većina ljudi pokušala da Vas iskoristi ako bi im se ukazala prilika ili bi se trudili da budu pošteni?",
+      "bsts_fair_lo": "Većina ljudi bi pokušala da me iskoristi",
+      "bsts_fair_hi": "Većina ljudi bi se trudila da bude poštena",
+      "pplhlp": "Da li biste rekli da ljudi najčešće pokušavaju da pomognu drugima ili da uglavnom brinu o sebi?",
+      "bsts_hlp_lo": "Ljudi uglavnom brinu o sebi",
+      "bsts_hlp_hi": "Ljudi uglavnom pokušavaju da pomognu drugima",
+      "debrief": "Hvala Vam na učešću.",
+      "bsts_head": "Molimo Vas da odgovorite na sledeća pitanja koristeći skalu od 0 do 10."
+    },
+    "sv": {
+      "ppltrst": "Skulle du säga att man i allmänhet kan lita på de flesta människor eller att man inte kan vara nog försiktig när man har att göra med andra människor?",
+      "bsts_trst_lo": "Man kan inte vara nog försiktig",
+      "bsts_trst_hi": "Man kan lita på de flesta människor",
+      "pplfair": "Tror du att de flesta människor skulle försöka utnyttja dig om de fick chansen eller skulle de försöka vara ärliga och rättvisa?",
+      "bsts_fair_lo": "De flesta människor skulle försöka utnyttja mig",
+      "bsts_fair_hi": "De flesta människor skulle försöka vara ärliga och rättvisa",
+      "pplhlp": "Skulle du säga att människor för det mesta försöker vara hjälpsamma eller att de främst ser till sig själva?",
+      "bsts_hlp_lo": "Människor ser främst till sig själva",
+      "bsts_hlp_hi": "Människor försöker för det mesta vara hjälpsamma",
+      "debrief": "Tack för att du deltog.",
+      "bsts_head": "Vänligen svara på följande frågor med en poäng från 0 till 10."
+    },
+    "tr": {
+      "ppltrst": "Sizce genelde insanların çoğunluğuna güvenilebilir mi, yoksa insanlara karşı hiçbir zaman dikkati elden bırakmamak mı gerekir?",
+      "bsts_trst_lo": "Dikkati elden bırakmamak gerekir",
+      "bsts_trst_hi": "İnsanların çoğuna güvenilebilir",
+      "pplfair": "Sizce insanların çoğu fırsatını bulursa sizi kullanmaya, sizden çıkar sağlamaya mı çalışır; yoksa haklı ve adil davranmaya mı çalışır?",
+      "bsts_fair_lo": "Çoğu insan benden çıkar sağlamaya çalışır",
+      "bsts_fair_hi": "Çoğu insan adil olmaya çalışır",
+      "pplhlp": "Sizce, insanlar çoğunlukla birbirlerine yardımcı olmaya mı çalışırlar yoksa çoğunlukla kendi çıkarlarını mı düşünürler?",
+      "bsts_hlp_lo": "İnsanlar çoğunlukla kendi çıkarlarını düşünürler",
+      "bsts_hlp_hi": "İnsanlar çoğunlukla birbirlerine yardımcı olmaya çalışırlar",
+      "debrief": "Bu anketi tamamladığınız için teşekkür ederiz.",
+      "bsts_head": "Lütfen aşağıdaki soruları 0 ile 10 arasında bir puan kullanarak cevaplayınız."
+    },
+    "da": {
+      "ppltrst": "Mener du, at de fleste mennesker i det store og hele er til at stole på, eller kan man ikke være for forsigtig, når man har med andre mennesker at gøre?",
+      "bsts_trst_lo": "Man kan ikke være for forsigtig",
+      "bsts_trst_hi": "De fleste mennesker er til at stole på",
+      "pplfair": "Tror du, at de fleste mennesker ville prøve at udnytte dig, hvis de havde mulighed for det, eller ville de prøve at være reelle?",
+      "bsts_fair_lo": "De fleste mennesker ville prøve at udnytte mig",
+      "bsts_fair_hi": "De fleste mennesker ville prøve at være reelle",
+      "pplhlp": "Mener du, at andre mennesker for det meste prøver at være hjælpsomme, eller tænker de mest på sig selv?",
+      "bsts_hlp_lo": "Mennesker tænker mest på sig selv",
+      "bsts_hlp_hi": "Mennesker prøver mest at være hjælpsomme",
+      "debrief": "Tak for din deltagelse.",
+      "bsts_head": "Besvar venligst følgende spørgsmål ved hjælp af en score fra 0 til 10."
+    },
+    "ca": {
+      "ppltrst": "Diria vostè que, en general, es pot confiar en la majoria de la gent, o que un/a mai no és prou prudent en el tracte amb els altres?",
+      "bsts_trst_lo": "Un/a mai no és prou prudent",
+      "bsts_trst_hi": "Es pot confiar en la majoria de la gent",
+      "pplfair": "Pensa que la majoria de la gent intentaria aprofitar-se de vostè si tingués l'ocasió, o que seria honrada amb vostè?",
+      "bsts_fair_lo": "La majoria de la gent intentaria aprofitar-se de mi",
+      "bsts_fair_hi": "La majoria de la gent seria honrada amb mi",
+      "pplhlp": "Vostè diria que la majoria de les vegades la gent intenta ajudar els altres o que principalment mira per si mateixa?",
+      "bsts_hlp_lo": "La majoria de les vegades la gent mira per si mateixa",
+      "bsts_hlp_hi": "La majoria de les vegades la gent intenta ajudar els altres",
+      "debrief": "Gràcies per completar aquest qüestionari.",
+      "bsts_head": "Si us plau, respongui les preguntes següents usant una puntuació de 0 a 10."
+    },
+    "es": {
+      "ppltrst": "¿Diría usted que, por lo general, se puede confiar en la mayoría de la gente, o que nunca se es lo bastante prudente en el trato con los demás?",
+      "bsts_trst_lo": "Nunca se es lo bastante prudente",
+      "bsts_trst_hi": "Se puede confiar en la mayoría de la gente",
+      "pplfair": "¿Cree que la mayoría de la gente intentaría aprovecharse de usted si pudiera, o que sería honrada con usted?",
+      "bsts_fair_lo": "La mayoría de la gente intentaría aprovecharse de mí",
+      "bsts_fair_hi": "La mayoría de la gente sería honrada conmigo",
+      "pplhlp": "¿Diría usted que la mayoría de las veces la gente intenta ayudar a los demás o que principalmente mira por sí misma?",
+      "bsts_hlp_lo": "La mayoría de las veces la gente mira por sí misma",
+      "bsts_hlp_hi": "La mayoría de la gente intenta ayudar a los demás",
+      "debrief": "Gracias por completar este cuestionario.",
+      "bsts_head": "Por favor, responda las siguientes preguntas usando una puntuación de 0 a 10."
+    },
+    "uk": {
+      "ppltrst": "Як Ви вважаєте, в цілому, більшості людей можна довіряти чи варто бути обережним, маючи справу з людьми?",
+      "bsts_trst_lo": "Потрібно бути обережним",
+      "bsts_trst_hi": "Більшості людей можна довіряти",
+      "pplfair": "Як Ви вважаєте, більшість людей намагатимуться використати або ошукати Вас, якщо будуть мати нагоду, чи вони будуть намагатись поводити себе чесно та порядно?",
+      "bsts_fair_lo": "Більшість людей будуть намагатися використати або ошукати мене",
+      "bsts_fair_hi": "Більшість людей будуть намагатися поводити себе чесно та порядно",
+      "pplhlp": "На Вашу думку, люди в основному намагаються допомагати іншим або дбають про власний інтерес?",
+      "bsts_hlp_lo": "Люди в основному дбають про власний інтерес",
+      "bsts_hlp_hi": "Люди в основному намагаються допомагати іншим",
+      "debrief": "Дякуємо за заповнення анкети.",
+      "bsts_head": "Будь ласка, дайте відповідь на наступні запитання, використовуючи шкалу від 0 до 10."
     }
   }
 }

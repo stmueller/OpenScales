@@ -132,6 +132,12 @@ const ScaleRunner = (() => {
     let text = strings[key];
     if (text === undefined || text === null) text = key; // literal fallback
     if (typeof text !== 'string') return String(text);
+    // Replace [param] square-bracket placeholders (ESS convention) with param values
+    if (params) {
+      text = text.replace(/\[([^\]]+)\]/g, (match, name) => {
+        return params[name] !== undefined ? String(params[name]) : match;
+      });
+    }
     return text.replace(/\{([^}]+)\}/g, (match, name) => {
       // S3: answer piping
       if (name.startsWith('answer.')) {
@@ -483,7 +489,9 @@ const ScaleRunner = (() => {
         scaleDef.response_scales[qdef.response_scale]) {
       return scaleDef.response_scales[qdef.response_scale];
     }
-    return scaleDef.likert_options || {};
+    const base = scaleDef.likert_options || {};
+    const item = qdef.likert_options || {};
+    return Object.keys(item).length ? Object.assign({}, base, item) : base;
   }
 
   /**
@@ -2433,6 +2441,28 @@ const ScaleRunner = (() => {
         state.rts[qi]        = rt;
         const mapVal = Array.isArray(val) ? val.join(',') : val;
         state.responseMap[qdef.id] = mapVal !== undefined && mapVal !== null ? mapVal : '';
+
+        // sets_parameter: update a runtime param from this response, then rebuild question list
+        // so that parameter-driven branches re-evaluate with the new value.
+        if (qdef.sets_parameter && mapVal !== undefined && mapVal !== null) {
+          state.params[qdef.sets_parameter] = mapVal;
+          const rebuilt = buildQuestionList(scaleDef, state.params);
+          // Remap existing responses/rts/timestamps/order by question id
+          const oldById = {};
+          state.questions.forEach((q, i) => {
+            if (state.responses[i] !== undefined) oldById[q.id] = { r: state.responses[i], rt: state.rts[i], ts: state.timestamps[i], ord: state.order[i] };
+          });
+          state.questions    = rebuilt.questions;
+          state.branchChoices = rebuilt.branchChoices;
+          state.aliasMap     = rebuilt.aliasMap;
+          state.responses    = rebuilt.questions.map(q => (oldById[q.id] ? oldById[q.id].r  : undefined));
+          state.rts          = rebuilt.questions.map(q => (oldById[q.id] ? oldById[q.id].rt : 0));
+          state.timestamps   = rebuilt.questions.map(q => (oldById[q.id] ? oldById[q.id].ts : null));
+          state.order        = rebuilt.questions.map(q => (oldById[q.id] ? oldById[q.id].ord : 0));
+          // Update currentIndex to match the same question id
+          state.currentIndex = rebuilt.questions.findIndex(q => q.id === qdef.id);
+          if (state.currentIndex < 0) state.currentIndex = qi;
+        }
 
         // Gate check — must happen after response is recorded so data is saved
         if (qdef.gate && gateTriggered(qdef.gate, mapVal)) {

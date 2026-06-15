@@ -1,0 +1,369 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "ESS-WLC",
+      "name": "Work-Life Conflict Scale (ESS)",
+      "abbreviation": "ESS-WLC",
+      "description": "3-item measure of work-to-family/personal life interference from the European Social Survey rotating module (appeared in ESS5 and ESS10). Respondents report how often work leaves them too tired, prevents family time, or causes family dissatisfaction. Higher scores indicate greater work-life conflict.",
+      "citation": "ESS ERIC (2022). ESS Round 10 Source Questionnaire. https://ess.sikt.no\nEuropean Social Survey European Research Infrastructure (ESS ERIC) (2025) ESS round 11 - 2023. Social inequalities in health, Gender in contemporary Europe. Sikt - Norwegian Agency for Shared Services in Education and Research. https://doi.org/10.21338/ess11-2023.",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://www.europeansocialsurvey.org/contact/disclaimer",
+      "license_explanation": "ESS item texts and documentation are published under CC BY-SA 4.0 by ESS ERIC.",
+      "url": "https://www.europeansocialsurvey.org/methodology/source-questionnaire",
+      "version": "1.0",
+      "domain": "Work & Organizational"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-14",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "notes": "Items G35–G37 from ESS10 GB source questionnaire (Digital Social Contacts rotating module). Also appeared as G47, G48, G50 in ESS5. ESS variable names used as item IDs. Intended for employed respondents only — the ESS applies a work-status filter before this section. jbprtfp includes an additional 'Don't have partner/family' response option (coded separately in ESS; treat as missing for scoring)."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "wlc_r1",
+        "wlc_r2",
+        "wlc_r3",
+        "wlc_r4",
+        "wlc_r5"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Work-Life Conflict",
+        "description": "Mean of all 3 items. Range 1–5; higher = greater work-life conflict."
+      }
+    ],
+    "items": [
+      {
+        "id": "trdawrk",
+        "type": "likert",
+        "text_key": "trdawrk",
+        "dimension": "total",
+        "question_head": "wlc_head"
+      },
+      {
+        "id": "jbprtfp",
+        "type": "likert",
+        "text_key": "jbprtfp",
+        "dimension": "total",
+        "question_head": "wlc_head"
+      },
+      {
+        "id": "pfmfdjba",
+        "type": "likert",
+        "text_key": "pfmfdjba",
+        "dimension": "total",
+        "question_head": "wlc_head"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "mean_coded",
+        "description": "Mean of trdawrk, jbprtfp, pfmfdjba. Range 1–5; higher = greater work-life conflict. jbprtfp: treat 'Don't have partner/family' response as missing.",
+        "items": {
+          "trdawrk": 1,
+          "jbprtfp": 1,
+          "pfmfdjba": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Work-Life Conflict Scale (ESS) Report",
+      "footer_refs": [
+        "ESS ERIC (2022). ESS Round 10 Source Questionnaire. https://ess.sikt.no. License: CC BY-SA 4.0.",
+        "Scoring: mean of 3 items. Range 1–5; higher = greater work-to-life conflict."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "wlc_r1": "Never",
+      "wlc_r2": "Hardly ever",
+      "wlc_r3": "Sometimes",
+      "wlc_r4": "Often",
+      "wlc_r5": "Always",
+      "trdawrk": "…feel too tired after work to enjoy the things you would like to do at home?",
+      "jbprtfp": "…find that your job prevents you from giving the time you want to your partner or family?",
+      "pfmfdjba": "…find that your partner or family gets fed up with the pressure of your job?",
+      "debrief": "Thank you for completing this questionnaire.",
+      "wlc_head": "The following questions are about how work affects your personal and family life. How often do you…"
+    },
+    "at": {
+      "wlc_head": "Wie oft passiert es Ihnen, dass...",
+      "trdawrk": "Wie oft sind Sie nach der Arbeit zu müde, um zu Hause die Dinge zu genießen, die Sie gerne machen würden?",
+      "jbprtfp": "Wie oft finden Sie, dass Ihre Arbeit Sie davon abhält, soviel Zeit mit Ihrem Partner/Ihrer Partnerin oder Ihrer Familie zu verbringen, wie Sie gerne möchten?",
+      "pfmfdjba": "Wie oft haben Sie das Gefühl, dass Ihr/e Partner/in oder Ihre Familie Ihre berufliche Belastung satt haben?",
+      "wlc_r1": "Nie",
+      "wlc_r2": "Selten",
+      "wlc_r3": "Gelegentlich",
+      "wlc_r4": "Oft",
+      "wlc_r5": "Immer",
+      "debrief": "Vielen Dank für Ihre Teilnahme."
+    },
+    "bg": {
+      "wlc_head": "Като ползвате тази карта, кажете колко често...",
+      "trdawrk": "... се чувствате прекалено умерен след работа, за да се наслаждавате на нещата, които Ви се иска да правите у дома.",
+      "jbprtfp": "... усещате, че работата Ви пречи да отделяте толкова време, колкото Ви се иска, на партньора или семейството си?",
+      "pfmfdjba": "... усещате, че на партньора или семейството Ви им е омръзнало, че работата Ви е толкова напрегната?",
+      "wlc_r1": "Никога",
+      "wlc_r2": "Почти никога",
+      "wlc_r3": "Понякога",
+      "wlc_r4": "Често",
+      "wlc_r5": "Винаги",
+      "debrief": "Благодарим ви за участието."
+    },
+    "cnr": {
+      "wlc_head": "Koristeći ovu karticu, odgovorite koliko često...",
+      "trdawrk": "...se osjećate previše umorno nakon posla da biste uživali u stvarima koje biste željeli da radite kod kuće?",
+      "jbprtfp": "...uviđate da Vas posao sprečava da svom partneru ili porodici posvetite onoliko vremena koliko želite?",
+      "pfmfdjba": "...stičete utisak da Vaš partner ili porodica više ne mogu da se nose sa pritiskom Vašeg posla?",
+      "wlc_r1": "Nikad",
+      "wlc_r2": "Skoro nikad",
+      "wlc_r3": "Ponekad",
+      "wlc_r4": "Često",
+      "wlc_r5": "Uvijek",
+      "debrief": "Hvala vam na učešću."
+    },
+    "cs": {
+      "wlc_head": "S použitím této karty mi řekněte, jak často…",
+      "trdawrk": "…se cítíte příliš unaven(a) na to, abyste si mohl(a) užít věci, které byste chtěl(a) dělat doma?",
+      "jbprtfp": "…kvůli vaší práci nemůžete věnovat vašemu partnerovi/partnerce nebo rodině tolik času, kolik byste chtěl(a)?",
+      "pfmfdjba": "…zjišťujete, že vašemu partnerovi/vaší partnerce nebo rodině velmi vadí tlak vaší práce?",
+      "wlc_r1": "Nikdy",
+      "wlc_r2": "Téměř nikdy",
+      "wlc_r3": "Někdy",
+      "wlc_r4": "Často",
+      "wlc_r5": "Stále",
+      "debrief": "Děkujeme za vaši účast."
+    },
+    "de": {
+      "wlc_head": "Wie häufig passiert es Ihnen, dass...",
+      "trdawrk": "Wie häufig fühlen Sie sich nach der Arbeit zu müde, um zu Hause das zu genießen, was sie gerne tun?",
+      "jbprtfp": "Wie häufig finden Sie, dass Ihre Arbeit Sie daran hindert, mit Ihrem Partner/Ihrer Partnerin oder Ihrer Familie so viel Zeit zu verbringen, wie Sie gerne möchten?",
+      "pfmfdjba": "Wie häufig finden Sie, dass Ihr Partner/Ihre Partnerin oder Ihre Familie Ihre berufliche Belastung satt haben?",
+      "wlc_r1": "Nie",
+      "wlc_r2": "Fast nie",
+      "wlc_r3": "Manchmal",
+      "wlc_r4": "Oft",
+      "wlc_r5": "Immer",
+      "debrief": "Vielen Dank für Ihre Teilnahme."
+    },
+    "el": {
+      "wlc_head": "Χρησιμοποιώντας αυτήν την κάρτα, πόσο συχνά...",
+      "trdawrk": "... αισθάνεστε τόσο κουρασμένοι μετά τη δουλειά, που δεν μπορείτε να απολαύσετε πράγματα που θα θέλατε να κάνετε στο σπίτι;",
+      "jbprtfp": "... νοιώθετε ότι η δουλειά σας σάς αποτρέπει από το να αφιερώσετε τον χρόνο που θα θέλατε στον/στην σύντροφο ή στην οικογένειά σας;",
+      "pfmfdjba": "... νοιώθετε ότι ο/η σύντροφός σας ή η οικογένειά σας δυσανασχετεί με την πίεση της δουλειάς σας;",
+      "wlc_r1": "Ποτέ",
+      "wlc_r2": "Σχεδόν ποτέ",
+      "wlc_r3": "Κάποτε",
+      "wlc_r4": "Συχνά",
+      "wlc_r5": "Πάντα",
+      "debrief": "Ευχαριστούμε για τη συμμετοχή σας."
+    },
+    "et": {
+      "wlc_head": "Kasutades kaarti 69, siis kui sageli…",
+      "trdawrk": "...tunnete pärast tööd end liiga väsinuna, et nautida asju, mida Te kodus teha tahaksite?",
+      "jbprtfp": "...mõtlete, et Teie töö takistab Teil leidmast aega, mida sooviksite oma elukaaslase või perekonnaga veeta?",
+      "pfmfdjba": "...leiate, et Teie elukaaslane või perekond tüdineb Teie töö pingelisusest?",
+      "wlc_r1": "Mitte kunagi",
+      "wlc_r2": "Peaaegu mitte kunagi",
+      "wlc_r3": "Mõni kord",
+      "wlc_r4": "Sageli",
+      "wlc_r5": "Alati",
+      "debrief": "Täname osalemise eest."
+    },
+    "fi": {
+      "wlc_head": "Käyttäen tätä korttia, kuinka usein...",
+      "trdawrk": "... olet työn jälkeen liian väsynyt nauttiaksesi asioista, joita haluaisit tehdä kotona?",
+      "jbprtfp": "... koet, että työsi estää sinua käyttämästä haluamasi ajan kumppanillesi tai perheellesi?",
+      "pfmfdjba": "... koet, että kumppanisi tai perheesi on kyllästynyt työn paineisiisi?",
+      "wlc_r1": "Ei koskaan",
+      "wlc_r2": "Tuskin koskaan",
+      "wlc_r3": "Joskus",
+      "wlc_r4": "Usein",
+      "wlc_r5": "Aina",
+      "debrief": "Kiitos osallistumisestasi."
+    },
+    "fr": {
+      "wlc_head": "En vous servant de cette liste, à quelle fréquence...",
+      "trdawrk": "... êtes-vous trop fatigué(e) après le travail pour profiter des choses que vous aimeriez faire chez vous ?",
+      "jbprtfp": "... avez-vous l'impression que votre travail vous empêche de consacrer le temps que vous voudriez à votre partenaire ou à votre famille ?",
+      "pfmfdjba": "... avez-vous l'impression que votre partenaire ou votre famille en a assez des pressions de votre travail ?",
+      "wlc_r1": "Jamais",
+      "wlc_r2": "Rarement",
+      "wlc_r3": "Parfois",
+      "wlc_r4": "Souvent",
+      "wlc_r5": "Toujours",
+      "debrief": "Merci pour votre participation."
+    },
+    "hr": {
+      "wlc_head": "Koristeći se ovom karticom, koliko često...",
+      "trdawrk": "... se nakon posla osjećate preumornima da biste uživali u stvarima koje biste željeli raditi kod kuće?",
+      "jbprtfp": "... uviđate da vas posao sprječava da vrijieme koje želite posvetite partneru i obitelji?",
+      "pfmfdjba": "... uviđate da je vašem partneru/ici ili obitelji dosta pritisaka zbog vašeg posla?",
+      "wlc_r1": "Nikada",
+      "wlc_r2": "Gotovo nikada",
+      "wlc_r3": "Ponekad",
+      "wlc_r4": "Često",
+      "wlc_r5": "Uvijek",
+      "debrief": "Hvala vam na sudjelovanju."
+    },
+    "hu": {
+      "wlc_head": "E kártyalapnak a segítségével kérem, mondja meg, milyen gyakran fordul elő, hogy...",
+      "trdawrk": "...túl fáradt ahhoz, hogy élvezze azokat a dolgokat, amiket otthon szeretne csinálni?",
+      "jbprtfp": "...úgy érzi, a munkája megakadályozza abban, hogy elég időt töltsön a partnerével vagy a családjával?",
+      "pfmfdjba": "...úgy érzi, a partnerének vagy a családjának elege van az Ön munkájával kapcsolatos feszültségből?",
+      "wlc_r1": "Soha",
+      "wlc_r2": "Szinte soha",
+      "wlc_r3": "Néha",
+      "wlc_r4": "Gyakran",
+      "wlc_r5": "Mindig",
+      "debrief": "Köszönjük részvételét."
+    },
+    "lt": {
+      "wlc_head": "Naudodamiesi šia kortele, atsakykite, ar jūs dažnai...",
+      "trdawrk": "... jaučiatės po darbo per daug pavargęs/-usi, kad jums būtų malonu užsiimti mėgiama veikla namuose?",
+      "jbprtfp": "... jaučiate, kad darbas jums trukdo skirti tiek laiko, kiek norėtumėte, savo partneriui/-ei ar šeimai?",
+      "pfmfdjba": "... atrodo, kad jūsų partneriui/-ei ar šeimai atsibodo jūsų darbo keliama įtampa?",
+      "wlc_r1": "Niekada",
+      "wlc_r2": "Beveik niekada",
+      "wlc_r3": "Kartais",
+      "wlc_r4": "Dažnai",
+      "wlc_r5": "Visada",
+      "debrief": "Dėkojame už dalyvavimą."
+    },
+    "mk": {
+      "wlc_head": "Користејќи ја оваа показна карта, колку често...",
+      "trdawrk": "...се чувствувате премногу уморни после работата за да уживате во различни нешта коишто сакате да ги правите дома?",
+      "jbprtfp": "...се случува поради работата да не можете да им посветите доволно време на Вашиот партнер/ка или семејство?",
+      "pfmfdjba": "...се случува на Вашиот партнер/ка или семејство да им е смачено од притисокот што го создава Вашата работа?",
+      "wlc_r1": "Никогаш",
+      "wlc_r2": "Многу ретко",
+      "wlc_r3": "Понекогаш",
+      "wlc_r4": "Често",
+      "wlc_r5": "Секогаш",
+      "debrief": "Ви благодариме за учеството."
+    },
+    "nl": {
+      "wlc_head": "Gebruik deze kaart. Hoe vaak...",
+      "trdawrk": "...voelt u zich na het werk te moe om van de dingen te genieten die u thuis zou willen doen?",
+      "jbprtfp": "...merkt u dat u vanwege uw werk niet zoveel tijd aan uw partner of gezin kunt besteden als u zou willen?",
+      "pfmfdjba": "...merkt u dat uw partner of gezinsleden schoon genoeg heeft/hebben van de druk die veroorzaakt wordt door uw werk?",
+      "wlc_r1": "Nooit",
+      "wlc_r2": "Bijna nooit",
+      "wlc_r3": "Soms",
+      "wlc_r4": "Vaak",
+      "wlc_r5": "Altijd",
+      "debrief": "Hartelijk dank voor uw deelname."
+    },
+    "no": {
+      "wlc_head": "Bruk dette kortet til å svare. Hvor ofte...",
+      "trdawrk": "... føler du deg for trøtt etter jobben til å ha glede av ting du ønsker å gjøre hjemme?",
+      "jbprtfp": "... forhindrer jobben deg fra å tilbringe den tid du ønsker sammen med partner eller familie?",
+      "pfmfdjba": "... opplever du at partneren eller familien din går lei av arbeidspresset på jobben din?",
+      "wlc_r1": "Aldri",
+      "wlc_r2": "Nesten aldri",
+      "wlc_r3": "Av og til",
+      "wlc_r4": "Ofte",
+      "wlc_r5": "Alltid",
+      "debrief": "Takk for at du deltok."
+    },
+    "pl": {
+      "wlc_head": "Jak często zdarza się, że...",
+      "trdawrk": "Jak często czuje się Pan/Pani zbyt zmęczony/a po pracy, aby cieszyć się tym, czym chciałby/chciałaby się Pan/Pani zająć w domu?",
+      "jbprtfp": "Jak często praca nie pozwala Panu/Pani poświęcać partnerowi/partnerce lub rodzinie tyle czasu, ile by Pan/Pani chciał/chciała?",
+      "pfmfdjba": "Jak często Pana/Pani partner/partnerka lub rodzina ma dość napięć, jakie wiążą się z Pana/Pani pracą?",
+      "wlc_r1": "Nigdy",
+      "wlc_r2": "Prawie nigdy",
+      "wlc_r3": "Od czasu do czasu",
+      "wlc_r4": "Często",
+      "wlc_r5": "Stale",
+      "debrief": "Dziękujemy za udział."
+    },
+    "pt": {
+      "wlc_head": "Utilize este cartão e diga-me com que frequência lhe acontece cada uma das seguintes situações:",
+      "trdawrk": "Sentir-se tão cansado/a depois do trabalho que não consegue tirar proveito das coisas que gostaria de fazer em casa?",
+      "jbprtfp": "Chegar à conclusão que o seu trabalho o/a impede de dedicar o tempo que gostaria ao seu cônjuge/companheiro/a ou à família?",
+      "pfmfdjba": "Chegar à conclusão que o seu cônjuge/companheiro(a) ou a família estão fartos por causa da pressão causada pelo seu trabalho?",
+      "wlc_r1": "Nunca",
+      "wlc_r2": "Quase nunca",
+      "wlc_r3": "Algumas vezes",
+      "wlc_r4": "Muitas vezes",
+      "wlc_r5": "Sempre",
+      "debrief": "Obrigado pela sua participação."
+    },
+    "ru": {
+      "wlc_head": "Используя карточку 69, как часто Вы...",
+      "trdawrk": "... чувствуете себя слишком уставшим после работы, чтобы получать удовольствие от вещей, которыми вы бы хотели заниматься дома?",
+      "jbprtfp": "...замечаете, что Ваша работа не дает вам уделять время, которое бы Вы хотели, своему партнеру или семье?",
+      "pfmfdjba": "...замечаете, что Вашему партнеру или семье надоело напряжение Вашей работы?",
+      "wlc_r1": "Никогда",
+      "wlc_r2": "Очень редко",
+      "wlc_r3": "Иногда",
+      "wlc_r4": "Часто",
+      "wlc_r5": "Всегда",
+      "debrief": "Спасибо за участие."
+    },
+    "sk": {
+      "wlc_head": "Použitím tejto karty, prosím povedzte, ako často...",
+      "trdawrk": "...sa cítite po práci príliš unavený/á na to, aby ste mali radosť z vecí, ktoré by ste doma radi robili?",
+      "jbprtfp": "...si uvedomujete, že vám práca bráni venovať toľko času, koľko by ste chceli svojmu partnerovi alebo rodine?",
+      "pfmfdjba": "...si uvedomujete, že váš partner alebo rodina majú plné zuby tlaku, ktorý prináša vaša práca?",
+      "wlc_r1": "Nikdy",
+      "wlc_r2": "Takmer nikdy",
+      "wlc_r3": "Niekedy",
+      "wlc_r4": "Často",
+      "wlc_r5": "Stále",
+      "debrief": "Ďakujeme za účasť."
+    },
+    "sl": {
+      "wlc_head": "S pomočjo kartice povejte, kako pogosto…",
+      "trdawrk": "... ste po službi preveč utrujeni, da bi doma počeli stvari, ki bi jih radi?",
+      "jbprtfp": "...imate občutek, da zaradi službe ne morete posvetiti dovolj časa svojemu partnerju/partnerici ali družini?",
+      "pfmfdjba": "…ima vaš partner/partnerica ali družina že čez glavo vaših službenih skrbi?",
+      "wlc_r1": "nikoli",
+      "wlc_r2": "skoraj nikoli",
+      "wlc_r3": "občasno",
+      "wlc_r4": "pogosto",
+      "wlc_r5": "vedno",
+      "debrief": "Hvala za sodelovanje."
+    },
+    "sq": {
+      "wlc_head": "Duke përdorur këtë kartë treguese, sa shpesh...",
+      "trdawrk": "... ndjeheni shumë të lodhur pas punës për të shijuar gjërat që dëshironi të bëni në shtëpi?",
+      "jbprtfp": "... ndodh që për shkak të punës suaj nuk mund t'i përkushtoni kohë të mjaftueshme partnerit/es ose familjes tuaj?",
+      "pfmfdjba": "...keni vënë re se partneri/ja ose familja juaj janë të lodhur nga presioni që ju krijon puna juaj?",
+      "wlc_r1": "Asnjëherë",
+      "wlc_r2": "Gati se asnjëherë",
+      "wlc_r3": "Ndonjëherë",
+      "wlc_r4": "Shpesh",
+      "wlc_r5": "Gjithmonë",
+      "debrief": "Faleminderit për pjesëmarrjen tuaj."
+    },
+    "sr": {
+      "wlc_head": "Koliko često se dešava da...",
+      "trdawrk": "Koliko često se osećate suviše umorno nakon posla da biste uživali u stvarima koje biste voleli da radite kod kuće?",
+      "jbprtfp": "Koliko često osećate da Vas posao sprečava da posvetite onoliko vremena partneru ili porodici koliko biste želeli?",
+      "pfmfdjba": "Koliko često osećate da je Vašem partneru ili porodici dosta pritiska koji Vaš posao nosi sa sobom?",
+      "wlc_r1": "Nikada",
+      "wlc_r2": "Skoro nikada",
+      "wlc_r3": "Ponekad",
+      "wlc_r4": "Često",
+      "wlc_r5": "Uvek",
+      "debrief": "Hvala vam na učešću."
+    }
+  }
+}

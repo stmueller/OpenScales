@@ -1,0 +1,124 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "SFCQ",
+      "name": "Short Form Cultural Intelligence Scale",
+      "abbreviation": "SFCQ",
+      "description": "10-item theory-based measure of cultural intelligence (CQ) capturing three facets: cultural knowledge (K, 2 items), cross-cultural skills (S, 5 items), and cultural metacognition (M, 3 items). Validated across 3526 participants in 14 samples and 5 language groups. Higher scores indicate greater cultural intelligence.",
+      "citation": "Thomas, D. C., Liao, Y., Ayçan, Z., Cerdin, J.-L., Pekerti, A. A., Ravlin, E. C., Stahl, G. K., Lazarova, M. B., Fock, H., Arli, D., Moeller, M., Okimoto, T. B., & van de Vijver, F. (2015). Cultural intelligence: A theory-based, short form measure. Journal of International Business Studies, 46(9), 1099–1118. https://doi.org/10.1057/jibs.2014.67",
+      "license": "Free for non-commercial research; cite ZIS documentation as source",
+      "license_url": "https://doi.org/10.6102/zis248",
+      "license_explanation": "Free to use for non-commercial research purposes. For other purposes, consent of the authors must be obtained. All resulting works and publications must cite the ZIS documentation as source. Contact: David C. Thomas, dcthomas@sfu.ca.",
+      "url": "https://zis.gesis.org/skala/Thomas-et-al.-Short-Form-Cultural-Intelligence-Scale-(SFCQ)",
+      "version": "1.0",
+      "domain": "Cross-cultural"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-13",
+      "license": "Free for non-commercial research",
+      "license_url": "https://doi.org/10.6102/zis248",
+      "notes": "Items presented in fixed order per Thomas et al. (2015). Three facets: K=Knowledge (items 1-2), S=Skills (items 3-7), M=Metacognition (items 8-10). Cronbach's alpha .77-.93 across samples; omega-h=.93. Translations available in French, Turkish, Indonesian, and Chinese — contact first author."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "sfcq_r1", "sfcq_r2", "sfcq_r3", "sfcq_r4", "sfcq_r5"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "knowledge",
+        "name": "Cultural Knowledge",
+        "description": "Knowledge of the ways cultures differ and ability to give examples of cultural differences (items 1-2)."
+      },
+      {
+        "id": "skills",
+        "name": "Cross-Cultural Skills",
+        "description": "Relational skills, perceptual acuity, empathy, adaptability, and tolerance of uncertainty in cross-cultural interactions (items 3-7)."
+      },
+      {
+        "id": "metacognition",
+        "name": "Cultural Metacognition",
+        "description": "Awareness of cultural differences, analysis of cultural influences on behavior, and planning in cross-cultural situations (items 8-10)."
+      },
+      {
+        "id": "total",
+        "name": "Cultural Intelligence",
+        "description": "Mean of all 10 items. Range 1-5; higher = greater cultural intelligence."
+      }
+    ],
+    "items": [
+      { "id": "sfcq_inst", "type": "inst", "text_key": "sfcq_inst" },
+      { "id": "sfcq01", "type": "likert", "text_key": "sfcq01", "dimension": "knowledge" },
+      { "id": "sfcq02", "type": "likert", "text_key": "sfcq02", "dimension": "knowledge" },
+      { "id": "sfcq03", "type": "likert", "text_key": "sfcq03", "dimension": "skills" },
+      { "id": "sfcq04", "type": "likert", "text_key": "sfcq04", "dimension": "skills" },
+      { "id": "sfcq05", "type": "likert", "text_key": "sfcq05", "dimension": "skills" },
+      { "id": "sfcq06", "type": "likert", "text_key": "sfcq06", "dimension": "skills" },
+      { "id": "sfcq07", "type": "likert", "text_key": "sfcq07", "dimension": "skills" },
+      { "id": "sfcq08", "type": "likert", "text_key": "sfcq08", "dimension": "metacognition" },
+      { "id": "sfcq09", "type": "likert", "text_key": "sfcq09", "dimension": "metacognition" },
+      { "id": "sfcq10", "type": "likert", "text_key": "sfcq10", "dimension": "metacognition" }
+    ],
+    "scoring": {
+      "knowledge": {
+        "method": "mean_coded",
+        "description": "Mean of items sfcq01-sfcq02. Range 1-5.",
+        "items": { "sfcq01": 1, "sfcq02": 1 }
+      },
+      "skills": {
+        "method": "mean_coded",
+        "description": "Mean of items sfcq03-sfcq07. Range 1-5.",
+        "items": { "sfcq03": 1, "sfcq04": 1, "sfcq05": 1, "sfcq06": 1, "sfcq07": 1 }
+      },
+      "metacognition": {
+        "method": "mean_coded",
+        "description": "Mean of items sfcq08-sfcq10. Range 1-5.",
+        "items": { "sfcq08": 1, "sfcq09": 1, "sfcq10": 1 }
+      },
+      "total": {
+        "method": "mean_coded",
+        "description": "Mean of all 10 items. Range 1-5; higher = greater cultural intelligence.",
+        "items": {
+          "sfcq01": 1, "sfcq02": 1, "sfcq03": 1, "sfcq04": 1, "sfcq05": 1,
+          "sfcq06": 1, "sfcq07": 1, "sfcq08": 1, "sfcq09": 1, "sfcq10": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "Short Form Cultural Intelligence Scale (SFCQ) Report",
+      "footer_refs": [
+        "Thomas, D. C., et al. (2015). Cultural intelligence: A theory-based, short form measure. Journal of International Business Studies, 46(9), 1099–1118. https://doi.org/10.1057/jibs.2014.67",
+        "ZIS Documentation: https://doi.org/10.6102/zis248",
+        "Scoring: mean of items per facet (Knowledge: 1-2; Skills: 3-7; Metacognition: 8-10) and total. Range 1-5; higher = greater cultural intelligence."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "sfcq_inst": "Below are 10 statements about one's experience when interacting with people from other cultures. Please indicate to what extent each of the following statements describes you.",
+      "sfcq01": "I know the ways in which cultures around the world are different.",
+      "sfcq02": "I can give examples of cultural differences from my personal experience, reading, and so on.",
+      "sfcq03": "I enjoy talking with people from different cultures.",
+      "sfcq04": "I have the ability to accurately understand the feelings of people from other cultures.",
+      "sfcq05": "I sometimes try to understand people from another culture by imagining how something looks from their perspective.",
+      "sfcq06": "I can change my behavior to suit different cultural situations and people.",
+      "sfcq07": "I accept delays without becoming upset when in different cultural situations and with culturally different people.",
+      "sfcq08": "I am aware of the cultural knowledge I use when interacting with someone from another culture.",
+      "sfcq09": "I think a lot about the influence that culture has on my behavior and that of others who are culturally different.",
+      "sfcq10": "I am aware that I need to plan my course of action when in different cultural situations and with culturally different people.",
+      "sfcq_r1": "Not at all",
+      "sfcq_r2": "A little",
+      "sfcq_r3": "Somewhat",
+      "sfcq_r4": "A lot",
+      "sfcq_r5": "Extremely well",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

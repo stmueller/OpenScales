@@ -1,0 +1,444 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "ESS-LA",
+      "name": "LGBT Attitudes Battery (ESS)",
+      "abbreviation": "ESS-LA",
+      "description": "3-item measure of attitudes toward gay men and lesbians from the European Social Survey core module (since Round 1). Items cover freedom to live as one wishes, shame if a family member were gay or lesbian (reverse-scored), and equal adoption rights. Higher scores indicate more accepting attitudes.",
+      "citation": "Takács, J., & Szalma, I. (2011). How to measure homophobia in an international comparison? Societies, 1(1), 202–232. https://doi.org/10.3390/soc1010202\nESS ERIC (2022). ESS Round 10 Source Questionnaire. https://ess.sikt.no\nEuropean Social Survey European Research Infrastructure (ESS ERIC) (2025) ESS round 11 - 2023. Social inequalities in health, Gender in contemporary Europe. Sikt - Norwegian Agency for Shared Services in Education and Research. https://doi.org/10.21338/ess11-2023.",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://www.europeansocialsurvey.org/contact/disclaimer",
+      "license_explanation": "ESS item texts and documentation are published under CC BY-SA 4.0 by ESS ERIC.",
+      "url": "https://www.europeansocialsurvey.org/methodology/source-questionnaire",
+      "version": "1.0",
+      "domain": "Social & Political"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-14",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "notes": "Items B34–B36 from ESS10 GB source questionnaire. ESS variable names used as item IDs. In raw ESS coding: 1=Agree strongly (accepting for freehms/hmsacld; rejecting for hmsfmlsh), 5=Disagree strongly. For a pro-LGBT acceptance score: freehms and hmsacld are reverse-coded (coded -1 in sum_coded); hmsfmlsh is coded +1. Scores range 3–15 after constant adjustment; higher = more accepting."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "la_r1",
+        "la_r2",
+        "la_r3",
+        "la_r4",
+        "la_r5"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "LGBT Acceptance",
+        "description": "Mean of 3 items recoded so higher = more accepting. Range 1–5."
+      }
+    ],
+    "items": [
+      {
+        "id": "la_inst",
+        "type": "inst",
+        "text_key": "la_inst"
+      },
+      {
+        "id": "freehms",
+        "type": "likert",
+        "text_key": "freehms",
+        "dimension": "total"
+      },
+      {
+        "id": "hmsfmlsh",
+        "type": "likert",
+        "text_key": "hmsfmlsh",
+        "dimension": "total"
+      },
+      {
+        "id": "hmsacld",
+        "type": "likert",
+        "text_key": "hmsacld",
+        "dimension": "total"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "method": "mean_coded",
+        "description": "Mean of items after recoding for direction. freehms and hmsacld: recode 6-raw (Agree strongly=5, Disagree strongly=1). hmsfmlsh: keep raw (Agree=ashamed=1=rejecting → raw 1=least accepting). After recoding all three, mean gives 1–5; higher = more accepting.",
+        "items": {
+          "freehms": -1,
+          "hmsfmlsh": 1,
+          "hmsacld": -1
+        },
+        "_note": "Coded as sum_coded with freehms=-1, hmsfmlsh=+1, hmsacld=-1 plus constant 12 → divide by 3 for mean. Or recode each item then mean."
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "LGBT Attitudes Battery (ESS) Report",
+      "footer_refs": [
+        "ESS ERIC (2022). ESS Round 10 Source Questionnaire. https://ess.sikt.no. License: CC BY-SA 4.0.",
+        "Scoring: mean of 3 items recoded so higher = more accepting (1–5). freehms and hmsacld reverse-scored; hmsfmlsh straight-scored."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "la_inst": "Please say to what extent you agree or disagree with each of the following statements.",
+      "la_r1": "Agree strongly",
+      "la_r2": "Agree",
+      "la_r3": "Neither agree nor disagree",
+      "la_r4": "Disagree",
+      "la_r5": "Disagree strongly",
+      "freehms": "Gay men and lesbians should be free to live their own life as they wish.",
+      "hmsfmlsh": "If a close family member was a gay man or a lesbian, I would feel ashamed.",
+      "hmsacld": "Gay male and lesbian couples should have the same rights to adopt children as straight couples.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "ar": {
+      "la_inst": "إلى أي مدى توافق/ين أو لا توافق/ين مع كل من الجمل التالية؟ إختر/إختاري إجابة واحدة فقط.",
+      "freehms": "يجب أن يكون المثليين والمثليات جنسياً أحراراً في عيش حياتهم كما يرغبون.",
+      "hmsfmlsh": "اذا كان أحد أفراد عائلتي المقرّبين مثلياً أو مثلية كنت سأشعر بالخجل لذلك.",
+      "hmsacld": "الأزواج المثليين جنسياً (مثليين أو مثليات جنسياً) يستحقون نفس الحقوق بتبني أولاد مثل الأزواج المختلطين (رجل ومرأة).",
+      "la_r1": "جداً موافق/ة",
+      "la_r2": "موافق/ة",
+      "la_r3": "بالوسط، موافق/ة وغير موافق/ة",
+      "la_r4": "غير موافق/ة",
+      "la_r5": "جداً غير موافق/ة",
+      "debrief": "شكراً لمشاركتك."
+    },
+    "at": {
+      "la_inst": "Inwieweit stimmen Sie jeder der folgenden Aussagen zu oder lehnen diese ab?",
+      "freehms": "Schwule und Lesben sollten ihr Leben so führen dürfen, wie sie es wollen.",
+      "hmsfmlsh": "Wenn ein enges Familienmitglied schwul oder lesbisch wäre, würde ich mich schämen.",
+      "hmsacld": "Schwule und lesbische Paare sollen dieselben Rechte haben, Kinder zu adoptieren, wie heterosexuelle Paare.",
+      "la_r1": "Stimme stark zu",
+      "la_r2": "Stimme zu",
+      "la_r3": "Weder noch",
+      "la_r4": "Lehne ab",
+      "la_r5": "Lehne stark ab",
+      "debrief": "Vielen Dank für Ihre Teilnahme."
+    },
+    "bg": {
+      "la_inst": "Доколко сте съгласни или не с всяко от следващите твърдения? Ползвайте тази карта, за да отговорите.",
+      "freehms": "Хората с хомосексуални наклонности трябва да бъдат оставени да живеят, както намерят за добре.",
+      "hmsfmlsh": "Бих се срамувал, ако близък роднина е хомосексуалист.",
+      "hmsacld": "Хомосексуалните двойки трябва да имат същите права да осиновяват деца, като хетеросексуалните.",
+      "la_r1": "Напълно съгласен",
+      "la_r2": "Съгласен",
+      "la_r3": "Нито съгласен, нито несъгласен",
+      "la_r4": "Несъгласен",
+      "la_r5": "Напълно несъгласен",
+      "debrief": "Благодарим ви за участието."
+    },
+    "cnr": {
+      "la_inst": "Koristeći ovu karticu, molimo Vas da nam kažete u kojoj mjeri se slažete ili ne slažete sa sljedećim tvrdnjama.",
+      "freehms": "Gej muškarci i lezbejke treba da budu slobodni da vode svoje živote na način na koji to oni žele.",
+      "hmsfmlsh": "Ukoliko bi blizak član moje porodice bio gej muškarac ili lezbejka, osjećao/la bih se posramljenim/om.",
+      "hmsacld": "Gej i lezbijski parovi treba da uživaju ista prava u vezi sa usvajanjem djece kao heteroseksualni parovi.",
+      "la_r1": "Veoma se slažem",
+      "la_r2": "Slažem se",
+      "la_r3": "Niti se slažem niti se ne slažem",
+      "la_r4": "Ne slažem se",
+      "la_r5": "Uopšte se ne slažem",
+      "debrief": "Hvala vam na učešću."
+    },
+    "cs": {
+      "la_inst": "S použitím této karty prosím řekněte, do jaké míry souhlasíte, či nesouhlasíte s každým z následujících výroků.",
+      "freehms": "Homosexuálové a lesbičky by měli mít právo žít svůj vlastní život podle svého přání.",
+      "hmsfmlsh": "Pokud by blízký člen mojí rodiny byl homosexuál nebo lesbička, styděl(a) bych se.",
+      "hmsacld": "Homosexuální páry by měly mít stejné právo adoptovat děti jako heterosexuální páry.",
+      "la_r1": "Rozhodně souhlasím",
+      "la_r2": "Souhlasím",
+      "la_r3": "Ani souhlas, ani nesouhlas",
+      "la_r4": "Nesouhlasím",
+      "la_r5": "Rozhodně nesouhlasím",
+      "debrief": "Děkujeme za vaši účast."
+    },
+    "de": {
+      "la_inst": "Wie sehr stimmen Sie jeder der folgenden Aussagen zu oder wie sehr lehnen Sie diese ab?",
+      "freehms": "Schwule und Lesben sollten ihr Leben so führen dürfen, wie sie es wollen.",
+      "hmsfmlsh": "Wenn ein nahes Familienmitglied schwul oder lesbisch wäre, würde ich mich schämen.",
+      "hmsacld": "Schwule und lesbische Paare sollten die gleichen Rechte haben, Kinder zu adoptieren, wie Paare, die aus Mann und Frau bestehen.",
+      "la_r1": "Stimme stark zu",
+      "la_r2": "Stimme zu",
+      "la_r3": "Weder noch",
+      "la_r4": "Lehne ab",
+      "la_r5": "Lehne stark ab",
+      "debrief": "Vielen Dank für Ihre Teilnahme."
+    },
+    "el": {
+      "la_inst": "Χρησιμοποιώντας αυτή την κάρτα, πείτε μου σε ποιο βαθμό συμφωνείτε ή διαφωνείτε με κάθε μια από τις πιο κάτω απόψεις.",
+      "freehms": "Οι ομοφυλόφιλοι/ες άνδρες και γυναίκες πρέπει να είναι ελεύθεροι/ες να ζουν τη ζωή τους όπως θέλουν.",
+      "hmsfmlsh": "Εάν ένα στενό μέλος της οικογένειάς μου ήταν ομοφυλόφιλος/η, θα αισθανόμουν ντροπή.",
+      "hmsacld": "Τα ομοφυλόφιλα ζευγάρια πρέπει να έχουν τα ίδια δικαιώματα στην υιοθεσία παιδιών όπως και τα ετεροφυλόφιλα ζευγάρια.",
+      "la_r1": "Συμφωνώ απόλυτα",
+      "la_r2": "Συμφωνώ",
+      "la_r3": "Ούτε συμφωνώ ούτε διαφωνώ",
+      "la_r4": "Διαφωνώ",
+      "la_r5": "Διαφωνώ απόλυτα",
+      "debrief": "Ευχαριστούμε για τη συμμετοχή σας."
+    },
+    "es": {
+      "la_inst": "¿Hasta qué punto está usted de acuerdo o en desacuerdo con cada una de las siguientes frases?",
+      "freehms": "Los gays y lesbianas deberían tener libertad para vivir como quieran.",
+      "hmsfmlsh": "Me daría vergüenza que un familiar cercano fuese gay o lesbiana.",
+      "hmsacld": "Las parejas de gays y lesbianas deberían tener los mismos derechos a adoptar que las parejas heterosexuales.",
+      "la_r1": "Muy de acuerdo",
+      "la_r2": "De acuerdo",
+      "la_r3": "Ni de acuerdo ni en desacuerdo",
+      "la_r4": "En desacuerdo",
+      "la_r5": "Muy en desacuerdo",
+      "debrief": "Gracias por su participación."
+    },
+    "et": {
+      "la_inst": "Öelge palun, mil määral nõustute järgnevate väidetega. Vastamiseks kasutage kaarti 14.",
+      "freehms": "Homoseksuaalsetel meestel ja naistel peaks olema vabadus elada oma elu nii, nagu nad soovivad.",
+      "hmsfmlsh": "Kui mõni minu lähedane pereliige oleks homoseksuaalne mees või naine, siis tunneksin häbi.",
+      "hmsacld": "Homoseksuaalsetel paaridel peaks olema laste adopteerimiseks samad õigused nagu heteroseksuaalsetel paaridel.",
+      "la_r1": "Olen täiesti nõus",
+      "la_r2": "Olen nõus",
+      "la_r3": "Ei nõustu ega ole vastu",
+      "la_r4": "Ei ole nõus",
+      "la_r5": "Ei ole üldse nõus",
+      "debrief": "Täname osalemise eest."
+    },
+    "fi": {
+      "la_inst": "Kuinka paljon olet samaa tai eri mieltä seuraavien väittämien kanssa?",
+      "freehms": "Homoilla ja lesboilla pitäisi olla vapaus elää elämäänsä haluamallaan tavalla.",
+      "hmsfmlsh": "Jos joku lähisukulaiseni olisi homo tai lesbo, häpeäisin sitä.",
+      "hmsacld": "Homo- ja lesbopareilla tulisi olla samanlainen adoptio-oikeus kuin heteropareilla.",
+      "la_r1": "Täysin samaa mieltä",
+      "la_r2": "Samaa mieltä",
+      "la_r3": "En samaa enkä eri mieltä",
+      "la_r4": "Eri mieltä",
+      "la_r5": "Täysin eri mieltä",
+      "debrief": "Kiitos osallistumisestasi."
+    },
+    "fr": {
+      "la_inst": "Veuillez m'indiquer, à l'aide de cette liste de réponses, dans quelle mesure vous êtes d'accord ou non avec les phrases suivantes.",
+      "freehms": "Les homosexuels hommes et femmes devraient être libres de vivre leur vie comme ils le souhaitent.",
+      "hmsfmlsh": "Si un membre de ma famille proche était homosexuel, homme ou femme, j'aurais honte.",
+      "hmsacld": "Les couples homosexuels, hommes ou femmes, devraient avoir les mêmes droits à l'adoption que les couples hétérosexuels.",
+      "la_r1": "Tout à fait d'accord",
+      "la_r2": "Plutôt d'accord",
+      "la_r3": "Ni d'accord, ni pas d'accord",
+      "la_r4": "Plutôt pas d'accord",
+      "la_r5": "Pas du tout d'accord",
+      "debrief": "Merci pour votre participation."
+    },
+    "he": {
+      "la_inst": "באיזו מידה את/ה מסכים/ה או לא מסכים/ה לכל אחד מהמשפטים הבאים? בחר/י תשובה אחת עבור כל משפט.",
+      "freehms": "הומואים ולסביות צריכים להיות חופשיים לחיות את חייהם כרצונם.",
+      "hmsfmlsh": "אם קרוב או קרובת משפחה שלי היה/היתה הומו או לסבית, הייתי מתביישת בכך.",
+      "hmsacld": "לזוגות חד מיניים (מתליים או מתליות גנסיות) יש לדת לאימץ ילדים זכויות זהות לזוגות הטרוסקסואלים (גבר ואשה).",
+      "la_r1": "מאוד מסכים/ה",
+      "la_r2": "מסכים/ה",
+      "la_r3": "באמצע, מסכים/ה ולא מסכים/ה",
+      "la_r4": "לא מסכים/ה",
+      "la_r5": "מאוד לא מסכים/ה",
+      "debrief": "תודה על השתתפותך."
+    },
+    "hr": {
+      "la_inst": "Koristeći ovu karticu, recite koliko se slažete ili ne slažete sa svakom od tvrdnji koje ću vam pročitati.",
+      "freehms": "Gejevi i lezbijke trebali bi imati slobodu da žive kako im se svida.",
+      "hmsfmlsh": "Da je član/ica moje bliske obitelji gej ili lezbijka bilo bi me sram.",
+      "hmsacld": "Gej i lezbijski parovi bi trebali imati jednaka prava na posvajanje djece kao i heteroseksualni parovi.",
+      "la_r1": "Izrazito se slažem",
+      "la_r2": "Slažem se",
+      "la_r3": "Niti se slažem niti se ne slažem",
+      "la_r4": "Ne slažem se",
+      "la_r5": "Izrazito se ne slažem",
+      "debrief": "Hvala vam na sudjelovanju."
+    },
+    "hu": {
+      "la_inst": "Kérem mondja meg, hogy milyen mértékben ért vagy nem ért egyet a következő kijelentésekkel.",
+      "freehms": "Hagyni kell, hogy a meleg férfiak, és a leszbikus nők szabadon éljék az életüket melegként és leszbikusként úgy, ahogy akarják.",
+      "hmsfmlsh": "Szégyellném, ha a közeli rokonaim között volna meleg férfi vagy leszbikus nő.",
+      "hmsacld": "A meleg férfipárokat és a leszbikus női párokat a gyermekek örökbefogadása terén a heteroszexuális párokéval megegyező jogoknak kellene megilletnie.",
+      "la_r1": "teljesen egyetértek",
+      "la_r2": "egyetértek",
+      "la_r3": "egyet is értek, meg nem is",
+      "la_r4": "nem értek egyet",
+      "la_r5": "egyáltalán nem értek egyet",
+      "debrief": "Köszönjük részvételét."
+    },
+    "is": {
+      "la_inst": "Segðu mér hversu sammála eða ósammála þú ert eftirfarandi fullyrðingum á þessu spjaldi.",
+      "freehms": "Samkynhneigt fólk ætti að geta hagað lífi sínu eins og það sjálft kýs.",
+      "hmsfmlsh": "Ef einhver í nánustu fjölskyldu minni væri hommi eða lesbía myndi ég skammast mín.",
+      "hmsacld": "Samkynhneigð pör, hvort sem um er að ræða karla eða konur, ættu að hafa sama rétt til að ættleiða börn og gagnkynhneigð pör.",
+      "la_r1": "Mjög sammála",
+      "la_r2": "Sammála",
+      "la_r3": "Hvorki sammála né ósammála",
+      "la_r4": "Ósammála",
+      "la_r5": "Mjög ósammála",
+      "debrief": "Takk fyrir þátttökuna."
+    },
+    "lt": {
+      "la_inst": "Naudodamiesi šia kortele, atsakykite, ar jūs pritariate, ar nepritariate kiekvienam iš teiginių, kuriuos jums perskaitysiu.",
+      "freehms": "Gėjams ir lesbietėms turėtų būti leidžiama gyventi taip, kaip jie nori.",
+      "hmsfmlsh": "Man būtų gėda, jei artimas šeimos narys būtų gėjus ar lesbietė.",
+      "hmsacld": "Gėjų ir lesbiečių poros turėtų turėti tokias pat įsivaikinimo teises kaip ir poros, kurias sudaro vyras ir moteris.",
+      "la_r1": "Labai pritariu",
+      "la_r2": "Pritariu",
+      "la_r3": "Nei pritariu, nei nepritariu",
+      "la_r4": "Nepritariu",
+      "la_r5": "Labai nepritariu",
+      "debrief": "Dėkojame už dalyvavimą."
+    },
+    "lv": {
+      "la_inst": "Cik lielā mērā jūs piekrītat vai nepiekrītat turpmākajiem apgalvojumiem?",
+      "freehms": "Gejiem un lesbietēm būtu jāļauj dzīvot savu dzīvi kā viņi vēlas.",
+      "hmsfmlsh": "Ja tuvs ģimenes loceklis būtu gejs vai lesbiete, man būtu kauns.",
+      "hmsacld": "Geju un lesbiešu pāriem jābūt tādām pašām tiesībām adoptēt bērnus kā heteroseksuāliem pāriem.",
+      "la_r1": "Pilnībā piekrītu",
+      "la_r2": "Piekrītu",
+      "la_r3": "Ne piekrītu, ne nepiekrītu",
+      "la_r4": "Nepiekrītu",
+      "la_r5": "Pilnībā nepiekrītu",
+      "debrief": "Paldies par dalību."
+    },
+    "mk": {
+      "la_inst": "Користејќи ja оваа показна карта, Ве молам кажете колку се согласувате или не се согласувате со секое од следните тврдења.",
+      "freehms": "Геј мажите и лезбејките треба да имаат слобода да го живеат својот живот како што сакаат.",
+      "hmsfmlsh": "Доколку близок член на семејството е геј маж или лезбејка, јас би се чувствувал/а засрамен/а.",
+      "hmsacld": "Геј машките и лезбејските парови треба да ги имаат истите права за посвојување деца како и паровите составени од маж и жена.",
+      "la_r1": "Сосема се согласувам",
+      "la_r2": "Се согласувам",
+      "la_r3": "Ниту се согласувам, ниту не се согласувам",
+      "la_r4": "Не се согласувам",
+      "la_r5": "Воопшто не се согласувам",
+      "debrief": "Ви благодариме за учеството."
+    },
+    "nl": {
+      "la_inst": "Gebruik nu deze kaart. In hoeverre bent u het eens of oneens met elk van de volgende uitspraken?",
+      "freehms": "Homoseksuele mannen en lesbische vrouwen moeten vrij zijn om hun leven te leiden zoals zij dat willen.",
+      "hmsfmlsh": "Als een naast familielid homoseksueel of lesbisch zou zijn, zou ik me schamen.",
+      "hmsacld": "Homoseksuele en lesbische stellen zouden dezelfde rechten moeten hebben om kinderen te adopteren als heteroseksuele stellen.",
+      "la_r1": "Helemaal eens",
+      "la_r2": "Eens",
+      "la_r3": "Niet eens, niet oneens",
+      "la_r4": "Oneens",
+      "la_r5": "Helemaal oneens",
+      "debrief": "Hartelijk dank voor uw deelname."
+    },
+    "no": {
+      "la_inst": "Bruk dette kortet og si hvor enig eller uenig du er i følgende påstander.",
+      "freehms": "Homofile og lesbiske bør ha frihet til å kunne leve som de selv ønsker.",
+      "hmsfmlsh": "Hvis et nært familiemedlem var homofil eller lesbisk, ville jeg føle skam.",
+      "hmsacld": "Homofile og lesbiske par burde ha de samme rettighetene til å adoptere barn som heterofile par.",
+      "la_r1": "Svært enig",
+      "la_r2": "Enig",
+      "la_r3": "Verken enig eller uenig",
+      "la_r4": "Uenig",
+      "la_r5": "Svært uenig",
+      "debrief": "Takk for at du deltok."
+    },
+    "pl": {
+      "la_inst": "W jakim stopniu zgadza się Pan albo nie zgadza z następującymi stwierdzeniami? Proszę zaznaczyć odpowiedź przy każdym stwierdzeniu.",
+      "freehms": "Osoby o orientacji homoseksualnej, geje i lesbijki, powinny mieć swobodę układania sobie życia wg własnych przekonań.",
+      "hmsfmlsh": "Gdyby ktoś z mojej bliskiej rodziny był osobą homoseksualną - gejem lub lesbijką - byłoby mi wstyd.",
+      "hmsacld": "Pary homoseksualne, tzn. pary gejów oraz pary lesbijek, powinny mieć te same prawa do adopcji dzieci, co pary składające się z kobiety i mężczyzny.",
+      "la_r1": "Zdecydowanie się zgadzam",
+      "la_r2": "Zgadzam się",
+      "la_r3": "Ani się zgadzam, ani nie zgadzam",
+      "la_r4": "Nie zgadzam się",
+      "la_r5": "Zdecydowanie się nie zgadzam",
+      "debrief": "Dziękujemy za udział."
+    },
+    "pt": {
+      "la_inst": "Utilizando este cartão diga, por favor, em que medida concorda ou discorda com cada uma das seguintes afirmações.",
+      "freehms": "Homossexuais e lésbicas deveriam ser livres de viver a sua vida como muito bem entenderem.",
+      "hmsfmlsh": "Se um seu familiar próximo, homem ou mulher, fosse homossexual sentiria vergonha.",
+      "hmsacld": "Os casais homossexuais, de homens ou de mulheres, devem ter os mesmos direitos de adotar crianças que os casais heterossexuais.",
+      "la_r1": "Concorda totalmente",
+      "la_r2": "Concorda",
+      "la_r3": "Nem concorda nem discorda",
+      "la_r4": "Discorda",
+      "la_r5": "Discorda totalmente",
+      "debrief": "Obrigado pela sua participação."
+    },
+    "ru": {
+      "la_inst": "Скажите, пожалуйста, насколько Вы согласны или не согласны со следующими утверждениями. Для ответа используйте карточку 14.",
+      "freehms": "Гомосексуалисты и лесбиянки должны иметь право вести тот образ жизни, который им нравится.",
+      "hmsfmlsh": "Если бы близкий член моей семьи был гомосексуалистом или лесбиянкой, мне было бы стыдно.",
+      "hmsacld": "Гомосексуальные и лесбийские пары должны обладать теми же правами на усыновление детей, что и гетеросексуальные пары.",
+      "la_r1": "Совершенно согласен(на)",
+      "la_r2": "Согласен(на)",
+      "la_r3": "Ни согласен(на), ни против этого",
+      "la_r4": "Не согласен(на)",
+      "la_r5": "Совершенно не согласен(на)",
+      "debrief": "Спасибо за участие."
+    },
+    "sk": {
+      "la_inst": "S pomocou tejto karty povedzte, prosím, do akej miery súhlasíte alebo nesúhlasíte s nasledujúcimi výrokmi.",
+      "freehms": "Homosexuáli a lesbičky by si mali slobodne žiť svoj život tak, ako chcú.",
+      "hmsfmlsh": "Ak by niekto z blízkej rodiny bol homosexuál alebo lesbička, cítil/a by som sa zahanbene.",
+      "hmsacld": "Homosexuálne páry gejov a lesbičiek by mali mať rovnaké práva na adopciu detí ako heterosexuálne páry.",
+      "la_r1": "Rozhodne súhlasím",
+      "la_r2": "Súhlasím",
+      "la_r3": "Ani súhlas ani nesúhlas",
+      "la_r4": "Nesúhlasím",
+      "la_r5": "Rozhodne nesúhlasím",
+      "debrief": "Ďakujeme za účasť."
+    },
+    "sl": {
+      "la_inst": "Povejte, koliko soglašate ali ne soglašate z vsako od naslednjih trditev?",
+      "freehms": "Homoseksualci in lezbijke morajo imeti svobodo, da si uredijo življenje po lastnih željah.",
+      "hmsfmlsh": "Če bi bil ožji družinski član gej ali lezbijka, bi me bilo sram.",
+      "hmsacld": "Gejevski oz. lezbični pari bi morali imeti enake pravice do posvojitve otrok kot raznospolni (heteroseksualni) pari.",
+      "la_r1": "močno soglašam",
+      "la_r2": "soglašam",
+      "la_r3": "niti – niti",
+      "la_r4": "ne soglašam",
+      "la_r5": "sploh ne soglašam",
+      "debrief": "Hvala za sodelovanje."
+    },
+    "sq": {
+      "la_inst": "Duke përdorur këtë kartelë, ju lutem më thoni, deri në çfarë mase jeni ose nuk jeni dakord me qëndrimet në vijim?",
+      "freehms": "Homoseksualët, si meshkuj edhe femra, duhet të jenë të lirë të jetojnë jetën e tyre ashtu si dëshirojnë.",
+      "hmsfmlsh": "Nëse një anëtar i afërt i familjes time do të ishte homoseksual, qoftë burrë apo grua, do të ndihesha i turpëruar.",
+      "hmsacld": "Çiftet homoseksuale, si burrat ashtu edhe gratë, duhet të gëzojnë të njëjtat të drejta që kanë çiftet heteroseksuale për adoptimin e fëmijëve.",
+      "la_r1": "Jam plotësisht dakord",
+      "la_r2": "Jam dakord",
+      "la_r3": "As jam dakord as kundër",
+      "la_r4": "Nuk jam dakord",
+      "la_r5": "Nuk jam aspak dakord",
+      "debrief": "Faleminderit për pjesëmarrjen tuaj."
+    },
+    "sr": {
+      "la_inst": "U kojoj meri se slažete ili ne slažete sa svakom od sledećih tvrdnji? Obeležite jedno polje za svaku tvrdnju.",
+      "freehms": "Gej muškarci i lezbejke bi trebalo da budu slobodni da žive svoj život onako kako žele.",
+      "hmsfmlsh": "Ako bi blizak član moje porodice bio gej muškarac ili lezbejka, bilo bi me sramota.",
+      "hmsacld": "Gej i lezbejski parovi bi trebalo da imaju ista prava da usvajaju decu kao i heteroseksualni parovi.",
+      "la_r1": "Izrazito se slažem",
+      "la_r2": "Slažem se",
+      "la_r3": "Niti se slažem niti se ne slažem",
+      "la_r4": "Ne slažem se",
+      "la_r5": "Izrazito se ne slažem",
+      "debrief": "Hvala vam na učešću."
+    },
+    "sv": {
+      "la_inst": "I vilken utsträckning instämmer eller tar du avstånd från vart och ett av följande påståenden.",
+      "freehms": "Homosexuella män och kvinnor bör få leva sina egna liv som de själva vill.",
+      "hmsfmlsh": "Om en nära familjemedlem var homosexuell skulle jag känna skam.",
+      "hmsacld": "Homosexuella manliga och kvinnliga par bör ha samma rättigheter att adoptera barn som heterosexuella par.",
+      "la_r1": "Instämmer starkt",
+      "la_r2": "Instämmer",
+      "la_r3": "Varken instämmer eller tar avstånd",
+      "la_r4": "Tar avstånd",
+      "la_r5": "Tar starkt avstånd",
+      "debrief": "Tack för ditt deltagande."
+    }
+  }
+}

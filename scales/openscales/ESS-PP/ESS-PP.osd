@@ -1,0 +1,603 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "ESS-PP",
+      "name": "Political Participation Battery (ESS)",
+      "abbreviation": "ESS-PP",
+      "description": "8-item checklist of non-electoral political participation behaviours from the European Social Survey core module. Respondents report whether they have engaged in each activity during the last 12 months. Items span conventional participation (contacting officials, donating, wearing badges), protest participation (demonstrations, boycotts, petitions), digital participation (posting political content online), and civic participation (volunteering).",
+      "citation": "van Deth, J. W. (2014). A conceptual map of political participation. Acta Politica, 49(3), 349–367. https://doi.org/10.1057/ap.2014.6\nESS ERIC (2022). ESS Round 10 Source Questionnaire. https://ess.sikt.no\nEuropean Social Survey European Research Infrastructure (ESS ERIC) (2025) ESS round 11 - 2023. Social inequalities in health, Gender in contemporary Europe. Sikt - Norwegian Agency for Shared Services in Education and Research. https://doi.org/10.21338/ess11-2023.",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://www.europeansocialsurvey.org/contact/disclaimer",
+      "license_explanation": "ESS item texts and documentation are published under CC BY-SA 4.0 by ESS ERIC.",
+      "url": "https://www.europeansocialsurvey.org/methodology/source-questionnaire",
+      "version": "1.0",
+      "domain": "Social & Political"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-14",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "notes": "Items B15–B22 from ESS10 GB source questionnaire. ESS variable names used as item IDs. Response coded Yes=1, No=0 for scoring (ESS raw coding is Yes=1, No=2 — recoded here). Subscale and total scores are sums (participation breadth); no internal consistency expected."
+    },
+    "likert_options": {
+      "points": 2,
+      "min": 1,
+      "labels": [
+        "pp_yes",
+        "pp_no"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "conventional",
+        "name": "Conventional Participation",
+        "description": "Contacting officials, donating to parties/groups, wearing campaign badges. Items: contplt, donprty, badge."
+      },
+      {
+        "id": "protest",
+        "name": "Protest Participation",
+        "description": "Signing petitions, attending demonstrations, boycotting products. Items: sgnptit, pbldmn, bctprd."
+      },
+      {
+        "id": "digital",
+        "name": "Digital Participation",
+        "description": "Posting or sharing political content online. Items: pstplt."
+      },
+      {
+        "id": "civic",
+        "name": "Civic Participation",
+        "description": "Volunteering for a not-for-profit or charitable organisation. Items: volunfp."
+      },
+      {
+        "id": "total",
+        "name": "Political Participation",
+        "description": "Count of activities engaged in (sum of Yes responses). Range 0–8."
+      }
+    ],
+    "items": [
+      {
+        "id": "contplt",
+        "type": "likert",
+        "text_key": "contplt",
+        "dimension": "conventional",
+        "question_head": "pp_head"
+      },
+      {
+        "id": "donprty",
+        "type": "likert",
+        "text_key": "donprty",
+        "dimension": "conventional",
+        "question_head": "pp_head"
+      },
+      {
+        "id": "badge",
+        "type": "likert",
+        "text_key": "badge",
+        "dimension": "conventional",
+        "question_head": "pp_head"
+      },
+      {
+        "id": "sgnptit",
+        "type": "likert",
+        "text_key": "sgnptit",
+        "dimension": "protest",
+        "question_head": "pp_head"
+      },
+      {
+        "id": "pbldmn",
+        "type": "likert",
+        "text_key": "pbldmn",
+        "dimension": "protest",
+        "question_head": "pp_head"
+      },
+      {
+        "id": "bctprd",
+        "type": "likert",
+        "text_key": "bctprd",
+        "dimension": "protest",
+        "question_head": "pp_head"
+      },
+      {
+        "id": "pstplt",
+        "type": "likert",
+        "text_key": "pstplt",
+        "dimension": "digital",
+        "question_head": "pp_head"
+      },
+      {
+        "id": "volunfp",
+        "type": "likert",
+        "text_key": "volunfp",
+        "dimension": "civic",
+        "question_head": "pp_head"
+      }
+    ],
+    "scoring": {
+      "_note": "Yes=1, No=2 in raw ESS coding; recode No=0, Yes=1 before scoring. All scores are sums of recoded items.",
+      "conventional": {
+        "method": "sum_coded",
+        "description": "Sum of contplt, donprty, badge (recoded: Yes=1, No=0). Range 0–3.",
+        "items": {
+          "contplt": 1,
+          "donprty": 1,
+          "badge": 1
+        }
+      },
+      "protest": {
+        "method": "sum_coded",
+        "description": "Sum of sgnptit, pbldmn, bctprd (recoded: Yes=1, No=0). Range 0–3.",
+        "items": {
+          "sgnptit": 1,
+          "pbldmn": 1,
+          "bctprd": 1
+        }
+      },
+      "digital": {
+        "method": "sum_coded",
+        "description": "pstplt (recoded: Yes=1, No=0). Range 0–1.",
+        "items": {
+          "pstplt": 1
+        }
+      },
+      "civic": {
+        "method": "sum_coded",
+        "description": "volunfp (recoded: Yes=1, No=0). Range 0–1.",
+        "items": {
+          "volunfp": 1
+        }
+      },
+      "total": {
+        "method": "sum_coded",
+        "description": "Sum of all 8 items (recoded: Yes=1, No=0). Range 0–8; higher = broader participation.",
+        "items": {
+          "contplt": 1,
+          "donprty": 1,
+          "badge": 1,
+          "sgnptit": 1,
+          "pbldmn": 1,
+          "bctprd": 1,
+          "pstplt": 1,
+          "volunfp": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Political Participation Battery (ESS) Report",
+      "footer_refs": [
+        "ESS ERIC (2022). ESS Round 10 Source Questionnaire. https://ess.sikt.no. License: CC BY-SA 4.0.",
+        "Scoring: sum of Yes responses (Yes=1, No=0). Total range 0–8; higher = broader political participation."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "pp_head": "There are different ways of trying to improve things in your country or help prevent things from going wrong. During the last 12 months, have you done any of the following?",
+      "contplt": "Contacted a politician, government or local government official?",
+      "donprty": "Donated money or raised funds for a political party or group?",
+      "badge": "Worn or displayed a campaign badge/sticker?",
+      "sgnptit": "Signed a petition?",
+      "pbldmn": "Taken part in a lawful public demonstration?",
+      "bctprd": "Boycotted certain products?",
+      "pstplt": "Posted or shared anything about politics online, for example on social media or in a blog?",
+      "volunfp": "Worked in a voluntary organisation or association?",
+      "pp_yes": "Yes",
+      "pp_no": "No",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "ar": {
+      "pp_head": "هناك طرق مختلفة لمحاولة تحسين الوضع في إسرائيل أو لمنع تدهور الوضع. خلال الـ 12 شهراً الأخيرة، هل...",
+      "contplt": "... اتصلت بسياسي أو موظف حكومي أو موظف في سلطة محلية؟",
+      "donprty": "... تبرعت أو شاركت في حزب سياسي أو مجموعة تأثير؟",
+      "badge": "... ارتديت أو عرضت شارة/ملصق (ستيكر) لحملة انتخابية؟",
+      "sgnptit": "... وقّعت على عريضة؟",
+      "pbldmn": "... شاركت في مظاهرة جماهيرية قانونية؟",
+      "bctprd": "... قاطعت منتجات معينة؟",
+      "pstplt": "... هل نشرت أو شاركت عبر الإنترنت شيئاً عن السياسة، مثلاً بمدوّنة، بريد إلكتروني، أو شبكات اجتماعية مثل الفيسبوك أو تويتر؟",
+      "volunfp": "... تطوعت في جمعية لا تهدف إلى الربح أو جمعية خيريّة؟",
+      "pp_yes": "نعم",
+      "pp_no": "لا",
+      "debrief": "شكراً لإكمالك هذا الاستبيان."
+    },
+    "at": {
+      "pp_head": "Es gibt verschiedene Wege, die Lage in Österreich zu verbessern oder zu versuchen, Fehlentwicklungen zu vermeiden. Haben Sie während der letzten 12 Monate…",
+      "contplt": "…einen Politiker oder einen Vertreter der Bundesregierung, der Landesregierung oder der Gemeindeverwaltung kontaktiert?",
+      "donprty": "…an eine politische Partei oder Interessengruppe gespendet oder darin mitgewirkt?",
+      "badge": "…ein Abzeichen oder einen Aufkleber für eine politische Kampagne getragen oder irgendwo befestigt?",
+      "sgnptit": "…sich an einer Unterschriftensammlung beteiligt?",
+      "pbldmn": "…an einer Demonstration teilgenommen?",
+      "bctprd": "…bestimmte Produkte boykottiert?",
+      "pstplt": "…etwas über Politik im Internet gepostet oder geteilt, zum Beispiel auf Blogs, per E-Mail oder in sozialen Medien wie Facebook oder Twitter?",
+      "volunfp": "…Freiwilligenarbeit in einer gemeinnützigen oder wohltätigen Organisation geleistet?",
+      "pp_yes": "Ja",
+      "pp_no": "Nein",
+      "debrief": "Vielen Dank für Ihre Teilnahme."
+    },
+    "bg": {
+      "pp_head": "ИМА РАЗЛИЧНИ НАЧИНИ ДА СЕ ПОМОГНЕ НЕЩАТА В БЪЛГАРИЯ ДА СЕ ПОДОБРЯТ ИЛИ ДА НЕ СЕ ВЛОШАТ ПОВЕЧЕ. През последните 12 месеца Вие лично дали сте…",
+      "contplt": "…се свързали с политик, с член на централната или на местната власт?",
+      "donprty": "…правили дарения за политическа партия или сдружение или сте участвали в такива?",
+      "badge": "…носили знак (значка, стикер, флаг, шапка, тениска) на политическа кампания?",
+      "sgnptit": "…подписвали петиция, подписка и др.?",
+      "pbldmn": "…вземали участие в законен протест или демонстрация?",
+      "bctprd": "…бойкотирали, не сте купували определени продукти?",
+      "pstplt": "…публикували или разпространили каквото и да е, свързано с политиката, например чрез блог, имейл, социална мрежа, Фейсбук или Туитър?",
+      "volunfp": "…били доброволец в организация с нестопанска цел или благотворителна организация?",
+      "pp_yes": "Да",
+      "pp_no": "Не",
+      "debrief": "Благодарим Ви за участието!"
+    },
+    "cnr": {
+      "pp_head": "Postoje različiti načini na koje se može pokušati da se poboljša stanje ili preduprijedi da stvari pođu po zlu u Crnoj Gori. Da li ste u proteklih 12 mjeseci učinili nešto sa sljedeće liste?",
+      "contplt": "…kontaktirali političara, predstavnika vlade ili lokalne samouprave?",
+      "donprty": "…dali donaciju ili učestvovali u radu političke partije ili interesne grupe?",
+      "badge": "…nosili bedž ili isticali promotivni materijal tokom kampanje?",
+      "sgnptit": "…potpisali neku peticiju?",
+      "pbldmn": "…učestvovali u javnim demonstracijama?",
+      "bctprd": "…bojkotovali određene proizvode?",
+      "pstplt": "…na Internet postavili ili podijelili neki sadržaj u vezi sa politikom, na primjer, na blogu, putem i-mejla ili na društvenim mrežama poput Fejsbuka ili Tvitera?",
+      "volunfp": "…volontirali pri nekoj neprofitnoj ili dobrotvornoj organizaciji?",
+      "pp_yes": "Da",
+      "pp_no": "Ne",
+      "debrief": "Hvala na učešću."
+    },
+    "cs": {
+      "pp_head": "Existují různé způsoby, prostřednictvím kterých je možné se pokusit o zlepšení různých záležitostí v České republice nebo jakými lze předejít jejich zhoršování. Udělal(a) jste v posledních 12 měsících některou z následujících věcí?",
+      "contplt": "…obrátil(a) se na politika, úředníka státní správy či místní samosprávy?",
+      "donprty": "…přispěl(a) jste na činnost nebo jste se zapojil(a) do činnosti politické strany nebo nátlakové skupiny?",
+      "badge": "…nosil(a) nebo veřejně vystavil(a) znak/nálepku nějaké kampaně?",
+      "sgnptit": "…podepsal(a) petici?",
+      "pbldmn": "…účastnil(a) se veřejné demonstrace?",
+      "bctprd": "…bojkotoval(a) určité zboží?",
+      "pstplt": "…přidal(a) příspěvek nebo sdílel(a) něco o politice online, například na blogu, emailem nebo na sociálních sítích jako je Facebook či Twitter?",
+      "volunfp": "…pracoval(a) jako dobrovolník pro neziskovou či charitativní organizaci?",
+      "pp_yes": "Ano",
+      "pp_no": "Ne",
+      "debrief": "Děkujeme za vyplnění dotazníku."
+    },
+    "de": {
+      "pp_head": "Es gibt verschiedene Möglichkeiten, mit denen man versuchen kann, etwas in Deutschland zu verbessern oder zu verhindern, dass sich etwas verschlechtert. Haben Sie im Verlauf der letzten 12 Monate…",
+      "contplt": "…Kontakt zu einem Politiker oder einer Amtsperson auf Bundes-, Landes- oder Kommunalebene aufgenommen?",
+      "donprty": "…an eine politische Partei oder Interessengruppe gespendet oder darin mitgewirkt?",
+      "badge": "…ein Abzeichen oder einen Aufkleber einer politischen Kampagne getragen oder irgendwo befestigt?",
+      "sgnptit": "…sich an einer Unterschriftensammlung beteiligt?",
+      "pbldmn": "…an einer Demonstration teilgenommen?",
+      "bctprd": "…bestimmte Produkte boykottiert?",
+      "pstplt": "…etwas über Politik im Internet gepostet oder geteilt, zum Beispiel auf Blogs, per E-Mail oder in sozialen Medien wie Facebook oder Twitter?",
+      "volunfp": "…ehrenamtlich für eine gemeinnützige oder wohltätige Organisation gearbeitet?",
+      "pp_yes": "Ja",
+      "pp_no": "Nein",
+      "debrief": "Vielen Dank für Ihre Teilnahme."
+    },
+    "el": {
+      "pp_head": "Υπάρχουν διάφοροι τρόποι με τους οποίους κάποιος μπορεί να προσπαθήσει να βελτιώσει τα πράγματα στην Ελλάδα ή να βοηθήσει ώστε να μην χειροτερέψουν. Κατά τη διάρκεια των τελευταίων 12 μηνών, έχετε κάνει κάτι από τα ακόλουθα;",
+      "contplt": "…έρθει σε επαφή με κάποιον πολιτικό, ή με κάποιον αρμόδιο της κυβέρνησης ή των τοπικών αρχών;",
+      "donprty": "…κάνει δωρεά ή συμμετάσχει σε κάποιο πολιτικό κόμμα ή ομάδα πίεσης;",
+      "badge": "…φορέσει ή επιδείξει το σήμα κάποιας εκστρατείας;",
+      "sgnptit": "…υπογράψει για κάποιο αίτημα ή κάποια έκκληση;",
+      "pbldmn": "…πάρει μέρος σε δημόσια διαδήλωση;",
+      "bctprd": "…μποϋκοτάρει συγκεκριμένα προϊόντα;",
+      "pstplt": "…αναρτήσει ή μοιραστεί διαδικτυακά οτιδήποτε σχετίζεται με την πολιτική, για παράδειγμα σε blogs, μέσω email ή σε κοινωνικά δίκτυα όπως το Facebook ή το Twitter;",
+      "volunfp": "…δουλέψει εθελοντικά για κάποια μη κερδοσκοπική ή φιλανθρωπική οργάνωση;",
+      "pp_yes": "Ναι",
+      "pp_no": "Όχι",
+      "debrief": "Σας ευχαριστούμε για τη συμμετοχή σας."
+    },
+    "es": {
+      "pp_head": "Hay muchas maneras de intentar que las cosas mejoren en España o, al menos, de evitar que vayan a peor. En los últimos 12 meses ¿usted ha…",
+      "contplt": "…contactado con un político o con una autoridad o funcionario estatal, autonómico o local?",
+      "donprty": "…hecho alguna donación o ha participado en algún partido político, grupo de presión o de acción ciudadana?",
+      "badge": "…llevado o mostrado insignias o pegatinas de alguna campaña?",
+      "sgnptit": "…firmado una petición en una campaña de recogida de firmas?",
+      "pbldmn": "…participado en una manifestación?",
+      "bctprd": "…boicoteado o dejado de comprar ciertos productos?",
+      "pstplt": "…publicado o compartido algo sobre política en Internet, por ejemplo en blogs, por correo electrónico o en redes sociales como Facebook o Twitter?",
+      "volunfp": "…participado como voluntario/a en una organización sin ánimo de lucro o benéfica?",
+      "pp_yes": "Sí",
+      "pp_no": "No",
+      "debrief": "Gracias por completar este cuestionario."
+    },
+    "et": {
+      "pp_head": "On erinevaid viise, kuidas Eesti riigis asju paremaks muuta või ennetada nende viltu minekut. Kas olete viimase 12 kuu jooksul…",
+      "contplt": "…võtnud ühendust mõne poliitiku, valitsuse või kohaliku omavalitsuse ametnikuga?",
+      "donprty": "…annetanud poliitilisele parteile või surverühmale või osalenud mõne sellise tegevuses?",
+      "badge": "…kandnud kampaaniamärki või -kleebist?",
+      "sgnptit": "…kirjutanud alla palvekirjale (petitsioonile)?",
+      "pbldmn": "…võtnud osa avalikust demonstratsioonist?",
+      "bctprd": "…boikoteerinud teatud tooteid?",
+      "pstplt": "…postitanud või jaganud midagi poliitikateemalist internetis, näiteks blogides, e-posti teel või sotsiaalmeedias, näiteks Facebookis või Twitteris?",
+      "volunfp": "…tegutsenud vabatahtlikult mõne mittetulundus- või heategevusorganisatsiooni heaks?",
+      "pp_yes": "Jah",
+      "pp_no": "Ei",
+      "debrief": "Täname osalemise eest!"
+    },
+    "fi": {
+      "pp_head": "On olemassa erilaisia keinoja parantaa Suomen asioita tai estää asioiden kehittymistä huonoon suuntaan. Oletko viimeisten 12 kuukauden aikana tehnyt mitään seuraavista?",
+      "contplt": "…ottanut yhteyttä poliitikkoon tai valtion tai kunnan virkamieheen?",
+      "donprty": "…tukenut taloudellisesti tai osallistunut jonkin puolueen tai poliittisen ryhmän toimintaan?",
+      "badge": "…käyttänyt tai pitänyt esillä kampanjatuotteita kuten rintamerkkejä, tarroja tms.?",
+      "sgnptit": "…allekirjoittanut kansalaisadressin tai -vetoomuksen?",
+      "pbldmn": "…osallistunut mielenosoitukseen?",
+      "bctprd": "…boikotoinut, eli kieltäytynyt tai välttänyt ostamasta tiettyjä tuotteita?",
+      "pstplt": "…julkaissut tai jakanut netissä jotain politiikkaan liittyvää, esimerkiksi blogissa, sähköpostilla tai sosiaalisessa mediassa, kuten Facebookissa tai Twitterissä?",
+      "volunfp": "…osallistunut vapaaehtoistyöhön voittoa tavoittelemattomassa organisaatiossa tai hyväntekeväisyysjärjestössä?",
+      "pp_yes": "Kyllä",
+      "pp_no": "En",
+      "debrief": "Kiitos osallistumisesta!"
+    },
+    "fr": {
+      "pp_head": "Il existe différents moyens pour essayer d'améliorer les choses en France ou pour empêcher que les choses n'aillent mal. Au cours des 12 derniers mois, avez-vous fait l'une des choses suivantes ?",
+      "contplt": "…contacté un homme ou une femme politique, un élu ou une élue au niveau national ou local?",
+      "donprty": "…fait un don ou milité dans un parti politique ou un groupe engagé politiquement ?",
+      "badge": "…porté un badge ou affiché un autocollant pour faire campagne pour une cause ?",
+      "sgnptit": "…signé une pétition ?",
+      "pbldmn": "…pris part à une manifestation ?",
+      "bctprd": "…boycotté, c'est-à-dire refusé d'acheter, certains produits ?",
+      "pstplt": "…publié ou partagé sur Internet quoi que ce soit en rapport avec la politique, par exemple sur un blog, par e-mail ou sur les réseaux sociaux tels que Facebook ou Twitter ?",
+      "volunfp": "…fait du bénévolat pour une association caritative ou un organisme à but non lucratif ?",
+      "pp_yes": "Oui",
+      "pp_no": "Non",
+      "debrief": "Merci d'avoir complété ce questionnaire."
+    },
+    "he": {
+      "pp_head": "יש דרכים שונות באמצעותן ניתן לנסות לשפר דברים בישראל או למנוע הידרדרות במצב. האם במהלך 12 החודשים האחרונים, עשית מהדברים הבאים?",
+      "contplt": "…יצרת קשר עם פוליטיקאי, פקיד ממשל או פקיד בשלטון המקומי?",
+      "donprty": "…תרמת למפלגה או לקבוצת פעולה או השתתפת בפעילותה?",
+      "badge": "…ענדת או הצגת תג/סטיקר של קמפיין?",
+      "sgnptit": "…חתמת על עצומה?",
+      "pbldmn": "…השתתפת בהפגנה ציבורית חוקית?",
+      "bctprd": "…החרמת מוצרים מסויימים?",
+      "pstplt": "…פרסמת או שיתפת דרך האינטרנט משהו על הפוליטיקה, לדוגמא בבלוגים, באימייל, או ברשתות החברתיות כמו פייסבוק או טוויטר?",
+      "volunfp": "…התנדבת בארגון ללא כוונת רווח או ג'מעייה צדקה?",
+      "pp_yes": "כן",
+      "pp_no": "לא",
+      "debrief": "תודה על השתתפותך."
+    },
+    "hr": {
+      "pp_head": "Postoje različiti načini na koje građani mogu pokušati poboljšati stanje u Hrvatskoj ili spriječiti da se ono pogorša. Jeste li tijekom posljednjih 12 mjeseci učinili nešto od navedenog?",
+      "contplt": "…kontaktirali nekog političara, službenika hrvatske vlade ili lokalne vlasti?",
+      "donprty": "…donirali političkoj stranci ili grupi za pritisak odnosno sudjelovali u njihovom radu?",
+      "badge": "…nosili ili isticali bedževe ili naljepnice neke javne kampanje?",
+      "sgnptit": "…potpisali neku peticiju?",
+      "pbldmn": "…sudjelovali u javnim prosvjedima?",
+      "bctprd": "…bojkotirali određene proizvode?",
+      "pstplt": "…objavili ili podijelili na Internetu bilo što vezano za politiku, primjerice na blogovima, putem e-maila ili na društvenim mrežama poput Facebooka ili Twittera?",
+      "volunfp": "…volontirali za neprofitnu ili dobrotvornu organizaciju?",
+      "pp_yes": "Da",
+      "pp_no": "Ne",
+      "debrief": "Hvala na sudjelovanju."
+    },
+    "hu": {
+      "pp_head": "Különböző módokon lehet megakadályozni a problémák kialakulását, és javítani a dolgokon Magyarországon. Az elmúlt 12 hónap során előfordult, hogy Ön a következő dolgok valamelyikét tette?",
+      "contplt": "…kapcsolatba lépett politikussal, kormányzati, vagy önkormányzati képviselővel?",
+      "donprty": "…adománnyal támogatott politikai pártot vagy más politikai szervezetet, vagy részt vett a tevékenységükben?",
+      "badge": "…viselt, vagy kihelyezett választási kampányjelvényeket/jelképeket?",
+      "sgnptit": "…tiltakozó levelet, nyilatkozatot írt alá?",
+      "pbldmn": "…részt vett egy nyilvános tüntetésen?",
+      "bctprd": "…szándékosan nem vásárolt, bojkottált bizonyos termékeket?",
+      "pstplt": "…közzétett vagy megosztott bármilyen politikával kapcsolatos tartalmat online, például e-mailben, blogon vagy a közösségi médián, például a Facebookon vagy a Twitteren?",
+      "volunfp": "…önkéntes munkát végzett egy nonprofit vagy jótékonysági szervezetnél?",
+      "pp_yes": "Igen",
+      "pp_no": "Nem",
+      "debrief": "Köszönjük a részvételt!"
+    },
+    "is": {
+      "pp_head": "Til að stuðla að úrbótum á Íslandi eða varna því að eitthvað fari úrskeiðis er hægt að fara ólíkar leiðir. Hefur þú gert eitthvað af eftirfarandi á síðustu 12 mánuðum?",
+      "contplt": "…haft samband við stjórnmálamann eða opinberan starfsmann hjá ríki eða sveitarfélagi?",
+      "donprty": "…látið fé renna til eða tekið þátt í starfi stjórnmálaflokks eða þrýstihóps?",
+      "badge": "…borið á þér eða sýnt með öðrum hætti barmmerki eða límmiða til stuðnings einhverjum málstað?",
+      "sgnptit": "…skrifað nafn þitt á undirskriftalista?",
+      "pbldmn": "…tekið þátt í opinberum mótmælum?",
+      "bctprd": "…sniðgengið ákveðnar vörur í mótmælaskyni?",
+      "pstplt": "…skrifað eða deilt einhverju um stjórnmál á netinu, til dæmis á bloggi, í tölvupósti eða á samfélagsmiðlum eins og Facebook eða Twitter?",
+      "volunfp": "…tekið að þér sjálfboðastarf fyrir frjáls félaga- eða góðgerðasamtök?",
+      "pp_yes": "Já",
+      "pp_no": "Nei",
+      "debrief": "Takk fyrir þátttökuna."
+    },
+    "it": {
+      "pp_head": "Ci possono essere diversi modi per tentare di migliorare le cose in Italia o per impedire che peggiorino. Nel corso degli ultimi 12 mesi ha svolto qualcuna delle seguenti attività?",
+      "contplt": "…contattato un uomo politico o un funzionario pubblico (statale o dell'amministrazione locale)?",
+      "donprty": "…effettuato donazioni o partecipato alle attività di un partito politico o gruppo di pressione?",
+      "badge": "…messo in mostra (anche indossato) il simbolo di un'associazione o di una campagna a favore di qualcosa?",
+      "sgnptit": "…firmato una petizione?",
+      "pbldmn": "…partecipato ad una manifestazione pubblica?",
+      "bctprd": "…boicottato dei prodotti?",
+      "pstplt": "…postato o condiviso online qualcosa di politica, ad esempio su blog, per e-mail o su social media come Facebook o Twitter?",
+      "volunfp": "…fatto volontariato per un'organizzazione senza fini di lucro o un'organizzazione di beneficenza?",
+      "pp_yes": "Sì",
+      "pp_no": "No",
+      "debrief": "Grazie per aver completato questo questionario."
+    },
+    "lt": {
+      "pp_head": "Siekiant geresnio gyvenimo Lietuvoje arba norint užkirsti kelią gyvenimo blogėjimui galima imtis įvairių veiksmų. Ar per pastaruosius 12 mėn. jūs ėmėtės šių veiksmų?",
+      "contplt": "…kreipėtės į politikus, centrinės ar vietos valdžios atstovus?",
+      "donprty": "…aukojote politinei partijai, judėjimui ar iniciatyvinei grupei ar dalyvavote jų veikloje?",
+      "badge": "…nešiojote ar kitaip demonstravote kokios nors politinės, socialinės, ekologinės ar panašaus pobūdžio kampanijos simboliką?",
+      "sgnptit": "…pasirašėte peticiją?",
+      "pbldmn": "…dalyvavote viešoje demonstracijoje?",
+      "bctprd": "…boikotavote tam tikrus produktus?",
+      "pstplt": "…dalijotės ar publikavote ką nors apie politiką internete, pavyzdžiui, tinklaraščiuose (bloguose), elektroniniu paštu ar socialiniuose tinkluose, tokiuose kaip Facebook'as ar Twitter'is?",
+      "volunfp": "…savanoriavote pelno nesiekiančioje ar labdaros organizacijoje?",
+      "pp_yes": "Taip",
+      "pp_no": "Ne",
+      "debrief": "Ačiū, kad užpildėte šį klausimyną."
+    },
+    "lv": {
+      "pp_head": "Pastāv dažādi veidi, kā uzlabot Latvijā notiekošo vai palīdzēt novērst nopietnas problēmas. Vai pēdējo 12 mēnešu laikā jūs esat…",
+      "contplt": "…kontaktējies/-usies ar kādu politiķi, valdības vai pašvaldības amatpersonu?",
+      "donprty": "…ziedojis/-usi naudu vai darbojies/-usies politiskajā partijā vai kādā politiskā rīcības grupā?",
+      "badge": "…nēsājis/-usi vai demonstrējis/-usi kampaņas piespraudi/uzlīmi?",
+      "sgnptit": "…parakstījies/-usies petīciju?",
+      "pbldmn": "…piedalījies/-usies publiskā demonstrācijā?",
+      "bctprd": "…boikotējis/-usi noteiktus produktus?",
+      "pstplt": "…ierakstījies/-usi vai publicējis/-usi kaut ko par politiku tiešsaistē, piemēram, blogos, e-pastā vai tādos sociālajos medijos kā Facebook vai Twitter?",
+      "volunfp": "…brīvprātīgi piedalījies/-usies kādas bezpeļņas vai labdarības organizācijas darbā?",
+      "pp_yes": "Jā",
+      "pp_no": "Nē",
+      "debrief": "Paldies par dalību!"
+    },
+    "mk": {
+      "pp_head": "Постојат различни начини за да се подобрат работите во Северна Македонија или да се спречи тие да одат кон полошо. Дали во текот на изминатите 12 месеци сте направиле нешто од следново?",
+      "contplt": "…контактирале политичар, службено лице во владата или во општината?",
+      "donprty": "…донирале средства или сте учествувале во активности на политичка партија или група за политичко влијание?",
+      "badge": "…носеле или истакнале беџ/облека поврзана со некоја кампања?",
+      "sgnptit": "…потпишале петиција?",
+      "pbldmn": "…учествувале во јавни протести?",
+      "bctprd": "…бојкотирале одредени производи?",
+      "pstplt": "…објавиле или споделиле онлајн некаква содржина во врска со политика, на пример, на блог, преку електронска пошта или на социјални мрежи како Фејсбук или Твитер?",
+      "volunfp": "…волонтирале за непрофитна или за добротворна организација?",
+      "pp_yes": "Да",
+      "pp_no": "Не",
+      "debrief": "Ви благодариме за учеството!"
+    },
+    "nl": {
+      "pp_head": "Er zijn verschillende manieren om te proberen in Nederland dingen te verbeteren of om te helpen voorkomen dat dingen verkeerd gaan. Heeft u in de afgelopen 12 maanden één van de volgende dingen gedaan?",
+      "contplt": "…contact opgenomen met een politicus, een landelijke of gemeentelijke ambtenaar?",
+      "donprty": "…geld gedoneerd aan of bent u actief geweest in een politieke partij of actiegroep?",
+      "badge": "…een sticker of badge gedragen voor een campagne?",
+      "sgnptit": "…deelgenomen aan een handtekeningenactie?",
+      "pbldmn": "…deelgenomen aan een openbare demonstratie?",
+      "bctprd": "…bepaalde producten geboycot?",
+      "pstplt": "…online iets geplaatst of gedeeld over politiek, bijvoorbeeld op blogs, via e-mail of op sociale media zoals Facebook of Twitter?",
+      "volunfp": "…vrijwilligerswerk gedaan voor een non-profit- of goededoelenorganisatie?",
+      "pp_yes": "Ja",
+      "pp_no": "Nee",
+      "debrief": "Bedankt voor uw deelname."
+    },
+    "no": {
+      "pp_head": "Det finnes flere måter å gå frem på for å prøve å forbedre ulike forhold i Norge eller å forhindre at ting går galt. Har du i løpet av de siste 12 månedene gjort noe av følgende?",
+      "contplt": "…kontaktet en politiker eller en statlig, kommunal eller fylkeskommunal tjenestemann?",
+      "donprty": "…gitt penger til eller vært medlem av et politisk parti eller en interessegruppe?",
+      "badge": "…gått med eller vist frem et merke til støtte for en sak?",
+      "sgnptit": "…skrevet under på en underskriftskampanje?",
+      "pbldmn": "…deltatt i en lovlig offentlig demonstrasjon?",
+      "bctprd": "…boikottet spesielle produkter?",
+      "pstplt": "…lagt ut eller delt noe om politikk på nettet, for eksempel i blogger, via epost eller på sosiale medier slik som Facebook eller Twitter?",
+      "volunfp": "…gjort frivillig innsats for en ideell eller veldedig organisasjon?",
+      "pp_yes": "Ja",
+      "pp_no": "Nei",
+      "debrief": "Takk for din deltakelse."
+    },
+    "pl": {
+      "pp_head": "Istnieje różne sposoby działania na rzecz poprawy sytuacji w Polsce lub zapobiegania pogorszeniu się jej. Czy w ciągu ostatnich 12 miesięcy…",
+      "contplt": "…kontaktował się Pan z politykiem, urzędnikiem na szczeblu rządowym lub samorządowym?",
+      "donprty": "…wspierał Pan finansowo lub działał Pan w partii politycznej bądź organizacji społecznej lub politycznej?",
+      "badge": "…nosił Pan lub umieszczał w widocznym miejscu znaczek/nalepkę propagującą jakąś kampanię lub akcję?",
+      "sgnptit": "…podpisywał Pan petycję?",
+      "pbldmn": "…brał Pan udział w publicznej demonstracji?",
+      "bctprd": "…bojkotował Pan, celowo nie kupował określonych towarów, produktów?",
+      "pstplt": "…zamieszczał Pan w Internecie coś na temat polityki albo dzielił się Pan takimi treściami, na przykład na blogach, w mediach społecznościowych, takich jak Facebook, czy Twitter lub korzystając z poczty elektronicznej?",
+      "volunfp": "…działał Pan społecznie, jako wolontariusz, angażował się w działania organizacji pozarządowej lub charytatywnej?",
+      "pp_yes": "Tak",
+      "pp_no": "Nie",
+      "debrief": "Dziękujemy za wypełnienie ankiety."
+    },
+    "pt": {
+      "pp_head": "Há várias ações que se podem desenvolver para melhorar as coisas em Portugal ou para evitar que corram mal. Durante os últimos 12 meses, fez alguma das seguintes coisas?",
+      "contplt": "…contactou um político, um representante do governo central ou um representante do poder local?",
+      "donprty": "…contribuiu com donativos ou participou em algum partido político ou grupo de pressão?",
+      "badge": "…usou um emblema ou autocolante de campanha?",
+      "sgnptit": "…assinou uma petição?",
+      "pbldmn": "…participou numa manifestação?",
+      "bctprd": "…boicotou determinados produtos?",
+      "pstplt": "…publicou ou partilhou alguma coisa sobre política na internet, por exemplo em blogues, por e-mail ou em redes sociais como o Facebook ou o Twitter?",
+      "volunfp": "…ofereceu-se como voluntário/a de uma instituição sem fins lucrativos ou de solidariedade?",
+      "pp_yes": "Sim",
+      "pp_no": "Não",
+      "debrief": "Obrigado/a por ter completado este questionário."
+    },
+    "ru": {
+      "pp_head": "Существуют разные пути для исправления положения дел в стране или для предотвращения неправильного хода событий и процессов. В течение последних 12 месяцев Вы…",
+      "contplt": "…обращались к политикам, правительству или чиновникам местного самоуправления?",
+      "donprty": "…делали пожертвования или участвовали в работе политической партии или инициативной группы?",
+      "badge": "…носили или показывали значок/наклейку (предвыборной) кампании?",
+      "sgnptit": "…подписывали петицию?",
+      "pbldmn": "…принимали участие в какой-либо демонстрации?",
+      "bctprd": "…бойкотировали определенные продукты?",
+      "pstplt": "…публиковали или делились какими-либо материалами о политике в интернете, например, в блогах, посредством электронной почты или в социальных сетях, таких как Фейсбук или Твиттер?",
+      "volunfp": "…добровольно участвовали в работе некоммерческой или благотворительной организации?",
+      "pp_yes": "Да",
+      "pp_no": "Нет",
+      "debrief": "Благодарим Вас за участие."
+    },
+    "sk": {
+      "pp_head": "Sú rozličné spôsoby, ako sa pokúsiť zlepšiť veci na Slovensku alebo ako pomôcť zabrániť, aby sa veci zhoršili. Počas posledných 12 mesiacov urobili ste niečo z nasledovných vecí?",
+      "contplt": "…obrátili ste sa na politika, vládu alebo predstaviteľa miestnej samosprávy?",
+      "donprty": "…darovali ste niečo politickej strane alebo skupine presadzujúcej názory alebo ste boli jej súčasťou?",
+      "badge": "…nosili ste odznak alebo vylepili plagát nejakej kampane?",
+      "sgnptit": "…podpísali ste petíciu?",
+      "pbldmn": "…zúčastnili ste sa verejnej demonštrácie?",
+      "bctprd": "…bojkotovali ste nejaké produkty?",
+      "pstplt": "…uverejnili ste alebo šírili hocičo o politike online, napríklad na blogoch, emailom alebo na sociálnych médiách ako Facebook alebo Twitter?",
+      "volunfp": "…boli ste dobrovoľníkom/čkou pre neziskovú alebo charitatívnu organizáciu?",
+      "pp_yes": "Áno",
+      "pp_no": "Nie",
+      "debrief": "Ďakujeme za vyplnenie dotazníka."
+    },
+    "sl": {
+      "pp_head": "Obstaja več načinov, kako bi v Sloveniji lahko izboljšali stvari ali pa preprečili, da bi šlo kaj narobe. Ali ste v zadnjih 12 mesecih naredili kaj od navedenega?",
+      "contplt": "…stopili v stik s politikom ali predstavnikom državne ali občinske oblasti?",
+      "donprty": "…donirali ali delovali v politični stranki ali skupini aktivistov?",
+      "badge": "…nosili značko ali nalepko v podporo neki politični akciji?",
+      "sgnptit": "…podpisali peticijo?",
+      "pbldmn": "…se udeležili demonstracij?",
+      "bctprd": "…bojkotirali določene izdelke?",
+      "pstplt": "…objavili ali delili z drugimi karkoli o politiki na spletu, na primer v blogih, po elektronski pošti ali na družbenih omrežjih kot sta Facebook ali Twitter?",
+      "volunfp": "…delali kot prostovoljec v neprofitni ali dobrodelni organizaciji?",
+      "pp_yes": "Da",
+      "pp_no": "Ne",
+      "debrief": "Hvala za sodelovanje."
+    },
+    "sq": {
+      "pp_head": "Ka mënyra të ndryshme në përpjekje për të përmirësuar gjërat ose për të ndihmuar në parandalimin e problemeve. Gjatë 12 muajve të fundit, a keni bërë ndonjë nga gjërat në vijim?",
+      "contplt": "…kontaktuar me një politikan, zyrtar qeveritar ose të pushtetit lokal?",
+      "donprty": "…dhënë donacion ose keni marrë pjesë në aktivitete të një partie politike apo grupi për ndikim politik?",
+      "badge": "…mbajtur ose shfaqur simbole/shenja të fushatave?",
+      "sgnptit": "…nënshkruar ndonjë peticion?",
+      "pbldmn": "…marrë pjesë në një demonstratë publike?",
+      "bctprd": "…bojkotuar produkte të caktuara?",
+      "pstplt": "…postuar ose ndarë online çfarëdo lloj përmbajtje rreth politikës, për shembull në blogje, me e-mail ose në rrjete sociale si Facebook ose Twitter?",
+      "volunfp": "…punuar vullnetar për një organizatë jofitimprurëse ose bamirëse?",
+      "pp_yes": "Po",
+      "pp_no": "Jo",
+      "debrief": "Faleminderit për pjesëmarrjen."
+    },
+    "sr": {
+      "pp_head": "Postoje razni načini na koje bi se moglo pokušati da se stvari u Srbiji poboljšaju ili da se spreči da stvari krenu nagore. Da li ste tokom poslednjih 12 meseci…",
+      "contplt": "…kontaktirali nekog političara, predstavnike republičkih ili lokalnih vlasti?",
+      "donprty": "…dali donaciju ili učestvovali u radu političke stranke ili aktivističke grupe?",
+      "badge": "…nosili transparent, zastavu ili bedž ili isticali poster ili nalepnicu određene političke kampanje?",
+      "sgnptit": "…potpisali neku peticiju?",
+      "pbldmn": "…učestvovali u javnim demonstracijama?",
+      "bctprd": "…bojkotovali određene proizvode?",
+      "pstplt": "…objavili ili podelili bilo šta vezano za politiku na internetu, na primer, na blogovima, putem elektronske pošte ili na društvenim mrežama, poput Fejsbuka ili Tvitera?",
+      "volunfp": "…volontirali u neprofitnoj ili dobrotvornoj organizaciji?",
+      "pp_yes": "Da",
+      "pp_no": "Ne",
+      "debrief": "Hvala na učešću."
+    },
+    "sv": {
+      "pp_head": "Det finns olika sätt att försöka förbättra saker i Sverige eller att försöka förhindra att saker går fel. Har du under de senaste 12 månaderna gjort något av följande?",
+      "contplt": "…kontaktat en politiker eller offentlig tjänsteman på riks- eller lokal nivå?",
+      "donprty": "…donerat till eller deltagit i ett politiskt parti eller påtryckningsgrupp?",
+      "badge": "…burit eller visat upp något kampanjmärke?",
+      "sgnptit": "…skrivit under en namninsamling?",
+      "pbldmn": "…deltagit i en demonstration?",
+      "bctprd": "…bojkottat vissa produkter?",
+      "pstplt": "…publicerat eller delat något om politik på nätet, till exempel i bloggar, via e-post eller i sociala medier som Facebook eller Twitter?",
+      "volunfp": "…arbetat som frivillig för en ideell organisation eller välgörenhetsorganisation?",
+      "pp_yes": "Ja",
+      "pp_no": "Nej",
+      "debrief": "Tack för din medverkan."
+    }
+  }
+}

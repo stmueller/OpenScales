@@ -1,0 +1,677 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "ESS-ITS",
+      "name": "Institutional Trust Scale (ESS)",
+      "abbreviation": "ESS-ITS",
+      "description": "7-item measure of trust in political and civic institutions, using core items from the European Social Survey administered since Round 1 (2002). Respondents rate trust in parliament, the legal system, police, politicians, political parties, the European Parliament, and the United Nations on 0–10 scales. Three subscales reflect domestic political trust, order institutions, and supranational trust.",
+      "citation": "Torcal, M. (2014). The decline of political trust in Spain and Portugal: Economic performance or political responsiveness? American Behavioral Scientist, 58(12), 1542–1567. https://doi.org/10.1177/0002764214534662\nZmerli, S., & Newton, K. (2008). Social trust and attitudes toward democracy. Public Opinion Quarterly, 72(4), 706–724. https://doi.org/10.1093/poq/nfn054\nESS ERIC (2022). ESS Round 10 Source Questionnaire. https://ess.sikt.no\nEuropean Social Survey European Research Infrastructure (ESS ERIC) (2025) ESS round 11 - 2023. Social inequalities in health, Gender in contemporary Europe. Sikt - Norwegian Agency for Shared Services in Education and Research. https://doi.org/10.21338/ess11-2023.",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://www.europeansocialsurvey.org/contact/disclaimer",
+      "license_explanation": "ESS item texts and documentation are published under CC BY-SA 4.0 by ESS ERIC.",
+      "url": "https://www.europeansocialsurvey.org/methodology/source-questionnaire",
+      "version": "1.0",
+      "domain": "Social & Political"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-14",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "notes": "Items B6–B12 from ESS10 GB source questionnaire. ESS variable names used as item IDs. Country-specific text ([country's] parliament) is parameterized via the 'country' translation key. trstep (European Parliament) and trstun (United Nations) may be less relevant outside European contexts — implementers may omit from total scoring."
+    },
+    "likert_options": {
+      "points": 11,
+      "min": 0,
+      "question_head": "its_head"
+    },
+    "dimensions": [
+      {
+        "id": "domestic_political",
+        "name": "Domestic Political Trust",
+        "description": "Trust in parliament, politicians, and political parties. Items: trstprl, trstplt, trstprt."
+      },
+      {
+        "id": "order",
+        "name": "Order Institutions Trust",
+        "description": "Trust in the legal system and police. Items: trstlgl, trstplc."
+      },
+      {
+        "id": "supranational",
+        "name": "Supranational Trust",
+        "description": "Trust in the European Parliament and United Nations. Items: trstep, trstun."
+      },
+      {
+        "id": "total",
+        "name": "Institutional Trust",
+        "description": "Mean of all 7 items. Range 0–10; higher = greater institutional trust."
+      }
+    ],
+    "items": [
+      {
+        "id": "trstprl",
+        "type": "likert",
+        "text_key": "trstprl",
+        "dimension": "domestic_political",
+        "likert_options": {
+          "labels": [
+            "its_lo",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "its_hi"
+          ]
+        }
+      },
+      {
+        "id": "trstlgl",
+        "type": "likert",
+        "text_key": "trstlgl",
+        "dimension": "order",
+        "likert_options": {
+          "labels": [
+            "its_lo",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "its_hi"
+          ]
+        }
+      },
+      {
+        "id": "trstplc",
+        "type": "likert",
+        "text_key": "trstplc",
+        "dimension": "order",
+        "likert_options": {
+          "labels": [
+            "its_lo",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "its_hi"
+          ]
+        }
+      },
+      {
+        "id": "trstplt",
+        "type": "likert",
+        "text_key": "trstplt",
+        "dimension": "domestic_political",
+        "likert_options": {
+          "labels": [
+            "its_lo",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "its_hi"
+          ]
+        }
+      },
+      {
+        "id": "trstprt",
+        "type": "likert",
+        "text_key": "trstprt",
+        "dimension": "domestic_political",
+        "likert_options": {
+          "labels": [
+            "its_lo",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "its_hi"
+          ]
+        }
+      },
+      {
+        "id": "trstep",
+        "type": "likert",
+        "text_key": "trstep",
+        "dimension": "supranational",
+        "likert_options": {
+          "labels": [
+            "its_lo",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "its_hi"
+          ]
+        }
+      },
+      {
+        "id": "trstun",
+        "type": "likert",
+        "text_key": "trstun",
+        "dimension": "supranational",
+        "likert_options": {
+          "labels": [
+            "its_lo",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "its_hi"
+          ]
+        }
+      }
+    ],
+    "scoring": {
+      "domestic_political": {
+        "method": "mean_coded",
+        "description": "Mean of trstprl, trstplt, trstprt. Range 0–10; higher = greater trust.",
+        "items": {
+          "trstprl": 1,
+          "trstplt": 1,
+          "trstprt": 1
+        }
+      },
+      "order": {
+        "method": "mean_coded",
+        "description": "Mean of trstlgl, trstplc. Range 0–10; higher = greater trust.",
+        "items": {
+          "trstlgl": 1,
+          "trstplc": 1
+        }
+      },
+      "supranational": {
+        "method": "mean_coded",
+        "description": "Mean of trstep, trstun. Range 0–10; higher = greater trust.",
+        "items": {
+          "trstep": 1,
+          "trstun": 1
+        }
+      },
+      "total": {
+        "method": "mean_coded",
+        "description": "Mean of all 7 items. Range 0–10; higher = greater institutional trust.",
+        "items": {
+          "trstprl": 1,
+          "trstlgl": 1,
+          "trstplc": 1,
+          "trstplt": 1,
+          "trstprt": 1,
+          "trstep": 1,
+          "trstun": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Institutional Trust Scale (ESS) Report",
+      "footer_refs": [
+        "ESS ERIC (2022). ESS Round 10 Source Questionnaire. https://ess.sikt.no. License: CC BY-SA 4.0.",
+        "Scoring: mean of items per subscale and total. Range 0–10; higher = greater trust."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "its_inst": "Please tell me on a score of 0 to 10 how much you personally trust each of the institutions I read out. 0 means you do not trust an institution at all, and 10 means you have complete trust.",
+      "its_head": "How much do you trust each institution?",
+      "its_lo": "No trust at all",
+      "its_hi": "Complete trust",
+      "trstprl": "The country's parliament",
+      "trstlgl": "The legal system",
+      "trstplc": "The police",
+      "trstplt": "Politicians",
+      "trstprt": "Political parties",
+      "trstep": "The European Parliament",
+      "trstun": "The United Nations",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "ar": {
+      "its_inst": "على سلم بين 0 إلى 10، إلى أي مدى أنت بشكل شخصي لديك ثقة بكل واحدة من المؤسسات التالية؟ إختر/إختاري إجابة واحدة فقط.",
+      "its_head": "إلى أي مدى لديك ثقة في كل مؤسسة؟",
+      "its_lo": "لا أثق بتاتاً",
+      "its_hi": "أثق ثقة تامة",
+      "trstprl": "الكنيست",
+      "trstlgl": "الجهاز القضائي",
+      "trstplc": "الشرطة",
+      "trstplt": "السياسيون",
+      "trstprt": "الأحزاب السياسية",
+      "trstep": "البرلمان الأوروبي",
+      "trstun": "الأمم المتحدة",
+      "debrief": "نشكرك جزيل الشكر على مشاركتك في الاستطلاع."
+    },
+    "at": {
+      "its_inst": "A17-24 Auf einer Skala von 0-10, wie sehr vertrauen Sie persönlich jeder der folgenden Institutionen? Kreuzen Sie für jede Aussage einen Kreis an.",
+      "its_head": "Wie sehr vertrauen Sie persönlich jeder der folgenden Institutionen?",
+      "its_lo": "Überhaupt kein Vertrauen",
+      "its_hi": "Vollkommenes Vertrauen",
+      "trstprl": "Dem österreichischen Parlament",
+      "trstlgl": "Der Justiz",
+      "trstplc": "Der Polizei",
+      "trstplt": "Den Politikerinnen und Politikern",
+      "trstprt": "Den politischen Parteien",
+      "trstep": "Dem Europäischen Parlament",
+      "trstun": "Den Vereinten Nationen",
+      "debrief": "Vielen Dank, dass Sie diese Umfrage ausgefüllt haben."
+    },
+    "bg": {
+      "its_inst": "Моля, посочете на скалата от 0 до 10 в каква степен имате доверие на всяка от институциите, които ще Ви изброя. \"0\" означава, че нямате никакво доверие, а \"10\", че имате пълно доверие. ПРОЧЕТЕТЕ...",
+      "its_head": "В каква степен имате доверие на всяка от тези институции?",
+      "its_lo": "Нямам никакво доверие",
+      "its_hi": "Имам пълно доверие",
+      "trstprl": "Българския парламент",
+      "trstlgl": "Съдебната система",
+      "trstplc": "Полицията",
+      "trstplt": "Политиците",
+      "trstprt": "Политическите партии",
+      "trstep": "Европейския парламент",
+      "trstun": "Организацията на обединените нации (ООН)",
+      "debrief": "БЛАГОДАРЯ ВИ!"
+    },
+    "cnr": {
+      "its_inst": "MISSING",
+      "its_head": "MISSING",
+      "its_lo": "MISSING",
+      "its_hi": "MISSING",
+      "trstprl": "MISSING",
+      "trstlgl": "MISSING",
+      "trstplc": "MISSING",
+      "trstplt": "MISSING",
+      "trstprt": "MISSING",
+      "trstep": "MISSING",
+      "trstun": "MISSING",
+      "debrief": "HVALA VAM NA VREMENU KOJE STE ODVOJILI ZA OVAJ UPITNIK."
+    },
+    "cs": {
+      "its_inst": "Řekněte mi prosím s použitím stupnice 0-10 jak moc vy osobně důvěřujete institucím, které budu číst nahlas. 0 znamená, že instituci vůbec nedůvěřujete, 10 znamená, že jí naprosto důvěřujete. Zaprvé… ČTĚTE NAHLAS…",
+      "its_head": "Jak moc osobně důvěřujete každé z těchto institucí?",
+      "its_lo": "Vůbec žádná důvěra",
+      "its_hi": "Naprostá důvěra",
+      "trstprl": "českému parlamentu",
+      "trstlgl": "právnímu systému",
+      "trstplc": "policii",
+      "trstplt": "politikům",
+      "trstprt": "politickým stranám",
+      "trstep": "Evropskému parlamentu",
+      "trstun": "Organizaci spojených národů",
+      "debrief": "Přesto děkujeme za vaši pomoc s tímto rozhovorem."
+    },
+    "de": {
+      "its_inst": "A17-24 Auf einer Skala von 0 bis 10, wie sehr vertrauen Sie persönlich jeder der folgenden öffentlichen Einrichtungen oder Personengruppen? Markieren Sie für jede Einrichtung oder Personengruppe einen Wert.",
+      "its_head": "Wie sehr vertrauen Sie persönlich jeder der folgenden Einrichtungen?",
+      "its_lo": "Vertraue überhaupt nicht",
+      "its_hi": "Vertraue voll und ganz",
+      "trstprl": "Dem Bundestag",
+      "trstlgl": "Der Justiz",
+      "trstplc": "Der Polizei",
+      "trstplt": "Den Politikern und Politikerinnen",
+      "trstprt": "Den Parteien",
+      "trstep": "Dem Europäischen Parlament",
+      "trstun": "Den Vereinten Nationen",
+      "debrief": "Vielen Dank für die Teilnahme an dieser Umfrage - wir danken Ihnen herzlich, dass Sie sich die Zeit dafür genommen haben."
+    },
+    "el": {
+      "its_inst": "Χρησιμοποιώντας αυτή την κάρτα, πείτε μου βαθμολογώντας από το 0-10, πόσο εσείς προσωπικά εμπιστεύεστε κάθε έναν από τους θεσμούς που θα σας διαβάσω. Το 0 σημαίνει ότι δεν έχετε καμία απολύτως εμπιστοσύνη και το 10 σημαίνει ότι έχετε απόλυτη εμπιστοσύνη. Πείτε μου πρώτα για… ΔΙΑΒΑΣΤΕ ΔΥΝΑΤΑ…",
+      "its_head": "Πόσο εμπιστεύεστε κάθε έναν από αυτούς τους θεσμούς;",
+      "its_lo": "Καμία εμπιστοσύνη",
+      "its_hi": "Απόλυτη εμπιστοσύνη",
+      "trstprl": "το Ελληνικό κοινοβούλιο",
+      "trstlgl": "τη δικαιοσύνη",
+      "trstplc": "την αστυνομία",
+      "trstplt": "τους πολιτικούς",
+      "trstprt": "τα πολιτικά κόμματα",
+      "trstep": "το Ευρωπαϊκό Κοινοβούλιο",
+      "trstun": "τα Ηνωμένα Έθνη",
+      "debrief": "ΣΑΣ ΕΥΧΑΡΙΣΤΟΥΜΕ ΠΟΥ ΑΦΙΕΡΩΣΑΤΕ ΧΡΟΝΟ ΝΑ ΑΠΑΝΤΗΣΕΤΕ ΣΕ ΑΥΤΕΣ ΤΙΣ ΕΡΩΤΗΣΕΙΣ."
+    },
+    "es": {
+      "its_inst": "A17-24 En una escala de 0 a 10, usted personalmente, ¿cuánto confía en cada una de las siguientes instituciones? Marque un círculo para cada frase.",
+      "its_head": "¿Cuánto confía personalmente en cada una de las siguientes instituciones?",
+      "its_lo": "No confío en absoluto",
+      "its_hi": "Confío plenamente",
+      "trstprl": "El parlamento español",
+      "trstlgl": "El sistema judicial",
+      "trstplc": "La policía",
+      "trstplt": "Los políticos",
+      "trstprt": "Los partidos políticos",
+      "trstep": "El Parlamento Europeo",
+      "trstun": "Las Naciones Unidas",
+      "debrief": "Gracias por su colaboración."
+    },
+    "et": {
+      "its_inst": "Järgnevalt palun vastake, kuivõrd Teie usaldate järgmisi institutsioone, mida ma Teile ette loen. Vastamiseks kasutage 10-pallist skaalat, kus 0 tähendab, et Te seda institutsiooni üldse ei usalda ja 10 tähendab, et usaldate täielikult. Vastamiseks kasutage kaarti 9. Esiteks, kuivõrd usaldate… LUGEGE ETTE…",
+      "its_head": "Kuivõrd Te usaldate iga järgmist institutsiooni?",
+      "its_lo": "Ei usalda üldse",
+      "its_hi": "Usaldan täielikult",
+      "trstprl": "Eesti Riigikogu",
+      "trstlgl": "Eesti õigussüsteemi",
+      "trstplc": "Eesti politseid",
+      "trstplt": "Eesti poliitikuid",
+      "trstprt": "Eesti poliitilisi parteisid ja erakondi",
+      "trstep": "Euroopa Parlamenti",
+      "trstun": "Ühinenud Rahvaste Organisatsiooni",
+      "debrief": "LÕPP."
+    },
+    "fi": {
+      "its_inst": "Käytä tätä korttia ja kerro asteikolla nollasta kymmeneen, kuinka paljon henkilökohtaisesti luotat seuraavaksi luettelemiini tahoihin. Nolla tarkoittaa sitä, että et luota ollenkaan kyseiseen tahoon ja 10 sitä, että luotat erittäin vahvasti kyseiseen tahoon. Ensinnäkin:",
+      "its_head": "Kuinka paljon henkilökohtaisesti luotat kuhunkin näistä tahoista?",
+      "its_lo": "En luota ollenkaan",
+      "its_hi": "Luotan täysin",
+      "trstprl": "Eduskunta",
+      "trstlgl": "Oikeusjärjestelmä",
+      "trstplc": "Poliisi",
+      "trstplt": "Poliitikot",
+      "trstprt": "Poliittiset puolueet",
+      "trstep": "Euroopan parlamentti",
+      "trstun": "YK eli Yhdistyneet Kansakunnat",
+      "debrief": "Kiitos vastauksestasi!"
+    },
+    "fr": {
+      "its_inst": "À l'aide de cette liste de réponses, dites-moi sur une échelle de 0 à 10, quelle confiance vous faites, personnellement, à chacune de ces institutions. 0 signifie « Pas du tout confiance », 10 signifie « Complètement confiance ». Commençons par… ENQR : LIRE A VOIX HAUTE",
+      "its_head": "Quelle confiance faites-vous personnellement à chacune de ces institutions ?",
+      "its_lo": "Pas du tout confiance",
+      "its_hi": "Complètement confiance",
+      "trstprl": "l'Assemblée nationale",
+      "trstlgl": "la justice",
+      "trstplc": "la police",
+      "trstplt": "les hommes et les femmes politiques",
+      "trstprt": "les partis politiques",
+      "trstep": "le parlement européen",
+      "trstun": "l'ONU (les Nations Unies)",
+      "debrief": "MERCI D'AVOIR PRIS LE TEMPS DE RÉPONDRE À CES QUESTIONS."
+    },
+    "he": {
+      "its_inst": "בסולם מ-0 עד 10 באיזו מידה את/ה אישית רוחש/ת אמון לכל אחד מן המוסדות הבאים. בחר/י תשובה אחת עבור כל אחד מהמוסדות הבאים.",
+      "its_head": "באיזו מידה את/ה אישית רוחש/ת אמון לכל מוסד?",
+      "its_lo": "כלל לא רוחש/ת אמון",
+      "its_hi": "רוחש/ת אמון מלא",
+      "trstprl": "הכנסת",
+      "trstlgl": "המערכת המשפטית",
+      "trstplc": "המשטרה",
+      "trstplt": "הפוליטיקאים",
+      "trstprt": "המפלגות",
+      "trstep": "הפרלמנט האירופי",
+      "trstun": "האו\"ם",
+      "debrief": "אנחנו אסירי תודה על כך שאתה/את מקדיש/מקדישה את הזמן למילוי השאלון."
+    },
+    "hr": {
+      "its_inst": "Koristeći ovu karticu, molim vas odaberite jedan broj na skali od 0-10 koji najbolje opisuje koliko vi osobno vjerujete svakoj od institucija koje ću pročitati. Nula znači da uopće ne vjerujete toj instituciji, a 10 da imate potpuno povjerenje. Za početak, koliko vjerujete… PROČITAJTE NAGLAS…",
+      "its_head": "Koliko osobno vjerujete svakoj od tih institucija?",
+      "its_lo": "Uopće nemam povjerenja",
+      "its_hi": "Imam potpuno povjerenje",
+      "trstprl": "Hrvatskom saboru",
+      "trstlgl": "pravosuđu",
+      "trstplc": "policiji",
+      "trstplt": "političarima",
+      "trstprt": "strankama",
+      "trstep": "Europskom parlamentu",
+      "trstun": "Ujedinjenim narodima",
+      "debrief": "HVALA VAM NA IZDVOJENOM VREMENU ZA ODGOVARANJE NA POSTAVLJENA PITANJA."
+    },
+    "hu": {
+      "its_inst": "Kérem mondja meg, hogy Ön személy szerint mennyire bízik a következő intézményekben. A \"0\" azt jelenti, hogy Ön egyáltalán nem bízik az adott intézményben, a \"10\" pedig azt jelenti, hogy teljesen megbízik benne. Ön mennyire bízik meg… Kérem, használja a 9. kártyalapot! KÉRDEZŐ: OLVASD FEL!",
+      "its_head": "Mennyire bízik személyesen minden egyes intézményben?",
+      "its_lo": "egyáltalán nem bízik meg",
+      "its_hi": "teljesen megbízik",
+      "trstprl": "a magyar Országgyűlésben",
+      "trstlgl": "a magyar jogrendszerben",
+      "trstplc": "a rendőrségben",
+      "trstplt": "a politikusokban",
+      "trstprt": "a politikai pártokban",
+      "trstep": "az Európai Parlamentben",
+      "trstun": "az ENSZ-ben (Egyesült Nemzetek Szervezetében)",
+      "debrief": "KÖSZÖNJÜK, HOGY IDŐT SZENTELT A KÉRDÉSEK MEGVÁLASZOLÁSÁRA!"
+    },
+    "is": {
+      "its_inst": "Með því að nota þetta spjald til að svara, hversu mikið traust berð þú til eftirfarandi stofnana eða aðila sem ég tel upp? 0 þýðir að þú treystir þeim alls ekki og 10 að þú treystir þeim fullkomlega. Hversu mikið traust berð þú til... LESA UPP…",
+      "its_head": "Hversu mikið traust berð þú til hverrar stofnunar?",
+      "its_lo": "Treysti alls ekki",
+      "its_hi": "Treysti fullkomlega",
+      "trstprl": "Alþingis",
+      "trstlgl": "réttarkerfisins",
+      "trstplc": "lögreglunnar",
+      "trstplt": "stjórnmálamanna",
+      "trstprt": "stjórnmálaflokka",
+      "trstep": "Evrópuþingsins",
+      "trstun": "Sameinuðu þjóðanna",
+      "debrief": "ÞAKKA ÞÉR FYRIR AÐ GEFA ÞÉR TÍMA TIL AÐ SVARA ÞESSUM SPURNINGUM."
+    },
+    "it": {
+      "its_inst": "Utilizzando questo cartellino, mi dica per favore, su una scala da 0 a 10, qual è il grado di fiducia che Lei personalmente ripone nelle istituzioni che le leggerò. 0 corrisponde a un'assoluta mancanza di fiducia nell'istituzione e 10 ad una totale fiducia. Innanzitutto... LEGGERE...",
+      "its_head": "Qual è il grado di fiducia che ripone personalmente in ogni istituzione?",
+      "its_lo": "Nessuna fiducia",
+      "its_hi": "Totale fiducia",
+      "trstprl": "Il Parlamento italiano",
+      "trstlgl": "La Magistratura",
+      "trstplc": "La Polizia",
+      "trstplt": "I politici",
+      "trstprt": "I partiti politici",
+      "trstep": "Il Parlamento europeo",
+      "trstun": "Le Nazioni Unite",
+      "debrief": "GRAZIE PER IL TEMPO DEDICATO A RISPONDERE A QUESTE DOMANDE."
+    },
+    "lt": {
+      "its_inst": "Naudodamiesi šia kortele įvertinkite skalėje nuo 0 iki 10, kiek jūs asmeniškai pasitikite kiekviena iš institucijų, kurias aš išvardinsiu? 0 skalėje reiškia, kad jūs visiškai nepasitikite institucija, o 10 – kad jūs visiškai ja pasitikite. Taigi kiek jūs pasitikite... INSTITUCIJŲ SĄRAŠĄ RESPONDENTUI PERSKAITYTI GARSIAI PO VIENĄ.",
+      "its_head": "Kiek asmeniškai pasitikite kiekviena iš šių institucijų?",
+      "its_lo": "Visiškai nepasitikiu",
+      "its_hi": "Visiškai pasitikiu",
+      "trstprl": "Seimu",
+      "trstlgl": "teisine sistema",
+      "trstplc": "policija",
+      "trstplt": "politikais",
+      "trstprt": "politinėmis partijomis",
+      "trstep": "Europos parlamentu",
+      "trstun": "Jungtinių tautų organizacija",
+      "debrief": "DĖKOJAME UŽ SUGAIŠTĄ LAIKĄ ATSAKINĖJANT Į ŠIUOS KLAUSIMUS!"
+    },
+    "lv": {
+      "its_inst": "A17-24 Skalā no 0 līdz 10, cik lielā mērā jūs personīgi uzticaties katrai no šādām institūcijām? Atzīmējiet vienu apli katram apgalvojumam.",
+      "its_head": "Cik lielā mērā personīgi uzticaties katrai no šīm institūcijām?",
+      "its_lo": "Nemaz neuzticos",
+      "its_hi": "Pilnībā uzticos",
+      "trstprl": "Saeimai",
+      "trstlgl": "Tieslietu sistēmai",
+      "trstplc": "Policijai",
+      "trstplt": "Politiķiem",
+      "trstprt": "Politiskajām partijām",
+      "trstep": "Eiropas Parlamentam",
+      "trstun": "Apvienoto Nāciju Organizācijai",
+      "debrief": "Paldies, ka pabeidzāt šo aptauju! Mēs ļoti pateicamies jums, ka veltījāt tam laiku!"
+    },
+    "mk": {
+      "its_inst": "Користејќи ја оваа показна карта, Ве молам оценете на скала од 0 до 10 колку Вие лично имате доверба во секоја од институциите кои ќе ги прочитам. 0 значи дека воопшто немате доверба, а 10 значи дека имате целосна доверба. Прво... ПРОЧИТАЈТЕ...",
+      "its_head": "Колку лично имате доверба во секоја од овие институции?",
+      "its_lo": "Воопшто немам доверба",
+      "its_hi": "Имам целосна доверба",
+      "trstprl": "Собранието на Република Северна Македонија",
+      "trstlgl": "правниот систем",
+      "trstplc": "полицијата",
+      "trstplt": "политичарите",
+      "trstprt": "политичките партии",
+      "trstep": "Европскиот парламент",
+      "trstun": "Обединетите Нации",
+      "debrief": "ВИ БЛАГОДАРИМЕ ШТО ОДВОИВТЕ ВРЕМЕ ЗА ДА ГИ ОДГОВОРИТЕ ОВИЕ ПРАШАЊА."
+    },
+    "nl": {
+      "its_inst": "Gebruik deze kaart. Kunt u op een schaal van 0 tot 10 aangeven hoeveel vertrouwen u persoonlijk heeft in elk van de instellingen die ik oplees? 0 betekent dat u helemaal geen vertrouwen heeft in een instelling en 10 dat u volledig vertrouwen heeft. Ten eerste... LEES VOOR...",
+      "its_head": "Hoeveel vertrouwen heeft u persoonlijk in elk van deze instellingen?",
+      "its_lo": "Helemaal geen vertrouwen",
+      "its_hi": "Volledig vertrouwen",
+      "trstprl": "het Nederlands parlement",
+      "trstlgl": "het rechtsstelsel",
+      "trstplc": "de politie",
+      "trstplt": "politici",
+      "trstprt": "politieke partijen",
+      "trstep": "het Europees Parlement",
+      "trstun": "de Verenigde Naties",
+      "debrief": "HARTELIJK DANK VOOR UW MEDEWERKING!"
+    },
+    "no": {
+      "its_inst": "Se på dette kortet og fortell meg på en skala fra 0 til 10 hvor stor tillit du personlig har til hver av de institusjonene jeg leser opp. 0 står for at du ikke har noen tillit til institusjonen i det hele tatt, mens 10 står for at du har full tillit til institusjonen. Vi begynner med… LES OPP…",
+      "its_head": "Hvor stor tillit har du personlig til hver av disse institusjonene?",
+      "its_lo": "Ingen tillit i det hele tatt",
+      "its_hi": "Full tillit",
+      "trstprl": "Stortinget",
+      "trstlgl": "rettsvesenet",
+      "trstplc": "politiet",
+      "trstplt": "politikere",
+      "trstprt": "politiske partier",
+      "trstep": "Europa-parlamentet",
+      "trstun": "FN",
+      "debrief": "TAKK FOR AT DU TOK DEG TID TIL Å SVARE PÅ DISSE SPØRSMÅLENE"
+    },
+    "pl": {
+      "its_inst": "A17-24 Proszę wskazać na skali od 0 do 10 na ile osobiście ma Pan zaufanie do każdej z następujących instytucji. Proszę zaznaczyć jedno kółko przy każdym stwierdzeniu.",
+      "its_head": "Na ile osobiście ma Pan/Pani zaufanie do każdej z następujących instytucji?",
+      "its_lo": "Całkowity brak zaufania",
+      "its_hi": "Całkowite zaufanie",
+      "trstprl": "Polskiego parlamentu, tzn. Sejmu i Senatu",
+      "trstlgl": "Systemu prawnego",
+      "trstplc": "Policji",
+      "trstplt": "Polityków",
+      "trstprt": "Partii politycznych",
+      "trstep": "Parlamentu Europejskiego",
+      "trstun": "Organizacji Narodów Zjednoczonych",
+      "debrief": "Dziękujemy Pani za wypełnienie tej ankiety - bardzo doceniamy poświęcony przez Panią czas."
+    },
+    "pt": {
+      "its_inst": "Diga-me, por favor, qual a confiança pessoal que tem em cada uma das instituições que lhe vou dizer. Situe a sua posição nesta escala em que 0 significa que não tem nenhuma confiança na instituição que referi e uma pontuação de 10 quer dizer que tem toda a confiança nessa instituição. LER UMA INSTITUIÇÃO E CODIFICAR A RESPECTIVA RESPOSTA.",
+      "its_head": "Qual a confiança pessoal que tem em cada uma destas instituições?",
+      "its_lo": "Nenhuma confiança",
+      "its_hi": "Toda a confiança",
+      "trstprl": "Assembleia da República",
+      "trstlgl": "sistema jurídico",
+      "trstplc": "polícia",
+      "trstplt": "políticos",
+      "trstprt": "partidos políticos",
+      "trstep": "Parlamento Europeu",
+      "trstun": "Nações Unidas",
+      "debrief": "Obrigado pela sua ajuda nesta entrevista."
+    },
+    "ru": {
+      "its_inst": "Используя эту карточку со шкалой от 0 до 10, ответьте, пожалуйста, насколько Вы лично можете доверять, каждой из организаций, названия которых я прочитаю. 0 означает, что Вы совершенно не доверяете этой организации, а 10 означает, что Вы полностью ей доверяете. Для ответа используйте карточку 9. Итак... ЗАЧИТАЙТЕ…",
+      "its_head": "Насколько Вы лично доверяете каждой из этих организаций?",
+      "its_lo": "Совсем не доверяю",
+      "its_hi": "Полностью доверяю",
+      "trstprl": "парламенту Эстонии",
+      "trstlgl": "законодательной (правовой) системе",
+      "trstplc": "полиции",
+      "trstplt": "политикам",
+      "trstprt": "политическим партиям",
+      "trstep": "Европейскому парламенту",
+      "trstun": "Организации Объединенных Наций (ООН)",
+      "debrief": "КОМАНДА ЕВРОПЕЙСКОГО СОЦИАЛЬНОГО ИССЛЕДОВАНИЯ БЛАГОДАРИТ ВАС!!!"
+    },
+    "sk": {
+      "its_inst": "Použite túto kartu a povedzte mi, prosím, na škále od 0 do 10 nakoľko vy osobne dôverujete každej z inštitúcií, ktoré prečítam. 0 znamená, že inštitúcii nedôverujete vôbec a 10 znamená, že inštitúcii dôveruje úplne. Takže... PREČÍTAJTE NAHLAS...",
+      "its_head": "Nakoľko osobne dôverujete každej z týchto inštitúcií?",
+      "its_lo": "Vôbec nedôverujem",
+      "its_hi": "Úplne dôverujem",
+      "trstprl": "slovenskému parlamentu",
+      "trstlgl": "právnemu systému",
+      "trstplc": "polícii",
+      "trstplt": "politikom",
+      "trstprt": "politickým stranám",
+      "trstep": "Európskemu parlamentu",
+      "trstun": "Organizácii spojených národov (OSN)",
+      "debrief": "ĎAKUJEME VÁM, ŽE STE SI NAŠLI ČAS NA ZODPOVEDANIE TÝCHTO OTÁZOK."
+    },
+    "sl": {
+      "its_inst": "Prosimo, da s pomočjo lestvice od 0 do 10 ocenite, koliko vi osebno zaupate vsaki od naslednjih ustanov. 0 pomeni, da ustanovi sploh ne zaupate, 10 pa, da ji povsem zaupate. Najprej... PREBERITE…",
+      "its_head": "Koliko osebno zaupate vsaki od teh ustanov?",
+      "its_lo": "sploh ne zaupam",
+      "its_hi": "povsem zaupam",
+      "trstprl": "Državnemu zboru",
+      "trstlgl": "pravnemu sistemu",
+      "trstplc": "policiji",
+      "trstplt": "politikom",
+      "trstprt": "političnim strankam",
+      "trstep": "Evropskemu parlamentu",
+      "trstun": "Organizaciji združenih narodov OZN",
+      "debrief": "Anketar/ka: Še enkrat se zahvalite anketirancu in zaključite intervju. [Standardno besedilo zahvale ni prisotno v txtdatoteki — samo navodilo anketarju.]"
+    },
+    "sq": {
+      "its_inst": "Duke përdorur këtë kartë treguese, ju lutem na tregoni në një shkallë prej 0-10 sa i besoni personalisht secilit institucion që do të lexoj. 0 do të thotë që nuk i besoni aspak atij institucioni, dhe 10 do të thotë që keni besim të plotë. Fillimisht... LEXONI...",
+      "its_head": "Sa i besoni personalisht secilit institucion?",
+      "its_lo": "Nuk i besoj aspak",
+      "its_hi": "I besoj plotësisht",
+      "trstprl": "Kuvendit të Republikës së Maqedonisë së Veriut",
+      "trstlgl": "sistemit juridik",
+      "trstplc": "policisë",
+      "trstplt": "politikanëve",
+      "trstprt": "partive politike",
+      "trstep": "Parlamentit Evropian",
+      "trstun": "Kombeve të Bashkuara",
+      "debrief": "JU FALËNDEROJMË QË NDATË KOHË PËR T'U PËRGJIGJUR KËTYRE PYETJEVE."
+    },
+    "sr": {
+      "its_inst": "A17-24 Na skali od 0 do 10 koliko Vi lično imate poverenja u svaku od sledećih institucija? Obeležite jedno polje za svaku tvrdnju.",
+      "its_head": "Koliko lično imate poverenja u svaku od sledećih institucija?",
+      "its_lo": "Uopšte nemam poverenja",
+      "its_hi": "Potpuno poverenje",
+      "trstprl": "Skupštinu Republike Srbije",
+      "trstlgl": "pravosuđe",
+      "trstplc": "policiju",
+      "trstplt": "političare",
+      "trstprt": "političke stranke",
+      "trstep": "Evropski parlament",
+      "trstun": "Ujedinjene nacije",
+      "debrief": "Hvala Vam za popunjavanje upitnika – zaista smo zahvalni na vremenu koje ste za to izdvojili."
+    },
+    "sv": {
+      "its_inst": "A17-24 På en skala från 0 till 10, tala om hur stor tillit du personligen har till var och en av följande institutioner? Markera en cirkel för varje påstående.",
+      "its_head": "Hur stor tillit har du personligen till var och en av dessa institutioner?",
+      "its_lo": "Ingen tillit alls",
+      "its_hi": "Fullständig tillit",
+      "trstprl": "Sveriges riksdag",
+      "trstlgl": "Rättsväsendet",
+      "trstplc": "Polisen",
+      "trstplt": "Politiker",
+      "trstprt": "Politiska partier",
+      "trstep": "Europaparlamentet",
+      "trstun": "FN, Förenta Nationerna",
+      "debrief": "Tack för ditt deltagande!"
+    }
+  }
+}

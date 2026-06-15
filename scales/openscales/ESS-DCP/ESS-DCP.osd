@@ -1,0 +1,291 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "ESS-DCP",
+      "name": "Digital Communication Perceptions Scale (ESS)",
+      "abbreviation": "ESS-DCP",
+      "description": "5-item measure of perceived effects of online and mobile communication, from the ESS Round 10 Digital Social Contacts rotating module. Items cover positive perceptions (feeling closer, easier coordination) and negative perceptions (work-life interruption, privacy erosion, misinformation exposure). All items use 0–10 scales.",
+      "citation": "ESS ERIC (2022). ESS Round 10 Source Questionnaire. https://ess.sikt.no\nEuropean Social Survey European Research Infrastructure (ESS ERIC) (2025) ESS round 11 - 2023. Social inequalities in health, Gender in contemporary Europe. Sikt - Norwegian Agency for Shared Services in Education and Research. https://doi.org/10.21338/ess11-2023.",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://www.europeansocialsurvey.org/contact/disclaimer",
+      "license_explanation": "ESS item texts and documentation are published under CC BY-SA 4.0 by ESS ERIC.",
+      "url": "https://www.europeansocialsurvey.org/methodology/source-questionnaire",
+      "version": "1.0",
+      "domain": "Technology & Media"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-14",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "notes": "Items G5–G9 from ESS10 GB source questionnaire. ESS variable names used as item IDs. These are new items first appearing in ESS10 — no cross-round longitudinal data available. Positive and negative subscales reported separately; total composite requires reversing negative items."
+    },
+    "likert_options": {
+      "points": 11,
+      "min": 0,
+      "labels": [
+        "dcp_lo",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "dcp_hi"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "positive",
+        "name": "Positive Perceptions",
+        "description": "Perceived benefits of digital communication: feeling closer and easier coordination. Items: mcclose, mccoord."
+      },
+      {
+        "id": "negative",
+        "name": "Negative Perceptions",
+        "description": "Perceived harms of digital communication: work-life interruption, privacy erosion, misinformation. Items: mcinter, mcpriv, mcmsinf."
+      }
+    ],
+    "items": [
+      {
+        "id": "mcclose",
+        "type": "likert",
+        "text_key": "mcclose",
+        "dimension": "positive",
+        "question_head": "dcp_head"
+      },
+      {
+        "id": "mcinter",
+        "type": "likert",
+        "text_key": "mcinter",
+        "dimension": "negative",
+        "question_head": "dcp_head"
+      },
+      {
+        "id": "mccoord",
+        "type": "likert",
+        "text_key": "mccoord",
+        "dimension": "positive",
+        "question_head": "dcp_head"
+      },
+      {
+        "id": "mcpriv",
+        "type": "likert",
+        "text_key": "mcpriv",
+        "dimension": "negative",
+        "question_head": "dcp_head"
+      },
+      {
+        "id": "mcmsinf",
+        "type": "likert",
+        "text_key": "mcmsinf",
+        "dimension": "negative",
+        "question_head": "dcp_head"
+      }
+    ],
+    "scoring": {
+      "positive": {
+        "method": "mean_coded",
+        "description": "Mean of mcclose and mccoord. Range 0–10; higher = more positive perception.",
+        "items": {
+          "mcclose": 1,
+          "mccoord": 1
+        }
+      },
+      "negative": {
+        "method": "mean_coded",
+        "description": "Mean of mcinter, mcpriv, mcmsinf. Range 0–10; higher = more negative perception.",
+        "items": {
+          "mcinter": 1,
+          "mcpriv": 1,
+          "mcmsinf": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Digital Communication Perceptions Scale (ESS) Report",
+      "footer_refs": [
+        "ESS ERIC (2022). ESS Round 10 Source Questionnaire. https://ess.sikt.no. License: CC BY-SA 4.0.",
+        "Scoring: mean of positive items (mcclose, mccoord) and negative items (mcinter, mcpriv, mcmsinf). Range 0–10 each."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "dcp_lo": "Not at all",
+      "dcp_hi": "Completely",
+      "mcclose": "…makes people feel closer to one another?",
+      "mcinter": "…makes work and personal life interrupt each other?",
+      "mccoord": "…makes it easy to coordinate and manage activities?",
+      "mcpriv": "…undermines personal privacy?",
+      "mcmsinf": "…exposes people to misinformation?",
+      "debrief": "Thank you for completing this questionnaire.",
+      "dcp_head": "The next few questions are about online and mobile communication — communication taking place over the Internet or mobile networks. To what extent would you say that online and mobile communication…"
+    },
+    "ar": {
+      "dcp_head": "الأسئلة التالية هي عن التواصل عبر الإنترنت والهاتف الخلوي. القصد من التواصل عبر الإنترنت أو الشبكة الخلوية، من خلال إستخدام الهواتف الخلوية أو أجهزة الحاسوب أو التابلت أو أي وسائل رقمية (ديجيتالية) أخرى.",
+      "mcclose": "إلى أي مدى تعتقد/ين بأن التواصل عبر الإنترنت والهاتف الخلوي يجعل الناس يشعرون أنهم قريبون من بعضهم البعض؟",
+      "mcinter": "إلى أي مدى تعتقد/ين بأن التواصل عبر الإنترنت والهاتف الخلوي يجعل العمل والحياة الشخصية يعيقون بعضهم البعض؟",
+      "mccoord": "إلى أي مدى تعتقد/ين بأن التواصل عبر الإنترنت والهاتف الخلوي يجعل تنسيق وإدارة المهام أسهل؟",
+      "mcpriv": "إلى أي مدى تعتقد/ين بأن التواصل عبر الإنترنت والهاتف الخلوي يضر بالخصوصية الشخصية؟",
+      "mcmsinf": "إلى أي مدى تعتقد/ين بأن التواصل عبر الإنترنت والهاتف الخلوي يكشف الناس على معلومات مُضلَّلة؟",
+      "dcp_lo": "بتاتاً لا",
+      "dcp_hi": "تماماً نعم",
+      "debrief": "شكراً لمشاركتك."
+    },
+    "at": {
+      "dcp_head": "Bei den nächsten Fragen geht es um Online- und Mobilkommunikation. Damit ist Kommunikation gemeint, die über Internet oder Mobilfunknetze stattfindet mit einem Mobiltelefon, Computer, Tablet oder anderen digitalen Geräten.",
+      "mcclose": "Wie sehr denken Sie, dass Online- und Mobilkommunikation dazu führt, dass sich Menschen einander näher fühlen?",
+      "mcinter": "Wie sehr denken Sie, dass Online- und Mobilkommunikation dazu führt, dass sich Arbeit und Privatleben gegenseitig stören?",
+      "mccoord": "Wie sehr denken Sie, dass Online- und Mobilkommunikation es erleichtert, Aktivitäten besser abstimmen und organisieren zu können?",
+      "mcpriv": "Wie sehr denken Sie, dass Online- und Mobilkommunikation die Privatsphäre gefährdet?",
+      "mcmsinf": "Wie sehr denken Sie, dass Online- und Mobilkommunikation dazu führt, dass man falschen Informationen ausgesetzt ist?",
+      "dcp_lo": "Überhaupt nicht",
+      "dcp_hi": "Voll und ganz",
+      "debrief": "Vielen Dank für Ihre Teilnahme."
+    },
+    "bg": {
+      "dcp_head": "Следващите няколко въпроса се отнасят за онлайн и мобилната комуникация. Това е комуникация, която се осъществява в интернет или през мобилни мрежи чрез използване на мобилни телефони, компютри, таблети или други цифрови устройства.",
+      "mcclose": "…създава у хората усещане за по-голяма близост?",
+      "mcinter": "…прави така, че работата и личният живот взаимно се прекъсват?",
+      "mccoord": "…улеснява координирането и управлението на различни дейности?",
+      "mcpriv": "…накърнява личния живот?",
+      "mcmsinf": "…излага хората на погрешна информация?",
+      "dcp_lo": "Никак",
+      "dcp_hi": "Напълно",
+      "debrief": "Благодарим ви за участието."
+    },
+    "de": {
+      "dcp_head": "Bei den nächsten Fragen geht es um Online- und Mobilkommunikation. Damit ist die Kommunikation gemeint, die über das Internet oder mobile Netzwerke stattfindet, also mit einem Handy, Computer, Tablet oder anderen digitalen Gerät.",
+      "mcclose": "Wie sehr denken Sie, dass die Online- und Mobilkommunikation dazu führt, dass Menschen sich einander näher fühlen?",
+      "mcinter": "Wie sehr denken Sie, dass die Online- und Mobilkommunikation dazu führt, dass sich Arbeit und Privatleben gegenseitig in die Quere kommen?",
+      "mccoord": "Wie sehr denken Sie, dass die Online- und Mobilkommunikation dazu führt, dass Aktivitäten leicht abgestimmt und organisiert werden können?",
+      "mcpriv": "Wie sehr denken Sie, dass die Online- und Mobilkommunikation dazu führt, dass die Privatsphäre gefährdet wird?",
+      "mcmsinf": "Wie sehr denken Sie, dass die Online- und Mobilkommunikation dazu führt, dass man falschen Informationen ausgesetzt ist?",
+      "dcp_lo": "Überhaupt nicht",
+      "dcp_hi": "Voll und ganz",
+      "debrief": "Vielen Dank für Ihre Teilnahme."
+    },
+    "el": {
+      "dcp_head": "Οι επόμενες ερωτήσεις αφορούν την επικοινωνία μέσω διαδικτύου και κινητής τηλεφωνίας. Δηλαδή, την επικοινωνία που πραγματοποιείται μέσω διαδικτύου ή κινητών δικτύων, με χρήση κινητών τηλεφώνων, υπολογιστών, tablet ή άλλων ψηφιακών συσκευών.",
+      "mcclose": "…κάνει τους ανθρώπους να νιώθουν πιο κοντά ο ένας με τον άλλο;",
+      "mcinter": "…έχει ως αποτέλεσμα η εργασία και η προσωπική ζωή να παρεμβάλλονται η μία στην άλλη;",
+      "mccoord": "…διευκολύνει τον συντονισμό και τη διαχείριση δραστηριοτήτων;",
+      "mcpriv": "…υπονομεύει την ιδιωτικότητα της προσωπικής ζωής;",
+      "mcmsinf": "…εκθέτει τους ανθρώπους σε παραπληροφόρηση;",
+      "dcp_lo": "Καθόλου",
+      "dcp_hi": "Απόλυτα",
+      "debrief": "Ευχαριστούμε για τη συμμετοχή σας."
+    },
+    "et": {
+      "dcp_head": "Järgmised küsimused puudutavad interneti- ja mobiilsuhtlust. See viitab suhtlusele, mis toimub interneti või mobiilsidevõrkude vahendusel, kasutades mobiiltelefone, arvuteid, tahvelarvuteid või muid digiseadmeid.",
+      "mcclose": "…tekitab inimestes suurema omavahelise lähedusetunde?",
+      "mcinter": "…viib selleni, et töö ja eraelu teineteist segavad?",
+      "mccoord": "…lihtsustab tegevuste koordineerimist ja juhtimist?",
+      "mcpriv": "…õõnestab inimese privaatsust?",
+      "mcmsinf": "…võimaldab inimestel kokku puutuda väärinfoga?",
+      "dcp_lo": "Üldse mitte",
+      "dcp_hi": "Täielikult",
+      "debrief": "Täname osalemise eest."
+    },
+    "fi": {
+      "dcp_head": "Seuraavat kysymykset koskevat online- ja mobiiliyhteydenpitoа. Tällä tarkoitetaan yhteydenpitoa, joka tapahtuu internet- tai mobiiliverkkojen välityksellä matkapuhelimilla, tietokoneilla, tableteilla tai muilla digitaalisilla laitteilla.",
+      "mcclose": "…saa ihmiset tuntemaan toisensa läheisemmiksi?",
+      "mcinter": "…saa työasiat häiritsemään yksityiselämää ja päinvastoin?",
+      "mccoord": "…helpottaa erilaisten toimien yhteensovittamista ja hallintaa?",
+      "mcpriv": "…heikentää yksityisyyden suojaa?",
+      "mcmsinf": "…altistaa ihmiset väärälle tiedolle?",
+      "dcp_lo": "Ei lainkaan",
+      "dcp_hi": "Täysin",
+      "debrief": "Kiitos osallistumisestasi."
+    },
+    "he": {
+      "dcp_head": "השאלות הבאות עוסקות בתקשורת מקוונת (און-ליין) וסלולרית. הכוונה לתקשורת שמבצעת על גבי האינטרנט או רשת סלולרית באמצעות טלפונים ניידים, מחשבים, טאבלטים או מכשירים דיגיטלים אחרים.",
+      "mcclose": "באיזו מידה היית אומר/ת שתקשורת מקוונת (און-ליין) וסלולרית גורמת לאנשים להרגיש קרובים יותר זה לזה?",
+      "mcinter": "באיזו מידה היית אומר/ת שתקשורת מקוונת (און-ליין) וסלולרית גורמת לעבודה ולחיים האישיים להפריע זה לזה?",
+      "mccoord": "באיזו מידה היית אומר/ת שתקשורת מקוונת (און-ליין) וסלולרית מקלה על אנשים לתאם ולנהל פעיליות?",
+      "mcpriv": "באיזו מידה היית אומר/ת שתקשורת מקוונת (און-ליין) וסלולרית פוגעת בפרטיות האישית?",
+      "mcmsinf": "באיזו מידה היית אומר/ת שתקשורת מקוונת (און-ליין) וסלולרית חושפת אנשים למידע מוטעה?",
+      "dcp_lo": "כלל לא",
+      "dcp_hi": "לחלוטין",
+      "debrief": "תודה על השתתפותך."
+    },
+    "hr": {
+      "dcp_head": "Idućih nekoliko pitanja odnosi se na komunikaciju putem interneta i mobilnu komunikaciju. To se odnosi na komunikaciju koja se odvija putem interneta ili mobilnih mreža, koristeći se mobilnim telefonima, računalima, tabletima ili drugim digitalnim uređajima.",
+      "mcclose": "…pomažu da se ljudi osjećaju međusobno bliskije?",
+      "mcinter": "…utječu na to da poslovni i privatni život ometaju jedan drugi?",
+      "mccoord": "…olakšavaju koordinaciju i upravljanje aktivnostima?",
+      "mcpriv": "…narušavaju privatnost?",
+      "mcmsinf": "…izlažu ljude dezinformacijama?",
+      "dcp_lo": "Uopće ne",
+      "dcp_hi": "U potpunosti",
+      "debrief": "Hvala vam na sudjelovanju."
+    },
+    "is": {
+      "dcp_head": "Næstu spurningar eru um samskipti á netinu og í gegnum farsíma. Hér er átt við samskipti sem eiga sér stað um internetið eða farsímanet, með því að nota farsíma, tölvur, spjaldtölvur eða önnur stafræn tæki.",
+      "mcclose": "…færi fólk nær hvert öðru?",
+      "mcinter": "…valdi árekstrum milli vinnu og einkalífs?",
+      "mccoord": "…auðveldi fólki að skipuleggja og stýra daglegum athöfnum og erindum?",
+      "mcpriv": "…grafi undan friðhelgi einkalifsins?",
+      "mcmsinf": "…geti fært fólki rangar upplýsingar?",
+      "dcp_lo": "Að engu leyti",
+      "dcp_hi": "Að öllu leyti",
+      "debrief": "Takk fyrir þátttökuna."
+    },
+    "pl": {
+      "dcp_head": "W jakim stopniu, Pana zdaniem, komunikacja internetowa i mobilna…",
+      "mcclose": "…sprawia, że ludzie czują się sobie bliżsi?",
+      "mcinter": "…sprawia, że praca i życie osobiste kolidują ze sobą?",
+      "mccoord": "…ułatwia koordynowanie i organizowanie różnych czynności, działań?",
+      "mcpriv": "…narusza sferę prywatną?",
+      "mcmsinf": "…naraża ludzi na kontakt z nieprawdziwymi informacjami?",
+      "dcp_lo": "W ogóle nie",
+      "dcp_hi": "W pełni",
+      "debrief": "Dziękujemy za udział."
+    },
+    "ru": {
+      "dcp_head": "Следующие несколько вопросов касаются общения онлайн или по мобильной связи. Имеется в виду общение через интернет или мобильные сети, используя мобильный телефон, компьютер, планшет и прочие цифровые устройства.",
+      "mcclose": "…позволяет людям почувствовать себя ближе друг к другу?",
+      "mcinter": "…приводит к тому, что работа и личная жизнь мешают друг другу?",
+      "mccoord": "…упрощает координацию и управление различной деятельностью?",
+      "mcpriv": "…подрывает неприкосновенность частной жизни?",
+      "mcmsinf": "…приводит к тому, что люди соприкасаются с ложной информацией?",
+      "dcp_lo": "Совсем нет",
+      "dcp_hi": "Полностью",
+      "debrief": "Спасибо за участие."
+    },
+    "sl": {
+      "dcp_head": "Koliko po vašem mnenju spletna in mobilna komunikacija…",
+      "mcclose": "…pripomore k temu, da se ljudje čutijo bliže drug drugemu?",
+      "mcinter": "…povzroča, da se delo in zasebno življenje preveč prepletata?",
+      "mccoord": "…omogoča lažje usklajevanje in urejanje aktivnosti?",
+      "mcpriv": "…spodkopava posameznikovo zasebnost?",
+      "mcmsinf": "…izpostavlja ljudi napačnim informacijam?",
+      "dcp_lo": "sploh ne",
+      "dcp_hi": "v celoti",
+      "debrief": "Hvala za sodelovanje."
+    },
+    "sr": {
+      "dcp_head": "U kojoj meri biste rekli da komunikacija putem interneta i mobilnih uređaja…",
+      "mcclose": "…čini da se ljudi osećaju međusobno bliskijim?",
+      "mcinter": "…utiče na to da se poslovni i privatni život međusobno remete?",
+      "mccoord": "…olakšava koordinaciju i obavljanje različitih aktivnosti?",
+      "mcpriv": "…ugrožava ličnu privatnost?",
+      "mcmsinf": "…izlaže ljude pogrešnim informacijama?",
+      "dcp_lo": "Nimalo",
+      "dcp_hi": "U potpunosti",
+      "debrief": "Hvala vam na učešću."
+    }
+  }
+}

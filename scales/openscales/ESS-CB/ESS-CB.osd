@@ -1,0 +1,371 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "ESS-CB",
+      "name": "Conspiracy Beliefs Battery (ESS)",
+      "abbreviation": "ESS-CB",
+      "description": "3-item measure of conspiracy beliefs from the ESS Round 10 COVID module. Two items tap generic conspiracy mentality (secret group controlling world politics; scientists suppressing evidence) and one item taps a COVID-specific conspiracy belief (coronavirus as deliberate effort). Higher scores indicate stronger conspiracy beliefs.",
+      "citation": "ESS ERIC (2022). ESS Round 10 Source Questionnaire. https://ess.sikt.no\nEuropean Social Survey European Research Infrastructure (ESS ERIC) (2025) ESS round 11 - 2023. Social inequalities in health, Gender in contemporary Europe. Sikt - Norwegian Agency for Shared Services in Education and Research. https://doi.org/10.21338/ess11-2023.",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://www.europeansocialsurvey.org/contact/disclaimer",
+      "license_explanation": "ESS item texts and documentation are published under CC BY-SA 4.0 by ESS ERIC.",
+      "url": "https://www.europeansocialsurvey.org/methodology/source-questionnaire",
+      "version": "1.0",
+      "domain": "Social & Political"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-14",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "notes": "Items K1, K2, K16 from ESS10 GB source questionnaire (COVID module). ESS variable names used as item IDs. Raw ESS coding: 1=Agree strongly (more conspiratorial), 5=Disagree strongly. For an intuitive conspiracy score (higher=more conspiratorial), items are reverse-coded in scoring (code=-1, plus constant). gvconc19 (K16) is COVID-event-specific and may feel anachronistic in non-pandemic contexts — consider omitting or flagging as context-dependent."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "cb_r1",
+        "cb_r2",
+        "cb_r3",
+        "cb_r4",
+        "cb_r5"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "generic",
+        "name": "Generic Conspiracy Mentality",
+        "description": "Belief in secret groups controlling world events and scientists suppressing evidence. Items: secgrdec, scidecpb."
+      },
+      {
+        "id": "total",
+        "name": "Conspiracy Beliefs",
+        "description": "Mean of all 3 items recoded so higher = more conspiratorial. Range 1–5."
+      }
+    ],
+    "items": [
+      {
+        "id": "secgrdec",
+        "type": "likert",
+        "text_key": "secgrdec",
+        "dimension": "generic",
+        "question_head": "cb_head"
+      },
+      {
+        "id": "scidecpb",
+        "type": "likert",
+        "text_key": "scidecpb",
+        "dimension": "generic",
+        "question_head": "cb_head"
+      },
+      {
+        "id": "gvconc19",
+        "type": "likert",
+        "text_key": "gvconc19",
+        "dimension": "total",
+        "question_head": "cb_head"
+      }
+    ],
+    "scoring": {
+      "_note": "Raw coding: 1=Agree strongly=most conspiratorial. All items coded -1 (reverse) so that higher score = more conspiratorial.",
+      "generic": {
+        "method": "mean_coded",
+        "description": "Mean of secgrdec and scidecpb, recoded so higher = more conspiratorial. Range 1–5.",
+        "items": {
+          "secgrdec": -1,
+          "scidecpb": -1
+        }
+      },
+      "total": {
+        "method": "mean_coded",
+        "description": "Mean of all 3 items recoded so higher = more conspiratorial. Range 1–5.",
+        "items": {
+          "secgrdec": -1,
+          "scidecpb": -1,
+          "gvconc19": -1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Conspiracy Beliefs Battery (ESS) Report",
+      "footer_refs": [
+        "ESS ERIC (2022). ESS Round 10 Source Questionnaire. https://ess.sikt.no. License: CC BY-SA 4.0.",
+        "Scoring: items reverse-coded so higher = more conspiratorial (1–5). gvconc19 is COVID-specific."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "cb_r1": "Agree strongly",
+      "cb_r2": "Agree",
+      "cb_r3": "Neither agree nor disagree",
+      "cb_r4": "Disagree",
+      "cb_r5": "Disagree strongly",
+      "secgrdec": "A small secret group of people is responsible for making all major decisions in world politics.",
+      "scidecpb": "Groups of scientists manipulate, fabricate, or suppress evidence in order to deceive the public.",
+      "gvconc19": "Coronavirus is the result of deliberate and concealed efforts of some government or organisation.",
+      "debrief": "Thank you for completing this questionnaire.",
+      "cb_head": "How much do you agree or disagree with the following statements?"
+    },
+    "ar": {
+      "cb_head": "إلى أي مدى توافق/ين أو لا توافق/ين مع الجمل التالية؟",
+      "secgrdec": "مجموعة صغيرة سريّة مسؤولة عن اتخاذ كل القرارات الهامة في السياسة العالمية.",
+      "scidecpb": "مجموعة صغيرة من العلماء تقوم بالتلاعب والتلفيق أو إخفاء أدلة من أجل خداع الجماهير.",
+      "gvconc19": "فيروس الكورونا هو نتيجة جهود موجهة وخفيّة قامت بها حكومة أو تنظيم ما.",
+      "cb_r1": "جداً موافق/ة",
+      "cb_r2": "موافق/ة",
+      "cb_r3": "لست موافق/ة ولست غير موافق/ة",
+      "cb_r4": "غير موافق/ة",
+      "cb_r5": "غير موافق/ة بتاتاً",
+      "debrief": "شكراً لمشاركتك."
+    },
+    "at": {
+      "cb_head": "Wie sehr stimmen Sie der folgenden Aussage zu oder lehnen diese ab?",
+      "secgrdec": "Eine kleine geheime Gruppe von Personen trifft alle wichtigen Entscheidungen in der Weltpolitik.",
+      "scidecpb": "Gruppen von Wissenschafterinnen und Wissenschaftern manipulieren, erfinden oder unterdrücken Beweise, um die Öffentlichkeit zu täuschen.",
+      "gvconc19": "Das Coronavirus ist das Ergebnis von gezielten und geheimen Machenschaften eines Staates oder einer Organisation.",
+      "cb_r1": "Stimme stark zu",
+      "cb_r2": "Stimme zu",
+      "cb_r3": "Weder noch",
+      "cb_r4": "Lehne ab",
+      "cb_r5": "Lehne stark ab",
+      "debrief": "Vielen Dank für Ihre Teilnahme."
+    },
+    "bg": {
+      "cb_head": "Доколко сте съгласен или не със следните твърдения?",
+      "secgrdec": "Важните решения в световната политика се вземат от малка тайна група от хора.",
+      "scidecpb": "Групи учени манипулират, измислят или укриват доказателства, за да заблудят обществеността.",
+      "gvconc19": "Коронавирусът е резултат от умишлените и скритите усилия на някое правителство или организация.",
+      "cb_r1": "Напълно съгласен",
+      "cb_r2": "Съгласен",
+      "cb_r3": "Нито съгласен, нито несъгласен",
+      "cb_r4": "Несъгласен",
+      "cb_r5": "Напълно несъгласен",
+      "debrief": "Благодарим ви за участието."
+    },
+    "cs": {
+      "cb_head": "Jak moc souhlasíte nebo nesouhlasíte s následujícími tvrzeními?",
+      "secgrdec": "Malá tajná skupina lidí je zodpovědná za veškerá důležitá rozhodnutí ve světové politice.",
+      "scidecpb": "Skupiny vědců manipulují, falšují, nebo zatajují důkazy, aby oklamali veřejnost.",
+      "gvconc19": "Koronavirus je výsledkem záměrného a skrytého úsilí nějaké vlády nebo organizace.",
+      "cb_r1": "Rozhodně souhlasím",
+      "cb_r2": "Souhlasím",
+      "cb_r3": "Ani souhlas, ani nesouhlas",
+      "cb_r4": "Nesouhlasím",
+      "cb_r5": "Rozhodně nesouhlasím",
+      "debrief": "Děkujeme za vaši účast."
+    },
+    "de": {
+      "cb_head": "Wie sehr stimmen Sie den folgenden Aussagen zu oder lehnen diese ab?",
+      "secgrdec": "Eine kleine geheime Gruppe von Personen trifft alle wichtigen Entscheidungen in der Weltpolitik.",
+      "scidecpb": "Gruppen von Wissenschaftlerinnen und Wissenschaftlern manipulieren, erfinden oder unterdrücken Beweise, um die Öffentlichkeit zu täuschen.",
+      "gvconc19": "Das Coronavirus ist das Ergebnis von gezielten und geheimen Machenschaften eines Staates oder einer Organisation.",
+      "cb_r1": "Stimme stark zu",
+      "cb_r2": "Stimme zu",
+      "cb_r3": "Weder noch",
+      "cb_r4": "Lehne ab",
+      "cb_r5": "Lehne stark ab",
+      "debrief": "Vielen Dank für Ihre Teilnahme."
+    },
+    "et": {
+      "cb_head": "Mil määral Te nõustute või ei nõustu järgnevate väidetega?",
+      "secgrdec": "Väike salajane rühm inimesi on vastutav kõigi suurte otsuste tegemise eest maailmapoliitikas.",
+      "scidecpb": "Teadlaste rühmad manipuleerivad, fabrikeerivad või varjavad tõendeid, et üldsust petta.",
+      "gvconc19": "Koroonaviirus on mõne valitsuse või organisatsiooni tahtliku ja varjatud tegevuse tulemus.",
+      "cb_r1": "Olen täiesti nõus",
+      "cb_r2": "Olen nõus",
+      "cb_r3": "Ei nõustu ega ole vastu",
+      "cb_r4": "Ei ole nõus",
+      "cb_r5": "Ei ole üldse nõus",
+      "debrief": "Täname osalemise eest."
+    },
+    "fi": {
+      "cb_head": "Missä määrin olet samaa tai eri mieltä seuraavien väittämien kanssa?",
+      "secgrdec": "Pieni salainen ryhmä ihmisiä on vastuussa kaikista maailmanpolitiikan merkittävistä päätöksistä.",
+      "scidecpb": "Tutkijaryhmät peukaloivat, tekaisevat tai salaavat todisteita harhauttaakseen ihmisiä.",
+      "gvconc19": "Koronaviruksen on tietoisesti ja salassa kehittänyt jokin hallitus tai organisaatio.",
+      "cb_r1": "Täysin samaa mieltä",
+      "cb_r2": "Samaa mieltä",
+      "cb_r3": "En samaa enkä eri mieltä",
+      "cb_r4": "Eri mieltä",
+      "cb_r5": "Täysin eri mieltä",
+      "debrief": "Kiitos osallistumisestasi."
+    },
+    "he": {
+      "cb_head": "באיזו מידה את/ה מסכים/ה עם המשפטים הבאים?",
+      "secgrdec": "קבוצה סודית קטנה אחראית לקבלת כל ההחלטות החשובות בפוליטיקה העולמית.",
+      "scidecpb": "קבוצות של מדענים מבצעות מניפולציות, ממציאות ומעלימות ממצאים כדי להונות את הציבור.",
+      "gvconc19": "מגיפת הקורונה היא תוצאה של מאמצים מכוונים ומוסתרים של ממשלה או ארגון כלשהו.",
+      "cb_r1": "מאוד מסכים/ה",
+      "cb_r2": "מסכים/ה",
+      "cb_r3": "באמצע, מסכים/ה ולא מסכים/ה",
+      "cb_r4": "לא מסכים/ה",
+      "cb_r5": "מאד לא מסכים/ה",
+      "debrief": "תודה על השתתפותך."
+    },
+    "hr": {
+      "cb_head": "U kojoj se mjeri slažete ili ne slažete sa sljedećim tvrdnjama?",
+      "secgrdec": "Mala tajna grupa ljudi odgovorna je za donošenje svih važnih odluka u svjetskoj politici.",
+      "scidecpb": "Grupe znanstvenika manipuliraju činjenicama, lažiraju ih ili prikrivaju kako bi zavarali javnost.",
+      "gvconc19": "Koronavirus je rezultat namjernih i prikrivenih aktivnosti neke vlade ili organizacije.",
+      "cb_r1": "U potpunosti se slažem",
+      "cb_r2": "Slažem se",
+      "cb_r3": "Niti se slažem niti ne slažem",
+      "cb_r4": "Ne slažem se",
+      "cb_r5": "Uopće se ne slažem",
+      "debrief": "Hvala vam na sudjelovanju."
+    },
+    "hu": {
+      "cb_head": "Mennyire ért vagy nem ért egyet az alábbi állításokkal?",
+      "secgrdec": "A világpolitika összes fontos döntése mögött egy kis titkos csoport áll.",
+      "scidecpb": "Tudósok egyes csoportjai manipulálják, meghamisítják vagy eltitkolják a kutatási eredményeiket, azért, hogy félrevezessék a nyilvánosságot.",
+      "gvconc19": "A koronavírus valamely kormány vagy szervezet szándékos és titkos tevékenységének eredménye.",
+      "cb_r1": "Nagyon egyetértek",
+      "cb_r2": "Egyetértek",
+      "cb_r3": "Egyet is értek meg nem is",
+      "cb_r4": "Nem értek egyet",
+      "cb_r5": "Nagyon nem értek egyet",
+      "debrief": "Köszönjük részvételét."
+    },
+    "is": {
+      "cb_head": "Hversu sammála eða ósammála ert þú eftirfarandi fullyrðingum?",
+      "secgrdec": "Fámennur og leynilegur hópur fólks ber ábyrgð á öllum veigamestu ákvörðunum sem teknar eru í alþjóðastjórnmálum.",
+      "scidecpb": "Ýmsir hópar vísindamanna hagræða gögnum, falsa gögn eða leyna gögnum í þeim tilgangi að blekkja almenning.",
+      "gvconc19": "Kórónuveiran er afleiðing vísvitandi og leynilegra aðgerða einhverra stjórnvalda eða samtaka.",
+      "cb_r1": "Mjög sammála",
+      "cb_r2": "Sammála",
+      "cb_r3": "Hvorki sammála né ósammála",
+      "cb_r4": "Ósammála",
+      "cb_r5": "Mjög ósammála",
+      "debrief": "Takk fyrir þátttökuna."
+    },
+    "lv": {
+      "cb_head": "Cik lielā mērā jūs piekrītat vai nepiekrītat šādiem apgalvojumiem?",
+      "secgrdec": "Neliela, slepena cilvēku grupa ir atbildīga par visu galveno lēmumu pieņemšanu pasaules politikā.",
+      "scidecpb": "Zinātnieku grupas manipulē ar pierādījumiem, safabricē vai slēpj tos, lai maldinātu sabiedrību.",
+      "gvconc19": "Koronavīruss ir kādas valdības vai organizācijas apzinātu un slēptu centienu rezultāts.",
+      "cb_r1": "Pilnībā piekrītu",
+      "cb_r2": "Piekrītu",
+      "cb_r3": "Ne piekrītu, ne nepiekrītu",
+      "cb_r4": "Nepiekrītu",
+      "cb_r5": "Pilnībā nepiekrītu",
+      "debrief": "Paldies par dalību."
+    },
+    "no": {
+      "cb_head": "I hvilken grad er du enig eller uenig i følgende påstander?",
+      "secgrdec": "En liten hemmelig gruppe mennesker er ansvarlig for å treffe alle viktige beslutninger i verdenspolitikken.",
+      "scidecpb": "Grupper av forskere manipulerer, fabrikkerer eller holder tilbake bevis for å villede befolkningen.",
+      "gvconc19": "Koronaviruset er et resultat av tilsiktede og hemmelige handlinger utført av et lands myndigheter eller en organisasjon.",
+      "cb_r1": "Svært enig",
+      "cb_r2": "Enig",
+      "cb_r3": "Verken enig eller uenig",
+      "cb_r4": "Uenig",
+      "cb_r5": "Svært uenig",
+      "debrief": "Takk for at du deltok."
+    },
+    "pl": {
+      "cb_head": "W jakiej mierze zgadza się Pan albo nie zgadza z następującymi stwierdzeniami?",
+      "secgrdec": "Wszystkie najważniejsze decyzje w światowej polityce podejmuje niewielka, tajna grupa osób.",
+      "scidecpb": "Grupy naukowców manipulują dowodami, fabrykują je lub zatajają, aby wprowadzać ludzi w błąd.",
+      "gvconc19": "Koronawirus to efekt celowych i ukrytych działań jakiegoś rządu lub organizacji.",
+      "cb_r1": "Zdecydowanie się zgadzam",
+      "cb_r2": "Zgadzam się",
+      "cb_r3": "Ani się zgadzam, ani nie zgadzam",
+      "cb_r4": "Nie zgadzam się",
+      "cb_r5": "Zdecydowanie się nie zgadzam",
+      "debrief": "Dziękujemy za udział."
+    },
+    "pt": {
+      "cb_head": "Em que medida concorda ou discorda com as seguintes afirmações?",
+      "secgrdec": "Há um pequeno grupo secreto de pessoas que é responsável por todas as grandes decisões na política mundial.",
+      "scidecpb": "Há grupos de cientistas que distorcem, inventam e escondem factos com o objectivo de enganar o público.",
+      "gvconc19": "A COVID-19 é resultado da acção intencional e oculta de algum governo ou organização.",
+      "cb_r1": "Concordo totalmente",
+      "cb_r2": "Concordo",
+      "cb_r3": "Nem concordo nem discordo",
+      "cb_r4": "Discordo",
+      "cb_r5": "Discordo totalmente",
+      "debrief": "Obrigado pela sua participação."
+    },
+    "ru": {
+      "cb_head": "Скажите, пожалуйста, насколько Вы согласны или не согласны со следующими утверждениями?",
+      "secgrdec": "Небольшая тайная группа людей в ответе за принятие всех важных решений в мировой политике.",
+      "scidecpb": "Группы ученых манипулируют, фабрикуют или скрывают данные с целью обмануть общественность.",
+      "gvconc19": "Коронавирус - результат намеренных и скрытых действий некого правительства или организации.",
+      "cb_r1": "Совершенно согласен(на)",
+      "cb_r2": "Согласен(на)",
+      "cb_r3": "Ни согласен(на), ни против этого",
+      "cb_r4": "Не согласен(на)",
+      "cb_r5": "Совершенно не согласен(на)",
+      "debrief": "Спасибо за участие."
+    },
+    "sk": {
+      "cb_head": "Nakoľko súhlasíte alebo nesúhlasíte s nasledujúcimi tvrdeniami?",
+      "secgrdec": "Za všetky zásadné rozhodnutia vo svetovej politike je zodpovedná malá tajná skupina ľudí.",
+      "scidecpb": "Skupiny vedcov manipulujú, vymýšľajú alebo potláčajú dôkazy s cieľom oklamať verejnosť.",
+      "gvconc19": "Koronavírus je výsledkom zámerného a tajného úsilia nejakej vlády alebo organizácie.",
+      "cb_r1": "Rozhodne súhlasím",
+      "cb_r2": "Súhlasím",
+      "cb_r3": "Ani súhlas ani nesúhlas",
+      "cb_r4": "Nesúhlasím",
+      "cb_r5": "Rozhodne nesúhlasím",
+      "debrief": "Ďakujeme za účasť."
+    },
+    "sl": {
+      "cb_head": "Koliko soglašate ali ne soglašate z naslednjima trditvama?",
+      "secgrdec": "Majhna prikrita skupina ljudi je odgovorna za sprejemanje vseh najpomembnejših odločitev v svetovni politiki.",
+      "scidecpb": "Skupine znanstvenikov prikrajajo, ponarejajo ali prikrivajo podatke zato, da bi zavedle javnost.",
+      "gvconc19": "Koronavirus je posledica namernega in prikritega delovanja ene od vlad ali organizacij.",
+      "cb_r1": "močno soglašam",
+      "cb_r2": "soglašam",
+      "cb_r3": "niti – niti",
+      "cb_r4": "ne soglašam",
+      "cb_r5": "sploh ne soglašam",
+      "debrief": "Hvala za sodelovanje."
+    },
+    "sq": {
+      "cb_head": "Sa jeni dakord ose nuk jeni dakord me pohimet e mëposhtme?",
+      "secgrdec": "Një grup i vogël sekret njerëzish është përgjegjës për marrjen e të gjitha vendimeve kryesore në politikën botërore.",
+      "scidecpb": "Grupe shkencëtarësh manipulojnë, trillojnë ose fshehin prova me qëllim që të mashtrojnë publikun.",
+      "gvconc19": "Koronavirusi është rezultat i përpjekjeve të qëllimshme dhe të fshehura të disa qeverive ose organizatave.",
+      "cb_r1": "Pajtohem plotësisht",
+      "cb_r2": "Pajtohem",
+      "cb_r3": "As pajtohem as nuk pajtohem",
+      "cb_r4": "Nuk pajtohem",
+      "cb_r5": "Aspak nuk pajtohem",
+      "debrief": "Faleminderit për pjesëmarrjen tuaj."
+    },
+    "sr": {
+      "cb_head": "U kojoj meri se slažete ili ne slažete sa sledećim tvrdnjama?",
+      "secgrdec": "Jedna mala tajna grupa ljudi je odgovorna za donošenje svih bitnih odluka u svetskoj politici.",
+      "scidecpb": "Grupe naučnika manipulišu dokazima, izmišljaju ih ili zataškavaju kako bi obmanule javnost.",
+      "gvconc19": "Virus korona je rezultat smišljenog i skrivenog delovanja neke vlade ili organizacije.",
+      "cb_r1": "Izrazito se slažem",
+      "cb_r2": "Slažem se",
+      "cb_r3": "Niti se slažem niti se ne slažem",
+      "cb_r4": "Ne slažem se",
+      "cb_r5": "Izrazito se ne slažem",
+      "debrief": "Hvala vam na učešću."
+    },
+    "sv": {
+      "cb_head": "Hur mycket instämmer du eller tar avstånd från följande påståenden?",
+      "secgrdec": "En liten hemlig grupp människor ansvarar för att fatta alla viktiga världspolitiska beslut.",
+      "scidecpb": "Grupper av forskare manipulerar, hittar på eller utelämnar fakta för att vilseleda allmänheten.",
+      "gvconc19": "Coronavirus är resultatet av en regerings eller organisations avsiktliga ansträngningar i det fördolda.",
+      "cb_r1": "Instämmer helt",
+      "cb_r2": "Instämmer",
+      "cb_r3": "Varken instämmer med eller tar avstånd från",
+      "cb_r4": "Tar avstånd från",
+      "cb_r5": "Tar helt avstånd från",
+      "debrief": "Tack för ditt deltagande."
+    }
+  }
+}

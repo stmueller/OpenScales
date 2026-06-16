@@ -1,0 +1,86 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Multidimensional Quiet Quitting Scale",
+      "code": "MQQS",
+      "abbreviation": "MQQS",
+      "description": "Measure of 'quiet quitting' at work — doing the minimum required rather than going above and beyond — with two dimensions: behavioral quiet quitting (withdrawal of discretionary effort) and emotional quiet quitting (emotional detachment from extra-role work). Items are rated 1 (strongly disagree) to 5 (strongly agree).",
+      "citation": "Patel, P. C., Guedes, M. J., Bachrach, D. G., & Cho, Y. (2025). A multidimensional quiet quitting scale: Development and test of a measure of quiet quitting. PLoS ONE, 20(4), e0317624. https://doi.org/10.1371/journal.pone.0317624",
+      "license": "CC BY 4.0",
+      "license_explanation": "© 2025 The Author(s). Items reproduced from Patel et al. (2025), PLoS ONE, under a Creative Commons Attribution 4.0 International License.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1371/journal.pone.0317624",
+      "version": "1.0",
+      "domain": "Work"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-16",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Response scale resolved to 5 points (1=strongly disagree to 5=strongly agree) per the item grid; the APA PsycTests record's prose ('seven-point Likert-type scale ranging from 1 to 5') is internally contradictory and treated as a typo. All 13 candidate items are administered. Items 2 ('I spend the adequate time necessary working on tasks to keep my job', dropped in Study 1) and 13 ('I don't tend to spend time mulling over work-related issues', dropped in Study 3) are excluded from the scored subscales to reflect the final validated measure. Behavioral = items 1,3,4,5,6; Emotional = items 7,8,9,10,11,12."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["likert_1", "likert_2", "likert_3", "likert_4", "likert_5"],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      { "id": "behavioral", "name": "Behavioral Quiet Quitting", "description": "Withdrawal of discretionary work effort — doing only what is required (scored items 1, 3, 4, 5, 6)." },
+      { "id": "emotional", "name": "Emotional Quiet Quitting", "description": "Emotional detachment from and reduced burden of extra-role work (scored items 7, 8, 9, 10, 11, 12)." },
+      { "id": "quiet_quitting", "name": "Quiet Quitting (Total)", "description": "Mean of the validated behavioral and emotional items (1-5)." }
+    ],
+    "items": [
+      { "id": "mqqs_inst_b", "type": "section", "title_key": "sec_behavioral" },
+      { "id": "mqqs1", "type": "likert", "text_key": "mqqs1", "dimension": "behavioral" },
+      { "id": "mqqs2", "type": "likert", "text_key": "mqqs2", "dimension": "behavioral" },
+      { "id": "mqqs3", "type": "likert", "text_key": "mqqs3", "dimension": "behavioral" },
+      { "id": "mqqs4", "type": "likert", "text_key": "mqqs4", "dimension": "behavioral" },
+      { "id": "mqqs5", "type": "likert", "text_key": "mqqs5", "dimension": "behavioral" },
+      { "id": "mqqs6", "type": "likert", "text_key": "mqqs6", "dimension": "behavioral" },
+      { "id": "mqqs_inst_e", "type": "section", "title_key": "sec_emotional" },
+      { "id": "mqqs7", "type": "likert", "text_key": "mqqs7", "dimension": "emotional" },
+      { "id": "mqqs8", "type": "likert", "text_key": "mqqs8", "dimension": "emotional" },
+      { "id": "mqqs9", "type": "likert", "text_key": "mqqs9", "dimension": "emotional" },
+      { "id": "mqqs10", "type": "likert", "text_key": "mqqs10", "dimension": "emotional" },
+      { "id": "mqqs11", "type": "likert", "text_key": "mqqs11", "dimension": "emotional" },
+      { "id": "mqqs12", "type": "likert", "text_key": "mqqs12", "dimension": "emotional" },
+      { "id": "mqqs13", "type": "likert", "text_key": "mqqs13", "dimension": "emotional" }
+    ],
+    "scoring": {
+      "behavioral": { "method": "mean_coded", "description": "Mean of items 1, 3, 4, 5, 6 (1-5). Item 2 excluded (dropped in validation).", "items": { "mqqs1": 1, "mqqs3": 1, "mqqs4": 1, "mqqs5": 1, "mqqs6": 1 } },
+      "emotional": { "method": "mean_coded", "description": "Mean of items 7, 8, 9, 10, 11, 12 (1-5). Item 13 excluded (dropped in validation).", "items": { "mqqs7": 1, "mqqs8": 1, "mqqs9": 1, "mqqs10": 1, "mqqs11": 1, "mqqs12": 1 } },
+      "quiet_quitting": { "method": "mean_coded", "description": "Mean of all validated items (1,3,4,5,6,7,8,9,10,11,12); higher = more quiet quitting.", "items": { "mqqs1": 1, "mqqs3": 1, "mqqs4": 1, "mqqs5": 1, "mqqs6": 1, "mqqs7": 1, "mqqs8": 1, "mqqs9": 1, "mqqs10": 1, "mqqs11": 1, "mqqs12": 1 } }
+    }
+  },
+  "translations": {
+    "en": {
+      "question_head": "Please indicate how much you agree or disagree with each statement.",
+      "sec_behavioral": "Behavioral",
+      "sec_emotional": "Emotional",
+      "likert_1": "Strongly disagree",
+      "likert_2": "Disagree",
+      "likert_3": "Neither agree nor disagree",
+      "likert_4": "Agree",
+      "likert_5": "Strongly agree",
+      "mqqs1": "I do only the work I'm specifically asked to do; just enough to not lose my job.",
+      "mqqs2": "I spend the adequate time necessary working on tasks to keep my job.",
+      "mqqs3": "I do not do extra work beyond what I'm paid to do.",
+      "mqqs4": "I don't look for extra work to do even though it could help me to get promoted.",
+      "mqqs5": "To keep my job, I believe in working just enough, not harder or smarter.",
+      "mqqs6": "Doing only the work that is required is smart, not lazy.",
+      "mqqs7": "It doesn't bother me when extra work gets left unfinished.",
+      "mqqs8": "It is emotionally rewarding for me not looking for extra work to do.",
+      "mqqs9": "Worries weigh heavily on my mind, when going above and beyond in my work.",
+      "mqqs10": "My emotions often multiply negatively when working beyond what is necessary to keep my job.",
+      "mqqs11": "I feel less burned out by doing only the work that is needed to keep my job.",
+      "mqqs12": "My mental health is a lot better by not going the 'extra mile' at work.",
+      "mqqs13": "I don't tend to spend time mulling over work-related issues.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

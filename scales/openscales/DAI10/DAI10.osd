@@ -1,0 +1,74 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Drug Attitudes Inventory–10 (Modified, Antidepressants)",
+      "code": "DAI10",
+      "abbreviation": "DAI-10",
+      "description": "10-item self-report of subjective attitudes toward antidepressant medication, a modified version of Hogan's Drug Attitude Inventory adapted for antidepressants. Each statement is answered TRUE or FALSE. Positively keyed responses score +1 and the opposite score −1; the total ranges from −10 to +10, with scores above 0 indicating positive attitudes toward medication.",
+      "citation": "Abdallat, M., Murshidi, R., Taha, H., Jaber, D. Z., Hammouri, M., Al-Huneidy, L., Aljayeh, M., Ghanem, H. H., Bedros, A. W., Al-Omairi, J., Abbas, R., Abu-usba, M. I., Alkayed, Z., Banimustafa, R., & Al-Ani, A. (2023). An investigation of knowledge and attitudes towards antidepressants: A cross-sectional survey of Jordan's six medical schools. BMC Psychiatry, 23(1), 605. https://doi.org/10.1186/s12888-023-05037-8",
+      "license": "CC BY 4.0",
+      "license_explanation": "© 2023 The Author(s). Items reproduced from Abdallat et al. (2023), BMC Psychiatry, under a Creative Commons Attribution 4.0 International License.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1186/s12888-023-05037-8",
+      "version": "1.0",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-16",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Dichotomous TRUE/FALSE items, modeled as single-select 'multi' items whose option values encode the keyed score (+1/-1) directly, so sum_coded yields the standard Drug Attitude Inventory total (-10 to +10). Positively keyed items (1,3,4,7,9,10): TRUE=+1, FALSE=-1. Negatively keyed items (2,5,6,8): TRUE=-1, FALSE=+1. A score above 0 indicates a positive subjective attitude toward medication. Item 3's source typo 'free well' is rendered as the standard 'free will'."
+    },
+    "dimensions": [
+      { "id": "attitude", "name": "Medication Attitude", "description": "Subjective attitude toward antidepressant medication. Sum of keyed item scores; range -10 to +10; > 0 indicates a positive attitude." }
+    ],
+    "items": [
+      { "id": "dai_intro", "type": "inst", "text_key": "question_head" },
+      { "id": "dai1", "type": "multi", "text_key": "dai1", "dimension": "attitude", "options": [ { "value": 1, "text_key": "opt_true" }, { "value": -1, "text_key": "opt_false" } ] },
+      { "id": "dai2", "type": "multi", "text_key": "dai2", "dimension": "attitude", "options": [ { "value": -1, "text_key": "opt_true" }, { "value": 1, "text_key": "opt_false" } ] },
+      { "id": "dai3", "type": "multi", "text_key": "dai3", "dimension": "attitude", "options": [ { "value": 1, "text_key": "opt_true" }, { "value": -1, "text_key": "opt_false" } ] },
+      { "id": "dai4", "type": "multi", "text_key": "dai4", "dimension": "attitude", "options": [ { "value": 1, "text_key": "opt_true" }, { "value": -1, "text_key": "opt_false" } ] },
+      { "id": "dai5", "type": "multi", "text_key": "dai5", "dimension": "attitude", "options": [ { "value": -1, "text_key": "opt_true" }, { "value": 1, "text_key": "opt_false" } ] },
+      { "id": "dai6", "type": "multi", "text_key": "dai6", "dimension": "attitude", "options": [ { "value": -1, "text_key": "opt_true" }, { "value": 1, "text_key": "opt_false" } ] },
+      { "id": "dai7", "type": "multi", "text_key": "dai7", "dimension": "attitude", "options": [ { "value": 1, "text_key": "opt_true" }, { "value": -1, "text_key": "opt_false" } ] },
+      { "id": "dai8", "type": "multi", "text_key": "dai8", "dimension": "attitude", "options": [ { "value": -1, "text_key": "opt_true" }, { "value": 1, "text_key": "opt_false" } ] },
+      { "id": "dai9", "type": "multi", "text_key": "dai9", "dimension": "attitude", "options": [ { "value": 1, "text_key": "opt_true" }, { "value": -1, "text_key": "opt_false" } ] },
+      { "id": "dai10", "type": "multi", "text_key": "dai10", "dimension": "attitude", "options": [ { "value": 1, "text_key": "opt_true" }, { "value": -1, "text_key": "opt_false" } ] }
+    ],
+    "scoring": {
+      "attitude": {
+        "method": "sum_coded",
+        "description": "Sum of keyed item scores (-10 to +10). Greater than 0 indicates a positive attitude toward medication.",
+        "items": { "dai1": 1, "dai2": 1, "dai3": 1, "dai4": 1, "dai5": 1, "dai6": 1, "dai7": 1, "dai8": 1, "dai9": 1, "dai10": 1 },
+        "norms": {
+          "thresholds": [
+            { "min": -10, "max": -1, "label": "Negative attitude" },
+            { "min": 0, "max": 0, "label": "Ambivalent" },
+            { "min": 1, "max": 10, "label": "Positive attitude" }
+          ]
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "question_head": "Please indicate whether each of the following statements is TRUE or FALSE for you.",
+      "opt_true": "TRUE",
+      "opt_false": "FALSE",
+      "dai1": "I think that the good things about antidepressants outweigh the bad.",
+      "dai2": "If someone has to use antidepressants, they will feel strange, \"doped up\", on them.",
+      "dai3": "If I need to take an antidepressant, I will take it of my own free will.",
+      "dai4": "If someone has to take antidepressants, it will make them feel more relaxed.",
+      "dai5": "If someone has to take antidepressants, it will make them feel tired and sluggish.",
+      "dai6": "If you have to take antidepressants, you will only take them when you feel ill.",
+      "dai7": "If someone has to take antidepressants, they will feel more normal on them.",
+      "dai8": "I think it is unnatural for someone's mind and body to be controlled by antidepressants.",
+      "dai9": "I think those who take antidepressants have clearer thoughts on them.",
+      "dai10": "I think taking antidepressants will prevent those who take them from having a breakdown.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

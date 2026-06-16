@@ -1,0 +1,92 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Moral Foundations Questionnaire – Liberty Scale",
+      "code": "MFQL",
+      "abbreviation": "MFQ-Liberty",
+      "description": "9-item measure of the 'liberty/oppression' moral foundation proposed to extend the Moral Foundations Questionnaire, capturing economic/government liberty (6 items) and lifestyle liberty (3 items). Following MFQ format, each subscale combines a relevance-rating item with judgment (agreement) items, all rated 0-5. This is the Liberty supplement, not the full 30-item MFQ.",
+      "citation": "Iyer, R., Koleva, S., Graham, J., Ditto, P., & Haidt, J. (2012). Understanding libertarian morality: The psychological dispositions of self-identified libertarians. PLoS ONE, 7(8), e42366. https://doi.org/10.1371/journal.pone.0042366",
+      "license": "CC BY 4.0",
+      "license_explanation": "Items reproduced from Iyer et al. (2012), PLoS ONE, which is published open access under a Creative Commons Attribution 4.0 International License.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1371/journal.pone.0042366",
+      "version": "1.0",
+      "domain": "Attitudes & Beliefs"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-16",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Mixed MFQ format: each subscale's first item is a relevance rating (0=not at all relevant to 5=extremely relevant) and the remaining items are agreement ratings (0=strongly disagree to 5=strongly agree), via the 'relevance' named response scale. Item 5 ('The government should do more to advance the common good...') is reverse-coded per the source. Subscales scored as means (0-5) combining relevance and agreement items, consistent with standard MFQ foundation scoring."
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 0,
+      "max": 5,
+      "labels": ["ag_0", "ag_1", "ag_2", "ag_3", "ag_4", "ag_5"],
+      "question_head": "head_agreement"
+    },
+    "response_scales": {
+      "relevance": {
+        "name": "Relevance",
+        "points": 6,
+        "min": 0,
+        "max": 5,
+        "labels": ["rel_0", "rel_1", "rel_2", "rel_3", "rel_4", "rel_5"],
+        "question_head": "head_relevance"
+      }
+    },
+    "dimensions": [
+      { "id": "econ_liberty", "name": "Economic/Government Liberty", "description": "Endorsement of economic freedom and limited government (items 1-6; item 5 reverse-coded)." },
+      { "id": "lifestyle_liberty", "name": "Lifestyle Liberty", "description": "Endorsement of personal freedom in lifestyle and group norms (items 7-9)." },
+      { "id": "liberty_total", "name": "Liberty (Total)", "description": "Mean of all 9 items (item 5 reverse-coded); higher = stronger liberty foundation." }
+    ],
+    "items": [
+      { "id": "mfql1", "type": "likert", "text_key": "mfql1", "dimension": "econ_liberty", "response_scale": "relevance" },
+      { "id": "mfql2", "type": "likert", "text_key": "mfql2", "dimension": "econ_liberty" },
+      { "id": "mfql3", "type": "likert", "text_key": "mfql3", "dimension": "econ_liberty" },
+      { "id": "mfql4", "type": "likert", "text_key": "mfql4", "dimension": "econ_liberty" },
+      { "id": "mfql5", "type": "likert", "text_key": "mfql5", "dimension": "econ_liberty" },
+      { "id": "mfql6", "type": "likert", "text_key": "mfql6", "dimension": "econ_liberty" },
+      { "id": "mfql7", "type": "likert", "text_key": "mfql7", "dimension": "lifestyle_liberty", "response_scale": "relevance" },
+      { "id": "mfql8", "type": "likert", "text_key": "mfql8", "dimension": "lifestyle_liberty" },
+      { "id": "mfql9", "type": "likert", "text_key": "mfql9", "dimension": "lifestyle_liberty" }
+    ],
+    "scoring": {
+      "econ_liberty": { "method": "mean_coded", "description": "Mean of items 1-6 (0-5); item 5 reverse-coded.", "items": { "mfql1": 1, "mfql2": 1, "mfql3": 1, "mfql4": 1, "mfql5": -1, "mfql6": 1 } },
+      "lifestyle_liberty": { "method": "mean_coded", "description": "Mean of items 7-9 (0-5).", "items": { "mfql7": 1, "mfql8": 1, "mfql9": 1 } },
+      "liberty_total": { "method": "mean_coded", "description": "Mean of all 9 items (0-5); item 5 reverse-coded.", "items": { "mfql1": 1, "mfql2": 1, "mfql3": 1, "mfql4": 1, "mfql5": -1, "mfql6": 1, "mfql7": 1, "mfql8": 1, "mfql9": 1 } }
+    }
+  },
+  "translations": {
+    "en": {
+      "head_relevance": "When you decide whether something is right or wrong, to what extent are the following considerations relevant to your thinking? Please rate each statement using this scale:",
+      "head_agreement": "Please read the following sentences and indicate your agreement or disagreement:",
+      "rel_0": "Not at all relevant",
+      "rel_1": "Not very relevant",
+      "rel_2": "Slightly relevant",
+      "rel_3": "Somewhat relevant",
+      "rel_4": "Very relevant",
+      "rel_5": "Extremely relevant",
+      "ag_0": "Strongly disagree",
+      "ag_1": "Moderately disagree",
+      "ag_2": "Slightly disagree",
+      "ag_3": "Slightly agree",
+      "ag_4": "Moderately agree",
+      "ag_5": "Strongly agree",
+      "mfql1": "Whether or not private property was respected.",
+      "mfql2": "People who are successful in business have a right to enjoy their wealth as they see fit.",
+      "mfql3": "Society works best when it lets individuals take responsibility for their own lives without telling them what to do.",
+      "mfql4": "The government interferes far too much in our everyday lives.",
+      "mfql5": "The government should do more to advance the common good, even if that means limiting the freedom and choices of individuals.",
+      "mfql6": "Property owners should be allowed to develop their land or build their homes in any way they choose, as long as they don't endanger their neighbors.",
+      "mfql7": "Whether or not everyone was free to do as they wanted.",
+      "mfql8": "I think everyone should be free to do as they choose, so long as they don't infringe upon the equal freedom of others.",
+      "mfql9": "People should be free to decide what group norms or traditions they themselves want to follow.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

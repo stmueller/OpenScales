@@ -1,0 +1,171 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Berlin Social Support Scales – Support Seeking",
+      "code": "BSS-SS",
+      "abbreviation": "BSS-SS",
+      "description": "Support seeking (Schwarzer & Schulz). 5 items; 4-point agreement; mean. Self-report.",
+      "citation": "Schwarzer, R., & Schulz, U. (2000). Berlin Social Support Scales (BSSS). http://www.coping.de ; Schulz, U., & Schwarzer, R. (2003). Die Berliner Social Support Skalen (BSSS). Diagnostica, 49, 73-82.",
+      "license": "CC BY 4.0",
+      "license_explanation": "Licensed to the OpenScales project under CC BY 4.0 by the author, Ralf Schwarzer (permission granted June 2026), who authorized inclusion of his scales. English items from userpage.fu-berlin.de/~health/soc_e.htm; German items from the FU-Berlin skalen documentation.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "http://userpage.fu-berlin.de/~health/bsss.htm",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-17",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Self-report. EN/DE verbatim; no reverse items. Part of the Berlin Social Support Scales family. Added official Spanish (soc_s.htm, Varela/Galain/Schwarzer/Schulz 2004), French (soc_f.htm, Schwarzer/Schulz/Katsap 2000), and Polish (soc_pol.htm) translations. NOTE: French source page had NO response anchors — the 4-point French anchors here are implementer-supplied (true-style, matching es/pl), VERIFY. es/fr/pl are the OFFICIAL versions and are gendered (and, for some subscales, assume a female respondent / male patient), unlike the gender-neutral en/de — VERIFY. Added Serbian (Latin; soc … Language_Selection/Serbian; Schwarzer/Schulz/Stula 2003) — official, gendered (masculine self-report)."
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "question_head": "qh"
+    },
+    "dimensions": [
+      {
+        "id": "seeking",
+        "name": "Support Seeking",
+        "description": "Mean of 5 items."
+      }
+    ],
+    "items": [
+      {
+        "id": "ss1",
+        "type": "likert",
+        "text_key": "ss1",
+        "dimension": "seeking"
+      },
+      {
+        "id": "ss2",
+        "type": "likert",
+        "text_key": "ss2",
+        "dimension": "seeking"
+      },
+      {
+        "id": "ss3",
+        "type": "likert",
+        "text_key": "ss3",
+        "dimension": "seeking"
+      },
+      {
+        "id": "ss4",
+        "type": "likert",
+        "text_key": "ss4",
+        "dimension": "seeking"
+      },
+      {
+        "id": "ss5",
+        "type": "likert",
+        "text_key": "ss5",
+        "dimension": "seeking"
+      }
+    ],
+    "scoring": {
+      "seeking": {
+        "name": "Support Seeking",
+        "method": "mean_coded",
+        "description": "Mean of ss1-5.",
+        "items": [
+          "ss1",
+          "ss2",
+          "ss3",
+          "ss4",
+          "ss5"
+        ]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "r1": "strongly disagree",
+      "r2": "somewhat disagree",
+      "r3": "somewhat agree",
+      "r4": "strongly agree",
+      "qh": "Please indicate how much you agree with each of the following statements.",
+      "LANGUAGE": "English",
+      "ss1": "In critical situations, I prefer to ask others for their advice.",
+      "ss2": "Whenever I am down, I look for someone to cheer me up again.",
+      "ss3": "When I am worried, I reach out to someone to talk to.",
+      "ss4": "If I do not know how to handle a situation, I ask others what they would do.",
+      "ss5": "Whenever I need help, I ask for it."
+    },
+    "de": {
+      "r1": "stimmt nicht",
+      "r2": "stimmt kaum",
+      "r3": "stimmt eher",
+      "r4": "stimmt genau",
+      "qh": "Bitte geben Sie an, inwieweit die folgenden Aussagen auf Sie zutreffen.",
+      "LANGUAGE": "Deutsch",
+      "ss1": "Wenn es kritisch wird, hole ich mir gerne Rat von anderen.",
+      "ss2": "Wenn ich niedergeschlagen bin, treffe ich mich mit anderen, damit sie mich aufmuntern.",
+      "ss3": "Wenn ich Sorgen habe, suche ich das Gespräch.",
+      "ss4": "Wenn ich nicht weiter weiß, frage ich andere, was sie an meiner Stelle tun würden.",
+      "ss5": "Wenn ich Hilfe brauche, bitte ich andere darum."
+    },
+    "es": {
+      "r1": "falsa",
+      "r2": "rara vez verdadero",
+      "r3": "moderadamente verdadero",
+      "r4": "totalmente verdadero",
+      "qh": "Indique en qué medida cada afirmación es cierta para usted (de 1 a 4).",
+      "LANGUAGE": "Español",
+      "ss1": "En situaciones criticas, prefiero acudir a otras personas por su consejo.",
+      "ss2": "Cuando estoy decaída, busco a alguien que me de ánimo.",
+      "ss3": "Cuando estoy preocupada, me aproximo a alguien para hablar.",
+      "ss4": "Si no se como manejar una situación, pregunto a otros que harían.",
+      "ss5": "Cada vez que necesito ayuda, la pido."
+    },
+    "fr": {
+      "r1": "pas du tout vrai",
+      "r2": "plutôt pas vrai",
+      "r3": "plutôt vrai",
+      "r4": "tout à fait vrai",
+      "qh": "Veuillez indiquer dans quelle mesure chaque affirmation est vraie pour vous.",
+      "LANGUAGE": "Français",
+      "ss1": "Quand ça ne va plus je demande volontiers conseil à d'autres personnes.",
+      "ss2": "Quand je n'ai pas le moral, je vois d'autres personnes afin qu'ils m'encouragent.",
+      "ss3": "Quand j'ai des soucis je cherche à en parler.",
+      "ss4": "Quand je ne sais plus quoi faire je demande aux autres ce qu'ils auraient fait à ma place.",
+      "ss5": "Quand j'ai besoin d'aide j'en demande aux autres."
+    },
+    "pl": {
+      "r1": "całkowicie nieprawdziwe",
+      "r2": "w małym stopniu prawdziwe",
+      "r3": "w umiarkowanym stopniu prawdziwe",
+      "r4": "całkowicie prawdziwe",
+      "qh": "Proszę wskazać, w jakim stopniu każde stwierdzenie jest prawdziwe dla Pana/Pani.",
+      "LANGUAGE": "Polski",
+      "ss1": "W krytycznych sytuacjach wolę poprosić innych o radę",
+      "ss2": "Ilekroć jestem przygnębiony, szukam kogoś, kto podniesie mnie na duchu",
+      "ss3": "Gdy jestem zmartwiony, szukam kogoś, z kim mógłbym porozmawiać",
+      "ss4": "Jeśli nie wiem, jak sobie poradzić z sytuacją, pytam innych, co oni by zrobili",
+      "ss5": "Ilekroć potrzebuję pomocy, proszę o nią"
+    },
+    "sr": {
+      "r1": "uopšte ne",
+      "r2": "uglavnom ne",
+      "r3": "uglavnom da",
+      "r4": "da, u potpunosti",
+      "qh": "Molimo Vas da označite u kojoj meri svaka tvrdnja važi za Vas.",
+      "LANGUAGE": "Srpski",
+      "ss1": "Kad postane kritično, rado slušam savete drugih.",
+      "ss2": "Kada sam neraspoložen, viđam se sa osobama koje me razvesele.",
+      "ss3": "Kada sam zabrinut, razgovaram sa nekim.",
+      "ss4": "Kada ne znam šta dalje, pitam druge šta bi oni uradili na mom mestu.",
+      "ss5": "Kada mi treba pomoć, zamolim druge da mi pomognu."
+    }
+  }
+}

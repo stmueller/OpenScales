@@ -1,0 +1,2133 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Proactive Coping Inventory",
+      "code": "PCI",
+      "abbreviation": "PCI",
+      "description": "Multidimensional coping inventory (Greenglass, Schwarzer & Taubert, 1999). LANGUAGE VARIANT: the English version has 55 items / 7 subscales (Proactive, Reflective, Strategic Planning, Preventive, Instrumental Support Seeking, Emotional Support Seeking, Avoidance); the German 'Deutsche Testversion' has 57 items / 7 partly-different subscales (Proaktives Coping, Funktionaler Handlungsaufschub, Kognitive Bewältigung, Präventive Bewältigung, Strategische Planung, Suche nach emotionaler Unterstützung, Suche nach Unterstützung). Each language administers and scores only its own subscales. 4-point; means. See also the standalone PCOPE (Proactive Coping subscale).",
+      "citation": "Greenglass, E., Schwarzer, R., & Taubert, S. (1999). The Proactive Coping Inventory (PCI). http://userpage.fu-berlin.de/~health/greenpci.htm",
+      "license": "CC BY 4.0",
+      "license_explanation": "Licensed to the OpenScales project under CC BY 4.0 by the author, Ralf Schwarzer (permission granted June 2026), who authorized inclusion of his scales.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "http://userpage.fu-berlin.de/~health/procoping.htm",
+      "domain": "Personality",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-17",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "LANGUAGE VARIANT with per-variant subscales (variant_when on items + `variants` tag on scoring blocks; needs the runner's scoring-block variant filter). English (greenpci.htm): 55 items, 7 subscales; reverse Proactive Coping items 2,9,14. German ('PCI - Deutsche Testversion', skalen): 57 items, 7 subscales. 'Die deutsche Version weicht von der englischen Version stark ab.' VERIFY German subscale 1 (Proaktives Coping): used the 16-item full-PCI form (the 17-item standalone minus 'Mir kommt es immer darauf an, etwas zu bewirken'); reverse mapped to items 2,7,13,14 of that 16-item list — confirm against the source. 4-point; subscales scored as means. Source does not print a single total; none provided."
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "question_head": "qh"
+    },
+    "variants": {
+      "default": "en",
+      "axes": [
+        {
+          "id": "language",
+          "selector": "language"
+        }
+      ],
+      "sets": {
+        "en": {
+          "name": "English (55 items, 7 subscales)",
+          "languages": [
+            "en"
+          ],
+          "items": [
+            "pci_en_proactive1",
+            "pci_en_proactive2",
+            "pci_en_proactive3",
+            "pci_en_proactive4",
+            "pci_en_proactive5",
+            "pci_en_proactive6",
+            "pci_en_proactive7",
+            "pci_en_proactive8",
+            "pci_en_proactive9",
+            "pci_en_proactive10",
+            "pci_en_proactive11",
+            "pci_en_proactive12",
+            "pci_en_proactive13",
+            "pci_en_proactive14",
+            "pci_en_reflective1",
+            "pci_en_reflective2",
+            "pci_en_reflective3",
+            "pci_en_reflective4",
+            "pci_en_reflective5",
+            "pci_en_reflective6",
+            "pci_en_reflective7",
+            "pci_en_reflective8",
+            "pci_en_reflective9",
+            "pci_en_reflective10",
+            "pci_en_reflective11",
+            "pci_en_strategic1",
+            "pci_en_strategic2",
+            "pci_en_strategic3",
+            "pci_en_strategic4",
+            "pci_en_preventive1",
+            "pci_en_preventive2",
+            "pci_en_preventive3",
+            "pci_en_preventive4",
+            "pci_en_preventive5",
+            "pci_en_preventive6",
+            "pci_en_preventive7",
+            "pci_en_preventive8",
+            "pci_en_preventive9",
+            "pci_en_preventive10",
+            "pci_en_instrumental1",
+            "pci_en_instrumental2",
+            "pci_en_instrumental3",
+            "pci_en_instrumental4",
+            "pci_en_instrumental5",
+            "pci_en_instrumental6",
+            "pci_en_instrumental7",
+            "pci_en_instrumental8",
+            "pci_en_emotional1",
+            "pci_en_emotional2",
+            "pci_en_emotional3",
+            "pci_en_emotional4",
+            "pci_en_emotional5",
+            "pci_en_avoidance1",
+            "pci_en_avoidance2",
+            "pci_en_avoidance3"
+          ]
+        },
+        "de": {
+          "name": "Deutsche Testversion (57 items, 7 subscales)",
+          "languages": [
+            "de"
+          ],
+          "items": [
+            "pci_de_proaktiv1",
+            "pci_de_proaktiv2",
+            "pci_de_proaktiv3",
+            "pci_de_proaktiv4",
+            "pci_de_proaktiv5",
+            "pci_de_proaktiv6",
+            "pci_de_proaktiv7",
+            "pci_de_proaktiv8",
+            "pci_de_proaktiv9",
+            "pci_de_proaktiv10",
+            "pci_de_proaktiv11",
+            "pci_de_proaktiv12",
+            "pci_de_proaktiv13",
+            "pci_de_proaktiv14",
+            "pci_de_proaktiv15",
+            "pci_de_proaktiv16",
+            "pci_de_handlungsaufschub1",
+            "pci_de_handlungsaufschub2",
+            "pci_de_handlungsaufschub3",
+            "pci_de_kognitiv1",
+            "pci_de_kognitiv2",
+            "pci_de_kognitiv3",
+            "pci_de_kognitiv4",
+            "pci_de_kognitiv5",
+            "pci_de_kognitiv6",
+            "pci_de_kognitiv7",
+            "pci_de_kognitiv8",
+            "pci_de_kognitiv9",
+            "pci_de_kognitiv10",
+            "pci_de_kognitiv11",
+            "pci_de_praeventiv1",
+            "pci_de_praeventiv2",
+            "pci_de_praeventiv3",
+            "pci_de_praeventiv4",
+            "pci_de_praeventiv5",
+            "pci_de_praeventiv6",
+            "pci_de_praeventiv7",
+            "pci_de_praeventiv8",
+            "pci_de_praeventiv9",
+            "pci_de_praeventiv10",
+            "pci_de_strategisch1",
+            "pci_de_strategisch2",
+            "pci_de_strategisch3",
+            "pci_de_strategisch4",
+            "pci_de_emotionale_us1",
+            "pci_de_emotionale_us2",
+            "pci_de_emotionale_us3",
+            "pci_de_emotionale_us4",
+            "pci_de_emotionale_us5",
+            "pci_de_us1",
+            "pci_de_us2",
+            "pci_de_us3",
+            "pci_de_us4",
+            "pci_de_us5",
+            "pci_de_us6",
+            "pci_de_us7",
+            "pci_de_us8"
+          ]
+        }
+      }
+    },
+    "dimensions": [
+      {
+        "id": "en_proactive",
+        "name": "Proactive Coping (EN)",
+        "description": "EN PCI subscale: mean of 14 items.",
+        "variants": [
+          "en"
+        ]
+      },
+      {
+        "id": "en_reflective",
+        "name": "Reflective Coping (EN)",
+        "description": "EN PCI subscale: mean of 11 items.",
+        "variants": [
+          "en"
+        ]
+      },
+      {
+        "id": "en_strategic",
+        "name": "Strategic Planning (EN)",
+        "description": "EN PCI subscale: mean of 4 items.",
+        "variants": [
+          "en"
+        ]
+      },
+      {
+        "id": "en_preventive",
+        "name": "Preventive Coping (EN)",
+        "description": "EN PCI subscale: mean of 10 items.",
+        "variants": [
+          "en"
+        ]
+      },
+      {
+        "id": "en_instrumental",
+        "name": "Instrumental Support Seeking (EN)",
+        "description": "EN PCI subscale: mean of 8 items.",
+        "variants": [
+          "en"
+        ]
+      },
+      {
+        "id": "en_emotional",
+        "name": "Emotional Support Seeking (EN)",
+        "description": "EN PCI subscale: mean of 5 items.",
+        "variants": [
+          "en"
+        ]
+      },
+      {
+        "id": "en_avoidance",
+        "name": "Avoidance Coping (EN)",
+        "description": "EN PCI subscale: mean of 3 items.",
+        "variants": [
+          "en"
+        ]
+      },
+      {
+        "id": "de_proaktiv",
+        "name": "Proaktives Coping (DE)",
+        "description": "DE PCI subscale: mean of 16 items.",
+        "variants": [
+          "de"
+        ]
+      },
+      {
+        "id": "de_handlungsaufschub",
+        "name": "Funktionaler Handlungsaufschub (DE)",
+        "description": "DE PCI subscale: mean of 3 items.",
+        "variants": [
+          "de"
+        ]
+      },
+      {
+        "id": "de_kognitiv",
+        "name": "Kognitive Bewältigung (DE)",
+        "description": "DE PCI subscale: mean of 11 items.",
+        "variants": [
+          "de"
+        ]
+      },
+      {
+        "id": "de_praeventiv",
+        "name": "Präventive Bewältigung (DE)",
+        "description": "DE PCI subscale: mean of 10 items.",
+        "variants": [
+          "de"
+        ]
+      },
+      {
+        "id": "de_strategisch",
+        "name": "Strategische Planung (DE)",
+        "description": "DE PCI subscale: mean of 4 items.",
+        "variants": [
+          "de"
+        ]
+      },
+      {
+        "id": "de_emotionale_us",
+        "name": "Suche nach emotionaler Unterstützung (DE)",
+        "description": "DE PCI subscale: mean of 5 items.",
+        "variants": [
+          "de"
+        ]
+      },
+      {
+        "id": "de_us",
+        "name": "Suche nach Unterstützung (DE)",
+        "description": "DE PCI subscale: mean of 8 items.",
+        "variants": [
+          "de"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "id": "pci_en_proactive1",
+        "type": "likert",
+        "text_key": "pci_en_proactive1",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_proactive2",
+        "type": "likert",
+        "text_key": "pci_en_proactive2",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_proactive3",
+        "type": "likert",
+        "text_key": "pci_en_proactive3",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_proactive4",
+        "type": "likert",
+        "text_key": "pci_en_proactive4",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_proactive5",
+        "type": "likert",
+        "text_key": "pci_en_proactive5",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_proactive6",
+        "type": "likert",
+        "text_key": "pci_en_proactive6",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_proactive7",
+        "type": "likert",
+        "text_key": "pci_en_proactive7",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_proactive8",
+        "type": "likert",
+        "text_key": "pci_en_proactive8",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_proactive9",
+        "type": "likert",
+        "text_key": "pci_en_proactive9",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_proactive10",
+        "type": "likert",
+        "text_key": "pci_en_proactive10",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_proactive11",
+        "type": "likert",
+        "text_key": "pci_en_proactive11",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_proactive12",
+        "type": "likert",
+        "text_key": "pci_en_proactive12",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_proactive13",
+        "type": "likert",
+        "text_key": "pci_en_proactive13",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_proactive14",
+        "type": "likert",
+        "text_key": "pci_en_proactive14",
+        "dimension": "en_proactive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_reflective1",
+        "type": "likert",
+        "text_key": "pci_en_reflective1",
+        "dimension": "en_reflective",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_reflective2",
+        "type": "likert",
+        "text_key": "pci_en_reflective2",
+        "dimension": "en_reflective",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_reflective3",
+        "type": "likert",
+        "text_key": "pci_en_reflective3",
+        "dimension": "en_reflective",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_reflective4",
+        "type": "likert",
+        "text_key": "pci_en_reflective4",
+        "dimension": "en_reflective",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_reflective5",
+        "type": "likert",
+        "text_key": "pci_en_reflective5",
+        "dimension": "en_reflective",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_reflective6",
+        "type": "likert",
+        "text_key": "pci_en_reflective6",
+        "dimension": "en_reflective",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_reflective7",
+        "type": "likert",
+        "text_key": "pci_en_reflective7",
+        "dimension": "en_reflective",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_reflective8",
+        "type": "likert",
+        "text_key": "pci_en_reflective8",
+        "dimension": "en_reflective",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_reflective9",
+        "type": "likert",
+        "text_key": "pci_en_reflective9",
+        "dimension": "en_reflective",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_reflective10",
+        "type": "likert",
+        "text_key": "pci_en_reflective10",
+        "dimension": "en_reflective",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_reflective11",
+        "type": "likert",
+        "text_key": "pci_en_reflective11",
+        "dimension": "en_reflective",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_strategic1",
+        "type": "likert",
+        "text_key": "pci_en_strategic1",
+        "dimension": "en_strategic",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_strategic2",
+        "type": "likert",
+        "text_key": "pci_en_strategic2",
+        "dimension": "en_strategic",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_strategic3",
+        "type": "likert",
+        "text_key": "pci_en_strategic3",
+        "dimension": "en_strategic",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_strategic4",
+        "type": "likert",
+        "text_key": "pci_en_strategic4",
+        "dimension": "en_strategic",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_preventive1",
+        "type": "likert",
+        "text_key": "pci_en_preventive1",
+        "dimension": "en_preventive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_preventive2",
+        "type": "likert",
+        "text_key": "pci_en_preventive2",
+        "dimension": "en_preventive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_preventive3",
+        "type": "likert",
+        "text_key": "pci_en_preventive3",
+        "dimension": "en_preventive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_preventive4",
+        "type": "likert",
+        "text_key": "pci_en_preventive4",
+        "dimension": "en_preventive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_preventive5",
+        "type": "likert",
+        "text_key": "pci_en_preventive5",
+        "dimension": "en_preventive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_preventive6",
+        "type": "likert",
+        "text_key": "pci_en_preventive6",
+        "dimension": "en_preventive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_preventive7",
+        "type": "likert",
+        "text_key": "pci_en_preventive7",
+        "dimension": "en_preventive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_preventive8",
+        "type": "likert",
+        "text_key": "pci_en_preventive8",
+        "dimension": "en_preventive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_preventive9",
+        "type": "likert",
+        "text_key": "pci_en_preventive9",
+        "dimension": "en_preventive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_preventive10",
+        "type": "likert",
+        "text_key": "pci_en_preventive10",
+        "dimension": "en_preventive",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_instrumental1",
+        "type": "likert",
+        "text_key": "pci_en_instrumental1",
+        "dimension": "en_instrumental",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_instrumental2",
+        "type": "likert",
+        "text_key": "pci_en_instrumental2",
+        "dimension": "en_instrumental",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_instrumental3",
+        "type": "likert",
+        "text_key": "pci_en_instrumental3",
+        "dimension": "en_instrumental",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_instrumental4",
+        "type": "likert",
+        "text_key": "pci_en_instrumental4",
+        "dimension": "en_instrumental",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_instrumental5",
+        "type": "likert",
+        "text_key": "pci_en_instrumental5",
+        "dimension": "en_instrumental",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_instrumental6",
+        "type": "likert",
+        "text_key": "pci_en_instrumental6",
+        "dimension": "en_instrumental",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_instrumental7",
+        "type": "likert",
+        "text_key": "pci_en_instrumental7",
+        "dimension": "en_instrumental",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_instrumental8",
+        "type": "likert",
+        "text_key": "pci_en_instrumental8",
+        "dimension": "en_instrumental",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_emotional1",
+        "type": "likert",
+        "text_key": "pci_en_emotional1",
+        "dimension": "en_emotional",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_emotional2",
+        "type": "likert",
+        "text_key": "pci_en_emotional2",
+        "dimension": "en_emotional",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_emotional3",
+        "type": "likert",
+        "text_key": "pci_en_emotional3",
+        "dimension": "en_emotional",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_emotional4",
+        "type": "likert",
+        "text_key": "pci_en_emotional4",
+        "dimension": "en_emotional",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_emotional5",
+        "type": "likert",
+        "text_key": "pci_en_emotional5",
+        "dimension": "en_emotional",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_avoidance1",
+        "type": "likert",
+        "text_key": "pci_en_avoidance1",
+        "dimension": "en_avoidance",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_avoidance2",
+        "type": "likert",
+        "text_key": "pci_en_avoidance2",
+        "dimension": "en_avoidance",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_en_avoidance3",
+        "type": "likert",
+        "text_key": "pci_en_avoidance3",
+        "dimension": "en_avoidance",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv1",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv1",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv2",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv2",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv3",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv3",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv4",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv4",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv5",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv5",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv6",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv6",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv7",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv7",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv8",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv8",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv9",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv9",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv10",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv10",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv11",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv11",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv12",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv12",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv13",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv13",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv14",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv14",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv15",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv15",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_proaktiv16",
+        "type": "likert",
+        "text_key": "pci_de_proaktiv16",
+        "dimension": "de_proaktiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_handlungsaufschub1",
+        "type": "likert",
+        "text_key": "pci_de_handlungsaufschub1",
+        "dimension": "de_handlungsaufschub",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_handlungsaufschub2",
+        "type": "likert",
+        "text_key": "pci_de_handlungsaufschub2",
+        "dimension": "de_handlungsaufschub",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_handlungsaufschub3",
+        "type": "likert",
+        "text_key": "pci_de_handlungsaufschub3",
+        "dimension": "de_handlungsaufschub",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_kognitiv1",
+        "type": "likert",
+        "text_key": "pci_de_kognitiv1",
+        "dimension": "de_kognitiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_kognitiv2",
+        "type": "likert",
+        "text_key": "pci_de_kognitiv2",
+        "dimension": "de_kognitiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_kognitiv3",
+        "type": "likert",
+        "text_key": "pci_de_kognitiv3",
+        "dimension": "de_kognitiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_kognitiv4",
+        "type": "likert",
+        "text_key": "pci_de_kognitiv4",
+        "dimension": "de_kognitiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_kognitiv5",
+        "type": "likert",
+        "text_key": "pci_de_kognitiv5",
+        "dimension": "de_kognitiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_kognitiv6",
+        "type": "likert",
+        "text_key": "pci_de_kognitiv6",
+        "dimension": "de_kognitiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_kognitiv7",
+        "type": "likert",
+        "text_key": "pci_de_kognitiv7",
+        "dimension": "de_kognitiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_kognitiv8",
+        "type": "likert",
+        "text_key": "pci_de_kognitiv8",
+        "dimension": "de_kognitiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_kognitiv9",
+        "type": "likert",
+        "text_key": "pci_de_kognitiv9",
+        "dimension": "de_kognitiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_kognitiv10",
+        "type": "likert",
+        "text_key": "pci_de_kognitiv10",
+        "dimension": "de_kognitiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_kognitiv11",
+        "type": "likert",
+        "text_key": "pci_de_kognitiv11",
+        "dimension": "de_kognitiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_praeventiv1",
+        "type": "likert",
+        "text_key": "pci_de_praeventiv1",
+        "dimension": "de_praeventiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_praeventiv2",
+        "type": "likert",
+        "text_key": "pci_de_praeventiv2",
+        "dimension": "de_praeventiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_praeventiv3",
+        "type": "likert",
+        "text_key": "pci_de_praeventiv3",
+        "dimension": "de_praeventiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_praeventiv4",
+        "type": "likert",
+        "text_key": "pci_de_praeventiv4",
+        "dimension": "de_praeventiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_praeventiv5",
+        "type": "likert",
+        "text_key": "pci_de_praeventiv5",
+        "dimension": "de_praeventiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_praeventiv6",
+        "type": "likert",
+        "text_key": "pci_de_praeventiv6",
+        "dimension": "de_praeventiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_praeventiv7",
+        "type": "likert",
+        "text_key": "pci_de_praeventiv7",
+        "dimension": "de_praeventiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_praeventiv8",
+        "type": "likert",
+        "text_key": "pci_de_praeventiv8",
+        "dimension": "de_praeventiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_praeventiv9",
+        "type": "likert",
+        "text_key": "pci_de_praeventiv9",
+        "dimension": "de_praeventiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_praeventiv10",
+        "type": "likert",
+        "text_key": "pci_de_praeventiv10",
+        "dimension": "de_praeventiv",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_strategisch1",
+        "type": "likert",
+        "text_key": "pci_de_strategisch1",
+        "dimension": "de_strategisch",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_strategisch2",
+        "type": "likert",
+        "text_key": "pci_de_strategisch2",
+        "dimension": "de_strategisch",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_strategisch3",
+        "type": "likert",
+        "text_key": "pci_de_strategisch3",
+        "dimension": "de_strategisch",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_strategisch4",
+        "type": "likert",
+        "text_key": "pci_de_strategisch4",
+        "dimension": "de_strategisch",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_emotionale_us1",
+        "type": "likert",
+        "text_key": "pci_de_emotionale_us1",
+        "dimension": "de_emotionale_us",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_emotionale_us2",
+        "type": "likert",
+        "text_key": "pci_de_emotionale_us2",
+        "dimension": "de_emotionale_us",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_emotionale_us3",
+        "type": "likert",
+        "text_key": "pci_de_emotionale_us3",
+        "dimension": "de_emotionale_us",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_emotionale_us4",
+        "type": "likert",
+        "text_key": "pci_de_emotionale_us4",
+        "dimension": "de_emotionale_us",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_emotionale_us5",
+        "type": "likert",
+        "text_key": "pci_de_emotionale_us5",
+        "dimension": "de_emotionale_us",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_us1",
+        "type": "likert",
+        "text_key": "pci_de_us1",
+        "dimension": "de_us",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_us2",
+        "type": "likert",
+        "text_key": "pci_de_us2",
+        "dimension": "de_us",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_us3",
+        "type": "likert",
+        "text_key": "pci_de_us3",
+        "dimension": "de_us",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_us4",
+        "type": "likert",
+        "text_key": "pci_de_us4",
+        "dimension": "de_us",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_us5",
+        "type": "likert",
+        "text_key": "pci_de_us5",
+        "dimension": "de_us",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_us6",
+        "type": "likert",
+        "text_key": "pci_de_us6",
+        "dimension": "de_us",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_us7",
+        "type": "likert",
+        "text_key": "pci_de_us7",
+        "dimension": "de_us",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      },
+      {
+        "id": "pci_de_us8",
+        "type": "likert",
+        "text_key": "pci_de_us8",
+        "dimension": "de_us",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de"
+          ]
+        }
+      }
+    ],
+    "scoring": {
+      "en_proactive": {
+        "name": "Proactive Coping (EN)",
+        "method": "mean_coded",
+        "description": "Mean of 14 items (reverse: [2, 9, 14]).",
+        "items": {
+          "pci_en_proactive1": 1,
+          "pci_en_proactive2": -1,
+          "pci_en_proactive3": 1,
+          "pci_en_proactive4": 1,
+          "pci_en_proactive5": 1,
+          "pci_en_proactive6": 1,
+          "pci_en_proactive7": 1,
+          "pci_en_proactive8": 1,
+          "pci_en_proactive9": -1,
+          "pci_en_proactive10": 1,
+          "pci_en_proactive11": 1,
+          "pci_en_proactive12": 1,
+          "pci_en_proactive13": 1,
+          "pci_en_proactive14": -1
+        },
+        "variants": [
+          "en"
+        ]
+      },
+      "en_reflective": {
+        "name": "Reflective Coping (EN)",
+        "method": "mean_coded",
+        "description": "Mean of 11 items.",
+        "items": {
+          "pci_en_reflective1": 1,
+          "pci_en_reflective2": 1,
+          "pci_en_reflective3": 1,
+          "pci_en_reflective4": 1,
+          "pci_en_reflective5": 1,
+          "pci_en_reflective6": 1,
+          "pci_en_reflective7": 1,
+          "pci_en_reflective8": 1,
+          "pci_en_reflective9": 1,
+          "pci_en_reflective10": 1,
+          "pci_en_reflective11": 1
+        },
+        "variants": [
+          "en"
+        ]
+      },
+      "en_strategic": {
+        "name": "Strategic Planning (EN)",
+        "method": "mean_coded",
+        "description": "Mean of 4 items.",
+        "items": {
+          "pci_en_strategic1": 1,
+          "pci_en_strategic2": 1,
+          "pci_en_strategic3": 1,
+          "pci_en_strategic4": 1
+        },
+        "variants": [
+          "en"
+        ]
+      },
+      "en_preventive": {
+        "name": "Preventive Coping (EN)",
+        "method": "mean_coded",
+        "description": "Mean of 10 items.",
+        "items": {
+          "pci_en_preventive1": 1,
+          "pci_en_preventive2": 1,
+          "pci_en_preventive3": 1,
+          "pci_en_preventive4": 1,
+          "pci_en_preventive5": 1,
+          "pci_en_preventive6": 1,
+          "pci_en_preventive7": 1,
+          "pci_en_preventive8": 1,
+          "pci_en_preventive9": 1,
+          "pci_en_preventive10": 1
+        },
+        "variants": [
+          "en"
+        ]
+      },
+      "en_instrumental": {
+        "name": "Instrumental Support Seeking (EN)",
+        "method": "mean_coded",
+        "description": "Mean of 8 items.",
+        "items": {
+          "pci_en_instrumental1": 1,
+          "pci_en_instrumental2": 1,
+          "pci_en_instrumental3": 1,
+          "pci_en_instrumental4": 1,
+          "pci_en_instrumental5": 1,
+          "pci_en_instrumental6": 1,
+          "pci_en_instrumental7": 1,
+          "pci_en_instrumental8": 1
+        },
+        "variants": [
+          "en"
+        ]
+      },
+      "en_emotional": {
+        "name": "Emotional Support Seeking (EN)",
+        "method": "mean_coded",
+        "description": "Mean of 5 items.",
+        "items": {
+          "pci_en_emotional1": 1,
+          "pci_en_emotional2": 1,
+          "pci_en_emotional3": 1,
+          "pci_en_emotional4": 1,
+          "pci_en_emotional5": 1
+        },
+        "variants": [
+          "en"
+        ]
+      },
+      "en_avoidance": {
+        "name": "Avoidance Coping (EN)",
+        "method": "mean_coded",
+        "description": "Mean of 3 items.",
+        "items": {
+          "pci_en_avoidance1": 1,
+          "pci_en_avoidance2": 1,
+          "pci_en_avoidance3": 1
+        },
+        "variants": [
+          "en"
+        ]
+      },
+      "de_proaktiv": {
+        "name": "Proaktives Coping (DE)",
+        "method": "mean_coded",
+        "description": "Mean of 16 items (reverse: [2, 7, 13, 14]).",
+        "items": {
+          "pci_de_proaktiv1": 1,
+          "pci_de_proaktiv2": -1,
+          "pci_de_proaktiv3": 1,
+          "pci_de_proaktiv4": 1,
+          "pci_de_proaktiv5": 1,
+          "pci_de_proaktiv6": 1,
+          "pci_de_proaktiv7": -1,
+          "pci_de_proaktiv8": 1,
+          "pci_de_proaktiv9": 1,
+          "pci_de_proaktiv10": 1,
+          "pci_de_proaktiv11": 1,
+          "pci_de_proaktiv12": 1,
+          "pci_de_proaktiv13": -1,
+          "pci_de_proaktiv14": -1,
+          "pci_de_proaktiv15": 1,
+          "pci_de_proaktiv16": 1
+        },
+        "variants": [
+          "de"
+        ]
+      },
+      "de_handlungsaufschub": {
+        "name": "Funktionaler Handlungsaufschub (DE)",
+        "method": "mean_coded",
+        "description": "Mean of 3 items.",
+        "items": {
+          "pci_de_handlungsaufschub1": 1,
+          "pci_de_handlungsaufschub2": 1,
+          "pci_de_handlungsaufschub3": 1
+        },
+        "variants": [
+          "de"
+        ]
+      },
+      "de_kognitiv": {
+        "name": "Kognitive Bewältigung (DE)",
+        "method": "mean_coded",
+        "description": "Mean of 11 items.",
+        "items": {
+          "pci_de_kognitiv1": 1,
+          "pci_de_kognitiv2": 1,
+          "pci_de_kognitiv3": 1,
+          "pci_de_kognitiv4": 1,
+          "pci_de_kognitiv5": 1,
+          "pci_de_kognitiv6": 1,
+          "pci_de_kognitiv7": 1,
+          "pci_de_kognitiv8": 1,
+          "pci_de_kognitiv9": 1,
+          "pci_de_kognitiv10": 1,
+          "pci_de_kognitiv11": 1
+        },
+        "variants": [
+          "de"
+        ]
+      },
+      "de_praeventiv": {
+        "name": "Präventive Bewältigung (DE)",
+        "method": "mean_coded",
+        "description": "Mean of 10 items.",
+        "items": {
+          "pci_de_praeventiv1": 1,
+          "pci_de_praeventiv2": 1,
+          "pci_de_praeventiv3": 1,
+          "pci_de_praeventiv4": 1,
+          "pci_de_praeventiv5": 1,
+          "pci_de_praeventiv6": 1,
+          "pci_de_praeventiv7": 1,
+          "pci_de_praeventiv8": 1,
+          "pci_de_praeventiv9": 1,
+          "pci_de_praeventiv10": 1
+        },
+        "variants": [
+          "de"
+        ]
+      },
+      "de_strategisch": {
+        "name": "Strategische Planung (DE)",
+        "method": "mean_coded",
+        "description": "Mean of 4 items.",
+        "items": {
+          "pci_de_strategisch1": 1,
+          "pci_de_strategisch2": 1,
+          "pci_de_strategisch3": 1,
+          "pci_de_strategisch4": 1
+        },
+        "variants": [
+          "de"
+        ]
+      },
+      "de_emotionale_us": {
+        "name": "Suche nach emotionaler Unterstützung (DE)",
+        "method": "mean_coded",
+        "description": "Mean of 5 items.",
+        "items": {
+          "pci_de_emotionale_us1": 1,
+          "pci_de_emotionale_us2": 1,
+          "pci_de_emotionale_us3": 1,
+          "pci_de_emotionale_us4": 1,
+          "pci_de_emotionale_us5": 1
+        },
+        "variants": [
+          "de"
+        ]
+      },
+      "de_us": {
+        "name": "Suche nach Unterstützung (DE)",
+        "method": "mean_coded",
+        "description": "Mean of 8 items.",
+        "items": {
+          "pci_de_us1": 1,
+          "pci_de_us2": 1,
+          "pci_de_us3": 1,
+          "pci_de_us4": 1,
+          "pci_de_us5": 1,
+          "pci_de_us6": 1,
+          "pci_de_us7": 1,
+          "pci_de_us8": 1
+        },
+        "variants": [
+          "de"
+        ]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "r1": "not at all true",
+      "r2": "barely true",
+      "r3": "somewhat true",
+      "r4": "completely true",
+      "qh": "The following statements deal with reactions you may have to various situations. Indicate how true each statement is for you.",
+      "LANGUAGE": "English",
+      "pci_en_proactive1": "I am a \"take charge\" person.",
+      "pci_en_proactive2": "I try to let things work out on their own.",
+      "pci_en_proactive3": "After attaining a goal, I look for another, more challenging one.",
+      "pci_en_proactive4": "I like challenges and beating the odds.",
+      "pci_en_proactive5": "I visualise my dreams and try to achieve them.",
+      "pci_en_proactive6": "Despite numerous setbacks, I usually succeed in getting what I want.",
+      "pci_en_proactive7": "I try to pinpoint what I need to succeed.",
+      "pci_en_proactive8": "I always try to find a way to work around obstacles; nothing really stops me.",
+      "pci_en_proactive9": "I often see myself failing so I don't get my hopes up too high.",
+      "pci_en_proactive10": "When I apply for a position, I imagine myself filling it.",
+      "pci_en_proactive11": "I turn obstacles into positive experiences.",
+      "pci_en_proactive12": "If someone tells me I can't do something, you can be sure I will do it.",
+      "pci_en_proactive13": "When I experience a problem, I take the initiative in resolving it.",
+      "pci_en_proactive14": "When I have a problem, I usually see myself in a no-win situation.",
+      "pci_en_reflective1": "I imagine myself solving difficult problems.",
+      "pci_en_reflective2": "Rather than acting impulsively, I usually think of various ways to solve a problem.",
+      "pci_en_reflective3": "In my mind I go through many different scenarios in order to prepare myself for different outcomes.",
+      "pci_en_reflective4": "I tackle a problem by thinking about realistic alternatives.",
+      "pci_en_reflective5": "When I have a problem with my co-workers, friends, or family, I imagine beforehand how I will deal with them successfully.",
+      "pci_en_reflective6": "Before tackling a difficult task I imagine success scenarios.",
+      "pci_en_reflective7": "I take action only after thinking carefully about a problem.",
+      "pci_en_reflective8": "I imagine myself solving a difficult problem before I actually have to face it.",
+      "pci_en_reflective9": "I address a problem from various angles until I find the appropriate action.",
+      "pci_en_reflective10": "When there are serious misunderstandings with co-workers, family members or friends, I practice before how I will deal with them.",
+      "pci_en_reflective11": "I think about every possible outcome to a problem before tackling it.",
+      "pci_en_strategic1": "I often find ways to break down difficult problems into manageable components.",
+      "pci_en_strategic2": "I make a plan and follow it.",
+      "pci_en_strategic3": "I break down a problem into smaller parts and do one part at a time.",
+      "pci_en_strategic4": "I make lists and try to focus on the most important things first.",
+      "pci_en_preventive1": "I plan for future eventualities.",
+      "pci_en_preventive2": "Rather than spending every cent I make, I like to save for a rainy day.",
+      "pci_en_preventive3": "I prepare for adverse events.",
+      "pci_en_preventive4": "Before disaster strikes I am well-prepared for its consequences.",
+      "pci_en_preventive5": "I plan my strategies to change a situation before I act.",
+      "pci_en_preventive6": "I develop my job skills to protect myself against unemployment.",
+      "pci_en_preventive7": "I make sure my family is well taken care of to protect them from adversity in the future.",
+      "pci_en_preventive8": "I think ahead to avoid dangerous situations.",
+      "pci_en_preventive9": "I plan strategies for what I hope will be the best possible outcome.",
+      "pci_en_preventive10": "I try to manage my money well in order to avoid being destitute in old age.",
+      "pci_en_instrumental1": "When solving my own problems other people's advice can be helpful.",
+      "pci_en_instrumental2": "I try to talk and explain my stress in order to get feedback from my friends.",
+      "pci_en_instrumental3": "Information I get from others has often helped me deal with my problems.",
+      "pci_en_instrumental4": "I can usually identify people who can help me develop my own solutions to problems.",
+      "pci_en_instrumental5": "I ask others what they would do in my situation.",
+      "pci_en_instrumental6": "Talking to others can be really useful because it provides another perspective on the problem.",
+      "pci_en_instrumental7": "Before getting messed up with a problem I'll call a friend to talk about it.",
+      "pci_en_instrumental8": "When I am in trouble I can usually work out something with the help of others.",
+      "pci_en_emotional1": "If I am depressed I know who I can call to help me feel better.",
+      "pci_en_emotional2": "Others help me feel cared for.",
+      "pci_en_emotional3": "I know who can be counted on when the chips are down.",
+      "pci_en_emotional4": "When I'm depressed I get out and talk to others.",
+      "pci_en_emotional5": "I confide my feelings in others to build up and maintain close relationships.",
+      "pci_en_avoidance1": "When I have a problem I like to sleep on it.",
+      "pci_en_avoidance2": "If I find a problem too difficult sometimes I put it aside until I'm ready to deal with it.",
+      "pci_en_avoidance3": "When I have a problem I usually let it simmer on the back burner for a while."
+    },
+    "de": {
+      "r1": "stimmt nicht",
+      "r2": "stimmt kaum",
+      "r3": "stimmt eher",
+      "r4": "stimmt genau",
+      "qh": "Hier geht es um Ihre persönlichen Einschätzungen und Gefühle. Bitte kreuzen Sie immer diejenige Antwortalternative an, mit der Sie am ehesten übereinstimmen. Antworten Sie spontan, ohne längeres Zögern.",
+      "LANGUAGE": "Deutsch",
+      "pci_de_proaktiv1": "Habe ich ein Ziel erreicht, dann suche ich mir eine größere Herausforderung.",
+      "pci_de_proaktiv2": "In brenzligen Situationen habe ich oft das Gefühl, auf verlorenem Posten zu stehen.",
+      "pci_de_proaktiv3": "Ich ziehe aus alltäglichen Schwierigkeiten wichtige Erfahrungen, um mein Leben besser zu gestalten.",
+      "pci_de_proaktiv4": "Ich male mir meine Wunschträume genau aus, um sie zu verwirklichen.",
+      "pci_de_proaktiv5": "Ich möchte mit dem, was ich tue, etwas Wichtiges in dieser Welt bewegen.",
+      "pci_de_proaktiv6": "Wenn ich mir etwas vorgenommen habe, kann mich nichts mehr aufhalten.",
+      "pci_de_proaktiv7": "Wenn die Dinge nicht so gut laufen, warte ich lieber, bis sie sich von selbst regeln.",
+      "pci_de_proaktiv8": "Ich konzentriere mich für meinen Erfolg auf das, was ich für wesentlich halte und lasse mich dabei nicht ablenken.",
+      "pci_de_proaktiv9": "Ich denke immer daran, was man wohl noch verbessern könnte.",
+      "pci_de_proaktiv10": "Ich arbeite mich nach oben, auch wenn der Weg oft steinig ist.",
+      "pci_de_proaktiv11": "Ich übernehme gerne Verantwortung und ziehe dabei oft für andere „den Karren aus dem Dreck\".",
+      "pci_de_proaktiv12": "Wenn es „hart auf hart kommt\", nehme ich die Sache in die Hand und finde einen Weg.",
+      "pci_de_proaktiv13": "Ich baue nur auf sicherem Boden und lasse die Finger von Experimenten.",
+      "pci_de_proaktiv14": "Ich stecke meine Ziele nicht allzu hoch, weil ich oft befürchte, daß ich scheitere.",
+      "pci_de_proaktiv15": "Ich habe Freude daran, die Qualität meiner Arbeit zu verbessern.",
+      "pci_de_proaktiv16": "Ich suche mir gern Herausforderungen und gehe dafür auch Wagnisse ein.",
+      "pci_de_handlungsaufschub1": "Wenn ich ein Problem habe, schlafe ich erst einmal eine Nacht darüber.",
+      "pci_de_handlungsaufschub2": "Wenn mir ein Problem zu schwierig erscheint, dann lasse ich es so lange ruhen, bis ich mich ihm gewachsen fühle.",
+      "pci_de_handlungsaufschub3": "Wenn ich ein Problem habe, lasse ich es erst einmal auf kleiner Flamme köcheln, bevor ich es anpacke.",
+      "pci_de_kognitiv1": "Ich traue mir zu, schwierige Probleme zu lösen.",
+      "pci_de_kognitiv2": "Anstatt voreilig zu handeln, überlege ich mir normalerweise verschiedene Lösungsmöglichkeiten für ein Problem.",
+      "pci_de_kognitiv3": "Ich male mir verschiedene Handlungsweisen aus, um für alles gewappnet zu sein.",
+      "pci_de_kognitiv4": "Ich gehe ein Problem an, indem ich mir verschiedene Handlungsmöglichkeiten überlege.",
+      "pci_de_kognitiv5": "Wenn ich ein Problem mit Kollegen, Freunden oder meiner Familie habe, mache ich mir zunächst Gedanken, wie ich erfolgreich damit umgehen kann.",
+      "pci_de_kognitiv6": "Bevor ich ein Problem anpacke, stelle ich mir erfolgreiche Problemlösungen vor.",
+      "pci_de_kognitiv7": "Ich handle erst, nachdem ich mir sorgfältig Gedanken über das Problem gemacht habe.",
+      "pci_de_kognitiv8": "Ich stelle mir schon vor, wie ich ein schwieriges Problem löse, bevor es überhaupt auftritt.",
+      "pci_de_kognitiv9": "Ich betrachte ein Problem von verschiedenen Seiten, bevor ich den richtigen Lösungsweg finde.",
+      "pci_de_kognitiv10": "Wenn ich Konflikte mit meinen Kollegen, Familienmitgliedern oder Freunden habe, spiele ich zunächst einmal durch, wie ich mich ihnen gegenüber verhalten werde.",
+      "pci_de_kognitiv11": "Bevor ich etwas in Gang bringe, stelle ich mir alle möglichen Konsequenzen vor.",
+      "pci_de_praeventiv1": "Ich treffe Vorkehrungen für die Zukunft.",
+      "pci_de_praeventiv2": "Ehe ich mein Geld zum Fenster hinauswerfe, spare ich es für schlechte Zeiten.",
+      "pci_de_praeventiv3": "Ich wappne mich frühzeitig gegen mögliche Schicksalsschläge.",
+      "pci_de_praeventiv4": "Schon bevor etwas Schlimmes eintritt, bin ich auf die Folgen gut vorbereitet.",
+      "pci_de_praeventiv5": "Wenn ich etwas vorhabe, sehe ich mein Ziel klar vor Augen.",
+      "pci_de_praeventiv6": "Ich nutze jede Gelegenheit zur Weiterbildung, um dem beruflichen Abstieg vorzubeugen.",
+      "pci_de_praeventiv7": "Ich kümmere mich darum, dass meine Angehörigen in der Zukunft gut versorgt sind.",
+      "pci_de_praeventiv8": "Ich mache mir Gedanken darüber, wie ich Gefahren am besten aus dem Weg gehe.",
+      "pci_de_praeventiv9": "Ich bin darauf bedacht, mögliche Krisen zum Guten zu wenden.",
+      "pci_de_praeventiv10": "Ich versuche, mein Geld so anzulegen, dass es mir im Alter an nichts fehlt.",
+      "pci_de_strategisch1": "Bei einer umfangreichen Aufgabe neige ich dazu, aus einem großen Packet viele kleine Päckchen zu schnüren.",
+      "pci_de_strategisch2": "Ich mache einen Plan und gehe danach vor.",
+      "pci_de_strategisch3": "Ich löse Probleme Schritt für Schritt.",
+      "pci_de_strategisch4": "Ich mache mir einen Plan und konzentriere mich zuerst auf die wesentlichsten Dinge.",
+      "pci_de_emotionale_us1": "Wenn ich niedergeschlagen bin, treffe ich mich mit Leuten, damit sie mich aufmuntern.",
+      "pci_de_emotionale_us2": "Ich suche Unterstützung bei anderen.",
+      "pci_de_emotionale_us3": "Ich weiß, auf wen ich zählen kann, wenn es darauf ankommt.",
+      "pci_de_emotionale_us4": "Wenn ich niedergeschlagen bin, suche ich das Gespräch mit anderen.",
+      "pci_de_emotionale_us5": "Um enge Beziehungen aufzubauen und aufrechtzuerhalten, vertraue ich anderen meine Gefühle an.",
+      "pci_de_us1": "Wenn es kritisch wird, hole ich mir gerne Rat von anderen.",
+      "pci_de_us2": "Bevor mir meine Probleme über den Kopf wachsen, versuche ich, meine Gedanken mit Hilfe meiner Freunde zu ordnen.",
+      "pci_de_us3": "Nützliche Tipps von anderen haben mir schon oft dabei geholfen, mit meinen Problemen umzugehen.",
+      "pci_de_us4": "Ich habe einen guten Blick dafür, wer mir bei bestimmten Problemen auf die Sprünge helfen kann.",
+      "pci_de_us5": "Ich frage andere, was sie an meiner Stelle tun würden.",
+      "pci_de_us6": "Es hilft mir, wenn andere Leute ihre Sichtweise meines Problems darstellen.",
+      "pci_de_us7": "Wenn mich etwas überfordert, sehe ich mich nach tatkräftiger Unterstützung um.",
+      "pci_de_us8": "Wenn mir andere Leute helfen, komme ich auch mit schwierigen Situationen zurecht."
+    }
+  }
+}

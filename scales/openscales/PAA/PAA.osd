@@ -1,0 +1,110 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Perceived Autonomy in Old Age",
+      "code": "PAA",
+      "abbreviation": "PAA",
+      "description": "4-item measure of perceived autonomy in old age (Schwarzer, 2008). Rated 1-4 (not at all true..definitely true); unidimensional; mean. Cronbach's alpha = .91.",
+      "citation": "Schwarzer, R. (2008). Perceived Autonomy in Old Age (PAA) [measurement instrument]. http://userpage.fu-berlin.de/~health/autonomy.htm ; Warner, L. M., Ziegelmann, J. P., Schüz, B., Wurm, S., Tesch-Römer, C., & Schwarzer, R. (2011). Maintaining autonomy despite multimorbidity. European Journal of Ageing. https://doi.org/10.1007/s10433-011-0176-6",
+      "license": "CC BY 4.0",
+      "license_explanation": "Licensed to the OpenScales project under CC BY 4.0 by the author, Ralf Schwarzer (permission granted June 2026), who authorized inclusion of his scales.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "http://userpage.fu-berlin.de/~health/autonomy.htm",
+      "domain": "Health",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-17",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English from autonomy.htm. Unidimensional, 4-point (1-4), no reverse items; sum 4-16 or mean. A German version exists (autonomie.htm) and can be added. Cronbach's alpha = .91 (Warner et al., 2011). German added from autonomie.htm ('Wahrgenommene Autonomie im Alter', WAA). NOTE: DE item 1 ('Ich komme im Alter gut allein zurecht' ≈ 'I get along well on my own in old age') is worded differently from EN item 1 ('I live by my own choices now that I am old') — VERIFY equivalence. Items 2-4 map 1:1. The source notes a 6-item form but only the first 4 are evaluated (alpha .91)."
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "question_head": "qh"
+    },
+    "dimensions": [
+      {
+        "id": "autonomy",
+        "name": "Perceived Autonomy",
+        "description": "Mean of 4 items; higher = more perceived autonomy."
+      }
+    ],
+    "items": [
+      {
+        "id": "paa1",
+        "type": "likert",
+        "text_key": "paa1",
+        "dimension": "autonomy"
+      },
+      {
+        "id": "paa2",
+        "type": "likert",
+        "text_key": "paa2",
+        "dimension": "autonomy"
+      },
+      {
+        "id": "paa3",
+        "type": "likert",
+        "text_key": "paa3",
+        "dimension": "autonomy"
+      },
+      {
+        "id": "paa4",
+        "type": "likert",
+        "text_key": "paa4",
+        "dimension": "autonomy"
+      }
+    ],
+    "scoring": {
+      "autonomy": {
+        "name": "Perceived Autonomy",
+        "method": "mean_coded",
+        "description": "Mean of paa1-4 (1-4).",
+        "items": [
+          "paa1",
+          "paa2",
+          "paa3",
+          "paa4"
+        ]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "r1": "not at all true",
+      "r2": "rather not true",
+      "r3": "somewhat true",
+      "r4": "definitely true",
+      "qh": "Please indicate how true each of the following statements is for you.",
+      "paa1": "I live by my own choices now that I am old.",
+      "paa2": "I make my own decisions and don't need others to protect me.",
+      "paa3": "I organize my life according to my own ideas.",
+      "paa4": "I cope with my daily life without outside help.",
+      "LANGUAGE": "English"
+    },
+    "de": {
+      "r1": "stimmt nicht",
+      "r2": "stimmt kaum",
+      "r3": "stimmt eher",
+      "r4": "stimmt genau",
+      "qh": "Bitte geben Sie an, inwieweit die folgenden Aussagen auf Sie zutreffen.",
+      "paa1": "Ich komme im Alter gut allein zurecht.",
+      "paa2": "Ich treffe meine eigenen Entscheidungen und lasse mich nicht von anderen Menschen bevormunden.",
+      "paa3": "Ich gestalte mein Leben nach meinen eigenen Vorstellungen.",
+      "paa4": "Ich bewältige meinen Alltag ohne fremde Hilfe.",
+      "LANGUAGE": "Deutsch"
+    }
+  }
+}

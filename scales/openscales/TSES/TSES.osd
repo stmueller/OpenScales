@@ -1,0 +1,234 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Teacher Self-Efficacy Scale",
+      "code": "TSES",
+      "abbreviation": "TSES",
+      "description": "10-item Teacher Self-Efficacy Scale (Schwarzer et al.). Rated 1-4 (not at all true..exactly true). No reverse-coded items.",
+      "citation": "Schwarzer, R., Schmitz, G. S., & Daytner, G. T. (1999). The Teacher Self-Efficacy Scale [measurement instrument]. http://userpage.fu-berlin.de/~health/teacher_se.htm",
+      "license": "CC BY 4.0",
+      "license_explanation": "Licensed to the OpenScales project under CC BY 4.0 by the author, Ralf Schwarzer (permission granted June 2026), who authorized inclusion of his scales. Items reproduced from the authors' official documentation (userpage.fu-berlin.de/~gesund/skalen/ and userpage.fu-berlin.de/~health/).",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "http://userpage.fu-berlin.de/~health/teacher_se.htm",
+      "domain": "Education",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-17",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Bilingual+ Teacher Self-Efficacy. ITEM 7 IS A LANGUAGE VARIANT (variant_when, selector language): English & Brazilian-Portuguese use the positively-worded form (forward); German & Turkish use the officially negatively-worded, reverse-scored form ('...weiß ich, daß ich nicht viel ausrichten kann' / '...inanmıyorum'). This restores the OFFICIAL German item 7 (the earlier build used a positive German rendering). Other 9 items shared. EN (Schwarzer/Schmitz/Daytner 1999), DE (skalen), pt-BR (Schwarzer/Schmitz/Bellico da Costa 1999), tr (Schwarzer/Schmitz/Balta 2000; transcribed from page images, encoding-normalized — VERIFY). Sum 10-40."
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "tse_r1",
+        "tse_r2",
+        "tse_r3",
+        "tse_r4"
+      ],
+      "question_head": "tse_qhead"
+    },
+    "dimensions": [
+      {
+        "id": "teacher_self_efficacy",
+        "name": "Teacher Self-Efficacy",
+        "abbreviation": "TSES",
+        "description": "Unidimensional teacher self-efficacy; sum of 10 items (range 10-40)."
+      }
+    ],
+    "items": [
+      {
+        "id": "tse1",
+        "type": "likert",
+        "text_key": "tse1",
+        "dimension": "teacher_self_efficacy"
+      },
+      {
+        "id": "tse2",
+        "type": "likert",
+        "text_key": "tse2",
+        "dimension": "teacher_self_efficacy"
+      },
+      {
+        "id": "tse3",
+        "type": "likert",
+        "text_key": "tse3",
+        "dimension": "teacher_self_efficacy"
+      },
+      {
+        "id": "tse4",
+        "type": "likert",
+        "text_key": "tse4",
+        "dimension": "teacher_self_efficacy"
+      },
+      {
+        "id": "tse5",
+        "type": "likert",
+        "text_key": "tse5",
+        "dimension": "teacher_self_efficacy"
+      },
+      {
+        "id": "tse6",
+        "type": "likert",
+        "text_key": "tse6",
+        "dimension": "teacher_self_efficacy"
+      },
+      {
+        "id": "tse7_pos",
+        "type": "likert",
+        "text_key": "tse7_pos",
+        "dimension": "teacher_self_efficacy",
+        "variant_group": "tse7",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "en",
+            "pt-BR"
+          ]
+        }
+      },
+      {
+        "id": "tse7_neg",
+        "type": "likert",
+        "text_key": "tse7_neg",
+        "dimension": "teacher_self_efficacy",
+        "variant_group": "tse7",
+        "variant_when": {
+          "selector": "language",
+          "operator": "in",
+          "value": [
+            "de",
+            "tr"
+          ]
+        }
+      },
+      {
+        "id": "tse8",
+        "type": "likert",
+        "text_key": "tse8",
+        "dimension": "teacher_self_efficacy"
+      },
+      {
+        "id": "tse9",
+        "type": "likert",
+        "text_key": "tse9",
+        "dimension": "teacher_self_efficacy"
+      },
+      {
+        "id": "tse10",
+        "type": "likert",
+        "text_key": "tse10",
+        "dimension": "teacher_self_efficacy"
+      }
+    ],
+    "scoring": {
+      "teacher_self_efficacy": {
+        "name": "Teacher Self-Efficacy",
+        "method": "sum_coded",
+        "description": "Sum of 10 items (range 10-40). Item 7 is a language variant: positive form (en/pt-BR, forward) or negative form (de/tr, reverse-coded).",
+        "items": {
+          "tse1": 1,
+          "tse2": 1,
+          "tse3": 1,
+          "tse4": 1,
+          "tse5": 1,
+          "tse6": 1,
+          "tse7_pos": 1,
+          "tse7_neg": -1,
+          "tse8": 1,
+          "tse9": 1,
+          "tse10": 1
+        }
+      }
+    },
+    "variants": {
+      "axes": [
+        {
+          "id": "language",
+          "selector": "language"
+        }
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "tse_qhead": "Please indicate how true each of the following statements is for you.",
+      "tse_r1": "not at all true",
+      "tse_r2": "barely true",
+      "tse_r3": "moderately true",
+      "tse_r4": "exactly true",
+      "tse1": "I am convinced that I am able to successfully teach all relevant subject content to even the most difficult students.",
+      "tse2": "I know that I can maintain a positive relationship with parents even when tensions arise.",
+      "tse3": "When I try really hard, I am able to reach even the most difficult students.",
+      "tse4": "I am convinced that, as time goes by, I will continue to become more and more capable of helping to address my students' needs.",
+      "tse5": "Even if I get disrupted while teaching, I am confident that I can maintain my composure and continue to teach well.",
+      "tse6": "I am confident in my ability to be responsive to my students' needs even if I am having a bad day.",
+      "tse8": "I am convinced that I can develop creative ways to cope with system constraints (such as budget cuts and other administrative problems) and continue to teach well.",
+      "tse9": "I know that I can motivate my students to participate in innovative projects.",
+      "tse10": "I know that I can carry out innovative projects even when I am opposed by skeptical colleagues.",
+      "LANGUAGE": "English",
+      "tse7_pos": "If I try hard enough, I know that I can exert a positive influence on both the personal and academic development of my students."
+    },
+    "de": {
+      "tse_qhead": "Bitte geben Sie an, inwieweit die folgenden Aussagen auf Sie zutreffen.",
+      "tse_r1": "stimmt nicht",
+      "tse_r2": "stimmt kaum",
+      "tse_r3": "stimmt eher",
+      "tse_r4": "stimmt genau",
+      "tse1": "Ich bin mir sicher, daß ich auch mit den problematischen Schülern in guten Kontakt kommen kann, wenn ich mich darum bemühe.",
+      "tse2": "Ich weiß, daß ich zu den Eltern guten Kontakt halten kann, selbst in schwierigen Situationen.",
+      "tse3": "Ich weiß, daß ich es schaffe, selbst den problematischsten Schülern den prüfungsrelevanten Stoff zu vermitteln.",
+      "tse4": "Ich bin mir sicher, daß ich mich in Zukunft auf individuelle Probleme der Schüler noch besser einstellen kann.",
+      "tse5": "Selbst wenn mein Unterricht gestört wird, bin ich mir sicher, die notwendige Gelassenheit bewahren zu können.",
+      "tse6": "Selbst wenn es mir mal nicht so gut geht, kann ich doch im Unterricht immer noch gut auf die Schüler eingehen.",
+      "tse8": "Ich bin mir sicher, daß ich kreative Ideen entwickeln kann, mit denen ich ungünstige Unterrichtsstrukturen verändere.",
+      "tse9": "Ich traue mir zu, die Schüler für neue Projekte zu begeistern.",
+      "tse10": "Ich kann innovative Veränderungen auch gegenüber skeptischen Kollegen durchsetzen.",
+      "LANGUAGE": "Deutsch",
+      "tse7_neg": "Auch wenn ich mich noch so sehr für die Entwicklung meiner Schüler engagiere, weiß ich, daß ich nicht viel ausrichten kann."
+    },
+    "pt-BR": {
+      "LANGUAGE": "Português (Brasil)",
+      "tse1": "Estou convencido(a) de que sou capaz de ensinar com sucesso todos os assuntos relevantes até mesmo para os alunos mais difíceis.",
+      "tse2": "Sei que posso manter um relacionamento positivo com os pais mesmo quando surgem tensões.",
+      "tse3": "Quando me esforço realmente, sou capaz de fazer-me entender até mesmo pelos alunos-problema.",
+      "tse4": "Estou convencido(a) de que com o passar do tempo, eu me tornarei mais e mais capaz de me dedicar a atender às carências de meus alunos.",
+      "tse5": "Mesmo se eu ficar perturbado enquanto ensino, estou confiante de que posso manter minha compostura e continuar ensinando bem.",
+      "tse6": "Confio em minha habilidade de ser responsivo(a) às necessidades de meus alunos mesmo quando tenho um dia ruim.",
+      "tse7_pos": "Se eu me esforçar arduamente, sei que posso exercer uma influência positiva tanto sobre o desenvolvimento pessoal quanto o acadêmico de meus alunos.",
+      "tse8": "Estou convencido(a) de que posso desenvolver maneiras e modos criativos para competir com as restrições do sistema (tais como cortes orçamentários e outros problemas administrativos) e continuar a ensinar bem.",
+      "tse9": "Sei que posso motivar meus alunos para participarem de projetos inovadores.",
+      "tse10": "Sei que posso levar a cabo projetos inovadores mesmo quando enfrento o ceticismo de colegas.",
+      "tse_r1": "não verdadeiro",
+      "tse_r2": "pouco verdadeiro",
+      "tse_r3": "moderadamente verdadeiro",
+      "tse_r4": "totalmente verdadeiro",
+      "tse_qhead": "Leia com atenção cada afirmativa e responda assinalando com um X a sua opção de resposta."
+    },
+    "tr": {
+      "LANGUAGE": "Türkçe",
+      "tse1": "Ben problemli talebelere imtihanla ilgili mevzuları öğreteceğime eminim.",
+      "tse2": "Ben biliyorum ki, zor konularda bile ebeveynlerle ilişki kurabilirim.",
+      "tse3": "Ben kendimden eminim, eğer çaba gösterirsem problemli talebelere ilişki kurabilirim.",
+      "tse4": "Zaman ilerledikçe öğrencilerimin ihtiyaçlarını karşılamada daha yetenekli olacağımdan eminim.",
+      "tse5": "Ders anlatırken herhangi bir nedenle eğer benim dersim bozulsa bile, eminim ki ders için ihtiyacım olan dengemi kaybetmem.",
+      "tse6": "Kötü bir gün geçirmiş olsam bile öğrencilerimin tüm ihtiyaçlarını karşılayacağıma eminim.",
+      "tse7_neg": "Ben ne kadar öğrencilerimin gelişmelerine engaje olsam bile pozitif bir etkinin olacağına inanmıyorum.",
+      "tse8": "Yönetimle ilgili ya da bütçe ile ilgili problemler olsa bile yaratıcı yöntemler geliştirerek öğretime devam edeceğime eminim.",
+      "tse9": "Öğrencilerimin yeni projelere katılması için, onları motive edebileceğimi düşünüyorum.",
+      "tse10": "Ben model proje çerçevesi içindeki değiştirmeler için kararsız meslektaşlarımı tatmin edebilirim.",
+      "tse_r1": "Doğru değil",
+      "tse_r2": "Biraz doğru",
+      "tse_r3": "Çoğunlukla doğru",
+      "tse_r4": "Tamamen doğru",
+      "tse_qhead": "Lütfen her bir ifadenin sizin için ne kadar doğru olduğunu belirtin."
+    }
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Berlin Social Support Scales – Perceived Available Support",
+      "code": "BSS-PAS",
+      "abbreviation": "BSS-PAS",
+      "description": "Perceived available social support (Schwarzer & Schulz). 8 items with emotional (4) and instrumental (4) facets; 4-point agreement; means. Self-report.",
+      "citation": "Schwarzer, R., & Schulz, U. (2000). Berlin Social Support Scales (BSSS). http://www.coping.de ; Schulz, U., & Schwarzer, R. (2003). Die Berliner Social Support Skalen (BSSS). Diagnostica, 49, 73-82.",
+      "license": "CC BY 4.0",
+      "license_explanation": "Licensed to the OpenScales project under CC BY 4.0 by the author, Ralf Schwarzer (permission granted June 2026), who authorized inclusion of his scales. English items from userpage.fu-berlin.de/~health/soc_e.htm; German items from the FU-Berlin skalen documentation.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "http://userpage.fu-berlin.de/~health/bsss.htm",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-17",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Self-report (respondent's own perceived support). EN/DE verbatim; no reverse items. Part of the Berlin Social Support Scales family. Added official Spanish (soc_s.htm, Varela/Galain/Schwarzer/Schulz 2004), French (soc_f.htm, Schwarzer/Schulz/Katsap 2000), and Polish (soc_pol.htm) translations. NOTE: French source page had NO response anchors — the 4-point French anchors here are implementer-supplied (true-style, matching es/pl), VERIFY. es/fr/pl are the OFFICIAL versions and are gendered (and, for some subscales, assume a female respondent / male patient), unlike the gender-neutral en/de — VERIFY. Added Serbian (Latin; soc … Language_Selection/Serbian; Schwarzer/Schulz/Stula 2003) — official, gendered (masculine self-report)."
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "question_head": "qh"
+    },
+    "dimensions": [
+      {
+        "id": "emotional",
+        "name": "Perceived Available Support – Emotional",
+        "description": "Mean of 4 emotional items."
+      },
+      {
+        "id": "instrumental",
+        "name": "Perceived Available Support – Instrumental",
+        "description": "Mean of 4 instrumental items."
+      },
+      {
+        "id": "perceived_total",
+        "name": "Perceived Available Support (Total)",
+        "description": "Mean of all 8 items."
+      }
+    ],
+    "items": [
+      {
+        "id": "pe1",
+        "type": "likert",
+        "text_key": "pe1",
+        "dimension": "emotional"
+      },
+      {
+        "id": "pe2",
+        "type": "likert",
+        "text_key": "pe2",
+        "dimension": "emotional"
+      },
+      {
+        "id": "pe3",
+        "type": "likert",
+        "text_key": "pe3",
+        "dimension": "emotional"
+      },
+      {
+        "id": "pe4",
+        "type": "likert",
+        "text_key": "pe4",
+        "dimension": "emotional"
+      },
+      {
+        "id": "pi1",
+        "type": "likert",
+        "text_key": "pi1",
+        "dimension": "instrumental"
+      },
+      {
+        "id": "pi2",
+        "type": "likert",
+        "text_key": "pi2",
+        "dimension": "instrumental"
+      },
+      {
+        "id": "pi3",
+        "type": "likert",
+        "text_key": "pi3",
+        "dimension": "instrumental"
+      },
+      {
+        "id": "pi4",
+        "type": "likert",
+        "text_key": "pi4",
+        "dimension": "instrumental"
+      }
+    ],
+    "scoring": {
+      "emotional": {
+        "name": "Emotional",
+        "method": "mean_coded",
+        "description": "Mean of pe1-4.",
+        "items": [
+          "pe1",
+          "pe2",
+          "pe3",
+          "pe4"
+        ]
+      },
+      "instrumental": {
+        "name": "Instrumental",
+        "method": "mean_coded",
+        "description": "Mean of pi1-4.",
+        "items": [
+          "pi1",
+          "pi2",
+          "pi3",
+          "pi4"
+        ]
+      },
+      "perceived_total": {
+        "name": "Perceived Available Support (Total)",
+        "method": "mean_coded",
+        "description": "Mean of all 8.",
+        "items": [
+          "pe1",
+          "pe2",
+          "pe3",
+          "pe4",
+          "pi1",
+          "pi2",
+          "pi3",
+          "pi4"
+        ]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "r1": "strongly disagree",
+      "r2": "somewhat disagree",
+      "r3": "somewhat agree",
+      "r4": "strongly agree",
+      "qh": "Please indicate how much you agree with each of the following statements.",
+      "LANGUAGE": "English",
+      "pe1": "There are some people who truly like me.",
+      "pe2": "Whenever I am not feeling well, other people show me that they are fond of me.",
+      "pe3": "Whenever I am sad, there are people who cheer me up.",
+      "pe4": "There is always someone there for me when I need comforting.",
+      "pi1": "I know some people upon whom I can always rely.",
+      "pi2": "When I am worried, there is someone who helps me.",
+      "pi3": "There are people who offer me help when I need it.",
+      "pi4": "When everything becomes too much for me to handle, others are there to help me."
+    },
+    "de": {
+      "r1": "stimmt nicht",
+      "r2": "stimmt kaum",
+      "r3": "stimmt eher",
+      "r4": "stimmt genau",
+      "qh": "Bitte geben Sie an, inwieweit die folgenden Aussagen auf Sie zutreffen.",
+      "LANGUAGE": "Deutsch",
+      "pe1": "Es gibt Menschen, die mich wirklich gern haben.",
+      "pe2": "Wenn es mir schlecht geht, zeigen andere mir, daß sie mich mögen.",
+      "pe3": "Wenn ich traurig bin, gibt es Menschen, die mich aufmuntern.",
+      "pe4": "Wenn ich Trost und Zuspruch brauche, ist jemand für mich da.",
+      "pi1": "Ich habe Menschen, auf die ich mich immer verlassen kann.",
+      "pi2": "Wenn ich Sorgen habe, gibt es jemanden, der mir hilft.",
+      "pi3": "Es gibt Menschen, die mir ihre Hilfe anbieten, wenn ich sie brauche.",
+      "pi4": "Wenn mir alles zuviel wird, helfen mir andere."
+    },
+    "es": {
+      "r1": "falsa",
+      "r2": "rara vez verdadero",
+      "r3": "moderadamente verdadero",
+      "r4": "totalmente verdadero",
+      "qh": "Indique en qué medida cada afirmación es cierta para usted (de 1 a 4).",
+      "LANGUAGE": "Español",
+      "pe1": "Hay personas a las que les resulto agradable.",
+      "pe2": "Cada vez que no me siento bien, otras personas me demuestran preocupación.",
+      "pe3": "Cada vez que me siento triste, hay gente que me levanta el ánimo.",
+      "pe4": "Siempre hay alguien allí, para mi, cuando necesito que me reconforten.",
+      "pi1": "Conozco alguna gente en la que siempre puedo confiar.",
+      "pi2": "Cuando estoy preocupado, siempre hay alguien que me ayuda.",
+      "pi3": "Hay gente que me ofrece ayuda cuando la necesito.",
+      "pi4": "Cuando todo se hace intolerable para mi, otros están allí para ayudarme."
+    },
+    "fr": {
+      "r1": "pas du tout vrai",
+      "r2": "plutôt pas vrai",
+      "r3": "plutôt vrai",
+      "r4": "tout à fait vrai",
+      "qh": "Veuillez indiquer dans quelle mesure chaque affirmation est vraie pour vous.",
+      "LANGUAGE": "Français",
+      "pe1": "Il y a des personnes qui m'estiment sincèrement.",
+      "pe2": "Quand ça ne va pas, les autres me montrent qu'ils m'aiment bien.",
+      "pe3": "Quand je suis triste, il y a des personnes pour me remonter le moral.",
+      "pe4": "Il y a toujours quelqu'un pour me consoler et pour me soutenir quand j'en ai besoin.",
+      "pi1": "J'ai des personnes sur lesquelles je peux toujours compter.",
+      "pi2": "Quand j'ai des soucis il y a quelqu'un pour m'aider.",
+      "pi3": "Il y a des personnes qui me proposent leur aide quand j'en ai besoin.",
+      "pi4": "Quand je suis dépassé par les évènements les autres m'aident."
+    },
+    "pl": {
+      "r1": "całkowicie nieprawdziwe",
+      "r2": "w małym stopniu prawdziwe",
+      "r3": "w umiarkowanym stopniu prawdziwe",
+      "r4": "całkowicie prawdziwe",
+      "qh": "Proszę wskazać, w jakim stopniu każde stwierdzenie jest prawdziwe dla Pana/Pani.",
+      "LANGUAGE": "Polski",
+      "pe1": "Są osoby, które naprawdę mnie lubią",
+      "pe2": "Ilekroć źle się czuję, inni okazują mi, że czują do mnie sympatię",
+      "pe3": "Ilekroć jestem smutny, są ludzie, którzy podnoszą mnie na duchu",
+      "pe4": "Zawsze jest ktoś, kto mnie pociesza, kiedy tego potrzebuję",
+      "pi1": "Znam osoby, na których zawsze mogę polegać",
+      "pi2": "Kiedy jestem zmartwiony, jest ktoś kto mi pomoże",
+      "pi3": "Są osoby, które oferują mi pomoc, kiedy jej potrzebuję",
+      "pi4": "Kiedy przestaję dawać sobie ze wszystkim radę, wtedy są tacy, którzy mi pomogą"
+    },
+    "sr": {
+      "r1": "uopšte ne",
+      "r2": "uglavnom ne",
+      "r3": "uglavnom da",
+      "r4": "da, u potpunosti",
+      "qh": "Molimo Vas da označite u kojoj meri svaka tvrdnja važi za Vas.",
+      "LANGUAGE": "Srpski",
+      "pe1": "Ima ljudi koji me zaista vole.",
+      "pe2": "Kada mi je teško, drugi mi pokazuju da me vole.",
+      "pe3": "Kada sam tužan, ima ljudi koji uspeju da me razvesele.",
+      "pe4": "Kada mi treba uteha i podrška, neko je tu za mene.",
+      "pi1": "Postoje ljudi na koje se uvek mogu osloniti.",
+      "pi2": "Kada imam briga, nađe se neko da mi pomogne.",
+      "pi3": "Ima ljudi koji mi nude pomoć, kada mi je potrebna.",
+      "pi4": "Kada mi je svega preko glave, postoji neko ko mi pomogne."
+    }
+  }
+}

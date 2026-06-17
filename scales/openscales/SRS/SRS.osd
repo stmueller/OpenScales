@@ -1,0 +1,165 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Schwarzer Self-Regulation Scale",
+      "code": "SRS",
+      "abbreviation": "SRS",
+      "description": "10-item Self-Regulation Scale (Schwarzer et al.). Rated 1-4 (not at all true..exactly true). Items 5,7,9 are reverse-scored.",
+      "citation": "Schwarzer, R., Diehl, M., & Schmitz, G. S. (1999). Self-Regulation Scale [measurement instrument]. http://userpage.fu-berlin.de/~health/selfreg.htm",
+      "license": "CC BY 4.0",
+      "license_explanation": "Licensed to the OpenScales project under CC BY 4.0 by the author, Ralf Schwarzer (permission granted June 2026), who authorized inclusion of his scales. Items reproduced from the authors' official documentation (userpage.fu-berlin.de/~gesund/skalen/ and userpage.fu-berlin.de/~health/).",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "http://userpage.fu-berlin.de/~health/selfreg.htm",
+      "domain": "Personality",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-17",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Bilingual English/German. English items from userpage.fu-berlin.de/~health/; German items from the FU-Berlin skalen documentation. 4-point response (1-4). Items 5,7,9 are reverse-scored. Source does not state sum vs mean; sum used (range 10-40), mean also common. Reverse markers (–) identical on English (selfreg_e.htm) and German source pages."
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "srs_r1",
+        "srs_r2",
+        "srs_r3",
+        "srs_r4"
+      ],
+      "question_head": "srs_qhead"
+    },
+    "dimensions": [
+      {
+        "id": "self_regulation",
+        "name": "Self-Regulation",
+        "abbreviation": "SRS",
+        "description": "Unidimensional self-regulation (attention/emotion control); reverse items 5,7,9."
+      }
+    ],
+    "items": [
+      {
+        "id": "srs1",
+        "type": "likert",
+        "text_key": "srs1",
+        "dimension": "self_regulation"
+      },
+      {
+        "id": "srs2",
+        "type": "likert",
+        "text_key": "srs2",
+        "dimension": "self_regulation"
+      },
+      {
+        "id": "srs3",
+        "type": "likert",
+        "text_key": "srs3",
+        "dimension": "self_regulation"
+      },
+      {
+        "id": "srs4",
+        "type": "likert",
+        "text_key": "srs4",
+        "dimension": "self_regulation"
+      },
+      {
+        "id": "srs5",
+        "type": "likert",
+        "text_key": "srs5",
+        "dimension": "self_regulation"
+      },
+      {
+        "id": "srs6",
+        "type": "likert",
+        "text_key": "srs6",
+        "dimension": "self_regulation"
+      },
+      {
+        "id": "srs7",
+        "type": "likert",
+        "text_key": "srs7",
+        "dimension": "self_regulation"
+      },
+      {
+        "id": "srs8",
+        "type": "likert",
+        "text_key": "srs8",
+        "dimension": "self_regulation"
+      },
+      {
+        "id": "srs9",
+        "type": "likert",
+        "text_key": "srs9",
+        "dimension": "self_regulation"
+      },
+      {
+        "id": "srs10",
+        "type": "likert",
+        "text_key": "srs10",
+        "dimension": "self_regulation"
+      }
+    ],
+    "scoring": {
+      "self_regulation": {
+        "name": "Self-Regulation",
+        "method": "sum_coded",
+        "description": "Sum of all 10 items (range 10-40); higher = more self-regulation. Items 5,7,9 are reverse-scored.",
+        "items": {
+          "srs1": 1,
+          "srs2": 1,
+          "srs3": 1,
+          "srs4": 1,
+          "srs5": -1,
+          "srs6": 1,
+          "srs7": -1,
+          "srs8": 1,
+          "srs9": -1,
+          "srs10": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "srs_qhead": "Please indicate how true each of the following statements is for you.",
+      "srs_r1": "not at all true",
+      "srs_r2": "barely true",
+      "srs_r3": "moderately true",
+      "srs_r4": "exactly true",
+      "srs1": "I can concentrate on one activity for a long time, if necessary.",
+      "srs2": "If I am distracted from an activity, I don't have any problem coming back to the topic quickly.",
+      "srs3": "If an activity arouses my feelings too much, I can calm myself down so that I can continue with the activity soon.",
+      "srs4": "If an activity requires a problem-oriented attitude, I can control my feelings.",
+      "srs5": "It is difficult for me to suppress thoughts that interfere with what I need to do.",
+      "srs6": "I can control my thoughts from distracting me from the task at hand.",
+      "srs7": "When I worry about something, I cannot concentrate on an activity.",
+      "srs8": "After an interruption, I don't have any problem resuming my concentrated style of working.",
+      "srs9": "I have a whole bunch of thoughts and feelings that interfere with my ability to work in a focused way.",
+      "srs10": "I stay focused on my goal and don't allow anything to distract me from my plan of action.",
+      "LANGUAGE": "English"
+    },
+    "de": {
+      "srs_qhead": "Bitte geben Sie an, inwieweit die folgenden Aussagen auf Sie zutreffen.",
+      "srs_r1": "stimmt nicht",
+      "srs_r2": "stimmt kaum",
+      "srs_r3": "stimmt eher",
+      "srs_r4": "stimmt genau",
+      "srs1": "Ich kann mich lange Zeit auf eine Sache konzentrieren, wenn es nötig ist.",
+      "srs2": "Wenn ich von einer Sache abgelenkt werde, komme ich schnell wieder zum Thema zurück.",
+      "srs3": "Wenn ich bei einer Tätigkeit zu aufgeregt werde, kann ich mich so beruhigen, daß ich bald wieder weitermachen kann.",
+      "srs4": "Wenn bei einer Tätigkeit eine sachliche Haltung nötig ist, kann ich meine Gefühle unter Kontrolle bringen.",
+      "srs5": "Wenn störende Gedanken auftreten, kann ich sie nur schwer von mir wegschieben.",
+      "srs6": "Ich kann es verhindern, daß die Gedanken ständig von meiner Aufgabe abschweifen.",
+      "srs7": "Wenn ich Sorgen habe, kann ich mich nicht auf eine Tätigkeit konzentrieren.",
+      "srs8": "Nach einer Unterbrechung finde ich problemlos zu einer konzentrierten Arbeitsweise zurück.",
+      "srs9": "Alle möglichen Gedanken oder Gefühle lassen mir einfach keine Ruhe zum Arbeiten.",
+      "srs10": "Ich behalte mein Ziel im Auge und lasse mich nicht vom Weg abbringen.",
+      "LANGUAGE": "Deutsch"
+    }
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Schwarzer Procrastination Scale",
+      "code": "PROCR",
+      "abbreviation": "PROCR",
+      "description": "10-item Procrastination Scale (Schwarzer et al.). Rated 1-4 (not at all true..exactly true). Items 2,3,5,7,8 are reverse-scored.",
+      "citation": "Schwarzer, R., Schmitz, G. S., & Diehl, M. (2000). Procrastination [measurement instrument]; Schwarzer, R. (2000). Stress, Angst und Handlungsregulation (4th ed.). Stuttgart: Kohlhammer.",
+      "license": "CC BY 4.0",
+      "license_explanation": "Licensed to the OpenScales project under CC BY 4.0 by the author, Ralf Schwarzer (permission granted June 2026), who authorized inclusion of his scales. Items reproduced from the authors' official documentation (userpage.fu-berlin.de/~gesund/skalen/ and userpage.fu-berlin.de/~health/).",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "http://userpage.fu-berlin.de/~gesund/skalen/Prokrastination/prokrastination.htm",
+      "domain": "Personality",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-17",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Bilingual English/German. English items from userpage.fu-berlin.de/~health/; German items from the FU-Berlin skalen documentation. 4-point response (1-4). Items 2,3,5,7,8 are reverse-scored. Source does not state sum vs mean; sum used (range 10-40), mean also common. Reverse markers (R/–) identical on English and German source pages."
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "proc_r1",
+        "proc_r2",
+        "proc_r3",
+        "proc_r4"
+      ],
+      "question_head": "proc_qhead"
+    },
+    "dimensions": [
+      {
+        "id": "procrastination",
+        "name": "Procrastination",
+        "abbreviation": "PROCR",
+        "description": "Unidimensional; higher = more procrastination. Reverse items 2,3,5,7,8."
+      }
+    ],
+    "items": [
+      {
+        "id": "proc1",
+        "type": "likert",
+        "text_key": "proc1",
+        "dimension": "procrastination"
+      },
+      {
+        "id": "proc2",
+        "type": "likert",
+        "text_key": "proc2",
+        "dimension": "procrastination"
+      },
+      {
+        "id": "proc3",
+        "type": "likert",
+        "text_key": "proc3",
+        "dimension": "procrastination"
+      },
+      {
+        "id": "proc4",
+        "type": "likert",
+        "text_key": "proc4",
+        "dimension": "procrastination"
+      },
+      {
+        "id": "proc5",
+        "type": "likert",
+        "text_key": "proc5",
+        "dimension": "procrastination"
+      },
+      {
+        "id": "proc6",
+        "type": "likert",
+        "text_key": "proc6",
+        "dimension": "procrastination"
+      },
+      {
+        "id": "proc7",
+        "type": "likert",
+        "text_key": "proc7",
+        "dimension": "procrastination"
+      },
+      {
+        "id": "proc8",
+        "type": "likert",
+        "text_key": "proc8",
+        "dimension": "procrastination"
+      },
+      {
+        "id": "proc9",
+        "type": "likert",
+        "text_key": "proc9",
+        "dimension": "procrastination"
+      },
+      {
+        "id": "proc10",
+        "type": "likert",
+        "text_key": "proc10",
+        "dimension": "procrastination"
+      }
+    ],
+    "scoring": {
+      "procrastination": {
+        "name": "Procrastination",
+        "method": "sum_coded",
+        "description": "Sum of all 10 items (range 10-40); higher = more procrastination. Items 2,3,5,7,8 are reverse-scored.",
+        "items": {
+          "proc1": 1,
+          "proc2": -1,
+          "proc3": -1,
+          "proc4": 1,
+          "proc5": -1,
+          "proc6": 1,
+          "proc7": -1,
+          "proc8": -1,
+          "proc9": 1,
+          "proc10": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "proc_qhead": "Please indicate how true each of the following statements is for you.",
+      "proc_r1": "not at all true",
+      "proc_r2": "barely true",
+      "proc_r3": "moderately true",
+      "proc_r4": "exactly true",
+      "proc1": "It is often days before I get around to doing things that I wanted to do right away.",
+      "proc2": "I begin each day with a clear picture of what I want to achieve for that day.",
+      "proc3": "I frequently complete tasks earlier than is required.",
+      "proc4": "I often take on things which I then end up not doing.",
+      "proc5": "When it comes to putting my plans into action I am disciplined.",
+      "proc6": "Tasks that still have not been completed worry me.",
+      "proc7": "I manage to organize my day in such a way that by evening I feel I have carried out the most important jobs.",
+      "proc8": "I don't allow the most important things in my life to become \"buried\" in everyday stress.",
+      "proc9": "I often have a guilty conscience because I know that I put things off.",
+      "proc10": "If I have written a letter, it can sometimes be lying around for days before I mail it.",
+      "LANGUAGE": "English"
+    },
+    "de": {
+      "proc_qhead": "Bitte geben Sie an, inwieweit die folgenden Aussagen auf Sie zutreffen.",
+      "proc_r1": "stimmt nicht",
+      "proc_r2": "stimmt kaum",
+      "proc_r3": "stimmt eher",
+      "proc_r4": "stimmt genau",
+      "proc1": "Ich komme oft erst nach Tagen dazu, Dinge zu tun, die ich eigentlich sofort erledigen wollte.",
+      "proc2": "Ich beginne jeden Tag mit einer klaren Vorstellung davon, was ich schaffen will.",
+      "proc3": "Oft erledige ich Aufgaben früher als nötig.",
+      "proc4": "Ich nehme mir oft Dinge vor, die ich dann doch nicht tue.",
+      "proc5": "Wenn es darum geht, meine Pläne in die Tat umzusetzen, bin ich diszipliniert.",
+      "proc6": "Mir wachsen all die Dinge, die noch unerledigt sind, über den Kopf.",
+      "proc7": "Es gelingt mir, meinen Tag so zu organisieren, daß ich abends das Gefühl habe, alles Wichtige erledigt zu haben.",
+      "proc8": "Ich lasse die für mein Leben wirklich bedeutsamen Tätigkeiten nicht im Alltagsstress untergehen.",
+      "proc9": "Ich habe oft ein schlechtes Gewissen, weil ich wichtige Dinge vor mir herschiebe.",
+      "proc10": "Wenn ich einen Brief geschrieben habe, kommt es vor, daß er tagelang herumliegt, bevor ich ihn einstecke.",
+      "LANGUAGE": "Deutsch"
+    }
+  }
+}

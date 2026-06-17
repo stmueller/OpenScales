@@ -1,0 +1,313 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Berlin Social Support Scales – Actually Received Support",
+      "code": "BSS-RS",
+      "abbreviation": "BSS-RS",
+      "description": "Actually received support, recipient perspective (Schwarzer & Schulz). 14 items (items 4,5,6 reverse) + 1 separate satisfaction item; 4-point agreement; mean.",
+      "citation": "Schwarzer, R., & Schulz, U. (2000). Berlin Social Support Scales (BSSS). http://www.coping.de ; Schulz, U., & Schwarzer, R. (2003). Die Berliner Social Support Skalen (BSSS). Diagnostica, 49, 73-82.",
+      "license": "CC BY 4.0",
+      "license_explanation": "Licensed to the OpenScales project under CC BY 4.0 by the author, Ralf Schwarzer (permission granted June 2026), who authorized inclusion of his scales. English items from userpage.fu-berlin.de/~health/soc_e.htm; German items from the FU-Berlin skalen documentation.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "http://userpage.fu-berlin.de/~health/bsss.htm",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-17",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "RECIPIENT perspective (e.g., a patient reporting support received from their closest person). EN/DE verbatim. Reverse: rs4,5,6. rs15 is a standalone satisfaction item, not part of the received-support score. Part of the Berlin Social Support Scales family. Added official Spanish (soc_s.htm, Varela/Galain/Schwarzer/Schulz 2004), French (soc_f.htm, Schwarzer/Schulz/Katsap 2000), and Polish (soc_pol.htm) translations. NOTE: French source page had NO response anchors — the 4-point French anchors here are implementer-supplied (true-style, matching es/pl), VERIFY. es/fr/pl are the OFFICIAL versions and are gendered (and, for some subscales, assume a female respondent / male patient), unlike the gender-neutral en/de — VERIFY. Added Serbian (Latin; soc … Language_Selection/Serbian; Schwarzer/Schulz/Stula 2003) — official, gendered (masculine self-report)."
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "question_head": "qh"
+    },
+    "dimensions": [
+      {
+        "id": "received",
+        "name": "Actually Received Support",
+        "description": "Mean of 14 items (4,5,6 reverse)."
+      },
+      {
+        "id": "satisfaction",
+        "name": "Satisfaction with Received Support",
+        "description": "Single item; not part of the received-support score."
+      }
+    ],
+    "items": [
+      {
+        "id": "rs1",
+        "type": "likert",
+        "text_key": "rs1",
+        "dimension": "received"
+      },
+      {
+        "id": "rs2",
+        "type": "likert",
+        "text_key": "rs2",
+        "dimension": "received"
+      },
+      {
+        "id": "rs3",
+        "type": "likert",
+        "text_key": "rs3",
+        "dimension": "received"
+      },
+      {
+        "id": "rs4",
+        "type": "likert",
+        "text_key": "rs4",
+        "dimension": "received"
+      },
+      {
+        "id": "rs5",
+        "type": "likert",
+        "text_key": "rs5",
+        "dimension": "received"
+      },
+      {
+        "id": "rs6",
+        "type": "likert",
+        "text_key": "rs6",
+        "dimension": "received"
+      },
+      {
+        "id": "rs7",
+        "type": "likert",
+        "text_key": "rs7",
+        "dimension": "received"
+      },
+      {
+        "id": "rs8",
+        "type": "likert",
+        "text_key": "rs8",
+        "dimension": "received"
+      },
+      {
+        "id": "rs9",
+        "type": "likert",
+        "text_key": "rs9",
+        "dimension": "received"
+      },
+      {
+        "id": "rs10",
+        "type": "likert",
+        "text_key": "rs10",
+        "dimension": "received"
+      },
+      {
+        "id": "rs11",
+        "type": "likert",
+        "text_key": "rs11",
+        "dimension": "received"
+      },
+      {
+        "id": "rs12",
+        "type": "likert",
+        "text_key": "rs12",
+        "dimension": "received"
+      },
+      {
+        "id": "rs13",
+        "type": "likert",
+        "text_key": "rs13",
+        "dimension": "received"
+      },
+      {
+        "id": "rs14",
+        "type": "likert",
+        "text_key": "rs14",
+        "dimension": "received"
+      },
+      {
+        "id": "rs15",
+        "type": "likert",
+        "text_key": "rs15",
+        "dimension": "satisfaction"
+      }
+    ],
+    "scoring": {
+      "received": {
+        "name": "Actually Received Support",
+        "method": "mean_coded",
+        "description": "Mean of rs1-14 (rs4,5,6 reverse).",
+        "items": {
+          "rs1": 1,
+          "rs2": 1,
+          "rs3": 1,
+          "rs4": -1,
+          "rs5": -1,
+          "rs6": -1,
+          "rs7": 1,
+          "rs8": 1,
+          "rs9": 1,
+          "rs10": 1,
+          "rs11": 1,
+          "rs12": 1,
+          "rs13": 1,
+          "rs14": 1
+        }
+      },
+      "satisfaction": {
+        "name": "Satisfaction",
+        "method": "mean_coded",
+        "description": "Single item rs15.",
+        "items": [
+          "rs15"
+        ]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "r1": "strongly disagree",
+      "r2": "somewhat disagree",
+      "r3": "somewhat agree",
+      "r4": "strongly agree",
+      "qh": "Think about the person who is closest to you, such as your spouse, partner, child, friend, and so on. How did this person react to you during the last week?",
+      "LANGUAGE": "English",
+      "rs1": "This person showed me that he/she loves and accepts me.",
+      "rs2": "This person was there when I needed him/her.",
+      "rs3": "This person comforted me when I was feeling bad.",
+      "rs4": "This person left me alone.",
+      "rs5": "This person did not show much empathy for my situation.",
+      "rs6": "This person complained about me.",
+      "rs7": "This person took care of many things for me.",
+      "rs8": "This person made me feel valued and important.",
+      "rs9": "This person expressed concern about my condition.",
+      "rs10": "This person assured me that I can rely completely on him/her.",
+      "rs11": "This person helped me find something positive in my situation.",
+      "rs12": "This person suggested activities that might distract me.",
+      "rs13": "This person encouraged me not to give up.",
+      "rs14": "This person took care of things I could not manage on my own.",
+      "rs15": "In general, I am very satisfied with the way this person behaved."
+    },
+    "de": {
+      "r1": "stimmt nicht",
+      "r2": "stimmt kaum",
+      "r3": "stimmt eher",
+      "r4": "stimmt genau",
+      "qh": "Denken Sie nun bitte an Ihre engste Bezugsperson wie (Ehe)Partner/in, Kind, Freund/in usw. Wie hat sie sich in der letzten Woche Ihnen gegenüber verhalten?",
+      "LANGUAGE": "Deutsch",
+      "rs1": "Diese Bezugsperson hat mir gezeigt, daß sie mich mag und akzeptiert.",
+      "rs2": "Diese Bezugsperson war für mich da, wenn ich sie gebraucht habe.",
+      "rs3": "Diese Bezugsperson hat mich getröstet, wenn es mir schlecht ging.",
+      "rs4": "Diese Bezugsperson hat mich allein gelassen.",
+      "rs5": "Diese Bezugsperson hat wenig Verständnis für meine Situation gehabt.",
+      "rs6": "Diese Bezugsperson hat etwas an mir auszusetzen gehabt.",
+      "rs7": "Diese Bezugsperson hat viel für mich erledigt.",
+      "rs8": "Diese Bezugsperson hat mir das Gefühl gegeben, wertvoll und wichtig zu sein.",
+      "rs9": "Diese Bezugsperson hat ihre Sorge um mein Befinden ausgedrückt.",
+      "rs10": "Diese Bezugsperson hat mir das Gefühl gegeben, daß ich mich auf sie verlassen kann.",
+      "rs11": "Diese Bezugsperson half mir, meiner Situation etwas Positives abzugewinnen.",
+      "rs12": "Diese Bezugsperson schlug mir eine Tätigkeit vor, die mich etwas ablenken könnte.",
+      "rs13": "Diese Bezugsperson machte mir Mut, mich nicht aufzugeben.",
+      "rs14": "Diese Bezugsperson kümmerte sich um meine Angelegenheiten, die ich nicht alleine erledigen konnte.",
+      "rs15": "Mit dem Verhalten dieser Bezugsperson bin ich insgesamt sehr zufrieden."
+    },
+    "es": {
+      "r1": "falsa",
+      "r2": "rara vez verdadero",
+      "r3": "moderadamente verdadero",
+      "r4": "totalmente verdadero",
+      "qh": "Piensa en la persona que está más próxima a ti (como tu esposo/a, compañero/a, amigo/a). ¿Cómo fue esta persona contigo en la última semana?",
+      "LANGUAGE": "Español",
+      "rs1": "Esa persona me demostró que me quiere y me acepta.",
+      "rs2": "Esta persona estuvo ahí cuando la necesité.",
+      "rs3": "Esa persona me confortó cuando me sentía mal.",
+      "rs4": "Esa persona me dejó sola.",
+      "rs5": "Esa persona no mostró demasiada empatía por mi situación.",
+      "rs6": "Esa persona se quejó de mi.",
+      "rs7": "Esa persona se hizo cargo de muchas cosas por mi.",
+      "rs8": "Esa persona me hizo sentir valorada e importante.",
+      "rs9": "Esa persona expresó preocupación sobre mi condición.",
+      "rs10": "Esa persona me aseguró que puedo confiar completamente en él o ella.",
+      "rs11": "Esa persona me ayudó a encontrar alguna cosa positiva en mi situación.",
+      "rs12": "Esa persona sugiere actividades que pueden distraerme.",
+      "rs13": "Esa persona me alienta a no darme por vencida.",
+      "rs14": "Esa persona se hace cargo de cosas que no puedo manejar por mi misma.",
+      "rs15": "En general, estoy muy satisfecha con la manera que esa persona actúa."
+    },
+    "fr": {
+      "r1": "pas du tout vrai",
+      "r2": "plutôt pas vrai",
+      "r3": "plutôt vrai",
+      "r4": "tout à fait vrai",
+      "qh": "Pensez à présent à la personne la plus proche de vous comme par exemple épouse/époux, enfant, ami/e etc. Comment cette personne s'est-elle comportée vis-à-vis de vous ces dernières semaines ?",
+      "LANGUAGE": "Français",
+      "rs1": "Cette personne m'a montré qu'elle m'aime bien et qu'elle m'accepte.",
+      "rs2": "Cette personne était là quand j'avais besoin d'elle.",
+      "rs3": "Cette personne me consolait quand j'allais mal.",
+      "rs4": "Cette personne m'a laissé tout seul.",
+      "rs5": "Cette personne avait peu de compréhension envers moi.",
+      "rs6": "Cette personne avait des choses à me reprocher.",
+      "rs7": "Cette personne a réglé beaucoup de choses pour moi.",
+      "rs8": "Cette personne me donnait le sentiment d'être utile et important.",
+      "rs9": "Cette personne a exprimé son inquiétude concernant mon état de santé.",
+      "rs10": "Cette personne m'a donné le sentiment de pouvoir compter sur elle.",
+      "rs11": "Cette personne m'a aidé de tirer quelque chose de positif de ma situation.",
+      "rs12": "Cette personne m'a proposé une activité qui pouvait me distraire.",
+      "rs13": "Cette personne m'a encouragé à ne pas baisser les bras.",
+      "rs14": "Cette personne s'est occupée des affaires que je ne pouvais pas régler tout seul.",
+      "rs15": "De façon générale, je suis satisfait du comportement de cette personne."
+    },
+    "pl": {
+      "r1": "całkowicie nieprawdziwe",
+      "r2": "w małym stopniu prawdziwe",
+      "r3": "w umiarkowanym stopniu prawdziwe",
+      "r4": "całkowicie prawdziwe",
+      "qh": "Proszę pomyśleć o osobie, która jest Panu/Pani najbliższa, takiej jak współmałżonek, partner, dziecko, przyjaciel lub ktoś inny. Jak ta osoba zachowywała się wobec Pana/Pani w ostatnim tygodniu?",
+      "LANGUAGE": "Polski",
+      "rs1": "Ta osoba okazała, że kocha mnie i akceptuje",
+      "rs2": "Ta osoba była przy mnie, kiedy jej potrzebowałem",
+      "rs3": "Ta osoba pocieszała mnie, kiedy czułem się źle",
+      "rs4": "Ta osoba pozostawiła mnie samego",
+      "rs5": "Ta osoba nie okazała wiele zrozumienia dla mojej sytuacji",
+      "rs6": "Ta osoba narzekała na mnie",
+      "rs7": "Ta osoba troszczyła się o wiele moich spraw",
+      "rs8": "Ta osoba sprawiła, że czułem się wartościowy i ważny",
+      "rs9": "Ta osoba wyrażała troskę o mój stan",
+      "rs10": "Ta osoba zapewniła mnie, że mogę na nim/niej całkowicie polegać",
+      "rs11": "Ta osoba pomogła mi znaleźć coś pozytywnego w mojej sytuacji",
+      "rs12": "Ta osoba proponowała, co mógłbym zrobić, by nie myśleć o mojej sytuacji",
+      "rs13": "Ta osoba zachęcała mnie, aby się nie poddawać",
+      "rs14": "Ta osoba dbała o sprawy, których nie mogłem dopilnować osobiście",
+      "rs15": "Ogólnie, jestem bardzo zadowolon/y/a z zachowania tej osoby"
+    },
+    "sr": {
+      "r1": "uopšte ne",
+      "r2": "uglavnom ne",
+      "r3": "uglavnom da",
+      "r4": "da, u potpunosti",
+      "qh": "Sada mislite na Vama najbližu osobu kao na primer: (bračnog) partnera/ku, dete, prijatelja/cu itd. Kako se ona poslednje nedelje ponašala prema Vama?",
+      "LANGUAGE": "Srpski",
+      "rs1": "Ta osoba mi je pokazala da me voli i prihvata.",
+      "rs2": "Ta osoba je bila tu, kada mi je bila potrebna.",
+      "rs3": "Ta osoba me je tešila, kada mi je bilo teško.",
+      "rs4": "Ta osoba me je ostavila samu.",
+      "rs5": "Ta osoba je imala malo razumevanja za mene.",
+      "rs6": "Ta osoba je imala nešto da mi zameri.",
+      "rs7": "Ta osoba je mnogo toga učinila za mene.",
+      "rs8": "Ta osoba mi je ulila osećaj da sam vredan i važan.",
+      "rs9": "Ta osoba je izrazila brigu za moje stanje.",
+      "rs10": "Ta osoba mi je ulila osećaj da se mogu osloniti na nju.",
+      "rs11": "Ta osoba mi je pomogla da iz moje situacije izvučem nešto pozitivno.",
+      "rs12": "Ta osoba mi je predložila aktivnost koja bi mi mogla odvući pažnju.",
+      "rs13": "Ta osoba mi je ulila hrabrost da se ne predam.",
+      "rs14": "Ta osoba se pobrinula za moje probleme koje nisam mogao da rešim sam.",
+      "rs15": "Sa ponašanjem te osobe sam u potpunosti zadovoljan."
+    }
+  }
+}

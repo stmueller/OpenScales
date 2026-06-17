@@ -1,0 +1,288 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Berlin Social Support Scales – Provided Support",
+      "code": "BSS-PS",
+      "abbreviation": "BSS-PS",
+      "description": "Provided support, provider/caregiver perspective (Schwarzer & Schulz). 14 items (items 4,5,6 reverse); 4-point agreement; mean. Gender-neutral wording.",
+      "citation": "Schwarzer, R., & Schulz, U. (2000). Berlin Social Support Scales (BSSS). http://www.coping.de ; Schulz, U., & Schwarzer, R. (2003). Die Berliner Social Support Skalen (BSSS). Diagnostica, 49, 73-82.",
+      "license": "CC BY 4.0",
+      "license_explanation": "Licensed to the OpenScales project under CC BY 4.0 by the author, Ralf Schwarzer (permission granted June 2026), who authorized inclusion of his scales. English items from userpage.fu-berlin.de/~health/soc_e.htm; German items from the FU-Berlin skalen documentation.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "http://userpage.fu-berlin.de/~health/bsss.htm",
+      "domain": "Social",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-17",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "PROVIDER/CAREGIVER perspective. GENDER-NEUTRAL adaptation: the official source is gendered — EN '(For a Male Patient)' with him/he; German masculine 'ihm/ihn', referent 'den Patienten'. English here uses singular they/them; German uses 'diese Person ... sie/ihr' (mirroring the recipient subscale's neutral device). ORIGINAL gendered forms: EN 'I showed him how much I cherish and accept him.' DE 'Ich habe ihm gezeigt, daß ich ihn mag und akzeptiere.' (etc.). German neutral rendering is implementer-adapted — VERIFY with a native speaker. Reverse: ps4,5,6 (note: the EN source marked only 5,6; item 4 'left them alone' reversed to match the German source and the parallel Received item 4). Part of the Berlin Social Support Scales family. Added official Spanish (soc_s.htm, Varela/Galain/Schwarzer/Schulz 2004), French (soc_f.htm, Schwarzer/Schulz/Katsap 2000), and Polish (soc_pol.htm) translations. NOTE: French source page had NO response anchors — the 4-point French anchors here are implementer-supplied (true-style, matching es/pl), VERIFY. es/fr/pl are the OFFICIAL versions and are gendered (and, for some subscales, assume a female respondent / male patient), unlike the gender-neutral en/de — VERIFY. Added Serbian (Latin; soc … Language_Selection/Serbian; Schwarzer/Schulz/Stula 2003) — official, gendered (masculine self-report)."
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "question_head": "qh"
+    },
+    "dimensions": [
+      {
+        "id": "provided",
+        "name": "Provided Support",
+        "description": "Mean of 14 items (4,5,6 reverse)."
+      }
+    ],
+    "items": [
+      {
+        "id": "ps1",
+        "type": "likert",
+        "text_key": "ps1",
+        "dimension": "provided"
+      },
+      {
+        "id": "ps2",
+        "type": "likert",
+        "text_key": "ps2",
+        "dimension": "provided"
+      },
+      {
+        "id": "ps3",
+        "type": "likert",
+        "text_key": "ps3",
+        "dimension": "provided"
+      },
+      {
+        "id": "ps4",
+        "type": "likert",
+        "text_key": "ps4",
+        "dimension": "provided"
+      },
+      {
+        "id": "ps5",
+        "type": "likert",
+        "text_key": "ps5",
+        "dimension": "provided"
+      },
+      {
+        "id": "ps6",
+        "type": "likert",
+        "text_key": "ps6",
+        "dimension": "provided"
+      },
+      {
+        "id": "ps7",
+        "type": "likert",
+        "text_key": "ps7",
+        "dimension": "provided"
+      },
+      {
+        "id": "ps8",
+        "type": "likert",
+        "text_key": "ps8",
+        "dimension": "provided"
+      },
+      {
+        "id": "ps9",
+        "type": "likert",
+        "text_key": "ps9",
+        "dimension": "provided"
+      },
+      {
+        "id": "ps10",
+        "type": "likert",
+        "text_key": "ps10",
+        "dimension": "provided"
+      },
+      {
+        "id": "ps11",
+        "type": "likert",
+        "text_key": "ps11",
+        "dimension": "provided"
+      },
+      {
+        "id": "ps12",
+        "type": "likert",
+        "text_key": "ps12",
+        "dimension": "provided"
+      },
+      {
+        "id": "ps13",
+        "type": "likert",
+        "text_key": "ps13",
+        "dimension": "provided"
+      },
+      {
+        "id": "ps14",
+        "type": "likert",
+        "text_key": "ps14",
+        "dimension": "provided"
+      }
+    ],
+    "scoring": {
+      "provided": {
+        "name": "Provided Support",
+        "method": "mean_coded",
+        "description": "Mean of ps1-14 (ps4,5,6 reverse).",
+        "items": {
+          "ps1": 1,
+          "ps2": 1,
+          "ps3": 1,
+          "ps4": -1,
+          "ps5": -1,
+          "ps6": -1,
+          "ps7": 1,
+          "ps8": 1,
+          "ps9": 1,
+          "ps10": 1,
+          "ps11": 1,
+          "ps12": 1,
+          "ps13": 1,
+          "ps14": 1
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "r1": "strongly disagree",
+      "r2": "somewhat disagree",
+      "r3": "somewhat agree",
+      "r4": "strongly agree",
+      "qh": "Think about the person you are supporting (the patient). How did you interact with them during the past week?",
+      "LANGUAGE": "English",
+      "ps1": "I showed them how much I cherish and accept them.",
+      "ps2": "I was there when they needed me.",
+      "ps3": "I comforted them when they were feeling bad.",
+      "ps4": "I left them alone.",
+      "ps5": "I did not have much empathy for them.",
+      "ps6": "I criticized them.",
+      "ps7": "I did a lot for them.",
+      "ps8": "I made them feel valued and important.",
+      "ps9": "I expressed my concern about their condition.",
+      "ps10": "I reassured them that they can rely completely on me.",
+      "ps11": "I helped them find something positive in their situation.",
+      "ps12": "I suggested an activity that might distract them.",
+      "ps13": "I encouraged them not to give up.",
+      "ps14": "I took care of daily duties that they could not fulfill on their own."
+    },
+    "de": {
+      "r1": "stimmt nicht",
+      "r2": "stimmt kaum",
+      "r3": "stimmt eher",
+      "r4": "stimmt genau",
+      "qh": "Denken Sie nun bitte an die Person, die Sie unterstützen (den Patienten bzw. die Patientin). Wie haben Sie sich in der letzten Woche ihr gegenüber verhalten?",
+      "LANGUAGE": "Deutsch",
+      "ps1": "Ich habe dieser Person gezeigt, dass ich sie mag und akzeptiere.",
+      "ps2": "Ich war für diese Person da, wenn sie mich gebraucht hat.",
+      "ps3": "Ich habe diese Person getröstet, wenn es ihr schlecht ging.",
+      "ps4": "Ich habe diese Person allein gelassen.",
+      "ps5": "Ich habe wenig Verständnis für diese Person gehabt.",
+      "ps6": "Ich habe etwas an dieser Person auszusetzen gehabt.",
+      "ps7": "Ich habe viel für diese Person erledigt.",
+      "ps8": "Ich habe dieser Person das Gefühl gegeben, wertvoll und wichtig zu sein.",
+      "ps9": "Ich habe meine Sorge um ihr Befinden ausgedrückt.",
+      "ps10": "Ich habe dieser Person das Gefühl gegeben, dass sie sich auf mich verlassen kann.",
+      "ps11": "Ich half dieser Person, ihrer Situation etwas Positives abzugewinnen.",
+      "ps12": "Ich schlug dieser Person eine Tätigkeit vor, die sie etwas ablenken könnte.",
+      "ps13": "Ich machte dieser Person Mut, sich nicht aufzugeben.",
+      "ps14": "Ich kümmerte mich um ihre Angelegenheiten, die sie nicht alleine erledigen konnte."
+    },
+    "es": {
+      "r1": "falsa",
+      "r2": "rara vez verdadero",
+      "r3": "moderadamente verdadero",
+      "r4": "totalmente verdadero",
+      "qh": "(Para un paciente de sexo masculino.) Ahora piense en el paciente. ¿Cómo interactuó con él en la última semana?",
+      "LANGUAGE": "Español",
+      "ps1": "Le mostré cuanto lo quiero y lo acepto.",
+      "ps2": "Estuve ahí cuando me necesitó.",
+      "ps3": "Lo conforté cuando se sentía mal.",
+      "ps4": "Lo dejé solo.",
+      "ps5": "No tuve mucha empatía con él.",
+      "ps6": "Lo critiqué.",
+      "ps7": "Hice mucho por él.",
+      "ps8": "Lo hice sentir importante y valorado.",
+      "ps9": "Le expresé mi preocupación por su condición.",
+      "ps10": "Le aseguré que puede confiar en mi.",
+      "ps11": "Lo ayudé a encontrar algo positivo en su situación.",
+      "ps12": "Le sugerí una actividad que podría distraerlo.",
+      "ps13": "Lo alenté a no darse por vencido.",
+      "ps14": "Me hice cargo de tareas diarias que no podía cumplir por sí mismo."
+    },
+    "fr": {
+      "r1": "pas du tout vrai",
+      "r2": "plutôt pas vrai",
+      "r3": "plutôt vrai",
+      "r4": "tout à fait vrai",
+      "qh": "(Pour un patient mâle.) Pensez à présent au patient, comment vous êtes-vous comporté vis-à-vis de lui ces dernières semaines ?",
+      "LANGUAGE": "Français",
+      "ps1": "Je lui ai montré que je l'aime bien et que je l'accepte.",
+      "ps2": "J'étais là quand il avait besoin de moi.",
+      "ps3": "Je le consolais quand il allait mal.",
+      "ps4": "Je l'ai laissé tout seul.",
+      "ps5": "J'avais peu de compréhension envers lui.",
+      "ps6": "Je avais des choses à lui reprocher.",
+      "ps7": "J'ai réglé beaucoup de choses pour lui.",
+      "ps8": "Je lui ai donné le sentiment d'être utile et important.",
+      "ps9": "J'exprimais mon inquiétude concernant son état de santé.",
+      "ps10": "Je lui ai donné le sentiment de pouvoir compter sur moi.",
+      "ps11": "Je l'ai aidé de tirer quelque chose de positif de sa situation.",
+      "ps12": "Je lui ai proposé une activité qui pouvait le distraire un peu.",
+      "ps13": "Je l'ai encouragé à ne pas baisser les bras.",
+      "ps14": "J'ai pris en mains les affaires qu'il ne pouvait pas régler tout seul."
+    },
+    "pl": {
+      "r1": "całkowicie nieprawdziwe",
+      "r2": "w małym stopniu prawdziwe",
+      "r3": "w umiarkowanym stopniu prawdziwe",
+      "r4": "całkowicie prawdziwe",
+      "qh": "Proszę pomyśleć o pacjencie. Jakie były Pani/Pana kontakty z pacjentką/pacjentem podczas ostatniego tygodnia?",
+      "LANGUAGE": "Polski",
+      "ps1": "Okazałem mu, jak bardzo go lubię i akceptuję",
+      "ps2": "Byłem przy nim, gdy mnie potrzebował",
+      "ps3": "Pocieszałem go, kiedy gdy źle się czuł",
+      "ps4": "Zostawiłem go samego",
+      "ps5": "Nie okazałem mu współczucia",
+      "ps6": "Krytykowałem go",
+      "ps7": "Zrobiłem dla niego wiele",
+      "ps8": "Sprawiłem, że czuł się ważny i wartościowy",
+      "ps9": "Okazywałem troskę o jego stan",
+      "ps10": "Zapewniałem go, że może na mnie polegać",
+      "ps11": "Pomogłem mu znaleźć coś pozytywnego w jego sytuacji",
+      "ps12": "Proponowałem, co mógłby zrobić, by nie myśleć o swojej sytuacji",
+      "ps13": "Zachęcałem, aby nie poddawał się",
+      "ps14": "Zająłem się jego codziennymi obowiązkami, kiedy nie mógł ich osobiście wypełniać"
+    },
+    "sr": {
+      "r1": "uopšte ne",
+      "r2": "uglavnom ne",
+      "r3": "uglavnom da",
+      "r4": "da, u potpunosti",
+      "qh": "Sada mislite na pacijenta. Kako ste se poslednje nedelje ponašali prema njemu?",
+      "LANGUAGE": "Srpski",
+      "ps1": "Pokazao sam mu da ga volim i prihvatam.",
+      "ps2": "Bio sam tu kada sam mu bio potreban.",
+      "ps3": "Tešio sam ga kada mu je bilo teško.",
+      "ps4": "Ostavio sam ga samog.",
+      "ps5": "Imao sam malo razumevanja za njega.",
+      "ps6": "Imao sam nešto da mu zamerim.",
+      "ps7": "Mnogo sam učinio za njega.",
+      "ps8": "Pomogao sam mu da se oseća vrednim i važnim.",
+      "ps9": "Izrazio sam brigu za njegovo stanje.",
+      "ps10": "Stvorio sam mu osećaj da se može osloniti na mene.",
+      "ps11": "Pomogao sam mu da iz svoje situacije izvuče nešto pozitivno.",
+      "ps12": "Predložio sam mu neku aktivnost koja će malo da mu skrene pažnju.",
+      "ps13": "Ulio sam mu hrabrost da se ne preda.",
+      "ps14": "Pobrinuo sam se za njegove probleme koje nije mogao da reši sam."
+    }
+  }
+}

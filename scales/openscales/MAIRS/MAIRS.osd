@@ -1,0 +1,108 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Medical Artificial Intelligence Readiness Scale for Medical Students",
+      "code": "MAIRS",
+      "abbreviation": "MAIRS-MS",
+      "description": "22-item measure of medical students' perceived readiness for artificial intelligence in medicine, across four factors: cognition, ability, vision, and ethics. Items are rated 1-5 and summed; higher scores indicate greater perceived AI readiness.",
+      "citation": "Karaca, O., Çalışkan, S. A., & Demir, K. (2021). Medical artificial intelligence readiness scale for medical students (MAIRS-MS) – development, validity and reliability study. BMC Medical Education, 21(1), 112. https://doi.org/10.1186/s12909-021-02546-6",
+      "license": "CC BY 4.0",
+      "license_explanation": "© The Author(s) 2021. Items reproduced from Karaca, Çalışkan, & Demir (2021), BMC Medical Education, licensed under a Creative Commons Attribution 4.0 International License.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1186/s12909-021-02546-6",
+      "version": "1.0",
+      "domain": "Technology"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-16",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English items from the original Karaca et al. (2021) BMC article (Table 2). Four factors scored as sums (the source reports subscale sums): Cognition (items 1-8, 8-40), Ability (9-16, 8-40), Vision (17-19, 3-15), Ethics (20-22, 3-15); Total = sum of all 22 (22-110). All items forward-coded (competence 'I can...' statements). A validated Persian (fa) translation (Khajeali et al., 2025, PLoS ONE) is available to add as a translation."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["likert_1", "likert_2", "likert_3", "likert_4", "likert_5"],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      { "id": "cognition", "name": "Cognition", "description": "Terminological and conceptual knowledge about medical AI applications, the logic of AI, and data science (items 1-8)." },
+      { "id": "ability", "name": "Ability", "description": "Competencies in choosing, using, and explaining medical AI applications in combination with professional knowledge (items 9-16)." },
+      { "id": "vision", "name": "Vision", "description": "Ability to explain limitations, strengths, and weaknesses of medical AI and anticipate its opportunities and threats (items 17-19)." },
+      { "id": "ethics", "name": "Ethics", "description": "Adherence to legal and ethical norms and regulations when using AI in healthcare (items 20-22)." }
+    ],
+    "items": [
+      { "id": "mairs1", "type": "likert", "text_key": "mairs1", "dimension": "cognition" },
+      { "id": "mairs2", "type": "likert", "text_key": "mairs2", "dimension": "cognition" },
+      { "id": "mairs3", "type": "likert", "text_key": "mairs3", "dimension": "cognition" },
+      { "id": "mairs4", "type": "likert", "text_key": "mairs4", "dimension": "cognition" },
+      { "id": "mairs5", "type": "likert", "text_key": "mairs5", "dimension": "cognition" },
+      { "id": "mairs6", "type": "likert", "text_key": "mairs6", "dimension": "cognition" },
+      { "id": "mairs7", "type": "likert", "text_key": "mairs7", "dimension": "cognition" },
+      { "id": "mairs8", "type": "likert", "text_key": "mairs8", "dimension": "cognition" },
+      { "id": "mairs9", "type": "likert", "text_key": "mairs9", "dimension": "ability" },
+      { "id": "mairs10", "type": "likert", "text_key": "mairs10", "dimension": "ability" },
+      { "id": "mairs11", "type": "likert", "text_key": "mairs11", "dimension": "ability" },
+      { "id": "mairs12", "type": "likert", "text_key": "mairs12", "dimension": "ability" },
+      { "id": "mairs13", "type": "likert", "text_key": "mairs13", "dimension": "ability" },
+      { "id": "mairs14", "type": "likert", "text_key": "mairs14", "dimension": "ability" },
+      { "id": "mairs15", "type": "likert", "text_key": "mairs15", "dimension": "ability" },
+      { "id": "mairs16", "type": "likert", "text_key": "mairs16", "dimension": "ability" },
+      { "id": "mairs17", "type": "likert", "text_key": "mairs17", "dimension": "vision" },
+      { "id": "mairs18", "type": "likert", "text_key": "mairs18", "dimension": "vision" },
+      { "id": "mairs19", "type": "likert", "text_key": "mairs19", "dimension": "vision" },
+      { "id": "mairs20", "type": "likert", "text_key": "mairs20", "dimension": "ethics" },
+      { "id": "mairs21", "type": "likert", "text_key": "mairs21", "dimension": "ethics" },
+      { "id": "mairs22", "type": "likert", "text_key": "mairs22", "dimension": "ethics" }
+    ],
+    "scoring": {
+      "cognition": { "method": "sum_coded", "description": "Sum of items 1-8 (8-40).", "items": ["mairs1", "mairs2", "mairs3", "mairs4", "mairs5", "mairs6", "mairs7", "mairs8"] },
+      "ability": { "method": "sum_coded", "description": "Sum of items 9-16 (8-40).", "items": ["mairs9", "mairs10", "mairs11", "mairs12", "mairs13", "mairs14", "mairs15", "mairs16"] },
+      "vision": { "method": "sum_coded", "description": "Sum of items 17-19 (3-15).", "items": ["mairs17", "mairs18", "mairs19"] },
+      "ethics": { "method": "sum_coded", "description": "Sum of items 20-22 (3-15).", "items": ["mairs20", "mairs21", "mairs22"] },
+      "readiness": {
+        "name": "Medical AI Readiness (Total)",
+        "method": "sum_coded",
+        "description": "Sum of all 22 items (22-110); higher = greater perceived medical AI readiness.",
+        "items": ["mairs1", "mairs2", "mairs3", "mairs4", "mairs5", "mairs6", "mairs7", "mairs8", "mairs9", "mairs10", "mairs11", "mairs12", "mairs13", "mairs14", "mairs15", "mairs16", "mairs17", "mairs18", "mairs19", "mairs20", "mairs21", "mairs22"]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "question_head": "Please rate how much you agree with each of the following statements about artificial intelligence (AI) in medicine.",
+      "likert_1": "Strongly disagree",
+      "likert_2": "Disagree",
+      "likert_3": "Neither agree nor disagree",
+      "likert_4": "Agree",
+      "likert_5": "Strongly agree",
+      "mairs1": "I can define the basic concepts of data science.",
+      "mairs2": "I can define the basic concepts of statistics.",
+      "mairs3": "I can explain how AI systems are trained.",
+      "mairs4": "I can define the basic concepts and terminology of AI.",
+      "mairs5": "I can properly analyze the data obtained by AI in healthcare.",
+      "mairs6": "I can differentiate between the functions and features of AI related tools and applications.",
+      "mairs7": "I can organize workflows in accordance with the logic of AI.",
+      "mairs8": "I can express the importance of data collection, analysis, evaluation and safety; for the development of AI in healthcare.",
+      "mairs9": "I can use AI-based information in combination with my professional knowledge.",
+      "mairs10": "I can use AI technologies effectively and efficiently in healthcare delivery.",
+      "mairs11": "I can use artificial intelligence applications in accordance with its purpose.",
+      "mairs12": "I can access, evaluate, use, share and create new knowledge using information and communication technologies.",
+      "mairs13": "I can explain how AI applications in healthcare offer a solution to which problem.",
+      "mairs14": "I find it valuable to use AI for education, service and research purposes.",
+      "mairs15": "I can explain the AI applications used in healthcare services to the patient.",
+      "mairs16": "I can choose the proper AI application for the problem encountered in healthcare.",
+      "mairs17": "I can explain the limitations of AI technology.",
+      "mairs18": "I can explain the strengths and weaknesses of AI technology.",
+      "mairs19": "I can foresee the opportunities and threats that AI technology can create.",
+      "mairs20": "I can use health data in accordance with legal and ethical norms.",
+      "mairs21": "I can act in accordance with ethical principles while using AI technologies.",
+      "mairs22": "I can follow the legal regulations regarding the use of AI technologies in healthcare.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Artificial Intelligence Anxiety Scale",
+      "code": "AIAnxS",
+      "abbreviation": "AIAnxS",
+      "description": "21-item measure of anxiety toward artificial intelligence (Wang & Wang), with four factors: Learning (8 items), Job Replacement (6 items), Sociotechnical Blindness (4 items), and AI Configuration (3 items). Items are rated 1-7; subscales are averaged and the total is summed (21-147), with higher scores indicating greater AI anxiety. Includes the original English and a validated German translation.",
+      "citation": "Wang, Y.-Y., & Wang, Y.-S. (2022). Development and validation of an artificial intelligence anxiety scale: An initial application in predicting motivated learning behavior. Interactive Learning Environments, 30(4), 619-634. https://doi.org/10.1080/10494820.2019.1674887",
+      "license": "CC BY-NC-ND 4.0",
+      "license_explanation": "The original English AIAS (Wang & Wang, 2019/2022, Interactive Learning Environments) is Open Access under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 License (CC BY-NC-ND 4.0): it permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited and is not altered, transformed, or built upon. Because of the NonCommercial-NoDerivatives terms, this scale is held in the restricted collection (free for non-commercial research use). The German translation (de) is from Hajek et al. (2025), PLoS ONE, which is CC BY 4.0. Item text is reproduced verbatim and properly cited.",
+      "license_url": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "url": "https://doi.org/10.1080/10494820.2019.1674887",
+      "version": "1.0",
+      "domain": "Technology"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-16",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English items are the final 21-item set drawn from the original 57-item AIAS pool (Wang & Wang). Item IDs preserve the original pool's Q-codes; items are presented in factor order. Factor assignment per the published loadings: Learning = Q3,Q2,Q5,Q4,Q6,Q1,Q8,Q7; Job Replacement = Q16,Q17,Q18,Q15,Q11,Q9; Sociotechnical Blindness = Q45,Q46,Q44,Q47; AI Configuration = Q29,Q30,Q32. Subscales scored as means (1-7); total scored as the sum of all 21 items (21-147), matching the published total range. No reverse-coded items. Bilingual: English (en) from Wang & Wang (CC BY-NC-ND 4.0); German (de) from Hajek et al. (2025), PLoS ONE (CC BY 4.0), mapped 1:1 to the same items by factor order. Merged into a single restricted scale (NC-ND on the English items). Response numbers suppressed; endpoint anchors carry their value (1 / 7)."
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": ["likert_1", null, null, null, null, null, "likert_7"],
+      "question_head": "question_head",
+      "suppress_likert_numbers": true
+    },
+    "dimensions": [
+      { "id": "learning", "name": "Learning", "description": "Anxiety about learning to use and understand AI techniques/products (items Q1-Q8)." },
+      { "id": "job_replacement", "name": "Job Replacement", "description": "Anxiety that AI will replace humans, jobs, or autonomy (items Q9, Q11, Q15-Q18)." },
+      { "id": "sociotechnical_blindness", "name": "Sociotechnical Blindness", "description": "Anxiety about AI misuse, malfunction, and loss of control (items Q44-Q47)." },
+      { "id": "ai_configuration", "name": "AI Configuration", "description": "Anxiety toward humanoid AI/robots (items Q29, Q30, Q32)." }
+    ],
+    "items": [
+      { "id": "Q3", "type": "likert", "text_key": "Q3", "dimension": "learning" },
+      { "id": "Q2", "type": "likert", "text_key": "Q2", "dimension": "learning" },
+      { "id": "Q5", "type": "likert", "text_key": "Q5", "dimension": "learning" },
+      { "id": "Q4", "type": "likert", "text_key": "Q4", "dimension": "learning" },
+      { "id": "Q6", "type": "likert", "text_key": "Q6", "dimension": "learning" },
+      { "id": "Q1", "type": "likert", "text_key": "Q1", "dimension": "learning" },
+      { "id": "Q8", "type": "likert", "text_key": "Q8", "dimension": "learning" },
+      { "id": "Q7", "type": "likert", "text_key": "Q7", "dimension": "learning" },
+      { "id": "Q16", "type": "likert", "text_key": "Q16", "dimension": "job_replacement" },
+      { "id": "Q17", "type": "likert", "text_key": "Q17", "dimension": "job_replacement" },
+      { "id": "Q18", "type": "likert", "text_key": "Q18", "dimension": "job_replacement" },
+      { "id": "Q15", "type": "likert", "text_key": "Q15", "dimension": "job_replacement" },
+      { "id": "Q11", "type": "likert", "text_key": "Q11", "dimension": "job_replacement" },
+      { "id": "Q9", "type": "likert", "text_key": "Q9", "dimension": "job_replacement" },
+      { "id": "Q45", "type": "likert", "text_key": "Q45", "dimension": "sociotechnical_blindness" },
+      { "id": "Q46", "type": "likert", "text_key": "Q46", "dimension": "sociotechnical_blindness" },
+      { "id": "Q44", "type": "likert", "text_key": "Q44", "dimension": "sociotechnical_blindness" },
+      { "id": "Q47", "type": "likert", "text_key": "Q47", "dimension": "sociotechnical_blindness" },
+      { "id": "Q29", "type": "likert", "text_key": "Q29", "dimension": "ai_configuration" },
+      { "id": "Q30", "type": "likert", "text_key": "Q30", "dimension": "ai_configuration" },
+      { "id": "Q32", "type": "likert", "text_key": "Q32", "dimension": "ai_configuration" }
+    ],
+    "scoring": {
+      "learning": { "method": "mean_coded", "description": "Mean of the 8 Learning items (1-7).", "items": ["Q3", "Q2", "Q5", "Q4", "Q6", "Q1", "Q8", "Q7"] },
+      "job_replacement": { "method": "mean_coded", "description": "Mean of the 6 Job Replacement items (1-7).", "items": ["Q16", "Q17", "Q18", "Q15", "Q11", "Q9"] },
+      "sociotechnical_blindness": { "method": "mean_coded", "description": "Mean of the 4 Sociotechnical Blindness items (1-7).", "items": ["Q45", "Q46", "Q44", "Q47"] },
+      "ai_configuration": { "method": "mean_coded", "description": "Mean of the 3 AI Configuration items (1-7).", "items": ["Q29", "Q30", "Q32"] },
+      "total": {
+        "name": "AI Anxiety (Total)",
+        "method": "sum_coded",
+        "description": "Sum of all 21 items (21-147); higher = greater AI anxiety.",
+        "items": ["Q3", "Q2", "Q5", "Q4", "Q6", "Q1", "Q8", "Q7", "Q16", "Q17", "Q18", "Q15", "Q11", "Q9", "Q45", "Q46", "Q44", "Q47", "Q29", "Q30", "Q32"]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "question_head": "To what extent do you agree with the following statements?",
+      "likert_1": "Strongly disagree (1)",
+      "likert_7": "Strongly agree (7)",
+      "Q1": "Taking a class about the development of AI techniques/products makes me anxious.",
+      "Q2": "Learning to use AI techniques/products makes me anxious.",
+      "Q3": "Learning to understand all of the special functions associated with an AI technique/product makes me anxious.",
+      "Q4": "Learning how an AI technique/product works makes me anxious.",
+      "Q5": "Learning to use specific functions of an AI technique/product makes me anxious.",
+      "Q6": "Learning to interact with an AI technique/product makes me anxious.",
+      "Q7": "Being unable to keep up with the advances associated with AI techniques/products makes me anxious.",
+      "Q8": "Reading an AI technique/product manual makes me anxious.",
+      "Q9": "I am afraid that AI techniques/products will replace someone's job.",
+      "Q11": "I am afraid that if I begin to use AI techniques/products I will become dependent upon them and lose some of my reasoning skills.",
+      "Q15": "I am afraid that widespread use of humanoid robots will take jobs away from people.",
+      "Q16": "I am afraid that an AI technique/product may make us dependent.",
+      "Q17": "I am afraid that an AI technique/product may make us even lazier.",
+      "Q18": "I am afraid that an AI technique/product may replace humans.",
+      "Q29": "I find humanoid AI techniques/products (e.g. humanoid robots) scary.",
+      "Q30": "I find humanoid AI techniques/products (e.g. humanoid robots) intimidating.",
+      "Q32": "I don't know why, but humanoid AI techniques/products (e.g. humanoid robots) scare me.",
+      "Q44": "I am afraid that an AI technique/product may get out of control and malfunction.",
+      "Q45": "I am afraid that an AI technique/product may be misused.",
+      "Q46": "I am afraid of various problems potentially associated with an AI technique/product.",
+      "Q47": "I am afraid that an AI technique/product may lead to robot autonomy.",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "de": {
+      "LANGUAGE": "Deutsch",
+      "question_head": "Bitte geben Sie an, inwieweit Sie den folgenden Aussagen zustimmen.",
+      "likert_1": "stimme überhaupt nicht zu (1)",
+      "likert_7": "stimme voll und ganz zu (7)",
+      "Q3": "Ich habe Angst davor, alle speziellen Funktionen zu erlernen, die eine KI-Technologie/ein KI-Produkt mit sich bringt.",
+      "Q2": "Ich habe Angst davor, zu lernen, wie man KI-Technologie/-Produkte verwendet.",
+      "Q5": "Ich habe Angst davor, zu lernen, wie man bestimmte Funktionen einer KI-Technologie/eines KI-Produkts verwendet.",
+      "Q4": "Ich habe Angst davor, zu lernen, wie eine KI-Technologie/ein KI-Produkt funktioniert.",
+      "Q6": "Ich habe Angst davor, zu lernen, wie man mit einer KI-Technologie/einem KI-Produkt interagiert.",
+      "Q1": "Ich habe Angst davor, an einem Kurs zur Entwicklung von KI-Technologien/-Produkten teilzunehmen.",
+      "Q8": "Ich habe Angst davor, die Anleitung einer KI-Technologie/eines KI-Produkts zu lesen.",
+      "Q7": "Ich habe Angst, nicht mit dem Fortschritt von KI-Technologien/-Produkten mithalten zu können.",
+      "Q16": "Ich habe Angst, dass eine KI-Technologie/ein KI-Produkt uns abhängig machen könnte.",
+      "Q17": "Ich habe Angst, dass eine KI-Technologie/ein KI-Produkt uns noch fauler machen könnte.",
+      "Q18": "Ich habe Angst, dass eine KI-Technologie/ein KI-Produkt Menschen ersetzen könnte.",
+      "Q15": "Ich habe Angst, dass eine weit verbreitete Nutzung menschenähnlicher Roboter Menschen ihre Arbeitsplätze wegnehmen könnte.",
+      "Q11": "Ich habe Angst, dass ich im Falle der Nutzung von KI-Technologien/-Produkte abhängig von ihnen werde und einen Teil meiner Fähigkeiten im Bereich des logischen Denkens verliere.",
+      "Q9": "Ich habe Angst, dass KI-Technologien/-Produkte Arbeitsplätze ersetzen könnten.",
+      "Q45": "Ich habe Angst, dass eine KI-Technologie/ein KI-Produkt missbraucht werden könnte.",
+      "Q46": "Ich habe Angst vor verschiedenen Problemen, die eine KI-Technologie/ein KI-Produkt möglicherweise mit sich bringen könnte.",
+      "Q44": "Ich habe Angst, dass eine KI-Technologie/ein KI-Produkt außer Kontrolle geraten und eine Fehlfunktion haben könnte.",
+      "Q47": "Ich habe Angst, dass eine KI-Technologie/ein KI-Produkt zur Verselbständigung von Robotern führen könnte.",
+      "Q29": "Ich finde menschenähnliche KI-Technologie/-Produkte (z. B. menschenähnliche Roboter) unheimlich.",
+      "Q30": "Ich finde menschenähnliche KI-Technologie/-Produkte (z. B. menschenähnliche Roboter) einschüchternd.",
+      "Q32": "Ich weiß nicht, wieso, aber menschenähnliche KI-Technologie/-Produkte (z. B. menschenähnliche Roboter) machen mir Angst.",
+      "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
+    }
+  }
+}

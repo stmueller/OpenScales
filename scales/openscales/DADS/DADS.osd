@@ -1,0 +1,78 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Disposition towards Automated Driving Scale",
+      "code": "DADS",
+      "abbreviation": "DADS",
+      "description": "11-item brief self-report measure of an individual's disposition toward automated (self-driving) vehicles. Unidimensional; items are rated 1-5 and averaged, with higher scores indicating a more positive disposition toward automated driving.",
+      "citation": "Somma, A., Fossati, A., Boscaro, L., Galbiati, A., Signorini, M. G., & Gobbi, M. (2025). Disposition towards Automated Driving Scale (DADS): Development and psychometric properties of a brief self-report measure to assess subject's disposition towards automated driving. Transportation Research Part F: Traffic Psychology and Behaviour, 112, 305-321. https://doi.org/10.1016/j.trf.2025.04.017",
+      "license": "CC BY 4.0",
+      "license_explanation": "© 2025 The Author(s). Items reproduced from Somma et al. (2025), Transportation Research Part F, published open access under a Creative Commons Attribution 4.0 International License (confirmed CC BY via Unpaywall).",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.1016/j.trf.2025.04.017",
+      "version": "1.0",
+      "domain": "Technology"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-16",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Unidimensional; scored as the mean of all 11 items (the source sums and averages). Items 2, 3, 5, 8, 9 are reverse-coded (marked 'REVERSE ITEM' in the source). Higher = more positive disposition toward automated vehicles."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["likert_1", "likert_2", "likert_3", "likert_4", "likert_5"],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      { "id": "disposition", "name": "Disposition towards Automated Driving", "description": "Overall positive disposition toward automated (self-driving) vehicles (mean of all 11 items, 1-5)." }
+    ],
+    "items": [
+      { "id": "dads1", "type": "likert", "text_key": "dads1", "dimension": "disposition" },
+      { "id": "dads2", "type": "likert", "text_key": "dads2", "dimension": "disposition" },
+      { "id": "dads3", "type": "likert", "text_key": "dads3", "dimension": "disposition" },
+      { "id": "dads4", "type": "likert", "text_key": "dads4", "dimension": "disposition" },
+      { "id": "dads5", "type": "likert", "text_key": "dads5", "dimension": "disposition" },
+      { "id": "dads6", "type": "likert", "text_key": "dads6", "dimension": "disposition" },
+      { "id": "dads7", "type": "likert", "text_key": "dads7", "dimension": "disposition" },
+      { "id": "dads8", "type": "likert", "text_key": "dads8", "dimension": "disposition" },
+      { "id": "dads9", "type": "likert", "text_key": "dads9", "dimension": "disposition" },
+      { "id": "dads10", "type": "likert", "text_key": "dads10", "dimension": "disposition" },
+      { "id": "dads11", "type": "likert", "text_key": "dads11", "dimension": "disposition" }
+    ],
+    "scoring": {
+      "disposition": {
+        "method": "mean_coded",
+        "description": "Mean of all 11 items (1-5); items 2,3,5,8,9 reverse-coded. Higher = more positive disposition toward automated vehicles.",
+        "items": { "dads1": 1, "dads2": -1, "dads3": -1, "dads4": 1, "dads5": -1, "dads6": 1, "dads7": 1, "dads8": -1, "dads9": -1, "dads10": 1, "dads11": 1 }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "question_head": "Now we are going to ask your opinion about automated vehicles, sometimes referred to as self-driving cars. Automated vehicles are cars that drive themselves with little or no human intervention. Please read each item carefully and provide your answer that best corresponds to your agreement or disagreement. There are no right or wrong answers, just describe your opinions as accurately as possible.",
+      "likert_1": "Strongly Disagree",
+      "likert_2": "Disagree",
+      "likert_3": "Neither Disagree, Nor Agree",
+      "likert_4": "Agree",
+      "likert_5": "Strongly Agree",
+      "dads1": "Would you feel comfortable driving on the road with an automated vehicle?",
+      "dads2": "Driving alongside human drivers or automated vehicles wouldn't make a difference to me.",
+      "dads3": "Humans, as a rule, should be in control of their vehicles at any time.",
+      "dads4": "I think that automated vehicles would be more predictable than human drivers.",
+      "dads5": "In my opinion, automated vehicles are not able to interact with human drivers because they don't have the common sense needed.",
+      "dads6": "Considering that automated vehicles don't have emotions, they might be better drivers than humans.",
+      "dads7": "I think that automated vehicles would be safer because most accidents are caused by human errors.",
+      "dads8": "Automated vehicles may not function properly.",
+      "dads9": "Not being in control of my vehicle would make me feel uncomfortable.",
+      "dads10": "I wouldn't mind being in control of the vehicle or not.",
+      "dads11": "Driving in an automated vehicle would be easier than driving a manually-driven vehicle.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

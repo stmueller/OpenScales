@@ -1,0 +1,113 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Critical Artificial Intelligence Literacy Scale",
+      "code": "CAILS",
+      "abbreviation": "CAILS",
+      "description": "24-item measure of critical AI literacy in higher education, across four subscales: AI Knowledge, AI Applications, AI-Critical assessment, and AI-Ethics. Each subscale uses its own question stem; all items are rated 1-5 from 'None at all' to 'A great deal.'",
+      "citation": "Ranieri, M., Biagini, G., & Cuomo, S. (2025). AI literacy in higher education: A systematic approach to questionnaire development and validation. International Journal of Digital Literacy and Digital Competence, 16(1), 1-25. https://doi.org/10.4018/IJDLDC.388469",
+      "license": "CC BY 4.0",
+      "license_explanation": "© 2025 The Author(s). Items reproduced from Ranieri, Biagini, & Cuomo (2025), IJDLDC, published open access under a Creative Commons Attribution 4.0 International License (confirmed CC BY via Unpaywall).",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.4018/IJDLDC.388469",
+      "version": "1.0",
+      "domain": "Technology"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-16",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Four 6-item subscales, each with a distinct question stem carried as an item-level question_head (the JS runner reads item-level/likert_options heads, not a named response scale's head). All items share the 1-5 'None at all'..'A great deal' anchors. Subscales scored as means (1-5); a total mean is also provided. Scoring rule (sum vs mean) is not stated in the source record — mean used pending verification. No reverse-coded items. Two obvious source typos corrected: 'valuse'->'values' (AIC2), 'New reporting'->'News reporting' (AIA3). The AI Knowledge stem was reworded for clarity in a self-administered context — original source stem: 'When it comes to Artificial Intelligence (AI), I feel my knowledge on the subject would be:' — items unchanged."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["likert_1", null, null, null, "likert_5"],
+      "question_head": "stem_knowledge",
+      "suppress_likert_numbers": true
+    },
+    "dimensions": [
+      { "id": "knowledge", "name": "AI Knowledge", "description": "Self-rated knowledge of AI definitions, foundations, application, assessment, creation, and ethics (AIK1-6)." },
+      { "id": "applications", "name": "AI Applications", "description": "Willingness to allow AI to perform various tasks (AIA1-6)." },
+      { "id": "critical", "name": "AI-Critical Assessment", "description": "Importance attributed to opportunities/challenges for critically evaluating AI (AIC1-6)." },
+      { "id": "ethics", "name": "AI-Ethics", "description": "Perceived influence of various ethical considerations on trust in AI (AIE1-6)." }
+    ],
+    "items": [
+      { "id": "AIK1", "type": "likert", "text_key": "AIK1", "dimension": "knowledge", "question_head": "stem_knowledge" },
+      { "id": "AIK2", "type": "likert", "text_key": "AIK2", "dimension": "knowledge", "question_head": "stem_knowledge" },
+      { "id": "AIK3", "type": "likert", "text_key": "AIK3", "dimension": "knowledge", "question_head": "stem_knowledge" },
+      { "id": "AIK4", "type": "likert", "text_key": "AIK4", "dimension": "knowledge", "question_head": "stem_knowledge" },
+      { "id": "AIK5", "type": "likert", "text_key": "AIK5", "dimension": "knowledge", "question_head": "stem_knowledge" },
+      { "id": "AIK6", "type": "likert", "text_key": "AIK6", "dimension": "knowledge", "question_head": "stem_knowledge" },
+      { "id": "AIA1", "type": "likert", "text_key": "AIA1", "dimension": "applications", "question_head": "stem_applications" },
+      { "id": "AIA2", "type": "likert", "text_key": "AIA2", "dimension": "applications", "question_head": "stem_applications" },
+      { "id": "AIA3", "type": "likert", "text_key": "AIA3", "dimension": "applications", "question_head": "stem_applications" },
+      { "id": "AIA4", "type": "likert", "text_key": "AIA4", "dimension": "applications", "question_head": "stem_applications" },
+      { "id": "AIA5", "type": "likert", "text_key": "AIA5", "dimension": "applications", "question_head": "stem_applications" },
+      { "id": "AIA6", "type": "likert", "text_key": "AIA6", "dimension": "applications", "question_head": "stem_applications" },
+      { "id": "AIC1", "type": "likert", "text_key": "AIC1", "dimension": "critical", "question_head": "stem_critical" },
+      { "id": "AIC2", "type": "likert", "text_key": "AIC2", "dimension": "critical", "question_head": "stem_critical" },
+      { "id": "AIC3", "type": "likert", "text_key": "AIC3", "dimension": "critical", "question_head": "stem_critical" },
+      { "id": "AIC4", "type": "likert", "text_key": "AIC4", "dimension": "critical", "question_head": "stem_critical" },
+      { "id": "AIC5", "type": "likert", "text_key": "AIC5", "dimension": "critical", "question_head": "stem_critical" },
+      { "id": "AIC6", "type": "likert", "text_key": "AIC6", "dimension": "critical", "question_head": "stem_critical" },
+      { "id": "AIE1", "type": "likert", "text_key": "AIE1", "dimension": "ethics", "question_head": "stem_ethics" },
+      { "id": "AIE2", "type": "likert", "text_key": "AIE2", "dimension": "ethics", "question_head": "stem_ethics" },
+      { "id": "AIE3", "type": "likert", "text_key": "AIE3", "dimension": "ethics", "question_head": "stem_ethics" },
+      { "id": "AIE4", "type": "likert", "text_key": "AIE4", "dimension": "ethics", "question_head": "stem_ethics" },
+      { "id": "AIE5", "type": "likert", "text_key": "AIE5", "dimension": "ethics", "question_head": "stem_ethics" },
+      { "id": "AIE6", "type": "likert", "text_key": "AIE6", "dimension": "ethics", "question_head": "stem_ethics" }
+    ],
+    "scoring": {
+      "knowledge": { "method": "mean_coded", "description": "Mean of AIK1-6 (1-5).", "items": ["AIK1", "AIK2", "AIK3", "AIK4", "AIK5", "AIK6"] },
+      "applications": { "method": "mean_coded", "description": "Mean of AIA1-6 (1-5).", "items": ["AIA1", "AIA2", "AIA3", "AIA4", "AIA5", "AIA6"] },
+      "critical": { "method": "mean_coded", "description": "Mean of AIC1-6 (1-5).", "items": ["AIC1", "AIC2", "AIC3", "AIC4", "AIC5", "AIC6"] },
+      "ethics": { "method": "mean_coded", "description": "Mean of AIE1-6 (1-5).", "items": ["AIE1", "AIE2", "AIE3", "AIE4", "AIE5", "AIE6"] },
+      "ai_literacy": {
+        "name": "Critical AI Literacy (Total)",
+        "method": "mean_coded",
+        "description": "Mean of all 24 items (1-5).",
+        "items": ["AIK1", "AIK2", "AIK3", "AIK4", "AIK5", "AIK6", "AIA1", "AIA2", "AIA3", "AIA4", "AIA5", "AIA6", "AIC1", "AIC2", "AIC3", "AIC4", "AIC5", "AIC6", "AIE1", "AIE2", "AIE3", "AIE4", "AIE5", "AIE6"]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "likert_1": "None at all (1)",
+      "likert_5": "A great deal (5)",
+      "stem_knowledge": "When it comes to Artificial Intelligence (AI), to what extent are you able to do each of the following?",
+      "stem_applications": "Would you allow AI to perform the following tasks?",
+      "stem_critical": "How important do you consider the following opportunities or challenges for a critical evaluation of AI?",
+      "stem_ethics": "How much do you think the following considerations influence trust in AI?",
+      "AIK1": "Know and understand AI definitions and theoretical foundations.",
+      "AIK2": "Know and understand AI basic mathematical functions behind the algorithms.",
+      "AIK3": "Use and apply AI knowledge, concepts and applications.",
+      "AIK4": "Evaluate, appraise, and critically assess AI applications.",
+      "AIK5": "Create AI, design and build AI applications.",
+      "AIK6": "Understanding ethical issues related to AI such as fairness, accountability, transparency, safety.",
+      "AIA1": "Supporting emergency services",
+      "AIA2": "Performing surgical procedures",
+      "AIA3": "News reporting",
+      "AIA4": "Medical/scientific research",
+      "AIA5": "Emotional support",
+      "AIA6": "Driving/piloting (cars, buses, trains, airplanes, trucks)",
+      "AIC1": "AI can perpetuate biases and discrimination if not carefully monitored",
+      "AIC2": "Developing values and skills to live and work in the AI era",
+      "AIC3": "Using AI to offer lifelong learning opportunities for all",
+      "AIC4": "Promoting equitable and inclusive use of AI",
+      "AIC5": "Using and promoting AI for gender equality",
+      "AIC6": "Ensuring a transparent, explainable, and verifiable use of data and algorithms",
+      "AIE1": "Social impact: the risk that AI further concentrates power and wealth in the hands of a few.",
+      "AIE2": "Democratic impact: the impact of AI on democracies.",
+      "AIE3": "Psychological impact: what reactions might arise from human-robot relationships and what are the legal and moral implications",
+      "AIE4": "Environmental impact: the increased use of AI leads to greater use of natural resources.",
+      "AIE5": "Impact on work: the impact of AI on the labor market and the economy and how different demographic groups might be affected.",
+      "AIE6": "Data security: the security of personal data concerning unauthorized access or data theft.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

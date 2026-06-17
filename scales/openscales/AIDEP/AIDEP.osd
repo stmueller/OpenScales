@@ -1,0 +1,115 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "AI Dependence Scale",
+      "code": "AIDEP",
+      "abbreviation": "AIDep-22",
+      "description": "22-item measure of dependence on artificial intelligence in an academic context, with four dimensions: emotional dependence, functional dependence, cognitive dependence, and loss of control. Items are rated 1-5; higher mean scores indicate greater AI dependence (1.00-2.49 low, 2.50-3.49 moderate, ≥3.50 high).",
+      "citation": "Wu, H., Ni, H., Luo, W., & Wu, T. (2026). Development and validation of the AI Dependence Scale for Chinese undergraduates and a preliminary exploration. Frontiers in Psychology, 16. https://doi.org/10.3389/fpsyg.2025.1725393",
+      "license": "CC BY 4.0",
+      "license_explanation": "© 2026 The Author(s). Items reproduced from Wu et al. (2026), Frontiers in Psychology, published open access under a Creative Commons Attribution 4.0 International License.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://doi.org/10.3389/fpsyg.2025.1725393",
+      "version": "1.0",
+      "domain": "Technology"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-16",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Item IDs preserve the published item numbers (the validated scale drops original items 4, 8, 19, 20, leaving 22). Four subscales scored as means (1-5); a total mean over all 22 items carries the published interpretive bands. All items forward-coded — the positively worded emotional items (2, 6) still indicate greater dependence (deriving calm/support from AI). Originally developed and validated with Chinese undergraduates; English items as reproduced in the APA PsycTests record from the open-access article."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": ["likert_1", "likert_2", "likert_3", "likert_4", "likert_5"],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      { "id": "emotional", "name": "Emotional Dependence", "description": "Emotional reliance on AI for reassurance and comfort (items 1, 2, 3, 5, 6)." },
+      { "id": "functional", "name": "Functional Dependence", "description": "Delegating academic tasks to and relying on AI to function (items 7, 9, 10, 11, 12, 13)." },
+      { "id": "cognitive", "name": "Cognitive Dependence", "description": "Reduced independent thinking and reliance on AI for judgments (items 14, 15, 16, 17, 18)." },
+      { "id": "loss_control", "name": "Loss of Control", "description": "Inability to regulate AI use despite intentions to (items 21, 22, 23, 24, 25, 26)." }
+    ],
+    "items": [
+      { "id": "aidep1", "type": "likert", "text_key": "aidep1", "dimension": "emotional" },
+      { "id": "aidep2", "type": "likert", "text_key": "aidep2", "dimension": "emotional" },
+      { "id": "aidep3", "type": "likert", "text_key": "aidep3", "dimension": "emotional" },
+      { "id": "aidep5", "type": "likert", "text_key": "aidep5", "dimension": "emotional" },
+      { "id": "aidep6", "type": "likert", "text_key": "aidep6", "dimension": "emotional" },
+      { "id": "aidep7", "type": "likert", "text_key": "aidep7", "dimension": "functional" },
+      { "id": "aidep9", "type": "likert", "text_key": "aidep9", "dimension": "functional" },
+      { "id": "aidep10", "type": "likert", "text_key": "aidep10", "dimension": "functional" },
+      { "id": "aidep11", "type": "likert", "text_key": "aidep11", "dimension": "functional" },
+      { "id": "aidep12", "type": "likert", "text_key": "aidep12", "dimension": "functional" },
+      { "id": "aidep13", "type": "likert", "text_key": "aidep13", "dimension": "functional" },
+      { "id": "aidep14", "type": "likert", "text_key": "aidep14", "dimension": "cognitive" },
+      { "id": "aidep15", "type": "likert", "text_key": "aidep15", "dimension": "cognitive" },
+      { "id": "aidep16", "type": "likert", "text_key": "aidep16", "dimension": "cognitive" },
+      { "id": "aidep17", "type": "likert", "text_key": "aidep17", "dimension": "cognitive" },
+      { "id": "aidep18", "type": "likert", "text_key": "aidep18", "dimension": "cognitive" },
+      { "id": "aidep21", "type": "likert", "text_key": "aidep21", "dimension": "loss_control" },
+      { "id": "aidep22", "type": "likert", "text_key": "aidep22", "dimension": "loss_control" },
+      { "id": "aidep23", "type": "likert", "text_key": "aidep23", "dimension": "loss_control" },
+      { "id": "aidep24", "type": "likert", "text_key": "aidep24", "dimension": "loss_control" },
+      { "id": "aidep25", "type": "likert", "text_key": "aidep25", "dimension": "loss_control" },
+      { "id": "aidep26", "type": "likert", "text_key": "aidep26", "dimension": "loss_control" }
+    ],
+    "scoring": {
+      "emotional": { "method": "mean_coded", "description": "Mean of items 1, 2, 3, 5, 6 (1-5).", "items": { "aidep1": 1, "aidep2": 1, "aidep3": 1, "aidep5": 1, "aidep6": 1 } },
+      "functional": { "method": "mean_coded", "description": "Mean of items 7, 9, 10, 11, 12, 13 (1-5).", "items": { "aidep7": 1, "aidep9": 1, "aidep10": 1, "aidep11": 1, "aidep12": 1, "aidep13": 1 } },
+      "cognitive": { "method": "mean_coded", "description": "Mean of items 14, 15, 16, 17, 18 (1-5).", "items": { "aidep14": 1, "aidep15": 1, "aidep16": 1, "aidep17": 1, "aidep18": 1 } },
+      "loss_control": { "method": "mean_coded", "description": "Mean of items 21, 22, 23, 24, 25, 26 (1-5).", "items": { "aidep21": 1, "aidep22": 1, "aidep23": 1, "aidep24": 1, "aidep25": 1, "aidep26": 1 } },
+      "dependence": {
+        "name": "AI Dependence (Total)",
+        "method": "mean_coded",
+        "description": "Mean of all 22 items (1-5); higher = greater AI dependence.",
+        "items": { "aidep1": 1, "aidep2": 1, "aidep3": 1, "aidep5": 1, "aidep6": 1, "aidep7": 1, "aidep9": 1, "aidep10": 1, "aidep11": 1, "aidep12": 1, "aidep13": 1, "aidep14": 1, "aidep15": 1, "aidep16": 1, "aidep17": 1, "aidep18": 1, "aidep21": 1, "aidep22": 1, "aidep23": 1, "aidep24": 1, "aidep25": 1, "aidep26": 1 },
+        "norms": {
+          "thresholds": [
+            { "min": 1.0, "max": 2.49, "label": "Low dependence" },
+            { "min": 2.5, "max": 3.49, "label": "Moderate dependence" },
+            { "min": 3.5, "max": 5.0, "label": "High dependence" }
+          ]
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "question_head": "The following statements concern your use of AI in your studies. Please indicate how much you agree with each statement.",
+      "likert_1": "Strongly disagree",
+      "likert_2": "Disagree",
+      "likert_3": "Neither agree nor disagree",
+      "likert_4": "Agree",
+      "likert_5": "Strongly agree",
+      "aidep1": "I feel uneasy or insecure without the help of AI.",
+      "aidep2": "Using AI to assist my studies makes me feel calm and relaxed.",
+      "aidep3": "I would feel anxious and frustrated if I couldn't use AI for my studies.",
+      "aidep5": "Whenever I encounter a difficult problem, my first instinct is to hope AI can help me; otherwise, I feel tense.",
+      "aidep6": "Interacting with AI via chat prompts is a pleasant experience that makes me feel supported.",
+      "aidep7": "I delegate almost all my academic tasks to AI because it performs them faster and better than I do.",
+      "aidep9": "I rely on AI's functions, including providing answers and writing suggestions, to improve my learning efficiency.",
+      "aidep10": "I can no longer manage complex academic tasks without the assistance of AI.",
+      "aidep11": "I prefer to delegate information gathering and content organization to AI rather than doing it entirely myself.",
+      "aidep12": "In my studies, I excessively rely on the ready-made answers or solutions provided by AI.",
+      "aidep13": "I feel inadequate in my studies without the support of AI.",
+      "aidep14": "I often ask AI for answers directly without thinking for myself first.",
+      "aidep15": "After using AI, my ability to independently analyze and solve problems has declined.",
+      "aidep16": "When faced with an academic challenge, I rely on AI instead of attempting to think it through on my own.",
+      "aidep17": "After long-term use of AI, I have become less inclined to think independently, preferring AI to do the work.",
+      "aidep18": "I am accustomed to letting AI make judgments and decisions for me rather than fully trusting my own judgment.",
+      "aidep21": "I have tried to reduce my use of AI, but I have never succeeded for long.",
+      "aidep22": "Once I start using AI, I often find it difficult to stop, even after spending a lot of time on it.",
+      "aidep23": "I know I shouldn't rely too much on AI, but I can't control myself.",
+      "aidep24": "I have almost no control over the frequency and duration of my AI use.",
+      "aidep25": "I am capable of completing tasks without AI, but I still cannot resist using it.",
+      "aidep26": "If I don't use AI for a period of time, I feel a strong urge to use it, sometimes even feeling irritable.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

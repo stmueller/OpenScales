@@ -1,4 +1,4 @@
-# Open Scale Definition (OSD) Specification v1.0.14
+# Open Scale Definition (OSD) Specification v1.0.16
 
 *Part of the [OpenScales Project](README.md)*
 
@@ -213,6 +213,8 @@ Optional common fields:
 | `random_group` | integer | see note | Randomization group. `0` = fixed position; `1`+ = shuffle within that numbered group when randomization is active. Group numbers are **scoped to the item's section** — a `random_group: 1` in one section and a `random_group: 1` in another section shuffle independently and never cross section boundaries. **Defaults:** `inst` items and items with `visible_when` default to `0` (fixed); all other items default to `1` (shuffled). When a section has its own `randomize` field, `random_group: 0` still pins the item, but higher group numbers are ignored — all non-pinned items form a single shuffle pool (see S4). |
 | `required` | boolean | varies | Whether the item must be answered (see C6) |
 | `question_head` | string | `null` | Translation key for a question stem displayed above the item text. Intended for blocks of items that share a common introductory question (e.g. "In the past month, how often did you..."). Overrides the scale-level `likert_options.question_head` for this item. Runners currently display the head on every item; future multi-item-per-page runners MAY suppress repetition when consecutive items share the same head. |
+| `variant_group` | string | `null` | Marks this item as one of several **mutually-exclusive** alternative forms of the same construct slot (e.g. a positively- vs. negatively-worded item 7). At most one member of a group is administered per variant. Advisory for tooling/validation; membership is governed by `variant_when` and/or `variants.sets`. See **A8. Scale Variants**. |
+| `variant_when` | object | `null` | A condition (same grammar as `visible_when`, plus `selector`/`parameter` leaves — see S1) resolved **once at instantiation** from the active language and parameter values. When present and false, the item is **not** part of the administered variant (and, having no response, is excluded from scoring). Distinct from `visible_when`, which is re-evaluated at runtime from answers. See **A8. Scale Variants**. |
 
 #### `likert` Type
 
@@ -610,6 +612,7 @@ Array index 0 corresponds to response value `min` (here 1), index 1 to `min+1` (
 | `correct_answers` | object | Per-item correct answers (for `sum_correct`) |
 | `transform` | array of objects | Optional sequence of affine steps applied to the raw score after the scoring method is computed. See **Score Transforms** below. |
 | `description` | string | Optional description of the score computation (e.g., range, direction). Primarily for documentation; runners may display it but should prefer the dimension's `description` for user-facing text. |
+| `variants` | array of strings | Optional. Variant set ids (from `variants.sets`) to which this scoring block applies. When present, the block is computed **only** if one of its ids is in the active variant; untagged blocks always apply. Lets a language-variant scale carry per-variant subscales in one file (e.g. PCI's English vs. German subscale sets). A dimension whose scoring block is filtered out is omitted from reports/output for that variant. See **A8. Scale Variants**. |
 
 #### Score Transforms
 
@@ -871,6 +874,7 @@ Translation files are JSON objects with flat key-value pairs:
 
 **Rules:**
 - Keys referenced by `text_key`, `likert_labels`, option `text_key`s, etc. MUST exist in the translation file
+- **Variant scales** (A8): completeness is **per variant** — a language need only provide keys for the items administered in the variant(s) it selects. For example, in an English/German scale where item 7 has a German-only form, the German form's `text_key` is required in the German translation but **not** the English one
 - Values may contain **HTML-lite**: `<b>`, `<i>`, `<br>`, `<a href="...">` — a safe subset of inline HTML
 - A `LANGUAGE` key is optional but recommended for self-identification
 - Runners MUST load the translation entry matching the requested language, falling back to `en` if unavailable, then to `default` if `en` is also unavailable, then to the first available entry if none of the above exist
@@ -1276,6 +1280,14 @@ Show or hide items or sections based on previous answers or parameters.
   }
 }
 ```
+
+**Conditions on the active language (selector leaf):** A leaf may test the `language` selector. This is used mainly in `variant_when` (A8) to administer a language-specific item form:
+
+```json
+{ "variant_when": { "selector": "language", "operator": "in", "value": ["de", "tr"] } }
+```
+
+The condition grammar (`item`/`question`, `parameter`, and `selector` leaves; the operators above; `all`/`any` connectors) is **shared** between `visible_when` (re-evaluated at runtime from answers) and `variant_when` (evaluated once at instantiation from the active language and parameter values — see A8). `selector` currently supports `"language"`.
 
 **Compound conditions:**
 
@@ -1854,6 +1866,85 @@ For test-retest: `"default_value": {"prior_answer": "q1"}` fills in the previous
 
 ---
 
+### A8. Scale Variants
+
+Some instruments ship **multiple variants** in one OSD file — most often old, widely-published-and-translated scales with quirks that a single shared item set cannot express:
+
+- a **framing-reversed item** — one construct slot is positively worded (forward-scored) in some languages but negatively worded (reverse-scored) in others;
+- **language-specific item sets** — e.g. an English 55-item edition and a German 57-item edition with partly different subscales;
+- **editions/forms** — a short vs. long form, or a revised edition selected at administration time.
+
+A *variant* is the set of items administered and scored for a given **coordinate**: the active **language** plus the values of any **choice parameters**. This is an advanced feature for reproducing established instruments faithfully; new scales rarely need it.
+
+#### Selectors (axes)
+
+| Selector | Kind | Value |
+|----------|------|-------|
+| `language` | **forced** | the active display language. |
+| a `parameters` entry of `type: "choice"` (C8) | **free** | the value chosen/assigned for that parameter (e.g. `form = "reverse"`). |
+
+The axes are orthogonal and compose — e.g. *German × reverse-form* may reverse an item that *English × reverse-form* does not.
+
+#### The `variants` block (definition level)
+
+```json
+"variants": {
+  "default": "en",
+  "axes": [
+    { "id": "language", "selector": "language" },
+    { "id": "form", "selector": "parameter", "parameter": "form" }
+  ],
+  "sets": {
+    "en": { "name": "English", "languages": ["en"], "items": ["q1", "…", "q7P"] },
+    "de": { "name": "German",  "languages": ["de"], "items": ["q1", "…", "q7N"] }
+  }
+}
+```
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `sets` | object | *Sugar for the language axis.* Named variant sets; each entry has `name` (label), `languages` (codes that select it), and `items` (ordered ids administered for it). A language in no set falls back to `default`. |
+| `axes` | array | *For the multi-axis / free-parameter form.* Declares the selector axes (`id`, `selector`, and `parameter` for free axes). Optional — mainly for tooling/discovery. |
+| `default` | string \| object | Fallback: a set id (sugar form) or a per-axis coordinate object (multi-axis form). |
+
+#### Per-item `variant_when`
+
+For free/parameter axes and multi-axis conditions, an item carries `variant_when` (C2) — a condition over the selectors (`selector`/`parameter` leaves + `all`/`any`; grammar in S1), resolved once at instantiation:
+
+```json
+{ "id": "q7N", "variant_group": "q7",
+  "variant_when": { "all": [
+    { "selector": "language", "operator": "in", "value": ["de"] },
+    { "parameter": "form", "operator": "equals", "value": "reverse" } ] } }
+```
+
+Items sharing a `variant_group` are mutually-exclusive alternatives; validators check that at most one is selected per coordinate.
+
+#### Scoring and dimensions
+
+A scoring block (and the dimension it produces) MAY carry a `variants` array (C3) of the set ids it applies to. An untagged block always applies; a tagged block is computed only when one of its ids is active — so per-language subscales coexist in one file. Because items carry their own coding, mutually-exclusive variant items (one forward, one reverse) may both appear in a block; only the administered one contributes.
+
+#### Resolution
+
+Given the active language **L** (and parameter values):
+
+1. **Active sets** = the `sets` whose `languages` include L (else `default`).
+2. An item is **administered** iff its `variant_when` (if any) is true for the coordinate **AND** — when a `sets` block lists it — it is in an active set. Items in no set are shared. The two mechanisms compose with **AND**; do not drive the *same* axis from both (use `sets` for the language axis, `variant_when` for free axes).
+3. A scoring block/dimension is computed only if its `variants` tag (if any) intersects the active sets.
+4. Scoring, output rows, and reports include only administered items and active blocks; translation completeness is **per-variant** (C4).
+
+#### Backward compatibility
+
+No `variants` block and no `variant_when` ⇒ a single implicit variant = all items, all scoring (the default behavior). Existing OSDs are unaffected.
+
+#### Runner, converter, and study behavior
+
+- **Runners** resolve the active variant from the chosen language + parameters, administer only its items, and score/report only active blocks.
+- **Converters** to single-variant platforms export the resolved variant for the requested language (reference: `tools/osd_variants.flatten_variant`).
+- **Studies (OSC):** a chained scale's variant is pinned through the scale step's `parameters` — `lang` for the language axis, free choice parameters for other axes; no special OSC field is required (see `OSC_SPECIFICATION.md`).
+
+---
+
 ## Runner-Specific Hints
 
 Sections that are runner-specific should be placed under a namespaced `runner_hints` key. Runners ignore namespaces they don't recognize:
@@ -1945,3 +2036,4 @@ For simple conditions, the structured object format is preferred. The expression
 | 1.0.13 | 2026-04-11 | C4: added `default` as a reserved language code for single-language scales where the language is unspecified; runner fallback order updated to: requested lang → `en` → `default` → first available; builders and converters without a specified language SHOULD emit strings under `default` rather than `en` |
 | 1.0.14 | 2026-04-11 | C2: added `response_scales` — a named dictionary of additional Likert response scale definitions, with the same structure as `likert_options`; added `response_scale` item field (string) referencing a key in `response_scales`; runner resolution order: per-item `likert_labels`/`likert_points` → `response_scale` lookup → `likert_options` default; `likert_labels`/`likert_points` per-item overrides retained for semantic-differential items where every item has truly unique endpoint labels; `response_scales` is the preferred mechanism when multiple items share the same non-default response format |
 | 1.0.15 | 2026-06-10 | C2: added `suppress_likert_numbers` boolean field in `likert_options` (default `false`) — when `true`, the numeric value is not displayed beneath response buttons; intended for scales where label text already encodes the number (e.g. bipolar scales with endpoints "Very inaccurate (−3)" and intermediate labels "−2", "−1", etc.) to avoid double-display; may also be set at the top level of `definition` as shorthand; runners MUST respect this field and omit the numeric element entirely when set |
+| 1.0.16 | 2026-06-17 | **A8. Scale Variants** (new): support multiple variants of an instrument in one OSD, selected by a *coordinate* = active language + choice-parameter values (for old, widely-translated scales with framing-reversed items, language-specific item sets, or short/long editions). C2: added `variant_group` (mutually-exclusive item alternatives) and `variant_when` (per-item condition over `selector`/`parameter` leaves, resolved once at instantiation). New definition-level `variants` block: `sets` (sugar for the language axis: per-set `languages`+`items`), `axes` (multi-axis/free-parameter declaration), `default`. C3: added `variants` array on scoring blocks/dimensions — computed only when one of its set ids is active (lets per-language subscales coexist). S1: added the `selector: "language"` condition leaf; condition grammar is shared between `visible_when` (re-evaluated at runtime) and `variant_when` (resolved at instantiation). C4: translation completeness is **per-variant**. Backward compatible — no `variants`/`variant_when` ⇒ unchanged single-variant behavior. Implemented in the JS runner (`scale-runner.js`) and the export converters (`tools/osd_variants.flatten_variant`); studies (OSC) pin a variant via a scale step's `parameters` (`lang` + free params), needing no new OSC field. |

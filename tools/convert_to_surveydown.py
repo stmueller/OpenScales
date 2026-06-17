@@ -57,6 +57,10 @@ def main():
             print("Error: no translations found in .osd file", file=sys.stderr)
             sys.exit(1)
 
+    # Variant scales: reduce to the active variant for the chosen language
+    from osd_variants import flatten_variant
+    osd_data['definition'] = flatten_variant(osd_data['definition'], args.lang)
+
     # Convert
     questions_yml = generate_questions_yml(osd_data, args.lang)
     survey_qmd = generate_survey_qmd(osd_data, args.lang)

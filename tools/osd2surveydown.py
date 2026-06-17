@@ -431,6 +431,10 @@ def main():
     outdir = args.outdir or f"surveydown-{code}"
     os.makedirs(outdir, exist_ok=True)
 
+    # Variant scales: reduce to the active variant for the chosen language
+    from osd_variants import flatten_variant
+    osd_data['definition'] = flatten_variant(osd_data['definition'], args.lang)
+
     # Generate files
     questions_yml = generate_questions_yml(osd_data, args.lang)
     survey_qmd = generate_survey_qmd(osd_data, args.lang)

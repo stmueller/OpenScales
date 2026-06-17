@@ -513,6 +513,13 @@ def main():
     if 'definition' in definition and 'osd_version' in definition:
         definition = definition['definition']
 
+    # Variant scales: export the primary language's variant (item sets can
+    # differ per language, which a single multi-language LimeSurvey cannot represent)
+    from osd_variants import flatten_variant
+    if definition.get('variants') and args.extra_langs:
+        print('Warning: variant scale — exporting only the primary language variant', file=sys.stderr)
+    definition = flatten_variant(definition, args.lang)
+
     all_langs = [args.lang] + (args.extra_langs or [])
     translations_by_lang = {}
     for lang in all_langs:

@@ -474,6 +474,10 @@ def main():
     if 'definition' in definition and 'osd_version' in definition:
         definition = definition['definition']
 
+    # Variant scales: reduce to the variant active for the chosen language
+    from osd_variants import flatten_variant
+    definition = flatten_variant(definition, args.lang)
+
     translations = load_translation(scale_dir, code, args.lang)
 
     output = generate_psytoolkit(definition, translations)

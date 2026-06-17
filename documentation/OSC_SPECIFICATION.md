@@ -263,6 +263,20 @@ Runs a standard OSD scale.
 | `osd` | string | required | Path or URL to the OSD file |
 | `parameters` | object | `{}` | Parameters passed to the scale runner (e.g., `lang`, `show_header`, scale-specific params) |
 
+**Selecting a scale variant.** Some OSDs ship multiple *variants* of an instrument
+in one file — e.g. a language-specific item form, or a short/long edition — selected
+at administration time (see the OSD variant strategy in
+`proposals/variant_strategy_proposal.md`). The OSC needs **no special field** for
+this: a variant is pinned through the same `parameters` object.
+- **Language variant** (forced axis): set `parameters.lang` (e.g. `"de"`). The runner
+  administers and scores only that language's variant.
+- **Free axis** (e.g. a `form`/`edition` choice parameter declared in the OSD): set it
+  in `parameters` (e.g. `{"form": "reverse"}`), exactly like any other scale parameter.
+
+To **randomize** a variant across participants, declare a `random` study parameter and
+either pass it through (`parameters: {"form": "${form}"}`) or route with a `branch`
+step — see `demo_form_param.osc`, which assigns short/long forms this way.
+
 ---
 
 ### `branch` Step

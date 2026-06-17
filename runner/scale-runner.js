@@ -191,7 +191,17 @@ const ScaleRunner = (() => {
    */
   function buildQuestionList(scaleDef, params) {
     params = params || {};
-    const rawQuestions = scaleDef.items || scaleDef.questions || [];
+    let rawQuestions = scaleDef.items || scaleDef.questions || [];
+
+    // ── 0. Variant filtering ───────────────────────────────────
+    // Drop items not in the active language/parameter variant. Section markers
+    // are kept (their own visible_when still applies). No-op when the scale
+    // defines no variants, preserving existing behavior exactly.
+    const usesVariants = !!scaleDef.variants || rawQuestions.some(q => q.variant_when);
+    if (usesVariants) {
+      rawQuestions = rawQuestions.filter(
+        q => q.type === 'section' || itemInActiveVariant(q, scaleDef, params));
+    }
 
     // ── 1. Resolve branch assignments ──────────────────────────
     const branchChoices = {};  // groupId → armId
@@ -411,6 +421,9 @@ const ScaleRunner = (() => {
     const itemRef = condition.item !== undefined ? condition.item : condition.question;
     if (itemRef !== undefined) {
       lhsRaw = responseMap[itemRef];
+    } else if (condition.selector === 'language') {
+      // Variant selector: the active display language (see variant strategy).
+      lhsRaw = (params || {}).__lang__;
     } else if (condition.parameter !== undefined) {
       lhsRaw = (params || {})[condition.parameter];
     } else {
@@ -440,6 +453,79 @@ const ScaleRunner = (() => {
         : !String(rhsRaw).split(',').map(s => s.trim()).includes(lhsStr);
       default: return true;
     }
+  }
+
+  // ============================================================
+  // VARIANT RESOLUTION  (documentation/proposals/variant_strategy_proposal.md)
+  // ============================================================
+  /**
+   * Decide whether an item is part of the active variant for the current
+   * (language, parameters) coordinate. An item is administered iff:
+   *   (a) its `variant_when` condition (if any) passes — this covers free
+   *       parameter axes and multi-axis conditions, incl. selector:language; AND
+   *   (b) when a `variants.sets` block lists the item (language-axis sugar), the
+   *       active language's set includes it. Items in no set are shared.
+   * Non-administered items never get a response, so scoring skips them naturally
+   * (see computeScores), making mutually-exclusive variants (e.g. 7P/7N) correct.
+   */
+  function itemInActiveVariant(qdef, scaleDef, params) {
+    params = params || {};
+    if (qdef.variant_when && !evaluateCondition(qdef.variant_when, {}, params)) return false;
+
+    const v = scaleDef.variants;
+    if (v && v.sets) {
+      const sets = v.sets;
+      const lang = params.__lang__ || 'en';
+      // Is this item governed by the sets (i.e. listed in any set)?
+      let governed = false;
+      for (const sid in sets) {
+        const items = (sets[sid] && sets[sid].items) || [];
+        if (items.indexOf(qdef.id) !== -1) { governed = true; break; }
+      }
+      if (governed) {
+        // Sets selected by the active language; fall back to a string `default`.
+        let activeSetIds = [];
+        for (const sid in sets) {
+          const langs = (sets[sid] && sets[sid].languages) || [];
+          if (langs.indexOf(lang) !== -1) activeSetIds.push(sid);
+        }
+        if (!activeSetIds.length && typeof v.default === 'string') activeSetIds = [v.default];
+        const inActive = activeSetIds.some(
+          sid => ((sets[sid] && sets[sid].items) || []).indexOf(qdef.id) !== -1);
+        if (!inActive) return false;
+      }
+    }
+    return true;
+  }
+
+  /**
+   * The variant set ids active for the current language (variants.sets with a
+   * matching `languages` entry; falls back to a string `default`). Returns null
+   * when the scale defines no `sets` (no scoring-block filtering applies).
+   */
+  function activeVariantSetIds(scaleDef, params) {
+    const v = scaleDef.variants;
+    if (!v || !v.sets) return null;
+    const lang = (params && params.__lang__) || 'en';
+    const ids = [];
+    for (const sid in v.sets) {
+      const langs = (v.sets[sid] && v.sets[sid].languages) || [];
+      if (langs.indexOf(lang) !== -1) ids.push(sid);
+    }
+    if (!ids.length && typeof v.default === 'string') ids.push(v.default);
+    return new Set(ids);
+  }
+
+  /**
+   * Whether a scoring block applies to the active variant. Untagged blocks (no
+   * `variants` array) always apply; tagged blocks apply only when one of their
+   * set ids is active (proposal §3.3). Lets en/de PCI subscales coexist in one
+   * file without a German respondent getting empty English subscales.
+   */
+  function isScoringActive(scoreDef, activeSets) {
+    if (!scoreDef || !Array.isArray(scoreDef.variants)) return true;
+    if (!activeSets) return true;
+    return scoreDef.variants.some(s => activeSets.has(s));
   }
 
   /**
@@ -1607,7 +1693,7 @@ const ScaleRunner = (() => {
     return getScoringItems(sd).includes(itemId);
   }
 
-  function computeScores(scaleDef, responseMap) {
+  function computeScores(scaleDef, responseMap, params) {
     // Expand grid responses: responseMap['gridId'] = "3 4 2" → 'gridId_1'=3, 'gridId_2'=4, ...
     // Expand multicheck responses: responseMap['qId'] = ['v1','v2'] → 'qId_v1'=1, 'qId_v2'=0, ...
     const expandedMap = Object.assign({}, responseMap);
@@ -1632,7 +1718,14 @@ const ScaleRunner = (() => {
     responseMap = expandedMap;
 
     const scores = {};
-    const scoring = scaleDef.scoring || {};
+    // Variant-aware: exclude scoring blocks tagged for a non-active variant
+    // (proposal §3.3 `variants` tag) so e.g. a German PCI respondent does not
+    // get empty English subscales. Untagged blocks always apply.
+    const _activeSets = activeVariantSetIds(scaleDef, params);
+    const scoring = {};
+    for (const _k in (scaleDef.scoring || {})) {
+      if (isScoringActive(scaleDef.scoring[_k], _activeSets)) scoring[_k] = scaleDef.scoring[_k];
+    }
     const codedValuesByDim = {};
 
     // Helper: score one item-based dimension into scores/codedValuesByDim
@@ -2006,7 +2099,8 @@ const ScaleRunner = (() => {
       }
     });
 
-    const dims = Object.keys(scaleDef.scoring || {});
+    const _activeSets = activeVariantSetIds(scaleDef, state.params);
+    const dims = Object.keys(scaleDef.scoring || {}).filter(d => isScoringActive(scaleDef.scoring[d], _activeSets));
     const tDims = dims.filter(d => (scaleDef.scoring || {})[d] && (scaleDef.scoring || {})[d].transform);
     const compNames = Object.keys(computedVars || {});
     const branchCols = Object.keys(state.branchChoices || {}).map(g => `${g}_arm`);
@@ -2041,7 +2135,8 @@ const ScaleRunner = (() => {
       }
     });
 
-    const dims    = Object.keys(scaleDef.scoring || {});
+    const _activeSets = activeVariantSetIds(scaleDef, state.params);
+    const dims    = Object.keys(scaleDef.scoring || {}).filter(d => isScoringActive(scaleDef.scoring[d], _activeSets));
     const dimVals = dims.map(d => scores[d] !== null && scores[d] !== undefined ? String(scores[d]) : 'NA');
     const tDims   = dims.filter(d => (scaleDef.scoring || {})[d] && (scaleDef.scoring || {})[d].transform);
     const tDimVals = tDims.map(d => {
@@ -2177,6 +2272,8 @@ const ScaleRunner = (() => {
       params[k] = pd.default !== undefined ? pd.default : null;
     }
     if (config.params) Object.assign(params, config.params);
+    // Expose the active display language to variant/condition resolution.
+    params.__lang__ = config.language || 'en';
 
     // ── Apply OSD show_header param to title visibility ───────
     // show_header default (from OSD) overrides the runner's URL-param-based showTitle,
@@ -2525,7 +2622,7 @@ const ScaleRunner = (() => {
       progressText.textContent = '';
 
       // Compute partial scores from whatever was answered
-      const { scores, transformedScores } = computeScores(scaleDef, state.responseMap);
+      const { scores, transformedScores } = computeScores(scaleDef, state.responseMap, state.params);
       const computedVars = computeComputedVars(scaleDef, state.responseMap, scores, transformedScores, state.params);
       const csvLines   = buildIndividualCSV(state, scaleDef, scores, transformedScores, strings);
       const pooledHdr  = buildPooledHeader(state, scaleDef, computedVars);
@@ -2570,7 +2667,7 @@ const ScaleRunner = (() => {
       progressText.textContent = '';
 
       // Compute scores and computed variables (S7)
-      const { scores, transformedScores } = computeScores(scaleDef, state.responseMap);
+      const { scores, transformedScores } = computeScores(scaleDef, state.responseMap, state.params);
       const computedVars = computeComputedVars(scaleDef, state.responseMap, scores, transformedScores, state.params);
 
       // Build CSV
@@ -2790,13 +2887,21 @@ const ScaleRunner = (() => {
 
     // ── Responses table ───────────────────────────────────────
     // Columns: Question | Response | [one per dimension]
-    const dims = scaleDef.dimensions || [];
+    const _activeSets = activeVariantSetIds(scaleDef, state.params);
+    const dims = (scaleDef.dimensions || []).filter(d => isScoringActive((scaleDef.scoring || {})[d.id], _activeSets));
     const dimHeaders = dims.map(d => `<th>${d.name}</th>`).join('');
     const respRows = [];
+
+    // Only items actually administered (variant filtering can drop items, e.g.
+    // the unused member of a variant_group) — never render NA rows for them.
+    const administeredIds = new Set((state.questions || []).map(q => q.id));
 
     (scaleDef.items || scaleDef.questions || []).forEach(qdef => {
       // Skip sections, inst, and image-only items
       if (['section', 'inst', 'image'].includes(qdef.type)) return;
+
+      // Skip items not administered in this run (variant-filtered)
+      if (!administeredIds.has(qdef.id)) return;
 
       const resp = state.responseMap[qdef.id];
 

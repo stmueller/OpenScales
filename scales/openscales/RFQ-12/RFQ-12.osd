@@ -1,0 +1,234 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Reflective Functioning Questionnaire – 12 items",
+      "code": "RFQ-12",
+      "abbreviation": "RFQ-12",
+      "description": "12-item RFQ short form. 7-point. Certainty (items 1,3,7,9,10,12) and Uncertainty (2,4,5,6,8,11) subscale means with the standard RFQ recodes.",
+      "citation": "Reflective Functioning Questionnaire (RFQ-54). Supplemental to a PLoS ONE open-access (CC BY 4.0) article (https://doi.org/10.1371/journal.pone.0259030); see also Fonagy et al. (2016), PLoS ONE 11(7): e0158678.",
+      "license": "CC BY 4.0",
+      "license_explanation": "RFQ items are published in open-access PLoS ONE articles under CC BY 4.0 and reproduced here with attribution: the RFQ validity study with supplemental item materials (https://doi.org/10.1371/journal.pone.0259030, PLOS figshare 'RFQ54 with self and other subscales') and the RFQ-8 short form (Fonagy et al., 2016, PLoS ONE 11(7): e0158678).",
+      "license_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0259030",
+      "url": "https://www.ucl.ac.uk/psychoanalysis/research/reflective-functioning-questionnaire-rfq",
+      "domain": "Clinical",
+      "version": "1.0"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-17",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "12-item RFQ short form. EN via mapping to the 54 (orig #s 2,12,14,18,26,28,34,36,38,42,44,47); KO from UCL Korean RFQ (12). Cert/uncert split per the Korean RFQ-12 scoring note. CC BY via PLoS — now in openscales/."
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "max": 7,
+      "labels": [
+        "rfq12_r1",
+        "rfq12_r2",
+        "rfq12_r3",
+        "rfq12_r4",
+        "rfq12_r5",
+        "rfq12_r6",
+        "rfq12_r7"
+      ],
+      "question_head": "question_head"
+    },
+    "dimensions": [
+      {
+        "id": "certainty",
+        "name": "Certainty",
+        "description": "6 items."
+      },
+      {
+        "id": "uncertainty",
+        "name": "Uncertainty",
+        "description": "6 items."
+      }
+    ],
+    "items": [
+      {
+        "id": "instr",
+        "type": "inst",
+        "text_key": "instructions"
+      },
+      {
+        "id": "rfq12_1",
+        "type": "likert",
+        "text_key": "rfq12_1",
+        "dimension": "certainty"
+      },
+      {
+        "id": "rfq12_2",
+        "type": "likert",
+        "text_key": "rfq12_2",
+        "dimension": "uncertainty"
+      },
+      {
+        "id": "rfq12_3",
+        "type": "likert",
+        "text_key": "rfq12_3",
+        "dimension": "certainty"
+      },
+      {
+        "id": "rfq12_4",
+        "type": "likert",
+        "text_key": "rfq12_4",
+        "dimension": "uncertainty"
+      },
+      {
+        "id": "rfq12_5",
+        "type": "likert",
+        "text_key": "rfq12_5",
+        "dimension": "uncertainty"
+      },
+      {
+        "id": "rfq12_6",
+        "type": "likert",
+        "text_key": "rfq12_6",
+        "dimension": "uncertainty"
+      },
+      {
+        "id": "rfq12_7",
+        "type": "likert",
+        "text_key": "rfq12_7",
+        "dimension": "certainty"
+      },
+      {
+        "id": "rfq12_8",
+        "type": "likert",
+        "text_key": "rfq12_8",
+        "dimension": "uncertainty"
+      },
+      {
+        "id": "rfq12_9",
+        "type": "likert",
+        "text_key": "rfq12_9",
+        "dimension": "certainty"
+      },
+      {
+        "id": "rfq12_10",
+        "type": "likert",
+        "text_key": "rfq12_10",
+        "dimension": "certainty"
+      },
+      {
+        "id": "rfq12_11",
+        "type": "likert",
+        "text_key": "rfq12_11",
+        "dimension": "uncertainty"
+      },
+      {
+        "id": "rfq12_12",
+        "type": "likert",
+        "text_key": "rfq12_12",
+        "dimension": "certainty"
+      }
+    ],
+    "scoring": {
+      "certainty": {
+        "name": "Certainty",
+        "method": "mean_coded",
+        "description": "6 items; recode 1→3,2→2,3→1,4-7→0.",
+        "items": [
+          "rfq12_1",
+          "rfq12_3",
+          "rfq12_7",
+          "rfq12_9",
+          "rfq12_10",
+          "rfq12_12"
+        ],
+        "value_map": {
+          "default": [
+            3,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "uncertainty": {
+        "name": "Uncertainty",
+        "method": "mean_coded",
+        "description": "6 items; recode 1-4→0,5→1,6→2,7→3.",
+        "items": [
+          "rfq12_2",
+          "rfq12_4",
+          "rfq12_5",
+          "rfq12_6",
+          "rfq12_8",
+          "rfq12_11"
+        ],
+        "value_map": {
+          "default": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "instructions": "Please work through the statements. For each, choose a number between 1 (strongly disagree) and 7 (strongly agree) to say how much you disagree or agree. Do not think too much about it — your initial responses are usually the best. Thank you.",
+      "question_head": "",
+      "debrief": "Thank you for completing this questionnaire.",
+      "LANGUAGE": "English",
+      "rfq12_r1": "Strongly Disagree",
+      "rfq12_r2": "",
+      "rfq12_r3": "",
+      "rfq12_r4": "",
+      "rfq12_r5": "",
+      "rfq12_r6": "",
+      "rfq12_r7": "Strongly Agree",
+      "rfq12_1": "It’s easy for me to figure out what someone else is thinking or feeling",
+      "rfq12_2": "I often get confused about what I am feeling",
+      "rfq12_3": "Understanding what’s on someone else’s mind is never difficult for me",
+      "rfq12_4": "It’s really hard for me to figure out what goes on in other people’s heads",
+      "rfq12_5": "Other people’s thoughts and feelings are confusing to me",
+      "rfq12_6": "Strong feelings often cloud my thinking",
+      "rfq12_7": "I normally have a good idea of what is on other people’s minds",
+      "rfq12_8": "When I get angry I say things that I later regret",
+      "rfq12_9": "I am a good mind reader",
+      "rfq12_10": "I usually know exactly what other people are thinking",
+      "rfq12_11": "Sometimes I do things without really knowing why",
+      "rfq12_12": "My gut feeling about what someone else is thinking is usually very accurate"
+    },
+    "ko": {
+      "instructions": "아래의 각 문항을 잘 읽은 후, 평소 자신을 잘 나타내는 곳에 \"O\"표를 해 주십시오.",
+      "question_head": "",
+      "debrief": "설문에 응해 주셔서 감사합니다.",
+      "LANGUAGE": "한국어",
+      "rfq12_r1": "전혀 그렇지 않다",
+      "rfq12_r2": "거의 그렇지 않다",
+      "rfq12_r3": "별로 그렇지 않다",
+      "rfq12_r4": "보통이다",
+      "rfq12_r5": "조금 그렇다",
+      "rfq12_r6": "거의 그렇다",
+      "rfq12_r7": "매우 그렇다",
+      "rfq12_1": "사람들이 무슨 생각을 하고 어떻게 느끼는지 알아내기란 쉬운 일이다.",
+      "rfq12_2": "가끔 내가 어떤 기분인지 혼란스럽다.",
+      "rfq12_3": "다른 사람의 마음을 이해하는 일이 나에게는 결코 어렵지 않다.",
+      "rfq12_4": "다른 사람의 머릿속에 무슨 일이 일어나는지 알아내기란 정말 힘든 일이다.",
+      "rfq12_5": "다른 사람이 어떻게 생각하고 느끼는지 헷갈릴 때가 많다.",
+      "rfq12_6": "종종 격한 감정이 일어나 생각이 흐려진다.",
+      "rfq12_7": "다른 사람의 마음속을 잘 파악하는 편이다.",
+      "rfq12_8": "화가 나면 나중에 후회할 말을 곧잘 한다.",
+      "rfq12_9": "남의 마음을 곧잘 읽는다.",
+      "rfq12_10": "다른 사람들이 무슨 생각을 하는지 대부분 정확하게 알고 있다.",
+      "rfq12_11": "가끔 그렇게 행동하는 이유를 알지 못한 채 행동하곤 한다.",
+      "rfq12_12": "다른 사람의 생각에 대한 내 짐작은, 거의 언제나 잘 맞다."
+    }
+  }
+}

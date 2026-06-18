@@ -915,7 +915,9 @@ const ScaleRunner = (() => {
       if (lKey) {
         labelEl.innerHTML = resolveText(lKey, strings, state.params, state.responseMap, state.aliasMap);
         btn.classList.add('sr-likert-has-label');
-      } else {
+      } else if (suppressNums) {
+        // Unlabeled point: only echo the number as the label when the numeric
+        // element is suppressed; otherwise numEl already shows it (avoid a double number).
         labelEl.textContent = String(val);
       }
 

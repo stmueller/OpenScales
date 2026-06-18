@@ -174,11 +174,70 @@
     return d.innerHTML;
   }
 
+  // Scale-variant flattening (mirror of tools/osd_variants.py / scale-runner.js):
+  // keep only the items belonging to the variant active for `lang`, so other
+  // variants' items (e.g. EWS German set on the English print-out) are dropped.
+  function osdActiveItems(defn, lang) {
+    const items = defn.items || defn.questions || [];
+    const hasVw = items.some(it => it && it.variant_when);
+    if (!defn.variants && !hasVw) return items;
+
+    const params = { __lang__: lang };
+    const pdefs = defn.parameters || {};
+    for (const k in pdefs) { if (pdefs[k] && ('default' in pdefs[k])) params[k] = pdefs[k].default; }
+
+    const v = defn.variants || {};
+    const sets = v.sets || null;
+    let activeSets = null;
+    if (sets) {
+      let ids = Object.keys(sets).filter(sid =>
+        Array.isArray(sets[sid].languages) && sets[sid].languages.indexOf(lang) >= 0);
+      if (ids.length === 0 && typeof v.default === 'string') ids = [v.default];
+      activeSets = new Set(ids);
+    }
+    const governed = {};
+    if (sets) for (const sid in sets) for (const iid of (sets[sid].items || [])) {
+      (governed[iid] = governed[iid] || new Set()).add(sid);
+    }
+    function evalCond(cond) {
+      if (!cond) return true;
+      if (typeof cond === 'string') {
+        const val = params[cond];
+        return !(val == null || val === 0 || val === '0' || val === false || val === '' || val === 'NA');
+      }
+      if (cond.all) return cond.all.every(evalCond);
+      if (cond.any) return cond.any.some(evalCond);
+      let lhs;
+      if (cond.selector === 'language') lhs = params.__lang__;
+      else if ('parameter' in cond) lhs = params[cond.parameter];
+      else return true;
+      const op = cond.operator, rhs = cond.value;
+      const ls = lhs == null ? '' : String(lhs);
+      if (op === 'in' || op === 'not_in') {
+        const vals = (Array.isArray(rhs) ? rhs : String(rhs).split(',')).map(x => String(x).trim());
+        const inv = vals.indexOf(ls) >= 0;
+        return op === 'in' ? inv : !inv;
+      }
+      if (op === 'equals') return ls === String(rhs);
+      if (op === 'not_equals') return ls !== String(rhs);
+      return true;
+    }
+    return items.filter(it => {
+      if (!it || typeof it !== 'object') return true;
+      if (it.variant_when && !evalCond(it.variant_when)) return false;
+      if (activeSets !== null) {
+        const g = governed[it.id];
+        if (g) { let any = false; g.forEach(s => { if (activeSets.has(s)) any = true; }); if (!any) return false; }
+      }
+      return true;
+    });
+  }
+
   function render(data, lang) {
     const defn = data.definition || {};
     const strings = (data.translations || {})[lang] || {};
     const info = defn.scale_info || {};
-    const items = defn.items || [];
+    const items = osdActiveItems(defn, lang);
     const likertOpts = defn.likert_options || {};
     let html = '';
 

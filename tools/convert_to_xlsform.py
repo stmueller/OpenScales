@@ -107,6 +107,9 @@ XPATH_OP_MAP = {
     "<=":          "<=",
 }
 
+# Operators that don't use a value RHS
+XPATH_UNARY_OPS = {"is_answered", "is_not_answered", "is_true", "is_false"}
+
 
 # ---------------------------------------------------------------------------
 # Shared helpers (matching convert_to_redcap.py style)
@@ -289,6 +292,19 @@ def _simple_condition_to_xpath(cond):
     if not item:
         return "true()"
     op_raw = cond.get("operator", cond.get("op", "=="))
+    name = make_xlsform_name(str(item))
+    ref = f"${{{name}}}"
+
+    # Unary operators — no RHS value
+    if op_raw == "is_answered":
+        return f"{ref} != ''"
+    if op_raw == "is_not_answered":
+        return f"{ref} = ''"
+    if op_raw == "is_true":
+        return f"{ref} = 'true'"
+    if op_raw == "is_false":
+        return f"{ref} = 'false'"
+
     op = XPATH_OP_MAP.get(op_raw, "=")
     value = cond.get("value", "")
     # Quote strings; leave numbers bare
@@ -297,8 +313,7 @@ def _simple_condition_to_xpath(cond):
         val_str = str(value)
     except (TypeError, ValueError):
         val_str = f"'{value}'"
-    name = make_xlsform_name(str(item))
-    return f"${{{name}}} {op} {val_str}"
+    return f"{ref} {op} {val_str}"
 
 
 def visible_when_to_relevant(visible_when):
@@ -959,11 +974,13 @@ def generate_xlsform(definition, translations, all_translations=None):
                                                 name=group_name))
 
         elif qtype in ("inst", "section"):
+            # Sections are structural dividers — no relevant expression
+            # (their skip logic belongs on the items they contain, not the header)
             row = _make_survey_row(
                 type_="note",
                 name=field_name,
                 label=strip_html(label),
-                relevant=relevant,
+                relevant=relevant if qtype == "inst" else "",
             )
             _add_lang_labels(row, lang_labels, langs)
             survey_rows.append(row)
@@ -1038,7 +1055,7 @@ def generate_xlsform(definition, translations, all_translations=None):
         survey_rows.append(_make_survey_row(
             type_="begin group",
             name=f"{make_xlsform_name(code)}_scoring",
-            label="# Computed Scores",
+            label="Computed Scores",
             appearance="field-list",
         ))
 
@@ -1059,9 +1076,10 @@ def generate_xlsform(definition, translations, all_translations=None):
 
             calc_name = make_xlsform_name(f"{code}_{score_id}")
             desc = score_def.get("description", "")
-            note_label = (f"# {score_id} ({method})"
-                          + (f" — {desc}" if desc else ""))
-            note_label = note_label[:200]  # keep it reasonable
+            # calculate rows: label is optional metadata; omit to avoid pyxform issues
+            note_label = (f"{score_id} ({method})"
+                          + (f" - {desc}" if desc else ""))
+            note_label = note_label[:200]
 
             survey_rows.append(_make_survey_row(
                 type_="calculate",

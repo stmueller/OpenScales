@@ -25,7 +25,15 @@
       "points": 7,
       "min": 1,
       "max": 7,
-      "labels": ["mprf_r1", "mprf_r2", "mprf_r3", "mprf_r4", "mprf_r5", "mprf_r6", "mprf_r7"]
+      "labels": [
+        "mprf_r1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "mprf_r7"
+      ]
     },
     "dimensions": [
       {
@@ -54,55 +62,176 @@
       }
     ],
     "items": [
-      {"id": "mprf_inst", "type": "inst", "text_key": "instructions"},
-      {"id": "mprf_stem", "type": "section", "text_key": "stem"},
-      {"id": "mprf_id1", "type": "likert", "text_key": "mprf_id1", "dimension": "ideals"},
-      {"id": "mprf_id2", "type": "likert", "text_key": "mprf_id2", "dimension": "ideals"},
-      {"id": "mprf_id3", "type": "likert", "text_key": "mprf_id3", "dimension": "ideals"},
-      {"id": "mprf_id4", "type": "likert", "text_key": "mprf_id4", "dimension": "ideals"},
-      {"id": "mprf_ou1", "type": "likert", "text_key": "mprf_ou1", "dimension": "oughts"},
-      {"id": "mprf_ou2", "type": "likert", "text_key": "mprf_ou2", "dimension": "oughts"},
-      {"id": "mprf_ou3", "type": "likert", "text_key": "mprf_ou3", "dimension": "oughts"},
-      {"id": "mprf_ou4", "type": "likert", "text_key": "mprf_ou4", "dimension": "oughts"},
-      {"id": "mprf_g1",  "type": "likert", "text_key": "mprf_g1",  "dimension": "gain"},
-      {"id": "mprf_g2",  "type": "likert", "text_key": "mprf_g2",  "dimension": "gain"},
-      {"id": "mprf_g3",  "type": "likert", "text_key": "mprf_g3",  "dimension": "gain"},
-      {"id": "mprf_g4",  "type": "likert", "text_key": "mprf_g4",  "dimension": "gain"},
-      {"id": "mprf_nl1", "type": "likert", "text_key": "mprf_nl1", "dimension": "nonloss"},
-      {"id": "mprf_nl2", "type": "likert", "text_key": "mprf_nl2", "dimension": "nonloss"},
-      {"id": "mprf_nl3", "type": "likert", "text_key": "mprf_nl3", "dimension": "nonloss"},
-      {"id": "mprf_nl4", "type": "likert", "text_key": "mprf_nl4", "dimension": "nonloss"}
+      {
+        "id": "mprf_inst",
+        "type": "inst",
+        "text_key": "instructions"
+      },
+      {
+        "id": "mprf_stem",
+        "type": "section",
+        "text_key": "stem"
+      },
+      {
+        "id": "mprf_id1",
+        "type": "likert",
+        "text_key": "mprf_id1",
+        "dimension": "ideals"
+      },
+      {
+        "id": "mprf_id2",
+        "type": "likert",
+        "text_key": "mprf_id2",
+        "dimension": "ideals"
+      },
+      {
+        "id": "mprf_id3",
+        "type": "likert",
+        "text_key": "mprf_id3",
+        "dimension": "ideals"
+      },
+      {
+        "id": "mprf_id4",
+        "type": "likert",
+        "text_key": "mprf_id4",
+        "dimension": "ideals"
+      },
+      {
+        "id": "mprf_ou1",
+        "type": "likert",
+        "text_key": "mprf_ou1",
+        "dimension": "oughts"
+      },
+      {
+        "id": "mprf_ou2",
+        "type": "likert",
+        "text_key": "mprf_ou2",
+        "dimension": "oughts"
+      },
+      {
+        "id": "mprf_ou3",
+        "type": "likert",
+        "text_key": "mprf_ou3",
+        "dimension": "oughts"
+      },
+      {
+        "id": "mprf_ou4",
+        "type": "likert",
+        "text_key": "mprf_ou4",
+        "dimension": "oughts"
+      },
+      {
+        "id": "mprf_g1",
+        "type": "likert",
+        "text_key": "mprf_g1",
+        "dimension": "gain"
+      },
+      {
+        "id": "mprf_g2",
+        "type": "likert",
+        "text_key": "mprf_g2",
+        "dimension": "gain"
+      },
+      {
+        "id": "mprf_g3",
+        "type": "likert",
+        "text_key": "mprf_g3",
+        "dimension": "gain"
+      },
+      {
+        "id": "mprf_g4",
+        "type": "likert",
+        "text_key": "mprf_g4",
+        "dimension": "gain"
+      },
+      {
+        "id": "mprf_nl1",
+        "type": "likert",
+        "text_key": "mprf_nl1",
+        "dimension": "nonloss"
+      },
+      {
+        "id": "mprf_nl2",
+        "type": "likert",
+        "text_key": "mprf_nl2",
+        "dimension": "nonloss"
+      },
+      {
+        "id": "mprf_nl3",
+        "type": "likert",
+        "text_key": "mprf_nl3",
+        "dimension": "nonloss"
+      },
+      {
+        "id": "mprf_nl4",
+        "type": "likert",
+        "text_key": "mprf_nl4",
+        "dimension": "nonloss"
+      }
     ],
     "scoring": {
       "ideals": {
         "description": "Mean of 4 Ideals items (mprf_id1–id4). Range 1–7; higher = stronger ideals/promotion focus.",
         "method": "mean_coded",
-        "items": ["mprf_id1", "mprf_id2", "mprf_id3", "mprf_id4"]
+        "items": [
+          "mprf_id1",
+          "mprf_id2",
+          "mprf_id3",
+          "mprf_id4"
+        ]
       },
       "oughts": {
         "description": "Mean of 4 Oughts items (mprf_ou1–ou4). Range 1–7; higher = stronger oughts/prevention focus.",
         "method": "mean_coded",
-        "items": ["mprf_ou1", "mprf_ou2", "mprf_ou3", "mprf_ou4"]
+        "items": [
+          "mprf_ou1",
+          "mprf_ou2",
+          "mprf_ou3",
+          "mprf_ou4"
+        ]
       },
       "gain": {
         "description": "Mean of 4 Gain items (mprf_g1–g4). Range 1–7; higher = stronger gain/promotion focus.",
         "method": "mean_coded",
-        "items": ["mprf_g1", "mprf_g2", "mprf_g3", "mprf_g4"]
+        "items": [
+          "mprf_g1",
+          "mprf_g2",
+          "mprf_g3",
+          "mprf_g4"
+        ]
       },
       "nonloss": {
         "description": "Mean of 4 Non-Loss items (mprf_nl1–nl4). Range 1–7; higher = stronger non-loss/prevention focus.",
         "method": "mean_coded",
-        "items": ["mprf_nl1", "mprf_nl2", "mprf_nl3", "mprf_nl4"]
+        "items": [
+          "mprf_nl1",
+          "mprf_nl2",
+          "mprf_nl3",
+          "mprf_nl4"
+        ]
       },
       "abbreviated": {
         "description": "8-item short form: Id1+Id4+Ou1+Ou3+G1+G2+N-L1+N-L3. Score each subscale (mean of 2 items) separately.",
         "method": "mean_coded",
-        "items": ["mprf_id1", "mprf_id4", "mprf_ou1", "mprf_ou3", "mprf_g1", "mprf_g2", "mprf_nl1", "mprf_nl3"]
+        "items": [
+          "mprf_id1",
+          "mprf_id4",
+          "mprf_ou1",
+          "mprf_ou3",
+          "mprf_g1",
+          "mprf_g2",
+          "mprf_nl1",
+          "mprf_nl3"
+        ]
       }
     },
     "report": {
       "template": "standard",
-      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
       "header": "Momentary-Chronic Regulatory Focus Scale (MPRF) Report",
       "footer_refs": [
         "Fay, D., Urbach, T., & Scheithauer, M. (2019). The Momentary-Chronic Regulatory Focus scale. Measurement Instruments for the Social Sciences, 1, e10993. https://doi.org/10.5964/miss.10993",
@@ -114,11 +243,6 @@
   "translations": {
     "en": {
       "mprf_r1": "does not apply at all",
-      "mprf_r2": "2",
-      "mprf_r3": "3",
-      "mprf_r4": "4",
-      "mprf_r5": "5",
-      "mprf_r6": "6",
       "mprf_r7": "applies fully",
       "instructions": "Please rate how well each of the following statements applies to you in general. A rating of 1 signifies that a statement doesn't apply to you in the least, whereas a rating of 7 signifies that it describes you perfectly. Use the ratings in between to denote more precisely intermediate degrees of correspondence.",
       "stem": "My thoughts and actions are mainly directed toward:",
@@ -130,10 +254,10 @@
       "mprf_ou2": "... fulfilling my responsibilities.",
       "mprf_ou3": "... meeting the expectations of others.",
       "mprf_ou4": "... observing guidelines.",
-      "mprf_g1":  "... working toward success.",
-      "mprf_g2":  "... accomplishing what I set out to do.",
-      "mprf_g3":  "... getting the most out it.",
-      "mprf_g4":  "... reaching goals.",
+      "mprf_g1": "... working toward success.",
+      "mprf_g2": "... accomplishing what I set out to do.",
+      "mprf_g3": "... getting the most out it.",
+      "mprf_g4": "... reaching goals.",
       "mprf_nl1": "... averting losses.",
       "mprf_nl2": "... avoiding setbacks.",
       "mprf_nl3": "... preventing mistakes.",
@@ -142,11 +266,6 @@
     },
     "de": {
       "mprf_r1": "trifft überhaupt nicht zu",
-      "mprf_r2": "2",
-      "mprf_r3": "3",
-      "mprf_r4": "4",
-      "mprf_r5": "5",
-      "mprf_r6": "6",
       "mprf_r7": "trifft vollständig zu",
       "instructions": "Bitte schätzen Sie ein, wie stark die folgenden Aussagen im Allgemeinen auf Sie zutreffen. Mit der Zahl 1 geben Sie an, dass die entsprechende Aussage überhaupt nicht auf Sie zutrifft, mit der Zahl 7 geben Sie an, dass die Aussage vollkommen auf Sie zutrifft. Die Zahlen 2 bis 6 ermöglichen Ihnen die Abstufung Ihrer Antworten zwischen „trifft überhaupt nicht zu“ und „trifft vollkommen zu“.",
       "stem": "Mein Denken und Handeln sind hauptsächlich dadurch geleitet:",
@@ -158,10 +277,10 @@
       "mprf_ou2": "… meiner Verantwortung gerecht zu werden.",
       "mprf_ou3": "… an mich gestellten Erwartungen nachzukommen.",
       "mprf_ou4": "… Richtlinien einzuhalten.",
-      "mprf_g1":  "… auf Erfolge hinzuarbeiten.",
-      "mprf_g2":  "… Angestrebtes auch zu erreichen.",
-      "mprf_g3":  "… das Maximum für die Sache herauszuholen.",
-      "mprf_g4":  "… Ziele zu erreichen.",
+      "mprf_g1": "… auf Erfolge hinzuarbeiten.",
+      "mprf_g2": "… Angestrebtes auch zu erreichen.",
+      "mprf_g3": "… das Maximum für die Sache herauszuholen.",
+      "mprf_g4": "… Ziele zu erreichen.",
       "mprf_nl1": "… Verluste zu vermeiden.",
       "mprf_nl2": "… Misserfolge zu vermeiden.",
       "mprf_nl3": "… Fehler zu verhindern.",

@@ -26,7 +26,15 @@
       "points": 7,
       "min": 1,
       "max": 7,
-      "labels": ["sop2_r1", "sop2_r2", "sop2_r3", "sop2_r4", "sop2_r5", "sop2_r6", "sop2_r7"]
+      "labels": [
+        "sop2_r1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "sop2_r7"
+      ]
     },
     "dimensions": [
       {
@@ -37,19 +45,38 @@
       }
     ],
     "items": [
-      {"id": "sop2_opt", "type": "likert", "text_key": "sop2_opt", "dimension": "optimism_pessimism", "coding": 1},
-      {"id": "sop2_pes", "type": "likert", "text_key": "sop2_pes", "dimension": "optimism_pessimism", "coding": -1}
+      {
+        "id": "sop2_opt",
+        "type": "likert",
+        "text_key": "sop2_opt",
+        "dimension": "optimism_pessimism",
+        "coding": 1
+      },
+      {
+        "id": "sop2_pes",
+        "type": "likert",
+        "text_key": "sop2_pes",
+        "dimension": "optimism_pessimism",
+        "coding": -1
+      }
     ],
     "scoring": {
       "optimism_pessimism": {
         "description": "Mean of 2 items with sop2_pes reverse-coded (recoded = 8 − raw). Range 1–7; higher = greater dispositional optimism.",
         "method": "mean_coded",
-        "items": {"sop2_opt": 1, "sop2_pes": -1}
+        "items": {
+          "sop2_opt": 1,
+          "sop2_pes": -1
+        }
       }
     },
     "report": {
       "template": "standard",
-      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
       "header": "Optimism–Pessimism Short Scale–2 (SOP2) Report",
       "footer_refs": [
         "Nießen, D., Groskurth, K., Kemper, C. J., Rammstedt, B., & Lechner, C. M. (2022). The Optimism–Pessimism Short Scale–2 (SOP2): A comprehensive validation of the English-language adaptation. Measurement Instruments for the Social Sciences, 4, Article e11067. https://doi.org/10.1186/s42409-021-00027-6",
@@ -60,11 +87,6 @@
   "translations": {
     "en": {
       "sop2_r1": "1 (Not at all)",
-      "sop2_r2": "2",
-      "sop2_r3": "3",
-      "sop2_r4": "4",
-      "sop2_r5": "5",
-      "sop2_r6": "6",
       "sop2_r7": "7 (Very much)",
       "sop2_opt_min": "Not at all optimistic",
       "sop2_opt_max": "Very optimistic",

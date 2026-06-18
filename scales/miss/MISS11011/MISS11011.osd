@@ -26,7 +26,15 @@
       "points": 7,
       "min": 1,
       "max": 7,
-      "labels": ["isas_r1", "isas_r2", "isas_r3", "isas_r4", "isas_r5", "isas_r6", "isas_r7"]
+      "labels": [
+        "isas_r1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "isas_r7"
+      ]
     },
     "dimensions": [
       {
@@ -49,36 +57,97 @@
       }
     ],
     "items": [
-      {"id": "isas_e1", "type": "likert", "text_key": "isas_e1", "dimension": "enjoyment"},
-      {"id": "isas_e2", "type": "likert", "text_key": "isas_e2", "dimension": "enjoyment"},
-      {"id": "isas_e3", "type": "likert", "text_key": "isas_e3", "dimension": "enjoyment"},
-      {"id": "isas_v1", "type": "likert", "text_key": "isas_v1", "dimension": "value"},
-      {"id": "isas_v2", "type": "likert", "text_key": "isas_v2", "dimension": "value"},
-      {"id": "isas_v3", "type": "likert", "text_key": "isas_v3", "dimension": "value"},
-      {"id": "isas_b1", "type": "likert", "text_key": "isas_b1", "dimension": "burden"},
-      {"id": "isas_b2", "type": "likert", "text_key": "isas_b2", "dimension": "burden"},
-      {"id": "isas_b3", "type": "likert", "text_key": "isas_b3", "dimension": "burden"}
+      {
+        "id": "isas_e1",
+        "type": "likert",
+        "text_key": "isas_e1",
+        "dimension": "enjoyment"
+      },
+      {
+        "id": "isas_e2",
+        "type": "likert",
+        "text_key": "isas_e2",
+        "dimension": "enjoyment"
+      },
+      {
+        "id": "isas_e3",
+        "type": "likert",
+        "text_key": "isas_e3",
+        "dimension": "enjoyment"
+      },
+      {
+        "id": "isas_v1",
+        "type": "likert",
+        "text_key": "isas_v1",
+        "dimension": "value"
+      },
+      {
+        "id": "isas_v2",
+        "type": "likert",
+        "text_key": "isas_v2",
+        "dimension": "value"
+      },
+      {
+        "id": "isas_v3",
+        "type": "likert",
+        "text_key": "isas_v3",
+        "dimension": "value"
+      },
+      {
+        "id": "isas_b1",
+        "type": "likert",
+        "text_key": "isas_b1",
+        "dimension": "burden"
+      },
+      {
+        "id": "isas_b2",
+        "type": "likert",
+        "text_key": "isas_b2",
+        "dimension": "burden"
+      },
+      {
+        "id": "isas_b3",
+        "type": "likert",
+        "text_key": "isas_b3",
+        "dimension": "burden"
+      }
     ],
     "scoring": {
       "enjoyment": {
         "description": "Mean of 3 Enjoyment items. Range 1–7; higher = greater survey enjoyment.",
         "method": "mean_coded",
-        "items": ["isas_e1", "isas_e2", "isas_e3"]
+        "items": [
+          "isas_e1",
+          "isas_e2",
+          "isas_e3"
+        ]
       },
       "value": {
         "description": "Mean of 3 Value items with isas_v3 reverse-coded. Range 1–7; higher = greater perceived value of surveys.",
         "method": "mean_coded",
-        "items": {"isas_v1": 1, "isas_v2": 1, "isas_v3": -1}
+        "items": {
+          "isas_v1": 1,
+          "isas_v2": 1,
+          "isas_v3": -1
+        }
       },
       "burden": {
         "description": "Mean of 3 Burden items, all reverse-coded. Range 1–7; higher = greater perceived burden.",
         "method": "mean_coded",
-        "items": {"isas_b1": -1, "isas_b2": -1, "isas_b3": -1}
+        "items": {
+          "isas_b1": -1,
+          "isas_b2": -1,
+          "isas_b3": -1
+        }
       }
     },
     "report": {
       "template": "standard",
-      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
       "header": "International Survey Attitude Scale (ISAS) Report",
       "footer_refs": [
         "de Leeuw, E., Hox, J., Silber, H., Struminskaya, B., & Vis, C. (2019). Development of an International Survey Attitude Scale: Measurement equivalence, reliability, and predictive validity. Measurement Instruments for the Social Sciences, 1, Article e11011. https://doi.org/10.1186/s42409-019-0012-x",
@@ -89,11 +158,6 @@
   "translations": {
     "en": {
       "isas_r1": "Totally disagree",
-      "isas_r2": "2",
-      "isas_r3": "3",
-      "isas_r4": "4",
-      "isas_r5": "5",
-      "isas_r6": "6",
       "isas_r7": "Totally agree",
       "isas_e1": "I really enjoy responding to questionnaires through the mail or Internet.",
       "isas_e2": "I really enjoy being interviewed for a survey.",
@@ -108,11 +172,6 @@
     },
     "de": {
       "isas_r1": "Stimme überhaupt nicht zu",
-      "isas_r2": "2",
-      "isas_r3": "3",
-      "isas_r4": "4",
-      "isas_r5": "5",
-      "isas_r6": "6",
       "isas_r7": "Stimme voll und ganz zu",
       "isas_e1": "Es macht mir Spaß, Fragebögen zu beantworten, die per Post oder Internet zugeschickt werden.",
       "isas_e2": "Es macht mir Spaß, für Umfragen interviewt zu werden.",
@@ -127,11 +186,6 @@
     },
     "nl": {
       "isas_r1": "Helemaal mee oneens",
-      "isas_r2": "2",
-      "isas_r3": "3",
-      "isas_r4": "4",
-      "isas_r5": "5",
-      "isas_r6": "6",
       "isas_r7": "Helemaal mee eens",
       "isas_e1": "Ik vind het echt leuk om vragenlijsten te beantwoorden, schriftelijk of via internet.",
       "isas_e2": "Ik vind het echt leuk om geïnterviewd te worden voor een onderzoek.",

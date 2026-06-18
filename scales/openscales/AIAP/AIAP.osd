@@ -81,8 +81,13 @@
       "points": 7,
       "min": 1,
       "labels": [
-        "AIAP_ra1", "AIAP_ra2", "AIAP_ra3", "AIAP_ra4",
-        "AIAP_ra5", "AIAP_ra6", "AIAP_ra7"
+        "AIAP_ra1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "AIAP_ra7"
       ],
       "question_head": "AIAP_head_agree"
     },
@@ -134,132 +139,701 @@
       }
     ],
     "items": [
-      { "id": "AIAPsec1",  "type": "section", "text_key": "AIAPsec_transparency",   "visible_when": "show_transparency" },
-      { "id": "AIAPT001", "type": "likert",  "text_key": "AIAPT001", "dimension": "Transparency",   "question_head": "AIAP_head_agree" },
-      { "id": "AIAPT002", "type": "likert",  "text_key": "AIAPT002", "dimension": "Transparency",   "question_head": "AIAP_head_agree" },
-      { "id": "AIAPT003", "type": "likert",  "text_key": "AIAPT003", "dimension": "Transparency",   "question_head": "AIAP_head_agree" },
-      { "id": "AIAPT004", "type": "likert",  "text_key": "AIAPT004", "dimension": "Transparency",   "question_head": "AIAP_head_agree" },
-
-      { "id": "AIAPsec2",  "type": "section", "text_key": "AIAPsec_intelligence",   "visible_when": "show_intelligence" },
-      { "id": "AIAPI001", "type": "likert",  "text_key": "AIAPI001", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
-      { "id": "AIAPI002", "type": "likert",  "text_key": "AIAPI002", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
-      { "id": "AIAPI003", "type": "likert",  "text_key": "AIAPI003", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
-      { "id": "AIAPI004", "type": "likert",  "text_key": "AIAPI004", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
-      { "id": "AIAPI005", "type": "likert",  "text_key": "AIAPI005", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
-      { "id": "AIAPI006", "type": "likert",  "text_key": "AIAPI006", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
-      { "id": "AIAPI007", "type": "likert",  "text_key": "AIAPI007", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
-      { "id": "AIAPI008", "type": "likert",  "text_key": "AIAPI008", "dimension": "Intelligence",   "question_head": "AIAP_head_compare", "likert_labels": ["AIAP_ri1","AIAP_ri2","AIAP_ri3","AIAP_ri4","AIAP_ri5","AIAP_ri6","AIAP_ri7"] },
-
-      { "id": "AIAPsec3",  "type": "section", "text_key": "AIAPsec_interdependence", "visible_when": "show_interdependence" },
-      { "id": "AIAPN001", "type": "likert",  "text_key": "AIAPN001", "dimension": "Interdependence", "question_head": "AIAP_head_agree" },
-      { "id": "AIAPN002", "type": "likert",  "text_key": "AIAPN002", "dimension": "Interdependence", "question_head": "AIAP_head_agree" },
-      { "id": "AIAPN003", "type": "likert",  "text_key": "AIAPN003", "dimension": "Interdependence", "question_head": "AIAP_head_agree" },
-      { "id": "AIAPN004", "type": "likert",  "text_key": "AIAPN004", "dimension": "Interdependence", "question_head": "AIAP_head_agree" },
-
-      { "id": "AIAPsec4",  "type": "section", "text_key": "AIAPsec_autonomy",        "visible_when": "show_autonomy" },
-      { "id": "AIAPA001", "type": "likert",  "text_key": "AIAPA001", "dimension": "Autonomy",       "question_head": "AIAP_head_agree" },
-      { "id": "AIAPA002", "type": "likert",  "text_key": "AIAPA002", "dimension": "Autonomy",       "question_head": "AIAP_head_agree" },
-      { "id": "AIAPA003", "type": "likert",  "text_key": "AIAPA003", "dimension": "Autonomy",       "question_head": "AIAP_head_agree" },
-      { "id": "AIAPA004", "type": "likert",  "text_key": "AIAPA004", "dimension": "Autonomy",       "question_head": "AIAP_head_agree" },
-      { "id": "AIAPA005", "type": "likert",  "text_key": "AIAPA005", "dimension": "Autonomy",       "question_head": "AIAP_head_agree" },
-
-      { "id": "AIAPsec5",  "type": "section", "text_key": "AIAPsec_conspiracy",      "visible_when": "show_conspiracy" },
-      { "id": "AIAPC001", "type": "likert",  "text_key": "AIAPC001", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-      { "id": "AIAPC002", "type": "likert",  "text_key": "AIAPC002", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-      { "id": "AIAPC003", "type": "likert",  "text_key": "AIAPC003", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-      { "id": "AIAPC004", "type": "likert",  "text_key": "AIAPC004", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-      { "id": "AIAPC005", "type": "likert",  "text_key": "AIAPC005", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-      { "id": "AIAPC006", "type": "likert",  "text_key": "AIAPC006", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-      { "id": "AIAPC007", "type": "likert",  "text_key": "AIAPC007", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-      { "id": "AIAPC008", "type": "likert",  "text_key": "AIAPC008", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-      { "id": "AIAPC009", "type": "likert",  "text_key": "AIAPC009", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-      { "id": "AIAPC010", "type": "likert",  "text_key": "AIAPC010", "dimension": "Conspiracy",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-
-      { "id": "AIAPsec6",  "type": "section", "text_key": "AIAPsec_threat_self",     "visible_when": "show_threat_self" },
-      { "id": "AIAPS001", "type": "likert",  "text_key": "AIAPS001", "dimension": "ThreatSelf",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-      { "id": "AIAPS002", "type": "likert",  "text_key": "AIAPS002", "dimension": "ThreatSelf",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-      { "id": "AIAPS003", "type": "likert",  "text_key": "AIAPS003", "dimension": "ThreatSelf",     "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-
-      { "id": "AIAPsec7",  "type": "section", "text_key": "AIAPsec_threat_society",  "visible_when": "show_threat_society" },
-      { "id": "AIAPG001", "type": "likert",  "text_key": "AIAPG001", "dimension": "ThreatSociety",  "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-      { "id": "AIAPG002", "type": "likert",  "text_key": "AIAPG002", "dimension": "ThreatSociety",  "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-      { "id": "AIAPG003", "type": "likert",  "text_key": "AIAPG003", "dimension": "ThreatSociety",  "question_head": "AIAP_head_conspire", "likert_labels": ["AIAP_rc1","AIAP_rc2","AIAP_rc3","AIAP_rc4","AIAP_rc5","AIAP_rc6","AIAP_rc7"] },
-
-      { "id": "AIAPsec8",  "type": "section", "text_key": "AIAPsec_lack_control",    "visible_when": "show_lack_control" },
-      { "id": "AIAPL001", "type": "likert",  "text_key": "AIAPL001", "dimension": "LackControl",    "question_head": "AIAP_head_experience" },
-      { "id": "AIAPL002", "type": "likert",  "text_key": "AIAPL002", "dimension": "LackControl",    "question_head": "AIAP_head_experience" },
-
-      { "id": "AIAPsec9",  "type": "section", "text_key": "AIAPsec_powerlessness",   "visible_when": "show_powerlessness" },
-      { "id": "AIAPP001", "type": "likert",  "text_key": "AIAPP001", "dimension": "Powerlessness",  "question_head": "AIAP_head_experience" },
-      { "id": "AIAPP002", "type": "likert",  "text_key": "AIAPP002", "dimension": "Powerlessness",  "question_head": "AIAP_head_experience" },
-      { "id": "AIAPP003", "type": "likert",  "text_key": "AIAPP003", "dimension": "Powerlessness",  "question_head": "AIAP_head_experience" }
+      {
+        "id": "AIAPsec1",
+        "type": "section",
+        "text_key": "AIAPsec_transparency",
+        "visible_when": "show_transparency"
+      },
+      {
+        "id": "AIAPT001",
+        "type": "likert",
+        "text_key": "AIAPT001",
+        "dimension": "Transparency",
+        "question_head": "AIAP_head_agree"
+      },
+      {
+        "id": "AIAPT002",
+        "type": "likert",
+        "text_key": "AIAPT002",
+        "dimension": "Transparency",
+        "question_head": "AIAP_head_agree"
+      },
+      {
+        "id": "AIAPT003",
+        "type": "likert",
+        "text_key": "AIAPT003",
+        "dimension": "Transparency",
+        "question_head": "AIAP_head_agree"
+      },
+      {
+        "id": "AIAPT004",
+        "type": "likert",
+        "text_key": "AIAPT004",
+        "dimension": "Transparency",
+        "question_head": "AIAP_head_agree"
+      },
+      {
+        "id": "AIAPsec2",
+        "type": "section",
+        "text_key": "AIAPsec_intelligence",
+        "visible_when": "show_intelligence"
+      },
+      {
+        "id": "AIAPI001",
+        "type": "likert",
+        "text_key": "AIAPI001",
+        "dimension": "Intelligence",
+        "question_head": "AIAP_head_compare",
+        "likert_labels": [
+          "AIAP_ri1",
+          "AIAP_ri2",
+          "AIAP_ri3",
+          "AIAP_ri4",
+          "AIAP_ri5",
+          "AIAP_ri6",
+          "AIAP_ri7"
+        ]
+      },
+      {
+        "id": "AIAPI002",
+        "type": "likert",
+        "text_key": "AIAPI002",
+        "dimension": "Intelligence",
+        "question_head": "AIAP_head_compare",
+        "likert_labels": [
+          "AIAP_ri1",
+          "AIAP_ri2",
+          "AIAP_ri3",
+          "AIAP_ri4",
+          "AIAP_ri5",
+          "AIAP_ri6",
+          "AIAP_ri7"
+        ]
+      },
+      {
+        "id": "AIAPI003",
+        "type": "likert",
+        "text_key": "AIAPI003",
+        "dimension": "Intelligence",
+        "question_head": "AIAP_head_compare",
+        "likert_labels": [
+          "AIAP_ri1",
+          "AIAP_ri2",
+          "AIAP_ri3",
+          "AIAP_ri4",
+          "AIAP_ri5",
+          "AIAP_ri6",
+          "AIAP_ri7"
+        ]
+      },
+      {
+        "id": "AIAPI004",
+        "type": "likert",
+        "text_key": "AIAPI004",
+        "dimension": "Intelligence",
+        "question_head": "AIAP_head_compare",
+        "likert_labels": [
+          "AIAP_ri1",
+          "AIAP_ri2",
+          "AIAP_ri3",
+          "AIAP_ri4",
+          "AIAP_ri5",
+          "AIAP_ri6",
+          "AIAP_ri7"
+        ]
+      },
+      {
+        "id": "AIAPI005",
+        "type": "likert",
+        "text_key": "AIAPI005",
+        "dimension": "Intelligence",
+        "question_head": "AIAP_head_compare",
+        "likert_labels": [
+          "AIAP_ri1",
+          "AIAP_ri2",
+          "AIAP_ri3",
+          "AIAP_ri4",
+          "AIAP_ri5",
+          "AIAP_ri6",
+          "AIAP_ri7"
+        ]
+      },
+      {
+        "id": "AIAPI006",
+        "type": "likert",
+        "text_key": "AIAPI006",
+        "dimension": "Intelligence",
+        "question_head": "AIAP_head_compare",
+        "likert_labels": [
+          "AIAP_ri1",
+          "AIAP_ri2",
+          "AIAP_ri3",
+          "AIAP_ri4",
+          "AIAP_ri5",
+          "AIAP_ri6",
+          "AIAP_ri7"
+        ]
+      },
+      {
+        "id": "AIAPI007",
+        "type": "likert",
+        "text_key": "AIAPI007",
+        "dimension": "Intelligence",
+        "question_head": "AIAP_head_compare",
+        "likert_labels": [
+          "AIAP_ri1",
+          "AIAP_ri2",
+          "AIAP_ri3",
+          "AIAP_ri4",
+          "AIAP_ri5",
+          "AIAP_ri6",
+          "AIAP_ri7"
+        ]
+      },
+      {
+        "id": "AIAPI008",
+        "type": "likert",
+        "text_key": "AIAPI008",
+        "dimension": "Intelligence",
+        "question_head": "AIAP_head_compare",
+        "likert_labels": [
+          "AIAP_ri1",
+          "AIAP_ri2",
+          "AIAP_ri3",
+          "AIAP_ri4",
+          "AIAP_ri5",
+          "AIAP_ri6",
+          "AIAP_ri7"
+        ]
+      },
+      {
+        "id": "AIAPsec3",
+        "type": "section",
+        "text_key": "AIAPsec_interdependence",
+        "visible_when": "show_interdependence"
+      },
+      {
+        "id": "AIAPN001",
+        "type": "likert",
+        "text_key": "AIAPN001",
+        "dimension": "Interdependence",
+        "question_head": "AIAP_head_agree"
+      },
+      {
+        "id": "AIAPN002",
+        "type": "likert",
+        "text_key": "AIAPN002",
+        "dimension": "Interdependence",
+        "question_head": "AIAP_head_agree"
+      },
+      {
+        "id": "AIAPN003",
+        "type": "likert",
+        "text_key": "AIAPN003",
+        "dimension": "Interdependence",
+        "question_head": "AIAP_head_agree"
+      },
+      {
+        "id": "AIAPN004",
+        "type": "likert",
+        "text_key": "AIAPN004",
+        "dimension": "Interdependence",
+        "question_head": "AIAP_head_agree"
+      },
+      {
+        "id": "AIAPsec4",
+        "type": "section",
+        "text_key": "AIAPsec_autonomy",
+        "visible_when": "show_autonomy"
+      },
+      {
+        "id": "AIAPA001",
+        "type": "likert",
+        "text_key": "AIAPA001",
+        "dimension": "Autonomy",
+        "question_head": "AIAP_head_agree"
+      },
+      {
+        "id": "AIAPA002",
+        "type": "likert",
+        "text_key": "AIAPA002",
+        "dimension": "Autonomy",
+        "question_head": "AIAP_head_agree"
+      },
+      {
+        "id": "AIAPA003",
+        "type": "likert",
+        "text_key": "AIAPA003",
+        "dimension": "Autonomy",
+        "question_head": "AIAP_head_agree"
+      },
+      {
+        "id": "AIAPA004",
+        "type": "likert",
+        "text_key": "AIAPA004",
+        "dimension": "Autonomy",
+        "question_head": "AIAP_head_agree"
+      },
+      {
+        "id": "AIAPA005",
+        "type": "likert",
+        "text_key": "AIAPA005",
+        "dimension": "Autonomy",
+        "question_head": "AIAP_head_agree"
+      },
+      {
+        "id": "AIAPsec5",
+        "type": "section",
+        "text_key": "AIAPsec_conspiracy",
+        "visible_when": "show_conspiracy"
+      },
+      {
+        "id": "AIAPC001",
+        "type": "likert",
+        "text_key": "AIAPC001",
+        "dimension": "Conspiracy",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPC002",
+        "type": "likert",
+        "text_key": "AIAPC002",
+        "dimension": "Conspiracy",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPC003",
+        "type": "likert",
+        "text_key": "AIAPC003",
+        "dimension": "Conspiracy",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPC004",
+        "type": "likert",
+        "text_key": "AIAPC004",
+        "dimension": "Conspiracy",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPC005",
+        "type": "likert",
+        "text_key": "AIAPC005",
+        "dimension": "Conspiracy",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPC006",
+        "type": "likert",
+        "text_key": "AIAPC006",
+        "dimension": "Conspiracy",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPC007",
+        "type": "likert",
+        "text_key": "AIAPC007",
+        "dimension": "Conspiracy",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPC008",
+        "type": "likert",
+        "text_key": "AIAPC008",
+        "dimension": "Conspiracy",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPC009",
+        "type": "likert",
+        "text_key": "AIAPC009",
+        "dimension": "Conspiracy",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPC010",
+        "type": "likert",
+        "text_key": "AIAPC010",
+        "dimension": "Conspiracy",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPsec6",
+        "type": "section",
+        "text_key": "AIAPsec_threat_self",
+        "visible_when": "show_threat_self"
+      },
+      {
+        "id": "AIAPS001",
+        "type": "likert",
+        "text_key": "AIAPS001",
+        "dimension": "ThreatSelf",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPS002",
+        "type": "likert",
+        "text_key": "AIAPS002",
+        "dimension": "ThreatSelf",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPS003",
+        "type": "likert",
+        "text_key": "AIAPS003",
+        "dimension": "ThreatSelf",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPsec7",
+        "type": "section",
+        "text_key": "AIAPsec_threat_society",
+        "visible_when": "show_threat_society"
+      },
+      {
+        "id": "AIAPG001",
+        "type": "likert",
+        "text_key": "AIAPG001",
+        "dimension": "ThreatSociety",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPG002",
+        "type": "likert",
+        "text_key": "AIAPG002",
+        "dimension": "ThreatSociety",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPG003",
+        "type": "likert",
+        "text_key": "AIAPG003",
+        "dimension": "ThreatSociety",
+        "question_head": "AIAP_head_conspire",
+        "likert_labels": [
+          "AIAP_rc1",
+          "AIAP_rc2",
+          "AIAP_rc3",
+          "AIAP_rc4",
+          "AIAP_rc5",
+          "AIAP_rc6",
+          "AIAP_rc7"
+        ]
+      },
+      {
+        "id": "AIAPsec8",
+        "type": "section",
+        "text_key": "AIAPsec_lack_control",
+        "visible_when": "show_lack_control"
+      },
+      {
+        "id": "AIAPL001",
+        "type": "likert",
+        "text_key": "AIAPL001",
+        "dimension": "LackControl",
+        "question_head": "AIAP_head_experience"
+      },
+      {
+        "id": "AIAPL002",
+        "type": "likert",
+        "text_key": "AIAPL002",
+        "dimension": "LackControl",
+        "question_head": "AIAP_head_experience"
+      },
+      {
+        "id": "AIAPsec9",
+        "type": "section",
+        "text_key": "AIAPsec_powerlessness",
+        "visible_when": "show_powerlessness"
+      },
+      {
+        "id": "AIAPP001",
+        "type": "likert",
+        "text_key": "AIAPP001",
+        "dimension": "Powerlessness",
+        "question_head": "AIAP_head_experience"
+      },
+      {
+        "id": "AIAPP002",
+        "type": "likert",
+        "text_key": "AIAPP002",
+        "dimension": "Powerlessness",
+        "question_head": "AIAP_head_experience"
+      },
+      {
+        "id": "AIAPP003",
+        "type": "likert",
+        "text_key": "AIAPP003",
+        "dimension": "Powerlessness",
+        "question_head": "AIAP_head_experience"
+      }
     ],
     "scoring": {
       "Transparency": {
         "method": "mean_coded",
         "description": "Transparency — mean of 4 items (higher = more perceived transparency)",
-        "items": { "AIAPT001": 1, "AIAPT002": 1, "AIAPT003": 1, "AIAPT004": 1 }
+        "items": {
+          "AIAPT001": 1,
+          "AIAPT002": 1,
+          "AIAPT003": 1,
+          "AIAPT004": 1
+        }
       },
       "Intelligence": {
         "method": "mean_coded",
         "description": "Intelligence — mean of 8 items (higher = AI seen as more capable than humans)",
-        "items": { "AIAPI001": 1, "AIAPI002": 1, "AIAPI003": 1, "AIAPI004": 1, "AIAPI005": 1, "AIAPI006": 1, "AIAPI007": 1, "AIAPI008": 1 }
+        "items": {
+          "AIAPI001": 1,
+          "AIAPI002": 1,
+          "AIAPI003": 1,
+          "AIAPI004": 1,
+          "AIAPI005": 1,
+          "AIAPI006": 1,
+          "AIAPI007": 1,
+          "AIAPI008": 1
+        }
       },
       "Interdependence": {
         "method": "mean_coded",
         "description": "Interdependence — mean of 4 items (higher = AI seen as more aligned with human interests)",
-        "items": { "AIAPN001": 1, "AIAPN002": 1, "AIAPN003": 1, "AIAPN004": 1 }
+        "items": {
+          "AIAPN001": 1,
+          "AIAPN002": 1,
+          "AIAPN003": 1,
+          "AIAPN004": 1
+        }
       },
       "Autonomy": {
         "method": "mean_coded",
         "description": "Autonomy — mean of 5 items (higher = AI seen as more independent of humans)",
-        "items": { "AIAPA001": 1, "AIAPA002": 1, "AIAPA003": 1, "AIAPA004": 1, "AIAPA005": 1 }
+        "items": {
+          "AIAPA001": 1,
+          "AIAPA002": 1,
+          "AIAPA003": 1,
+          "AIAPA004": 1,
+          "AIAPA005": 1
+        }
       },
       "Conspiracy": {
         "method": "mean_coded",
         "description": "Conspiracy — mean of 10 items (higher = stronger conspiracy beliefs about AI)",
-        "items": { "AIAPC001": 1, "AIAPC002": 1, "AIAPC003": 1, "AIAPC004": 1, "AIAPC005": 1, "AIAPC006": 1, "AIAPC007": 1, "AIAPC008": 1, "AIAPC009": 1, "AIAPC010": 1 }
+        "items": {
+          "AIAPC001": 1,
+          "AIAPC002": 1,
+          "AIAPC003": 1,
+          "AIAPC004": 1,
+          "AIAPC005": 1,
+          "AIAPC006": 1,
+          "AIAPC007": 1,
+          "AIAPC008": 1,
+          "AIAPC009": 1,
+          "AIAPC010": 1
+        }
       },
       "ThreatSelf": {
         "method": "mean_coded",
         "description": "Threat to Self — mean of 3 items",
-        "items": { "AIAPS001": 1, "AIAPS002": 1, "AIAPS003": 1 }
+        "items": {
+          "AIAPS001": 1,
+          "AIAPS002": 1,
+          "AIAPS003": 1
+        }
       },
       "ThreatSociety": {
         "method": "mean_coded",
         "description": "Threat to Society — mean of 3 items",
-        "items": { "AIAPG001": 1, "AIAPG002": 1, "AIAPG003": 1 }
+        "items": {
+          "AIAPG001": 1,
+          "AIAPG002": 1,
+          "AIAPG003": 1
+        }
       },
       "LackControl": {
         "method": "mean_coded",
         "description": "Lack of Control — mean of 2 items",
-        "items": { "AIAPL001": 1, "AIAPL002": 1 }
+        "items": {
+          "AIAPL001": 1,
+          "AIAPL002": 1
+        }
       },
       "Powerlessness": {
         "method": "mean_coded",
         "description": "Powerlessness — mean of 3 items",
-        "items": { "AIAPP001": 1, "AIAPP002": 1, "AIAPP003": 1 }
+        "items": {
+          "AIAPP001": 1,
+          "AIAPP002": 1,
+          "AIAPP003": 1
+        }
       }
     }
   },
   "translations": {
     "en": {
-      "AIAP_head_agree":     "Please indicate to what extent you agree or disagree with these statements about Artificial Intelligence (AI).",
-      "AIAP_head_compare":   "Please indicate how you think Artificial Intelligence (AI) compares to humans on these capabilities.",
-      "AIAP_head_conspire":  "Please indicate to what extent you agree or disagree with these statements about Artificial Intelligence (AI).",
-      "AIAP_head_experience":"Please indicate to what extent you experience the following.",
-      "AIAP_ra1": "Not at all", "AIAP_ra2": "2", "AIAP_ra3": "3", "AIAP_ra4": "4", "AIAP_ra5": "5", "AIAP_ra6": "6", "AIAP_ra7": "Very much",
-      "AIAP_ri1": "Far worse than humans", "AIAP_ri2": "2", "AIAP_ri3": "3", "AIAP_ri4": "4", "AIAP_ri5": "5", "AIAP_ri6": "6", "AIAP_ri7": "Far better than humans",
-      "AIAP_rc1": "Completely disagree", "AIAP_rc2": "2", "AIAP_rc3": "3", "AIAP_rc4": "4", "AIAP_rc5": "5", "AIAP_rc6": "6", "AIAP_rc7": "Completely agree",
-      "AIAPsec_transparency":   "Transparency of AI",
-      "AIAPsec_intelligence":   "Intelligence of AI",
-      "AIAPsec_interdependence":"Interdependence of AI",
-      "AIAPsec_autonomy":       "Autonomy of AI",
-      "AIAPsec_conspiracy":     "AI Conspiracy Beliefs",
-      "AIAPsec_threat_self":    "Perceived Threat to Self",
+      "AIAP_head_agree": "Please indicate to what extent you agree or disagree with these statements about Artificial Intelligence (AI).",
+      "AIAP_head_compare": "Please indicate how you think Artificial Intelligence (AI) compares to humans on these capabilities.",
+      "AIAP_head_conspire": "Please indicate to what extent you agree or disagree with these statements about Artificial Intelligence (AI).",
+      "AIAP_head_experience": "Please indicate to what extent you experience the following.",
+      "AIAP_ra1": "Not at all",
+      "AIAP_ra7": "Very much",
+      "AIAP_ri1": "Far worse than humans",
+      "AIAP_ri2": "2",
+      "AIAP_ri3": "3",
+      "AIAP_ri4": "4",
+      "AIAP_ri5": "5",
+      "AIAP_ri6": "6",
+      "AIAP_ri7": "Far better than humans",
+      "AIAP_rc1": "Completely disagree",
+      "AIAP_rc2": "2",
+      "AIAP_rc3": "3",
+      "AIAP_rc4": "4",
+      "AIAP_rc5": "5",
+      "AIAP_rc6": "6",
+      "AIAP_rc7": "Completely agree",
+      "AIAPsec_transparency": "Transparency of AI",
+      "AIAPsec_intelligence": "Intelligence of AI",
+      "AIAPsec_interdependence": "Interdependence of AI",
+      "AIAPsec_autonomy": "Autonomy of AI",
+      "AIAPsec_conspiracy": "AI Conspiracy Beliefs",
+      "AIAPsec_threat_self": "Perceived Threat to Self",
       "AIAPsec_threat_society": "Perceived Threat to Society",
-      "AIAPsec_lack_control":   "Lack of Control",
-      "AIAPsec_powerlessness":  "Powerlessness",
+      "AIAPsec_lack_control": "Lack of Control",
+      "AIAPsec_powerlessness": "Powerlessness",
       "AIAPT001": "In general, AI's decisions are easy to understand for lay people.",
       "AIAPT002": "In general, lay people can understand why AI reaches certain conclusions.",
       "AIAPT003": "In general, it is clear to lay people how AI works.",

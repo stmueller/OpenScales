@@ -28,7 +28,7 @@
       },
       "shuffle_questions": {
         "type": "boolean",
-        "default":  0,
+        "default": 0,
         "description": "Randomize item presentation order"
       }
     },
@@ -36,8 +36,13 @@
       "points": 7,
       "min": 1,
       "labels": [
-        "BMCQ_r1", "BMCQ_r2", "BMCQ_r3", "BMCQ_r4",
-        "BMCQ_r5", "BMCQ_r6", "BMCQ_r7"
+        "BMCQ_r1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "BMCQ_r7"
       ],
       "question_head": "BMCQ_head"
     },
@@ -59,41 +64,115 @@
       }
     ],
     "items": [
-      { "id": "BMCQ001", "type": "likert", "text_key": "BMCQ001", "dimension": "BMV" },
-      { "id": "BMCQ002", "type": "likert", "text_key": "BMCQ002", "dimension": "BMV" },
-      { "id": "BMCQ003", "type": "likert", "text_key": "BMCQ003", "dimension": "BMV" },
-      { "id": "BMCQ004", "type": "likert", "text_key": "BMCQ004", "dimension": "BMV" },
-      { "id": "BMCQ005", "type": "likert", "text_key": "BMCQ005", "dimension": "BMV" },
-      { "id": "BMCQ006", "type": "likert", "text_key": "BMCQ006", "dimension": "BMV" },
-      { "id": "BMCQ007", "type": "likert", "text_key": "BMCQ007", "dimension": "SEA" },
-      { "id": "BMCQ008", "type": "likert", "text_key": "BMCQ008", "dimension": "SEA" },
-      { "id": "BMCQ009", "type": "likert", "text_key": "BMCQ009", "dimension": "SEA" },
-      { "id": "BMCQ010", "type": "likert", "text_key": "BMCQ010", "dimension": "IA" },
-      { "id": "BMCQ011", "type": "likert", "text_key": "BMCQ011", "dimension": "IA" },
-      { "id": "BMCQ012", "type": "likert", "text_key": "BMCQ012", "dimension": "IA" },
-      { "id": "BMCQ013", "type": "likert", "text_key": "BMCQ013", "dimension": "IA" }
+      {
+        "id": "BMCQ001",
+        "type": "likert",
+        "text_key": "BMCQ001",
+        "dimension": "BMV"
+      },
+      {
+        "id": "BMCQ002",
+        "type": "likert",
+        "text_key": "BMCQ002",
+        "dimension": "BMV"
+      },
+      {
+        "id": "BMCQ003",
+        "type": "likert",
+        "text_key": "BMCQ003",
+        "dimension": "BMV"
+      },
+      {
+        "id": "BMCQ004",
+        "type": "likert",
+        "text_key": "BMCQ004",
+        "dimension": "BMV"
+      },
+      {
+        "id": "BMCQ005",
+        "type": "likert",
+        "text_key": "BMCQ005",
+        "dimension": "BMV"
+      },
+      {
+        "id": "BMCQ006",
+        "type": "likert",
+        "text_key": "BMCQ006",
+        "dimension": "BMV"
+      },
+      {
+        "id": "BMCQ007",
+        "type": "likert",
+        "text_key": "BMCQ007",
+        "dimension": "SEA"
+      },
+      {
+        "id": "BMCQ008",
+        "type": "likert",
+        "text_key": "BMCQ008",
+        "dimension": "SEA"
+      },
+      {
+        "id": "BMCQ009",
+        "type": "likert",
+        "text_key": "BMCQ009",
+        "dimension": "SEA"
+      },
+      {
+        "id": "BMCQ010",
+        "type": "likert",
+        "text_key": "BMCQ010",
+        "dimension": "IA"
+      },
+      {
+        "id": "BMCQ011",
+        "type": "likert",
+        "text_key": "BMCQ011",
+        "dimension": "IA"
+      },
+      {
+        "id": "BMCQ012",
+        "type": "likert",
+        "text_key": "BMCQ012",
+        "dimension": "IA"
+      },
+      {
+        "id": "BMCQ013",
+        "type": "likert",
+        "text_key": "BMCQ013",
+        "dimension": "IA"
+      }
     ],
     "scoring": {
       "BMV": {
         "method": "mean_coded",
         "description": "Body-Mind Values — mean of 6 items; item 6 reverse-scored",
         "items": {
-          "BMCQ001": 1, "BMCQ002": 1, "BMCQ003": 1,
-          "BMCQ004": 1, "BMCQ005": 1, "BMCQ006": -1
+          "BMCQ001": 1,
+          "BMCQ002": 1,
+          "BMCQ003": 1,
+          "BMCQ004": 1,
+          "BMCQ005": 1,
+          "BMCQ006": -1
         }
       },
       "SEA": {
         "method": "mean_coded",
         "description": "Sensation-Emotion Articulation — mean of 3 items; all reverse-scored",
         "items": {
-          "BMCQ007": -1, "BMCQ008": -1, "BMCQ009": -1
+          "BMCQ007": -1,
+          "BMCQ008": -1,
+          "BMCQ009": -1
         }
       },
       "IA": {
         "method": "mean_coded",
         "description": "Interoceptive Attention — mean of 4 items",
         "items": {
-          "BMCQ010": 1, "BMCQ011": 1, "BMCQ012": 1, "BMCQ013": 1
+          "BMCQ010": 1,
+          "BMCQ011": 1,
+          "BMCQ012": 1,
+          "BMCQ013": 1
         }
       }
     }
@@ -102,11 +181,6 @@
     "en": {
       "BMCQ_head": "Please indicate how true each statement is of you.",
       "BMCQ_r1": "Not at all true of me",
-      "BMCQ_r2": "2",
-      "BMCQ_r3": "3",
-      "BMCQ_r4": "4",
-      "BMCQ_r5": "5",
-      "BMCQ_r6": "6",
       "BMCQ_r7": "Very true of me",
       "BMCQ001": "Feeling physically well is something that I prioritise in life.",
       "BMCQ002": "I value being well-balanced in my body and my mind.",

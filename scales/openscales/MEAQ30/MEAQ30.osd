@@ -28,7 +28,7 @@
       },
       "shuffle_questions": {
         "type": "boolean",
-        "default":  0,
+        "default": 0,
         "description": "Randomize item presentation order"
       }
     },
@@ -36,8 +36,12 @@
       "points": 6,
       "min": 1,
       "labels": [
-        "MEAQ30_r1", "MEAQ30_r2", "MEAQ30_r3",
-        "MEAQ30_r4", "MEAQ30_r5", "MEAQ30_r6"
+        "MEAQ30_r1",
+        null,
+        null,
+        null,
+        null,
+        "MEAQ30_r6"
       ],
       "question_head": "MEAQ30_head"
     },
@@ -74,67 +78,253 @@
       }
     ],
     "items": [
-      { "id": "MEAQ30001", "type": "likert", "text_key": "MEAQ30001", "dimension": "BA" },
-      { "id": "MEAQ30002", "type": "likert", "text_key": "MEAQ30002", "dimension": "BA" },
-      { "id": "MEAQ30003", "type": "likert", "text_key": "MEAQ30003", "dimension": "BA" },
-      { "id": "MEAQ30004", "type": "likert", "text_key": "MEAQ30004", "dimension": "BA" },
-      { "id": "MEAQ30005", "type": "likert", "text_key": "MEAQ30005", "dimension": "BA" },
-      { "id": "MEAQ30006", "type": "likert", "text_key": "MEAQ30006", "dimension": "DA" },
-      { "id": "MEAQ30007", "type": "likert", "text_key": "MEAQ30007", "dimension": "DA" },
-      { "id": "MEAQ30008", "type": "likert", "text_key": "MEAQ30008", "dimension": "DA" },
-      { "id": "MEAQ30009", "type": "likert", "text_key": "MEAQ30009", "dimension": "DA" },
-      { "id": "MEAQ30010", "type": "likert", "text_key": "MEAQ30010", "dimension": "DA" },
-      { "id": "MEAQ30011", "type": "likert", "text_key": "MEAQ30011", "dimension": "PR" },
-      { "id": "MEAQ30012", "type": "likert", "text_key": "MEAQ30012", "dimension": "PR" },
-      { "id": "MEAQ30013", "type": "likert", "text_key": "MEAQ30013", "dimension": "PR" },
-      { "id": "MEAQ30014", "type": "likert", "text_key": "MEAQ30014", "dimension": "PR" },
-      { "id": "MEAQ30015", "type": "likert", "text_key": "MEAQ30015", "dimension": "PR" },
-      { "id": "MEAQ30016", "type": "likert", "text_key": "MEAQ30016", "dimension": "DS" },
-      { "id": "MEAQ30017", "type": "likert", "text_key": "MEAQ30017", "dimension": "DS" },
-      { "id": "MEAQ30018", "type": "likert", "text_key": "MEAQ30018", "dimension": "DS" },
-      { "id": "MEAQ30019", "type": "likert", "text_key": "MEAQ30019", "dimension": "DS" },
-      { "id": "MEAQ30020", "type": "likert", "text_key": "MEAQ30020", "dimension": "DS" },
-      { "id": "MEAQ30021", "type": "likert", "text_key": "MEAQ30021", "dimension": "RD" },
-      { "id": "MEAQ30022", "type": "likert", "text_key": "MEAQ30022", "dimension": "RD" },
-      { "id": "MEAQ30023", "type": "likert", "text_key": "MEAQ30023", "dimension": "RD" },
-      { "id": "MEAQ30024", "type": "likert", "text_key": "MEAQ30024", "dimension": "RD" },
-      { "id": "MEAQ30025", "type": "likert", "text_key": "MEAQ30025", "dimension": "RD" },
-      { "id": "MEAQ30026", "type": "likert", "text_key": "MEAQ30026", "dimension": "DE" },
-      { "id": "MEAQ30027", "type": "likert", "text_key": "MEAQ30027", "dimension": "DE" },
-      { "id": "MEAQ30028", "type": "likert", "text_key": "MEAQ30028", "dimension": "DE" },
-      { "id": "MEAQ30029", "type": "likert", "text_key": "MEAQ30029", "dimension": "DE" },
-      { "id": "MEAQ30030", "type": "likert", "text_key": "MEAQ30030", "dimension": "DE" }
+      {
+        "id": "MEAQ30001",
+        "type": "likert",
+        "text_key": "MEAQ30001",
+        "dimension": "BA"
+      },
+      {
+        "id": "MEAQ30002",
+        "type": "likert",
+        "text_key": "MEAQ30002",
+        "dimension": "BA"
+      },
+      {
+        "id": "MEAQ30003",
+        "type": "likert",
+        "text_key": "MEAQ30003",
+        "dimension": "BA"
+      },
+      {
+        "id": "MEAQ30004",
+        "type": "likert",
+        "text_key": "MEAQ30004",
+        "dimension": "BA"
+      },
+      {
+        "id": "MEAQ30005",
+        "type": "likert",
+        "text_key": "MEAQ30005",
+        "dimension": "BA"
+      },
+      {
+        "id": "MEAQ30006",
+        "type": "likert",
+        "text_key": "MEAQ30006",
+        "dimension": "DA"
+      },
+      {
+        "id": "MEAQ30007",
+        "type": "likert",
+        "text_key": "MEAQ30007",
+        "dimension": "DA"
+      },
+      {
+        "id": "MEAQ30008",
+        "type": "likert",
+        "text_key": "MEAQ30008",
+        "dimension": "DA"
+      },
+      {
+        "id": "MEAQ30009",
+        "type": "likert",
+        "text_key": "MEAQ30009",
+        "dimension": "DA"
+      },
+      {
+        "id": "MEAQ30010",
+        "type": "likert",
+        "text_key": "MEAQ30010",
+        "dimension": "DA"
+      },
+      {
+        "id": "MEAQ30011",
+        "type": "likert",
+        "text_key": "MEAQ30011",
+        "dimension": "PR"
+      },
+      {
+        "id": "MEAQ30012",
+        "type": "likert",
+        "text_key": "MEAQ30012",
+        "dimension": "PR"
+      },
+      {
+        "id": "MEAQ30013",
+        "type": "likert",
+        "text_key": "MEAQ30013",
+        "dimension": "PR"
+      },
+      {
+        "id": "MEAQ30014",
+        "type": "likert",
+        "text_key": "MEAQ30014",
+        "dimension": "PR"
+      },
+      {
+        "id": "MEAQ30015",
+        "type": "likert",
+        "text_key": "MEAQ30015",
+        "dimension": "PR"
+      },
+      {
+        "id": "MEAQ30016",
+        "type": "likert",
+        "text_key": "MEAQ30016",
+        "dimension": "DS"
+      },
+      {
+        "id": "MEAQ30017",
+        "type": "likert",
+        "text_key": "MEAQ30017",
+        "dimension": "DS"
+      },
+      {
+        "id": "MEAQ30018",
+        "type": "likert",
+        "text_key": "MEAQ30018",
+        "dimension": "DS"
+      },
+      {
+        "id": "MEAQ30019",
+        "type": "likert",
+        "text_key": "MEAQ30019",
+        "dimension": "DS"
+      },
+      {
+        "id": "MEAQ30020",
+        "type": "likert",
+        "text_key": "MEAQ30020",
+        "dimension": "DS"
+      },
+      {
+        "id": "MEAQ30021",
+        "type": "likert",
+        "text_key": "MEAQ30021",
+        "dimension": "RD"
+      },
+      {
+        "id": "MEAQ30022",
+        "type": "likert",
+        "text_key": "MEAQ30022",
+        "dimension": "RD"
+      },
+      {
+        "id": "MEAQ30023",
+        "type": "likert",
+        "text_key": "MEAQ30023",
+        "dimension": "RD"
+      },
+      {
+        "id": "MEAQ30024",
+        "type": "likert",
+        "text_key": "MEAQ30024",
+        "dimension": "RD"
+      },
+      {
+        "id": "MEAQ30025",
+        "type": "likert",
+        "text_key": "MEAQ30025",
+        "dimension": "RD"
+      },
+      {
+        "id": "MEAQ30026",
+        "type": "likert",
+        "text_key": "MEAQ30026",
+        "dimension": "DE"
+      },
+      {
+        "id": "MEAQ30027",
+        "type": "likert",
+        "text_key": "MEAQ30027",
+        "dimension": "DE"
+      },
+      {
+        "id": "MEAQ30028",
+        "type": "likert",
+        "text_key": "MEAQ30028",
+        "dimension": "DE"
+      },
+      {
+        "id": "MEAQ30029",
+        "type": "likert",
+        "text_key": "MEAQ30029",
+        "dimension": "DE"
+      },
+      {
+        "id": "MEAQ30030",
+        "type": "likert",
+        "text_key": "MEAQ30030",
+        "dimension": "DE"
+      }
     ],
     "scoring": {
       "BA": {
         "method": "mean_coded",
         "description": "Behavioral Avoidance",
-        "items": { "MEAQ30001": 1, "MEAQ30002": 1, "MEAQ30003": 1, "MEAQ30004": 1, "MEAQ30005": 1 }
+        "items": {
+          "MEAQ30001": 1,
+          "MEAQ30002": 1,
+          "MEAQ30003": 1,
+          "MEAQ30004": 1,
+          "MEAQ30005": 1
+        }
       },
       "DA": {
         "method": "mean_coded",
         "description": "Distress Aversion",
-        "items": { "MEAQ30006": 1, "MEAQ30007": 1, "MEAQ30008": 1, "MEAQ30009": 1, "MEAQ30010": 1 }
+        "items": {
+          "MEAQ30006": 1,
+          "MEAQ30007": 1,
+          "MEAQ30008": 1,
+          "MEAQ30009": 1,
+          "MEAQ30010": 1
+        }
       },
       "PR": {
         "method": "mean_coded",
         "description": "Procrastination. Item 15 is reverse-scored.",
-        "items": { "MEAQ30011": 1, "MEAQ30012": 1, "MEAQ30013": 1, "MEAQ30014": 1, "MEAQ30015": -1 }
+        "items": {
+          "MEAQ30011": 1,
+          "MEAQ30012": 1,
+          "MEAQ30013": 1,
+          "MEAQ30014": 1,
+          "MEAQ30015": -1
+        }
       },
       "DS": {
         "method": "mean_coded",
         "description": "Distraction and Suppression",
-        "items": { "MEAQ30016": 1, "MEAQ30017": 1, "MEAQ30018": 1, "MEAQ30019": 1, "MEAQ30020": 1 }
+        "items": {
+          "MEAQ30016": 1,
+          "MEAQ30017": 1,
+          "MEAQ30018": 1,
+          "MEAQ30019": 1,
+          "MEAQ30020": 1
+        }
       },
       "RD": {
         "method": "mean_coded",
         "description": "Repression/Denial",
-        "items": { "MEAQ30021": 1, "MEAQ30022": 1, "MEAQ30023": 1, "MEAQ30024": 1, "MEAQ30025": 1 }
+        "items": {
+          "MEAQ30021": 1,
+          "MEAQ30022": 1,
+          "MEAQ30023": 1,
+          "MEAQ30024": 1,
+          "MEAQ30025": 1
+        }
       },
       "DE": {
         "method": "mean_coded",
         "description": "Distress Endurance — high scores indicate low avoidance (opposite direction from other subscales)",
-        "items": { "MEAQ30026": 1, "MEAQ30027": 1, "MEAQ30028": 1, "MEAQ30029": 1, "MEAQ30030": 1 }
+        "items": {
+          "MEAQ30026": 1,
+          "MEAQ30027": 1,
+          "MEAQ30028": 1,
+          "MEAQ30029": 1,
+          "MEAQ30030": 1
+        }
       }
     }
   },
@@ -142,10 +332,6 @@
     "en": {
       "MEAQ30_head": "Please indicate how much you agree or disagree with each statement.",
       "MEAQ30_r1": "Strongly disagree",
-      "MEAQ30_r2": "2",
-      "MEAQ30_r3": "3",
-      "MEAQ30_r4": "4",
-      "MEAQ30_r5": "5",
       "MEAQ30_r6": "Strongly agree",
       "MEAQ30001": "I won't do something if I think it will make me uncomfortable.",
       "MEAQ30002": "I avoid activities if there is even a small possibility of getting hurt.",

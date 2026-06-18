@@ -1,0 +1,202 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Warwick-Edinburgh Mental Well-being Scale",
+      "code": "WEMWBS",
+      "abbreviation": "WEMWBS",
+      "version": "1.0",
+      "description": "Unidimensional scale measuring mental well-being across hedonic and eudaimonic dimensions. All items are positively worded, covering positive affect, satisfying interpersonal relationships, and positive functioning. Respondents rate each statement over the past 2 weeks. Full version (WEMWBS): 14 items, score 14–70. Short version (SWEMWBS): 7 items, score 7–35. Higher scores indicate greater well-being. Select version via the 'version' parameter.",
+      "citation": "Tennant, R., Hiller, L., Fishwick, R., Platt, S., Joseph, S., Weich, S., Parkinson, J., Secker, J., & Stewart-Brown, S. (2007). The Warwick-Edinburgh Mental Well-being Scale (WEMWBS): Development and UK validation. Health and Quality of Life Outcomes, 5, 63. https://doi.org/10.1186/1477-7525-5-63",
+      "license": "CC BY 2.0",
+      "license_url": "https://link.springer.com/article/10.1186/1477-7525-5-63",
+      "url": "https://warwick.ac.uk/services/innovations/wemwbs",
+      "domain": "Well-being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-18",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "parameters": [
+      {
+        "id": "version",
+        "type": "choice",
+        "default": "full",
+        "choices": ["full", "short"],
+        "label": "Version",
+        "description": "full = WEMWBS (14 items); short = SWEMWBS (7 items)"
+      }
+    ],
+    "variants": {
+      "axes": [
+        {
+          "id": "version",
+          "parameter": "version",
+          "sets": ["full", "short"]
+        }
+      ],
+      "sets": {
+        "full": {
+          "name": "WEMWBS (14-item)",
+          "items": ["wemwbs1","wemwbs2","wemwbs3","wemwbs4","wemwbs5","wemwbs6","wemwbs7","wemwbs8","wemwbs9","wemwbs10","wemwbs11","wemwbs12","wemwbs13","wemwbs14"]
+        },
+        "short": {
+          "name": "SWEMWBS (7-item)",
+          "items": ["wemwbs1","wemwbs2","wemwbs3","wemwbs6","wemwbs7","wemwbs9","wemwbs11"]
+        }
+      },
+      "default": "full"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "wemwbs_r1",
+        "wemwbs_r2",
+        "wemwbs_r3",
+        "wemwbs_r4",
+        "wemwbs_r5"
+      ],
+      "question_head": "wemwbs_inst"
+    },
+    "dimensions": [
+      {
+        "id": "wemwbs",
+        "name": "Mental Well-being",
+        "abbreviation": "MWB",
+        "description": "Sum of all administered items. WEMWBS: range 14–70; SWEMWBS: range 7–35. Higher scores indicate greater mental well-being."
+      }
+    ],
+    "items": [
+      {
+        "id": "wemwbs1",
+        "text_key": "wemwbs1",
+        "type": "likert",
+        "dimension": "wemwbs"
+      },
+      {
+        "id": "wemwbs2",
+        "text_key": "wemwbs2",
+        "type": "likert",
+        "dimension": "wemwbs"
+      },
+      {
+        "id": "wemwbs3",
+        "text_key": "wemwbs3",
+        "type": "likert",
+        "dimension": "wemwbs"
+      },
+      {
+        "id": "wemwbs4",
+        "text_key": "wemwbs4",
+        "type": "likert",
+        "dimension": "wemwbs",
+        "variant_when": { "parameter": "version", "operator": "==", "value": "full" }
+      },
+      {
+        "id": "wemwbs5",
+        "text_key": "wemwbs5",
+        "type": "likert",
+        "dimension": "wemwbs",
+        "variant_when": { "parameter": "version", "operator": "==", "value": "full" }
+      },
+      {
+        "id": "wemwbs6",
+        "text_key": "wemwbs6",
+        "type": "likert",
+        "dimension": "wemwbs"
+      },
+      {
+        "id": "wemwbs7",
+        "text_key": "wemwbs7",
+        "type": "likert",
+        "dimension": "wemwbs"
+      },
+      {
+        "id": "wemwbs8",
+        "text_key": "wemwbs8",
+        "type": "likert",
+        "dimension": "wemwbs",
+        "variant_when": { "parameter": "version", "operator": "==", "value": "full" }
+      },
+      {
+        "id": "wemwbs9",
+        "text_key": "wemwbs9",
+        "type": "likert",
+        "dimension": "wemwbs"
+      },
+      {
+        "id": "wemwbs10",
+        "text_key": "wemwbs10",
+        "type": "likert",
+        "dimension": "wemwbs",
+        "variant_when": { "parameter": "version", "operator": "==", "value": "full" }
+      },
+      {
+        "id": "wemwbs11",
+        "text_key": "wemwbs11",
+        "type": "likert",
+        "dimension": "wemwbs"
+      },
+      {
+        "id": "wemwbs12",
+        "text_key": "wemwbs12",
+        "type": "likert",
+        "dimension": "wemwbs",
+        "variant_when": { "parameter": "version", "operator": "==", "value": "full" }
+      },
+      {
+        "id": "wemwbs13",
+        "text_key": "wemwbs13",
+        "type": "likert",
+        "dimension": "wemwbs",
+        "variant_when": { "parameter": "version", "operator": "==", "value": "full" }
+      },
+      {
+        "id": "wemwbs14",
+        "text_key": "wemwbs14",
+        "type": "likert",
+        "dimension": "wemwbs",
+        "variant_when": { "parameter": "version", "operator": "==", "value": "full" }
+      }
+    ],
+    "scoring": {
+      "wemwbs": {
+        "method": "sum_coded",
+        "items": [
+          "wemwbs1","wemwbs2","wemwbs3","wemwbs4","wemwbs5",
+          "wemwbs6","wemwbs7","wemwbs8","wemwbs9","wemwbs10",
+          "wemwbs11","wemwbs12","wemwbs13","wemwbs14"
+        ]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "wemwbs_inst": "Below are some statements about feelings and thoughts. Please select the answer that best describes your experience of each over the last 2 weeks.",
+      "wemwbs_r1": "None of the time",
+      "wemwbs_r2": "Rarely",
+      "wemwbs_r3": "Some of the time",
+      "wemwbs_r4": "Often",
+      "wemwbs_r5": "All of the time",
+      "wemwbs1": "I've been feeling optimistic about the future",
+      "wemwbs2": "I've been feeling useful",
+      "wemwbs3": "I've been feeling relaxed",
+      "wemwbs4": "I've been feeling interested in other people",
+      "wemwbs5": "I've had energy to spare",
+      "wemwbs6": "I've been dealing with problems well",
+      "wemwbs7": "I've been thinking clearly",
+      "wemwbs8": "I've been feeling good about myself",
+      "wemwbs9": "I've been feeling close to other people",
+      "wemwbs10": "I've been feeling confident",
+      "wemwbs11": "I've been able to make up my own mind about things",
+      "wemwbs12": "I've been feeling loved",
+      "wemwbs13": "I've been interested in new things",
+      "wemwbs14": "I've been feeling cheerful"
+    }
+  }
+}

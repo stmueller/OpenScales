@@ -318,7 +318,11 @@ def validate_xlsform_name(name):
 
 def _simple_condition_to_xpath(cond):
     """Convert a single leaf condition dict to an XPath fragment."""
-    item = cond.get("item") or cond.get("question") or cond.get("parameter")
+    # Parameter conditions are pre-launch settings, not runtime fields —
+    # variant resolution handles them; skip in relevant expressions.
+    if "parameter" in cond and "item" not in cond and "question" not in cond:
+        return "true()"
+    item = cond.get("item") or cond.get("question")
     if not item:
         return "true()"
     op_raw = cond.get("operator", cond.get("op", "=="))
@@ -565,13 +569,20 @@ def _scoring_items_list(score_def):
 
 
 def build_xlsform_calculate(score_id, score_def, definition, code,
-                             all_score_names):
+                             all_score_names, active_item_ids=None):
     """Build an XPath calculate expression for XLSForm.
 
+    active_item_ids: set of item IDs present in the flattened form; scoring
+    references to absent items (e.g. from inactive variants) are skipped.
     Returns expression string or empty string if not computable.
     """
     method = score_def.get("method", "")
-    item_pairs = _scoring_items_list(score_def)
+    raw_pairs = _scoring_items_list(score_def)
+    # Filter to items that actually exist in this variant of the form
+    if active_item_ids is not None:
+        item_pairs = [(iid, c) for iid, c in raw_pairs if iid in active_item_ids]
+    else:
+        item_pairs = raw_pairs
     scores_refs = score_def.get("scores", [])  # composite: references other scores
 
     # Determine reverse-sum floor for likert scale
@@ -1004,12 +1015,15 @@ def generate_xlsform(definition, translations, all_translations=None):
                                                 name=group_name))
 
         elif qtype in ("inst", "section"):
-            # Sections are structural dividers — no relevant expression
-            # (their skip logic belongs on the items they contain, not the header)
+            # Sections are structural dividers — no relevant expression.
+            # Skip if label is blank — pyxform requires note to have a label.
+            clean_label = strip_html(label)
+            if not clean_label:
+                continue
             row = _make_survey_row(
                 type_="note",
                 name=field_name,
-                label=strip_html(label),
+                label=clean_label,
                 relevant=relevant if qtype == "inst" else "",
             )
             _add_lang_labels(row, lang_labels, langs)
@@ -1078,16 +1092,14 @@ def generate_xlsform(definition, translations, all_translations=None):
             survey_rows.append(row)
 
     # --- Scoring calculate fields ---
+    # calculate rows must be at the top level (not inside a group) — ODK rejects
+    # groups whose only children are calculate fields (invisible in body).
     if scoring:
         all_score_names = set(scoring.keys())
-
-        # begin group for scoring section
-        survey_rows.append(_make_survey_row(
-            type_="begin group",
-            name=f"{make_xlsform_name(code)}_scoring",
-            label="Computed Scores",
-            appearance="field-list",
-        ))
+        active_item_ids = {
+            q.get("id") for q in questions
+            if isinstance(q, dict) and q.get("id")
+        }
 
         for score_id, score_def in scoring.items():
             if not isinstance(score_def, dict):
@@ -1095,7 +1107,8 @@ def generate_xlsform(definition, translations, all_translations=None):
 
             method = score_def.get("method", "")
             expression = build_xlsform_calculate(
-                score_id, score_def, definition, code, all_score_names)
+                score_id, score_def, definition, code, all_score_names,
+                active_item_ids=active_item_ids)
             if not expression:
                 continue
 
@@ -1106,7 +1119,6 @@ def generate_xlsform(definition, translations, all_translations=None):
 
             calc_name = make_xlsform_name(f"{code}_{score_id}")
             desc = score_def.get("description", "")
-            # calculate rows: label is optional metadata
             note_label = (f"{score_id} ({method})"
                           + (f" - {normalize_text(desc)}" if desc else ""))
             note_label = note_label[:200]
@@ -1117,11 +1129,6 @@ def generate_xlsform(definition, translations, all_translations=None):
                 label=note_label,
                 calculation=expression,
             ))
-
-        survey_rows.append(_make_survey_row(
-            type_="end group",
-            name=f"{make_xlsform_name(code)}_scoring",
-        ))
 
     return survey_rows, choices, langs
 

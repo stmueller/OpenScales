@@ -86,6 +86,36 @@ SETTINGS_COLUMNS = [
     "default_language",
 ]
 
+# Unicode → ASCII equivalents for XLSForm/Enketo XML compatibility
+_UNICODE_NORMALIZE = str.maketrans({
+    "–": "-",    # en-dash
+    "—": "--",   # em-dash
+    "‘": "'",    # left single quote
+    "’": "'",    # right single quote / apostrophe
+    "“": '"',    # left double quote
+    "”": '"',    # right double quote
+    "…": "...",  # ellipsis
+    "≥": ">=",   # greater-than-or-equal
+    "≤": "<=",   # less-than-or-equal
+    "±": "+/-",  # plus-minus
+    "°": " deg", # degree sign
+    "×": "x",    # multiplication sign
+    "·": "*",    # middle dot / multiplication
+    "−": "-",    # minus sign (not hyphen)
+    "→": "->",   # right arrow
+    "←": "<-",   # left arrow
+    "↑": "^",    # up arrow
+    "↓": "v",    # down arrow
+})
+
+
+def normalize_text(s):
+    """Replace common non-ASCII typography with ASCII equivalents."""
+    if not s:
+        return s
+    return s.translate(_UNICODE_NORMALIZE)
+
+
 # Header fill colours (pale blue / pale green)
 HEADER_FILL_SURVEY = PatternFill("solid", fgColor="DCEBF7")
 HEADER_FILL_CHOICES = PatternFill("solid", fgColor="DCF7DC")
@@ -217,10 +247,10 @@ def get_text(translations, key, fallback=None):
 
 
 def strip_html(text):
-    """Strip HTML tags for plain-text contexts."""
+    """Strip HTML tags and normalize typography for XLSForm compatibility."""
     if not text:
         return ""
-    return re.sub(r"<[^>]+>", "", str(text)).strip()
+    return normalize_text(re.sub(r"<[^>]+>", "", str(text)).strip())
 
 
 def get_effective_scale(question, definition):
@@ -1076,9 +1106,9 @@ def generate_xlsform(definition, translations, all_translations=None):
 
             calc_name = make_xlsform_name(f"{code}_{score_id}")
             desc = score_def.get("description", "")
-            # calculate rows: label is optional metadata; omit to avoid pyxform issues
+            # calculate rows: label is optional metadata
             note_label = (f"{score_id} ({method})"
-                          + (f" - {desc}" if desc else ""))
+                          + (f" - {normalize_text(desc)}" if desc else ""))
             note_label = note_label[:200]
 
             survey_rows.append(_make_survey_row(

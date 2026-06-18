@@ -1,0 +1,102 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "ONS Subjective Well-being Scale",
+      "code": "ONS-SWB4",
+      "abbreviation": "ONS-SWB4",
+      "version": "1.0",
+      "description": "Four single-item measures of subjective well-being developed by the UK Office for National Statistics (ONS). Respondents rate life satisfaction, sense of worth, happiness yesterday, and anxiety yesterday on 0–10 scales. Used in the Annual Population Survey and other UK national surveys.",
+      "citation": "Tinkler, L., & Hicks, S. (2011). Measuring subjective well-being. Office for National Statistics. https://www.ons.gov.uk/",
+      "license": "CC BY-NC-ND 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "url": "https://www.researchgate.net/publication/298713256_The_Office_for_National_Statistics_experience_of_collecting_and_measuring_subjective_well-being",
+      "domain": "Well-being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-17",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "dimensions": [
+      {
+        "id": "swb",
+        "name": "Subjective Well-being",
+        "abbreviation": "SWB",
+        "description": "Sum of all four items (satisfaction, worth, happiness, anxiety). Range 0–40."
+      }
+    ],
+    "items": [
+      {
+        "id": "inst",
+        "text_key": "inst",
+        "type": "inst"
+      },
+      {
+        "id": "satisfaction",
+        "text_key": "q_satisfaction",
+        "type": "vas",
+        "min": 0,
+        "max": 10,
+        "min_label": "vas_min_satisfied",
+        "max_label": "vas_max_satisfied",
+        "dimension": "swb"
+      },
+      {
+        "id": "worth",
+        "text_key": "q_worth",
+        "type": "vas",
+        "min": 0,
+        "max": 10,
+        "min_label": "vas_min_worthwhile",
+        "max_label": "vas_max_worthwhile",
+        "dimension": "swb"
+      },
+      {
+        "id": "happiness",
+        "text_key": "q_happiness",
+        "type": "vas",
+        "min": 0,
+        "max": 10,
+        "min_label": "vas_min_happy",
+        "max_label": "vas_max_happy",
+        "dimension": "swb"
+      },
+      {
+        "id": "anxiety",
+        "text_key": "q_anxiety",
+        "type": "vas",
+        "min": 0,
+        "max": 10,
+        "min_label": "vas_min_anxious",
+        "max_label": "vas_max_anxious",
+        "dimension": "swb"
+      }
+    ],
+    "scoring": {
+      "swb": {
+        "method": "sum_coded",
+        "items": ["satisfaction", "worth", "happiness", "anxiety"]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "inst": "Next I would like to ask you four questions about your feelings on aspects of your life. There are no right or wrong answers. For each of these questions I'd like you to give an answer on a scale of 0 to 10, where 0 is 'not at all' and 10 is 'completely'.",
+      "q_satisfaction": "Overall, how satisfied are you with your life nowadays?",
+      "vas_min_satisfied": "Not at all satisfied",
+      "vas_max_satisfied": "Completely satisfied",
+      "q_worth": "Overall, to what extent do you feel that the things you do in your life are worthwhile?",
+      "vas_min_worthwhile": "Not at all worthwhile",
+      "vas_max_worthwhile": "Completely worthwhile",
+      "q_happiness": "Overall, how happy did you feel yesterday?",
+      "vas_min_happy": "Not at all happy",
+      "vas_max_happy": "Completely happy",
+      "q_anxiety": "On a scale where 0 is 'not at all anxious' and 10 is 'completely anxious', overall, how anxious did you feel yesterday?",
+      "vas_min_anxious": "Not at all anxious",
+      "vas_max_anxious": "Completely anxious"
+    }
+  }
+}

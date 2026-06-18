@@ -1249,7 +1249,7 @@ def write_xlsform(survey_rows, choices_registry, langs, definition, code,
     form_title = scale_info.get("name", code)
     form_id = code.lower()
     version = date.today().strftime("%Y%m%d")
-    default_language = langs[0] if langs else ""
+    default_language = langs[0] if langs else "English (en)"
 
     ws_settings.append([form_title, form_id, version, default_language])
     _auto_width(ws_settings)

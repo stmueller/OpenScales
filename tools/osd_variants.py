@@ -50,15 +50,35 @@ def _eval_condition(cond, params):
     return True
 
 
-def active_variant_set_ids(definition, lang):
-    """Set of variant-set ids active for `lang` (sets whose `languages` include
-    it; else a string `default`). None when the scale defines no `sets`."""
+def active_variant_set_ids(definition, lang, params=None):
+    """Set of variant-set ids active for `lang` and `params`.
+
+    Handles two variant axis types:
+    - Language-based: sets with a `languages` array containing `lang`
+    - Parameter-based: axes with a `parameter` field resolved via `params`
+
+    Falls back to `variants.default` if no axis matches.
+    """
     v = definition.get("variants") or {}
     sets = v.get("sets")
     if not sets:
         return None
-    ids = [sid for sid, sd in sets.items()
-           if isinstance(sd, dict) and lang in (sd.get("languages") or [])]
+    p = params or {}
+    ids = []
+
+    # Language-based sets
+    ids += [sid for sid, sd in sets.items()
+            if isinstance(sd, dict) and lang in (sd.get("languages") or [])]
+
+    # Parameter-axis sets: each axis maps a parameter value to a set id
+    for axis in (v.get("axes") or []):
+        param_name = axis.get("parameter")
+        if not param_name:
+            continue
+        val = p.get(param_name)
+        if val is not None and val in sets:
+            ids.append(val)
+
     if not ids and isinstance(v.get("default"), str):
         ids = [v["default"]]
     return set(ids)
@@ -113,14 +133,20 @@ def flatten_variant(definition, lang, params=None):
 
     d = copy.deepcopy(definition)
     p = {}
-    for name, pd in (d.get("parameters") or {}).items():
-        if isinstance(pd, dict) and "default" in pd:
-            p[name] = pd["default"]
+    raw_params = d.get("parameters") or {}
+    if isinstance(raw_params, list):
+        for pd in raw_params:
+            if isinstance(pd, dict) and "id" in pd and "default" in pd:
+                p[pd["id"]] = pd["default"]
+    else:
+        for name, pd in raw_params.items():
+            if isinstance(pd, dict) and "default" in pd:
+                p[name] = pd["default"]
     if params:
         p.update(params)
     p["__lang__"] = lang
 
-    active_sets = active_variant_set_ids(d, lang)
+    active_sets = active_variant_set_ids(d, lang, p)
     governed = _governed_sets(d)
 
     ik = _items_key(d)

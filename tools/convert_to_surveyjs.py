@@ -121,6 +121,8 @@ def convert(scale_dir, lang="en"):
     # Track pending likert rows to group into matrix blocks
     pending_matrix = []
     pending_matrix_visible_if = None
+    # Map item_id -> matrix_name for scoring expression generation
+    item_to_matrix = {}
 
     def flush_matrix():
         """Emit accumulated likert rows as a single matrix element."""
@@ -129,9 +131,13 @@ def convert(scale_dir, lang="en"):
         q_head_key = lo.get("question_head") if lo else None
         q_head = _t(translations, lang, q_head_key) if q_head_key else ""
 
+        matrix_name = f"matrix_{pending_matrix[0]['name']}"
+        for r in pending_matrix:
+            item_to_matrix[r["name"]] = matrix_name
+
         matrix = {
             "type": "matrix",
-            "name": f"matrix_{pending_matrix[0]['name']}",
+            "name": matrix_name,
             "title": q_head,
             "columns": _build_likert_columns(lo, translations, lang),
             "rows": [{"value": r["name"], "text": r["title"]} for r in pending_matrix],
@@ -258,29 +264,25 @@ def convert(scale_dir, lang="en"):
 
     flush_matrix()
 
-    # Debrief text
-    debrief_key = "debrief"
-    debrief = _t(translations, lang, debrief_key)
-    if debrief:
-        elements.append({"type": "html", "name": "debrief", "html": f"<p>{debrief}</p>"})
+    # Build calculatedValues for numeric scoring dimensions
+    calc_values = _build_calculated_values(defn, items, lo, item_to_matrix)
 
-    # Scoring note (researcher-facing html block)
+    # Debrief + scoring note go into completedHtml (shown after submission, not on survey page)
+    completed_parts = []
+    debrief = _t(translations, lang, "debrief")
+    if debrief:
+        completed_parts.append(f"<p>{debrief}</p>")
     scoring_html = _build_scoring_html(defn, code)
     if scoring_html:
-        elements.append({
-            "type": "html",
-            "name": "scoring_note",
-            "html": scoring_html,
-        })
-
-    # Build calculatedValues for numeric scoring dimensions
-    calc_values = _build_calculated_values(defn, items, lo)
+        completed_parts.append(scoring_html)
 
     survey = {
         "title": title,
         "description": scale_info.get("description", ""),
         "pages": [{"name": "page1", "elements": elements}],
     }
+    if completed_parts:
+        survey["completedHtml"] = "".join(completed_parts)
     if calc_values:
         survey["calculatedValues"] = calc_values
 
@@ -314,16 +316,19 @@ def _build_scoring_html(defn, code):
     return "".join(lines)
 
 
-def _build_calculated_values(defn, items, lo):
-    """Build SurveyJS calculatedValues for scoring dimensions."""
+def _build_calculated_values(defn, items, lo, item_to_matrix=None):
+    """Build SurveyJS calculatedValues for scoring dimensions.
+
+    Matrix row answers are accessed as {matrixName.rowId} in SurveyJS expressions.
+    item_to_matrix maps item_id -> matrix element name for likert items.
+    """
     scoring = defn.get("scoring", {})
     if not scoring:
         return []
 
-    # Map item ids to their reverse-score weight
-    # scoring[dim]["items"] can be:
-    #   list of item ids (weight=1 each), or
-    #   dict of {item_id: weight}
+    if item_to_matrix is None:
+        item_to_matrix = {}
+
     calc = []
     for dim_id, dim_score in scoring.items():
         raw_items = dim_score.get("items", [])
@@ -335,33 +340,29 @@ def _build_calculated_values(defn, items, lo):
         if not item_weights:
             continue
 
-        # Build JS expression
-        # For likert matrix, name = item_id directly
-        # SurveyJS: {item_id} resolves to selected value (numeric if choices have numeric values)
         parts = []
         for iid, weight in item_weights.items():
-            # Find item type
             itype = next((it.get("type", "likert") for it in items if it.get("id") == iid), "likert")
-            if itype == "likert" and lo:
-                # matrix rows: access via {iid} - SurveyJS stores row answers keyed by row value
-                # For a matrix named matrix_X, answers are stored as {matrix_X: {row_id: col_value}}
-                # We need to find which matrix contains this item
-                matrix_name = f"matrix_{iid}"  # approximate; first row of its matrix
+            if itype == "likert" and lo and iid in item_to_matrix:
+                # SurveyJS matrix answers: {matrixName.rowValue}
+                matrix_name = item_to_matrix[iid]
+                ref = f"{{{matrix_name}.{iid}}}"
                 if weight == 1:
-                    parts.append(f"{{row_{iid}}}")
+                    parts.append(ref)
                 elif weight == -1:
-                    max_val = (lo.get("min", 1) + lo.get("points", 5) - 1)
+                    max_val = lo.get("min", 1) + lo.get("points", 5) - 1
                     min_val = lo.get("min", 1)
-                    parts.append(f"({min_val + max_val} - {{row_{iid}}})")
+                    parts.append(f"({min_val + max_val} - {ref})")
                 else:
-                    parts.append(f"({weight} * {{row_{iid}}})")
+                    parts.append(f"({weight} * {ref})")
             else:
+                ref = f"{{{iid}}}"
                 if weight == 1:
-                    parts.append(f"{{{iid}}}")
+                    parts.append(ref)
                 elif weight == -1:
-                    parts.append(f"(-1 * {{{iid}}})")
+                    parts.append(f"(-1 * {ref})")
                 else:
-                    parts.append(f"({weight} * {{{iid}}})")
+                    parts.append(f"({weight} * {ref})")
 
         expr = " + ".join(parts)
         calc.append({

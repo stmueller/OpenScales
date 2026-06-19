@@ -1275,6 +1275,8 @@ Show or hide items or sections based on previous answers or parameters.
 | `not_in` | Value is not in list |
 | `is_answered` | Item has been answered |
 | `is_not_answered` | Item has not been answered |
+| `is_true` | Parameter or item value is truthy |
+| `is_false` | Parameter or item value is falsy |
 
 **Conditions on parameters:**
 

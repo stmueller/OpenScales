@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SurveyJS Test Runner</title>
+  <link rel="stylesheet" href="https://unpkg.com/survey-core/defaultV2.min.css">
+  <style>
+    body { font-family: sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    #toolbar { margin-bottom: 20px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    #toolbar label { font-weight: bold; }
+    #fileInput { flex: 1; }
+    #surveyContainer { min-height: 100px; }
+    #results { margin-top: 24px; background: #f5f5f5; padding: 16px; border-radius: 6px; display: none; }
+    #results h2 { margin: 0 0 8px; font-size: 1em; }
+    #results pre { margin: 0; font-size: 0.85em; white-space: pre-wrap; word-break: break-all; }
+    .dim { color: #666; font-size: 0.9em; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <div id="toolbar">
+    <label for="fileInput">SurveyJS JSON:</label>
+    <input type="file" id="fileInput" accept=".json">
+    <span class="dim">or drag &amp; drop a JSON file onto the page</span>
+  </div>
+
+  <div id="surveyContainer"><em style="color:#999">Load a JSON file above to begin.</em></div>
+
+  <div id="results">
+    <h2>Results (after Complete)</h2>
+    <pre id="resultsJson"></pre>
+  </div>
+
+  <script src="https://unpkg.com/survey-core/survey.core.min.js"></script>
+  <script src="https://unpkg.com/survey-js-ui/survey-js-ui.min.js"></script>
+  <script>
+    let currentSurvey = null;
+
+    function loadSurveyJson(json) {
+      document.getElementById("results").style.display = "none";
+      document.getElementById("resultsJson").textContent = "";
+
+      let surveyJson;
+      try {
+        surveyJson = JSON.parse(json);
+      } catch(e) {
+        document.getElementById("surveyContainer").innerHTML =
+          '<p style="color:red">JSON parse error: ' + e.message + '</p>';
+        return;
+      }
+
+      document.getElementById("surveyContainer").innerHTML = "";
+      const survey = new Survey.Model(surveyJson);
+      currentSurvey = survey;
+
+      survey.onComplete.add(function(sender) {
+        const data = sender.data;
+        console.log("Survey complete:", data);
+        document.getElementById("results").style.display = "block";
+        document.getElementById("resultsJson").textContent = JSON.stringify(data, null, 2);
+      });
+
+      survey.render(document.getElementById("surveyContainer"));
+    }
+
+    document.getElementById("fileInput").addEventListener("change", function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      document.title = "SurveyJS Test — " + file.name;
+      const reader = new FileReader();
+      reader.onload = function(ev) { loadSurveyJson(ev.target.result); };
+      reader.readAsText(file);
+    });
+
+    // Drag-and-drop support
+    document.addEventListener("dragover", function(e) { e.preventDefault(); });
+    document.addEventListener("drop", function(e) {
+      e.preventDefault();
+      const file = e.dataTransfer.files[0];
+      if (!file || !file.name.endsWith(".json")) return;
+      document.title = "SurveyJS Test — " + file.name;
+      const reader = new FileReader();
+      reader.onload = function(ev) { loadSurveyJson(ev.target.result); };
+      reader.readAsText(file);
+    });
+  </script>
+</body>
+</html>

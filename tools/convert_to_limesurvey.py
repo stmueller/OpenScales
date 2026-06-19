@@ -25,7 +25,7 @@ Supported conversions:
   multicheck    -> M  (multiple choice checkboxes) — options become subquestions
   short         -> S  (short free text)
   long          -> T  (long free text)
-  vas           -> N  (numerical input) [approximation — note emitted]
+  vas           -> K  (Multiple Numerical slider; set slider_layout=1 after import)
   grid          -> F  (array, flexible) — rows=subquestions, columns=answers
   image         -> X  (text display with image path noted) [note emitted]
   imageresponse -> X  (text display with image path noted) [note emitted]
@@ -33,7 +33,8 @@ Supported conversions:
 Limitations (noted to stderr):
   - Scoring, reverse coding, and dimension subscales must be configured
     manually in LimeSurvey after import.
-  - VAS slider is approximated as numerical input (N).
+  - VAS exports as K (Multiple Numerical) with one subquestion. Set slider_layout=1
+    and slider_min/max in question attributes after import to activate the slider.
   - image/imageresponse become text-display items; images must be uploaded
     manually in LimeSurvey.
   - C9 validation: regex pattern → preg column; number_min/max → numeric
@@ -42,6 +43,7 @@ Limitations (noted to stderr):
 """
 
 import json
+import random
 import re
 import sys
 from pathlib import Path
@@ -109,6 +111,11 @@ def strip_html(text):
     return re.sub(r"<[^>]+>", "", text).strip()
 
 
+def escape_em(text):
+    """Escape curly braces so LimeSurvey Expression Manager doesn't parse them."""
+    return text.replace("{", "&#123;").replace("}", "&#125;")
+
+
 # ---------------------------------------------------------------------------
 # LimeSurvey TSV specifics
 # ---------------------------------------------------------------------------
@@ -123,12 +130,11 @@ COLUMNS = [
 # OpenScales type → LimeSurvey one-letter type code
 TYPE_MAP = {
     "inst":          "X",
-    "likert":        "L",
     "multi":         "L",
     "multicheck":    "M",
     "short":         "S",
     "long":          "T",
-    "vas":           "N",
+    "vas":           "K",
     "grid":          "F",
     "image":         "X",
     "imageresponse": "X",
@@ -152,7 +158,7 @@ class TSVWriter:
             validation="", mandatory="", other="", default="", same_default=""):
         self._rows.append([
             str(id_), str(related_id), class_, type_scale, name,
-            relevance, text, help_, language,
+            relevance, escape_em(text), escape_em(help_), language,
             validation, mandatory, other, default, same_default,
         ])
 
@@ -291,41 +297,157 @@ def generate_limesurvey(definition, translations_by_lang, primary_lang="en"):
     primary_trans = translations_by_lang.get(primary_lang, {})
 
     # ------------------------------------------------------------------ S rows
-    # Minimal survey-level settings LimeSurvey needs
-    w.add(class_="S", name="format", text="I")          # I = one question per page
+    # Survey-level settings. sid/gsid are required by the TSV importer to avoid
+    # crashes on PHP 8.3; LS will assign a new sid on import regardless.
+    dummy_sid = str(random.randint(100000, 999999))
+    w.add(class_="S", name="sid", text=dummy_sid)
+    w.add(class_="S", name="gsid", text="1")
+    w.add(class_="S", name="format", text="I")
     w.add(class_="S", name="language", text=primary_lang)
+    w.add(class_="S", name="template", text="inherit")
+    w.add(class_="S", name="anonymized", text="N")
+    w.add(class_="S", name="startdate", text="1980-01-01 00:00:00")
     if len(langs) > 1:
         w.add(class_="S", name="additional_languages",
               text=" ".join(langs[1:]))
 
     # ----------------------------------------------------------------- SL rows
-    # Localised survey title (and description if present)
-    desc = scale_info.get("description", "")
+    # Use first inst item text as participant-facing description; skip scale_info
+    # description (researcher metadata, not for participants).
+    first_inst = next((q for q in questions if q.get("type") == "inst"), None)
     for lang in langs:
         w.add(class_="SL", name="surveyls_title", text=survey_name,
               language=lang)
-        if desc:
-            w.add(class_="SL", name="surveyls_description", text=desc,
-                  language=lang)
+        if first_inst:
+            trans = translations_by_lang.get(lang, {})
+            inst_text = strip_html(get_text(trans, first_inst.get("text_key", ""), ""))
+            if inst_text:
+                w.add(class_="SL", name="surveyls_description", text=inst_text,
+                      language=lang)
 
     # ------------------------------------------------------------------ G rows
-    # One group containing all questions
-    group_id = w.next_id()
-    code = scale_info.get("code", "scale")
-    for lang in langs:
-        w.add(id_=group_id, class_="G",
-              name=code,
-              relevance="1",
-              text="",
-              language=lang)
+    # Groups are emitted lazily: a default group is created only when a question
+    # needs one and no section has been seen yet, preventing empty initial groups.
+    code = scale_info.get("code", "scale").replace("_", "")
+    likert_head_key = likert_opts.get("question_head", "")
+    _group_emitted = [False]  # mutable flag for closure
+
+    def _ensure_group():
+        if _group_emitted[0]:
+            return
+        gid = w.next_id()
+        for lang in langs:
+            trans = translations_by_lang.get(lang, {})
+            group_name = get_text(trans, likert_head_key, code) if likert_head_key else code
+            w.add(id_=gid, class_="G",
+                  name=group_name,
+                  relevance="1",
+                  language=lang)
+        _group_emitted[0] = True
 
     # ------------------------------------------------------------------ Q rows
+    # Likert items are batched into Array (F) questions grouped by response scale.
+    # A new array starts when the response scale changes or a non-likert item appears.
+
+    def _scale_key(q):
+        """Return a hashable key identifying the response scale of a likert item."""
+        rs_id = q.get("response_scale")
+        if rs_id:
+            return ("rs", rs_id)
+        eff = _get_effective_scale(q, definition)
+        labels = tuple(eff.get("labels", []))
+        return ("lo", eff.get("points", 5), eff.get("min", 1), labels)
+
+    def _flush_likert_block(block, block_scale_key):
+        """Emit one Array (F) question for a block of likert items."""
+        if not block:
+            return
+        _ensure_group()
+        # Use first item's id as the array question name; LS title col is varchar(20)
+        array_name = ("arr" + block[0]["id"].replace("_", ""))[:20]
+        array_id = w.next_id()
+        mandatory = _get_mandatory(block[0], definition)
+
+        # Q row (type F = array)
+        for lang in langs:
+            w.add(id_=array_id, class_="Q",
+                  type_scale="F",
+                  name=array_name,
+                  relevance="1",
+                  text="",
+                  language=lang,
+                  mandatory=mandatory,
+                  other="N")
+
+        # SQ rows — one per item (the rows of the array)
+        for q in block:
+            sq_id = w.next_id()
+            sq_code = q["id"].replace("_", "")
+            text_key = q.get("text_key", q["id"])
+            for lang in langs:
+                trans = translations_by_lang.get(lang, {})
+                text = strip_html(get_text(trans, text_key, q["id"]))
+                w.add(id_=sq_id, class_="SQ",
+                      type_scale="0",
+                      name=sq_code,
+                      relevance="1",
+                      text=text,
+                      language=lang)
+
+        # A rows — scale point columns, from the first item's scale
+        label_pairs = _get_likert_label_pairs(block[0], definition, primary_trans)
+        for val, label_key in label_pairs:
+            ans_code = f"A{val:03d}"
+            for lang in langs:
+                trans = translations_by_lang.get(lang, {})
+                label_text = get_text(trans, label_key, str(val)) if label_key else str(val)
+                w.add(id_=array_id, class_="A",
+                      type_scale="0",
+                      name=ans_code,
+                      relevance=str(val),
+                      text=label_text,
+                      language=lang)
+
+    likert_block = []
+    current_scale_key = None
+
     for q in questions:
         qtype = q.get("type", "short")
-        qid_str = q["id"]
+
+        if qtype == "likert":
+            sk = _scale_key(q)
+            if sk != current_scale_key:
+                _flush_likert_block(likert_block, current_scale_key)
+                likert_block = []
+                current_scale_key = sk
+            likert_block.append(q)
+            continue
+
+        # Non-likert item — flush any pending block first
+        _flush_likert_block(likert_block, current_scale_key)
+        likert_block = []
+        current_scale_key = None
+
+        if qtype == "section":
+            # Each section starts a new group (= page break in LimeSurvey)
+            sec_code = q["id"].replace("_", "")[:20]
+            text_key = q.get("text_key", q["id"])
+            sec_gid = w.next_id()
+            for lang in langs:
+                trans = translations_by_lang.get(lang, {})
+                group_name = get_text(trans, text_key, sec_code)
+                w.add(id_=sec_gid, class_="G",
+                      name=group_name,
+                      relevance="1",
+                      language=lang)
+            _group_emitted[0] = True
+            continue
+
+        qid_str = q["id"].replace("_", "")
         text_key = q.get("text_key", qid_str)
         ls_type = TYPE_MAP.get(qtype, "T")
 
+        _ensure_group()
         q_num_id = w.next_id()
         relevance = _visible_when_to_relevance(q.get("visible_when"))
         mandatory = _get_mandatory(q, definition)
@@ -350,25 +472,7 @@ def generate_limesurvey(definition, translations_by_lang, primary_lang="en"):
 
         # ---------------------------------------------------------- Sub-rows
 
-        if qtype == "likert":
-            # A rows: one per scale point, per language
-            label_pairs = _get_likert_label_pairs(q, definition, primary_trans)
-            for val, label_key in label_pairs:
-                ans_code = f"A{val:03d}"
-                for lang in langs:
-                    trans = translations_by_lang.get(lang, {})
-                    if label_key:
-                        label_text = get_text(trans, label_key, str(val))
-                    else:
-                        label_text = str(val)
-                    w.add(id_=q_num_id, class_="A",
-                          type_scale="0",
-                          name=ans_code,
-                          relevance=str(val),   # assessment_value
-                          text=label_text,
-                          language=lang)
-
-        elif qtype == "multi":
+        if qtype == "multi":
             # A rows: one per option, per language
             for i, opt in enumerate(q.get("options", [])):
                 opt_key, opt_code = _option_key_and_code(opt, i)
@@ -425,11 +529,41 @@ def generate_limesurvey(definition, translations_by_lang, primary_lang="en"):
                           language=lang)
 
         elif qtype == "vas":
+            # Type K (Multiple Numerical) with slider_layout=1 renders as a real slider.
+            # Parent Q row carries no text; item text goes on the single SQ row.
+            # TSV doesn't support question attributes, so slider config must be set manually.
             min_v = q.get("min", q.get("min_value", 0))
             max_v = q.get("max", q.get("max_value", 100))
+
+            def _anchor_label(anchor, trans):
+                if isinstance(anchor, dict):
+                    key = anchor.get("label", "")
+                    return get_text(trans, key, key) if key else ""
+                return get_text(trans, anchor, anchor) if anchor else ""
+
+            sq_id = w.next_id()
+            sq_code = (qid_str + "sq")[:20]
+            for lang in langs:
+                trans = translations_by_lang.get(lang, {})
+                item_text = strip_html(get_text(trans, text_key, qid_str))
+                anchors = q.get("anchors", [])
+                min_label = get_text(trans, q["min_label"], "") if "min_label" in q else (
+                    _anchor_label(anchors[0], trans) if anchors else "")
+                max_label = get_text(trans, q["max_label"], "") if "max_label" in q else (
+                    _anchor_label(anchors[-1], trans) if anchors else "")
+                help_text = (min_label + (" | " if min_label and max_label else "") + max_label).strip()
+                w.add(id_=sq_id, class_="SQ",
+                      related_id=q_num_id,
+                      name=sq_code,
+                      relevance="1",
+                      text=item_text,
+                      help_=help_text,
+                      language=lang)
+
             warnings.append(
-                f"  {qid_str}: VAS (min={min_v}, max={max_v}) → N (numerical "
-                f"input). Configure slider/range manually in LimeSurvey."
+                f"  {qid_str}: VAS (min={min_v}, max={max_v}) exported as K (Multiple Numerical) slider. "
+                f"After import, set question attributes: slider_layout=1, slider_min={min_v}, "
+                f"slider_max={max_v}, slider_accuracy=1."
             )
 
         elif qtype in ("image", "imageresponse"):
@@ -453,6 +587,9 @@ def generate_limesurvey(definition, translations_by_lang, primary_lang="en"):
                 f"in LimeSurvey TSV: {', '.join(unsupported)}. "
                 f"Configure via question attributes after import."
             )
+
+    # Flush any trailing likert block
+    _flush_likert_block(likert_block, current_scale_key)
 
     # ---------------------------------------------------------- Scoring note
     scoring = definition.get("scoring", {})

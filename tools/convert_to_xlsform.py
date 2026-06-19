@@ -764,6 +764,14 @@ def generate_xlsform(definition, translations, all_translations=None):
             if items_on_page:
                 first_page_item[items_on_page[0]] = page
 
+    # Identify first likert item for question_head note emission
+    likert_opts = definition.get("likert_options", {})
+    global_question_head_key = likert_opts.get("question_head", "")
+    first_likert_id = next(
+        (q["id"] for q in questions if q.get("type") == "likert"),
+        None
+    )
+
     for q in questions:
         qtype = q.get("type", "")
         qid = q["id"]
@@ -803,6 +811,22 @@ def generate_xlsform(definition, translations, all_translations=None):
                             row[f"label::{_lang_tag(lang)}"] = get_text(
                                 trans, title_key, page_title)
                     survey_rows.append(row)
+
+        # --- Global question_head note (emitted before first likert item) ---
+        if qid == first_likert_id and global_question_head_key:
+            head_text = get_text(translations, global_question_head_key, "")
+            if head_text:
+                head_row = _make_survey_row(
+                    type_="note",
+                    name=make_xlsform_name(global_question_head_key),
+                    label=strip_html(head_text),
+                )
+                if langs:
+                    for lang in langs:
+                        trans = all_translations.get(lang, {})
+                        head_row[f"label::{_lang_tag(lang)}"] = strip_html(
+                            get_text(trans, global_question_head_key, head_text))
+                survey_rows.append(head_row)
 
         # --- Type dispatch ---
 

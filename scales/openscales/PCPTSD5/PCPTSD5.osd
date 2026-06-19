@@ -1,0 +1,132 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Primary Care PTSD Screen for DSM-5",
+      "code": "PCPTSD5",
+      "abbreviation": "PC-PTSD-5",
+      "description": "5-item PTSD screening tool for use in primary care and other medical settings. Item 1 screens for trauma exposure; items 2-6 assess PTSD symptoms over the past month. Score is the sum of items 2-6 (0-5). A score of 3 or more is recommended as a positive screen. Developed by Prins et al. for the VA National Center for PTSD.",
+      "citation": "Prins, A., Bovin, M. J., Smolenski, D. J., Marx, B. P., Kimerling, R., Jenkins-Guarnieri, M. A., Kaloupek, D. G., Schnurr, P. P., Kaiser, A. P., Leyva, Y. E., & Tiet, Q. Q. (2016). The Primary Care PTSD Screen for DSM-5 (PC-PTSD-5): Development and evaluation within a veteran primary care sample. Journal of General Internal Medicine, 31(10), 1206-1211. https://doi.org/10.1007/s11606-016-3703-5",
+      "license": "Public Domain",
+      "license_explanation": "Developed by employees of the US Department of Veterans Affairs (federal government). Work produced by US federal government employees in the course of their duties is not eligible for copyright under 17 U.S.C. § 105. The VA National Center for PTSD explicitly states the PC-PTSD-5 is in the public domain.",
+      "license_url": "https://www.ptsd.va.gov/professional/assessment/screens/pc-ptsd.asp",
+      "version": "1.0",
+      "url": "https://doi.org/10.1007/s11606-016-3703-5",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-19",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "dimensions": [
+      {
+        "id": "ptsd",
+        "name": "PTSD Screen",
+        "description": "Sum of symptom items 2-6 (0-5). Score ≥3 is a positive screen."
+      }
+    ],
+    "items": [
+      {
+        "id": "pcptsd_intro",
+        "text_key": "pcptsd_intro",
+        "type": "inst"
+      },
+      {
+        "id": "pcptsd1",
+        "text_key": "pcptsd1",
+        "type": "multi",
+        "options": [
+          { "text_key": "yes", "value": 1 },
+          { "text_key": "no",  "value": 0 }
+        ]
+      },
+      {
+        "id": "pcptsd_month_head",
+        "text_key": "pcptsd_month_head",
+        "type": "inst",
+        "visible_when": { "item": "pcptsd1", "operator": "equals", "value": 1 }
+      },
+      {
+        "id": "pcptsd2",
+        "text_key": "pcptsd2",
+        "type": "multi",
+        "visible_when": { "item": "pcptsd1", "operator": "equals", "value": 1 },
+        "options": [
+          { "text_key": "yes", "value": 1 },
+          { "text_key": "no",  "value": 0 }
+        ]
+      },
+      {
+        "id": "pcptsd3",
+        "text_key": "pcptsd3",
+        "type": "multi",
+        "visible_when": { "item": "pcptsd1", "operator": "equals", "value": 1 },
+        "options": [
+          { "text_key": "yes", "value": 1 },
+          { "text_key": "no",  "value": 0 }
+        ]
+      },
+      {
+        "id": "pcptsd4",
+        "text_key": "pcptsd4",
+        "type": "multi",
+        "visible_when": { "item": "pcptsd1", "operator": "equals", "value": 1 },
+        "options": [
+          { "text_key": "yes", "value": 1 },
+          { "text_key": "no",  "value": 0 }
+        ]
+      },
+      {
+        "id": "pcptsd5",
+        "text_key": "pcptsd5",
+        "type": "multi",
+        "visible_when": { "item": "pcptsd1", "operator": "equals", "value": 1 },
+        "options": [
+          { "text_key": "yes", "value": 1 },
+          { "text_key": "no",  "value": 0 }
+        ]
+      },
+      {
+        "id": "pcptsd6",
+        "text_key": "pcptsd6",
+        "type": "multi",
+        "visible_when": { "item": "pcptsd1", "operator": "equals", "value": 1 },
+        "options": [
+          { "text_key": "yes", "value": 1 },
+          { "text_key": "no",  "value": 0 }
+        ]
+      }
+    ],
+    "scoring": {
+      "ptsd": {
+        "description": "Sum of symptom items 2-6 (0-5). Recommended cutoff ≥3 for positive screen.",
+        "method": "sum_coded",
+        "items": ["pcptsd2", "pcptsd3", "pcptsd4", "pcptsd5", "pcptsd6"],
+        "norms": {
+          "thresholds": [
+            { "min": 0, "max": 2, "label": "Below threshold" },
+            { "min": 3, "max": 5, "label": "Positive screen — further assessment recommended" }
+          ]
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "yes": "Yes",
+      "no": "No",
+      "pcptsd_intro": "Sometimes things happen to people that are unusually or especially frightening, horrible, or traumatic. For example: a serious accident or fire, a physical or sexual assault or abuse, an earthquake or flood, a war, seeing someone be killed or seriously injured, having a loved one die through homicide or suicide.",
+      "pcptsd1": "Have you ever experienced this kind of event?",
+      "pcptsd_month_head": "In the past month, have you…",
+      "pcptsd2": "…had nightmares about the event(s) or thought about the event(s) when you did not want to?",
+      "pcptsd3": "…tried hard not to think about the event(s) or gone out of your way to avoid situations that reminded you of the event(s)?",
+      "pcptsd4": "…been constantly on guard, watchful, or easily startled?",
+      "pcptsd5": "…felt numb or detached from people, activities, or your surroundings?",
+      "pcptsd6": "…felt guilty or unable to stop blaming yourself or others for the event(s) or any problems the event(s) may have caused?",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

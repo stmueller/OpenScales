@@ -53,7 +53,7 @@ PARAMETER_TYPES = {"string", "boolean", "integer", "number", "choice"}
 
 CONDITION_OPERATORS = {
     "equals", "not_equals", "greater_than", "less_than", "greater_equal", "less_equal",
-    "in", "not_in", "is_answered", "is_not_answered",
+    "in", "not_in", "is_answered", "is_not_answered", "is_true", "is_false",
 }
 
 CODING_VALUES = {1, -1, 0}
@@ -656,8 +656,13 @@ VALID_SELECTORS = {"language"}
 def validate_condition(condition, qids, result, context, param_ids=()):
     """Validate a visible_when / variant_when condition. Leaves may reference an
     item ('question'), the 'language' selector, or a 'parameter'."""
+    if isinstance(condition, str):
+        # String shorthand: bare parameter name → {parameter: X, operator: is_true}
+        if param_ids and condition not in param_ids:
+            result.warn(f"{context}: string shorthand references unknown parameter '{condition}'")
+        return
     if not isinstance(condition, dict):
-        result.warn(f"{context}: condition must be an object")
+        result.error(f"{context}: condition must be an object or parameter-name string, got {type(condition).__name__}")
         return
     if "all" in condition:
         for sub in condition["all"]:

@@ -1288,6 +1288,15 @@ Show or hide items or sections based on previous answers or parameters.
 }
 ```
 
+**Parameter name shorthand:** A bare string is accepted as a shorthand for a truthy parameter test. The following two forms are equivalent:
+
+```json
+{ "visible_when": "show_followup" }
+{ "visible_when": { "parameter": "show_followup", "operator": "is_true" } }
+```
+
+This shorthand is valid only for parameter names (no operators or item references). Use the full object form for any other condition.
+
 **Conditions on the active language (selector leaf):** A leaf may test the `language` selector. This is used mainly in `variant_when` (A8) to administer a language-specific item form:
 
 ```json

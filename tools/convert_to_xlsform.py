@@ -318,6 +318,9 @@ def validate_xlsform_name(name):
 
 def _simple_condition_to_xpath(cond):
     """Convert a single leaf condition dict to an XPath fragment."""
+    if not isinstance(cond, dict):
+        # String shorthand like "true" or "false"
+        return "true()" if str(cond).lower() in ("true", "1", "yes") else "false()"
     # Parameter conditions are pre-launch settings, not runtime fields —
     # variant resolution handles them; skip in relevant expressions.
     if "parameter" in cond and "item" not in cond and "question" not in cond:
@@ -354,6 +357,11 @@ def visible_when_to_relevant(visible_when):
     """Recursively convert OSD visible_when to XLSForm relevant XPath."""
     if not visible_when:
         return ""
+    if isinstance(visible_when, str):
+        # String shorthand: bare parameter name → always true at runtime
+        return "true()"
+    if not isinstance(visible_when, dict):
+        return "true()"
     if "all" in visible_when:
         parts = [visible_when_to_relevant(c) for c in visible_when["all"]]
         return "(" + " and ".join(parts) + ")"

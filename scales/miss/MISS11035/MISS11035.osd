@@ -19,13 +19,19 @@
       "date": "2026-06-08",
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "notes": "Items verbatim from paper in English, German, and Arabic. Farsi/Dari not reproduced (script rendering issues). Response scale 1=Strongly agree to 5=Strongly disagree — note this is reversed from typical Likert convention; higher raw scores = more challenged belonging. No reverse-coded items. Validated with refugee/asylum seeker populations; generalizability to other populations unknown."
+      "notes": "Items verbatim from paper in English, German, and Arabic. Farsi/Dari not reproduced (script rendering issues). Response scale 1=Strongly agree to 5=Strongly disagree — note this is reversed from typical Likert convention; higher raw scores = more challenged belonging. No reverse-coded items. Validated with refugee/asylum seeker populations; generalizability to other populations unknown. Also documented in GESIS-ZIS: https://doi.org/10.6102/zis306_exz"
     },
     "likert_options": {
       "points": 5,
       "min": 1,
       "max": 5,
-      "labels": ["csbs_r1", "csbs_r2", "csbs_r3", "csbs_r4", "csbs_r5"]
+      "labels": [
+        "csbs_r1",
+        "csbs_r2",
+        "csbs_r3",
+        "csbs_r4",
+        "csbs_r5"
+      ]
     },
     "dimensions": [
       {
@@ -36,21 +42,50 @@
       }
     ],
     "items": [
-      {"id": "csbs1", "type": "likert", "text_key": "csbs1", "dimension": "belonging"},
-      {"id": "csbs2", "type": "likert", "text_key": "csbs2", "dimension": "belonging"},
-      {"id": "csbs3", "type": "likert", "text_key": "csbs3", "dimension": "belonging"},
-      {"id": "csbs4", "type": "likert", "text_key": "csbs4", "dimension": "belonging"}
+      {
+        "id": "csbs1",
+        "type": "likert",
+        "text_key": "csbs1",
+        "dimension": "belonging"
+      },
+      {
+        "id": "csbs2",
+        "type": "likert",
+        "text_key": "csbs2",
+        "dimension": "belonging"
+      },
+      {
+        "id": "csbs3",
+        "type": "likert",
+        "text_key": "csbs3",
+        "dimension": "belonging"
+      },
+      {
+        "id": "csbs4",
+        "type": "likert",
+        "text_key": "csbs4",
+        "dimension": "belonging"
+      }
     ],
     "scoring": {
       "belonging": {
         "description": "Sum of all 4 items. Range 4–20; higher = greater challenge to sense of belonging. Note: response scale runs 1=Strongly agree to 5=Strongly disagree (atypical direction).",
         "method": "sum_coded",
-        "items": ["csbs1", "csbs2", "csbs3", "csbs4"]
+        "items": [
+          "csbs1",
+          "csbs2",
+          "csbs3",
+          "csbs4"
+        ]
       }
     },
     "report": {
       "template": "standard",
-      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
       "header": "Challenged Sense of Belonging Scale (CSBS) Report",
       "footer_refs": [
         "Fuchs, L. M., Jacobsen, J., Walther, L., Hahn, E., Ta, T. M. T., Bajbouj, M., & von Scheve, C. (2021). The Challenged Sense of Belonging Scale (CSBS)—A validation study in English, Arabic, and Farsi/Dari among refugees and asylum seekers in Germany. Measurement Instruments for the Social Sciences, 3, Article e11035. https://doi.org/10.1186/s42409-021-00021-y",

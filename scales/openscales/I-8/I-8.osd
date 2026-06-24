@@ -1,0 +1,173 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "I-8",
+      "name": "Impulsive Behavior Short Scale–8 (I-8)",
+      "abbreviation": "I-8",
+      "description": "8-item English-language adaptation measuring four facets of impulsive behavior with two items each: urgency, lack of premeditation, lack of perseverance, and sensation seeking. Subscale score is the mean of its two items (with the premeditation and perseverance items reverse-scored). A total across facets is not used.",
+      "citation": "Groskurth, K., Nießen, D., Rammstedt, B., & Lechner, C. M (2022). Impulsive Behavior Short Scale–8 (I-8). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis324_exz",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_explanation": "Licensed CC BY 4.0 via ZIS (GESIS Leibniz Institute for the Social Sciences). Free to use, share, and adapt with attribution. Cite the ZIS documentation (https://doi.org/10.6102/zis324_exz) and the original publication.",
+      "url": "https://zis.gesis.org/skala/Kovaleva-Beierlein-Kemper-Rammstedt-Impulsive-Behavior-Short-Scale-8-(I-8)",
+      "version": "1.0",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-24",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English-language adaptation of the German I-8 (Kovaleva et al., 2014). 5-point apply scale. Items 3,4 (premeditation) and 5,6 (perseverance) are reverse-scored so higher = more LACK of premeditation/perseverance. Score each facet as the mean of its two items; no total. Partial scalar invariance UK-Germany."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "question_head": "i_8_inst",
+      "labels": [
+        "i_8_r1",
+        null,
+        null,
+        null,
+        "i_8_r5"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "urgency",
+        "name": "Urgency",
+        "description": "Mean of items 1 and 2. Range 1-5."
+      },
+      {
+        "id": "premeditation",
+        "name": "Lack of Premeditation",
+        "description": "Mean of items 3 and 4, reverse-scored. Range 1-5."
+      },
+      {
+        "id": "perseverance",
+        "name": "Lack of Perseverance",
+        "description": "Mean of items 5 and 6, reverse-scored. Range 1-5."
+      },
+      {
+        "id": "sensation",
+        "name": "Sensation Seeking",
+        "description": "Mean of items 7 and 8. Range 1-5."
+      }
+    ],
+    "items": [
+      {
+        "id": "i_801",
+        "type": "likert",
+        "text_key": "i_801",
+        "dimension": "urgency"
+      },
+      {
+        "id": "i_802",
+        "type": "likert",
+        "text_key": "i_802",
+        "dimension": "urgency"
+      },
+      {
+        "id": "i_803",
+        "type": "likert",
+        "text_key": "i_803",
+        "dimension": "premeditation"
+      },
+      {
+        "id": "i_804",
+        "type": "likert",
+        "text_key": "i_804",
+        "dimension": "premeditation"
+      },
+      {
+        "id": "i_805",
+        "type": "likert",
+        "text_key": "i_805",
+        "dimension": "perseverance"
+      },
+      {
+        "id": "i_806",
+        "type": "likert",
+        "text_key": "i_806",
+        "dimension": "perseverance"
+      },
+      {
+        "id": "i_807",
+        "type": "likert",
+        "text_key": "i_807",
+        "dimension": "sensation"
+      },
+      {
+        "id": "i_808",
+        "type": "likert",
+        "text_key": "i_808",
+        "dimension": "sensation"
+      }
+    ],
+    "scoring": {
+      "urgency": {
+        "method": "mean_coded",
+        "description": "Mean of items 1 and 2. Range 1-5.",
+        "items": {
+          "i_801": 1,
+          "i_802": 1
+        }
+      },
+      "premeditation": {
+        "method": "mean_coded",
+        "description": "Mean of items 3 and 4, reverse-scored. Range 1-5.",
+        "items": {
+          "i_803": -1,
+          "i_804": -1
+        }
+      },
+      "perseverance": {
+        "method": "mean_coded",
+        "description": "Mean of items 5 and 6, reverse-scored. Range 1-5.",
+        "items": {
+          "i_805": -1,
+          "i_806": -1
+        }
+      },
+      "sensation": {
+        "method": "mean_coded",
+        "description": "Mean of items 7 and 8. Range 1-5.",
+        "items": {
+          "i_807": 1,
+          "i_808": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Impulsive Behavior Short Scale–8 (I-8) Report",
+      "footer_refs": [
+        "Groskurth, K., Nießen, D., Rammstedt, B., & Lechner, C. M (2022). Impulsive Behavior Short Scale–8 (I-8). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis324_exz",
+        "ZIS Documentation: https://doi.org/10.6102/zis324_exz"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "i_8_inst": "The following statements may apply more or less to you. To what extent do you think each statement applies to you personally?",
+      "i_801": "Sometimes I do things impulsively that I should not do.",
+      "i_802": "I sometimes do things to cheer myself up that I later regret.",
+      "i_803": "I usually think carefully before I act.",
+      "i_804": "I usually consider things carefully and logically before I make up my mind.",
+      "i_805": "I always bring to an end what I have started.",
+      "i_806": "I plan my schedule so that I get everything done on time.",
+      "i_807": "I am willing to take risks.",
+      "i_808": "I am happy to take chances.",
+      "i_8_r1": "Does not apply at all",
+      "i_8_r5": "Applies completely",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

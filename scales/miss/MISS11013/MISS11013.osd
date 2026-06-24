@@ -20,13 +20,19 @@
       "date": "2026-06-08",
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "notes": "English and German items verbatim from paper appendix. Italian items also included. 5-point scale: 1=Not at all to 5=Completely. Instruction stem: \"I feel capable of...\" (German: \"Ich fühle mich in der Lage...\"). No reverse-coded items. Short form items: ppse3, ppse4, ppse8, ppse10. Original scale by Caprara et al. (2009)."
+      "notes": "English and German items verbatim from paper appendix. Italian items also included. 5-point scale: 1=Not at all to 5=Completely. Instruction stem: \"I feel capable of...\" (German: \"Ich fühle mich in der Lage...\"). No reverse-coded items. Short form items: ppse3, ppse4, ppse8, ppse10. Original scale by Caprara et al. (2009). Also documented in GESIS-ZIS: https://doi.org/10.6102/zis309_exz"
     },
     "likert_options": {
       "points": 5,
       "min": 1,
       "max": 5,
-      "labels": ["ppse_r1", "ppse_r2", "ppse_r3", "ppse_r4", "ppse_r5"]
+      "labels": [
+        "ppse_r1",
+        "ppse_r2",
+        "ppse_r3",
+        "ppse_r4",
+        "ppse_r5"
+      ]
     },
     "dimensions": [
       {
@@ -34,30 +40,110 @@
         "name": "Perceived Political Self-Efficacy",
         "abbreviation": "PPSE",
         "description": "Confidence in ability to execute political actions. Mean of 10 items (or 4-item short form), range 1–5; higher = greater perceived political self-efficacy."
+      },
+      {
+        "id": "ppse_short",
+        "name": "P-PSE Short Form (4-item)",
+        "description": "Mean of items 3, 4, 8, 10 — the validated four-item short form (Bromme, Rothmund, & Caprara, 2020). Range 1-5."
       }
     ],
     "items": [
-      {"id": "ppse1",  "type": "likert", "text_key": "ppse1",  "dimension": "political_efficacy"},
-      {"id": "ppse2",  "type": "likert", "text_key": "ppse2",  "dimension": "political_efficacy"},
-      {"id": "ppse3",  "type": "likert", "text_key": "ppse3",  "dimension": "political_efficacy"},
-      {"id": "ppse4",  "type": "likert", "text_key": "ppse4",  "dimension": "political_efficacy"},
-      {"id": "ppse5",  "type": "likert", "text_key": "ppse5",  "dimension": "political_efficacy"},
-      {"id": "ppse6",  "type": "likert", "text_key": "ppse6",  "dimension": "political_efficacy"},
-      {"id": "ppse7",  "type": "likert", "text_key": "ppse7",  "dimension": "political_efficacy"},
-      {"id": "ppse8",  "type": "likert", "text_key": "ppse8",  "dimension": "political_efficacy"},
-      {"id": "ppse9",  "type": "likert", "text_key": "ppse9",  "dimension": "political_efficacy"},
-      {"id": "ppse10", "type": "likert", "text_key": "ppse10", "dimension": "political_efficacy"}
+      {
+        "id": "ppse1",
+        "type": "likert",
+        "text_key": "ppse1",
+        "dimension": "political_efficacy"
+      },
+      {
+        "id": "ppse2",
+        "type": "likert",
+        "text_key": "ppse2",
+        "dimension": "political_efficacy"
+      },
+      {
+        "id": "ppse3",
+        "type": "likert",
+        "text_key": "ppse3",
+        "dimension": "political_efficacy"
+      },
+      {
+        "id": "ppse4",
+        "type": "likert",
+        "text_key": "ppse4",
+        "dimension": "political_efficacy"
+      },
+      {
+        "id": "ppse5",
+        "type": "likert",
+        "text_key": "ppse5",
+        "dimension": "political_efficacy"
+      },
+      {
+        "id": "ppse6",
+        "type": "likert",
+        "text_key": "ppse6",
+        "dimension": "political_efficacy"
+      },
+      {
+        "id": "ppse7",
+        "type": "likert",
+        "text_key": "ppse7",
+        "dimension": "political_efficacy"
+      },
+      {
+        "id": "ppse8",
+        "type": "likert",
+        "text_key": "ppse8",
+        "dimension": "political_efficacy"
+      },
+      {
+        "id": "ppse9",
+        "type": "likert",
+        "text_key": "ppse9",
+        "dimension": "political_efficacy"
+      },
+      {
+        "id": "ppse10",
+        "type": "likert",
+        "text_key": "ppse10",
+        "dimension": "political_efficacy"
+      }
     ],
     "scoring": {
       "political_efficacy": {
         "description": "Mean of all 10 items. Range 1–5; higher = greater perceived political self-efficacy. A validated 4-item short form uses items ppse3, ppse4, ppse8, ppse10.",
         "method": "mean_coded",
-        "items": ["ppse1", "ppse2", "ppse3", "ppse4", "ppse5", "ppse6", "ppse7", "ppse8", "ppse9", "ppse10"]
+        "items": [
+          "ppse1",
+          "ppse2",
+          "ppse3",
+          "ppse4",
+          "ppse5",
+          "ppse6",
+          "ppse7",
+          "ppse8",
+          "ppse9",
+          "ppse10"
+        ]
+      },
+      "ppse_short": {
+        "method": "mean_coded",
+        "description": "Mean of the validated 4-item short form (items 3,4,8,10).",
+        "items": {
+          "ppse3": 1,
+          "ppse4": 1,
+          "ppse8": 1,
+          "ppse10": 1
+        }
       }
     },
     "report": {
       "template": "standard",
-      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
       "header": "Perceived Political Self-Efficacy Scale (P-PSE) Report",
       "footer_refs": [
         "Bromme, L., Rothmund, T., & Caprara, G. V. (2020). A translation and validation of the Perceived Political Self-Efficacy (P-PSE) Scale for the use in German samples. Measurement Instruments for the Social Sciences, 2, Article e11013. https://doi.org/10.1186/s42409-020-00013-4",
@@ -73,15 +159,15 @@
       "ppse_r4": "Mostly",
       "ppse_r5": "Completely",
       "stem": "For each of the following items, please rate how confident you are in your ability to execute the specific action or behavior described.",
-      "ppse1":  "State your own political opinion openly, even in clearly hostile settings.",
-      "ppse2":  "Make certain that the political representatives you voted honor their commitments to the electorate.",
-      "ppse3":  "Promote public initiatives to support political programs that you believe are just.",
-      "ppse4":  "Maintain personal relationships with representatives of national government authorities.",
-      "ppse5":  "Play a decisive role in the choice of the leaders of political movements to which you belong, or to which you are near.",
-      "ppse6":  "Carry out an effective information campaign for the political movement or party with which you concur regarding beliefs and programs.",
-      "ppse7":  "Actively promote the election of political candidates in which you trust.",
-      "ppse8":  "Promote effective activities of information and mobilization in your own community (of work, friends, and family), to sustain political programs in which you believe.",
-      "ppse9":  "Collect a substantial amount of money to sustain the activities of your party.",
+      "ppse1": "State your own political opinion openly, even in clearly hostile settings.",
+      "ppse2": "Make certain that the political representatives you voted honor their commitments to the electorate.",
+      "ppse3": "Promote public initiatives to support political programs that you believe are just.",
+      "ppse4": "Maintain personal relationships with representatives of national government authorities.",
+      "ppse5": "Play a decisive role in the choice of the leaders of political movements to which you belong, or to which you are near.",
+      "ppse6": "Carry out an effective information campaign for the political movement or party with which you concur regarding beliefs and programs.",
+      "ppse7": "Actively promote the election of political candidates in which you trust.",
+      "ppse8": "Promote effective activities of information and mobilization in your own community (of work, friends, and family), to sustain political programs in which you believe.",
+      "ppse9": "Collect a substantial amount of money to sustain the activities of your party.",
       "ppse10": "Use the means you have as a citizen to critically monitor the actions of your political representatives.",
       "debrief": "Thank you for completing this questionnaire."
     },
@@ -92,15 +178,15 @@
       "ppse_r4": "Stimme eher zu",
       "ppse_r5": "Stimme vollkommen zu",
       "stem": "Nun geht es um die Fähigkeiten, die nötig sind, um politische Handlungen auszuführen. Ich fühle mich in der Lage...",
-      "ppse1":  "Meine eigene politische Meinung offen zu bekunden, auch in einem offensichtlich feindseligen Umfeld.",
-      "ppse2":  "Mich zu vergewissern, dass die politischen Repräsentanten, für die ich gestimmt habe, ihre Wahlversprechen halten.",
-      "ppse3":  "Werbung für politische Bewegungen zu machen, die ich gut finde.",
-      "ppse4":  "Persönlichen Kontakt mit Abgeordneten oder Mitarbeitern der Regierung aufzunehmen und zu pflegen.",
-      "ppse5":  "Die Wahl von Anführern einer politischen Bewegung entscheidend zu beeinflussen.",
-      "ppse6":  "Eine effektive Öffentlichkeitskampagne für eine politische Bewegung durchzuführen, mit deren Zielen oder Überzeugungen ich übereinstimme.",
-      "ppse7":  "Aktiv Wahlwerbung für politische Kandidaten zu machen, denen ich vertraue.",
-      "ppse8":  "Freunde oder Bekannte erfolgreich zu informieren und zu mobilisieren, um ein politisches Programm zu unterstützen, von dem ich überzeugt bin.",
-      "ppse9":  "Eine bedeutsame Menge Geld zu sammeln, um damit eine politische Bewegung zu unterstützen.",
+      "ppse1": "Meine eigene politische Meinung offen zu bekunden, auch in einem offensichtlich feindseligen Umfeld.",
+      "ppse2": "Mich zu vergewissern, dass die politischen Repräsentanten, für die ich gestimmt habe, ihre Wahlversprechen halten.",
+      "ppse3": "Werbung für politische Bewegungen zu machen, die ich gut finde.",
+      "ppse4": "Persönlichen Kontakt mit Abgeordneten oder Mitarbeitern der Regierung aufzunehmen und zu pflegen.",
+      "ppse5": "Die Wahl von Anführern einer politischen Bewegung entscheidend zu beeinflussen.",
+      "ppse6": "Eine effektive Öffentlichkeitskampagne für eine politische Bewegung durchzuführen, mit deren Zielen oder Überzeugungen ich übereinstimme.",
+      "ppse7": "Aktiv Wahlwerbung für politische Kandidaten zu machen, denen ich vertraue.",
+      "ppse8": "Freunde oder Bekannte erfolgreich zu informieren und zu mobilisieren, um ein politisches Programm zu unterstützen, von dem ich überzeugt bin.",
+      "ppse9": "Eine bedeutsame Menge Geld zu sammeln, um damit eine politische Bewegung zu unterstützen.",
       "ppse10": "Die Mittel zu nutzen, die mir als Bürger zur Verfügung stehen, um das Tun der politischen Vertreter kritisch zu überwachen.",
       "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
     },
@@ -111,15 +197,15 @@
       "ppse_r4": "Molto capace",
       "ppse_r5": "Del tutto capace",
       "stem": "Di seguito sono elencate alcune situazioni nelle quali un cittadino può trovarsi nell'esercizio dei suoi diritti di partecipazione all'attività politica. La preghiamo di valutare quanto lei ritiene di essere capace di affrontare queste diverse situazioni.",
-      "ppse1":  "Dichiarare la sua opinione politica apertamente, anche nei contesti decisamente ostili.",
-      "ppse2":  "Fare sì che i rappresentanti politici per i quali ha votato onorino gli impegni presi con l'elettorato.",
-      "ppse3":  "Farsi promotore di iniziative pubbliche a sostegno dei programmi politici che lei ritiene giusti.",
-      "ppse4":  "Intrattenere rapporti personali con rappresentanti degli organi di governo nazionale.",
-      "ppse5":  "Svolgere un ruolo decisivo o comunque rilevante nella scelta dei dirigenti dei movimenti politici ai quali si sente vicino o fa parte.",
-      "ppse6":  "Svolgere un'efficace azione di propaganda per il movimento o lo schieramento politico di cui condivide le ispirazioni e i programmi.",
-      "ppse7":  "Contribuire attivamente all'elezione dei candidati politici in cui ripone la sua fiducia.",
-      "ppse8":  "Promuovere azioni efficaci di informazione e mobilitazione negli ambiti in cui opera (lavoro, amici, famiglia), a sostegno dei programmi politici in cui crede.",
-      "ppse9":  "Raccogliere consistenti somme di denaro a sostegno delle attività del movimento politico del quale fa parte.",
+      "ppse1": "Dichiarare la sua opinione politica apertamente, anche nei contesti decisamente ostili.",
+      "ppse2": "Fare sì che i rappresentanti politici per i quali ha votato onorino gli impegni presi con l'elettorato.",
+      "ppse3": "Farsi promotore di iniziative pubbliche a sostegno dei programmi politici che lei ritiene giusti.",
+      "ppse4": "Intrattenere rapporti personali con rappresentanti degli organi di governo nazionale.",
+      "ppse5": "Svolgere un ruolo decisivo o comunque rilevante nella scelta dei dirigenti dei movimenti politici ai quali si sente vicino o fa parte.",
+      "ppse6": "Svolgere un'efficace azione di propaganda per il movimento o lo schieramento politico di cui condivide le ispirazioni e i programmi.",
+      "ppse7": "Contribuire attivamente all'elezione dei candidati politici in cui ripone la sua fiducia.",
+      "ppse8": "Promuovere azioni efficaci di informazione e mobilitazione negli ambiti in cui opera (lavoro, amici, famiglia), a sostegno dei programmi politici in cui crede.",
+      "ppse9": "Raccogliere consistenti somme di denaro a sostegno delle attività del movimento politico del quale fa parte.",
       "ppse10": "Utilizzare i mezzi che lei possiede come cittadino per vigilare criticamente sull'operato dei suoi rappresentanti politici.",
       "debrief": "Grazie per aver completato questo questionario."
     }

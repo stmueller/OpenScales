@@ -19,13 +19,19 @@
       "date": "2026-06-08",
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "notes": "English items verbatim from Table 2. NQ− items (kse4, kse5, kse6) are reverse-coded at scoring. 5-point scale: 1=Doesn’t apply at all to 5=Applies completely."
+      "notes": "English items verbatim from Table 2. NQ− items (kse4, kse5, kse6) are reverse-coded at scoring. 5-point scale: 1=Doesn’t apply at all to 5=Applies completely. Also documented in GESIS-ZIS: https://doi.org/10.6102/zis271_exz"
     },
     "likert_options": {
       "points": 5,
       "min": 1,
       "max": 5,
-      "labels": ["kse_r1", "kse_r2", "kse_r3", "kse_r4", "kse_r5"]
+      "labels": [
+        "kse_r1",
+        "kse_r2",
+        "kse_r3",
+        "kse_r4",
+        "kse_r5"
+      ]
     },
     "dimensions": [
       {
@@ -42,28 +48,70 @@
       }
     ],
     "items": [
-      {"id": "kse1", "type": "likert", "text_key": "kse1", "dimension": "pq_plus"},
-      {"id": "kse2", "type": "likert", "text_key": "kse2", "dimension": "pq_plus"},
-      {"id": "kse3", "type": "likert", "text_key": "kse3", "dimension": "pq_plus"},
-      {"id": "kse4", "type": "likert", "text_key": "kse4", "dimension": "nq_minus"},
-      {"id": "kse5", "type": "likert", "text_key": "kse5", "dimension": "nq_minus"},
-      {"id": "kse6", "type": "likert", "text_key": "kse6", "dimension": "nq_minus"}
+      {
+        "id": "kse1",
+        "type": "likert",
+        "text_key": "kse1",
+        "dimension": "pq_plus"
+      },
+      {
+        "id": "kse2",
+        "type": "likert",
+        "text_key": "kse2",
+        "dimension": "pq_plus"
+      },
+      {
+        "id": "kse3",
+        "type": "likert",
+        "text_key": "kse3",
+        "dimension": "pq_plus"
+      },
+      {
+        "id": "kse4",
+        "type": "likert",
+        "text_key": "kse4",
+        "dimension": "nq_minus"
+      },
+      {
+        "id": "kse5",
+        "type": "likert",
+        "text_key": "kse5",
+        "dimension": "nq_minus"
+      },
+      {
+        "id": "kse6",
+        "type": "likert",
+        "text_key": "kse6",
+        "dimension": "nq_minus"
+      }
     ],
     "scoring": {
       "pq_plus": {
         "description": "Mean of PQ+ items. Range 1–5; higher = greater tendency to claim positive attributes.",
         "method": "mean_coded",
-        "items": {"kse1": 1, "kse2": 1, "kse3": 1}
+        "items": {
+          "kse1": 1,
+          "kse2": 1,
+          "kse3": 1
+        }
       },
       "nq_minus": {
         "description": "Mean of NQ− items (reverse-coded). Range 1–5; higher = greater tendency to deny negative qualities.",
         "method": "mean_coded",
-        "items": {"kse4": -1, "kse5": -1, "kse6": -1}
+        "items": {
+          "kse4": -1,
+          "kse5": -1,
+          "kse6": -1
+        }
       }
     },
     "report": {
       "template": "standard",
-      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
       "header": "Social Desirability–Gamma Short Scale (KSE-G-E) Report",
       "footer_refs": [
         "Nießen, D., Partsch, M. V., Kemper, C. J., & Rammstedt, B. (2019). An English-language adaptation of the Social Desirability–Gamma Short Scale (KSE-G). Measurement Instruments for the Social Sciences, 1, Article e10985. https://doi.org/10.1186/s42409-018-0005-1",

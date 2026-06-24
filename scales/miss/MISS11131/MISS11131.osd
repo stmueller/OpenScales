@@ -1,0 +1,144 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "MISS11131",
+      "name": "Basic Social Justice Orientations (BSJO) Scale",
+      "abbreviation": "MISS11131",
+      "description": "4-item scale measuring four basic social justice orientations with a single item each: equality, need, equity, and entitlement. Each item is a single-item indicator of its orientation; no total score is computed. Used in ESS Round 9 across 29 European countries.",
+      "citation": "Adriaans, J., & Fourré, M. (2022). Basic Social Justice Orientations: Measuring Order-Related Justice in the European Social Survey Round 9. Measurement Instruments for the Social Sciences. https://doi.org/10.1186/s42409-022-00040-3",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_explanation": "Published in Measurement Instruments for the Social Sciences under CC BY 4.0.",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/11131",
+      "version": "1.0",
+      "domain": "Social"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-24",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "MISS article ID: 11131. DOI: 10.1186/s42409-022-00040-3. Also documented in GESIS-ZIS: https://doi.org/10.6102/zis338_exz. Each item is a SINGLE-item indicator of a distinct justice orientation (equality, need, equity, entitlement). No total score should be calculated. 5-point response scale runs from 1 'Agree completely' to 5 'Disagree completely' (descending agreement). Fielded in ESS Round 9 (2018/19) across 29 countries and CRONOS."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "bsjo_r1",
+        "bsjo_r2",
+        "bsjo_r3",
+        "bsjo_r4",
+        "bsjo_r5"
+      ],
+      "question_head": "bsjo_inst"
+    },
+    "dimensions": [
+      {
+        "id": "equality",
+        "name": "Equality",
+        "description": "Single-item indicator (item 1). Range 1-5."
+      },
+      {
+        "id": "need",
+        "name": "Need",
+        "description": "Single-item indicator (item 2). Range 1-5."
+      },
+      {
+        "id": "equity",
+        "name": "Equity",
+        "description": "Single-item indicator (item 3). Range 1-5."
+      },
+      {
+        "id": "entitlement",
+        "name": "Entitlement",
+        "description": "Single-item indicator (item 4). Range 1-5."
+      }
+    ],
+    "items": [
+      {
+        "id": "bsjo01",
+        "type": "likert",
+        "text_key": "bsjo01",
+        "dimension": "equality"
+      },
+      {
+        "id": "bsjo02",
+        "type": "likert",
+        "text_key": "bsjo02",
+        "dimension": "need"
+      },
+      {
+        "id": "bsjo03",
+        "type": "likert",
+        "text_key": "bsjo03",
+        "dimension": "equity"
+      },
+      {
+        "id": "bsjo04",
+        "type": "likert",
+        "text_key": "bsjo04",
+        "dimension": "entitlement"
+      }
+    ],
+    "scoring": {
+      "equality": {
+        "method": "mean_coded",
+        "description": "Single-item indicator (item 1). Range 1-5.",
+        "items": {
+          "bsjo01": 1
+        }
+      },
+      "need": {
+        "method": "mean_coded",
+        "description": "Single-item indicator (item 2). Range 1-5.",
+        "items": {
+          "bsjo02": 1
+        }
+      },
+      "equity": {
+        "method": "mean_coded",
+        "description": "Single-item indicator (item 3). Range 1-5.",
+        "items": {
+          "bsjo03": 1
+        }
+      },
+      "entitlement": {
+        "method": "mean_coded",
+        "description": "Single-item indicator (item 4). Range 1-5.",
+        "items": {
+          "bsjo04": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Basic Social Justice Orientations (BSJO) Scale Report",
+      "footer_refs": [
+        "Adriaans, J., & Fourré, M. (2024). Basic Social Justice Orientations (BSJO) Scale. Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis338_exz",
+        "ZIS Documentation: https://doi.org/10.6102/zis338_exz"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "bsjo_inst": "There are many different views as to what makes a society fair or unfair. How much do you agree or disagree with each statement?",
+      "bsjo01": "A society is fair when income and wealth are equally distributed among all people.",
+      "bsjo02": "A society is fair when it takes care of those who are poor and in need regardless of what they give back to society.",
+      "bsjo03": "A society is fair when hard-working people earn more than others.",
+      "bsjo04": "A society is fair when people from families with high social status enjoy privileges in their lives.",
+      "bsjo_r1": "Agree completely",
+      "bsjo_r2": "Agree",
+      "bsjo_r3": "Neither agree nor disagree",
+      "bsjo_r4": "Disagree",
+      "bsjo_r5": "Disagree completely",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

@@ -1,4 +1,4 @@
-# Open Scale Definition (OSD) Specification v1.0.16
+# Open Scale Definition (OSD) Specification v1.0.18
 
 *Part of the [OpenScales Project](README.md)*
 
@@ -2034,6 +2034,102 @@ For simple conditions, the structured object format is preferred. The expression
 
 ---
 
+## Roadmap / Planned Features
+
+These are designed-but-not-yet-implemented extensions. They are documented here so
+authors don't depend on them prematurely and so the eventual implementation has a
+fixed target. **None of these are part of the current spec — do not emit them.**
+
+### R1. Per-language parameter defaults (`default_by_language`)
+
+**Problem.** Some scale parameters should default to *different* values depending on
+the active language — e.g. a scale that templates a currency, an income figure, a
+country name, or a locale-specific example into item text via `{param}` placeholders
+(S2). Today a parameter has a single scalar `default`, so the default is the same in
+every language; getting language-correct values requires either hardcoding them in
+each translation (no parameterization) or per-language item sets (A8, which discards
+the parameterization). The motivating case is the **JEID** scale (Justice Evaluation
+of the Income Distribution), whose five income figures differ between the UK (£) and
+German (€) versions.
+
+**Proposed schema.** Add an optional `default_by_language` field to a parameter
+definition, an object keyed by BCP-47 language code. Resolution: the runner uses
+`default_by_language[activeLang]` when present, otherwise falls back to the scalar
+`default`. A new field (rather than overloading `default` to accept an object) avoids
+ambiguity with parameters whose legitimate value is itself an object.
+
+```json
+"income_low": {
+  "type": "string",
+  "description": "Average gross monthly income, low-income bracket",
+  "default": "£1,100",
+  "default_by_language": { "en": "£1,100", "de": "1.500 Euro" }
+}
+```
+
+**Why it is not implemented yet.** This is a small change in the runner, but it has
+**broad downstream consequences**: every consumer that resolves parameter defaults
+or flattens a scale would need to handle the per-language case, including —
+
+- the **JS scale-runner** (default resolution + `resolveText` templating),
+- the **PEBL runner**,
+- all **export converters** (`tools/convert_to_*`, `osd2surveydown`) and
+  `tools/osd_variants.flatten_variant`, which bake parameter values into the
+  exported instrument and would need to flatten per target language,
+- the **importers / ScaleBuilder** and the **web UI** (parameter editing, the
+  detail/preview pages, and the printer), and
+- the **validator** (`tools/validate_scale.py`).
+
+Until all of those handle it consistently, scales that need language-varying
+defaults should **hardcode the values directly in each language's translation
+strings** (no parameters). This is also the easiest way to *update* such values as
+demographics/inflation change or when adapting a scale to a country not covered by
+the original (e.g. a US adaptation) — the change is a localized translation edit.
+
+### R2. Non-scale response options on scored items (`extra_options` / N/A)
+
+**Problem.** Some instruments offer a scored item an additional **off-scale**
+response that is not part of the numeric Likert range — most commonly a
+**"Not applicable / N/A"** option, but also "Don't know", "Prefer not to say",
+"Can't choose", etc. These responses are *not* a point on the 1…N scale: they are
+recorded as a distinct category and treated as missing (or as their own code) for
+scoring. The current Likert specification has no way to express such an option — a
+`likert_options` scale is exactly `points` numeric buttons. Motivating cases:
+**AppRoVE** (an explicit N/A button per item) and **ISSP-PRIDE** ("Can't choose",
+original code 8, treated as missing).
+
+**Proposed schema.** Add an optional `extra_options` array to `likert_options`
+(and to a `response_scale`), each entry an off-scale response rendered after the
+numeric buttons:
+
+```json
+"likert_options": {
+  "points": 11, "min": 0,
+  "labels": ["app_r0", null, ..., "app_r10"],
+  "extra_options": [
+    { "value": "NA", "label_key": "app_na", "missing": true }
+  ]
+}
+```
+
+Each entry: `value` (stored code, non-numeric, e.g. `"NA"`), `label_key`
+(translation key), and `missing` (boolean — when `true`, scoring treats a selection
+as a missing value and excludes the item from its dimension means/sums, exactly like
+an unanswered optional item; when `false`, the code is passed through to the data
+record but still excluded from numeric aggregation). Runners render these as extra
+buttons; converters map them to each target platform's N/A/other facility.
+
+**Why it is not implemented yet.** Like R1, it touches every consumer that renders
+or scores Likert items — the JS runner (render + scoring + data record), the PEBL
+runner, all export converters, importers/ScaleBuilder, the web preview/printer, and
+the validator. Until then, the interim approach is to **make the item optional**
+(`required: false`, or scale-level `default_required: false`) so a respondent can
+**skip** an item that doesn't apply; the skipped item is recorded as unanswered and
+excluded from scoring — functionally equivalent to an N/A coded `missing: true`,
+just without a labelled button. (AppRoVE uses this interim approach.)
+
+---
+
 ## Version History
 
 | Version | Date | Changes |
@@ -2055,3 +2151,5 @@ For simple conditions, the structured object format is preferred. The expression
 | 1.0.14 | 2026-04-11 | C2: added `response_scales` — a named dictionary of additional Likert response scale definitions, with the same structure as `likert_options`; added `response_scale` item field (string) referencing a key in `response_scales`; runner resolution order: per-item `likert_labels`/`likert_points` → `response_scale` lookup → `likert_options` default; `likert_labels`/`likert_points` per-item overrides retained for semantic-differential items where every item has truly unique endpoint labels; `response_scales` is the preferred mechanism when multiple items share the same non-default response format |
 | 1.0.15 | 2026-06-10 | C2: added `suppress_likert_numbers` boolean field in `likert_options` (default `false`) — when `true`, the numeric value is not displayed beneath response buttons; intended for scales where label text already encodes the number (e.g. bipolar scales with endpoints "Very inaccurate (−3)" and intermediate labels "−2", "−1", etc.) to avoid double-display; may also be set at the top level of `definition` as shorthand; runners MUST respect this field and omit the numeric element entirely when set |
 | 1.0.16 | 2026-06-17 | **A8. Scale Variants** (new): support multiple variants of an instrument in one OSD, selected by a *coordinate* = active language + choice-parameter values (for old, widely-translated scales with framing-reversed items, language-specific item sets, or short/long editions). C2: added `variant_group` (mutually-exclusive item alternatives) and `variant_when` (per-item condition over `selector`/`parameter` leaves, resolved once at instantiation). New definition-level `variants` block: `sets` (sugar for the language axis: per-set `languages`+`items`), `axes` (multi-axis/free-parameter declaration), `default`. C3: added `variants` array on scoring blocks/dimensions — computed only when one of its set ids is active (lets per-language subscales coexist). S1: added the `selector: "language"` condition leaf; condition grammar is shared between `visible_when` (re-evaluated at runtime) and `variant_when` (resolved at instantiation). C4: translation completeness is **per-variant**. Backward compatible — no `variants`/`variant_when` ⇒ unchanged single-variant behavior. Implemented in the JS runner (`scale-runner.js`) and the export converters (`tools/osd_variants.flatten_variant`); studies (OSC) pin a variant via a scale step's `parameters` (`lang` + free params), needing no new OSC field. |
+| 1.0.17 | 2026-06-24 | Documentation only — added **Roadmap / Planned Features** section. R1: `default_by_language` (per-language parameter defaults) specified but **not implemented** (broad downstream impact across runner, converters, importers, web UI, validator); until then, scales needing language-varying templated values hardcode them in per-language translations. No format change. |
+| 1.0.18 | 2026-06-24 | Documentation only — Roadmap **R2**: `extra_options` / off-scale N/A responses on scored Likert items specified but **not implemented** (broad downstream impact like R1). Interim guidance: make the item optional (`required: false` / `default_required: false`) so respondents skip non-applicable items. No format change. |

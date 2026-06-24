@@ -1,0 +1,108 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "MISS10991",
+      "name": "Measuring Cultural Capital through the Number of Books in the Household",
+      "abbreviation": "MISS10991",
+      "description": "2-item measure of objectified cultural capital (Bourdieu) via number of books in the home, assessed for the family of origin (at age 16) and the current household. Each item is a single 6-category ordinal indicator (1 = '10 books or less' to 6 = 'More than 500 books'). The two items are used separately (past vs. present); no total is computed.",
+      "citation": "Sieben, S., & Lechner, C. M. (2018). Measuring Cultural Capital through the Number of Books in the Household. Measurement Instruments for the Social Sciences. https://doi.org/10.1186/s42409-018-0006-0",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_explanation": "Published in Measurement Instruments for the Social Sciences under CC BY 4.0.",
+      "url": "https://miss.psychopen.eu/index.php/miss/article/view/10991",
+      "version": "1.0",
+      "domain": "Other"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-24",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "MISS article ID: 10991. DOI: 10.1186/s42409-018-0006-0. Also documented in GESIS-ZIS: https://doi.org/10.6102/zis289_exz. Objectified cultural capital via number-of-books items (Sieben & Lechner). 6-category ordinal response (ascending). The two items measure past (family of origin) and present (current household) resources and are used SEPARATELY; no total. Widely used as single items in PIAAC, PISA (ESCS/HOMEPOS), PIRLS. In PIAAC-L, missing was coded -1 'Do not know', -2 'Refused' (not represented here)."
+    },
+    "likert_options": {
+      "points": 6,
+      "min": 1,
+      "labels": [
+        "ca_r1",
+        "ca_r2",
+        "ca_r3",
+        "ca_r4",
+        "ca_r5",
+        "ca_r6"
+      ],
+      "question_head": "ca_inst"
+    },
+    "dimensions": [
+      {
+        "id": "books_origin",
+        "name": "Books in family of origin (age 16)",
+        "description": "Single-item ordinal indicator (item 1). Range 1-6."
+      },
+      {
+        "id": "books_current",
+        "name": "Books in current household",
+        "description": "Single-item ordinal indicator (item 2). Range 1-6."
+      }
+    ],
+    "items": [
+      {
+        "id": "ca01",
+        "type": "likert",
+        "text_key": "ca01",
+        "dimension": "books_origin"
+      },
+      {
+        "id": "ca02",
+        "type": "likert",
+        "text_key": "ca02",
+        "dimension": "books_current"
+      }
+    ],
+    "scoring": {
+      "books_origin": {
+        "method": "mean_coded",
+        "description": "Single-item ordinal indicator (item 1). Range 1-6.",
+        "items": {
+          "ca01": 1
+        }
+      },
+      "books_current": {
+        "method": "mean_coded",
+        "description": "Single-item ordinal indicator (item 2). Range 1-6.",
+        "items": {
+          "ca02": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Cultural Capital (CA) Report",
+      "footer_refs": [
+        "Sieben, S., & Lechner, C. M. (2020). Cultural Capital (CA). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis289_exz",
+        "ZIS Documentation: https://doi.org/10.6102/zis289_exz"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "ca_inst": "The following questions ask about the number of books in your home. Please do not include magazines, newspapers or schoolbooks. To give an estimation, one meter of shelving is about 40 books.",
+      "ca01": "About how many books were there in your home when you were 16 years old? Do not include magazines, newspapers or schoolbooks. To give an estimation, one meter of shelving is about 40 books.",
+      "ca02": "About how many books are there in your home today? Do not include magazines, newspapers or schoolbooks. To give an estimation, one meter of shelving is about 40 books.",
+      "ca_r1": "10 books or less",
+      "ca_r2": "11 to 25 books",
+      "ca_r3": "26 to 100 books",
+      "ca_r4": "101 to 200 books",
+      "ca_r5": "201 to 500 books",
+      "ca_r6": "More than 500 books",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

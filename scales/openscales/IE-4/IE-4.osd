@@ -1,0 +1,119 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "IE-4",
+      "name": "Internal–External Locus of Control Short Scale–4 (IE-4)",
+      "abbreviation": "IE-4",
+      "description": "4-item English-language adaptation measuring locus of control via two 2-item subscales: internal locus of control and external locus of control. All items positively keyed. Subscale score is the mean of its two items; a total across subscales is not recommended.",
+      "citation": "Nießen, D., Schmidt, I., Groskurth, K., Rammstedt, B., & Lechner, C. M. (2022). Internal–External Locus of Control Short Scale–4 (IE-4). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis323_exz",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_explanation": "Licensed CC BY 4.0 via ZIS (GESIS Leibniz Institute for the Social Sciences). Free to use, share, and adapt with attribution. Cite the ZIS documentation (https://doi.org/10.6102/zis323_exz) and the original publication.",
+      "url": "https://zis.gesis.org/skala/Kovaleva-Beierlein-Kemper-Rammstedt-Internal-External-Locus-of-Control-Short-Scale-4-(IE-4)",
+      "version": "1.0",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-24",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "English-language adaptation (Nießen et al.) of the German IE-4 (Kovaleva et al., 2014). 5-point apply scale. All items positively keyed within their subscale. Score each subscale as the mean of its two items; a TOTAL across subscales is explicitly not recommended. Metrically invariant UK-Germany."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "question_head": "ie_4_inst",
+      "labels": [
+        "ie_4_r1",
+        null,
+        null,
+        null,
+        "ie_4_r5"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "internal",
+        "name": "Internal Locus of Control",
+        "description": "Mean of items 1 and 2. Range 1-5."
+      },
+      {
+        "id": "external",
+        "name": "External Locus of Control",
+        "description": "Mean of items 3 and 4. Range 1-5."
+      }
+    ],
+    "items": [
+      {
+        "id": "ie_401",
+        "type": "likert",
+        "text_key": "ie_401",
+        "dimension": "internal"
+      },
+      {
+        "id": "ie_402",
+        "type": "likert",
+        "text_key": "ie_402",
+        "dimension": "internal"
+      },
+      {
+        "id": "ie_403",
+        "type": "likert",
+        "text_key": "ie_403",
+        "dimension": "external"
+      },
+      {
+        "id": "ie_404",
+        "type": "likert",
+        "text_key": "ie_404",
+        "dimension": "external"
+      }
+    ],
+    "scoring": {
+      "internal": {
+        "method": "mean_coded",
+        "description": "Mean of items 1 and 2. Range 1-5.",
+        "items": {
+          "ie_401": 1,
+          "ie_402": 1
+        }
+      },
+      "external": {
+        "method": "mean_coded",
+        "description": "Mean of items 3 and 4. Range 1-5.",
+        "items": {
+          "ie_403": 1,
+          "ie_404": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Internal–External Locus of Control Short Scale–4 (IE-4) Report",
+      "footer_refs": [
+        "Nießen, D., Schmidt, I., Groskurth, K., Rammstedt, B., & Lechner, C. M. (2022). Internal–External Locus of Control Short Scale–4 (IE-4). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis323_exz",
+        "ZIS Documentation: https://doi.org/10.6102/zis323_exz"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "ie_4_inst": "The following statements may apply more or less to you. To what extent do you think each statement applies to you personally?",
+      "ie_401": "I'm my own boss.",
+      "ie_402": "If I work hard, I will succeed.",
+      "ie_403": "Whether at work or in my private life: What I do is mainly determined by others.",
+      "ie_404": "Fate often gets in the way of my plans.",
+      "ie_4_r1": "Does not apply at all",
+      "ie_4_r5": "Applies completely",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

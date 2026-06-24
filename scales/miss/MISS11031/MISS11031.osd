@@ -20,13 +20,19 @@
       "date": "2026-06-08",
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "notes": "English items verbatim from paper. No reverse-coded items. 5-point Likert: 1=Do not agree at all to 5=Completely agree. Authors recommend reporting internal and external subscales separately rather than a total score. Translated from German PEKS using TRAPD approach."
+      "notes": "English items verbatim from paper. No reverse-coded items. 5-point Likert: 1=Do not agree at all to 5=Completely agree. Authors recommend reporting internal and external subscales separately rather than a total score. Translated from German PEKS using TRAPD approach. Also documented in GESIS-ZIS: https://doi.org/10.6102/zis295_exz"
     },
     "likert_options": {
       "points": 5,
       "min": 1,
       "max": 5,
-      "labels": ["pess_r1", "pess_r2", "pess_r3", "pess_r4", "pess_r5"]
+      "labels": [
+        "pess_r1",
+        "pess_r2",
+        "pess_r3",
+        "pess_r4",
+        "pess_r5"
+      ]
     },
     "dimensions": [
       {
@@ -43,26 +49,56 @@
       }
     ],
     "items": [
-      {"id": "pess1", "type": "likert", "text_key": "pess1", "dimension": "internal_efficacy"},
-      {"id": "pess2", "type": "likert", "text_key": "pess2", "dimension": "external_efficacy"},
-      {"id": "pess3", "type": "likert", "text_key": "pess3", "dimension": "internal_efficacy"},
-      {"id": "pess4", "type": "likert", "text_key": "pess4", "dimension": "external_efficacy"}
+      {
+        "id": "pess1",
+        "type": "likert",
+        "text_key": "pess1",
+        "dimension": "internal_efficacy"
+      },
+      {
+        "id": "pess2",
+        "type": "likert",
+        "text_key": "pess2",
+        "dimension": "external_efficacy"
+      },
+      {
+        "id": "pess3",
+        "type": "likert",
+        "text_key": "pess3",
+        "dimension": "internal_efficacy"
+      },
+      {
+        "id": "pess4",
+        "type": "likert",
+        "text_key": "pess4",
+        "dimension": "external_efficacy"
+      }
     ],
     "scoring": {
       "internal_efficacy": {
         "description": "Mean of items pess1 and pess3. Range 1–5; higher = stronger sense of internal political efficacy.",
         "method": "mean_coded",
-        "items": ["pess1", "pess3"]
+        "items": [
+          "pess1",
+          "pess3"
+        ]
       },
       "external_efficacy": {
         "description": "Mean of items pess2 and pess4. Range 1–5; higher = stronger sense of external political efficacy.",
         "method": "mean_coded",
-        "items": ["pess2", "pess4"]
+        "items": [
+          "pess2",
+          "pess4"
+        ]
       }
     },
     "report": {
       "template": "standard",
-      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
       "header": "Political Efficacy Short Scale (PESS) Report",
       "footer_refs": [
         "Groskurth, K., Nießen, D., Rammstedt, B., & Lechner, C. M. (2021). An English-language adaptation and validation of the Political Efficacy Short Scale (PESS). Measurement Instruments for the Social Sciences, 3, Article e11031. https://doi.org/10.1186/s42409-020-00018-z",

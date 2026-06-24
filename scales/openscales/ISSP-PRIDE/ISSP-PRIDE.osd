@@ -1,0 +1,167 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "ISSP-PRIDE",
+      "name": "Cultural Pride and Political Pride (ISSP)",
+      "abbreviation": "ISSP-PRIDE",
+      "description": "9-item measure of national pride from the ISSP National Identity module, with two subscales: Political Pride (4 items: democracy, political influence, social security, fair treatment of groups) and Cultural Pride (5 items: science/technology, sports, arts/literature, armed forces, history). 4-point pride scale. Subscale scores are the unweighted mean, coded so higher = more pride.",
+      "citation": "Greer, Z., Urban, J., & Koc, P. (2025). Cultural Pride and Political Pride (ISSP). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis364",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_explanation": "Licensed CC BY 4.0 via ZIS (GESIS Leibniz Institute for the Social Sciences). Free to use, share, and adapt with attribution. Cite the ZIS documentation (https://doi.org/10.6102/zis364) and the original publication.",
+      "url": "https://zis.gesis.org/skala/Cultural-Pride-and-Political-Pride-(ISSP)",
+      "version": "1.0",
+      "domain": "Social"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-24",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "ISSP National Identity national-pride items (Cultural Pride and Political Pride). CC BY 4.0; available in ~30+ languages (English among them). 4-point scale: Very proud, Somewhat proud, Not very proud, Not proud at all. Source assigns 1=Very proud..4=Not proud at all; here all items are REVERSE-coded so higher score = more pride (matching the published convention 4=Very proud). 'Can't choose' (orig code 8) and no-answer (9) are treated as missing/NA. The country reference is the [COUNTRY] parameter (default 'your country'); set it (e.g. via URL/launch parameter) to the target country. An 'economic achievements' item was dropped by the authors due to low loadings and is not included."
+    },
+    "parameters": {
+      "COUNTRY": {
+        "type": "string",
+        "default": "your country",
+        "description": "Country the respondent is asked to rate pride in. Substituted into the [COUNTRY] placeholders in the instruction and items; defaults to 'your country', override per study (e.g. 'Germany')."
+      }
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "labels": [
+        "issp_pride_r1",
+        "issp_pride_r2",
+        "issp_pride_r3",
+        "issp_pride_r4"
+      ],
+      "question_head": "issp_pride_inst"
+    },
+    "dimensions": [
+      {
+        "id": "political",
+        "name": "Political Pride",
+        "description": "Mean of the 4 political-pride items, reverse-coded so higher = more pride. Range 1-4."
+      },
+      {
+        "id": "cultural",
+        "name": "Cultural Pride",
+        "description": "Mean of the 5 cultural-pride items, reverse-coded so higher = more pride. Range 1-4."
+      }
+    ],
+    "items": [
+      {
+        "id": "issp_pride01",
+        "type": "likert",
+        "text_key": "issp_pride01",
+        "dimension": "political"
+      },
+      {
+        "id": "issp_pride02",
+        "type": "likert",
+        "text_key": "issp_pride02",
+        "dimension": "political"
+      },
+      {
+        "id": "issp_pride03",
+        "type": "likert",
+        "text_key": "issp_pride03",
+        "dimension": "political"
+      },
+      {
+        "id": "issp_pride04",
+        "type": "likert",
+        "text_key": "issp_pride04",
+        "dimension": "political"
+      },
+      {
+        "id": "issp_pride05",
+        "type": "likert",
+        "text_key": "issp_pride05",
+        "dimension": "cultural"
+      },
+      {
+        "id": "issp_pride06",
+        "type": "likert",
+        "text_key": "issp_pride06",
+        "dimension": "cultural"
+      },
+      {
+        "id": "issp_pride07",
+        "type": "likert",
+        "text_key": "issp_pride07",
+        "dimension": "cultural"
+      },
+      {
+        "id": "issp_pride08",
+        "type": "likert",
+        "text_key": "issp_pride08",
+        "dimension": "cultural"
+      },
+      {
+        "id": "issp_pride09",
+        "type": "likert",
+        "text_key": "issp_pride09",
+        "dimension": "cultural"
+      }
+    ],
+    "scoring": {
+      "political": {
+        "method": "mean_coded",
+        "description": "Mean of the 4 political-pride items, reverse-coded so higher = more pride. Range 1-4.",
+        "items": {
+          "issp_pride01": -1,
+          "issp_pride02": -1,
+          "issp_pride03": -1,
+          "issp_pride04": -1
+        }
+      },
+      "cultural": {
+        "method": "mean_coded",
+        "description": "Mean of the 5 cultural-pride items, reverse-coded so higher = more pride. Range 1-4.",
+        "items": {
+          "issp_pride05": -1,
+          "issp_pride06": -1,
+          "issp_pride07": -1,
+          "issp_pride08": -1,
+          "issp_pride09": -1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Cultural Pride and Political Pride (ISSP) Report",
+      "footer_refs": [
+        "Greer, Z., Urban, J., & Koc, P. (2025). Cultural Pride and Political Pride (ISSP). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis364",
+        "ZIS Documentation: https://doi.org/10.6102/zis364"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "issp_pride_inst": "How proud are you of [COUNTRY] in each of the following? (Please check one box on each line.)",
+      "issp_pride01": "the way democracy works",
+      "issp_pride02": "its political influence in the world",
+      "issp_pride03": "its social security system",
+      "issp_pride04": "its fair treatment of groups in society",
+      "issp_pride05": "its scientific and technological achievements",
+      "issp_pride06": "its achievements in sports",
+      "issp_pride07": "its achievements in arts and literature",
+      "issp_pride08": "[COUNTRY]'s armed forces",
+      "issp_pride09": "its history",
+      "issp_pride_r1": "Very proud",
+      "issp_pride_r2": "Somewhat proud",
+      "issp_pride_r3": "Not very proud",
+      "issp_pride_r4": "Not proud at all",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

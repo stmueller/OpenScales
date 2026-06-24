@@ -1,0 +1,180 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "JEID",
+      "name": "Justice Evaluation of the Income Distribution (JEID) Scale",
+      "abbreviation": "JEID",
+      "description": "5-item scale measuring the subjective evaluation of the objective earnings distribution. Each item provides contextual information (average gross monthly income and typical occupations) for one income bracket — low, middle, upper-middle, high, top — and asks whether that income is unfairly low, fair, or unfairly high (7-point). Items are interpreted as a pattern across brackets; no total score is computed. Bilingual (English/UK and German). Income figures and occupations are country-specific and hardcoded per language.",
+      "citation": "Nießen, D., Adriaans, J., Liebig, S., & Lechner, C. M. (2023). Justice Evaluation of the Income Distribution (JEID) Scale. Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis331_exz",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_explanation": "Licensed CC BY 4.0 via ZIS (GESIS Leibniz Institute for the Social Sciences). Free to use, share, and adapt with attribution. Cite the ZIS documentation (https://doi.org/10.6102/zis331_exz) and the original publication.",
+      "url": "https://zis.gesis.org/skala/Nießen-Adriaans-Liebig-Lechner-Justice-Evaluation-of-the-Income-Distribution-(JEID)-Scale",
+      "version": "1.0",
+      "domain": "Social"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-24",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "Bilingual JEID (Nießen et al., 2023). 7-point scale: unfairly low (1) / fair (4) / unfairly high (7), with middle points (2,3,5,6) unlabeled. Five income brackets, each its own single-item dimension; NO total score (per the authors, items are analyzed together as a pattern, not aggregated). The country-specific income figures and example occupations are HARDCODED in each language's translation (English = UK / £; German = Germany / €) rather than parameterized — see SPECIFICATION.md R1. To update for inflation or to adapt to another country (e.g. a US version), edit the figures/occupations/country directly in the translation strings and add the corresponding language."
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "labels": [
+        "jeid_r1",
+        null,
+        null,
+        "jeid_r4",
+        null,
+        null,
+        "jeid_r7"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "low",
+        "name": "Low income evaluation",
+        "description": "Single-item justice evaluation of low income (item 1). 1=unfairly low, 4=fair, 7=unfairly high."
+      },
+      {
+        "id": "middle",
+        "name": "Middle income evaluation",
+        "description": "Single-item justice evaluation of middle income (item 2). 1=unfairly low, 4=fair, 7=unfairly high."
+      },
+      {
+        "id": "uppermiddle",
+        "name": "Upper-middle income evaluation",
+        "description": "Single-item justice evaluation of upper-middle income (item 3). 1=unfairly low, 4=fair, 7=unfairly high."
+      },
+      {
+        "id": "high",
+        "name": "High income evaluation",
+        "description": "Single-item justice evaluation of high income (item 4). 1=unfairly low, 4=fair, 7=unfairly high."
+      },
+      {
+        "id": "top",
+        "name": "Top income evaluation",
+        "description": "Single-item justice evaluation of top income (item 5). 1=unfairly low, 4=fair, 7=unfairly high."
+      }
+    ],
+    "items": [
+      {
+        "id": "jeid_inst",
+        "type": "inst",
+        "text_key": "jeid_inst"
+      },
+      {
+        "id": "jeid01",
+        "type": "likert",
+        "text_key": "jeid01",
+        "dimension": "low"
+      },
+      {
+        "id": "jeid02",
+        "type": "likert",
+        "text_key": "jeid02",
+        "dimension": "middle"
+      },
+      {
+        "id": "jeid03",
+        "type": "likert",
+        "text_key": "jeid03",
+        "dimension": "uppermiddle"
+      },
+      {
+        "id": "jeid04",
+        "type": "likert",
+        "text_key": "jeid04",
+        "dimension": "high"
+      },
+      {
+        "id": "jeid05",
+        "type": "likert",
+        "text_key": "jeid05",
+        "dimension": "top"
+      }
+    ],
+    "scoring": {
+      "low": {
+        "method": "mean_coded",
+        "description": "Single-item justice evaluation of low income (item 1). 1=unfairly low, 4=fair, 7=unfairly high.",
+        "items": {
+          "jeid01": 1
+        }
+      },
+      "middle": {
+        "method": "mean_coded",
+        "description": "Single-item justice evaluation of middle income (item 2). 1=unfairly low, 4=fair, 7=unfairly high.",
+        "items": {
+          "jeid02": 1
+        }
+      },
+      "uppermiddle": {
+        "method": "mean_coded",
+        "description": "Single-item justice evaluation of upper-middle income (item 3). 1=unfairly low, 4=fair, 7=unfairly high.",
+        "items": {
+          "jeid03": 1
+        }
+      },
+      "high": {
+        "method": "mean_coded",
+        "description": "Single-item justice evaluation of high income (item 4). 1=unfairly low, 4=fair, 7=unfairly high.",
+        "items": {
+          "jeid04": 1
+        }
+      },
+      "top": {
+        "method": "mean_coded",
+        "description": "Single-item justice evaluation of top income (item 5). 1=unfairly low, 4=fair, 7=unfairly high.",
+        "items": {
+          "jeid05": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Justice Evaluation of the Income Distribution (JEID) Report",
+      "footer_refs": [
+        "Nießen, D., Adriaans, J., Liebig, S., & Lechner, C. M. (2023). Justice Evaluation of the Income Distribution (JEID) Scale. Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis331_exz",
+        "ZIS Documentation: https://doi.org/10.6102/zis331_exz",
+        "Interpretation: items form a profile across income brackets (1=unfairly low, 4=fair, 7=unfairly high); no total score."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "jeid_inst": "We would now like to ask you a few questions about income differences in the UK. Current survey results show that low-income earners in the UK make £1,100 on average per month. Middle-income earners make £2,100 on average per month, upper-middle-income earners make £3,300 on average per month, and high-income earners make £6,000 on average per month. Top-income earners in the UK make more than £8,500 per month. These figures refer to the gross monthly income of full-time employees — the amount earned per month before deductions for taxes and social security contributions. We would now like to ask you how fair you find these incomes.",
+      "jeid01": "Low-income earners such as cleaners, shop salespeople, or couriers make £1,100 (gross) on average per month. This means that they earn less than 90% of all employees in the UK. Do you think that the income of low-income earners in the UK is unfairly low, fair, or unfairly high?",
+      "jeid02": "Middle-income earners such as nurses, office clerks, or social workers make £2,100 (gross) on average per month. This means that their income is in the mid-range. Do you think that the income of middle-income earners in the UK is unfairly low, fair, or unfairly high?",
+      "jeid03": "Upper-middle-income earners such as teachers, police officers, or programmers make £3,300 (gross) on average per month. This means that they earn more than 80% of all employees in the UK. Do you think that the income of upper-middle-income earners in the UK is unfairly low, fair, or unfairly high?",
+      "jeid04": "High-income earners such as doctors, engineers, or department managers make £6,000 (gross) on average per month. This means that they earn more than 90% of all employees in the UK. Do you think that the income of high-income earners in the UK is unfairly low, fair, or unfairly high?",
+      "jeid05": "Top-income earners such as chief executives, bank directors, or management consultants make more than £8,500 (gross) per month. This means that they earn more than 99% of all employees in the UK. Do you think that the income of top-income earners in the UK is unfairly low, fair, or unfairly high?",
+      "jeid_r1": "Unfairly low",
+      "jeid_r4": "Fair",
+      "jeid_r7": "Unfairly high",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "de": {
+      "jeid_inst": "Nun stellen wir Ihnen ein paar Fragen zu Einkommensunterschieden in Deutschland. Aktuelle Umfrageergebnisse zeigen, dass Geringverdiener in Deutschland durchschnittlich 1.500 Euro im Monat erhalten. Durchschnittsverdiener erhalten durchschnittlich 2.900 Euro im Monat, Gutverdiener durchschnittlich 4.100 Euro und Besserverdiener durchschnittlich 6.700 Euro. Die Topverdiener in Deutschland erhalten mehr als 11.000 Euro im Monat. Diese Zahlen beziehen sich auf monatliche Bruttoeinkommen von vollzeitbeschäftigten Angestellten — das, was jemand, der in Vollzeit arbeitet, monatlich vor Abzug von Steuern und Sozialversicherungsbeiträgen verdient. Im Folgenden möchten wir gerne von Ihnen wissen, wie gerecht Sie diese Einkommen finden.",
+      "jeid01": "Geringverdiener wie z. B. Reinigungskräfte, Friseure oder Paketboten verdienen brutto durchschnittlich 1.500 Euro im Monat. Damit verdienen sie weniger als 90 % aller Angestellten in Deutschland. Finden Sie das Einkommen von Geringverdienern in Deutschland ungerecht niedrig, gerecht oder ungerecht hoch?",
+      "jeid02": "Durchschnittsverdiener wie z. B. Krankenschwestern/Krankenpfleger, Buchhalter oder Elektriker verdienen brutto durchschnittlich 2.900 Euro im Monat. Damit liegen sie mit ihrem Einkommen im Mittelfeld. Finden Sie das Einkommen von Durchschnittsverdienern in Deutschland ungerecht niedrig, gerecht oder ungerecht hoch?",
+      "jeid03": "Gutverdiener wie z. B. Lehrer, Polizisten oder Softwareentwickler verdienen brutto durchschnittlich 4.100 Euro im Monat. Damit verdienen sie mehr als 80 % aller Angestellten in Deutschland. Finden Sie das Einkommen von Gutverdienern in Deutschland ungerecht niedrig, gerecht oder ungerecht hoch?",
+      "jeid04": "Besserverdiener wie z. B. Ärzte, Ingenieure oder Universitätsprofessoren verdienen brutto durchschnittlich 6.700 Euro im Monat. Damit verdienen sie mehr als 90 % aller Angestellten in Deutschland. Finden Sie das Einkommen von Besserverdienern in Deutschland ungerecht niedrig, gerecht oder ungerecht hoch?",
+      "jeid05": "Topverdiener wie z. B. Geschäftsführer, Bankdirektoren oder Unternehmensberater verdienen brutto mehr als 11.000 Euro im Monat. Damit verdienen sie mehr als 99 % aller Angestellten in Deutschland. Finden Sie das Einkommen von Topverdienern in Deutschland ungerecht niedrig, gerecht oder ungerecht hoch?",
+      "jeid_r1": "Ungerecht niedrig",
+      "jeid_r4": "Gerecht",
+      "jeid_r7": "Ungerecht hoch",
+      "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
+    }
+  }
+}

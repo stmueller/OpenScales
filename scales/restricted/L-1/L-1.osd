@@ -1,0 +1,90 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "L-1",
+      "name": "General Life Satisfaction Short Scale (L-1)",
+      "abbreviation": "L-1",
+      "description": "Single-item ultra-short scale measuring general (global) life satisfaction. The respondent rates overall satisfaction with their life on an 11-point rating scale (0-10). The scale score equals the respondent's answer to the one item. English-language adaptation (validated in the United Kingdom) of the German source instrument by Beierlein, Kovaleva, Laszlo, et al. (2015).",
+      "citation": "Nießen, D., Groskurth, K., Rammstedt, B., & Lechner, C. M. (2021). General Life Satisfaction Short Scale (L-1). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis284",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "license_explanation": "Licensed CC BY-NC-SA 4.0 via ZIS (GESIS Leibniz Institute for the Social Sciences). Free for NON-COMMERCIAL use: you may share and adapt the material with attribution and under the same ShareAlike license, but not for commercial purposes. Cite the ZIS documentation (https://doi.org/10.6102/zis284) and the original publication.",
+      "url": "https://zis.gesis.org/skala/Nießen-Groskurth-Rammstedt-Lechner-General-Life-Satisfaction-Short-Scale-(L-1)",
+      "version": "1.0",
+      "domain": "Well-being"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-24",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "notes": "Single-item measure of general life satisfaction. One item answered on an 11-point rating scale; following Beierlein et al. (2015), the scale is coded 0-10 (min 0, 11 points), with only the two endpoints labeled (0 = not at all satisfied; 10 = completely satisfied). The instruction/question stem is carried in likert_options.question_head (no standalone instruction item). The scale score is simply the item value (a single-item measure); scoring uses method mean_coded over the one item coded 1. Languages: English (from the ZIS English-language adaptation, zis284) and German. The English only: the CC BY-NC-SA ZIS English-adaptation document does not reproduce German item/anchor wordings (it references the original German instrument, which is separately licensed)."
+    },
+    "likert_options": {
+      "points": 11,
+      "min": 0,
+      "question_head": "l_1_inst",
+      "labels": [
+        "l_1_r0",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "l_1_r10"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "life_satisfaction",
+        "name": "General Life Satisfaction",
+        "description": "General (global) life satisfaction. Equal to the single item value. Range 0-10."
+      }
+    ],
+    "items": [
+      {
+        "id": "l_101",
+        "type": "likert",
+        "text_key": "l_101",
+        "dimension": "life_satisfaction"
+      }
+    ],
+    "scoring": {
+      "life_satisfaction": {
+        "method": "mean_coded",
+        "description": "Single-item measure: the score equals the respondent's answer to the one item. Range 0-10.",
+        "items": {
+          "l_101": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "General Life Satisfaction Short Scale (L-1) Report",
+      "footer_refs": [
+        "Nießen, D., Groskurth, K., Rammstedt, B., & Lechner, C. M. (2021). General Life Satisfaction Short Scale (L-1). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis284",
+        "ZIS Documentation: https://doi.org/10.6102/zis284"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "l_1_inst": "The next question is about your general satisfaction with life. All things considered, how satisfied are you with your life these days?",
+      "l_101": "All things considered, how satisfied are you with your life these days?",
+      "l_1_r0": "Not at all satisfied",
+      "l_1_r10": "Completely satisfied",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "English Translation of the SJT-TW (Situational Judgment Test – Teamwork)",
+      "code": "SJT-TW",
+      "abbreviation": "SJT-TW",
+      "description": "12-scenario Situational Judgment Test assessing knowledge about teamwork effectiveness. Each scenario describes a work-situation faced by a team or team member and presents four behavioural response options; the respondent selects the single best (most suitable) option. The original German version (Gatzka & Volmer, 2017) additionally asks for the worst option; this English translation pilot asked only for the best option to reduce duration. Scoring against a predefined best/worst key (restricted; available from the authors). Authors propose a single total score; a tentative two-factor structure was reported but the authors recommend computing only a total test score.",
+      "citation": "Freudenstein, J.-P., Remmert, N., Reznik, N., & Krumm, S. (2020). English Translation of the SJT-TW. Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis285",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "license_explanation": "Licensed CC BY-NC-SA 4.0 via ZIS (GESIS Leibniz Institute for the Social Sciences). Free for non-commercial use, sharing, and adaptation with attribution; derivative works must be shared under the same license (ShareAlike). Cite the ZIS documentation (https://doi.org/10.6102/zis285) and the original German instrument (Gatzka & Volmer, 2017). NOTE: The scoring key (the predefined best and worst response for each scenario) is NOT included in the public documentation and is restricted: it may be requested from ZIS (zis@gesis.org) or the original test authors (Thomas Gatzka and Judith Volmer) by submitting a signed Data Use Agreement. The 'correct_answers' fields in the scoring block are therefore left empty and must be filled in by the user once the key is obtained.",
+      "url": "https://zis.gesis.org/skala/Freudenstein-Remmert-Reznik-Krumm-English-Translation-of-the-SJT-TW",
+      "version": "1.0",
+      "domain": "Work"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-24",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "notes": "Situational Judgment Test, NOT a Likert scale. Structure: 12 scenarios, each a single-select 'multi' item with four behavioural response options (a-d). The respondent picks the single best (most suitable) option for each scenario, matching the English-version task (the German version additionally asks for the worst option, which is omitted here). Each scenario is encoded as one 'multi' item with option values 'a','b','c','d'. SCORING: The official scoring key (which option is best, and which is worst, for each scenario) is RESTRICTED and is not contained in the public ZIS documentation; it must be requested from ZIS (zis@gesis.org) or the test authors (Thomas Gatzka & Judith Volmer) via a signed Data Use Agreement. Per the documentation, when only the best option is asked (as here), a correct best choice scores +1, choosing the documented WORST option scores -1, and all other choices score 0; the total test score then ranges from -12 to +12 across the 12 scenarios. When both best AND worst options are asked (full German format), each scenario ranges from -2 to +2 and the total from -24 to +24. OSD's 'sum_correct' method counts correct (best) choices (range 0-12) but cannot express the -1 penalty for choosing the worst option, nor the separate worst-option task, without an expression evaluator; this is a known limitation. Because the key itself is restricted, the 'correct_answers' arrays are left EMPTY: the structure and scoring method are faithful, but the key values must be supplied by the user. With empty keys the 'teamwork' score will be 0 for all respondents until the key is filled in. Authors recommend computing only a single total score; a tentative two-factor structure (Factor 1: items 2,3,5,6,7,9,10,12; Factor 2: items 1,4,8,11) was reported but is described as preliminary and not recommended for scoring. Item 11 showed a negative item-total correlation in the pilot (N=20) and may warrant exclusion in future use. This test is recommended for research settings only."
+    },
+    "parameters": {
+      "shuffle_questions": {
+        "type": "boolean",
+        "default": false,
+        "description": "Randomize the order of the 12 scenarios"
+      }
+    },
+    "dimensions": [
+      {
+        "id": "teamwork",
+        "name": "Teamwork Effectiveness Knowledge",
+        "abbreviation": "SJT-TW",
+        "description": "Total test score: number of scenarios for which the best response option was correctly identified (0-12). REQUIRES the restricted scoring key (best option per scenario) to be entered into the scoring block's 'correct_answers'. See implementation notes; the documented full scoring (best vs. worst, with -1 penalties, range -12 to +12 or -24 to +24) cannot be fully expressed by sum_correct."
+      }
+    ],
+    "items": [
+      {
+        "id": "inst1",
+        "type": "inst",
+        "text_key": "inst1"
+      },
+      {
+        "id": "sjttw_sec",
+        "type": "section",
+        "title_key": "sec_title"
+      },
+      {
+        "id": "sjttw01",
+        "type": "multi",
+        "text_key": "sjttw01",
+        "dimension": "teamwork",
+        "options": [
+          {"value": "a", "text_key": "sjttw01_a"},
+          {"value": "b", "text_key": "sjttw01_b"},
+          {"value": "c", "text_key": "sjttw01_c"},
+          {"value": "d", "text_key": "sjttw01_d"}
+        ]
+      },
+      {
+        "id": "sjttw02",
+        "type": "multi",
+        "text_key": "sjttw02",
+        "dimension": "teamwork",
+        "options": [
+          {"value": "a", "text_key": "sjttw02_a"},
+          {"value": "b", "text_key": "sjttw02_b"},
+          {"value": "c", "text_key": "sjttw02_c"},
+          {"value": "d", "text_key": "sjttw02_d"}
+        ]
+      },
+      {
+        "id": "sjttw03",
+        "type": "multi",
+        "text_key": "sjttw03",
+        "dimension": "teamwork",
+        "options": [
+          {"value": "a", "text_key": "sjttw03_a"},
+          {"value": "b", "text_key": "sjttw03_b"},
+          {"value": "c", "text_key": "sjttw03_c"},
+          {"value": "d", "text_key": "sjttw03_d"}
+        ]
+      },
+      {
+        "id": "sjttw04",
+        "type": "multi",
+        "text_key": "sjttw04",
+        "dimension": "teamwork",
+        "options": [
+          {"value": "a", "text_key": "sjttw04_a"},
+          {"value": "b", "text_key": "sjttw04_b"},
+          {"value": "c", "text_key": "sjttw04_c"},
+          {"value": "d", "text_key": "sjttw04_d"}
+        ]
+      },
+      {
+        "id": "sjttw05",
+        "type": "multi",
+        "text_key": "sjttw05",
+        "dimension": "teamwork",
+        "options": [
+          {"value": "a", "text_key": "sjttw05_a"},
+          {"value": "b", "text_key": "sjttw05_b"},
+          {"value": "c", "text_key": "sjttw05_c"},
+          {"value": "d", "text_key": "sjttw05_d"}
+        ]
+      },
+      {
+        "id": "sjttw06",
+        "type": "multi",
+        "text_key": "sjttw06",
+        "dimension": "teamwork",
+        "options": [
+          {"value": "a", "text_key": "sjttw06_a"},
+          {"value": "b", "text_key": "sjttw06_b"},
+          {"value": "c", "text_key": "sjttw06_c"},
+          {"value": "d", "text_key": "sjttw06_d"}
+        ]
+      },
+      {
+        "id": "sjttw07",
+        "type": "multi",
+        "text_key": "sjttw07",
+        "dimension": "teamwork",
+        "options": [
+          {"value": "a", "text_key": "sjttw07_a"},
+          {"value": "b", "text_key": "sjttw07_b"},
+          {"value": "c", "text_key": "sjttw07_c"},
+          {"value": "d", "text_key": "sjttw07_d"}
+        ]
+      },
+      {
+        "id": "sjttw08",
+        "type": "multi",
+        "text_key": "sjttw08",
+        "dimension": "teamwork",
+        "options": [
+          {"value": "a", "text_key": "sjttw08_a"},
+          {"value": "b", "text_key": "sjttw08_b"},
+          {"value": "c", "text_key": "sjttw08_c"},
+          {"value": "d", "text_key": "sjttw08_d"}
+        ]
+      },
+      {
+        "id": "sjttw09",
+        "type": "multi",
+        "text_key": "sjttw09",
+        "dimension": "teamwork",
+        "options": [
+          {"value": "a", "text_key": "sjttw09_a"},
+          {"value": "b", "text_key": "sjttw09_b"},
+          {"value": "c", "text_key": "sjttw09_c"},
+          {"value": "d", "text_key": "sjttw09_d"}
+        ]
+      },
+      {
+        "id": "sjttw10",
+        "type": "multi",
+        "text_key": "sjttw10",
+        "dimension": "teamwork",
+        "options": [
+          {"value": "a", "text_key": "sjttw10_a"},
+          {"value": "b", "text_key": "sjttw10_b"},
+          {"value": "c", "text_key": "sjttw10_c"},
+          {"value": "d", "text_key": "sjttw10_d"}
+        ]
+      },
+      {
+        "id": "sjttw11",
+        "type": "multi",
+        "text_key": "sjttw11",
+        "dimension": "teamwork",
+        "options": [
+          {"value": "a", "text_key": "sjttw11_a"},
+          {"value": "b", "text_key": "sjttw11_b"},
+          {"value": "c", "text_key": "sjttw11_c"},
+          {"value": "d", "text_key": "sjttw11_d"}
+        ]
+      },
+      {
+        "id": "sjttw12",
+        "type": "multi",
+        "text_key": "sjttw12",
+        "dimension": "teamwork",
+        "options": [
+          {"value": "a", "text_key": "sjttw12_a"},
+          {"value": "b", "text_key": "sjttw12_b"},
+          {"value": "c", "text_key": "sjttw12_c"},
+          {"value": "d", "text_key": "sjttw12_d"}
+        ]
+      }
+    ],
+    "scoring": {
+      "teamwork": {
+        "method": "sum_correct",
+        "description": "Number of scenarios for which the best response was correctly identified (0-12). The 'correct_answers' below are EMPTY because the official scoring key is restricted (available from ZIS/the test authors via a signed Data Use Agreement). Fill in the correct best-option value (one of 'a','b','c','d') for each scenario once the key is obtained. Note: the documented scoring also assigns -1 when the respondent picks the option that is the predefined WORST for a scenario; sum_correct cannot express that penalty and counts only correct best choices.",
+        "items": ["sjttw01", "sjttw02", "sjttw03", "sjttw04", "sjttw05", "sjttw06", "sjttw07", "sjttw08", "sjttw09", "sjttw10", "sjttw11", "sjttw12"],
+        "correct_answers": {
+          "sjttw01": [],
+          "sjttw02": [],
+          "sjttw03": [],
+          "sjttw04": [],
+          "sjttw05": [],
+          "sjttw06": [],
+          "sjttw07": [],
+          "sjttw08": [],
+          "sjttw09": [],
+          "sjttw10": [],
+          "sjttw11": [],
+          "sjttw12": []
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "SJT-TW (English Translation) Report",
+      "footer_refs": [
+        "Freudenstein, J.-P., Remmert, N., Reznik, N., & Krumm, S. (2020). English Translation of the SJT-TW. Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis285",
+        "Gatzka, T., & Volmer, J. (2017). Situational Judgment Test of teamwork effectiveness (SJT-TW).",
+        "ZIS Documentation: https://doi.org/10.6102/zis285"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "LANGUAGE": "English",
+      "inst1": "Below, 12 situations are described as they may occur in the occupational daily routine of teams or working groups. For each situation, four different behavioural options are presented. Please pick the most suitable behaviour for each situation. For some situations, it may be difficult for you to decide as certain details are not specified, you did not experience a similar situation before, or you consider some options very similar. However, please choose the alternative that you generally take for the best solution. Please always select the best option for each situation. Please select exactly one response option for each situation. Please do not skip any situation.",
+      "sec_title": "Situations",
+      "sjttw01": "You are temporarily subjected to personal stress that also affects your occupational activity. A briefly acquainted colleague asks you about the reason for your decline in performance and offers help with your task. What should you do in such a situation?",
+      "sjttw01_a": "You confirm an increase in personal stress and accept the help.",
+      "sjttw01_b": "You do not mention your personal problems, but accept the help.",
+      "sjttw01_c": "You explain your specific situation and ask for help with your task.",
+      "sjttw01_d": "You thank your colleague for the feedback but politely decline the offer.",
+      "sjttw02": "Your team has clearly allocated all areas of responsibility. However, you incidentally notice that some team members in another area are challenged by a task that you have experience in. What should you do in such a situation?",
+      "sjttw02_a": "You tell your colleagues about your experience and offer advisory support.",
+      "sjttw02_b": "You mention your expertise and offer active support.",
+      "sjttw02_c": "You ask whether your experience or advice is desired and if so, when.",
+      "sjttw02_d": "You respect your colleagues’ responsibilities and stay out of it.",
+      "sjttw03": "Your team has made a lot of progress working on a complex task when some unforeseen developments occur. Therefore, your tediously achieved results are no longer completely up to date. What should your team do in such a situation?",
+      "sjttw03_a": "Slight shortcomings will be tolerated due to the advanced progress of the work.",
+      "sjttw03_b": "The team asks the customer or superior for their assessment of the situation.",
+      "sjttw03_c": "Team members immediately discuss possible consequences in a meeting.",
+      "sjttw03_d": "Changes are retrospectively implemented through intensive additional work.",
+      "sjttw04": "You notice a sudden but continuous decrease in performance in one of your team members, whom you have experienced as competent and reliable. Other sources report that this colleague currently has some personal problems. What should you do in such a situation?",
+      "sjttw04_a": "You and the other team members discuss how to support this colleague.",
+      "sjttw04_b": "You respect your colleague’s privacy and do not get involved in private matters.",
+      "sjttw04_c": "You help your colleague without asking questions.",
+      "sjttw04_d": "You ask your colleague if they want to talk about their problems.",
+      "sjttw05": "Some of your colleagues discuss various aspects of a team task during a meeting. Your area of responsibility is not the focus of their discussion, which is why you hold back and refrain from partaking in it. What should you do in such a situation?",
+      "sjttw05_a": "You mentally prepare the discussion points that you wanted to address.",
+      "sjttw05_b": "You use the opportunity to broaden your knowledge about other parts of the task.",
+      "sjttw05_c": "You carefully steer the conversation towards a more familiar topic that you can engage in.",
+      "sjttw05_d": "You attentively look for information that could be important for your area of responsibility.",
+      "sjttw06": "You are transferred to an already existing team. During a brief introduction, your contact person tells you that all team members have their own area of responsibility. Without providing any further details, your contact person instructs you on your own area of responsibility. What should you do in such a situation?",
+      "sjttw06_a": "You limit your questions to your area of responsibility, as nothing else should concern you.",
+      "sjttw06_b": "You hold back your curiosity and carefully listen to your contact person’s explanations.",
+      "sjttw06_c": "You decide to become familiar with the other areas of responsibility on your own after the conversation.",
+      "sjttw06_d": "You ask for the basic workflows and interdependencies in the team.",
+      "sjttw07": "You have to inform another team member about a complex issue from your area of responsibility. It is of utmost importance for your team’s success that the other person takes note of your concern and that no uncertainties are left. What should you do in such a situation?",
+      "sjttw07_a": "You prepare a timesaving summary that you personally deliver.",
+      "sjttw07_b": "You send a detailed report and ask for an acknowledgement of receipt.",
+      "sjttw07_c": "You arrange a personal meeting with the other team member.",
+      "sjttw07_d": "You send a message and explicitly request the other team member to contact you if any uncertainties are left.",
+      "sjttw08": "You incidentally notice that another team member struggles to finish their work on time. You have already completed your tasks. However, you want to double check your work and, if necessary, improve some details before the deadline. What should you do in such a situation?",
+      "sjttw08_a": "You ask the team member in a confidential conversation whether they need help.",
+      "sjttw08_b": "You contain yourself because you do not want the team member to appear incompetent.",
+      "sjttw08_c": "You carefully address your observation in the next team meeting.",
+      "sjttw08_d": "You finish your own tasks first before offering your help.",
+      "sjttw09": "Together with your team members, you are setting objectives for each member for an upcoming task. What should your team do in such a situation?",
+      "sjttw09_a": "The team sets objectives that are positive, clearly defined and easily verifiable.",
+      "sjttw09_b": "The team sets objectives that are specific, challenging and agreed upon by the whole team.",
+      "sjttw09_c": "The team sets objectives that are moderately difficult and comprehensible to the whole team.",
+      "sjttw09_d": "The team sets objectives that are easily attainable, open and flexible concerning time management.",
+      "sjttw10": "You are working on a task that is mainly in your area of responsibility. When you present your intended procedure during a meeting, some team members from other areas speak up and add suggestions for changes and adaptations. What should you do in such a situation?",
+      "sjttw10_a": "You take note of suggestions and discuss them with everyone involved.",
+      "sjttw10_b": "You reflect on what changes might be sensible and ask for details.",
+      "sjttw10_c": "You politely point out that you have a better overview of the task due to your expertise.",
+      "sjttw10_d": "You try to include as many of the suggested changes as possible in your plan.",
+      "sjttw11": "Due to external circumstances, your team was unable to finish an important task on time. Since every team member has given their very best, there is considerable disappointment. When a new task comes up, you notice that low morale and poor motivation are impairing the team. What should you do in such a situation?",
+      "sjttw11_a": "You remind your team of past successes to spark new motivation.",
+      "sjttw11_b": "You address your concerns in front of the whole team and encourage a discussion.",
+      "sjttw11_c": "You ask for a team meeting to put the failure behind you.",
+      "sjttw11_d": "You give the other team members the time to regain their motivation.",
+      "sjttw12": "Together with your team members, you are planning how to tackle an upcoming task. The team’s success in mastering this challenge depends on several factors, some of which are difficult to predict. What should your team do in such a situation?",
+      "sjttw12_a": "The team discusses all possible developments in advance and works out a strategy for each of them.",
+      "sjttw12_b": "The planning proceeds in small steps in order to allow quick adaptations.",
+      "sjttw12_c": "The team waits with further planning until all uncertainties are eliminated.",
+      "sjttw12_d": "The team focuses especially on currently available facts for the planning.",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

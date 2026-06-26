@@ -1,0 +1,163 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "PIS",
+      "name": "Partisan Identity Scale (PIS)",
+      "abbreviation": "PIS",
+      "description": "8-item English-language scale measuring partisan identity strength: the degree to which a voter identifies with a political party. Adapted from the Identification with a Psychological Group (IDPG) scale (Mael & Tetrick, 1992), it captures a subjective sense of group belonging, the affective importance of party membership, and the affective consequences of lowered group status. The party the respondent identifies with is inserted into each item. All items are positively keyed (no reverse items). A 4-item short form (items 3, 6, 7, 8) is available. The scale targets partisans only and is not meaningful for respondents with no party attachment.",
+      "citation": "Bankert, A. & Huddy, L. (2019). Partisan Identity Scale (PIS). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis270",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "license_explanation": "Licensed CC BY-NC-SA 4.0 (Attribution-NonCommercial-ShareAlike 4.0 International) via ZIS (GESIS Leibniz Institute for the Social Sciences). Free to use, share, and adapt for NON-COMMERCIAL purposes with attribution and under the same ShareAlike terms. Cite the ZIS documentation (https://doi.org/10.6102/zis270) and the original publication (Bankert & Huddy, 2019).",
+      "url": "https://zis.gesis.org/skala/Bankert-Huddy-Partisan-Identity-Scale-(PIS)",
+      "version": "1.0",
+      "domain": "Social"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-24",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "notes": "Items transcribed from the ZIS documentation of the Partisan Identity Scale (Bankert & Huddy, 2019; zis270). Eight items presented in a randomized grid; the name of the party the respondent identifies with is inserted in place of 'this party' in each item. Response scale is 4 points: 1 = Never/Rarely, 2 = Sometimes, 3 = Often, 4 = Always (all anchors labeled; no unlabeled middle points). Scoring: the full-scale score is the unweighted mean of all 8 items; higher values indicate stronger partisan identity. A 4-item short form uses items 3, 6, 7, and 8 (also scored as their mean). All items are positively keyed; there are NO reverse-coded items. The scale is administered only to partisans (voters who feel attached or close to a party). Language coverage: English only (the source instrument provides item wordings in English only; otherLanguage is null in the ZIS record). The party reference is the [PARTY] parameter (default 'my political party'); set it per study to a specific party name. Items use [PARTY] in place of the original 'this party'."
+    },
+    "parameters": {
+      "PARTY": {
+        "type": "string",
+        "default": "my political party",
+        "description": "The political party the respondent identifies with. Substituted into the [PARTY] placeholders in the items; defaults to 'my political party'. Set it per study to a specific party name (e.g. 'the Labour Party')."
+      }
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "labels": [
+        "pis_r1",
+        "pis_r2",
+        "pis_r3",
+        "pis_r4"
+      ],
+      "question_head": "pis_inst"
+    },
+    "dimensions": [
+      {
+        "id": "partisan_identity",
+        "name": "Partisan Identity (Full Scale)",
+        "description": "Mean of all 8 items. Range 1-4. Higher values indicate stronger partisan identity."
+      },
+      {
+        "id": "partisan_identity_short",
+        "name": "Partisan Identity (Short Form)",
+        "description": "Mean of the 4 short-form items (items 3, 6, 7, 8). Range 1-4. Used when survey space is limited."
+      }
+    ],
+    "items": [
+      {
+        "id": "pis_01",
+        "type": "likert",
+        "text_key": "pis_01",
+        "dimension": "partisan_identity"
+      },
+      {
+        "id": "pis_02",
+        "type": "likert",
+        "text_key": "pis_02",
+        "dimension": "partisan_identity"
+      },
+      {
+        "id": "pis_03",
+        "type": "likert",
+        "text_key": "pis_03",
+        "dimension": "partisan_identity"
+      },
+      {
+        "id": "pis_04",
+        "type": "likert",
+        "text_key": "pis_04",
+        "dimension": "partisan_identity"
+      },
+      {
+        "id": "pis_05",
+        "type": "likert",
+        "text_key": "pis_05",
+        "dimension": "partisan_identity"
+      },
+      {
+        "id": "pis_06",
+        "type": "likert",
+        "text_key": "pis_06",
+        "dimension": "partisan_identity"
+      },
+      {
+        "id": "pis_07",
+        "type": "likert",
+        "text_key": "pis_07",
+        "dimension": "partisan_identity"
+      },
+      {
+        "id": "pis_08",
+        "type": "likert",
+        "text_key": "pis_08",
+        "dimension": "partisan_identity"
+      }
+    ],
+    "scoring": {
+      "partisan_identity": {
+        "method": "mean_coded",
+        "description": "Unweighted mean of all 8 items. Range 1-4. Higher = stronger partisan identity. No reverse-coded items.",
+        "items": {
+          "pis_01": 1,
+          "pis_02": 1,
+          "pis_03": 1,
+          "pis_04": 1,
+          "pis_05": 1,
+          "pis_06": 1,
+          "pis_07": 1,
+          "pis_08": 1
+        }
+      },
+      "partisan_identity_short": {
+        "method": "mean_coded",
+        "description": "Unweighted mean of the 4 short-form items (3, 6, 7, 8). Range 1-4. No reverse-coded items.",
+        "items": {
+          "pis_03": 1,
+          "pis_06": 1,
+          "pis_07": 1,
+          "pis_08": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Partisan Identity Scale (PIS) Report",
+      "footer_refs": [
+        "Bankert, A. & Huddy, L. (2019). Partisan Identity Scale (PIS). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis270",
+        "ZIS Documentation: https://doi.org/10.6102/zis270"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "pis_inst": "How frequently do you experience the following thoughts, feelings, and behaviors?",
+      "pis_01": "When I speak about [PARTY], I usually say \"we\" instead of \"they\".",
+      "pis_02": "I am interested in what other people think about [PARTY].",
+      "pis_03": "When people criticize [PARTY], it feels like a personal insult.",
+      "pis_04": "I have a lot in common with other supporters of [PARTY].",
+      "pis_05": "If [PARTY] does badly in opinion polls, my day is ruined.",
+      "pis_06": "When I meet someone who supports [PARTY], I feel connected.",
+      "pis_07": "When I speak about [PARTY], I refer to them as \"my party\".",
+      "pis_08": "When people praise [PARTY], it makes me feel good.",
+      "pis_r1": "Never/Rarely",
+      "pis_r2": "Sometimes",
+      "pis_r3": "Often",
+      "pis_r4": "Always",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

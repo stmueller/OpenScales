@@ -1,0 +1,116 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "OCS-ISSP",
+      "name": "Organizational Commitment Scale (ISSP)",
+      "abbreviation": "OCS-ISSP",
+      "description": "3-item measure of organizational commitment (OC) used in the work-orientations module of the International Social Survey Programme (ISSP). Items assess willingness to exert effort for one's firm/organization, pride in the organization, and willingness to forgo a better-paid job to stay. All items positively keyed. 5-point agree-disagree Likert scale; the recommended score is the unweighted mean of the three items after inverting them so higher scores indicate higher organizational commitment.",
+      "citation": "Urban, J., Groskurth, K., & Schmidt, I. (2023). Organizational Commitment Scale (ISSP). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis312",
+      "license": "CC BY-NC 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "license_explanation": "Licensed CC BY-NC 4.0 via ZIS (GESIS Leibniz Institute for the Social Sciences). Free for NON-COMMERCIAL use: you may use, share, and adapt the scale with attribution but may not use it for commercial purposes. Cite the ZIS documentation (https://doi.org/10.6102/zis312) and the original ISSP publication (Jutz & Scholz, 2017).",
+      "url": "https://zis.gesis.org/skala/Urban-Groskurth-Schmidt-Organizational-Commitment-Scale-(ISSP)",
+      "version": "1.0",
+      "domain": "Work & Organizational"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-24",
+      "license": "CC BY-NC 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "notes": "3-item ISSP Organizational Commitment Scale. 5-point agree-disagree Likert; the raw ISSP scale runs 1 = Strongly agree to 5 = Strongly disagree, with an additional 8 = Can't choose treated as missing (not implemented here). Following the authors' scoring recommendation, all three items are inverted (coding -1) so that the computed mean ranges from 1 = low to 5 = high organizational commitment; the mean should only be computed when all three items are answered. All items are positively keyed in content (polarity +); the inversion compensates for the descending raw response scale, not for any negatively worded item. The ZIS source documents the instrument in English and German; many additional ISSP languages exist (available on the ISSP website) but their item wordings and response anchors are not reproduced in the ZIS documentation, so only the English block is included here. Suitable for research, not individual diagnostics (relatively low reliability). German item wordings, instruction, and response anchors added verbatim from the CC BY-NC source document (fixed an obvious source typo 'bleibe'->'bleiben')."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "ocs_issp_r1",
+        "ocs_issp_r2",
+        "ocs_issp_r3",
+        "ocs_issp_r4",
+        "ocs_issp_r5"
+      ],
+      "question_head": "ocs_issp_inst"
+    },
+    "dimensions": [
+      {
+        "id": "oc",
+        "name": "Organizational Commitment",
+        "description": "Mean of the three inverted items. Range 1-5; higher = higher organizational commitment."
+      }
+    ],
+    "items": [
+      {
+        "id": "ocs_issp01",
+        "type": "likert",
+        "text_key": "ocs_issp01",
+        "dimension": "oc"
+      },
+      {
+        "id": "ocs_issp02",
+        "type": "likert",
+        "text_key": "ocs_issp02",
+        "dimension": "oc"
+      },
+      {
+        "id": "ocs_issp03",
+        "type": "likert",
+        "text_key": "ocs_issp03",
+        "dimension": "oc"
+      }
+    ],
+    "scoring": {
+      "oc": {
+        "method": "mean_coded",
+        "description": "Unweighted mean of the three items, all inverted so that higher scores represent higher organizational commitment. Range 1-5. Compute only when all three items are answered.",
+        "items": {
+          "ocs_issp01": -1,
+          "ocs_issp02": -1,
+          "ocs_issp03": -1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Organizational Commitment Scale (ISSP) Report",
+      "footer_refs": [
+        "Urban, J., Groskurth, K., & Schmidt, I. (2023). Organizational Commitment Scale (ISSP). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis312",
+        "Jutz, R., & Scholz, E. (2017). ISSP Work Orientations IV (2015).",
+        "ZIS Documentation: https://doi.org/10.6102/zis312"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "ocs_issp_inst": "To what extent do you agree or disagree with each of the following statements?",
+      "ocs_issp01": "I am willing to work harder than I have to in order to help the firm or organization I work for succeed.",
+      "ocs_issp02": "I am proud to be working for my firm or organization.",
+      "ocs_issp03": "I would turn down another job that offered quite a bit more pay in order to stay with this organization.",
+      "ocs_issp_r1": "Strongly agree",
+      "ocs_issp_r2": "Agree",
+      "ocs_issp_r3": "Neither agree nor disagree",
+      "ocs_issp_r4": "Disagree",
+      "ocs_issp_r5": "Strongly disagree",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "de": {
+      "ocs_issp_inst": "Inwieweit stimmen Sie den folgenden Aussagen zu oder nicht zu?",
+      "ocs_issp01": "Ich bin bereit, härter zu arbeiten als ich muss, um zum Erfolg meiner Firma/Organisation beizutragen.",
+      "ocs_issp02": "Ich bin stolz darauf, für meine Firma/Organisation zu arbeiten.",
+      "ocs_issp03": "Ich würde eine andere, besser bezahlte Stelle ablehnen, um bei meiner jetzigen Firma/Organisation zu bleiben.",
+      "ocs_issp_r1": "Stimme voll und ganz zu",
+      "ocs_issp_r2": "Stimme zu",
+      "ocs_issp_r3": "Weder noch",
+      "ocs_issp_r4": "Stimme nicht zu",
+      "ocs_issp_r5": "Stimme überhaupt nicht zu",
+      "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "R-1",
+      "name": "Risk Proneness Short Scale (R-1)",
+      "abbreviation": "R-1",
+      "description": "Single-item ultra-short scale measuring the psychological disposition of risk proneness (general willingness to take risks). The respondent rates how willing they are in general to take risks on a 7-point rating scale with labeled endpoints (1-7). The scale score equals the respondent's answer to the one item. English-language adaptation (validated in the United Kingdom) of the German source instrument by Beierlein, Kovaleva, Kemper, et al. (2015).",
+      "citation": "Nießen, D., Groskurth, K., Rammstedt, B., & Lechner, C. M. (2022). Risk Proneness Short Scale (R-1). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis286",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "license_explanation": "Licensed CC BY-NC-SA 4.0 via ZIS (GESIS Leibniz Institute for the Social Sciences). Free for NON-COMMERCIAL use: you may share and adapt the material with attribution and under the same ShareAlike license, but not for commercial purposes. Cite the ZIS documentation (https://doi.org/10.6102/zis286) and the original publication.",
+      "url": "https://zis.gesis.org/skala/Nießen-Groskurth-Rammstedt-Lechner-Risk-Proneness-Short-Scale-(R-1)",
+      "version": "1.0",
+      "domain": "Personality"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-24",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "notes": "Single-item measure of risk proneness. One item answered on a 7-point rating scale (min 1, 7 points) with only the two endpoints labeled (1 = not at all willing to take risks; 7 = very willing to take risks); the five middle points are unlabeled (literal null). The instruction/question stem is carried in likert_options.question_head (no standalone instruction item). The scale score is simply the item value (a single-item measure); scoring uses method mean_coded over the one item coded 1. Languages: English (from the ZIS English-language adaptation, zis286) and German. The English only: the CC BY-NC-SA ZIS English-adaptation document does not reproduce German item/anchor wordings (it references the original German instrument, which is separately licensed)."
+    },
+    "likert_options": {
+      "points": 7,
+      "min": 1,
+      "question_head": "r_1_inst",
+      "labels": [
+        "r_1_r1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "r_1_r7"
+      ]
+    },
+    "dimensions": [
+      {
+        "id": "risk_proneness",
+        "name": "Risk Proneness",
+        "description": "General willingness to take risks. Equal to the single item value. Range 1-7."
+      }
+    ],
+    "items": [
+      {
+        "id": "r_101",
+        "type": "likert",
+        "text_key": "r_101",
+        "dimension": "risk_proneness"
+      }
+    ],
+    "scoring": {
+      "risk_proneness": {
+        "method": "mean_coded",
+        "description": "Single-item measure: the score equals the respondent's answer to the one item. Range 1-7.",
+        "items": {
+          "r_101": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Risk Proneness Short Scale (R-1) Report",
+      "footer_refs": [
+        "Nießen, D., Groskurth, K., Rammstedt, B., & Lechner, C. M. (2022). Risk Proneness Short Scale (R-1). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis286",
+        "ZIS Documentation: https://doi.org/10.6102/zis286"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "r_1_inst": "How do you see yourself – how willing are you in general to take risks?",
+      "r_101": "How do you see yourself – how willing are you in general to take risks?",
+      "r_1_r1": "Not at all willing to take risks",
+      "r_1_r7": "Very willing to take risks",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

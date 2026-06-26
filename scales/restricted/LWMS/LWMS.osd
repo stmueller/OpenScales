@@ -1,0 +1,161 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "LWMS",
+      "name": "Luxembourg Workplace Mobbing Scale (LWMS)",
+      "abbreviation": "LWMS",
+      "description": "Very brief (5-item) unidimensional instrument assessing workplace mobbing exposure in the general working population. Respondents rate how often difficult situations (criticism, being ignored, meaningless tasks, ridicule, conflict) arise with colleagues or a superior on a 5-point frequency scale. All items positively keyed; higher scores reflect greater workplace mobbing exposure. Validated in German, French, and Luxembourgish.",
+      "citation": "Sischka, P. E., Schmidt, A. F., & Steffgen, G. (2021). Luxembourg Workplace Mobbing Scale (LWMS). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis298",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "license_explanation": "Licensed CC BY-NC-SA 4.0 via ZIS (GESIS Leibniz Institute for the Social Sciences). Free to use, share, and adapt for NON-COMMERCIAL purposes with attribution, and any derivative must be distributed under the same license (ShareAlike). Cite the ZIS documentation (https://doi.org/10.6102/zis298) and the original publication (Sischka, Schmidt, & Steffgen).",
+      "url": "https://zis.gesis.org/skala/Sischka-Schmidt-Steffgen-Luxembourg-Workplace-Mobbing-Scale-(LWMS)",
+      "version": "1.0",
+      "domain": "Work & Organizational"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-24",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "notes": "5 items, unidimensional. Response is a 5-point frequency scale: 1 (Never), 2 (Rarely), 3 (Sometimes), 4 (Often), 5 (Almost always); all five points are labeled. The shared instruction is delivered via likert_options.question_head (no standalone instruction item). Scoring: all items positively keyed (coding 1, no reverse items); the total is the unweighted mean of the five items (range 1-5), with higher scores reflecting greater workplace mobbing exposure. Empirically validated language versions: German, French, Luxembourgish. English item/anchor wordings are provided in the documentation but the English version is not yet empirically validated. A Portuguese version exists in the answer sheet but its item wordings are not provided in the source text and are therefore not included here."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "lwms_r1",
+        "lwms_r2",
+        "lwms_r3",
+        "lwms_r4",
+        "lwms_r5"
+      ],
+      "question_head": "lwms_inst"
+    },
+    "dimensions": [
+      {
+        "id": "mobbing",
+        "name": "Workplace Mobbing Exposure",
+        "description": "Unweighted mean of all 5 items. Range 1-5. Higher scores reflect greater workplace mobbing exposure."
+      }
+    ],
+    "items": [
+      {
+        "id": "lwms01",
+        "type": "likert",
+        "text_key": "lwms01",
+        "dimension": "mobbing"
+      },
+      {
+        "id": "lwms02",
+        "type": "likert",
+        "text_key": "lwms02",
+        "dimension": "mobbing"
+      },
+      {
+        "id": "lwms03",
+        "type": "likert",
+        "text_key": "lwms03",
+        "dimension": "mobbing"
+      },
+      {
+        "id": "lwms04",
+        "type": "likert",
+        "text_key": "lwms04",
+        "dimension": "mobbing"
+      },
+      {
+        "id": "lwms05",
+        "type": "likert",
+        "text_key": "lwms05",
+        "dimension": "mobbing"
+      }
+    ],
+    "scoring": {
+      "mobbing": {
+        "method": "mean_coded",
+        "description": "Unweighted mean of all 5 items. Range 1-5. All items positively keyed; no reverse-scored items. Higher scores reflect greater workplace mobbing exposure.",
+        "items": {
+          "lwms01": 1,
+          "lwms02": 1,
+          "lwms03": 1,
+          "lwms04": 1,
+          "lwms05": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "Luxembourg Workplace Mobbing Scale (LWMS) Report",
+      "footer_refs": [
+        "Sischka, P. E., Schmidt, A. F., & Steffgen, G. (2021). Luxembourg Workplace Mobbing Scale (LWMS). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis298",
+        "ZIS Documentation: https://doi.org/10.6102/zis298"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "lwms_inst": "How often from your point of view do difficult situations arise with your colleagues or your superior?",
+      "lwms01": "How often is your work criticised by your colleagues or by your superior?",
+      "lwms02": "How often are you ignored at work by your colleagues or your superior?",
+      "lwms03": "How often are you assigned meaningless tasks by your superior?",
+      "lwms04": "How often are you ridiculed in front of others by your superior or by your colleagues?",
+      "lwms05": "How often are you in conflict with your colleagues or superior?",
+      "lwms_r1": "Never",
+      "lwms_r2": "Rarely",
+      "lwms_r3": "Sometimes",
+      "lwms_r4": "Often",
+      "lwms_r5": "Almost always",
+      "debrief": "Thank you for completing this questionnaire."
+    },
+    "de": {
+      "lwms_inst": "Wie häufig sind aus Ihrer Sicht schwierige Situationen mit Kollegen und Kolleginnen oder Vorgesetzten?",
+      "lwms01": "Wie häufig wird Ihre Arbeit durch Ihre Kollegen oder Ihren Vorgesetzten kritisiert?",
+      "lwms02": "Wie häufig werden Sie auf der Arbeit von Ihren Kollegen oder Ihrem Vorgesetzten ignoriert?",
+      "lwms03": "Wie häufig kriegen Sie von Ihrem Vorgesetzten sinnlose Aufgaben zugewiesen?",
+      "lwms04": "Wie häufig werden Sie von Ihrem Vorgesetzten oder von Ihren Kollegen vor anderen lächerlich gemacht?",
+      "lwms05": "Wie häufig haben Sie Konflikte mit Ihren Kollegen oder Vorgesetzten?",
+      "lwms_r1": "Niemals",
+      "lwms_r2": "Selten",
+      "lwms_r3": "Manchmal",
+      "lwms_r4": "Oft",
+      "lwms_r5": "Fast immer",
+      "debrief": "Vielen Dank für das Ausfüllen dieses Fragebogens."
+    },
+    "fr": {
+      "lwms_inst": "De votre point de vue, à quelle fréquence des situations difficiles avec des collègues ou un supérieur surviennent-elles?",
+      "lwms01": "À quelle fréquence vos collègues ou votre supérieur critiquent-ils votre travail?",
+      "lwms02": "À quelle fréquence vos collègues ou votre supérieur vous ignorent-ils au travail?",
+      "lwms03": "À quelle fréquence votre supérieur vous assigne-t-il des missions dénuées de sens?",
+      "lwms04": "À quelle fréquence votre supérieur ou vos collègues vous ridiculisent-ils devant d'autres personnes?",
+      "lwms05": "À quelle fréquence êtes-vous en conflit avec vos collègues ou votre supérieur?",
+      "lwms_r1": "Jamais",
+      "lwms_r2": "Rarement",
+      "lwms_r3": "Parfois",
+      "lwms_r4": "Souvent",
+      "lwms_r5": "Presque tout le temps",
+      "debrief": "Merci d'avoir rempli ce questionnaire."
+    },
+    "lb": {
+      "lwms_inst": "Wéi oft kommen aus Ärer Siicht schwiereg Situatiounen mat Kollegen a Kolleginnen oder Ärem Viergesetzten vir?",
+      "lwms01": "Wéi oft gëtt Är Aarbecht vun Äre Kollegen oder Ärem Viergesetzten kritiséiert?",
+      "lwms02": "Wéi oft gitt Dir op der Aarbecht vun Äre Kollegen oder Ärem Viergesetzten ignoréiert?",
+      "lwms03": "Wéi oft kritt Dir vun Ärem Viergesetzten Aufgaben zougewisen, déi kee Sënn maachen?",
+      "lwms04": "Wéi oft gitt Dir vun Ärem Viergesetzten oder vun Äre Kollegen virun aneren lächerlech gemaach?",
+      "lwms05": "Wéi oft hutt Dir Konflikter mat Äre Kollegen oder Ärem Viergesetzten?",
+      "lwms_r1": "Ni",
+      "lwms_r2": "Seelen",
+      "lwms_r3": "Munchmol",
+      "lwms_r4": "Oft",
+      "lwms_r5": "Bal ëmmer",
+      "debrief": "Merci datt Dir dëse Questionnaire ausgefëllt hutt."
+    }
+  }
+}

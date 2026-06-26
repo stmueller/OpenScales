@@ -1,0 +1,103 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "GSE-3",
+      "name": "General Self-Efficacy Short Scale-3 (GSE-3)",
+      "abbreviation": "GSE-3",
+      "description": "3-item English-language adaptation of the German ASKU (Allgemeine Selbstwirksamkeit Kurzskala) measuring general self-efficacy: the generalized belief in one's competence to cope with a broad range of demanding or novel situations. All three items are positively keyed (no reverse items) and load on a single dimension. Answered on a fully labelled 5-point apply scale; the score is the unweighted mean of the three items.",
+      "citation": "Doll, E. S., Nießen, D., Schmidt, I., Rammstedt, B., & Lechner, C. M. (2021). General Self-Efficacy Short Scale-3 (GSE-3). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis294",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "license_explanation": "Licensed CC BY-NC-SA 4.0 via ZIS (GESIS Leibniz Institute for the Social Sciences). Free for NON-COMMERCIAL use: you may use, share, and adapt the scale with attribution, and any adaptations must be shared under the same license (ShareAlike). Cite the ZIS documentation (https://doi.org/10.6102/zis294) and the original publication (Doll, Nießen, Schmidt, Rammstedt, & Lechner, 2021).",
+      "url": "https://zis.gesis.org/skala/Doll-Nießen-Schmidt-Rammstedt-Lechner-General-Self-Efficacy-Short-Scale-3-(GSE-3)",
+      "version": "1.0",
+      "domain": "Self & Coping"
+    },
+    "implementation": {
+      "author": "Shane T. Mueller",
+      "organization": "OpenScales Project",
+      "date": "2026-06-24",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "notes": "GESIS ZIS short scale (zis294). English-language adaptation of the German ASKU (Beierlein, Kovaleva, et al., 2014). Three items, single dimension (general self-efficacy), all positively keyed (no reverse items). Fully labelled 5-point apply scale (all five points labelled). Scale score is the unweighted mean across the three items; the authors recommend computing it only when there are no missing values. The German source items and German response anchors are not included in the ZIS English-adaptation document (zis294) and so are not provided here; only the English language version is implemented."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": [
+        "gse_3_r1",
+        "gse_3_r2",
+        "gse_3_r3",
+        "gse_3_r4",
+        "gse_3_r5"
+      ],
+      "question_head": "gse_3_inst"
+    },
+    "dimensions": [
+      {
+        "id": "gse",
+        "name": "General Self-Efficacy",
+        "description": "Mean of all 3 items. Range 1-5. Higher scores indicate greater general self-efficacy."
+      }
+    ],
+    "items": [
+      {
+        "id": "gse_301",
+        "type": "likert",
+        "text_key": "gse_301",
+        "dimension": "gse"
+      },
+      {
+        "id": "gse_302",
+        "type": "likert",
+        "text_key": "gse_302",
+        "dimension": "gse"
+      },
+      {
+        "id": "gse_303",
+        "type": "likert",
+        "text_key": "gse_303",
+        "dimension": "gse"
+      }
+    ],
+    "scoring": {
+      "gse": {
+        "method": "mean_coded",
+        "description": "Unweighted mean of all 3 items. Range 1-5. All items positively keyed (no reverse). Compute only when there are no missing values.",
+        "items": {
+          "gse_301": 1,
+          "gse_302": 1,
+          "gse_303": 1
+        }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
+      "header": "General Self-Efficacy Short Scale-3 (GSE-3) Report",
+      "footer_refs": [
+        "Doll, E. S., Nießen, D., Schmidt, I., Rammstedt, B., & Lechner, C. M. (2021). General Self-Efficacy Short Scale-3 (GSE-3). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis294",
+        "ZIS Documentation: https://doi.org/10.6102/zis294"
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "gse_3_inst": "The following statements may apply more or less to you. To what extent do you think each statement applies to you personally?",
+      "gse_301": "I can rely on my own abilities in difficult situations.",
+      "gse_302": "I am able to solve most problems on my own.",
+      "gse_303": "I can usually solve even challenging and complex tasks well.",
+      "gse_3_r1": "Does not apply at all",
+      "gse_3_r2": "Applies a bit",
+      "gse_3_r3": "Applies somewhat",
+      "gse_3_r4": "Applies mostly",
+      "gse_3_r5": "Applies completely",
+      "debrief": "Thank you for completing this questionnaire."
+    }
+  }
+}

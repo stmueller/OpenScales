@@ -345,7 +345,7 @@
 
   function renderLikert(item, likertOpts, strings) {
     const points = item.likert_points || likertOpts.points || 5;
-    const min = item.likert_min || likertOpts.min || 1;
+    const min = (item.likert_min !== undefined && item.likert_min !== null) ? item.likert_min : (likertOpts.min !== undefined && likertOpts.min !== null) ? likertOpts.min : 1;
     const max = item.likert_max || likertOpts.max || points;
     const labels = item.likert_labels || likertOpts.labels || [];
     const reverse = item.likert_reverse !== undefined ? item.likert_reverse : (likertOpts.likert_reverse || false);

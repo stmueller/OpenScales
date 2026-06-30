@@ -1,0 +1,74 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Personal Suffering Assessment",
+      "abbreviation": "PSA",
+      "code": "PSA",
+      "version": "1.0",
+      "license": "CC BY-NC-ND 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "license_explanation": "Open access article under CC BY-NC-ND 4.0. Free for non-commercial use without modification; commercial use prohibited.",
+      "doi": "10.1016/j.socscimed.2019.01.041",
+      "citation": "VanderWeele, T. J. (2019). Suffering and response: Directions in empirical research. Social Science & Medicine, 224, 58–66. https://doi.org/10.1016/j.socscimed.2019.01.041",
+      "url": "https://hfh.fas.harvard.edu/measuring-flourishing",
+      "construct": "Subjective suffering: intensity, duration, uncontrollability, pervasiveness, disruption to purposes, threat to personhood",
+      "languages": ["en"],
+      "n_items": 7,
+      "respondent": "adult",
+      "notes": "Item 1 uses 0=Not suffering at all / 10=Suffering terribly. Items 2–7 use 0=Do not agree / 10=Completely agree. Total score = sum of all 7 items, range 0–70."
+    },
+    "likert_options": {
+      "points": 11,
+      "min": 0,
+      "labels": ["psa_r0", null, null, null, null, null, null, null, null, null, "psa_r10"]
+    },
+    "items": [
+      {"id": "psa_inst", "type": "inst", "text_key": "psa_inst"},
+      {"id": "psa_01", "type": "likert", "text_key": "psa_01", "response_scale": "psa_rs_suffering"},
+      {"id": "psa_02", "type": "likert", "text_key": "psa_02", "response_scale": "psa_rs_agree"},
+      {"id": "psa_03", "type": "likert", "text_key": "psa_03", "response_scale": "psa_rs_agree"},
+      {"id": "psa_04", "type": "likert", "text_key": "psa_04", "response_scale": "psa_rs_agree"},
+      {"id": "psa_05", "type": "likert", "text_key": "psa_05", "response_scale": "psa_rs_agree"},
+      {"id": "psa_06", "type": "likert", "text_key": "psa_06", "response_scale": "psa_rs_agree"},
+      {"id": "psa_07", "type": "likert", "text_key": "psa_07", "response_scale": "psa_rs_agree"}
+    ],
+    "response_scales": {
+      "psa_rs_suffering": {
+        "points": 11,
+        "min": 0,
+        "labels": ["psa_rs_suffering_r0", null, null, null, null, null, null, null, null, null, "psa_rs_suffering_r10"]
+      },
+      "psa_rs_agree": {
+        "points": 11,
+        "min": 0,
+        "labels": ["psa_rs_agree_r0", null, null, null, null, null, null, null, null, null, "psa_rs_agree_r10"]
+      }
+    },
+    "scoring": {
+      "Total": {
+        "method": "sum",
+        "items": ["psa_01", "psa_02", "psa_03", "psa_04", "psa_05", "psa_06", "psa_07"],
+        "notes": "Sum of all 7 items. Range 0–70."
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "psa_inst": "Please answer each of the following questions on a scale of 0–10.",
+      "psa_01": "To what extent are you suffering?",
+      "psa_02": "The intensity of what I have been experiencing feels intolerable.",
+      "psa_03": "The length of time I have been suffering, or expect to suffer, feels intolerable.",
+      "psa_04": "I feel powerless to stop my current experience of suffering.",
+      "psa_05": "The suffering I have been experiencing affects all aspects of my life.",
+      "psa_06": "Certain purposes of my life have been badly disrupted because of what I have been experiencing.",
+      "psa_07": "What I have been experiencing threatens who I am as a person.",
+      "psa_r0": "0",
+      "psa_r10": "10",
+      "psa_rs_suffering_r0": "Not suffering at all",
+      "psa_rs_suffering_r10": "Suffering terribly",
+      "psa_rs_agree_r0": "Do not agree",
+      "psa_rs_agree_r10": "Completely agree"
+    }
+  }
+}

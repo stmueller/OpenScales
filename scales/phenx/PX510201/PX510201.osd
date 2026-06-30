@@ -6,18 +6,11 @@
       "code": "PX510201",
       "abbreviation": "PX510201",
       "description": "The Alcohol Use Disorders Identification Test (AUDIT) includes 10 screening questions about the use of alcohol and alcohol-related consequences during the past year. The questions address alcohol frequency, quantity, alcohol dependence symptoms, and alcohol-related problems.",
-      "domain": "Substance Use",
+      "domain": "Substance Use - Screening & Family History",
       "citation": "Conigrave, K. M., Saunders, J. B., & Reznik, R.B. (1995). Predictive capacity of the AUDIT questionnaire for alcohol-related harm. Addiction, 90 (11), 1479-1485. Fleming, M. F., Barry, K. L., & MacDonald, R. (1991). The alcohol use disorders identification test (AUDIT) in a college sample. International Journal of the Addictions, 26 (11), 1173-1185. Hays, R. D., Merz, J. F., & Nicholas, R. (1995). Response burden, reliability, and validity of the CAGE, Short MAST, and AUDIT alcohol screening measures. Behavioral Research Methods, Instruments, & Computers, 27 (2), 277-280. Piccinelli, M., Tessari, E., Bortolomasi, M., Piasere, O., Semenzin, M., Garzotto, N., & Tansella, M. (1997). Efficacy of the alcohol use disorders identification test as a screening tool for hazardous alcohol intake and related disorders in primary care: a validity study. British Medical Journal, 314 (8), 420-424. Rigmaiden, R. S., Pistorello, J., Johnson, J., Mar, D., & Veach, T. L. (1995). Addiction medicine in ambulatory care: Prevalence patterns in internal medicine. Substance Abuse, 16 (1), 49-57. Volk, R. J., Steinbauer, J. R., Cantor, S. B., & Holzer, C. E. (1997). The Alcohol Use Disorders Identification Test (AUDIT) as a screen for at-risk drinking in primary care patients of different racial/ethnic backgrounds. Addiction, 92 (2), 197-206. [PhenX: https://www.phenxtoolkit.org/protocols/view/510201]",
       "license": "PhenX Toolkit freely available protocol",
       "version": "1.0",
       "url": "https://www.phenxtoolkit.org/protocols/view/510201"
-    },
-    "implementation": {
-      "author": "Shane T. Mueller",
-      "organization": "OpenScales Project",
-      "date": "2026-04-01",
-      "license": "CC BY 4.0",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/"
     },
     "likert_options": {
       "points": 5,
@@ -133,15 +126,15 @@
         "type": "multi",
         "options": [
           {
-            "text_key": "opt_1",
+            "text_key": "injured_result_of_drinking_opt_0",
             "value": 0
           },
           {
-            "text_key": "opt_2",
+            "text_key": "injured_result_of_drinking_opt_2",
             "value": 2
           },
           {
-            "text_key": "opt_3",
+            "text_key": "injured_result_of_drinking_opt_4",
             "value": 4
           }
         ]
@@ -152,45 +145,25 @@
         "type": "multi",
         "options": [
           {
-            "text_key": "opt_1",
+            "text_key": "others_concerned_about_your_drinking_opt_0",
             "value": 0
           },
           {
-            "text_key": "opt_2",
+            "text_key": "others_concerned_about_your_drinking_opt_2",
             "value": 2
           },
           {
-            "text_key": "opt_3",
+            "text_key": "others_concerned_about_your_drinking_opt_4",
             "value": 4
           }
         ]
-      }
-    ],
-    "dimensions": [
+      },
       {
-        "id": "total",
-        "name": "Total Score"
+        "id": "scoring_510201",
+        "text_key": "scoring_510201",
+        "type": "inst"
       }
-    ],
-    "scoring": {
-      "total": {
-        "description": "Total: sum_coded of all 10 items.",
-        "method": "sum_coded",
-        "items": [
-          "how_often_drink",
-          "how_many_drinks_when_drinking",
-          "how_often_have_sixormore_drinks",
-          "how_often_cannot_stop_drinking",
-          "failed_expectations_because_of_drinking",
-          "how_often_needed_morning_drink",
-          "how_often_guilty_after_drinking",
-          "how_often_blackout_drinking",
-          "injured_result_of_drinking",
-          "others_concerned_about_your_drinking"
-        ]
-      }
-    },
-    "_scoring_notes": "Scoring Procedure and Interpretation:Points:0 = Never, 1 or 2, Never or No1 = Monthly or less, 3 or 4, Less than Monthly2 = 2-4 times a month, 5 or 6, Monthly, Yes-but not in the last year3 = 2-3 times a week, 7 to 9, weekly4 = 4 or more times a week, 10 or more, Daily or almost daily, Yes-during the last yearSum the total score of items 1 through 10. Scores in the range of 0-7 indicate a low level of alcohol problems; 8-15 indicate a medium level of alcohol problems; and 16 and above indicate a high level of alcohol problems. Medium or high levels of alcohol problems are indicative that a comprehensive assessment is needed."
+    ]
   },
   "translations": {
     "en": {
@@ -219,10 +192,14 @@
       "how_often_guilty_after_drinking": "How often during the last year have you had a feeling of guilt or remorse after drinking?",
       "how_often_blackout_drinking": "How often during the last year have you been unable to remember what happened the night before because you had been drinking?",
       "injured_result_of_drinking": "Have you or someone else been injured as a result of your drinking?",
+      "injured_result_of_drinking_opt_0": "No",
+      "injured_result_of_drinking_opt_2": "Yes, but not in the last year",
+      "injured_result_of_drinking_opt_4": "Yes, during the last year",
       "others_concerned_about_your_drinking": "Has a relative or friend or a doctor or another health worker been concerned about your drinking or suggested you cut down?",
-      "opt_1": "No",
-      "opt_2": "Yes, but not in the last year",
-      "opt_3": "Yes, during the last year"
+      "others_concerned_about_your_drinking_opt_0": "No",
+      "others_concerned_about_your_drinking_opt_2": "Yes, but not in the last year",
+      "others_concerned_about_your_drinking_opt_4": "Yes, during the last year",
+      "scoring_510201": "Scoring Procedure and Interpretation:Points:0 = Never, 1 or 2, Never or No1 = Monthly or less, 3 or 4, Less than Monthly2 = 2-4 times a month, 5 or 6, Monthly, Yes-but not in the last year3 = 2-3 times a week, 7 to 9, weekly4 = 4 or more times a week, 10 or more, Daily or almost daily, Yes-during the last yearSum the total score of items 1 through 10. Scores in the range of 0-7 indicate a low level of alcohol problems; 8-15 indicate a medium level of alcohol problems; and 16 and above indicate a high level of alcohol problems. Medium or high levels of alcohol problems are indicative that a comprehensive assessment is needed."
     }
   }
 }

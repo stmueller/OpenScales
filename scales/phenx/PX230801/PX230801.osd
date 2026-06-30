@@ -6,18 +6,11 @@
       "code": "PX230801",
       "abbreviation": "PX230801",
       "description": "This is a single-item, three-part measure taken from the Growing Up Today Study (GUTS) that assesses use and frequency of various products (e.g., creatine, growth hormone, steroids) to improve muscle mass or strength in the past year.",
-      "domain": "Self & Coping",
+      "domain": "Eating Disorders",
       "citation": "Neumark-Sztainer, D., & Eisenberg, M. E. (2014). Body image concerns, muscle-enhancing behaviors, and eating disorders in males. JAMA, 312 (20), 2156-2157. [PhenX: https://www.phenxtoolkit.org/protocols/view/230801]",
       "license": "PhenX Toolkit freely available protocol",
       "version": "1.0",
       "url": "https://www.phenxtoolkit.org/protocols/view/230801"
-    },
-    "implementation": {
-      "author": "Shane T. Mueller",
-      "organization": "OpenScales Project",
-      "date": "2026-04-01",
-      "license": "CC BY 4.0",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/"
     },
     "likert_options": {
       "points": 5,
@@ -58,13 +51,18 @@
     ],
     "scoring": {
       "total": {
-        "description": "Total score (sum of all items)",
         "method": "sum_coded",
         "items": [
           "creatinegrowthhormones_creatine_use",
           "creatinegrowthhormones_dhea_androstenedione_hgh_use",
           "creatinegrowthhormones_anabolicsteroids_use"
-        ]
+        ],
+        "item_coding": {
+          "creatinegrowthhormones_creatine_use": 1,
+          "creatinegrowthhormones_dhea_androstenedione_hgh_use": 1,
+          "creatinegrowthhormones_anabolicsteroids_use": 1
+        },
+        "description": "Total score (sum of all items)"
       }
     }
   },

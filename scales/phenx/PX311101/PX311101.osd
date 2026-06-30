@@ -6,18 +6,11 @@
       "code": "PX311101",
       "abbreviation": "PX311101",
       "description": "Three items from the Implementing GeNomics In pracTicE (IGNITE) Pre-implementation Provider Survey that healthcare providers can use to assess the compatibility and value of a genomic intervention at their clinical practice. Responses are based upon a 5-point Likert scale from strongly agree (5) to ",
-      "domain": "Health",
+      "domain": "Genomics & Genetics",
       "citation": "Orlando, L. A., Sperber, N. R., Volis, C., Nichols, M., Myers, R. A., Wu, R. R., Rakhra-Burris, T., Levy, K. D., Levy, M., Pollin, T. I., Guan, Y., Horowitz, C. R., Ramos, M., Kimmel, S. E., McDonough, C. W., Madden, E. B., Damschroder, L. J. (2018). Developing a common framework for evaluating the implementation of genomic medicine interventions in clinical care: The IGNITE Network’s Common Measures Working Group. Genetics in Medicine, 20(6), 655–663. Orlando, L. A., Volis, C., Horowitz, C. R., Myers, R. A., Arwood, M. J., Cicali, E. J., McDonough, C. W., Pollin, T. I., Guan, Y., Levy, K. D., Ramirez, A., Quittner, A., Madden, E. B. (2018). IGNITE network: Response of patients to genomic medicine interventions. Molecular Genetics & Genomic Medicine, 7, e636. [PhenX: https://www.phenxtoolkit.org/protocols/view/311101]",
       "license": "PhenX Toolkit freely available protocol",
       "version": "1.0",
       "url": "https://www.phenxtoolkit.org/protocols/view/311101"
-    },
-    "implementation": {
-      "author": "Shane T. Mueller",
-      "organization": "OpenScales Project",
-      "date": "2026-04-01",
-      "license": "CC BY 4.0",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/"
     },
     "likert_options": {
       "points": 5,
@@ -53,13 +46,18 @@
     ],
     "scoring": {
       "total": {
-        "description": "Total score (sum of all items)",
         "method": "sum_coded",
         "items": [
           "perceieved_compatibility_current_practice_care_already_use",
           "perceieved_compatibility_current_practice_generate_important_information_care",
           "perceieved_compatibility_current_practice_relevant"
-        ]
+        ],
+        "item_coding": {
+          "perceieved_compatibility_current_practice_care_already_use": 1,
+          "perceieved_compatibility_current_practice_generate_important_information_care": 1,
+          "perceieved_compatibility_current_practice_relevant": 1
+        },
+        "description": "Total score (sum of all items)"
       }
     }
   },

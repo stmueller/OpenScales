@@ -6,18 +6,11 @@
       "code": "PX510203",
       "abbreviation": "PX510203",
       "description": "The Brief Michigan Alcoholism Screening Test (Brief MAST) is a 10-item instrument to screen for alcoholism. It is used as a quantitative indicator of the respondent’s alcohol-related problems.",
-      "domain": "Substance Use",
+      "domain": "Substance Use - Screening & Family History",
       "citation": "Selzer, M. L. (1971). The Michigan Alcoholism Screening Test (MAST): The quest for a new diagnostic instrument. American Journal of Psychiatry, 127 (12), 1653-1658. [PhenX: https://www.phenxtoolkit.org/protocols/view/510203]",
       "license": "PhenX Toolkit freely available protocol",
       "version": "1.0",
       "url": "https://www.phenxtoolkit.org/protocols/view/510203"
-    },
-    "implementation": {
-      "author": "Shane T. Mueller",
-      "organization": "OpenScales Project",
-      "date": "2026-04-01",
-      "license": "CC BY 4.0",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/"
     },
     "items": [
       {
@@ -31,11 +24,11 @@
         "type": "multi",
         "options": [
           {
-            "text_key": "opt_1",
+            "text_key": "normal_drinker_opt_1",
             "value": 1
           },
           {
-            "text_key": "opt_2",
+            "text_key": "normal_drinker_opt_2",
             "value": 2
           }
         ]
@@ -46,11 +39,11 @@
         "type": "multi",
         "options": [
           {
-            "text_key": "opt_1",
+            "text_key": "friends_think_you_normal_drinker_opt_1",
             "value": 1
           },
           {
-            "text_key": "opt_2",
+            "text_key": "friends_think_you_normal_drinker_opt_2",
             "value": 2
           }
         ]
@@ -61,11 +54,11 @@
         "type": "multi",
         "options": [
           {
-            "text_key": "opt_1",
+            "text_key": "ever_attended_alcoholics_anonymous_opt_1",
             "value": 1
           },
           {
-            "text_key": "opt_2",
+            "text_key": "ever_attended_alcoholics_anonymous_opt_2",
             "value": 2
           }
         ]
@@ -76,11 +69,11 @@
         "type": "multi",
         "options": [
           {
-            "text_key": "opt_1",
+            "text_key": "lost_friends_because_of_drinking_opt_1",
             "value": 1
           },
           {
-            "text_key": "opt_2",
+            "text_key": "lost_friends_because_of_drinking_opt_2",
             "value": 2
           }
         ]
@@ -91,11 +84,11 @@
         "type": "multi",
         "options": [
           {
-            "text_key": "opt_1",
+            "text_key": "drinking_cause_trouble_at_work_opt_1",
             "value": 1
           },
           {
-            "text_key": "opt_2",
+            "text_key": "drinking_cause_trouble_at_work_opt_2",
             "value": 2
           }
         ]
@@ -106,11 +99,11 @@
         "type": "multi",
         "options": [
           {
-            "text_key": "opt_1",
+            "text_key": "neglected_obligations_because_of_drinking_opt_1",
             "value": 1
           },
           {
-            "text_key": "opt_2",
+            "text_key": "neglected_obligations_because_of_drinking_opt_2",
             "value": 2
           }
         ]
@@ -121,11 +114,11 @@
         "type": "multi",
         "options": [
           {
-            "text_key": "opt_1",
+            "text_key": "ever_had_delirium_tremens_opt_1",
             "value": 1
           },
           {
-            "text_key": "opt_2",
+            "text_key": "ever_had_delirium_tremens_opt_2",
             "value": 2
           }
         ]
@@ -136,11 +129,11 @@
         "type": "multi",
         "options": [
           {
-            "text_key": "opt_1",
+            "text_key": "gone_for_help_about_drinking_opt_1",
             "value": 1
           },
           {
-            "text_key": "opt_2",
+            "text_key": "gone_for_help_about_drinking_opt_2",
             "value": 2
           }
         ]
@@ -151,11 +144,11 @@
         "type": "multi",
         "options": [
           {
-            "text_key": "opt_1",
+            "text_key": "been_hospitalized_because_of_drinking_opt_1",
             "value": 1
           },
           {
-            "text_key": "opt_2",
+            "text_key": "been_hospitalized_because_of_drinking_opt_2",
             "value": 2
           }
         ]
@@ -166,57 +159,56 @@
         "type": "multi",
         "options": [
           {
-            "text_key": "opt_1",
+            "text_key": "arrested_for_drunk_driving_opt_1",
             "value": 1
           },
           {
-            "text_key": "opt_2",
+            "text_key": "arrested_for_drunk_driving_opt_2",
             "value": 2
           }
         ]
-      }
-    ],
-    "dimensions": [
+      },
       {
-        "id": "total",
-        "name": "Total Score"
+        "id": "scoring_510203",
+        "text_key": "scoring_510203",
+        "type": "inst"
       }
-    ],
-    "scoring": {
-      "total": {
-        "description": "Total: sum_coded of all 10 items.",
-        "method": "sum_coded",
-        "items": [
-          "normal_drinker",
-          "friends_think_you_normal_drinker",
-          "ever_attended_alcoholics_anonymous",
-          "lost_friends_because_of_drinking",
-          "drinking_cause_trouble_at_work",
-          "neglected_obligations_because_of_drinking",
-          "ever_had_delirium_tremens",
-          "gone_for_help_about_drinking",
-          "been_hospitalized_because_of_drinking",
-          "arrested_for_drunk_driving"
-        ]
-      }
-    },
-    "_scoring_notes": "Scoring Procedure and InterpretationIf an item was answered in the critical direction, add the number of points indicated for that item:Item #;  Critical direction;  Points to add#1; NO;   2#2;  NO;  2#3;  YES;  5#4;  YES;  2#5;  YES:  2#6;  YES;  2#7:  YES:  2#8:  YES;  5#9:  YES:  5#10: YES:  2A score of 6 or more indicates a probable diagnosis of alcoholism, except for questions 3, 8, or 9, which are by themselves diagnostic."
+    ]
   },
   "translations": {
     "en": {
       "info_510203": "Please select one answer for each of the following YES or NO questions:",
       "normal_drinker": "Do you feel you are a normal drinker?",
+      "normal_drinker_opt_1": "Yes",
+      "normal_drinker_opt_2": "No",
       "friends_think_you_normal_drinker": "Do friends or relatives think that you are a normal drinker?",
+      "friends_think_you_normal_drinker_opt_1": "Yes",
+      "friends_think_you_normal_drinker_opt_2": "No",
       "ever_attended_alcoholics_anonymous": "Have you ever attended a meeting of Alcoholics Anonymous (AA)?",
+      "ever_attended_alcoholics_anonymous_opt_1": "Yes",
+      "ever_attended_alcoholics_anonymous_opt_2": "No",
       "lost_friends_because_of_drinking": "Have you ever lost friends or girlfriends/boyfriends because of drinking?",
+      "lost_friends_because_of_drinking_opt_1": "Yes",
+      "lost_friends_because_of_drinking_opt_2": "No",
       "drinking_cause_trouble_at_work": "Have you ever gotten into trouble at work because of drinking?",
+      "drinking_cause_trouble_at_work_opt_1": "Yes",
+      "drinking_cause_trouble_at_work_opt_2": "No",
       "neglected_obligations_because_of_drinking": "Have you ever neglected your obligations, your family, or your work for two or more days in a row because you were drinking?",
+      "neglected_obligations_because_of_drinking_opt_1": "Yes",
+      "neglected_obligations_because_of_drinking_opt_2": "No",
       "ever_had_delirium_tremens": "Have you ever had delirium tremens (DTs), severe shaking, heard voices, or seen things that weren't there after heavy drinking?",
+      "ever_had_delirium_tremens_opt_1": "Yes",
+      "ever_had_delirium_tremens_opt_2": "No",
       "gone_for_help_about_drinking": "Have you ever gone to anyone for help about your drinking?",
+      "gone_for_help_about_drinking_opt_1": "Yes",
+      "gone_for_help_about_drinking_opt_2": "No",
       "been_hospitalized_because_of_drinking": "Have you ever been in the hospital because of drinking?",
+      "been_hospitalized_because_of_drinking_opt_1": "Yes",
+      "been_hospitalized_because_of_drinking_opt_2": "No",
       "arrested_for_drunk_driving": "Have you ever been arrested for drunk driving or driving after drinking?",
-      "opt_1": "Yes",
-      "opt_2": "No"
+      "arrested_for_drunk_driving_opt_1": "Yes",
+      "arrested_for_drunk_driving_opt_2": "No",
+      "scoring_510203": "Scoring Procedure and InterpretationIf an item was answered in the critical direction, add the number of points indicated for that item:Item #;  Critical direction;  Points to add#1; NO;   2#2;  NO;  2#3;  YES;  5#4;  YES;  2#5;  YES:  2#6;  YES;  2#7:  YES:  2#8:  YES;  5#9:  YES:  5#10: YES:  2A score of 6 or more indicates a probable diagnosis of alcoholism, except for questions 3, 8, or 9, which are by themselves diagnostic."
     }
   }
 }

@@ -6,18 +6,11 @@
       "code": "PX211001",
       "abbreviation": "PX211001",
       "description": "The protocol includes 39 self-administered questions developed by Zullig et al. (2010). The items are scored with a five-point Likert scale, from strongly disagree to strongly agree, and include eight subscales: teacher relationships, school connectedness, academic support, order and discipline, sch",
-      "domain": "Mental Health",
+      "domain": "Child Psychosocial",
       "citation": "Hicks, B. M., South, S. C., DiRago, A. C., Iacono, W. G., & McGue, M. (2009). Environmental adversity and increasing genetic risk for externalizing disorders. Archives of General Psychiatry, 66 (6), 640-648. Jacobson, K. C., & Rowe, D. C. (1999). Genetic and environmental influences on the relationships between family connectedness, school connectedness, and adolescent depressed mood: Sex differences. Developmental Psychology, 35, 926-939. McNeely, C., & Falci, C. (2004). School connectedness and the transition into and out of health-risk behavior among adolescents: A comparison of social belonging and teacher support. Journal of School Health, 74, 284-292. [PhenX: https://www.phenxtoolkit.org/protocols/view/211001]",
       "license": "PhenX Toolkit freely available protocol",
       "version": "1.0",
       "url": "https://www.phenxtoolkit.org/protocols/view/211001"
-    },
-    "implementation": {
-      "author": "Shane T. Mueller",
-      "organization": "OpenScales Project",
-      "date": "2026-04-01",
-      "license": "CC BY 4.0",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/"
     },
     "likert_options": {
       "points": 5,
@@ -268,8 +261,7 @@
       }
     ],
     "scoring": {
-      "teacher_relationships": {
-        "description": "Teacher Relationships subscale (items 1–9)",
+      "total": {
         "method": "sum_coded",
         "items": [
           "teacher_understands_problems",
@@ -280,135 +272,82 @@
           "teachers_notice_truancy",
           "teachers_help_with_problems",
           "teachers_care",
-          "teachers_feel_good"
-        ]
-      },
-      "school_connectedness": {
-        "description": "School Connectedness subscale (items 10–15)",
-        "method": "sum_coded",
-        "items": [
+          "teachers_feel_good",
           "exciting_schoolwork",
           "students_influence_offered_courses",
           "students_recognized_for_arts",
           "take_additional_classes",
           "schools_makes_students_enthusiastic",
-          "students_recognized_for_following_rules"
-        ]
-      },
-      "academic_support": {
-        "description": "Academic Support subscale (items 16–21)",
-        "method": "sum_coded",
-        "items": [
+          "students_recognized_for_following_rules",
           "understand_homework",
           "clear_expectations_for_grades",
           "teachers_expect_students_to_learn",
           "do_well_in_school",
           "teachers_believe_in_students_abilities",
-          "try_to_succeed"
-        ]
-      },
-      "order_and_discipline": {
-        "description": "Order and Discipline subscale (items 22–28)",
-        "method": "sum_coded",
-        "items": [
+          "try_to_succeed",
           "classroom_rules_applied_equally",
           "problems_solved_by_staff_students",
           "students_punished_not_following_rules",
           "school_rules_are_fair",
           "school_rules_enforced_fairly_consistently",
           "teachers_call_out_class_misbehavior",
-          "discipline_is_fair"
-        ]
-      },
-      "school_physical_environment": {
-        "description": "School Physical Environment subscale (items 29–32)",
-        "method": "sum_coded",
-        "items": [
+          "discipline_is_fair",
           "school_grounds_kept_clean",
           "school_neat_clean",
           "school_buildings_pleasant_maintained",
-          "school_usually_clean_tidy"
-        ]
-      },
-      "school_social_environment": {
-        "description": "School Social Environment / Perceived Exclusion subscale (items 33–37)",
-        "method": "sum_coded",
-        "items": [
+          "school_usually_clean_tidy",
           "happy_with_kinds_of_schoolmates",
           "happy_with_other_students",
           "same_person_helps_teacher",
           "same_kids_chosen_special_activities",
-          "same_kids_use_resources"
-        ]
-      },
-      "academic_satisfaction": {
-        "description": "Academic Satisfaction subscale (items 38–39)",
-        "method": "sum_coded",
-        "items": [
+          "same_kids_use_resources",
           "happy_about_number_tests",
           "happy_about_amount_of_homework"
-        ]
-      },
-      "total_composite": {
-        "description": "Total composite score (sum of all 7 subscale scores)",
-        "method": "sum_coded",
-        "scores": [
-          "teacher_relationships",
-          "school_connectedness",
-          "academic_support",
-          "order_and_discipline",
-          "school_physical_environment",
-          "school_social_environment",
-          "academic_satisfaction"
-        ]
+        ],
+        "item_coding": {
+          "teacher_understands_problems": 1,
+          "teacher_interested_in_future": 1,
+          "teachers_available_to_talk": 1,
+          "easy_to_talk_with_teachers": 1,
+          "students_get_along_with_teachers": 1,
+          "teachers_notice_truancy": 1,
+          "teachers_help_with_problems": 1,
+          "teachers_care": 1,
+          "teachers_feel_good": 1,
+          "exciting_schoolwork": 1,
+          "students_influence_offered_courses": 1,
+          "students_recognized_for_arts": 1,
+          "take_additional_classes": 1,
+          "schools_makes_students_enthusiastic": 1,
+          "students_recognized_for_following_rules": 1,
+          "understand_homework": 1,
+          "clear_expectations_for_grades": 1,
+          "teachers_expect_students_to_learn": 1,
+          "do_well_in_school": 1,
+          "teachers_believe_in_students_abilities": 1,
+          "try_to_succeed": 1,
+          "classroom_rules_applied_equally": 1,
+          "problems_solved_by_staff_students": 1,
+          "students_punished_not_following_rules": 1,
+          "school_rules_are_fair": 1,
+          "school_rules_enforced_fairly_consistently": 1,
+          "teachers_call_out_class_misbehavior": 1,
+          "discipline_is_fair": 1,
+          "school_grounds_kept_clean": 1,
+          "school_neat_clean": 1,
+          "school_buildings_pleasant_maintained": 1,
+          "school_usually_clean_tidy": 1,
+          "happy_with_kinds_of_schoolmates": 1,
+          "happy_with_other_students": 1,
+          "same_person_helps_teacher": 1,
+          "same_kids_chosen_special_activities": 1,
+          "same_kids_use_resources": 1,
+          "happy_about_number_tests": 1,
+          "happy_about_amount_of_homework": 1
+        },
+        "description": "Total score (sum of all items)"
       }
-    },
-    "_manual_notes": "Subscale structure inferred from PDF section headers. Item-to-subscale boundaries require verification against the original instrument. Auto-generated 'total' removed; explicit subscale and composite total scoring added.",
-    "dimensions": [
-      {
-        "id": "teacher_relationships",
-        "name": "Teacher Relationships",
-        "abbreviation": "TR"
-      },
-      {
-        "id": "school_connectedness",
-        "name": "School Connectedness",
-        "abbreviation": "SC"
-      },
-      {
-        "id": "academic_support",
-        "name": "Academic Support",
-        "abbreviation": "AS"
-      },
-      {
-        "id": "order_and_discipline",
-        "name": "Order and Discipline",
-        "abbreviation": "OD"
-      },
-      {
-        "id": "school_physical_environment",
-        "name": "School Physical Environment",
-        "abbreviation": "SPE"
-      },
-      {
-        "id": "school_social_environment",
-        "name": "School Social Environment",
-        "abbreviation": "SSE"
-      },
-      {
-        "id": "academic_satisfaction",
-        "name": "Academic Satisfaction",
-        "abbreviation": "ASat"
-      },
-      {
-        "id": "total",
-        "name": "Total",
-        "abbreviation": "Total"
-      }
-    ],
-    "_conversion_notes": [
-      "INFO  manual_addition.json merged"
-    ]
+    }
   },
   "translations": {
     "en": {

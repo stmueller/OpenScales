@@ -6,18 +6,11 @@
       "code": "PX870202",
       "abbreviation": "PX870202",
       "description": "The Sickle Cell Disease Health-Related Stigma Scale Short Form (SCD-HRSS-SF) is a 21-item self-administered questionnaire that measures the amount of external stigma experienced by SCD patients. The SCD-HRSS-SF consists of three subscales: Public and Physician/Doctor (P2) Subscale (eight items), Fam",
-      "domain": "Health",
+      "domain": "Sickle Cell Disease - Stigma",
       "citation": "Adeyemo, T.A., Ojewunmi, O.O., Diaku-Akinwumi, I.N., Ayinde, O.C. and Akanmu, A.S. (2015), Health related quality of life and perception of stigmatisation in adolescents living with sickle cell disease in Nigeria: A cross sectional study. Pediatric Blood & Cancer, 62 (7), 1245–1251. https://doi.org/10.1002/pbc.25503 Bulgin, D., Tanabe, P., & Jenerette, C. (2018). Stigma of Sickle Cell Disease: A systematic review. Issues in Mental Health Nursing , 39 (8), 675–686. https://doi.org/10.1080/01612840.2018.1443530 Ezenwa, M., Yao, Y., Molokie, R., Wang, Z., Suarez, M., Zhao, Z., Carrasco, J., Angulo, V., Shuey, D., Roach, K., Oraifo, G., & Wilkie, D. (2016). (157) The association of sickle cell-related stigma with physical and emotional symptoms in patients with sickle cell pain. The Journal of Pain : Official Journal of the American Pain Society. 17 (4), S15?S15. https://doi.org/10.1016/j.jpain.2016.01.060 Jenerette, C., Brewer, C. A., Crandell, J., & Ataga, K. I. (2012). Preliminary validity and reliability of the Sickle Cell Disease Health-Related Stigma Scale. Issues in Mental Health Nursing, 33 (6), 363?369. https://doi.org/10.3109/01612840.2012.656823 [PhenX: https://www.phenxtoolkit.org/protocols/view/870202]",
       "license": "PhenX Toolkit freely available protocol",
       "version": "1.0",
       "url": "https://www.phenxtoolkit.org/protocols/view/870202"
-    },
-    "implementation": {
-      "author": "Shane T. Mueller",
-      "organization": "OpenScales Project",
-      "date": "2026-04-01",
-      "license": "CC BY 4.0",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/"
     },
     "likert_options": {
       "points": 5,
@@ -193,6 +186,11 @@
         "type": "likert",
         "likert_points": 5,
         "_matrix_group": "nurse_subscale"
+      },
+      {
+        "id": "external_stigma_sickle_cell_disease_scoring_instructions",
+        "text_key": "external_stigma_sickle_cell_disease_scoring_instructions",
+        "type": "inst"
       }
     ],
     "_conversion_notes": [
@@ -217,63 +215,7 @@
       "INFO  external_stigma_sickle_cell_disease_nurse_could_be_more_active: member of matrix group 'nurse_subscale' — consider converting to grid type manually",
       "INFO  external_stigma_sickle_cell_disease_nurse_prescription_drug_addict: member of matrix group 'nurse_subscale' — consider converting to grid type manually",
       "INFO  external_stigma_sickle_cell_disease_nurse_prefer_not_care: member of matrix group 'nurse_subscale' — consider converting to grid type manually"
-    ],
-    "dimensions": [
-      {
-        "id": "peer",
-        "name": "Peer Stigma"
-      },
-      {
-        "id": "family",
-        "name": "Family Stigma"
-      },
-      {
-        "id": "nurse",
-        "name": "Nurse Stigma"
-      }
-    ],
-    "scoring": {
-      "peer": {
-        "description": "Peer Stigma: mean_coded of 8 items.",
-        "method": "mean_coded",
-        "items": [
-          "external_stigma_sickle_cell_disease_people_patient_fault1",
-          "external_stigma_sickle_cell_disease_people_excuse_medication",
-          "external_stigma_sickle_cell_disease_people_think_less_unable_work",
-          "external_stigma_sickle_cell_disease_people_sign_weakness",
-          "external_stigma_sickle_cell_disease_people_prescription_drug_addict",
-          "external_stigma_sickle_cell_disease_people_think_mental_emotional_problem",
-          "external_stigma_sickle_cell_disease_doctor_think_want_more_medication_than_needed",
-          "external_stigma_sickle_cell_disease_doctor_think_mental_emotional_problem"
-        ]
-      },
-      "family": {
-        "description": "Family Stigma: mean_coded of 7 items.",
-        "method": "mean_coded",
-        "items": [
-          "external_stigma_sickle_cell_disease_family_think_need_less_medication",
-          "external_stigma_sickle_cell_disease_family_exaggerate_pain",
-          "external_stigma_sickle_cell_disease_family_could_be_more_active",
-          "external_stigma_sickle_cell_disease_family_prescription_drug_addict",
-          "external_stigma_sickle_cell_disease_family_less_respect",
-          "external_stigma_sickle_cell_disease_family_think_mental_emotional_problem",
-          "external_stigma_sickle_cell_disease_family_embarrassed"
-        ]
-      },
-      "nurse": {
-        "description": "Nurse Stigma: mean_coded of 6 items.",
-        "method": "mean_coded",
-        "items": [
-          "external_stigma_sickle_cell_disease_nurse_exaggerate_pain",
-          "external_stigma_sickle_cell_disease_nurse_think_want_more_medication_than_needed",
-          "external_stigma_sickle_cell_disease_nurse_think_mental_emotional_problem",
-          "external_stigma_sickle_cell_disease_nurse_could_be_more_active",
-          "external_stigma_sickle_cell_disease_nurse_prescription_drug_addict",
-          "external_stigma_sickle_cell_disease_nurse_prefer_not_care"
-        ]
-      }
-    },
-    "_scoring_notes": "Each subscale score is the sum of the items in the subscale scale (P2 Range= 8-40; Family Range= 7-35; Nurse Range= 6-30).The total score is the sum of all 3 subscale scores (Range: 21-105)."
+    ]
   },
   "translations": {
     "en": {
@@ -305,7 +247,8 @@
       "external_stigma_sickle_cell_disease_nurse_think_mental_emotional_problem": "Nurses think that sickle cell pain is mostly a mental or emotional problem.",
       "external_stigma_sickle_cell_disease_nurse_could_be_more_active": "Many nurses believe that people with sickle cell could be more physically active if they wanted.",
       "external_stigma_sickle_cell_disease_nurse_prescription_drug_addict": "Many nurses think that people with sickle cell pain are \"drug addicts\".",
-      "external_stigma_sickle_cell_disease_nurse_prefer_not_care": "Most nurses would prefer not to care for people with sickle cell disease."
+      "external_stigma_sickle_cell_disease_nurse_prefer_not_care": "Most nurses would prefer not to care for people with sickle cell disease.",
+      "external_stigma_sickle_cell_disease_scoring_instructions": "Each subscale score is the sum of the items in the subscale scale (P2 Range= 8-40; Family Range= 7-35; Nurse Range= 6-30).The total score is the sum of all 3 subscale scores (Range: 21-105)."
     }
   }
 }

@@ -1,0 +1,309 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Female Contraception Use and Preference in Sickle Cell Disease",
+      "code": "PX880601",
+      "abbreviation": "PX880601",
+      "description": "The Female Contraception Survey includes eight self-administered questions that assess a participant’s sexual behavior and use of contraception in the past month and in their lifetime.",
+      "domain": "Women's Health",
+      "citation": "Carvalho, N. S., Braga, J. P., Barbieri, M., Torloni, M. R., Figueiredo, M. S., & Guazzelli, C. A. F. (2017). Contraceptive practices in women with sickle-cell disease. Journal of Obstetrics and Gynaecology, 37 (1), 74–77. https://doi.org/10.1080/01443615.2016.1225023 Day, M. E., Stimpson, S. J., Rodeghier, M., Ghafuri, D., Callaghan, M., Zaidi, A. U., … Sharma, D. (2019). Contraceptive methods and the impact of menstruation on daily functioning in women with sickle cell disease. Southern Medical Journal, 112 (3), 174–179. https://doi.org/10.14423/SMJ.0000000000000949 Knight-Madden, J., & Barton-Gooden, A. (2009). Contraceptive usage among Jamaican women with sickle cell disease. Contraception, 80 (5), 474–478. https://doi.org/10.1016/j.contraception.2009.05.121 O’Brien, S. H., Klima, J., Reed, S., Chisolm, D., Schwarz, E. B., & Kelleher, K. J. (2011). Hormonal contraception use and pregnancy in adolescents with sickle cell disease: Analysis of Michigan Medicaid claims. Contraception, 83 (2), 134–137. https://doi.org/10.1016/j.contraception.2010.06.017 [PhenX: https://www.phenxtoolkit.org/protocols/view/880601]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/880601"
+    },
+    "items": [
+      {
+        "id": "female_contraception_use_sexually_active",
+        "text_key": "female_contraception_use_sexually_active",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "female_contraception_use_sexually_active_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "female_contraception_use_sexually_active_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "female_contraception_use_biological_sex_partner",
+        "text_key": "female_contraception_use_biological_sex_partner",
+        "type": "short",
+        "visible_when": {
+          "item": "female_contraception_use_sexually_active",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "female_contraception_use_sex_male_partner_any_time",
+        "text_key": "female_contraception_use_sex_male_partner_any_time",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "female_contraception_use_sex_male_partner_any_time_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "female_contraception_use_sex_male_partner_any_time_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "female_contraception_use_sex_male_partner_age_first_time",
+        "text_key": "female_contraception_use_sex_male_partner_age_first_time",
+        "type": "short",
+        "visible_when": {
+          "item": "female_contraception_use_sex_male_partner_any_time",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "female_contraception_use_sex_male_partner_current",
+        "text_key": "female_contraception_use_sex_male_partner_current",
+        "type": "multi",
+        "visible_when": {
+          "item": "female_contraception_use_sex_male_partner_any_time",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "female_contraception_use_sex_male_partner_current_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "female_contraception_use_sex_male_partner_current_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "female_contraception_use_birth_control_ever_prevent_pregnancy",
+        "text_key": "female_contraception_use_birth_control_ever_prevent_pregnancy",
+        "type": "multi",
+        "visible_when": {
+          "item": "female_contraception_use_sex_male_partner_any_time",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "female_contraception_use_birth_control_ever_prevent_pregnancy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_ever_prevent_pregnancy_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "female_contraception_use_birth_control_type_ever_used",
+        "text_key": "female_contraception_use_birth_control_type_ever_used",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "female_contraception_use_sex_male_partner_any_time",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "female_contraception_use_birth_control_type_ever_used_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_ever_used_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_ever_used_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_ever_used_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_ever_used_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_ever_used_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_ever_used_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_ever_used_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_ever_used_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_ever_used_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_ever_used_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_ever_used_opt_12",
+            "value": 12
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_ever_used_opt_13",
+            "value": 13
+          }
+        ]
+      },
+      {
+        "id": "female_contraception_use_birth_control_type_ever_used_other",
+        "text_key": "female_contraception_use_birth_control_type_ever_used_other",
+        "type": "short",
+        "visible_when": {
+          "item": "female_contraception_use_birth_control_type_ever_used",
+          "operator": "in",
+          "value": [
+            12
+          ]
+        }
+      },
+      {
+        "id": "female_contraception_use_birth_control_type_past_month_used",
+        "text_key": "female_contraception_use_birth_control_type_past_month_used",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "female_contraception_use_sex_male_partner_any_time",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "female_contraception_use_birth_control_type_past_month_used_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_past_month_used_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_past_month_used_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_past_month_used_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_past_month_used_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_past_month_used_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_past_month_used_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_past_month_used_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_past_month_used_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_past_month_used_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_past_month_used_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_past_month_used_opt_12",
+            "value": 12
+          },
+          {
+            "text_key": "female_contraception_use_birth_control_type_past_month_used_opt_13",
+            "value": 13
+          }
+        ]
+      },
+      {
+        "id": "female_contraception_use_birth_control_type_past_month_used_other",
+        "text_key": "female_contraception_use_birth_control_type_past_month_used_other",
+        "type": "short",
+        "visible_when": {
+          "item": "female_contraception_use_birth_control_type_past_month_used",
+          "operator": "in",
+          "value": [
+            12
+          ]
+        }
+      }
+    ]
+  },
+  "translations": {
+    "en": {
+      "female_contraception_use_sexually_active": "Have you ever been sexually active?",
+      "female_contraception_use_sexually_active_opt_1": "Yes",
+      "female_contraception_use_sexually_active_opt_2": "No",
+      "female_contraception_use_biological_sex_partner": "What is the biological sex of your most recent sex partner?",
+      "female_contraception_use_sex_male_partner_any_time": "At any time in your life, have you had sex with a male partner?",
+      "female_contraception_use_sex_male_partner_any_time_opt_1": "Yes",
+      "female_contraception_use_sex_male_partner_any_time_opt_2": "No",
+      "female_contraception_use_sex_male_partner_age_first_time": "How old were you the first time you had sex with a male partner?",
+      "female_contraception_use_sex_male_partner_current": "Do you currently have sex with a male partner on a regular basis?",
+      "female_contraception_use_sex_male_partner_current_opt_1": "Yes",
+      "female_contraception_use_sex_male_partner_current_opt_2": "No",
+      "female_contraception_use_birth_control_ever_prevent_pregnancy": "Have you ever used birth control, to prevent pregnancy or for another reason?",
+      "female_contraception_use_birth_control_ever_prevent_pregnancy_opt_1": "Yes",
+      "female_contraception_use_birth_control_ever_prevent_pregnancy_opt_2": "No",
+      "female_contraception_use_birth_control_type_ever_used": "Which types of birth control, if any, have you EVER used? Check all that apply.",
+      "female_contraception_use_birth_control_type_ever_used_opt_1": "Condom",
+      "female_contraception_use_birth_control_type_ever_used_opt_2": "Pill",
+      "female_contraception_use_birth_control_type_ever_used_opt_3": "Patch (Ortho Evraâ„˘)",
+      "female_contraception_use_birth_control_type_ever_used_opt_4": "Shot (Depo-Proveraâ„˘)",
+      "female_contraception_use_birth_control_type_ever_used_opt_5": "Ring (Nuva Ringâ„˘)",
+      "female_contraception_use_birth_control_type_ever_used_opt_6": "Arm implant (Nexplanonâ„˘, formerly Implanonâ„˘)",
+      "female_contraception_use_birth_control_type_ever_used_opt_7": "Copper intrauterine device/IUD (Paragardâ„˘)",
+      "female_contraception_use_birth_control_type_ever_used_opt_8": "Hormonal intrauterine device/IUD (Mirenaâ„˘, Skylaâ„˘, Lilettaâ„˘)",
+      "female_contraception_use_birth_control_type_ever_used_opt_9": "Withdrawal (pulling out)",
+      "female_contraception_use_birth_control_type_ever_used_opt_10": "Rhythm",
+      "female_contraception_use_birth_control_type_ever_used_opt_11": "Morning after pill (Plan Bâ„˘, Ellaâ„˘)",
+      "female_contraception_use_birth_control_type_ever_used_opt_12": "Other",
+      "female_contraception_use_birth_control_type_ever_used_opt_13": "I have never used a birth control method",
+      "female_contraception_use_birth_control_type_ever_used_other": "Which types of birth control, if any, have you EVER used? Other",
+      "female_contraception_use_birth_control_type_past_month_used": "Which types of birth control, if any, have you used in THE PAST MONTH? Check all that apply.",
+      "female_contraception_use_birth_control_type_past_month_used_opt_1": "Condom",
+      "female_contraception_use_birth_control_type_past_month_used_opt_2": "Pill",
+      "female_contraception_use_birth_control_type_past_month_used_opt_3": "Patch (Ortho Evraâ„˘)",
+      "female_contraception_use_birth_control_type_past_month_used_opt_4": "Shot (Depo-Proveraâ„˘)",
+      "female_contraception_use_birth_control_type_past_month_used_opt_5": "Ring (Nuva Ringâ„˘)",
+      "female_contraception_use_birth_control_type_past_month_used_opt_6": "Arm implant (Nexplanonâ„˘, formerly Implanonâ„˘)",
+      "female_contraception_use_birth_control_type_past_month_used_opt_7": "Copper intrauterine device/IUD (Paragardâ„˘)",
+      "female_contraception_use_birth_control_type_past_month_used_opt_8": "Hormonal intrauterine device/IUD (Mirenaâ„˘, Skylaâ„˘, Lilettaâ„˘)",
+      "female_contraception_use_birth_control_type_past_month_used_opt_9": "Withdrawal (pulling out)",
+      "female_contraception_use_birth_control_type_past_month_used_opt_10": "Rhythm",
+      "female_contraception_use_birth_control_type_past_month_used_opt_11": "Morning after pill (Plan Bâ„˘, Ellaâ„˘)",
+      "female_contraception_use_birth_control_type_past_month_used_opt_12": "Other",
+      "female_contraception_use_birth_control_type_past_month_used_opt_13": "I have never used a birth control method",
+      "female_contraception_use_birth_control_type_past_month_used_other": "Which types of birth control, if any, have you used in THE PAST MONTH? Other"
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Flourishing Index / Secure Flourishing Index",
+      "abbreviation": "FI/SFI",
+      "code": "FI",
+      "version": "1.0",
+      "license": "CC BY-NC 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "license_explanation": "Copyrighted under CC BY-NC 4.0 by the Human Flourishing Program at Harvard. Free for non-commercial use with proper citation. Commercial use requires a license managed through the Flourishing Hub.",
+      "doi": "10.1073/pnas.1702996114",
+      "citation": "VanderWeele, T. J. (2017). On the promotion of human flourishing. Proceedings of the National Academy of Sciences, 114(31), 8148–8156. https://doi.org/10.1073/pnas.1702996114",
+      "url": "https://hfh.fas.harvard.edu/measuring-flourishing",
+      "construct": "Human flourishing across six domains: happiness/life satisfaction, mental/physical health, meaning/purpose, character/virtue, close social relationships, financial/material stability",
+      "languages": ["en"],
+      "n_items": 12,
+      "respondent": "adult",
+      "notes": "The Flourishing Index (FI) uses domains 1–5 (10 items, sum score 0–100). The Secure Flourishing Index (SFI) adds domain 6 (12 items, sum score 0–120). Each item rated 0–10 with domain-specific anchors. No reverse scoring. Validated in Global Flourishing Study."
+    },
+    "likert_options": {
+      "points": 11,
+      "min": 0,
+      "labels": [
+        "fi_r0", null, null, null, null, null, null, null, null, null, "fi_r10"
+      ]
+    },
+    "items": [
+      {"id": "fi_inst", "type": "inst", "text_key": "fi_inst"},
+      {"id": "fi_01", "type": "likert", "text_key": "fi_01", "dimension": "HappinessLifeSatisfaction", "response_scale": "fi_rs_satisfied"},
+      {"id": "fi_02", "type": "likert", "text_key": "fi_02", "dimension": "HappinessLifeSatisfaction", "response_scale": "fi_rs_happy"},
+      {"id": "fi_03", "type": "likert", "text_key": "fi_03", "dimension": "MentalPhysicalHealth", "response_scale": "fi_rs_health"},
+      {"id": "fi_04", "type": "likert", "text_key": "fi_04", "dimension": "MentalPhysicalHealth", "response_scale": "fi_rs_health"},
+      {"id": "fi_05", "type": "likert", "text_key": "fi_05", "dimension": "MeaningPurpose", "response_scale": "fi_rs_worthwhile"},
+      {"id": "fi_06", "type": "likert", "text_key": "fi_06", "dimension": "MeaningPurpose", "response_scale": "fi_rs_agree"},
+      {"id": "fi_07", "type": "likert", "text_key": "fi_07", "dimension": "CharacterVirtue", "response_scale": "fi_rs_trueme"},
+      {"id": "fi_08", "type": "likert", "text_key": "fi_08", "dimension": "CharacterVirtue", "response_scale": "fi_rs_trueme"},
+      {"id": "fi_09", "type": "likert", "text_key": "fi_09", "dimension": "CloseSocialRelationships", "response_scale": "fi_rs_agree"},
+      {"id": "fi_10", "type": "likert", "text_key": "fi_10", "dimension": "CloseSocialRelationships", "response_scale": "fi_rs_agree"},
+      {"id": "fi_11", "type": "likert", "text_key": "fi_11", "dimension": "FinancialMaterialStability", "response_scale": "fi_rs_worry"},
+      {"id": "fi_12", "type": "likert", "text_key": "fi_12", "dimension": "FinancialMaterialStability", "response_scale": "fi_rs_worry"}
+    ],
+    "response_scales": {
+      "fi_rs_satisfied": {
+        "points": 11,
+        "min": 0,
+        "labels": ["fi_rs_satisfied_r0", null, null, null, null, null, null, null, null, null, "fi_rs_satisfied_r10"]
+      },
+      "fi_rs_happy": {
+        "points": 11,
+        "min": 0,
+        "labels": ["fi_rs_happy_r0", null, null, null, null, null, null, null, null, null, "fi_rs_happy_r10"]
+      },
+      "fi_rs_health": {
+        "points": 11,
+        "min": 0,
+        "labels": ["fi_rs_health_r0", null, null, null, null, null, null, null, null, null, "fi_rs_health_r10"]
+      },
+      "fi_rs_worthwhile": {
+        "points": 11,
+        "min": 0,
+        "labels": ["fi_rs_worthwhile_r0", null, null, null, null, null, null, null, null, null, "fi_rs_worthwhile_r10"]
+      },
+      "fi_rs_agree": {
+        "points": 11,
+        "min": 0,
+        "labels": ["fi_rs_agree_r0", null, null, null, null, null, null, null, null, null, "fi_rs_agree_r10"]
+      },
+      "fi_rs_trueme": {
+        "points": 11,
+        "min": 0,
+        "labels": ["fi_rs_trueme_r0", null, null, null, null, null, null, null, null, null, "fi_rs_trueme_r10"]
+      },
+      "fi_rs_worry": {
+        "points": 11,
+        "min": 0,
+        "labels": ["fi_rs_worry_r0", null, null, null, null, null, null, null, null, null, "fi_rs_worry_r10"]
+      }
+    },
+    "dimensions": [
+      {"id": "HappinessLifeSatisfaction", "name": "Happiness and Life Satisfaction", "description": "Overall life satisfaction and hedonic happiness"},
+      {"id": "MentalPhysicalHealth", "name": "Mental and Physical Health", "description": "Self-rated physical and mental health"},
+      {"id": "MeaningPurpose", "name": "Meaning and Purpose", "description": "Sense that one's life activities are worthwhile and purposeful"},
+      {"id": "CharacterVirtue", "name": "Character and Virtue", "description": "Acting to promote good and capacity for deferred gratification"},
+      {"id": "CloseSocialRelationships", "name": "Close Social Relationships", "description": "Satisfaction with friendships and relationships"},
+      {"id": "FinancialMaterialStability", "name": "Financial and Material Stability", "description": "Freedom from worry about living expenses, safety, food, and housing"}
+    ],
+    "scoring": {
+      "FlourishIndex": {
+        "method": "sum",
+        "items": ["fi_01", "fi_02", "fi_03", "fi_04", "fi_05", "fi_06", "fi_07", "fi_08", "fi_09", "fi_10"],
+        "notes": "Sum of items 1–10. Range 0–100."
+      },
+      "SecureFlourishIndex": {
+        "method": "sum",
+        "items": ["fi_01", "fi_02", "fi_03", "fi_04", "fi_05", "fi_06", "fi_07", "fi_08", "fi_09", "fi_10", "fi_11", "fi_12"],
+        "notes": "Sum of all 12 items. Range 0–120."
+      },
+      "HappinessLifeSatisfaction": {
+        "method": "sum",
+        "items": ["fi_01", "fi_02"]
+      },
+      "MentalPhysicalHealth": {
+        "method": "sum",
+        "items": ["fi_03", "fi_04"]
+      },
+      "MeaningPurpose": {
+        "method": "sum",
+        "items": ["fi_05", "fi_06"]
+      },
+      "CharacterVirtue": {
+        "method": "sum",
+        "items": ["fi_07", "fi_08"]
+      },
+      "CloseSocialRelationships": {
+        "method": "sum",
+        "items": ["fi_09", "fi_10"]
+      },
+      "FinancialMaterialStability": {
+        "method": "sum",
+        "items": ["fi_11", "fi_12"]
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "fi_inst": "Please answer each of the following questions on a scale of 0–10.",
+      "fi_01": "Overall, how satisfied are you with life as a whole these days?",
+      "fi_02": "In general, how happy or unhappy do you usually feel?",
+      "fi_03": "In general, how would you rate your physical health?",
+      "fi_04": "How would you rate your overall mental health?",
+      "fi_05": "Overall, to what extent do you feel the things you do in your life are worthwhile?",
+      "fi_06": "I understand my purpose in life.",
+      "fi_07": "I always act to promote good in all circumstances, even in difficult and challenging situations.",
+      "fi_08": "I am always able to give up some happiness now for greater happiness later.",
+      "fi_09": "I am content with my friendships and relationships.",
+      "fi_10": "My relationships are as satisfying as I would want them to be.",
+      "fi_11": "How often do you worry about being able to meet normal monthly living expenses?",
+      "fi_12": "How often do you worry about safety, food, or housing?",
+      "fi_r0": "0",
+      "fi_r10": "10",
+      "fi_rs_satisfied_r0": "Not Satisfied at All",
+      "fi_rs_satisfied_r10": "Completely Satisfied",
+      "fi_rs_happy_r0": "Extremely Unhappy",
+      "fi_rs_happy_r10": "Extremely Happy",
+      "fi_rs_health_r0": "Poor",
+      "fi_rs_health_r10": "Excellent",
+      "fi_rs_worthwhile_r0": "Not at All Worthwhile",
+      "fi_rs_worthwhile_r10": "Completely Worthwhile",
+      "fi_rs_agree_r0": "Strongly Disagree",
+      "fi_rs_agree_r10": "Strongly Agree",
+      "fi_rs_trueme_r0": "Not True of Me",
+      "fi_rs_trueme_r10": "Completely True of Me",
+      "fi_rs_worry_r0": "Worry All of the Time",
+      "fi_rs_worry_r10": "Do Not Ever Worry"
+    }
+  }
+}

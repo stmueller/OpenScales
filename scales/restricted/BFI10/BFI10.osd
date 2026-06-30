@@ -1,0 +1,106 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Big Five Inventory (BFI-10)",
+      "abbreviation": "BFI-10",
+      "code": "BFI10",
+      "version": "1.0",
+      "license": "Non-commercial research use only (ZIS standard terms)",
+      "license_url": "https://doi.org/10.6102/zis76",
+      "license_explanation": "Free for non-commercial research. For other purposes or other forms, permission of the authors is required. This documentation must be cited in all resulting works and publications.",
+      "doi": "10.6102/zis76",
+      "citation": "Rammstedt, B., Kemper, C. J., Klein, M. C., Beierlein, C., & Kovaleva, A. (2014). Big Five Inventory (BFI-10). Zusammenstellung sozialwissenschaftlicher Items und Skalen (ZIS). https://doi.org/10.6102/zis76",
+      "url": "https://zis.gesis.org/skala/Rammstedt-Kemper-Klein-Beierlein-Kovaleva-Big-Five-Inventory-(BFI-10)",
+      "construct": "Big Five personality dimensions (Extraversion, Agreeableness, Conscientiousness, Neuroticism, Openness)",
+      "languages": ["de", "en"],
+      "n_items": 10,
+      "respondent": "adult"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "labels": ["bfi10_r1", "bfi10_r2", "bfi10_r3", "bfi10_r4", "bfi10_r5"]
+    },
+    "items": [
+      {"id": "bfi10_inst", "type": "inst", "text_key": "bfi10_inst"},
+      {"id": "bfi10_01", "type": "likert", "text_key": "bfi10_01", "dimension": "Extraversion"},
+      {"id": "bfi10_02", "type": "likert", "text_key": "bfi10_02", "dimension": "Agreeableness"},
+      {"id": "bfi10_03", "type": "likert", "text_key": "bfi10_03", "dimension": "Conscientiousness"},
+      {"id": "bfi10_04", "type": "likert", "text_key": "bfi10_04", "dimension": "Neuroticism"},
+      {"id": "bfi10_05", "type": "likert", "text_key": "bfi10_05", "dimension": "Openness"},
+      {"id": "bfi10_06", "type": "likert", "text_key": "bfi10_06", "dimension": "Extraversion"},
+      {"id": "bfi10_07", "type": "likert", "text_key": "bfi10_07", "dimension": "Agreeableness"},
+      {"id": "bfi10_08", "type": "likert", "text_key": "bfi10_08", "dimension": "Conscientiousness"},
+      {"id": "bfi10_09", "type": "likert", "text_key": "bfi10_09", "dimension": "Neuroticism"},
+      {"id": "bfi10_10", "type": "likert", "text_key": "bfi10_10", "dimension": "Openness"}
+    ],
+    "dimensions": [
+      {"id": "Extraversion", "name": "Extraversion", "description": "Sociability, assertiveness, positive emotionality"},
+      {"id": "Agreeableness", "name": "Agreeableness", "description": "Cooperation, trust, prosocial orientation"},
+      {"id": "Conscientiousness", "name": "Conscientiousness", "description": "Organization, diligence, self-discipline"},
+      {"id": "Neuroticism", "name": "Neuroticism", "description": "Emotional instability, anxiety, negative emotionality"},
+      {"id": "Openness", "name": "Openness", "description": "Intellectual curiosity, imagination, aesthetic sensitivity"}
+    ],
+    "scoring": {
+      "extraversion": {
+        "method": "mean_coded",
+        "items": {"bfi10_01": -1, "bfi10_06": 1}
+      },
+      "agreeableness": {
+        "method": "mean_coded",
+        "items": {"bfi10_02": 1, "bfi10_07": -1}
+      },
+      "conscientiousness": {
+        "method": "mean_coded",
+        "items": {"bfi10_03": -1, "bfi10_08": 1}
+      },
+      "neuroticism": {
+        "method": "mean_coded",
+        "items": {"bfi10_04": -1, "bfi10_09": 1}
+      },
+      "openness": {
+        "method": "mean_coded",
+        "items": {"bfi10_05": -1, "bfi10_10": 1}
+      }
+    }
+  },
+  "translations": {
+    "de": {
+      "bfi10_inst": "Inwieweit treffen die folgenden Aussagen auf Sie zu?",
+      "bfi10_01": "Ich bin eher zurückhaltend, reserviert.",
+      "bfi10_02": "Ich schenke anderen leicht Vertrauen, glaube an das Gute im Menschen.",
+      "bfi10_03": "Ich bin bequem, neige zur Faulheit.",
+      "bfi10_04": "Ich bin entspannt, lasse mich durch Stress nicht aus der Ruhe bringen.",
+      "bfi10_05": "Ich habe nur wenig künstlerisches Interesse.",
+      "bfi10_06": "Ich gehe aus mir heraus, bin gesellig.",
+      "bfi10_07": "Ich neige dazu, andere zu kritisieren.",
+      "bfi10_08": "Ich erledige Aufgaben gründlich.",
+      "bfi10_09": "Ich werde leicht nervös und unsicher.",
+      "bfi10_10": "Ich habe eine aktive Vorstellungskraft, bin fantasievoll.",
+      "bfi10_r1": "trifft überhaupt nicht zu",
+      "bfi10_r2": null,
+      "bfi10_r3": null,
+      "bfi10_r4": null,
+      "bfi10_r5": "trifft voll und ganz zu"
+    },
+    "en": {
+      "bfi10_inst": "How well do the following statements describe your personality?",
+      "bfi10_01": "I see myself as someone who is reserved.",
+      "bfi10_02": "I see myself as someone who is generally trusting.",
+      "bfi10_03": "I see myself as someone who tends to be lazy.",
+      "bfi10_04": "I see myself as someone who is relaxed, handles stress well.",
+      "bfi10_05": "I see myself as someone who has few artistic interests.",
+      "bfi10_06": "I see myself as someone who is outgoing, sociable.",
+      "bfi10_07": "I see myself as someone who tends to find fault with others.",
+      "bfi10_08": "I see myself as someone who does a thorough job.",
+      "bfi10_09": "I see myself as someone who gets nervous easily.",
+      "bfi10_10": "I see myself as someone who has an active imagination.",
+      "bfi10_r1": "disagree strongly",
+      "bfi10_r2": null,
+      "bfi10_r3": null,
+      "bfi10_r4": null,
+      "bfi10_r5": "agree strongly"
+    }
+  }
+}

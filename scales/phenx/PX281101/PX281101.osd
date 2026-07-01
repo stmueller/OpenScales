@@ -1,218 +1,221 @@
 {
-  "scale_info": {
-    "name": "Healthcare Communications",
-    "code": "PX281101",
-    "abbreviation": "PX281101",
-    "description": "MEPS is a SAQ that aims to understand how people feel about their health and health care by assessing prior experiences with doctors or other health professionals in the last 12 months.",
-    "domain": "Health Technology & Spirituality",
-    "citation": "Carroll, W., & Rhoades, J. (2013, May). Access and experiences regarding health care: estimates for the U.S. civilian noninstitutionalized population age 18 and older, 2010. [Statistical Brief #406]. Agency for Healthcare Research and Quality. http://www.meps.ahrq.gov/mepsweb/data_files/publications/ st406/stat406.pdf Hong, Y. R., Holcomb, D., Bhandari, M., & Larkin, L. (2016). Affordable Care Act: comparison of healthcare indicators among different insurance beneficiaries with new coverage eligibility. BMC Health Services Research, 16, 114. https://doi.org/10.1186/s12913-016-1362-1 Levine, D. M., Linder, J. A., & Landon, B. E. (2016). The quality of outpatient care delivered to adults in the United States, 2002 to 2013. JAMA Internal Medicine, 176(12), 1778-1790. https://doi.org/10.1001/jamainternmed.2016.6217 [PhenX: https://www.phenxtoolkit.org/protocols/view/281101]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/281101"
-  },
-  "option_sets": {
-    "default": [
-      {
-        "text_key": "opt_1",
-        "value": 1
-      },
-      {
-        "text_key": "opt_2",
-        "value": 2
-      },
-      {
-        "text_key": "opt_3",
-        "value": 3
-      },
-      {
-        "text_key": "opt_4",
-        "value": 4
-      }
-    ]
-  },
-  "items": [
-    {
-      "id": "healthcare_communications_doctor_instructions_illness_conditionrecord_id",
-      "text_key": "healthcare_communications_doctor_instructions_illness_conditionrecord_id",
-      "type": "short"
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Healthcare Communications",
+      "code": "PX281101",
+      "abbreviation": "PX281101",
+      "description": "MEPS is a SAQ that aims to understand how people feel about their health and health care by assessing prior experiences with doctors or other health professionals in the last 12 months.",
+      "domain": "Health Technology & Spirituality",
+      "citation": "Carroll, W., & Rhoades, J. (2013, May). Access and experiences regarding health care: estimates for the U.S. civilian noninstitutionalized population age 18 and older, 2010. [Statistical Brief #406]. Agency for Healthcare Research and Quality. http://www.meps.ahrq.gov/mepsweb/data_files/publications/ st406/stat406.pdf Hong, Y. R., Holcomb, D., Bhandari, M., & Larkin, L. (2016). Affordable Care Act: comparison of healthcare indicators among different insurance beneficiaries with new coverage eligibility. BMC Health Services Research, 16, 114. https://doi.org/10.1186/s12913-016-1362-1 Levine, D. M., Linder, J. A., & Landon, B. E. (2016). The quality of outpatient care delivered to adults in the United States, 2002 to 2013. JAMA Internal Medicine, 176(12), 1778-1790. https://doi.org/10.1001/jamainternmed.2016.6217 [PhenX: https://www.phenxtoolkit.org/protocols/view/281101]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/281101"
     },
-    {
-      "id": "intro_text",
-      "text_key": "intro_text",
-      "type": "inst"
-    },
-    {
-      "id": "healthcare_communications_doctor_instructions_illness_condition",
-      "text_key": "healthcare_communications_doctor_instructions_illness_condition",
-      "type": "multi",
-      "options": [
+    "option_sets": {
+      "default": [
         {
-          "text_key": "healthcare_communications_doctor_instructions_illness_condition_opt_1",
+          "text_key": "opt_1",
           "value": 1
         },
         {
-          "text_key": "healthcare_communications_doctor_instructions_illness_condition_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "healthcare_communications_doctor_instructions_illness_condition_understand",
-      "text_key": "healthcare_communications_doctor_instructions_illness_condition_understand",
-      "type": "multi",
-      "visible_when": {
-        "item": "healthcare_communications_doctor_instructions_illness_condition",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "healthcare_communications_doctor_instructions_illness_condition_describe_follow",
-      "text_key": "healthcare_communications_doctor_instructions_illness_condition_describe_follow",
-      "type": "multi",
-      "visible_when": {
-        "item": "healthcare_communications_doctor_instructions_illness_condition",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "healthcare_communications_sign_forms_doctor_office",
-      "text_key": "healthcare_communications_sign_forms_doctor_office",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "healthcare_communications_sign_forms_doctor_office_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "healthcare_communications_sign_forms_doctor_office_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "healthcare_communications_sign_forms_doctor_office_help",
-      "text_key": "healthcare_communications_sign_forms_doctor_office_help",
-      "type": "multi",
-      "visible_when": {
-        "item": "healthcare_communications_sign_forms_doctor_office",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "healthcare_communications_doctor_explain_easy_understand",
-      "text_key": "healthcare_communications_doctor_explain_easy_understand",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "healthcare_communications_doctor_listen_carefully",
-      "text_key": "healthcare_communications_doctor_listen_carefully",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "healthcare_communications_doctor_show_respect",
-      "text_key": "healthcare_communications_doctor_show_respect",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "healthcare_communications_doctor_spend_time",
-      "text_key": "healthcare_communications_doctor_spend_time",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "specialist_text",
-      "text_key": "specialist_text",
-      "type": "inst"
-    },
-    {
-      "id": "healthcare_communications_specialist_appointment",
-      "text_key": "healthcare_communications_specialist_appointment",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "healthcare_communications_specialist_appointment_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "healthcare_communications_specialist_appointment_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "healthcare_communications_specialist_appointment_needed",
-      "text_key": "healthcare_communications_specialist_appointment_needed",
-      "type": "multi",
-      "visible_when": {
-        "item": "healthcare_communications_specialist_appointment",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "healthcare_communications_complete_date",
-      "text_key": "healthcare_communications_complete_date",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "healthcare_communications_complete_date_who",
-      "text_key": "healthcare_communications_complete_date_who",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "healthcare_communications_complete_date_who_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "healthcare_communications_complete_date_who_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "healthcare_communications_complete_date_who_relationship",
-      "text_key": "healthcare_communications_complete_date_who_relationship",
-      "type": "multi",
-      "visible_when": {
-        "item": "healthcare_communications_complete_date_who",
-        "operator": "equals",
-        "value": 2
-      },
-      "options": [
-        {
-          "text_key": "healthcare_communications_complete_date_who_relationship_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "healthcare_communications_complete_date_who_relationship_opt_2",
+          "text_key": "opt_2",
           "value": 2
         },
         {
-          "text_key": "healthcare_communications_complete_date_who_relationship_opt_3",
+          "text_key": "opt_3",
           "value": 3
         },
         {
-          "text_key": "healthcare_communications_complete_date_who_relationship_opt_4",
+          "text_key": "opt_4",
           "value": 4
-        },
-        {
-          "text_key": "healthcare_communications_complete_date_who_relationship_opt_5",
-          "value": 5
         }
       ]
-    }
-  ],
+    },
+    "items": [
+      {
+        "id": "healthcare_communications_doctor_instructions_illness_conditionrecord_id",
+        "text_key": "healthcare_communications_doctor_instructions_illness_conditionrecord_id",
+        "type": "short"
+      },
+      {
+        "id": "intro_text",
+        "text_key": "intro_text",
+        "type": "inst"
+      },
+      {
+        "id": "healthcare_communications_doctor_instructions_illness_condition",
+        "text_key": "healthcare_communications_doctor_instructions_illness_condition",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "healthcare_communications_doctor_instructions_illness_condition_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_doctor_instructions_illness_condition_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_doctor_instructions_illness_condition_understand",
+        "text_key": "healthcare_communications_doctor_instructions_illness_condition_understand",
+        "type": "multi",
+        "visible_when": {
+          "item": "healthcare_communications_doctor_instructions_illness_condition",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "healthcare_communications_doctor_instructions_illness_condition_describe_follow",
+        "text_key": "healthcare_communications_doctor_instructions_illness_condition_describe_follow",
+        "type": "multi",
+        "visible_when": {
+          "item": "healthcare_communications_doctor_instructions_illness_condition",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "healthcare_communications_sign_forms_doctor_office",
+        "text_key": "healthcare_communications_sign_forms_doctor_office",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "healthcare_communications_sign_forms_doctor_office_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_sign_forms_doctor_office_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_sign_forms_doctor_office_help",
+        "text_key": "healthcare_communications_sign_forms_doctor_office_help",
+        "type": "multi",
+        "visible_when": {
+          "item": "healthcare_communications_sign_forms_doctor_office",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "healthcare_communications_doctor_explain_easy_understand",
+        "text_key": "healthcare_communications_doctor_explain_easy_understand",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "healthcare_communications_doctor_listen_carefully",
+        "text_key": "healthcare_communications_doctor_listen_carefully",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "healthcare_communications_doctor_show_respect",
+        "text_key": "healthcare_communications_doctor_show_respect",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "healthcare_communications_doctor_spend_time",
+        "text_key": "healthcare_communications_doctor_spend_time",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "specialist_text",
+        "text_key": "specialist_text",
+        "type": "inst"
+      },
+      {
+        "id": "healthcare_communications_specialist_appointment",
+        "text_key": "healthcare_communications_specialist_appointment",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "healthcare_communications_specialist_appointment_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_specialist_appointment_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_specialist_appointment_needed",
+        "text_key": "healthcare_communications_specialist_appointment_needed",
+        "type": "multi",
+        "visible_when": {
+          "item": "healthcare_communications_specialist_appointment",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "healthcare_communications_complete_date",
+        "text_key": "healthcare_communications_complete_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "healthcare_communications_complete_date_who",
+        "text_key": "healthcare_communications_complete_date_who",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "healthcare_communications_complete_date_who_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_complete_date_who_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "healthcare_communications_complete_date_who_relationship",
+        "text_key": "healthcare_communications_complete_date_who_relationship",
+        "type": "multi",
+        "visible_when": {
+          "item": "healthcare_communications_complete_date_who",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "healthcare_communications_complete_date_who_relationship_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "healthcare_communications_complete_date_who_relationship_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "healthcare_communications_complete_date_who_relationship_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "healthcare_communications_complete_date_who_relationship_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "healthcare_communications_complete_date_who_relationship_opt_5",
+            "value": 5
+          }
+        ]
+      }
+    ]
+  },
   "translations": {
     "en": {
       "opt_1": "Never",

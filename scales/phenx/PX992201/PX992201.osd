@@ -1,417 +1,420 @@
 {
-  "scale_info": {
-    "name": "Long COVID - Physical Functioning",
-    "code": "PX992201",
-    "abbreviation": "PX992201",
-    "description": "A self-administered questionnaire that asks about the effects of Long COVID symptoms on physical functioning.",
-    "domain": "Long COVID",
-    "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/992201]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/992201"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Long COVID - Physical Functioning",
+      "code": "PX992201",
+      "abbreviation": "PX992201",
+      "description": "A self-administered questionnaire that asks about the effects of Long COVID symptoms on physical functioning.",
+      "domain": "Long COVID",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/992201]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/992201"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problemrecord_id",
+        "text_key": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problemrecord_id",
+        "type": "short"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem",
+        "text_key": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem_opt_3",
+            "value": 3
+          }
+        ]
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem_specify",
+        "text_key": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "long_covid_physical_function_before_health_problem_special_equipment",
+        "text_key": "long_covid_physical_function_before_health_problem_special_equipment",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "long_covid_physical_function_today_difficulty_walk_quarter_mile_any",
+        "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_any",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much",
+        "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "long_covid_physical_function_before_difficulty_walk_quarter_mile_any",
+        "text_key": "long_covid_physical_function_before_difficulty_walk_quarter_mile_any",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "long_covid_physical_function_today_ease_walk_quarter_mile",
+        "text_key": "long_covid_physical_function_today_ease_walk_quarter_mile",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_quarter_mile_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_quarter_mile_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_quarter_mile_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_quarter_mile_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "long_covid_physical_function_today_difficulty_walk_one_mile_any",
+        "text_key": "long_covid_physical_function_today_difficulty_walk_one_mile_any",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "long_covid_physical_function_before_difficulty_walk_one_mile_how_much",
+        "text_key": "long_covid_physical_function_before_difficulty_walk_one_mile_how_much",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "long_covid_physical_function_today_ease_walk_one_mile",
+        "text_key": "long_covid_physical_function_today_ease_walk_one_mile",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_one_mile_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_one_mile_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_one_mile_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_one_mile_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "long_covid_physical_function_today_difficulty_walk_ten_steps_any",
+        "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_any",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much",
+        "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "long_covid_physical_function_before_difficulty_walk_ten_steps_any",
+        "text_key": "long_covid_physical_function_before_difficulty_walk_ten_steps_any",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "long_covid_physical_function_today_ease_walk_ten_steps",
+        "text_key": "long_covid_physical_function_today_ease_walk_ten_steps",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_ten_steps_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_ten_steps_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_ten_steps_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_ten_steps_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "long_covid_physical_function_today_difficulty_walk_twenty_steps_any",
+        "text_key": "long_covid_physical_function_today_difficulty_walk_twenty_steps_any",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "long_covid_physical_function_before_difficulty_walk_twenty_steps_any",
+        "text_key": "long_covid_physical_function_before_difficulty_walk_twenty_steps_any",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "long_covid_physical_function_today_ease_walk_twenty_steps",
+        "text_key": "long_covid_physical_function_today_ease_walk_twenty_steps",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_twenty_steps_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_twenty_steps_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_twenty_steps_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_physical_function_today_ease_walk_twenty_steps_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "long_covid_physical_function_today_difficulty_walk_light_housework_any",
+        "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_any",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much",
+        "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "long_covid_physical_function_before_difficulty_walk_light_housework_any",
+        "text_key": "long_covid_physical_function_before_difficulty_walk_light_housework_any",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "long_covid_physical_function_today_difficulty_walk_heavy_housework_any",
+        "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_any",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much",
+        "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "long_covid_physical_function_before_difficulty_walk_heavy_housework_any",
+        "text_key": "long_covid_physical_function_before_difficulty_walk_heavy_housework_any",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "long_covid_physical_function_before_strenuous_exercise_times_per_week",
+        "text_key": "long_covid_physical_function_before_strenuous_exercise_times_per_week",
+        "type": "short",
+        "input_type": "number",
+        "number_min": 0.0
+      },
+      {
+        "id": "long_covid_physical_function_before_strenuous_exercise_times_per_week_desc",
+        "text_key": "long_covid_physical_function_before_strenuous_exercise_times_per_week_desc",
+        "type": "inst"
+      },
+      {
+        "id": "long_covid_physical_function_before_moderate_exercise_times_per_week",
+        "text_key": "long_covid_physical_function_before_moderate_exercise_times_per_week",
+        "type": "short",
+        "input_type": "number",
+        "number_min": 0.0
+      },
+      {
+        "id": "long_covid_physical_function_before_moderate_exercise_times_per_week_desc",
+        "text_key": "long_covid_physical_function_before_moderate_exercise_times_per_week_desc",
+        "type": "inst"
+      },
+      {
+        "id": "long_covid_physical_function_before_light_exercise_times_per_week",
+        "text_key": "long_covid_physical_function_before_light_exercise_times_per_week",
+        "type": "short",
+        "input_type": "number",
+        "number_min": 0.0
+      },
+      {
+        "id": "long_covid_physical_function_before_light_exercise_times_per_week_desc",
+        "text_key": "long_covid_physical_function_before_light_exercise_times_per_week_desc",
+        "type": "inst"
+      },
+      {
+        "id": "long_covid_physical_function_after_strenuous_exercise_times_per_week",
+        "text_key": "long_covid_physical_function_after_strenuous_exercise_times_per_week",
+        "type": "short",
+        "input_type": "number",
+        "number_min": 0.0
+      },
+      {
+        "id": "long_covid_physical_function_after_strenuous_exercise_times_per_week_desc",
+        "text_key": "long_covid_physical_function_after_strenuous_exercise_times_per_week_desc",
+        "type": "inst"
+      },
+      {
+        "id": "long_covid_physical_function_after_moderate_exercise_times_per_week",
+        "text_key": "long_covid_physical_function_after_moderate_exercise_times_per_week",
+        "type": "short",
+        "input_type": "number",
+        "number_min": 0.0
+      },
+      {
+        "id": "long_covid_physical_function_after_moderate_exercise_times_per_week_desc",
+        "text_key": "long_covid_physical_function_after_moderate_exercise_times_per_week_desc",
+        "type": "inst"
+      },
+      {
+        "id": "long_covid_physical_function_after_light_exercise_times_per_week",
+        "text_key": "long_covid_physical_function_after_light_exercise_times_per_week",
+        "type": "short",
+        "input_type": "number",
+        "number_min": 0.0
+      },
+      {
+        "id": "long_covid_physical_function_after_light_exercise_times_per_week_desc",
+        "text_key": "long_covid_physical_function_after_light_exercise_times_per_week_desc",
+        "type": "inst"
       }
     ]
   },
-  "items": [
-    {
-      "id": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problemrecord_id",
-      "text_key": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problemrecord_id",
-      "type": "short"
-    },
-    {
-      "id": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem",
-      "text_key": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem_specify",
-      "text_key": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem_specify",
-      "type": "short",
-      "visible_when": {
-        "item": "long_covid_physical_function_before_limit_activity_physical_mental_emotional_problem",
-        "operator": "equals",
-        "value": 1
-      }
-    },
-    {
-      "id": "long_covid_physical_function_before_health_problem_special_equipment",
-      "text_key": "long_covid_physical_function_before_health_problem_special_equipment",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "long_covid_physical_function_today_difficulty_walk_quarter_mile_any",
-      "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_any",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much",
-      "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_quarter_mile_how_much_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "long_covid_physical_function_before_difficulty_walk_quarter_mile_any",
-      "text_key": "long_covid_physical_function_before_difficulty_walk_quarter_mile_any",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "long_covid_physical_function_today_ease_walk_quarter_mile",
-      "text_key": "long_covid_physical_function_today_ease_walk_quarter_mile",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_quarter_mile_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_quarter_mile_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_quarter_mile_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_quarter_mile_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "long_covid_physical_function_today_difficulty_walk_one_mile_any",
-      "text_key": "long_covid_physical_function_today_difficulty_walk_one_mile_any",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "long_covid_physical_function_before_difficulty_walk_one_mile_how_much",
-      "text_key": "long_covid_physical_function_before_difficulty_walk_one_mile_how_much",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "long_covid_physical_function_today_ease_walk_one_mile",
-      "text_key": "long_covid_physical_function_today_ease_walk_one_mile",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_one_mile_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_one_mile_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_one_mile_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_one_mile_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "long_covid_physical_function_today_difficulty_walk_ten_steps_any",
-      "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_any",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much",
-      "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_ten_steps_how_much_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "long_covid_physical_function_before_difficulty_walk_ten_steps_any",
-      "text_key": "long_covid_physical_function_before_difficulty_walk_ten_steps_any",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "long_covid_physical_function_today_ease_walk_ten_steps",
-      "text_key": "long_covid_physical_function_today_ease_walk_ten_steps",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_ten_steps_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_ten_steps_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_ten_steps_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_ten_steps_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "long_covid_physical_function_today_difficulty_walk_twenty_steps_any",
-      "text_key": "long_covid_physical_function_today_difficulty_walk_twenty_steps_any",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "long_covid_physical_function_before_difficulty_walk_twenty_steps_any",
-      "text_key": "long_covid_physical_function_before_difficulty_walk_twenty_steps_any",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "long_covid_physical_function_today_ease_walk_twenty_steps",
-      "text_key": "long_covid_physical_function_today_ease_walk_twenty_steps",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_twenty_steps_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_twenty_steps_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_twenty_steps_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "long_covid_physical_function_today_ease_walk_twenty_steps_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "long_covid_physical_function_today_difficulty_walk_light_housework_any",
-      "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_any",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much",
-      "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_light_housework_how_much_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "long_covid_physical_function_before_difficulty_walk_light_housework_any",
-      "text_key": "long_covid_physical_function_before_difficulty_walk_light_housework_any",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "long_covid_physical_function_today_difficulty_walk_heavy_housework_any",
-      "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_any",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much",
-      "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "long_covid_physical_function_today_difficulty_walk_heavy_housework_how_much_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "long_covid_physical_function_before_difficulty_walk_heavy_housework_any",
-      "text_key": "long_covid_physical_function_before_difficulty_walk_heavy_housework_any",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "long_covid_physical_function_before_strenuous_exercise_times_per_week",
-      "text_key": "long_covid_physical_function_before_strenuous_exercise_times_per_week",
-      "type": "short",
-      "input_type": "number",
-      "number_min": 0.0
-    },
-    {
-      "id": "long_covid_physical_function_before_strenuous_exercise_times_per_week_desc",
-      "text_key": "long_covid_physical_function_before_strenuous_exercise_times_per_week_desc",
-      "type": "inst"
-    },
-    {
-      "id": "long_covid_physical_function_before_moderate_exercise_times_per_week",
-      "text_key": "long_covid_physical_function_before_moderate_exercise_times_per_week",
-      "type": "short",
-      "input_type": "number",
-      "number_min": 0.0
-    },
-    {
-      "id": "long_covid_physical_function_before_moderate_exercise_times_per_week_desc",
-      "text_key": "long_covid_physical_function_before_moderate_exercise_times_per_week_desc",
-      "type": "inst"
-    },
-    {
-      "id": "long_covid_physical_function_before_light_exercise_times_per_week",
-      "text_key": "long_covid_physical_function_before_light_exercise_times_per_week",
-      "type": "short",
-      "input_type": "number",
-      "number_min": 0.0
-    },
-    {
-      "id": "long_covid_physical_function_before_light_exercise_times_per_week_desc",
-      "text_key": "long_covid_physical_function_before_light_exercise_times_per_week_desc",
-      "type": "inst"
-    },
-    {
-      "id": "long_covid_physical_function_after_strenuous_exercise_times_per_week",
-      "text_key": "long_covid_physical_function_after_strenuous_exercise_times_per_week",
-      "type": "short",
-      "input_type": "number",
-      "number_min": 0.0
-    },
-    {
-      "id": "long_covid_physical_function_after_strenuous_exercise_times_per_week_desc",
-      "text_key": "long_covid_physical_function_after_strenuous_exercise_times_per_week_desc",
-      "type": "inst"
-    },
-    {
-      "id": "long_covid_physical_function_after_moderate_exercise_times_per_week",
-      "text_key": "long_covid_physical_function_after_moderate_exercise_times_per_week",
-      "type": "short",
-      "input_type": "number",
-      "number_min": 0.0
-    },
-    {
-      "id": "long_covid_physical_function_after_moderate_exercise_times_per_week_desc",
-      "text_key": "long_covid_physical_function_after_moderate_exercise_times_per_week_desc",
-      "type": "inst"
-    },
-    {
-      "id": "long_covid_physical_function_after_light_exercise_times_per_week",
-      "text_key": "long_covid_physical_function_after_light_exercise_times_per_week",
-      "type": "short",
-      "input_type": "number",
-      "number_min": 0.0
-    },
-    {
-      "id": "long_covid_physical_function_after_light_exercise_times_per_week_desc",
-      "text_key": "long_covid_physical_function_after_light_exercise_times_per_week_desc",
-      "type": "inst"
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "Yes",

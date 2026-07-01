@@ -1,507 +1,510 @@
 {
-  "scale_info": {
-    "name": "Hormone Therapy",
-    "code": "PX880901",
-    "abbreviation": "PX880901",
-    "description": "This protocol includes 10 interviewer-administered questions from the Reproductive Health section of the National Health and Nutrition Examination Survey (NHANES) 2013-2014 that capture use of female hormones (including pills and patches) and duration of use.",
-    "domain": "Women's Health",
-    "citation": "North American Menopause Society (2010). Estrogen and progestogen use in postmenopausal women: 2010 position statement of The North American Menopause Society. Menopause, 17(2), 242–255. [PhenX: https://www.phenxtoolkit.org/protocols/view/880901]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/880901"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Hormone Therapy",
+      "code": "PX880901",
+      "abbreviation": "PX880901",
+      "description": "This protocol includes 10 interviewer-administered questions from the Reproductive Health section of the National Health and Nutrition Examination Survey (NHANES) 2013-2014 that capture use of female hormones (including pills and patches) and duration of use.",
+      "domain": "Women's Health",
+      "citation": "North American Menopause Society (2010). Estrogen and progestogen use in postmenopausal women: 2010 position statement of The North American Menopause Society. Menopause, 17(2), 242–255. [PhenX: https://www.phenxtoolkit.org/protocols/view/880901]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/880901"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_7",
+          "value": 7
+        },
+        {
+          "text_key": "opt_9",
+          "value": 9
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "hormone_therapy_ever_used_estrogen_progesterone_title",
+        "text_key": "hormone_therapy_ever_used_estrogen_progesterone_title",
+        "type": "inst"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "hormone_therapy_ever_used_estrogen_progesterone",
+        "text_key": "hormone_therapy_ever_used_estrogen_progesterone",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_7",
-        "value": 7
+        "id": "hormone_therapy_ever_used_estrogen_progesterone_which",
+        "text_key": "hormone_therapy_ever_used_estrogen_progesterone_which",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "hormone_therapy_ever_used_estrogen_progesterone_which_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_estrogen_progesterone_which_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_estrogen_progesterone_which_opt_12",
+            "value": 12
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_estrogen_progesterone_which_opt_77",
+            "value": 77
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_estrogen_progesterone_which_opt_99",
+            "value": 99
+          }
+        ]
       },
       {
-        "text_key": "opt_9",
-        "value": 9
+        "id": "hormone_therapy_ever_used_pill_estrogen_only",
+        "text_key": "hormone_therapy_ever_used_pill_estrogen_only",
+        "type": "multi",
+        "visible_when": {
+          "item": "hormone_therapy_ever_used_estrogen_progesterone_which",
+          "operator": "in",
+          "value": [
+            10
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "hormone_therapy_ever_used_pill_estrogen_only_refuse",
+        "text_key": "hormone_therapy_ever_used_pill_estrogen_only_refuse",
+        "type": "multi",
+        "visible_when": {
+          "item": "hormone_therapy_ever_used_pill_estrogen_only",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "hormone_therapy_ever_used_pill_estrogen_only_refuse_opt_77",
+            "value": 77
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_pill_estrogen_only_refuse_opt_99",
+            "value": 99
+          }
+        ]
+      },
+      {
+        "id": "hormone_therapy_ever_used_pill_estrogen_only_number",
+        "text_key": "hormone_therapy_ever_used_pill_estrogen_only_number",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "hormone_therapy_ever_used_pill_estrogen_only",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "all": [
+                {
+                  "item": "hormone_therapy_ever_used_pill_estrogen_only_refuse",
+                  "operator": "not_equals",
+                  "value": 77
+                },
+                {
+                  "item": "hormone_therapy_ever_used_pill_estrogen_only_refuse",
+                  "operator": "not_equals",
+                  "value": 99
+                }
+              ]
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "hormone_therapy_ever_used_pill_estrogen_only_unit",
+        "text_key": "hormone_therapy_ever_used_pill_estrogen_only_unit",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "hormone_therapy_ever_used_pill_estrogen_only",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "all": [
+                {
+                  "item": "hormone_therapy_ever_used_pill_estrogen_only_refuse",
+                  "operator": "not_equals",
+                  "value": 77
+                },
+                {
+                  "item": "hormone_therapy_ever_used_pill_estrogen_only_refuse",
+                  "operator": "not_equals",
+                  "value": 99
+                }
+              ]
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "hormone_therapy_ever_used_pill_estrogen_only_unit_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_pill_estrogen_only_unit_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_pill_estrogen_only_unit_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_pill_estrogen_only_unit_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "hormone_therapy_ever_used_pill_estrogen_progesterone_both",
+        "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both",
+        "type": "multi",
+        "visible_when": {
+          "item": "hormone_therapy_ever_used_estrogen_progesterone_which",
+          "operator": "in",
+          "value": [
+            10
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse",
+        "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse",
+        "type": "multi",
+        "visible_when": {
+          "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse_opt_77",
+            "value": 77
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse_opt_99",
+            "value": 99
+          }
+        ]
+      },
+      {
+        "id": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_number",
+        "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_number",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "all": [
+                {
+                  "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse",
+                  "operator": "not_equals",
+                  "value": 77
+                },
+                {
+                  "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse",
+                  "operator": "not_equals",
+                  "value": 99
+                }
+              ]
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_unit",
+        "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_unit",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "all": [
+                {
+                  "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse",
+                  "operator": "not_equals",
+                  "value": 77
+                },
+                {
+                  "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse",
+                  "operator": "not_equals",
+                  "value": 99
+                }
+              ]
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_unit_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_unit_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_unit_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_unit_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "hormone_therapy_ever_used_patch_estrogen_only",
+        "text_key": "hormone_therapy_ever_used_patch_estrogen_only",
+        "type": "multi",
+        "visible_when": {
+          "item": "hormone_therapy_ever_used_estrogen_progesterone_which",
+          "operator": "in",
+          "value": [
+            11
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "hormone_therapy_ever_used_patch_estrogen_only_refuse",
+        "text_key": "hormone_therapy_ever_used_patch_estrogen_only_refuse",
+        "type": "multi",
+        "visible_when": {
+          "item": "hormone_therapy_ever_used_patch_estrogen_only",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "hormone_therapy_ever_used_patch_estrogen_only_refuse_opt_77",
+            "value": 77
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_patch_estrogen_only_refuse_opt_99",
+            "value": 99
+          }
+        ]
+      },
+      {
+        "id": "hormone_therapy_ever_used_patch_estrogen_only_number",
+        "text_key": "hormone_therapy_ever_used_patch_estrogen_only_number",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "hormone_therapy_ever_used_patch_estrogen_only",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "all": [
+                {
+                  "item": "hormone_therapy_ever_used_patch_estrogen_only_refuse",
+                  "operator": "not_equals",
+                  "value": 77
+                },
+                {
+                  "item": "hormone_therapy_ever_used_patch_estrogen_only_refuse",
+                  "operator": "not_equals",
+                  "value": 99
+                }
+              ]
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "hormone_therapy_ever_used_patch_estrogen_only_unit",
+        "text_key": "hormone_therapy_ever_used_patch_estrogen_only_unit",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "hormone_therapy_ever_used_patch_estrogen_only",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "all": [
+                {
+                  "item": "hormone_therapy_ever_used_patch_estrogen_only_refuse",
+                  "operator": "not_equals",
+                  "value": 77
+                },
+                {
+                  "item": "hormone_therapy_ever_used_patch_estrogen_only_refuse",
+                  "operator": "not_equals",
+                  "value": 99
+                }
+              ]
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "hormone_therapy_ever_used_patch_estrogen_only_unit_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_patch_estrogen_only_unit_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_patch_estrogen_only_unit_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_patch_estrogen_only_unit_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "hormone_therapy_ever_used_patch_estrogen_progesterone_both",
+        "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both",
+        "type": "multi",
+        "visible_when": {
+          "item": "hormone_therapy_ever_used_estrogen_progesterone_which",
+          "operator": "in",
+          "value": [
+            11
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse",
+        "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse",
+        "type": "multi",
+        "visible_when": {
+          "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse_opt_77",
+            "value": 77
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse_opt_99",
+            "value": 99
+          }
+        ]
+      },
+      {
+        "id": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_number",
+        "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_number",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "all": [
+                {
+                  "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse",
+                  "operator": "not_equals",
+                  "value": 77
+                },
+                {
+                  "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse",
+                  "operator": "not_equals",
+                  "value": 99
+                }
+              ]
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_unit",
+        "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_unit",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "all": [
+                {
+                  "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse",
+                  "operator": "not_equals",
+                  "value": 77
+                },
+                {
+                  "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse",
+                  "operator": "not_equals",
+                  "value": 99
+                }
+              ]
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_unit_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_unit_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_unit_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_unit_opt_9",
+            "value": 9
+          }
+        ]
       }
     ]
   },
-  "items": [
-    {
-      "id": "hormone_therapy_ever_used_estrogen_progesterone_title",
-      "text_key": "hormone_therapy_ever_used_estrogen_progesterone_title",
-      "type": "inst"
-    },
-    {
-      "id": "hormone_therapy_ever_used_estrogen_progesterone",
-      "text_key": "hormone_therapy_ever_used_estrogen_progesterone",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "hormone_therapy_ever_used_estrogen_progesterone_which",
-      "text_key": "hormone_therapy_ever_used_estrogen_progesterone_which",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "hormone_therapy_ever_used_estrogen_progesterone_which_opt_10",
-          "value": 10
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_estrogen_progesterone_which_opt_11",
-          "value": 11
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_estrogen_progesterone_which_opt_12",
-          "value": 12
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_estrogen_progesterone_which_opt_77",
-          "value": 77
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_estrogen_progesterone_which_opt_99",
-          "value": 99
-        }
-      ]
-    },
-    {
-      "id": "hormone_therapy_ever_used_pill_estrogen_only",
-      "text_key": "hormone_therapy_ever_used_pill_estrogen_only",
-      "type": "multi",
-      "visible_when": {
-        "item": "hormone_therapy_ever_used_estrogen_progesterone_which",
-        "operator": "in",
-        "value": [
-          10
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "hormone_therapy_ever_used_pill_estrogen_only_refuse",
-      "text_key": "hormone_therapy_ever_used_pill_estrogen_only_refuse",
-      "type": "multi",
-      "visible_when": {
-        "item": "hormone_therapy_ever_used_pill_estrogen_only",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "hormone_therapy_ever_used_pill_estrogen_only_refuse_opt_77",
-          "value": 77
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_pill_estrogen_only_refuse_opt_99",
-          "value": 99
-        }
-      ]
-    },
-    {
-      "id": "hormone_therapy_ever_used_pill_estrogen_only_number",
-      "text_key": "hormone_therapy_ever_used_pill_estrogen_only_number",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "hormone_therapy_ever_used_pill_estrogen_only",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "all": [
-              {
-                "item": "hormone_therapy_ever_used_pill_estrogen_only_refuse",
-                "operator": "not_equals",
-                "value": 77
-              },
-              {
-                "item": "hormone_therapy_ever_used_pill_estrogen_only_refuse",
-                "operator": "not_equals",
-                "value": 99
-              }
-            ]
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "hormone_therapy_ever_used_pill_estrogen_only_unit",
-      "text_key": "hormone_therapy_ever_used_pill_estrogen_only_unit",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "hormone_therapy_ever_used_pill_estrogen_only",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "all": [
-              {
-                "item": "hormone_therapy_ever_used_pill_estrogen_only_refuse",
-                "operator": "not_equals",
-                "value": 77
-              },
-              {
-                "item": "hormone_therapy_ever_used_pill_estrogen_only_refuse",
-                "operator": "not_equals",
-                "value": 99
-              }
-            ]
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "hormone_therapy_ever_used_pill_estrogen_only_unit_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_pill_estrogen_only_unit_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_pill_estrogen_only_unit_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_pill_estrogen_only_unit_opt_9",
-          "value": 9
-        }
-      ]
-    },
-    {
-      "id": "hormone_therapy_ever_used_pill_estrogen_progesterone_both",
-      "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both",
-      "type": "multi",
-      "visible_when": {
-        "item": "hormone_therapy_ever_used_estrogen_progesterone_which",
-        "operator": "in",
-        "value": [
-          10
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse",
-      "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse",
-      "type": "multi",
-      "visible_when": {
-        "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse_opt_77",
-          "value": 77
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse_opt_99",
-          "value": 99
-        }
-      ]
-    },
-    {
-      "id": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_number",
-      "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_number",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "all": [
-              {
-                "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse",
-                "operator": "not_equals",
-                "value": 77
-              },
-              {
-                "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse",
-                "operator": "not_equals",
-                "value": 99
-              }
-            ]
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_unit",
-      "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_unit",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "all": [
-              {
-                "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse",
-                "operator": "not_equals",
-                "value": 77
-              },
-              {
-                "item": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_refuse",
-                "operator": "not_equals",
-                "value": 99
-              }
-            ]
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_unit_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_unit_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_unit_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_pill_estrogen_progesterone_both_unit_opt_9",
-          "value": 9
-        }
-      ]
-    },
-    {
-      "id": "hormone_therapy_ever_used_patch_estrogen_only",
-      "text_key": "hormone_therapy_ever_used_patch_estrogen_only",
-      "type": "multi",
-      "visible_when": {
-        "item": "hormone_therapy_ever_used_estrogen_progesterone_which",
-        "operator": "in",
-        "value": [
-          11
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "hormone_therapy_ever_used_patch_estrogen_only_refuse",
-      "text_key": "hormone_therapy_ever_used_patch_estrogen_only_refuse",
-      "type": "multi",
-      "visible_when": {
-        "item": "hormone_therapy_ever_used_patch_estrogen_only",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "hormone_therapy_ever_used_patch_estrogen_only_refuse_opt_77",
-          "value": 77
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_patch_estrogen_only_refuse_opt_99",
-          "value": 99
-        }
-      ]
-    },
-    {
-      "id": "hormone_therapy_ever_used_patch_estrogen_only_number",
-      "text_key": "hormone_therapy_ever_used_patch_estrogen_only_number",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "hormone_therapy_ever_used_patch_estrogen_only",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "all": [
-              {
-                "item": "hormone_therapy_ever_used_patch_estrogen_only_refuse",
-                "operator": "not_equals",
-                "value": 77
-              },
-              {
-                "item": "hormone_therapy_ever_used_patch_estrogen_only_refuse",
-                "operator": "not_equals",
-                "value": 99
-              }
-            ]
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "hormone_therapy_ever_used_patch_estrogen_only_unit",
-      "text_key": "hormone_therapy_ever_used_patch_estrogen_only_unit",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "hormone_therapy_ever_used_patch_estrogen_only",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "all": [
-              {
-                "item": "hormone_therapy_ever_used_patch_estrogen_only_refuse",
-                "operator": "not_equals",
-                "value": 77
-              },
-              {
-                "item": "hormone_therapy_ever_used_patch_estrogen_only_refuse",
-                "operator": "not_equals",
-                "value": 99
-              }
-            ]
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "hormone_therapy_ever_used_patch_estrogen_only_unit_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_patch_estrogen_only_unit_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_patch_estrogen_only_unit_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_patch_estrogen_only_unit_opt_9",
-          "value": 9
-        }
-      ]
-    },
-    {
-      "id": "hormone_therapy_ever_used_patch_estrogen_progesterone_both",
-      "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both",
-      "type": "multi",
-      "visible_when": {
-        "item": "hormone_therapy_ever_used_estrogen_progesterone_which",
-        "operator": "in",
-        "value": [
-          11
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse",
-      "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse",
-      "type": "multi",
-      "visible_when": {
-        "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse_opt_77",
-          "value": 77
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse_opt_99",
-          "value": 99
-        }
-      ]
-    },
-    {
-      "id": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_number",
-      "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_number",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "all": [
-              {
-                "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse",
-                "operator": "not_equals",
-                "value": 77
-              },
-              {
-                "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse",
-                "operator": "not_equals",
-                "value": 99
-              }
-            ]
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_unit",
-      "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_unit",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "all": [
-              {
-                "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse",
-                "operator": "not_equals",
-                "value": 77
-              },
-              {
-                "item": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_refuse",
-                "operator": "not_equals",
-                "value": 99
-              }
-            ]
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_unit_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_unit_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_unit_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "hormone_therapy_ever_used_patch_estrogen_progesterone_both_unit_opt_9",
-          "value": 9
-        }
-      ]
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "Yes",

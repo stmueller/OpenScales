@@ -1,713 +1,716 @@
 {
-  "scale_info": {
-    "name": "Burden of Cancer on Employment",
-    "code": "PX320101",
-    "abbreviation": "PX320101",
-    "description": "This self-administered subset of the questionnaire collects employment data to understand the lasting effects of cancer and cancer treatments on the lives of those who have been diagnosed with cancer.",
-    "domain": "Cancer & Chronic Disease",
-    "citation": "Yabroff, K. R., Dowling, E., Rodriguez, J., Ekwueme, D. U., Meissner, H., Soni, A., … Virgo, K. S. (2012). The Medical Expenditure Panel Survey (MEPS) experiences with cancer survivorship supplement. Journal of cancer survivorship : research and practice, 6(4), 407–419. doi:10.1007/s11764-012-0221-2 Ekwueme, D. U., Yabroff, K. R., Guy, G. P., Jr, Banegas, M. P., de Moor, J. S., Li, C., … Centers for Disease Control and Prevention (CDC) (2014). Medical costs and productivity losses of cancer survivors--United States, 2008-2011. MMWR. Morbidity and mortality weekly report, 63(23), 505–510. Guy, G. P., Jr, Ekwueme, D. U., Yabroff, K. R., Dowling, E. C., Li, C., Rodriguez, J. L., … Virgo, K. S. (2013). Economic burden of cancer survivorship among adults in the United States. Journal of clinical oncology : official journal of the American Society of Clinical Oncology, 31(30), 3749–3757. doi:10.1200/JCO.2013.49.1241 Guy, G. P., Jr, Yabroff, K. R., Ekwueme, D. U., Rim, S. H., Li, R., & Richardson, L. C. (2017). Economic Burden of Chronic Conditions Among Survivors of Cancer in the United States. Journal of clinical oncology : official journal of the American Society of Clinical Oncology, 35(18), 2053–2061. doi:10.1200/JCO.2016.71.9716 [PhenX: https://www.phenxtoolkit.org/protocols/view/320101]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/320101"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Burden of Cancer on Employment",
+      "code": "PX320101",
+      "abbreviation": "PX320101",
+      "description": "This self-administered subset of the questionnaire collects employment data to understand the lasting effects of cancer and cancer treatments on the lives of those who have been diagnosed with cancer.",
+      "domain": "Cancer & Chronic Disease",
+      "citation": "Yabroff, K. R., Dowling, E., Rodriguez, J., Ekwueme, D. U., Meissner, H., Soni, A., … Virgo, K. S. (2012). The Medical Expenditure Panel Survey (MEPS) experiences with cancer survivorship supplement. Journal of cancer survivorship : research and practice, 6(4), 407–419. doi:10.1007/s11764-012-0221-2 Ekwueme, D. U., Yabroff, K. R., Guy, G. P., Jr, Banegas, M. P., de Moor, J. S., Li, C., … Centers for Disease Control and Prevention (CDC) (2014). Medical costs and productivity losses of cancer survivors--United States, 2008-2011. MMWR. Morbidity and mortality weekly report, 63(23), 505–510. Guy, G. P., Jr, Ekwueme, D. U., Yabroff, K. R., Dowling, E. C., Li, C., Rodriguez, J. L., … Virgo, K. S. (2013). Economic burden of cancer survivorship among adults in the United States. Journal of clinical oncology : official journal of the American Society of Clinical Oncology, 31(30), 3749–3757. doi:10.1200/JCO.2013.49.1241 Guy, G. P., Jr, Yabroff, K. R., Ekwueme, D. U., Rim, S. H., Li, R., & Richardson, L. C. (2017). Economic Burden of Chronic Conditions Among Survivors of Cancer in the United States. Journal of clinical oncology : official journal of the American Society of Clinical Oncology, 35(18), 2053–2061. doi:10.1200/JCO.2016.71.9716 [PhenX: https://www.phenxtoolkit.org/protocols/view/320101]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/320101"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "cancer_diagnosis_working_pay_business_job",
+        "text_key": "cancer_diagnosis_working_pay_business_job",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
-      }
-    ]
-  },
-  "items": [
-    {
-      "id": "cancer_diagnosis_working_pay_business_job",
-      "text_key": "cancer_diagnosis_working_pay_business_job",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "desc1",
-      "text_key": "desc1",
-      "type": "inst"
-    },
-    {
-      "id": "cancer_diagnosis_working_time_off",
-      "text_key": "cancer_diagnosis_working_time_off",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_diagnosis_working_pay_business_job",
-        "operator": "equals",
-        "value": 1
+        "id": "desc1",
+        "text_key": "desc1",
+        "type": "inst"
       },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_diagnosis_extended_time_off",
-      "text_key": "cancer_diagnosis_extended_time_off",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_diagnosis_working_time_off",
-        "operator": "equals",
-        "value": 2
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "ask_work_changes",
-      "text_key": "ask_work_changes",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_diagnosis_extended_time_off",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "ask_work_changes_opt_1",
+      {
+        "id": "cancer_diagnosis_working_time_off",
+        "text_key": "cancer_diagnosis_working_time_off",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_diagnosis_working_pay_business_job",
+          "operator": "equals",
           "value": 1
         },
-        {
-          "text_key": "ask_work_changes_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "make_work_changes",
-      "text_key": "make_work_changes",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_diagnosis_working_time_off",
-        "operator": "equals",
-        "value": 1
+        "option_set": "default"
       },
-      "options": [
-        {
-          "text_key": "make_work_changes_opt_1",
+      {
+        "id": "cancer_diagnosis_extended_time_off",
+        "text_key": "cancer_diagnosis_extended_time_off",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_diagnosis_working_time_off",
+          "operator": "equals",
+          "value": 2
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "ask_work_changes",
+        "text_key": "ask_work_changes",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_diagnosis_extended_time_off",
+          "operator": "equals",
           "value": 1
         },
-        {
-          "text_key": "make_work_changes_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "extended_time_off_ever",
-      "text_key": "extended_time_off_ever",
-      "type": "multi",
-      "visible_when": {
-        "item": "make_work_changes",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "extended_time_off_when",
-      "text_key": "extended_time_off_when",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "extended_time_off_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "extended_time_off_when_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "extended_time_off_when_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "extended_time_off_when_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "extended_time_off_when_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "extended_time_off_length",
-      "text_key": "extended_time_off_length",
-      "type": "multi",
-      "visible_when": {
-        "item": "extended_time_off_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "extended_time_off_length_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "extended_time_off_length_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "extended_time_off_length_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "extended_time_off_length_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "extended_time_off_length_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "extended_time_off_ongoing",
-      "text_key": "extended_time_off_ongoing",
-      "type": "multi",
-      "visible_when": {
-        "item": "extended_time_off_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "unpaid_time_off_ever",
-      "text_key": "unpaid_time_off_ever",
-      "type": "multi",
-      "visible_when": {
-        "item": "make_work_changes",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "unpaid_time_off_when",
-      "text_key": "unpaid_time_off_when",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "unpaid_time_off_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "unpaid_time_off_when_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "unpaid_time_off_when_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "unpaid_time_off_when_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "unpaid_time_off_when_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "unpaid_time_off_length",
-      "text_key": "unpaid_time_off_length",
-      "type": "multi",
-      "visible_when": {
-        "item": "unpaid_time_off_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "unpaid_time_off_length_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "unpaid_time_off_length_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "unpaid_time_off_length_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "unpaid_time_off_length_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "unpaid_time_off_length_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "unpaid_time_off_ongoing",
-      "text_key": "unpaid_time_off_ongoing",
-      "type": "multi",
-      "visible_when": {
-        "item": "unpaid_time_off_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "part_full_time_change_ever",
-      "text_key": "part_full_time_change_ever",
-      "type": "multi",
-      "visible_when": {
-        "item": "make_work_changes",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "part_full_time_change_when",
-      "text_key": "part_full_time_change_when",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "part_full_time_change_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "part_full_time_change_when_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "part_full_time_change_when_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "part_full_time_change_when_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "part_full_time_change_when_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "part_full_time_change_length",
-      "text_key": "part_full_time_change_length",
-      "type": "multi",
-      "visible_when": {
-        "item": "part_full_time_change_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "part_full_time_change_length_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "part_full_time_change_length_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "part_full_time_change_length_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "part_full_time_change_length_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "part_full_time_change_length_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "part_full_time_change_ongoing",
-      "text_key": "part_full_time_change_ongoing",
-      "type": "multi",
-      "visible_when": {
-        "item": "part_full_time_change_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "full_part_time_change_ever",
-      "text_key": "full_part_time_change_ever",
-      "type": "multi",
-      "visible_when": {
-        "item": "make_work_changes",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "full_part_time_change_when",
-      "text_key": "full_part_time_change_when",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "full_part_time_change_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "full_part_time_change_when_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "full_part_time_change_when_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "full_part_time_change_when_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "full_part_time_change_when_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "full_part_time_change_length",
-      "text_key": "full_part_time_change_length",
-      "type": "multi",
-      "visible_when": {
-        "item": "full_part_time_change_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "full_part_time_change_length_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "full_part_time_change_length_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "full_part_time_change_length_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "full_part_time_change_length_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "full_part_time_change_length_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "full_part_time_change_ongoing",
-      "text_key": "full_part_time_change_ongoing",
-      "type": "multi",
-      "visible_when": {
-        "item": "full_part_time_change_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "work_schedule_change_ever",
-      "text_key": "work_schedule_change_ever",
-      "type": "multi",
-      "visible_when": {
-        "item": "make_work_changes",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "work_schedule_change_when",
-      "text_key": "work_schedule_change_when",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "work_schedule_change_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "work_schedule_change_when_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "work_schedule_change_when_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "work_schedule_change_when_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "work_schedule_change_when_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "work_schedule_change_less_demand",
-      "text_key": "work_schedule_change_less_demand",
-      "type": "multi",
-      "visible_when": {
-        "item": "make_work_changes",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "work_schedule_change_less_demand_when",
-      "text_key": "work_schedule_change_less_demand_when",
-      "type": "multi",
-      "visible_when": {
-        "item": "work_schedule_change_less_demand",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "work_schedule_change_less_demand_when_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "work_schedule_change_less_demand_when_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "work_schedule_change_less_demand_when_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "work_schedule_change_less_demand_when_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "work_schedule_change_ongoing",
-      "text_key": "work_schedule_change_ongoing",
-      "type": "multi",
-      "visible_when": {
-        "item": "work_schedule_change_less_demand",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "other_work_arrangements",
-      "text_key": "other_work_arrangements",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_diagnosis_working_pay_business_job",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "other_work_arrangements_describe",
-      "text_key": "other_work_arrangements_describe",
-      "type": "long",
-      "visible_when": {
-        "item": "other_work_arrangements",
-        "operator": "equals",
-        "value": 1
-      }
-    },
-    {
-      "id": "cancer_treatment_effects_pursue_advancement_promotion",
-      "text_key": "cancer_treatment_effects_pursue_advancement_promotion",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_diagnosis_working_pay_business_job",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_treatment_effects_retire_earlier",
-      "text_key": "cancer_treatment_effects_retire_earlier",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_diagnosis_working_pay_business_job",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_treatment_effects_delay_retirement",
-      "text_key": "cancer_treatment_effects_delay_retirement",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_treatment_effects_retire_earlier",
-        "operator": "equals",
-        "value": 2
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_treatment_effects_interfere_physical_tasks",
-      "text_key": "cancer_treatment_effects_interfere_physical_tasks",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_diagnosis_working_pay_business_job",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "cancer_treatment_effects_interfere_physical_tasks_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "cancer_treatment_effects_interfere_physical_tasks_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "cancer_treatment_effects_interfere_physical_tasks_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "cancer_treatment_effects_interfere_mental_tasks",
-      "text_key": "cancer_treatment_effects_interfere_mental_tasks",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_diagnosis_working_pay_business_job",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_treatment_effects_less_productive",
-      "text_key": "cancer_treatment_effects_less_productive",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_diagnosis_working_pay_business_job",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_treatment_effects_force_retirement_quit",
-      "text_key": "cancer_treatment_effects_force_retirement_quit",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_diagnosis_working_pay_business_job",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "stay_job_health_insurance",
-      "text_key": "stay_job_health_insurance",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_diagnosis_working_pay_business_job",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "losing_health_insurance",
-      "text_key": "losing_health_insurance",
-      "type": "multi",
-      "visible_when": {
-        "item": "stay_job_health_insurance",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_treatment_effects_work_life_career",
-      "text_key": "cancer_treatment_effects_work_life_career",
-      "type": "multi",
-      "visible_when": {
-        "any": [
+        "options": [
           {
-            "item": "stay_job_health_insurance",
-            "operator": "equals",
-            "value": 2
+            "text_key": "ask_work_changes_opt_1",
+            "value": 1
           },
           {
-            "item": "losing_health_insurance",
-            "operator": "not_equals",
-            "value": ""
+            "text_key": "ask_work_changes_opt_2",
+            "value": 2
           }
         ]
       },
-      "options": [
-        {
-          "text_key": "cancer_treatment_effects_work_life_career_opt_1",
+      {
+        "id": "make_work_changes",
+        "text_key": "make_work_changes",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_diagnosis_working_time_off",
+          "operator": "equals",
           "value": 1
         },
-        {
-          "text_key": "cancer_treatment_effects_work_life_career_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "cancer_treatment_effects_work_life_career_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "cancer_treatment_effects_work_life_career_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "spouse_health_insurance",
-      "text_key": "spouse_health_insurance",
-      "type": "multi",
-      "visible_when": {
-        "item": "cancer_diagnosis_working_pay_business_job",
-        "operator": "not_equals",
-        "value": ""
+        "options": [
+          {
+            "text_key": "make_work_changes_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "make_work_changes_opt_2",
+            "value": 2
+          }
+        ]
       },
-      "options": [
-        {
-          "text_key": "spouse_health_insurance_opt_1",
+      {
+        "id": "extended_time_off_ever",
+        "text_key": "extended_time_off_ever",
+        "type": "multi",
+        "visible_when": {
+          "item": "make_work_changes",
+          "operator": "equals",
           "value": 1
         },
-        {
-          "text_key": "spouse_health_insurance_opt_2",
+        "option_set": "default"
+      },
+      {
+        "id": "extended_time_off_when",
+        "text_key": "extended_time_off_when",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "extended_time_off_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "extended_time_off_when_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "extended_time_off_when_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "extended_time_off_when_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "extended_time_off_when_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "extended_time_off_length",
+        "text_key": "extended_time_off_length",
+        "type": "multi",
+        "visible_when": {
+          "item": "extended_time_off_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "extended_time_off_length_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "extended_time_off_length_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "extended_time_off_length_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "extended_time_off_length_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "extended_time_off_length_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "extended_time_off_ongoing",
+        "text_key": "extended_time_off_ongoing",
+        "type": "multi",
+        "visible_when": {
+          "item": "extended_time_off_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "unpaid_time_off_ever",
+        "text_key": "unpaid_time_off_ever",
+        "type": "multi",
+        "visible_when": {
+          "item": "make_work_changes",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "unpaid_time_off_when",
+        "text_key": "unpaid_time_off_when",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "unpaid_time_off_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "unpaid_time_off_when_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "unpaid_time_off_when_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "unpaid_time_off_when_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "unpaid_time_off_when_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "unpaid_time_off_length",
+        "text_key": "unpaid_time_off_length",
+        "type": "multi",
+        "visible_when": {
+          "item": "unpaid_time_off_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "unpaid_time_off_length_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "unpaid_time_off_length_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "unpaid_time_off_length_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "unpaid_time_off_length_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "unpaid_time_off_length_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "unpaid_time_off_ongoing",
+        "text_key": "unpaid_time_off_ongoing",
+        "type": "multi",
+        "visible_when": {
+          "item": "unpaid_time_off_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "part_full_time_change_ever",
+        "text_key": "part_full_time_change_ever",
+        "type": "multi",
+        "visible_when": {
+          "item": "make_work_changes",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "part_full_time_change_when",
+        "text_key": "part_full_time_change_when",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "part_full_time_change_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "part_full_time_change_when_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "part_full_time_change_when_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "part_full_time_change_when_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "part_full_time_change_when_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "part_full_time_change_length",
+        "text_key": "part_full_time_change_length",
+        "type": "multi",
+        "visible_when": {
+          "item": "part_full_time_change_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "part_full_time_change_length_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "part_full_time_change_length_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "part_full_time_change_length_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "part_full_time_change_length_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "part_full_time_change_length_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "part_full_time_change_ongoing",
+        "text_key": "part_full_time_change_ongoing",
+        "type": "multi",
+        "visible_when": {
+          "item": "part_full_time_change_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "full_part_time_change_ever",
+        "text_key": "full_part_time_change_ever",
+        "type": "multi",
+        "visible_when": {
+          "item": "make_work_changes",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "full_part_time_change_when",
+        "text_key": "full_part_time_change_when",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "full_part_time_change_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "full_part_time_change_when_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "full_part_time_change_when_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "full_part_time_change_when_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "full_part_time_change_when_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "full_part_time_change_length",
+        "text_key": "full_part_time_change_length",
+        "type": "multi",
+        "visible_when": {
+          "item": "full_part_time_change_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "full_part_time_change_length_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "full_part_time_change_length_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "full_part_time_change_length_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "full_part_time_change_length_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "full_part_time_change_length_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "full_part_time_change_ongoing",
+        "text_key": "full_part_time_change_ongoing",
+        "type": "multi",
+        "visible_when": {
+          "item": "full_part_time_change_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "work_schedule_change_ever",
+        "text_key": "work_schedule_change_ever",
+        "type": "multi",
+        "visible_when": {
+          "item": "make_work_changes",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "work_schedule_change_when",
+        "text_key": "work_schedule_change_when",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "work_schedule_change_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "work_schedule_change_when_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "work_schedule_change_when_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "work_schedule_change_when_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "work_schedule_change_when_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "work_schedule_change_less_demand",
+        "text_key": "work_schedule_change_less_demand",
+        "type": "multi",
+        "visible_when": {
+          "item": "make_work_changes",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "work_schedule_change_less_demand_when",
+        "text_key": "work_schedule_change_less_demand_when",
+        "type": "multi",
+        "visible_when": {
+          "item": "work_schedule_change_less_demand",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "work_schedule_change_less_demand_when_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "work_schedule_change_less_demand_when_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "work_schedule_change_less_demand_when_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "work_schedule_change_less_demand_when_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "work_schedule_change_ongoing",
+        "text_key": "work_schedule_change_ongoing",
+        "type": "multi",
+        "visible_when": {
+          "item": "work_schedule_change_less_demand",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "other_work_arrangements",
+        "text_key": "other_work_arrangements",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_diagnosis_working_pay_business_job",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "other_work_arrangements_describe",
+        "text_key": "other_work_arrangements_describe",
+        "type": "long",
+        "visible_when": {
+          "item": "other_work_arrangements",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "cancer_treatment_effects_pursue_advancement_promotion",
+        "text_key": "cancer_treatment_effects_pursue_advancement_promotion",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_diagnosis_working_pay_business_job",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_treatment_effects_retire_earlier",
+        "text_key": "cancer_treatment_effects_retire_earlier",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_diagnosis_working_pay_business_job",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_treatment_effects_delay_retirement",
+        "text_key": "cancer_treatment_effects_delay_retirement",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_treatment_effects_retire_earlier",
+          "operator": "equals",
           "value": 2
         },
-        {
-          "text_key": "spouse_health_insurance_opt_3",
-          "value": 3
-        }
-      ]
-    }
-  ],
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_treatment_effects_interfere_physical_tasks",
+        "text_key": "cancer_treatment_effects_interfere_physical_tasks",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_diagnosis_working_pay_business_job",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "cancer_treatment_effects_interfere_physical_tasks_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_treatment_effects_interfere_physical_tasks_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_treatment_effects_interfere_physical_tasks_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "cancer_treatment_effects_interfere_mental_tasks",
+        "text_key": "cancer_treatment_effects_interfere_mental_tasks",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_diagnosis_working_pay_business_job",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_treatment_effects_less_productive",
+        "text_key": "cancer_treatment_effects_less_productive",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_diagnosis_working_pay_business_job",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_treatment_effects_force_retirement_quit",
+        "text_key": "cancer_treatment_effects_force_retirement_quit",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_diagnosis_working_pay_business_job",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "stay_job_health_insurance",
+        "text_key": "stay_job_health_insurance",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_diagnosis_working_pay_business_job",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "losing_health_insurance",
+        "text_key": "losing_health_insurance",
+        "type": "multi",
+        "visible_when": {
+          "item": "stay_job_health_insurance",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_treatment_effects_work_life_career",
+        "text_key": "cancer_treatment_effects_work_life_career",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "stay_job_health_insurance",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "losing_health_insurance",
+              "operator": "not_equals",
+              "value": ""
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cancer_treatment_effects_work_life_career_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_treatment_effects_work_life_career_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_treatment_effects_work_life_career_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cancer_treatment_effects_work_life_career_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "spouse_health_insurance",
+        "text_key": "spouse_health_insurance",
+        "type": "multi",
+        "visible_when": {
+          "item": "cancer_diagnosis_working_pay_business_job",
+          "operator": "not_equals",
+          "value": ""
+        },
+        "options": [
+          {
+            "text_key": "spouse_health_insurance_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "spouse_health_insurance_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "spouse_health_insurance_opt_3",
+            "value": 3
+          }
+        ]
+      }
+    ]
+  },
   "translations": {
     "en": {
       "opt_1": "Yes",

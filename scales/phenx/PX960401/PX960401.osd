@@ -1,93 +1,96 @@
 {
-  "scale_info": {
-    "name": "Coronavirus Anxiety Scale",
-    "code": "PX960401",
-    "abbreviation": "PX960401",
-    "description": "The Coronavirus Anxiety Scale (CAS) is a self-reported mental health screener of dysfunctional anxiety associated with the coronavirus crisis.",
-    "domain": "COVID-19 - Mental Health",
-    "citation": "X- N/A [PhenX: https://www.phenxtoolkit.org/protocols/view/960401]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/960401"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Coronavirus Anxiety Scale",
+      "code": "PX960401",
+      "abbreviation": "PX960401",
+      "description": "The Coronavirus Anxiety Scale (CAS) is a self-reported mental health screener of dysfunctional anxiety associated with the coronavirus crisis.",
+      "domain": "COVID-19 - Mental Health",
+      "citation": "X- N/A [PhenX: https://www.phenxtoolkit.org/protocols/view/960401]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/960401"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_0",
+          "value": 0
+        },
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        },
+        {
+          "text_key": "opt_4",
+          "value": 4
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_0",
-        "value": 0
+        "id": "sec_how_often_have_you_experienced_the_follo",
+        "type": "section",
+        "text_key": "sec_how_often_have_you_experienced_the_follo_title"
       },
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "px960401_coronavirus_anxiety_scale_experience_dizziness",
+        "text_key": "px960401_coronavirus_anxiety_scale_experience_dizziness",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "px960401_coronavirus_anxiety_scale_trouble_sleeping",
+        "text_key": "px960401_coronavirus_anxiety_scale_trouble_sleeping",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "px960401_coronavirus_anxiety_scale_paralyzed_frozen",
+        "text_key": "px960401_coronavirus_anxiety_scale_paralyzed_frozen",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
       },
       {
-        "text_key": "opt_4",
-        "value": 4
+        "id": "px960401_coronavirus_anxiety_scale_lost_interest_eating",
+        "text_key": "px960401_coronavirus_anxiety_scale_lost_interest_eating",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
+      },
+      {
+        "id": "px960401_coronavirus_anxiety_scale_nausea",
+        "text_key": "px960401_coronavirus_anxiety_scale_nausea",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
+      },
+      {
+        "id": "px960401_coronavirus_anxiety_scale_desc",
+        "text_key": "px960401_coronavirus_anxiety_scale_desc",
+        "type": "inst"
       }
+    ],
+    "_conversion_notes": [
+      "INFO  px960401_coronavirus_anxiety_scale_experience_dizziness: member of matrix group 'mat1' — consider converting to grid type manually",
+      "INFO  px960401_coronavirus_anxiety_scale_trouble_sleeping: member of matrix group 'mat1' — consider converting to grid type manually",
+      "INFO  px960401_coronavirus_anxiety_scale_paralyzed_frozen: member of matrix group 'mat1' — consider converting to grid type manually",
+      "INFO  px960401_coronavirus_anxiety_scale_lost_interest_eating: member of matrix group 'mat1' — consider converting to grid type manually",
+      "INFO  px960401_coronavirus_anxiety_scale_nausea: member of matrix group 'mat1' — consider converting to grid type manually"
     ]
   },
-  "items": [
-    {
-      "id": "sec_how_often_have_you_experienced_the_follo",
-      "type": "section",
-      "text_key": "sec_how_often_have_you_experienced_the_follo_title"
-    },
-    {
-      "id": "px960401_coronavirus_anxiety_scale_experience_dizziness",
-      "text_key": "px960401_coronavirus_anxiety_scale_experience_dizziness",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "px960401_coronavirus_anxiety_scale_trouble_sleeping",
-      "text_key": "px960401_coronavirus_anxiety_scale_trouble_sleeping",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "px960401_coronavirus_anxiety_scale_paralyzed_frozen",
-      "text_key": "px960401_coronavirus_anxiety_scale_paralyzed_frozen",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "px960401_coronavirus_anxiety_scale_lost_interest_eating",
-      "text_key": "px960401_coronavirus_anxiety_scale_lost_interest_eating",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "px960401_coronavirus_anxiety_scale_nausea",
-      "text_key": "px960401_coronavirus_anxiety_scale_nausea",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "px960401_coronavirus_anxiety_scale_desc",
-      "text_key": "px960401_coronavirus_anxiety_scale_desc",
-      "type": "inst"
-    }
-  ],
-  "_conversion_notes": [
-    "INFO  px960401_coronavirus_anxiety_scale_experience_dizziness: member of matrix group 'mat1' — consider converting to grid type manually",
-    "INFO  px960401_coronavirus_anxiety_scale_trouble_sleeping: member of matrix group 'mat1' — consider converting to grid type manually",
-    "INFO  px960401_coronavirus_anxiety_scale_paralyzed_frozen: member of matrix group 'mat1' — consider converting to grid type manually",
-    "INFO  px960401_coronavirus_anxiety_scale_lost_interest_eating: member of matrix group 'mat1' — consider converting to grid type manually",
-    "INFO  px960401_coronavirus_anxiety_scale_nausea: member of matrix group 'mat1' — consider converting to grid type manually"
-  ],
   "translations": {
     "en": {
       "opt_0": "Not at all",

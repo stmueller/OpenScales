@@ -1,229 +1,232 @@
 {
-  "scale_info": {
-    "name": "Sharing Genomic Information with Relatives",
-    "code": "PX311501",
-    "abbreviation": "PX311501",
-    "description": "This series of questions can be used to determine who the individual shared his or her genetic tests results with, if anyone, and why it was important to share the results.",
-    "domain": "Genomics & Genetics",
-    "citation": "Manuscripts are in progress. [PhenX: https://www.phenxtoolkit.org/protocols/view/311501]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/311501"
-  },
-  "option_sets": {
-    "default": [
-      {
-        "text_key": "opt_1",
-        "value": 1
-      },
-      {
-        "text_key": "opt_2",
-        "value": 2
-      },
-      {
-        "text_key": "opt_3",
-        "value": 3
-      }
-    ]
-  },
-  "items": [
-    {
-      "id": "genetic_test_result",
-      "text_key": "genetic_test_result",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "genetic_test_result_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "genetic_test_result_opt_2",
-          "value": 2
-        }
-      ]
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Sharing Genomic Information with Relatives",
+      "code": "PX311501",
+      "abbreviation": "PX311501",
+      "description": "This series of questions can be used to determine who the individual shared his or her genetic tests results with, if anyone, and why it was important to share the results.",
+      "domain": "Genomics & Genetics",
+      "citation": "Manuscripts are in progress. [PhenX: https://www.phenxtoolkit.org/protocols/view/311501]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/311501"
     },
-    {
-      "id": "genetic_test_result_diagnosis",
-      "text_key": "genetic_test_result_diagnosis",
-      "type": "multi",
-      "visible_when": {
-        "item": "genetic_test_result",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
+    "option_sets": {
+      "default": [
         {
-          "text_key": "genetic_test_result_diagnosis_opt_1",
+          "text_key": "opt_1",
           "value": 1
         },
         {
-          "text_key": "genetic_test_result_diagnosis_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "genetic_test_result_shared_biological_family",
-      "text_key": "genetic_test_result_shared_biological_family",
-      "type": "multi",
-      "visible_when": {
-        "item": "genetic_test_result",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "genetic_test_result_shared_biological_family_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "genetic_test_result_shared_biological_family_opt_2",
+          "text_key": "opt_2",
           "value": 2
         },
         {
-          "text_key": "genetic_test_result_shared_biological_family_opt_3",
+          "text_key": "opt_3",
           "value": 3
         }
       ]
     },
-    {
-      "id": "genetic_test_result_shared_other_biological_parent",
-      "text_key": "genetic_test_result_shared_other_biological_parent",
-      "type": "multi",
-      "visible_when": {
-        "item": "genetic_test_result_shared_biological_family",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "genetic_test_result_shared_children",
-      "text_key": "genetic_test_result_shared_children",
-      "type": "multi",
-      "visible_when": {
-        "item": "genetic_test_result_shared_biological_family",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "genetic_test_result_shared_sibling",
-      "text_key": "genetic_test_result_shared_sibling",
-      "type": "multi",
-      "visible_when": {
-        "item": "genetic_test_result_shared_biological_family",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "genetic_test_result_shared_parent",
-      "text_key": "genetic_test_result_shared_parent",
-      "type": "multi",
-      "visible_when": {
-        "item": "genetic_test_result_shared_biological_family",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "genetic_test_result_shared_other_biological_family",
-      "text_key": "genetic_test_result_shared_other_biological_family",
-      "type": "multi",
-      "visible_when": {
-        "item": "genetic_test_result_shared_biological_family",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "genetic_test_result_shared_other_biological_family_detail",
-      "text_key": "genetic_test_result_shared_other_biological_family_detail",
-      "type": "short",
-      "visible_when": {
-        "item": "genetic_test_result_shared_other_biological_family",
-        "operator": "equals",
-        "value": 1
-      }
-    },
-    {
-      "id": "genetic_test_result_share_decision",
-      "text_key": "genetic_test_result_share_decision",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "genetic_test_result_shared_biological_family",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "genetic_test_result_share_decision_opt_a",
-          "value": "a"
-        },
-        {
-          "text_key": "genetic_test_result_share_decision_opt_b",
-          "value": "b"
-        },
-        {
-          "text_key": "genetic_test_result_share_decision_opt_c",
-          "value": "c"
-        },
-        {
-          "text_key": "genetic_test_result_share_decision_opt_d",
-          "value": "d"
-        },
-        {
-          "text_key": "genetic_test_result_share_decision_opt_e",
-          "value": "e"
-        },
-        {
-          "text_key": "genetic_test_result_share_decision_opt_f",
-          "value": "f"
-        },
-        {
-          "text_key": "genetic_test_result_share_decision_opt_g",
-          "value": "g"
-        },
-        {
-          "text_key": "genetic_test_result_share_decision_opt_h",
-          "value": "h"
-        },
-        {
-          "text_key": "genetic_test_result_share_decision_opt_i",
-          "value": "i"
-        },
-        {
-          "text_key": "genetic_test_result_share_decision_opt_j",
-          "value": "j"
-        },
-        {
-          "text_key": "genetic_test_result_share_decision_opt_k",
-          "value": "k"
-        },
-        {
-          "text_key": "genetic_test_result_share_decision_opt_l",
-          "value": "l"
-        }
-      ]
-    },
-    {
-      "id": "genetic_test_result_share_decision_specify",
-      "text_key": "genetic_test_result_share_decision_specify",
-      "type": "short",
-      "visible_when": {
-        "item": "genetic_test_result_share_decision",
-        "operator": "in",
-        "value": [
-          "l"
+    "items": [
+      {
+        "id": "genetic_test_result",
+        "text_key": "genetic_test_result",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "genetic_test_result_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "genetic_test_result_opt_2",
+            "value": 2
+          }
         ]
+      },
+      {
+        "id": "genetic_test_result_diagnosis",
+        "text_key": "genetic_test_result_diagnosis",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "genetic_test_result_diagnosis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "genetic_test_result_diagnosis_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "genetic_test_result_shared_biological_family",
+        "text_key": "genetic_test_result_shared_biological_family",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "genetic_test_result_shared_biological_family_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "genetic_test_result_shared_biological_family_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "genetic_test_result_shared_biological_family_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "genetic_test_result_shared_other_biological_parent",
+        "text_key": "genetic_test_result_shared_other_biological_parent",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result_shared_biological_family",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "genetic_test_result_shared_children",
+        "text_key": "genetic_test_result_shared_children",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result_shared_biological_family",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "genetic_test_result_shared_sibling",
+        "text_key": "genetic_test_result_shared_sibling",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result_shared_biological_family",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "genetic_test_result_shared_parent",
+        "text_key": "genetic_test_result_shared_parent",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result_shared_biological_family",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "genetic_test_result_shared_other_biological_family",
+        "text_key": "genetic_test_result_shared_other_biological_family",
+        "type": "multi",
+        "visible_when": {
+          "item": "genetic_test_result_shared_biological_family",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "genetic_test_result_shared_other_biological_family_detail",
+        "text_key": "genetic_test_result_shared_other_biological_family_detail",
+        "type": "short",
+        "visible_when": {
+          "item": "genetic_test_result_shared_other_biological_family",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "genetic_test_result_share_decision",
+        "text_key": "genetic_test_result_share_decision",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "genetic_test_result_shared_biological_family",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "genetic_test_result_share_decision_opt_a",
+            "value": "a"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_b",
+            "value": "b"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_c",
+            "value": "c"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_d",
+            "value": "d"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_e",
+            "value": "e"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_f",
+            "value": "f"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_g",
+            "value": "g"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_h",
+            "value": "h"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_i",
+            "value": "i"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_j",
+            "value": "j"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_k",
+            "value": "k"
+          },
+          {
+            "text_key": "genetic_test_result_share_decision_opt_l",
+            "value": "l"
+          }
+        ]
+      },
+      {
+        "id": "genetic_test_result_share_decision_specify",
+        "text_key": "genetic_test_result_share_decision_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "genetic_test_result_share_decision",
+          "operator": "in",
+          "value": [
+            "l"
+          ]
+        }
       }
-    }
-  ],
+    ]
+  },
   "translations": {
     "en": {
       "opt_1": "Yes",

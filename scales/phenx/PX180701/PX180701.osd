@@ -1,263 +1,266 @@
 {
-  "scale_info": {
-    "name": "Perceived Social Support Conflict",
-    "code": "PX180701",
-    "abbreviation": "PX180701",
-    "description": "The respondent completes three groups of questions about interactions with spouse/partner, family, and friends. Each group includes social support questions about how much they care about you, how much they understand the way you feel, if you can rely on them, and if you can talk to them about your ",
-    "domain": "Mental Health & Quality of Life",
-    "citation": "Schuster, T. L., Kessler, R. C., & Aseltine, R. H., Jr. (1990). Supportive interactions, negative interactions, and depressed mood. American Journal of Community Psychology, 18(3), 423-438. Whalen, H. R., & Lachman, M. E. (2000). Social support and strain from partner, family and friends: Costs and benefits for men and women in adulthood. Journal of Social and Personal Relationships, 17(1), 5-30. [PhenX: https://www.phenxtoolkit.org/protocols/view/180701]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/180701"
-  },
-  "likert_options": {
-    "points": 4,
-    "min": 1,
-    "max": 4,
-    "labels": [
-      "lk_opt_1",
-      "lk_opt_2",
-      "lk_opt_3",
-      "lk_opt_4"
-    ]
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Perceived Social Support Conflict",
+      "code": "PX180701",
+      "abbreviation": "PX180701",
+      "description": "The respondent completes three groups of questions about interactions with spouse/partner, family, and friends. Each group includes social support questions about how much they care about you, how much they understand the way you feel, if you can rely on them, and if you can talk to them about your ",
+      "domain": "Mental Health & Quality of Life",
+      "citation": "Schuster, T. L., Kessler, R. C., & Aseltine, R. H., Jr. (1990). Supportive interactions, negative interactions, and depressed mood. American Journal of Community Psychology, 18(3), 423-438. Whalen, H. R., & Lachman, M. E. (2000). Social support and strain from partner, family and friends: Costs and benefits for men and women in adulthood. Journal of Social and Personal Relationships, 17(1), 5-30. [PhenX: https://www.phenxtoolkit.org/protocols/view/180701]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/180701"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "lk_opt_1",
+        "lk_opt_2",
+        "lk_opt_3",
+        "lk_opt_4"
+      ]
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        },
+        {
+          "text_key": "opt_4",
+          "value": 4
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "spouse_partner_180701",
+        "text_key": "spouse_partner_180701",
+        "type": "inst"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "spouse_really_care_about_you",
+        "text_key": "spouse_really_care_about_you",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "spouse_understand_way_you_feel",
+        "text_key": "spouse_understand_way_you_feel",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_4",
-        "value": 4
+        "id": "spouse_appreciate_you",
+        "text_key": "spouse_appreciate_you",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "rely_on_spouse",
+        "text_key": "rely_on_spouse",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "open_up_to_spouse",
+        "text_key": "open_up_to_spouse",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "relax_around_spouse",
+        "text_key": "relax_around_spouse",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "answer_spouse",
+        "text_key": "answer_spouse",
+        "type": "inst"
+      },
+      {
+        "id": "spouse_make_too_many_demands",
+        "text_key": "spouse_make_too_many_demands",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "spouse_make_you_feel_tense",
+        "text_key": "spouse_make_you_feel_tense",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "spouse_argue_with_you",
+        "text_key": "spouse_argue_with_you",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "spouse_criticize_you",
+        "text_key": "spouse_criticize_you",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "spouse_let_you_down",
+        "text_key": "spouse_let_you_down",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "spouse_get_on_your_nerves",
+        "text_key": "spouse_get_on_your_nerves",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "instructions_family",
+        "text_key": "instructions_family",
+        "type": "inst"
+      },
+      {
+        "id": "family_really_care_about_you",
+        "text_key": "family_really_care_about_you",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "family_understand_way_you_feel",
+        "text_key": "family_understand_way_you_feel",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "rely_on_family_for_help",
+        "text_key": "rely_on_family_for_help",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "open_up_to_family",
+        "text_key": "open_up_to_family",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "really_care_about_family",
+        "text_key": "really_care_about_family",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "you_understand_family",
+        "text_key": "you_understand_family",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "instructions_how_often_fam",
+        "text_key": "instructions_how_often_fam",
+        "type": "inst"
+      },
+      {
+        "id": "family_make_demands",
+        "text_key": "family_make_demands",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "family_criticize_you",
+        "text_key": "family_criticize_you",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "family_let_you_down",
+        "text_key": "family_let_you_down",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "family_get_on_your_nerves",
+        "text_key": "family_get_on_your_nerves",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "instructions_friends",
+        "text_key": "instructions_friends",
+        "type": "inst"
+      },
+      {
+        "id": "friends_really_care_about_you",
+        "text_key": "friends_really_care_about_you",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "friends_understand_way_you_feel",
+        "text_key": "friends_understand_way_you_feel",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "rely_on_friends_for_help",
+        "text_key": "rely_on_friends_for_help",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "open_up_to_friends",
+        "text_key": "open_up_to_friends",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "answer_how_often_for_each",
+        "text_key": "answer_how_often_for_each",
+        "type": "inst"
+      },
+      {
+        "id": "friends_make_too_many_demands",
+        "text_key": "friends_make_too_many_demands",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "friends_criticize_you",
+        "text_key": "friends_criticize_you",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "friends_let_you_down",
+        "text_key": "friends_let_you_down",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "friends_get_on_your_nerves",
+        "text_key": "friends_get_on_your_nerves",
+        "type": "likert",
+        "likert_points": 4
+      },
+      {
+        "id": "scaling_scales_1807001",
+        "text_key": "scaling_scales_1807001",
+        "type": "inst"
       }
     ]
   },
-  "items": [
-    {
-      "id": "spouse_partner_180701",
-      "text_key": "spouse_partner_180701",
-      "type": "inst"
-    },
-    {
-      "id": "spouse_really_care_about_you",
-      "text_key": "spouse_really_care_about_you",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "spouse_understand_way_you_feel",
-      "text_key": "spouse_understand_way_you_feel",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "spouse_appreciate_you",
-      "text_key": "spouse_appreciate_you",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "rely_on_spouse",
-      "text_key": "rely_on_spouse",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "open_up_to_spouse",
-      "text_key": "open_up_to_spouse",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "relax_around_spouse",
-      "text_key": "relax_around_spouse",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "answer_spouse",
-      "text_key": "answer_spouse",
-      "type": "inst"
-    },
-    {
-      "id": "spouse_make_too_many_demands",
-      "text_key": "spouse_make_too_many_demands",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "spouse_make_you_feel_tense",
-      "text_key": "spouse_make_you_feel_tense",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "spouse_argue_with_you",
-      "text_key": "spouse_argue_with_you",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "spouse_criticize_you",
-      "text_key": "spouse_criticize_you",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "spouse_let_you_down",
-      "text_key": "spouse_let_you_down",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "spouse_get_on_your_nerves",
-      "text_key": "spouse_get_on_your_nerves",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "instructions_family",
-      "text_key": "instructions_family",
-      "type": "inst"
-    },
-    {
-      "id": "family_really_care_about_you",
-      "text_key": "family_really_care_about_you",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "family_understand_way_you_feel",
-      "text_key": "family_understand_way_you_feel",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "rely_on_family_for_help",
-      "text_key": "rely_on_family_for_help",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "open_up_to_family",
-      "text_key": "open_up_to_family",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "really_care_about_family",
-      "text_key": "really_care_about_family",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "you_understand_family",
-      "text_key": "you_understand_family",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "instructions_how_often_fam",
-      "text_key": "instructions_how_often_fam",
-      "type": "inst"
-    },
-    {
-      "id": "family_make_demands",
-      "text_key": "family_make_demands",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "family_criticize_you",
-      "text_key": "family_criticize_you",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "family_let_you_down",
-      "text_key": "family_let_you_down",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "family_get_on_your_nerves",
-      "text_key": "family_get_on_your_nerves",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "instructions_friends",
-      "text_key": "instructions_friends",
-      "type": "inst"
-    },
-    {
-      "id": "friends_really_care_about_you",
-      "text_key": "friends_really_care_about_you",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "friends_understand_way_you_feel",
-      "text_key": "friends_understand_way_you_feel",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "rely_on_friends_for_help",
-      "text_key": "rely_on_friends_for_help",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "open_up_to_friends",
-      "text_key": "open_up_to_friends",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "answer_how_often_for_each",
-      "text_key": "answer_how_often_for_each",
-      "type": "inst"
-    },
-    {
-      "id": "friends_make_too_many_demands",
-      "text_key": "friends_make_too_many_demands",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "friends_criticize_you",
-      "text_key": "friends_criticize_you",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "friends_let_you_down",
-      "text_key": "friends_let_you_down",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "friends_get_on_your_nerves",
-      "text_key": "friends_get_on_your_nerves",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "scaling_scales_1807001",
-      "text_key": "scaling_scales_1807001",
-      "type": "inst"
-    }
-  ],
   "translations": {
     "en": {
       "lk_opt_1": "Often",

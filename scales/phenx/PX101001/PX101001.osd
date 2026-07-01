@@ -1,450 +1,453 @@
 {
-  "scale_info": {
-    "name": "Male Sexual Function",
-    "code": "PX101001",
-    "abbreviation": "PX101001",
-    "description": "The participant answers whether he has had difficulty with erections and sexual function during the past 4 weeks.",
-    "domain": "Puberty & Development",
-    "citation": "Berner, M. M., Kriston, L., & Harms, A. (2006). Efficacy of PDE-5-inhibitors for erectile dysfunction. A comparative meta-analysis of fixed-dose regimen randomized controlled trials administering the International Index of Erectile Function in broad-spectrum populations. International Journal of Impotence Research, 18 (3), 229-235. [PhenX: https://www.phenxtoolkit.org/protocols/view/101001]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/101001"
-  },
-  "likert_options": {
-    "points": 4,
-    "min": 1,
-    "max": 4,
-    "labels": [
-      "lk_opt_1",
-      "lk_opt_2",
-      "lk_opt_3",
-      "lk_opt_4"
-    ]
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Male Sexual Function",
+      "code": "PX101001",
+      "abbreviation": "PX101001",
+      "description": "The participant answers whether he has had difficulty with erections and sexual function during the past 4 weeks.",
+      "domain": "Puberty & Development",
+      "citation": "Berner, M. M., Kriston, L., & Harms, A. (2006). Efficacy of PDE-5-inhibitors for erectile dysfunction. A comparative meta-analysis of fixed-dose regimen randomized controlled trials administering the International Index of Erectile Function in broad-spectrum populations. International Journal of Impotence Research, 18 (3), 229-235. [PhenX: https://www.phenxtoolkit.org/protocols/view/101001]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/101001"
+    },
+    "likert_options": {
+      "points": 4,
+      "min": 1,
+      "max": 4,
+      "labels": [
+        "lk_opt_1",
+        "lk_opt_2",
+        "lk_opt_3",
+        "lk_opt_4"
+      ]
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_0",
+          "value": 0
+        },
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        },
+        {
+          "text_key": "opt_4",
+          "value": 4
+        },
+        {
+          "text_key": "opt_5",
+          "value": 5
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_0",
-        "value": 0
+        "id": "difficulty_achieving_erection",
+        "text_key": "difficulty_achieving_erection",
+        "type": "likert",
+        "likert_points": 4
       },
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "difficulty_ejaculating_early",
+        "text_key": "difficulty_ejaculating_early",
+        "type": "likert",
+        "likert_points": 4
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "difficulty_ejaculating",
+        "text_key": "difficulty_ejaculating",
+        "type": "likert",
+        "likert_points": 4
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "difficulty_lack_interest_sex",
+        "text_key": "difficulty_lack_interest_sex",
+        "type": "likert",
+        "likert_points": 4
       },
       {
-        "text_key": "opt_4",
-        "value": 4
+        "id": "erection_during_sexual_activity",
+        "text_key": "erection_during_sexual_activity",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "erection_during_sexual_activity_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "erection_during_sexual_activity_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "erection_during_sexual_activity_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "erection_during_sexual_activity_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "erection_during_sexual_activity_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "erection_during_sexual_activity_opt_5",
+            "value": 5
+          }
+        ]
       },
       {
-        "text_key": "opt_5",
-        "value": 5
+        "id": "erection_hard_enough_penetration",
+        "text_key": "erection_hard_enough_penetration",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "erection_hard_enough_penetration_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "erection_hard_enough_penetration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "erection_hard_enough_penetration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "erection_hard_enough_penetration_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "erection_hard_enough_penetration_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "erection_hard_enough_penetration_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "penetrate_sexual_intercourse",
+        "text_key": "penetrate_sexual_intercourse",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "maintain_erection_after_penetrated",
+        "text_key": "maintain_erection_after_penetrated",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "maintain_erection_completion_intercourse",
+        "text_key": "maintain_erection_completion_intercourse",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "maintain_erection_completion_intercourse_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "maintain_erection_completion_intercourse_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "maintain_erection_completion_intercourse_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "maintain_erection_completion_intercourse_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "maintain_erection_completion_intercourse_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "maintain_erection_completion_intercourse_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "attempt_sexual_intercourse_times",
+        "text_key": "attempt_sexual_intercourse_times",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "attempt_sexual_intercourse_times_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "attempt_sexual_intercourse_times_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "attempt_sexual_intercourse_times_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "attempt_sexual_intercourse_times_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "attempt_sexual_intercourse_times_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "attempt_sexual_intercourse_times_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "attempt_sexual_intercourse_satisfactory",
+        "text_key": "attempt_sexual_intercourse_satisfactory",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "enjoy_sexual_intercourse",
+        "text_key": "enjoy_sexual_intercourse",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "enjoy_sexual_intercourse_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "enjoy_sexual_intercourse_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "enjoy_sexual_intercourse_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "enjoy_sexual_intercourse_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "enjoy_sexual_intercourse_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "enjoy_sexual_intercourse_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sexual_stimulation_intercourse_ejaculate",
+        "text_key": "sexual_stimulation_intercourse_ejaculate",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sexual_stimulation_intercourse_ejaculate_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "sexual_stimulation_intercourse_ejaculate_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sexual_stimulation_intercourse_ejaculate_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sexual_stimulation_intercourse_ejaculate_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sexual_stimulation_intercourse_ejaculate_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sexual_stimulation_intercourse_ejaculate_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sexual_stimulation_intercourse_orgasm_climax",
+        "text_key": "sexual_stimulation_intercourse_orgasm_climax",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sexual_stimulation_intercourse_orgasm_climax_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "sexual_stimulation_intercourse_orgasm_climax_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sexual_stimulation_intercourse_orgasm_climax_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sexual_stimulation_intercourse_orgasm_climax_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sexual_stimulation_intercourse_orgasm_climax_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sexual_stimulation_intercourse_orgasm_climax_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sexual_desire_felt",
+        "text_key": "sexual_desire_felt",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sexual_desire_felt_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sexual_desire_felt_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sexual_desire_felt_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sexual_desire_felt_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sexual_desire_felt_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sexual_desire_level_rate",
+        "text_key": "sexual_desire_level_rate",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sexual_desire_level_rate_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sexual_desire_level_rate_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sexual_desire_level_rate_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sexual_desire_level_rate_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sexual_desire_level_rate_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "overall_sex_life_satisfied",
+        "text_key": "overall_sex_life_satisfied",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "overall_sex_life_satisfied_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "overall_sex_life_satisfied_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "overall_sex_life_satisfied_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "overall_sex_life_satisfied_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "overall_sex_life_satisfied_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sex_relationship_satisfied",
+        "text_key": "sex_relationship_satisfied",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sex_relationship_satisfied_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sex_relationship_satisfied_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sex_relationship_satisfied_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sex_relationship_satisfied_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sex_relationship_satisfied_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "confidence_get_keep_erection",
+        "text_key": "confidence_get_keep_erection",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "confidence_get_keep_erection_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "confidence_get_keep_erection_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "confidence_get_keep_erection_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "confidence_get_keep_erection_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "confidence_get_keep_erection_opt_5",
+            "value": 5
+          }
+        ]
       }
     ]
   },
-  "items": [
-    {
-      "id": "difficulty_achieving_erection",
-      "text_key": "difficulty_achieving_erection",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "difficulty_ejaculating_early",
-      "text_key": "difficulty_ejaculating_early",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "difficulty_ejaculating",
-      "text_key": "difficulty_ejaculating",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "difficulty_lack_interest_sex",
-      "text_key": "difficulty_lack_interest_sex",
-      "type": "likert",
-      "likert_points": 4
-    },
-    {
-      "id": "erection_during_sexual_activity",
-      "text_key": "erection_during_sexual_activity",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "erection_during_sexual_activity_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "erection_during_sexual_activity_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "erection_during_sexual_activity_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "erection_during_sexual_activity_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "erection_during_sexual_activity_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "erection_during_sexual_activity_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "erection_hard_enough_penetration",
-      "text_key": "erection_hard_enough_penetration",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "erection_hard_enough_penetration_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "erection_hard_enough_penetration_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "erection_hard_enough_penetration_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "erection_hard_enough_penetration_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "erection_hard_enough_penetration_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "erection_hard_enough_penetration_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "penetrate_sexual_intercourse",
-      "text_key": "penetrate_sexual_intercourse",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "maintain_erection_after_penetrated",
-      "text_key": "maintain_erection_after_penetrated",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "maintain_erection_completion_intercourse",
-      "text_key": "maintain_erection_completion_intercourse",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "maintain_erection_completion_intercourse_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "maintain_erection_completion_intercourse_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "maintain_erection_completion_intercourse_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "maintain_erection_completion_intercourse_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "maintain_erection_completion_intercourse_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "maintain_erection_completion_intercourse_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "attempt_sexual_intercourse_times",
-      "text_key": "attempt_sexual_intercourse_times",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "attempt_sexual_intercourse_times_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "attempt_sexual_intercourse_times_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "attempt_sexual_intercourse_times_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "attempt_sexual_intercourse_times_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "attempt_sexual_intercourse_times_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "attempt_sexual_intercourse_times_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "attempt_sexual_intercourse_satisfactory",
-      "text_key": "attempt_sexual_intercourse_satisfactory",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "enjoy_sexual_intercourse",
-      "text_key": "enjoy_sexual_intercourse",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "enjoy_sexual_intercourse_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "enjoy_sexual_intercourse_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "enjoy_sexual_intercourse_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "enjoy_sexual_intercourse_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "enjoy_sexual_intercourse_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "enjoy_sexual_intercourse_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "sexual_stimulation_intercourse_ejaculate",
-      "text_key": "sexual_stimulation_intercourse_ejaculate",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sexual_stimulation_intercourse_ejaculate_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "sexual_stimulation_intercourse_ejaculate_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sexual_stimulation_intercourse_ejaculate_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "sexual_stimulation_intercourse_ejaculate_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "sexual_stimulation_intercourse_ejaculate_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "sexual_stimulation_intercourse_ejaculate_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "sexual_stimulation_intercourse_orgasm_climax",
-      "text_key": "sexual_stimulation_intercourse_orgasm_climax",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sexual_stimulation_intercourse_orgasm_climax_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "sexual_stimulation_intercourse_orgasm_climax_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sexual_stimulation_intercourse_orgasm_climax_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "sexual_stimulation_intercourse_orgasm_climax_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "sexual_stimulation_intercourse_orgasm_climax_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "sexual_stimulation_intercourse_orgasm_climax_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "sexual_desire_felt",
-      "text_key": "sexual_desire_felt",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sexual_desire_felt_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sexual_desire_felt_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "sexual_desire_felt_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "sexual_desire_felt_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "sexual_desire_felt_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "sexual_desire_level_rate",
-      "text_key": "sexual_desire_level_rate",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sexual_desire_level_rate_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sexual_desire_level_rate_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "sexual_desire_level_rate_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "sexual_desire_level_rate_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "sexual_desire_level_rate_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "overall_sex_life_satisfied",
-      "text_key": "overall_sex_life_satisfied",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "overall_sex_life_satisfied_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "overall_sex_life_satisfied_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "overall_sex_life_satisfied_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "overall_sex_life_satisfied_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "overall_sex_life_satisfied_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "sex_relationship_satisfied",
-      "text_key": "sex_relationship_satisfied",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sex_relationship_satisfied_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sex_relationship_satisfied_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "sex_relationship_satisfied_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "sex_relationship_satisfied_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "sex_relationship_satisfied_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "confidence_get_keep_erection",
-      "text_key": "confidence_get_keep_erection",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "confidence_get_keep_erection_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "confidence_get_keep_erection_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "confidence_get_keep_erection_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "confidence_get_keep_erection_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "confidence_get_keep_erection_opt_5",
-          "value": 5
-        }
-      ]
-    }
-  ],
   "translations": {
     "en": {
       "lk_opt_1": "Almost never",

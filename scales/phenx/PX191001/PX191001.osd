@@ -1,310 +1,313 @@
 {
-  "scale_info": {
-    "name": "Personal History of Gastrointestinal Conditions",
-    "code": "PX191001",
-    "abbreviation": "PX191001",
-    "description": "This self-administered questionnaire asks respondents about their personal history of several gastrointestinal conditions including colon or rectal polyps, gallbladder conditions, gastric ulcers, Barretts esophagus, ulcerative colitis/Crohns disease, colon or rectal cancer, pancreatic cancer, and ga",
-    "domain": "Gastrointestinal",
-    "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/191001]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/191001"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Personal History of Gastrointestinal Conditions",
+      "code": "PX191001",
+      "abbreviation": "PX191001",
+      "description": "This self-administered questionnaire asks respondents about their personal history of several gastrointestinal conditions including colon or rectal polyps, gallbladder conditions, gastric ulcers, Barretts esophagus, ulcerative colitis/Crohns disease, colon or rectal cancer, pancreatic cancer, and ga",
+      "domain": "Gastrointestinal",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/191001]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/191001"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "upper_endoscopy",
+        "text_key": "upper_endoscopy",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "virtual_ct_colonoscopy",
+        "text_key": "virtual_ct_colonoscopy",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "colonoscopy",
+        "text_key": "colonoscopy",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "initial_reason_colon",
+        "text_key": "initial_reason_colon",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "colonoscopy",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "initial_reason_colon_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "initial_reason_colon_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "initial_reason_colon_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "initial_reason_colon_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "initial_reason_colon_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "initial_reason_colon_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "initial_reason_colon_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "initial_reason_colon_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "initial_reason_colon_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "sigmoidoscopy",
+        "text_key": "sigmoidoscopy",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "initial_reason_sigmoid",
+        "text_key": "initial_reason_sigmoid",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "sigmoidoscopy",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "initial_reason_sigmoid_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "initial_reason_sigmoid_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "diverticulitis_or_diverticulosis_enum",
+        "text_key": "diverticulitis_or_diverticulosis_enum",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "diverticulitis_year_of_diagnosis",
+        "text_key": "diverticulitis_year_of_diagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "colon_or_rectal_polyp",
+        "text_key": "colon_or_rectal_polyp",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "polyp_year_of_diagnosis",
+        "text_key": "polyp_year_of_diagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "cancer_of_colon_or_rectum",
+        "text_key": "cancer_of_colon_or_rectum",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_year_of_diagnosis",
+        "text_key": "cancer_year_of_diagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "gall_bladder_removal",
+        "text_key": "gall_bladder_removal",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "gall_bladder_removal_year_ofdiagnosis",
+        "text_key": "gall_bladder_removal_year_ofdiagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "gastric_or_duodenal_ulcer",
+        "text_key": "gastric_or_duodenal_ulcer",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "ulcer_year_of_diagnosis",
+        "text_key": "ulcer_year_of_diagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "barretts_esophagus",
+        "text_key": "barretts_esophagus",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "barretts_esophagus_year_of_diagnosis",
+        "text_key": "barretts_esophagus_year_of_diagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "ulcerative_colitiscrohns_disease",
+        "text_key": "ulcerative_colitiscrohns_disease",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "ulcerative_colitiscrohns_year_of_diagnosis",
+        "text_key": "ulcerative_colitiscrohns_year_of_diagnosis",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "gastrointestinal_bleeding",
+        "text_key": "gastrointestinal_bleeding",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "site_of_the_bleeding_unkown_enum",
+        "text_key": "site_of_the_bleeding_unkown_enum",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "site_of_the_bleeding_unkown_enum_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "site_of_the_bleeding_unkown_enum_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "site_of_the_bleeding_unkown_enum_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "site_of_the_bleeding_unkown_enum_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "site_of_the_bleeding_unkown_enum_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "site_of_the_bleeding_unkown_enum_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "site_of_the_bleeding_other_specify",
+        "text_key": "site_of_the_bleeding_other_specify",
+        "type": "short"
+      },
+      {
+        "id": "bleeding_year_enum",
+        "text_key": "bleeding_year_enum",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "bleeding_year_enum_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "bleeding_year_enum_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "bleeding_year_enum_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "bleeding_year_enum_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "bleeding_year_enum_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "bleeding_year_enum_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "bleeding_year_enum_opt_7",
+            "value": 7
+          }
+        ]
       }
     ]
   },
-  "items": [
-    {
-      "id": "upper_endoscopy",
-      "text_key": "upper_endoscopy",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "virtual_ct_colonoscopy",
-      "text_key": "virtual_ct_colonoscopy",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "colonoscopy",
-      "text_key": "colonoscopy",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "initial_reason_colon",
-      "text_key": "initial_reason_colon",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "colonoscopy",
-        "operator": "equals",
-        "value": 2
-      },
-      "options": [
-        {
-          "text_key": "initial_reason_colon_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "initial_reason_colon_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "initial_reason_colon_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "initial_reason_colon_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "initial_reason_colon_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "initial_reason_colon_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "initial_reason_colon_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "initial_reason_colon_opt_8",
-          "value": 8
-        },
-        {
-          "text_key": "initial_reason_colon_opt_9",
-          "value": 9
-        }
-      ]
-    },
-    {
-      "id": "sigmoidoscopy",
-      "text_key": "sigmoidoscopy",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "initial_reason_sigmoid",
-      "text_key": "initial_reason_sigmoid",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "sigmoidoscopy",
-        "operator": "equals",
-        "value": 2
-      },
-      "options": [
-        {
-          "text_key": "initial_reason_sigmoid_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "initial_reason_sigmoid_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "initial_reason_sigmoid_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "initial_reason_sigmoid_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "initial_reason_sigmoid_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "initial_reason_sigmoid_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "initial_reason_sigmoid_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "initial_reason_sigmoid_opt_8",
-          "value": 8
-        },
-        {
-          "text_key": "initial_reason_sigmoid_opt_9",
-          "value": 9
-        }
-      ]
-    },
-    {
-      "id": "diverticulitis_or_diverticulosis_enum",
-      "text_key": "diverticulitis_or_diverticulosis_enum",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "diverticulitis_year_of_diagnosis",
-      "text_key": "diverticulitis_year_of_diagnosis",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "colon_or_rectal_polyp",
-      "text_key": "colon_or_rectal_polyp",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "polyp_year_of_diagnosis",
-      "text_key": "polyp_year_of_diagnosis",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "cancer_of_colon_or_rectum",
-      "text_key": "cancer_of_colon_or_rectum",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_year_of_diagnosis",
-      "text_key": "cancer_year_of_diagnosis",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "gall_bladder_removal",
-      "text_key": "gall_bladder_removal",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "gall_bladder_removal_year_ofdiagnosis",
-      "text_key": "gall_bladder_removal_year_ofdiagnosis",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "gastric_or_duodenal_ulcer",
-      "text_key": "gastric_or_duodenal_ulcer",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "ulcer_year_of_diagnosis",
-      "text_key": "ulcer_year_of_diagnosis",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "barretts_esophagus",
-      "text_key": "barretts_esophagus",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "barretts_esophagus_year_of_diagnosis",
-      "text_key": "barretts_esophagus_year_of_diagnosis",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "ulcerative_colitiscrohns_disease",
-      "text_key": "ulcerative_colitiscrohns_disease",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "ulcerative_colitiscrohns_year_of_diagnosis",
-      "text_key": "ulcerative_colitiscrohns_year_of_diagnosis",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "gastrointestinal_bleeding",
-      "text_key": "gastrointestinal_bleeding",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "site_of_the_bleeding_unkown_enum",
-      "text_key": "site_of_the_bleeding_unkown_enum",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "site_of_the_bleeding_unkown_enum_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "site_of_the_bleeding_unkown_enum_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "site_of_the_bleeding_unkown_enum_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "site_of_the_bleeding_unkown_enum_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "site_of_the_bleeding_unkown_enum_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "site_of_the_bleeding_unkown_enum_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "site_of_the_bleeding_other_specify",
-      "text_key": "site_of_the_bleeding_other_specify",
-      "type": "short"
-    },
-    {
-      "id": "bleeding_year_enum",
-      "text_key": "bleeding_year_enum",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "bleeding_year_enum_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "bleeding_year_enum_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "bleeding_year_enum_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "bleeding_year_enum_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "bleeding_year_enum_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "bleeding_year_enum_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "bleeding_year_enum_opt_7",
-          "value": 7
-        }
-      ]
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "Yes",

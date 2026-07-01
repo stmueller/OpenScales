@@ -1,4 +1,4 @@
-# Open Scale Definition (OSD) Specification v1.0.18
+# Open Scale Definition (OSD) Specification v1.0.20
 
 *Part of the [OpenScales Project](README.md)*
 
@@ -29,25 +29,75 @@ A runner declares its conformance level. When a scale uses features beyond the r
 
 ## File Structure
 
+Each scale lives in its own directory named after its code:
+
 ```
 {code}/
-  {code}.json           — Scale definition (required)
-  {code}.en.json        — English translation (recommended)
-  {code}.{lang}.json    — Additional translations (optional)
-   -or-
-   {code}.osd           — .json file containing scale definition and translations files.
-  
-  -optional-
+  {code}.osd            — OSD bundle: definition + all translations (canonical)
   LICENSE.txt           — License evidence / permissions grant (optional)
   screenshot.png        — Preview image (optional, auto-generated)
   images/               — Referenced images (optional)
   audio/                — Referenced audio files (optional)
   video/                — Referenced video files (optional)
-  
-  
 ```
 
+The `.osd` bundle is the canonical distribution format. Runners and tools
+MUST support it. The split two-file layout (`.json` + `.{lang}.json`) is
+an optional runner/tool feature — useful when translations are large or
+numerous — but it is not the primary format and tools are not required to
+support it.
+
 Language codes follow [BCP 47](https://www.rfc-editor.org/info/bcp47) (e.g., `en`, `de`, `es`, `zh-Hans`).
+
+### The `.osd` Bundle Format
+
+A `.osd` file is a JSON object with three top-level keys:
+
+| Key | Type | Required | Description |
+|-----|------|----------|-------------|
+| `osd_version` | string | REQUIRED | Spec version this file was written against (e.g. `"1.0"`) |
+| `definition` | object | REQUIRED | The full scale definition (all C1–C9 content: `scale_info`, `items`, `scoring`, etc.) |
+| `translations` | object | REQUIRED | Map of BCP-47 language code → flat key/value translation object (see C4) |
+
+**Minimal valid bundle:**
+
+```json
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": { "code": "PHQ9", "name": "PHQ-9" },
+    "items": [ ... ]
+  },
+  "translations": {
+    "en": { "q1": "Little interest or pleasure in doing things." }
+  }
+}
+```
+
+**Rules:**
+
+- `osd_version` MUST be a string matching the spec version the file was written against. Runners SHOULD warn on unknown versions but MUST attempt to parse the file.
+- `definition` contains all structural content. Every field documented in C1–C9 (e.g. `scale_info`, `parameters`, `likert_options`, `response_scales`, `option_sets`, `items`, `dimensions`, `scoring`, `variants`) lives inside `definition`.
+- `translations` contains all user-facing text, keyed by language code. The structure is identical to the standalone `{code}.{lang}.json` files described in C4.
+- Runners MUST ignore unrecognized top-level keys in the bundle envelope (future extensibility and converter provenance metadata).
+- **Flat bundles** (where `scale_info`, `items`, etc. appear at the top level alongside `translations`, with no `definition` wrapper) are a known legacy format. Runners SHOULD detect and accept them for backward compatibility by treating the entire object as the definition.
+
+**Extension keys:** Converters and importers MAY add provenance metadata as top-level keys prefixed with `_` (e.g. `_camcops_conversion`, `_source_tool`). Runners MUST ignore these.
+
+**Deprecated:** A `scoring` key at the envelope level (outside `definition`) is a legacy artifact from an earlier draft. Runners that encounter it SHOULD treat it as equivalent to `definition.scoring`. New files MUST NOT use this pattern; `scoring` belongs inside `definition`.
+
+### Split Two-File Layout (Optional)
+
+Runners and tools MAY support loading a scale from separate files instead of a bundle:
+
+```
+{code}/
+  {code}.json           — Scale definition
+  {code}.en.json        — English translation
+  {code}.{lang}.json    — Additional translations (one per language)
+```
+
+This layout is appropriate when translations are large or managed independently (e.g. the PEBL desktop runner, translation pipelines). A runner that supports split layout MUST fall back to the `.osd` bundle when no `.json` file is present. Tools that write split layout SHOULD also write a `.osd` bundle for interoperability.
 
 ---
 
@@ -2198,4 +2248,5 @@ just without a labelled button. (AppRoVE uses this interim approach.)
 | 1.0.16 | 2026-06-17 | **A8. Scale Variants** (new): support multiple variants of an instrument in one OSD, selected by a *coordinate* = active language + choice-parameter values (for old, widely-translated scales with framing-reversed items, language-specific item sets, or short/long editions). C2: added `variant_group` (mutually-exclusive item alternatives) and `variant_when` (per-item condition over `selector`/`parameter` leaves, resolved once at instantiation). New definition-level `variants` block: `sets` (sugar for the language axis: per-set `languages`+`items`), `axes` (multi-axis/free-parameter declaration), `default`. C3: added `variants` array on scoring blocks/dimensions — computed only when one of its set ids is active (lets per-language subscales coexist). S1: added the `selector: "language"` condition leaf; condition grammar is shared between `visible_when` (re-evaluated at runtime) and `variant_when` (resolved at instantiation). C4: translation completeness is **per-variant**. Backward compatible — no `variants`/`variant_when` ⇒ unchanged single-variant behavior. Implemented in the JS runner (`scale-runner.js`) and the export converters (`tools/osd_variants.flatten_variant`); studies (OSC) pin a variant via a scale step's `parameters` (`lang` + free params), needing no new OSC field. |
 | 1.0.17 | 2026-06-24 | Documentation only — added **Roadmap / Planned Features** section. R1: `default_by_language` (per-language parameter defaults) specified but **not implemented** (broad downstream impact across runner, converters, importers, web UI, validator); until then, scales needing language-varying templated values hardcode them in per-language translations. No format change. |
 | 1.0.18 | 2026-06-24 | Documentation only — Roadmap **R2**: `extra_options` / off-scale N/A responses on scored Likert items specified but **not implemented** (broad downstream impact like R1). Interim guidance: make the item optional (`required: false` / `default_required: false`) so respondents skip non-applicable items. No format change. |
+| 1.0.20 | 2026-07-01 | **File Structure** rewritten: `.osd` bundle is now the canonical distribution format; split two-file layout (`.json` + `.{lang}.json`) demoted to an optional runner/tool feature. Formally documented the `.osd` envelope: required top-level keys `osd_version` (string), `definition` (object), `translations` (object); rules for unknown-version tolerance, runner ignore of unrecognized keys, `_`-prefixed extension keys for converter provenance metadata. Noted flat-bundle legacy format (no `definition` wrapper) and deprecated envelope-level `scoring` key (belongs inside `definition`). No format change — all existing `.osd` files are valid. |
 | 1.0.19 | 2026-06-30 | C2: added `option_sets` — a named dictionary of option arrays for `multi`/`multicheck` items that share a common choice set (analogous to `response_scales` for `likert`); the reserved key `"default"` designates the set used by any item without an explicit `option_set` field; added `option_set` item field (string) referencing a key in `option_sets`; resolution order: per-item `options` → `option_set` lookup → `"default"` set → validation error; `shuffle_options`/`pin_last` per-item overrides remain valid alongside `option_set`; eliminates duplicate translation keys when many items share the same choices (e.g. TRUE/FALSE, frequency scales). Implemented in `scale-runner.js`, all `convert_to_*.py` converters, `osd2surveydown.js`, `osd2surveydown.py`, `validate_scale.py`, `scale.php`, `survey-builder.js`, and PhenX converters. |

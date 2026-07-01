@@ -1,271 +1,274 @@
 {
-  "scale_info": {
-    "name": "Media Use During COVID-19",
-    "code": "PX950101",
-    "abbreviation": "PX950101",
-    "description": "This protocol uses four questions from the COVID-19 Experiences (COVEX) questionnaire Media Use module. The questions assess an individual’s sources of news and information for COVID-19 related information during the pandemic, and their mental health impact.",
-    "domain": "COVID-19 - Media",
-    "citation": "COVID-19 Experiences (COVEX). As implemented in: PhenX Toolkit. Media Use During COVID-19. https://www.phenxtoolkit.org/protocols/view/950101",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/950101"
-  },
-  "likert_options": {
-    "points": 5,
-    "min": 1,
-    "max": 5,
-    "labels": [
-      "lk_opt_1",
-      "lk_opt_2",
-      "lk_opt_3",
-      "lk_opt_4",
-      "lk_opt_5"
-    ]
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Media Use During COVID-19",
+      "code": "PX950101",
+      "abbreviation": "PX950101",
+      "description": "This protocol uses four questions from the COVID-19 Experiences (COVEX) questionnaire Media Use module. The questions assess an individual’s sources of news and information for COVID-19 related information during the pandemic, and their mental health impact.",
+      "domain": "COVID-19 - Media",
+      "citation": "COVID-19 Experiences (COVEX). As implemented in: PhenX Toolkit. Media Use During COVID-19. https://www.phenxtoolkit.org/protocols/view/950101",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/950101"
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "max": 5,
+      "labels": [
+        "lk_opt_1",
+        "lk_opt_2",
+        "lk_opt_3",
+        "lk_opt_4",
+        "lk_opt_5"
+      ]
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        },
+        {
+          "text_key": "opt_4",
+          "value": 4
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "most_common_way_news",
+        "text_key": "most_common_way_news",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "most_common_way_news_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "most_common_way_news_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "most_common_way_news_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "most_common_way_news_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "most_common_way_news_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "most_common_way_news_opt_6",
+            "value": 6
+          }
+        ]
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "time_get_information_covid_impact",
+        "text_key": "time_get_information_covid_impact",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "time_get_information_covid_impact_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "time_get_information_covid_impact_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "time_get_information_covid_impact_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "time_get_information_covid_impact_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "time_get_information_covid_impact_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "time_get_information_covid_impact_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "time_get_information_covid_impact_opt_7",
+            "value": 7
+          }
+        ]
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "sec_has_your_usage_of_the_following_sources_",
+        "type": "section",
+        "text_key": "sec_has_your_usage_of_the_following_sources__title"
       },
       {
-        "text_key": "opt_4",
-        "value": 4
+        "id": "usage_source_information_mental_health_friends_family",
+        "text_key": "usage_source_information_mental_health_friends_family",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "usage_source_information_mental_health"
+      },
+      {
+        "id": "usage_source_information_mental_health_government_local",
+        "text_key": "usage_source_information_mental_health_government_local",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "usage_source_information_mental_health"
+      },
+      {
+        "id": "usage_source_information_mental_health_government_national",
+        "text_key": "usage_source_information_mental_health_government_national",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "usage_source_information_mental_health"
+      },
+      {
+        "id": "usage_source_information_mental_health_national_international_officials",
+        "text_key": "usage_source_information_mental_health_national_international_officials",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "usage_source_information_mental_health"
+      },
+      {
+        "id": "usage_source_information_mental_health_news",
+        "text_key": "usage_source_information_mental_health_news",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "usage_source_information_mental_health"
+      },
+      {
+        "id": "usage_source_information_mental_health_radio_podcast",
+        "text_key": "usage_source_information_mental_health_radio_podcast",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "usage_source_information_mental_health"
+      },
+      {
+        "id": "usage_source_information_mental_health_facebook",
+        "text_key": "usage_source_information_mental_health_facebook",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "usage_source_information_mental_health"
+      },
+      {
+        "id": "usage_source_information_mental_health_instagram_snapchat",
+        "text_key": "usage_source_information_mental_health_instagram_snapchat",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "usage_source_information_mental_health"
+      },
+      {
+        "id": "usage_source_information_mental_health_twitter",
+        "text_key": "usage_source_information_mental_health_twitter",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "usage_source_information_mental_health"
+      },
+      {
+        "id": "usage_source_information_mental_health_other_social_media",
+        "text_key": "usage_source_information_mental_health_other_social_media",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "usage_source_information_mental_health"
+      },
+      {
+        "id": "sec_how_often_do_you_use_or_rely_on_the_foll",
+        "type": "section",
+        "text_key": "sec_how_often_do_you_use_or_rely_on_the_foll_title"
+      },
+      {
+        "id": "frequency_sources_information_covid_friends_family_neighbors",
+        "text_key": "frequency_sources_information_covid_friends_family_neighbors",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "frequency_sources_information_covid"
+      },
+      {
+        "id": "frequency_sources_information_covid_providers",
+        "text_key": "frequency_sources_information_covid_providers",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "frequency_sources_information_covid"
+      },
+      {
+        "id": "frequency_sources_information_covid_government_officials_local",
+        "text_key": "frequency_sources_information_covid_government_officials_local",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "frequency_sources_information_covid"
+      },
+      {
+        "id": "frequency_sources_information_covid_government_federal",
+        "text_key": "frequency_sources_information_covid_government_federal",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "frequency_sources_information_covid"
+      },
+      {
+        "id": "frequency_sources_information_covid_health_website",
+        "text_key": "frequency_sources_information_covid_health_website",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "frequency_sources_information_covid"
+      },
+      {
+        "id": "frequency_sources_information_covid_news",
+        "text_key": "frequency_sources_information_covid_news",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "frequency_sources_information_covid"
+      },
+      {
+        "id": "frequency_sources_information_covid_tv_radio",
+        "text_key": "frequency_sources_information_covid_tv_radio",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "frequency_sources_information_covid"
+      },
+      {
+        "id": "frequency_sources_information_covid_social_media",
+        "text_key": "frequency_sources_information_covid_social_media",
+        "type": "likert",
+        "likert_points": 5,
+        "_matrix_group": "frequency_sources_information_covid"
       }
+    ],
+    "_conversion_notes": [
+      "INFO  usage_source_information_mental_health_friends_family: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
+      "INFO  usage_source_information_mental_health_government_local: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
+      "INFO  usage_source_information_mental_health_government_national: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
+      "INFO  usage_source_information_mental_health_national_international_officials: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
+      "INFO  usage_source_information_mental_health_news: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
+      "INFO  usage_source_information_mental_health_radio_podcast: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
+      "INFO  usage_source_information_mental_health_facebook: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
+      "INFO  usage_source_information_mental_health_instagram_snapchat: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
+      "INFO  usage_source_information_mental_health_twitter: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
+      "INFO  usage_source_information_mental_health_other_social_media: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
+      "INFO  frequency_sources_information_covid_friends_family_neighbors: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
+      "INFO  frequency_sources_information_covid_providers: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
+      "INFO  frequency_sources_information_covid_government_officials_local: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
+      "INFO  frequency_sources_information_covid_government_federal: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
+      "INFO  frequency_sources_information_covid_health_website: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
+      "INFO  frequency_sources_information_covid_news: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
+      "INFO  frequency_sources_information_covid_tv_radio: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
+      "INFO  frequency_sources_information_covid_social_media: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually"
     ]
   },
-  "items": [
-    {
-      "id": "most_common_way_news",
-      "text_key": "most_common_way_news",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "most_common_way_news_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "most_common_way_news_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "most_common_way_news_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "most_common_way_news_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "most_common_way_news_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "most_common_way_news_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "time_get_information_covid_impact",
-      "text_key": "time_get_information_covid_impact",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "time_get_information_covid_impact_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "time_get_information_covid_impact_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "time_get_information_covid_impact_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "time_get_information_covid_impact_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "time_get_information_covid_impact_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "time_get_information_covid_impact_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "time_get_information_covid_impact_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "sec_has_your_usage_of_the_following_sources_",
-      "type": "section",
-      "text_key": "sec_has_your_usage_of_the_following_sources__title"
-    },
-    {
-      "id": "usage_source_information_mental_health_friends_family",
-      "text_key": "usage_source_information_mental_health_friends_family",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "usage_source_information_mental_health"
-    },
-    {
-      "id": "usage_source_information_mental_health_government_local",
-      "text_key": "usage_source_information_mental_health_government_local",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "usage_source_information_mental_health"
-    },
-    {
-      "id": "usage_source_information_mental_health_government_national",
-      "text_key": "usage_source_information_mental_health_government_national",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "usage_source_information_mental_health"
-    },
-    {
-      "id": "usage_source_information_mental_health_national_international_officials",
-      "text_key": "usage_source_information_mental_health_national_international_officials",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "usage_source_information_mental_health"
-    },
-    {
-      "id": "usage_source_information_mental_health_news",
-      "text_key": "usage_source_information_mental_health_news",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "usage_source_information_mental_health"
-    },
-    {
-      "id": "usage_source_information_mental_health_radio_podcast",
-      "text_key": "usage_source_information_mental_health_radio_podcast",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "usage_source_information_mental_health"
-    },
-    {
-      "id": "usage_source_information_mental_health_facebook",
-      "text_key": "usage_source_information_mental_health_facebook",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "usage_source_information_mental_health"
-    },
-    {
-      "id": "usage_source_information_mental_health_instagram_snapchat",
-      "text_key": "usage_source_information_mental_health_instagram_snapchat",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "usage_source_information_mental_health"
-    },
-    {
-      "id": "usage_source_information_mental_health_twitter",
-      "text_key": "usage_source_information_mental_health_twitter",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "usage_source_information_mental_health"
-    },
-    {
-      "id": "usage_source_information_mental_health_other_social_media",
-      "text_key": "usage_source_information_mental_health_other_social_media",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "usage_source_information_mental_health"
-    },
-    {
-      "id": "sec_how_often_do_you_use_or_rely_on_the_foll",
-      "type": "section",
-      "text_key": "sec_how_often_do_you_use_or_rely_on_the_foll_title"
-    },
-    {
-      "id": "frequency_sources_information_covid_friends_family_neighbors",
-      "text_key": "frequency_sources_information_covid_friends_family_neighbors",
-      "type": "likert",
-      "likert_points": 5,
-      "_matrix_group": "frequency_sources_information_covid"
-    },
-    {
-      "id": "frequency_sources_information_covid_providers",
-      "text_key": "frequency_sources_information_covid_providers",
-      "type": "likert",
-      "likert_points": 5,
-      "_matrix_group": "frequency_sources_information_covid"
-    },
-    {
-      "id": "frequency_sources_information_covid_government_officials_local",
-      "text_key": "frequency_sources_information_covid_government_officials_local",
-      "type": "likert",
-      "likert_points": 5,
-      "_matrix_group": "frequency_sources_information_covid"
-    },
-    {
-      "id": "frequency_sources_information_covid_government_federal",
-      "text_key": "frequency_sources_information_covid_government_federal",
-      "type": "likert",
-      "likert_points": 5,
-      "_matrix_group": "frequency_sources_information_covid"
-    },
-    {
-      "id": "frequency_sources_information_covid_health_website",
-      "text_key": "frequency_sources_information_covid_health_website",
-      "type": "likert",
-      "likert_points": 5,
-      "_matrix_group": "frequency_sources_information_covid"
-    },
-    {
-      "id": "frequency_sources_information_covid_news",
-      "text_key": "frequency_sources_information_covid_news",
-      "type": "likert",
-      "likert_points": 5,
-      "_matrix_group": "frequency_sources_information_covid"
-    },
-    {
-      "id": "frequency_sources_information_covid_tv_radio",
-      "text_key": "frequency_sources_information_covid_tv_radio",
-      "type": "likert",
-      "likert_points": 5,
-      "_matrix_group": "frequency_sources_information_covid"
-    },
-    {
-      "id": "frequency_sources_information_covid_social_media",
-      "text_key": "frequency_sources_information_covid_social_media",
-      "type": "likert",
-      "likert_points": 5,
-      "_matrix_group": "frequency_sources_information_covid"
-    }
-  ],
-  "_conversion_notes": [
-    "INFO  usage_source_information_mental_health_friends_family: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
-    "INFO  usage_source_information_mental_health_government_local: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
-    "INFO  usage_source_information_mental_health_government_national: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
-    "INFO  usage_source_information_mental_health_national_international_officials: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
-    "INFO  usage_source_information_mental_health_news: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
-    "INFO  usage_source_information_mental_health_radio_podcast: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
-    "INFO  usage_source_information_mental_health_facebook: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
-    "INFO  usage_source_information_mental_health_instagram_snapchat: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
-    "INFO  usage_source_information_mental_health_twitter: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
-    "INFO  usage_source_information_mental_health_other_social_media: member of matrix group 'usage_source_information_mental_health' — consider converting to grid type manually",
-    "INFO  frequency_sources_information_covid_friends_family_neighbors: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
-    "INFO  frequency_sources_information_covid_providers: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
-    "INFO  frequency_sources_information_covid_government_officials_local: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
-    "INFO  frequency_sources_information_covid_government_federal: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
-    "INFO  frequency_sources_information_covid_health_website: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
-    "INFO  frequency_sources_information_covid_news: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
-    "INFO  frequency_sources_information_covid_tv_radio: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually",
-    "INFO  frequency_sources_information_covid_social_media: member of matrix group 'frequency_sources_information_covid' — consider converting to grid type manually"
-  ],
   "translations": {
     "en": {
       "lk_opt_1": "Never",

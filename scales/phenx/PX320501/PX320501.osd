@@ -1,115 +1,118 @@
 {
-  "scale_info": {
-    "name": "Financial Hardship Associated with Cancer",
-    "code": "PX320501",
-    "abbreviation": "PX320501",
-    "description": "This self-administered subset of the questionnaire collects data on the effects of cancer and cancer treatments on the lives of those who have been diagnosed with cancer. These questions focus on different kinds of financial hardship on the participant and participant’s family members associated wit",
-    "domain": "Cancer & Chronic Disease",
-    "citation": "Yabroff, K. R., Dowling, E., Rodriguez, J., Ekwueme, D. U., Meissner, H., Soni, A., Virgo, K. S. (2012). The Medical Expenditure Panel Survey (MEPS) experiences with cancer survivorship supplement. Journal of cancer survivorship : research and practice, 6(4), 407–419. doi:10.1007/s11764-012-0221-2 Mariotto AB, Yabroff KR, Shao Y, Feuer EJ, Brown ML. Projections of the cost of cancer care in the United States: 2010–2020. J Natl Cancer Inst. 2011;103(2):117–28. [PubMed], [Google Scholar] Guy GP, Ekwueme DU, Yabroff KR, et al. : Economic burden of cancer survivorship among adults in the United States. J. Clin Oncol 31 (30); 3749-57, 2013. [PubMed]. Guy GP, Yabroff KR, Ekwueme DU, et al.: Estimating the health and economic burden of cancer among these diagnosed as adolescents and young adults. Health Aff (Millwood) 33 (6): 1024-31, 2014 [PubMed]. [PhenX: https://www.phenxtoolkit.org/protocols/view/320501]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/320501"
-  },
-  "option_sets": {
-    "default": [
-      {
-        "text_key": "opt_1",
-        "value": 1
-      },
-      {
-        "text_key": "opt_2",
-        "value": 2
-      }
-    ]
-  },
-  "items": [
-    {
-      "id": "desc1",
-      "text_key": "desc1",
-      "type": "inst"
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Financial Hardship Associated with Cancer",
+      "code": "PX320501",
+      "abbreviation": "PX320501",
+      "description": "This self-administered subset of the questionnaire collects data on the effects of cancer and cancer treatments on the lives of those who have been diagnosed with cancer. These questions focus on different kinds of financial hardship on the participant and participant’s family members associated wit",
+      "domain": "Cancer & Chronic Disease",
+      "citation": "Yabroff, K. R., Dowling, E., Rodriguez, J., Ekwueme, D. U., Meissner, H., Soni, A., Virgo, K. S. (2012). The Medical Expenditure Panel Survey (MEPS) experiences with cancer survivorship supplement. Journal of cancer survivorship : research and practice, 6(4), 407–419. doi:10.1007/s11764-012-0221-2 Mariotto AB, Yabroff KR, Shao Y, Feuer EJ, Brown ML. Projections of the cost of cancer care in the United States: 2010–2020. J Natl Cancer Inst. 2011;103(2):117–28. [PubMed], [Google Scholar] Guy GP, Ekwueme DU, Yabroff KR, et al. : Economic burden of cancer survivorship among adults in the United States. J. Clin Oncol 31 (30); 3749-57, 2013. [PubMed]. Guy GP, Yabroff KR, Ekwueme DU, et al.: Estimating the health and economic burden of cancer among these diagnosed as adolescents and young adults. Health Aff (Millwood) 33 (6): 1024-31, 2014 [PubMed]. [PhenX: https://www.phenxtoolkit.org/protocols/view/320501]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/320501"
     },
-    {
-      "id": "borrow_money_debt",
-      "text_key": "borrow_money_debt",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "borrow_money_debt_amount",
-      "text_key": "borrow_money_debt_amount",
-      "type": "multi",
-      "visible_when": {
-        "item": "borrow_money_debt",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
+    "option_sets": {
+      "default": [
         {
-          "text_key": "borrow_money_debt_amount_opt_1",
+          "text_key": "opt_1",
           "value": 1
         },
         {
-          "text_key": "borrow_money_debt_amount_opt_2",
+          "text_key": "opt_2",
           "value": 2
-        },
-        {
-          "text_key": "borrow_money_debt_amount_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "borrow_money_debt_amount_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "borrow_money_debt_amount_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "borrow_money_debt_amount_opt_6",
-          "value": 6
         }
       ]
     },
-    {
-      "id": "bankruptcy",
-      "text_key": "bankruptcy",
-      "type": "multi",
-      "visible_when": {
-        "item": "borrow_money_debt",
-        "operator": "equals",
-        "value": 1
+    "items": [
+      {
+        "id": "desc1",
+        "text_key": "desc1",
+        "type": "inst"
       },
-      "option_set": "default"
-    },
-    {
-      "id": "other_sacrifices",
-      "text_key": "other_sacrifices",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "other_sacrifices_describe",
-      "text_key": "other_sacrifices_describe",
-      "type": "long",
-      "visible_when": {
-        "item": "other_sacrifices",
-        "operator": "equals",
-        "value": 1
+      {
+        "id": "borrow_money_debt",
+        "text_key": "borrow_money_debt",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "borrow_money_debt_amount",
+        "text_key": "borrow_money_debt_amount",
+        "type": "multi",
+        "visible_when": {
+          "item": "borrow_money_debt",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "borrow_money_debt_amount_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "borrow_money_debt_amount_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "borrow_money_debt_amount_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "borrow_money_debt_amount_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "borrow_money_debt_amount_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "borrow_money_debt_amount_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "bankruptcy",
+        "text_key": "bankruptcy",
+        "type": "multi",
+        "visible_when": {
+          "item": "borrow_money_debt",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "other_sacrifices",
+        "text_key": "other_sacrifices",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "other_sacrifices_describe",
+        "text_key": "other_sacrifices_describe",
+        "type": "long",
+        "visible_when": {
+          "item": "other_sacrifices",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "worry_large_medical_bills",
+        "text_key": "worry_large_medical_bills",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "unable_cover_cost",
+        "text_key": "unable_cover_cost",
+        "type": "multi",
+        "option_set": "default"
       }
-    },
-    {
-      "id": "worry_large_medical_bills",
-      "text_key": "worry_large_medical_bills",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "unable_cover_cost",
-      "text_key": "unable_cover_cost",
-      "type": "multi",
-      "option_set": "default"
-    }
-  ],
+    ]
+  },
   "translations": {
     "en": {
       "opt_1": "Yes",

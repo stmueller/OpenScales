@@ -1,1079 +1,1082 @@
 {
-  "scale_info": {
-    "name": "Childs Lifetime Household Composition",
-    "code": "PX300401",
-    "abbreviation": "PX300401",
-    "description": "Section C of the Mother and Home Questionnaire from Avon Longitudinal Study of Parents and Children (ALSPAC) to be answered by a childs mother/guardian, which contains 22 questions on the composition of a childs home environment.",
-    "domain": "Family & Parenting",
-    "citation": "Houtepen, L.C., Heron, J., Suderman, M.J., Tiling, K & Howe L.D. (2018). Adverse childhood experiences in the children of the Avon Longitudinal Study of Parents and Children (ALSPAC). Welcome Open Res., 3 (106). McElroy, E, Shevlin, M. & Murphy, J. (2017). Internalizing and externalizing disorders in childhood and adolescence: A latent transition analysis using ALSPC data. Compr Psychiatry, (75). pp.74-84. Fraser, A., Macdonald-Willis, C., Tilling, K., Golding, J., Davey Smith, G., Henderson, J., Macleod, J., Molloy, L., Ness, A., Ring, S., Nelson, S.M. & Lawlor, D.A. (2013). Cohort Profile: the Avon Longitudinal Study of Parents and Children: ALSPAC mothers cohort. Int J Epidemiol, 42 (1), pp. 97-110. [PhenX: https://www.phenxtoolkit.org/protocols/view/300401]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/300401"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Childs Lifetime Household Composition",
+      "code": "PX300401",
+      "abbreviation": "PX300401",
+      "description": "Section C of the Mother and Home Questionnaire from Avon Longitudinal Study of Parents and Children (ALSPAC) to be answered by a childs mother/guardian, which contains 22 questions on the composition of a childs home environment.",
+      "domain": "Family & Parenting",
+      "citation": "Houtepen, L.C., Heron, J., Suderman, M.J., Tiling, K & Howe L.D. (2018). Adverse childhood experiences in the children of the Avon Longitudinal Study of Parents and Children (ALSPAC). Welcome Open Res., 3 (106). McElroy, E, Shevlin, M. & Murphy, J. (2017). Internalizing and externalizing disorders in childhood and adolescence: A latent transition analysis using ALSPC data. Compr Psychiatry, (75). pp.74-84. Fraser, A., Macdonald-Willis, C., Tilling, K., Golding, J., Davey Smith, G., Henderson, J., Macleod, J., Molloy, L., Ness, A., Ring, S., Nelson, S.M. & Lawlor, D.A. (2013). Cohort Profile: the Avon Longitudinal Study of Parents and Children: ALSPAC mothers cohort. Int J Epidemiol, 42 (1), pp. 97-110. [PhenX: https://www.phenxtoolkit.org/protocols/view/300401]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/300401"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "child_lifetime_household_composition_adults_over_18",
+        "text_key": "child_lifetime_household_composition_adults_over_18",
+        "type": "short",
+        "input_type": "number"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "child_lifetime_household_composition_young_adults",
+        "text_key": "child_lifetime_household_composition_young_adults",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_children",
+        "text_key": "child_lifetime_household_composition_children",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_adults_over_18_yourself",
+        "text_key": "child_lifetime_household_composition_adults_over_18_yourself",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "child_lifetime_household_composition_adults_over_18",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "child_lifetime_household_composition_young_adults",
+              "operator": "greater_than",
+              "value": 0
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_adults_over_18_partner",
+        "text_key": "child_lifetime_household_composition_adults_over_18_partner",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "child_lifetime_household_composition_adults_over_18",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "child_lifetime_household_composition_young_adults",
+              "operator": "greater_than",
+              "value": 0
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_adults_over_18_parents",
+        "text_key": "child_lifetime_household_composition_adults_over_18_parents",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "child_lifetime_household_composition_adults_over_18",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "child_lifetime_household_composition_young_adults",
+              "operator": "greater_than",
+              "value": 0
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_adults_over_18_partner_parents",
+        "text_key": "child_lifetime_household_composition_adults_over_18_partner_parents",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "child_lifetime_household_composition_adults_over_18",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "child_lifetime_household_composition_young_adults",
+              "operator": "greater_than",
+              "value": 0
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_adults_your_children_over_18",
+        "text_key": "child_lifetime_household_composition_adults_your_children_over_18",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "child_lifetime_household_composition_adults_over_18",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "child_lifetime_household_composition_young_adults",
+              "operator": "greater_than",
+              "value": 0
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_adults_partner_children_over_18",
+        "text_key": "child_lifetime_household_composition_adults_partner_children_over_18",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "child_lifetime_household_composition_adults_over_18",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "child_lifetime_household_composition_young_adults",
+              "operator": "greater_than",
+              "value": 0
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_adults_over_18_your_other_relations",
+        "text_key": "child_lifetime_household_composition_adults_over_18_your_other_relations",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "child_lifetime_household_composition_adults_over_18",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "child_lifetime_household_composition_young_adults",
+              "operator": "greater_than",
+              "value": 0
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_adults_over_18_partner_other_relations",
+        "text_key": "child_lifetime_household_composition_adults_over_18_partner_other_relations",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "child_lifetime_household_composition_adults_over_18",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "child_lifetime_household_composition_young_adults",
+              "operator": "greater_than",
+              "value": 0
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_adults_over_18_friend",
+        "text_key": "child_lifetime_household_composition_adults_over_18_friend",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "child_lifetime_household_composition_adults_over_18",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "child_lifetime_household_composition_young_adults",
+              "operator": "greater_than",
+              "value": 0
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_adults_over_18_lodger",
+        "text_key": "child_lifetime_household_composition_adults_over_18_lodger",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "child_lifetime_household_composition_adults_over_18",
+              "operator": "greater_than",
+              "value": 0
+            },
+            {
+              "item": "child_lifetime_household_composition_young_adults",
+              "operator": "greater_than",
+              "value": 0
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_adults_over_18_other",
+        "text_key": "child_lifetime_household_composition_adults_over_18_other",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_adults_over_18_lodger",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_adults_over_18_other_specify",
+        "text_key": "child_lifetime_household_composition_adults_over_18_other_specify",
+        "type": "short"
+      },
+      {
+        "id": "child_lifetime_household_composition_present_marital_status",
+        "text_key": "child_lifetime_household_composition_present_marital_status",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_lifetime_household_composition_present_marital_status_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_lifetime_household_composition_present_marital_status_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_lifetime_household_composition_present_marital_status_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_lifetime_household_composition_present_marital_status_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_lifetime_household_composition_present_marital_status_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_lifetime_household_composition_present_marital_status_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_lifetime_household_composition_present_marital_status_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "child_lifetime_household_composition_married_wedding_date",
+        "text_key": "child_lifetime_household_composition_married_wedding_date",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_married_wedding_date",
+          "operator": "in",
+          "value": [
+            5,
+            6,
+            7
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_biological_father_present",
+        "text_key": "child_lifetime_household_composition_biological_father_present",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_present_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_present_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_present_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_present_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "child_lifetime_household_composition_biological_father_stopping_living_together_years",
+        "text_key": "child_lifetime_household_composition_biological_father_stopping_living_together_years",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_biological_father_present",
+          "operator": "in",
+          "value": [
+            2,
+            7
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_biological_father_visit_frequency",
+        "text_key": "child_lifetime_household_composition_biological_father_visit_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_biological_father_present",
+          "operator": "in",
+          "value": [
+            2,
+            7
+          ]
+        },
+        "options": [
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "child_lifetime_household_composition_biological_father_financial_support",
+        "text_key": "child_lifetime_household_composition_biological_father_financial_support",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_biological_father_present",
+          "operator": "in",
+          "value": [
+            2,
+            7
+          ]
+        },
+        "options": [
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_financial_support_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_financial_support_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_father_financial_support_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_lifetime_household_composition_biological_mother_present",
+        "text_key": "child_lifetime_household_composition_biological_mother_present",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_biological_father_present",
+          "operator": "in",
+          "value": [
+            2,
+            7
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_biological_mother_stopping_living_together_years",
+        "text_key": "child_lifetime_household_composition_biological_mother_stopping_living_together_years",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_biological_mother_visit_frequency",
+        "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_biological_mother_stopping_living_together_years",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "child_lifetime_household_composition_biological_mother_financial_support",
+        "text_key": "child_lifetime_household_composition_biological_mother_financial_support",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_biological_mother_stopping_living_together_years",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "child_lifetime_household_composition_biological_mother_financial_support_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_mother_financial_support_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "child_lifetime_household_composition_biological_mother_financial_support_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "child_lifetime_household_composition_children_natural_parents",
+        "text_key": "child_lifetime_household_composition_children_natural_parents",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_biological_mother_stopping_living_together_years",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_children_natural_mother_only",
+        "text_key": "child_lifetime_household_composition_children_natural_mother_only",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_biological_mother_stopping_living_together_years",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_children_partner_natural_father",
+        "text_key": "child_lifetime_household_composition_children_partner_natural_father",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_children_neither_natural_parent",
+        "text_key": "child_lifetime_household_composition_children_neither_natural_parent",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_children_partner",
+        "text_key": "child_lifetime_household_composition_other_children_partner",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_children",
+        "text_key": "child_lifetime_household_composition_other_children",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_children_both",
+        "text_key": "child_lifetime_household_composition_other_children_both",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_married_living_with_partner",
+        "text_key": "child_lifetime_household_composition_married_living_with_partner",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_number_children_with_partner",
+        "text_key": "child_lifetime_household_composition_number_children_with_partner",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_married_living_with_partner",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_children_date_birth_1",
+        "text_key": "child_lifetime_household_composition_children_date_birth_1",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_children_currently_living_with_1",
+        "text_key": "child_lifetime_household_composition_children_currently_living_with_1",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_children_date_birth_2",
+        "text_key": "child_lifetime_household_composition_children_date_birth_2",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_children_currently_living_with_2",
+        "text_key": "child_lifetime_household_composition_children_currently_living_with_2",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_children_date_birth_3",
+        "text_key": "child_lifetime_household_composition_children_date_birth_3",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_children_currently_living_with_3",
+        "text_key": "child_lifetime_household_composition_children_currently_living_with_3",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_children_date_birth_4",
+        "text_key": "child_lifetime_household_composition_children_date_birth_4",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_children_currently_living_with_4",
+        "text_key": "child_lifetime_household_composition_children_currently_living_with_4",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_live_in_relatioinship",
+        "text_key": "child_lifetime_household_composition_other_live_in_relatioinship",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_most_recent_married_together",
+        "text_key": "child_lifetime_household_composition_other_most_recent_married_together",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_most_recent_parted",
+        "text_key": "child_lifetime_household_composition_other_most_recent_parted",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_most_recent_children",
+        "text_key": "child_lifetime_household_composition_other_most_recent_children",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_most_recent_date_birth_child_1",
+        "text_key": "child_lifetime_household_composition_other_most_recent_date_birth_child_1",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_most_recent_date_birth_child_2",
+        "text_key": "child_lifetime_household_composition_other_most_recent_date_birth_child_2",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_most_recent_date_birth_child_3",
+        "text_key": "child_lifetime_household_composition_other_most_recent_date_birth_child_3",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_most_recent_date_birth_child_4",
+        "text_key": "child_lifetime_household_composition_other_most_recent_date_birth_child_4",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_most_recent_children_living_with_currently",
+        "text_key": "child_lifetime_household_composition_other_most_recent_children_living_with_currently",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_second_recent_married_together",
+        "text_key": "child_lifetime_household_composition_other_second_recent_married_together",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_second_recent_parted",
+        "text_key": "child_lifetime_household_composition_other_second_recent_parted",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_second_recent_children",
+        "text_key": "child_lifetime_household_composition_other_second_recent_children",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_second_recent_date_birth_child_1",
+        "text_key": "child_lifetime_household_composition_other_second_recent_date_birth_child_1",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_second_recent_date_birth_child_2",
+        "text_key": "child_lifetime_household_composition_other_second_recent_date_birth_child_2",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_second_recent_date_birth_child_3",
+        "text_key": "child_lifetime_household_composition_other_second_recent_date_birth_child_3",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_second_recent_date_birth_child_4",
+        "text_key": "child_lifetime_household_composition_other_second_recent_date_birth_child_4",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_second_recent_children_living_with_currently",
+        "text_key": "child_lifetime_household_composition_other_second_recent_children_living_with_currently",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_third_recent_married_together",
+        "text_key": "child_lifetime_household_composition_other_third_recent_married_together",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_third_recent_parted",
+        "text_key": "child_lifetime_household_composition_other_third_recent_parted",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_third_recent_children",
+        "text_key": "child_lifetime_household_composition_other_third_recent_children",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_third_recent_date_birth_child_1",
+        "text_key": "child_lifetime_household_composition_other_third_recent_date_birth_child_1",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_third_recent_date_birth_child_2",
+        "text_key": "child_lifetime_household_composition_other_third_recent_date_birth_child_2",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_third_recent_date_birth_child_3",
+        "text_key": "child_lifetime_household_composition_other_third_recent_date_birth_child_3",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_third_recent_date_birth_child_4",
+        "text_key": "child_lifetime_household_composition_other_third_recent_date_birth_child_4",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_third_recent_children_living_with_currently",
+        "text_key": "child_lifetime_household_composition_other_third_recent_children_living_with_currently",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_live_in_relatioinship",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_children",
+        "text_key": "child_lifetime_household_composition_other_relationship_children",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_children_date_birth_child_1",
+        "text_key": "child_lifetime_household_composition_other_relationship_children_date_birth_child_1",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_1",
+        "text_key": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_1",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_children_date_birth_child_2",
+        "text_key": "child_lifetime_household_composition_other_relationship_children_date_birth_child_2",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_2",
+        "text_key": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_2",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_children_date_birth_child_3",
+        "text_key": "child_lifetime_household_composition_other_relationship_children_date_birth_child_3",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_3",
+        "text_key": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_3",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_children_date_birth_child_4",
+        "text_key": "child_lifetime_household_composition_other_relationship_children_date_birth_child_4",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_4",
+        "text_key": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_4",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_partner_children",
+        "text_key": "child_lifetime_household_composition_other_relationship_partner_children",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_1",
+        "text_key": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_1",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_partner_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_1",
+        "text_key": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_1",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_partner_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_2",
+        "text_key": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_2",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_partner_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_2",
+        "text_key": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_2",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_partner_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_3",
+        "text_key": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_3",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_partner_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_3",
+        "text_key": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_3",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_partner_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_4",
+        "text_key": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_4",
+        "type": "short",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_partner_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_4",
+        "text_key": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_4",
+        "type": "multi",
+        "visible_when": {
+          "item": "child_lifetime_household_composition_other_relationship_partner_children",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
       }
     ]
   },
-  "items": [
-    {
-      "id": "child_lifetime_household_composition_adults_over_18",
-      "text_key": "child_lifetime_household_composition_adults_over_18",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_young_adults",
-      "text_key": "child_lifetime_household_composition_young_adults",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_children",
-      "text_key": "child_lifetime_household_composition_children",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_adults_over_18_yourself",
-      "text_key": "child_lifetime_household_composition_adults_over_18_yourself",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "child_lifetime_household_composition_adults_over_18",
-            "operator": "greater_than",
-            "value": 0
-          },
-          {
-            "item": "child_lifetime_household_composition_young_adults",
-            "operator": "greater_than",
-            "value": 0
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_adults_over_18_partner",
-      "text_key": "child_lifetime_household_composition_adults_over_18_partner",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "child_lifetime_household_composition_adults_over_18",
-            "operator": "greater_than",
-            "value": 0
-          },
-          {
-            "item": "child_lifetime_household_composition_young_adults",
-            "operator": "greater_than",
-            "value": 0
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_adults_over_18_parents",
-      "text_key": "child_lifetime_household_composition_adults_over_18_parents",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "child_lifetime_household_composition_adults_over_18",
-            "operator": "greater_than",
-            "value": 0
-          },
-          {
-            "item": "child_lifetime_household_composition_young_adults",
-            "operator": "greater_than",
-            "value": 0
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_adults_over_18_partner_parents",
-      "text_key": "child_lifetime_household_composition_adults_over_18_partner_parents",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "child_lifetime_household_composition_adults_over_18",
-            "operator": "greater_than",
-            "value": 0
-          },
-          {
-            "item": "child_lifetime_household_composition_young_adults",
-            "operator": "greater_than",
-            "value": 0
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_adults_your_children_over_18",
-      "text_key": "child_lifetime_household_composition_adults_your_children_over_18",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "child_lifetime_household_composition_adults_over_18",
-            "operator": "greater_than",
-            "value": 0
-          },
-          {
-            "item": "child_lifetime_household_composition_young_adults",
-            "operator": "greater_than",
-            "value": 0
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_adults_partner_children_over_18",
-      "text_key": "child_lifetime_household_composition_adults_partner_children_over_18",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "child_lifetime_household_composition_adults_over_18",
-            "operator": "greater_than",
-            "value": 0
-          },
-          {
-            "item": "child_lifetime_household_composition_young_adults",
-            "operator": "greater_than",
-            "value": 0
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_adults_over_18_your_other_relations",
-      "text_key": "child_lifetime_household_composition_adults_over_18_your_other_relations",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "child_lifetime_household_composition_adults_over_18",
-            "operator": "greater_than",
-            "value": 0
-          },
-          {
-            "item": "child_lifetime_household_composition_young_adults",
-            "operator": "greater_than",
-            "value": 0
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_adults_over_18_partner_other_relations",
-      "text_key": "child_lifetime_household_composition_adults_over_18_partner_other_relations",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "child_lifetime_household_composition_adults_over_18",
-            "operator": "greater_than",
-            "value": 0
-          },
-          {
-            "item": "child_lifetime_household_composition_young_adults",
-            "operator": "greater_than",
-            "value": 0
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_adults_over_18_friend",
-      "text_key": "child_lifetime_household_composition_adults_over_18_friend",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "child_lifetime_household_composition_adults_over_18",
-            "operator": "greater_than",
-            "value": 0
-          },
-          {
-            "item": "child_lifetime_household_composition_young_adults",
-            "operator": "greater_than",
-            "value": 0
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_adults_over_18_lodger",
-      "text_key": "child_lifetime_household_composition_adults_over_18_lodger",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "child_lifetime_household_composition_adults_over_18",
-            "operator": "greater_than",
-            "value": 0
-          },
-          {
-            "item": "child_lifetime_household_composition_young_adults",
-            "operator": "greater_than",
-            "value": 0
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_adults_over_18_other",
-      "text_key": "child_lifetime_household_composition_adults_over_18_other",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_adults_over_18_lodger",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_adults_over_18_other_specify",
-      "text_key": "child_lifetime_household_composition_adults_over_18_other_specify",
-      "type": "short"
-    },
-    {
-      "id": "child_lifetime_household_composition_present_marital_status",
-      "text_key": "child_lifetime_household_composition_present_marital_status",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "child_lifetime_household_composition_present_marital_status_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "child_lifetime_household_composition_present_marital_status_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "child_lifetime_household_composition_present_marital_status_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "child_lifetime_household_composition_present_marital_status_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "child_lifetime_household_composition_present_marital_status_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "child_lifetime_household_composition_present_marital_status_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "child_lifetime_household_composition_present_marital_status_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "child_lifetime_household_composition_married_wedding_date",
-      "text_key": "child_lifetime_household_composition_married_wedding_date",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_married_wedding_date",
-        "operator": "in",
-        "value": [
-          5,
-          6,
-          7
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_biological_father_present",
-      "text_key": "child_lifetime_household_composition_biological_father_present",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_present_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_present_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_present_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_present_opt_9",
-          "value": 9
-        }
-      ]
-    },
-    {
-      "id": "child_lifetime_household_composition_biological_father_stopping_living_together_years",
-      "text_key": "child_lifetime_household_composition_biological_father_stopping_living_together_years",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_biological_father_present",
-        "operator": "in",
-        "value": [
-          2,
-          7
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_biological_father_visit_frequency",
-      "text_key": "child_lifetime_household_composition_biological_father_visit_frequency",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_biological_father_present",
-        "operator": "in",
-        "value": [
-          2,
-          7
-        ]
-      },
-      "options": [
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_visit_frequency_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "child_lifetime_household_composition_biological_father_financial_support",
-      "text_key": "child_lifetime_household_composition_biological_father_financial_support",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_biological_father_present",
-        "operator": "in",
-        "value": [
-          2,
-          7
-        ]
-      },
-      "options": [
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_financial_support_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_financial_support_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_father_financial_support_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "child_lifetime_household_composition_biological_mother_present",
-      "text_key": "child_lifetime_household_composition_biological_mother_present",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_biological_father_present",
-        "operator": "in",
-        "value": [
-          2,
-          7
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_biological_mother_stopping_living_together_years",
-      "text_key": "child_lifetime_household_composition_biological_mother_stopping_living_together_years",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_biological_mother_visit_frequency",
-      "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_biological_mother_stopping_living_together_years",
-        "operator": "equals",
-        "value": 2
-      },
-      "options": [
-        {
-          "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_mother_visit_frequency_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "child_lifetime_household_composition_biological_mother_financial_support",
-      "text_key": "child_lifetime_household_composition_biological_mother_financial_support",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_biological_mother_stopping_living_together_years",
-        "operator": "equals",
-        "value": 2
-      },
-      "options": [
-        {
-          "text_key": "child_lifetime_household_composition_biological_mother_financial_support_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_mother_financial_support_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "child_lifetime_household_composition_biological_mother_financial_support_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "child_lifetime_household_composition_children_natural_parents",
-      "text_key": "child_lifetime_household_composition_children_natural_parents",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_biological_mother_stopping_living_together_years",
-        "operator": "equals",
-        "value": 2
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_children_natural_mother_only",
-      "text_key": "child_lifetime_household_composition_children_natural_mother_only",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_biological_mother_stopping_living_together_years",
-        "operator": "equals",
-        "value": 2
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_children_partner_natural_father",
-      "text_key": "child_lifetime_household_composition_children_partner_natural_father",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_children_neither_natural_parent",
-      "text_key": "child_lifetime_household_composition_children_neither_natural_parent",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_children_partner",
-      "text_key": "child_lifetime_household_composition_other_children_partner",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_children",
-      "text_key": "child_lifetime_household_composition_other_children",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_children_both",
-      "text_key": "child_lifetime_household_composition_other_children_both",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_married_living_with_partner",
-      "text_key": "child_lifetime_household_composition_married_living_with_partner",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_number_children_with_partner",
-      "text_key": "child_lifetime_household_composition_number_children_with_partner",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_married_living_with_partner",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_children_date_birth_1",
-      "text_key": "child_lifetime_household_composition_children_date_birth_1",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_children_currently_living_with_1",
-      "text_key": "child_lifetime_household_composition_children_currently_living_with_1",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_children_date_birth_2",
-      "text_key": "child_lifetime_household_composition_children_date_birth_2",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_children_currently_living_with_2",
-      "text_key": "child_lifetime_household_composition_children_currently_living_with_2",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_children_date_birth_3",
-      "text_key": "child_lifetime_household_composition_children_date_birth_3",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_children_currently_living_with_3",
-      "text_key": "child_lifetime_household_composition_children_currently_living_with_3",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_children_date_birth_4",
-      "text_key": "child_lifetime_household_composition_children_date_birth_4",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_children_currently_living_with_4",
-      "text_key": "child_lifetime_household_composition_children_currently_living_with_4",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_live_in_relatioinship",
-      "text_key": "child_lifetime_household_composition_other_live_in_relatioinship",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_most_recent_married_together",
-      "text_key": "child_lifetime_household_composition_other_most_recent_married_together",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_most_recent_parted",
-      "text_key": "child_lifetime_household_composition_other_most_recent_parted",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_most_recent_children",
-      "text_key": "child_lifetime_household_composition_other_most_recent_children",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_most_recent_date_birth_child_1",
-      "text_key": "child_lifetime_household_composition_other_most_recent_date_birth_child_1",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_most_recent_date_birth_child_2",
-      "text_key": "child_lifetime_household_composition_other_most_recent_date_birth_child_2",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_most_recent_date_birth_child_3",
-      "text_key": "child_lifetime_household_composition_other_most_recent_date_birth_child_3",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_most_recent_date_birth_child_4",
-      "text_key": "child_lifetime_household_composition_other_most_recent_date_birth_child_4",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_most_recent_children_living_with_currently",
-      "text_key": "child_lifetime_household_composition_other_most_recent_children_living_with_currently",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_second_recent_married_together",
-      "text_key": "child_lifetime_household_composition_other_second_recent_married_together",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_second_recent_parted",
-      "text_key": "child_lifetime_household_composition_other_second_recent_parted",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_second_recent_children",
-      "text_key": "child_lifetime_household_composition_other_second_recent_children",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_second_recent_date_birth_child_1",
-      "text_key": "child_lifetime_household_composition_other_second_recent_date_birth_child_1",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_second_recent_date_birth_child_2",
-      "text_key": "child_lifetime_household_composition_other_second_recent_date_birth_child_2",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_second_recent_date_birth_child_3",
-      "text_key": "child_lifetime_household_composition_other_second_recent_date_birth_child_3",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_second_recent_date_birth_child_4",
-      "text_key": "child_lifetime_household_composition_other_second_recent_date_birth_child_4",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_second_recent_children_living_with_currently",
-      "text_key": "child_lifetime_household_composition_other_second_recent_children_living_with_currently",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_third_recent_married_together",
-      "text_key": "child_lifetime_household_composition_other_third_recent_married_together",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_third_recent_parted",
-      "text_key": "child_lifetime_household_composition_other_third_recent_parted",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_third_recent_children",
-      "text_key": "child_lifetime_household_composition_other_third_recent_children",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_third_recent_date_birth_child_1",
-      "text_key": "child_lifetime_household_composition_other_third_recent_date_birth_child_1",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_third_recent_date_birth_child_2",
-      "text_key": "child_lifetime_household_composition_other_third_recent_date_birth_child_2",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_third_recent_date_birth_child_3",
-      "text_key": "child_lifetime_household_composition_other_third_recent_date_birth_child_3",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_third_recent_date_birth_child_4",
-      "text_key": "child_lifetime_household_composition_other_third_recent_date_birth_child_4",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_third_recent_children_living_with_currently",
-      "text_key": "child_lifetime_household_composition_other_third_recent_children_living_with_currently",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_live_in_relatioinship",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_children",
-      "text_key": "child_lifetime_household_composition_other_relationship_children",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_children_date_birth_child_1",
-      "text_key": "child_lifetime_household_composition_other_relationship_children_date_birth_child_1",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_1",
-      "text_key": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_1",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_children_date_birth_child_2",
-      "text_key": "child_lifetime_household_composition_other_relationship_children_date_birth_child_2",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_2",
-      "text_key": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_2",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_children_date_birth_child_3",
-      "text_key": "child_lifetime_household_composition_other_relationship_children_date_birth_child_3",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_3",
-      "text_key": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_3",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_children_date_birth_child_4",
-      "text_key": "child_lifetime_household_composition_other_relationship_children_date_birth_child_4",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_4",
-      "text_key": "child_lifetime_household_composition_other_relationship_children_currently_living_with_child_4",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_partner_children",
-      "text_key": "child_lifetime_household_composition_other_relationship_partner_children",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_1",
-      "text_key": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_1",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_partner_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_1",
-      "text_key": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_1",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_partner_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_2",
-      "text_key": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_2",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_partner_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_2",
-      "text_key": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_2",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_partner_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_3",
-      "text_key": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_3",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_partner_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_3",
-      "text_key": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_3",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_partner_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_4",
-      "text_key": "child_lifetime_household_composition_other_relationship_partner_date_birth_child_4",
-      "type": "short",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_partner_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_4",
-      "text_key": "child_lifetime_household_composition_other_relationship_partner_currently_living_with_child_4",
-      "type": "multi",
-      "visible_when": {
-        "item": "child_lifetime_household_composition_other_relationship_partner_children",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "Yes",

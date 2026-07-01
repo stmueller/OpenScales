@@ -1,205 +1,208 @@
 {
-  "scale_info": {
-    "name": "Menstrual History",
-    "code": "PX101101",
-    "abbreviation": "PX101101",
-    "description": "Females answer questions about the frequency and regularity of her menstrual cycle and whether any irregularities were due to breastfeeding. Females also answer questions about whether their periods have stopped.",
-    "domain": "Puberty & Development",
-    "citation": "Carroll, J., Saxena, R., & Welt, C. K. (2012). Environmental and genetic factors influence age at menarche in women with polycystic ovary syndrome. Journal of Pediatric Endocrinology and Metabolism , 25 (5-6), 459-66. Solomon, C. G., Hu, F. B., Dunaif, A., Rich-Edwards, J., Willett, W. C., Hunter, D. J., . . . Manson, J. E. (2001). Long or highly irregular menstrual cycles as a marker for risk of type 2 diabetes mellitus. JAMA, 286 , 2421-2426. Solomon, C. G., Hu, F. B., Dunaif, A., Rich-Edwards, J. E., Stampfer, M. J., Willett. W. C., . . . Manson, J. E. (2002). Menstrual cycle irregularity and risk for future cardiovascular disease. Journal of Clinical Endocrinology and Metabolism, 87 , 2013-2017. Carroll, J., Saxena, R., & Welt, C. K. (2012). Environmental and genetic factors influence age at menarche in women with polycystic ovary syndrome. Journal of Pediatric Endocrinology and Metabolism, 25 (5-6), 459-66. [PhenX: https://www.phenxtoolkit.org/protocols/view/101101]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/101101"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Menstrual History",
+      "code": "PX101101",
+      "abbreviation": "PX101101",
+      "description": "Females answer questions about the frequency and regularity of her menstrual cycle and whether any irregularities were due to breastfeeding. Females also answer questions about whether their periods have stopped.",
+      "domain": "Puberty & Development",
+      "citation": "Carroll, J., Saxena, R., & Welt, C. K. (2012). Environmental and genetic factors influence age at menarche in women with polycystic ovary syndrome. Journal of Pediatric Endocrinology and Metabolism , 25 (5-6), 459-66. Solomon, C. G., Hu, F. B., Dunaif, A., Rich-Edwards, J., Willett, W. C., Hunter, D. J., . . . Manson, J. E. (2001). Long or highly irregular menstrual cycles as a marker for risk of type 2 diabetes mellitus. JAMA, 286 , 2421-2426. Solomon, C. G., Hu, F. B., Dunaif, A., Rich-Edwards, J. E., Stampfer, M. J., Willett. W. C., . . . Manson, J. E. (2002). Menstrual cycle irregularity and risk for future cardiovascular disease. Journal of Clinical Endocrinology and Metabolism, 87 , 2013-2017. Carroll, J., Saxena, R., & Welt, C. K. (2012). Environmental and genetic factors influence age at menarche in women with polycystic ovary syndrome. Journal of Pediatric Endocrinology and Metabolism, 25 (5-6), 459-66. [PhenX: https://www.phenxtoolkit.org/protocols/view/101101]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/101101"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt__8",
+          "value": "_8"
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "no_menstrual_period_3_more_months",
+        "text_key": "no_menstrual_period_3_more_months",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "no_menstrual_period_3_more_months_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "no_menstrual_period_3_more_months_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "no_menstrual_period_3_more_months_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "no_menstrual_period_3_more_months_opt__8",
+            "value": "_8"
+          }
+        ]
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "no_menstrual_period_breastfeeding",
+        "text_key": "no_menstrual_period_breastfeeding",
+        "type": "multi",
+        "visible_when": {
+          "item": "no_menstrual_period_3_more_months",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "option_set": "default"
       },
       {
-        "text_key": "opt__8",
-        "value": "_8"
+        "id": "no_menstrual_period_breastfeeding_pregnant_always",
+        "text_key": "no_menstrual_period_breastfeeding_pregnant_always",
+        "type": "multi",
+        "visible_when": {
+          "item": "no_menstrual_period_breastfeeding",
+          "operator": "equals",
+          "value": 2
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "menstrual_cycle_pattern_age_18_22",
+        "text_key": "menstrual_cycle_pattern_age_18_22",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "menstrual_cycle_pattern_age_18_22_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "menstrual_cycle_pattern_age_18_22_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "menstrual_cycle_pattern_age_18_22_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "menstrual_cycle_pattern_age_18_22_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "menstrual_cycle_typical_days_average",
+        "text_key": "menstrual_cycle_typical_days_average",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "menstrual_cycle_typical_days_average_opt__8",
+            "value": "_8"
+          }
+        ]
+      },
+      {
+        "id": "menstrual_period_stop_permanently",
+        "text_key": "menstrual_period_stop_permanently",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "menstrual_period_stop_permanently_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "menstrual_period_stop_permanently_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "menstrual_period_stop_permanently_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "menstrual_period_stop_permanently_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "menstrual_period_stop_age",
+        "text_key": "menstrual_period_stop_age",
+        "type": "multi",
+        "visible_when": {
+          "item": "menstrual_period_stop_permanently",
+          "operator": "in",
+          "value": [
+            1,
+            2
+          ]
+        },
+        "options": [
+          {
+            "text_key": "menstrual_period_stop_age_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "menstrual_period_stop_age_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "menstrual_period_stop_age_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "menstrual_period_stop_age_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "menstrual_period_stop_age_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "menstrual_period_stop_age_opt_6",
+            "value": 6
+          }
+        ]
       }
     ]
   },
-  "items": [
-    {
-      "id": "no_menstrual_period_3_more_months",
-      "text_key": "no_menstrual_period_3_more_months",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "no_menstrual_period_3_more_months_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "no_menstrual_period_3_more_months_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "no_menstrual_period_3_more_months_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "no_menstrual_period_3_more_months_opt__8",
-          "value": "_8"
-        }
-      ]
-    },
-    {
-      "id": "no_menstrual_period_breastfeeding",
-      "text_key": "no_menstrual_period_breastfeeding",
-      "type": "multi",
-      "visible_when": {
-        "item": "no_menstrual_period_3_more_months",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "no_menstrual_period_breastfeeding_pregnant_always",
-      "text_key": "no_menstrual_period_breastfeeding_pregnant_always",
-      "type": "multi",
-      "visible_when": {
-        "item": "no_menstrual_period_breastfeeding",
-        "operator": "equals",
-        "value": 2
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "menstrual_cycle_pattern_age_18_22",
-      "text_key": "menstrual_cycle_pattern_age_18_22",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "menstrual_cycle_pattern_age_18_22_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "menstrual_cycle_pattern_age_18_22_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "menstrual_cycle_pattern_age_18_22_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "menstrual_cycle_pattern_age_18_22_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "menstrual_cycle_typical_days_average",
-      "text_key": "menstrual_cycle_typical_days_average",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "menstrual_cycle_typical_days_average_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "menstrual_cycle_typical_days_average_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "menstrual_cycle_typical_days_average_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "menstrual_cycle_typical_days_average_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "menstrual_cycle_typical_days_average_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "menstrual_cycle_typical_days_average_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "menstrual_cycle_typical_days_average_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "menstrual_cycle_typical_days_average_opt__8",
-          "value": "_8"
-        }
-      ]
-    },
-    {
-      "id": "menstrual_period_stop_permanently",
-      "text_key": "menstrual_period_stop_permanently",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "menstrual_period_stop_permanently_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "menstrual_period_stop_permanently_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "menstrual_period_stop_permanently_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "menstrual_period_stop_permanently_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "menstrual_period_stop_age",
-      "text_key": "menstrual_period_stop_age",
-      "type": "multi",
-      "visible_when": {
-        "item": "menstrual_period_stop_permanently",
-        "operator": "in",
-        "value": [
-          1,
-          2
-        ]
-      },
-      "options": [
-        {
-          "text_key": "menstrual_period_stop_age_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "menstrual_period_stop_age_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "menstrual_period_stop_age_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "menstrual_period_stop_age_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "menstrual_period_stop_age_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "menstrual_period_stop_age_opt_6",
-          "value": 6
-        }
-      ]
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "No",

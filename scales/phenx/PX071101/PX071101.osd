@@ -1,1298 +1,1301 @@
 {
-  "scale_info": {
-    "name": "Cancer Treatments",
-    "code": "PX071101",
-    "abbreviation": "PX071101",
-    "description": "These questions start by asking if the respondent has had cancer. For respondents who have had cancer, detailed follow-up questions ask about the type of cancer treatment, including surgery, chemotherapy, radiation, and hormone therapy.",
-    "domain": "Physical Activity & Exposures",
-    "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/71101]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/71101"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Cancer Treatments",
+      "code": "PX071101",
+      "abbreviation": "PX071101",
+      "description": "These questions start by asking if the respondent has had cancer. For respondents who have had cancer, detailed follow-up questions ask about the type of cancer treatment, including surgery, chemotherapy, radiation, and hormone therapy.",
+      "domain": "Physical Activity & Exposures",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/71101]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/71101"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "had_cancer",
+        "text_key": "had_cancer",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "had_cancer_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "had_cancer_opt_2",
+            "value": 2
+          }
+        ]
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "cancer_site",
+        "text_key": "cancer_site",
+        "type": "short",
+        "visible_when": {
+          "item": "had_cancer",
+          "operator": "equals",
+          "value": 1
+        }
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "cancer_laterality",
+        "text_key": "cancer_laterality",
+        "type": "multi",
+        "visible_when": {
+          "item": "had_cancer",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "cancer_laterality_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_laterality_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_laterality_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cancer_laterality_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "cancer_diagnosis_date",
+        "text_key": "cancer_diagnosis_date",
+        "type": "short",
+        "visible_when": {
+          "item": "had_cancer",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_diagnosis_age",
+        "text_key": "cancer_diagnosis_age",
+        "type": "short",
+        "visible_when": {
+          "item": "had_cancer",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "cancer_surgery",
+        "text_key": "cancer_surgery",
+        "type": "multi",
+        "visible_when": {
+          "item": "had_cancer",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_surgery_name",
+        "text_key": "cancer_surgery_name",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_surgery",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_surgery_date",
+        "text_key": "cancer_surgery_date",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_surgery",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_surgery_hospital",
+        "text_key": "cancer_surgery_hospital",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_surgery",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_chemotherapy",
+        "text_key": "cancer_chemotherapy",
+        "type": "multi",
+        "visible_when": {
+          "item": "had_cancer",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_chemotherapy_drug_name",
+        "text_key": "cancer_chemotherapy_drug_name",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_chemotherapy",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cancer_chemotherapy_drug_name_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name_opt_12",
+            "value": 12
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name_opt_13",
+            "value": 13
+          }
+        ]
+      },
+      {
+        "id": "cancer_chemotherapy_completed_date",
+        "text_key": "cancer_chemotherapy_completed_date",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_chemotherapy",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_chemotherapy_hospital",
+        "text_key": "cancer_chemotherapy_hospital",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_chemotherapy",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_radiation",
+        "text_key": "cancer_radiation",
+        "type": "multi",
+        "visible_when": {
+          "item": "had_cancer",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_radiation_completed_date",
+        "text_key": "cancer_radiation_completed_date",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_radiation",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_radiation_hospital",
+        "text_key": "cancer_radiation_hospital",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_radiation",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_hormonal_therapy",
+        "text_key": "cancer_hormonal_therapy",
+        "type": "multi",
+        "visible_when": {
+          "item": "had_cancer",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_hormonal_therapy_drug_name",
+        "text_key": "cancer_hormonal_therapy_drug_name",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_hormonal_therapy",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cancer_hormonal_therapy_drug_name_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_hormonal_therapy_drug_name_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_hormonal_therapy_drug_name_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cancer_hormonal_therapy_drug_name_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "cancer_hormonal_therapy_started_date",
+        "text_key": "cancer_hormonal_therapy_started_date",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_hormonal_therapy",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_hormonal_therapy_hospital",
+        "text_key": "cancer_hormonal_therapy_hospital",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_hormonal_therapy",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_other_therapy",
+        "text_key": "cancer_other_therapy",
+        "type": "multi",
+        "visible_when": {
+          "item": "had_cancer",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_other_therapy_name",
+        "text_key": "cancer_other_therapy_name",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_other_therapy",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_other_therapy_started_date",
+        "text_key": "cancer_other_therapy_started_date",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_other_therapy",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_other_therapy_hospital",
+        "text_key": "cancer_other_therapy_hospital",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_other_therapy",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_recurrence",
+        "text_key": "cancer_recurrence",
+        "type": "multi",
+        "visible_when": {
+          "item": "had_cancer",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_recurrence_date",
+        "text_key": "cancer_recurrence_date",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_recurrence",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_recurrence_site",
+        "text_key": "cancer_recurrence_site",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_recurrence",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_recurrence_hospital",
+        "text_key": "cancer_recurrence_hospital",
+        "type": "short",
+        "visible_when": {
+          "item": "had_cancer",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "cancer_second_intro",
+        "text_key": "cancer_second_intro",
+        "type": "inst",
+        "visible_when": {
+          "item": "had_cancer",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "had_second_cancer",
+        "text_key": "had_second_cancer",
+        "type": "multi",
+        "visible_when": {
+          "item": "had_cancer",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "had_second_cancer_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "had_second_cancer_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "cancer_site2",
+        "text_key": "cancer_site2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_laterality2",
+        "text_key": "cancer_laterality2",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cancer_laterality2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_laterality2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_laterality2_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cancer_laterality2_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "cancer_diagnosis_date2",
+        "text_key": "cancer_diagnosis_date2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_diagnosis_age2",
+        "text_key": "cancer_diagnosis_age2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "cancer_surgery2",
+        "text_key": "cancer_surgery2",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_surgery_name2",
+        "text_key": "cancer_surgery_name2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_surgery2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_surgery_date2",
+        "text_key": "cancer_surgery_date2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_surgery2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_surgery_hospital2",
+        "text_key": "cancer_surgery_hospital2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_surgery2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_chemotherapy2",
+        "text_key": "cancer_chemotherapy2",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_chemotherapy_drug_name2",
+        "text_key": "cancer_chemotherapy_drug_name2",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_chemotherapy2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cancer_chemotherapy_drug_name2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name2_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name2_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name2_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name2_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name2_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name2_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name2_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name2_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name2_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name2_opt_12",
+            "value": 12
+          },
+          {
+            "text_key": "cancer_chemotherapy_drug_name2_opt_13",
+            "value": 13
+          }
+        ]
+      },
+      {
+        "id": "cancer_chemotherapy_started_date2",
+        "text_key": "cancer_chemotherapy_started_date2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_chemotherapy2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_chemotherapy_hospital2",
+        "text_key": "cancer_chemotherapy_hospital2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_chemotherapy2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_radiation2",
+        "text_key": "cancer_radiation2",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_radiation_started_date2",
+        "text_key": "cancer_radiation_started_date2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_radiation2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_radiation_hospital2",
+        "text_key": "cancer_radiation_hospital2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_radiation2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_hormonal_therapy2",
+        "text_key": "cancer_hormonal_therapy2",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_hormonal_therapy_drug_name2",
+        "text_key": "cancer_hormonal_therapy_drug_name2",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_hormonal_therapy2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cancer_hormonal_therapy_drug_name2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cancer_hormonal_therapy_drug_name2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cancer_hormonal_therapy_drug_name2_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cancer_hormonal_therapy_drug_name2_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "cancer_hormonal_therapy_started_date2",
+        "text_key": "cancer_hormonal_therapy_started_date2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_hormonal_therapy2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_hormonal_therapy_hospital2",
+        "text_key": "cancer_hormonal_therapy_hospital2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_hormonal_therapy2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_other_therapy2",
+        "text_key": "cancer_other_therapy2",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_other_therapy_name2",
+        "text_key": "cancer_other_therapy_name2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_other_therapy2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_other_therapy_started_date2",
+        "text_key": "cancer_other_therapy_started_date2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_other_therapy2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_other_therapy_hospital2",
+        "text_key": "cancer_other_therapy_hospital2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_other_therapy2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_recurrence2",
+        "text_key": "cancer_recurrence2",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_recurrence_date2",
+        "text_key": "cancer_recurrence_date2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_recurrence2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "date"
+      },
+      {
+        "id": "cancer_recurrence_site2",
+        "text_key": "cancer_recurrence_site2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_recurrence2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "cancer_recurrence_hospital2",
+        "text_key": "cancer_recurrence_hospital2",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "had_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "had_second_cancer",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cancer_recurrence2",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
       }
     ]
   },
-  "items": [
-    {
-      "id": "had_cancer",
-      "text_key": "had_cancer",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "had_cancer_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "had_cancer_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "cancer_site",
-      "text_key": "cancer_site",
-      "type": "short",
-      "visible_when": {
-        "item": "had_cancer",
-        "operator": "equals",
-        "value": 1
-      }
-    },
-    {
-      "id": "cancer_laterality",
-      "text_key": "cancer_laterality",
-      "type": "multi",
-      "visible_when": {
-        "item": "had_cancer",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "cancer_laterality_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "cancer_laterality_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "cancer_laterality_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "cancer_laterality_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "cancer_diagnosis_date",
-      "text_key": "cancer_diagnosis_date",
-      "type": "short",
-      "visible_when": {
-        "item": "had_cancer",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_diagnosis_age",
-      "text_key": "cancer_diagnosis_age",
-      "type": "short",
-      "visible_when": {
-        "item": "had_cancer",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "cancer_surgery",
-      "text_key": "cancer_surgery",
-      "type": "multi",
-      "visible_when": {
-        "item": "had_cancer",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_surgery_name",
-      "text_key": "cancer_surgery_name",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_surgery",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_surgery_date",
-      "text_key": "cancer_surgery_date",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_surgery",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_surgery_hospital",
-      "text_key": "cancer_surgery_hospital",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_surgery",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_chemotherapy",
-      "text_key": "cancer_chemotherapy",
-      "type": "multi",
-      "visible_when": {
-        "item": "had_cancer",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_chemotherapy_drug_name",
-      "text_key": "cancer_chemotherapy_drug_name",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_chemotherapy",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "cancer_chemotherapy_drug_name_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name_opt_8",
-          "value": 8
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name_opt_9",
-          "value": 9
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name_opt_10",
-          "value": 10
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name_opt_11",
-          "value": 11
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name_opt_12",
-          "value": 12
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name_opt_13",
-          "value": 13
-        }
-      ]
-    },
-    {
-      "id": "cancer_chemotherapy_completed_date",
-      "text_key": "cancer_chemotherapy_completed_date",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_chemotherapy",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_chemotherapy_hospital",
-      "text_key": "cancer_chemotherapy_hospital",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_chemotherapy",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_radiation",
-      "text_key": "cancer_radiation",
-      "type": "multi",
-      "visible_when": {
-        "item": "had_cancer",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_radiation_completed_date",
-      "text_key": "cancer_radiation_completed_date",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_radiation",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_radiation_hospital",
-      "text_key": "cancer_radiation_hospital",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_radiation",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_hormonal_therapy",
-      "text_key": "cancer_hormonal_therapy",
-      "type": "multi",
-      "visible_when": {
-        "item": "had_cancer",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_hormonal_therapy_drug_name",
-      "text_key": "cancer_hormonal_therapy_drug_name",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_hormonal_therapy",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "cancer_hormonal_therapy_drug_name_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "cancer_hormonal_therapy_drug_name_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "cancer_hormonal_therapy_drug_name_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "cancer_hormonal_therapy_drug_name_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "cancer_hormonal_therapy_started_date",
-      "text_key": "cancer_hormonal_therapy_started_date",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_hormonal_therapy",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_hormonal_therapy_hospital",
-      "text_key": "cancer_hormonal_therapy_hospital",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_hormonal_therapy",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_other_therapy",
-      "text_key": "cancer_other_therapy",
-      "type": "multi",
-      "visible_when": {
-        "item": "had_cancer",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_other_therapy_name",
-      "text_key": "cancer_other_therapy_name",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_other_therapy",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_other_therapy_started_date",
-      "text_key": "cancer_other_therapy_started_date",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_other_therapy",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_other_therapy_hospital",
-      "text_key": "cancer_other_therapy_hospital",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_other_therapy",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_recurrence",
-      "text_key": "cancer_recurrence",
-      "type": "multi",
-      "visible_when": {
-        "item": "had_cancer",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_recurrence_date",
-      "text_key": "cancer_recurrence_date",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_recurrence",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_recurrence_site",
-      "text_key": "cancer_recurrence_site",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_recurrence",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_recurrence_hospital",
-      "text_key": "cancer_recurrence_hospital",
-      "type": "short",
-      "visible_when": {
-        "item": "had_cancer",
-        "operator": "equals",
-        "value": 1
-      }
-    },
-    {
-      "id": "cancer_second_intro",
-      "text_key": "cancer_second_intro",
-      "type": "inst",
-      "visible_when": {
-        "item": "had_cancer",
-        "operator": "equals",
-        "value": 1
-      }
-    },
-    {
-      "id": "had_second_cancer",
-      "text_key": "had_second_cancer",
-      "type": "multi",
-      "visible_when": {
-        "item": "had_cancer",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "had_second_cancer_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "had_second_cancer_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "cancer_site2",
-      "text_key": "cancer_site2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_laterality2",
-      "text_key": "cancer_laterality2",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "cancer_laterality2_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "cancer_laterality2_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "cancer_laterality2_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "cancer_laterality2_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "cancer_diagnosis_date2",
-      "text_key": "cancer_diagnosis_date2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_diagnosis_age2",
-      "text_key": "cancer_diagnosis_age2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "cancer_surgery2",
-      "text_key": "cancer_surgery2",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_surgery_name2",
-      "text_key": "cancer_surgery_name2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_surgery2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_surgery_date2",
-      "text_key": "cancer_surgery_date2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_surgery2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_surgery_hospital2",
-      "text_key": "cancer_surgery_hospital2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_surgery2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_chemotherapy2",
-      "text_key": "cancer_chemotherapy2",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_chemotherapy_drug_name2",
-      "text_key": "cancer_chemotherapy_drug_name2",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_chemotherapy2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "cancer_chemotherapy_drug_name2_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name2_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name2_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name2_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name2_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name2_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name2_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name2_opt_8",
-          "value": 8
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name2_opt_9",
-          "value": 9
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name2_opt_10",
-          "value": 10
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name2_opt_11",
-          "value": 11
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name2_opt_12",
-          "value": 12
-        },
-        {
-          "text_key": "cancer_chemotherapy_drug_name2_opt_13",
-          "value": 13
-        }
-      ]
-    },
-    {
-      "id": "cancer_chemotherapy_started_date2",
-      "text_key": "cancer_chemotherapy_started_date2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_chemotherapy2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_chemotherapy_hospital2",
-      "text_key": "cancer_chemotherapy_hospital2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_chemotherapy2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_radiation2",
-      "text_key": "cancer_radiation2",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_radiation_started_date2",
-      "text_key": "cancer_radiation_started_date2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_radiation2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_radiation_hospital2",
-      "text_key": "cancer_radiation_hospital2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_radiation2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_hormonal_therapy2",
-      "text_key": "cancer_hormonal_therapy2",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_hormonal_therapy_drug_name2",
-      "text_key": "cancer_hormonal_therapy_drug_name2",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_hormonal_therapy2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "cancer_hormonal_therapy_drug_name2_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "cancer_hormonal_therapy_drug_name2_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "cancer_hormonal_therapy_drug_name2_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "cancer_hormonal_therapy_drug_name2_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "cancer_hormonal_therapy_started_date2",
-      "text_key": "cancer_hormonal_therapy_started_date2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_hormonal_therapy2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_hormonal_therapy_hospital2",
-      "text_key": "cancer_hormonal_therapy_hospital2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_hormonal_therapy2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_other_therapy2",
-      "text_key": "cancer_other_therapy2",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_other_therapy_name2",
-      "text_key": "cancer_other_therapy_name2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_other_therapy2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_other_therapy_started_date2",
-      "text_key": "cancer_other_therapy_started_date2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_other_therapy2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_other_therapy_hospital2",
-      "text_key": "cancer_other_therapy_hospital2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_other_therapy2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_recurrence2",
-      "text_key": "cancer_recurrence2",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_recurrence_date2",
-      "text_key": "cancer_recurrence_date2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_recurrence2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "date"
-    },
-    {
-      "id": "cancer_recurrence_site2",
-      "text_key": "cancer_recurrence_site2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_recurrence2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "cancer_recurrence_hospital2",
-      "text_key": "cancer_recurrence_hospital2",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "had_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "had_second_cancer",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cancer_recurrence2",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "Yes",

@@ -1,273 +1,276 @@
 {
-  "scale_info": {
-    "name": "Breast or Bottle Feeding Patterns",
-    "code": "PX080101",
-    "abbreviation": "PX080101",
-    "description": "These parent-reported, self-administered questions obtain information on the infants feeding schedule, frequency of adding supplemental foods, and feeding lengths.",
-    "domain": "Oral Health & Early Childhood",
-    "citation": "Warren, J. J., Weber-Gasparoni, K., Marshall, T. A., Drake, D. R., Dehkordi-Vakil, F., Dawson, D. V., & Tharp, K. M. (2009). A longitudinal study of dental caries risk among very young low SES children. Community Dentistry and Oral Epidemiology, 37 (2), 116–122. [PhenX: https://www.phenxtoolkit.org/protocols/view/80101]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/80101"
-  },
-  "option_sets": {
-    "default": [
-      {
-        "text_key": "opt_1",
-        "value": 1
-      },
-      {
-        "text_key": "opt_2",
-        "value": 2
-      },
-      {
-        "text_key": "opt_3",
-        "value": 3
-      },
-      {
-        "text_key": "opt_4",
-        "value": 4
-      },
-      {
-        "text_key": "opt_5",
-        "value": 5
-      },
-      {
-        "text_key": "opt_6",
-        "value": 6
-      }
-    ]
-  },
-  "items": [
-    {
-      "id": "feeding_frequency",
-      "text_key": "feeding_frequency",
-      "type": "multi",
-      "options": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Breast or Bottle Feeding Patterns",
+      "code": "PX080101",
+      "abbreviation": "PX080101",
+      "description": "These parent-reported, self-administered questions obtain information on the infants feeding schedule, frequency of adding supplemental foods, and feeding lengths.",
+      "domain": "Oral Health & Early Childhood",
+      "citation": "Warren, J. J., Weber-Gasparoni, K., Marshall, T. A., Drake, D. R., Dehkordi-Vakil, F., Dawson, D. V., & Tharp, K. M. (2009). A longitudinal study of dental caries risk among very young low SES children. Community Dentistry and Oral Epidemiology, 37 (2), 116–122. [PhenX: https://www.phenxtoolkit.org/protocols/view/80101]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/80101"
+    },
+    "option_sets": {
+      "default": [
         {
-          "text_key": "feeding_frequency_opt_1",
+          "text_key": "opt_1",
           "value": 1
         },
         {
-          "text_key": "feeding_frequency_opt_2",
+          "text_key": "opt_2",
           "value": 2
         },
         {
-          "text_key": "feeding_frequency_opt_3",
+          "text_key": "opt_3",
           "value": 3
         },
         {
-          "text_key": "feeding_frequency_opt_4",
+          "text_key": "opt_4",
           "value": 4
         },
         {
-          "text_key": "feeding_frequency_opt_5",
+          "text_key": "opt_5",
           "value": 5
         },
         {
-          "text_key": "feeding_frequency_opt_6",
+          "text_key": "opt_6",
           "value": 6
-        },
-        {
-          "text_key": "feeding_frequency_opt_7",
-          "value": 7
         }
       ]
     },
-    {
-      "id": "bed_with_feeding_frequency",
-      "text_key": "bed_with_feeding_frequency",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "bed_with_feeding_frequency_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "bed_with_feeding_frequency_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "bed_with_feeding_frequency_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "bed_with_feeding_frequency_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "bed_with_feeding_frequency_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "feeding_bottle_past_two_weeks",
-      "text_key": "feeding_bottle_past_two_weeks",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "feeding_bottle_past_two_weeks_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "feeding_bottle_past_two_weeks_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "feeding_bottle_vitamin_mineral",
-      "text_key": "feeding_bottle_vitamin_mineral",
-      "type": "multi",
-      "visible_when": {
-        "item": "feeding_bottle_past_two_weeks",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "feeding_bottle_baby_cereal",
-      "text_key": "feeding_bottle_baby_cereal",
-      "type": "multi",
-      "visible_when": {
-        "item": "feeding_bottle_past_two_weeks",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "feeding_bottle_sweetener",
-      "text_key": "feeding_bottle_sweetener",
-      "type": "multi",
-      "visible_when": {
-        "item": "feeding_bottle_past_two_weeks",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "feeding_bottle_medicine",
-      "text_key": "feeding_bottle_medicine",
-      "type": "multi",
-      "visible_when": {
-        "item": "feeding_bottle_past_two_weeks",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "feeding_bottle_other",
-      "text_key": "feeding_bottle_other",
-      "type": "multi",
-      "visible_when": {
-        "item": "feeding_bottle_past_two_weeks",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "feeding_bottle_other_item",
-      "text_key": "feeding_bottle_other_item",
-      "type": "short",
-      "visible_when": {
-        "all": [
+    "items": [
+      {
+        "id": "feeding_frequency",
+        "text_key": "feeding_frequency",
+        "type": "multi",
+        "options": [
           {
-            "item": "feeding_bottle_other",
-            "operator": "equals",
+            "text_key": "feeding_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "feeding_frequency_opt_2",
             "value": 2
           },
           {
-            "item": "feeding_bottle_other",
-            "operator": "equals",
+            "text_key": "feeding_frequency_opt_3",
             "value": 3
           },
           {
-            "item": "feeding_bottle_other",
-            "operator": "equals",
+            "text_key": "feeding_frequency_opt_4",
             "value": 4
           },
           {
-            "item": "feeding_bottle_other",
-            "operator": "equals",
+            "text_key": "feeding_frequency_opt_5",
             "value": 5
           },
           {
-            "item": "feeding_bottle_other",
-            "operator": "equals",
+            "text_key": "feeding_frequency_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "feeding_frequency_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "bed_with_feeding_frequency",
+        "text_key": "bed_with_feeding_frequency",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "bed_with_feeding_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "bed_with_feeding_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "bed_with_feeding_frequency_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "bed_with_feeding_frequency_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "bed_with_feeding_frequency_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "feeding_bottle_past_two_weeks",
+        "text_key": "feeding_bottle_past_two_weeks",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "feeding_bottle_past_two_weeks_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "feeding_bottle_past_two_weeks_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "feeding_bottle_vitamin_mineral",
+        "text_key": "feeding_bottle_vitamin_mineral",
+        "type": "multi",
+        "visible_when": {
+          "item": "feeding_bottle_past_two_weeks",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "feeding_bottle_baby_cereal",
+        "text_key": "feeding_bottle_baby_cereal",
+        "type": "multi",
+        "visible_when": {
+          "item": "feeding_bottle_past_two_weeks",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "feeding_bottle_sweetener",
+        "text_key": "feeding_bottle_sweetener",
+        "type": "multi",
+        "visible_when": {
+          "item": "feeding_bottle_past_two_weeks",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "feeding_bottle_medicine",
+        "text_key": "feeding_bottle_medicine",
+        "type": "multi",
+        "visible_when": {
+          "item": "feeding_bottle_past_two_weeks",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "feeding_bottle_other",
+        "text_key": "feeding_bottle_other",
+        "type": "multi",
+        "visible_when": {
+          "item": "feeding_bottle_past_two_weeks",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "feeding_bottle_other_item",
+        "text_key": "feeding_bottle_other_item",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "feeding_bottle_other",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "feeding_bottle_other",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "feeding_bottle_other",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "feeding_bottle_other",
+              "operator": "equals",
+              "value": 5
+            },
+            {
+              "item": "feeding_bottle_other",
+              "operator": "equals",
+              "value": 6
+            }
+          ]
+        }
+      },
+      {
+        "id": "breastfed_fed_past_7_days",
+        "text_key": "breastfed_fed_past_7_days",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "breastfed_fed_past_7_days_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breastfed_fed_past_7_days_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "breastfeeding_session_length",
+        "text_key": "breastfeeding_session_length",
+        "type": "multi",
+        "visible_when": {
+          "item": "breastfed_fed_past_7_days",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "breastfeeding_session_length_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breastfeeding_session_length_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "breastfeeding_session_length_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "breastfeeding_session_length_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "breastfeeding_session_length_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "breastfeeding_session_length_opt_6",
             "value": 6
           }
         ]
+      },
+      {
+        "id": "pumped_breast_milk_times",
+        "text_key": "pumped_breast_milk_times",
+        "type": "short",
+        "visible_when": {
+          "item": "breastfed_fed_past_7_days",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
       }
-    },
-    {
-      "id": "breastfed_fed_past_7_days",
-      "text_key": "breastfed_fed_past_7_days",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "breastfed_fed_past_7_days_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "breastfed_fed_past_7_days_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "breastfeeding_session_length",
-      "text_key": "breastfeeding_session_length",
-      "type": "multi",
-      "visible_when": {
-        "item": "breastfed_fed_past_7_days",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "breastfeeding_session_length_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "breastfeeding_session_length_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "breastfeeding_session_length_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "breastfeeding_session_length_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "breastfeeding_session_length_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "breastfeeding_session_length_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "pumped_breast_milk_times",
-      "text_key": "pumped_breast_milk_times",
-      "type": "short",
-      "visible_when": {
-        "item": "breastfed_fed_past_7_days",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    }
-  ],
+    ]
+  },
   "translations": {
     "en": {
       "opt_1": "Never",

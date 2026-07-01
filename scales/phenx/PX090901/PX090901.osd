@@ -1,2164 +1,2167 @@
 {
-  "scale_info": {
-    "name": "Personal and Family History of Respiratory Symptoms/Diseases - Adult",
-    "code": "PX090901",
-    "abbreviation": "PX090901",
-    "description": "This protocol obtains information about the personal history of respiratory symptoms and illnesses. Duration of disease, other allergic diseases, occupational history, smoking status, and family history of selected respiratory diseases are also assessed. The PhenX Working Group added supplemental qu",
-    "domain": "Respiratory",
-    "citation": "Ferris, B. G. (1978). American Thoracic Society (ATS) statement: Epidemiology standardization project. American Review of Respiratory Disease, 118, 1-120. [PhenX: https://www.phenxtoolkit.org/protocols/view/90901]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/90901"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Personal and Family History of Respiratory Symptoms/Diseases - Adult",
+      "code": "PX090901",
+      "abbreviation": "PX090901",
+      "description": "This protocol obtains information about the personal history of respiratory symptoms and illnesses. Duration of disease, other allergic diseases, occupational history, smoking status, and family history of selected respiratory diseases are also assessed. The PhenX Working Group added supplemental qu",
+      "domain": "Respiratory",
+      "citation": "Ferris, B. G. (1978). American Thoracic Society (ATS) statement: Epidemiology standardization project. American Review of Respiratory Disease, 118, 1-120. [PhenX: https://www.phenxtoolkit.org/protocols/view/90901]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/90901"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "resp_history_intro",
+        "text_key": "resp_history_intro",
+        "type": "inst"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "cough_history",
+        "text_key": "cough_history",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "cough_frequently",
+        "text_key": "cough_frequently",
+        "type": "multi",
+        "visible_when": {
+          "item": "cough_history",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "cough_in_morning",
+        "text_key": "cough_in_morning",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "cough_day_night",
+        "text_key": "cough_day_night",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "cough_consecutive_months",
+        "text_key": "cough_consecutive_months",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "cough_frequently",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cough_history",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cough_in_morning",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cough_day_night",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "cough_consecutive_months_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cough_consecutive_months_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cough_consecutive_months_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "cough_years",
+        "text_key": "cough_years",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "cough_history",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cough_frequently",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cough_in_morning",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "cough_day_night",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "cough_years_coded",
+        "text_key": "cough_years_coded",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "cough_years_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "phlegm_history",
+        "text_key": "phlegm_history",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "phlegm_frequently",
+        "text_key": "phlegm_frequently",
+        "type": "multi",
+        "visible_when": {
+          "item": "phlegm_history",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "phlegm_in_morning",
+        "text_key": "phlegm_in_morning",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "phlegm_day_night",
+        "text_key": "phlegm_day_night",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "phlegm_consecutive_months",
+        "text_key": "phlegm_consecutive_months",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "phlegm_history",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "phlegm_frequently",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "phlegm_in_morning",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "phlegm_day_night",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "phlegm_consecutive_months_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "phlegm_consecutive_months_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "phlegm_consecutive_months_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "phlegm_years",
+        "text_key": "phlegm_years",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "phlegm_history",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "phlegm_frequently",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "phlegm_in_morning",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "phlegm_day_night",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "phlegm_years_coded",
+        "text_key": "phlegm_years_coded",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "phlegm_years_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "cough_phlegm_period_episode",
+        "text_key": "cough_phlegm_period_episode",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "cough_phlegm_episode_lasting_time",
+        "text_key": "cough_phlegm_episode_lasting_time",
+        "type": "short",
+        "visible_when": {
+          "item": "cough_phlegm_period_episode",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "cough_phlegm_episode_lasting_time_coded",
+        "text_key": "cough_phlegm_episode_lasting_time_coded",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "cough_phlegm_episode_lasting_time_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "wheezing_have_cold",
+        "text_key": "wheezing_have_cold",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "wheezing_apart_from_cold",
+        "text_key": "wheezing_apart_from_cold",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "wheezing_day_night",
+        "text_key": "wheezing_day_night",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "wheezing_years",
+        "text_key": "wheezing_years",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "wheezing_have_cold",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "wheezing_apart_from_cold",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "wheezing_day_night",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "wheezing_years_coded",
+        "text_key": "wheezing_years_coded",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "wheezing_years_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "wheezing_attack_ever",
+        "text_key": "wheezing_attack_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "wheezing_first_age",
+        "text_key": "wheezing_first_age",
+        "type": "short",
+        "visible_when": {
+          "item": "wheezing_attack_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "wheezing_first_age_coded",
+        "text_key": "wheezing_first_age_coded",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "wheezing_first_age_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "wheezing_attack_multiple_episodes",
+        "text_key": "wheezing_attack_multiple_episodes",
+        "type": "multi",
+        "visible_when": {
+          "item": "wheezing_attack_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "wheezing_attack_multiple_episodes_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "wheezing_attack_multiple_episodes_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "wheezing_attack_multiple_episodes_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "wheezing_attack_medicine_treatment_ever",
+        "text_key": "wheezing_attack_medicine_treatment_ever",
+        "type": "multi",
+        "visible_when": {
+          "item": "wheezing_attack_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "wheezing_attack_medicine_treatment_ever_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "wheezing_attack_medicine_treatment_ever_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "wheezing_attack_medicine_treatment_ever_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "breathlessness_condition_nature",
+        "text_key": "breathlessness_condition_nature",
+        "type": "short"
+      },
+      {
+        "id": "inst2_090901",
+        "text_key": "inst2_090901",
+        "type": "inst"
+      },
+      {
+        "id": "breathlessness_hurrying_slight_hill",
+        "text_key": "breathlessness_hurrying_slight_hill",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "breathlessness_need_walk_slower",
+        "text_key": "breathlessness_need_walk_slower",
+        "type": "multi",
+        "visible_when": {
+          "item": "breathlessness_hurrying_slight_hill",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "breathlessness_need_walk_slower_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breathlessness_need_walk_slower_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "breathlessness_need_walk_slower_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "breathlessness_need_stop_own_pace",
+        "text_key": "breathlessness_need_stop_own_pace",
+        "type": "multi",
+        "visible_when": {
+          "item": "breathlessness_hurrying_slight_hill",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "breathlessness_need_stop_own_pace_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breathlessness_need_stop_own_pace_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "breathlessness_need_stop_own_pace_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "breathlessness_need_stop_100_yards",
+        "text_key": "breathlessness_need_stop_100_yards",
+        "type": "multi",
+        "visible_when": {
+          "item": "breathlessness_hurrying_slight_hill",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "breathlessness_need_stop_100_yards_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breathlessness_need_stop_100_yards_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "breathlessness_need_stop_100_yards_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "breathlessness_leave_house_dressing_undressing",
+        "text_key": "breathlessness_leave_house_dressing_undressing",
+        "type": "multi",
+        "visible_when": {
+          "item": "breathlessness_hurrying_slight_hill",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "breathlessness_leave_house_dressing_undressing_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "breathlessness_leave_house_dressing_undressing_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "breathlessness_leave_house_dressing_undressing_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "cold_usually_go_to_chest",
+        "text_key": "cold_usually_go_to_chest",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "cold_usually_go_to_chest_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cold_usually_go_to_chest_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cold_usually_go_to_chest_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "chest_illness_keep_home_bed",
+        "text_key": "chest_illness_keep_home_bed",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "chest_illness_phlegm",
+        "text_key": "chest_illness_phlegm",
+        "type": "multi",
+        "visible_when": {
+          "item": "chest_illness_keep_home_bed",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "chest_illness_phlegm_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "chest_illness_phlegm_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "chest_illness_phlegm_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "chest_illness_phlegm_number",
+        "text_key": "chest_illness_phlegm_number",
+        "type": "short",
+        "visible_when": {
+          "item": "chest_illness_phlegm",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number",
+        "number_min": 1,
+        "number_max": 99
+      },
+      {
+        "id": "chest_illness_phlegm_lasting_week",
+        "text_key": "chest_illness_phlegm_lasting_week",
+        "type": "multi",
+        "visible_when": {
+          "item": "chest_illness_phlegm",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "chest_illness_phlegm_lasting_week_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "chest_illness_phlegm_lasting_week_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "lung_trouble_before_age_16",
+        "text_key": "lung_trouble_before_age_16",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "bronchitis_ever",
+        "text_key": "bronchitis_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "bronchitis_doctor_confirmed",
+        "text_key": "bronchitis_doctor_confirmed",
+        "type": "multi",
+        "visible_when": {
+          "item": "bronchitis_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "bronchitis_doctor_confirmed_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "bronchitis_doctor_confirmed_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "bronchitis_doctor_confirmed_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "bronchitis_first_age",
+        "text_key": "bronchitis_first_age",
+        "type": "short",
+        "visible_when": {
+          "item": "bronchitis_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "bronchitis_first_age_coded",
+        "text_key": "bronchitis_first_age_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "bronchitis_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "bronchitis_first_age_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "pneumonia_ever",
+        "text_key": "pneumonia_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "pneumonia_doctor_confirmed",
+        "text_key": "pneumonia_doctor_confirmed",
+        "type": "multi",
+        "visible_when": {
+          "item": "pneumonia_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "pneumonia_doctor_confirmed_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pneumonia_doctor_confirmed_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pneumonia_doctor_confirmed_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "pneumonia_first_age",
+        "text_key": "pneumonia_first_age",
+        "type": "short",
+        "visible_when": {
+          "item": "pneumonia_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "pneumonia_first_age_coded",
+        "text_key": "pneumonia_first_age_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "pneumonia_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "pneumonia_first_age_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "hay_fever_ever",
+        "text_key": "hay_fever_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "hay_fever_doctor_confirmed",
+        "text_key": "hay_fever_doctor_confirmed",
+        "type": "multi",
+        "visible_when": {
+          "item": "hay_fever_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "hay_fever_doctor_confirmed_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "hay_fever_doctor_confirmed_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "hay_fever_doctor_confirmed_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "hay_fever_start_age",
+        "text_key": "hay_fever_start_age",
+        "type": "short",
+        "visible_when": {
+          "item": "hay_fever_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "hay_fever_start_age_coded",
+        "text_key": "hay_fever_start_age_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "hay_fever_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "hay_fever_start_age_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "chronic_bronchitis_ever",
+        "text_key": "chronic_bronchitis_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "chronic_bronchitis_still_have",
+        "text_key": "chronic_bronchitis_still_have",
+        "type": "multi",
+        "visible_when": {
+          "item": "chronic_bronchitis_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "chronic_bronchitis_still_have_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "chronic_bronchitis_still_have_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "chronic_bronchitis_still_have_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "chronic_bronchitis_doctor_confirmed",
+        "text_key": "chronic_bronchitis_doctor_confirmed",
+        "type": "multi",
+        "visible_when": {
+          "item": "chronic_bronchitis_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "chronic_bronchitis_doctor_confirmed_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "chronic_bronchitis_doctor_confirmed_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "chronic_bronchitis_doctor_confirmed_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "chronic_bronchitis_start_age",
+        "text_key": "chronic_bronchitis_start_age",
+        "type": "short",
+        "visible_when": {
+          "item": "chronic_bronchitis_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "chronic_bronchitis_start_age_coded",
+        "text_key": "chronic_bronchitis_start_age_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "chronic_bronchitis_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "chronic_bronchitis_start_age_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "emphysema_ever",
+        "text_key": "emphysema_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "emphysema_still_have",
+        "text_key": "emphysema_still_have",
+        "type": "multi",
+        "visible_when": {
+          "item": "emphysema_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "emphysema_still_have_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "emphysema_still_have_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "emphysema_still_have_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "emphysema_doctor_confirmed",
+        "text_key": "emphysema_doctor_confirmed",
+        "type": "multi",
+        "visible_when": {
+          "item": "emphysema_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "emphysema_doctor_confirmed_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "emphysema_doctor_confirmed_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "emphysema_doctor_confirmed_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "emphysema_start_age",
+        "text_key": "emphysema_start_age",
+        "type": "short",
+        "visible_when": {
+          "item": "emphysema_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "emphysema_start_age_coded",
+        "text_key": "emphysema_start_age_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "emphysema_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "emphysema_start_age_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "asthma_ever",
+        "text_key": "asthma_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "asthma_still_have",
+        "text_key": "asthma_still_have",
+        "type": "multi",
+        "visible_when": {
+          "item": "asthma_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "asthma_still_have_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "asthma_still_have_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "asthma_still_have_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "asthma_doctor_confirmed",
+        "text_key": "asthma_doctor_confirmed",
+        "type": "multi",
+        "visible_when": {
+          "item": "asthma_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "asthma_doctor_confirmed_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "asthma_doctor_confirmed_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "asthma_doctor_confirmed_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "asthma_start_age",
+        "text_key": "asthma_start_age",
+        "type": "short",
+        "visible_when": {
+          "item": "asthma_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "asthma_start_age_coded",
+        "text_key": "asthma_start_age_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "asthma_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "asthma_start_age_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "asthma_stop_age",
+        "text_key": "asthma_stop_age",
+        "type": "short",
+        "visible_when": {
+          "item": "asthma_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "asthma_stop_age_coded",
+        "text_key": "asthma_stop_age_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "asthma_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "asthma_stop_age_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "other_chest_illness_ever",
+        "text_key": "other_chest_illness_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "other_chest_illness_specify",
+        "text_key": "other_chest_illness_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "other_chest_illness_ever",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "chest_operation_ever",
+        "text_key": "chest_operation_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "chest_operation_specify",
+        "text_key": "chest_operation_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "chest_operation_ever",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "chest_injury_ever",
+        "text_key": "chest_injury_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "chest_injury_specify",
+        "text_key": "chest_injury_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "chest_injury_ever",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "heart_trouble_ever",
+        "text_key": "heart_trouble_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "heart_trouble_treatment_ever",
+        "text_key": "heart_trouble_treatment_ever",
+        "type": "multi",
+        "visible_when": {
+          "item": "heart_trouble_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "heart_trouble_treatment_ever_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "heart_trouble_treatment_ever_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "heart_trouble_treatment_ever_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "high_blood_pressure_ever",
+        "text_key": "high_blood_pressure_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "high_blood_pressure_treatment_ever",
+        "text_key": "high_blood_pressure_treatment_ever",
+        "type": "multi",
+        "visible_when": {
+          "item": "high_blood_pressure_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "high_blood_pressure_treatment_ever_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "high_blood_pressure_treatment_ever_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "high_blood_pressure_treatment_ever_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "full_time_ever",
+        "text_key": "full_time_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "dusty_job_ever",
+        "text_key": "dusty_job_ever",
+        "type": "multi",
+        "visible_when": {
+          "item": "full_time_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "dusty_job_ever_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "dusty_job_ever_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "dusty_job_ever_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "dusty_job_industry_specify",
+        "text_key": "dusty_job_industry_specify",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "dusty_job_ever",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "full_time_ever",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "dusty_job_total_years",
+        "text_key": "dusty_job_total_years",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "full_time_ever",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "dusty_job_ever",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "dusty_job_exposure_degree",
+        "text_key": "dusty_job_exposure_degree",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "full_time_ever",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "dusty_job_ever",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "dusty_job_exposure_degree_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "dusty_job_exposure_degree_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "dusty_job_exposure_degree_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "gas_chemical_fumes_exposed_ever",
+        "text_key": "gas_chemical_fumes_exposed_ever",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "gas_chemical_fumes_exposed_ever_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "gas_chemical_fumes_exposed_ever_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "gas_chemical_fumes_exposed_ever_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "gas_chemical_fumes_industry_specify",
+        "text_key": "gas_chemical_fumes_industry_specify",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "full_time_ever",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "gas_chemical_fumes_exposed_ever",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "gas_chemical_fumes_total_years",
+        "text_key": "gas_chemical_fumes_total_years",
+        "type": "short",
+        "visible_when": {
+          "all": [
+            {
+              "item": "full_time_ever",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "gas_chemical_fumes_exposed_ever",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "gas_chemical_fumes_exposure_degree",
+        "text_key": "gas_chemical_fumes_exposure_degree",
+        "type": "multi",
+        "visible_when": {
+          "all": [
+            {
+              "item": "full_time_ever",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "gas_chemical_fumes_exposed_ever",
+              "operator": "equals",
+              "value": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "gas_chemical_fumes_exposure_degree_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "gas_chemical_fumes_exposure_degree_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "gas_chemical_fumes_exposure_degree_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "longest_job_occupation",
+        "text_key": "longest_job_occupation",
+        "type": "short"
+      },
+      {
+        "id": "longest_job_years",
+        "text_key": "longest_job_years",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "longest_job_title",
+        "text_key": "longest_job_title",
+        "type": "short"
+      },
+      {
+        "id": "longest_job_business_field_industry",
+        "text_key": "longest_job_business_field_industry",
+        "type": "short"
+      },
+      {
+        "id": "smoking_cigarettes_ever",
+        "text_key": "smoking_cigarettes_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "smoking_cigarettes_now",
+        "text_key": "smoking_cigarettes_now",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoking_cigarettes_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "smoking_cigarettes_now_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "smoking_cigarettes_now_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "smoking_cigarettes_now_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "smoking_cigarettes_start_age",
+        "text_key": "smoking_cigarettes_start_age",
+        "type": "short",
+        "visible_when": {
+          "item": "smoking_cigarettes_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "smoking_cigarettes_start_age_coded",
+        "text_key": "smoking_cigarettes_start_age_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoking_cigarettes_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "smoking_cigarettes_start_age_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "smoking_cigarettes_stop_age",
+        "text_key": "smoking_cigarettes_stop_age",
+        "type": "short",
+        "visible_when": {
+          "item": "smoking_cigarettes_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "smoking_cigarettes_stop_age_coded",
+        "text_key": "smoking_cigarettes_stop_age_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoking_cigarettes_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "smoking_cigarettes_stop_age_coded_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "smoking_cigarettes_stop_age_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "smoking_cigarettes_quantity_day_now",
+        "text_key": "smoking_cigarettes_quantity_day_now",
+        "type": "short",
+        "visible_when": {
+          "item": "smoking_cigarettes_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "smoking_cigarettes_quantity_day_now_coded",
+        "text_key": "smoking_cigarettes_quantity_day_now_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoking_cigarettes_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "smoking_cigarettes_quantity_day_now_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "smoking_cigarettes_quantity_day_average",
+        "text_key": "smoking_cigarettes_quantity_day_average",
+        "type": "short",
+        "visible_when": {
+          "item": "smoking_cigarettes_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "smoking_cigarettes_quantity_day_average_coded",
+        "text_key": "smoking_cigarettes_quantity_day_average_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoking_cigarettes_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "smoking_cigarettes_quantity_day_average_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "smoking_cigarettes_inhale",
+        "text_key": "smoking_cigarettes_inhale",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoking_cigarettes_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "smoking_cigarettes_inhale_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "smoking_cigarettes_inhale_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "smoking_cigarettes_inhale_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "smoking_cigarettes_inhale_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "smoking_cigarettes_inhale_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "smoke_pipe_ever",
+        "text_key": "smoke_pipe_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "smoke_pipe_start_age",
+        "text_key": "smoke_pipe_start_age",
+        "type": "short",
+        "visible_when": {
+          "item": "smoke_pipe_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "smoke_pipe_stop_age",
+        "text_key": "smoke_pipe_stop_age",
+        "type": "short",
+        "visible_when": {
+          "item": "smoke_pipe_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "smoke_pipe_stop_age_coded",
+        "text_key": "smoke_pipe_stop_age_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoke_pipe_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "smoke_pipe_stop_age_coded_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "smoke_pipe_stop_age_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "smoke_pipe_quantity_week_average",
+        "text_key": "smoke_pipe_quantity_week_average",
+        "type": "short",
+        "visible_when": {
+          "item": "smoke_pipe_ever",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "smoke_pipe_quantity_week_average_coded",
+        "text_key": "smoke_pipe_quantity_week_average_coded",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "smoke_pipe_quantity_week_average_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "smoke_pipe_quantity_week_now",
+        "text_key": "smoke_pipe_quantity_week_now",
+        "type": "short",
+        "visible_when": {
+          "item": "smoke_pipe_ever",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "smoke_pipe_quantity_week_now_coded",
+        "text_key": "smoke_pipe_quantity_week_now_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoke_pipe_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "smoke_pipe_quantity_week_now_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "smoke_pipe_inhale",
+        "text_key": "smoke_pipe_inhale",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoke_pipe_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "smoke_pipe_inhale_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "smoke_pipe_inhale_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "smoke_pipe_inhale_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "smoke_pipe_inhale_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "smoke_pipe_inhale_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "smoke_cigars_ever",
+        "text_key": "smoke_cigars_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "smoke_cigars_start_age",
+        "text_key": "smoke_cigars_start_age",
+        "type": "short",
+        "visible_when": {
+          "item": "smoke_cigars_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "smoke_cigars_stop_age",
+        "text_key": "smoke_cigars_stop_age",
+        "type": "short",
+        "visible_when": {
+          "item": "smoke_cigars_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "smoke_cigars_stop_age_coded",
+        "text_key": "smoke_cigars_stop_age_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoke_cigars_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "smoke_cigars_stop_age_coded_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "smoke_cigars_stop_age_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "smoke_cigars_quantity_week_average",
+        "text_key": "smoke_cigars_quantity_week_average",
+        "type": "short",
+        "visible_when": {
+          "item": "smoke_cigars_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "smoke_cigars_quantity_week_average_coded",
+        "text_key": "smoke_cigars_quantity_week_average_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoke_cigars_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "smoke_cigars_quantity_week_average_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "smoke_cigars_quantity_week_now",
+        "text_key": "smoke_cigars_quantity_week_now",
+        "type": "short",
+        "visible_when": {
+          "item": "smoke_cigars_ever",
+          "operator": "equals",
+          "value": 1
+        }
+      },
+      {
+        "id": "smoke_cigars_quantity_week_now_coded",
+        "text_key": "smoke_cigars_quantity_week_now_coded",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoke_cigars_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "smoke_cigars_quantity_week_now_coded_opt_88",
+            "value": 88
+          }
+        ]
+      },
+      {
+        "id": "smoke_cigars_inhale",
+        "text_key": "smoke_cigars_inhale",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoke_cigars_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "smoke_cigars_inhale_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "smoke_cigars_inhale_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "smoke_cigars_inhale_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "smoke_cigars_inhale_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "smoke_cigars_inhale_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "history_father_chronic_bronchitis",
+        "text_key": "history_father_chronic_bronchitis",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "history_father_chronic_bronchitis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "history_father_chronic_bronchitis_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "history_father_chronic_bronchitis_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "history_father_emphysema",
+        "text_key": "history_father_emphysema",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "history_father_emphysema_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "history_father_emphysema_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "history_father_emphysema_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "history_father_asthma",
+        "text_key": "history_father_asthma",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "history_father_asthma_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "history_father_asthma_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "history_father_asthma_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "history_father_lung_cancer",
+        "text_key": "history_father_lung_cancer",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "history_father_lung_cancer_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "history_father_lung_cancer_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "history_father_lung_cancer_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "history_father_other_chest_conditions",
+        "text_key": "history_father_other_chest_conditions",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "history_father_other_chest_conditions_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "history_father_other_chest_conditions_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "history_father_other_chest_conditions_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "history_mother_chronic_bronchitis",
+        "text_key": "history_mother_chronic_bronchitis",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "history_mother_chronic_bronchitis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "history_mother_chronic_bronchitis_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "history_mother_chronic_bronchitis_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "history_mother_emphysema",
+        "text_key": "history_mother_emphysema",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "history_mother_emphysema_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "history_mother_emphysema_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "history_mother_emphysema_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "history_mother_asthma",
+        "text_key": "history_mother_asthma",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "history_mother_asthma_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "history_mother_asthma_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "history_mother_asthma_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "history_mother_lung_cancer",
+        "text_key": "history_mother_lung_cancer",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "history_mother_lung_cancer_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "history_mother_lung_cancer_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "history_mother_lung_cancer_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "history_mother_other_chest_conditions",
+        "text_key": "history_mother_other_chest_conditions",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "history_mother_other_chest_conditions_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "history_mother_other_chest_conditions_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "history_mother_other_chest_conditions_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "wheezing_whistling_chest_ever",
+        "text_key": "wheezing_whistling_chest_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "wheezing_whistling_chest_first_age",
+        "text_key": "wheezing_whistling_chest_first_age",
+        "type": "short",
+        "visible_when": {
+          "item": "wheezing_whistling_chest_ever",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "history_wheezing_whistling_chest",
+        "text_key": "history_wheezing_whistling_chest",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "history_wheezing_whistling_chest_cold",
+        "text_key": "history_wheezing_whistling_chest_cold",
+        "type": "multi",
+        "visible_when": {
+          "item": "history_wheezing_whistling_chest",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "history_wheezing_whistling_chest_multiple",
+        "text_key": "history_wheezing_whistling_chest_multiple",
+        "type": "multi",
+        "visible_when": {
+          "item": "history_wheezing_whistling_chest",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "history_wheezing_whistling_chest_day_night",
+        "text_key": "history_wheezing_whistling_chest_day_night",
+        "type": "multi",
+        "visible_when": {
+          "item": "history_wheezing_whistling_chest",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "history_awakened_coughing",
+        "text_key": "history_awakened_coughing",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "history_awakened_breath_tightness_chest",
+        "text_key": "history_awakened_breath_tightness_chest",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "history_sneezing_runny_blocked_nose",
+        "text_key": "history_sneezing_runny_blocked_nose",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "history_watery_itchy_burning_eyes",
+        "text_key": "history_watery_itchy_burning_eyes",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "history_cough_phlegm_lasted_week",
+        "text_key": "history_cough_phlegm_lasted_week",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "history_cough_phlegm_years",
+        "text_key": "history_cough_phlegm_years",
+        "type": "short",
+        "visible_when": {
+          "item": "history_cough_phlegm_lasted_week",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "history_cough_phlegm_episodes",
+        "text_key": "history_cough_phlegm_episodes",
+        "type": "short",
+        "visible_when": {
+          "item": "history_cough_phlegm_lasted_week",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "history_er_hospitalized_lung",
+        "text_key": "history_er_hospitalized_lung",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "history_er_hospitalized_lung_times",
+        "text_key": "history_er_hospitalized_lung_times",
+        "type": "short",
+        "visible_when": {
+          "item": "history_er_hospitalized_lung",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "history_antibiotics_treatment_chest",
+        "text_key": "history_antibiotics_treatment_chest",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "history_antibiotics_treatment_chest_times",
+        "text_key": "history_antibiotics_treatment_chest_times",
+        "type": "short",
+        "visible_when": {
+          "item": "history_antibiotics_treatment_chest",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "history_steroid_treatment_chest",
+        "text_key": "history_steroid_treatment_chest",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "history_steroid_treatment_chest_times",
+        "text_key": "history_steroid_treatment_chest_times",
+        "type": "short",
+        "visible_when": {
+          "item": "history_steroid_treatment_chest",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
       }
     ]
   },
-  "items": [
-    {
-      "id": "resp_history_intro",
-      "text_key": "resp_history_intro",
-      "type": "inst"
-    },
-    {
-      "id": "cough_history",
-      "text_key": "cough_history",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "cough_frequently",
-      "text_key": "cough_frequently",
-      "type": "multi",
-      "visible_when": {
-        "item": "cough_history",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "cough_in_morning",
-      "text_key": "cough_in_morning",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "cough_day_night",
-      "text_key": "cough_day_night",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "cough_consecutive_months",
-      "text_key": "cough_consecutive_months",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "cough_frequently",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cough_history",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cough_in_morning",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cough_day_night",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "cough_consecutive_months_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "cough_consecutive_months_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "cough_consecutive_months_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "cough_years",
-      "text_key": "cough_years",
-      "type": "short",
-      "visible_when": {
-        "any": [
-          {
-            "item": "cough_history",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cough_frequently",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cough_in_morning",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "cough_day_night",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "cough_years_coded",
-      "text_key": "cough_years_coded",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "cough_years_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "phlegm_history",
-      "text_key": "phlegm_history",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "phlegm_frequently",
-      "text_key": "phlegm_frequently",
-      "type": "multi",
-      "visible_when": {
-        "item": "phlegm_history",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "phlegm_in_morning",
-      "text_key": "phlegm_in_morning",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "phlegm_day_night",
-      "text_key": "phlegm_day_night",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "phlegm_consecutive_months",
-      "text_key": "phlegm_consecutive_months",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "phlegm_history",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "phlegm_frequently",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "phlegm_in_morning",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "phlegm_day_night",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "phlegm_consecutive_months_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "phlegm_consecutive_months_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "phlegm_consecutive_months_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "phlegm_years",
-      "text_key": "phlegm_years",
-      "type": "short",
-      "visible_when": {
-        "any": [
-          {
-            "item": "phlegm_history",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "phlegm_frequently",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "phlegm_in_morning",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "phlegm_day_night",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "phlegm_years_coded",
-      "text_key": "phlegm_years_coded",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "phlegm_years_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "cough_phlegm_period_episode",
-      "text_key": "cough_phlegm_period_episode",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "cough_phlegm_episode_lasting_time",
-      "text_key": "cough_phlegm_episode_lasting_time",
-      "type": "short",
-      "visible_when": {
-        "item": "cough_phlegm_period_episode",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "cough_phlegm_episode_lasting_time_coded",
-      "text_key": "cough_phlegm_episode_lasting_time_coded",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "cough_phlegm_episode_lasting_time_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "wheezing_have_cold",
-      "text_key": "wheezing_have_cold",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "wheezing_apart_from_cold",
-      "text_key": "wheezing_apart_from_cold",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "wheezing_day_night",
-      "text_key": "wheezing_day_night",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "wheezing_years",
-      "text_key": "wheezing_years",
-      "type": "short",
-      "visible_when": {
-        "any": [
-          {
-            "item": "wheezing_have_cold",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "wheezing_apart_from_cold",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "wheezing_day_night",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "wheezing_years_coded",
-      "text_key": "wheezing_years_coded",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "wheezing_years_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "wheezing_attack_ever",
-      "text_key": "wheezing_attack_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "wheezing_first_age",
-      "text_key": "wheezing_first_age",
-      "type": "short",
-      "visible_when": {
-        "item": "wheezing_attack_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "wheezing_first_age_coded",
-      "text_key": "wheezing_first_age_coded",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "wheezing_first_age_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "wheezing_attack_multiple_episodes",
-      "text_key": "wheezing_attack_multiple_episodes",
-      "type": "multi",
-      "visible_when": {
-        "item": "wheezing_attack_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "wheezing_attack_multiple_episodes_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "wheezing_attack_multiple_episodes_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "wheezing_attack_multiple_episodes_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "wheezing_attack_medicine_treatment_ever",
-      "text_key": "wheezing_attack_medicine_treatment_ever",
-      "type": "multi",
-      "visible_when": {
-        "item": "wheezing_attack_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "wheezing_attack_medicine_treatment_ever_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "wheezing_attack_medicine_treatment_ever_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "wheezing_attack_medicine_treatment_ever_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "breathlessness_condition_nature",
-      "text_key": "breathlessness_condition_nature",
-      "type": "short"
-    },
-    {
-      "id": "inst2_090901",
-      "text_key": "inst2_090901",
-      "type": "inst"
-    },
-    {
-      "id": "breathlessness_hurrying_slight_hill",
-      "text_key": "breathlessness_hurrying_slight_hill",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "breathlessness_need_walk_slower",
-      "text_key": "breathlessness_need_walk_slower",
-      "type": "multi",
-      "visible_when": {
-        "item": "breathlessness_hurrying_slight_hill",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "breathlessness_need_walk_slower_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "breathlessness_need_walk_slower_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "breathlessness_need_walk_slower_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "breathlessness_need_stop_own_pace",
-      "text_key": "breathlessness_need_stop_own_pace",
-      "type": "multi",
-      "visible_when": {
-        "item": "breathlessness_hurrying_slight_hill",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "breathlessness_need_stop_own_pace_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "breathlessness_need_stop_own_pace_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "breathlessness_need_stop_own_pace_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "breathlessness_need_stop_100_yards",
-      "text_key": "breathlessness_need_stop_100_yards",
-      "type": "multi",
-      "visible_when": {
-        "item": "breathlessness_hurrying_slight_hill",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "breathlessness_need_stop_100_yards_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "breathlessness_need_stop_100_yards_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "breathlessness_need_stop_100_yards_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "breathlessness_leave_house_dressing_undressing",
-      "text_key": "breathlessness_leave_house_dressing_undressing",
-      "type": "multi",
-      "visible_when": {
-        "item": "breathlessness_hurrying_slight_hill",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "breathlessness_leave_house_dressing_undressing_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "breathlessness_leave_house_dressing_undressing_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "breathlessness_leave_house_dressing_undressing_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "cold_usually_go_to_chest",
-      "text_key": "cold_usually_go_to_chest",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "cold_usually_go_to_chest_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "cold_usually_go_to_chest_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "cold_usually_go_to_chest_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "chest_illness_keep_home_bed",
-      "text_key": "chest_illness_keep_home_bed",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "chest_illness_phlegm",
-      "text_key": "chest_illness_phlegm",
-      "type": "multi",
-      "visible_when": {
-        "item": "chest_illness_keep_home_bed",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "chest_illness_phlegm_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "chest_illness_phlegm_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "chest_illness_phlegm_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "chest_illness_phlegm_number",
-      "text_key": "chest_illness_phlegm_number",
-      "type": "short",
-      "visible_when": {
-        "item": "chest_illness_phlegm",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number",
-      "number_min": 1,
-      "number_max": 99
-    },
-    {
-      "id": "chest_illness_phlegm_lasting_week",
-      "text_key": "chest_illness_phlegm_lasting_week",
-      "type": "multi",
-      "visible_when": {
-        "item": "chest_illness_phlegm",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "chest_illness_phlegm_lasting_week_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "chest_illness_phlegm_lasting_week_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "lung_trouble_before_age_16",
-      "text_key": "lung_trouble_before_age_16",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "bronchitis_ever",
-      "text_key": "bronchitis_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "bronchitis_doctor_confirmed",
-      "text_key": "bronchitis_doctor_confirmed",
-      "type": "multi",
-      "visible_when": {
-        "item": "bronchitis_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "bronchitis_doctor_confirmed_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "bronchitis_doctor_confirmed_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "bronchitis_doctor_confirmed_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "bronchitis_first_age",
-      "text_key": "bronchitis_first_age",
-      "type": "short",
-      "visible_when": {
-        "item": "bronchitis_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "bronchitis_first_age_coded",
-      "text_key": "bronchitis_first_age_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "bronchitis_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "bronchitis_first_age_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "pneumonia_ever",
-      "text_key": "pneumonia_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pneumonia_doctor_confirmed",
-      "text_key": "pneumonia_doctor_confirmed",
-      "type": "multi",
-      "visible_when": {
-        "item": "pneumonia_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "pneumonia_doctor_confirmed_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "pneumonia_doctor_confirmed_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "pneumonia_doctor_confirmed_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "pneumonia_first_age",
-      "text_key": "pneumonia_first_age",
-      "type": "short",
-      "visible_when": {
-        "item": "pneumonia_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "pneumonia_first_age_coded",
-      "text_key": "pneumonia_first_age_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "pneumonia_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "pneumonia_first_age_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "hay_fever_ever",
-      "text_key": "hay_fever_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "hay_fever_doctor_confirmed",
-      "text_key": "hay_fever_doctor_confirmed",
-      "type": "multi",
-      "visible_when": {
-        "item": "hay_fever_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "hay_fever_doctor_confirmed_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "hay_fever_doctor_confirmed_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "hay_fever_doctor_confirmed_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "hay_fever_start_age",
-      "text_key": "hay_fever_start_age",
-      "type": "short",
-      "visible_when": {
-        "item": "hay_fever_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "hay_fever_start_age_coded",
-      "text_key": "hay_fever_start_age_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "hay_fever_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "hay_fever_start_age_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "chronic_bronchitis_ever",
-      "text_key": "chronic_bronchitis_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "chronic_bronchitis_still_have",
-      "text_key": "chronic_bronchitis_still_have",
-      "type": "multi",
-      "visible_when": {
-        "item": "chronic_bronchitis_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "chronic_bronchitis_still_have_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "chronic_bronchitis_still_have_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "chronic_bronchitis_still_have_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "chronic_bronchitis_doctor_confirmed",
-      "text_key": "chronic_bronchitis_doctor_confirmed",
-      "type": "multi",
-      "visible_when": {
-        "item": "chronic_bronchitis_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "chronic_bronchitis_doctor_confirmed_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "chronic_bronchitis_doctor_confirmed_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "chronic_bronchitis_doctor_confirmed_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "chronic_bronchitis_start_age",
-      "text_key": "chronic_bronchitis_start_age",
-      "type": "short",
-      "visible_when": {
-        "item": "chronic_bronchitis_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "chronic_bronchitis_start_age_coded",
-      "text_key": "chronic_bronchitis_start_age_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "chronic_bronchitis_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "chronic_bronchitis_start_age_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "emphysema_ever",
-      "text_key": "emphysema_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "emphysema_still_have",
-      "text_key": "emphysema_still_have",
-      "type": "multi",
-      "visible_when": {
-        "item": "emphysema_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "emphysema_still_have_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "emphysema_still_have_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "emphysema_still_have_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "emphysema_doctor_confirmed",
-      "text_key": "emphysema_doctor_confirmed",
-      "type": "multi",
-      "visible_when": {
-        "item": "emphysema_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "emphysema_doctor_confirmed_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "emphysema_doctor_confirmed_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "emphysema_doctor_confirmed_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "emphysema_start_age",
-      "text_key": "emphysema_start_age",
-      "type": "short",
-      "visible_when": {
-        "item": "emphysema_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "emphysema_start_age_coded",
-      "text_key": "emphysema_start_age_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "emphysema_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "emphysema_start_age_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "asthma_ever",
-      "text_key": "asthma_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "asthma_still_have",
-      "text_key": "asthma_still_have",
-      "type": "multi",
-      "visible_when": {
-        "item": "asthma_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "asthma_still_have_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "asthma_still_have_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "asthma_still_have_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "asthma_doctor_confirmed",
-      "text_key": "asthma_doctor_confirmed",
-      "type": "multi",
-      "visible_when": {
-        "item": "asthma_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "asthma_doctor_confirmed_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "asthma_doctor_confirmed_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "asthma_doctor_confirmed_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "asthma_start_age",
-      "text_key": "asthma_start_age",
-      "type": "short",
-      "visible_when": {
-        "item": "asthma_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "asthma_start_age_coded",
-      "text_key": "asthma_start_age_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "asthma_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "asthma_start_age_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "asthma_stop_age",
-      "text_key": "asthma_stop_age",
-      "type": "short",
-      "visible_when": {
-        "item": "asthma_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "asthma_stop_age_coded",
-      "text_key": "asthma_stop_age_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "asthma_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "asthma_stop_age_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "other_chest_illness_ever",
-      "text_key": "other_chest_illness_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "other_chest_illness_specify",
-      "text_key": "other_chest_illness_specify",
-      "type": "short",
-      "visible_when": {
-        "item": "other_chest_illness_ever",
-        "operator": "equals",
-        "value": 1
-      }
-    },
-    {
-      "id": "chest_operation_ever",
-      "text_key": "chest_operation_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "chest_operation_specify",
-      "text_key": "chest_operation_specify",
-      "type": "short",
-      "visible_when": {
-        "item": "chest_operation_ever",
-        "operator": "equals",
-        "value": 1
-      }
-    },
-    {
-      "id": "chest_injury_ever",
-      "text_key": "chest_injury_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "chest_injury_specify",
-      "text_key": "chest_injury_specify",
-      "type": "short",
-      "visible_when": {
-        "item": "chest_injury_ever",
-        "operator": "equals",
-        "value": 1
-      }
-    },
-    {
-      "id": "heart_trouble_ever",
-      "text_key": "heart_trouble_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "heart_trouble_treatment_ever",
-      "text_key": "heart_trouble_treatment_ever",
-      "type": "multi",
-      "visible_when": {
-        "item": "heart_trouble_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "heart_trouble_treatment_ever_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "heart_trouble_treatment_ever_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "heart_trouble_treatment_ever_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "high_blood_pressure_ever",
-      "text_key": "high_blood_pressure_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "high_blood_pressure_treatment_ever",
-      "text_key": "high_blood_pressure_treatment_ever",
-      "type": "multi",
-      "visible_when": {
-        "item": "high_blood_pressure_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "high_blood_pressure_treatment_ever_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "high_blood_pressure_treatment_ever_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "high_blood_pressure_treatment_ever_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "full_time_ever",
-      "text_key": "full_time_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "dusty_job_ever",
-      "text_key": "dusty_job_ever",
-      "type": "multi",
-      "visible_when": {
-        "item": "full_time_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "dusty_job_ever_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "dusty_job_ever_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "dusty_job_ever_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "dusty_job_industry_specify",
-      "text_key": "dusty_job_industry_specify",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "dusty_job_ever",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "full_time_ever",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "dusty_job_total_years",
-      "text_key": "dusty_job_total_years",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "full_time_ever",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "dusty_job_ever",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "dusty_job_exposure_degree",
-      "text_key": "dusty_job_exposure_degree",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "full_time_ever",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "dusty_job_ever",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "dusty_job_exposure_degree_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "dusty_job_exposure_degree_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "dusty_job_exposure_degree_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "gas_chemical_fumes_exposed_ever",
-      "text_key": "gas_chemical_fumes_exposed_ever",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "gas_chemical_fumes_exposed_ever_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "gas_chemical_fumes_exposed_ever_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "gas_chemical_fumes_exposed_ever_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "gas_chemical_fumes_industry_specify",
-      "text_key": "gas_chemical_fumes_industry_specify",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "full_time_ever",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "gas_chemical_fumes_exposed_ever",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "gas_chemical_fumes_total_years",
-      "text_key": "gas_chemical_fumes_total_years",
-      "type": "short",
-      "visible_when": {
-        "all": [
-          {
-            "item": "full_time_ever",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "gas_chemical_fumes_exposed_ever",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "gas_chemical_fumes_exposure_degree",
-      "text_key": "gas_chemical_fumes_exposure_degree",
-      "type": "multi",
-      "visible_when": {
-        "all": [
-          {
-            "item": "full_time_ever",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "gas_chemical_fumes_exposed_ever",
-            "operator": "equals",
-            "value": 1
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "gas_chemical_fumes_exposure_degree_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "gas_chemical_fumes_exposure_degree_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "gas_chemical_fumes_exposure_degree_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "longest_job_occupation",
-      "text_key": "longest_job_occupation",
-      "type": "short"
-    },
-    {
-      "id": "longest_job_years",
-      "text_key": "longest_job_years",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "longest_job_title",
-      "text_key": "longest_job_title",
-      "type": "short"
-    },
-    {
-      "id": "longest_job_business_field_industry",
-      "text_key": "longest_job_business_field_industry",
-      "type": "short"
-    },
-    {
-      "id": "smoking_cigarettes_ever",
-      "text_key": "smoking_cigarettes_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "smoking_cigarettes_now",
-      "text_key": "smoking_cigarettes_now",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoking_cigarettes_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "smoking_cigarettes_now_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "smoking_cigarettes_now_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "smoking_cigarettes_now_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "smoking_cigarettes_start_age",
-      "text_key": "smoking_cigarettes_start_age",
-      "type": "short",
-      "visible_when": {
-        "item": "smoking_cigarettes_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "smoking_cigarettes_start_age_coded",
-      "text_key": "smoking_cigarettes_start_age_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoking_cigarettes_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "smoking_cigarettes_start_age_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "smoking_cigarettes_stop_age",
-      "text_key": "smoking_cigarettes_stop_age",
-      "type": "short",
-      "visible_when": {
-        "item": "smoking_cigarettes_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "smoking_cigarettes_stop_age_coded",
-      "text_key": "smoking_cigarettes_stop_age_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoking_cigarettes_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "smoking_cigarettes_stop_age_coded_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "smoking_cigarettes_stop_age_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "smoking_cigarettes_quantity_day_now",
-      "text_key": "smoking_cigarettes_quantity_day_now",
-      "type": "short",
-      "visible_when": {
-        "item": "smoking_cigarettes_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "smoking_cigarettes_quantity_day_now_coded",
-      "text_key": "smoking_cigarettes_quantity_day_now_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoking_cigarettes_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "smoking_cigarettes_quantity_day_now_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "smoking_cigarettes_quantity_day_average",
-      "text_key": "smoking_cigarettes_quantity_day_average",
-      "type": "short",
-      "visible_when": {
-        "item": "smoking_cigarettes_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "smoking_cigarettes_quantity_day_average_coded",
-      "text_key": "smoking_cigarettes_quantity_day_average_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoking_cigarettes_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "smoking_cigarettes_quantity_day_average_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "smoking_cigarettes_inhale",
-      "text_key": "smoking_cigarettes_inhale",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoking_cigarettes_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "smoking_cigarettes_inhale_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "smoking_cigarettes_inhale_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "smoking_cigarettes_inhale_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "smoking_cigarettes_inhale_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "smoking_cigarettes_inhale_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "smoke_pipe_ever",
-      "text_key": "smoke_pipe_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "smoke_pipe_start_age",
-      "text_key": "smoke_pipe_start_age",
-      "type": "short",
-      "visible_when": {
-        "item": "smoke_pipe_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "smoke_pipe_stop_age",
-      "text_key": "smoke_pipe_stop_age",
-      "type": "short",
-      "visible_when": {
-        "item": "smoke_pipe_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "smoke_pipe_stop_age_coded",
-      "text_key": "smoke_pipe_stop_age_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoke_pipe_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "smoke_pipe_stop_age_coded_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "smoke_pipe_stop_age_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "smoke_pipe_quantity_week_average",
-      "text_key": "smoke_pipe_quantity_week_average",
-      "type": "short",
-      "visible_when": {
-        "item": "smoke_pipe_ever",
-        "operator": "equals",
-        "value": 1
-      }
-    },
-    {
-      "id": "smoke_pipe_quantity_week_average_coded",
-      "text_key": "smoke_pipe_quantity_week_average_coded",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "smoke_pipe_quantity_week_average_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "smoke_pipe_quantity_week_now",
-      "text_key": "smoke_pipe_quantity_week_now",
-      "type": "short",
-      "visible_when": {
-        "item": "smoke_pipe_ever",
-        "operator": "equals",
-        "value": 1
-      }
-    },
-    {
-      "id": "smoke_pipe_quantity_week_now_coded",
-      "text_key": "smoke_pipe_quantity_week_now_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoke_pipe_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "smoke_pipe_quantity_week_now_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "smoke_pipe_inhale",
-      "text_key": "smoke_pipe_inhale",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoke_pipe_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "smoke_pipe_inhale_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "smoke_pipe_inhale_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "smoke_pipe_inhale_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "smoke_pipe_inhale_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "smoke_pipe_inhale_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "smoke_cigars_ever",
-      "text_key": "smoke_cigars_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "smoke_cigars_start_age",
-      "text_key": "smoke_cigars_start_age",
-      "type": "short",
-      "visible_when": {
-        "item": "smoke_cigars_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "smoke_cigars_stop_age",
-      "text_key": "smoke_cigars_stop_age",
-      "type": "short",
-      "visible_when": {
-        "item": "smoke_cigars_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "smoke_cigars_stop_age_coded",
-      "text_key": "smoke_cigars_stop_age_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoke_cigars_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "smoke_cigars_stop_age_coded_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "smoke_cigars_stop_age_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "smoke_cigars_quantity_week_average",
-      "text_key": "smoke_cigars_quantity_week_average",
-      "type": "short",
-      "visible_when": {
-        "item": "smoke_cigars_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "smoke_cigars_quantity_week_average_coded",
-      "text_key": "smoke_cigars_quantity_week_average_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoke_cigars_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "smoke_cigars_quantity_week_average_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "smoke_cigars_quantity_week_now",
-      "text_key": "smoke_cigars_quantity_week_now",
-      "type": "short",
-      "visible_when": {
-        "item": "smoke_cigars_ever",
-        "operator": "equals",
-        "value": 1
-      }
-    },
-    {
-      "id": "smoke_cigars_quantity_week_now_coded",
-      "text_key": "smoke_cigars_quantity_week_now_coded",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoke_cigars_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "smoke_cigars_quantity_week_now_coded_opt_88",
-          "value": 88
-        }
-      ]
-    },
-    {
-      "id": "smoke_cigars_inhale",
-      "text_key": "smoke_cigars_inhale",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoke_cigars_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "smoke_cigars_inhale_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "smoke_cigars_inhale_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "smoke_cigars_inhale_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "smoke_cigars_inhale_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "smoke_cigars_inhale_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "history_father_chronic_bronchitis",
-      "text_key": "history_father_chronic_bronchitis",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "history_father_chronic_bronchitis_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "history_father_chronic_bronchitis_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "history_father_chronic_bronchitis_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "history_father_emphysema",
-      "text_key": "history_father_emphysema",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "history_father_emphysema_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "history_father_emphysema_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "history_father_emphysema_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "history_father_asthma",
-      "text_key": "history_father_asthma",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "history_father_asthma_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "history_father_asthma_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "history_father_asthma_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "history_father_lung_cancer",
-      "text_key": "history_father_lung_cancer",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "history_father_lung_cancer_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "history_father_lung_cancer_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "history_father_lung_cancer_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "history_father_other_chest_conditions",
-      "text_key": "history_father_other_chest_conditions",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "history_father_other_chest_conditions_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "history_father_other_chest_conditions_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "history_father_other_chest_conditions_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "history_mother_chronic_bronchitis",
-      "text_key": "history_mother_chronic_bronchitis",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "history_mother_chronic_bronchitis_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "history_mother_chronic_bronchitis_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "history_mother_chronic_bronchitis_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "history_mother_emphysema",
-      "text_key": "history_mother_emphysema",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "history_mother_emphysema_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "history_mother_emphysema_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "history_mother_emphysema_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "history_mother_asthma",
-      "text_key": "history_mother_asthma",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "history_mother_asthma_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "history_mother_asthma_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "history_mother_asthma_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "history_mother_lung_cancer",
-      "text_key": "history_mother_lung_cancer",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "history_mother_lung_cancer_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "history_mother_lung_cancer_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "history_mother_lung_cancer_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "history_mother_other_chest_conditions",
-      "text_key": "history_mother_other_chest_conditions",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "history_mother_other_chest_conditions_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "history_mother_other_chest_conditions_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "history_mother_other_chest_conditions_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "wheezing_whistling_chest_ever",
-      "text_key": "wheezing_whistling_chest_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "wheezing_whistling_chest_first_age",
-      "text_key": "wheezing_whistling_chest_first_age",
-      "type": "short",
-      "visible_when": {
-        "item": "wheezing_whistling_chest_ever",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "history_wheezing_whistling_chest",
-      "text_key": "history_wheezing_whistling_chest",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "history_wheezing_whistling_chest_cold",
-      "text_key": "history_wheezing_whistling_chest_cold",
-      "type": "multi",
-      "visible_when": {
-        "item": "history_wheezing_whistling_chest",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "history_wheezing_whistling_chest_multiple",
-      "text_key": "history_wheezing_whistling_chest_multiple",
-      "type": "multi",
-      "visible_when": {
-        "item": "history_wheezing_whistling_chest",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "history_wheezing_whistling_chest_day_night",
-      "text_key": "history_wheezing_whistling_chest_day_night",
-      "type": "multi",
-      "visible_when": {
-        "item": "history_wheezing_whistling_chest",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "history_awakened_coughing",
-      "text_key": "history_awakened_coughing",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "history_awakened_breath_tightness_chest",
-      "text_key": "history_awakened_breath_tightness_chest",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "history_sneezing_runny_blocked_nose",
-      "text_key": "history_sneezing_runny_blocked_nose",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "history_watery_itchy_burning_eyes",
-      "text_key": "history_watery_itchy_burning_eyes",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "history_cough_phlegm_lasted_week",
-      "text_key": "history_cough_phlegm_lasted_week",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "history_cough_phlegm_years",
-      "text_key": "history_cough_phlegm_years",
-      "type": "short",
-      "visible_when": {
-        "item": "history_cough_phlegm_lasted_week",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "history_cough_phlegm_episodes",
-      "text_key": "history_cough_phlegm_episodes",
-      "type": "short",
-      "visible_when": {
-        "item": "history_cough_phlegm_lasted_week",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "history_er_hospitalized_lung",
-      "text_key": "history_er_hospitalized_lung",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "history_er_hospitalized_lung_times",
-      "text_key": "history_er_hospitalized_lung_times",
-      "type": "short",
-      "visible_when": {
-        "item": "history_er_hospitalized_lung",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "history_antibiotics_treatment_chest",
-      "text_key": "history_antibiotics_treatment_chest",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "history_antibiotics_treatment_chest_times",
-      "text_key": "history_antibiotics_treatment_chest_times",
-      "type": "short",
-      "visible_when": {
-        "item": "history_antibiotics_treatment_chest",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "history_steroid_treatment_chest",
-      "text_key": "history_steroid_treatment_chest",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "history_steroid_treatment_chest_times",
-      "text_key": "history_steroid_treatment_chest_times",
-      "type": "short",
-      "visible_when": {
-        "item": "history_steroid_treatment_chest",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "Yes",

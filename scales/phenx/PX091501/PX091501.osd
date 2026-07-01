@@ -1,219 +1,222 @@
 {
-  "scale_info": {
-    "name": "Sleep Apnea - Adult",
-    "code": "PX091501",
-    "abbreviation": "PX091501",
-    "description": "The questionnaire asks about risk factors for sleep apnea, namely snoring behavior, wake time, sleepiness or fatigue, and the presence of high blood pressure. The protocol begins with information that an individual self-reports on height, weight, age, and sex. The 10 questions address snoring, fatig",
-    "domain": "Respiratory",
-    "citation": "Chiu, H.-Y., Chen, P. Y., Chuang, L. P., Chen, N. H., Tu, Y. K., Hsieh, Y. J., Wang, Y. C., & Guilleminault, C. (2016). Diagnostic accuracy of the Berlin questionnaire, STOP-BANG, STOP, and Epworth sleepiness scale in detecting obstructive sleep apnea: A bivariate meta-analysis. Sleep Medicine Reviews. doi: 10.1016/j.smrv.2016.10.004 [PhenX: https://www.phenxtoolkit.org/protocols/view/91501]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/91501"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Sleep Apnea - Adult",
+      "code": "PX091501",
+      "abbreviation": "PX091501",
+      "description": "The questionnaire asks about risk factors for sleep apnea, namely snoring behavior, wake time, sleepiness or fatigue, and the presence of high blood pressure. The protocol begins with information that an individual self-reports on height, weight, age, and sex. The 10 questions address snoring, fatig",
+      "domain": "Respiratory",
+      "citation": "Chiu, H.-Y., Chen, P. Y., Chuang, L. P., Chen, N. H., Tu, Y. K., Hsieh, Y. J., Wang, Y. C., & Guilleminault, C. (2016). Diagnostic accuracy of the Berlin questionnaire, STOP-BANG, STOP, and Epworth sleepiness scale in detecting obstructive sleep apnea: A bivariate meta-analysis. Sleep Medicine Reviews. doi: 10.1016/j.smrv.2016.10.004 [PhenX: https://www.phenxtoolkit.org/protocols/view/91501]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/91501"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        },
+        {
+          "text_key": "opt_4",
+          "value": 4
+        },
+        {
+          "text_key": "opt_5",
+          "value": 5
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "sleep_apnea_height",
+        "text_key": "sleep_apnea_height",
+        "type": "short",
+        "input_type": "number"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "sleep_apnea_weight",
+        "text_key": "sleep_apnea_weight",
+        "type": "short",
+        "input_type": "number"
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "sleep_apnea_age",
+        "text_key": "sleep_apnea_age",
+        "type": "short",
+        "input_type": "number"
       },
       {
-        "text_key": "opt_4",
-        "value": 4
+        "id": "sleep_apnea_gender",
+        "text_key": "sleep_apnea_gender",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sleep_apnea_gender_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_gender_opt_2",
+            "value": 2
+          }
+        ]
       },
       {
-        "text_key": "opt_5",
-        "value": 5
+        "id": "sleep_apnea_snore",
+        "text_key": "sleep_apnea_snore",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sleep_apnea_snore_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_snore_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleep_apnea_snore_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_snore_loudness",
+        "text_key": "sleep_apnea_snore_loudness",
+        "type": "multi",
+        "visible_when": {
+          "item": "sleep_apnea_snore",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "sleep_apnea_snore_loudness_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_snore_loudness_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleep_apnea_snore_loudness_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sleep_apnea_snore_loudness_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_snore_frequency",
+        "text_key": "sleep_apnea_snore_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "sleep_apnea_snore",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "sleep_apnea_snore_bother_other",
+        "text_key": "sleep_apnea_snore_bother_other",
+        "type": "multi",
+        "visible_when": {
+          "item": "sleep_apnea_snore",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "sleep_apnea_snore_bother_other_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_snore_bother_other_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleep_apnea_snore_bother_other_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_quit_breathing_sleep",
+        "text_key": "sleep_apnea_quit_breathing_sleep",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "sleep_apnea_tired_fatigued_after",
+        "text_key": "sleep_apnea_tired_fatigued_after",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "sleep_apnea_tired_fatigued_waking",
+        "text_key": "sleep_apnea_tired_fatigued_waking",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "sleep_apnea_nodded_asleep_driving",
+        "text_key": "sleep_apnea_nodded_asleep_driving",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sleep_apnea_nodded_asleep_driving_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_nodded_asleep_driving_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sleep_apnea_asleep_driving_frequency",
+        "text_key": "sleep_apnea_asleep_driving_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "sleep_apnea_nodded_asleep_driving",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "sleep_apnea_high_blood_pressure",
+        "text_key": "sleep_apnea_high_blood_pressure",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sleep_apnea_high_blood_pressure_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleep_apnea_high_blood_pressure_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleep_apnea_high_blood_pressure_opt_3",
+            "value": 3
+          }
+        ]
       }
     ]
   },
-  "items": [
-    {
-      "id": "sleep_apnea_height",
-      "text_key": "sleep_apnea_height",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "sleep_apnea_weight",
-      "text_key": "sleep_apnea_weight",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "sleep_apnea_age",
-      "text_key": "sleep_apnea_age",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "sleep_apnea_gender",
-      "text_key": "sleep_apnea_gender",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sleep_apnea_gender_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sleep_apnea_gender_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "sleep_apnea_snore",
-      "text_key": "sleep_apnea_snore",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sleep_apnea_snore_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sleep_apnea_snore_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "sleep_apnea_snore_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "sleep_apnea_snore_loudness",
-      "text_key": "sleep_apnea_snore_loudness",
-      "type": "multi",
-      "visible_when": {
-        "item": "sleep_apnea_snore",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "sleep_apnea_snore_loudness_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sleep_apnea_snore_loudness_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "sleep_apnea_snore_loudness_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "sleep_apnea_snore_loudness_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "sleep_apnea_snore_frequency",
-      "text_key": "sleep_apnea_snore_frequency",
-      "type": "multi",
-      "visible_when": {
-        "item": "sleep_apnea_snore",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "sleep_apnea_snore_bother_other",
-      "text_key": "sleep_apnea_snore_bother_other",
-      "type": "multi",
-      "visible_when": {
-        "item": "sleep_apnea_snore",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "sleep_apnea_snore_bother_other_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sleep_apnea_snore_bother_other_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "sleep_apnea_snore_bother_other_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "sleep_apnea_quit_breathing_sleep",
-      "text_key": "sleep_apnea_quit_breathing_sleep",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "sleep_apnea_tired_fatigued_after",
-      "text_key": "sleep_apnea_tired_fatigued_after",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "sleep_apnea_tired_fatigued_waking",
-      "text_key": "sleep_apnea_tired_fatigued_waking",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "sleep_apnea_nodded_asleep_driving",
-      "text_key": "sleep_apnea_nodded_asleep_driving",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sleep_apnea_nodded_asleep_driving_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sleep_apnea_nodded_asleep_driving_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "sleep_apnea_asleep_driving_frequency",
-      "text_key": "sleep_apnea_asleep_driving_frequency",
-      "type": "multi",
-      "visible_when": {
-        "item": "sleep_apnea_nodded_asleep_driving",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "sleep_apnea_high_blood_pressure",
-      "text_key": "sleep_apnea_high_blood_pressure",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sleep_apnea_high_blood_pressure_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sleep_apnea_high_blood_pressure_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "sleep_apnea_high_blood_pressure_opt_3",
-          "value": 3
-        }
-      ]
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "Nearly every day",

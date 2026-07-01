@@ -1,1449 +1,1452 @@
 {
-  "scale_info": {
-    "name": "Scoliosis - Quality of Life",
-    "code": "PX221501",
-    "abbreviation": "PX221501",
-    "description": "The Pediatric Outcomes Data Collection Instrument (PODCI) was developed by the American Academy of Orthopaedic Surgeons®, Pediatric Orthopaedic Society of North America, American Academy of Pediatrics, and Shriners Hospitals. The protocol here is based on Version 2.0 of the PODCI which was revised, ",
-    "domain": "Child Development",
-    "citation": "Allen, D. D., Gorton, G. E., Oeffinger, D. J., Tylkowski, C., Tucker, C. A., & Haley, S. M. (2008). Analysis of the Pediatric Outcomes Data Collection Instrument (PODCI) in ambulatory children with cerebral palsy using confirmatory factor analysis and item response theory methods. Journal of Pediatric Orthopedics , 28 (2), 192-198. Kunkel, S., Eismann, E., & Cornwall, R. (2011). Utility of the pediatric outcomes data collection instrument for assessing acute hand and wrist injuries in children. Journal of Pediatric Orthopaedics , 31 (7), 767-772. [PhenX: https://www.phenxtoolkit.org/protocols/view/221501]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/221501"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Scoliosis - Quality of Life",
+      "code": "PX221501",
+      "abbreviation": "PX221501",
+      "description": "The Pediatric Outcomes Data Collection Instrument (PODCI) was developed by the American Academy of Orthopaedic Surgeons®, Pediatric Orthopaedic Society of North America, American Academy of Pediatrics, and Shriners Hospitals. The protocol here is based on Version 2.0 of the PODCI which was revised, ",
+      "domain": "Child Development",
+      "citation": "Allen, D. D., Gorton, G. E., Oeffinger, D. J., Tylkowski, C., Tucker, C. A., & Haley, S. M. (2008). Analysis of the Pediatric Outcomes Data Collection Instrument (PODCI) in ambulatory children with cerebral palsy using confirmatory factor analysis and item response theory methods. Journal of Pediatric Orthopedics , 28 (2), 192-198. Kunkel, S., Eismann, E., & Cornwall, R. (2011). Utility of the pediatric outcomes data collection instrument for assessing acute hand and wrist injuries in children. Journal of Pediatric Orthopaedics , 31 (7), 767-772. [PhenX: https://www.phenxtoolkit.org/protocols/view/221501]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/221501"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        },
+        {
+          "text_key": "opt_4",
+          "value": 4
+        },
+        {
+          "text_key": "opt_5",
+          "value": 5
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "scoliosis_qol_clinic_id",
+        "text_key": "scoliosis_qol_clinic_id",
+        "type": "short"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "scoliosis_qol_physician_id",
+        "text_key": "scoliosis_qol_physician_id",
+        "type": "short"
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "scoliosis_qol_firstsix_last_name",
+        "text_key": "scoliosis_qol_firstsix_last_name",
+        "type": "short"
       },
       {
-        "text_key": "opt_4",
-        "value": 4
+        "id": "scoliosis_qol_office_chart",
+        "text_key": "scoliosis_qol_office_chart",
+        "type": "short"
       },
       {
-        "text_key": "opt_5",
-        "value": 5
+        "id": "scoliosis_qol_primarydx_dxcode",
+        "text_key": "scoliosis_qol_primarydx_dxcode",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_primarydx_icd9",
+        "text_key": "scoliosis_qol_primarydx_icd9",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_primarydx_txprocedurecpt_code",
+        "text_key": "scoliosis_qol_primarydx_txprocedurecpt_code",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_primarydx_txprocedureicd9_code",
+        "text_key": "scoliosis_qol_primarydx_txprocedureicd9_code",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_primarydx_cpt_date",
+        "text_key": "scoliosis_qol_primarydx_cpt_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "scoliosis_qol_primarydx_procedure_bodysite",
+        "text_key": "scoliosis_qol_primarydx_procedure_bodysite",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_primarydx_procedure_bodysite_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_primarydx_procedure_bodysite_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_primarydx_procedure_bodysite_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_primarydx_procedure_bodysite_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_secondardx1_dxcode",
+        "text_key": "scoliosis_qol_secondardx1_dxcode",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondardx1_icd9",
+        "text_key": "scoliosis_qol_secondardx1_icd9",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondarydx1_txprocedurecpt_code",
+        "text_key": "scoliosis_qol_secondarydx1_txprocedurecpt_code",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondarydx1_txprocedureicd9_code",
+        "text_key": "scoliosis_qol_secondarydx1_txprocedureicd9_code",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondarydx1_cpt_date",
+        "text_key": "scoliosis_qol_secondarydx1_cpt_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "scoliosis_qol_secondardx1_procedure_bodysite",
+        "text_key": "scoliosis_qol_secondardx1_procedure_bodysite",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_secondardx1_procedure_bodysite_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_secondardx1_procedure_bodysite_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_secondardx1_procedure_bodysite_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_secondardx1_procedure_bodysite_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_secondardx2_dxcode",
+        "text_key": "scoliosis_qol_secondardx2_dxcode",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondardx2_icd9",
+        "text_key": "scoliosis_qol_secondardx2_icd9",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondarydx2_txprocedurecpt_code",
+        "text_key": "scoliosis_qol_secondarydx2_txprocedurecpt_code",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondarydx2_txprocedureicd9_code",
+        "text_key": "scoliosis_qol_secondarydx2_txprocedureicd9_code",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondarydx2_cpt_date",
+        "text_key": "scoliosis_qol_secondarydx2_cpt_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "scoliosis_qol_secondardx2_procedure_bodysite",
+        "text_key": "scoliosis_qol_secondardx2_procedure_bodysite",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_secondardx2_procedure_bodysite_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_secondardx2_procedure_bodysite_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_secondardx2_procedure_bodysite_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_secondardx2_procedure_bodysite_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_secondardx3_dxcode",
+        "text_key": "scoliosis_qol_secondardx3_dxcode",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondardx3_icd9",
+        "text_key": "scoliosis_qol_secondardx3_icd9",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondarydx3_txprocedurecpt_code",
+        "text_key": "scoliosis_qol_secondarydx3_txprocedurecpt_code",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondarydx3_txprocedureicd9_code",
+        "text_key": "scoliosis_qol_secondarydx3_txprocedureicd9_code",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondarydx3_cpt_date",
+        "text_key": "scoliosis_qol_secondarydx3_cpt_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "scoliosis_qol_secondardx3_procedure_bodysite",
+        "text_key": "scoliosis_qol_secondardx3_procedure_bodysite",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_secondardx3_procedure_bodysite_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_secondardx3_procedure_bodysite_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_secondardx3_procedure_bodysite_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_secondardx3_procedure_bodysite_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_secondardx4_dxcode",
+        "text_key": "scoliosis_qol_secondardx4_dxcode",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondardx4_icd9",
+        "text_key": "scoliosis_qol_secondardx4_icd9",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondarydx4_txprocedurecpt_code",
+        "text_key": "scoliosis_qol_secondarydx4_txprocedurecpt_code",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondarydx4_txprocedureicd9_code",
+        "text_key": "scoliosis_qol_secondarydx4_txprocedureicd9_code",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_secondarydx4_cpt_date",
+        "text_key": "scoliosis_qol_secondarydx4_cpt_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "scoliosis_qol_secondardx4_procedure_bodysite",
+        "text_key": "scoliosis_qol_secondardx4_procedure_bodysite",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_secondardx4_procedure_bodysite_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_secondardx4_procedure_bodysite_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_secondardx4_procedure_bodysite_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_secondardx4_procedure_bodysite_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_todays_date",
+        "text_key": "scoliosis_qol_todays_date",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "scoliosis_qol_childs_dob",
+        "text_key": "scoliosis_qol_childs_dob",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "scoliosis_qol_childs_ssn",
+        "text_key": "scoliosis_qol_childs_ssn",
+        "type": "short"
+      },
+      {
+        "id": "scoliosis_qol_parent_ssn",
+        "text_key": "scoliosis_qol_parent_ssn",
+        "type": "short"
+      },
+      {
+        "id": "instructions_221501",
+        "text_key": "instructions_221501",
+        "type": "inst"
+      },
+      {
+        "id": "scoliosis_qol_last_week_liftbooks",
+        "text_key": "scoliosis_qol_last_week_liftbooks",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_pourmilk",
+        "text_key": "scoliosis_qol_last_week_pourmilk",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_openjar",
+        "text_key": "scoliosis_qol_last_week_openjar",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_forkspoon",
+        "text_key": "scoliosis_qol_last_week_forkspoon",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_combhair",
+        "text_key": "scoliosis_qol_last_week_combhair",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_buttons",
+        "text_key": "scoliosis_qol_last_week_buttons",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_puton_coat",
+        "text_key": "scoliosis_qol_last_week_puton_coat",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_writepencil",
+        "text_key": "scoliosis_qol_last_week_writepencil",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last12mo_missschool",
+        "text_key": "scoliosis_qol_last12mo_missschool",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_last12mo_missschool_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_last12mo_missschool_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_last12mo_missschool_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_last12mo_missschool_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_last12mo_missschool_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "scoliosis_qol_last12mo_missschool_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_last_week_happylooks",
+        "text_key": "scoliosis_qol_last_week_happylooks",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_last_week_happylooks_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happylooks_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happylooks_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happylooks_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happylooks_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happylooks_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_last_week_happybody",
+        "text_key": "scoliosis_qol_last_week_happybody",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_last_week_happybody_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happybody_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happybody_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happybody_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happybody_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happybody_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_last_week_happyclothes",
+        "text_key": "scoliosis_qol_last_week_happyclothes",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_last_week_happyclothes_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyclothes_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyclothes_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyclothes_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyclothes_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyclothes_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_last_week_happyability",
+        "text_key": "scoliosis_qol_last_week_happyability",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_last_week_happyability_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyability_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyability_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyability_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyability_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyability_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_last_week_happyhealth",
+        "text_key": "scoliosis_qol_last_week_happyhealth",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_last_week_happyhealth_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyhealth_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyhealth_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyhealth_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyhealth_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_happyhealth_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_last_week_sicktired",
+        "text_key": "scoliosis_qol_last_week_sicktired",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_last_week_sicktired_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_sicktired_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_sicktired_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_sicktired_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_lastweek_fullenergy",
+        "text_key": "scoliosis_qol_lastweek_fullenergy",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_lastweek_fullenergy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_fullenergy_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_fullenergy_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_fullenergy_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_last_week_paininterfere",
+        "text_key": "scoliosis_qol_last_week_paininterfere",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_last_week_paininterfere_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_paininterfere_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_paininterfere_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_last_week_paininterfere_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_last_week_run",
+        "text_key": "scoliosis_qol_last_week_run",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_bicycletricycle",
+        "text_key": "scoliosis_qol_last_week_bicycletricycle",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_3flightsstairs",
+        "text_key": "scoliosis_qol_last_week_3flightsstairs",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_1flightstairs",
+        "text_key": "scoliosis_qol_last_week_1flightstairs",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_walkmile",
+        "text_key": "scoliosis_qol_last_week_walkmile",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_walkthreeblocks",
+        "text_key": "scoliosis_qol_last_week_walkthreeblocks",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_walkoneblock",
+        "text_key": "scoliosis_qol_last_week_walkoneblock",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_getonoffbus",
+        "text_key": "scoliosis_qol_last_week_getonoffbus",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_child_need_help",
+        "text_key": "scoliosis_qol_child_need_help",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_child_need_help_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_child_need_help_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_child_need_help_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_child_need_help_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_child_need_help_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_child_use_assistivedevices",
+        "text_key": "scoliosis_qol_child_use_assistivedevices",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_child_use_assistivedevices_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_child_use_assistivedevices_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_child_use_assistivedevices_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_child_use_assistivedevices_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_child_use_assistivedevices_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_last_week_standsink",
+        "text_key": "scoliosis_qol_last_week_standsink",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_sitchair",
+        "text_key": "scoliosis_qol_last_week_sitchair",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_onofftoilet",
+        "text_key": "scoliosis_qol_last_week_onofftoilet",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_inoutbed",
+        "text_key": "scoliosis_qol_last_week_inoutbed",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_turndoorknobs",
+        "text_key": "scoliosis_qol_last_week_turndoorknobs",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_last_week_bendover",
+        "text_key": "scoliosis_qol_last_week_bendover",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scoliosis_qol_help_sittingstanding",
+        "text_key": "scoliosis_qol_help_sittingstanding",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_help_sittingstanding_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_help_sittingstanding_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_help_sittingstanding_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_help_sittingstanding_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_help_sittingstanding_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_use_assistivedevices_sitstand",
+        "text_key": "scoliosis_qol_use_assistivedevices_sitstand",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_use_assistivedevices_sitstand_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_use_assistivedevices_sitstand_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_use_assistivedevices_sitstand_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_use_assistivedevices_sitstand_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_use_assistivedevices_sitstand_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_recreational_outdooractivities",
+        "text_key": "scoliosis_qol_recreational_outdooractivities",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_recreational_outdooractivities_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_recreational_outdooractivities_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_recreational_outdooractivities_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_recreational_outdooractivities_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_activity_limited_byoutdoor",
+        "text_key": "scoliosis_qol_activity_limited_byoutdoor",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_pickupgames_sports",
+        "text_key": "scoliosis_qol_pickupgames_sports",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_pickupgames_sports_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_pickupgames_sports_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_pickupgames_sports_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_pickupgames_sports_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_activity_limited_bysports",
+        "text_key": "scoliosis_qol_activity_limited_bysports",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_activity_limited_bysports_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_bysports_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_bysports_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_bysports_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_bysports_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_bysports_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_bysports_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_competitivelevel_sports",
+        "text_key": "scoliosis_qol_competitivelevel_sports",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_competitivelevel_sports_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_competitivelevel_sports_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_competitivelevel_sports_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_competitivelevel_sports_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_activity_limited_bycompetivitesports",
+        "text_key": "scoliosis_qol_activity_limited_bycompetivitesports",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_gettogether_friends",
+        "text_key": "scoliosis_qol_gettogether_friends",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_gettogether_friends_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_gettogether_friends_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_gettogether_friends_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_frequency_gettogether_limitedby",
+        "text_key": "scoliosis_qol_frequency_gettogether_limitedby",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_frequency_gettogether_limitedby_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_frequency_gettogether_limitedby_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_frequency_gettogether_limitedby_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_frequency_gettogether_limitedby_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_frequency_gettogether_limitedby_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_lastweek_gymrecess",
+        "text_key": "scoliosis_qol_lastweek_gymrecess",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_lastweek_gymrecess_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_gymrecess_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_gymrecess_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_gymrecess_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_limitedby_gymrecess",
+        "text_key": "scoliosis_qol_limitedby_gymrecess",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_limitedby_gymrecess_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_limitedby_gymrecess_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_limitedby_gymrecess_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_limitedby_gymrecess_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_limitedby_gymrecess_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_easy_makefriends",
+        "text_key": "scoliosis_qol_easy_makefriends",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_easy_makefriends_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_easy_makefriends_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_easy_makefriends_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_easy_makefriends_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_lastweek_pain",
+        "text_key": "scoliosis_qol_lastweek_pain",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_lastweek_pain_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_pain_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_pain_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_pain_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_pain_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_pain_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_lastweek_paininterfere",
+        "text_key": "scoliosis_qol_lastweek_paininterfere",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_lastweek_paininterfere_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_paininterfere_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_paininterfere_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_paininterfere_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_lastweek_paininterfere_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_txexpectations_painrelief",
+        "text_key": "scoliosis_qol_txexpectations_painrelief",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_txexpectations_painrelief_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_painrelief_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_painrelief_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_painrelief_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_painrelief_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_txexpectations_lookbetter",
+        "text_key": "scoliosis_qol_txexpectations_lookbetter",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_txexpectations_lookbetter_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_lookbetter_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_lookbetter_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_lookbetter_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_lookbetter_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_txexpectations_feelbetterself",
+        "text_key": "scoliosis_qol_txexpectations_feelbetterself",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_txexpectations_feelbetterself_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_feelbetterself_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_feelbetterself_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_feelbetterself_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_feelbetterself_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_txexpectations_sleep",
+        "text_key": "scoliosis_qol_txexpectations_sleep",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_txexpectations_sleep_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_sleep_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_sleep_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_sleep_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_sleep_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_txexpectations_activitieshome",
+        "text_key": "scoliosis_qol_txexpectations_activitieshome",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_txexpectations_activitieshome_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_activitieshome_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_activitieshome_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_activitieshome_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_activitieshome_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_txexpectations_domore_school",
+        "text_key": "scoliosis_qol_txexpectations_domore_school",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_school_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_school_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_school_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_school_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_school_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_txexpectations_domore_play",
+        "text_key": "scoliosis_qol_txexpectations_domore_play",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_play_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_play_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_play_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_play_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_play_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_txexpectations_domore_sports",
+        "text_key": "scoliosis_qol_txexpectations_domore_sports",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_sports_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_sports_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_sports_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_sports_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_domore_sports_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult",
+        "text_key": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "scoliosis_qol_nochangedx_howyoufeel",
+        "text_key": "scoliosis_qol_nochangedx_howyoufeel",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "scoliosis_qol_nochangedx_howyoufeel_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scoliosis_qol_nochangedx_howyoufeel_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scoliosis_qol_nochangedx_howyoufeel_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scoliosis_qol_nochangedx_howyoufeel_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scoliosis_qol_nochangedx_howyoufeel_opt_5",
+            "value": 5
+          }
+        ]
       }
     ]
   },
-  "items": [
-    {
-      "id": "scoliosis_qol_clinic_id",
-      "text_key": "scoliosis_qol_clinic_id",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_physician_id",
-      "text_key": "scoliosis_qol_physician_id",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_firstsix_last_name",
-      "text_key": "scoliosis_qol_firstsix_last_name",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_office_chart",
-      "text_key": "scoliosis_qol_office_chart",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_primarydx_dxcode",
-      "text_key": "scoliosis_qol_primarydx_dxcode",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_primarydx_icd9",
-      "text_key": "scoliosis_qol_primarydx_icd9",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_primarydx_txprocedurecpt_code",
-      "text_key": "scoliosis_qol_primarydx_txprocedurecpt_code",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_primarydx_txprocedureicd9_code",
-      "text_key": "scoliosis_qol_primarydx_txprocedureicd9_code",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_primarydx_cpt_date",
-      "text_key": "scoliosis_qol_primarydx_cpt_date",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "scoliosis_qol_primarydx_procedure_bodysite",
-      "text_key": "scoliosis_qol_primarydx_procedure_bodysite",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_primarydx_procedure_bodysite_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_primarydx_procedure_bodysite_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_primarydx_procedure_bodysite_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_primarydx_procedure_bodysite_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_secondardx1_dxcode",
-      "text_key": "scoliosis_qol_secondardx1_dxcode",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondardx1_icd9",
-      "text_key": "scoliosis_qol_secondardx1_icd9",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondarydx1_txprocedurecpt_code",
-      "text_key": "scoliosis_qol_secondarydx1_txprocedurecpt_code",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondarydx1_txprocedureicd9_code",
-      "text_key": "scoliosis_qol_secondarydx1_txprocedureicd9_code",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondarydx1_cpt_date",
-      "text_key": "scoliosis_qol_secondarydx1_cpt_date",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "scoliosis_qol_secondardx1_procedure_bodysite",
-      "text_key": "scoliosis_qol_secondardx1_procedure_bodysite",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_secondardx1_procedure_bodysite_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_secondardx1_procedure_bodysite_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_secondardx1_procedure_bodysite_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_secondardx1_procedure_bodysite_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_secondardx2_dxcode",
-      "text_key": "scoliosis_qol_secondardx2_dxcode",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondardx2_icd9",
-      "text_key": "scoliosis_qol_secondardx2_icd9",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondarydx2_txprocedurecpt_code",
-      "text_key": "scoliosis_qol_secondarydx2_txprocedurecpt_code",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondarydx2_txprocedureicd9_code",
-      "text_key": "scoliosis_qol_secondarydx2_txprocedureicd9_code",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondarydx2_cpt_date",
-      "text_key": "scoliosis_qol_secondarydx2_cpt_date",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "scoliosis_qol_secondardx2_procedure_bodysite",
-      "text_key": "scoliosis_qol_secondardx2_procedure_bodysite",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_secondardx2_procedure_bodysite_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_secondardx2_procedure_bodysite_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_secondardx2_procedure_bodysite_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_secondardx2_procedure_bodysite_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_secondardx3_dxcode",
-      "text_key": "scoliosis_qol_secondardx3_dxcode",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondardx3_icd9",
-      "text_key": "scoliosis_qol_secondardx3_icd9",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondarydx3_txprocedurecpt_code",
-      "text_key": "scoliosis_qol_secondarydx3_txprocedurecpt_code",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondarydx3_txprocedureicd9_code",
-      "text_key": "scoliosis_qol_secondarydx3_txprocedureicd9_code",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondarydx3_cpt_date",
-      "text_key": "scoliosis_qol_secondarydx3_cpt_date",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "scoliosis_qol_secondardx3_procedure_bodysite",
-      "text_key": "scoliosis_qol_secondardx3_procedure_bodysite",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_secondardx3_procedure_bodysite_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_secondardx3_procedure_bodysite_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_secondardx3_procedure_bodysite_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_secondardx3_procedure_bodysite_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_secondardx4_dxcode",
-      "text_key": "scoliosis_qol_secondardx4_dxcode",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondardx4_icd9",
-      "text_key": "scoliosis_qol_secondardx4_icd9",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondarydx4_txprocedurecpt_code",
-      "text_key": "scoliosis_qol_secondarydx4_txprocedurecpt_code",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondarydx4_txprocedureicd9_code",
-      "text_key": "scoliosis_qol_secondarydx4_txprocedureicd9_code",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_secondarydx4_cpt_date",
-      "text_key": "scoliosis_qol_secondarydx4_cpt_date",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "scoliosis_qol_secondardx4_procedure_bodysite",
-      "text_key": "scoliosis_qol_secondardx4_procedure_bodysite",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_secondardx4_procedure_bodysite_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_secondardx4_procedure_bodysite_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_secondardx4_procedure_bodysite_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_secondardx4_procedure_bodysite_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_todays_date",
-      "text_key": "scoliosis_qol_todays_date",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "scoliosis_qol_childs_dob",
-      "text_key": "scoliosis_qol_childs_dob",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "scoliosis_qol_childs_ssn",
-      "text_key": "scoliosis_qol_childs_ssn",
-      "type": "short"
-    },
-    {
-      "id": "scoliosis_qol_parent_ssn",
-      "text_key": "scoliosis_qol_parent_ssn",
-      "type": "short"
-    },
-    {
-      "id": "instructions_221501",
-      "text_key": "instructions_221501",
-      "type": "inst"
-    },
-    {
-      "id": "scoliosis_qol_last_week_liftbooks",
-      "text_key": "scoliosis_qol_last_week_liftbooks",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_pourmilk",
-      "text_key": "scoliosis_qol_last_week_pourmilk",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_openjar",
-      "text_key": "scoliosis_qol_last_week_openjar",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_forkspoon",
-      "text_key": "scoliosis_qol_last_week_forkspoon",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_combhair",
-      "text_key": "scoliosis_qol_last_week_combhair",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_buttons",
-      "text_key": "scoliosis_qol_last_week_buttons",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_puton_coat",
-      "text_key": "scoliosis_qol_last_week_puton_coat",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_writepencil",
-      "text_key": "scoliosis_qol_last_week_writepencil",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last12mo_missschool",
-      "text_key": "scoliosis_qol_last12mo_missschool",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_last12mo_missschool_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_last12mo_missschool_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_last12mo_missschool_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_last12mo_missschool_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_last12mo_missschool_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "scoliosis_qol_last12mo_missschool_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_last_week_happylooks",
-      "text_key": "scoliosis_qol_last_week_happylooks",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_last_week_happylooks_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happylooks_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happylooks_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happylooks_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happylooks_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happylooks_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_last_week_happybody",
-      "text_key": "scoliosis_qol_last_week_happybody",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_last_week_happybody_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happybody_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happybody_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happybody_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happybody_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happybody_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_last_week_happyclothes",
-      "text_key": "scoliosis_qol_last_week_happyclothes",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_last_week_happyclothes_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyclothes_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyclothes_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyclothes_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyclothes_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyclothes_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_last_week_happyability",
-      "text_key": "scoliosis_qol_last_week_happyability",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_last_week_happyability_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyability_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyability_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyability_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyability_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyability_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_last_week_happyhealth",
-      "text_key": "scoliosis_qol_last_week_happyhealth",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_last_week_happyhealth_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyhealth_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyhealth_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyhealth_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyhealth_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_happyhealth_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_last_week_sicktired",
-      "text_key": "scoliosis_qol_last_week_sicktired",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_last_week_sicktired_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_sicktired_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_sicktired_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_sicktired_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_lastweek_fullenergy",
-      "text_key": "scoliosis_qol_lastweek_fullenergy",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_lastweek_fullenergy_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_fullenergy_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_fullenergy_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_fullenergy_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_last_week_paininterfere",
-      "text_key": "scoliosis_qol_last_week_paininterfere",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_last_week_paininterfere_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_paininterfere_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_paininterfere_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_last_week_paininterfere_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_last_week_run",
-      "text_key": "scoliosis_qol_last_week_run",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_bicycletricycle",
-      "text_key": "scoliosis_qol_last_week_bicycletricycle",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_3flightsstairs",
-      "text_key": "scoliosis_qol_last_week_3flightsstairs",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_1flightstairs",
-      "text_key": "scoliosis_qol_last_week_1flightstairs",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_walkmile",
-      "text_key": "scoliosis_qol_last_week_walkmile",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_walkthreeblocks",
-      "text_key": "scoliosis_qol_last_week_walkthreeblocks",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_walkoneblock",
-      "text_key": "scoliosis_qol_last_week_walkoneblock",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_getonoffbus",
-      "text_key": "scoliosis_qol_last_week_getonoffbus",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_child_need_help",
-      "text_key": "scoliosis_qol_child_need_help",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_child_need_help_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_child_need_help_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_child_need_help_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_child_need_help_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_child_need_help_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_child_use_assistivedevices",
-      "text_key": "scoliosis_qol_child_use_assistivedevices",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_child_use_assistivedevices_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_child_use_assistivedevices_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_child_use_assistivedevices_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_child_use_assistivedevices_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_child_use_assistivedevices_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_last_week_standsink",
-      "text_key": "scoliosis_qol_last_week_standsink",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_sitchair",
-      "text_key": "scoliosis_qol_last_week_sitchair",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_onofftoilet",
-      "text_key": "scoliosis_qol_last_week_onofftoilet",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_inoutbed",
-      "text_key": "scoliosis_qol_last_week_inoutbed",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_turndoorknobs",
-      "text_key": "scoliosis_qol_last_week_turndoorknobs",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_last_week_bendover",
-      "text_key": "scoliosis_qol_last_week_bendover",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scoliosis_qol_help_sittingstanding",
-      "text_key": "scoliosis_qol_help_sittingstanding",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_help_sittingstanding_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_help_sittingstanding_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_help_sittingstanding_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_help_sittingstanding_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_help_sittingstanding_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_use_assistivedevices_sitstand",
-      "text_key": "scoliosis_qol_use_assistivedevices_sitstand",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_use_assistivedevices_sitstand_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_use_assistivedevices_sitstand_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_use_assistivedevices_sitstand_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_use_assistivedevices_sitstand_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_use_assistivedevices_sitstand_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_recreational_outdooractivities",
-      "text_key": "scoliosis_qol_recreational_outdooractivities",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_recreational_outdooractivities_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_recreational_outdooractivities_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_recreational_outdooractivities_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_recreational_outdooractivities_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_activity_limited_byoutdoor",
-      "text_key": "scoliosis_qol_activity_limited_byoutdoor",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_byoutdoor_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_pickupgames_sports",
-      "text_key": "scoliosis_qol_pickupgames_sports",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_pickupgames_sports_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_pickupgames_sports_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_pickupgames_sports_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_pickupgames_sports_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_activity_limited_bysports",
-      "text_key": "scoliosis_qol_activity_limited_bysports",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_activity_limited_bysports_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_bysports_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_bysports_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_bysports_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_bysports_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_bysports_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_bysports_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_competitivelevel_sports",
-      "text_key": "scoliosis_qol_competitivelevel_sports",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_competitivelevel_sports_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_competitivelevel_sports_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_competitivelevel_sports_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_competitivelevel_sports_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_activity_limited_bycompetivitesports",
-      "text_key": "scoliosis_qol_activity_limited_bycompetivitesports",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "scoliosis_qol_activity_limited_bycompetivitesports_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_gettogether_friends",
-      "text_key": "scoliosis_qol_gettogether_friends",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_gettogether_friends_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_gettogether_friends_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_gettogether_friends_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_frequency_gettogether_limitedby",
-      "text_key": "scoliosis_qol_frequency_gettogether_limitedby",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_frequency_gettogether_limitedby_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_frequency_gettogether_limitedby_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_frequency_gettogether_limitedby_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_frequency_gettogether_limitedby_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_frequency_gettogether_limitedby_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_lastweek_gymrecess",
-      "text_key": "scoliosis_qol_lastweek_gymrecess",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_lastweek_gymrecess_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_gymrecess_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_gymrecess_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_gymrecess_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_limitedby_gymrecess",
-      "text_key": "scoliosis_qol_limitedby_gymrecess",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_limitedby_gymrecess_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_limitedby_gymrecess_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_limitedby_gymrecess_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_limitedby_gymrecess_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_limitedby_gymrecess_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_easy_makefriends",
-      "text_key": "scoliosis_qol_easy_makefriends",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_easy_makefriends_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_easy_makefriends_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_easy_makefriends_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_easy_makefriends_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_lastweek_pain",
-      "text_key": "scoliosis_qol_lastweek_pain",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_lastweek_pain_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_pain_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_pain_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_pain_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_pain_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_pain_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_lastweek_paininterfere",
-      "text_key": "scoliosis_qol_lastweek_paininterfere",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_lastweek_paininterfere_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_paininterfere_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_paininterfere_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_paininterfere_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_lastweek_paininterfere_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_txexpectations_painrelief",
-      "text_key": "scoliosis_qol_txexpectations_painrelief",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_txexpectations_painrelief_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_painrelief_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_painrelief_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_painrelief_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_painrelief_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_txexpectations_lookbetter",
-      "text_key": "scoliosis_qol_txexpectations_lookbetter",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_txexpectations_lookbetter_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_lookbetter_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_lookbetter_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_lookbetter_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_lookbetter_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_txexpectations_feelbetterself",
-      "text_key": "scoliosis_qol_txexpectations_feelbetterself",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_txexpectations_feelbetterself_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_feelbetterself_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_feelbetterself_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_feelbetterself_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_feelbetterself_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_txexpectations_sleep",
-      "text_key": "scoliosis_qol_txexpectations_sleep",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_txexpectations_sleep_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_sleep_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_sleep_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_sleep_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_sleep_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_txexpectations_activitieshome",
-      "text_key": "scoliosis_qol_txexpectations_activitieshome",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_txexpectations_activitieshome_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_activitieshome_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_activitieshome_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_activitieshome_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_activitieshome_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_txexpectations_domore_school",
-      "text_key": "scoliosis_qol_txexpectations_domore_school",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_school_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_school_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_school_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_school_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_school_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_txexpectations_domore_play",
-      "text_key": "scoliosis_qol_txexpectations_domore_play",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_play_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_play_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_play_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_play_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_play_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_txexpectations_domore_sports",
-      "text_key": "scoliosis_qol_txexpectations_domore_sports",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_sports_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_sports_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_sports_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_sports_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_domore_sports_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult",
-      "text_key": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_txexpectations_freeofpain_nodisabilityadult_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "scoliosis_qol_nochangedx_howyoufeel",
-      "text_key": "scoliosis_qol_nochangedx_howyoufeel",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "scoliosis_qol_nochangedx_howyoufeel_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "scoliosis_qol_nochangedx_howyoufeel_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "scoliosis_qol_nochangedx_howyoufeel_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scoliosis_qol_nochangedx_howyoufeel_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scoliosis_qol_nochangedx_howyoufeel_opt_5",
-          "value": 5
-        }
-      ]
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "1 - Easy",

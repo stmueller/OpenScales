@@ -1,193 +1,196 @@
 {
-  "scale_info": {
-    "name": "Ethnicity and Race",
-    "code": "PX011901",
-    "abbreviation": "PX011901",
-    "description": "This protocol includes questions that ask about ethnicity and race with answers that are multiple choice. For Ethnicity, the respondent can specify an ‘other’ ethnicity. For Race, the respondent can select one or more answer choice and write in their specific origin.",
-    "domain": "Demographics",
-    "citation": "2019 Census Test Report : A New Design for the 21st Century. Reissued: January 3, 2020, version 1.0. Prepared by: Decennial Statistical Studies Division and American Community Survey Office. Brown, J., Heggeness, M., Dorinski, S., Warren, L., & Yi, M. (2018). Understanding the Quality of Alternative Citizenship Data Sources for the 2020 Census. Washington, D.C.: U.S. Census Bureau. Retrieved November 26, 2019, from https://www2.census.gov/ces/wp/2018/CES-WP-18-38.pdf The Precision Medicine Initiative Cohort Program – Building a Research Foundation for 21st Century Medicine Precision Medicine Initiative (PMI) Working Group Report to the Advisory Committee to the Director, NIH September 17, 2015 The All of Us Research Program Investigators. Special Report : The “All of Us” Research Program. N Engl J Med 2019; 381: 668-676. [PhenX: https://www.phenxtoolkit.org/protocols/view/11901]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/11901"
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Ethnicity and Race",
+      "code": "PX011901",
+      "abbreviation": "PX011901",
+      "description": "This protocol includes questions that ask about ethnicity and race with answers that are multiple choice. For Ethnicity, the respondent can specify an ‘other’ ethnicity. For Race, the respondent can select one or more answer choice and write in their specific origin.",
+      "domain": "Demographics",
+      "citation": "2019 Census Test Report : A New Design for the 21st Century. Reissued: January 3, 2020, version 1.0. Prepared by: Decennial Statistical Studies Division and American Community Survey Office. Brown, J., Heggeness, M., Dorinski, S., Warren, L., & Yi, M. (2018). Understanding the Quality of Alternative Citizenship Data Sources for the 2020 Census. Washington, D.C.: U.S. Census Bureau. Retrieved November 26, 2019, from https://www2.census.gov/ces/wp/2018/CES-WP-18-38.pdf The Precision Medicine Initiative Cohort Program – Building a Research Foundation for 21st Century Medicine Precision Medicine Initiative (PMI) Working Group Report to the Advisory Committee to the Director, NIH September 17, 2015 The All of Us Research Program Investigators. Special Report : The “All of Us” Research Program. N Engl J Med 2019; 381: 668-676. [PhenX: https://www.phenxtoolkit.org/protocols/view/11901]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/11901"
+    },
+    "items": [
+      {
+        "id": "race_ethnicity_hispanic",
+        "text_key": "race_ethnicity_hispanic",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "race_ethnicity_hispanic_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "race_ethnicity_hispanic_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "race_ethnicity_hispanic_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "race_ethnicity_hispanic_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "race_ethnicity_hispanic_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "race_ethnicity_hispanic_other",
+        "text_key": "race_ethnicity_hispanic_other",
+        "type": "short",
+        "visible_when": {
+          "item": "race_ethnicity_hispanic",
+          "operator": "equals",
+          "value": 5
+        }
+      },
+      {
+        "id": "race_ethnicity_person_race",
+        "text_key": "race_ethnicity_person_race",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "race_ethnicity_person_race_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_10",
+            "value": 10
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_11",
+            "value": 11
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_12",
+            "value": 12
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_13",
+            "value": 13
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_14",
+            "value": 14
+          },
+          {
+            "text_key": "race_ethnicity_person_race_opt_15",
+            "value": 15
+          }
+        ]
+      },
+      {
+        "id": "race_ethnicity_person_race_origin_white",
+        "text_key": "race_ethnicity_person_race_origin_white",
+        "type": "short",
+        "visible_when": {
+          "item": "race_ethnicity_person_race",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        }
+      },
+      {
+        "id": "race_ethnicity_person_race_origin_black",
+        "text_key": "race_ethnicity_person_race_origin_black",
+        "type": "short",
+        "visible_when": {
+          "item": "race_ethnicity_person_race",
+          "operator": "in",
+          "value": [
+            2
+          ]
+        }
+      },
+      {
+        "id": "race_ethnicity_person_race_origin_american_indian",
+        "text_key": "race_ethnicity_person_race_origin_american_indian",
+        "type": "short",
+        "visible_when": {
+          "item": "race_ethnicity_person_race",
+          "operator": "in",
+          "value": [
+            3
+          ]
+        }
+      },
+      {
+        "id": "race_ethnicity_person_race_origin_other_asian",
+        "text_key": "race_ethnicity_person_race_origin_other_asian",
+        "type": "short",
+        "visible_when": {
+          "item": "race_ethnicity_person_race",
+          "operator": "in",
+          "value": [
+            10
+          ]
+        }
+      },
+      {
+        "id": "race_ethnicity_person_race_origin_other_pacific_islander",
+        "text_key": "race_ethnicity_person_race_origin_other_pacific_islander",
+        "type": "short",
+        "visible_when": {
+          "item": "race_ethnicity_person_race",
+          "operator": "in",
+          "value": [
+            14
+          ]
+        }
+      },
+      {
+        "id": "race_ethnicity_person_race_origin_other",
+        "text_key": "race_ethnicity_person_race_origin_other",
+        "type": "short",
+        "visible_when": {
+          "item": "race_ethnicity_person_race",
+          "operator": "in",
+          "value": [
+            15
+          ]
+        }
+      }
+    ]
   },
-  "items": [
-    {
-      "id": "race_ethnicity_hispanic",
-      "text_key": "race_ethnicity_hispanic",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "race_ethnicity_hispanic_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "race_ethnicity_hispanic_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "race_ethnicity_hispanic_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "race_ethnicity_hispanic_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "race_ethnicity_hispanic_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "race_ethnicity_hispanic_other",
-      "text_key": "race_ethnicity_hispanic_other",
-      "type": "short",
-      "visible_when": {
-        "item": "race_ethnicity_hispanic",
-        "operator": "equals",
-        "value": 5
-      }
-    },
-    {
-      "id": "race_ethnicity_person_race",
-      "text_key": "race_ethnicity_person_race",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "race_ethnicity_person_race_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_8",
-          "value": 8
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_9",
-          "value": 9
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_10",
-          "value": 10
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_11",
-          "value": 11
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_12",
-          "value": 12
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_13",
-          "value": 13
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_14",
-          "value": 14
-        },
-        {
-          "text_key": "race_ethnicity_person_race_opt_15",
-          "value": 15
-        }
-      ]
-    },
-    {
-      "id": "race_ethnicity_person_race_origin_white",
-      "text_key": "race_ethnicity_person_race_origin_white",
-      "type": "short",
-      "visible_when": {
-        "item": "race_ethnicity_person_race",
-        "operator": "in",
-        "value": [
-          1
-        ]
-      }
-    },
-    {
-      "id": "race_ethnicity_person_race_origin_black",
-      "text_key": "race_ethnicity_person_race_origin_black",
-      "type": "short",
-      "visible_when": {
-        "item": "race_ethnicity_person_race",
-        "operator": "in",
-        "value": [
-          2
-        ]
-      }
-    },
-    {
-      "id": "race_ethnicity_person_race_origin_american_indian",
-      "text_key": "race_ethnicity_person_race_origin_american_indian",
-      "type": "short",
-      "visible_when": {
-        "item": "race_ethnicity_person_race",
-        "operator": "in",
-        "value": [
-          3
-        ]
-      }
-    },
-    {
-      "id": "race_ethnicity_person_race_origin_other_asian",
-      "text_key": "race_ethnicity_person_race_origin_other_asian",
-      "type": "short",
-      "visible_when": {
-        "item": "race_ethnicity_person_race",
-        "operator": "in",
-        "value": [
-          10
-        ]
-      }
-    },
-    {
-      "id": "race_ethnicity_person_race_origin_other_pacific_islander",
-      "text_key": "race_ethnicity_person_race_origin_other_pacific_islander",
-      "type": "short",
-      "visible_when": {
-        "item": "race_ethnicity_person_race",
-        "operator": "in",
-        "value": [
-          14
-        ]
-      }
-    },
-    {
-      "id": "race_ethnicity_person_race_origin_other",
-      "text_key": "race_ethnicity_person_race_origin_other",
-      "type": "short",
-      "visible_when": {
-        "item": "race_ethnicity_person_race",
-        "operator": "in",
-        "value": [
-          15
-        ]
-      }
-    }
-  ],
   "translations": {
     "en": {
       "race_ethnicity_hispanic": "Is Person 1 of Hispanic, Latino, or Spanish origin?",

@@ -1,397 +1,400 @@
 {
-  "scale_info": {
-    "name": "Long COVID - Symptoms Due to COVID-19 - Temperature Regulation and Cardiovascular",
-    "code": "PX992008",
-    "abbreviation": "PX992008",
-    "description": "This protocol helps better describe and understand the patient experience and recovery of those with confirmed or suspected COVID-19, with a specific emphasis on Long COVID experience especially with temperature regulation and cardiovascular.",
-    "domain": "Long COVID",
-    "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/992008]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/992008"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Long COVID - Symptoms Due to COVID-19 - Temperature Regulation and Cardiovascular",
+      "code": "PX992008",
+      "abbreviation": "PX992008",
+      "description": "This protocol helps better describe and understand the patient experience and recovery of those with confirmed or suspected COVID-19, with a specific emphasis on Long COVID experience especially with temperature regulation and cardiovascular.",
+      "domain": "Long COVID",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/992008]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/992008"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        },
+        {
+          "text_key": "opt_4",
+          "value": 4
+        },
+        {
+          "text_key": "opt_5",
+          "value": 5
+        },
+        {
+          "text_key": "opt_6",
+          "value": 6
+        },
+        {
+          "text_key": "opt_7",
+          "value": 7
+        },
+        {
+          "text_key": "opt_8",
+          "value": 8
+        },
+        {
+          "text_key": "opt_9",
+          "value": 9
+        },
+        {
+          "text_key": "opt_10",
+          "value": 10
+        },
+        {
+          "text_key": "opt_11",
+          "value": 11
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_srecord_id",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_srecord_id",
+        "type": "short"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start_opt_2",
+            "value": 2
+          }
+        ]
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms",
+        "type": "multi",
+        "visible_when": {
+          "item": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms_opt_3",
+            "value": 3
+          }
+        ]
       },
       {
-        "text_key": "opt_4",
-        "value": 4
+        "id": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms_other",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms_other",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            null,
+            null
+          ]
+        }
       },
       {
-        "text_key": "opt_5",
-        "value": 5
+        "id": "sec_if_you_experienced_any_of_the_following_",
+        "type": "section",
+        "text_key": "sec_if_you_experienced_any_of_the_following__title"
       },
       {
-        "text_key": "opt_6",
-        "value": 6
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_elevated_temperature",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_elevated_temperature",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default",
+        "_matrix_group": "temperature_cardiovascular_temperature_issues_duration"
       },
       {
-        "text_key": "opt_7",
-        "value": 7
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_fever",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_fever",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default",
+        "_matrix_group": "temperature_cardiovascular_temperature_issues_duration"
       },
       {
-        "text_key": "opt_8",
-        "value": 8
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_low_temperature",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_low_temperature",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default",
+        "_matrix_group": "temperature_cardiovascular_temperature_issues_duration"
       },
       {
-        "text_key": "opt_9",
-        "value": 9
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_chills_flushing_sweats",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_chills_flushing_sweats",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default",
+        "_matrix_group": "temperature_cardiovascular_temperature_issues_duration"
       },
       {
-        "text_key": "opt_10",
-        "value": 10
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_other_temperature",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_other_temperature",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
+          "operator": "equals",
+          "value": 1
+        },
+        "option_set": "default",
+        "_matrix_group": "temperature_cardiovascular_temperature_issues_duration"
       },
       {
-        "text_key": "opt_11",
-        "value": 11
+        "id": "long_covid_symptoms_temperature_cardiovascular_lowest_temperature",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_lowest_temperature",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_low_temperature",
+          "operator": "in",
+          "value": [
+            2
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "long_covid_symptoms_temperature_cardiovascular_highest_temperature",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_highest_temperature",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_elevated_temperature",
+          "operator": "in",
+          "value": [
+            2
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "sec_when_did_you_experience_these_symptoms_p",
+        "type": "section",
+        "text_key": "sec_when_did_you_experience_these_symptoms_p_title"
+      },
+      {
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
+        "type": "multicheck",
+        "option_set": "default",
+        "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
+      },
+      {
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_bradycardia",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_bradycardia",
+        "type": "multicheck",
+        "option_set": "default",
+        "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
+      },
+      {
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_heart_palpitations",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_heart_palpitations",
+        "type": "multicheck",
+        "option_set": "default",
+        "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
+      },
+      {
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_high_blood_pressure",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_high_blood_pressure",
+        "type": "multicheck",
+        "option_set": "default",
+        "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
+      },
+      {
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_low_blood_pressure",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_low_blood_pressure",
+        "type": "multicheck",
+        "option_set": "default",
+        "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
+      },
+      {
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_visibly_inflamed_veins",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_visibly_inflamed_veins",
+        "type": "multicheck",
+        "option_set": "default",
+        "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
+      },
+      {
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_fainting",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_fainting",
+        "type": "multicheck",
+        "option_set": "default",
+        "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
+      },
+      {
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_blood_clots",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_blood_clots",
+        "type": "multicheck",
+        "option_set": "default",
+        "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
+      },
+      {
+        "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_maximum_tachycardia_rest",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_maximum_tachycardia_rest",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
+              "operator": "in",
+              "value": [
+                2
+              ]
+            },
+            {
+              "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
+              "operator": "in",
+              "value": [
+                3
+              ]
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "long_covid_symptoms_temperature_cardiovascular_maximum_tachycardia_exertion",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_maximum_tachycardia_exertion",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
+              "operator": "in",
+              "value": [
+                2
+              ]
+            },
+            {
+              "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
+              "operator": "in",
+              "value": [
+                3
+              ]
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "long_covid_symptoms_temperature_cardiovascular_tachycardia_sitting_standing_higher",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_tachycardia_sitting_standing_higher",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
+              "operator": "in",
+              "value": [
+                2
+              ]
+            },
+            {
+              "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
+              "operator": "in",
+              "value": [
+                3
+              ]
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_temperature_cardiovascular_tachycardia_sitting_standing_higher_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_temperature_cardiovascular_tachycardia_sitting_standing_higher_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_temperature_cardiovascular_tachycardia_sitting_standing_higher_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_temperature_cardiovascular_tachycardia_lying_standing_change",
+        "text_key": "long_covid_symptoms_temperature_cardiovascular_tachycardia_lying_standing_change",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
+              "operator": "in",
+              "value": [
+                2
+              ]
+            },
+            {
+              "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
+              "operator": "in",
+              "value": [
+                3
+              ]
+            }
+          ]
+        },
+        "input_type": "number"
       }
+    ],
+    "_conversion_notes": [
+      "WARN  long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms_other: branching references external var(s) → visible_when added but requires manual review [[long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms] = ']",
+      "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_elevated_temperature: member of matrix group 'temperature_cardiovascular_temperature_issues_duration' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_fever: member of matrix group 'temperature_cardiovascular_temperature_issues_duration' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_low_temperature: member of matrix group 'temperature_cardiovascular_temperature_issues_duration' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_chills_flushing_sweats: member of matrix group 'temperature_cardiovascular_temperature_issues_duration' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_other_temperature: member of matrix group 'temperature_cardiovascular_temperature_issues_duration' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_bradycardia: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_heart_palpitations: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_high_blood_pressure: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_low_blood_pressure: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_visibly_inflamed_veins: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_fainting: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_blood_clots: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually"
     ]
   },
-  "items": [
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_srecord_id",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_srecord_id",
-      "type": "short"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms",
-      "type": "multi",
-      "visible_when": {
-        "item": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms_other",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms_other",
-      "type": "short",
-      "visible_when": {
-        "any": [
-          null,
-          null
-        ]
-      }
-    },
-    {
-      "id": "sec_if_you_experienced_any_of_the_following_",
-      "type": "section",
-      "text_key": "sec_if_you_experienced_any_of_the_following__title"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_elevated_temperature",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_elevated_temperature",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default",
-      "_matrix_group": "temperature_cardiovascular_temperature_issues_duration"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_fever",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_fever",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default",
-      "_matrix_group": "temperature_cardiovascular_temperature_issues_duration"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_low_temperature",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_low_temperature",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default",
-      "_matrix_group": "temperature_cardiovascular_temperature_issues_duration"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_chills_flushing_sweats",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_chills_flushing_sweats",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default",
-      "_matrix_group": "temperature_cardiovascular_temperature_issues_duration"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_other_temperature",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_other_temperature",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "long_covid_symptoms_temperature_cardiovascular_temperature_issues_start",
-        "operator": "equals",
-        "value": 1
-      },
-      "option_set": "default",
-      "_matrix_group": "temperature_cardiovascular_temperature_issues_duration"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_lowest_temperature",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_lowest_temperature",
-      "type": "short",
-      "visible_when": {
-        "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_low_temperature",
-        "operator": "in",
-        "value": [
-          2
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_highest_temperature",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_highest_temperature",
-      "type": "short",
-      "visible_when": {
-        "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_elevated_temperature",
-        "operator": "in",
-        "value": [
-          2
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "sec_when_did_you_experience_these_symptoms_p",
-      "type": "section",
-      "text_key": "sec_when_did_you_experience_these_symptoms_p_title"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
-      "type": "multicheck",
-      "option_set": "default",
-      "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_bradycardia",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_bradycardia",
-      "type": "multicheck",
-      "option_set": "default",
-      "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_heart_palpitations",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_heart_palpitations",
-      "type": "multicheck",
-      "option_set": "default",
-      "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_high_blood_pressure",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_high_blood_pressure",
-      "type": "multicheck",
-      "option_set": "default",
-      "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_low_blood_pressure",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_low_blood_pressure",
-      "type": "multicheck",
-      "option_set": "default",
-      "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_visibly_inflamed_veins",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_visibly_inflamed_veins",
-      "type": "multicheck",
-      "option_set": "default",
-      "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_fainting",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_fainting",
-      "type": "multicheck",
-      "option_set": "default",
-      "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_blood_clots",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_blood_clots",
-      "type": "multicheck",
-      "option_set": "default",
-      "_matrix_group": "long_covid_cardiovascular_symptoms_duration"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_symptoms_maximum_tachycardia_rest",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_symptoms_maximum_tachycardia_rest",
-      "type": "short",
-      "visible_when": {
-        "any": [
-          {
-            "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
-            "operator": "in",
-            "value": [
-              2
-            ]
-          },
-          {
-            "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
-            "operator": "in",
-            "value": [
-              3
-            ]
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_maximum_tachycardia_exertion",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_maximum_tachycardia_exertion",
-      "type": "short",
-      "visible_when": {
-        "any": [
-          {
-            "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
-            "operator": "in",
-            "value": [
-              2
-            ]
-          },
-          {
-            "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
-            "operator": "in",
-            "value": [
-              3
-            ]
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_tachycardia_sitting_standing_higher",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_tachycardia_sitting_standing_higher",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
-            "operator": "in",
-            "value": [
-              2
-            ]
-          },
-          {
-            "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
-            "operator": "in",
-            "value": [
-              3
-            ]
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "long_covid_symptoms_temperature_cardiovascular_tachycardia_sitting_standing_higher_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_symptoms_temperature_cardiovascular_tachycardia_sitting_standing_higher_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_symptoms_temperature_cardiovascular_tachycardia_sitting_standing_higher_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "long_covid_symptoms_temperature_cardiovascular_tachycardia_lying_standing_change",
-      "text_key": "long_covid_symptoms_temperature_cardiovascular_tachycardia_lying_standing_change",
-      "type": "short",
-      "visible_when": {
-        "any": [
-          {
-            "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
-            "operator": "in",
-            "value": [
-              2
-            ]
-          },
-          {
-            "item": "long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia",
-            "operator": "in",
-            "value": [
-              3
-            ]
-          }
-        ]
-      },
-      "input_type": "number"
-    }
-  ],
-  "_conversion_notes": [
-    "WARN  long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms_other: branching references external var(s) → visible_when added but requires manual review [[long_covid_symptoms_temperature_cardiovascular_temperature_issues_symptoms] = ']",
-    "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_elevated_temperature: member of matrix group 'temperature_cardiovascular_temperature_issues_duration' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_fever: member of matrix group 'temperature_cardiovascular_temperature_issues_duration' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_low_temperature: member of matrix group 'temperature_cardiovascular_temperature_issues_duration' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_chills_flushing_sweats: member of matrix group 'temperature_cardiovascular_temperature_issues_duration' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_other_temperature: member of matrix group 'temperature_cardiovascular_temperature_issues_duration' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_tachycardia: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_bradycardia: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_heart_palpitations: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_high_blood_pressure: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_low_blood_pressure: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_visibly_inflamed_veins: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_fainting: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_temperature_cardiovascular_symptoms_blood_clots: member of matrix group 'long_covid_cardiovascular_symptoms_duration' — consider converting to grid type manually"
-  ],
   "translations": {
     "en": {
       "opt_1": "N/A",

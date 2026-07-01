@@ -1,572 +1,575 @@
 {
-  "scale_info": {
-    "name": "Family History of Substance Use Problems - Drugs",
-    "code": "PX510102",
-    "abbreviation": "PX510102",
-    "description": "The Alcohol Use Disorder and Associated Disabilities Interview Schedule -IV (AUDADIS-IV) is a fully structured diagnostic interview designed to assess alcohol, drug, and mental disorders according to the Diagnostic and Statistical Manual of Mental Disorders, Fourth Edition (DSM-IV), diagnostic crite",
-    "domain": "Substance Use - Screening & Family History",
-    "citation": "Grant, B. F., Dawson, D. A., & Hasin, D. S. (2001). The Alcohol Use Disorder and Associated Disabilities Interview Schedule-DSM-IV Version . Bethesda, MD: National Institute on Alcohol Abuse and Alcoholism. Grant, B. F., Dawson, D. A., Stinson, F. S., Chou, P. S., Kay, W., & Pickering, R. (2003). The Alcohol Use Disorder and Associated Disabilities Interview Schedule-IV (AUDADIS-IV): Reliability of alcohol consumption, tobacco use, family history of depression and psychiatric diagnostic modules in a general population sample. Drug and Alcohol Dependence, 71 (1), 7-16. Grant, B. F., Harford, T. C., Dawson, D. A., Chou, P. S., & Pickering, R. P. (1995). The Alcohol Use Disorder and Associated Disabilities Interview Schedule (AUDADIS): Reliability of alcohol and drug modules in a general population sample. Drug and Alcohol Dependence, 39 (1), 37-44. Hasin, D., Carpenter, K. M., McCloud, S., Smith, M., & Grant, B. F. (1997). The Alcohol Use Disorder and Associated Disabilities Interview Schedule (AUDADIS): Reliability of alcohol and drug modules in a clinical sample. Drug and Alcohol Dependence, 44 (2-3):133-141. [PhenX: https://www.phenxtoolkit.org/protocols/view/510102]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/510102"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Family History of Substance Use Problems - Drugs",
+      "code": "PX510102",
+      "abbreviation": "PX510102",
+      "description": "The Alcohol Use Disorder and Associated Disabilities Interview Schedule -IV (AUDADIS-IV) is a fully structured diagnostic interview designed to assess alcohol, drug, and mental disorders according to the Diagnostic and Statistical Manual of Mental Disorders, Fourth Edition (DSM-IV), diagnostic crite",
+      "domain": "Substance Use - Screening & Family History",
+      "citation": "Grant, B. F., Dawson, D. A., & Hasin, D. S. (2001). The Alcohol Use Disorder and Associated Disabilities Interview Schedule-DSM-IV Version . Bethesda, MD: National Institute on Alcohol Abuse and Alcoholism. Grant, B. F., Dawson, D. A., Stinson, F. S., Chou, P. S., Kay, W., & Pickering, R. (2003). The Alcohol Use Disorder and Associated Disabilities Interview Schedule-IV (AUDADIS-IV): Reliability of alcohol consumption, tobacco use, family history of depression and psychiatric diagnostic modules in a general population sample. Drug and Alcohol Dependence, 71 (1), 7-16. Grant, B. F., Harford, T. C., Dawson, D. A., Chou, P. S., & Pickering, R. P. (1995). The Alcohol Use Disorder and Associated Disabilities Interview Schedule (AUDADIS): Reliability of alcohol and drug modules in a general population sample. Drug and Alcohol Dependence, 39 (1), 37-44. Hasin, D., Carpenter, K. M., McCloud, S., Smith, M., & Grant, B. F. (1997). The Alcohol Use Disorder and Associated Disabilities Interview Schedule (AUDADIS): Reliability of alcohol and drug modules in a clinical sample. Drug and Alcohol Dependence, 44 (2-3):133-141. [PhenX: https://www.phenxtoolkit.org/protocols/view/510102]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/510102"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "father_problem_drugs",
+        "text_key": "father_problem_drugs",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "mother_problem_drugs",
+        "text_key": "mother_problem_drugs",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "pxt510102_number_full_brothers",
+        "text_key": "pxt510102_number_full_brothers",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pxt510102_number_full2_f85",
+        "text_key": "pxt510102_number_full2_f85",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pxt510102_number_full2_f85_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "pxt510102_number_full2_f85_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "brother_problem_drugs",
+        "text_key": "brother_problem_drugs",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_full_brothers",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "number_brothers_problem_drugs",
+        "text_key": "number_brothers_problem_drugs",
+        "type": "short",
+        "visible_when": {
+          "item": "pxt510102_number_full_brothers",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "number_brothers_probl2_142",
+        "text_key": "number_brothers_probl2_142",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_full_brothers",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "number_brothers_probl2_142_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "pxt510102_number_full_sisters",
+        "text_key": "pxt510102_number_full_sisters",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pxt510102_number_full2_601",
+        "text_key": "pxt510102_number_full2_601",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pxt510102_number_full2_601_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "pxt510102_number_full2_601_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "sister_problem_drugs",
+        "text_key": "sister_problem_drugs",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_full_sisters",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "number_sisters_problem_drugs",
+        "text_key": "number_sisters_problem_drugs",
+        "type": "short",
+        "visible_when": {
+          "item": "pxt510102_number_full_sisters",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "number_sisters_proble2_4b8",
+        "text_key": "number_sisters_proble2_4b8",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_full_sisters",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "number_sisters_proble2_4b8_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "pxt510102_number_natural_sons",
+        "text_key": "pxt510102_number_natural_sons",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pxt510102_number_natu2_bb9",
+        "text_key": "pxt510102_number_natu2_bb9",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pxt510102_number_natu2_bb9_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "pxt510102_number_natu2_bb9_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "son_problem_drugs",
+        "text_key": "son_problem_drugs",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_natural_sons",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "number_sons_problem_drugs",
+        "text_key": "number_sons_problem_drugs",
+        "type": "short",
+        "visible_when": {
+          "item": "pxt510102_number_natural_sons",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "number_sons_problem_d2_492",
+        "text_key": "number_sons_problem_d2_492",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_natural_sons",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "number_sons_problem_d2_492_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "pxt510102_number_natural_daughters",
+        "text_key": "pxt510102_number_natural_daughters",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pxt510102_number_natu2_841",
+        "text_key": "pxt510102_number_natu2_841",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pxt510102_number_natu2_841_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "pxt510102_number_natu2_841_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "daughter_problem_drugs",
+        "text_key": "daughter_problem_drugs",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_natural_daughters",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "number_daughters_problem_drugs",
+        "text_key": "number_daughters_problem_drugs",
+        "type": "short",
+        "visible_when": {
+          "item": "pxt510102_number_natural_daughters",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "number_daughters_prob2_637",
+        "text_key": "number_daughters_prob2_637",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_natural_daughters",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "number_daughters_prob2_637_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "pxt510102_number_natural_paternal_uncles",
+        "text_key": "pxt510102_number_natural_paternal_uncles",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pxt510102_number_natu2_2de",
+        "text_key": "pxt510102_number_natu2_2de",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pxt510102_number_natu2_2de_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "pxt510102_number_natu2_2de_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "paternal_uncle_problem_drugs",
+        "text_key": "paternal_uncle_problem_drugs",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_natural_paternal_uncles",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "number_paternal_uncles_problem_drugs",
+        "text_key": "number_paternal_uncles_problem_drugs",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_natural_paternal_uncles",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "number_paternal_uncles_problem_drugs_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "number_paternal_uncle2_f24",
+        "text_key": "number_paternal_uncle2_f24",
+        "type": "short",
+        "visible_when": {
+          "item": "pxt510102_number_natural_paternal_uncles",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "pxt510102_number_natural_paternal_aunts",
+        "text_key": "pxt510102_number_natural_paternal_aunts",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pxt510102_number_natu2_e6d",
+        "text_key": "pxt510102_number_natu2_e6d",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pxt510102_number_natu2_e6d_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "pxt510102_number_natu2_e6d_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "paternal_aunt_problem_drugs",
+        "text_key": "paternal_aunt_problem_drugs",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_natural_paternal_aunts",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "number_paternal_aunts_problem_drugs",
+        "text_key": "number_paternal_aunts_problem_drugs",
+        "type": "short",
+        "visible_when": {
+          "item": "pxt510102_number_natural_paternal_aunts",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "number_paternal_aunts2_73d",
+        "text_key": "number_paternal_aunts2_73d",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_natural_paternal_aunts",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "number_paternal_aunts2_73d_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "pxt510102_number_natural_maternal_uncles",
+        "text_key": "pxt510102_number_natural_maternal_uncles",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pxt510102_number_natu2_ff4",
+        "text_key": "pxt510102_number_natu2_ff4",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pxt510102_number_natu2_ff4_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "pxt510102_number_natu2_ff4_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "maternal_uncle_problem_drugs",
+        "text_key": "maternal_uncle_problem_drugs",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_natural_maternal_uncles",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "number_maternal_uncles_problem_drugs",
+        "text_key": "number_maternal_uncles_problem_drugs",
+        "type": "short",
+        "visible_when": {
+          "item": "pxt510102_number_natural_maternal_uncles",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "number_maternal_uncle2_ffc",
+        "text_key": "number_maternal_uncle2_ffc",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_natural_maternal_uncles",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "number_maternal_uncle2_ffc_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "pxt510102_number_natural_maternal_aunts",
+        "text_key": "pxt510102_number_natural_maternal_aunts",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pxt510102_number_natu2_912",
+        "text_key": "pxt510102_number_natu2_912",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pxt510102_number_natu2_912_opt_0",
+            "value": 0
+          },
+          {
+            "text_key": "pxt510102_number_natu2_912_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "maternal_aunt_problem_drugs",
+        "text_key": "maternal_aunt_problem_drugs",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_natural_maternal_aunts",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "number_maternal_aunts_problem_drugs",
+        "text_key": "number_maternal_aunts_problem_drugs",
+        "type": "multi",
+        "visible_when": {
+          "item": "pxt510102_number_natural_maternal_aunts",
+          "operator": "greater_than",
+          "value": 0
+        },
+        "options": [
+          {
+            "text_key": "number_maternal_aunts_problem_drugs_opt_1",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "id": "paternal_grandfather_problem_drugs",
+        "text_key": "paternal_grandfather_problem_drugs",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "paternal_grandmother_problem_drugs",
+        "text_key": "paternal_grandmother_problem_drugs",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "maternal_grandfather_problem_drugs",
+        "text_key": "maternal_grandfather_problem_drugs",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "maternal_grandmother_problem_drugs",
+        "text_key": "maternal_grandmother_problem_drugs",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "married_to_someone_problem_drugs",
+        "text_key": "married_to_someone_problem_drugs",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "current_spouse_problem_drugs",
+        "text_key": "current_spouse_problem_drugs",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "current_spouse_problem_drugs_now",
+        "text_key": "current_spouse_problem_drugs_now",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "pxt510102_live_with_someone",
+        "text_key": "pxt510102_live_with_someone",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "live_with_someone_problem_drugs",
+        "text_key": "live_with_someone_problem_drugs",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "live_with_someone_now_problem_drugs",
+        "text_key": "live_with_someone_now_problem_drugs",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "live_with_someone_problem_drugs_currently",
+        "text_key": "live_with_someone_problem_drugs_currently",
+        "type": "multi",
+        "option_set": "default"
       }
     ]
   },
-  "items": [
-    {
-      "id": "father_problem_drugs",
-      "text_key": "father_problem_drugs",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "mother_problem_drugs",
-      "text_key": "mother_problem_drugs",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pxt510102_number_full_brothers",
-      "text_key": "pxt510102_number_full_brothers",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pxt510102_number_full2_f85",
-      "text_key": "pxt510102_number_full2_f85",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "pxt510102_number_full2_f85_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "pxt510102_number_full2_f85_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "brother_problem_drugs",
-      "text_key": "brother_problem_drugs",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_full_brothers",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "number_brothers_problem_drugs",
-      "text_key": "number_brothers_problem_drugs",
-      "type": "short",
-      "visible_when": {
-        "item": "pxt510102_number_full_brothers",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "number_brothers_probl2_142",
-      "text_key": "number_brothers_probl2_142",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_full_brothers",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "options": [
-        {
-          "text_key": "number_brothers_probl2_142_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "pxt510102_number_full_sisters",
-      "text_key": "pxt510102_number_full_sisters",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pxt510102_number_full2_601",
-      "text_key": "pxt510102_number_full2_601",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "pxt510102_number_full2_601_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "pxt510102_number_full2_601_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "sister_problem_drugs",
-      "text_key": "sister_problem_drugs",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_full_sisters",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "number_sisters_problem_drugs",
-      "text_key": "number_sisters_problem_drugs",
-      "type": "short",
-      "visible_when": {
-        "item": "pxt510102_number_full_sisters",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "number_sisters_proble2_4b8",
-      "text_key": "number_sisters_proble2_4b8",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_full_sisters",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "options": [
-        {
-          "text_key": "number_sisters_proble2_4b8_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "pxt510102_number_natural_sons",
-      "text_key": "pxt510102_number_natural_sons",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pxt510102_number_natu2_bb9",
-      "text_key": "pxt510102_number_natu2_bb9",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "pxt510102_number_natu2_bb9_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "pxt510102_number_natu2_bb9_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "son_problem_drugs",
-      "text_key": "son_problem_drugs",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_natural_sons",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "number_sons_problem_drugs",
-      "text_key": "number_sons_problem_drugs",
-      "type": "short",
-      "visible_when": {
-        "item": "pxt510102_number_natural_sons",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "number_sons_problem_d2_492",
-      "text_key": "number_sons_problem_d2_492",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_natural_sons",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "options": [
-        {
-          "text_key": "number_sons_problem_d2_492_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "pxt510102_number_natural_daughters",
-      "text_key": "pxt510102_number_natural_daughters",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pxt510102_number_natu2_841",
-      "text_key": "pxt510102_number_natu2_841",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "pxt510102_number_natu2_841_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "pxt510102_number_natu2_841_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "daughter_problem_drugs",
-      "text_key": "daughter_problem_drugs",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_natural_daughters",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "number_daughters_problem_drugs",
-      "text_key": "number_daughters_problem_drugs",
-      "type": "short",
-      "visible_when": {
-        "item": "pxt510102_number_natural_daughters",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "number_daughters_prob2_637",
-      "text_key": "number_daughters_prob2_637",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_natural_daughters",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "options": [
-        {
-          "text_key": "number_daughters_prob2_637_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "pxt510102_number_natural_paternal_uncles",
-      "text_key": "pxt510102_number_natural_paternal_uncles",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pxt510102_number_natu2_2de",
-      "text_key": "pxt510102_number_natu2_2de",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "pxt510102_number_natu2_2de_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "pxt510102_number_natu2_2de_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "paternal_uncle_problem_drugs",
-      "text_key": "paternal_uncle_problem_drugs",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_natural_paternal_uncles",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "number_paternal_uncles_problem_drugs",
-      "text_key": "number_paternal_uncles_problem_drugs",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_natural_paternal_uncles",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "options": [
-        {
-          "text_key": "number_paternal_uncles_problem_drugs_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "number_paternal_uncle2_f24",
-      "text_key": "number_paternal_uncle2_f24",
-      "type": "short",
-      "visible_when": {
-        "item": "pxt510102_number_natural_paternal_uncles",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "pxt510102_number_natural_paternal_aunts",
-      "text_key": "pxt510102_number_natural_paternal_aunts",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pxt510102_number_natu2_e6d",
-      "text_key": "pxt510102_number_natu2_e6d",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "pxt510102_number_natu2_e6d_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "pxt510102_number_natu2_e6d_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "paternal_aunt_problem_drugs",
-      "text_key": "paternal_aunt_problem_drugs",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_natural_paternal_aunts",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "number_paternal_aunts_problem_drugs",
-      "text_key": "number_paternal_aunts_problem_drugs",
-      "type": "short",
-      "visible_when": {
-        "item": "pxt510102_number_natural_paternal_aunts",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "number_paternal_aunts2_73d",
-      "text_key": "number_paternal_aunts2_73d",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_natural_paternal_aunts",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "options": [
-        {
-          "text_key": "number_paternal_aunts2_73d_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "pxt510102_number_natural_maternal_uncles",
-      "text_key": "pxt510102_number_natural_maternal_uncles",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pxt510102_number_natu2_ff4",
-      "text_key": "pxt510102_number_natu2_ff4",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "pxt510102_number_natu2_ff4_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "pxt510102_number_natu2_ff4_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "maternal_uncle_problem_drugs",
-      "text_key": "maternal_uncle_problem_drugs",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_natural_maternal_uncles",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "number_maternal_uncles_problem_drugs",
-      "text_key": "number_maternal_uncles_problem_drugs",
-      "type": "short",
-      "visible_when": {
-        "item": "pxt510102_number_natural_maternal_uncles",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "number_maternal_uncle2_ffc",
-      "text_key": "number_maternal_uncle2_ffc",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_natural_maternal_uncles",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "options": [
-        {
-          "text_key": "number_maternal_uncle2_ffc_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "pxt510102_number_natural_maternal_aunts",
-      "text_key": "pxt510102_number_natural_maternal_aunts",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pxt510102_number_natu2_912",
-      "text_key": "pxt510102_number_natu2_912",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "pxt510102_number_natu2_912_opt_0",
-          "value": 0
-        },
-        {
-          "text_key": "pxt510102_number_natu2_912_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "maternal_aunt_problem_drugs",
-      "text_key": "maternal_aunt_problem_drugs",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_natural_maternal_aunts",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "number_maternal_aunts_problem_drugs",
-      "text_key": "number_maternal_aunts_problem_drugs",
-      "type": "multi",
-      "visible_when": {
-        "item": "pxt510102_number_natural_maternal_aunts",
-        "operator": "greater_than",
-        "value": 0
-      },
-      "options": [
-        {
-          "text_key": "number_maternal_aunts_problem_drugs_opt_1",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "id": "paternal_grandfather_problem_drugs",
-      "text_key": "paternal_grandfather_problem_drugs",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "paternal_grandmother_problem_drugs",
-      "text_key": "paternal_grandmother_problem_drugs",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "maternal_grandfather_problem_drugs",
-      "text_key": "maternal_grandfather_problem_drugs",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "maternal_grandmother_problem_drugs",
-      "text_key": "maternal_grandmother_problem_drugs",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "married_to_someone_problem_drugs",
-      "text_key": "married_to_someone_problem_drugs",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "current_spouse_problem_drugs",
-      "text_key": "current_spouse_problem_drugs",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "current_spouse_problem_drugs_now",
-      "text_key": "current_spouse_problem_drugs_now",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pxt510102_live_with_someone",
-      "text_key": "pxt510102_live_with_someone",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "live_with_someone_problem_drugs",
-      "text_key": "live_with_someone_problem_drugs",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "live_with_someone_now_problem_drugs",
-      "text_key": "live_with_someone_now_problem_drugs",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "live_with_someone_problem_drugs_currently",
-      "text_key": "live_with_someone_problem_drugs_currently",
-      "type": "multi",
-      "option_set": "default"
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "Yes",

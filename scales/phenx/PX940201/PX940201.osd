@@ -1,473 +1,476 @@
 {
-  "scale_info": {
-    "name": "Vulnerability and Exposure to COVID-19",
-    "code": "PX940201",
-    "abbreviation": "PX940201",
-    "description": "The COVID-19 Experiences (COVEX) questionnaire was developed by investigators from the Division of Child and Adolescent Psychiatry at Columbia University/New York State Psychiatric Institute for use in ongoing and new research studies and by affiliated clinical settings to document the experiences o",
-    "domain": "COVID-19 - Vaccination",
-    "citation": "COVID-19 Experiences (COVEX). As implemented in: PhenX Toolkit. Vulnerability and Exposure to COVID-19. https://www.phenxtoolkit.org/protocols/view/940201",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/940201"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Vulnerability and Exposure to COVID-19",
+      "code": "PX940201",
+      "abbreviation": "PX940201",
+      "description": "The COVID-19 Experiences (COVEX) questionnaire was developed by investigators from the Division of Child and Adolescent Psychiatry at Columbia University/New York State Psychiatric Institute for use in ongoing and new research studies and by affiliated clinical settings to document the experiences o",
+      "domain": "COVID-19 - Vaccination",
+      "citation": "COVID-19 Experiences (COVEX). As implemented in: PhenX Toolkit. Vulnerability and Exposure to COVID-19. https://www.phenxtoolkit.org/protocols/view/940201",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/940201"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "medical_condition_prior_outbreak",
+        "text_key": "medical_condition_prior_outbreak",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "medical_condition_prior_outbreak_specify",
+        "text_key": "medical_condition_prior_outbreak_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "medical_condition_prior_outbreak",
+          "operator": "equals",
+          "value": 2
+        }
+      },
+      {
+        "id": "smoker_vaper_prior_outbreak",
+        "text_key": "smoker_vaper_prior_outbreak",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "smoker_vaper_prior_outbreak_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "smoker_vaper_prior_outbreak_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "smoker_vaper_prior_outbreak_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "smoker_vaper_prior_outbreak_smoke_amount",
+        "text_key": "smoker_vaper_prior_outbreak_smoke_amount",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoker_vaper_prior_outbreak",
+          "operator": "in",
+          "value": [
+            2
+          ]
+        },
+        "options": [
+          {
+            "text_key": "smoker_vaper_prior_outbreak_smoke_amount_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "smoker_vaper_prior_outbreak_smoke_amount_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "smoker_vaper_prior_outbreak_smoke_amount_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "smoker_vaper_prior_outbreak_smoke_amount_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "smoker_vaper_prior_outbreak_smoke_amount_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "smoker_vaper_prior_outbreak_vape_amount",
+        "text_key": "smoker_vaper_prior_outbreak_vape_amount",
+        "type": "multi",
+        "visible_when": {
+          "item": "smoker_vaper_prior_outbreak",
+          "operator": "in",
+          "value": [
+            3
+          ]
+        },
+        "options": [
+          {
+            "text_key": "smoker_vaper_prior_outbreak_vape_amount_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "smoker_vaper_prior_outbreak_vape_amount_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "smoker_vaper_prior_outbreak_vape_amount_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "smoker_vaper_prior_outbreak_vape_amount_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "smoker_vaper_prior_outbreak_vape_amount_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "pregnant_during_after_outbreak",
+        "text_key": "pregnant_during_after_outbreak",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "outbreak_live_with_someone_sick",
+        "text_key": "outbreak_live_with_someone_sick",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "outbreak_live_with_someone_sick_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "outbreak_live_with_someone_sick_who",
+        "text_key": "outbreak_live_with_someone_sick_who",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "outbreak_live_with_someone_sick",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "options": [
+          {
+            "text_key": "outbreak_live_with_someone_sick_who_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_who_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_who_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_who_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_who_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_who_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_who_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_who_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "outbreak_live_with_someone_sick_who_other",
+        "text_key": "outbreak_live_with_someone_sick_who_other",
+        "type": "short",
+        "visible_when": {
+          "item": "outbreak_live_with_someone_sick_who",
+          "operator": "in",
+          "value": [
+            8
+          ]
+        }
+      },
+      {
+        "id": "outbreak_live_with_someone_sick_hospitalization",
+        "text_key": "outbreak_live_with_someone_sick_hospitalization",
+        "type": "multi",
+        "visible_when": {
+          "item": "outbreak_live_with_someone_sick",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "outbreak_live_with_someone_sick_death",
+        "text_key": "outbreak_live_with_someone_sick_death",
+        "type": "multi",
+        "visible_when": {
+          "item": "outbreak_live_with_someone_sick",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "outbreak_live_with_someone_sick_death_who",
+        "text_key": "outbreak_live_with_someone_sick_death_who",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "outbreak_live_with_someone_sick_death",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "outbreak_live_with_someone_sick_death_who_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_death_who_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_death_who_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_death_who_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_death_who_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_death_who_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_death_who_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "outbreak_live_with_someone_sick_death_who_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "family_friends_sick_coronavirus",
+        "text_key": "family_friends_sick_coronavirus",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "family_friends_sick_coronavirus_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "family_friends_sick_coronavirus_who",
+        "text_key": "family_friends_sick_coronavirus_who",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "family_friends_sick_coronavirus",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "options": [
+          {
+            "text_key": "family_friends_sick_coronavirus_who_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_who_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_who_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_who_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_who_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_who_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_who_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_who_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "family_friends_sick_coronavirus_near_two_weeks_before",
+        "text_key": "family_friends_sick_coronavirus_near_two_weeks_before",
+        "type": "multi",
+        "visible_when": {
+          "item": "family_friends_sick_coronavirus",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "family_friends_sick_coronavirus_hospitalization",
+        "text_key": "family_friends_sick_coronavirus_hospitalization",
+        "type": "multi",
+        "visible_when": {
+          "item": "family_friends_sick_coronavirus",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "family_friends_sick_coronavirus_death",
+        "text_key": "family_friends_sick_coronavirus_death",
+        "type": "multi",
+        "visible_when": {
+          "item": "family_friends_sick_coronavirus",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "family_friends_sick_coronavirus_death_who",
+        "text_key": "family_friends_sick_coronavirus_death_who",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "family_friends_sick_coronavirus_death",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "family_friends_sick_coronavirus_death_who_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_death_who_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_death_who_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_death_who_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_death_who_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_death_who_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_death_who_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "family_friends_sick_coronavirus_death_who_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "interaction_other_regular_sick",
+        "text_key": "interaction_other_regular_sick",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "interaction_other_regular_sick_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "interaction_other_regular_sick_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "interaction_other_regular_sick_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "interaction_other_regular_sick_near_two_weeks",
+        "text_key": "interaction_other_regular_sick_near_two_weeks",
+        "type": "multi",
+        "visible_when": {
+          "item": "interaction_other_regular_sick",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "option_set": "default"
       }
     ]
   },
-  "items": [
-    {
-      "id": "medical_condition_prior_outbreak",
-      "text_key": "medical_condition_prior_outbreak",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "medical_condition_prior_outbreak_specify",
-      "text_key": "medical_condition_prior_outbreak_specify",
-      "type": "short",
-      "visible_when": {
-        "item": "medical_condition_prior_outbreak",
-        "operator": "equals",
-        "value": 2
-      }
-    },
-    {
-      "id": "smoker_vaper_prior_outbreak",
-      "text_key": "smoker_vaper_prior_outbreak",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "smoker_vaper_prior_outbreak_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "smoker_vaper_prior_outbreak_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "smoker_vaper_prior_outbreak_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "smoker_vaper_prior_outbreak_smoke_amount",
-      "text_key": "smoker_vaper_prior_outbreak_smoke_amount",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoker_vaper_prior_outbreak",
-        "operator": "in",
-        "value": [
-          2
-        ]
-      },
-      "options": [
-        {
-          "text_key": "smoker_vaper_prior_outbreak_smoke_amount_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "smoker_vaper_prior_outbreak_smoke_amount_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "smoker_vaper_prior_outbreak_smoke_amount_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "smoker_vaper_prior_outbreak_smoke_amount_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "smoker_vaper_prior_outbreak_smoke_amount_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "smoker_vaper_prior_outbreak_vape_amount",
-      "text_key": "smoker_vaper_prior_outbreak_vape_amount",
-      "type": "multi",
-      "visible_when": {
-        "item": "smoker_vaper_prior_outbreak",
-        "operator": "in",
-        "value": [
-          3
-        ]
-      },
-      "options": [
-        {
-          "text_key": "smoker_vaper_prior_outbreak_vape_amount_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "smoker_vaper_prior_outbreak_vape_amount_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "smoker_vaper_prior_outbreak_vape_amount_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "smoker_vaper_prior_outbreak_vape_amount_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "smoker_vaper_prior_outbreak_vape_amount_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "pregnant_during_after_outbreak",
-      "text_key": "pregnant_during_after_outbreak",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "outbreak_live_with_someone_sick",
-      "text_key": "outbreak_live_with_someone_sick",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "outbreak_live_with_someone_sick_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "outbreak_live_with_someone_sick_who",
-      "text_key": "outbreak_live_with_someone_sick_who",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "outbreak_live_with_someone_sick",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "options": [
-        {
-          "text_key": "outbreak_live_with_someone_sick_who_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_who_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_who_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_who_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_who_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_who_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_who_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_who_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "outbreak_live_with_someone_sick_who_other",
-      "text_key": "outbreak_live_with_someone_sick_who_other",
-      "type": "short",
-      "visible_when": {
-        "item": "outbreak_live_with_someone_sick_who",
-        "operator": "in",
-        "value": [
-          8
-        ]
-      }
-    },
-    {
-      "id": "outbreak_live_with_someone_sick_hospitalization",
-      "text_key": "outbreak_live_with_someone_sick_hospitalization",
-      "type": "multi",
-      "visible_when": {
-        "item": "outbreak_live_with_someone_sick",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "outbreak_live_with_someone_sick_death",
-      "text_key": "outbreak_live_with_someone_sick_death",
-      "type": "multi",
-      "visible_when": {
-        "item": "outbreak_live_with_someone_sick",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "outbreak_live_with_someone_sick_death_who",
-      "text_key": "outbreak_live_with_someone_sick_death_who",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "outbreak_live_with_someone_sick_death",
-        "operator": "equals",
-        "value": 2
-      },
-      "options": [
-        {
-          "text_key": "outbreak_live_with_someone_sick_death_who_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_death_who_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_death_who_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_death_who_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_death_who_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_death_who_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_death_who_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "outbreak_live_with_someone_sick_death_who_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "family_friends_sick_coronavirus",
-      "text_key": "family_friends_sick_coronavirus",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "family_friends_sick_coronavirus_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "family_friends_sick_coronavirus_who",
-      "text_key": "family_friends_sick_coronavirus_who",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "family_friends_sick_coronavirus",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "options": [
-        {
-          "text_key": "family_friends_sick_coronavirus_who_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_who_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_who_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_who_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_who_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_who_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_who_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_who_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "family_friends_sick_coronavirus_near_two_weeks_before",
-      "text_key": "family_friends_sick_coronavirus_near_two_weeks_before",
-      "type": "multi",
-      "visible_when": {
-        "item": "family_friends_sick_coronavirus",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "family_friends_sick_coronavirus_hospitalization",
-      "text_key": "family_friends_sick_coronavirus_hospitalization",
-      "type": "multi",
-      "visible_when": {
-        "item": "family_friends_sick_coronavirus",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "family_friends_sick_coronavirus_death",
-      "text_key": "family_friends_sick_coronavirus_death",
-      "type": "multi",
-      "visible_when": {
-        "item": "family_friends_sick_coronavirus",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "family_friends_sick_coronavirus_death_who",
-      "text_key": "family_friends_sick_coronavirus_death_who",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "family_friends_sick_coronavirus_death",
-        "operator": "equals",
-        "value": 2
-      },
-      "options": [
-        {
-          "text_key": "family_friends_sick_coronavirus_death_who_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_death_who_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_death_who_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_death_who_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_death_who_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_death_who_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_death_who_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "family_friends_sick_coronavirus_death_who_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "interaction_other_regular_sick",
-      "text_key": "interaction_other_regular_sick",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "interaction_other_regular_sick_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "interaction_other_regular_sick_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "interaction_other_regular_sick_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "interaction_other_regular_sick_near_two_weeks",
-      "text_key": "interaction_other_regular_sick_near_two_weeks",
-      "type": "multi",
-      "visible_when": {
-        "item": "interaction_other_regular_sick",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "option_set": "default"
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "No",

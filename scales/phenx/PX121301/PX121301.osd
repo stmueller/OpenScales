@@ -1,688 +1,716 @@
 {
-  "scale_info": {
-    "name": "General Distress Screener",
-    "code": "PX121301",
-    "abbreviation": "PX121301",
-    "description": "The K6 is a screening scale consisting of six questions to assess nonspecific psychological distress during the last 30 days. These questions ask about the respondent’s feelings and how these feelings have affected their normal activities and also about whether or not the respondent has sought profe",
-    "domain": "Psychiatric",
-    "citation": "Scoring: Kessler, R. C., Barker, P. R., Colpe, L. J., Epstein, J. F., Gfroerer, J. C., Hiripi, E., Howes, M. J, Normand, S-L. T., Manderscheid, R. W., Walters, E. E., & Zaslavsky, A. M. (2003). Screening for serious mental illness in the general population. Archives of General Psychiatry, 60 (2), 184-189. Definition of General Psychiatric Distress: Leising, D., Grande, T., & Faber, R. (2009). The Toronto Alexithymia Scale (TAS-20): A measure of general psychological distress. Journal of Research in Personality , 43 (4), 707-710. [PhenX: https://www.phenxtoolkit.org/protocols/view/121301]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/121301"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "General Distress Screener",
+      "code": "PX121301",
+      "abbreviation": "PX121301",
+      "description": "The K6 is a screening scale consisting of six questions to assess nonspecific psychological distress during the last 30 days. These questions ask about the respondent’s feelings and how these feelings have affected their normal activities and also about whether or not the respondent has sought profe",
+      "domain": "Psychiatric",
+      "citation": "Scoring: Kessler, R. C., Barker, P. R., Colpe, L. J., Epstein, J. F., Gfroerer, J. C., Hiripi, E., Howes, M. J, Normand, S-L. T., Manderscheid, R. W., Walters, E. E., & Zaslavsky, A. M. (2003). Screening for serious mental illness in the general population. Archives of General Psychiatry, 60 (2), 184-189. Definition of General Psychiatric Distress: Leising, D., Grande, T., & Faber, R. (2009). The Toronto Alexithymia Scale (TAS-20): A measure of general psychological distress. Journal of Research in Personality , 43 (4), 707-710. [PhenX: https://www.phenxtoolkit.org/protocols/view/121301]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/121301"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        },
+        {
+          "text_key": "opt_4",
+          "value": 4
+        },
+        {
+          "text_key": "opt_5",
+          "value": 5
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "instr_0121301",
+        "text_key": "instr_0121301",
+        "type": "inst"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "nervous",
+        "text_key": "nervous",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "hopeless",
+        "text_key": "hopeless",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_4",
-        "value": 4
+        "id": "pxt121301_restless",
+        "text_key": "pxt121301_restless",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_5",
-        "value": 5
+        "id": "pxt121301_depressed",
+        "text_key": "pxt121301_depressed",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "everything_an_effort",
+        "text_key": "everything_an_effort",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "worthless",
+        "text_key": "worthless",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "frequency_feelings_past_thirty_days",
+        "text_key": "frequency_feelings_past_thirty_days",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "frequency_feelings_past_thirty_days_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "frequency_feelings_past_thirty_days_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "frequency_feelings_past_thirty_days_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "frequency_feelings_past_thirty_days_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "frequency_feelings_past_thirty_days_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "frequency_feelings_past_thirty_days_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "frequency_feelings_past_thirty_days_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "number_days_worked",
+        "text_key": "number_days_worked",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 4
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "number_days_do_only_half",
+        "text_key": "number_days_do_only_half",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 3
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "number_times_see_doctor",
+        "text_key": "number_times_see_doctor",
+        "type": "short",
+        "visible_when": {
+          "any": [
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 3
+            }
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "physical_health_cause_problems",
+        "text_key": "physical_health_cause_problems",
+        "type": "multi",
+        "visible_when": {
+          "any": [
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "nervous",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "hopeless",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "pxt121301_restless",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "pxt121301_depressed",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 3
+            },
+            {
+              "item": "everything_an_effort",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 1
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 2
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 4
+            },
+            {
+              "item": "worthless",
+              "operator": "equals",
+              "value": 3
+            }
+          ]
+        },
+        "options": [
+          {
+            "text_key": "physical_health_cause_problems_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "physical_health_cause_problems_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "physical_health_cause_problems_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "physical_health_cause_problems_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "physical_health_cause_problems_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "sec_scoring",
+        "type": "section",
+        "text_key": "sec_scoring_title"
+      },
+      {
+        "id": "scoring_0121301",
+        "text_key": "scoring_0121301",
+        "type": "inst"
       }
-    ]
-  },
-  "items": [
-    {
-      "id": "instr_0121301",
-      "text_key": "instr_0121301",
-      "type": "inst"
-    },
-    {
-      "id": "nervous",
-      "text_key": "nervous",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "hopeless",
-      "text_key": "hopeless",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pxt121301_restless",
-      "text_key": "pxt121301_restless",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pxt121301_depressed",
-      "text_key": "pxt121301_depressed",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "everything_an_effort",
-      "text_key": "everything_an_effort",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "worthless",
-      "text_key": "worthless",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "frequency_feelings_past_thirty_days",
-      "text_key": "frequency_feelings_past_thirty_days",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "frequency_feelings_past_thirty_days_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "frequency_feelings_past_thirty_days_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "frequency_feelings_past_thirty_days_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "frequency_feelings_past_thirty_days_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "frequency_feelings_past_thirty_days_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "frequency_feelings_past_thirty_days_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "frequency_feelings_past_thirty_days_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "number_days_worked",
-      "text_key": "number_days_worked",
-      "type": "short",
-      "visible_when": {
-        "any": [
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 4
-          }
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 11 items.",
+        "method": "sum_coded",
+        "items": [
+          "nervous",
+          "hopeless",
+          "pxt121301_restless",
+          "pxt121301_depressed",
+          "everything_an_effort",
+          "worthless",
+          "frequency_feelings_past_thirty_days",
+          "number_days_worked",
+          "number_days_do_only_half",
+          "number_times_see_doctor",
+          "physical_health_cause_problems"
         ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "number_days_do_only_half",
-      "text_key": "number_days_do_only_half",
-      "type": "short",
-      "visible_when": {
-        "any": [
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 3
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "number_times_see_doctor",
-      "text_key": "number_times_see_doctor",
-      "type": "short",
-      "visible_when": {
-        "any": [
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 3
-          }
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "physical_health_cause_problems",
-      "text_key": "physical_health_cause_problems",
-      "type": "multi",
-      "visible_when": {
-        "any": [
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "nervous",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "hopeless",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "pxt121301_restless",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "pxt121301_depressed",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 3
-          },
-          {
-            "item": "everything_an_effort",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 1
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 2
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 4
-          },
-          {
-            "item": "worthless",
-            "operator": "equals",
-            "value": 3
-          }
-        ]
-      },
-      "options": [
-        {
-          "text_key": "physical_health_cause_problems_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "physical_health_cause_problems_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "physical_health_cause_problems_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "physical_health_cause_problems_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "physical_health_cause_problems_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "sec_scoring",
-      "type": "section",
-      "text_key": "sec_scoring_title"
-    },
-    {
-      "id": "scoring_0121301",
-      "text_key": "scoring_0121301",
-      "type": "inst"
+      }
     }
-  ],
+  },
   "translations": {
     "en": {
       "opt_1": "(1) All of the time",
@@ -716,31 +744,6 @@
       "physical_health_cause_problems_opt_5": "None of the time",
       "sec_scoring_title": "Scoring",
       "scoring_0121301": "Code question 1.a through 1.f 0-4 and sum to convert the K6 to a 0-24 scale. A cut point of 13 or greater is recommended to assess the prevalence of SMI (serious mental illness). Please see Kessler et al. (2002) for further information on scoring the K6."
-    }
-  },
-  "dimensions": [
-    {
-      "id": "total",
-      "name": "Total Score"
-    }
-  ],
-  "scoring": {
-    "total": {
-      "description": "Total: sum_coded of all 11 items.",
-      "method": "sum_coded",
-      "items": [
-        "nervous",
-        "hopeless",
-        "pxt121301_restless",
-        "pxt121301_depressed",
-        "everything_an_effort",
-        "worthless",
-        "frequency_feelings_past_thirty_days",
-        "number_days_worked",
-        "number_days_do_only_half",
-        "number_times_see_doctor",
-        "physical_health_cause_problems"
-      ]
     }
   }
 }

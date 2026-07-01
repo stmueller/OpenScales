@@ -1,2325 +1,2586 @@
 {
-  "scale_info": {
-    "name": "Personal and Family History of Hearing Loss",
-    "code": "PX201501",
-    "abbreviation": "PX201501",
-    "description": "The Age-Related Hearing Impairment (ARHI) instrument is a self-administered questionnaire that asks about an individual’s hearing impairment history, history of ear diseases and operations, family history, and history of exposure to loud noises.",
-    "domain": "Communication & Hearing",
-    "citation": "Lin F. R., Niparko J. K., Ferrucci L. (2011). Hearing loss prevalence in the United States. Arch. Intern. Med. 171, 1851-1852. [PhenX: https://www.phenxtoolkit.org/protocols/view/201501]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/201501"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Personal and Family History of Hearing Loss",
+      "code": "PX201501",
+      "abbreviation": "PX201501",
+      "description": "The Age-Related Hearing Impairment (ARHI) instrument is a self-administered questionnaire that asks about an individual’s hearing impairment history, history of ear diseases and operations, family history, and history of exposure to loud noises.",
+      "domain": "Communication & Hearing",
+      "citation": "Lin F. R., Niparko J. K., Ferrucci L. (2011). Hearing loss prevalence in the United States. Arch. Intern. Med. 171, 1851-1852. [PhenX: https://www.phenxtoolkit.org/protocols/view/201501]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/201501"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "difficulty_hearing",
+        "text_key": "difficulty_hearing",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "which_ear_affected",
+        "text_key": "which_ear_affected",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "which_ear_affected_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "which_ear_affected_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "which_ear_affected_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "age_first_noticed_hearing_difficulty",
+        "text_key": "age_first_noticed_hearing_difficulty",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "age_first_noticed_hearing_difficulty_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "age_first_noticed_hearing_difficulty_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "age_first_noticed_hearing_difficulty_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "age_first_noticed_hearing_difficulty_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "how_quickly_difficulty_developed",
+        "text_key": "how_quickly_difficulty_developed",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "how_quickly_difficulty_developed_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "how_quickly_difficulty_developed_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "how_quickly_difficulty_developed_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "reason_for_difficulty",
+        "text_key": "reason_for_difficulty",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "reason_for_difficulty_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "reason_for_difficulty_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "reason_for_difficulty_describe",
+        "text_key": "reason_for_difficulty_describe",
+        "type": "short"
+      },
+      {
+        "id": "hearing_vary_day_to_day",
+        "text_key": "hearing_vary_day_to_day",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "hearing_vary_day_to_day_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "hearing_vary_day_to_day_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "hearing_vary_day_to_day_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "hearing_vary_day_to_day_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "background_noise",
+        "text_key": "background_noise",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "sensitive_loud_sounds",
+        "text_key": "sensitive_loud_sounds",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "fullness_in_ears",
+        "text_key": "fullness_in_ears",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "fullness_in_ears_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "fullness_in_ears_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "fullness_in_ears_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "fullness_in_ears_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "tinnitus",
+        "text_key": "tinnitus",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "disease_caused_hearing_get_worse",
+        "text_key": "disease_caused_hearing_get_worse",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "ear_discharge",
+        "text_key": "ear_discharge",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "ear_discharge_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "ear_discharge_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "ear_discharge_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "ear_discharge_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "ear_discharge_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "ear_operation",
+        "text_key": "ear_operation",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "ear_operation_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "ear_operation_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "ear_operation_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "earoperation1_type",
+        "text_key": "earoperation1_type",
+        "type": "short"
+      },
+      {
+        "id": "earoperation1_which_ear",
+        "text_key": "earoperation1_which_ear",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "earoperation1_which_ear_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "earoperation1_which_ear_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "earoperation1_year",
+        "text_key": "earoperation1_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "earoperation2_type",
+        "text_key": "earoperation2_type",
+        "type": "short"
+      },
+      {
+        "id": "earoperation2_which_ear",
+        "text_key": "earoperation2_which_ear",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "earoperation2_which_ear_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "earoperation2_which_ear_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "earoperation2_year",
+        "text_key": "earoperation2_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "earoperation3_type",
+        "text_key": "earoperation3_type",
+        "type": "short"
+      },
+      {
+        "id": "earoperation3_which_ear",
+        "text_key": "earoperation3_which_ear",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "earoperation3_which_ear_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "earoperation3_which_ear_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "earoperation3_year",
+        "text_key": "earoperation3_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "earoperation4_type",
+        "text_key": "earoperation4_type",
+        "type": "short"
+      },
+      {
+        "id": "earoperation4_which_ear",
+        "text_key": "earoperation4_which_ear",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "earoperation4_which_ear_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "earoperation4_which_ear_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "earoperation4_year",
+        "text_key": "earoperation4_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pxt201501_dizziness",
+        "text_key": "pxt201501_dizziness",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pxt201501_dizziness_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pxt201501_dizziness_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pxt201501_dizziness_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "unsteady_in_dark",
+        "text_key": "unsteady_in_dark",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "mothers_father_country",
+        "text_key": "mothers_father_country",
+        "type": "short"
+      },
+      {
+        "id": "mothers_father_region",
+        "text_key": "mothers_father_region",
+        "type": "short"
+      },
+      {
+        "id": "mothers_mother_country",
+        "text_key": "mothers_mother_country",
+        "type": "short"
+      },
+      {
+        "id": "mothers_mother_region",
+        "text_key": "mothers_mother_region",
+        "type": "short"
+      },
+      {
+        "id": "fathers_father_country",
+        "text_key": "fathers_father_country",
+        "type": "short"
+      },
+      {
+        "id": "fathers_father_region",
+        "text_key": "fathers_father_region",
+        "type": "short"
+      },
+      {
+        "id": "fathers_mother_country",
+        "text_key": "fathers_mother_country",
+        "type": "short"
+      },
+      {
+        "id": "fathers_mother_region",
+        "text_key": "fathers_mother_region",
+        "type": "short"
+      },
+      {
+        "id": "mother_have_hearing_problems",
+        "text_key": "mother_have_hearing_problems",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "mothers_birth_year",
+        "text_key": "mothers_birth_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "mothers_occupation",
+        "text_key": "mothers_occupation",
+        "type": "short"
+      },
+      {
+        "id": "age_mothers_hearing_problems_started",
+        "text_key": "age_mothers_hearing_problems_started",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "cause_of_mothers_hearing_problem",
+        "text_key": "cause_of_mothers_hearing_problem",
+        "type": "short"
+      },
+      {
+        "id": "age_mother_died",
+        "text_key": "age_mother_died",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "father_have_hearing_problem",
+        "text_key": "father_have_hearing_problem",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "fathers_birth_year",
+        "text_key": "fathers_birth_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "fathers_occupation",
+        "text_key": "fathers_occupation",
+        "type": "short"
+      },
+      {
+        "id": "age_onset_fathers_hearing_problem",
+        "text_key": "age_onset_fathers_hearing_problem",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "cause_of_fathers_hearing_problem",
+        "text_key": "cause_of_fathers_hearing_problem",
+        "type": "short"
+      },
+      {
+        "id": "age_father_died",
+        "text_key": "age_father_died",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "siblings_with_normal_hearing",
+        "text_key": "siblings_with_normal_hearing",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "number_siblings_with_normal_hearing",
+        "text_key": "number_siblings_with_normal_hearing",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "siblings_with_hearing_difficulties",
+        "text_key": "siblings_with_hearing_difficulties",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "number_siblings_with_hearing_difficulties",
+        "text_key": "number_siblings_with_hearing_difficulties",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "sibling1_sex",
+        "text_key": "sibling1_sex",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling1_sex_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling1_sex_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling1_birth_year",
+        "text_key": "sibling1_birth_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "sibling1_age_onset_hearing_difficulty",
+        "text_key": "sibling1_age_onset_hearing_difficulty",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "sibling1_cause_of_hearing_difficulty",
+        "text_key": "sibling1_cause_of_hearing_difficulty",
+        "type": "short"
+      },
+      {
+        "id": "sibling2_sex",
+        "text_key": "sibling2_sex",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling2_sex_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling2_sex_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling2_year_of_birth",
+        "text_key": "sibling2_year_of_birth",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "sibling2_age_onset_hearing_difficulty_enum",
+        "text_key": "sibling2_age_onset_hearing_difficulty_enum",
+        "type": "short"
+      },
+      {
+        "id": "sibling2_cause_of_hearing_difficulty",
+        "text_key": "sibling2_cause_of_hearing_difficulty",
+        "type": "short"
+      },
+      {
+        "id": "sibling3_sex",
+        "text_key": "sibling3_sex",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling3_sex_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling3_sex_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling3_birth_year",
+        "text_key": "sibling3_birth_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "sibling3_age_onset_hearing_difficulty",
+        "text_key": "sibling3_age_onset_hearing_difficulty",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "sibling3_cause_of_hearing_difficulty_enum",
+        "text_key": "sibling3_cause_of_hearing_difficulty_enum",
+        "type": "short"
+      },
+      {
+        "id": "sibling4_sex",
+        "text_key": "sibling4_sex",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sibling4_sex_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sibling4_sex_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "sibling4_birth_year",
+        "text_key": "sibling4_birth_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "sibling4_age_onset_hearing_difficulty",
+        "text_key": "sibling4_age_onset_hearing_difficulty",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "sibling4_cause_of_hearing_difficulty",
+        "text_key": "sibling4_cause_of_hearing_difficulty",
+        "type": "short"
+      },
+      {
+        "id": "children_with_normal_hearing",
+        "text_key": "children_with_normal_hearing",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "children_with_normal_hearing_number",
+        "text_key": "children_with_normal_hearing_number",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "children_with_hearing_difficulty",
+        "text_key": "children_with_hearing_difficulty",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "children_with_hearing_difficulty_number",
+        "text_key": "children_with_hearing_difficulty_number",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child1_sex",
+        "text_key": "child1_sex",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child1_sex_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child1_sex_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child1_birth_year",
+        "text_key": "child1_birth_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child1_age_onset_hearing_difficulty",
+        "text_key": "child1_age_onset_hearing_difficulty",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child1_cause_of_hearing_difficulty",
+        "text_key": "child1_cause_of_hearing_difficulty",
+        "type": "short"
+      },
+      {
+        "id": "child2_sex",
+        "text_key": "child2_sex",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child2_sex_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child2_sex_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child2_birth_year",
+        "text_key": "child2_birth_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child2_age_onset_hearing_difficulty",
+        "text_key": "child2_age_onset_hearing_difficulty",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child2_cause_of_hearing_difficulty",
+        "text_key": "child2_cause_of_hearing_difficulty",
+        "type": "short"
+      },
+      {
+        "id": "child3_sex",
+        "text_key": "child3_sex",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child3_sex_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child3_sex_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child3_birth_year",
+        "text_key": "child3_birth_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child3_age_onset_hearing_difficulty",
+        "text_key": "child3_age_onset_hearing_difficulty",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child3_cause_of_hearing_difficulty",
+        "text_key": "child3_cause_of_hearing_difficulty",
+        "type": "short"
+      },
+      {
+        "id": "child4_sex",
+        "text_key": "child4_sex",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "child4_sex_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "child4_sex_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "child4_birth_year",
+        "text_key": "child4_birth_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child4_age_onset_hearing_difficulty",
+        "text_key": "child4_age_onset_hearing_difficulty",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "child4_cause_of_hearing_difficulty",
+        "text_key": "child4_cause_of_hearing_difficulty",
+        "type": "short"
+      },
+      {
+        "id": "other_relatives_with_hearing_difficulty",
+        "text_key": "other_relatives_with_hearing_difficulty",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "other_relatives_participated",
+        "text_key": "other_relatives_participated",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "other_relatives_participated_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "other_relatives_participated_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "other_relative_name",
+        "text_key": "other_relative_name",
+        "type": "short"
+      },
+      {
+        "id": "other_relative_relation",
+        "text_key": "other_relative_relation",
+        "type": "short"
+      },
+      {
+        "id": "migraine",
+        "text_key": "migraine",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "migraine_frequency",
+        "text_key": "migraine_frequency",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "migraine_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "migraine_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "migraine_frequency_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "migraine_frequency_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "hearing_loss_meningitis_encephalitis",
+        "text_key": "hearing_loss_meningitis_encephalitis",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "hearing_loss_meningitis_encephalitis_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "hearing_loss_meningitis_encephalitis_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "hearing_loss_meningitis_encephalitis_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "hearing_loss_meningitis_encephalitis_year",
+        "text_key": "hearing_loss_meningitis_encephalitis_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "whiplash",
+        "text_key": "whiplash",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "whiplash_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "whiplash_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "whiplash_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "whiplash_year",
+        "text_key": "whiplash_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "knocked_unconscious",
+        "text_key": "knocked_unconscious",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "knocked_unconscious_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "knocked_unconscious_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "knocked_unconscious_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "knocked_unconscious_year",
+        "text_key": "knocked_unconscious_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pxt201501_heart_attack",
+        "text_key": "pxt201501_heart_attack",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "heart_attack_year",
+        "text_key": "heart_attack_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "heart_surgery",
+        "text_key": "heart_surgery",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "heart_surgery_type",
+        "text_key": "heart_surgery_type",
+        "type": "short"
+      },
+      {
+        "id": "heart_surgery_year",
+        "text_key": "heart_surgery_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "coronary_artery_catheterization",
+        "text_key": "coronary_artery_catheterization",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "coronary_artery_catheterization_intervention",
+        "text_key": "coronary_artery_catheterization_intervention",
+        "type": "short"
+      },
+      {
+        "id": "coronary_artery_catheterization_year",
+        "text_key": "coronary_artery_catheterization_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pxt201501_stroke",
+        "text_key": "pxt201501_stroke",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pxt201501_stroke_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pxt201501_stroke_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pxt201501_stroke_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "stroke_year",
+        "text_key": "stroke_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "carotid_artery_operation",
+        "text_key": "carotid_artery_operation",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "carotid_artery_operation_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "carotid_artery_operation_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "carotid_artery_operation_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "carotid_artery_operation_year",
+        "text_key": "carotid_artery_operation_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "intermittent_claudication",
+        "text_key": "intermittent_claudication",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "intermittent_claudication_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "intermittent_claudication_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "intermittent_claudication_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "other_heart_problems",
+        "text_key": "other_heart_problems",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "other_heart_problems_describe",
+        "text_key": "other_heart_problems_describe",
+        "type": "short"
+      },
+      {
+        "id": "pxt201501_diabetes",
+        "text_key": "pxt201501_diabetes",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pxt201501_diabetes_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pxt201501_diabetes_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pxt201501_diabetes_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "need_insulin",
+        "text_key": "need_insulin",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "osteoporosis",
+        "text_key": "osteoporosis",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "pxt201501_osteoarthritis",
+        "text_key": "pxt201501_osteoarthritis",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "multiple_sclerosis",
+        "text_key": "multiple_sclerosis",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "pxt201501_epilepsy",
+        "text_key": "pxt201501_epilepsy",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "lung_problems",
+        "text_key": "lung_problems",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "allergy",
+        "text_key": "allergy",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "stomach_intestines",
+        "text_key": "stomach_intestines",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "pxt201501_kidney_disease",
+        "text_key": "pxt201501_kidney_disease",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "liver_diseases",
+        "text_key": "liver_diseases",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "skin_diseases",
+        "text_key": "skin_diseases",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "psychiatric_problems",
+        "text_key": "psychiatric_problems",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "blood_diseases",
+        "text_key": "blood_diseases",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "thyroid_diseases",
+        "text_key": "thyroid_diseases",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "describe_disease",
+        "text_key": "describe_disease",
+        "type": "short"
+      },
+      {
+        "id": "rheumatoid_arthritis",
+        "text_key": "rheumatoid_arthritis",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "inflammatory_bowel_disease",
+        "text_key": "inflammatory_bowel_disease",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "lupus",
+        "text_key": "lupus",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "pxt201501_psoriasis",
+        "text_key": "pxt201501_psoriasis",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "wegeners_granulomatosis",
+        "text_key": "wegeners_granulomatosis",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "vasculitis",
+        "text_key": "vasculitis",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "nephritis",
+        "text_key": "nephritis",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "hashimoto_thyroiditis",
+        "text_key": "hashimoto_thyroiditis",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "cogans_syndrome",
+        "text_key": "cogans_syndrome",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "behcets_syndrome",
+        "text_key": "behcets_syndrome",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "other_autoimmune_diseases_enum",
+        "text_key": "other_autoimmune_diseases_enum",
+        "type": "short"
+      },
+      {
+        "id": "other_operation",
+        "text_key": "other_operation",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "other_operation1_type",
+        "text_key": "other_operation1_type",
+        "type": "short"
+      },
+      {
+        "id": "other_operation1_year",
+        "text_key": "other_operation1_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "other_operation2_type",
+        "text_key": "other_operation2_type",
+        "type": "short"
+      },
+      {
+        "id": "other_operation2_year",
+        "text_key": "other_operation2_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "other_operation3_type",
+        "text_key": "other_operation3_type",
+        "type": "short"
+      },
+      {
+        "id": "other_operation3_year",
+        "text_key": "other_operation3_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "other_operation4_type",
+        "text_key": "other_operation4_type",
+        "type": "short"
+      },
+      {
+        "id": "other_operation4_year",
+        "text_key": "other_operation4_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "other_serious_health_problems",
+        "text_key": "other_serious_health_problems",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "other_serious_health_problems_describe",
+        "text_key": "other_serious_health_problems_describe",
+        "type": "short"
+      },
+      {
+        "id": "antibiotic_drip",
+        "text_key": "antibiotic_drip",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "antibiotic_drip_infection",
+        "text_key": "antibiotic_drip_infection",
+        "type": "short"
+      },
+      {
+        "id": "antibiotic_drip_year",
+        "text_key": "antibiotic_drip_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pxt201501_cancer",
+        "text_key": "pxt201501_cancer",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_type",
+        "text_key": "cancer_type",
+        "type": "short"
+      },
+      {
+        "id": "cancer_chemotherapy_medication",
+        "text_key": "cancer_chemotherapy_medication",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "cancer_chemotherapy_medication_type",
+        "text_key": "cancer_chemotherapy_medication_type",
+        "type": "short"
+      },
+      {
+        "id": "cancer_chemotherapy_medication_year",
+        "text_key": "cancer_chemotherapy_medication_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "radiotherapy_tumor",
+        "text_key": "radiotherapy_tumor",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "radiotherapy_tumor_type",
+        "text_key": "radiotherapy_tumor_type",
+        "type": "short"
+      },
+      {
+        "id": "radiotherapy_tumor_year",
+        "text_key": "radiotherapy_tumor_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "painkiller_frequency",
+        "text_key": "painkiller_frequency",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "painkiller_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "painkiller_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "painkiller_frequency_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "painkiller_frequency_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "painkiller_frequency_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "painkiller_frequency_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "daily_aspirin",
+        "text_key": "daily_aspirin",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "daily_aspirin_how_long",
+        "text_key": "daily_aspirin_how_long",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "daily_aspirin_how_long_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "daily_aspirin_how_long_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "daily_aspirin_how_long_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "sec_please_list_all_of_the_medication_you_ha",
+        "type": "section",
+        "text_key": "sec_please_list_all_of_the_medication_you_ha_title"
+      },
+      {
+        "id": "regular_medication1_name",
+        "text_key": "regular_medication1_name",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication1_reason",
+        "text_key": "regular_medication1_reason",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication1_duration",
+        "text_key": "regular_medication1_duration",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "regular_medication1_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "regular_medication1_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "regular_medication1_duration_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "regular_medication2_name",
+        "text_key": "regular_medication2_name",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication2_reason",
+        "text_key": "regular_medication2_reason",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication2_duration",
+        "text_key": "regular_medication2_duration",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "regular_medication2_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "regular_medication2_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "regular_medication2_duration_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "regular_medication3_name",
+        "text_key": "regular_medication3_name",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication3_reason",
+        "text_key": "regular_medication3_reason",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication3_duration",
+        "text_key": "regular_medication3_duration",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "regular_medication3_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "regular_medication3_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "regular_medication3_duration_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "regular_medication4_name",
+        "text_key": "regular_medication4_name",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication4_reason",
+        "text_key": "regular_medication4_reason",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication4_duration",
+        "text_key": "regular_medication4_duration",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "regular_medication4_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "regular_medication4_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "regular_medication4_duration_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "regular_medication5_name",
+        "text_key": "regular_medication5_name",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication5_reason",
+        "text_key": "regular_medication5_reason",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication5_duration",
+        "text_key": "regular_medication5_duration",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "regular_medication5_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "regular_medication5_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "regular_medication5_duration_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "regular_medication6_name",
+        "text_key": "regular_medication6_name",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication6_reason",
+        "text_key": "regular_medication6_reason",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication6_duration",
+        "text_key": "regular_medication6_duration",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "regular_medication6_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "regular_medication6_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "regular_medication6_duration_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "regular_medication7_name",
+        "text_key": "regular_medication7_name",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication7_reason",
+        "text_key": "regular_medication7_reason",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication7_duration",
+        "text_key": "regular_medication7_duration",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "regular_medication7_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "regular_medication7_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "regular_medication7_duration_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "regular_medication8_name",
+        "text_key": "regular_medication8_name",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication8_reason",
+        "text_key": "regular_medication8_reason",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication8_duration",
+        "text_key": "regular_medication8_duration",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "regular_medication8_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "regular_medication8_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "regular_medication8_duration_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "regular_medication9_name",
+        "text_key": "regular_medication9_name",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication9_reason",
+        "text_key": "regular_medication9_reason",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication9_duration",
+        "text_key": "regular_medication9_duration",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "regular_medication9_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "regular_medication9_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "regular_medication9_duration_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "regular_medication10_name",
+        "text_key": "regular_medication10_name",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication10_reason",
+        "text_key": "regular_medication10_reason",
+        "type": "short"
+      },
+      {
+        "id": "regular_medication10_duration",
+        "text_key": "regular_medication10_duration",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "regular_medication10_duration_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "regular_medication10_duration_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "regular_medication10_duration_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "ever_fired_gun",
+        "text_key": "ever_fired_gun",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "light_weapons_number_shots",
+        "text_key": "light_weapons_number_shots",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "light_weapons_number_shots_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "light_weapons_number_shots_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "light_weapons_number_shots_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "light_weapons_number_shots_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "light_weapons_number_shots_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "light_weapons_ear_protection",
+        "text_key": "light_weapons_ear_protection",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "light_weapons_ear_protection_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "light_weapons_ear_protection_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "light_weapons_ear_protection_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "light_weapons_ear_protection_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "light_weapons_ear_protection_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "light_weapons_ear_protection_type",
+        "text_key": "light_weapons_ear_protection_type",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "light_weapons_ear_protection_type_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "light_weapons_ear_protection_type_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "light_weapons_ear_protection_type_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "light_weapons_ear_protection_type_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "heavy_weapons_number_shots",
+        "text_key": "heavy_weapons_number_shots",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "heavy_weapons_number_shots_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "heavy_weapons_number_shots_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "heavy_weapons_number_shots_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "heavy_weapons_number_shots_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "heavy_weapons_number_shots_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "heavy_weapons_ear_protection",
+        "text_key": "heavy_weapons_ear_protection",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "heavy_weapons_ear_protection_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "heavy_weapons_ear_protection_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "heavy_weapons_ear_protection_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "heavy_weapons_ear_protection_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "heavy_weapons_ear_protection_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "heavy_weapons_ear_protection_type",
+        "text_key": "heavy_weapons_ear_protection_type",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "heavy_weapons_ear_protection_type_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "heavy_weapons_ear_protection_type_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "heavy_weapons_ear_protection_type_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "heavy_weapons_ear_protection_type_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "leisure_time_loud_noise",
+        "text_key": "leisure_time_loud_noise",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "leisure_time_loud_noise_type",
+        "text_key": "leisure_time_loud_noise_type",
+        "type": "short"
+      },
+      {
+        "id": "leisure_time_loud_noise_years",
+        "text_key": "leisure_time_loud_noise_years",
+        "type": "short"
+      },
+      {
+        "id": "leisure_time_loud_noise_hoursperweek",
+        "text_key": "leisure_time_loud_noise_hoursperweek",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "leisure_time_loud_noise_hoursperweek_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "leisure_time_loud_noise_hoursperweek_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "leisure_time_loud_noise_hoursperweek_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "leisure_time_loud_noise_hoursperweek_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "leisure_time_loud_noise_earprotection",
+        "text_key": "leisure_time_loud_noise_earprotection",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "leisure_time_loud_noise_earprotection_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "leisure_time_loud_noise_earprotection_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "leisure_time_loud_noise_earprotection_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "leisure_time_loud_noise_earprotection_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "leisure_time_loud_noise_earprotection_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "leisure_time_loud_noise_earprotectiontype",
+        "text_key": "leisure_time_loud_noise_earprotectiontype",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "leisure_time_loud_noise_earprotectiontype_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "leisure_time_loud_noise_earprotectiontype_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "leisure_time_loud_noise_earprotectiontype_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "leisure_time_loud_noise_earprotectiontype_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "occupation",
+        "text_key": "occupation",
+        "type": "short"
+      },
+      {
+        "id": "occupational_exposure_to_solvents",
+        "text_key": "occupational_exposure_to_solvents",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "occupational_exposure_to_solvents_type",
+        "text_key": "occupational_exposure_to_solvents_type",
+        "type": "short"
+      },
+      {
+        "id": "occupational_exposure_to_solvents_start",
+        "text_key": "occupational_exposure_to_solvents_start",
+        "type": "short"
+      },
+      {
+        "id": "occupational_exposure_to_solvents_years",
+        "text_key": "occupational_exposure_to_solvents_years",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "occupational_exposure_to_solvents_hoursperday",
+        "text_key": "occupational_exposure_to_solvents_hoursperday",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "occupational_exposure_to_solvents_hoursperday_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "occupational_exposure_to_solvents_hoursperday_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "occupational_exposure_to_solvents_hoursperday_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "white_finger_syndrome",
+        "text_key": "white_finger_syndrome",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "white_finger_syndrome_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "white_finger_syndrome_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "white_finger_syndrome_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "loud_working_environment",
+        "text_key": "loud_working_environment",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "loud_working_environment_job",
+        "text_key": "loud_working_environment_job",
+        "type": "short"
+      },
+      {
+        "id": "loud_working_environment_company",
+        "text_key": "loud_working_environment_company",
+        "type": "short"
+      },
+      {
+        "id": "loud_working_environment_noisesource",
+        "text_key": "loud_working_environment_noisesource",
+        "type": "short"
+      },
+      {
+        "id": "loud_working_environment_start",
+        "text_key": "loud_working_environment_start",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "loud_working_environment_years",
+        "text_key": "loud_working_environment_years",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "loud_working_environment_noiselevel",
+        "text_key": "loud_working_environment_noiselevel",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "loud_working_environment_noisedose",
+        "text_key": "loud_working_environment_noisedose",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "loud_working_environment_hoursperday",
+        "text_key": "loud_working_environment_hoursperday",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "loud_working_environment_hoursperday_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "loud_working_environment_hoursperday_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "loud_working_environment_hoursperday_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "loud_working_environment_constant_impulse",
+        "text_key": "loud_working_environment_constant_impulse",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "loud_working_environment_constant_impulse_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "loud_working_environment_constant_impulse_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "loud_working_environment_constant_impulse_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "loud_working_environment_use_noiseprotection",
+        "text_key": "loud_working_environment_use_noiseprotection",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "loud_working_environment_use_noiseprotection_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "loud_working_environment_use_noiseprotection_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "loud_working_environment_use_noiseprotection_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "loud_working_environment_use_noiseprotection_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "loud_working_environment_use_noiseprotection_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "loud_working_environment_noiseprotection_type",
+        "text_key": "loud_working_environment_noiseprotection_type",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "loud_working_environment_noiseprotection_type_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "loud_working_environment_noiseprotection_type_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "loud_working_environment_noiseprotection_type_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "loud_working_environment_noiseprotection_type_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "height",
+        "text_key": "height",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "height_units",
+        "text_key": "height_units",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "height_units_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "height_units_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "pxt201501_weight",
+        "text_key": "pxt201501_weight",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "weight_units",
+        "text_key": "weight_units",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "weight_units_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "weight_units_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "handedness",
+        "text_key": "handedness",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "handedness_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "handedness_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "susceptible_to_sunburn",
+        "text_key": "susceptible_to_sunburn",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "susceptible_to_sunburn_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "susceptible_to_sunburn_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "susceptible_to_sunburn_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "susceptible_to_sunburn_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "eye_color",
+        "text_key": "eye_color",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "eye_color_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "eye_color_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "eye_color_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "eye_color_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "eye_color_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "eye_color_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "smoked_regularly",
+        "text_key": "smoked_regularly",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "age_started_smoking",
+        "text_key": "age_started_smoking",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "years_smoked",
+        "text_key": "years_smoked",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "average_number_cigarettes_smoked",
+        "text_key": "average_number_cigarettes_smoked",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "average_number_cigarettes_smoked_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "average_number_cigarettes_smoked_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "average_number_cigarettes_smoked_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "average_number_cigarettes_smoked_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "average_number_cigars",
+        "text_key": "average_number_cigars",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "amount_pipe_tobacco",
+        "text_key": "amount_pipe_tobacco",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "drink_alcohol_regularly",
+        "text_key": "drink_alcohol_regularly",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "average_number_drinks",
+        "text_key": "average_number_drinks",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "average_number_drinks_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "average_number_drinks_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "average_number_drinks_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "average_number_drinks_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "scoring_201501",
+        "text_key": "scoring_201501",
+        "type": "inst"
       }
-    ]
-  },
-  "items": [
-    {
-      "id": "difficulty_hearing",
-      "text_key": "difficulty_hearing",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "which_ear_affected",
-      "text_key": "which_ear_affected",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "which_ear_affected_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "which_ear_affected_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "which_ear_affected_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "age_first_noticed_hearing_difficulty",
-      "text_key": "age_first_noticed_hearing_difficulty",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "age_first_noticed_hearing_difficulty_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "age_first_noticed_hearing_difficulty_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "age_first_noticed_hearing_difficulty_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "age_first_noticed_hearing_difficulty_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "how_quickly_difficulty_developed",
-      "text_key": "how_quickly_difficulty_developed",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "how_quickly_difficulty_developed_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "how_quickly_difficulty_developed_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "how_quickly_difficulty_developed_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "reason_for_difficulty",
-      "text_key": "reason_for_difficulty",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "reason_for_difficulty_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "reason_for_difficulty_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "reason_for_difficulty_describe",
-      "text_key": "reason_for_difficulty_describe",
-      "type": "short"
-    },
-    {
-      "id": "hearing_vary_day_to_day",
-      "text_key": "hearing_vary_day_to_day",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "hearing_vary_day_to_day_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "hearing_vary_day_to_day_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "hearing_vary_day_to_day_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "hearing_vary_day_to_day_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "background_noise",
-      "text_key": "background_noise",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "sensitive_loud_sounds",
-      "text_key": "sensitive_loud_sounds",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "fullness_in_ears",
-      "text_key": "fullness_in_ears",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "fullness_in_ears_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "fullness_in_ears_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "fullness_in_ears_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "fullness_in_ears_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "tinnitus",
-      "text_key": "tinnitus",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "disease_caused_hearing_get_worse",
-      "text_key": "disease_caused_hearing_get_worse",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "ear_discharge",
-      "text_key": "ear_discharge",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "ear_discharge_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "ear_discharge_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "ear_discharge_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "ear_discharge_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "ear_discharge_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "ear_operation",
-      "text_key": "ear_operation",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "ear_operation_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "ear_operation_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "ear_operation_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "earoperation1_type",
-      "text_key": "earoperation1_type",
-      "type": "short"
-    },
-    {
-      "id": "earoperation1_which_ear",
-      "text_key": "earoperation1_which_ear",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "earoperation1_which_ear_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "earoperation1_which_ear_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "earoperation1_year",
-      "text_key": "earoperation1_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "earoperation2_type",
-      "text_key": "earoperation2_type",
-      "type": "short"
-    },
-    {
-      "id": "earoperation2_which_ear",
-      "text_key": "earoperation2_which_ear",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "earoperation2_which_ear_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "earoperation2_which_ear_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "earoperation2_year",
-      "text_key": "earoperation2_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "earoperation3_type",
-      "text_key": "earoperation3_type",
-      "type": "short"
-    },
-    {
-      "id": "earoperation3_which_ear",
-      "text_key": "earoperation3_which_ear",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "earoperation3_which_ear_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "earoperation3_which_ear_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "earoperation3_year",
-      "text_key": "earoperation3_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "earoperation4_type",
-      "text_key": "earoperation4_type",
-      "type": "short"
-    },
-    {
-      "id": "earoperation4_which_ear",
-      "text_key": "earoperation4_which_ear",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "earoperation4_which_ear_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "earoperation4_which_ear_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "earoperation4_year",
-      "text_key": "earoperation4_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pxt201501_dizziness",
-      "text_key": "pxt201501_dizziness",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "pxt201501_dizziness_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "pxt201501_dizziness_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "pxt201501_dizziness_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "unsteady_in_dark",
-      "text_key": "unsteady_in_dark",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "mothers_father_country",
-      "text_key": "mothers_father_country",
-      "type": "short"
-    },
-    {
-      "id": "mothers_father_region",
-      "text_key": "mothers_father_region",
-      "type": "short"
-    },
-    {
-      "id": "mothers_mother_country",
-      "text_key": "mothers_mother_country",
-      "type": "short"
-    },
-    {
-      "id": "mothers_mother_region",
-      "text_key": "mothers_mother_region",
-      "type": "short"
-    },
-    {
-      "id": "fathers_father_country",
-      "text_key": "fathers_father_country",
-      "type": "short"
-    },
-    {
-      "id": "fathers_father_region",
-      "text_key": "fathers_father_region",
-      "type": "short"
-    },
-    {
-      "id": "fathers_mother_country",
-      "text_key": "fathers_mother_country",
-      "type": "short"
-    },
-    {
-      "id": "fathers_mother_region",
-      "text_key": "fathers_mother_region",
-      "type": "short"
-    },
-    {
-      "id": "mother_have_hearing_problems",
-      "text_key": "mother_have_hearing_problems",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "mothers_birth_year",
-      "text_key": "mothers_birth_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "mothers_occupation",
-      "text_key": "mothers_occupation",
-      "type": "short"
-    },
-    {
-      "id": "age_mothers_hearing_problems_started",
-      "text_key": "age_mothers_hearing_problems_started",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "cause_of_mothers_hearing_problem",
-      "text_key": "cause_of_mothers_hearing_problem",
-      "type": "short"
-    },
-    {
-      "id": "age_mother_died",
-      "text_key": "age_mother_died",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "father_have_hearing_problem",
-      "text_key": "father_have_hearing_problem",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "fathers_birth_year",
-      "text_key": "fathers_birth_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "fathers_occupation",
-      "text_key": "fathers_occupation",
-      "type": "short"
-    },
-    {
-      "id": "age_onset_fathers_hearing_problem",
-      "text_key": "age_onset_fathers_hearing_problem",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "cause_of_fathers_hearing_problem",
-      "text_key": "cause_of_fathers_hearing_problem",
-      "type": "short"
-    },
-    {
-      "id": "age_father_died",
-      "text_key": "age_father_died",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "siblings_with_normal_hearing",
-      "text_key": "siblings_with_normal_hearing",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "number_siblings_with_normal_hearing",
-      "text_key": "number_siblings_with_normal_hearing",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "siblings_with_hearing_difficulties",
-      "text_key": "siblings_with_hearing_difficulties",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "number_siblings_with_hearing_difficulties",
-      "text_key": "number_siblings_with_hearing_difficulties",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "sibling1_sex",
-      "text_key": "sibling1_sex",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sibling1_sex_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sibling1_sex_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "sibling1_birth_year",
-      "text_key": "sibling1_birth_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "sibling1_age_onset_hearing_difficulty",
-      "text_key": "sibling1_age_onset_hearing_difficulty",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "sibling1_cause_of_hearing_difficulty",
-      "text_key": "sibling1_cause_of_hearing_difficulty",
-      "type": "short"
-    },
-    {
-      "id": "sibling2_sex",
-      "text_key": "sibling2_sex",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sibling2_sex_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sibling2_sex_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "sibling2_year_of_birth",
-      "text_key": "sibling2_year_of_birth",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "sibling2_age_onset_hearing_difficulty_enum",
-      "text_key": "sibling2_age_onset_hearing_difficulty_enum",
-      "type": "short"
-    },
-    {
-      "id": "sibling2_cause_of_hearing_difficulty",
-      "text_key": "sibling2_cause_of_hearing_difficulty",
-      "type": "short"
-    },
-    {
-      "id": "sibling3_sex",
-      "text_key": "sibling3_sex",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sibling3_sex_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sibling3_sex_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "sibling3_birth_year",
-      "text_key": "sibling3_birth_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "sibling3_age_onset_hearing_difficulty",
-      "text_key": "sibling3_age_onset_hearing_difficulty",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "sibling3_cause_of_hearing_difficulty_enum",
-      "text_key": "sibling3_cause_of_hearing_difficulty_enum",
-      "type": "short"
-    },
-    {
-      "id": "sibling4_sex",
-      "text_key": "sibling4_sex",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sibling4_sex_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sibling4_sex_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "sibling4_birth_year",
-      "text_key": "sibling4_birth_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "sibling4_age_onset_hearing_difficulty",
-      "text_key": "sibling4_age_onset_hearing_difficulty",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "sibling4_cause_of_hearing_difficulty",
-      "text_key": "sibling4_cause_of_hearing_difficulty",
-      "type": "short"
-    },
-    {
-      "id": "children_with_normal_hearing",
-      "text_key": "children_with_normal_hearing",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "children_with_normal_hearing_number",
-      "text_key": "children_with_normal_hearing_number",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "children_with_hearing_difficulty",
-      "text_key": "children_with_hearing_difficulty",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "children_with_hearing_difficulty_number",
-      "text_key": "children_with_hearing_difficulty_number",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child1_sex",
-      "text_key": "child1_sex",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "child1_sex_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "child1_sex_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "child1_birth_year",
-      "text_key": "child1_birth_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child1_age_onset_hearing_difficulty",
-      "text_key": "child1_age_onset_hearing_difficulty",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child1_cause_of_hearing_difficulty",
-      "text_key": "child1_cause_of_hearing_difficulty",
-      "type": "short"
-    },
-    {
-      "id": "child2_sex",
-      "text_key": "child2_sex",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "child2_sex_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "child2_sex_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "child2_birth_year",
-      "text_key": "child2_birth_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child2_age_onset_hearing_difficulty",
-      "text_key": "child2_age_onset_hearing_difficulty",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child2_cause_of_hearing_difficulty",
-      "text_key": "child2_cause_of_hearing_difficulty",
-      "type": "short"
-    },
-    {
-      "id": "child3_sex",
-      "text_key": "child3_sex",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "child3_sex_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "child3_sex_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "child3_birth_year",
-      "text_key": "child3_birth_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child3_age_onset_hearing_difficulty",
-      "text_key": "child3_age_onset_hearing_difficulty",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child3_cause_of_hearing_difficulty",
-      "text_key": "child3_cause_of_hearing_difficulty",
-      "type": "short"
-    },
-    {
-      "id": "child4_sex",
-      "text_key": "child4_sex",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "child4_sex_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "child4_sex_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "child4_birth_year",
-      "text_key": "child4_birth_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child4_age_onset_hearing_difficulty",
-      "text_key": "child4_age_onset_hearing_difficulty",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "child4_cause_of_hearing_difficulty",
-      "text_key": "child4_cause_of_hearing_difficulty",
-      "type": "short"
-    },
-    {
-      "id": "other_relatives_with_hearing_difficulty",
-      "text_key": "other_relatives_with_hearing_difficulty",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "other_relatives_participated",
-      "text_key": "other_relatives_participated",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "other_relatives_participated_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "other_relatives_participated_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "other_relative_name",
-      "text_key": "other_relative_name",
-      "type": "short"
-    },
-    {
-      "id": "other_relative_relation",
-      "text_key": "other_relative_relation",
-      "type": "short"
-    },
-    {
-      "id": "migraine",
-      "text_key": "migraine",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "migraine_frequency",
-      "text_key": "migraine_frequency",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "migraine_frequency_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "migraine_frequency_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "migraine_frequency_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "migraine_frequency_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "hearing_loss_meningitis_encephalitis",
-      "text_key": "hearing_loss_meningitis_encephalitis",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "hearing_loss_meningitis_encephalitis_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "hearing_loss_meningitis_encephalitis_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "hearing_loss_meningitis_encephalitis_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "hearing_loss_meningitis_encephalitis_year",
-      "text_key": "hearing_loss_meningitis_encephalitis_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "whiplash",
-      "text_key": "whiplash",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "whiplash_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "whiplash_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "whiplash_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "whiplash_year",
-      "text_key": "whiplash_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "knocked_unconscious",
-      "text_key": "knocked_unconscious",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "knocked_unconscious_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "knocked_unconscious_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "knocked_unconscious_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "knocked_unconscious_year",
-      "text_key": "knocked_unconscious_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pxt201501_heart_attack",
-      "text_key": "pxt201501_heart_attack",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "heart_attack_year",
-      "text_key": "heart_attack_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "heart_surgery",
-      "text_key": "heart_surgery",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "heart_surgery_type",
-      "text_key": "heart_surgery_type",
-      "type": "short"
-    },
-    {
-      "id": "heart_surgery_year",
-      "text_key": "heart_surgery_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "coronary_artery_catheterization",
-      "text_key": "coronary_artery_catheterization",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "coronary_artery_catheterization_intervention",
-      "text_key": "coronary_artery_catheterization_intervention",
-      "type": "short"
-    },
-    {
-      "id": "coronary_artery_catheterization_year",
-      "text_key": "coronary_artery_catheterization_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pxt201501_stroke",
-      "text_key": "pxt201501_stroke",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "pxt201501_stroke_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "pxt201501_stroke_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "pxt201501_stroke_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "stroke_year",
-      "text_key": "stroke_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "carotid_artery_operation",
-      "text_key": "carotid_artery_operation",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "carotid_artery_operation_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "carotid_artery_operation_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "carotid_artery_operation_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "carotid_artery_operation_year",
-      "text_key": "carotid_artery_operation_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "intermittent_claudication",
-      "text_key": "intermittent_claudication",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "intermittent_claudication_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "intermittent_claudication_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "intermittent_claudication_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "other_heart_problems",
-      "text_key": "other_heart_problems",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "other_heart_problems_describe",
-      "text_key": "other_heart_problems_describe",
-      "type": "short"
-    },
-    {
-      "id": "pxt201501_diabetes",
-      "text_key": "pxt201501_diabetes",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "pxt201501_diabetes_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "pxt201501_diabetes_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "pxt201501_diabetes_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "need_insulin",
-      "text_key": "need_insulin",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "osteoporosis",
-      "text_key": "osteoporosis",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pxt201501_osteoarthritis",
-      "text_key": "pxt201501_osteoarthritis",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "multiple_sclerosis",
-      "text_key": "multiple_sclerosis",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pxt201501_epilepsy",
-      "text_key": "pxt201501_epilepsy",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "lung_problems",
-      "text_key": "lung_problems",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "allergy",
-      "text_key": "allergy",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "stomach_intestines",
-      "text_key": "stomach_intestines",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pxt201501_kidney_disease",
-      "text_key": "pxt201501_kidney_disease",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "liver_diseases",
-      "text_key": "liver_diseases",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "skin_diseases",
-      "text_key": "skin_diseases",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "psychiatric_problems",
-      "text_key": "psychiatric_problems",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "blood_diseases",
-      "text_key": "blood_diseases",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "thyroid_diseases",
-      "text_key": "thyroid_diseases",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "describe_disease",
-      "text_key": "describe_disease",
-      "type": "short"
-    },
-    {
-      "id": "rheumatoid_arthritis",
-      "text_key": "rheumatoid_arthritis",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "inflammatory_bowel_disease",
-      "text_key": "inflammatory_bowel_disease",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "lupus",
-      "text_key": "lupus",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pxt201501_psoriasis",
-      "text_key": "pxt201501_psoriasis",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "wegeners_granulomatosis",
-      "text_key": "wegeners_granulomatosis",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "vasculitis",
-      "text_key": "vasculitis",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "nephritis",
-      "text_key": "nephritis",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "hashimoto_thyroiditis",
-      "text_key": "hashimoto_thyroiditis",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "cogans_syndrome",
-      "text_key": "cogans_syndrome",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "behcets_syndrome",
-      "text_key": "behcets_syndrome",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "other_autoimmune_diseases_enum",
-      "text_key": "other_autoimmune_diseases_enum",
-      "type": "short"
-    },
-    {
-      "id": "other_operation",
-      "text_key": "other_operation",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "other_operation1_type",
-      "text_key": "other_operation1_type",
-      "type": "short"
-    },
-    {
-      "id": "other_operation1_year",
-      "text_key": "other_operation1_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "other_operation2_type",
-      "text_key": "other_operation2_type",
-      "type": "short"
-    },
-    {
-      "id": "other_operation2_year",
-      "text_key": "other_operation2_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "other_operation3_type",
-      "text_key": "other_operation3_type",
-      "type": "short"
-    },
-    {
-      "id": "other_operation3_year",
-      "text_key": "other_operation3_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "other_operation4_type",
-      "text_key": "other_operation4_type",
-      "type": "short"
-    },
-    {
-      "id": "other_operation4_year",
-      "text_key": "other_operation4_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "other_serious_health_problems",
-      "text_key": "other_serious_health_problems",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "other_serious_health_problems_describe",
-      "text_key": "other_serious_health_problems_describe",
-      "type": "short"
-    },
-    {
-      "id": "antibiotic_drip",
-      "text_key": "antibiotic_drip",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "antibiotic_drip_infection",
-      "text_key": "antibiotic_drip_infection",
-      "type": "short"
-    },
-    {
-      "id": "antibiotic_drip_year",
-      "text_key": "antibiotic_drip_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pxt201501_cancer",
-      "text_key": "pxt201501_cancer",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_type",
-      "text_key": "cancer_type",
-      "type": "short"
-    },
-    {
-      "id": "cancer_chemotherapy_medication",
-      "text_key": "cancer_chemotherapy_medication",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "cancer_chemotherapy_medication_type",
-      "text_key": "cancer_chemotherapy_medication_type",
-      "type": "short"
-    },
-    {
-      "id": "cancer_chemotherapy_medication_year",
-      "text_key": "cancer_chemotherapy_medication_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "radiotherapy_tumor",
-      "text_key": "radiotherapy_tumor",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "radiotherapy_tumor_type",
-      "text_key": "radiotherapy_tumor_type",
-      "type": "short"
-    },
-    {
-      "id": "radiotherapy_tumor_year",
-      "text_key": "radiotherapy_tumor_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "painkiller_frequency",
-      "text_key": "painkiller_frequency",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "painkiller_frequency_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "painkiller_frequency_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "painkiller_frequency_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "painkiller_frequency_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "painkiller_frequency_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "painkiller_frequency_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "daily_aspirin",
-      "text_key": "daily_aspirin",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "daily_aspirin_how_long",
-      "text_key": "daily_aspirin_how_long",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "daily_aspirin_how_long_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "daily_aspirin_how_long_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "daily_aspirin_how_long_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "sec_please_list_all_of_the_medication_you_ha",
-      "type": "section",
-      "text_key": "sec_please_list_all_of_the_medication_you_ha_title"
-    },
-    {
-      "id": "regular_medication1_name",
-      "text_key": "regular_medication1_name",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication1_reason",
-      "text_key": "regular_medication1_reason",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication1_duration",
-      "text_key": "regular_medication1_duration",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "regular_medication1_duration_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "regular_medication1_duration_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "regular_medication1_duration_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "regular_medication2_name",
-      "text_key": "regular_medication2_name",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication2_reason",
-      "text_key": "regular_medication2_reason",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication2_duration",
-      "text_key": "regular_medication2_duration",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "regular_medication2_duration_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "regular_medication2_duration_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "regular_medication2_duration_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "regular_medication3_name",
-      "text_key": "regular_medication3_name",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication3_reason",
-      "text_key": "regular_medication3_reason",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication3_duration",
-      "text_key": "regular_medication3_duration",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "regular_medication3_duration_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "regular_medication3_duration_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "regular_medication3_duration_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "regular_medication4_name",
-      "text_key": "regular_medication4_name",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication4_reason",
-      "text_key": "regular_medication4_reason",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication4_duration",
-      "text_key": "regular_medication4_duration",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "regular_medication4_duration_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "regular_medication4_duration_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "regular_medication4_duration_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "regular_medication5_name",
-      "text_key": "regular_medication5_name",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication5_reason",
-      "text_key": "regular_medication5_reason",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication5_duration",
-      "text_key": "regular_medication5_duration",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "regular_medication5_duration_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "regular_medication5_duration_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "regular_medication5_duration_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "regular_medication6_name",
-      "text_key": "regular_medication6_name",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication6_reason",
-      "text_key": "regular_medication6_reason",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication6_duration",
-      "text_key": "regular_medication6_duration",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "regular_medication6_duration_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "regular_medication6_duration_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "regular_medication6_duration_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "regular_medication7_name",
-      "text_key": "regular_medication7_name",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication7_reason",
-      "text_key": "regular_medication7_reason",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication7_duration",
-      "text_key": "regular_medication7_duration",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "regular_medication7_duration_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "regular_medication7_duration_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "regular_medication7_duration_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "regular_medication8_name",
-      "text_key": "regular_medication8_name",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication8_reason",
-      "text_key": "regular_medication8_reason",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication8_duration",
-      "text_key": "regular_medication8_duration",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "regular_medication8_duration_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "regular_medication8_duration_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "regular_medication8_duration_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "regular_medication9_name",
-      "text_key": "regular_medication9_name",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication9_reason",
-      "text_key": "regular_medication9_reason",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication9_duration",
-      "text_key": "regular_medication9_duration",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "regular_medication9_duration_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "regular_medication9_duration_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "regular_medication9_duration_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "regular_medication10_name",
-      "text_key": "regular_medication10_name",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication10_reason",
-      "text_key": "regular_medication10_reason",
-      "type": "short"
-    },
-    {
-      "id": "regular_medication10_duration",
-      "text_key": "regular_medication10_duration",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "regular_medication10_duration_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "regular_medication10_duration_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "regular_medication10_duration_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "ever_fired_gun",
-      "text_key": "ever_fired_gun",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "light_weapons_number_shots",
-      "text_key": "light_weapons_number_shots",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "light_weapons_number_shots_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "light_weapons_number_shots_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "light_weapons_number_shots_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "light_weapons_number_shots_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "light_weapons_number_shots_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "light_weapons_ear_protection",
-      "text_key": "light_weapons_ear_protection",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "light_weapons_ear_protection_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "light_weapons_ear_protection_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "light_weapons_ear_protection_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "light_weapons_ear_protection_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "light_weapons_ear_protection_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "light_weapons_ear_protection_type",
-      "text_key": "light_weapons_ear_protection_type",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "light_weapons_ear_protection_type_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "light_weapons_ear_protection_type_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "light_weapons_ear_protection_type_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "light_weapons_ear_protection_type_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "heavy_weapons_number_shots",
-      "text_key": "heavy_weapons_number_shots",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "heavy_weapons_number_shots_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "heavy_weapons_number_shots_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "heavy_weapons_number_shots_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "heavy_weapons_number_shots_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "heavy_weapons_number_shots_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "heavy_weapons_ear_protection",
-      "text_key": "heavy_weapons_ear_protection",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "heavy_weapons_ear_protection_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "heavy_weapons_ear_protection_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "heavy_weapons_ear_protection_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "heavy_weapons_ear_protection_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "heavy_weapons_ear_protection_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "heavy_weapons_ear_protection_type",
-      "text_key": "heavy_weapons_ear_protection_type",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "heavy_weapons_ear_protection_type_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "heavy_weapons_ear_protection_type_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "heavy_weapons_ear_protection_type_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "heavy_weapons_ear_protection_type_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "leisure_time_loud_noise",
-      "text_key": "leisure_time_loud_noise",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "leisure_time_loud_noise_type",
-      "text_key": "leisure_time_loud_noise_type",
-      "type": "short"
-    },
-    {
-      "id": "leisure_time_loud_noise_years",
-      "text_key": "leisure_time_loud_noise_years",
-      "type": "short"
-    },
-    {
-      "id": "leisure_time_loud_noise_hoursperweek",
-      "text_key": "leisure_time_loud_noise_hoursperweek",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "leisure_time_loud_noise_hoursperweek_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "leisure_time_loud_noise_hoursperweek_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "leisure_time_loud_noise_hoursperweek_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "leisure_time_loud_noise_hoursperweek_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "leisure_time_loud_noise_earprotection",
-      "text_key": "leisure_time_loud_noise_earprotection",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "leisure_time_loud_noise_earprotection_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "leisure_time_loud_noise_earprotection_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "leisure_time_loud_noise_earprotection_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "leisure_time_loud_noise_earprotection_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "leisure_time_loud_noise_earprotection_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "leisure_time_loud_noise_earprotectiontype",
-      "text_key": "leisure_time_loud_noise_earprotectiontype",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "leisure_time_loud_noise_earprotectiontype_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "leisure_time_loud_noise_earprotectiontype_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "leisure_time_loud_noise_earprotectiontype_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "leisure_time_loud_noise_earprotectiontype_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "occupation",
-      "text_key": "occupation",
-      "type": "short"
-    },
-    {
-      "id": "occupational_exposure_to_solvents",
-      "text_key": "occupational_exposure_to_solvents",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "occupational_exposure_to_solvents_type",
-      "text_key": "occupational_exposure_to_solvents_type",
-      "type": "short"
-    },
-    {
-      "id": "occupational_exposure_to_solvents_start",
-      "text_key": "occupational_exposure_to_solvents_start",
-      "type": "short"
-    },
-    {
-      "id": "occupational_exposure_to_solvents_years",
-      "text_key": "occupational_exposure_to_solvents_years",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "occupational_exposure_to_solvents_hoursperday",
-      "text_key": "occupational_exposure_to_solvents_hoursperday",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "occupational_exposure_to_solvents_hoursperday_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "occupational_exposure_to_solvents_hoursperday_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "occupational_exposure_to_solvents_hoursperday_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "white_finger_syndrome",
-      "text_key": "white_finger_syndrome",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "white_finger_syndrome_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "white_finger_syndrome_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "white_finger_syndrome_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "loud_working_environment",
-      "text_key": "loud_working_environment",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "loud_working_environment_job",
-      "text_key": "loud_working_environment_job",
-      "type": "short"
-    },
-    {
-      "id": "loud_working_environment_company",
-      "text_key": "loud_working_environment_company",
-      "type": "short"
-    },
-    {
-      "id": "loud_working_environment_noisesource",
-      "text_key": "loud_working_environment_noisesource",
-      "type": "short"
-    },
-    {
-      "id": "loud_working_environment_start",
-      "text_key": "loud_working_environment_start",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "loud_working_environment_years",
-      "text_key": "loud_working_environment_years",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "loud_working_environment_noiselevel",
-      "text_key": "loud_working_environment_noiselevel",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "loud_working_environment_noisedose",
-      "text_key": "loud_working_environment_noisedose",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "loud_working_environment_hoursperday",
-      "text_key": "loud_working_environment_hoursperday",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "loud_working_environment_hoursperday_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "loud_working_environment_hoursperday_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "loud_working_environment_hoursperday_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "loud_working_environment_constant_impulse",
-      "text_key": "loud_working_environment_constant_impulse",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "loud_working_environment_constant_impulse_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "loud_working_environment_constant_impulse_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "loud_working_environment_constant_impulse_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "loud_working_environment_use_noiseprotection",
-      "text_key": "loud_working_environment_use_noiseprotection",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "loud_working_environment_use_noiseprotection_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "loud_working_environment_use_noiseprotection_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "loud_working_environment_use_noiseprotection_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "loud_working_environment_use_noiseprotection_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "loud_working_environment_use_noiseprotection_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "loud_working_environment_noiseprotection_type",
-      "text_key": "loud_working_environment_noiseprotection_type",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "loud_working_environment_noiseprotection_type_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "loud_working_environment_noiseprotection_type_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "loud_working_environment_noiseprotection_type_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "loud_working_environment_noiseprotection_type_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "height",
-      "text_key": "height",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "height_units",
-      "text_key": "height_units",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "height_units_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "height_units_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "pxt201501_weight",
-      "text_key": "pxt201501_weight",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "weight_units",
-      "text_key": "weight_units",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "weight_units_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "weight_units_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "handedness",
-      "text_key": "handedness",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "handedness_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "handedness_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "susceptible_to_sunburn",
-      "text_key": "susceptible_to_sunburn",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "susceptible_to_sunburn_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "susceptible_to_sunburn_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "susceptible_to_sunburn_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "susceptible_to_sunburn_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "eye_color",
-      "text_key": "eye_color",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "eye_color_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "eye_color_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "eye_color_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "eye_color_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "eye_color_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "eye_color_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "smoked_regularly",
-      "text_key": "smoked_regularly",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "age_started_smoking",
-      "text_key": "age_started_smoking",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "years_smoked",
-      "text_key": "years_smoked",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "average_number_cigarettes_smoked",
-      "text_key": "average_number_cigarettes_smoked",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "average_number_cigarettes_smoked_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "average_number_cigarettes_smoked_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "average_number_cigarettes_smoked_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "average_number_cigarettes_smoked_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "average_number_cigars",
-      "text_key": "average_number_cigars",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "amount_pipe_tobacco",
-      "text_key": "amount_pipe_tobacco",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "drink_alcohol_regularly",
-      "text_key": "drink_alcohol_regularly",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "average_number_drinks",
-      "text_key": "average_number_drinks",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "average_number_drinks_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "average_number_drinks_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "average_number_drinks_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "average_number_drinks_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "scoring_201501",
-      "text_key": "scoring_201501",
-      "type": "inst"
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 244 items.",
+        "method": "sum_coded",
+        "items": [
+          "difficulty_hearing",
+          "which_ear_affected",
+          "age_first_noticed_hearing_difficulty",
+          "how_quickly_difficulty_developed",
+          "reason_for_difficulty",
+          "reason_for_difficulty_describe",
+          "hearing_vary_day_to_day",
+          "background_noise",
+          "sensitive_loud_sounds",
+          "fullness_in_ears",
+          "tinnitus",
+          "disease_caused_hearing_get_worse",
+          "ear_discharge",
+          "ear_operation",
+          "earoperation1_type",
+          "earoperation1_which_ear",
+          "earoperation1_year",
+          "earoperation2_type",
+          "earoperation2_which_ear",
+          "earoperation2_year",
+          "earoperation3_type",
+          "earoperation3_which_ear",
+          "earoperation3_year",
+          "earoperation4_type",
+          "earoperation4_which_ear",
+          "earoperation4_year",
+          "pxt201501_dizziness",
+          "unsteady_in_dark",
+          "mothers_father_country",
+          "mothers_father_region",
+          "mothers_mother_country",
+          "mothers_mother_region",
+          "fathers_father_country",
+          "fathers_father_region",
+          "fathers_mother_country",
+          "fathers_mother_region",
+          "mother_have_hearing_problems",
+          "mothers_birth_year",
+          "mothers_occupation",
+          "age_mothers_hearing_problems_started",
+          "cause_of_mothers_hearing_problem",
+          "age_mother_died",
+          "father_have_hearing_problem",
+          "fathers_birth_year",
+          "fathers_occupation",
+          "age_onset_fathers_hearing_problem",
+          "cause_of_fathers_hearing_problem",
+          "age_father_died",
+          "siblings_with_normal_hearing",
+          "number_siblings_with_normal_hearing",
+          "siblings_with_hearing_difficulties",
+          "number_siblings_with_hearing_difficulties",
+          "sibling1_sex",
+          "sibling1_birth_year",
+          "sibling1_age_onset_hearing_difficulty",
+          "sibling1_cause_of_hearing_difficulty",
+          "sibling2_sex",
+          "sibling2_year_of_birth",
+          "sibling2_age_onset_hearing_difficulty_enum",
+          "sibling2_cause_of_hearing_difficulty",
+          "sibling3_sex",
+          "sibling3_birth_year",
+          "sibling3_age_onset_hearing_difficulty",
+          "sibling3_cause_of_hearing_difficulty_enum",
+          "sibling4_sex",
+          "sibling4_birth_year",
+          "sibling4_age_onset_hearing_difficulty",
+          "sibling4_cause_of_hearing_difficulty",
+          "children_with_normal_hearing",
+          "children_with_normal_hearing_number",
+          "children_with_hearing_difficulty",
+          "children_with_hearing_difficulty_number",
+          "child1_sex",
+          "child1_birth_year",
+          "child1_age_onset_hearing_difficulty",
+          "child1_cause_of_hearing_difficulty",
+          "child2_sex",
+          "child2_birth_year",
+          "child2_age_onset_hearing_difficulty",
+          "child2_cause_of_hearing_difficulty",
+          "child3_sex",
+          "child3_birth_year",
+          "child3_age_onset_hearing_difficulty",
+          "child3_cause_of_hearing_difficulty",
+          "child4_sex",
+          "child4_birth_year",
+          "child4_age_onset_hearing_difficulty",
+          "child4_cause_of_hearing_difficulty",
+          "other_relatives_with_hearing_difficulty",
+          "other_relatives_participated",
+          "other_relative_name",
+          "other_relative_relation",
+          "migraine",
+          "migraine_frequency",
+          "hearing_loss_meningitis_encephalitis",
+          "hearing_loss_meningitis_encephalitis_year",
+          "whiplash",
+          "whiplash_year",
+          "knocked_unconscious",
+          "knocked_unconscious_year",
+          "pxt201501_heart_attack",
+          "heart_attack_year",
+          "heart_surgery",
+          "heart_surgery_type",
+          "heart_surgery_year",
+          "coronary_artery_catheterization",
+          "coronary_artery_catheterization_intervention",
+          "coronary_artery_catheterization_year",
+          "pxt201501_stroke",
+          "stroke_year",
+          "carotid_artery_operation",
+          "carotid_artery_operation_year",
+          "intermittent_claudication",
+          "other_heart_problems",
+          "other_heart_problems_describe",
+          "pxt201501_diabetes",
+          "need_insulin",
+          "osteoporosis",
+          "pxt201501_osteoarthritis",
+          "multiple_sclerosis",
+          "pxt201501_epilepsy",
+          "lung_problems",
+          "allergy",
+          "stomach_intestines",
+          "pxt201501_kidney_disease",
+          "liver_diseases",
+          "skin_diseases",
+          "psychiatric_problems",
+          "blood_diseases",
+          "thyroid_diseases",
+          "describe_disease",
+          "rheumatoid_arthritis",
+          "inflammatory_bowel_disease",
+          "lupus",
+          "pxt201501_psoriasis",
+          "wegeners_granulomatosis",
+          "vasculitis",
+          "nephritis",
+          "hashimoto_thyroiditis",
+          "cogans_syndrome",
+          "behcets_syndrome",
+          "other_autoimmune_diseases_enum",
+          "other_operation",
+          "other_operation1_type",
+          "other_operation1_year",
+          "other_operation2_type",
+          "other_operation2_year",
+          "other_operation3_type",
+          "other_operation3_year",
+          "other_operation4_type",
+          "other_operation4_year",
+          "other_serious_health_problems",
+          "other_serious_health_problems_describe",
+          "antibiotic_drip",
+          "antibiotic_drip_infection",
+          "antibiotic_drip_year",
+          "pxt201501_cancer",
+          "cancer_type",
+          "cancer_chemotherapy_medication",
+          "cancer_chemotherapy_medication_type",
+          "cancer_chemotherapy_medication_year",
+          "radiotherapy_tumor",
+          "radiotherapy_tumor_type",
+          "radiotherapy_tumor_year",
+          "painkiller_frequency",
+          "daily_aspirin",
+          "daily_aspirin_how_long",
+          "regular_medication1_name",
+          "regular_medication1_reason",
+          "regular_medication1_duration",
+          "regular_medication2_name",
+          "regular_medication2_reason",
+          "regular_medication2_duration",
+          "regular_medication3_name",
+          "regular_medication3_reason",
+          "regular_medication3_duration",
+          "regular_medication4_name",
+          "regular_medication4_reason",
+          "regular_medication4_duration",
+          "regular_medication5_name",
+          "regular_medication5_reason",
+          "regular_medication5_duration",
+          "regular_medication6_name",
+          "regular_medication6_reason",
+          "regular_medication6_duration",
+          "regular_medication7_name",
+          "regular_medication7_reason",
+          "regular_medication7_duration",
+          "regular_medication8_name",
+          "regular_medication8_reason",
+          "regular_medication8_duration",
+          "regular_medication9_name",
+          "regular_medication9_reason",
+          "regular_medication9_duration",
+          "regular_medication10_name",
+          "regular_medication10_reason",
+          "regular_medication10_duration",
+          "ever_fired_gun",
+          "light_weapons_number_shots",
+          "light_weapons_ear_protection",
+          "light_weapons_ear_protection_type",
+          "heavy_weapons_number_shots",
+          "heavy_weapons_ear_protection",
+          "heavy_weapons_ear_protection_type",
+          "leisure_time_loud_noise",
+          "leisure_time_loud_noise_type",
+          "leisure_time_loud_noise_years",
+          "leisure_time_loud_noise_hoursperweek",
+          "leisure_time_loud_noise_earprotection",
+          "leisure_time_loud_noise_earprotectiontype",
+          "occupation",
+          "occupational_exposure_to_solvents",
+          "occupational_exposure_to_solvents_type",
+          "occupational_exposure_to_solvents_start",
+          "occupational_exposure_to_solvents_years",
+          "occupational_exposure_to_solvents_hoursperday",
+          "white_finger_syndrome",
+          "loud_working_environment",
+          "loud_working_environment_job",
+          "loud_working_environment_company",
+          "loud_working_environment_noisesource",
+          "loud_working_environment_start",
+          "loud_working_environment_years",
+          "loud_working_environment_noiselevel",
+          "loud_working_environment_noisedose",
+          "loud_working_environment_hoursperday",
+          "loud_working_environment_constant_impulse",
+          "loud_working_environment_use_noiseprotection",
+          "loud_working_environment_noiseprotection_type",
+          "height",
+          "height_units",
+          "pxt201501_weight",
+          "weight_units",
+          "handedness",
+          "susceptible_to_sunburn",
+          "eye_color",
+          "smoked_regularly",
+          "age_started_smoking",
+          "years_smoked",
+          "average_number_cigarettes_smoked",
+          "average_number_cigars",
+          "amount_pipe_tobacco",
+          "drink_alcohol_regularly",
+          "average_number_drinks"
+        ]
+      }
     }
-  ],
+  },
   "translations": {
     "en": {
       "opt_1": "No",
@@ -2777,264 +3038,6 @@
       "average_number_drinks_opt_3": "1-3 drinks each day",
       "average_number_drinks_opt_4": "More than 3 drinks each day",
       "scoring_201501": "Scoring Instructions:Please see Fransen et al., 2008 for a complete description of the statistical analysis used for these questions. Also, supplementary table 4 contains information on how the different variables were coded in this statistical analysis."
-    }
-  },
-  "dimensions": [
-    {
-      "id": "total",
-      "name": "Total Score"
-    }
-  ],
-  "scoring": {
-    "total": {
-      "description": "Total: sum_coded of all 244 items.",
-      "method": "sum_coded",
-      "items": [
-        "difficulty_hearing",
-        "which_ear_affected",
-        "age_first_noticed_hearing_difficulty",
-        "how_quickly_difficulty_developed",
-        "reason_for_difficulty",
-        "reason_for_difficulty_describe",
-        "hearing_vary_day_to_day",
-        "background_noise",
-        "sensitive_loud_sounds",
-        "fullness_in_ears",
-        "tinnitus",
-        "disease_caused_hearing_get_worse",
-        "ear_discharge",
-        "ear_operation",
-        "earoperation1_type",
-        "earoperation1_which_ear",
-        "earoperation1_year",
-        "earoperation2_type",
-        "earoperation2_which_ear",
-        "earoperation2_year",
-        "earoperation3_type",
-        "earoperation3_which_ear",
-        "earoperation3_year",
-        "earoperation4_type",
-        "earoperation4_which_ear",
-        "earoperation4_year",
-        "pxt201501_dizziness",
-        "unsteady_in_dark",
-        "mothers_father_country",
-        "mothers_father_region",
-        "mothers_mother_country",
-        "mothers_mother_region",
-        "fathers_father_country",
-        "fathers_father_region",
-        "fathers_mother_country",
-        "fathers_mother_region",
-        "mother_have_hearing_problems",
-        "mothers_birth_year",
-        "mothers_occupation",
-        "age_mothers_hearing_problems_started",
-        "cause_of_mothers_hearing_problem",
-        "age_mother_died",
-        "father_have_hearing_problem",
-        "fathers_birth_year",
-        "fathers_occupation",
-        "age_onset_fathers_hearing_problem",
-        "cause_of_fathers_hearing_problem",
-        "age_father_died",
-        "siblings_with_normal_hearing",
-        "number_siblings_with_normal_hearing",
-        "siblings_with_hearing_difficulties",
-        "number_siblings_with_hearing_difficulties",
-        "sibling1_sex",
-        "sibling1_birth_year",
-        "sibling1_age_onset_hearing_difficulty",
-        "sibling1_cause_of_hearing_difficulty",
-        "sibling2_sex",
-        "sibling2_year_of_birth",
-        "sibling2_age_onset_hearing_difficulty_enum",
-        "sibling2_cause_of_hearing_difficulty",
-        "sibling3_sex",
-        "sibling3_birth_year",
-        "sibling3_age_onset_hearing_difficulty",
-        "sibling3_cause_of_hearing_difficulty_enum",
-        "sibling4_sex",
-        "sibling4_birth_year",
-        "sibling4_age_onset_hearing_difficulty",
-        "sibling4_cause_of_hearing_difficulty",
-        "children_with_normal_hearing",
-        "children_with_normal_hearing_number",
-        "children_with_hearing_difficulty",
-        "children_with_hearing_difficulty_number",
-        "child1_sex",
-        "child1_birth_year",
-        "child1_age_onset_hearing_difficulty",
-        "child1_cause_of_hearing_difficulty",
-        "child2_sex",
-        "child2_birth_year",
-        "child2_age_onset_hearing_difficulty",
-        "child2_cause_of_hearing_difficulty",
-        "child3_sex",
-        "child3_birth_year",
-        "child3_age_onset_hearing_difficulty",
-        "child3_cause_of_hearing_difficulty",
-        "child4_sex",
-        "child4_birth_year",
-        "child4_age_onset_hearing_difficulty",
-        "child4_cause_of_hearing_difficulty",
-        "other_relatives_with_hearing_difficulty",
-        "other_relatives_participated",
-        "other_relative_name",
-        "other_relative_relation",
-        "migraine",
-        "migraine_frequency",
-        "hearing_loss_meningitis_encephalitis",
-        "hearing_loss_meningitis_encephalitis_year",
-        "whiplash",
-        "whiplash_year",
-        "knocked_unconscious",
-        "knocked_unconscious_year",
-        "pxt201501_heart_attack",
-        "heart_attack_year",
-        "heart_surgery",
-        "heart_surgery_type",
-        "heart_surgery_year",
-        "coronary_artery_catheterization",
-        "coronary_artery_catheterization_intervention",
-        "coronary_artery_catheterization_year",
-        "pxt201501_stroke",
-        "stroke_year",
-        "carotid_artery_operation",
-        "carotid_artery_operation_year",
-        "intermittent_claudication",
-        "other_heart_problems",
-        "other_heart_problems_describe",
-        "pxt201501_diabetes",
-        "need_insulin",
-        "osteoporosis",
-        "pxt201501_osteoarthritis",
-        "multiple_sclerosis",
-        "pxt201501_epilepsy",
-        "lung_problems",
-        "allergy",
-        "stomach_intestines",
-        "pxt201501_kidney_disease",
-        "liver_diseases",
-        "skin_diseases",
-        "psychiatric_problems",
-        "blood_diseases",
-        "thyroid_diseases",
-        "describe_disease",
-        "rheumatoid_arthritis",
-        "inflammatory_bowel_disease",
-        "lupus",
-        "pxt201501_psoriasis",
-        "wegeners_granulomatosis",
-        "vasculitis",
-        "nephritis",
-        "hashimoto_thyroiditis",
-        "cogans_syndrome",
-        "behcets_syndrome",
-        "other_autoimmune_diseases_enum",
-        "other_operation",
-        "other_operation1_type",
-        "other_operation1_year",
-        "other_operation2_type",
-        "other_operation2_year",
-        "other_operation3_type",
-        "other_operation3_year",
-        "other_operation4_type",
-        "other_operation4_year",
-        "other_serious_health_problems",
-        "other_serious_health_problems_describe",
-        "antibiotic_drip",
-        "antibiotic_drip_infection",
-        "antibiotic_drip_year",
-        "pxt201501_cancer",
-        "cancer_type",
-        "cancer_chemotherapy_medication",
-        "cancer_chemotherapy_medication_type",
-        "cancer_chemotherapy_medication_year",
-        "radiotherapy_tumor",
-        "radiotherapy_tumor_type",
-        "radiotherapy_tumor_year",
-        "painkiller_frequency",
-        "daily_aspirin",
-        "daily_aspirin_how_long",
-        "regular_medication1_name",
-        "regular_medication1_reason",
-        "regular_medication1_duration",
-        "regular_medication2_name",
-        "regular_medication2_reason",
-        "regular_medication2_duration",
-        "regular_medication3_name",
-        "regular_medication3_reason",
-        "regular_medication3_duration",
-        "regular_medication4_name",
-        "regular_medication4_reason",
-        "regular_medication4_duration",
-        "regular_medication5_name",
-        "regular_medication5_reason",
-        "regular_medication5_duration",
-        "regular_medication6_name",
-        "regular_medication6_reason",
-        "regular_medication6_duration",
-        "regular_medication7_name",
-        "regular_medication7_reason",
-        "regular_medication7_duration",
-        "regular_medication8_name",
-        "regular_medication8_reason",
-        "regular_medication8_duration",
-        "regular_medication9_name",
-        "regular_medication9_reason",
-        "regular_medication9_duration",
-        "regular_medication10_name",
-        "regular_medication10_reason",
-        "regular_medication10_duration",
-        "ever_fired_gun",
-        "light_weapons_number_shots",
-        "light_weapons_ear_protection",
-        "light_weapons_ear_protection_type",
-        "heavy_weapons_number_shots",
-        "heavy_weapons_ear_protection",
-        "heavy_weapons_ear_protection_type",
-        "leisure_time_loud_noise",
-        "leisure_time_loud_noise_type",
-        "leisure_time_loud_noise_years",
-        "leisure_time_loud_noise_hoursperweek",
-        "leisure_time_loud_noise_earprotection",
-        "leisure_time_loud_noise_earprotectiontype",
-        "occupation",
-        "occupational_exposure_to_solvents",
-        "occupational_exposure_to_solvents_type",
-        "occupational_exposure_to_solvents_start",
-        "occupational_exposure_to_solvents_years",
-        "occupational_exposure_to_solvents_hoursperday",
-        "white_finger_syndrome",
-        "loud_working_environment",
-        "loud_working_environment_job",
-        "loud_working_environment_company",
-        "loud_working_environment_noisesource",
-        "loud_working_environment_start",
-        "loud_working_environment_years",
-        "loud_working_environment_noiselevel",
-        "loud_working_environment_noisedose",
-        "loud_working_environment_hoursperday",
-        "loud_working_environment_constant_impulse",
-        "loud_working_environment_use_noiseprotection",
-        "loud_working_environment_noiseprotection_type",
-        "height",
-        "height_units",
-        "pxt201501_weight",
-        "weight_units",
-        "handedness",
-        "susceptible_to_sunburn",
-        "eye_color",
-        "smoked_regularly",
-        "age_started_smoking",
-        "years_smoked",
-        "average_number_cigarettes_smoked",
-        "average_number_cigars",
-        "amount_pipe_tobacco",
-        "drink_alcohol_regularly",
-        "average_number_drinks"
-      ]
     }
   }
 }

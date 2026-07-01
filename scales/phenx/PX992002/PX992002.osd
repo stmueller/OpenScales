@@ -1,400 +1,403 @@
 {
-  "scale_info": {
-    "name": "Long COVID - Symptoms Due to COVID-19 - Memory",
-    "code": "PX992002",
-    "abbreviation": "PX992002",
-    "description": "A self-administered questionnaire to better describe and understand the patient experience and recovery of those with confirmed or suspected COVID-19, with a specific emphasis on Long COVID experience especially with memory.",
-    "domain": "Long COVID",
-    "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/992002]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/992002"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Long COVID - Symptoms Due to COVID-19 - Memory",
+      "code": "PX992002",
+      "abbreviation": "PX992002",
+      "description": "A self-administered questionnaire to better describe and understand the patient experience and recovery of those with confirmed or suspected COVID-19, with a specific emphasis on Long COVID experience especially with memory.",
+      "domain": "Long COVID",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/992002]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/992002"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        },
+        {
+          "text_key": "opt_4",
+          "value": 4
+        },
+        {
+          "text_key": "opt_5",
+          "value": 5
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "sec_memory_symptoms",
+        "type": "section",
+        "text_key": "sec_memory_symptoms_title"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "long_covid_symptoms_memory_memory_related_symptoms",
+        "text_key": "long_covid_symptoms_memory_memory_related_symptoms",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_memory_memory_related_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_memory_related_symptoms_opt_2",
+            "value": 2
+          }
+        ]
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "long_covid_symptoms_memory_experienced_memory_symptoms",
+        "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_opt_6",
+            "value": 6
+          }
+        ]
       },
       {
-        "text_key": "opt_4",
-        "value": 4
+        "id": "long_covid_symptoms_memory_experienced_memory_symptoms_other",
+        "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_other",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_memory_experienced_memory_symptoms",
+          "operator": "in",
+          "value": [
+            6
+          ]
+        }
       },
       {
-        "text_key": "opt_5",
-        "value": 5
+        "id": "long_covid_symptoms_memory_when_experienced_symptoms",
+        "text_key": "long_covid_symptoms_memory_when_experienced_symptoms",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_10",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "id": "sec_cognitive_function_brain_fog_symptoms",
+        "type": "section",
+        "text_key": "sec_cognitive_function_brain_fog_symptoms_title"
+      },
+      {
+        "id": "long_covid_symptoms_memory_brain_fog",
+        "text_key": "long_covid_symptoms_memory_brain_fog",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_opt_2",
+            "value": 2
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_memory_brain_fog_symptoms",
+        "text_key": "long_covid_symptoms_memory_brain_fog_symptoms",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_9",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "id": "long_covid_symptoms_memory_brain_fog_experience_symptoms",
+        "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_9",
+            "value": 9
+          },
+          {
+            "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_10",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "id": "sec_have_you_felt_significantly_limited_or_u",
+        "type": "section",
+        "text_key": "sec_have_you_felt_significantly_limited_or_u_title"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_drive",
+        "text_key": "long_covid_symptoms_memory_memory_loss_drive",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_watch_children",
+        "text_key": "long_covid_symptoms_memory_memory_loss_watch_children",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_cook_hot_items",
+        "text_key": "long_covid_symptoms_memory_memory_loss_cook_hot_items",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_feed_yourself",
+        "text_key": "long_covid_symptoms_memory_memory_loss_feed_yourself",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_shower_bathe_regularly",
+        "text_key": "long_covid_symptoms_memory_memory_loss_shower_bathe_regularly",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_make_decisions",
+        "text_key": "long_covid_symptoms_memory_memory_loss_make_decisions",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_leave_return_house",
+        "text_key": "long_covid_symptoms_memory_memory_loss_leave_return_house",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_remember_correct_year_month",
+        "text_key": "long_covid_symptoms_memory_memory_loss_remember_correct_year_month",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_conversations",
+        "text_key": "long_covid_symptoms_memory_memory_loss_conversations",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_limited_medication_schedule",
+        "text_key": "long_covid_symptoms_memory_memory_loss_limited_medication_schedule",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_work",
+        "text_key": "long_covid_symptoms_memory_memory_loss_work",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_follow_instructions",
+        "text_key": "long_covid_symptoms_memory_memory_loss_follow_instructions",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_communcate",
+        "text_key": "long_covid_symptoms_memory_memory_loss_communcate",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_other",
+        "text_key": "long_covid_symptoms_memory_memory_loss_other",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "changes"
+      },
+      {
+        "id": "long_covid_symptoms_memory_memory_loss_other_specify",
+        "text_key": "long_covid_symptoms_memory_memory_loss_other_specify",
+        "type": "short",
+        "visible_when": {
+          "item": "long_covid_symptoms_memory_memory_loss_other",
+          "operator": "in",
+          "value": [
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      },
+      {
+        "id": "long_covid_symptoms_memory_other_affected_areas",
+        "text_key": "long_covid_symptoms_memory_other_affected_areas",
+        "type": "short"
       }
+    ],
+    "_conversion_notes": [
+      "INFO  long_covid_symptoms_memory_memory_loss_drive: member of matrix group 'changes' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_memory_memory_loss_watch_children: member of matrix group 'changes' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_memory_memory_loss_cook_hot_items: member of matrix group 'changes' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_memory_memory_loss_feed_yourself: member of matrix group 'changes' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_memory_memory_loss_shower_bathe_regularly: member of matrix group 'changes' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_memory_memory_loss_make_decisions: member of matrix group 'changes' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_memory_memory_loss_leave_return_house: member of matrix group 'changes' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_memory_memory_loss_remember_correct_year_month: member of matrix group 'changes' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_memory_memory_loss_conversations: member of matrix group 'changes' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_memory_memory_loss_limited_medication_schedule: member of matrix group 'changes' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_memory_memory_loss_work: member of matrix group 'changes' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_memory_memory_loss_follow_instructions: member of matrix group 'changes' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_memory_memory_loss_communcate: member of matrix group 'changes' — consider converting to grid type manually",
+      "INFO  long_covid_symptoms_memory_memory_loss_other: member of matrix group 'changes' — consider converting to grid type manually"
     ]
   },
-  "items": [
-    {
-      "id": "sec_memory_symptoms",
-      "type": "section",
-      "text_key": "sec_memory_symptoms_title"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_related_symptoms",
-      "text_key": "long_covid_symptoms_memory_memory_related_symptoms",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "long_covid_symptoms_memory_memory_related_symptoms_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_memory_related_symptoms_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "long_covid_symptoms_memory_experienced_memory_symptoms",
-      "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "long_covid_symptoms_memory_experienced_memory_symptoms_other",
-      "text_key": "long_covid_symptoms_memory_experienced_memory_symptoms_other",
-      "type": "short",
-      "visible_when": {
-        "item": "long_covid_symptoms_memory_experienced_memory_symptoms",
-        "operator": "in",
-        "value": [
-          6
-        ]
-      }
-    },
-    {
-      "id": "long_covid_symptoms_memory_when_experienced_symptoms",
-      "text_key": "long_covid_symptoms_memory_when_experienced_symptoms",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_8",
-          "value": 8
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_9",
-          "value": 9
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_when_experienced_symptoms_opt_10",
-          "value": 10
-        }
-      ]
-    },
-    {
-      "id": "sec_cognitive_function_brain_fog_symptoms",
-      "type": "section",
-      "text_key": "sec_cognitive_function_brain_fog_symptoms_title"
-    },
-    {
-      "id": "long_covid_symptoms_memory_brain_fog",
-      "text_key": "long_covid_symptoms_memory_brain_fog",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_opt_2",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "id": "long_covid_symptoms_memory_brain_fog_symptoms",
-      "text_key": "long_covid_symptoms_memory_brain_fog_symptoms",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_8",
-          "value": 8
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_symptoms_opt_9",
-          "value": 9
-        }
-      ]
-    },
-    {
-      "id": "long_covid_symptoms_memory_brain_fog_experience_symptoms",
-      "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_8",
-          "value": 8
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_9",
-          "value": 9
-        },
-        {
-          "text_key": "long_covid_symptoms_memory_brain_fog_experience_symptoms_opt_10",
-          "value": 10
-        }
-      ]
-    },
-    {
-      "id": "sec_have_you_felt_significantly_limited_or_u",
-      "type": "section",
-      "text_key": "sec_have_you_felt_significantly_limited_or_u_title"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_drive",
-      "text_key": "long_covid_symptoms_memory_memory_loss_drive",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_watch_children",
-      "text_key": "long_covid_symptoms_memory_memory_loss_watch_children",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_cook_hot_items",
-      "text_key": "long_covid_symptoms_memory_memory_loss_cook_hot_items",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_feed_yourself",
-      "text_key": "long_covid_symptoms_memory_memory_loss_feed_yourself",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_shower_bathe_regularly",
-      "text_key": "long_covid_symptoms_memory_memory_loss_shower_bathe_regularly",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_make_decisions",
-      "text_key": "long_covid_symptoms_memory_memory_loss_make_decisions",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_leave_return_house",
-      "text_key": "long_covid_symptoms_memory_memory_loss_leave_return_house",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_remember_correct_year_month",
-      "text_key": "long_covid_symptoms_memory_memory_loss_remember_correct_year_month",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_conversations",
-      "text_key": "long_covid_symptoms_memory_memory_loss_conversations",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_limited_medication_schedule",
-      "text_key": "long_covid_symptoms_memory_memory_loss_limited_medication_schedule",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_work",
-      "text_key": "long_covid_symptoms_memory_memory_loss_work",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_follow_instructions",
-      "text_key": "long_covid_symptoms_memory_memory_loss_follow_instructions",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_communcate",
-      "text_key": "long_covid_symptoms_memory_memory_loss_communcate",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_other",
-      "text_key": "long_covid_symptoms_memory_memory_loss_other",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "changes"
-    },
-    {
-      "id": "long_covid_symptoms_memory_memory_loss_other_specify",
-      "text_key": "long_covid_symptoms_memory_memory_loss_other_specify",
-      "type": "short",
-      "visible_when": {
-        "item": "long_covid_symptoms_memory_memory_loss_other",
-        "operator": "in",
-        "value": [
-          1,
-          2,
-          3,
-          4
-        ]
-      }
-    },
-    {
-      "id": "long_covid_symptoms_memory_other_affected_areas",
-      "text_key": "long_covid_symptoms_memory_other_affected_areas",
-      "type": "short"
-    }
-  ],
-  "_conversion_notes": [
-    "INFO  long_covid_symptoms_memory_memory_loss_drive: member of matrix group 'changes' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_memory_memory_loss_watch_children: member of matrix group 'changes' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_memory_memory_loss_cook_hot_items: member of matrix group 'changes' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_memory_memory_loss_feed_yourself: member of matrix group 'changes' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_memory_memory_loss_shower_bathe_regularly: member of matrix group 'changes' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_memory_memory_loss_make_decisions: member of matrix group 'changes' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_memory_memory_loss_leave_return_house: member of matrix group 'changes' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_memory_memory_loss_remember_correct_year_month: member of matrix group 'changes' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_memory_memory_loss_conversations: member of matrix group 'changes' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_memory_memory_loss_limited_medication_schedule: member of matrix group 'changes' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_memory_memory_loss_work: member of matrix group 'changes' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_memory_memory_loss_follow_instructions: member of matrix group 'changes' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_memory_memory_loss_communcate: member of matrix group 'changes' — consider converting to grid type manually",
-    "INFO  long_covid_symptoms_memory_memory_loss_other: member of matrix group 'changes' — consider converting to grid type manually"
-  ],
   "translations": {
     "en": {
       "opt_1": "Severely unable",

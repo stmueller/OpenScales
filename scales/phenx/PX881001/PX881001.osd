@@ -1,133 +1,136 @@
 {
-  "scale_info": {
-    "name": "Sickle Cell Disease Pain Associated with Menstruation",
-    "code": "PX881001",
-    "abbreviation": "PX881001",
-    "description": "This protocol includes five self-administered items from the Demographic Survey in Table 1 from Sharma et al. (2019) that document sickle cell pain associated with menstruation. The protocol includes instructions for categorizing participants who experience acute “sickle cell” pain that is temporall",
-    "domain": "Women's Health",
-    "citation": "Chesney, M. A., & Tasto, D. L. (1975). The development of the menstrual symptom questionnaire. Behaviour Research and Therapy, 13 (4), 237-244. https://doi.org/10.1016/0005-7967(75)90028-5 Day, M., Bonnet, K., Schlundt, D. G., DeBaun, M., & Sharma, D. (2020). Vaso-occlusive pain and menstruation in sickle cell disease: A focus group analysis. Women’s Health Reports,1 (1), 36-46. https://doi.org/10.1089/whr.2019.0008 Zempsky, W. T., O'Hara, E. A., Santanelli, J. P., Palermo, T. M., New, T., Smith-Whitley, K., & Casella, J. F. (2013). Validation of the sickle cell disease pain burden interview–Youth. Journal of Pain, 14 , 975-982. https://doi.org/10.1016/j.jpain.2013.03.007 [PhenX: https://www.phenxtoolkit.org/protocols/view/881001]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/881001"
-  },
-  "option_sets": {
-    "default": [
-      {
-        "text_key": "opt_1",
-        "value": 1
-      },
-      {
-        "text_key": "opt_2",
-        "value": 2
-      }
-    ]
-  },
-  "items": [
-    {
-      "id": "scd_pain_menstruation_identify_triggersrecord_id",
-      "text_key": "scd_pain_menstruation_identify_triggersrecord_id",
-      "type": "short"
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Sickle Cell Disease Pain Associated with Menstruation",
+      "code": "PX881001",
+      "abbreviation": "PX881001",
+      "description": "This protocol includes five self-administered items from the Demographic Survey in Table 1 from Sharma et al. (2019) that document sickle cell pain associated with menstruation. The protocol includes instructions for categorizing participants who experience acute “sickle cell” pain that is temporall",
+      "domain": "Women's Health",
+      "citation": "Chesney, M. A., & Tasto, D. L. (1975). The development of the menstrual symptom questionnaire. Behaviour Research and Therapy, 13 (4), 237-244. https://doi.org/10.1016/0005-7967(75)90028-5 Day, M., Bonnet, K., Schlundt, D. G., DeBaun, M., & Sharma, D. (2020). Vaso-occlusive pain and menstruation in sickle cell disease: A focus group analysis. Women’s Health Reports,1 (1), 36-46. https://doi.org/10.1089/whr.2019.0008 Zempsky, W. T., O'Hara, E. A., Santanelli, J. P., Palermo, T. M., New, T., Smith-Whitley, K., & Casella, J. F. (2013). Validation of the sickle cell disease pain burden interview–Youth. Journal of Pain, 14 , 975-982. https://doi.org/10.1016/j.jpain.2013.03.007 [PhenX: https://www.phenxtoolkit.org/protocols/view/881001]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/881001"
     },
-    {
-      "id": "scd_pain_menstruation_title",
-      "text_key": "scd_pain_menstruation_title",
-      "type": "inst"
-    },
-    {
-      "id": "scd_pain_menstruation_desc",
-      "text_key": "scd_pain_menstruation_desc",
-      "type": "inst"
-    },
-    {
-      "id": "scd_pain_menstruation_identify_triggers",
-      "text_key": "scd_pain_menstruation_identify_triggers",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scd_pain_menstruation_identify_triggers_what",
-      "text_key": "scd_pain_menstruation_identify_triggers_what",
-      "type": "multicheck",
-      "visible_when": {
-        "item": "scd_pain_menstruation_identify_triggers",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
+    "option_sets": {
+      "default": [
         {
-          "text_key": "scd_pain_menstruation_identify_triggers_what_opt_1",
+          "text_key": "opt_1",
           "value": 1
         },
         {
-          "text_key": "scd_pain_menstruation_identify_triggers_what_opt_2",
+          "text_key": "opt_2",
           "value": 2
-        },
-        {
-          "text_key": "scd_pain_menstruation_identify_triggers_what_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "scd_pain_menstruation_identify_triggers_what_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "scd_pain_menstruation_identify_triggers_what_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "scd_pain_menstruation_identify_triggers_what_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "scd_pain_menstruation_identify_triggers_what_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "scd_pain_menstruation_identify_triggers_what_opt_8",
-          "value": 8
-        },
-        {
-          "text_key": "scd_pain_menstruation_identify_triggers_what_opt_9",
-          "value": 9
         }
       ]
     },
-    {
-      "id": "scd_pain_menstruation_identify_triggers_what_other",
-      "text_key": "scd_pain_menstruation_identify_triggers_what_other",
-      "type": "short",
-      "visible_when": {
-        "item": "scd_pain_menstruation_identify_triggers_what",
-        "operator": "in",
-        "value": [
-          8
+    "items": [
+      {
+        "id": "scd_pain_menstruation_identify_triggersrecord_id",
+        "text_key": "scd_pain_menstruation_identify_triggersrecord_id",
+        "type": "short"
+      },
+      {
+        "id": "scd_pain_menstruation_title",
+        "text_key": "scd_pain_menstruation_title",
+        "type": "inst"
+      },
+      {
+        "id": "scd_pain_menstruation_desc",
+        "text_key": "scd_pain_menstruation_desc",
+        "type": "inst"
+      },
+      {
+        "id": "scd_pain_menstruation_identify_triggers",
+        "text_key": "scd_pain_menstruation_identify_triggers",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scd_pain_menstruation_identify_triggers_what",
+        "text_key": "scd_pain_menstruation_identify_triggers_what",
+        "type": "multicheck",
+        "visible_when": {
+          "item": "scd_pain_menstruation_identify_triggers",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "scd_pain_menstruation_identify_triggers_what_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "scd_pain_menstruation_identify_triggers_what_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "scd_pain_menstruation_identify_triggers_what_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "scd_pain_menstruation_identify_triggers_what_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "scd_pain_menstruation_identify_triggers_what_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "scd_pain_menstruation_identify_triggers_what_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "scd_pain_menstruation_identify_triggers_what_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "scd_pain_menstruation_identify_triggers_what_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "scd_pain_menstruation_identify_triggers_what_opt_9",
+            "value": 9
+          }
         ]
+      },
+      {
+        "id": "scd_pain_menstruation_identify_triggers_what_other",
+        "text_key": "scd_pain_menstruation_identify_triggers_what_other",
+        "type": "short",
+        "visible_when": {
+          "item": "scd_pain_menstruation_identify_triggers_what",
+          "operator": "in",
+          "value": [
+            8
+          ]
+        }
+      },
+      {
+        "id": "scd_pain_menstruation_experience_pain_week_before_period",
+        "text_key": "scd_pain_menstruation_experience_pain_week_before_period",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "scd_pain_menstruation_experience_pain_week_before_period_when_start",
+        "text_key": "scd_pain_menstruation_experience_pain_week_before_period_when_start",
+        "type": "multi",
+        "options": []
+      },
+      {
+        "id": "scd_pain_menstruation_experience_pain_week_before_period_how_often",
+        "text_key": "scd_pain_menstruation_experience_pain_week_before_period_how_often",
+        "type": "multi",
+        "options": []
+      },
+      {
+        "id": "scd_pain_menstruation_scoring",
+        "text_key": "scd_pain_menstruation_scoring",
+        "type": "inst"
       }
-    },
-    {
-      "id": "scd_pain_menstruation_experience_pain_week_before_period",
-      "text_key": "scd_pain_menstruation_experience_pain_week_before_period",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "scd_pain_menstruation_experience_pain_week_before_period_when_start",
-      "text_key": "scd_pain_menstruation_experience_pain_week_before_period_when_start",
-      "type": "multi",
-      "options": []
-    },
-    {
-      "id": "scd_pain_menstruation_experience_pain_week_before_period_how_often",
-      "text_key": "scd_pain_menstruation_experience_pain_week_before_period_how_often",
-      "type": "multi",
-      "options": []
-    },
-    {
-      "id": "scd_pain_menstruation_scoring",
-      "text_key": "scd_pain_menstruation_scoring",
-      "type": "inst"
-    }
-  ],
+    ]
+  },
   "translations": {
     "en": {
       "opt_1": "Yes",

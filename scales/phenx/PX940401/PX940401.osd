@@ -1,243 +1,246 @@
 {
-  "scale_info": {
-    "name": "COVID-19 Vaccination - Adult",
-    "code": "PX940401",
-    "abbreviation": "PX940401",
-    "description": "This protocol has 13 items asking about the COVID-19 vaccination and enrollment in the vaccine trial.",
-    "domain": "COVID-19 - Vaccination",
-    "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/940401]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/940401"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "COVID-19 Vaccination - Adult",
+      "code": "PX940401",
+      "abbreviation": "PX940401",
+      "description": "This protocol has 13 items asking about the COVID-19 vaccination and enrollment in the vaccine trial.",
+      "domain": "COVID-19 - Vaccination",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/940401]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/940401"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        },
+        {
+          "text_key": "opt_4",
+          "value": 4
+        },
+        {
+          "text_key": "opt_5",
+          "value": 5
+        },
+        {
+          "text_key": "opt_6",
+          "value": 6
+        },
+        {
+          "text_key": "opt_7",
+          "value": 7
+        },
+        {
+          "text_key": "opt_8",
+          "value": 8
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "covid_vaccination_adult_ever_given",
+        "text_key": "covid_vaccination_adult_ever_given",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "covid_vaccination_adult_ever_given_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_adult_ever_given_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "covid_vaccination_adult_ever_given_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "covid_vaccination_adult_ever_given_opt_4",
+            "value": 4
+          }
+        ]
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "covid_vaccination_adult_number_doses",
+        "text_key": "covid_vaccination_adult_number_doses",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "covid_vaccination_adult_number_doses_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_adult_number_doses_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "covid_vaccination_adult_number_doses_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "covid_vaccination_adult_number_doses_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "covid_vaccination_adult_number_doses_opt_5",
+            "value": 5
+          }
+        ]
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "covid_vaccination_adult_number_doses_other",
+        "text_key": "covid_vaccination_adult_number_doses_other",
+        "type": "short",
+        "visible_when": {
+          "item": "covid_vaccination_adult_number_doses",
+          "operator": "equals",
+          "value": 4
+        },
+        "input_type": "number"
       },
       {
-        "text_key": "opt_4",
-        "value": 4
+        "id": "covid_vaccination_adult_dose_first",
+        "text_key": "covid_vaccination_adult_dose_first",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_5",
-        "value": 5
+        "id": "covid_vaccination_adult_dose_first_other",
+        "text_key": "covid_vaccination_adult_dose_first_other",
+        "type": "short",
+        "visible_when": {
+          "item": "covid_vaccination_adult_dose_first",
+          "operator": "equals",
+          "value": 6
+        }
       },
       {
-        "text_key": "opt_6",
-        "value": 6
+        "id": "covid_vaccination_adult_dose_placebo",
+        "text_key": "covid_vaccination_adult_dose_placebo",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "covid_vaccination_adult_dose_placebo_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_placebo_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_placebo_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_placebo_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "covid_vaccination_adult_dose_placebo_opt_5",
+            "value": 5
+          }
+        ]
       },
       {
-        "text_key": "opt_7",
-        "value": 7
+        "id": "covid_vaccination_adult_dose_first_month",
+        "text_key": "covid_vaccination_adult_dose_first_month",
+        "type": "short",
+        "input_type": "number"
       },
       {
-        "text_key": "opt_8",
-        "value": 8
+        "id": "covid_vaccination_adult_dose_first_day",
+        "text_key": "covid_vaccination_adult_dose_first_day",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_first_year",
+        "text_key": "covid_vaccination_adult_dose_first_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_second",
+        "text_key": "covid_vaccination_adult_dose_second",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_second_other",
+        "text_key": "covid_vaccination_adult_dose_second_other",
+        "type": "short",
+        "visible_when": {
+          "item": "covid_vaccination_adult_dose_second",
+          "operator": "equals",
+          "value": 6
+        }
+      },
+      {
+        "id": "covid_vaccination_adult_dose_second_month",
+        "text_key": "covid_vaccination_adult_dose_second_month",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_second_day",
+        "text_key": "covid_vaccination_adult_dose_second_day",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_second_year",
+        "text_key": "covid_vaccination_adult_dose_second_year",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_third",
+        "text_key": "covid_vaccination_adult_dose_third",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_third_other",
+        "text_key": "covid_vaccination_adult_dose_third_other",
+        "type": "short",
+        "visible_when": {
+          "item": "covid_vaccination_adult_dose_third",
+          "operator": "equals",
+          "value": 6
+        }
+      },
+      {
+        "id": "covid_vaccination_adult_dose_third_month",
+        "text_key": "covid_vaccination_adult_dose_third_month",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_third_day",
+        "text_key": "covid_vaccination_adult_dose_third_day",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "covid_vaccination_adult_dose_third_year",
+        "text_key": "covid_vaccination_adult_dose_third_year",
+        "type": "short",
+        "input_type": "number"
       }
     ]
   },
-  "items": [
-    {
-      "id": "covid_vaccination_adult_ever_given",
-      "text_key": "covid_vaccination_adult_ever_given",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "covid_vaccination_adult_ever_given_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "covid_vaccination_adult_ever_given_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "covid_vaccination_adult_ever_given_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "covid_vaccination_adult_ever_given_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "covid_vaccination_adult_number_doses",
-      "text_key": "covid_vaccination_adult_number_doses",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "covid_vaccination_adult_number_doses_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "covid_vaccination_adult_number_doses_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "covid_vaccination_adult_number_doses_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "covid_vaccination_adult_number_doses_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "covid_vaccination_adult_number_doses_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "covid_vaccination_adult_number_doses_other",
-      "text_key": "covid_vaccination_adult_number_doses_other",
-      "type": "short",
-      "visible_when": {
-        "item": "covid_vaccination_adult_number_doses",
-        "operator": "equals",
-        "value": 4
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "covid_vaccination_adult_dose_first",
-      "text_key": "covid_vaccination_adult_dose_first",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "covid_vaccination_adult_dose_first_other",
-      "text_key": "covid_vaccination_adult_dose_first_other",
-      "type": "short",
-      "visible_when": {
-        "item": "covid_vaccination_adult_dose_first",
-        "operator": "equals",
-        "value": 6
-      }
-    },
-    {
-      "id": "covid_vaccination_adult_dose_placebo",
-      "text_key": "covid_vaccination_adult_dose_placebo",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "covid_vaccination_adult_dose_placebo_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "covid_vaccination_adult_dose_placebo_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "covid_vaccination_adult_dose_placebo_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "covid_vaccination_adult_dose_placebo_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "covid_vaccination_adult_dose_placebo_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "covid_vaccination_adult_dose_first_month",
-      "text_key": "covid_vaccination_adult_dose_first_month",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "covid_vaccination_adult_dose_first_day",
-      "text_key": "covid_vaccination_adult_dose_first_day",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "covid_vaccination_adult_dose_first_year",
-      "text_key": "covid_vaccination_adult_dose_first_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "covid_vaccination_adult_dose_second",
-      "text_key": "covid_vaccination_adult_dose_second",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "covid_vaccination_adult_dose_second_other",
-      "text_key": "covid_vaccination_adult_dose_second_other",
-      "type": "short",
-      "visible_when": {
-        "item": "covid_vaccination_adult_dose_second",
-        "operator": "equals",
-        "value": 6
-      }
-    },
-    {
-      "id": "covid_vaccination_adult_dose_second_month",
-      "text_key": "covid_vaccination_adult_dose_second_month",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "covid_vaccination_adult_dose_second_day",
-      "text_key": "covid_vaccination_adult_dose_second_day",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "covid_vaccination_adult_dose_second_year",
-      "text_key": "covid_vaccination_adult_dose_second_year",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "covid_vaccination_adult_dose_third",
-      "text_key": "covid_vaccination_adult_dose_third",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "covid_vaccination_adult_dose_third_other",
-      "text_key": "covid_vaccination_adult_dose_third_other",
-      "type": "short",
-      "visible_when": {
-        "item": "covid_vaccination_adult_dose_third",
-        "operator": "equals",
-        "value": 6
-      }
-    },
-    {
-      "id": "covid_vaccination_adult_dose_third_month",
-      "text_key": "covid_vaccination_adult_dose_third_month",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "covid_vaccination_adult_dose_third_day",
-      "text_key": "covid_vaccination_adult_dose_third_day",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "covid_vaccination_adult_dose_third_year",
-      "text_key": "covid_vaccination_adult_dose_third_year",
-      "type": "short",
-      "input_type": "number"
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "Moderna mRNA vaccine",

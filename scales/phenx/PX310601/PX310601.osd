@@ -1,200 +1,203 @@
 {
-  "scale_info": {
-    "name": "Information Sources for Patients after Return of Results",
-    "code": "PX310601",
-    "abbreviation": "PX310601",
-    "description": "After a patient receives genetic test results, the patient is asked which sources were used to find out more about the genetic test results. Then the patient completes a scale of 1–5 based on the perceived usefulness of the information from the source. The patient is also encouraged to list any webs",
-    "domain": "Genomics & Genetics",
-    "citation": "Read, C. Y., Perry, D. J., & Duffy, M. E. (2005). Design and psychometric evaluation of the Psychological Adaptation to Genetic Information Scale. Journal of Nursing Scholarship, 37(3), 203–208. [PhenX: https://www.phenxtoolkit.org/protocols/view/310601]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/310601"
-  },
-  "option_sets": {
-    "default": [
-      {
-        "text_key": "opt_1",
-        "value": 1
-      },
-      {
-        "text_key": "opt_5",
-        "value": 5
-      }
-    ]
-  },
-  "items": [
-    {
-      "id": "patient_results_information_source",
-      "text_key": "patient_results_information_source",
-      "type": "multicheck",
-      "options": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Information Sources for Patients after Return of Results",
+      "code": "PX310601",
+      "abbreviation": "PX310601",
+      "description": "After a patient receives genetic test results, the patient is asked which sources were used to find out more about the genetic test results. Then the patient completes a scale of 1–5 based on the perceived usefulness of the information from the source. The patient is also encouraged to list any webs",
+      "domain": "Genomics & Genetics",
+      "citation": "Read, C. Y., Perry, D. J., & Duffy, M. E. (2005). Design and psychometric evaluation of the Psychological Adaptation to Genetic Information Scale. Journal of Nursing Scholarship, 37(3), 203–208. [PhenX: https://www.phenxtoolkit.org/protocols/view/310601]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/310601"
+    },
+    "option_sets": {
+      "default": [
         {
-          "text_key": "patient_results_information_source_opt_1",
+          "text_key": "opt_1",
           "value": 1
         },
         {
-          "text_key": "patient_results_information_source_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "patient_results_information_source_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "patient_results_information_source_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "patient_results_information_source_opt_5",
+          "text_key": "opt_5",
           "value": 5
-        },
-        {
-          "text_key": "patient_results_information_source_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "patient_results_information_source_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "patient_results_information_source_opt_8",
-          "value": 8
-        },
-        {
-          "text_key": "patient_results_information_source_opt_9",
-          "value": 9
         }
       ]
     },
-    {
-      "id": "patient_results_information_source_family_friend",
-      "text_key": "patient_results_information_source_family_friend",
-      "type": "multi",
-      "visible_when": {
-        "item": "patient_results_information_source",
-        "operator": "in",
-        "value": [
-          1
+    "items": [
+      {
+        "id": "patient_results_information_source",
+        "text_key": "patient_results_information_source",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "patient_results_information_source_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "patient_results_information_source_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "patient_results_information_source_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "patient_results_information_source_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "patient_results_information_source_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "patient_results_information_source_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "patient_results_information_source_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "patient_results_information_source_opt_8",
+            "value": 8
+          },
+          {
+            "text_key": "patient_results_information_source_opt_9",
+            "value": 9
+          }
         ]
       },
-      "option_set": "default"
-    },
-    {
-      "id": "patient_results_information_source_facebook",
-      "text_key": "patient_results_information_source_facebook",
-      "type": "multi",
-      "visible_when": {
-        "item": "patient_results_information_source",
-        "operator": "in",
-        "value": [
-          2
-        ]
+      {
+        "id": "patient_results_information_source_family_friend",
+        "text_key": "patient_results_information_source_family_friend",
+        "type": "multi",
+        "visible_when": {
+          "item": "patient_results_information_source",
+          "operator": "in",
+          "value": [
+            1
+          ]
+        },
+        "option_set": "default"
       },
-      "option_set": "default"
-    },
-    {
-      "id": "patient_results_information_source_support_group",
-      "text_key": "patient_results_information_source_support_group",
-      "type": "multi",
-      "visible_when": {
-        "item": "patient_results_information_source",
-        "operator": "in",
-        "value": [
-          3
-        ]
+      {
+        "id": "patient_results_information_source_facebook",
+        "text_key": "patient_results_information_source_facebook",
+        "type": "multi",
+        "visible_when": {
+          "item": "patient_results_information_source",
+          "operator": "in",
+          "value": [
+            2
+          ]
+        },
+        "option_set": "default"
       },
-      "option_set": "default"
-    },
-    {
-      "id": "patient_results_information_source_other_doctor",
-      "text_key": "patient_results_information_source_other_doctor",
-      "type": "multi",
-      "visible_when": {
-        "item": "patient_results_information_source",
-        "operator": "in",
-        "value": [
-          4
-        ]
+      {
+        "id": "patient_results_information_source_support_group",
+        "text_key": "patient_results_information_source_support_group",
+        "type": "multi",
+        "visible_when": {
+          "item": "patient_results_information_source",
+          "operator": "in",
+          "value": [
+            3
+          ]
+        },
+        "option_set": "default"
       },
-      "option_set": "default"
-    },
-    {
-      "id": "patient_results_information_source_internet",
-      "text_key": "patient_results_information_source_internet",
-      "type": "multi",
-      "visible_when": {
-        "item": "patient_results_information_source",
-        "operator": "in",
-        "value": [
-          5
-        ]
+      {
+        "id": "patient_results_information_source_other_doctor",
+        "text_key": "patient_results_information_source_other_doctor",
+        "type": "multi",
+        "visible_when": {
+          "item": "patient_results_information_source",
+          "operator": "in",
+          "value": [
+            4
+          ]
+        },
+        "option_set": "default"
       },
-      "option_set": "default"
-    },
-    {
-      "id": "patient_results_information_source_internet_helpful_website",
-      "text_key": "patient_results_information_source_internet_helpful_website",
-      "type": "short",
-      "visible_when": {
-        "item": "patient_results_information_source",
-        "operator": "in",
-        "value": [
-          5
-        ]
+      {
+        "id": "patient_results_information_source_internet",
+        "text_key": "patient_results_information_source_internet",
+        "type": "multi",
+        "visible_when": {
+          "item": "patient_results_information_source",
+          "operator": "in",
+          "value": [
+            5
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "patient_results_information_source_internet_helpful_website",
+        "text_key": "patient_results_information_source_internet_helpful_website",
+        "type": "short",
+        "visible_when": {
+          "item": "patient_results_information_source",
+          "operator": "in",
+          "value": [
+            5
+          ]
+        }
+      },
+      {
+        "id": "patient_results_information_source_support_book_print_media",
+        "text_key": "patient_results_information_source_support_book_print_media",
+        "type": "multi",
+        "visible_when": {
+          "item": "patient_results_information_source",
+          "operator": "in",
+          "value": [
+            6
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "patient_results_information_source_genetic_test",
+        "text_key": "patient_results_information_source_genetic_test",
+        "type": "multi",
+        "visible_when": {
+          "item": "patient_results_information_source",
+          "operator": "in",
+          "value": [
+            7
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "patient_results_information_source_other",
+        "text_key": "patient_results_information_source_other",
+        "type": "multi",
+        "visible_when": {
+          "item": "patient_results_information_source",
+          "operator": "in",
+          "value": [
+            8
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "patient_results_information_source_other_detail",
+        "text_key": "patient_results_information_source_other_detail",
+        "type": "short",
+        "visible_when": {
+          "item": "patient_results_information_source",
+          "operator": "in",
+          "value": [
+            8
+          ]
+        }
       }
-    },
-    {
-      "id": "patient_results_information_source_support_book_print_media",
-      "text_key": "patient_results_information_source_support_book_print_media",
-      "type": "multi",
-      "visible_when": {
-        "item": "patient_results_information_source",
-        "operator": "in",
-        "value": [
-          6
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "patient_results_information_source_genetic_test",
-      "text_key": "patient_results_information_source_genetic_test",
-      "type": "multi",
-      "visible_when": {
-        "item": "patient_results_information_source",
-        "operator": "in",
-        "value": [
-          7
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "patient_results_information_source_other",
-      "text_key": "patient_results_information_source_other",
-      "type": "multi",
-      "visible_when": {
-        "item": "patient_results_information_source",
-        "operator": "in",
-        "value": [
-          8
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "patient_results_information_source_other_detail",
-      "text_key": "patient_results_information_source_other_detail",
-      "type": "short",
-      "visible_when": {
-        "item": "patient_results_information_source",
-        "operator": "in",
-        "value": [
-          8
-        ]
-      }
-    }
-  ],
+    ]
+  },
   "translations": {
     "en": {
       "opt_1": "Not useful at all",

@@ -1,72 +1,94 @@
 {
-  "scale_info": {
-    "name": "Psoriatic Arthritis (PsA) - Screening",
-    "code": "PX171801",
-    "abbreviation": "PX171801",
-    "description": "The Psoriasis Epidemiology Screening Tool (PEST) is a five-item, yes-or-no response, self-report questionnaire.",
-    "domain": "Dermatology, Bone & Rheumatology",
-    "citation": "Mease, P. J., Gladman, D. D., Papp, K. A., Khraishi, M. M., Thaci, D., Behrens, F., . . . Alvarez, D. (2013). Prevalence of rheumatologist-diagnosed psoriatic arthritis in patients with psoriasis in European/North American dermatology clinics. Journal of the American Academy of Dermatology, 69(5), 729–735. doi:10.1016/j.jaad.2013.07.023. PMID: 23981683. National Institute for Health and Care Excellence (NICE). (2017). Psoriasis: Assessment and management. Clinical guideline [CG153]. Published: 24 October 2012. London: NICE. [PhenX: https://www.phenxtoolkit.org/protocols/view/171801]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/171801"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Psoriatic Arthritis (PsA) - Screening",
+      "code": "PX171801",
+      "abbreviation": "PX171801",
+      "description": "The Psoriasis Epidemiology Screening Tool (PEST) is a five-item, yes-or-no response, self-report questionnaire.",
+      "domain": "Dermatology, Bone & Rheumatology",
+      "citation": "Mease, P. J., Gladman, D. D., Papp, K. A., Khraishi, M. M., Thaci, D., Behrens, F., . . . Alvarez, D. (2013). Prevalence of rheumatologist-diagnosed psoriatic arthritis in patients with psoriasis in European/North American dermatology clinics. Journal of the American Academy of Dermatology, 69(5), 729–735. doi:10.1016/j.jaad.2013.07.023. PMID: 23981683. National Institute for Health and Care Excellence (NICE). (2017). Psoriasis: Assessment and management. Clinical guideline [CG153]. Published: 24 October 2012. London: NICE. [PhenX: https://www.phenxtoolkit.org/protocols/view/171801]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/171801"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_0",
+          "value": 0
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "psoriatric_arthritis_screening_intro",
+        "text_key": "psoriatric_arthritis_screening_intro",
+        "type": "inst"
       },
       {
-        "text_key": "opt_0",
-        "value": 0
+        "id": "psoriatic_arthritis_screening_swollen_joint_ever",
+        "text_key": "psoriatic_arthritis_screening_swollen_joint_ever",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "psoriatic_arthritis_screening_doctor_told_arthritis",
+        "text_key": "psoriatic_arthritis_screening_doctor_told_arthritis",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "psoriatic_arthritis_screening_finger_toe_nail_pit_hole",
+        "text_key": "psoriatic_arthritis_screening_finger_toe_nail_pit_hole",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "psoriatic_arthritis_screening_pain_heel",
+        "text_key": "psoriatic_arthritis_screening_pain_heel",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "psoriatic_arthritis_screening_finger_toe_swollen_completely_no_reason",
+        "text_key": "psoriatic_arthritis_screening_finger_toe_swollen_completely_no_reason",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "psoriatric_arthritis_screening_outro",
+        "text_key": "psoriatric_arthritis_screening_outro",
+        "type": "inst"
       }
-    ]
-  },
-  "items": [
-    {
-      "id": "psoriatric_arthritis_screening_intro",
-      "text_key": "psoriatric_arthritis_screening_intro",
-      "type": "inst"
-    },
-    {
-      "id": "psoriatic_arthritis_screening_swollen_joint_ever",
-      "text_key": "psoriatic_arthritis_screening_swollen_joint_ever",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "psoriatic_arthritis_screening_doctor_told_arthritis",
-      "text_key": "psoriatic_arthritis_screening_doctor_told_arthritis",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "psoriatic_arthritis_screening_finger_toe_nail_pit_hole",
-      "text_key": "psoriatic_arthritis_screening_finger_toe_nail_pit_hole",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "psoriatic_arthritis_screening_pain_heel",
-      "text_key": "psoriatic_arthritis_screening_pain_heel",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "psoriatic_arthritis_screening_finger_toe_swollen_completely_no_reason",
-      "text_key": "psoriatic_arthritis_screening_finger_toe_swollen_completely_no_reason",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "psoriatric_arthritis_screening_outro",
-      "text_key": "psoriatric_arthritis_screening_outro",
-      "type": "inst"
+    ],
+    "_conversion_notes": [
+      "SKIP  psoriatic_arthritis_screening_total: field type 'calc' not supported in OSD"
+    ],
+    "dimensions": [
+      {
+        "id": "total",
+        "name": "Total Score"
+      }
+    ],
+    "scoring": {
+      "total": {
+        "description": "Total: sum_coded of all 5 items.",
+        "method": "sum_coded",
+        "items": [
+          "psoriatic_arthritis_screening_swollen_joint_ever",
+          "psoriatic_arthritis_screening_doctor_told_arthritis",
+          "psoriatic_arthritis_screening_finger_toe_nail_pit_hole",
+          "psoriatic_arthritis_screening_pain_heel",
+          "psoriatic_arthritis_screening_finger_toe_swollen_completely_no_reason"
+        ]
+      }
     }
-  ],
-  "_conversion_notes": [
-    "SKIP  psoriatic_arthritis_screening_total: field type 'calc' not supported in OSD"
-  ],
+  },
   "translations": {
     "en": {
       "opt_1": "Yes",
@@ -78,25 +100,6 @@
       "psoriatic_arthritis_screening_pain_heel": "Have you had pain in your heel?",
       "psoriatic_arthritis_screening_finger_toe_swollen_completely_no_reason": "Have you had a finger or toe that was completely swollen and painful for no apparent reason?",
       "psoriatric_arthritis_screening_outro": "A total score of 3 or more out of 5 is positive and indicates referral to rheumatology should be considered."
-    }
-  },
-  "dimensions": [
-    {
-      "id": "total",
-      "name": "Total Score"
-    }
-  ],
-  "scoring": {
-    "total": {
-      "description": "Total: sum_coded of all 5 items.",
-      "method": "sum_coded",
-      "items": [
-        "psoriatic_arthritis_screening_swollen_joint_ever",
-        "psoriatic_arthritis_screening_doctor_told_arthritis",
-        "psoriatic_arthritis_screening_finger_toe_nail_pit_hole",
-        "psoriatic_arthritis_screening_pain_heel",
-        "psoriatic_arthritis_screening_finger_toe_swollen_completely_no_reason"
-      ]
     }
   }
 }

@@ -1,155 +1,158 @@
 {
-  "scale_info": {
-    "name": "Mode of Conception - Interview",
-    "code": "PX241201",
-    "abbreviation": "PX241201",
-    "description": "A woman who gave birth is asked several questions about the amount of time she spent trying to become pregnant and if she used fertility drugs or reproductive technologies to help her get pregnant.",
-    "domain": "Reproductive & Perinatal Health",
-    "citation": "Core State Preconception Health Indicators-Pregnancy Risk Assessment Monitoring System and Behavioral Risk Factor Surveillance System, 2009. (2014). Morbidity and Mortality Weekly Report, 63(ss03):1-62. [PhenX: https://www.phenxtoolkit.org/protocols/view/241201]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/241201"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Mode of Conception - Interview",
+      "code": "PX241201",
+      "abbreviation": "PX241201",
+      "description": "A woman who gave birth is asked several questions about the amount of time she spent trying to become pregnant and if she used fertility drugs or reproductive technologies to help her get pregnant.",
+      "domain": "Reproductive & Perinatal Health",
+      "citation": "Core State Preconception Health Indicators-Pregnancy Risk Assessment Monitoring System and Behavioral Risk Factor Surveillance System, 2009. (2014). Morbidity and Mortality Weekly Report, 63(ss03):1-62. [PhenX: https://www.phenxtoolkit.org/protocols/view/241201]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/241201"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "mode_conception_trying_pregnant",
+        "text_key": "mode_conception_trying_pregnant",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "mode_conception_fertility_drugs_treatment",
+        "text_key": "mode_conception_fertility_drugs_treatment",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "mode_conception_fertility_treatment_month",
+        "text_key": "mode_conception_fertility_treatment_month",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "mode_conception_fertility_treatment_month_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "mode_conception_fertility_treatment_month_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "mode_conception_fertility_treatment_month_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "mode_conception_fertility_treatment_month_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "mode_conception_fertility_treatment_month_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "mode_conception_fertility_treatment_month_other",
+        "text_key": "mode_conception_fertility_treatment_month_other",
+        "type": "short",
+        "visible_when": {
+          "item": "mode_conception_fertility_treatment_month",
+          "operator": "equals",
+          "value": 4
+        }
+      },
+      {
+        "id": "mode_conception_months_before_fertility_drugs_treatment",
+        "text_key": "mode_conception_months_before_fertility_drugs_treatment",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "mode_conception_months_before_fertility_drugs_treatment_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "mode_conception_months_before_fertility_drugs_treatment_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "mode_conception_months_before_fertility_drugs_treatment_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "mode_conception_months_before_fertility_drugs_treatment_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "mode_conception_months_before_fertility_drugs_treatment_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "mode_conception_cycles_fertility_treatment",
+        "text_key": "mode_conception_cycles_fertility_treatment",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "mode_conception_cycles_fertility_treatment_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "mode_conception_cycles_fertility_treatment_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "mode_conception_cycles_fertility_treatment_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "mode_conception_cycles_fertility_treatment_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "mode_conception_months_trying_pregnant",
+        "text_key": "mode_conception_months_trying_pregnant",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "mode_conception_months_trying_pregnant_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "mode_conception_months_trying_pregnant_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "mode_conception_months_trying_pregnant_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "mode_conception_months_trying_pregnant_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "mode_conception_months_trying_pregnant_opt_5",
+            "value": 5
+          }
+        ]
       }
     ]
   },
-  "items": [
-    {
-      "id": "mode_conception_trying_pregnant",
-      "text_key": "mode_conception_trying_pregnant",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "mode_conception_fertility_drugs_treatment",
-      "text_key": "mode_conception_fertility_drugs_treatment",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "mode_conception_fertility_treatment_month",
-      "text_key": "mode_conception_fertility_treatment_month",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "mode_conception_fertility_treatment_month_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "mode_conception_fertility_treatment_month_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "mode_conception_fertility_treatment_month_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "mode_conception_fertility_treatment_month_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "mode_conception_fertility_treatment_month_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "mode_conception_fertility_treatment_month_other",
-      "text_key": "mode_conception_fertility_treatment_month_other",
-      "type": "short",
-      "visible_when": {
-        "item": "mode_conception_fertility_treatment_month",
-        "operator": "equals",
-        "value": 4
-      }
-    },
-    {
-      "id": "mode_conception_months_before_fertility_drugs_treatment",
-      "text_key": "mode_conception_months_before_fertility_drugs_treatment",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "mode_conception_months_before_fertility_drugs_treatment_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "mode_conception_months_before_fertility_drugs_treatment_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "mode_conception_months_before_fertility_drugs_treatment_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "mode_conception_months_before_fertility_drugs_treatment_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "mode_conception_months_before_fertility_drugs_treatment_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "mode_conception_cycles_fertility_treatment",
-      "text_key": "mode_conception_cycles_fertility_treatment",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "mode_conception_cycles_fertility_treatment_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "mode_conception_cycles_fertility_treatment_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "mode_conception_cycles_fertility_treatment_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "mode_conception_cycles_fertility_treatment_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "mode_conception_months_trying_pregnant",
-      "text_key": "mode_conception_months_trying_pregnant",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "mode_conception_months_trying_pregnant_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "mode_conception_months_trying_pregnant_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "mode_conception_months_trying_pregnant_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "mode_conception_months_trying_pregnant_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "mode_conception_months_trying_pregnant_opt_5",
-          "value": 5
-        }
-      ]
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "Yes",

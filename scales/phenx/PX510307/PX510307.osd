@@ -1,260 +1,263 @@
 {
-  "scale_info": {
-    "name": "General Cannabis Use",
-    "code": "PX510307",
-    "abbreviation": "PX510307",
-    "description": "This questionnaire includes six items from the International Cannabis Policy Study Survey, Wave 6 (2023). Respondents are asked if they ever tried marijuana, when they last used marijuana, how often they use marijuana, how often they used marijuana in the last 30 days, length of marijuana use and ho",
-    "domain": "Substance Use - Screening & Family History",
-    "citation": "Corsetti, D., Fataar, F., Burkalter, R., & Hammond, D. (2023). International Cannabis Policy Study Technical Report-Wave 5 (2022) . Waterloo, Ontario, Canada: University of Waterloo. Hammond, D., Goodman, S., Wadsworth, E., Rynard, V., Boudreau, C., & Hall, W. (2020). Evaluating the impacts of cannabis legalization: The International Cannabis Policy Study. International Journal on Drug Policy, 77 , 102698. https://doi.org/10.1016/j.drugpo.2020.102698 [PhenX: https://www.phenxtoolkit.org/protocols/view/510307]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/510307"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "General Cannabis Use",
+      "code": "PX510307",
+      "abbreviation": "PX510307",
+      "description": "This questionnaire includes six items from the International Cannabis Policy Study Survey, Wave 6 (2023). Respondents are asked if they ever tried marijuana, when they last used marijuana, how often they use marijuana, how often they used marijuana in the last 30 days, length of marijuana use and ho",
+      "domain": "Substance Use - Screening & Family History",
+      "citation": "Corsetti, D., Fataar, F., Burkalter, R., & Hammond, D. (2023). International Cannabis Policy Study Technical Report-Wave 5 (2022) . Waterloo, Ontario, Canada: University of Waterloo. Hammond, D., Goodman, S., Wadsworth, E., Rynard, V., Boudreau, C., & Hall, W. (2020). Evaluating the impacts of cannabis legalization: The International Cannabis Policy Study. International Journal on Drug Policy, 77 , 102698. https://doi.org/10.1016/j.drugpo.2020.102698 [PhenX: https://www.phenxtoolkit.org/protocols/view/510307]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/510307"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_-77",
+          "value": -77
+        },
+        {
+          "text_key": "opt_-88",
+          "value": -88
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_-77",
-        "value": -77
+        "id": "general_cannabis_use_tried_marijuana",
+        "text_key": "general_cannabis_use_tried_marijuana",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "general_cannabis_use_tried_marijuana_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "general_cannabis_use_tried_marijuana_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "general_cannabis_use_tried_marijuana_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "general_cannabis_use_tried_marijuana_opt_-88",
+            "value": -88
+          }
+        ]
       },
       {
-        "text_key": "opt_-88",
-        "value": -88
+        "id": "general_cannabis_use_last_time",
+        "text_key": "general_cannabis_use_last_time",
+        "type": "multi",
+        "visible_when": {
+          "item": "general_cannabis_use_tried_marijuana",
+          "operator": "equals",
+          "value": 1
+        },
+        "options": [
+          {
+            "text_key": "general_cannabis_use_last_time_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "general_cannabis_use_last_time_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "general_cannabis_use_last_time_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "general_cannabis_use_last_time_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "general_cannabis_use_last_time_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "general_cannabis_use_last_time_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "general_cannabis_use_frequency",
+        "text_key": "general_cannabis_use_frequency",
+        "type": "multi",
+        "visible_when": {
+          "item": "general_cannabis_use_last_time",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4
+          ]
+        },
+        "options": [
+          {
+            "text_key": "general_cannabis_use_frequency_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "general_cannabis_use_frequency_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "general_cannabis_use_frequency_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "general_cannabis_use_frequency_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "general_cannabis_use_frequency_opt_-77",
+            "value": -77
+          },
+          {
+            "text_key": "general_cannabis_use_frequency_opt_-88",
+            "value": -88
+          }
+        ]
+      },
+      {
+        "id": "general_cannabis_use_marijuana_days",
+        "text_key": "general_cannabis_use_marijuana_days",
+        "type": "short",
+        "visible_when": {
+          "item": "general_cannabis_use_last_time",
+          "operator": "equals",
+          "value": 4
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "general_cannabis_use_marijuana_days_other",
+        "text_key": "general_cannabis_use_marijuana_days_other",
+        "type": "multi",
+        "visible_when": {
+          "item": "general_cannabis_use_last_time",
+          "operator": "equals",
+          "value": 4
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "general_cannabis_use_frequency_years",
+        "text_key": "general_cannabis_use_frequency_years",
+        "type": "short",
+        "visible_when": {
+          "item": "general_cannabis_use_frequency",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "general_cannabis_use_frequency_months",
+        "text_key": "general_cannabis_use_frequency_months",
+        "type": "short",
+        "visible_when": {
+          "item": "general_cannabis_use_frequency",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "general_cannabis_use_frequency_days",
+        "text_key": "general_cannabis_use_frequency_days",
+        "type": "short",
+        "visible_when": {
+          "item": "general_cannabis_use_frequency",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4
+          ]
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "general_cannabis_use_frequency_other",
+        "text_key": "general_cannabis_use_frequency_other",
+        "type": "multi",
+        "visible_when": {
+          "item": "general_cannabis_use_frequency",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "general_cannabis_use_after_waking",
+        "text_key": "general_cannabis_use_after_waking",
+        "type": "multi",
+        "visible_when": {
+          "item": "general_cannabis_use_frequency",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "general_cannabis_use_after_waking_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "general_cannabis_use_after_waking_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "general_cannabis_use_after_waking_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "general_cannabis_use_after_waking_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "general_cannabis_use_after_waking_minutes",
+        "text_key": "general_cannabis_use_after_waking_minutes",
+        "type": "short",
+        "visible_when": {
+          "item": "general_cannabis_use_after_waking",
+          "operator": "equals",
+          "value": 1
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "general_cannabis_use_after_waking_hours",
+        "text_key": "general_cannabis_use_after_waking_hours",
+        "type": "short",
+        "visible_when": {
+          "item": "general_cannabis_use_after_waking",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number"
       }
     ]
   },
-  "items": [
-    {
-      "id": "general_cannabis_use_tried_marijuana",
-      "text_key": "general_cannabis_use_tried_marijuana",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "general_cannabis_use_tried_marijuana_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "general_cannabis_use_tried_marijuana_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "general_cannabis_use_tried_marijuana_opt_-77",
-          "value": -77
-        },
-        {
-          "text_key": "general_cannabis_use_tried_marijuana_opt_-88",
-          "value": -88
-        }
-      ]
-    },
-    {
-      "id": "general_cannabis_use_last_time",
-      "text_key": "general_cannabis_use_last_time",
-      "type": "multi",
-      "visible_when": {
-        "item": "general_cannabis_use_tried_marijuana",
-        "operator": "equals",
-        "value": 1
-      },
-      "options": [
-        {
-          "text_key": "general_cannabis_use_last_time_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "general_cannabis_use_last_time_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "general_cannabis_use_last_time_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "general_cannabis_use_last_time_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "general_cannabis_use_last_time_opt_-77",
-          "value": -77
-        },
-        {
-          "text_key": "general_cannabis_use_last_time_opt_-88",
-          "value": -88
-        }
-      ]
-    },
-    {
-      "id": "general_cannabis_use_frequency",
-      "text_key": "general_cannabis_use_frequency",
-      "type": "multi",
-      "visible_when": {
-        "item": "general_cannabis_use_last_time",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4
-        ]
-      },
-      "options": [
-        {
-          "text_key": "general_cannabis_use_frequency_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "general_cannabis_use_frequency_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "general_cannabis_use_frequency_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "general_cannabis_use_frequency_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "general_cannabis_use_frequency_opt_-77",
-          "value": -77
-        },
-        {
-          "text_key": "general_cannabis_use_frequency_opt_-88",
-          "value": -88
-        }
-      ]
-    },
-    {
-      "id": "general_cannabis_use_marijuana_days",
-      "text_key": "general_cannabis_use_marijuana_days",
-      "type": "short",
-      "visible_when": {
-        "item": "general_cannabis_use_last_time",
-        "operator": "equals",
-        "value": 4
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "general_cannabis_use_marijuana_days_other",
-      "text_key": "general_cannabis_use_marijuana_days_other",
-      "type": "multi",
-      "visible_when": {
-        "item": "general_cannabis_use_last_time",
-        "operator": "equals",
-        "value": 4
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "general_cannabis_use_frequency_years",
-      "text_key": "general_cannabis_use_frequency_years",
-      "type": "short",
-      "visible_when": {
-        "item": "general_cannabis_use_frequency",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "general_cannabis_use_frequency_months",
-      "text_key": "general_cannabis_use_frequency_months",
-      "type": "short",
-      "visible_when": {
-        "item": "general_cannabis_use_frequency",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "general_cannabis_use_frequency_days",
-      "text_key": "general_cannabis_use_frequency_days",
-      "type": "short",
-      "visible_when": {
-        "item": "general_cannabis_use_frequency",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4
-        ]
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "general_cannabis_use_frequency_other",
-      "text_key": "general_cannabis_use_frequency_other",
-      "type": "multi",
-      "visible_when": {
-        "item": "general_cannabis_use_frequency",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "general_cannabis_use_after_waking",
-      "text_key": "general_cannabis_use_after_waking",
-      "type": "multi",
-      "visible_when": {
-        "item": "general_cannabis_use_frequency",
-        "operator": "equals",
-        "value": 2
-      },
-      "options": [
-        {
-          "text_key": "general_cannabis_use_after_waking_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "general_cannabis_use_after_waking_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "general_cannabis_use_after_waking_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "general_cannabis_use_after_waking_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "general_cannabis_use_after_waking_minutes",
-      "text_key": "general_cannabis_use_after_waking_minutes",
-      "type": "short",
-      "visible_when": {
-        "item": "general_cannabis_use_after_waking",
-        "operator": "equals",
-        "value": 1
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "general_cannabis_use_after_waking_hours",
-      "text_key": "general_cannabis_use_after_waking_hours",
-      "type": "short",
-      "visible_when": {
-        "item": "general_cannabis_use_after_waking",
-        "operator": "equals",
-        "value": 2
-      },
-      "input_type": "number"
-    }
-  ],
   "translations": {
     "en": {
       "opt_-77": "Don't know",

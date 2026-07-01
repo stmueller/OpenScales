@@ -1,962 +1,965 @@
 {
-  "scale_info": {
-    "name": "Cumulative Lifetime Physical Activity",
-    "code": "PX070201",
-    "abbreviation": "PX070201",
-    "description": "The selected protocol assesses strenuous and moderate physical activities and exercise at various stages of life. Respondents are asked to estimate the average amount of time each week and the average number of months each year that they spend doing strenuous and moderate exercise.",
-    "domain": "Physical Activity & Exposures",
-    "citation": "The California Teachers Study, Baseline. As implemented in: PhenX Toolkit. Cumulative Lifetime Physical Activity. https://www.phenxtoolkit.org/protocols/view/70201",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/70201"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Cumulative Lifetime Physical Activity",
+      "code": "PX070201",
+      "abbreviation": "PX070201",
+      "description": "The selected protocol assesses strenuous and moderate physical activities and exercise at various stages of life. Respondents are asked to estimate the average amount of time each week and the average number of months each year that they spend doing strenuous and moderate exercise.",
+      "domain": "Physical Activity & Exposures",
+      "citation": "The California Teachers Study, Baseline. As implemented in: PhenX Toolkit. Cumulative Lifetime Physical Activity. https://www.phenxtoolkit.org/protocols/view/70201",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/70201"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        },
+        {
+          "text_key": "opt_4",
+          "value": 4
+        },
+        {
+          "text_key": "opt_5",
+          "value": 5
+        },
+        {
+          "text_key": "opt_6",
+          "value": 6
+        },
+        {
+          "text_key": "opt_7",
+          "value": 7
+        },
+        {
+          "text_key": "opt_8",
+          "value": 8
+        },
+        {
+          "text_key": "opt_9",
+          "value": 9
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "sec_strenuous_exercise",
+        "type": "section",
+        "text_key": "sec_strenuous_exercise_title"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "strenuous_exercise_hours_high_school",
+        "text_key": "strenuous_exercise_hours_high_school",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "strenuous_exercise_months_high_school",
+        "text_key": "strenuous_exercise_months_high_school",
+        "type": "multi",
+        "visible_when": {
+          "item": "strenuous_exercise_hours_high_school",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            5,
+            4,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "options": [
+          {
+            "text_key": "strenuous_exercise_months_high_school_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "strenuous_exercise_months_high_school_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "strenuous_exercise_months_high_school_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "strenuous_exercise_months_high_school_opt_4",
+            "value": 4
+          }
+        ]
       },
       {
-        "text_key": "opt_4",
-        "value": 4
+        "id": "strenuous_exercise_hours_age18_24",
+        "text_key": "strenuous_exercise_hours_age18_24",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_5",
-        "value": 5
+        "id": "strenuous_exercise_months_age18_24",
+        "text_key": "strenuous_exercise_months_age18_24",
+        "type": "multi",
+        "visible_when": {
+          "item": "strenuous_exercise_hours_age18_24",
+          "operator": "in",
+          "value": [
+            3,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "options": [
+          {
+            "text_key": "strenuous_exercise_months_age18_24_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "strenuous_exercise_months_age18_24_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "strenuous_exercise_months_age18_24_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "strenuous_exercise_months_age18_24_opt_4",
+            "value": 4
+          }
+        ]
       },
       {
-        "text_key": "opt_6",
-        "value": 6
+        "id": "strenuous_exercise_hours_age25_34",
+        "text_key": "strenuous_exercise_hours_age25_34",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_7",
-        "value": 7
+        "id": "strenuous_exercise_months_age25_34",
+        "text_key": "strenuous_exercise_months_age25_34",
+        "type": "multi",
+        "visible_when": {
+          "item": "strenuous_exercise_hours_age25_34",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "options": [
+          {
+            "text_key": "strenuous_exercise_months_age25_34_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "strenuous_exercise_months_age25_34_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "strenuous_exercise_months_age25_34_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "strenuous_exercise_months_age25_34_opt_4",
+            "value": 4
+          }
+        ]
       },
       {
-        "text_key": "opt_8",
-        "value": 8
+        "id": "strenuous_exercise_hours_age35_44",
+        "text_key": "strenuous_exercise_hours_age35_44",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_9",
-        "value": 9
+        "id": "strenuous_exercise_months_age35_44",
+        "text_key": "strenuous_exercise_months_age35_44",
+        "type": "multi",
+        "visible_when": {
+          "item": "strenuous_exercise_hours_age35_44",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "options": [
+          {
+            "text_key": "strenuous_exercise_months_age35_44_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "strenuous_exercise_months_age35_44_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "strenuous_exercise_months_age35_44_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "strenuous_exercise_months_age35_44_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "strenuous_exercise_hours_age45_54",
+        "text_key": "strenuous_exercise_hours_age45_54",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "strenuous_exercise_months_age45_54",
+        "text_key": "strenuous_exercise_months_age45_54",
+        "type": "multi",
+        "visible_when": {
+          "item": "strenuous_exercise_hours_age45_54",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "options": [
+          {
+            "text_key": "strenuous_exercise_months_age45_54_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "strenuous_exercise_months_age45_54_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "strenuous_exercise_months_age45_54_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "strenuous_exercise_months_age45_54_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "strenuous_exercise_hours_past_3years",
+        "text_key": "strenuous_exercise_hours_past_3years",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "strenuous_exercise_months_past_3years",
+        "text_key": "strenuous_exercise_months_past_3years",
+        "type": "multi",
+        "visible_when": {
+          "item": "strenuous_exercise_hours_past_3years",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "options": [
+          {
+            "text_key": "strenuous_exercise_months_past_3years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "strenuous_exercise_months_past_3years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "strenuous_exercise_months_past_3years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "strenuous_exercise_months_past_3years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sec_moderate_exercise",
+        "type": "section",
+        "text_key": "sec_moderate_exercise_title"
+      },
+      {
+        "id": "moderate_exercise_hours_high_school",
+        "text_key": "moderate_exercise_hours_high_school",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "moderate_exercise_months_high_school",
+        "text_key": "moderate_exercise_months_high_school",
+        "type": "multi",
+        "visible_when": {
+          "item": "moderate_exercise_hours_high_school",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "options": [
+          {
+            "text_key": "moderate_exercise_months_high_school_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "moderate_exercise_months_high_school_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "moderate_exercise_months_high_school_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "moderate_exercise_months_high_school_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "moderate_exercise_hours_age18_24",
+        "text_key": "moderate_exercise_hours_age18_24",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "moderate_exercise_months_age18_24",
+        "text_key": "moderate_exercise_months_age18_24",
+        "type": "multi",
+        "visible_when": {
+          "item": "moderate_exercise_hours_age18_24",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "options": [
+          {
+            "text_key": "moderate_exercise_months_age18_24_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "moderate_exercise_months_age18_24_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "moderate_exercise_months_age18_24_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "moderate_exercise_months_age18_24_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "moderate_exercise_hours_age25_34",
+        "text_key": "moderate_exercise_hours_age25_34",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "moderate_exercise_months_age25_34",
+        "text_key": "moderate_exercise_months_age25_34",
+        "type": "multi",
+        "visible_when": {
+          "item": "moderate_exercise_hours_age25_34",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "options": [
+          {
+            "text_key": "moderate_exercise_months_age25_34_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "moderate_exercise_months_age25_34_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "moderate_exercise_months_age25_34_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "moderate_exercise_months_age25_34_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "moderate_exercise_hours_age35_44",
+        "text_key": "moderate_exercise_hours_age35_44",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "moderate_exercise_months_age35_44",
+        "text_key": "moderate_exercise_months_age35_44",
+        "type": "multi",
+        "visible_when": {
+          "item": "moderate_exercise_hours_age35_44",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "options": [
+          {
+            "text_key": "moderate_exercise_months_age35_44_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "moderate_exercise_months_age35_44_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "moderate_exercise_months_age35_44_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "moderate_exercise_months_age35_44_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "moderate_exercise_hours_age45_54",
+        "text_key": "moderate_exercise_hours_age45_54",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "moderate_exercise_months_age45_54",
+        "text_key": "moderate_exercise_months_age45_54",
+        "type": "multi",
+        "visible_when": {
+          "item": "moderate_exercise_hours_age45_54",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "options": [
+          {
+            "text_key": "moderate_exercise_months_age45_54_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "moderate_exercise_months_age45_54_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "moderate_exercise_months_age45_54_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "moderate_exercise_months_age45_54_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "moderate_exercise_hours_past_3years",
+        "text_key": "moderate_exercise_hours_past_3years",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "moderate_exercise_months_past_3years",
+        "text_key": "moderate_exercise_months_past_3years",
+        "type": "multi",
+        "visible_when": {
+          "item": "moderate_exercise_hours_past_3years",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9
+          ]
+        },
+        "options": [
+          {
+            "text_key": "moderate_exercise_months_past_3years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "moderate_exercise_months_past_3years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "moderate_exercise_months_past_3years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "moderate_exercise_months_past_3years_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sec_other_activities",
+        "type": "section",
+        "text_key": "sec_other_activities_title"
+      },
+      {
+        "id": "casual_walking_hours_per_day",
+        "text_key": "casual_walking_hours_per_day",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "casual_walking_hours_per_day_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "casual_walking_hours_per_day_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "casual_walking_hours_per_day_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "casual_walking_hours_per_day_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "casual_walking_hours_per_day_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "casual_walking_hours_per_day_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "casual_walking_hours_per_day_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "casual_walking_hours_per_day_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "casual_walking_days_per_week",
+        "text_key": "casual_walking_days_per_week",
+        "type": "multi",
+        "visible_when": {
+          "item": "casual_walking_hours_per_day",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "options": [
+          {
+            "text_key": "casual_walking_days_per_week_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "casual_walking_days_per_week_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "casual_walking_days_per_week_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "casual_walking_days_per_week_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "housework_hours_per_day",
+        "text_key": "housework_hours_per_day",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "housework_hours_per_day_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "housework_hours_per_day_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "housework_hours_per_day_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "housework_hours_per_day_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "housework_hours_per_day_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "housework_hours_per_day_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "housework_hours_per_day_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "housework_hours_per_day_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "housework_days_per_week",
+        "text_key": "housework_days_per_week",
+        "type": "multi",
+        "visible_when": {
+          "item": "housework_hours_per_day",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "options": [
+          {
+            "text_key": "housework_days_per_week_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "housework_days_per_week_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "housework_days_per_week_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "housework_days_per_week_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "standing_walking_hours_per_day",
+        "text_key": "standing_walking_hours_per_day",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "standing_walking_hours_per_day_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "standing_walking_hours_per_day_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "standing_walking_hours_per_day_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "standing_walking_hours_per_day_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "standing_walking_hours_per_day_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "standing_walking_hours_per_day_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "standing_walking_hours_per_day_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "standing_walking_hours_per_day_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "standing_walking_days_per_week",
+        "text_key": "standing_walking_days_per_week",
+        "type": "multi",
+        "visible_when": {
+          "item": "standing_walking_hours_per_day",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "options": [
+          {
+            "text_key": "standing_walking_days_per_week_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "standing_walking_days_per_week_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "standing_walking_days_per_week_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "standing_walking_days_per_week_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sitting_hours_per_day",
+        "text_key": "sitting_hours_per_day",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sitting_hours_per_day_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sitting_hours_per_day_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sitting_hours_per_day_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sitting_hours_per_day_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sitting_hours_per_day_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sitting_hours_per_day_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sitting_hours_per_day_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "sitting_hours_per_day_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "sitting_days_per_week",
+        "text_key": "sitting_days_per_week",
+        "type": "multi",
+        "visible_when": {
+          "item": "sitting_hours_per_day",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "options": [
+          {
+            "text_key": "sitting_days_per_week_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sitting_days_per_week_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sitting_days_per_week_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sitting_days_per_week_opt_4",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "id": "sleeping_hours_per_day",
+        "text_key": "sleeping_hours_per_day",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "sleeping_hours_per_day_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleeping_hours_per_day_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleeping_hours_per_day_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sleeping_hours_per_day_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "sleeping_hours_per_day_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "sleeping_hours_per_day_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "sleeping_hours_per_day_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "sleeping_hours_per_day_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "sleeping_days_per_week",
+        "text_key": "sleeping_days_per_week",
+        "type": "multi",
+        "visible_when": {
+          "item": "sleeping_hours_per_day",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "options": [
+          {
+            "text_key": "sleeping_days_per_week_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "sleeping_days_per_week_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "sleeping_days_per_week_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "sleeping_days_per_week_opt_4",
+            "value": 4
+          }
+        ]
       }
     ]
   },
-  "items": [
-    {
-      "id": "sec_strenuous_exercise",
-      "type": "section",
-      "text_key": "sec_strenuous_exercise_title"
-    },
-    {
-      "id": "strenuous_exercise_hours_high_school",
-      "text_key": "strenuous_exercise_hours_high_school",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "strenuous_exercise_months_high_school",
-      "text_key": "strenuous_exercise_months_high_school",
-      "type": "multi",
-      "visible_when": {
-        "item": "strenuous_exercise_hours_high_school",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          5,
-          4,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "options": [
-        {
-          "text_key": "strenuous_exercise_months_high_school_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "strenuous_exercise_months_high_school_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "strenuous_exercise_months_high_school_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "strenuous_exercise_months_high_school_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "strenuous_exercise_hours_age18_24",
-      "text_key": "strenuous_exercise_hours_age18_24",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "strenuous_exercise_months_age18_24",
-      "text_key": "strenuous_exercise_months_age18_24",
-      "type": "multi",
-      "visible_when": {
-        "item": "strenuous_exercise_hours_age18_24",
-        "operator": "in",
-        "value": [
-          3,
-          2,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "options": [
-        {
-          "text_key": "strenuous_exercise_months_age18_24_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "strenuous_exercise_months_age18_24_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "strenuous_exercise_months_age18_24_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "strenuous_exercise_months_age18_24_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "strenuous_exercise_hours_age25_34",
-      "text_key": "strenuous_exercise_hours_age25_34",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "strenuous_exercise_months_age25_34",
-      "text_key": "strenuous_exercise_months_age25_34",
-      "type": "multi",
-      "visible_when": {
-        "item": "strenuous_exercise_hours_age25_34",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "options": [
-        {
-          "text_key": "strenuous_exercise_months_age25_34_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "strenuous_exercise_months_age25_34_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "strenuous_exercise_months_age25_34_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "strenuous_exercise_months_age25_34_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "strenuous_exercise_hours_age35_44",
-      "text_key": "strenuous_exercise_hours_age35_44",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "strenuous_exercise_months_age35_44",
-      "text_key": "strenuous_exercise_months_age35_44",
-      "type": "multi",
-      "visible_when": {
-        "item": "strenuous_exercise_hours_age35_44",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "options": [
-        {
-          "text_key": "strenuous_exercise_months_age35_44_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "strenuous_exercise_months_age35_44_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "strenuous_exercise_months_age35_44_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "strenuous_exercise_months_age35_44_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "strenuous_exercise_hours_age45_54",
-      "text_key": "strenuous_exercise_hours_age45_54",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "strenuous_exercise_months_age45_54",
-      "text_key": "strenuous_exercise_months_age45_54",
-      "type": "multi",
-      "visible_when": {
-        "item": "strenuous_exercise_hours_age45_54",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "options": [
-        {
-          "text_key": "strenuous_exercise_months_age45_54_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "strenuous_exercise_months_age45_54_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "strenuous_exercise_months_age45_54_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "strenuous_exercise_months_age45_54_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "strenuous_exercise_hours_past_3years",
-      "text_key": "strenuous_exercise_hours_past_3years",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "strenuous_exercise_months_past_3years",
-      "text_key": "strenuous_exercise_months_past_3years",
-      "type": "multi",
-      "visible_when": {
-        "item": "strenuous_exercise_hours_past_3years",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "options": [
-        {
-          "text_key": "strenuous_exercise_months_past_3years_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "strenuous_exercise_months_past_3years_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "strenuous_exercise_months_past_3years_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "strenuous_exercise_months_past_3years_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "sec_moderate_exercise",
-      "type": "section",
-      "text_key": "sec_moderate_exercise_title"
-    },
-    {
-      "id": "moderate_exercise_hours_high_school",
-      "text_key": "moderate_exercise_hours_high_school",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "moderate_exercise_months_high_school",
-      "text_key": "moderate_exercise_months_high_school",
-      "type": "multi",
-      "visible_when": {
-        "item": "moderate_exercise_hours_high_school",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "options": [
-        {
-          "text_key": "moderate_exercise_months_high_school_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "moderate_exercise_months_high_school_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "moderate_exercise_months_high_school_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "moderate_exercise_months_high_school_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "moderate_exercise_hours_age18_24",
-      "text_key": "moderate_exercise_hours_age18_24",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "moderate_exercise_months_age18_24",
-      "text_key": "moderate_exercise_months_age18_24",
-      "type": "multi",
-      "visible_when": {
-        "item": "moderate_exercise_hours_age18_24",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "options": [
-        {
-          "text_key": "moderate_exercise_months_age18_24_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "moderate_exercise_months_age18_24_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "moderate_exercise_months_age18_24_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "moderate_exercise_months_age18_24_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "moderate_exercise_hours_age25_34",
-      "text_key": "moderate_exercise_hours_age25_34",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "moderate_exercise_months_age25_34",
-      "text_key": "moderate_exercise_months_age25_34",
-      "type": "multi",
-      "visible_when": {
-        "item": "moderate_exercise_hours_age25_34",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "options": [
-        {
-          "text_key": "moderate_exercise_months_age25_34_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "moderate_exercise_months_age25_34_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "moderate_exercise_months_age25_34_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "moderate_exercise_months_age25_34_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "moderate_exercise_hours_age35_44",
-      "text_key": "moderate_exercise_hours_age35_44",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "moderate_exercise_months_age35_44",
-      "text_key": "moderate_exercise_months_age35_44",
-      "type": "multi",
-      "visible_when": {
-        "item": "moderate_exercise_hours_age35_44",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "options": [
-        {
-          "text_key": "moderate_exercise_months_age35_44_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "moderate_exercise_months_age35_44_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "moderate_exercise_months_age35_44_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "moderate_exercise_months_age35_44_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "moderate_exercise_hours_age45_54",
-      "text_key": "moderate_exercise_hours_age45_54",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "moderate_exercise_months_age45_54",
-      "text_key": "moderate_exercise_months_age45_54",
-      "type": "multi",
-      "visible_when": {
-        "item": "moderate_exercise_hours_age45_54",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "options": [
-        {
-          "text_key": "moderate_exercise_months_age45_54_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "moderate_exercise_months_age45_54_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "moderate_exercise_months_age45_54_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "moderate_exercise_months_age45_54_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "moderate_exercise_hours_past_3years",
-      "text_key": "moderate_exercise_hours_past_3years",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "moderate_exercise_months_past_3years",
-      "text_key": "moderate_exercise_months_past_3years",
-      "type": "multi",
-      "visible_when": {
-        "item": "moderate_exercise_hours_past_3years",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          8,
-          9
-        ]
-      },
-      "options": [
-        {
-          "text_key": "moderate_exercise_months_past_3years_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "moderate_exercise_months_past_3years_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "moderate_exercise_months_past_3years_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "moderate_exercise_months_past_3years_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "sec_other_activities",
-      "type": "section",
-      "text_key": "sec_other_activities_title"
-    },
-    {
-      "id": "casual_walking_hours_per_day",
-      "text_key": "casual_walking_hours_per_day",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "casual_walking_hours_per_day_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "casual_walking_hours_per_day_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "casual_walking_hours_per_day_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "casual_walking_hours_per_day_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "casual_walking_hours_per_day_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "casual_walking_hours_per_day_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "casual_walking_hours_per_day_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "casual_walking_hours_per_day_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "casual_walking_days_per_week",
-      "text_key": "casual_walking_days_per_week",
-      "type": "multi",
-      "visible_when": {
-        "item": "casual_walking_hours_per_day",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ]
-      },
-      "options": [
-        {
-          "text_key": "casual_walking_days_per_week_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "casual_walking_days_per_week_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "casual_walking_days_per_week_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "casual_walking_days_per_week_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "housework_hours_per_day",
-      "text_key": "housework_hours_per_day",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "housework_hours_per_day_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "housework_hours_per_day_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "housework_hours_per_day_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "housework_hours_per_day_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "housework_hours_per_day_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "housework_hours_per_day_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "housework_hours_per_day_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "housework_hours_per_day_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "housework_days_per_week",
-      "text_key": "housework_days_per_week",
-      "type": "multi",
-      "visible_when": {
-        "item": "housework_hours_per_day",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ]
-      },
-      "options": [
-        {
-          "text_key": "housework_days_per_week_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "housework_days_per_week_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "housework_days_per_week_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "housework_days_per_week_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "standing_walking_hours_per_day",
-      "text_key": "standing_walking_hours_per_day",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "standing_walking_hours_per_day_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "standing_walking_hours_per_day_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "standing_walking_hours_per_day_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "standing_walking_hours_per_day_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "standing_walking_hours_per_day_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "standing_walking_hours_per_day_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "standing_walking_hours_per_day_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "standing_walking_hours_per_day_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "standing_walking_days_per_week",
-      "text_key": "standing_walking_days_per_week",
-      "type": "multi",
-      "visible_when": {
-        "item": "standing_walking_hours_per_day",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ]
-      },
-      "options": [
-        {
-          "text_key": "standing_walking_days_per_week_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "standing_walking_days_per_week_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "standing_walking_days_per_week_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "standing_walking_days_per_week_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "sitting_hours_per_day",
-      "text_key": "sitting_hours_per_day",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sitting_hours_per_day_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sitting_hours_per_day_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "sitting_hours_per_day_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "sitting_hours_per_day_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "sitting_hours_per_day_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "sitting_hours_per_day_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "sitting_hours_per_day_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "sitting_hours_per_day_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "sitting_days_per_week",
-      "text_key": "sitting_days_per_week",
-      "type": "multi",
-      "visible_when": {
-        "item": "sitting_hours_per_day",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ]
-      },
-      "options": [
-        {
-          "text_key": "sitting_days_per_week_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sitting_days_per_week_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "sitting_days_per_week_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "sitting_days_per_week_opt_4",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "id": "sleeping_hours_per_day",
-      "text_key": "sleeping_hours_per_day",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "sleeping_hours_per_day_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sleeping_hours_per_day_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "sleeping_hours_per_day_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "sleeping_hours_per_day_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "sleeping_hours_per_day_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "sleeping_hours_per_day_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "sleeping_hours_per_day_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "sleeping_hours_per_day_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "sleeping_days_per_week",
-      "text_key": "sleeping_days_per_week",
-      "type": "multi",
-      "visible_when": {
-        "item": "sleeping_hours_per_day",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ]
-      },
-      "options": [
-        {
-          "text_key": "sleeping_days_per_week_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "sleeping_days_per_week_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "sleeping_days_per_week_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "sleeping_days_per_week_opt_4",
-          "value": 4
-        }
-      ]
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "None",

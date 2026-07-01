@@ -1,77 +1,80 @@
 {
-  "scale_info": {
-    "name": "Birthplace of Grandparents",
-    "code": "PX010401",
-    "abbreviation": "PX010401",
-    "description": "The respondent completes the self-administered questionnaire by indicating his or her maternal grandmothers place of birth. If he or she was born in the United States, an additional question captures the state, if known. If he or she was not born in the United States, another open-ended question ask",
-    "domain": "Demographics",
-    "citation": "Public Population Project in Genomics (P3G) Data Schema and Harmonization Platform for Epidemiological Research (DataSHaPER). U.S. Census Bureau. (2007). 2006 American Community Survey Content Test Report P.1. Evaluation report covering place of birth, U.S. citizenship status, and year of arrival. Washington, DC: Author. [PhenX: https://www.phenxtoolkit.org/protocols/view/10401]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/10401"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Birthplace of Grandparents",
+      "code": "PX010401",
+      "abbreviation": "PX010401",
+      "description": "The respondent completes the self-administered questionnaire by indicating his or her maternal grandmothers place of birth. If he or she was born in the United States, an additional question captures the state, if known. If he or she was not born in the United States, another open-ended question ask",
+      "domain": "Demographics",
+      "citation": "Public Population Project in Genomics (P3G) Data Schema and Harmonization Platform for Epidemiological Research (DataSHaPER). U.S. Census Bureau. (2007). 2006 American Community Survey Content Test Report P.1. Evaluation report covering place of birth, U.S. citizenship status, and year of arrival. Washington, DC: Author. [PhenX: https://www.phenxtoolkit.org/protocols/view/10401]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/10401"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        },
+        {
+          "text_key": "opt_3",
+          "value": 3
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "maternal_grandmother_birthplace",
+        "text_key": "maternal_grandmother_birthplace",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "maternal_grandmother_birthplace_location",
+        "text_key": "maternal_grandmother_birthplace_location",
+        "type": "short"
       },
       {
-        "text_key": "opt_3",
-        "value": 3
+        "id": "maternal_grandfather_birthplace",
+        "text_key": "maternal_grandfather_birthplace",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "maternal_grandfather_birthplace_location",
+        "text_key": "maternal_grandfather_birthplace_location",
+        "type": "short"
+      },
+      {
+        "id": "paternal_grandmother_birthplace",
+        "text_key": "paternal_grandmother_birthplace",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "paternal_grandmother_birthplace_location",
+        "text_key": "paternal_grandmother_birthplace_location",
+        "type": "short"
+      },
+      {
+        "id": "paternal_grandfather_birthplace",
+        "text_key": "paternal_grandfather_birthplace",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "paternal_grandfather_birthplace_location",
+        "text_key": "paternal_grandfather_birthplace_location",
+        "type": "short"
       }
     ]
   },
-  "items": [
-    {
-      "id": "maternal_grandmother_birthplace",
-      "text_key": "maternal_grandmother_birthplace",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "maternal_grandmother_birthplace_location",
-      "text_key": "maternal_grandmother_birthplace_location",
-      "type": "short"
-    },
-    {
-      "id": "maternal_grandfather_birthplace",
-      "text_key": "maternal_grandfather_birthplace",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "maternal_grandfather_birthplace_location",
-      "text_key": "maternal_grandfather_birthplace_location",
-      "type": "short"
-    },
-    {
-      "id": "paternal_grandmother_birthplace",
-      "text_key": "paternal_grandmother_birthplace",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "paternal_grandmother_birthplace_location",
-      "text_key": "paternal_grandmother_birthplace_location",
-      "type": "short"
-    },
-    {
-      "id": "paternal_grandfather_birthplace",
-      "text_key": "paternal_grandfather_birthplace",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "paternal_grandfather_birthplace_location",
-      "text_key": "paternal_grandfather_birthplace_location",
-      "type": "short"
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "In the United States",

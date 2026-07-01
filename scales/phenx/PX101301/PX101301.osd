@@ -1,523 +1,526 @@
 {
-  "scale_info": {
-    "name": "Reproductive History - Female",
-    "code": "PX101301",
-    "abbreviation": "PX101301",
-    "description": "The female participant is first asked how many pregnancies she has had. If none, the protocol is complete. For each pregnancy she reports, she is asked a series of questions (e.g., whether pregnancy was a live birth, how long the pregnancy lasted, when did the pregnancy end, whether the participant ",
-    "domain": "Puberty & Development",
-    "citation": "Centers for Disease Control and Prevention. (2009). Pregnancy Risk Assessment Monitoring System (PRAMS). Phase 6 Core Questionnaire. http://www.cdc.gov/PRAMS/References/Phase6MailCore_FINAL.doc National Cancer Institute. (n.d.). Women’s Interview Study of Health. http://seer.cancer.gov/studies/epidemiology/study15.html [PhenX: https://www.phenxtoolkit.org/protocols/view/101301]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/101301"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Reproductive History - Female",
+      "code": "PX101301",
+      "abbreviation": "PX101301",
+      "description": "The female participant is first asked how many pregnancies she has had. If none, the protocol is complete. For each pregnancy she reports, she is asked a series of questions (e.g., whether pregnancy was a live birth, how long the pregnancy lasted, when did the pregnancy end, whether the participant ",
+      "domain": "Puberty & Development",
+      "citation": "Centers for Disease Control and Prevention. (2009). Pregnancy Risk Assessment Monitoring System (PRAMS). Phase 6 Core Questionnaire. http://www.cdc.gov/PRAMS/References/Phase6MailCore_FINAL.doc National Cancer Institute. (n.d.). Women’s Interview Study of Health. http://seer.cancer.gov/studies/epidemiology/study15.html [PhenX: https://www.phenxtoolkit.org/protocols/view/101301]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/101301"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "number_pregnancy",
+        "text_key": "number_pregnancy",
+        "type": "short",
+        "input_type": "number"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "pregnancy_1",
+        "text_key": "pregnancy_1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pregnancy_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pregnancy_1_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pregnancy_1_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "pregnancy_1_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "pregnancy_1_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "pregnancy_1_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "pregnancy_1_opt_96",
+            "value": 96
+          }
+        ]
+      },
+      {
+        "id": "pregnancy_specify_1",
+        "text_key": "pregnancy_specify_1",
+        "type": "short",
+        "visible_when": {
+          "item": "pregnancy_1",
+          "operator": "equals",
+          "value": 96
+        }
+      },
+      {
+        "id": "pregnancy_2",
+        "text_key": "pregnancy_2",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "pregnancy_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "pregnancy_2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "pregnancy_2_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "pregnancy_2_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "pregnancy_2_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "pregnancy_2_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "pregnancy_2_opt_96",
+            "value": 96
+          }
+        ]
+      },
+      {
+        "id": "pregnancy_specify_2",
+        "text_key": "pregnancy_specify_2",
+        "type": "short",
+        "visible_when": {
+          "item": "pregnancy_2",
+          "operator": "equals",
+          "value": 96
+        }
+      },
+      {
+        "id": "pregnancy_last_weeks_1",
+        "text_key": "pregnancy_last_weeks_1",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pregnancy_last_months_1",
+        "text_key": "pregnancy_last_months_1",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pregnancy_last_weeks_2",
+        "text_key": "pregnancy_last_weeks_2",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pregnancy_last_months_2",
+        "text_key": "pregnancy_last_months_2",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "pregnancy_end_date_1",
+        "text_key": "pregnancy_end_date_1",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "pregnancy_end_date_2",
+        "text_key": "pregnancy_end_date_2",
+        "type": "short",
+        "input_type": "date"
+      },
+      {
+        "id": "frequent_nausea_vomiting_during_pregnancy_1",
+        "text_key": "frequent_nausea_vomiting_during_pregnancy_1",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "frequent_nausea_vomiting_during_pregnancy_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "frequent_nausea_vomiting_during_pregnancy_1_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "frequent_nausea_vomiting_during_pregnancy_1_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "frequent_nausea_vomiting_during_pregnancy_2",
+        "text_key": "frequent_nausea_vomiting_during_pregnancy_2",
+        "type": "multicheck",
+        "options": [
+          {
+            "text_key": "frequent_nausea_vomiting_during_pregnancy_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "frequent_nausea_vomiting_during_pregnancy_2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "frequent_nausea_vomiting_during_pregnancy_2_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "frequent_nausea_vomiting_months_1",
+        "text_key": "frequent_nausea_vomiting_months_1",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "frequent_nausea_vomiting_months_1_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "frequent_nausea_vomiting_months_1_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "frequent_nausea_vomiting_months_1_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "frequent_nausea_vomiting_months_2",
+        "text_key": "frequent_nausea_vomiting_months_2",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "frequent_nausea_vomiting_months_2_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "frequent_nausea_vomiting_months_2_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "frequent_nausea_vomiting_months_2_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "pregnancy_hypertension_high_blood_pressure_1",
+        "text_key": "pregnancy_hypertension_high_blood_pressure_1",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "pregnancy_preeclampsia_toxemia_1",
+        "text_key": "pregnancy_preeclampsia_toxemia_1",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "pregnancy_diabetes_high_blood_sugar_1",
+        "text_key": "pregnancy_diabetes_high_blood_sugar_1",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "pregnancy_related_complications_1",
+        "text_key": "pregnancy_related_complications_1",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "pregnancy_hypertension_high_blood_pressure_2",
+        "text_key": "pregnancy_hypertension_high_blood_pressure_2",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "pregnancy_preeclampsia_toxemia_2",
+        "text_key": "pregnancy_preeclampsia_toxemia_2",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "pregnancy_diabetes_high_blood_sugar_2",
+        "text_key": "pregnancy_diabetes_high_blood_sugar_2",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "pregnancy_related_complications_2",
+        "text_key": "pregnancy_related_complications_2",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "baby_number_boy_1",
+        "text_key": "baby_number_boy_1",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "baby_number_girl_1",
+        "text_key": "baby_number_girl_1",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "baby_number_boy_2",
+        "text_key": "baby_number_boy_2",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "baby_number_girl_2",
+        "text_key": "baby_number_girl_2",
+        "type": "short",
+        "input_type": "number"
+      },
+      {
+        "id": "cigarettes_3_months_before_pregnancy",
+        "text_key": "cigarettes_3_months_before_pregnancy",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "cigarettes_3_months_before_pregnancy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cigarettes_3_months_before_pregnancy_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cigarettes_3_months_before_pregnancy_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cigarettes_3_months_before_pregnancy_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "cigarettes_3_months_before_pregnancy_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "cigarettes_3_months_before_pregnancy_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "cigarettes_3_months_before_pregnancy_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "cigarettes_last_3_months_pregnancy",
+        "text_key": "cigarettes_last_3_months_pregnancy",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "cigarettes_last_3_months_pregnancy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "cigarettes_last_3_months_pregnancy_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "cigarettes_last_3_months_pregnancy_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "cigarettes_last_3_months_pregnancy_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "cigarettes_last_3_months_pregnancy_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "cigarettes_last_3_months_pregnancy_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "cigarettes_last_3_months_pregnancy_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "alcohol_3_months_before_pregnancy",
+        "text_key": "alcohol_3_months_before_pregnancy",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "alcohol_3_months_before_pregnancy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "alcohol_3_months_before_pregnancy_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "alcohol_3_months_before_pregnancy_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "alcohol_3_months_before_pregnancy_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "alcohol_3_months_before_pregnancy_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "alcohol_3_months_before_pregnancy_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "heavy_alcohol_3_months_before_pregnancy",
+        "text_key": "heavy_alcohol_3_months_before_pregnancy",
+        "type": "multi",
+        "visible_when": {
+          "item": "alcohol_3_months_before_pregnancy",
+          "operator": "in",
+          "value": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "options": [
+          {
+            "text_key": "heavy_alcohol_3_months_before_pregnancy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "heavy_alcohol_3_months_before_pregnancy_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "heavy_alcohol_3_months_before_pregnancy_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "heavy_alcohol_3_months_before_pregnancy_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "heavy_alcohol_3_months_before_pregnancy_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "alcohol_last_3_months_pregnancy",
+        "text_key": "alcohol_last_3_months_pregnancy",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "alcohol_last_3_months_pregnancy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "alcohol_last_3_months_pregnancy_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "alcohol_last_3_months_pregnancy_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "alcohol_last_3_months_pregnancy_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "alcohol_last_3_months_pregnancy_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "alcohol_last_3_months_pregnancy_opt_6",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "id": "heavy_alcohol_last_3_months_pregnancy",
+        "text_key": "heavy_alcohol_last_3_months_pregnancy",
+        "type": "multi",
+        "visible_when": {
+          "item": "alcohol_last_3_months_pregnancy",
+          "operator": "in",
+          "value": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "options": [
+          {
+            "text_key": "heavy_alcohol_last_3_months_pregnancy_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "heavy_alcohol_last_3_months_pregnancy_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "heavy_alcohol_last_3_months_pregnancy_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "heavy_alcohol_last_3_months_pregnancy_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "heavy_alcohol_last_3_months_pregnancy_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "receive_help_alcohol_drug_problem",
+        "text_key": "receive_help_alcohol_drug_problem",
+        "type": "multi",
+        "option_set": "default"
       }
     ]
   },
-  "items": [
-    {
-      "id": "number_pregnancy",
-      "text_key": "number_pregnancy",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pregnancy_1",
-      "text_key": "pregnancy_1",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "pregnancy_1_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "pregnancy_1_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "pregnancy_1_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "pregnancy_1_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "pregnancy_1_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "pregnancy_1_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "pregnancy_1_opt_96",
-          "value": 96
-        }
-      ]
-    },
-    {
-      "id": "pregnancy_specify_1",
-      "text_key": "pregnancy_specify_1",
-      "type": "short",
-      "visible_when": {
-        "item": "pregnancy_1",
-        "operator": "equals",
-        "value": 96
-      }
-    },
-    {
-      "id": "pregnancy_2",
-      "text_key": "pregnancy_2",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "pregnancy_2_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "pregnancy_2_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "pregnancy_2_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "pregnancy_2_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "pregnancy_2_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "pregnancy_2_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "pregnancy_2_opt_96",
-          "value": 96
-        }
-      ]
-    },
-    {
-      "id": "pregnancy_specify_2",
-      "text_key": "pregnancy_specify_2",
-      "type": "short",
-      "visible_when": {
-        "item": "pregnancy_2",
-        "operator": "equals",
-        "value": 96
-      }
-    },
-    {
-      "id": "pregnancy_last_weeks_1",
-      "text_key": "pregnancy_last_weeks_1",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pregnancy_last_months_1",
-      "text_key": "pregnancy_last_months_1",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pregnancy_last_weeks_2",
-      "text_key": "pregnancy_last_weeks_2",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pregnancy_last_months_2",
-      "text_key": "pregnancy_last_months_2",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "pregnancy_end_date_1",
-      "text_key": "pregnancy_end_date_1",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "pregnancy_end_date_2",
-      "text_key": "pregnancy_end_date_2",
-      "type": "short",
-      "input_type": "date"
-    },
-    {
-      "id": "frequent_nausea_vomiting_during_pregnancy_1",
-      "text_key": "frequent_nausea_vomiting_during_pregnancy_1",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "frequent_nausea_vomiting_during_pregnancy_1_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "frequent_nausea_vomiting_during_pregnancy_1_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "frequent_nausea_vomiting_during_pregnancy_1_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "frequent_nausea_vomiting_during_pregnancy_2",
-      "text_key": "frequent_nausea_vomiting_during_pregnancy_2",
-      "type": "multicheck",
-      "options": [
-        {
-          "text_key": "frequent_nausea_vomiting_during_pregnancy_2_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "frequent_nausea_vomiting_during_pregnancy_2_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "frequent_nausea_vomiting_during_pregnancy_2_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "frequent_nausea_vomiting_months_1",
-      "text_key": "frequent_nausea_vomiting_months_1",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "frequent_nausea_vomiting_months_1_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "frequent_nausea_vomiting_months_1_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "frequent_nausea_vomiting_months_1_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "frequent_nausea_vomiting_months_2",
-      "text_key": "frequent_nausea_vomiting_months_2",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "frequent_nausea_vomiting_months_2_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "frequent_nausea_vomiting_months_2_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "frequent_nausea_vomiting_months_2_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "pregnancy_hypertension_high_blood_pressure_1",
-      "text_key": "pregnancy_hypertension_high_blood_pressure_1",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pregnancy_preeclampsia_toxemia_1",
-      "text_key": "pregnancy_preeclampsia_toxemia_1",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pregnancy_diabetes_high_blood_sugar_1",
-      "text_key": "pregnancy_diabetes_high_blood_sugar_1",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pregnancy_related_complications_1",
-      "text_key": "pregnancy_related_complications_1",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pregnancy_hypertension_high_blood_pressure_2",
-      "text_key": "pregnancy_hypertension_high_blood_pressure_2",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pregnancy_preeclampsia_toxemia_2",
-      "text_key": "pregnancy_preeclampsia_toxemia_2",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pregnancy_diabetes_high_blood_sugar_2",
-      "text_key": "pregnancy_diabetes_high_blood_sugar_2",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "pregnancy_related_complications_2",
-      "text_key": "pregnancy_related_complications_2",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "baby_number_boy_1",
-      "text_key": "baby_number_boy_1",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "baby_number_girl_1",
-      "text_key": "baby_number_girl_1",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "baby_number_boy_2",
-      "text_key": "baby_number_boy_2",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "baby_number_girl_2",
-      "text_key": "baby_number_girl_2",
-      "type": "short",
-      "input_type": "number"
-    },
-    {
-      "id": "cigarettes_3_months_before_pregnancy",
-      "text_key": "cigarettes_3_months_before_pregnancy",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "cigarettes_3_months_before_pregnancy_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "cigarettes_3_months_before_pregnancy_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "cigarettes_3_months_before_pregnancy_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "cigarettes_3_months_before_pregnancy_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "cigarettes_3_months_before_pregnancy_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "cigarettes_3_months_before_pregnancy_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "cigarettes_3_months_before_pregnancy_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "cigarettes_last_3_months_pregnancy",
-      "text_key": "cigarettes_last_3_months_pregnancy",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "cigarettes_last_3_months_pregnancy_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "cigarettes_last_3_months_pregnancy_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "cigarettes_last_3_months_pregnancy_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "cigarettes_last_3_months_pregnancy_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "cigarettes_last_3_months_pregnancy_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "cigarettes_last_3_months_pregnancy_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "cigarettes_last_3_months_pregnancy_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "alcohol_3_months_before_pregnancy",
-      "text_key": "alcohol_3_months_before_pregnancy",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "alcohol_3_months_before_pregnancy_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "alcohol_3_months_before_pregnancy_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "alcohol_3_months_before_pregnancy_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "alcohol_3_months_before_pregnancy_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "alcohol_3_months_before_pregnancy_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "alcohol_3_months_before_pregnancy_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "heavy_alcohol_3_months_before_pregnancy",
-      "text_key": "heavy_alcohol_3_months_before_pregnancy",
-      "type": "multi",
-      "visible_when": {
-        "item": "alcohol_3_months_before_pregnancy",
-        "operator": "in",
-        "value": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ]
-      },
-      "options": [
-        {
-          "text_key": "heavy_alcohol_3_months_before_pregnancy_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "heavy_alcohol_3_months_before_pregnancy_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "heavy_alcohol_3_months_before_pregnancy_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "heavy_alcohol_3_months_before_pregnancy_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "heavy_alcohol_3_months_before_pregnancy_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "alcohol_last_3_months_pregnancy",
-      "text_key": "alcohol_last_3_months_pregnancy",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "alcohol_last_3_months_pregnancy_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "alcohol_last_3_months_pregnancy_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "alcohol_last_3_months_pregnancy_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "alcohol_last_3_months_pregnancy_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "alcohol_last_3_months_pregnancy_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "alcohol_last_3_months_pregnancy_opt_6",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "id": "heavy_alcohol_last_3_months_pregnancy",
-      "text_key": "heavy_alcohol_last_3_months_pregnancy",
-      "type": "multi",
-      "visible_when": {
-        "item": "alcohol_last_3_months_pregnancy",
-        "operator": "in",
-        "value": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ]
-      },
-      "options": [
-        {
-          "text_key": "heavy_alcohol_last_3_months_pregnancy_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "heavy_alcohol_last_3_months_pregnancy_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "heavy_alcohol_last_3_months_pregnancy_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "heavy_alcohol_last_3_months_pregnancy_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "heavy_alcohol_last_3_months_pregnancy_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "receive_help_alcohol_drug_problem",
-      "text_key": "receive_help_alcohol_drug_problem",
-      "type": "multi",
-      "option_set": "default"
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "Yes",

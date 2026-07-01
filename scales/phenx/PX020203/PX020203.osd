@@ -1,131 +1,134 @@
 {
-  "scale_info": {
-    "name": "Birth Weight - Proxy Reported Birth Weight",
-    "code": "PX020203",
-    "abbreviation": "PX020203",
-    "description": "Proxy-reported birth weight",
-    "domain": "Anthropometrics",
-    "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/20203]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/20203"
-  },
-  "items": [
-    {
-      "id": "proxy_birthwt_gram",
-      "text_key": "proxy_birthwt_gram",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "proxy_birthwt_gram_opt_1",
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Birth Weight - Proxy Reported Birth Weight",
+      "code": "PX020203",
+      "abbreviation": "PX020203",
+      "description": "Proxy-reported birth weight",
+      "domain": "Anthropometrics",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/20203]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/20203"
+    },
+    "items": [
+      {
+        "id": "proxy_birthwt_gram",
+        "text_key": "proxy_birthwt_gram",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "proxy_birthwt_gram_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "proxy_birthwt_gram_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "proxy_birthwt_gram_opt_3",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "id": "proxy_report_birthwt_g",
+        "text_key": "proxy_report_birthwt_g",
+        "type": "short",
+        "visible_when": {
+          "item": "proxy_birthwt_gram",
+          "operator": "equals",
           "value": 1
         },
-        {
-          "text_key": "proxy_birthwt_gram_opt_2",
+        "input_type": "number",
+        "number_min": 1,
+        "number_max": 4000
+      },
+      {
+        "id": "proxy_reported_birthweight_pounds",
+        "text_key": "proxy_reported_birthweight_pounds",
+        "type": "short",
+        "visible_when": {
+          "item": "proxy_birthwt_gram",
+          "operator": "equals",
           "value": 2
         },
-        {
-          "text_key": "proxy_birthwt_gram_opt_3",
+        "input_type": "number",
+        "number_min": 1,
+        "number_max": 20
+      },
+      {
+        "id": "proxy_reported_birthweight_ounces",
+        "text_key": "proxy_reported_birthweight_ounces",
+        "type": "short",
+        "visible_when": {
+          "item": "proxy_birthwt_gram",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number",
+        "number_min": 0,
+        "number_max": 15
+      },
+      {
+        "id": "proxy_reported_birthweight_2500g",
+        "text_key": "proxy_reported_birthweight_2500g",
+        "type": "multi",
+        "visible_when": {
+          "item": "proxy_birthwt_gram",
+          "operator": "equals",
           "value": 3
-        }
-      ]
-    },
-    {
-      "id": "proxy_report_birthwt_g",
-      "text_key": "proxy_report_birthwt_g",
-      "type": "short",
-      "visible_when": {
-        "item": "proxy_birthwt_gram",
-        "operator": "equals",
-        "value": 1
+        },
+        "options": [
+          {
+            "text_key": "proxy_reported_birthweight_2500g_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "proxy_reported_birthweight_2500g_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "proxy_reported_birthweight_2500g_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "proxy_reported_birthweight_2500g_opt_9",
+            "value": 9
+          }
+        ]
       },
-      "input_type": "number",
-      "number_min": 1,
-      "number_max": 4000
-    },
-    {
-      "id": "proxy_reported_birthweight_pounds",
-      "text_key": "proxy_reported_birthweight_pounds",
-      "type": "short",
-      "visible_when": {
-        "item": "proxy_birthwt_gram",
-        "operator": "equals",
-        "value": 2
-      },
-      "input_type": "number",
-      "number_min": 1,
-      "number_max": 20
-    },
-    {
-      "id": "proxy_reported_birthweight_ounces",
-      "text_key": "proxy_reported_birthweight_ounces",
-      "type": "short",
-      "visible_when": {
-        "item": "proxy_birthwt_gram",
-        "operator": "equals",
-        "value": 2
-      },
-      "input_type": "number",
-      "number_min": 0,
-      "number_max": 15
-    },
-    {
-      "id": "proxy_reported_birthweight_2500g",
-      "text_key": "proxy_reported_birthweight_2500g",
-      "type": "multi",
-      "visible_when": {
-        "item": "proxy_birthwt_gram",
-        "operator": "equals",
-        "value": 3
-      },
-      "options": [
-        {
-          "text_key": "proxy_reported_birthweight_2500g_opt_1",
-          "value": 1
+      {
+        "id": "proxy_reported_birthweight_4100g",
+        "text_key": "proxy_reported_birthweight_4100g",
+        "type": "multi",
+        "visible_when": {
+          "item": "proxy_birthwt_gram",
+          "operator": "equals",
+          "value": 3
         },
-        {
-          "text_key": "proxy_reported_birthweight_2500g_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "proxy_reported_birthweight_2500g_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "proxy_reported_birthweight_2500g_opt_9",
-          "value": 9
-        }
-      ]
-    },
-    {
-      "id": "proxy_reported_birthweight_4100g",
-      "text_key": "proxy_reported_birthweight_4100g",
-      "type": "multi",
-      "visible_when": {
-        "item": "proxy_birthwt_gram",
-        "operator": "equals",
-        "value": 3
-      },
-      "options": [
-        {
-          "text_key": "proxy_reported_birthweight_4100g_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "proxy_reported_birthweight_4100g_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "proxy_reported_birthweight_4100g_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "proxy_reported_birthweight_4100g_opt_9",
-          "value": 9
-        }
-      ]
-    }
-  ],
+        "options": [
+          {
+            "text_key": "proxy_reported_birthweight_4100g_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "proxy_reported_birthweight_4100g_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "proxy_reported_birthweight_4100g_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "proxy_reported_birthweight_4100g_opt_9",
+            "value": 9
+          }
+        ]
+      }
+    ]
+  },
   "translations": {
     "en": {
       "proxy_birthwt_gram": "How much did participant weigh at birth? ENTER WEIGHT IN GRAMS OR POUNDS AND OUNCES",

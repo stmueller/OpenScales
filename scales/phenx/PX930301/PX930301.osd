@@ -1,202 +1,205 @@
 {
-  "scale_info": {
-    "name": "Use of Personal Protective Equipment (PPE) by Healthcare Workers",
-    "code": "PX930301",
-    "abbreviation": "PX930301",
-    "description": "This is a self-reported survey for healthcare workers on their access to and reuse of Personal Protective Equipment (PPE). It consists of two multiple choice questions and a table consisting of Likert-style questions on access to specific types of PPE.",
-    "domain": "COVID-19 - Social",
-    "citation": "HERO Registry Protective Equipment Survey. As implemented in: PhenX Toolkit. Use of Personal Protective Equipment (PPE) by Healthcare Workers. https://www.phenxtoolkit.org/protocols/view/930301",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/930301"
-  },
-  "option_sets": {
-    "default": [
-      {
-        "text_key": "opt_1",
-        "value": 1
-      },
-      {
-        "text_key": "opt_2",
-        "value": 2
-      },
-      {
-        "text_key": "opt_3",
-        "value": 3
-      },
-      {
-        "text_key": "opt_4",
-        "value": 4
-      }
-    ]
-  },
-  "items": [
-    {
-      "id": "hero_protective_equipment_work_maskrecord_id",
-      "text_key": "hero_protective_equipment_work_maskrecord_id",
-      "type": "short"
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Use of Personal Protective Equipment (PPE) by Healthcare Workers",
+      "code": "PX930301",
+      "abbreviation": "PX930301",
+      "description": "This is a self-reported survey for healthcare workers on their access to and reuse of Personal Protective Equipment (PPE). It consists of two multiple choice questions and a table consisting of Likert-style questions on access to specific types of PPE.",
+      "domain": "COVID-19 - Social",
+      "citation": "HERO Registry Protective Equipment Survey. As implemented in: PhenX Toolkit. Use of Personal Protective Equipment (PPE) by Healthcare Workers. https://www.phenxtoolkit.org/protocols/view/930301",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/930301"
     },
-    {
-      "id": "hero_protective_equipment_work_mask",
-      "text_key": "hero_protective_equipment_work_mask",
-      "type": "multi",
-      "options": [
+    "option_sets": {
+      "default": [
         {
-          "text_key": "hero_protective_equipment_work_mask_opt_1",
+          "text_key": "opt_1",
           "value": 1
         },
         {
-          "text_key": "hero_protective_equipment_work_mask_opt_2",
+          "text_key": "opt_2",
           "value": 2
         },
         {
-          "text_key": "hero_protective_equipment_work_mask_opt_3",
+          "text_key": "opt_3",
           "value": 3
+        },
+        {
+          "text_key": "opt_4",
+          "value": 4
         }
       ]
     },
-    {
-      "id": "hero_protective_equipment_work_mask_type",
-      "text_key": "hero_protective_equipment_work_mask_type",
-      "type": "multi",
-      "visible_when": {
-        "item": "hero_protective_equipment_work_mask",
-        "operator": "in",
-        "value": [
-          2,
-          3
+    "items": [
+      {
+        "id": "hero_protective_equipment_work_maskrecord_id",
+        "text_key": "hero_protective_equipment_work_maskrecord_id",
+        "type": "short"
+      },
+      {
+        "id": "hero_protective_equipment_work_mask",
+        "text_key": "hero_protective_equipment_work_mask",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "hero_protective_equipment_work_mask_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "hero_protective_equipment_work_mask_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "hero_protective_equipment_work_mask_opt_3",
+            "value": 3
+          }
         ]
       },
-      "options": [
-        {
-          "text_key": "hero_protective_equipment_work_mask_type_opt_1",
-          "value": 1
+      {
+        "id": "hero_protective_equipment_work_mask_type",
+        "text_key": "hero_protective_equipment_work_mask_type",
+        "type": "multi",
+        "visible_when": {
+          "item": "hero_protective_equipment_work_mask",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
         },
-        {
-          "text_key": "hero_protective_equipment_work_mask_type_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "hero_protective_equipment_work_mask_type_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "hero_protective_equipment_work_mask_type_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "hero_protective_equipment_work_mask_type_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "desc1",
-      "text_key": "desc1",
-      "type": "inst"
-    },
-    {
-      "id": "hero_protective_equipment_work_difficulty_respiratory_mask",
-      "text_key": "hero_protective_equipment_work_difficulty_respiratory_mask",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "hero_protective_equipment_work_difficulty_surgical_mask",
-      "text_key": "hero_protective_equipment_work_difficulty_surgical_mask",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "hero_protective_equipment_work_difficulty_powered_air_purifying_respirator",
-      "text_key": "hero_protective_equipment_work_difficulty_powered_air_purifying_respirator",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "hero_protective_equipment_work_difficulty_face_shield",
-      "text_key": "hero_protective_equipment_work_difficulty_face_shield",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "hero_protective_equipment_work_difficulty_gloves",
-      "text_key": "hero_protective_equipment_work_difficulty_gloves",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "hero_protective_equipment_work_difficulty_gowns",
-      "text_key": "hero_protective_equipment_work_difficulty_gowns",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "hero_protective_equipment_work_difficulty_hand_sanitizer",
-      "text_key": "hero_protective_equipment_work_difficulty_hand_sanitizer",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "hero_protective_equipment_work_difficulty_soap",
-      "text_key": "hero_protective_equipment_work_difficulty_soap",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "hero_protective_equipment_work_difficulty_cleaning_disinfectant",
-      "text_key": "hero_protective_equipment_work_difficulty_cleaning_disinfectant",
-      "type": "multi",
-      "option_set": "default",
-      "_matrix_group": "mat1"
-    },
-    {
-      "id": "hero_protective_equipment_work_reuse_mask_respirator",
-      "text_key": "hero_protective_equipment_work_reuse_mask_respirator",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "hero_protective_equipment_work_reuse_mask_respirator_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "hero_protective_equipment_work_reuse_mask_respirator_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "hero_protective_equipment_work_reuse_mask_respirator_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "hero_protective_equipment_work_reuse_mask_respirator_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "hero_protective_equipment_work_reuse_mask_respirator_opt_5",
-          "value": 5
-        }
-      ]
-    }
-  ],
-  "_conversion_notes": [
-    "INFO  hero_protective_equipment_work_difficulty_respiratory_mask: member of matrix group 'mat1' — consider converting to grid type manually",
-    "INFO  hero_protective_equipment_work_difficulty_surgical_mask: member of matrix group 'mat1' — consider converting to grid type manually",
-    "INFO  hero_protective_equipment_work_difficulty_powered_air_purifying_respirator: member of matrix group 'mat1' — consider converting to grid type manually",
-    "INFO  hero_protective_equipment_work_difficulty_face_shield: member of matrix group 'mat1' — consider converting to grid type manually",
-    "INFO  hero_protective_equipment_work_difficulty_gloves: member of matrix group 'mat1' — consider converting to grid type manually",
-    "INFO  hero_protective_equipment_work_difficulty_gowns: member of matrix group 'mat1' — consider converting to grid type manually",
-    "INFO  hero_protective_equipment_work_difficulty_hand_sanitizer: member of matrix group 'mat1' — consider converting to grid type manually",
-    "INFO  hero_protective_equipment_work_difficulty_soap: member of matrix group 'mat1' — consider converting to grid type manually",
-    "INFO  hero_protective_equipment_work_difficulty_cleaning_disinfectant: member of matrix group 'mat1' — consider converting to grid type manually"
-  ],
+        "options": [
+          {
+            "text_key": "hero_protective_equipment_work_mask_type_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "hero_protective_equipment_work_mask_type_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "hero_protective_equipment_work_mask_type_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "hero_protective_equipment_work_mask_type_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "hero_protective_equipment_work_mask_type_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "desc1",
+        "text_key": "desc1",
+        "type": "inst"
+      },
+      {
+        "id": "hero_protective_equipment_work_difficulty_respiratory_mask",
+        "text_key": "hero_protective_equipment_work_difficulty_respiratory_mask",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
+      },
+      {
+        "id": "hero_protective_equipment_work_difficulty_surgical_mask",
+        "text_key": "hero_protective_equipment_work_difficulty_surgical_mask",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
+      },
+      {
+        "id": "hero_protective_equipment_work_difficulty_powered_air_purifying_respirator",
+        "text_key": "hero_protective_equipment_work_difficulty_powered_air_purifying_respirator",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
+      },
+      {
+        "id": "hero_protective_equipment_work_difficulty_face_shield",
+        "text_key": "hero_protective_equipment_work_difficulty_face_shield",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
+      },
+      {
+        "id": "hero_protective_equipment_work_difficulty_gloves",
+        "text_key": "hero_protective_equipment_work_difficulty_gloves",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
+      },
+      {
+        "id": "hero_protective_equipment_work_difficulty_gowns",
+        "text_key": "hero_protective_equipment_work_difficulty_gowns",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
+      },
+      {
+        "id": "hero_protective_equipment_work_difficulty_hand_sanitizer",
+        "text_key": "hero_protective_equipment_work_difficulty_hand_sanitizer",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
+      },
+      {
+        "id": "hero_protective_equipment_work_difficulty_soap",
+        "text_key": "hero_protective_equipment_work_difficulty_soap",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
+      },
+      {
+        "id": "hero_protective_equipment_work_difficulty_cleaning_disinfectant",
+        "text_key": "hero_protective_equipment_work_difficulty_cleaning_disinfectant",
+        "type": "multi",
+        "option_set": "default",
+        "_matrix_group": "mat1"
+      },
+      {
+        "id": "hero_protective_equipment_work_reuse_mask_respirator",
+        "text_key": "hero_protective_equipment_work_reuse_mask_respirator",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "hero_protective_equipment_work_reuse_mask_respirator_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "hero_protective_equipment_work_reuse_mask_respirator_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "hero_protective_equipment_work_reuse_mask_respirator_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "hero_protective_equipment_work_reuse_mask_respirator_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "hero_protective_equipment_work_reuse_mask_respirator_opt_5",
+            "value": 5
+          }
+        ]
+      }
+    ],
+    "_conversion_notes": [
+      "INFO  hero_protective_equipment_work_difficulty_respiratory_mask: member of matrix group 'mat1' — consider converting to grid type manually",
+      "INFO  hero_protective_equipment_work_difficulty_surgical_mask: member of matrix group 'mat1' — consider converting to grid type manually",
+      "INFO  hero_protective_equipment_work_difficulty_powered_air_purifying_respirator: member of matrix group 'mat1' — consider converting to grid type manually",
+      "INFO  hero_protective_equipment_work_difficulty_face_shield: member of matrix group 'mat1' — consider converting to grid type manually",
+      "INFO  hero_protective_equipment_work_difficulty_gloves: member of matrix group 'mat1' — consider converting to grid type manually",
+      "INFO  hero_protective_equipment_work_difficulty_gowns: member of matrix group 'mat1' — consider converting to grid type manually",
+      "INFO  hero_protective_equipment_work_difficulty_hand_sanitizer: member of matrix group 'mat1' — consider converting to grid type manually",
+      "INFO  hero_protective_equipment_work_difficulty_soap: member of matrix group 'mat1' — consider converting to grid type manually",
+      "INFO  hero_protective_equipment_work_difficulty_cleaning_disinfectant: member of matrix group 'mat1' — consider converting to grid type manually"
+    ]
+  },
   "translations": {
     "en": {
       "opt_1": "No problem",

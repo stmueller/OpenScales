@@ -1,664 +1,667 @@
 {
-  "scale_info": {
-    "name": "Exogenous Female Hormone Use",
-    "code": "PX070401",
-    "abbreviation": "PX070401",
-    "description": "Female respondents self-report the use of estrogen and progesterone, including the duration and dose.",
-    "domain": "Physical Activity & Exposures",
-    "citation": "The California Teachers Study, Baseline, Fall 1995. As implemented in: PhenX Toolkit. Exogenous Female Hormone Use. https://www.phenxtoolkit.org/protocols/view/70401",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/70401"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Exogenous Female Hormone Use",
+      "code": "PX070401",
+      "abbreviation": "PX070401",
+      "description": "Female respondents self-report the use of estrogen and progesterone, including the duration and dose.",
+      "domain": "Physical Activity & Exposures",
+      "citation": "The California Teachers Study, Baseline, Fall 1995. As implemented in: PhenX Toolkit. Exogenous Female Hormone Use. https://www.phenxtoolkit.org/protocols/view/70401",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/70401"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "ever_taken_estrogen",
+        "text_key": "ever_taken_estrogen",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "ever_taken_estrogen_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "ever_taken_estrogen_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "ever_taken_estrogen_opt_3",
+            "value": 3
+          }
+        ]
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "ever_premarin",
+        "text_key": "ever_premarin",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_taken_estrogen",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "premarin_age_first",
+        "text_key": "premarin_age_first",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_premarin",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "premarin_age_first_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "premarin_age_first_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "premarin_age_first_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "premarin_age_first_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "premarin_age_first_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "premarin_age_first_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "premarin_age_first_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "premarin_age_last",
+        "text_key": "premarin_age_last",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_premarin",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "premarin_age_last_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "premarin_age_last_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "premarin_age_last_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "premarin_age_last_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "premarin_age_last_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "premarin_age_last_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "premarin_age_last_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "premarin_age_last_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "premarin_years",
+        "text_key": "premarin_years",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_premarin",
+          "operator": "equals",
+          "value": 2
+        },
+        "input_type": "number"
+      },
+      {
+        "id": "premarin_dose_green",
+        "text_key": "premarin_dose_green",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_premarin",
+          "operator": "equals",
+          "value": 2
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "premarin_dose_brown_red",
+        "text_key": "premarin_dose_brown_red",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_premarin",
+          "operator": "equals",
+          "value": 2
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "premarin_dose_white",
+        "text_key": "premarin_dose_white",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_premarin",
+          "operator": "equals",
+          "value": 2
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "premarin_dose_yellow_orange",
+        "text_key": "premarin_dose_yellow_orange",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_premarin",
+          "operator": "equals",
+          "value": 2
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "premarin_dose_purple",
+        "text_key": "premarin_dose_purple",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_premarin",
+          "operator": "equals",
+          "value": 2
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "premarin_dose_longest_used",
+        "text_key": "premarin_dose_longest_used",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_premarin",
+          "operator": "equals",
+          "value": 2
+        },
+        "options": [
+          {
+            "text_key": "premarin_dose_longest_used_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "premarin_dose_longest_used_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "premarin_dose_longest_used_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "premarin_dose_longest_used_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "premarin_dose_longest_used_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "ever_estrogen_by_mouth",
+        "text_key": "ever_estrogen_by_mouth",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_taken_estrogen",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "ever_estrogen_by_injection",
+        "text_key": "ever_estrogen_by_injection",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_taken_estrogen",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "ever_estrogen_by_patch_implant",
+        "text_key": "ever_estrogen_by_patch_implant",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_taken_estrogen",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "ever_estrogen_by_cream_suppository",
+        "text_key": "ever_estrogen_by_cream_suppository",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_taken_estrogen",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "option_set": "default"
+      },
+      {
+        "id": "estrogen_except_premarin_age_first",
+        "text_key": "estrogen_except_premarin_age_first",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_taken_estrogen",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "options": [
+          {
+            "text_key": "estrogen_except_premarin_age_first_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "estrogen_except_premarin_age_first_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "estrogen_except_premarin_age_first_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "estrogen_except_premarin_age_first_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "estrogen_except_premarin_age_first_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "estrogen_except_premarin_age_first_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "estrogen_except_premarin_age_first_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "estrogen_except_premarin_age_last",
+        "text_key": "estrogen_except_premarin_age_last",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_taken_estrogen",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "options": [
+          {
+            "text_key": "estrogen_except_premarin_age_last_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "estrogen_except_premarin_age_last_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "estrogen_except_premarin_age_last_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "estrogen_except_premarin_age_last_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "estrogen_except_premarin_age_last_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "estrogen_except_premarin_age_last_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "estrogen_except_premarin_age_last_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "estrogen_except_premarin_age_last_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "estrogen_except_premarin_years",
+        "text_key": "estrogen_except_premarin_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_taken_estrogen",
+          "operator": "in",
+          "value": [
+            2,
+            3
+          ]
+        },
+        "options": [
+          {
+            "text_key": "estrogen_except_premarin_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "estrogen_except_premarin_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "estrogen_except_premarin_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "estrogen_except_premarin_years_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "estrogen_except_premarin_years_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "estrogen_except_premarin_years_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "estrogen_except_premarin_years_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "ever_progesterone_progestin",
+        "text_key": "ever_progesterone_progestin",
+        "type": "multi",
+        "options": [
+          {
+            "text_key": "ever_progesterone_progestin_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "ever_progesterone_progestin_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "ever_progesterone_progestin_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "ever_progesterone_progestin_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "ever_progesterone_progestin_opt_5",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "id": "progesterone_progestin_age_first",
+        "text_key": "progesterone_progestin_age_first",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_progesterone_progestin",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "options": [
+          {
+            "text_key": "progesterone_progestin_age_first_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "progesterone_progestin_age_first_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "progesterone_progestin_age_first_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "progesterone_progestin_age_first_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "progesterone_progestin_age_first_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "progesterone_progestin_age_first_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "progesterone_progestin_age_first_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "progesterone_progestin_age_first_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "progesterone_progestin_age_last",
+        "text_key": "progesterone_progestin_age_last",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_progesterone_progestin",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "options": [
+          {
+            "text_key": "progesterone_progestin_age_last_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "progesterone_progestin_age_last_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "progesterone_progestin_age_last_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "progesterone_progestin_age_last_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "progesterone_progestin_age_last_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "progesterone_progestin_age_last_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "progesterone_progestin_age_last_opt_7",
+            "value": 7
+          },
+          {
+            "text_key": "progesterone_progestin_age_last_opt_8",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "id": "progesterone_progestin_years",
+        "text_key": "progesterone_progestin_years",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_progesterone_progestin",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "options": [
+          {
+            "text_key": "progesterone_progestin_years_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "progesterone_progestin_years_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "progesterone_progestin_years_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "progesterone_progestin_years_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "progesterone_progestin_years_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "progesterone_progestin_years_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "progesterone_progestin_years_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "provera_dose",
+        "text_key": "provera_dose",
+        "type": "multi",
+        "visible_when": {
+          "item": "ever_progesterone_progestin",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "options": [
+          {
+            "text_key": "provera_dose_opt_1",
+            "value": 1
+          },
+          {
+            "text_key": "provera_dose_opt_2",
+            "value": 2
+          },
+          {
+            "text_key": "provera_dose_opt_3",
+            "value": 3
+          },
+          {
+            "text_key": "provera_dose_opt_4",
+            "value": 4
+          },
+          {
+            "text_key": "provera_dose_opt_5",
+            "value": 5
+          },
+          {
+            "text_key": "provera_dose_opt_6",
+            "value": 6
+          },
+          {
+            "text_key": "provera_dose_opt_7",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "progesterone_progestin_days",
+        "text_key": "progesterone_progestin_days",
+        "type": "short",
+        "visible_when": {
+          "item": "ever_progesterone_progestin",
+          "operator": "in",
+          "value": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "input_type": "number"
       }
     ]
   },
-  "items": [
-    {
-      "id": "ever_taken_estrogen",
-      "text_key": "ever_taken_estrogen",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "ever_taken_estrogen_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "ever_taken_estrogen_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "ever_taken_estrogen_opt_3",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "id": "ever_premarin",
-      "text_key": "ever_premarin",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_taken_estrogen",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "premarin_age_first",
-      "text_key": "premarin_age_first",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_premarin",
-        "operator": "equals",
-        "value": 2
-      },
-      "options": [
-        {
-          "text_key": "premarin_age_first_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "premarin_age_first_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "premarin_age_first_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "premarin_age_first_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "premarin_age_first_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "premarin_age_first_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "premarin_age_first_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "premarin_age_last",
-      "text_key": "premarin_age_last",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_premarin",
-        "operator": "equals",
-        "value": 2
-      },
-      "options": [
-        {
-          "text_key": "premarin_age_last_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "premarin_age_last_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "premarin_age_last_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "premarin_age_last_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "premarin_age_last_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "premarin_age_last_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "premarin_age_last_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "premarin_age_last_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "premarin_years",
-      "text_key": "premarin_years",
-      "type": "short",
-      "visible_when": {
-        "item": "ever_premarin",
-        "operator": "equals",
-        "value": 2
-      },
-      "input_type": "number"
-    },
-    {
-      "id": "premarin_dose_green",
-      "text_key": "premarin_dose_green",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_premarin",
-        "operator": "equals",
-        "value": 2
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "premarin_dose_brown_red",
-      "text_key": "premarin_dose_brown_red",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_premarin",
-        "operator": "equals",
-        "value": 2
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "premarin_dose_white",
-      "text_key": "premarin_dose_white",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_premarin",
-        "operator": "equals",
-        "value": 2
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "premarin_dose_yellow_orange",
-      "text_key": "premarin_dose_yellow_orange",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_premarin",
-        "operator": "equals",
-        "value": 2
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "premarin_dose_purple",
-      "text_key": "premarin_dose_purple",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_premarin",
-        "operator": "equals",
-        "value": 2
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "premarin_dose_longest_used",
-      "text_key": "premarin_dose_longest_used",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_premarin",
-        "operator": "equals",
-        "value": 2
-      },
-      "options": [
-        {
-          "text_key": "premarin_dose_longest_used_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "premarin_dose_longest_used_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "premarin_dose_longest_used_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "premarin_dose_longest_used_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "premarin_dose_longest_used_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "ever_estrogen_by_mouth",
-      "text_key": "ever_estrogen_by_mouth",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_taken_estrogen",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "ever_estrogen_by_injection",
-      "text_key": "ever_estrogen_by_injection",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_taken_estrogen",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "ever_estrogen_by_patch_implant",
-      "text_key": "ever_estrogen_by_patch_implant",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_taken_estrogen",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "ever_estrogen_by_cream_suppository",
-      "text_key": "ever_estrogen_by_cream_suppository",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_taken_estrogen",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "option_set": "default"
-    },
-    {
-      "id": "estrogen_except_premarin_age_first",
-      "text_key": "estrogen_except_premarin_age_first",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_taken_estrogen",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "options": [
-        {
-          "text_key": "estrogen_except_premarin_age_first_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "estrogen_except_premarin_age_first_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "estrogen_except_premarin_age_first_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "estrogen_except_premarin_age_first_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "estrogen_except_premarin_age_first_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "estrogen_except_premarin_age_first_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "estrogen_except_premarin_age_first_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "estrogen_except_premarin_age_last",
-      "text_key": "estrogen_except_premarin_age_last",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_taken_estrogen",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "options": [
-        {
-          "text_key": "estrogen_except_premarin_age_last_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "estrogen_except_premarin_age_last_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "estrogen_except_premarin_age_last_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "estrogen_except_premarin_age_last_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "estrogen_except_premarin_age_last_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "estrogen_except_premarin_age_last_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "estrogen_except_premarin_age_last_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "estrogen_except_premarin_age_last_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "estrogen_except_premarin_years",
-      "text_key": "estrogen_except_premarin_years",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_taken_estrogen",
-        "operator": "in",
-        "value": [
-          2,
-          3
-        ]
-      },
-      "options": [
-        {
-          "text_key": "estrogen_except_premarin_years_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "estrogen_except_premarin_years_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "estrogen_except_premarin_years_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "estrogen_except_premarin_years_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "estrogen_except_premarin_years_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "estrogen_except_premarin_years_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "estrogen_except_premarin_years_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "ever_progesterone_progestin",
-      "text_key": "ever_progesterone_progestin",
-      "type": "multi",
-      "options": [
-        {
-          "text_key": "ever_progesterone_progestin_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "ever_progesterone_progestin_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "ever_progesterone_progestin_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "ever_progesterone_progestin_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "ever_progesterone_progestin_opt_5",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "id": "progesterone_progestin_age_first",
-      "text_key": "progesterone_progestin_age_first",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_progesterone_progestin",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5
-        ]
-      },
-      "options": [
-        {
-          "text_key": "progesterone_progestin_age_first_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "progesterone_progestin_age_first_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "progesterone_progestin_age_first_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "progesterone_progestin_age_first_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "progesterone_progestin_age_first_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "progesterone_progestin_age_first_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "progesterone_progestin_age_first_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "progesterone_progestin_age_first_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "progesterone_progestin_age_last",
-      "text_key": "progesterone_progestin_age_last",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_progesterone_progestin",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5
-        ]
-      },
-      "options": [
-        {
-          "text_key": "progesterone_progestin_age_last_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "progesterone_progestin_age_last_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "progesterone_progestin_age_last_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "progesterone_progestin_age_last_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "progesterone_progestin_age_last_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "progesterone_progestin_age_last_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "progesterone_progestin_age_last_opt_7",
-          "value": 7
-        },
-        {
-          "text_key": "progesterone_progestin_age_last_opt_8",
-          "value": 8
-        }
-      ]
-    },
-    {
-      "id": "progesterone_progestin_years",
-      "text_key": "progesterone_progestin_years",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_progesterone_progestin",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5
-        ]
-      },
-      "options": [
-        {
-          "text_key": "progesterone_progestin_years_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "progesterone_progestin_years_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "progesterone_progestin_years_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "progesterone_progestin_years_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "progesterone_progestin_years_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "progesterone_progestin_years_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "progesterone_progestin_years_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "provera_dose",
-      "text_key": "provera_dose",
-      "type": "multi",
-      "visible_when": {
-        "item": "ever_progesterone_progestin",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5
-        ]
-      },
-      "options": [
-        {
-          "text_key": "provera_dose_opt_1",
-          "value": 1
-        },
-        {
-          "text_key": "provera_dose_opt_2",
-          "value": 2
-        },
-        {
-          "text_key": "provera_dose_opt_3",
-          "value": 3
-        },
-        {
-          "text_key": "provera_dose_opt_4",
-          "value": 4
-        },
-        {
-          "text_key": "provera_dose_opt_5",
-          "value": 5
-        },
-        {
-          "text_key": "provera_dose_opt_6",
-          "value": 6
-        },
-        {
-          "text_key": "provera_dose_opt_7",
-          "value": 7
-        }
-      ]
-    },
-    {
-      "id": "progesterone_progestin_days",
-      "text_key": "progesterone_progestin_days",
-      "type": "short",
-      "visible_when": {
-        "item": "ever_progesterone_progestin",
-        "operator": "in",
-        "value": [
-          2,
-          3,
-          4,
-          5
-        ]
-      },
-      "input_type": "number"
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "No",

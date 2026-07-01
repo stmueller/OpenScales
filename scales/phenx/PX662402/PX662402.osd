@@ -1,52 +1,55 @@
 {
-  "scale_info": {
-    "name": "Incarceration - Adult",
-    "code": "PX662402",
-    "abbreviation": "PX662402",
-    "description": "This protocol includes four self-administered questions that capture total number of arrests and also number of arrests and time spent on probation or parole in the last 12 months from the National Survey on Drug Use and Health (NSDUH) 2014 Questionnaire.",
-    "domain": "Psychiatric Symptoms & Wellbeing",
-    "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/662402]",
-    "license": "PhenX Toolkit freely available protocol",
-    "version": "1.0",
-    "url": "https://www.phenxtoolkit.org/protocols/view/662402"
-  },
-  "option_sets": {
-    "default": [
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Incarceration - Adult",
+      "code": "PX662402",
+      "abbreviation": "PX662402",
+      "description": "This protocol includes four self-administered questions that capture total number of arrests and also number of arrests and time spent on probation or parole in the last 12 months from the National Survey on Drug Use and Health (NSDUH) 2014 Questionnaire.",
+      "domain": "Psychiatric Symptoms & Wellbeing",
+      "citation": "None [PhenX: https://www.phenxtoolkit.org/protocols/view/662402]",
+      "license": "PhenX Toolkit freely available protocol",
+      "version": "1.0",
+      "url": "https://www.phenxtoolkit.org/protocols/view/662402"
+    },
+    "option_sets": {
+      "default": [
+        {
+          "text_key": "opt_1",
+          "value": 1
+        },
+        {
+          "text_key": "opt_2",
+          "value": 2
+        }
+      ]
+    },
+    "items": [
       {
-        "text_key": "opt_1",
-        "value": 1
+        "id": "incarceration_adult_arrested",
+        "text_key": "incarceration_adult_arrested",
+        "type": "multi",
+        "option_set": "default"
       },
       {
-        "text_key": "opt_2",
-        "value": 2
+        "id": "incarceration_adult_arrested_past_year",
+        "text_key": "incarceration_adult_arrested_past_year",
+        "type": "short"
+      },
+      {
+        "id": "incarceration_adult_probation_past_year",
+        "text_key": "incarceration_adult_probation_past_year",
+        "type": "multi",
+        "option_set": "default"
+      },
+      {
+        "id": "incarceration_adult_parol_past_year",
+        "text_key": "incarceration_adult_parol_past_year",
+        "type": "multi",
+        "option_set": "default"
       }
     ]
   },
-  "items": [
-    {
-      "id": "incarceration_adult_arrested",
-      "text_key": "incarceration_adult_arrested",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "incarceration_adult_arrested_past_year",
-      "text_key": "incarceration_adult_arrested_past_year",
-      "type": "short"
-    },
-    {
-      "id": "incarceration_adult_probation_past_year",
-      "text_key": "incarceration_adult_probation_past_year",
-      "type": "multi",
-      "option_set": "default"
-    },
-    {
-      "id": "incarceration_adult_parol_past_year",
-      "text_key": "incarceration_adult_parol_past_year",
-      "type": "multi",
-      "option_set": "default"
-    }
-  ],
   "translations": {
     "en": {
       "opt_1": "Yes",

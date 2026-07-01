@@ -1,27 +1,23 @@
 {
-  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "_note": "PSS-10 (Perceived Stress Scale). Options 0–4 (Never=0 to Very Often=4); options are stored as 0-based values. Items 4,5,7,8 (felt_confident_to_handle_problems, felt_things_going_your_way, able_to_control_irritations, felt_on_top_of_things) are positively worded and reverse-scored. Range 0–40.",
   "dimensions": [
-    {
-      "id": "total",
-      "name": "Total Score"
-    }
+    {"id": "total", "name": "Perceived Stress"}
   ],
   "scoring": {
     "total": {
-      "description": "Total: sum_coded of all 10 items.",
       "method": "sum_coded",
-      "items": [
-        "upset_because_of_unexpected",
-        "unable_to_control_important_things",
-        "felt_nervous_and_stressed",
-        "felt_confident_to_handle_problems",
-        "felt_things_going_your_way",
-        "could_not_cope_with_allthings",
-        "able_to_control_irritations",
-        "felt_on_top_of_things",
-        "angered_by_things_outside_control",
-        "difficulties_piling_up"
-      ]
+      "items": {
+        "upset_because_of_unexpected": 1,
+        "unable_to_control_important_things": 1,
+        "felt_nervous_and_stressed": 1,
+        "felt_confident_to_handle_problems": -1,
+        "felt_things_going_your_way": -1,
+        "could_not_cope_with_allthings": 1,
+        "able_to_control_irritations": -1,
+        "felt_on_top_of_things": -1,
+        "angered_by_things_outside_control": 1,
+        "difficulties_piling_up": 1
+      }
     }
   }
 }

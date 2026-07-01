@@ -19,9 +19,9 @@ class OSD2Surveydown {
 
     getEffectiveScale(item) {
         const rsId = item.response_scale;
-        if (rsId && this.defn.response_scales && this.defn.response_scales[rsId]) {
-            return this.defn.response_scales[rsId];
-        }
+        const rs = this.defn.response_scales || {};
+        if (rsId && rs[rsId]) return rs[rsId];
+        if (rs['default']) return rs['default'];
         return this.defn.likert_options || {};
     }
 

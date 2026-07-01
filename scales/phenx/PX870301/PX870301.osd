@@ -140,26 +140,65 @@
     ],
     "dimensions": [
       {
+        "id": "social_exclusion",
+        "name": "Social Exclusion"
+      },
+      {
+        "id": "internalized_stigma",
+        "name": "Internalized Stigma"
+      },
+      {
+        "id": "disclosure_concerns",
+        "name": "Disclosure Concerns"
+      },
+      {
+        "id": "expected_discrimination",
+        "name": "Expected Discrimination"
+      },
+      {
         "id": "total",
-        "name": "Total Score"
+        "name": "Total Stigma Score"
       }
     ],
     "scoring": {
-      "total": {
-        "description": "Total: sum_coded of all 11 items.",
+      "social_exclusion": {
         "method": "sum_coded",
-        "items": [
-          "internal_stigma_sickle_cell_disease_social_exclusion_people_backed_away",
-          "internal_stigma_sickle_cell_disease_social_exclusion_telling_others_mistake",
-          "internal_stigma_sickle_cell_disease_social_exclusion_people_afraid",
-          "internal_stigma_sickle_cell_disease_internalized_stigma_feel_guilty",
-          "internal_stigma_sickle_cell_disease_internalized_stigma_feel_bad_person",
-          "internal_stigma_sickle_cell_disease_internalized_stigma_feel_not_good_as_others",
-          "internal_stigma_sickle_cell_disease_disclosure_concerns_no_one_knows",
-          "internal_stigma_sickle_cell_disease_disclosure_concerns_careful_who_tell",
-          "internal_stigma_sickle_cell_disease_disclosure_concerns_telling_someone_risky",
-          "internal_stigma_sickle_cell_disease_expected_discrimination_lose_job_employers_learn",
-          "internal_stigma_sickle_cell_disease_expected_discrimination_against"
+        "items": {
+          "internal_stigma_sickle_cell_disease_social_exclusion_people_backed_away": 1,
+          "internal_stigma_sickle_cell_disease_social_exclusion_telling_others_mistake": 1,
+          "internal_stigma_sickle_cell_disease_social_exclusion_people_afraid": 1
+        }
+      },
+      "internalized_stigma": {
+        "method": "sum_coded",
+        "items": {
+          "internal_stigma_sickle_cell_disease_internalized_stigma_feel_guilty": 1,
+          "internal_stigma_sickle_cell_disease_internalized_stigma_feel_bad_person": 1,
+          "internal_stigma_sickle_cell_disease_internalized_stigma_feel_not_good_as_others": 1
+        }
+      },
+      "disclosure_concerns": {
+        "method": "sum_coded",
+        "items": {
+          "internal_stigma_sickle_cell_disease_disclosure_concerns_no_one_knows": 1,
+          "internal_stigma_sickle_cell_disease_disclosure_concerns_careful_who_tell": 1,
+          "internal_stigma_sickle_cell_disease_disclosure_concerns_telling_someone_risky": 1
+        }
+      },
+      "expected_discrimination": {
+        "method": "sum_coded",
+        "items": {
+          "internal_stigma_sickle_cell_disease_expected_discrimination_lose_job_employers_learn": 1,
+          "internal_stigma_sickle_cell_disease_expected_discrimination_against": 1
+        }
+      },
+      "total": {
+        "method": "sum_coded",
+        "scores": [
+          "social_exclusion",
+          "internalized_stigma",
+          "disclosure_concerns",
+          "expected_discrimination"
         ]
       }
     }
@@ -172,7 +211,7 @@
       "opt_4": "somewhat true (more true than false)",
       "opt_5": "mostly true",
       "opt_6": "completely true",
-      "internal_stigma_sickle_cell_disease_social_exclusion_instructions": "Measure of Sickle Cell Stigma (MoSCS) ScaleInstructionsThe statements below are based on some experiences of people with sickle cell disease (SCD). It is not a test, and there are no \"right\" or \"wrong\" responses. Therefore, please respond to each statement as openly and honestly as you possibly can. There is no need to worry about the privacy of your answers or how they might compare to the answers of others, because we are interested in overall views, not individual points of view. Choose a number using the scale below that best indicates your agreement with each statement and write it in the corresponding space. These numbers mean the following:1 = completely false2 = mostly false3 = somewhat false (more false than true)4 = somewhat true (more true than false)5 = mostly true6 = completely true",
+      "internal_stigma_sickle_cell_disease_social_exclusion_instructions": "Measure of Sickle Cell Stigma (MoSCS) Scale\nInstructions\nThe statements below are based on some experiences of people with sickle cell disease (SCD). It is not a test, and there are no \"right\" or \"wrong\" responses. Therefore, please respond to each statement as openly and honestly as you possibly can. There is no need to worry about the privacy of your answers or how they might compare to the answers of others, because we are interested in overall views, not individual points of view. Choose a number using the scale below that best indicates your agreement with each statement and write it in the corresponding space. These numbers mean the following:\n\n1 = completely false\n2 = mostly false\n3 = somewhat false (more false than true)\n4 = somewhat true (more true than false)\n5 = mostly true\n6 = completely true",
       "sec_social_exclusion_title": "Social Exclusion",
       "internal_stigma_sickle_cell_disease_social_exclusion_people_backed_away": "People have physically backed away from me because I have SCD.",
       "internal_stigma_sickle_cell_disease_social_exclusion_telling_others_mistake": "As a rule, telling others that I have SCD has been a mistake.",
@@ -188,7 +227,7 @@
       "sec_expected_discrimination_title": "Expected Discrimination",
       "internal_stigma_sickle_cell_disease_expected_discrimination_lose_job_employers_learn": "People lose jobs when employers learn they have SCD.",
       "internal_stigma_sickle_cell_disease_expected_discrimination_against": "I worry about people discriminating against me because I have SCD.",
-      "internal_stigma_sickle_cell_disease_scoring": "ScoringEach item is assigned a value ranging from 1 to 6. A total stigma scale score is computed by adding the values for each of the 11 items. Subscale scores are computed by adding the values for the items that constitute each subscale: Social Exclusion, Internalized Stigma, Disclosure Concerns, and Expected Discrimination. Higher scores indicate greater levels of stigma."
+      "internal_stigma_sickle_cell_disease_scoring": "Scoring\n\nEach item is assigned a value ranging from 1 to 6. A total stigma scale score is computed by adding the values for each of the 11 items. Subscale scores are computed by adding the values for the items that constitute each subscale: Social Exclusion, Internalized Stigma, Disclosure Concerns, and Expected Discrimination. Higher scores indicate greater levels of stigma."
     }
   }
 }

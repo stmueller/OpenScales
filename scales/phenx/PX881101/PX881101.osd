@@ -98,22 +98,21 @@
     "dimensions": [
       {
         "id": "total",
-        "name": "Total Score"
+        "name": "Pain Burden"
       }
     ],
     "scoring": {
       "total": {
-        "description": "Total: sum_coded of all 7 items.",
         "method": "sum_coded",
-        "items": [
-          "scd_pain_menstruation_quality_of_life_days_during_period",
-          "scd_pain_menstruation_quality_of_life_nights_slept_poorly_period",
-          "scd_pain_menstruation_quality_of_life_days_trouble_care_self_period",
-          "scd_pain_menstruation_quality_of_life_days_missed_school_work_period",
-          "scd_pain_menstruation_quality_of_life_days_left_school_work_period",
-          "scd_pain_menstruation_quality_of_life_days_unable_do_things_enjoy_period",
-          "scd_pain_menstruation_quality_of_life_days_sad_mad_upset_period"
-        ]
+        "value_map": {
+          "default": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
       }
     }
   },
@@ -133,7 +132,7 @@
       "scd_pain_menstruation_quality_of_life_days_left_school_work_period": "How many days have you left school/work early because of sickle cell pain during this menstrual period?",
       "scd_pain_menstruation_quality_of_life_days_unable_do_things_enjoy_period": "How many days have you been unable to do things you enjoy because of sickle cell pain during this menstrual period?",
       "scd_pain_menstruation_quality_of_life_days_sad_mad_upset_period": "How many days have you felt sad, mad, or upset because of sickle cell pain during this menstrual period?",
-      "scd_pain_menstruation_quality_of_life_scoring": "Scoring: \"None\" = 0, \"A Few\" = 1, \"Some\" = 2, \"Many\" = 3, and \"Every\" = 4.Scores range from 0 to 28; that is, no pain burden to severe pain burden."
+      "scd_pain_menstruation_quality_of_life_scoring": "Scoring: \n\"None\" = 0, \"A Few\" = 1, \"Some\" = 2, \"Many\" = 3, and \"Every\" = 4.\nScores range from 0 to 28; that is, no pain burden to severe pain burden."
     }
   }
 }

@@ -57,8 +57,16 @@
       "points": 7,
       "min": -3,
       "max": 3,
-      "labels": ["deis_r1", "deis_r2", "deis_r3", "deis_r4", "deis_r5", "deis_r6", "deis_r7"],
-      "suppress_likert_numbers": true
+      "labels": [
+        "deis_r1",
+        "deis_r2",
+        "deis_r3",
+        "deis_r4",
+        "deis_r5",
+        "deis_r6",
+        "deis_r7"
+      ],
+      "show_numbers": "none"
     },
     "dimensions": [
       {
@@ -87,52 +95,180 @@
       }
     ],
     "items": [
-      {"id": "embIDa", "type": "likert", "text_key": "embIDa", "dimension": "embedded"},
-      {"id": "embIDb", "type": "likert", "text_key": "embIDb", "dimension": "embedded"},
-      {"id": "embIDc", "type": "likert", "text_key": "embIDc", "dimension": "embedded"},
-      {"id": "embIDd", "type": "likert", "text_key": "embIDd", "dimension": "embedded"},
-      {"id": "embIDe", "type": "likert", "text_key": "embIDe", "dimension": "embedded"},
-      {"id": "disIDa", "type": "likert", "text_key": "disIDa", "dimension": "disembedded"},
-      {"id": "disIDb", "type": "likert", "text_key": "disIDb", "dimension": "disembedded"},
-      {"id": "disIDc", "type": "likert", "text_key": "disIDc", "dimension": "disembedded"},
-      {"id": "disIDd", "type": "likert", "text_key": "disIDd", "dimension": "disembedded"},
-      {"id": "disIDe", "type": "likert", "text_key": "disIDe", "dimension": "disembedded"},
-      {"id": "subIDa", "type": "likert", "text_key": "subIDa", "dimension": "subgroup"},
-      {"id": "subIDb", "type": "likert", "text_key": "subIDb", "dimension": "subgroup"},
-      {"id": "subIDc", "type": "likert", "text_key": "subIDc", "dimension": "subgroup"},
-      {"id": "subIDd", "type": "likert", "text_key": "subIDd", "dimension": "subgroup"},
-      {"id": "subIDe", "type": "likert", "text_key": "subIDe", "dimension": "subgroup"},
-      {"id": "supIDa", "type": "likert", "text_key": "supIDa", "dimension": "superordinate"},
-      {"id": "supIDb", "type": "likert", "text_key": "supIDb", "dimension": "superordinate"},
-      {"id": "supIDc", "type": "likert", "text_key": "supIDc", "dimension": "superordinate"},
-      {"id": "supIDd", "type": "likert", "text_key": "supIDd", "dimension": "superordinate"},
-      {"id": "supIDe", "type": "likert", "text_key": "supIDe", "dimension": "superordinate"}
+      {
+        "id": "embIDa",
+        "type": "likert",
+        "text_key": "embIDa",
+        "dimension": "embedded"
+      },
+      {
+        "id": "embIDb",
+        "type": "likert",
+        "text_key": "embIDb",
+        "dimension": "embedded"
+      },
+      {
+        "id": "embIDc",
+        "type": "likert",
+        "text_key": "embIDc",
+        "dimension": "embedded"
+      },
+      {
+        "id": "embIDd",
+        "type": "likert",
+        "text_key": "embIDd",
+        "dimension": "embedded"
+      },
+      {
+        "id": "embIDe",
+        "type": "likert",
+        "text_key": "embIDe",
+        "dimension": "embedded"
+      },
+      {
+        "id": "disIDa",
+        "type": "likert",
+        "text_key": "disIDa",
+        "dimension": "disembedded"
+      },
+      {
+        "id": "disIDb",
+        "type": "likert",
+        "text_key": "disIDb",
+        "dimension": "disembedded"
+      },
+      {
+        "id": "disIDc",
+        "type": "likert",
+        "text_key": "disIDc",
+        "dimension": "disembedded"
+      },
+      {
+        "id": "disIDd",
+        "type": "likert",
+        "text_key": "disIDd",
+        "dimension": "disembedded"
+      },
+      {
+        "id": "disIDe",
+        "type": "likert",
+        "text_key": "disIDe",
+        "dimension": "disembedded"
+      },
+      {
+        "id": "subIDa",
+        "type": "likert",
+        "text_key": "subIDa",
+        "dimension": "subgroup"
+      },
+      {
+        "id": "subIDb",
+        "type": "likert",
+        "text_key": "subIDb",
+        "dimension": "subgroup"
+      },
+      {
+        "id": "subIDc",
+        "type": "likert",
+        "text_key": "subIDc",
+        "dimension": "subgroup"
+      },
+      {
+        "id": "subIDd",
+        "type": "likert",
+        "text_key": "subIDd",
+        "dimension": "subgroup"
+      },
+      {
+        "id": "subIDe",
+        "type": "likert",
+        "text_key": "subIDe",
+        "dimension": "subgroup"
+      },
+      {
+        "id": "supIDa",
+        "type": "likert",
+        "text_key": "supIDa",
+        "dimension": "superordinate"
+      },
+      {
+        "id": "supIDb",
+        "type": "likert",
+        "text_key": "supIDb",
+        "dimension": "superordinate"
+      },
+      {
+        "id": "supIDc",
+        "type": "likert",
+        "text_key": "supIDc",
+        "dimension": "superordinate"
+      },
+      {
+        "id": "supIDd",
+        "type": "likert",
+        "text_key": "supIDd",
+        "dimension": "superordinate"
+      },
+      {
+        "id": "supIDe",
+        "type": "likert",
+        "text_key": "supIDe",
+        "dimension": "superordinate"
+      }
     ],
     "scoring": {
       "embedded": {
         "description": "Mean of 5 Embedded Identification items. Range −3 to +3; higher = stronger embedded identification.",
         "method": "mean_coded",
-        "items": ["embIDa", "embIDb", "embIDc", "embIDd", "embIDe"]
+        "items": [
+          "embIDa",
+          "embIDb",
+          "embIDc",
+          "embIDd",
+          "embIDe"
+        ]
       },
       "disembedded": {
         "description": "Mean of 5 Dis-Embedded Identification items. Range −3 to +3; higher = stronger dis-embedded identification.",
         "method": "mean_coded",
-        "items": ["disIDa", "disIDb", "disIDc", "disIDd", "disIDe"]
+        "items": [
+          "disIDa",
+          "disIDb",
+          "disIDc",
+          "disIDd",
+          "disIDe"
+        ]
       },
       "subgroup": {
         "description": "Mean of 5 Subordinate Ingroup Identification items. Range −3 to +3; higher = stronger subordinate ingroup identification.",
         "method": "mean_coded",
-        "items": ["subIDa", "subIDb", "subIDc", "subIDd", "subIDe"]
+        "items": [
+          "subIDa",
+          "subIDb",
+          "subIDc",
+          "subIDd",
+          "subIDe"
+        ]
       },
       "superordinate": {
         "description": "Mean of 5 Superordinate (In)Group Identification items. Range −3 to +3; higher = stronger superordinate identification.",
         "method": "mean_coded",
-        "items": ["supIDa", "supIDb", "supIDc", "supIDd", "supIDe"]
+        "items": [
+          "supIDa",
+          "supIDb",
+          "supIDc",
+          "supIDd",
+          "supIDe"
+        ]
       }
     },
     "report": {
       "template": "standard",
-      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
       "header": "(Dis-)Embedded Identification Scale (DEIS) Report",
       "footer_refs": [
         "Paffrath, J. (2024). The measurement of (dis-)embedded identification. Measurement Instruments for the Social Sciences, 6, Article e13783. https://doi.org/10.5964/miss.13783",

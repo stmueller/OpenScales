@@ -566,15 +566,16 @@ const ScaleRunner = (() => {
   }
 
   /**
-   * Resolve the effective response-scale options for a likert item.
-   * Resolution order: item response_scale → likert_options default.
+   * Resolve the effective response-scale object for a likert item.
+   * Resolution order: named response_scale → response_scales["default"] → likert_options.
    * (Per-item likert_labels/likert_points are handled by callers directly.)
    */
   function getEffectiveOpts(qdef, scaleDef) {
-    if (qdef.response_scale && scaleDef.response_scales &&
-        scaleDef.response_scales[qdef.response_scale]) {
-      return scaleDef.response_scales[qdef.response_scale];
+    const rs = scaleDef.response_scales || {};
+    if (qdef.response_scale && rs[qdef.response_scale]) {
+      return rs[qdef.response_scale];
     }
+    if (rs['default']) return rs['default'];
     const base = scaleDef.likert_options || {};
     const item = qdef.likert_options || {};
     return Object.keys(item).length ? Object.assign({}, base, item) : base;
@@ -913,16 +914,19 @@ const ScaleRunner = (() => {
     const pts     = qdef.likert_points || opts.points || 5;
     const [min]   = getQuestionRange(qdef, scaleDef);
     const labels  = qdef.likert_labels || opts.labels || [];
-    const reverse = qdef.likert_reverse !== undefined ? qdef.likert_reverse : (opts.likert_reverse || false);
-    const suppressNums = opts.suppress_likert_numbers || scaleDef.suppress_likert_numbers || false;
+    // order: new field; fall back to deprecated likert_reverse boolean
+    const descending = opts.order === 'descending' ||
+                       (opts.order === undefined && (qdef.likert_reverse || opts.likert_reverse || false));
+    // show_numbers: new field; fall back to deprecated suppress_likert_numbers boolean
+    const showNums = opts.show_numbers ||
+                     (opts.suppress_likert_numbers || scaleDef.suppress_likert_numbers ? 'none' : 'all');
 
     const row = document.createElement('div');
     row.className = 'sr-likert-row';
     if (pts >= 8) row.classList.add('sr-likert-row--compact');
 
     for (let i = 0; i < pts; i++) {
-      // When reversed, display max value on the left down to min on the right
-      const val   = reverse ? (min + pts - 1 - i) : (min + i);
+      const val   = descending ? (min + pts - 1 - i) : (min + i);
       const btn   = document.createElement('button');
       btn.type    = 'button';
       btn.className = 'sr-likert-btn';
@@ -930,17 +934,22 @@ const ScaleRunner = (() => {
 
       const labelEl = document.createElement('span');
       labelEl.className = 'sr-likert-label';
-      const lKey = labels[val - min];  // always index by value, regardless of display order
-      if (lKey) {
+      const lKey = labels[val - min];  // always index by value offset, regardless of display order
+      const hasLabel = !!lKey;
+      if (hasLabel) {
         labelEl.innerHTML = resolveText(lKey, strings, state.params, state.responseMap, state.aliasMap);
         btn.classList.add('sr-likert-has-label');
-      } else if (suppressNums) {
-        // Unlabeled point: only echo the number as the label when the numeric
-        // element is suppressed; otherwise numEl already shows it (avoid a double number).
-        labelEl.textContent = String(val);
       }
 
-      if (!suppressNums) {
+      // show_numbers logic:
+      //   "all"          → always show numEl
+      //   "labeled_only" → show numEl only when this point has no label (null slot)
+      //   "none"         → never show numEl; echo number as label text on unlabeled points
+      const showNumEl = showNums === 'all' || (showNums === 'labeled_only' && !hasLabel);
+      if (showNums === 'none' && !hasLabel) {
+        labelEl.textContent = String(val);
+      }
+      if (showNumEl) {
         const numEl = document.createElement('span');
         numEl.className = 'sr-likert-num';
         numEl.textContent = String(val);
@@ -1991,16 +2000,19 @@ const ScaleRunner = (() => {
         let numVal = parseFloat(responseVal);
         if (isNaN(numVal)) return String(responseVal);
         const vm = sd.value_map;
+        let mappedMin = rMin, mappedMax = rMax;
         if (vm) {
-          const m = vm[qdef.id] || vm['*'];
+          const m = vm[qdef.id] || vm['default'] || vm['*'];
           if (Array.isArray(m) && rMin !== null) {
             const idx = Math.round(numVal) - rMin;
             if (idx >= 0 && idx < m.length) numVal = m[idx];
+            mappedMin = Math.min(...m);
+            mappedMax = Math.max(...m);
           }
         }
         const coding = getItemCoding(sd, qdef.id);
         if (coding === -1) {
-          if (rMin !== null && rMax !== null) return String((rMin + rMax) - numVal);
+          if (mappedMin !== null && mappedMax !== null) return String((mappedMin + mappedMax) - numVal);
         }
         return String(numVal);
       });
@@ -2999,17 +3011,20 @@ const ScaleRunner = (() => {
         let numVal = parseFloat(respVal);
         if (isNaN(numVal)) return `<td>${respVal}</td>`;
         const vm = sd.value_map;
+        let mappedMin = rMin, mappedMax = rMax;
         if (vm) {
           const m = vm[qdef.id] || vm['default'];
           if (Array.isArray(m) && rMin !== null) {
             const idx = Math.round(numVal) - rMin;
             if (idx >= 0 && idx < m.length) numVal = m[idx];
+            mappedMin = Math.min(...m);
+            mappedMax = Math.max(...m);
           }
         }
         const c = getItemCoding(sd, qdef.id);
         let coded = numVal;
         if (c === -1) {
-          if (rMin !== null && rMax !== null) coded = (rMin + rMax) - numVal;
+          if (mappedMin !== null && mappedMax !== null) coded = (mappedMin + mappedMax) - numVal;
         }
         return `<td>${coded}</td>`;
       }).join('');

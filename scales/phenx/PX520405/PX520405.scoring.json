@@ -1,15 +1,121 @@
 {
-  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "_note": "PSEQ (Prescription Stimulant Expectancy Questionnaire). Options 0\u20132. Forward items (positions 1,2,4,5,6,7,11,13,23,24,28,30,31,32,34,35,36,37,38,39) scored as-is. Reverse items use value_map [2,1,0]. Score = mean of all 41 items.",
   "dimensions": [
     {
       "id": "total",
-      "name": "Total Score"
+      "name": "Stimulant Expectancy"
     }
   ],
   "scoring": {
     "total": {
-      "description": "Total: sum_coded of all 41 items.",
-      "method": "sum_coded",
+      "method": "mean_coded",
+      "value_map": {
+        "absorb_material_first_time_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "study_for_hours_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "cant_hold_still_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "cant_sleep_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "dont_daydream_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "enjoy_studying_more_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "feel_drained_next_day_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "feel_guilty_taking_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "cant_get_throughday_without_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "cutting_corners_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "sick_to_stomach_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "feel_twitchy_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "focus_unimportant_tasks_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "annoyed_with_myself_for_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "need_fewer_study_breaks_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "wish_do_well_without_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "worry_im_addicted_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "no_trouble_sit_still_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "focus_crystal_clear_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "work_more_interesting_stimulants": [
+          2,
+          1,
+          0
+        ],
+        "my_heart_races_stimulants": [
+          2,
+          1,
+          0
+        ]
+      },
       "items": [
         "used_prescription_stimulant",
         "distractions_disappear_stimulants",

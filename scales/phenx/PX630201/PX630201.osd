@@ -68,14 +68,33 @@
     ],
     "scoring": {
       "total": {
-        "description": "Total: sum_coded of all 4 items.",
         "method": "sum_coded",
+        "value_map": {
+          "default": [
+            1,
+            0
+          ]
+        },
         "items": [
           "ptsd_experience_upsetting_nightmares",
           "ptsd_experience_upsetting_avoid",
           "ptsd_experience_upsetting_onguard",
           "ptsd_experience_upsetting_numb"
-        ]
+        ],
+        "norms": {
+          "thresholds": [
+            {
+              "min": 0,
+              "max": 2,
+              "label_key": "norm_negative"
+            },
+            {
+              "min": 3,
+              "max": 4,
+              "label_key": "norm_positive"
+            }
+          ]
+        }
       }
     }
   },

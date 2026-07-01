@@ -1,61 +1,95 @@
 {
-  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "_note": "BFI-44 (Big Five Inventory). 5-point scale 1\u20135. Method mean_coded per subscale. Reverse items coded -1.",
   "dimensions": [
     {
-      "id": "total",
-      "name": "Total Score"
+      "id": "extraversion",
+      "name": "Extraversion"
+    },
+    {
+      "id": "agreeableness",
+      "name": "Agreeableness"
+    },
+    {
+      "id": "conscientiousness",
+      "name": "Conscientiousness"
+    },
+    {
+      "id": "neuroticism",
+      "name": "Neuroticism"
+    },
+    {
+      "id": "openness",
+      "name": "Openness"
     }
   ],
   "scoring": {
-    "total": {
-      "description": "Total: sum_coded of all 44 items.",
-      "method": "sum_coded",
-      "items": [
-        "talkative",
-        "finds_fault",
-        "thorough_job",
-        "depressed",
-        "original",
-        "reserved",
-        "helpful",
-        "somewhat_careless",
-        "relaxed",
-        "curious",
-        "energetic",
-        "starts_quarrels",
-        "reliable_worker",
-        "tense",
-        "ingenious",
-        "generates_enthusiasm",
-        "forgiving",
-        "disorganized",
-        "worries",
-        "active_imagination",
-        "quiet",
-        "trusting",
-        "lazy",
-        "emotionally_stable",
-        "inventive",
-        "assertive",
-        "aloof",
-        "persevere",
-        "moody",
-        "artistic_experiences",
-        "shy_inhibited",
-        "considerate",
-        "efficient",
-        "remains_calm",
-        "prefers_routine",
-        "outgoing",
-        "rude_to_others",
-        "follows_through_on_plans",
-        "gets_nervous",
-        "reflective",
-        "few_artistic_interests",
-        "cooperates_with_others",
-        "easily_distracted",
-        "sophisticated_art_music_literature"
-      ]
+    "extraversion": {
+      "method": "mean_coded",
+      "items": {
+        "talkative": 1,
+        "reserved": -1,
+        "energetic": 1,
+        "generates_enthusiasm": 1,
+        "quiet": -1,
+        "assertive": 1,
+        "shy_inhibited": -1,
+        "outgoing": 1
+      }
+    },
+    "agreeableness": {
+      "method": "mean_coded",
+      "items": {
+        "finds_fault": -1,
+        "helpful": 1,
+        "starts_quarrels": -1,
+        "forgiving": 1,
+        "trusting": 1,
+        "aloof": -1,
+        "considerate": 1,
+        "rude_to_others": -1
+      }
+    },
+    "conscientiousness": {
+      "method": "mean_coded",
+      "items": {
+        "thorough_job": 1,
+        "somewhat_careless": -1,
+        "reliable_worker": 1,
+        "disorganized": -1,
+        "lazy": -1,
+        "persevere": 1,
+        "efficient": 1,
+        "follows_through_on_plans": 1,
+        "easily_distracted": -1
+      }
+    },
+    "neuroticism": {
+      "method": "mean_coded",
+      "items": {
+        "depressed": 1,
+        "relaxed": -1,
+        "tense": 1,
+        "worries": 1,
+        "emotionally_stable": -1,
+        "moody": 1,
+        "remains_calm": -1,
+        "gets_nervous": 1
+      }
+    },
+    "openness": {
+      "method": "mean_coded",
+      "items": {
+        "original": 1,
+        "curious": 1,
+        "ingenious": 1,
+        "active_imagination": 1,
+        "inventive": 1,
+        "artistic_experiences": 1,
+        "prefers_routine": -1,
+        "reflective": 1,
+        "few_artistic_interests": -1,
+        "sophisticated_art_music_literature": 1
+      }
     }
   }
 }

@@ -51,6 +51,9 @@ def get_effective_scale(item, defn):
         rs = defn.get('response_scales', {}).get(rs_id)
         if rs:
             return rs
+    rs = defn.get('response_scales', {})
+    if 'default' in rs:
+        return rs['default']
     return defn.get('likert_options', {})
 
 

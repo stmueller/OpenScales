@@ -6,7 +6,7 @@ translations}` wrapper with embedded translations) as well as the legacy flat
 `.json` definition + separate `{code}.{lang}.json` translation files.
 
 Validates current spec features: response_scales, likert_options
-(suppress_likert_numbers, question_head, likert_reverse, min/max/labels),
+(show_numbers, order, question_head, min/max/labels),
 object-form scoring coding `{id: 1|-1|0}`, `scores` composites, `value_map`,
 `weights`, `transform`, `answer_categories`/`answer_category`, item-level
 `question_head`/`response_scale`, `section` items, and the draft `variants`
@@ -208,6 +208,31 @@ def validate_dimensions(definition, result):
     return dim_ids
 
 
+_VALID_SHOW_NUMBERS = {"all", "labeled_only", "none"}
+_VALID_ORDER = {"ascending", "descending"}
+
+
+def _validate_response_scale_obj(sid, sdef, result):
+    """Validate a single response scale object (shared by likert_options and response_scales)."""
+    prefix = f"response_scales['{sid}']" if sid != "_likert_options" else "likert_options"
+    if "labels" not in sdef and "points" not in sdef:
+        result.warn(f"{prefix} has neither 'points' nor 'labels'")
+    for nf in ("points", "min", "max"):
+        if nf in sdef and not isinstance(sdef[nf], (int, float)):
+            result.error(f"{prefix}.{nf} must be numeric")
+    if "labels" in sdef and not isinstance(sdef["labels"], list):
+        result.error(f"{prefix}.labels must be an array")
+    if "show_numbers" in sdef and sdef["show_numbers"] not in _VALID_SHOW_NUMBERS:
+        result.error(f"{prefix}.show_numbers must be one of: {sorted(_VALID_SHOW_NUMBERS)}")
+    if "order" in sdef and sdef["order"] not in _VALID_ORDER:
+        result.error(f"{prefix}.order must be one of: {sorted(_VALID_ORDER)}")
+    # Deprecated fields — warn but accept
+    if "suppress_likert_numbers" in sdef:
+        result.warn(f"{prefix}.suppress_likert_numbers is deprecated; use show_numbers instead")
+    if "likert_reverse" in sdef:
+        result.warn(f"{prefix}.likert_reverse is deprecated; use order: 'descending' instead")
+
+
 def validate_response_scales(definition, result):
     rs = definition.get("response_scales")
     rs_ids = set()
@@ -221,10 +246,7 @@ def validate_response_scales(definition, result):
         if not isinstance(sdef, dict):
             result.error(f"response_scales['{sid}'] must be an object")
             continue
-        if "labels" not in sdef and "points" not in sdef:
-            result.warn(f"response_scales['{sid}'] has neither 'points' nor 'labels'")
-        if "labels" in sdef and not isinstance(sdef["labels"], list):
-            result.error(f"response_scales['{sid}'].labels must be an array")
+        _validate_response_scale_obj(sid, sdef, result)
     return rs_ids
 
 
@@ -432,13 +454,7 @@ def validate_likert_options(definition, result):
     if not isinstance(lo, dict):
         result.error("'likert_options' must be an object")
         return
-    for nf in ("points", "min", "max"):
-        if nf in lo and not isinstance(lo[nf], (int, float)):
-            result.error(f"likert_options.{nf} must be numeric")
-    if "labels" in lo and not isinstance(lo["labels"], list):
-        result.error("likert_options.labels must be an array")
-    if "suppress_likert_numbers" in lo and not isinstance(lo["suppress_likert_numbers"], bool):
-        result.warn("likert_options.suppress_likert_numbers should be boolean")
+    _validate_response_scale_obj("_likert_options", lo, result)
 
 
 def validate_variants(definition, qids, result):

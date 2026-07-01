@@ -131,7 +131,8 @@ def convert(scale_dir, lang="en"):
 
     scale_info = defn.get("scale_info", {})
     title = scale_info.get("name", code)
-    lo = defn.get("likert_options")
+    _rs = defn.get("response_scales", {})
+    lo = _rs.get("default") or defn.get("likert_options")
 
     items = defn.get("items", [])
 

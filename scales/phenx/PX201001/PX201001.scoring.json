@@ -1,42 +1,12 @@
 {
-  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "_note": "HHIE-S (Hearing Handicap Inventory for the Elderly — Screening). Options: Yes=1, Sometimes=2, No=3. value_map recodes to Yes=4, Sometimes=2, No=0. Total range 0–40 (10-item) or 0–100 (25-item); higher = greater handicap.",
   "dimensions": [
-    {
-      "id": "total",
-      "name": "Total Score"
-    }
+    {"id": "total", "name": "Hearing Handicap"}
   ],
   "scoring": {
     "total": {
-      "description": "Total: sum_coded of all 25 items.",
       "method": "sum_coded",
-      "items": [
-        "difficult_to_concentrate",
-        "difficult_to_hear_people",
-        "tinnitus_angry",
-        "tinnitus_confused",
-        "tinnitus_desperate",
-        "tinnitus_complain",
-        "tinnitus_sleeplessness",
-        "tinnitus_cannot_escape",
-        "tinnitus_interfere_social_activity",
-        "tinnitus_frustrated",
-        "tinnitus_terrible_disease",
-        "tinnitus_difficult_enjoy_life",
-        "tinnitus_interfere_job_household",
-        "tinnitus_irritable",
-        "tinnitus_difficult_to_read",
-        "tinnitus_upset",
-        "tinnitus_stressed_relationships",
-        "tinnitus_difficult_focus_otherthings",
-        "tinnitus_no_control",
-        "tinnitus_tired",
-        "tinnitus_depressed",
-        "tinnitus_anxious",
-        "tinnitus_no_longer_cope",
-        "tinnitus_worse_under_stress",
-        "tinnitus_insecure"
-      ]
+      "value_map": {"default": [4, 2, 0]}
     }
   }
 }

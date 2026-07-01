@@ -43,7 +43,7 @@
       },
       "shuffle_questions": {
         "type": "boolean",
-        "default":  0,
+        "default": 0,
         "description": "Enables random_group-based item shuffle within sections that do not have their own randomize property."
       }
     },
@@ -277,8 +277,8 @@
         "dimension": "attitudes",
         "required": true,
         "random_group": 1,
-        "likert_reverse": true,
-        "_note": "Reverse-coded AND reverse-displayed (likert_reverse=true). Buttons show 5-4-3-2-1 left-to-right."
+        "_note": "Reverse-coded AND reverse-displayed (likert_reverse=true). Buttons show 5-4-3-2-1 left-to-right.",
+        "response_scale": "_rev"
       },
       {
         "id": "att4",
@@ -611,6 +611,22 @@
             }
           ]
         }
+      }
+    },
+    "response_scales": {
+      "_rev": {
+        "name": "Default (descending)",
+        "points": 5,
+        "min": 1,
+        "max": 5,
+        "labels": [
+          "likert_1",
+          "likert_2",
+          "likert_3",
+          "likert_4",
+          "likert_5"
+        ],
+        "order": "descending"
       }
     }
   },

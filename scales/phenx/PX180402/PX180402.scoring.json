@@ -1,95 +1,92 @@
 {
-  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "_note": "UPPS-P Short Form (20-item). 4-point scale 1\u20134. sum_coded per subscale. R items coded -1. Higher = more impulsive.",
   "dimensions": [
     {
-      "id": "lack_of_premeditation",
-      "name": "Lack of premeditation"
+      "id": "premeditation",
+      "name": "Lack of Premeditation"
     },
     {
       "id": "negative_urgency",
-      "name": "Negative urgency"
+      "name": "Negative Urgency"
     },
     {
       "id": "sensation_seeking",
-      "name": "Sensation seeking"
+      "name": "Sensation Seeking"
     },
     {
-      "id": "lack_of_perseverance",
-      "name": "Lack of perseverance"
+      "id": "perseverance",
+      "name": "Lack of Perseverance"
     },
     {
       "id": "positive_urgency",
-      "name": "Positive urgency"
+      "name": "Positive Urgency"
     }
   ],
   "scoring": {
-    "lack_of_premeditation": {
-      "description": "Lack of premeditation: sum_coded of 8 items.",
+    "premeditation": {
       "method": "sum_coded",
-      "items": [
-        "blurt_out_things",
-        "like_to_stop_and_think",
-        "like_toknow_what_todo",
-        "take_a_careful_approach",
-        "very_careful",
-        "like_toknow_what_toexpect",
-        "tend_to_stop_and_think",
-        "consider_good_and_bad_things"
-      ]
+      "items": {
+        "blurt_out_things": 1,
+        "like_to_stop_and_think": -1,
+        "like_toknow_what_todo": -1,
+        "take_a_careful_approach": -1,
+        "very_careful": -1,
+        "like_toknow_what_toexpect": -1,
+        "tend_to_stop_and_think": -1,
+        "consider_good_and_bad_things": -1
+      }
     },
     "negative_urgency": {
-      "description": "Negative urgency: sum_coded of 7 items.",
       "method": "sum_coded",
-      "items": [
-        "do_what_i_feel_like",
-        "do_things_later_regret",
-        "keep_doing_eventhough_makingworse",
-        "when_upset_act_without_thinking",
-        "pxt180402_say_things_regret_when_rejected",
-        "pxt180402_act_without_thinking_when_upset",
-        "say_things_regret_when_mad"
-      ]
+      "items": {
+        "do_what_i_feel_like": 1,
+        "do_things_later_regret": 1,
+        "keep_doing_eventhough_makingworse": 1,
+        "when_upset_act_without_thinking": 1,
+        "pxt180402_say_things_regret_when_rejected": 1,
+        "pxt180402_act_without_thinking_when_upset": 1,
+        "say_things_regret_when_mad": 1,
+        "crazy_thing": 1
+      }
     },
     "sensation_seeking": {
-      "description": "Sensation seeking: sum_coded of 7 items.",
       "method": "sum_coded",
-      "items": [
-        "like_new_thrilling_things",
-        "would_like_water_skiing",
-        "pxt180402_enjoy_taking_risks",
-        "would_like_parachute_jumping",
-        "like_thrilling_things_even_ifscary",
-        "like_to_learn_to_fly",
-        "ski_fast_down_high_mountain"
-      ]
+      "items": {
+        "like_new_thrilling_things": 1,
+        "would_like_water_skiing": 1,
+        "pxt180402_enjoy_taking_risks": 1,
+        "would_like_parachute_jumping": 1,
+        "like_thrilling_things_even_ifscary": 1,
+        "like_to_learn_to_fly": 1,
+        "ski_fast_down_high_mountain": 1,
+        "pxt180402_enjoy_fast_driving": 1
+      }
     },
-    "lack_of_perseverance": {
-      "description": "Lack of perseverance: sum_coded of 8 items.",
+    "perseverance": {
       "method": "sum_coded",
-      "items": [
-        "pxt180402_see_things_through",
-        "upset_when_not_finished",
-        "hate_to_stop_once_going",
-        "easy_to_think_hard",
-        "pxt180402_finish_what_i_start",
-        "get_things_done_on_time",
-        "always_gets_the_job_done",
-        "pxt180402_almost_always_finish_projects"
-      ]
+      "items": {
+        "pxt180402_see_things_through": -1,
+        "upset_when_not_finished": -1,
+        "hate_to_stop_once_going": -1,
+        "easy_to_think_hard": -1,
+        "pxt180402_finish_what_i_start": -1,
+        "get_things_done_on_time": -1,
+        "always_gets_the_job_done": -1,
+        "pxt180402_almost_always_finish_projects": -1
+      }
     },
     "positive_urgency": {
-      "description": "Positive urgency: sum_coded of 8 items.",
       "method": "sum_coded",
-      "items": [
-        "cant_stop_going_overboard",
-        "dont_think_about_actions_results",
-        "pxt180402_do_things_that_cause_problems",
-        "act_without_thinking_when_happy",
-        "actions_lead_to_trouble",
-        "out_of_control_when_happy",
-        "lose_control_in_great_mood",
-        "when_happy_actions_cause_problems"
-      ]
+      "items": {
+        "cant_stop_going_overboard": 1,
+        "dont_think_about_actions_results": 1,
+        "pxt180402_do_things_that_cause_problems": 1,
+        "act_without_thinking_when_happy": 1,
+        "actions_lead_to_trouble": 1,
+        "out_of_control_when_happy": 1,
+        "lose_control_in_great_mood": 1,
+        "when_happy_actions_cause_problems": 1
+      }
     }
   }
 }

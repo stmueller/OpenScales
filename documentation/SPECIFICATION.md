@@ -1,4 +1,4 @@
-# Open Scale Definition (OSD) Specification v1.0.20
+# Open Scale Definition (OSD) Specification v1.1.0
 
 *Part of the [OpenScales Project](README.md)*
 
@@ -284,53 +284,78 @@ Optional common fields:
 | `likert_labels` | array of strings | Translation keys for each point label (optional, overrides scale-level labels) |
 | `likert_min` | integer | Minimum numeric value (default: 1) |
 | `likert_max` | integer | Maximum numeric value (default: `likert_points`) |
-| `likert_reverse` | boolean | When `true`, response buttons are displayed right-to-left (highest value on the left, lowest on the right). The **stored value is unchanged** — a participant clicking the leftmost button still stores `likert_max`. Labels are always shown beside their corresponding value regardless of display order. Default: `false`. |
-
-**`likert_reverse` example** — QOLIE-89 item 2 (quality-of-life ladder, 10 at left down to 0 at right):
-
-```json
-{
-  "id": "qolie89_2",
-  "type": "likert",
-  "text_key": "qolie89_2",
-  "likert_points": 11,
-  "likert_min": 0,
-  "likert_reverse": true,
-  "likert_labels": ["qolie89_qol0", null, null, null, null, null, null, null, null, null, "qolie89_qol10"]
-}
-```
+| `likert_reverse` | boolean | **Deprecated as of v1.1.0.** Set `order: "descending"` on the item's response scale instead. Still honoured by runners for backward compatibility. |
 
 `likert_labels` is indexed by value offset from `likert_min` (i.e., index 0 = value 0, index 10 = value 10), regardless of display order.
 
-**ScaleBuilder note:** When editing a Likert item, ScaleBuilder SHOULD display a **"Reverse display order"** checkbox (off by default). When checked, the live preview of the item should update immediately to show buttons in descending order (max → min left-to-right) so the author can confirm the layout matches the paper instrument.
+#### Named Response Scales (`response_scales` and `likert_options`)
 
-**Scale-level Likert defaults** can be set via `likert_options`:
+OSD uses a unified **named response scale** system for `likert` items. Every response format — default or named — is the same object shape. The two top-level fields are:
+
+- **`response_scales`** — a dict of named scale objects. The reserved key `"default"` is the scale used by any `likert` item that has no `response_scale` field.
+- **`likert_options`** — shorthand for a single default scale. Equivalent to `response_scales: { "default": { ... } }`. Runners synthesize a `"default"` entry from `likert_options` when present.
+
+Most single-format scales use only `likert_options`. Scales with multiple response formats populate `response_scales` directly (and may still use `likert_options` as the default).
+
+**Response scale object fields:**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `name` | string | No | Editor/report-facing label; never shown to participants. Literal (like `dimensions[].name`). |
+| `points` | integer | Yes | Number of response options |
+| `min` | integer | Yes | Numeric value of the first (leftmost) option |
+| `max` | integer | Yes | Numeric value of the last (rightmost) option. Must equal `min + points − 1`. |
+| `labels` | array of (string\|null) | Yes | Translation keys, one per point, indexed by value offset from `min`. `null` = unlabeled point (runner shows its number only). |
+| `question_head` | string | No | Translation key for a shared question stem shown above items using this scale |
+| `show_numbers` | enum | No | `"all"` (default) · `"labeled_only"` · `"none"`. Controls whether the numeric value appears beneath each button. See below. |
+| `order` | enum | No | `"ascending"` (default) · `"descending"`. Display order of buttons left-to-right. Stored value is unaffected. |
+
+**`show_numbers` semantics:**
+
+- `"all"` — every button shows its numeric value beneath the label. Default.
+- `"labeled_only"` — show the numeric value only on points that have **no** text label (i.e., `null` in `labels`). Labeled endpoints show text only; unlabeled middles show their number. The standard choice for "endpoint-anchored" scales (e.g. 1–7 with only two labels).
+- `"none"` — never show numeric values; labels only. Use when labels already encode the number (e.g. a bipolar scale whose labels are "−3", "−2", … "3") or when showing the number would be redundant.
+
+**`order` semantics:**
+
+- `"ascending"` — buttons displayed left-to-right min→max. Default.
+- `"descending"` — buttons displayed left-to-right max→min (e.g. a quality-of-life ladder where "best" is on the left). The stored response value is always the numeric value the participant selected, regardless of display order.
+
+**Numbering vs. labels (RECOMMENDED practice).** By default (`show_numbers: "all"`) the runner draws the numeric value beneath every button and the label text above it, so a labeled point shows both. Guidelines:
+
+- Use `null` for unlabeled middles on endpoint-anchored scales — the runner then shows only the number for those points. Prefer `show_numbers: "labeled_only"` over `"all"` when using null-padded labels.
+- Do **not** put the number itself as a label string (e.g. `"2"`, `"3"`) — the runner already draws that number, so it would appear twice. Use `null` instead.
+- Use `show_numbers: "none"` only when every label already encodes the value (bipolar scales, letter-graded response sets, etc.).
+- Number-vs-label resolution is per-language: a key that resolves in one language and is absent in another is valid and expected — each language renders independently.
+
+**Example — single default scale (PHQ-9):**
 
 ```json
 {
   "likert_options": {
-    "points": 5,
-    "min": 1,
-    "max": 5,
-    "labels": ["likert_1", "likert_2", "likert_3", "likert_4", "likert_5"],
+    "points": 4,
+    "min": 0, "max": 3,
+    "labels": ["likert_1", "likert_2", "likert_3", "likert_4"],
     "question_head": "question_head",
-    "suppress_likert_numbers": false
+    "show_numbers": "all"
   }
 }
 ```
 
-The `suppress_likert_numbers` field (default `false`) controls whether the numeric value is displayed beneath each response button. Set to `true` when the label text already contains the number (e.g. bipolar scales with endpoints like "Very inaccurate (−3)" and intermediate labels "−2", "−1", etc.), to avoid displaying the number twice. When `true`, buttons show only the label text; when `false` (default), buttons show both the number and the label text. May also be set at the top level of `definition` as a shorthand (equivalent to setting it in `likert_options`).
+**Example — endpoint-anchored 7-point scale (MRSS):**
 
-**Numbering vs. labels (RECOMMENDED practice).** By default the runner draws the numeric value beneath **every** button. A point's label is shown *in addition to* that number. Therefore:
+```json
+{
+  "likert_options": {
+    "points": 7,
+    "min": 1, "max": 7,
+    "labels": ["likert_1", null, null, null, null, null, "likert_7"],
+    "show_numbers": "labeled_only"
+  }
+}
+```
 
-- **To label only some points** (typically the endpoints of a 1…N scale) and let the runner number the rest, set the unlabeled positions to **`null`** in `labels` / `likert_labels` (as in the QOLIE-89 example above). A `null` point shows just the runner's number.
-- **Do NOT use the number itself as a label** (e.g. `"2"`, `"3"`, …). The runner already draws that number, so a numeric label renders it **twice** ("3" over "3"). Use `null` for those points instead.
-- **`suppress_likert_numbers` is the narrower tool.** Reserve it for scales whose labels must encode a numbering the default 1…N sequence cannot express — e.g. a bipolar **−3…+3** scale, a 0-based scale, or any case where the number lives *inside* the label text. For an ordinary scale that simply wants bare numbers on the middle points with text only on the ends, **prefer `null` middle labels over `suppress_likert_numbers`**: suppression strips the numbers from the endpoints too, whereas null middle labels keep every button numbered and add text only where you provide it.
-- **Number-vs-label resolution is per-language.** Whether a point shows a number or a label is decided independently for each rendered language, based on that language's resolved label text. A label key that resolves to a string in one language and is absent (or `null`) in another is **valid and expected**: the language with text shows the label, the language without shows the runner's number. The languages need not agree on which points are labeled. (Verified with RFQ-12: the Korean translation labels the endpoints while English leaves them to the runner's numbering — both render correctly.)
-
-The `question_head` references a translation key for a question stem or instructions displayed above scored items (`likert`, `vas`, `grid`, `multi`, `multicheck`). It is particularly useful when a block of items shares a common introductory question. An item-level `question_head` field (see Common Item Fields) overrides this scale-level default for individual items. `question_head` is optional; omit it (or omit `likert_options` entirely) for scales where each item is self-contained.
-
-**Named additional response scales** can be defined via `response_scales` when a scale uses more than one Likert response format. `response_scales` is an object whose keys are short identifiers and whose values have the same structure as `likert_options`. Items reference a named scale using the `response_scale` field; items without `response_scale` use `likert_options` as usual.
+**Example — multiple response formats (DOSPERT):**
 
 ```json
 {
@@ -344,48 +369,41 @@ The `question_head` references a translation key for a question stem or instruct
       "name": "Risk Perception",
       "points": 7, "min": 1, "max": 7,
       "labels": ["rp_l1","rp_l2","rp_l3","rp_l4","rp_l5","rp_l6","rp_l7"],
-      "question_head": "rp_head"
+      "question_head": "rp_head",
+      "show_numbers": "labeled_only"
     },
     "eb": {
       "name": "Expected Benefits",
       "points": 7, "min": 1, "max": 7,
       "labels": ["eb_l1","eb_l2","eb_l3","eb_l4","eb_l5","eb_l6","eb_l7"],
-      "question_head": "eb_head"
+      "question_head": "eb_head",
+      "show_numbers": "labeled_only"
     }
   }
 }
 ```
 
-`response_scales` fields:
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `name` | string | No | Human-readable label for the scale (used by editors and ScaleBuilder UI) |
-| `points` | integer | Yes | Number of response options |
-| `min` | integer | Yes | Numeric value of the first option |
-| `max` | integer | Yes | Numeric value of the last option |
-| `labels` | array of strings | Yes | Translation keys, one per point |
-| `question_head` | string | No | Translation key for a shared question stem for items using this scale |
-
 Items reference a named scale with `"response_scale": "<id>"`:
 
 ```json
-{
-  "id": "rp1",
-  "type": "likert",
-  "text_key": "rp1",
-  "response_scale": "rp"
-}
+{ "id": "rp1", "type": "likert", "text_key": "rp1", "response_scale": "rp" }
 ```
 
-**Resolution order** for runners when determining a `likert` item's response scale:
-1. Item has `likert_labels` and/or `likert_points` → use those (per-item override, e.g. semantic differential)
+**Resolution order** for runners:
+1. Item has `likert_labels` and/or `likert_points` → use those (per-item override; deprecated in favour of a named scale but still honoured)
 2. Item has `response_scale` → look up in `response_scales` dict
-3. Fall back to `likert_options`
+3. Fall back to the `"default"` entry in `response_scales`, synthesised from `likert_options` if necessary
 
-`likert_labels` / `likert_points` per-item overrides remain valid for items where every item has a truly unique response format (e.g. semantic differential scales where each item has distinct endpoint labels). `response_scales` is the preferred mechanism whenever multiple items share the same non-default response format.
+The `question_head` key on a response scale is a translation key for a question stem shown above items that use that scale. An item-level `question_head` field overrides the scale-level default for that item.
 
-**Implementation status:** `response_scales` is implemented in the JS runner (`scale-runner.js`), `osd2surveydown.js`, `osd2surveydown.py`, and the web scale preview (`scale.php`). Not yet implemented in the phenx converter or `build_manifest_*.py` scripts (those do not need to resolve response options).
+**Deprecated fields** (supported indefinitely for backward compatibility; do not use in new files):
+
+| Deprecated field | Location | Maps to |
+|-----------------|----------|---------|
+| `suppress_likert_numbers: true` | `likert_options` or top-level `definition` | `show_numbers: "none"` on the default response scale |
+| `likert_reverse: true` | per-item or `likert_options` | `order: "descending"` on the item's response scale |
+
+**Implementation status:** `response_scales` / `likert_options` (including `show_numbers` and `order`) are implemented in the JS runner (`scale-runner.js`) and web scale preview (`scale.php`). Converters read the resolved scale; `show_numbers`/`order` affect display only and have no export-format equivalent in most targets.
 
 #### `vas` Type
 
@@ -2248,5 +2266,6 @@ just without a labelled button. (AppRoVE uses this interim approach.)
 | 1.0.16 | 2026-06-17 | **A8. Scale Variants** (new): support multiple variants of an instrument in one OSD, selected by a *coordinate* = active language + choice-parameter values (for old, widely-translated scales with framing-reversed items, language-specific item sets, or short/long editions). C2: added `variant_group` (mutually-exclusive item alternatives) and `variant_when` (per-item condition over `selector`/`parameter` leaves, resolved once at instantiation). New definition-level `variants` block: `sets` (sugar for the language axis: per-set `languages`+`items`), `axes` (multi-axis/free-parameter declaration), `default`. C3: added `variants` array on scoring blocks/dimensions — computed only when one of its set ids is active (lets per-language subscales coexist). S1: added the `selector: "language"` condition leaf; condition grammar is shared between `visible_when` (re-evaluated at runtime) and `variant_when` (resolved at instantiation). C4: translation completeness is **per-variant**. Backward compatible — no `variants`/`variant_when` ⇒ unchanged single-variant behavior. Implemented in the JS runner (`scale-runner.js`) and the export converters (`tools/osd_variants.flatten_variant`); studies (OSC) pin a variant via a scale step's `parameters` (`lang` + free params), needing no new OSC field. |
 | 1.0.17 | 2026-06-24 | Documentation only — added **Roadmap / Planned Features** section. R1: `default_by_language` (per-language parameter defaults) specified but **not implemented** (broad downstream impact across runner, converters, importers, web UI, validator); until then, scales needing language-varying templated values hardcode them in per-language translations. No format change. |
 | 1.0.18 | 2026-06-24 | Documentation only — Roadmap **R2**: `extra_options` / off-scale N/A responses on scored Likert items specified but **not implemented** (broad downstream impact like R1). Interim guidance: make the item optional (`required: false` / `default_required: false`) so respondents skip non-applicable items. No format change. |
+| 1.1.0 | 2026-07-01 | **C2: Unified named response scale system.** `response_scales` entries (and `likert_options`) now support two new fields: `show_numbers` (enum `"all"` · `"labeled_only"` · `"none"`, default `"all"`) replaces the `suppress_likert_numbers` boolean; `order` (enum `"ascending"` · `"descending"`, default `"ascending"`) replaces the per-item `likert_reverse` boolean. `likert_options` is now formally defined as syntactic sugar for `response_scales["default"]`; runners synthesise a `"default"` entry from `likert_options` when `response_scales` has no explicit `"default"` key. `response_scales` and `option_sets` together form the complete named-reusable-response-format system for Likert and multi/multicheck items respectively. Deprecated fields (still honoured): `suppress_likert_numbers` → `show_numbers: "none"`; `likert_reverse` → `order: "descending"` on the scale; per-item `likert_labels`/`likert_points` → still valid but prefer a named or inline scale. Implemented in `scale-runner.js`; converters, builder, and LimeSurvey importer pending. |
 | 1.0.20 | 2026-07-01 | **File Structure** rewritten: `.osd` bundle is now the canonical distribution format; split two-file layout (`.json` + `.{lang}.json`) demoted to an optional runner/tool feature. Formally documented the `.osd` envelope: required top-level keys `osd_version` (string), `definition` (object), `translations` (object); rules for unknown-version tolerance, runner ignore of unrecognized keys, `_`-prefixed extension keys for converter provenance metadata. Noted flat-bundle legacy format (no `definition` wrapper) and deprecated envelope-level `scoring` key (belongs inside `definition`). No format change — all existing `.osd` files are valid. |
 | 1.0.19 | 2026-06-30 | C2: added `option_sets` — a named dictionary of option arrays for `multi`/`multicheck` items that share a common choice set (analogous to `response_scales` for `likert`); the reserved key `"default"` designates the set used by any item without an explicit `option_set` field; added `option_set` item field (string) referencing a key in `option_sets`; resolution order: per-item `options` → `option_set` lookup → `"default"` set → validation error; `shuffle_options`/`pin_last` per-item overrides remain valid alongside `option_set`; eliminates duplicate translation keys when many items share the same choices (e.g. TRUE/FALSE, frequency scales). Implemented in `scale-runner.js`, all `convert_to_*.py` converters, `osd2surveydown.js`, `osd2surveydown.py`, `validate_scale.py`, `scale.php`, `survey-builder.js`, and PhenX converters. |

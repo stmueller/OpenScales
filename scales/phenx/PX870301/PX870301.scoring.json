@@ -1,28 +1,62 @@
 {
-  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "_note": "Internal Stigma of Sickle Cell Disease Scale. Items rated 1–6. 4 subscales + total. Social Exclusion: items 1–3; Internalized Stigma: items 4–6; Disclosure Concerns: items 7–9; Expected Discrimination: items 10–11. Total = sum of all 11 items. Higher = more stigma.",
   "dimensions": [
     {
+      "id": "social_exclusion",
+      "name": "Social Exclusion"
+    },
+    {
+      "id": "internalized_stigma",
+      "name": "Internalized Stigma"
+    },
+    {
+      "id": "disclosure_concerns",
+      "name": "Disclosure Concerns"
+    },
+    {
+      "id": "expected_discrimination",
+      "name": "Expected Discrimination"
+    },
+    {
       "id": "total",
-      "name": "Total Score"
+      "name": "Total Stigma Score"
     }
   ],
   "scoring": {
-    "total": {
-      "description": "Total: sum_coded of all 11 items.",
+    "social_exclusion": {
       "method": "sum_coded",
-      "items": [
-        "internal_stigma_sickle_cell_disease_social_exclusion_people_backed_away",
-        "internal_stigma_sickle_cell_disease_social_exclusion_telling_others_mistake",
-        "internal_stigma_sickle_cell_disease_social_exclusion_people_afraid",
-        "internal_stigma_sickle_cell_disease_internalized_stigma_feel_guilty",
-        "internal_stigma_sickle_cell_disease_internalized_stigma_feel_bad_person",
-        "internal_stigma_sickle_cell_disease_internalized_stigma_feel_not_good_as_others",
-        "internal_stigma_sickle_cell_disease_disclosure_concerns_no_one_knows",
-        "internal_stigma_sickle_cell_disease_disclosure_concerns_careful_who_tell",
-        "internal_stigma_sickle_cell_disease_disclosure_concerns_telling_someone_risky",
-        "internal_stigma_sickle_cell_disease_expected_discrimination_lose_job_employers_learn",
-        "internal_stigma_sickle_cell_disease_expected_discrimination_against"
-      ]
+      "items": {
+        "internal_stigma_sickle_cell_disease_social_exclusion_people_backed_away": 1,
+        "internal_stigma_sickle_cell_disease_social_exclusion_telling_others_mistake": 1,
+        "internal_stigma_sickle_cell_disease_social_exclusion_people_afraid": 1
+      }
+    },
+    "internalized_stigma": {
+      "method": "sum_coded",
+      "items": {
+        "internal_stigma_sickle_cell_disease_internalized_stigma_feel_guilty": 1,
+        "internal_stigma_sickle_cell_disease_internalized_stigma_feel_bad_person": 1,
+        "internal_stigma_sickle_cell_disease_internalized_stigma_feel_not_good_as_others": 1
+      }
+    },
+    "disclosure_concerns": {
+      "method": "sum_coded",
+      "items": {
+        "internal_stigma_sickle_cell_disease_disclosure_concerns_no_one_knows": 1,
+        "internal_stigma_sickle_cell_disease_disclosure_concerns_careful_who_tell": 1,
+        "internal_stigma_sickle_cell_disease_disclosure_concerns_telling_someone_risky": 1
+      }
+    },
+    "expected_discrimination": {
+      "method": "sum_coded",
+      "items": {
+        "internal_stigma_sickle_cell_disease_expected_discrimination_lose_job_employers_learn": 1,
+        "internal_stigma_sickle_cell_disease_expected_discrimination_against": 1
+      }
+    },
+    "total": {
+      "method": "sum_coded",
+      "scores": ["social_exclusion", "internalized_stigma", "disclosure_concerns", "expected_discrimination"]
     }
   }
 }

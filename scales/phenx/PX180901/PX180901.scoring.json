@@ -1,18 +1,84 @@
 {
-  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "_note": "Rosenberg Self-Esteem Scale. Options 1\u20134 (Strongly Agree to Strongly Disagree). Forward items (positions 1,2,4,6,7) scored SA=3..SD=0; reverse items (3,5,8,9,10) scored SA=0..SD=3. Total range 0\u201330.",
   "dimensions": [
     {
-      "id": "for",
-      "name": "For"
+      "id": "total",
+      "name": "Self-Esteem"
     }
   ],
   "scoring": {
-    "for": {
-      "description": "For: sum_coded of 5 items.",
+    "total": {
       "method": "sum_coded",
+      "value_map": {
+        "person_of_worth": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "number_of_good_qualities": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "inclined_to_feel_a_failure": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "do_as_well_as_others": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "not_much_tobe_proud_of": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "positive_self_attitude": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "satisfied_with_myself": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "wish_have_more_self_respect": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "feel_useless_at_times": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "times_think_no_good": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
       "items": [
+        "person_of_worth",
+        "number_of_good_qualities",
         "inclined_to_feel_a_failure",
+        "do_as_well_as_others",
         "not_much_tobe_proud_of",
+        "positive_self_attitude",
+        "satisfied_with_myself",
         "wish_have_more_self_respect",
         "feel_useless_at_times",
         "times_think_no_good"

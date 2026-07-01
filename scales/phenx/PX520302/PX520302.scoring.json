@@ -1,23 +1,26 @@
 {
-  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "_note": "Cocaine Craving Questionnaire. Items scored 1–7. Raw scores from items 1–3,5,6,8–10; items 4 (could_resist_using_coke) and 7 (no_desire_for_cocaine) are reverse-scored (8 minus item). Total = mean of all 10 items after reverse coding. Ref: Heinz et al. 2006; Sussner et al. 2006.",
   "dimensions": [
     {
-      "id": "the_scores_from",
-      "name": "The scores from"
+      "id": "total",
+      "name": "Total Score"
     }
   ],
   "scoring": {
-    "the_scores_from": {
-      "description": "The scores from: sum_coded of 6 items.",
-      "method": "sum_coded",
-      "items": [
-        "want_cocaine_almost_taste",
-        "urge_for_cocaine",
-        "use_cocaine_soon_as_possible",
-        "crave_coke",
-        "want_to_use_cocaine",
-        "cocaine_make_things_perfect"
-      ]
+    "total": {
+      "method": "mean_coded",
+      "items": {
+        "want_cocaine_almost_taste": 1,
+        "urge_for_cocaine": 1,
+        "use_cocaine_soon_as_possible": 1,
+        "could_resist_using_coke": -1,
+        "crave_coke": 1,
+        "want_to_use_cocaine": 1,
+        "no_desire_for_cocaine": -1,
+        "cocaine_make_things_perfect": 1,
+        "use_cocaine_soon": 1,
+        "nothing_better_than_coke_now": 1
+      }
     }
   }
 }

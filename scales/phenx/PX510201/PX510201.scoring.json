@@ -1,15 +1,72 @@
 {
-  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "_note": "AUDIT (Alcohol Use Disorders Identification Test). Items 1\u20138 use 5-option likert (min=1,max=5) recoded via value_map to 0\u20134 points. Items 9\u201310 have 3 options already stored as point values (0,2,4) \u2014 no value_map needed. Sum all 10; range 0\u201340.",
   "dimensions": [
     {
       "id": "total",
-      "name": "Total Score"
+      "name": "AUDIT Total"
     }
   ],
   "scoring": {
     "total": {
-      "description": "Total: sum_coded of all 10 items.",
       "method": "sum_coded",
+      "value_map": {
+        "how_often_drink": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "how_many_drinks_when_drinking": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "how_often_have_sixormore_drinks": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "how_often_cannot_stop_drinking": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "failed_expectations_because_of_drinking": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "how_often_needed_morning_drink": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "how_often_guilty_after_drinking": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "how_often_blackout_drinking": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
       "items": [
         "how_often_drink",
         "how_many_drinks_when_drinking",

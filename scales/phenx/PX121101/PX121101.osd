@@ -324,60 +324,94 @@
     ],
     "dimensions": [
       {
-        "id": "total",
-        "name": "Total Score"
+        "id": "extraversion",
+        "name": "Extraversion"
+      },
+      {
+        "id": "agreeableness",
+        "name": "Agreeableness"
+      },
+      {
+        "id": "conscientiousness",
+        "name": "Conscientiousness"
+      },
+      {
+        "id": "neuroticism",
+        "name": "Neuroticism"
+      },
+      {
+        "id": "openness",
+        "name": "Openness"
       }
     ],
     "scoring": {
-      "total": {
-        "description": "Total: sum_coded of all 44 items.",
-        "method": "sum_coded",
-        "items": [
-          "talkative",
-          "finds_fault",
-          "thorough_job",
-          "depressed",
-          "original",
-          "reserved",
-          "helpful",
-          "somewhat_careless",
-          "relaxed",
-          "curious",
-          "energetic",
-          "starts_quarrels",
-          "reliable_worker",
-          "tense",
-          "ingenious",
-          "generates_enthusiasm",
-          "forgiving",
-          "disorganized",
-          "worries",
-          "active_imagination",
-          "quiet",
-          "trusting",
-          "lazy",
-          "emotionally_stable",
-          "inventive",
-          "assertive",
-          "aloof",
-          "persevere",
-          "moody",
-          "artistic_experiences",
-          "shy_inhibited",
-          "considerate",
-          "efficient",
-          "remains_calm",
-          "prefers_routine",
-          "outgoing",
-          "rude_to_others",
-          "follows_through_on_plans",
-          "gets_nervous",
-          "reflective",
-          "few_artistic_interests",
-          "cooperates_with_others",
-          "easily_distracted",
-          "sophisticated_art_music_literature"
-        ]
+      "extraversion": {
+        "method": "mean_coded",
+        "items": {
+          "talkative": 1,
+          "reserved": -1,
+          "energetic": 1,
+          "generates_enthusiasm": 1,
+          "quiet": -1,
+          "assertive": 1,
+          "shy_inhibited": -1,
+          "outgoing": 1
+        }
+      },
+      "agreeableness": {
+        "method": "mean_coded",
+        "items": {
+          "finds_fault": -1,
+          "helpful": 1,
+          "starts_quarrels": -1,
+          "forgiving": 1,
+          "trusting": 1,
+          "aloof": -1,
+          "considerate": 1,
+          "rude_to_others": -1
+        }
+      },
+      "conscientiousness": {
+        "method": "mean_coded",
+        "items": {
+          "thorough_job": 1,
+          "somewhat_careless": -1,
+          "reliable_worker": 1,
+          "disorganized": -1,
+          "lazy": -1,
+          "persevere": 1,
+          "efficient": 1,
+          "follows_through_on_plans": 1,
+          "easily_distracted": -1
+        }
+      },
+      "neuroticism": {
+        "method": "mean_coded",
+        "items": {
+          "depressed": 1,
+          "relaxed": -1,
+          "tense": 1,
+          "worries": 1,
+          "emotionally_stable": -1,
+          "moody": 1,
+          "remains_calm": -1,
+          "gets_nervous": 1
+        }
+      },
+      "openness": {
+        "method": "mean_coded",
+        "items": {
+          "original": 1,
+          "curious": 1,
+          "ingenious": 1,
+          "active_imagination": 1,
+          "inventive": 1,
+          "artistic_experiences": 1,
+          "prefers_routine": -1,
+          "reflective": 1,
+          "few_artistic_interests": -1,
+          "sophisticated_art_music_literature": 1
+        }
       }
     }
   },
@@ -388,7 +422,7 @@
       "opt_3": "Neither disagree nor agree",
       "opt_4": "Agree",
       "opt_5": "Strongly agree",
-      "instr1_0121101": "The following statements concern your perception about yourself in a variety of situations. Your task is to indicate the strength of your agreement with each statement, utilizing a scale in which 1 denotes strong disagreement, 5 denotes strong agreement, and 2, 3, and 4 represent intermediate judgments. In the boxes after each statement, write a number from 1 to 5 from the following scale:       1. Strongly disagree       2. Disagree       3. Neither disagree nor agree       4. Agree       5. Strongly agreeSelect the number that most closely reflects you on each statement.",
+      "instr1_0121101": "The following statements concern your perception about yourself in a variety of situations. Your task is to indicate the strength of your agreement with each statement, utilizing a scale in which 1 denotes strong disagreement, 5 denotes strong agreement, and 2, 3, and 4 represent intermediate judgments. In the boxes after each statement, write a number from 1 to 5 from the following scale:\n\n\n\n       1. Strongly disagree\n\n       2. Disagree\n\n       3. Neither disagree nor agree\n\n       4. Agree\n\n       5. Strongly agree\n\n\n\nSelect the number that most closely reflects you on each statement.",
       "sec_i_see_myself_as_someone_who_title": "I see myself as someone who...",
       "talkative": "Is talkative",
       "finds_fault": "Tends to find fault with others",
@@ -435,7 +469,7 @@
       "easily_distracted": "Is easily distracted",
       "sophisticated_art_music_literature": "Is sophisticated in art, music or literature",
       "sec_scoring_instructions_title": "SCORING INSTRUCTIONS",
-      "scoringinst_0121101": "Reverse-score the following items:Extraversion: 6, 21, 31Agreeableness: 2, 12, 27, 37Conscientiousness: 8, 18, 23, 43Neuroticism: 9, 24, 34Openness: 35, 41Next, create scale scores for each domain by averaging the following items (where R indicates using the reverse-scored item).Extraversion: 1, 6R 11, 16, 21R, 26, 31R, 36Agreeableness: 2R, 7, 12R, 17, 22, 27R, 32, 37RConscientiousness: 3, 8R, 13, 18R, 23R, 28, 33, 38, 43RNeuroticism: 4, 9R, 14, 19, 24R, 29, 34R, 39Openness: 5, 10, 15, 20, 25, 30, 35R, 40, 41R, 44Optional items:Liking: 45, 46"
+      "scoringinst_0121101": "Reverse-score the following items:\n\n\n\nExtraversion: 6, 21, 31\n\nAgreeableness: 2, 12, 27, 37\n\nConscientiousness: 8, 18, 23, 43\n\nNeuroticism: 9, 24, 34\n\nOpenness: 35, 41\n\nNext, create scale scores for each domain by averaging the following items (where R indicates using the reverse-scored item).\n\n\n\nExtraversion: 1, 6R 11, 16, 21R, 26, 31R, 36\n\nAgreeableness: 2R, 7, 12R, 17, 22, 27R, 32, 37R\n\nConscientiousness: 3, 8R, 13, 18R, 23R, 28, 33, 38, 43R\n\nNeuroticism: 4, 9R, 14, 19, 24R, 29, 34R, 39\n\nOpenness: 5, 10, 15, 20, 25, 30, 35R, 40, 41R, 44\n\n\n\nOptional items:\n\n\n\nLiking: 45, 46"
     }
   }
 }

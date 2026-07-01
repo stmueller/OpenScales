@@ -94,7 +94,7 @@ for scale_dir in sorted(PHENX_DIR.iterdir()):
         'version':      info.get('version', '1.0'),
         'url':          info.get('url', ''),
         'domain':       info.get('domain', 'Health'),
-        'n_items':      len(items),
+        'items_count':  len(items),
         'dimensions':   [{'id': d.get('id'), 'name': d.get('name')} for d in dims],
         'has_scoring':  bool(scoring),
         'languages':    langs,
@@ -124,7 +124,7 @@ print(f"  Languages found: {len(langs_all)}  ({', '.join(langs_all[:15])}{'...' 
 print()
 for e in entries:
     lang_str = ', '.join(e['languages'])
-    print(f"  [{e['domain']:20s}]  {e['code']:12s} {e['name']}  ({e['n_items']} items) [{lang_str}]")
+    print(f"  [{e['domain']:20s}]  {e['code']:12s} {e['name']}  ({e['items_count']} items) [{lang_str}]")
 
 if excluded:
     print(f"\n  Excluded protocols ({len(excluded)}):")

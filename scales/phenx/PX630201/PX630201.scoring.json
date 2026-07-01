@@ -1,5 +1,5 @@
 {
-  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "_note": "Hand-coded scoring overlay for this PhenX scale (PC-PTSD-4). Options: yes=1, no=2; value_map recodes yes→1, no→0. Positive screen = total ≥ 3 (any 3 of 4 items endorsed). After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
   "dimensions": [
     {
       "id": "total",
@@ -8,14 +8,20 @@
   ],
   "scoring": {
     "total": {
-      "description": "Total: sum_coded of all 4 items.",
       "method": "sum_coded",
+      "value_map": {"default": [1, 0]},
       "items": [
         "ptsd_experience_upsetting_nightmares",
         "ptsd_experience_upsetting_avoid",
         "ptsd_experience_upsetting_onguard",
         "ptsd_experience_upsetting_numb"
-      ]
+      ],
+      "norms": {
+        "thresholds": [
+          {"min": 0, "max": 2, "label_key": "norm_negative"},
+          {"min": 3, "max": 4, "label_key": "norm_positive"}
+        ]
+      }
     }
   }
 }

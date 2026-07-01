@@ -1,19 +1,13 @@
 {
-  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "_note": "SWAN (Strengths and Weaknesses of ADHD-Symptoms and Normal Behavior). 7-point scale: Far Below Average=1 … Far Above Average=7 in OSD. value_map recodes to 3,2,1,0,−1,−2,−3 (Far Below=3, Below=2, Somewhat Below=1, Average=0, Somewhat Above=−1, Above=−2, Far Above=−3). Score = mean per subscale; lower = more ADHD symptoms.",
   "dimensions": [
-    {
-      "id": "inattention",
-      "name": "Inattention"
-    },
-    {
-      "id": "hyperactivity",
-      "name": "Hyperactivity/Impulsivity"
-    }
+    {"id": "inattention",   "name": "Inattention"},
+    {"id": "hyperactivity", "name": "Hyperactivity/Impulsivity"}
   ],
   "scoring": {
     "inattention": {
-      "description": "Inattention: mean_coded of 9 items.",
       "method": "mean_coded",
+      "value_map": {"default": [3, 2, 1, 0, -1, -2, -3]},
       "items": [
         "close_attention_to_detail",
         "sustain_attention",
@@ -27,8 +21,8 @@
       ]
     },
     "hyperactivity": {
-      "description": "Hyperactivity/Impulsivity: mean_coded of 9 items.",
       "method": "mean_coded",
+      "value_map": {"default": [3, 2, 1, 0, -1, -2, -3]},
       "items": [
         "sit_still",
         "stay_seated",

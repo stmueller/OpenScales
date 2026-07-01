@@ -1,15 +1,11 @@
 {
-  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "_note": "HCQ (Heroin Craving Questionnaire). Options 1–7 (Strongly Disagree to Strongly Agree). Items at positions 1,5,8,9,10,14 are reverse-scored. Score = mean of all 14 items.",
   "dimensions": [
-    {
-      "id": "total",
-      "name": "Total Score"
-    }
+    {"id": "total", "name": "Heroin Craving"}
   ],
   "scoring": {
     "total": {
-      "description": "Total: mean of all 14 items. Items 1,5,8,9,10,14 reverse-coded.",
-      "method": "sum_coded",
+      "method": "mean_coded",
       "items": {
         "heroin_not_sharpen_concentration": -1,
         "control_things_better_heroin": 1,

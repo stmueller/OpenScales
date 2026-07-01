@@ -25,9 +25,15 @@
     "likert_options": {
       "points": 4,
       "min": 0,
-      "labels": ["mesx_r1", "mesx_r2", "mesx_r3", "mesx_r4"],
+      "labels": [
+        "mesx_r1",
+        "mesx_r2",
+        "mesx_r3",
+        "mesx_r4"
+      ],
       "question_head": "mesx_head",
-      "suppress_likert_numbers": true
+      "show_numbers": "none",
+      "max": 3
     },
     "dimensions": [
       {
@@ -37,36 +43,122 @@
       }
     ],
     "items": [
-      { "id": "mesx_inst",        "type": "inst", "text_key": "mesx_inst" },
-      { "id": "mesx_circles_head","type": "inst", "text_key": "mesx_circles_head" },
-      { "id": "mesx_circle1",     "type": "inst", "text_key": "mesx_circle1" },
-      { "id": "mesx_circle2",     "type": "inst", "text_key": "mesx_circle2" },
-      { "id": "mesx_circle3",     "type": "inst", "text_key": "mesx_circle3" },
-      { "id": "mesx_circle4",     "type": "inst", "text_key": "mesx_circle4" },
-      { "id": "mesx01", "type": "likert", "text_key": "mesx01", "dimension": "total" },
-      { "id": "mesx02", "type": "likert", "text_key": "mesx02", "dimension": "total" },
-      { "id": "mesx03", "type": "likert", "text_key": "mesx03", "dimension": "total" },
-      { "id": "mesx04", "type": "likert", "text_key": "mesx04", "dimension": "total" },
-      { "id": "mesx05", "type": "likert", "text_key": "mesx05", "dimension": "total" },
-      { "id": "mesx06", "type": "likert", "text_key": "mesx06", "dimension": "total" },
-      { "id": "mesx07", "type": "likert", "text_key": "mesx07", "dimension": "total" },
-      { "id": "mesx08", "type": "likert", "text_key": "mesx08", "dimension": "total" },
-      { "id": "mesx09", "type": "likert", "text_key": "mesx09", "dimension": "total" },
-      { "id": "mesx10", "type": "likert", "text_key": "mesx10", "dimension": "total" }
+      {
+        "id": "mesx_inst",
+        "type": "inst",
+        "text_key": "mesx_inst"
+      },
+      {
+        "id": "mesx_circles_head",
+        "type": "inst",
+        "text_key": "mesx_circles_head"
+      },
+      {
+        "id": "mesx_circle1",
+        "type": "inst",
+        "text_key": "mesx_circle1"
+      },
+      {
+        "id": "mesx_circle2",
+        "type": "inst",
+        "text_key": "mesx_circle2"
+      },
+      {
+        "id": "mesx_circle3",
+        "type": "inst",
+        "text_key": "mesx_circle3"
+      },
+      {
+        "id": "mesx_circle4",
+        "type": "inst",
+        "text_key": "mesx_circle4"
+      },
+      {
+        "id": "mesx01",
+        "type": "likert",
+        "text_key": "mesx01",
+        "dimension": "total"
+      },
+      {
+        "id": "mesx02",
+        "type": "likert",
+        "text_key": "mesx02",
+        "dimension": "total"
+      },
+      {
+        "id": "mesx03",
+        "type": "likert",
+        "text_key": "mesx03",
+        "dimension": "total"
+      },
+      {
+        "id": "mesx04",
+        "type": "likert",
+        "text_key": "mesx04",
+        "dimension": "total"
+      },
+      {
+        "id": "mesx05",
+        "type": "likert",
+        "text_key": "mesx05",
+        "dimension": "total"
+      },
+      {
+        "id": "mesx06",
+        "type": "likert",
+        "text_key": "mesx06",
+        "dimension": "total"
+      },
+      {
+        "id": "mesx07",
+        "type": "likert",
+        "text_key": "mesx07",
+        "dimension": "total"
+      },
+      {
+        "id": "mesx08",
+        "type": "likert",
+        "text_key": "mesx08",
+        "dimension": "total"
+      },
+      {
+        "id": "mesx09",
+        "type": "likert",
+        "text_key": "mesx09",
+        "dimension": "total"
+      },
+      {
+        "id": "mesx10",
+        "type": "likert",
+        "text_key": "mesx10",
+        "dimension": "total"
+      }
     ],
     "scoring": {
       "total": {
         "method": "sum_coded",
         "description": "Sum of all 10 items. Range 0–30; higher = more expansive moral circle.",
         "items": {
-          "mesx01": 1, "mesx02": 1, "mesx03": 1, "mesx04": 1, "mesx05": 1,
-          "mesx06": 1, "mesx07": 1, "mesx08": 1, "mesx09": 1, "mesx10": 1
+          "mesx01": 1,
+          "mesx02": 1,
+          "mesx03": 1,
+          "mesx04": 1,
+          "mesx05": 1,
+          "mesx06": 1,
+          "mesx07": 1,
+          "mesx08": 1,
+          "mesx09": 1,
+          "mesx10": 1
         }
       }
     },
     "report": {
       "template": "standard",
-      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "include": [
+        "timestamp",
+        "completion_time",
+        "dimension_scores"
+      ],
       "header": "Moral Expansiveness Scale – Short Form (MESx) Report",
       "footer_refs": [
         "Crimston, C. R., Hornsey, M. J., Bain, P. G., & Bastian, B. (2018). Moral expansiveness short form: Validity and reliability of the MESx. PLoS ONE, 13(10), e0205373. https://doi.org/10.1371/journal.pone.0205373",

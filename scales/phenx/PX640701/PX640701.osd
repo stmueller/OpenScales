@@ -238,60 +238,69 @@
       {
         "id": "hostility",
         "name": "Hostility"
+      },
+      {
+        "id": "total",
+        "name": "Total Aggression"
       }
     ],
     "scoring": {
       "physical_aggression": {
-        "description": "Physical Aggression: sum_coded of 9 items.",
         "method": "sum_coded",
-        "items": [
-          "aggression_urge_tostrike",
-          "aggression_provocation_hit",
-          "aggression_hit_back",
-          "aggression_get_into_fights",
-          "aggression_resort_toviolence",
-          "aggression_pushed_to_blows",
-          "aggression_no_reason_tohit",
-          "aggression_threatened_people",
-          "aggression_mad_broken_things"
-        ]
+        "items": {
+          "aggression_urge_tostrike": 1,
+          "aggression_provocation_hit": 1,
+          "aggression_hit_back": 1,
+          "aggression_get_into_fights": 1,
+          "aggression_resort_toviolence": 1,
+          "aggression_pushed_to_blows": 1,
+          "aggression_no_reason_tohit": -1,
+          "aggression_threatened_people": 1,
+          "aggression_mad_broken_things": 1
+        }
       },
       "verbal_aggression": {
-        "description": "Verbal Aggression: sum_coded of 5 items.",
         "method": "sum_coded",
-        "items": [
-          "aggression_openly_disagree",
-          "aggression_often_disagreeeing",
-          "aggression_tell_what_ithink",
-          "aggression_arguments_disagree",
-          "anger_argumentative"
-        ]
+        "items": {
+          "aggression_openly_disagree": 1,
+          "aggression_often_disagreeeing": 1,
+          "aggression_tell_what_ithink": 1,
+          "aggression_arguments_disagree": 1,
+          "anger_argumentative": 1
+        }
       },
       "anger": {
-        "description": "Anger: sum_coded of 7 items.",
         "method": "sum_coded",
-        "items": [
-          "anger_flare_up_quickly",
-          "anger_frustrated_show_irritation",
-          "anger_feel_ready_toexplode",
-          "anger_eventempered",
-          "anger_hothead",
-          "anger_fly_off_handle",
-          "hostility_trouble_controlling_temper"
-        ]
+        "items": {
+          "anger_flare_up_quickly": 1,
+          "anger_frustrated_show_irritation": 1,
+          "anger_feel_ready_toexplode": 1,
+          "anger_eventempered": -1,
+          "anger_hothead": 1,
+          "anger_fly_off_handle": 1,
+          "hostility_trouble_controlling_temper": 1
+        }
       },
       "hostility": {
-        "description": "Hostility: sum_coded of 8 items.",
         "method": "sum_coded",
-        "items": [
-          "hostility_sometimes_jealous",
-          "hostility_raw_deal_oflife",
-          "hostility_others_get_breaks",
-          "hostilitybitter",
-          "hostility_friends_talk_aboutme",
-          "hostility_suspicious_of_strangers",
-          "hostility_people_laughing_atme",
-          "hostility_people_nice_iwonder"
+        "items": {
+          "hostility_sometimes_jealous": 1,
+          "hostility_raw_deal_oflife": 1,
+          "hostility_others_get_breaks": 1,
+          "hostilitybitter": 1,
+          "hostility_friends_talk_aboutme": 1,
+          "hostility_suspicious_of_strangers": 1,
+          "hostility_people_laughing_atme": 1,
+          "hostility_people_nice_iwonder": 1
+        }
+      },
+      "total": {
+        "method": "sum_coded",
+        "scores": [
+          "physical_aggression",
+          "verbal_aggression",
+          "anger",
+          "hostility"
         ]
       }
     }
@@ -303,7 +312,7 @@
       "opt_4": "Neither uncharacterisic nor characterisitc",
       "opt_5": "Somewhat characteristic",
       "opt_6": "Extremely characteristic",
-      "info_640701": "Buss-Perry Aggression QuestionnairePlease select the following items in terms of how characteristic they are of you.",
+      "info_640701": "Buss-Perry Aggression Questionnaire\n\n\n\nPlease select the following items in terms of how characteristic they are of you.",
       "aggression_urge_tostrike": "Once in a while I can't control the urge to strike another person.",
       "aggression_provocation_hit": "Given enough provocation, I may hit another person.",
       "aggression_hit_back": "If somebody hits me, I hit back.",
@@ -333,7 +342,7 @@
       "hostility_suspicious_of_strangers": "I am suspicious of overly friendly strangers.",
       "hostility_people_laughing_atme": "I sometimes feel that people are laughing at me behind me back.",
       "hostility_people_nice_iwonder": "When people are especially nice, I wonder what they want.",
-      "scoring_640701": "Scoring:Physical Aggression subscale: items 1-9.Verbal Aggression subscale: items 10-14.Anger subscale: items 15-21.Hostility subscale: items 22-29.The score for each scale is the sum or the ratings for its items. The two items (7 and 18) worded in the direction opposite to aggression are reverse-scored. The total score for aggression is the sum of these scale scores. Higher scores indicate higher aggressive behavior."
+      "scoring_640701": "Scoring:\n\n\n\nPhysical Aggression subscale: items 1-9.\n\n\n\nVerbal Aggression subscale: items 10-14.\n\n\n\nAnger subscale: items 15-21.\n\n\n\nHostility subscale: items 22-29.\n\n\n\nThe score for each scale is the sum or the ratings for its items. The two items (7 and 18) worded in the direction opposite to aggression are reverse-scored. The total score for aggression is the sum of these scale scores. Higher scores indicate higher aggressive behavior."
     }
   }
 }

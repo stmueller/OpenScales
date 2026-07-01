@@ -109,6 +109,9 @@ def get_effective_scale(question, definition):
         rs = definition.get("response_scales", {}).get(rs_id)
         if rs:
             return rs, rs_id
+    rs = definition.get("response_scales", {})
+    if "default" in rs:
+        return rs["default"], None
     return definition.get("likert_options", {}), None
 
 

@@ -614,6 +614,12 @@ const ScaleRunner = (() => {
               qdef.max !== undefined ? qdef.max : 100];
     }
     if (qdef.type === 'binary') return [0, 1];
+    if (qdef.type === 'multi' || qdef.type === 'multicheck') {
+      const opts = getEffectiveOptions(qdef, scaleDef);
+      const vals = opts.map(o => typeof o === 'object' ? o.value : o).filter(v => typeof v === 'number');
+      if (vals.length) return [Math.min(...vals), Math.max(...vals)];
+      return [null, null];
+    }
     if (qdef.type === 'grid') {
       const rawCols = qdef.columns || [];
       if (rawCols.length === 0) return [null, null];
@@ -1787,13 +1793,17 @@ const ScaleRunner = (() => {
         }
         const [rMin, rMax] = getQuestionRange(qdef || {}, scaleDef);
 
-        // Apply value_map before coding: per-item array overrides "*" default
-        // Array index i = recoded value for response min+i
+        // Apply value_map before coding: per-item array overrides "default"
+        // Array index i = recoded value for raw response rMin+i
         let numVal = numRaw;
         const itemMap = vmap[itemId] || vmap['default'];
+        let mappedMin = rMin, mappedMax = rMax;
         if (Array.isArray(itemMap) && rMin !== null) {
           const idx = Math.round(numRaw) - rMin;
           if (idx >= 0 && idx < itemMap.length) numVal = itemMap[idx];
+          // Reverse coding uses the mapped range, not the raw option range
+          mappedMin = Math.min(...itemMap);
+          mappedMax = Math.max(...itemMap);
         }
 
         const c = getItemCoding(scoreDef, itemId);
@@ -1801,7 +1811,7 @@ const ScaleRunner = (() => {
 
         let coded = numVal;
         if (c < 0) {
-          coded = (rMin !== null && rMax !== null) ? (rMin + rMax) - numVal : numVal;
+          coded = (mappedMin !== null && mappedMax !== null) ? (mappedMin + mappedMax) - numVal : numVal;
         }
 
         codedValues.push(coded);

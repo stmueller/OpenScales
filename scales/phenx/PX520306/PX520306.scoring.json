@@ -1,0 +1,32 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "factor_1_included",
+      "name": "Factor 1 included"
+    },
+    {
+      "id": "factor_2_included",
+      "name": "Factor 2 included"
+    }
+  ],
+  "scoring": {
+    "factor_1_included": {
+      "description": "Factor 1 included: mean_coded of 2 items.",
+      "method": "mean_coded",
+      "items": [
+        "desire_for_a_cigarette",
+        "urge_for_a_cigarette"
+      ]
+    },
+    "factor_2_included": {
+      "description": "Factor 2 included: mean_coded of 3 items.",
+      "method": "mean_coded",
+      "items": [
+        "control_things_better_smoke",
+        "do_almost_anything_for_cigarette",
+        "smoking_make_me_less_depressed"
+      ]
+    }
+  }
+}

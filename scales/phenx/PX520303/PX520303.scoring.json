@@ -1,0 +1,31 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "total",
+      "name": "Total Score"
+    }
+  ],
+  "scoring": {
+    "total": {
+      "description": "Total: mean of all 14 items. Items 1,5,8,9,10,14 reverse-coded.",
+      "method": "sum_coded",
+      "items": {
+        "heroin_not_sharpen_concentration": -1,
+        "control_things_better_heroin": 1,
+        "unable_to_stop_more_heroin": 1,
+        "heroin_almost_taste_it": 1,
+        "dont_want_heroin_now": -1,
+        "less_irritable_heroin": 1,
+        "want_to_use_heroin": 1,
+        "heroin_would_not_satisfying": -1,
+        "would_not_enjoy_heroin": -1,
+        "do_not_need_heroin_now": -1,
+        "unable_control_heroin_amount": 1,
+        "crave_heroin": 1,
+        "urge_for_heroin": 1,
+        "could_resist_heroin_now": -1
+      }
+    }
+  }
+}

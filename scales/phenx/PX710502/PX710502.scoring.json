@@ -1,0 +1,67 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "intrinsic_health",
+      "name": "Intrinsic Health Concerns"
+    },
+    {
+      "id": "intrinsic_self_control",
+      "name": "Intrinsic Self-Control"
+    },
+    {
+      "id": "extrinsic_immediate",
+      "name": "Extrinsic Immediate Reinforcement"
+    },
+    {
+      "id": "extrinsic_social",
+      "name": "Extrinsic Social Pressure"
+    }
+  ],
+  "scoring": {
+    "intrinsic_health": {
+      "description": "Intrinsic Health Concerns: mean_coded of 5 items.",
+      "method": "mean_coded",
+      "items": [
+        "quit_smoking_concerend_illness",
+        "quit_smoking_physical_symptoms",
+        "quit_smoking_effect_body",
+        "quit_smoking_know_died",
+        "quit_smoking_concerned_shorten_life"
+      ]
+    },
+    "intrinsic_self_control": {
+      "description": "Intrinsic Self-Control: mean_coded of 5 items.",
+      "method": "mean_coded",
+      "items": [
+        "quit_smoking_show_myself",
+        "quit_smoking_like_myself_better",
+        "quit_smoking_feel_control",
+        "quit_smoking_prove_accomplishment",
+        "quit_smoking_prove_not_addicted"
+      ]
+    },
+    "extrinsic_immediate": {
+      "description": "Extrinsic Immediate Reinforcement: mean_coded of 5 items.",
+      "method": "mean_coded",
+      "items": [
+        "quit_smoking_wont_smell",
+        "quit_smoking_save_money",
+        "quit_smoking_wont_burn_holes",
+        "quit_smoking_save_money_cigarettes",
+        "quit_smoking_not_clean"
+      ]
+    },
+    "extrinsic_social": {
+      "description": "Extrinsic Social Pressure: mean_coded of 5 items.",
+      "method": "mean_coded",
+      "items": [
+        "quit_smoking_family_nagging",
+        "quit_smoking_ultimatum",
+        "quit_smoking_receive_gift",
+        "quit_smoking_people_close_upset",
+        "quit_smoking_financial_reward"
+      ]
+    }
+  }
+}

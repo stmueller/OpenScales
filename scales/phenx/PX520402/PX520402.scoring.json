@@ -1,0 +1,101 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "global_positive_effects",
+      "name": "Global Positive Effects"
+    },
+    {
+      "id": "global_negative_effects",
+      "name": "Global Negative Effects"
+    },
+    {
+      "id": "general_arousal",
+      "name": "General Arousal"
+    },
+    {
+      "id": "anxiety",
+      "name": "Anxiety"
+    },
+    {
+      "id": "relaxation_and_tension_reduction",
+      "name": "Relaxation and Tension Reduction"
+    }
+  ],
+  "scoring": {
+    "global_positive_effects": {
+      "description": "Global Positive Effects: sum_coded of 10 items.",
+      "method": "sum_coded",
+      "items": [
+        "stimulants_make_me_less_hungry",
+        "get_paranoid_on_stimulants",
+        "tingly_feeling_on_stimulants",
+        "more_capable_on_stimulants",
+        "not_easily_frustrated_on_stimulants",
+        "less_sensitive_on_stimulants",
+        "less_aware_on_stimulants",
+        "become_fearful_on_stimulants",
+        "stimulants_make_me_aggressive",
+        "parties_more_fun_on_stimulants"
+      ]
+    },
+    "global_negative_effects": {
+      "description": "Global Negative Effects: sum_coded of 14 items.",
+      "method": "sum_coded",
+      "items": [
+        "stimulants_increase_my_sex_drive",
+        "stimulants_make_me_feel_dreamy",
+        "stimulants_make_me_shaky",
+        "stimulants_not_dizzy",
+        "can_do_anything_stimulants",
+        "stimulants_do_not_make_sweat",
+        "after_stimulant_depressed",
+        "stimulants_decrease_my_sexual_performance",
+        "same_thing_over_stimulants",
+        "never_satisfied_on_stimulants",
+        "stimulants_give_sense_of_control",
+        "stimulants_cause_hallucinations",
+        "stimulants_cause_me_lose_interest",
+        "more_talkative_stimulants"
+      ]
+    },
+    "general_arousal": {
+      "description": "General Arousal: sum_coded of 8 items.",
+      "method": "sum_coded",
+      "items": [
+        "anxious_or_tense_stimulants",
+        "not_impatient_stimulants",
+        "stimulants_uncomfortable_feeling",
+        "stimulants_give_rush",
+        "grind_teeth_on_stimulants",
+        "bathroom_more_on_stimulants",
+        "awake_and_alert_on_stimulants",
+        "able_to_drink_more_stimulants"
+      ]
+    },
+    "anxiety": {
+      "description": "Anxiety: sum_coded of 8 items.",
+      "method": "sum_coded",
+      "items": [
+        "which_stimulant_drug_most_experience",
+        "say_things_dont_mean_stimulants",
+        "effects_not_similar_to_alcohol",
+        "stimulants_make_me_hyper",
+        "stimulants_increase_activity_level",
+        "stimulants_make_my_heart_faster",
+        "numb_on_stimulants",
+        "stimulants_make_my_judgment_worse"
+      ]
+    },
+    "relaxation_and_tension_reduction": {
+      "description": "Relaxation and Tension Reduction: sum_coded of 4 items.",
+      "method": "sum_coded",
+      "items": [
+        "stimulants_speed_me_up",
+        "everything_is_right_stimulants",
+        "stimulants_make_me_feel_important",
+        "stimulants_do_not_make_clear"
+      ]
+    }
+  }
+}

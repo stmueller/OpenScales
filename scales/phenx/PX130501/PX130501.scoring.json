@@ -1,0 +1,43 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "total",
+      "name": "Total Score"
+    }
+  ],
+  "scoring": {
+    "total": {
+      "description": "Total: sum_coded of all 26 items.",
+      "method": "sum_coded",
+      "items": [
+        "severe_headaches_last_year",
+        "current_age",
+        "gender",
+        "headache_complications_numbness_enum",
+        "severe_headaches_average_frequency",
+        "severe_headache_pain_type",
+        "how_affected_by_headaches",
+        "how_long_unable_to_work",
+        "headache_frequency_last_three_months",
+        "number_days_miss_school",
+        "number_days_reduced_productivity",
+        "number_days_no_house_work",
+        "number_days_housework_reduced_half",
+        "number_days_miss_activities",
+        "age_headaches_began",
+        "ever_goneto_hospital_for_headaches",
+        "usual_headache_treatment",
+        "headache_prescription_medication_daily_basis",
+        "any_other_daily_medication_prescription_depression_enum",
+        "last_took_daily_headache_medication",
+        "consider_headaches_tobe_migraines",
+        "diagnosed_with_headache_type_migraine_enum",
+        "age_diagnosed_with_migraines",
+        "height_feet",
+        "height_inches",
+        "weight"
+      ]
+    }
+  }
+}

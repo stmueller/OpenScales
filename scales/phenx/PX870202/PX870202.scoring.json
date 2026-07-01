@@ -1,0 +1,58 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "peer",
+      "name": "Peer Stigma"
+    },
+    {
+      "id": "family",
+      "name": "Family Stigma"
+    },
+    {
+      "id": "nurse",
+      "name": "Nurse Stigma"
+    }
+  ],
+  "scoring": {
+    "peer": {
+      "description": "Peer Stigma: mean_coded of 8 items.",
+      "method": "mean_coded",
+      "items": [
+        "external_stigma_sickle_cell_disease_people_patient_fault1",
+        "external_stigma_sickle_cell_disease_people_excuse_medication",
+        "external_stigma_sickle_cell_disease_people_think_less_unable_work",
+        "external_stigma_sickle_cell_disease_people_sign_weakness",
+        "external_stigma_sickle_cell_disease_people_prescription_drug_addict",
+        "external_stigma_sickle_cell_disease_people_think_mental_emotional_problem",
+        "external_stigma_sickle_cell_disease_doctor_think_want_more_medication_than_needed",
+        "external_stigma_sickle_cell_disease_doctor_think_mental_emotional_problem"
+      ]
+    },
+    "family": {
+      "description": "Family Stigma: mean_coded of 7 items.",
+      "method": "mean_coded",
+      "items": [
+        "external_stigma_sickle_cell_disease_family_think_need_less_medication",
+        "external_stigma_sickle_cell_disease_family_exaggerate_pain",
+        "external_stigma_sickle_cell_disease_family_could_be_more_active",
+        "external_stigma_sickle_cell_disease_family_prescription_drug_addict",
+        "external_stigma_sickle_cell_disease_family_less_respect",
+        "external_stigma_sickle_cell_disease_family_think_mental_emotional_problem",
+        "external_stigma_sickle_cell_disease_family_embarrassed"
+      ]
+    },
+    "nurse": {
+      "description": "Nurse Stigma: mean_coded of 6 items.",
+      "method": "mean_coded",
+      "items": [
+        "external_stigma_sickle_cell_disease_nurse_exaggerate_pain",
+        "external_stigma_sickle_cell_disease_nurse_think_want_more_medication_than_needed",
+        "external_stigma_sickle_cell_disease_nurse_think_mental_emotional_problem",
+        "external_stigma_sickle_cell_disease_nurse_could_be_more_active",
+        "external_stigma_sickle_cell_disease_nurse_prescription_drug_addict",
+        "external_stigma_sickle_cell_disease_nurse_prefer_not_care"
+      ]
+    }
+  }
+}

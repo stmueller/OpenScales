@@ -1,0 +1,26 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "total",
+      "name": "Total Score"
+    }
+  ],
+  "scoring": {
+    "total": {
+      "description": "Total: mean_coded of all 9 items.",
+      "method": "mean_coded",
+      "items": [
+        "cyberbullying_race_more_danger",
+        "cyberbullying_race_lose_job",
+        "cyberbullying_race_infection",
+        "cyberbullying_race_social_mass_media_reports",
+        "cyberbullying_race_infection_more_likely",
+        "cyberbullying_race_healthcare",
+        "cyberbullying_race_coronavirus",
+        "cyberbullying_race_coronavirus_increase",
+        "cyberbullying_race_negative_social_media_increase"
+      ]
+    }
+  }
+}

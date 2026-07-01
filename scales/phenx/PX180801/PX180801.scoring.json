@@ -1,0 +1,27 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "total",
+      "name": "Total Score"
+    }
+  ],
+  "scoring": {
+    "total": {
+      "description": "Total: sum_coded of all 10 items.",
+      "method": "sum_coded",
+      "items": [
+        "upset_because_of_unexpected",
+        "unable_to_control_important_things",
+        "felt_nervous_and_stressed",
+        "felt_confident_to_handle_problems",
+        "felt_things_going_your_way",
+        "could_not_cope_with_allthings",
+        "able_to_control_irritations",
+        "felt_on_top_of_things",
+        "angered_by_things_outside_control",
+        "difficulties_piling_up"
+      ]
+    }
+  }
+}

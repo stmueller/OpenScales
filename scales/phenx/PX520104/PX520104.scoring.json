@@ -1,0 +1,47 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "satisfaction",
+      "name": "Smoking Satisfaction"
+    },
+    {
+      "id": "psychological_reward",
+      "name": "Psychological Reward"
+    },
+    {
+      "id": "aversion",
+      "name": "Aversion"
+    }
+  ],
+  "scoring": {
+    "satisfaction": {
+      "description": "Smoking Satisfaction: mean_coded of 3 items.",
+      "method": "mean_coded",
+      "items": [
+        "was_smoking_satisfying",
+        "did_cigarettes_taste_good",
+        "did_you_enjoy_smoking"
+      ]
+    },
+    "psychological_reward": {
+      "description": "Psychological Reward: mean_coded of 5 items.",
+      "method": "mean_coded",
+      "items": [
+        "smoking_calm_you_down",
+        "smoking_make_you_more_awake",
+        "make_you_less_irritable",
+        "smoking_help_you_concentrate",
+        "reduce_your_hunger"
+      ]
+    },
+    "aversion": {
+      "description": "Aversion: mean_coded of 2 items.",
+      "method": "mean_coded",
+      "items": [
+        "smoking_make_you_dizzy",
+        "smoking_make_you_nauseous"
+      ]
+    }
+  }
+}

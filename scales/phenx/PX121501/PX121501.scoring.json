@@ -1,0 +1,35 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "total",
+      "name": "Total Score"
+    }
+  ],
+  "scoring": {
+    "total": {
+      "description": "Total: sum_coded of all 18 items.",
+      "method": "sum_coded",
+      "items": [
+        "trouble_wrapping_up_project",
+        "difficulty_getting_orgainized",
+        "difficulty_remembering_appointments",
+        "procrastinate_tasks",
+        "fidget_while_sitting",
+        "feel_driven_by_motor",
+        "careless_mistakes_tedious_tasks",
+        "difficulty_paying_attention_repetitive_tasks",
+        "difficulty_concentrating_on_conversations",
+        "misplace_items_home_work",
+        "frequency_distracted_by_noise",
+        "frequency_leave_seat_at_meetings",
+        "frequency_restless",
+        "difficulty_unwinding",
+        "frequency_talk_too_much",
+        "finish_others_sentences",
+        "difficulty_waiting_turn",
+        "interrupt_others_when_busy"
+      ]
+    }
+  }
+}

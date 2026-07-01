@@ -1,0 +1,19 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "total",
+      "name": "Total Score"
+    }
+  ],
+  "scoring": {
+    "total": {
+      "description": "Total: sum_coded of all 2 items.",
+      "method": "sum_coded",
+      "items": [
+        "on_the_job_activity",
+        "leisure_time_activity"
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "total",
+      "name": "Total Score"
+    }
+  ],
+  "scoring": {
+    "total": {
+      "description": "Total: sum_coded of all 10 items.",
+      "method": "sum_coded",
+      "items": [
+        "normal_drinker",
+        "friends_think_you_normal_drinker",
+        "ever_attended_alcoholics_anonymous",
+        "lost_friends_because_of_drinking",
+        "drinking_cause_trouble_at_work",
+        "neglected_obligations_because_of_drinking",
+        "ever_had_delirium_tremens",
+        "gone_for_help_about_drinking",
+        "been_hospitalized_because_of_drinking",
+        "arrested_for_drunk_driving"
+      ]
+    }
+  }
+}

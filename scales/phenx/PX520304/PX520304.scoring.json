@@ -1,0 +1,59 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "compulsivity",
+      "name": "Compulsivity"
+    },
+    {
+      "id": "emotionality",
+      "name": "Emotionality"
+    },
+    {
+      "id": "expectancy",
+      "name": "Expectancy"
+    },
+    {
+      "id": "purposefulness",
+      "name": "Purposefulness"
+    }
+  ],
+  "scoring": {
+    "compulsivity": {
+      "description": "Compulsivity: mean_coded of 3 items.",
+      "method": "mean_coded",
+      "items": [
+        "could_not_limit_marijuana",
+        "unable_control_how_much_marijuana",
+        "need_marijuana"
+      ]
+    },
+    "emotionality": {
+      "description": "Emotionality: mean_coded of 3 items.",
+      "method": "mean_coded",
+      "items": [
+        "more_in_control_marijuana",
+        "marijuana_less_tense",
+        "less_anxious_marijuana"
+      ]
+    },
+    "expectancy": {
+      "description": "Expectancy: mean_coded of 3 items.",
+      "method": "mean_coded",
+      "items": [
+        "marijuana_sleep_better",
+        "marijuana_less_nervous",
+        "marijuana_would_make_me_content"
+      ]
+    },
+    "purposefulness": {
+      "description": "Purposefulness: mean_coded of 3 items.",
+      "method": "mean_coded",
+      "items": [
+        "marijuana_pleasant_right_now",
+        "making_plans_for_marijuana",
+        "great_to_smoke_marijuana"
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "positive_affect",
+      "name": "Positive Affect"
+    },
+    {
+      "id": "negative_affect",
+      "name": "Negative Affect"
+    }
+  ],
+  "scoring": {
+    "positive_affect": {
+      "description": "Positive Affect: mean_coded of 12 items.",
+      "method": "mean_coded",
+      "items": [
+        "pxt180502_interested",
+        "pxt180502_frightened",
+        "pxt180502_excited",
+        "pxt180502_upset",
+        "pxt180502_strong",
+        "pxt180502_guilty",
+        "pxt180502_scared",
+        "miserable",
+        "pxt180502_cheerful",
+        "pxt180502_proud",
+        "pxt180502_joyful",
+        "mad"
+      ]
+    },
+    "negative_affect": {
+      "description": "Negative Affect: mean_coded of 15 items.",
+      "method": "mean_coded",
+      "items": [
+        "pxt180502_sad",
+        "pxt180502_alert",
+        "pxt180502_ashamed",
+        "pxt180502_happy",
+        "pxt180502_nervous",
+        "pxt180502_energetic",
+        "pxt180502_calm",
+        "pxt180502_jittery",
+        "pxt180502_active",
+        "pxt180502_afraid",
+        "pxt180502_lonely",
+        "pxt180502_fearless",
+        "pxt180502_delighted",
+        "pxt180502_daring",
+        "pxt180502_lively"
+      ]
+    }
+  }
+}

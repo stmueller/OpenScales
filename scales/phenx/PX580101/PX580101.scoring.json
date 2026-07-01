@@ -1,0 +1,52 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "internalizing",
+      "name": "Internalizing Disorders"
+    },
+    {
+      "id": "externalizing",
+      "name": "Externalizing Disorders"
+    },
+    {
+      "id": "substance",
+      "name": "Substance Disorders"
+    }
+  ],
+  "scoring": {
+    "internalizing": {
+      "description": "Internalizing Disorders: mean_coded of 5 items.",
+      "method": "mean_coded",
+      "items": [
+        "pxt580101_feeling_depressed_hopeless",
+        "pxt580101_sleep_trouble",
+        "pxt580101_feeling_anxious_nervous",
+        "pxt580101_distressed_about_past",
+        "pxt580101_committing_suicide"
+      ]
+    },
+    "externalizing": {
+      "description": "Externalizing Disorders: mean_coded of 5 items.",
+      "method": "mean_coded",
+      "items": [
+        "pxt580101_lied_or_conned",
+        "pxt580101_hard_time_paying_attention",
+        "pxt580101_hard_time_listening_to_instructions",
+        "pxt580101_threatened_other_people",
+        "pxt580101_started_physical_fights"
+      ]
+    },
+    "substance": {
+      "description": "Substance Disorders: mean_coded of 5 items.",
+      "method": "mean_coded",
+      "items": [
+        "pxt580101_used_alcohol_or_drugs_weekly",
+        "pxt580101_lot_of_time_alcohol_drugs",
+        "pxt580101_continued_using_alcohol_drugs",
+        "pxt580101_alcohol_drugs_caused_reduced_involvement",
+        "pxt580101_withdrawal_problems"
+      ]
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "withdrawal",
+      "name": "Withdrawal"
+    },
+    {
+      "id": "continuance",
+      "name": "Continuance"
+    },
+    {
+      "id": "tolerance",
+      "name": "Tolerance"
+    },
+    {
+      "id": "lack_of_control",
+      "name": "Lack of Control"
+    },
+    {
+      "id": "reduction",
+      "name": "Reduction in Other Activities"
+    },
+    {
+      "id": "time",
+      "name": "Time"
+    },
+    {
+      "id": "intention",
+      "name": "Intention Effects"
+    },
+    {
+      "id": "total",
+      "name": "EDS Total"
+    }
+  ],
+  "scoring": {
+    "withdrawal": {
+      "description": "Withdrawal: sum of 3 items.",
+      "method": "sum_coded",
+      "items": [
+        "exercise_avoid_feeling_irritable",
+        "exercise_avoid_feeling_anxious",
+        "exercise_avoid_feeling_tense"
+      ]
+    },
+    "continuance": {
+      "description": "Continuance: sum of 3 items.",
+      "method": "sum_coded",
+      "items": [
+        "exercise_despite_recurring_physical_problems",
+        "exercise_when_injured",
+        "exercise_despite_persistent_physical_problems"
+      ]
+    },
+    "tolerance": {
+      "description": "Tolerance: sum of 3 items.",
+      "method": "sum_coded",
+      "items": [
+        "exercise_increase_intensity_forresults",
+        "exercise_increase_frequency_forresults",
+        "exercise_increase_duration_forresults"
+      ]
+    },
+    "lack_of_control": {
+      "description": "Lack of Control: sum of 3 items.",
+      "method": "sum_coded",
+      "items": [
+        "exercise_unableto_reduce_length",
+        "exercise_unableto_reduce_frequency",
+        "exercise_unable_reduce_intensity"
+      ]
+    },
+    "reduction": {
+      "description": "Reduction in Other Activities: sum of 2 items.",
+      "method": "sum_coded",
+      "items": [
+        "exercise_insteadof_social_activity",
+        "exercise_thoughts_insteadof_school_work"
+      ]
+    },
+    "time": {
+      "description": "Time: sum of 3 items.",
+      "method": "sum_coded",
+      "items": [
+        "exercise_time_spent",
+        "exercise_majorityof_free_time",
+        "exercise_excusefrom_social_activity"
+      ]
+    },
+    "intention": {
+      "description": "Intention Effects: sum of 3 items.",
+      "method": "sum_coded",
+      "items": [
+        "exercise_longerthan_intended",
+        "exercise_longerthan_expected",
+        "exercise_longerthan_planned"
+      ]
+    },
+    "total": {
+      "description": "EDS Total: sum of all items. Higher = greater exercise dependence.",
+      "method": "sum_coded",
+      "items": [
+        "exercise_avoid_feeling_irritable",
+        "exercise_despite_recurring_physical_problems",
+        "exercise_increase_intensity_forresults",
+        "exercise_unableto_reduce_length",
+        "exercise_insteadof_social_activity",
+        "exercise_time_spent",
+        "exercise_longerthan_intended",
+        "exercise_avoid_feeling_anxious",
+        "exercise_when_injured",
+        "exercise_increase_frequency_forresults",
+        "exercise_unableto_reduce_frequency",
+        "exercise_thoughts_insteadof_school_work",
+        "exercise_majorityof_free_time",
+        "exercise_longerthan_expected",
+        "exercise_avoid_feeling_tense",
+        "exercise_despite_persistent_physical_problems",
+        "exercise_increase_duration_forresults",
+        "exercise_unable_reduce_intensity",
+        "exercise_excusefrom_social_activity",
+        "exercise_longerthan_planned"
+      ]
+    }
+  }
+}

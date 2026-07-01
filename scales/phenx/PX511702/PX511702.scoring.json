@@ -1,0 +1,22 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "total",
+      "name": "Total Score"
+    }
+  ],
+  "scoring": {
+    "total": {
+      "description": "Total: mean_coded of all 5 items.",
+      "method": "mean_coded",
+      "items": [
+        "post_acute_withdrawal_signs_and_symptoms_craving_past_week_thought",
+        "post_acute_withdrawal_signs_and_symptoms_craving_strength_of_craving",
+        "post_acute_withdrawal_signs_and_symptoms_craving_amount_time_thinking",
+        "post_acute_withdrawal_signs_and_symptoms_craving_difficulty_resisting_in_house",
+        "post_acute_withdrawal_signs_and_symptoms_craving_overall_craving"
+      ]
+    }
+  }
+}

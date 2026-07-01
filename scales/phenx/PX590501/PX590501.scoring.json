@@ -1,0 +1,89 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "social_capital",
+      "name": "Social Capital"
+    },
+    {
+      "id": "physical_capital",
+      "name": "Physical Capital"
+    },
+    {
+      "id": "human_capital",
+      "name": "Human Capital"
+    },
+    {
+      "id": "cultural_capital",
+      "name": "Cultural Capital"
+    },
+    {
+      "id": "total",
+      "name": "Overall Recovery Capital"
+    }
+  ],
+  "scoring": {
+    "social_capital": {
+      "description": "Social Capital: sum_coded of 7 items (range 7-28). Reverse-coded items scored 4→1, 3→2, 2→3, 1→4.",
+      "method": "sum_coded",
+      "items": {
+        "multidimensional_assessment_recovery_capital_support_others": 1,
+        "multidimensional_assessment_recovery_capital_family_difficult": -1,
+        "multidimensional_assessment_recovery_capital_friend_support": 1,
+        "multidimensional_assessment_recovery_capital_family_support": 1,
+        "multidimensional_assessment_recovery_capital_people_not_recover": -1,
+        "multidimensional_assessment_recovery_capital_feel_alone": -1,
+        "multidimensional_assessment_recovery_capital_part_community": 1
+      }
+    },
+    "physical_capital": {
+      "description": "Physical Capital: sum_coded of 7 items (range 7-28). Reverse-coded items scored 4→1, 3→2, 2→3, 1→4.",
+      "method": "sum_coded",
+      "items": {
+        "multidimensional_assessment_recovery_capital_helpful_housing": 1,
+        "multidimensional_assessment_recovery_capital_difficult_transport": -1,
+        "multidimensional_assessment_recovery_capital_unstable_housing": -1,
+        "multidimensional_assessment_recovery_capital_enough_money": 1,
+        "multidimensional_assessment_recovery_capital_not_enough_money": -1,
+        "multidimensional_assessment_recovery_capital_afford_care": 1,
+        "multidimensional_assessment_recovery_capital_access_communication": 1
+      }
+    },
+    "human_capital": {
+      "description": "Human Capital: sum_coded of 7 items (range 7-28). Reverse-coded items scored 4→1, 3→2, 2→3, 1→4.",
+      "method": "sum_coded",
+      "items": {
+        "multidimensional_assessment_recovery_capital_hard_fun": -1,
+        "multidimensional_assessment_recovery_capital_physically_healthy": 1,
+        "multidimensional_assessment_recovery_capital_guilt_shame": -1,
+        "multidimensional_assessment_recovery_capital_stress": -1,
+        "multidimensional_assessment_recovery_capital_education_training_prepare": 1,
+        "multidimensional_assessment_recovery_capital_mental_health": -1,
+        "multidimensional_assessment_recovery_capital_purpose_meaning": 1
+      }
+    },
+    "cultural_capital": {
+      "description": "Cultural Capital: sum_coded of 7 items (range 7-28). Reverse-coded items scored 4→1, 3→2, 2→3, 1→4.",
+      "method": "sum_coded",
+      "items": {
+        "multidimensional_assessment_recovery_capital_hard_trust": -1,
+        "multidimensional_assessment_recovery_capital_fun_activities": 1,
+        "multidimensional_assessment_recovery_capital_disconnected_culture": -1,
+        "multidimensional_assessment_recovery_capital_feel_outcast": -1,
+        "multidimensional_assessment_recovery_capital_helpful_services_avail": 1,
+        "multidimensional_assessment_recovery_capital_let_go_identity": -1,
+        "multidimensional_assessment_recovery_capital_neighborhood_safe": 1
+      }
+    },
+    "total": {
+      "description": "Overall Recovery Capital: sum of 4 subscale scores (range 28-112). Higher = greater recovery capital.",
+      "method": "sum_coded",
+      "scores": [
+        "social_capital",
+        "physical_capital",
+        "human_capital",
+        "cultural_capital"
+      ]
+    }
+  }
+}

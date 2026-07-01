@@ -1,0 +1,62 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "physical_subscale",
+      "name": "Physical Subscale"
+    },
+    {
+      "id": "emotional_subscale",
+      "name": "Emotional Subscale"
+    },
+    {
+      "id": "functional_subscale",
+      "name": "Functional Subscale"
+    }
+  ],
+  "scoring": {
+    "physical_subscale": {
+      "description": "Physical Subscale: sum_coded of 7 items.",
+      "method": "sum_coded",
+      "items": [
+        "looking_up_increases_problem",
+        "walking_down_aisle_increase_problem",
+        "sports_dancing_chores_increases_problems",
+        "quick_head_movements_increase_problem",
+        "turning_in_bed_increases_problems",
+        "sidewalk_increase_problem",
+        "bending_over_increases_problem"
+      ]
+    },
+    "emotional_subscale": {
+      "description": "Emotional Subscale: sum_coded of 9 items.",
+      "method": "sum_coded",
+      "items": [
+        "feel_frustrated",
+        "afraid_to_leave_home_unaccompanied",
+        "embarrassed_in_front_of_others",
+        "people_think_intoxicated",
+        "pxt201101_difficult_to_concentrate",
+        "afraid_to_stay_home_alone",
+        "feel_handicapped",
+        "relationship_stress",
+        "problem_causes_depression"
+      ]
+    },
+    "functional_subscale": {
+      "description": "Functional Subscale: sum_coded of 9 items.",
+      "method": "sum_coded",
+      "items": [
+        "restrict_travel",
+        "difficulty_getting_out_of_bed",
+        "problem_restricts_social_participation",
+        "difficulty_reading",
+        "avoid_heights",
+        "difficulty_with_house_yard_work",
+        "difficult_walk_alone",
+        "difficult_to_walk_in_dark",
+        "problem_interfere_with_job"
+      ]
+    }
+  }
+}

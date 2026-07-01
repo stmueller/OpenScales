@@ -1,0 +1,70 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "assertiveness",
+      "name": "Assertiveness"
+    },
+    {
+      "id": "responsiveness",
+      "name": "Responsiveness"
+    },
+    {
+      "id": "semantics",
+      "name": "Semantics"
+    },
+    {
+      "id": "syntax",
+      "name": "Syntax"
+    },
+    {
+      "id": "articulation",
+      "name": "Articulation"
+    }
+  ],
+  "scoring": {
+    "assertiveness": {
+      "description": "Assertiveness: sum_coded of 3 items.",
+      "method": "sum_coded",
+      "items": [
+        "ability_ask_questions",
+        "ability_get_talking",
+        "start_convers_other_children"
+      ]
+    },
+    "responsiveness": {
+      "description": "Responsiveness: sum_coded of 2 items.",
+      "method": "sum_coded",
+      "items": [
+        "ability_answer_questions",
+        "keep_convo_going"
+      ]
+    },
+    "semantics": {
+      "description": "Semantics: sum_coded of 3 items.",
+      "method": "sum_coded",
+      "items": [
+        "number_words_known",
+        "use_words_correctly",
+        "use_proper_words"
+      ]
+    },
+    "syntax": {
+      "description": "Syntax: sum_coded of 2 items.",
+      "method": "sum_coded",
+      "items": [
+        "length_of_sentences",
+        "make_grownup_sentences"
+      ]
+    },
+    "articulation": {
+      "description": "Articulation: sum_coded of 3 items.",
+      "method": "sum_coded",
+      "items": [
+        "say_sentences_clearly",
+        "get_message_across",
+        "correctly_say_sounds"
+      ]
+    }
+  }
+}

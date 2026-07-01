@@ -1,0 +1,67 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "bas_drive",
+      "name": "BAS Drive"
+    },
+    {
+      "id": "bas_fun_seeking",
+      "name": "BAS Fun Seeking"
+    },
+    {
+      "id": "bas_reward_responsiveness",
+      "name": "BAS Reward Responsiveness"
+    },
+    {
+      "id": "bis",
+      "name": "BIS"
+    }
+  ],
+  "scoring": {
+    "bas_drive": {
+      "description": "BAS Drive: mean_coded of 4 items.",
+      "method": "mean_coded",
+      "items": [
+        "get_things_i_want",
+        "go_allout",
+        "move_on_it_right_away",
+        "no_holds_barred_approach"
+      ]
+    },
+    "bas_fun_seeking": {
+      "description": "BAS Fun Seeking: mean_coded of 4 items.",
+      "method": "mean_coded",
+      "items": [
+        "willing_to_try_something_new",
+        "do_because_might_be_fun",
+        "act_spur_of_moment",
+        "crave_excitement"
+      ]
+    },
+    "bas_reward_responsiveness": {
+      "description": "BAS Reward Responsiveness: mean_coded of 5 items.",
+      "method": "mean_coded",
+      "items": [
+        "doing_well_at_something",
+        "get_something_i_want_energized",
+        "get_excited_right_away",
+        "good_things_affect_me_strongly",
+        "excite_me_to_win_contest"
+      ]
+    },
+    "bis": {
+      "description": "BIS: mean_coded of 7 items.",
+      "method": "mean_coded",
+      "items": {
+        "rarely_experience_fear": -1,
+        "criticism_or_scolding_hurts_me": 1,
+        "worried_when_somebody_is_angry": 1,
+        "worked_up_over_unpleasant_things": 1,
+        "worried_when_done_poorly": 1,
+        "few_fears_compared_to_friends": -1,
+        "worry_about_making_mistakes": 1
+      }
+    }
+  }
+}

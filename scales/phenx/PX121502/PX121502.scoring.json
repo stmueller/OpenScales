@@ -1,0 +1,45 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "inattention",
+      "name": "Inattention"
+    },
+    {
+      "id": "hyperactivity",
+      "name": "Hyperactivity/Impulsivity"
+    }
+  ],
+  "scoring": {
+    "inattention": {
+      "description": "Inattention: mean_coded of 9 items.",
+      "method": "mean_coded",
+      "items": [
+        "close_attention_to_detail",
+        "sustain_attention",
+        "listen_when_spoken_to",
+        "follow_through_chores",
+        "organize_tasks_activities",
+        "engage_mental_effort",
+        "keep_track_of_activity_items",
+        "ignore_extraneous_stimuli",
+        "remember_daily_activities"
+      ]
+    },
+    "hyperactivity": {
+      "description": "Hyperactivity/Impulsivity: mean_coded of 9 items.",
+      "method": "mean_coded",
+      "items": [
+        "sit_still",
+        "stay_seated",
+        "modulate_motor_activity",
+        "play_quietly",
+        "settle_down",
+        "control_excess_talking",
+        "control_blurting_out",
+        "await_turns",
+        "control_interrupting"
+      ]
+    }
+  }
+}

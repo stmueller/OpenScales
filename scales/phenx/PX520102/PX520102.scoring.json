@@ -1,0 +1,41 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "stimulation",
+      "name": "Stimulation"
+    },
+    {
+      "id": "sedation",
+      "name": "Sedation"
+    }
+  ],
+  "scoring": {
+    "stimulation": {
+      "description": "Stimulation subscale: sum of 7 items (Elated, Energized, Excited, Stimulated, Talkative, Up, Vigorous).",
+      "method": "sum_coded",
+      "items": [
+        "elated",
+        "energized",
+        "excited",
+        "stimulated",
+        "talkative",
+        "up",
+        "vigorous"
+      ]
+    },
+    "sedation": {
+      "description": "Sedation subscale: sum of 7 items (Difficulty concentrating, Down, Heavy head, Inactive, Sedated, Slow thoughts, Sluggish).",
+      "method": "sum_coded",
+      "items": [
+        "difficulty_concentrating",
+        "down",
+        "heavy_head",
+        "inactive",
+        "sedated",
+        "slow_thoughts",
+        "sluggish"
+      ]
+    }
+  }
+}

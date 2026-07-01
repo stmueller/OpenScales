@@ -1,0 +1,37 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "mean_of",
+      "name": "Mean of"
+    },
+    {
+      "id": "means_of",
+      "name": "Means of"
+    }
+  ],
+  "scoring": {
+    "mean_of": {
+      "description": "Mean of: mean_coded of 5 items.",
+      "method": "mean_coded",
+      "items": [
+        "drink_because_like_the_feeling",
+        "drink_because_its_exciting",
+        "drink_to_get_high",
+        "drink_gives_pleasant_feeling",
+        "drink_because_its_fun"
+      ]
+    },
+    "means_of": {
+      "description": "Means of: mean_coded of 5 items.",
+      "method": "mean_coded",
+      "items": [
+        "friends_pressure_you_to_drink",
+        "drink_so_others_wont_kid",
+        "drink_to_fit_in",
+        "drink_to_be_liked",
+        "drink_wont_feel_left_out"
+      ]
+    }
+  }
+}

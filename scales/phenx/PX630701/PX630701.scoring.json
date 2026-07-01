@@ -1,0 +1,85 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "anxiety",
+      "name": "Anxiety"
+    },
+    {
+      "id": "depression",
+      "name": "Depression"
+    },
+    {
+      "id": "positive_wellbeing",
+      "name": "Positive Well-being"
+    },
+    {
+      "id": "self_control",
+      "name": "Self-control"
+    },
+    {
+      "id": "vitality",
+      "name": "Vitality"
+    },
+    {
+      "id": "general_health",
+      "name": "General Health"
+    }
+  ],
+  "scoring": {
+    "anxiety": {
+      "description": "Anxiety: mean_coded of 4 items.",
+      "method": "mean_coded",
+      "items": {
+        "bothered_nerves": 1,
+        "stress_pressure": 1,
+        "anxious_worried_upset": 1,
+        "relaxed_or_tense": -1
+      }
+    },
+    "depression": {
+      "description": "Depression: mean_coded of 3 items.",
+      "method": "mean_coded",
+      "items": [
+        "felt_sad_problems",
+        "felt_downhearted_blue",
+        "depressed_or_cheerful"
+      ]
+    },
+    "positive_wellbeing": {
+      "description": "Positive Well-being: mean_coded of 3 items.",
+      "method": "mean_coded",
+      "items": {
+        "feeling_general": -1,
+        "happy_personal_life": -1,
+        "daily_life_interesting": -1
+      }
+    },
+    "self_control": {
+      "description": "Self-control: mean_coded of 3 items.",
+      "method": "mean_coded",
+      "items": {
+        "control_behavior_feelings": -1,
+        "losing_mind": -1,
+        "waking_up_fresh": -1
+      }
+    },
+    "vitality": {
+      "description": "Vitality: mean_coded of 3 items.",
+      "method": "mean_coded",
+      "items": {
+        "bothered_illness_healthfears": -1,
+        "feeling_emotionally_stable": 1,
+        "energy_vitality": -1
+      }
+    },
+    "general_health": {
+      "description": "General Health: mean_coded of 2 items.",
+      "method": "mean_coded",
+      "items": {
+        "felt_tired_exhausted": 1,
+        "worried_health": -1
+      }
+    }
+  }
+}

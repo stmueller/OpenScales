@@ -1,0 +1,67 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "physical_subscale",
+      "name": "Physical Subscale"
+    },
+    {
+      "id": "emotional_subscale",
+      "name": "Emotional Subscale"
+    },
+    {
+      "id": "functional_subscale",
+      "name": "Functional Subscale"
+    }
+  ],
+  "scoring": {
+    "physical_subscale": {
+      "description": "Physical Subscale: sum_coded of 10 items.",
+      "method": "sum_coded",
+      "items": [
+        "run_out_of_air",
+        "sound_of_voice_varies",
+        "people_ask_about_voice",
+        "voice_creaky_dry",
+        "strain_to_produce_voice",
+        "voice_clarity_unpredictable",
+        "change_voice_to_sound_different",
+        "great_deal_of_effort_speak",
+        "voice_worse_evening",
+        "voice_gives_out"
+      ]
+    },
+    "emotional_subscale": {
+      "description": "Emotional Subscale: sum_coded of 10 items.",
+      "method": "sum_coded",
+      "items": [
+        "tense_when_talking",
+        "people_irritated_with_my_voice",
+        "people_donot_understand_problem",
+        "voice_upsets_me",
+        "less_outgoing_dueto_voice",
+        "voice_makes_me_feel_handicapped",
+        "annoyed_when_asked_to_repeat",
+        "feel_embarrassed_when_repeat_self",
+        "voice_makes_me_feel_incompetent",
+        "ashamed_of_voice_problem"
+      ]
+    },
+    "functional_subscale": {
+      "description": "Functional Subscale: sum_coded of 10 items.",
+      "method": "sum_coded",
+      "items": [
+        "difficult_for_people_hear_me",
+        "difficulty_understanding_me_noisy_room",
+        "family_difficulty_hearing_me",
+        "use_phone_less_often",
+        "avoid_groups_due_to_voice",
+        "speak_less_often_to_friends",
+        "people_ask_me_to_repeat",
+        "voice_restricts_personal_social_life",
+        "feel_left_out_of_conversations",
+        "voice_causes_lost_income"
+      ]
+    }
+  }
+}

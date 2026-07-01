@@ -1,0 +1,168 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "group_responses_4_and_5_for",
+      "name": "Group responses 4 and 5 for"
+    },
+    {
+      "id": "reverse_score",
+      "name": "Reverse score"
+    },
+    {
+      "id": "take_a_mean_of",
+      "name": "Take a mean of"
+    },
+    {
+      "id": "residential_density",
+      "name": "Residential Density"
+    },
+    {
+      "id": "land_use_mix",
+      "name": "Land Use Mix"
+    },
+    {
+      "id": "transit_access",
+      "name": "Transit Access"
+    },
+    {
+      "id": "pedestrian_infrastructure",
+      "name": "Pedestrian Infrastructure"
+    },
+    {
+      "id": "bicycling_infrastructure",
+      "name": "Bicycling Infrastructure"
+    },
+    {
+      "id": "recreation_facilities",
+      "name": "Recreation Facilities"
+    },
+    {
+      "id": "street_connectivity",
+      "name": "Street Connectivity"
+    },
+    {
+      "id": "crime_safety",
+      "name": "Crime Safety"
+    },
+    {
+      "id": "traffic_safety",
+      "name": "Traffic Safety"
+    },
+    {
+      "id": "pedestrian_safety",
+      "name": "Pedestrian Safety"
+    },
+    {
+      "id": "aesthetics",
+      "name": "Aesthetics"
+    }
+  ],
+  "scoring": {
+    "group_responses_4_and_5_for": {
+      "description": "Group responses 4 and 5 for: mean_coded of 1 items.",
+      "method": "mean_coded",
+      "items": {
+        "physical_activity_neighborhood_environment_main_type_housing": -1
+      }
+    },
+    "reverse_score": {
+      "description": "Reverse score: mean_coded of 5 items.",
+      "method": "mean_coded",
+      "items": {
+        "physical_activity_neighborhood_environment_main_type_housing": -1,
+        "physical_activity_neighborhood_environment_crime_rate_unsafe_walk_night": -1,
+        "physical_activity_neighborhood_environment_traffic_street_difficult_walk": -1,
+        "physical_activity_neighborhood_environment_bicycling_well_maintained": -1,
+        "physical_activity_neighborhood_environment_traffic_street_difficult_bicycle": -1
+      }
+    },
+    "take_a_mean_of": {
+      "description": "Take a mean of: mean_coded of 1 items.",
+      "method": "mean_coded",
+      "items": {
+        "physical_activity_neighborhood_environment_main_type_housing": -1
+      }
+    },
+    "residential_density": {
+      "description": "Residential Density: mean_coded of 1 items.",
+      "method": "mean_coded",
+      "items": {
+        "physical_activity_neighborhood_environment_main_type_housing": -1
+      }
+    },
+    "land_use_mix": {
+      "description": "Land Use Mix: mean_coded of 2 items.",
+      "method": "mean_coded",
+      "items": [
+        "physical_activity_neighborhood_environment_shop_easy_walk_distance",
+        "physical_activity_neighborhood_environment_crime_rate_unsafe_walk_day"
+      ]
+    },
+    "transit_access": {
+      "description": "Transit Access: mean_coded of 1 items.",
+      "method": "mean_coded",
+      "items": [
+        "physical_activity_neighborhood_environment_transit_stop_10_15_minutes"
+      ]
+    },
+    "pedestrian_infrastructure": {
+      "description": "Pedestrian Infrastructure: mean_coded of 2 items.",
+      "method": "mean_coded",
+      "items": [
+        "physical_activity_neighborhood_environment_sidewalk_most_streeet",
+        "physical_activity_neighborhood_environment_many_four_way_intersection"
+      ]
+    },
+    "bicycling_infrastructure": {
+      "description": "Bicycling Infrastructure: mean_coded of 2 items.",
+      "method": "mean_coded",
+      "items": [
+        "physical_activity_neighborhood_environment_bicycle_facility_near",
+        "physical_activity_neighborhood_environment_sidewalk_well_maintained"
+      ]
+    },
+    "recreation_facilities": {
+      "description": "Recreation Facilities: mean_coded of 1 items.",
+      "method": "mean_coded",
+      "items": [
+        "physical_activity_neighborhood_environment_several_free_recreation_facility"
+      ]
+    },
+    "street_connectivity": {
+      "description": "Street Connectivity: mean_coded of 1 items.",
+      "method": "mean_coded",
+      "items": [
+        "physical_activity_neighborhood_environment_number_motor_vehicle_working_unsure"
+      ]
+    },
+    "crime_safety": {
+      "description": "Crime Safety: mean_coded of 1 items.",
+      "method": "mean_coded",
+      "items": {
+        "physical_activity_neighborhood_environment_crime_rate_unsafe_walk_night": -1
+      }
+    },
+    "traffic_safety": {
+      "description": "Traffic Safety: mean_coded of 1 items.",
+      "method": "mean_coded",
+      "items": {
+        "physical_activity_neighborhood_environment_traffic_street_difficult_walk": -1
+      }
+    },
+    "pedestrian_safety": {
+      "description": "Pedestrian Safety: mean_coded of 1 items.",
+      "method": "mean_coded",
+      "items": [
+        "physical_activity_neighborhood_environment_people_active"
+      ]
+    },
+    "aesthetics": {
+      "description": "Aesthetics: mean_coded of 1 items.",
+      "method": "mean_coded",
+      "items": [
+        "physical_activity_neighborhood_environment_many_interesting_thing"
+      ]
+    }
+  }
+}

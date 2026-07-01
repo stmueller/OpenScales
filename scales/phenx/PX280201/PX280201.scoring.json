@@ -1,0 +1,37 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "total",
+      "name": "Total Score"
+    }
+  ],
+  "scoring": {
+    "total": {
+      "description": "Total: mean_coded of all 20 items.",
+      "method": "mean_coded",
+      "items": [
+        "health_numeracy_blood_sugar_reading_goal",
+        "health_numeracy_pain_scale_pain_rating",
+        "health_numeracy_side_effect_likelihood",
+        "health_numeracy_highest_heart_attack_chance",
+        "health_numeracy_highest_pills_per_day",
+        "health_numeracy_receive_medicine_likelihood",
+        "health_numeracy_chance_heart_attack_twenty_years",
+        "health_numeracy_blood_pressure_medicine_chance_side_effect",
+        "health_numeracy_test_blood_chance_prostate_cancer",
+        "health_numeracy_breast_cancer_chance_recurrence",
+        "health_numeracy_colon_cancer_death_decreased_risk",
+        "health_numeracy_arthritis_pain_medicine_effectiveness",
+        "health_numeracy_diabetes_medicine_effectiveness_significance",
+        "health_numeracy_randomized_controlled_trial_size",
+        "health_numeracy_exercise_habits_life_expectancy",
+        "health_numeracy_exercise_diabetes_percent_read_graph",
+        "health_numeracy_fever_temperature_action_taken",
+        "health_numeracy_nutrition_label_calorie_interpretation",
+        "health_numeracy_breast_cancer_three_year_survival",
+        "health_numeracy_new_medicine_side_effect_chance"
+      ]
+    }
+  }
+}

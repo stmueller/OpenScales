@@ -1,0 +1,38 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "affirmation_belonging",
+      "name": "Affirmation/Belonging"
+    },
+    {
+      "id": "exploration",
+      "name": "Exploration"
+    }
+  ],
+  "scoring": {
+    "affirmation_belonging": {
+      "description": "Affirmation/Belonging: mean_coded of 7 items.",
+      "method": "mean_coded",
+      "items": [
+        "ethnic_identity_active_ethnic_group",
+        "ethnic_identity_affect_life",
+        "ethnic_identity_happy_member",
+        "ethnic_identity_sense_belonging",
+        "ethnic_identity_learn_talkabout",
+        "ethnic_identity_participate_clultural",
+        "ethnic_identity_strong_attachment"
+      ]
+    },
+    "exploration": {
+      "description": "Exploration: mean_coded of 5 items.",
+      "method": "mean_coded",
+      "items": [
+        "ethnic_identity_find_out",
+        "ethnic_identity_clear_sense",
+        "ethnic_identity_understand_membership",
+        "ethnic_identity_pride_accomplishment"
+      ]
+    }
+  }
+}

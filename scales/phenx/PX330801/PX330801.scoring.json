@@ -1,0 +1,39 @@
+{
+  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "dimensions": [
+    {
+      "id": "internal_stimuli",
+      "name": "Internal Stimuli"
+    },
+    {
+      "id": "external_stimuli",
+      "name": "External Stimuli"
+    }
+  ],
+  "scoring": {
+    "internal_stimuli": {
+      "description": "Internal Stimuli: mean self-efficacy for resisting smoking during internal states (6 items).",
+      "method": "mean_coded",
+      "items": [
+        "self_efficacy_smoking_refrain_internal_stimuli_nervous",
+        "self_efficacy_smoking_refrain_internal_stimuli_depressed",
+        "self_efficacy_smoking_refrain_internal_stimuli_angry",
+        "self_efficacy_smoking_refrain_internal_stimuli_anxious",
+        "self_efficacy_smoking_refrain_internal_stimuli_difficult_problem",
+        "self_efficacy_smoking_refrain_internal_stimuli_urge"
+      ]
+    },
+    "external_stimuli": {
+      "description": "External Stimuli: mean self-efficacy for resisting smoking during external situations (6 items).",
+      "method": "mean_coded",
+      "items": [
+        "self_efficacy_smoking_refrain_external_stimuli_social_drinking",
+        "self_efficacy_smoking_refrain_external_stimuli_celebrating",
+        "self_efficacy_smoking_refrain_external_stimuli_drinking",
+        "self_efficacy_smoking_refrain_external_stimuli_others",
+        "self_efficacy_smoking_refrain_external_stimuli_meal",
+        "self_efficacy_smoking_refrain_external_stimuli_coffee_tea"
+      ]
+    }
+  }
+}

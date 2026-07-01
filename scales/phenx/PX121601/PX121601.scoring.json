@@ -1,36 +1,131 @@
 {
-  "_note": "Hand-coded scoring overlay for this PhenX scale. The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
+  "_note": "Hand-coded scoring overlay for this PhenX scale (TriPM — Triarchic Psychopathy Measure). The PhenX REDCap converter does not produce scoring automatically. After rebuilding the .osd from a new PhenX export, run tools/apply_phenx_scoring.py to merge these dimensions and scoring blocks back into the generated .osd file.",
   "dimensions": [
     {
-      "id": "sum_coded_responses_for_the_following",
-      "name": "Sum coded responses for the following"
+      "id": "boldness",
+      "name": "Boldness"
+    },
+    {
+      "id": "meanness",
+      "name": "Meanness"
+    },
+    {
+      "id": "disinhibition",
+      "name": "Disinhibition"
+    },
+    {
+      "id": "total",
+      "name": "Total Psychopathy Score"
     }
   ],
   "scoring": {
-    "sum_coded_responses_for_the_following": {
-      "description": "Sum coded responses for the following: mean_coded of 20 items.",
-      "method": "mean_coded",
-      "items": [
-        "act_on_immediate_needs",
-        "missed_events",
-        "impulsive_decisions",
-        "missed_work_without_calling",
-        "jump_without_thinking",
-        "missed_too_much_school",
-        "good_self_control",
-        "take_money_from_wallet",
-        "abuse_trust",
-        "keep_appointments",
-        "bore_quickly",
-        "conned_people_for_money",
-        "trouble_not_consider_consequences",
-        "stolen_from_store",
-        "hard_to_wait",
-        "actions_lost_friends",
-        "others_concerned_lack_self_control",
-        "robbed_someone",
-        "problems_at_work_because_irresponsible",
-        "stolen_from_vehicle"
+    "boldness": {
+      "description": "Boldness subscale (19 items). Raw options 1-4 (True-False) remapped via value_map to 3-0; [F] items reverse-coded.",
+      "method": "sum_coded",
+      "value_map": {
+        "default": [
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      "items": {
+        "optimistic": 1,
+        "parachute": -1,
+        "deal_with_stress": 1,
+        "easily_scared": -1,
+        "born_leader": 1,
+        "things_turn_out_my_way": -1,
+        "influence_people": 1,
+        "new_situations": 1,
+        "not_talented": -1,
+        "less_fear_than_others": 1,
+        "not_traumatized_like_others": 1,
+        "worried_about_unfamiliar_situations": -1,
+        "convince_others": 1,
+        "dont_like_lead_groups": -1,
+        "easily_embarrassed": -1,
+        "avoid_physical_danger": -1,
+        "stack_up_to_others": -1,
+        "not_worried_about_looking_foolish": 1,
+        "not_good_at_influencing_others": -1
+      }
+    },
+    "meanness": {
+      "description": "Meanness subscale (19 items). Raw options 1-4 (True-False) remapped via value_map to 3-0; [F] items reverse-coded.",
+      "method": "sum_coded",
+      "value_map": {
+        "default": [
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      "items": {
+        "other_peoples_feelings": -1,
+        "high_speed_chase": 1,
+        "someone_i_dislike_gets_hurt": 1,
+        "sympathize_with_others": -1,
+        "enjoy_physical_fight": 1,
+        "return_insults": 1,
+        "other_peoples_pain": 1,
+        "enjoy_pushing_others_around": 1,
+        "taunt_others": 1,
+        "not_worried_about_hurting_others": 1,
+        "sensitive_to_others_feelings": -1,
+        "no_sympathy_for_others": 1,
+        "honesty_best_policy": -1,
+        "injured_to_see_pain": 1,
+        "insult_to_get_reaction": 1,
+        "enjoy_danger": 1,
+        "dont_mind_hurting_others": 1,
+        "relate_to_peoples_emotions": -1,
+        "not_bothered_by_people_hurting": 1
+      }
+    },
+    "disinhibition": {
+      "description": "Disinhibition subscale (20 items). Raw options 1-4 (True-False) remapped via value_map to 3-0; [F] items reverse-coded.",
+      "method": "sum_coded",
+      "value_map": {
+        "default": [
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      "items": {
+        "act_on_immediate_needs": 1,
+        "missed_events": 1,
+        "impulsive_decisions": 1,
+        "missed_work_without_calling": 1,
+        "jump_without_thinking": 1,
+        "missed_too_much_school": 1,
+        "good_self_control": -1,
+        "take_money_from_wallet": 1,
+        "abuse_trust": 1,
+        "keep_appointments": -1,
+        "bore_quickly": 1,
+        "conned_people_for_money": 1,
+        "trouble_not_consider_consequences": 1,
+        "stolen_from_store": 1,
+        "hard_to_wait": 1,
+        "actions_lost_friends": 1,
+        "others_concerned_lack_self_control": 1,
+        "robbed_someone": 1,
+        "problems_at_work_because_irresponsible": 1,
+        "stolen_from_vehicle": 1
+      }
+    },
+    "total": {
+      "description": "Total Psychopathy Score — sum of Boldness + Meanness + Disinhibition subscale scores.",
+      "method": "sum_coded",
+      "scores": [
+        "boldness",
+        "meanness",
+        "disinhibition"
       ]
     }
   }

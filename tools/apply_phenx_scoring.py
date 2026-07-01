@@ -64,9 +64,15 @@ def apply_all(scales_dir, dry_run=False, verbose=False):
         # Check for scoring refs that no longer exist
         warnings = []
         for dim_id, block in scoring.items():
+            # skip composite dims that reference other scores (not item IDs)
+            if block.get('scores'):
+                continue
             si = block.get('items', [])
             if isinstance(si, dict):
                 si = list(si.keys())
+            # also check deprecated item_coding refs
+            ic = block.get('item_coding', {})
+            si = list(si) + [k for k in ic if k not in si]
             missing = [i for i in si if i not in item_ids]
             if missing:
                 warnings.append(f"    {code}/{dim_id}: missing item IDs {missing}")

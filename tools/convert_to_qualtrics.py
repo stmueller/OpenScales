@@ -90,6 +90,26 @@ def get_text(translations, key):
     return key
 
 
+def resolve_options(item, defn):
+    """Resolve the options list for a multi/multicheck item.
+
+    Resolution order:
+    1. item['options']          — inline options (highest priority)
+    2. item['option_set']       — named set in defn['option_sets']
+    3. defn['option_sets']['default'] — default set
+    4. []                       — fallback
+    """
+    if "options" in item:
+        return item["options"]
+    option_sets = defn.get("option_sets", {})
+    set_key = item.get("option_set")
+    if set_key and set_key in option_sets:
+        return option_sets[set_key]
+    if "default" in option_sets:
+        return option_sets["default"]
+    return []
+
+
 def strip_html(text):
     """Strip HTML tags for plain-text contexts."""
     return re.sub(r"<[^>]+>", "", text).strip()
@@ -235,7 +255,7 @@ def _emit_single_question(lines, question, definition, translations, scoring):
         lines.append(f"[[ID:{qid}]]")
         lines.append(html_to_qualtrics(text))
         lines.append("[[Choices]]")
-        for i, opt in enumerate(question.get("options", [])):
+        for i, opt in enumerate(resolve_options(question, definition)):
             if isinstance(opt, dict):
                 opt_text = get_text(translations,
                                     opt.get("text_key", opt.get("value", "")))
@@ -250,7 +270,7 @@ def _emit_single_question(lines, question, definition, translations, scoring):
         lines.append("[[MultipleAnswer]]")
         lines.append(html_to_qualtrics(text))
         lines.append("[[Choices]]")
-        for i, opt in enumerate(question.get("options", [])):
+        for i, opt in enumerate(resolve_options(question, definition)):
             if isinstance(opt, dict):
                 opt_text = get_text(translations,
                                     opt.get("text_key", opt.get("value", "")))

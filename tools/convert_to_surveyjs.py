@@ -90,6 +90,26 @@ def _build_likert_columns(lo, translations, lang):
     return columns
 
 
+def resolve_options(item, defn):
+    """Resolve the options list for a multi/multicheck item.
+
+    Resolution order:
+    1. item['options']          — inline options (highest priority)
+    2. item['option_set']       — named set in defn['option_sets']
+    3. defn['option_sets']['default'] — default set
+    4. []                       — fallback
+    """
+    if "options" in item:
+        return item["options"]
+    option_sets = defn.get("option_sets", {})
+    set_key = item.get("option_set")
+    if set_key and set_key in option_sets:
+        return option_sets[set_key]
+    if "default" in option_sets:
+        return option_sets["default"]
+    return []
+
+
 def _build_multi_choices(options, translations, lang):
     """Build SurveyJS choices list from OSD multi/multicheck options."""
     choices = []
@@ -179,7 +199,7 @@ def convert(scale_dir, lang="en"):
 
         elif itype == "multi":
             flush_matrix()
-            options = item.get("options", [])
+            options = resolve_options(item, defn)
             el = {
                 "type": "radiogroup",
                 "name": iid,
@@ -193,7 +213,7 @@ def convert(scale_dir, lang="en"):
 
         elif itype == "multicheck":
             flush_matrix()
-            options = item.get("options", [])
+            options = resolve_options(item, defn)
             el = {
                 "type": "checkbox",
                 "name": iid,

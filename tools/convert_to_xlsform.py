@@ -116,6 +116,26 @@ def normalize_text(s):
     return s.translate(_UNICODE_NORMALIZE)
 
 
+def resolve_options(item, defn):
+    """Resolve the options list for a multi/multicheck item.
+
+    Resolution order:
+    1. item['options']          — inline options (highest priority)
+    2. item['option_set']       — named set in defn['option_sets']
+    3. defn['option_sets']['default'] — default set
+    4. []                       — fallback
+    """
+    if "options" in item:
+        return item["options"]
+    option_sets = defn.get("option_sets", {})
+    set_key = item.get("option_set")
+    if set_key and set_key in option_sets:
+        return option_sets[set_key]
+    if "default" in option_sets:
+        return option_sets["default"]
+    return []
+
+
 # Header fill colours (pale blue / pale green)
 HEADER_FILL_SURVEY = PatternFill("solid", fgColor="DCEBF7")
 HEADER_FILL_CHOICES = PatternFill("solid", fgColor="DCF7DC")
@@ -464,7 +484,7 @@ class ChoicesRegistry:
         return list_name
 
     def register_options(self, question, translations, all_translations=None,
-                         list_name_hint=None):
+                         list_name_hint=None, defn=None):
         """Register a per-item choices list for multi/multicheck/dropdown.
 
         Returns list_name.
@@ -474,7 +494,7 @@ class ChoicesRegistry:
         if key in self._key_to_name:
             return self._key_to_name[key]
 
-        options = question.get("options", [])
+        options = resolve_options(question, defn or {})
         choices = []
         for i, opt in enumerate(options):
             if isinstance(opt, dict):
@@ -854,7 +874,8 @@ def generate_xlsform(definition, translations, all_translations=None):
 
         elif qtype == "multi":
             list_name = choices.register_options(
-                q, translations, all_translations if langs else None)
+                q, translations, all_translations if langs else None,
+                defn=definition)
             row = _make_survey_row(
                 type_=f"select_one {list_name}",
                 name=field_name,
@@ -867,7 +888,8 @@ def generate_xlsform(definition, translations, all_translations=None):
 
         elif qtype == "multicheck":
             list_name = choices.register_options(
-                q, translations, all_translations if langs else None)
+                q, translations, all_translations if langs else None,
+                defn=definition)
             row = _make_survey_row(
                 type_=f"select_multiple {list_name}",
                 name=field_name,
@@ -880,7 +902,8 @@ def generate_xlsform(definition, translations, all_translations=None):
 
         elif qtype == "dropdown":
             list_name = choices.register_options(
-                q, translations, all_translations if langs else None)
+                q, translations, all_translations if langs else None,
+                defn=definition)
             row = _make_survey_row(
                 type_=f"select_one {list_name}",
                 name=field_name,

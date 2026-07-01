@@ -93,6 +93,26 @@ def load_json(filepath):
         return json.load(f)
 
 
+def resolve_options(item, defn):
+    """Resolve the options list for a multi/multicheck item.
+
+    Resolution order:
+    1. item['options']          — inline options (highest priority)
+    2. item['option_set']       — named set in defn['option_sets']
+    3. defn['option_sets']['default'] — default set
+    4. []                       — fallback
+    """
+    if "options" in item:
+        return item["options"]
+    option_sets = defn.get("option_sets", {})
+    set_key = item.get("option_set")
+    if set_key and set_key in option_sets:
+        return option_sets[set_key]
+    if "default" in option_sets:
+        return option_sets["default"]
+    return []
+
+
 def find_definition_file(scale_dir):
     """Find the main scale file in a directory. Prefers `{code}.osd`, then any
     `.osd`, then `{code}.json`, then any non-translation `.json`."""
@@ -218,6 +238,7 @@ def validate_questions(definition, dim_ids, rs_ids, result):
         return set(), {}
 
     has_default_points = "points" in (definition.get("likert_options") or {})
+    option_sets = definition.get("option_sets", {})
     qids = set()
     variant_groups = {}  # group -> [item ids]
 
@@ -258,10 +279,31 @@ def validate_questions(definition, dim_ids, rs_ids, result):
                 result.warn(f"Item '{qid}' (likert) has no points and no scale-level default")
 
         elif qtype in ("multi", "multicheck"):
-            if "options" not in q:
-                result.error(f"Item '{qid}' ({qtype}) missing required 'options' field")
-            elif isinstance(q["options"], list):
-                for j, opt in enumerate(q["options"]):
+            # Options may be inline, reference a named option_set, or rely on
+            # the 'default' option_set defined in definition['option_sets'].
+            has_inline = "options" in q
+            set_key = q.get("option_set")
+            has_set_ref = bool(set_key)
+            has_default_set = "default" in option_sets
+
+            if has_inline:
+                resolved_opts = q["options"]
+            elif has_set_ref:
+                if set_key not in option_sets:
+                    result.error(
+                        f"Item '{qid}' ({qtype}) option_set '{set_key}' not found "
+                        f"in definition.option_sets")
+                resolved_opts = option_sets.get(set_key, [])
+            elif has_default_set:
+                resolved_opts = option_sets["default"]
+            else:
+                result.error(
+                    f"Item '{qid}' ({qtype}) has no 'options', no 'option_set', "
+                    f"and no default option_set defined")
+                resolved_opts = []
+
+            if isinstance(resolved_opts, list):
+                for j, opt in enumerate(resolved_opts):
                     if isinstance(opt, dict):
                         if "value" not in opt:
                             result.error(f"Item '{qid}' option {j} missing 'value'")
@@ -559,8 +601,9 @@ def collect_required_keys(definition):
                 add(k, None)  # response-scale labels are shared structure
             if sdef.get("question_head"):
                 add(sdef["question_head"], None)
-        if isinstance(q.get("options"), list):
-            for opt in q["options"]:
+        resolved_opts = resolve_options(q, definition)
+        if isinstance(resolved_opts, list):
+            for opt in resolved_opts:
                 if isinstance(opt, dict) and opt.get("text_key"):
                     add(opt["text_key"], langs)
                 elif isinstance(opt, str):

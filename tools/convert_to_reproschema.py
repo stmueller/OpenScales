@@ -176,6 +176,26 @@ def get_effective_scale(item, definition):
     return definition.get("likert_options", {})
 
 
+def resolve_options(item, defn):
+    """Resolve options for a multi/multicheck item using option_sets fallback.
+
+    Resolution order:
+      1. item.get("options")           — inline options (highest priority)
+      2. item.get("option_set")        — named set in defn["option_sets"]
+      3. defn["option_sets"]["default"]— scale-level default set
+      4. []                            — empty fallback
+    """
+    if "options" in item:
+        return item["options"]
+    option_sets = defn.get("option_sets", {})
+    set_key = item.get("option_set")
+    if set_key and set_key in option_sets:
+        return option_sets[set_key]
+    if "default" in option_sets:
+        return option_sets["default"]
+    return []
+
+
 def get_likert_choices(item, definition, translations_by_lang, primary_lang):
     """Build a list of {name, value} choice dicts for a likert item.
 
@@ -443,7 +463,7 @@ def build_item_file(item, definition, translations_by_lang, primary_lang):
         obj["responseOptions"] = "../valueConstraints"
 
     elif item_type == "multi":
-        options = item.get("options", [])
+        options = resolve_options(item, definition)
         choices = _build_option_choices(options, translations_by_lang)
         obj["ui"] = {"inputType": "radio"}
         obj["responseOptions"] = {
@@ -453,7 +473,7 @@ def build_item_file(item, definition, translations_by_lang, primary_lang):
         }
 
     elif item_type == "multicheck":
-        options = item.get("options", [])
+        options = resolve_options(item, definition)
         choices = _build_option_choices(options, translations_by_lang)
         obj["ui"] = {"inputType": "radio"}
         obj["responseOptions"] = {

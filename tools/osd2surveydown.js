@@ -39,6 +39,27 @@ class OSD2Surveydown {
         return text;
     }
 
+    // ── Option resolution ────────────────────────────────────────────
+
+    /**
+     * Resolve options for a multi/multicheck item via option_sets.
+     *
+     * Resolution order:
+     * 1. item.options (inline) — use that
+     * 2. item.option_set — look up in defn.option_sets[item.option_set]
+     * 3. defn.option_sets['default'] — use that
+     * 4. Fall back to []
+     */
+    resolveOptions(item) {
+        if (item.options != null) return item.options;
+        const optionSets = this.defn.option_sets || {};
+        if (item.option_set && optionSets[item.option_set]) {
+            return optionSets[item.option_set];
+        }
+        if (optionSets['default']) return optionSets['default'];
+        return [];
+    }
+
     // ── Item converters ──────────────────────────────────────────────
 
     convertLikert(item) {
@@ -90,7 +111,7 @@ class OSD2Surveydown {
     convertMulti(item) {
         const text = this.resolveText(item.text_key || item.id);
         const options = {};
-        for (const opt of (item.options || [])) {
+        for (const opt of this.resolveOptions(item)) {
             if (typeof opt === 'object') {
                 const optText = this.resolveText(opt.text_key || opt.value || '');
                 options[optText] = String(opt.value || '');

@@ -581,6 +581,19 @@ const ScaleRunner = (() => {
   }
 
   /**
+   * Resolve the effective options array for a multi/multicheck item.
+   * Resolution order: per-item options → option_set lookup → "default" set → [].
+   */
+  function getEffectiveOptions(qdef, scaleDef) {
+    if (qdef.options && qdef.options.length) return qdef.options;
+    const sets = scaleDef.option_sets;
+    if (!sets) return [];
+    if (qdef.option_set && sets[qdef.option_set]) return sets[qdef.option_set];
+    if (sets['default']) return sets['default'];
+    return [];
+  }
+
+  /**
    * Get [min, max] numeric range for a question's response.
    * Cascade: question-level → response_scale / likert_options → type defaults.
    */
@@ -957,7 +970,7 @@ const ScaleRunner = (() => {
   }
 
   function renderMulti(qdef, strings, scaleDef, state, wrap, onResponse, prevResponse) {
-    let options = qdef.options || [];
+    let options = getEffectiveOptions(qdef, scaleDef);
     if (qdef.shuffle_options) {
       const pinned = options.filter(o => o.pin_last);
       const free   = options.filter(o => !o.pin_last);
@@ -1007,7 +1020,7 @@ const ScaleRunner = (() => {
   }
 
   function renderMulticheck(qdef, strings, scaleDef, state, wrap, onResponse, prevResponse) {
-    let options  = qdef.options || [];
+    let options = getEffectiveOptions(qdef, scaleDef);
     if (qdef.shuffle_options) {
       const pinned = options.filter(o => o.pin_last);
       const free   = options.filter(o => !o.pin_last);
@@ -1711,7 +1724,7 @@ const ScaleRunner = (() => {
         const raw = responseMap[qdef.id];
         if (raw === undefined || raw === null || raw === 'NA') return;
         const selected = new Set(Array.isArray(raw) ? raw.map(String) : String(raw).split(',').map(s => s.trim()));
-        (qdef.options || []).forEach(opt => {
+        getEffectiveOptions(qdef, scaleDef).forEach(opt => {
           const val = opt.value !== undefined ? String(opt.value) : String(opt);
           expandedMap[`${qdef.id}_${val}`] = selected.has(val) ? 1 : 0;
         });
@@ -1951,7 +1964,7 @@ const ScaleRunner = (() => {
           const selected = new Set(Array.isArray(responseVal) ? responseVal.map(String)
             : (responseVal === 'NA' ? [] : String(responseVal).split(',').map(s => s.trim())));
           let optSum = 0, anyInDim = false;
-          (qdef.options || []).forEach(opt => {
+          getEffectiveOptions(qdef, scaleDef).forEach(opt => {
             const v = opt.value !== undefined ? String(opt.value) : String(opt);
             const subId = `${qdef.id}_${v}`;
             if (!isInScoring(sd, subId)) return;
@@ -1986,7 +1999,7 @@ const ScaleRunner = (() => {
       const tDimCols = tDims.map(dimId => {
         const sd = (scaleDef.scoring || {})[dimId];
         if (qdef.type === 'multicheck') {
-          const anyInDim = (qdef.options || []).some(opt => {
+          const anyInDim = getEffectiveOptions(qdef, scaleDef).some(opt => {
             const v = opt.value !== undefined ? String(opt.value) : String(opt);
             return isInScoring(sd, `${qdef.id}_${v}`);
           });
@@ -2045,7 +2058,7 @@ const ScaleRunner = (() => {
         // Expand one row per option, recording 1/0 for selected/not-selected
         const selected = new Set(Array.isArray(responseVal) ? responseVal.map(String)
           : (responseVal === 'NA' ? [] : String(responseVal).split(',').map(s => s.trim())));
-        (qdef.options || []).forEach(opt => {
+        getEffectiveOptions(qdef, scaleDef).forEach(opt => {
           const val = opt.value !== undefined ? String(opt.value) : String(opt);
           const subId = `${qdef.id}_${val}`;
           const subResp = responseVal === 'NA' ? 'NA' : (selected.has(val) ? '1' : '0');
@@ -2092,7 +2105,7 @@ const ScaleRunner = (() => {
       if (qdef.type === 'grid') {
         (qdef.rows || []).forEach((_, ri) => qIds.push(`${qdef.id}_${ri + 1}`));
       } else if (qdef.type === 'multicheck') {
-        (qdef.options || []).forEach(opt => {
+        getEffectiveOptions(qdef, scaleDef).forEach(opt => {
           const val = opt.value !== undefined ? String(opt.value) : String(opt);
           qIds.push(`${qdef.id}_${val}`);
         });
@@ -2128,7 +2141,7 @@ const ScaleRunner = (() => {
         (qdef.rows || []).forEach((_, ri) => qVals.push(parts[ri] || 'NA'));
       } else if (qdef.type === 'multicheck') {
         const selected = new Set(Array.isArray(val) ? val.map(String) : (val === 'NA' ? [] : String(val).split(',').map(s => s.trim())));
-        (qdef.options || []).forEach(opt => {
+        getEffectiveOptions(qdef, scaleDef).forEach(opt => {
           const v = opt.value !== undefined ? String(opt.value) : String(opt);
           qVals.push(val === 'NA' ? 'NA' : (selected.has(v) ? '1' : '0'));
         });

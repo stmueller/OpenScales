@@ -177,6 +177,26 @@ def _get_effective_scale(question, definition):
     return definition.get("likert_options", {})
 
 
+def resolve_options(item, defn):
+    """Resolve options for a multi/multicheck item using option_sets fallback.
+
+    Resolution order:
+      1. item.get("options")           — inline options (highest priority)
+      2. item.get("option_set")        — named set in defn["option_sets"]
+      3. defn["option_sets"]["default"]— scale-level default set
+      4. []                            — empty fallback
+    """
+    if "options" in item:
+        return item["options"]
+    option_sets = defn.get("option_sets", {})
+    set_key = item.get("option_set")
+    if set_key and set_key in option_sets:
+        return option_sets[set_key]
+    if "default" in option_sets:
+        return option_sets["default"]
+    return []
+
+
 def _build_likert_item(qid, text, question, definition, translations, scoring):
     """Build a likert item as qti-choice-interaction."""
     eff = _get_effective_scale(question, definition)
@@ -218,7 +238,7 @@ def _build_likert_item(qid, text, question, definition, translations, scoring):
 
 def _build_multi_item(qid, text, question, definition, translations, scoring):
     """Build a multiple-choice (single select) item."""
-    options = question.get("options", [])
+    options = resolve_options(question, definition)
     max_choices = "1"
 
     xml = _xml_header(qid, strip_html(text)[:80])
@@ -259,7 +279,7 @@ def _build_multi_item(qid, text, question, definition, translations, scoring):
 
 def _build_multicheck_item(qid, text, question, definition, translations, scoring):
     """Build a multiple-choice (multi select) item."""
-    options = question.get("options", [])
+    options = resolve_options(question, definition)
 
     xml = _xml_header(qid, strip_html(text)[:80])
     xml += (

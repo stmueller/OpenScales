@@ -75,6 +75,26 @@ def get_text(translations, key):
     return key
 
 
+def resolve_options(item, defn):
+    """Resolve the options list for a multi/multicheck item.
+
+    Resolution order:
+    1. item['options']          — inline options (highest priority)
+    2. item['option_set']       — named set in defn['option_sets']
+    3. defn['option_sets']['default'] — default set
+    4. []                       — fallback
+    """
+    if "options" in item:
+        return item["options"]
+    option_sets = defn.get("option_sets", {})
+    set_key = item.get("option_set")
+    if set_key and set_key in option_sets:
+        return option_sets[set_key]
+    if "default" in option_sets:
+        return option_sets["default"]
+    return []
+
+
 def escape_psytoolkit(text):
     """Ensure text is safe for PsyToolkit format (already supports HTML)."""
     # PsyToolkit supports HTML, so most content passes through
@@ -270,7 +290,7 @@ def generate_psytoolkit(definition, translations):
             lines.append("t: radio")
             lines.append(f"q: {escape_psytoolkit(text)}")
 
-            for opt in q.get("options", []):
+            for opt in resolve_options(q, definition):
                 if isinstance(opt, dict):
                     opt_text = get_text(translations, opt.get("text_key", opt.get("value", "")))
                 else:

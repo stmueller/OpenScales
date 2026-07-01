@@ -54,6 +54,26 @@ def get_effective_scale(item, defn):
     return defn.get('likert_options', {})
 
 
+def resolve_options(item, defn):
+    """Resolve options for a multi/multicheck item via option_sets.
+
+    Resolution order:
+    1. item['options'] (inline) — use that
+    2. item['option_set'] — look up in defn['option_sets'][item['option_set']]
+    3. defn['option_sets']['default'] — use that
+    4. Fall back to []
+    """
+    if item.get('options') is not None:
+        return item['options']
+    option_sets = defn.get('option_sets', {})
+    option_set_key = item.get('option_set')
+    if option_set_key and option_set_key in option_sets:
+        return option_sets[option_set_key]
+    if 'default' in option_sets:
+        return option_sets['default']
+    return []
+
+
 def convert_likert(item, defn, translations):
     """Convert a likert item to surveydown mc_buttons question."""
     likert_opts = get_effective_scale(item, defn)
@@ -128,7 +148,7 @@ def convert_multi(item, defn, translations):
     text = resolve_text(item.get('text_key', item['id']), translations)
 
     options = {}
-    for opt in item.get('options', []):
+    for opt in resolve_options(item, defn):
         if isinstance(opt, dict):
             opt_text = resolve_text(opt.get('text_key', opt.get('value', '')), translations)
             opt_val = str(opt.get('value', ''))

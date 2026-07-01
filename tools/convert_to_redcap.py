@@ -190,6 +190,26 @@ def get_likert_max(question, definition):
     return min_val + points - 1
 
 
+def resolve_options(item, defn):
+    """Resolve options for a multi/multicheck item using option_sets fallback.
+
+    Resolution order:
+      1. item.get("options")           — inline options (highest priority)
+      2. item.get("option_set")        — named set in defn["option_sets"]
+      3. defn["option_sets"]["default"]— scale-level default set
+      4. []                            — empty fallback
+    """
+    if "options" in item:
+        return item["options"]
+    option_sets = defn.get("option_sets", {})
+    set_key = item.get("option_set")
+    if set_key and set_key in option_sets:
+        return option_sets[set_key]
+    if "default" in option_sets:
+        return option_sets["default"]
+    return []
+
+
 def build_scoring_expression(score_id, score_def, definition):
     """Build a REDCap calc expression for a scoring definition.
 
@@ -305,7 +325,7 @@ def generate_redcap(definition, translations):
             }))
 
         elif qtype == "multi":
-            options = q.get("options", [])
+            options = resolve_options(q, definition)
             choice_parts = []
             for i, opt in enumerate(options):
                 if isinstance(opt, dict):
@@ -329,7 +349,7 @@ def generate_redcap(definition, translations):
             }))
 
         elif qtype == "multicheck":
-            options = q.get("options", [])
+            options = resolve_options(q, definition)
             choice_parts = []
             for i, opt in enumerate(options):
                 if isinstance(opt, dict):

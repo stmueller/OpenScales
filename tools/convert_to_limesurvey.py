@@ -276,6 +276,30 @@ def _option_key_and_code(opt, index):
 
 
 # ---------------------------------------------------------------------------
+# Option-set resolution
+# ---------------------------------------------------------------------------
+
+def resolve_options(item, defn):
+    """Resolve options for a multi/multicheck item using option_sets fallback.
+
+    Resolution order:
+      1. item.get("options")           — inline options (highest priority)
+      2. item.get("option_set")        — named set in defn["option_sets"]
+      3. defn["option_sets"]["default"]— scale-level default set
+      4. []                            — empty fallback
+    """
+    if "options" in item:
+        return item["options"]
+    option_sets = defn.get("option_sets", {})
+    set_key = item.get("option_set")
+    if set_key and set_key in option_sets:
+        return option_sets[set_key]
+    if "default" in option_sets:
+        return option_sets["default"]
+    return []
+
+
+# ---------------------------------------------------------------------------
 # Main generator
 # ---------------------------------------------------------------------------
 
@@ -474,7 +498,7 @@ def generate_limesurvey(definition, translations_by_lang, primary_lang="en"):
 
         if qtype == "multi":
             # A rows: one per option, per language
-            for i, opt in enumerate(q.get("options", [])):
+            for i, opt in enumerate(resolve_options(q, definition)):
                 opt_key, opt_code = _option_key_and_code(opt, i)
                 for lang in langs:
                     trans = translations_by_lang.get(lang, {})
@@ -488,7 +512,7 @@ def generate_limesurvey(definition, translations_by_lang, primary_lang="en"):
 
         elif qtype == "multicheck":
             # SQ rows: type M uses subquestions as checkbox options
-            for i, opt in enumerate(q.get("options", [])):
+            for i, opt in enumerate(resolve_options(q, definition)):
                 sq_id = w.next_id()
                 opt_key, _ = _option_key_and_code(opt, i)
                 sq_code = f"SQ{i+1:03d}"

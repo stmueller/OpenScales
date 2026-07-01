@@ -335,6 +335,8 @@ Items reference a named scale with `"response_scale": "<id>"`:
 
 `likert_labels` / `likert_points` per-item overrides remain valid for items where every item has a truly unique response format (e.g. semantic differential scales where each item has distinct endpoint labels). `response_scales` is the preferred mechanism whenever multiple items share the same non-default response format.
 
+**Implementation status:** `response_scales` is implemented in the JS runner (`scale-runner.js`), `osd2surveydown.js`, `osd2surveydown.py`, and the web scale preview (`scale.php`). Not yet implemented in the phenx converter or `build_manifest_*.py` scripts (those do not need to resolve response options).
+
 #### `vas` Type
 
 ```json
@@ -490,6 +492,49 @@ Each option object may include:
 | `pin_last` | boolean | `false` | When `shuffle_options` is active, this option is held at the end of the list rather than shuffled. |
 
 For `multi`, exactly one option is selected. For `multicheck`, zero or more options may be selected.
+
+**Named option sets** can be defined via `option_sets` when multiple `multi` or `multicheck` items share the same set of choices. `option_sets` is an object whose keys are short identifiers and whose values are arrays of option objects (same format as an inline `options` array). A special key `"default"` designates the option set used by any `multi` or `multicheck` item that does not specify an `option_set` field — analogous to how `likert_options` is the default for `likert` items.
+
+```json
+{
+  "option_sets": {
+    "default": [
+      {"value": 1, "text_key": "opt_true"},
+      {"value": 2, "text_key": "opt_somewhat_true"},
+      {"value": 3, "text_key": "opt_somewhat_false"},
+      {"value": 4, "text_key": "opt_false"}
+    ],
+    "frequency": [
+      {"value": 1, "text_key": "opt_never"},
+      {"value": 2, "text_key": "opt_sometimes"},
+      {"value": 3, "text_key": "opt_often"},
+      {"value": 4, "text_key": "opt_always"}
+    ]
+  }
+}
+```
+
+Items reference a named option set with `"option_set": "<id>"`. Items without an `option_set` field use the `"default"` set if one is defined; if neither `option_set` nor a `"default"` set exists, `options` must be specified inline on the item.
+
+```json
+{"id": "q1", "type": "multi", "text_key": "q1"}
+{"id": "q2", "type": "multi", "text_key": "q2", "option_set": "frequency"}
+```
+
+**Resolution order** for runners when determining a `multi` / `multicheck` item's options:
+1. Item has `options` → use those (per-item inline, highest priority)
+2. Item has `option_set` → look up in `option_sets` dict
+3. `option_sets` contains a `"default"` key → use that
+4. No options resolved → validation error
+
+`option_sets` fields (each entry in the dict):
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `name` | string | No | Human-readable label for the set (used by editors and ScaleBuilder UI) |
+| *(array entries)* | array of option objects | Yes | Same format as inline `options` — each entry is `{"value": ..., "text_key": "..."}` or a plain string |
+
+`shuffle_options` and `pin_last` may still be specified per-item even when the item uses `option_set` — they override presentation order without changing which set is used.
 
 #### `short` and `long` Types
 
@@ -2153,3 +2198,4 @@ just without a labelled button. (AppRoVE uses this interim approach.)
 | 1.0.16 | 2026-06-17 | **A8. Scale Variants** (new): support multiple variants of an instrument in one OSD, selected by a *coordinate* = active language + choice-parameter values (for old, widely-translated scales with framing-reversed items, language-specific item sets, or short/long editions). C2: added `variant_group` (mutually-exclusive item alternatives) and `variant_when` (per-item condition over `selector`/`parameter` leaves, resolved once at instantiation). New definition-level `variants` block: `sets` (sugar for the language axis: per-set `languages`+`items`), `axes` (multi-axis/free-parameter declaration), `default`. C3: added `variants` array on scoring blocks/dimensions — computed only when one of its set ids is active (lets per-language subscales coexist). S1: added the `selector: "language"` condition leaf; condition grammar is shared between `visible_when` (re-evaluated at runtime) and `variant_when` (resolved at instantiation). C4: translation completeness is **per-variant**. Backward compatible — no `variants`/`variant_when` ⇒ unchanged single-variant behavior. Implemented in the JS runner (`scale-runner.js`) and the export converters (`tools/osd_variants.flatten_variant`); studies (OSC) pin a variant via a scale step's `parameters` (`lang` + free params), needing no new OSC field. |
 | 1.0.17 | 2026-06-24 | Documentation only — added **Roadmap / Planned Features** section. R1: `default_by_language` (per-language parameter defaults) specified but **not implemented** (broad downstream impact across runner, converters, importers, web UI, validator); until then, scales needing language-varying templated values hardcode them in per-language translations. No format change. |
 | 1.0.18 | 2026-06-24 | Documentation only — Roadmap **R2**: `extra_options` / off-scale N/A responses on scored Likert items specified but **not implemented** (broad downstream impact like R1). Interim guidance: make the item optional (`required: false` / `default_required: false`) so respondents skip non-applicable items. No format change. |
+| 1.0.19 | 2026-06-30 | C2: added `option_sets` — a named dictionary of option arrays for `multi`/`multicheck` items that share a common choice set (analogous to `response_scales` for `likert`); the reserved key `"default"` designates the set used by any item without an explicit `option_set` field; added `option_set` item field (string) referencing a key in `option_sets`; resolution order: per-item `options` → `option_set` lookup → `"default"` set → validation error; `shuffle_options`/`pin_last` per-item overrides remain valid alongside `option_set`; eliminates duplicate translation keys when many items share the same choices (e.g. TRUE/FALSE, frequency scales). Implemented in `scale-runner.js`, all `convert_to_*.py` converters, `osd2surveydown.js`, `osd2surveydown.py`, `validate_scale.py`, `scale.php`, `survey-builder.js`, and PhenX converters. |

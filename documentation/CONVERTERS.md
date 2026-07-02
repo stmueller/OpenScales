@@ -24,6 +24,7 @@ Converters live in `tools/`. The naming convention is:
 | **PsyToolkit** | Export (OSD →) | `convert_to_psytoolkit.py` | |
 | **REDCap** | Export (OSD →) | `convert_to_redcap.py` | Data Dictionary CSV; no import yet |
 | **LimeSurvey** | Export (OSD →) | `convert_to_limesurvey.py` | Tab-separated value format |
+| **Google Forms** | Export (OSD →) | `convert_to_googleforms.py` | Google Apps Script; paste into Script Editor and run once |
 | **SurveyDown** | Export (OSD →) | `convert_to_surveydown.py`, `osd2surveydown.py`, `osd2surveydown.js` | Markdown/R/Shiny/PostgreSQL |
 | **QTI 3.0** | Export (OSD →) | `convert_to_qti.py` | IMS QTI content package; e-assessment |
 | **CamCOPS** | Import (→ OSD) | `convert_camcops_to_osd.py` | Cambridge cognitive/psychiatric kit |

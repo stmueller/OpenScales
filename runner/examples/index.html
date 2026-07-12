@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-hosted scale — minimal OpenScales runner example</title>
+
+  <!-- (1) Runner stylesheet. On your own site, copy scale-runner.css into this
+       folder and change the path to "scale-runner.css". -->
+  <link rel="stylesheet" href="../scale-runner.css">
+
+  <style>
+    body { margin: 0; background: #f3f4f6;
+           font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+    #runner { max-width: 760px; margin: 0 auto; background: #fff;
+              min-height: 80vh; box-shadow: 0 0 0 1px #e5e7eb; }
+    .demo-footer { max-width: 760px; margin: 12px auto 48px; padding: 12px 16px;
+                   font-size: 0.85rem; line-height: 1.5; color: #555; text-align: center; }
+    .demo-footer a { color: #2563eb; text-decoration: none; }
+    .demo-footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- (2) Container the runner mounts into -->
+  <div id="runner"></div>
+
+  <!-- (3) Attribution + useful links -->
+  <div class="demo-footer">
+    A <strong>self-hosted</strong> demo of an original CC0 sample scale (<strong>DEMO5</strong>),
+    administered with the <a href="https://openscales.net" target="_blank" rel="noopener">OpenScales</a>
+    runner &mdash; pure client-side JavaScript, no server or PHP. In this demo mode no data is saved.
+    <br>
+    <a href="DEMO5.osd" download>Download this scale definition (.osd)</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://openscales.net/convert.php" target="_blank" rel="noopener">Convert an .osd to Qualtrics / REDCap / SurveyJS / &hellip;</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://openscales.net" target="_blank" rel="noopener">About OpenScales</a>
+  </div>
+
+  <!-- (4) Runner engine. On your own site, copy scale-runner.js into this folder
+       and change the path to "scale-runner.js". -->
+  <script src="../scale-runner.js"></script>
+
+  <!-- (5) Mount it, pointing at your self-hosted .osd bundle -->
+  <script>
+    ScaleRunner.mount(document.getElementById('runner'), {
+      osdURL:      'DEMO5.osd',   // a single self-contained .osd JSON bundle (same folder)
+      language:    'en',
+      participant: 'demo',
+      demo:        true,          // administer + score + show report in-browser; save nothing
+      showTitle:   true,
+      onComplete:  function (detail) {
+        // detail = { status, scale, responses }. The scored report is shown on-screen.
+        // To save responses, set demo:false and collect:'your-endpoint' (any POST target).
+        console.log('DEMO5 complete:', detail);
+      }
+    });
+  </script>
+</body>
+</html>

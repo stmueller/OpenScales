@@ -1,0 +1,74 @@
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "code": "DEMO5",
+      "name": "OpenScales Demo Scale (5 items)",
+      "abbreviation": "DEMO5",
+      "description": "A short, made-up 5-item demonstration scale used to show how the OpenScales runner administers, scores, and reports a self-hosted .osd file. This is NOT a validated instrument — it exists only as a self-hosting example.",
+      "citation": "OpenScales Project (2026). OpenScales Demo Scale (DEMO5). https://openscales.net",
+      "license": "CC0 1.0 (public domain)",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_explanation": "An original demonstration scale created by the OpenScales Project and dedicated to the public domain under CC0 1.0. Free to copy, modify, and reuse for any purpose. It is a sample, not a validated measure.",
+      "url": "https://openscales.net",
+      "version": "1.0",
+      "domain": "Well-being"
+    },
+    "implementation": {
+      "author": "OpenScales Project",
+      "organization": "OpenScales Project",
+      "date": "2026-07-11",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Sample 5-item demo scale for the self-hosted runner example. Items are original and neutral; scoring is a simple sum (5-25), higher = a better day. Replace this file with your own .osd to demo your scale."
+    },
+    "likert_options": {
+      "points": 5,
+      "min": 1,
+      "question_head": "demo_head",
+      "labels": ["demo_r1", "demo_r2", "demo_r3", "demo_r4", "demo_r5"]
+    },
+    "dimensions": [
+      { "id": "total", "name": "Demo Total", "description": "Sum of all 5 items. Range 5-25; higher = a better day." }
+    ],
+    "items": [
+      { "id": "d1", "type": "likert", "text_key": "d1", "dimension": "total" },
+      { "id": "d2", "type": "likert", "text_key": "d2", "dimension": "total" },
+      { "id": "d3", "type": "likert", "text_key": "d3", "dimension": "total" },
+      { "id": "d4", "type": "likert", "text_key": "d4", "dimension": "total" },
+      { "id": "d5", "type": "likert", "text_key": "d5", "dimension": "total" }
+    ],
+    "scoring": {
+      "total": {
+        "method": "sum",
+        "description": "Sum of all 5 items (each 1-5). Range 5-25; higher = a better day.",
+        "items": { "d1": 1, "d2": 1, "d3": 1, "d4": 1, "d5": 1 }
+      }
+    },
+    "report": {
+      "template": "standard",
+      "include": ["timestamp", "completion_time", "dimension_scores"],
+      "header": "OpenScales Demo Scale (DEMO5) Report",
+      "footer_refs": [
+        "OpenScales Demo Scale (DEMO5) — a sample instrument, not validated. https://openscales.net",
+        "Scoring: sum of 5 items (each 1-5) -> 5-25; higher = a better day."
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "demo_head": "Thinking about today, please indicate how much you agree with each statement.",
+      "d1": "Today, I felt rested and alert.",
+      "d2": "Today, I found my tasks manageable.",
+      "d3": "Today, I felt connected to the people around me.",
+      "d4": "Today, I was able to focus when I needed to.",
+      "d5": "Overall, today went well for me.",
+      "demo_r1": "Strongly disagree",
+      "demo_r2": "Disagree",
+      "demo_r3": "Neutral",
+      "demo_r4": "Agree",
+      "demo_r5": "Strongly agree",
+      "debrief": "Thank you — this was a demonstration scale."
+    }
+  }
+}

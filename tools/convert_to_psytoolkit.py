@@ -27,6 +27,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+import osd_params
+
 
 def find_definition_file(scale_dir):
     """Find the main .json definition file."""
@@ -122,8 +125,17 @@ def _psytoolkit_scale_name(code, rs_id):
     return code.lower()
 
 
-def generate_psytoolkit(definition, translations):
-    """Generate PsyToolkit survey text from OSD format."""
+def generate_psytoolkit(definition, translations, params=None):
+    """Generate PsyToolkit survey text from OSD format.
+
+    `params` is the effective OSD conversion-parameter dict (from
+    osd_params.prepare). Text substitution has already been applied in place to
+    `translations`; params is consulted here only for header/title control.
+    PsyToolkit emits no respondent-facing scale title (block labels use the
+    machine `code`), so osd_params.show_header has no visible title to blank.
+    """
+    if params is None:
+        params = {}
     lines = []
     code = definition.get("scale_info", {}).get("code", "scale")
 
@@ -478,6 +490,7 @@ def main():
     parser.add_argument("scale_dir", help="Path to scale directory")
     parser.add_argument("--output", "-o", help="Output file (default: stdout)")
     parser.add_argument("--lang", default="en", help="Language code (default: en)")
+    osd_params.add_param_arg(parser)
     args = parser.parse_args()
 
     scale_dir = Path(args.scale_dir)
@@ -503,7 +516,12 @@ def main():
 
     translations = load_translation(scale_dir, code, args.lang)
 
-    output = generate_psytoolkit(definition, translations)
+    # Apply OSD conversion parameters: substitute [name]/{name} tokens in item
+    # text (in place) and resolve effective params. translations here is a flat
+    # {key: text} dict, so wrap it in a single-language map for osd_params.
+    params = osd_params.prepare(definition, {args.lang: translations}, args.param)
+
+    output = generate_psytoolkit(definition, translations, params)
 
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:

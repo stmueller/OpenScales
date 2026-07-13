@@ -18,6 +18,7 @@ import glob
 # Import the converter functions from sibling module
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from osd2surveydown import load_osd, generate_questions_yml, generate_survey_qmd, generate_app_r
+import osd_params
 
 
 def find_osd_file(scale_dir):
@@ -34,6 +35,7 @@ def main():
     parser.add_argument('scale_dir', help='Path to scale directory containing .osd file')
     parser.add_argument('--output', '-o', required=True, help='Output ZIP file path')
     parser.add_argument('--lang', default='en', help='Language code (default: en)')
+    osd_params.add_param_arg(parser)
     args = parser.parse_args()
 
     # Find .osd file
@@ -60,6 +62,16 @@ def main():
     # Variant scales: reduce to the active variant for the chosen language
     from osd_variants import flatten_variant
     osd_data['definition'] = flatten_variant(osd_data['definition'], args.lang)
+
+    # Apply OSD conversion parameters: substitute [name]/{name} tokens in item
+    # text (in place, across osd_data['translations']) and resolve effective
+    # params. osd_data['translations'] is already {lang: {key: text}}.
+    params = osd_params.prepare(
+        osd_data['definition'], osd_data.get('translations', {}), args.param)
+    # show_header=false: blank the respondent-facing scale title so the
+    # instrument name is not revealed in survey.qmd / app.R.
+    if not osd_params.show_header(params):
+        osd_data['definition'].get('scale_info', {})['name'] = ''
 
     # Convert
     questions_yml = generate_questions_yml(osd_data, args.lang)

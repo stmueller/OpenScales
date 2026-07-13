@@ -41,6 +41,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+import osd_params
+
 try:
     import openpyxl
     from openpyxl.styles import Font, PatternFill, Alignment
@@ -377,11 +380,14 @@ def build_r_calculate(score_id, score_def, definition, code,
 # Main generator
 # ---------------------------------------------------------------------------
 
-def generate_formr(definition, translations, lang="en"):
+def generate_formr(definition, translations, lang="en", params=None):
     """Generate formr survey rows and choices registry from OSD.
 
     Returns (survey_rows, choices_registry).
     Each survey_row is a dict keyed by SURVEY_COLUMNS.
+
+    When osd_params.show_header(params) is False, the respondent-facing survey
+    title row is omitted so the instrument name is not revealed.
     """
     scale_info = definition.get("scale_info", {})
     code = scale_info.get("code", "scale")
@@ -390,6 +396,19 @@ def generate_formr(definition, translations, lang="en"):
 
     choices = ChoicesRegistry()
     survey_rows = []
+
+    # Survey title header (respondent-facing) — guarded by show_header.
+    if osd_params.show_header(params):
+        survey_title = scale_info.get("name", code)
+        if survey_title:
+            survey_rows.append({
+                "type": "note",
+                "name": make_name(f"{code}_title"),
+                "label": survey_title,
+                "optional": "*",
+                "showif": "",
+                "value": "",
+            })
 
     active_item_ids = {q["id"] for q in questions if isinstance(q, dict) and q.get("id")}
 
@@ -780,9 +799,16 @@ def main():
         print(f"Warning: No translation found for language '{args.lang}'",
               file=sys.stderr)
 
+    # Shared OSD parameter handling: resolve effective defaults and apply
+    # [name]/{name} text substitution in place. osd_params.prepare expects a
+    # {lang: {key: value}} mapping; `translations` here is a flat single-language
+    # dict, so wrap it (the inner dict is mutated in place).
+    params = osd_params.prepare(definition, {args.lang: translations}, args.param)
+
     output_path = Path(args.output) if args.output else Path(f"{code}_formr.xlsx")
 
-    survey_rows, choices_registry = generate_formr(definition, translations, args.lang)
+    survey_rows, choices_registry = generate_formr(
+        definition, translations, args.lang, params=params)
 
     write_formr(survey_rows, choices_registry, definition, code, output_path)
 

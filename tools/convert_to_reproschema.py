@@ -36,6 +36,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+import osd_params
+
 
 # ---------------------------------------------------------------------------
 # ReproSchema context URL
@@ -592,7 +595,8 @@ def build_score_item_file(score_id, code):
 
 
 def build_activity_schema(definition, translations_by_lang, primary_lang, code,
-                           ordered_item_ids, add_properties, compute_entries):
+                           ordered_item_ids, add_properties, compute_entries,
+                           params=None):
     """Build the activity schema JSON-LD dict.
 
     ordered_item_ids: list of 'items/{id}' paths for ui.order
@@ -600,7 +604,10 @@ def build_activity_schema(definition, translations_by_lang, primary_lang, code,
     compute_entries: list of {jsExpression, variableName} dicts
     """
     scale_info = definition.get("scale_info", {})
-    name = scale_info.get("name", code)
+    # Respondent-facing scale name; blanked when show_header is false (machine
+    # identifiers below still use `code`). Not currently emitted into the schema
+    # (prefLabel uses `code`), but honored here for correctness/future use.
+    name = scale_info.get("name", code) if osd_params.show_header(params) else ""
     description = scale_info.get("description", "")
     citation = scale_info.get("citation", "")
 
@@ -700,7 +707,8 @@ def expand_grid_item(item, definition, translations_by_lang, primary_lang):
 # Main converter
 # ---------------------------------------------------------------------------
 
-def convert(definition, translations_by_lang, primary_lang, code, output_dir):
+def convert(definition, translations_by_lang, primary_lang, code, output_dir,
+            params=None):
     """Convert a parsed OSD definition to ReproSchema and write to output_dir.
 
     Returns a summary dict with counts of written files.
@@ -816,7 +824,7 @@ def convert(definition, translations_by_lang, primary_lang, code, output_dir):
     # --- Write activity schema ---
     schema = build_activity_schema(
         definition, translations_by_lang, primary_lang, code,
-        ordered_item_ids, add_properties, compute_entries,
+        ordered_item_ids, add_properties, compute_entries, params=params,
     )
     schema_path = output_dir / f"{code}_schema"
     _write_json(schema_path, schema)
@@ -862,6 +870,7 @@ def main():
         "--all-langs", action="store_true",
         help="Include all available languages in multilingual fields",
     )
+    osd_params.add_param_arg(parser)
     args = parser.parse_args()
 
     scale_dir = Path(args.scale_dir)
@@ -911,6 +920,9 @@ def main():
     if args.lang not in translations_by_lang:
         translations_by_lang[args.lang] = {}
 
+    # Resolve conversion params + substitute [name]/{name} across all translations
+    params = osd_params.prepare(definition, translations_by_lang, args.param)
+
     # Determine output — if --output ends in .zip, write dir then zip it
     zip_output = args.output and args.output.endswith(".zip")
 
@@ -926,7 +938,7 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
 
     summary = convert(definition, translations_by_lang, args.lang, code,
-                      output_dir)
+                      output_dir, params=params)
 
     if zip_output:
         import zipfile

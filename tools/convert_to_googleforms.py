@@ -18,6 +18,9 @@ How to use the output:
   5. Grant permissions when prompted
   6. Find the new form in Google Drive
 
+Note: SurveyMonkey can import a Google Form directly, so this converter also
+serves as an indirect path into SurveyMonkey (OSD -> Google Forms -> SurveyMonkey).
+
 Item type mapping:
   likert (grouped, shared scale) -> GridItem (matrix of rows × columns)
   likert (single item)           -> MultipleChoiceItem
@@ -46,6 +49,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from osd_loader import load_scale
+import osd_params
 
 
 # ---------------------------------------------------------------------------
@@ -233,14 +237,17 @@ def _emit_scale(lines, title, mn, mx, min_label='', max_label='', required=False
 # Main converter
 # ---------------------------------------------------------------------------
 
-def convert(scale_dir, lang='en'):
+def convert(scale_dir, lang='en', param_pairs=None):
     defn, translations, code = load_scale(scale_dir, lang)
+    params = osd_params.prepare(defn, translations, param_pairs)  # substitute [name]/{name}
     items = defn.get('items', [])
     scale_info = defn.get('scale_info', {})
-    name = scale_info.get('name', code)
+    # Respondent-facing scale name; blanked when show_header is false. The form
+    # still needs a non-empty title, so the create() call falls back to `code`.
+    name = scale_info.get('name', code) if osd_params.show_header(params) else ''
 
     lines = []
-    lines.append(f'// Google Apps Script — {name}')
+    lines.append(f'// Google Apps Script — {name or code}')
     lines.append(f'// Generated from {code}.osd by convert_to_googleforms.py')
     lines.append(f'//')
     lines.append(f'// Instructions:')
@@ -264,7 +271,7 @@ def convert(scale_dir, lang='en'):
         lines.append('')
 
     lines.append('function createForm() {')
-    lines.append(f'  var form = FormApp.create("{_js_str(name)}");')
+    lines.append(f'  var form = FormApp.create("{_js_str(name or code)}");')
     lines.append(f'  form.setDescription("{_js_str(scale_info.get("description", ""))}");')
     lines.append('')
 
@@ -391,9 +398,10 @@ def main():
     parser.add_argument('scale_dir', help='Scale directory containing .osd file')
     parser.add_argument('--output', '-o', help='Output .gs file (default: stdout)')
     parser.add_argument('--lang', default='en', help='Language code (default: en)')
+    osd_params.add_param_arg(parser)
     args = parser.parse_args()
 
-    script = convert(args.scale_dir, lang=args.lang)
+    script = convert(args.scale_dir, lang=args.lang, param_pairs=args.param)
 
     if args.output:
         Path(args.output).write_text(script, encoding='utf-8')

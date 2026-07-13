@@ -43,10 +43,14 @@ Limitations (noted to stderr):
 """
 
 import json
+import os
 import random
 import re
 import sys
 from pathlib import Path
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import osd_params
 
 
 # ---------------------------------------------------------------------------
@@ -306,8 +310,15 @@ def resolve_options(item, defn):
 # Main generator
 # ---------------------------------------------------------------------------
 
-def generate_limesurvey(definition, translations_by_lang, primary_lang="en"):
+def generate_limesurvey(definition, translations_by_lang, primary_lang="en",
+                        params=None):
     """Generate LimeSurvey TSV content from an OSD definition.
+
+    `params` are the resolved OSD conversion parameters. Item text is already
+    substituted in `translations_by_lang`; here show_header controls whether the
+    respondent-facing survey title (surveyls_title) is populated. LimeSurvey's TSV
+    requires the SL row to exist, so when suppressed we emit an empty title rather
+    than omit the row.
 
     Returns (tsv_string, warnings_list).
     """
@@ -315,7 +326,7 @@ def generate_limesurvey(definition, translations_by_lang, primary_lang="en"):
     warnings = []
 
     scale_info = definition.get("scale_info", {})
-    survey_name = scale_info.get("name", "Scale")
+    survey_name = scale_info.get("name", "Scale") if osd_params.show_header(params) else ""
     questions = definition.get("items") or definition.get("questions", [])
     likert_opts = definition.get("likert_options", {})
 
@@ -657,6 +668,7 @@ def main():
     parser.add_argument("--extra-langs", nargs="*", default=[],
                         metavar="LANG",
                         help="Additional language codes to include (e.g. de fr)")
+    osd_params.add_param_arg(parser)
     args = parser.parse_args()
 
     scale_dir = Path(args.scale_dir)
@@ -694,8 +706,12 @@ def main():
             print(f"Warning: No translation file found for language '{lang}'",
                   file=sys.stderr)
 
+    # Resolve conversion parameters and substitute [name]/{name} tokens across all
+    # loaded language translations in place. show_header is honored below.
+    params = osd_params.prepare(definition, translations_by_lang, args.param)
+
     tsv_content, warnings = generate_limesurvey(
-        definition, translations_by_lang, primary_lang=args.lang
+        definition, translations_by_lang, primary_lang=args.lang, params=params
     )
 
     if warnings:

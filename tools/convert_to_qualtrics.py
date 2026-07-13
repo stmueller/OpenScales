@@ -35,9 +35,13 @@ Notes:
 """
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import osd_params
 
 
 def find_definition_file(scale_dir):
@@ -470,16 +474,25 @@ def _emit_scoring_notes(lines, definition, scoring):
     lines.append("")
 
 
-def generate_qualtrics(definition, translations):
-    """Generate Qualtrics Advanced TXT from OSD format."""
+def generate_qualtrics(definition, translations, params=None):
+    """Generate Qualtrics Advanced TXT from OSD format.
+
+    `params` are the resolved OSD conversion parameters. Item text is already
+    substituted in `translations`; here show_header controls whether the human
+    scale name is exposed as the (respondent-facing) block title. The block still
+    exists regardless — only its visible label is blanked — so import structure is
+    preserved.
+    """
     lines = ["[[AdvancedFormat]]", ""]
 
-    name = definition.get("scale_info", {}).get("name", "Scale")
+    si = definition.get("scale_info", {})
+    name = si.get("name", "Scale")
+    block_title = name if osd_params.show_header(params) else ""
     questions = definition.get("items") or definition.get("questions", [])
     scoring = definition.get("scoring", {})
     pages = definition.get("pages", None)
 
-    lines.append(f"[[Block:{name}]]")
+    lines.append(f"[[Block:{block_title}]]")
     lines.append("")
 
     if pages:
@@ -523,6 +536,7 @@ def main():
     parser.add_argument("--output", "-o", help="Output file (default: stdout)")
     parser.add_argument("--lang", default="en",
                         help="Language code (default: en)")
+    osd_params.add_param_arg(parser)
     args = parser.parse_args()
 
     scale_dir = Path(args.scale_dir)
@@ -549,7 +563,11 @@ def main():
 
     translations = load_translation(scale_dir, code, args.lang)
 
-    output = generate_qualtrics(definition, translations)
+    # Resolve conversion parameters and substitute [name]/{name} tokens in the
+    # (flat) translations dict in place. show_header is honored in generate_qualtrics.
+    params = osd_params.prepare(definition, {args.lang: translations}, args.param)
+
+    output = generate_qualtrics(definition, translations, params)
 
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:

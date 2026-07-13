@@ -29,6 +29,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from osd_loader import load_scale
+import osd_params
 
 
 # ---------------------------------------------------------------------------
@@ -73,6 +74,7 @@ def _visible_if(cond):
 
 def _build_likert_columns(lo, translations, lang):
     """Build SurveyJS column list from OSD likert_options."""
+    lo = lo or {}
     points = lo.get("points", 5)
     labels = lo.get("labels", [])
     min_val = lo.get("min", 1)
@@ -125,12 +127,13 @@ def _build_multi_choices(options, translations, lang):
 # Main converter
 # ---------------------------------------------------------------------------
 
-def convert(scale_dir, lang="en"):
+def convert(scale_dir, lang="en", param_pairs=None):
     """Convert an OSD scale directory to a SurveyJS survey dict."""
     defn, translations, code = load_scale(scale_dir, lang)
+    params = osd_params.prepare(defn, translations, param_pairs)  # substitute [name]/{name}
 
     scale_info = defn.get("scale_info", {})
-    title = scale_info.get("name", code)
+    title = scale_info.get("name", code) if osd_params.show_header(params) else ""
     _rs = defn.get("response_scales", {})
     lo = _rs.get("default") or defn.get("likert_options")
 
@@ -142,14 +145,23 @@ def convert(scale_dir, lang="en"):
     # Track pending likert rows to group into matrix blocks
     pending_matrix = []
     pending_matrix_visible_if = None
+    pending_matrix_sig = None
     # Map item_id -> matrix_name for scoring expression generation
     item_to_matrix = {}
+
+    def _item_lo(item):
+        """Resolve the effective likert options for an item (per-item > response_scale > scale)."""
+        rs_key = item.get("response_scale")
+        return (item.get("likert_options")
+                or (_rs.get(rs_key) if rs_key else None)
+                or lo or {})
 
     def flush_matrix():
         """Emit accumulated likert rows as a single matrix element."""
         if not pending_matrix:
             return
-        q_head_key = lo.get("question_head") if lo else None
+        eff_lo = pending_matrix[0].get("lo") or lo or {}
+        q_head_key = eff_lo.get("question_head")
         q_head = _t(translations, lang, q_head_key) if q_head_key else ""
 
         matrix_name = f"matrix_{pending_matrix[0]['name']}"
@@ -160,7 +172,7 @@ def convert(scale_dir, lang="en"):
             "type": "matrix",
             "name": matrix_name,
             "title": q_head,
-            "columns": _build_likert_columns(lo, translations, lang),
+            "columns": _build_likert_columns(eff_lo, translations, lang),
             "rows": [{"value": r["name"], "text": r["title"]} for r in pending_matrix],
             "isAllRowRequired": False,
         }
@@ -178,14 +190,20 @@ def convert(scale_dir, lang="en"):
         vis = _visible_if(cond)
 
         if itype == "likert":
-            # If visible_when changes, flush and start new matrix
-            if cond != pending_matrix_visible_if and pending_matrix:
+            item_lo = _item_lo(item)
+            sig = (item_lo.get("points"), item_lo.get("min"),
+                   tuple(item_lo.get("labels") or []))
+            # Flush and start a new matrix when the skip-logic OR the response scale changes
+            # (items may carry per-item likert_options with different points/labels).
+            if pending_matrix and (cond != pending_matrix_visible_if or sig != pending_matrix_sig):
                 flush_matrix()
                 pending_matrix_visible_if = cond
+                pending_matrix_sig = sig
             elif not pending_matrix:
                 pending_matrix_visible_if = cond
+                pending_matrix_sig = sig
 
-            pending_matrix.append({"name": iid, "title": text})
+            pending_matrix.append({"name": iid, "title": text, "lo": item_lo})
 
         elif itype in ("inst", "section"):
             flush_matrix()
@@ -302,6 +320,9 @@ def convert(scale_dir, lang="en"):
         "description": scale_info.get("description", ""),
         "pages": [{"name": "page1", "elements": elements}],
     }
+    if osd_params.shuffle_questions(params):
+        # SurveyJS native randomization — never bake a fixed order
+        survey["questionsOrder"] = "random"
     if completed_parts:
         survey["completedHtml"] = "".join(completed_parts)
     if calc_values:
@@ -405,9 +426,10 @@ def main():
     parser.add_argument("scale_dir", help="Path to scale directory containing .osd file")
     parser.add_argument("--lang", default="en", help="Language code (default: en)")
     parser.add_argument("--output", "-o", help="Output file path (default: stdout)")
+    osd_params.add_param_arg(parser)
     args = parser.parse_args()
 
-    survey = convert(args.scale_dir, lang=args.lang)
+    survey = convert(args.scale_dir, lang=args.lang, param_pairs=args.param)
     out = json.dumps(survey, ensure_ascii=False, indent=2)
 
     if args.output:

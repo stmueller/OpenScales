@@ -45,6 +45,9 @@ import sys
 from datetime import date
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+import osd_params
+
 try:
     import openpyxl
     from openpyxl.styles import Font, PatternFill, Alignment
@@ -1245,8 +1248,12 @@ def _auto_width(ws, max_col_width=80):
 
 
 def write_xlsform(survey_rows, choices_registry, langs, definition, code,
-                  output_path):
-    """Write the three-sheet XLSForm workbook to output_path."""
+                  output_path, show_header=True):
+    """Write the three-sheet XLSForm workbook to output_path.
+
+    When show_header is False, the respondent-facing form_title is blanked so
+    the instrument name is not revealed to participants.
+    """
     wb = openpyxl.Workbook()
 
     # ---------------------------------------------------------------- survey
@@ -1304,7 +1311,7 @@ def write_xlsform(survey_rows, choices_registry, langs, definition, code,
     _style_header_row(ws_settings, HEADER_FILL_SETTINGS)
 
     scale_info = definition.get("scale_info", {})
-    form_title = scale_info.get("name", code)
+    form_title = scale_info.get("name", code) if show_header else ""
     form_id = code.lower()
     version = date.today().strftime("%Y%m%d")
     default_language = langs[0] if langs else "English (en)"
@@ -1390,6 +1397,15 @@ def main():
                   file=sys.stderr)
         all_translations = None
 
+    # Shared OSD parameter handling: resolve effective defaults and apply
+    # [name]/{name} text substitution in place across all loaded translations.
+    # osd_params.prepare expects a {lang: {key: value}} mapping; these
+    # translations are flat single-language dicts, so wrap them (the inner
+    # dicts are mutated in place, so substitutions propagate back).
+    sub_map = dict(all_translations) if all_translations else {}
+    sub_map[args.lang] = primary_translations
+    params = osd_params.prepare(definition, sub_map, args.param)
+
     # Determine output path
     if args.output:
         output_path = Path(args.output)
@@ -1401,7 +1417,7 @@ def main():
     )
 
     write_xlsform(survey_rows, choices_registry, langs, definition, code,
-                  output_path)
+                  output_path, show_header=osd_params.show_header(params))
 
     n_items = sum(1 for r in survey_rows
                   if r.get("type", "") not in (

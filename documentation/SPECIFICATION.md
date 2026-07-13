@@ -56,7 +56,7 @@ A `.osd` file is a JSON object with three top-level keys:
 | Key | Type | Required | Description |
 |-----|------|----------|-------------|
 | `osd_version` | string | REQUIRED | Spec version this file was written against (e.g. `"1.0"`) |
-| `definition` | object | REQUIRED | The full scale definition (all C1–C9 content: `scale_info`, `items`, `scoring`, etc.) |
+| `definition` | object | REQUIRED | The full scale definition (all C1–C10 content: `scale_info`, `items`, `scoring`, etc.) |
 | `translations` | object | REQUIRED | Map of BCP-47 language code → flat key/value translation object (see C4) |
 
 **Minimal valid bundle:**
@@ -77,7 +77,7 @@ A `.osd` file is a JSON object with three top-level keys:
 **Rules:**
 
 - `osd_version` MUST be a string matching the spec version the file was written against. Runners SHOULD warn on unknown versions but MUST attempt to parse the file.
-- `definition` contains all structural content. Every field documented in C1–C9 (e.g. `scale_info`, `parameters`, `likert_options`, `response_scales`, `option_sets`, `items`, `dimensions`, `scoring`, `variants`) lives inside `definition`.
+- `definition` contains all structural content. Every field documented in C1–C10 (e.g. `scale_info`, `parameters`, `likert_options`, `response_scales`, `option_sets`, `items`, `dimensions`, `scoring`, `variants`) lives inside `definition`. An optional `codes` overlay block (terminology codes: LOINC / SNOMED CT / ICD-10, consumed by the FHIR exporter) also lives at `definition.codes` — see **C10** for its schema.
 - `translations` contains all user-facing text, keyed by language code. The structure is identical to the standalone `{code}.{lang}.json` files described in C4.
 - Runners MUST ignore unrecognized top-level keys in the bundle envelope (future extensibility and converter provenance metadata).
 - **Flat bundles** (where `scale_info`, `items`, etc. appear at the top level alongside `translations`, with no `definition` wrapper) are a known legacy format. Runners SHOULD detect and accept them for backward compatibility by treating the entire object as the definition.
@@ -125,6 +125,8 @@ Every definition MUST include a `scale_info` object.
 | `license` | string | Short license label shown as a pill/badge in browse views. Keep brief — one to four words. See **Recommended license values** below. |
 | `license_explanation` | string | Full license terms or usage conditions displayed on the scale detail page. Should capture the substance of the license grant (who granted it, what they said, when) so the record is self-contained even if external URLs go dead. |
 | `license_url` | string | URL documenting the license terms or providing evidence for the `license` claim (e.g., rights holder's download page, press release, CC deed). Supplements `license_explanation` — do not rely on this URL as the sole record. |
+| `licensor` | string | *Optional.* The body that licenses/distributes the instrument when it is **gatekept by a third party** rather than the publishing author — e.g. `"Mapi Research Trust / ePROVIDE"`, `"Mind Garden"`, `"PAR Inc."`, `"World Health Organization"`. Distinct from `license` (the terms) and `citation` (the authors): it names *who you must obtain permission from* to administer the scale. Signals that use may be permission-gated even when the text is technically published; such scales usually belong in `private/`. |
+| `licensor_url` | string | *Optional.* URL of the licensor's page for this instrument (e.g. its ePROVIDE `https://eprovide.mapi-trust.org/instruments/<slug>` page), where permission/licensing is obtained. |
 | `version` | string | Scale definition version |
 | `url` | string | URL for more information |
 
@@ -1354,6 +1356,80 @@ The PEBL ScaleRunner supports pattern validation via the built-in `RegexMatch(te
 
 ---
 
+### C10. Terminology Codes (`codes`) — Optional
+
+**Optional.** An overlay block at `definition.codes` carrying standard terminology codes
+(**LOINC**, **SNOMED CT**, **ICD-10**) for FHIR and outcome-registry interoperability. Purely
+additive metadata — runners MAY ignore it entirely, and a scale with no `codes` block is fully
+valid. It is consumed by the FHIR exporter (`tools/convert_to_fhir.py`); per-scale *population*
+of codes is ongoing curation, but the schema below is stable.
+
+**Motivation.** As OpenScales grows into a broader ecosystem — including commercial and
+registry partners, not only the open repository — interoperability with electronic health
+records and outcome registries becomes valuable in its own right, and a plausible way to
+**fund development through partnership**. The relevant standard vocabularies are **LOINC**
+(Regenstrief Institute — codes for observations, including survey instruments, their items,
+and answer options; free to use) and **SNOMED CT** (SNOMED International — codes for clinical
+concepts; requires an Affiliate License in non-member countries). Consortia such as **ICHOM**
+publish "IT-ready" sets that map every data element to LOINC/SNOMED for FHIR-based collection.
+Carrying these codes in the `.osd` lets a scale administered by the runner export
+FHIR-conformant, code-mapped observations that plug directly into EHRs, registries, and the
+ICHOM pipeline — without touching the open-vs-licensed content question.
+
+**Schema — a single overlay block, not inline scattering.** Codes are carried in one optional
+`codes` object at `definition.codes`, **separate from the item definitions**, rather than
+sprinkled inline on each item/option. This is a deliberate design choice for three reasons:
+
+1. **Terminologies map to questions *and* answers, but our response scales are shared.** LOINC
+   codes each question; answers carry LOINC answer-list / SNOMED codes. Because a scale defines
+   its response scale **once** and reuses it across many items, answer codes are declared **once**
+   on the response scale (`codes.response_scales.<key>.options`) — not repeated per item as LOINC's
+   own model does. The converter fans them onto every item that uses that scale.
+2. **Codes are versioned facts on a different cadence than content.** Keeping them in their own
+   block means a code refresh (new LOINC/SNOMED release) never dirties — or forces re-verification
+   of — the instrument text.
+3. **Item keys are the join, explicitly.** The overlay references items by `id`; a validation pass
+   requires every key to resolve to exactly one item. (The convenient `PX<id>` → LOINC-panel join
+   is PhenX-specific; every other scale needs an explicit, hand-curated map — which *is* this block.)
+
+```json
+"codes": {
+  "systems": {
+    "loinc":  { "uri": "http://loinc.org", "version": "2.77" },
+    "snomed": { "uri": "http://snomed.info/sct" }
+  },
+  "scale": { "loinc": "63000-4" },                       // instrument / LOINC panel code
+  "response_scales": {                                    // ANSWER codes — declared ONCE per scale
+    "default": {
+      "loinc": "LL1714-6",                               // answer list
+      "options": { "4": { "snomed": "373066001" },       // keyed by option value or text_key
+                   "0": { "snomed": "373067005" } }
+    }
+  },
+  "items": {                                              // QUESTION codes — keyed by item id
+    "looking_up_increases_problem": { "loinc": "67345-9" },
+    "feel_frustrated":              { "loinc": "67346-7" }
+  }
+}
+```
+
+An optional per-item answer override (`codes.items.<id>.options`) wins over the shared scale for
+the rare case where the same answer text means a different SNOMED concept in one question.
+
+**Implementation.** The FHIR exporter `tools/convert_to_fhir.py` reads this overlay and emits:
+`Questionnaire.code` (panel), `item.code` (per-question LOINC), and answer `valueCoding` set to
+the terminology code when present (SNOMED/LOINC), with scoring preserved via the
+`itemWeight`/`ordinalValue` extensions and system `version` stamped from `codes.systems`. Verified
+end-to-end against a public HAPI FHIR R4 server ($validate: zero errors; the only warnings are the
+test server lacking the LOINC/SNOMED terminology to check code *values*). `misc/phenx_49/` populates
+the overlay for PhenX scales from the PhenX↔LOINC panels.
+
+**Licensing note.** LOINC is free to embed and comes first; SNOMED CT redistribution requires an
+Affiliate License, so SNOMED codes are included only where that license permits. Scales simply omit
+`codes` until curated.
+
+---
+
 ## STANDARD — Recommended for Full-Featured Runners
 
 ### S1. Conditional Logic / Skip Logic
@@ -2241,6 +2317,10 @@ the validator. Until then, the interim approach is to **make the item optional**
 excluded from scoring — functionally equivalent to an N/A coded `missing: true`,
 just without a labelled button. (AppRoVE uses this interim approach.)
 
+### R3. Terminology codes for interoperability — promoted to C10
+
+This feature is now documented as **[C10. Terminology Codes](#c10-terminology-codes-codes--optional)** (the `codes` overlay block at `definition.codes`), reflecting that its schema is stable and implemented (consumed by `tools/convert_to_fhir.py`). See C10 for the schema and rationale.
+
 ---
 
 ## Version History
@@ -2269,3 +2349,5 @@ just without a labelled button. (AppRoVE uses this interim approach.)
 | 1.1.0 | 2026-07-01 | **C2: Unified named response scale system.** `response_scales` entries (and `likert_options`) now support two new fields: `show_numbers` (enum `"all"` · `"labeled_only"` · `"none"`, default `"all"`) replaces the `suppress_likert_numbers` boolean; `order` (enum `"ascending"` · `"descending"`, default `"ascending"`) replaces the per-item `likert_reverse` boolean. `likert_options` is now formally defined as syntactic sugar for `response_scales["default"]`; runners synthesise a `"default"` entry from `likert_options` when `response_scales` has no explicit `"default"` key. `response_scales` and `option_sets` together form the complete named-reusable-response-format system for Likert and multi/multicheck items respectively. Deprecated fields (still honoured): `suppress_likert_numbers` → `show_numbers: "none"`; `likert_reverse` → `order: "descending"` on the scale; per-item `likert_labels`/`likert_points` → still valid but prefer a named or inline scale. Implemented in `scale-runner.js`; converters, builder, and LimeSurvey importer pending. |
 | 1.0.20 | 2026-07-01 | **File Structure** rewritten: `.osd` bundle is now the canonical distribution format; split two-file layout (`.json` + `.{lang}.json`) demoted to an optional runner/tool feature. Formally documented the `.osd` envelope: required top-level keys `osd_version` (string), `definition` (object), `translations` (object); rules for unknown-version tolerance, runner ignore of unrecognized keys, `_`-prefixed extension keys for converter provenance metadata. Noted flat-bundle legacy format (no `definition` wrapper) and deprecated envelope-level `scoring` key (belongs inside `definition`). No format change — all existing `.osd` files are valid. |
 | 1.0.19 | 2026-06-30 | C2: added `option_sets` — a named dictionary of option arrays for `multi`/`multicheck` items that share a common choice set (analogous to `response_scales` for `likert`); the reserved key `"default"` designates the set used by any item without an explicit `option_set` field; added `option_set` item field (string) referencing a key in `option_sets`; resolution order: per-item `options` → `option_set` lookup → `"default"` set → validation error; `shuffle_options`/`pin_last` per-item overrides remain valid alongside `option_set`; eliminates duplicate translation keys when many items share the same choices (e.g. TRUE/FALSE, frequency scales). Implemented in `scale-runner.js`, all `convert_to_*.py` converters, `osd2surveydown.js`, `osd2surveydown.py`, `validate_scale.py`, `scale.php`, `survey-builder.js`, and PhenX converters. |
+| 1.0.21 | 2026-07-11 | Roadmap **R3**: optional `codes` **overlay block** (`definition.codes`) carrying LOINC / SNOMED CT / ICD-10 terminology codes for FHIR & outcome-registry interoperability (e.g. ICHOM "IT-ready" sets). Single block separate from item definitions: `systems` (URIs + versions), `scale` (LOINC panel), `response_scales.<key>.options` (answer codes declared **once** per shared scale, not repeated per item), and `items` (per-question codes keyed by item id); optional per-item answer overrides. Additive optional metadata (runners ignore unrecognized keys, so no `.osd` breaks); LOINC-first (free to embed), SNOMED only where its Affiliate License permits. **Exporter `tools/convert_to_fhir.py` implemented and consumes the overlay** (verified against public HAPI FHIR R4 `$validate`, zero errors); per-scale code *population* is the remaining curation work. No format change to existing scales. |
+| 1.0.22 | 2026-07-12 | Documentation: (a) added optional `scale_info.licensor` and `scale_info.licensor_url` fields (C1) — the third-party body that gatekeeps use of an instrument (e.g. Mapi Research Trust / ePROVIDE, Mind Garden, PAR Inc., WHO) and its licensing page; distinct from `license`/`citation`, signals permission-gated use (such scales usually live in `private/`). (b) the `codes` overlay (LOINC/SNOMED/ICD-10) **promoted from Roadmap R3 to a real section, C10** (and added to the `definition` field list): schema-stable and implemented (consumed by `convert_to_fhir.py`); only per-scale population remains. R3 now redirects to C10. Additive optional metadata; no format change to existing scales. |

@@ -48,6 +48,9 @@ import io
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
+sys.path.insert(0, str(Path(__file__).parent))
+import osd_params
+
 
 QTI_NS = "http://www.imsglobal.org/xsd/imsqtiasi_v3p0"
 CP_NS = "http://www.imsglobal.org/xsd/imscp_v1p1"
@@ -761,10 +764,21 @@ def build_scoring_info(definition):
     return json.dumps(info, indent=2, ensure_ascii=False)
 
 
-def generate_qti_package(definition, translations):
-    """Generate QTI 3.0 content package as bytes (ZIP)."""
+def generate_qti_package(definition, translations, params=None):
+    """Generate QTI 3.0 content package as bytes (ZIP).
+
+    `params` is the effective OSD conversion-parameter dict (from
+    osd_params.prepare); item text substitution has already been applied in
+    place to `translations`. When osd_params.show_header(params) is false, the
+    respondent-facing scale title (scale_info['name']) is blanked to "" — the
+    QTI `title` attribute is required, so we keep the attribute with an empty
+    value; machine identifiers (built from `code`) are left intact.
+    """
+    if params is None:
+        params = {}
     code = definition.get("scale_info", {}).get("code", "scale")
-    name = definition.get("scale_info", {}).get("name", code)
+    name = definition.get("scale_info", {}).get("name", code) \
+        if osd_params.show_header(params) else ""
     questions = definition.get("items") or definition.get("questions", [])
     scoring = definition.get("scoring", {})
     pages = definition.get("pages", None)
@@ -805,6 +819,7 @@ def main():
                         help="Output ZIP file (default: {code}_qti.zip)")
     parser.add_argument("--lang", default="en",
                         help="Language code (default: en)")
+    osd_params.add_param_arg(parser)
     args = parser.parse_args()
 
     scale_dir = Path(args.scale_dir)
@@ -831,7 +846,12 @@ def main():
 
     translations = load_translation(scale_dir, code, args.lang)
 
-    package_bytes = generate_qti_package(definition, translations)
+    # Apply OSD conversion parameters: substitute [name]/{name} tokens in item
+    # text (in place) and resolve effective params. translations here is a flat
+    # {key: text} dict, so wrap it in a single-language map for osd_params.
+    params = osd_params.prepare(definition, {args.lang: translations}, args.param)
+
+    package_bytes = generate_qti_package(definition, translations, params)
 
     output_path = args.output or f"{code}_qti.zip"
     with open(output_path, "wb") as f:

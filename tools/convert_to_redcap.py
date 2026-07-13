@@ -34,10 +34,14 @@ Notes:
 
 import csv
 import json
+import os
 import re
 import sys
 import io
 from pathlib import Path
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import osd_params
 
 
 # REDCap Data Dictionary column headers
@@ -269,10 +273,20 @@ def build_scoring_expression(score_id, score_def, definition):
         return f"sum({','.join(parts)})"
 
 
-def generate_redcap(definition, translations):
-    """Generate REDCap Data Dictionary rows from OSD format."""
-    code = definition.get("scale_info", {}).get("code", "scale")
+def generate_redcap(definition, translations, params=None):
+    """Generate REDCap Data Dictionary rows from OSD format.
+
+    `params` are the resolved OSD conversion parameters (from osd_params.prepare).
+    Item text has already been substituted in `translations`; here we only honor
+    show_header, which controls whether the human-readable scale title is exposed
+    as a leading descriptive field. Machine identifiers (form_name from `code`) are
+    never blanked.
+    """
+    si = definition.get("scale_info", {})
+    code = si.get("code", "scale")
     form_name = clean_field_name(code)
+    show_header = osd_params.show_header(params)
+    scale_title = si.get("name", "") if show_header else ""
     questions = definition.get("items") or definition.get("questions", [])
     scoring = definition.get("scoring", {})
     pages = definition.get("pages", None)
@@ -280,6 +294,16 @@ def generate_redcap(definition, translations):
 
     rows = []
     section_header = ""
+
+    # Respondent-facing scale title as a leading descriptive field, unless
+    # show_header=false (then the instrument name is not revealed to respondents).
+    if scale_title:
+        rows.append(make_row(**{
+            "Variable / Field Name": clean_field_name(f"{code}_title"),
+            "Form Name": form_name,
+            "Field Type": "descriptive",
+            "Field Label": scale_title,
+        }))
 
     # Track which page we're on for section headers
     q_to_page = {}
@@ -667,6 +691,7 @@ def main():
     parser.add_argument("--output", "-o", help="Output CSV file (default: stdout)")
     parser.add_argument("--lang", default="en",
                         help="Language code (default: en)")
+    osd_params.add_param_arg(parser)
     args = parser.parse_args()
 
     scale_dir = Path(args.scale_dir)
@@ -693,7 +718,11 @@ def main():
 
     translations = load_translation(scale_dir, code, args.lang)
 
-    rows = generate_redcap(definition, translations)
+    # Resolve conversion parameters and substitute [name]/{name} tokens in the
+    # (flat) translations dict in place. show_header is honored inside generate_redcap.
+    params = osd_params.prepare(definition, {args.lang: translations}, args.param)
+
+    rows = generate_redcap(definition, translations, params)
     csv_output = generate_csv(rows)
 
     if args.output:

@@ -6,9 +6,11 @@
 
 LLMs given only the full specification often invent plausible-but-invalid structures: they put item text in the wrong place, invent response-scale shapes, and use scoring shapes from other survey formats. The result may open in ScaleBuilder but show **blank questions**, wrong response buttons, or missing summary scores.
 
-This page is the **short, example-driven contract** to paste into a prompt (or link alongside the spec). Examples here are generic (`EX`, `q1`, `total`) — apply the same patterns to whatever scale you are implementing. Prefer a real repo file such as `PHQ9.osd` as the structural template.
+This page is the **short, example-driven contract** to paste into a prompt (or link alongside the spec). Examples here are generic (`EX`, `q1`, `total`) — apply the same patterns to whatever scale you are implementing.
 
-**Pattern-match the templates in this guide** (especially the complete skeletons). Do not invent “standard survey JSON” shapes (`scoring` arrays, boolean toggles, `operation` instead of `op`).
+**Anchor on the Comprehensive exemplar below** (not the shorter “minimal” skeleton). Minimal templates omit edge-case fields; models then fall back to habitual JSON (`show_numbers: false`, object-shaped `transform`, missing `dimensions`). A feature-complete exemplar keeps those fields visible so the model copies them. Prefer real repo files such as `PHQ9.osd` / `DASS21.osd` only after matching this guide’s shapes.
+
+Do not invent “standard survey JSON” workarounds (`scoring` arrays, boolean toggles, `operation` instead of `op`).
 
 ---
 
@@ -70,6 +72,109 @@ transform: [                    // ALWAYS an array (even for one step)
 
 ---
 
+## Comprehensive exemplar (anchor on this)
+
+**Start here.** Clone this file’s structure, then swap in the published measure’s ids, wording, point counts, and scoring math. It is intentionally denser than a “hello world” so the gotchas stay in-distribution for the model.
+
+This single template demonstrates all of:
+
+1. `dimensions[].id` ↔ keyed `scoring.<id>` (both present; same id)  
+2. `scoring` as an **object**, never an array  
+3. `transform` as a **one-element array** of `{ "op", "value" }` (not `{ "operation": … }`)  
+4. literal `"description"` on the score (not `description_key`)  
+5. `show_numbers`: **`"none"`** (string enum — not boolean `false`)  
+6. `question_head` linked to an `instruction` translation  
+7. optional `norms` on the scoring block  
+8. `implementation` + full-ish `scale_info`
+
+```json
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Example Percent Scale",
+      "code": "EXPCT",
+      "abbreviation": "EXPCT",
+      "description": "Illustrative 0–10 buttons labeled as percents; mean×10 → 0–100 report metric.",
+      "citation": "Author, A. (Year). Title. Journal. https://doi.org/...",
+      "license": "free for research use",
+      "license_explanation": "Rights holder states free for research/clinical use; cite source page.",
+      "license_url": "https://example.org/measures",
+      "version": "1.0",
+      "domain": "Mental Health"
+    },
+    "implementation": {
+      "author": "Your Name",
+      "organization": "OpenScales Project",
+      "date": "2026-11-06",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "likert_options": {
+      "points": 11,
+      "min": 0,
+      "max": 10,
+      "labels": [
+        "opt_0", "opt_10", "opt_20", "opt_30", "opt_40", "opt_50",
+        "opt_60", "opt_70", "opt_80", "opt_90", "opt_100"
+      ],
+      "show_numbers": "none",
+      "question_head": "instruction"
+    },
+    "dimensions": [
+      { "id": "total", "name": "Total" }
+    ],
+    "items": [
+      { "id": "q1", "type": "likert", "text_key": "q1" },
+      { "id": "q2", "type": "likert", "text_key": "q2" },
+      { "id": "q3", "type": "likert", "text_key": "q3" }
+    ],
+    "scoring": {
+      "total": {
+        "method": "mean_coded",
+        "items": ["q1", "q2", "q3"],
+        "transform": [
+          { "op": "multiply", "value": 10 }
+        ],
+        "description": "Mean of item responses (0–10), multiplied by 10 (0–100).",
+        "norms": {
+          "thresholds": [
+            { "min": 0, "max": 40, "label": "Below cutoff" },
+            { "min": 40, "max": 100, "label": "At or above cutoff" }
+          ]
+        }
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "instruction": "Choose the option that best fits your experience.",
+      "q1": "First item wording.",
+      "q2": "Second item wording.",
+      "q3": "Third item wording.",
+      "opt_0": "0%",
+      "opt_10": "10%",
+      "opt_20": "20%",
+      "opt_30": "30%",
+      "opt_40": "40%",
+      "opt_50": "50%",
+      "opt_60": "60%",
+      "opt_70": "70%",
+      "opt_80": "80%",
+      "opt_90": "90%",
+      "opt_100": "100%",
+      "debrief": "Thank you."
+    }
+  }
+}
+```
+
+If the published scale uses ordinary Never…Always anchors and no rescaling, keep this same skeleton and only change what must change: set `"show_numbers": "all"` (or `"labeled_only"`), replace percent `labels`/translations, and omit `transform` / `norms` when the publication has none. **Do not** drop `dimensions` or switch `scoring` to an array when simplifying.
+
+For multiple subscales, keep this pattern and duplicate dimension+scoring pairs (see **Subscales** below / `DASS21.osd`).
+
+---
+
 ## Copy-paste prompt (recommended)
 
 ```
@@ -79,7 +184,10 @@ BEFORE writing any JSON:
 1. Open https://github.com/stmueller/OpenScales/blob/main/documentation/LLM_OSD_GUIDE.md
 2. Quote the section "Fingerprint of a REJECT file" verbatim in your reply
 3. Confirm you will NOT emit that fingerprint
-4. Ask the user any open choices below (or state the defaults you will use
+4. Clone the section "Comprehensive exemplar (anchor on this)" — do NOT start
+   from a blank file or from generic survey-JSON habits. The shorter
+   "minimal" skeleton is optional later; the comprehensive one is the default.
+5. Ask the user any open choices below (or state the defaults you will use
    and proceed only if they already answered / said to use defaults)
 
 ASK THE USER (or apply defaults and say so):
@@ -129,7 +237,8 @@ Rules (override generic survey-JSON habits — do NOT invert these):
    (g) show_numbers is set intentionally. If any check fails, fix before answering.
 
 Then implement: <SCALE NAME / SOURCE URL / PDF>.
-Use PHQ9.osd for a single total score; DASS21.osd for multiple subscales.
+Default structural template: this guide’s Comprehensive exemplar.
+Repo cross-check: PHQ9.osd (single total); DASS21.osd (multiple subscales).
 ```
 
 Also attach or link:
@@ -141,9 +250,9 @@ Also attach or link:
 
 ---
 
-## Minimal valid skeleton (ordinary verbal anchors)
+## Minimal valid skeleton (ordinary verbal anchors only)
 
-Copy this structure first. Then change ids/text/methods to match the published measure.
+**Secondary.** Use only after the Comprehensive exemplar: same hierarchy, but with Never…Always labels and `"show_numbers": "all"`, and without `transform` / `norms`. Still includes `dimensions` + keyed `scoring` — never strip those when “simplifying.”
 
 ```json
 {
@@ -208,73 +317,6 @@ Copy this structure first. Then change ids/text/methods to match the published m
 ```
 
 **File name:** `EX.osd` (same as `scale_info.code`). Prefer codes that are safe filename stems: `[A-Za-z0-9_]+`.
-
-## Complete skeleton (percent labels + suppress numbers + transform)
-
-Use this when labels already state the metric and the published score rescales after mean/sum. Lock onto these exact field shapes:
-
-```json
-{
-  "osd_version": "1.0",
-  "definition": {
-    "scale_info": {
-      "name": "Example Percent Scale",
-      "code": "EXPCT",
-      "description": "Illustrative 0–10 buttons labeled as percents; mean×10 → 0–100."
-    },
-    "implementation": {
-      "author": "Your Name",
-      "license": "CC BY 4.0"
-    },
-    "likert_options": {
-      "points": 11,
-      "min": 0,
-      "max": 10,
-      "labels": [
-        "opt_0", "opt_10", "opt_20", "opt_30", "opt_40", "opt_50",
-        "opt_60", "opt_70", "opt_80", "opt_90", "opt_100"
-      ],
-      "show_numbers": "none",
-      "question_head": "instruction"
-    },
-    "dimensions": [
-      { "id": "total", "name": "Total" }
-    ],
-    "items": [
-      { "id": "q1", "type": "likert", "text_key": "q1" },
-      { "id": "q2", "type": "likert", "text_key": "q2" }
-    ],
-    "scoring": {
-      "total": {
-        "method": "mean_coded",
-        "items": ["q1", "q2"],
-        "transform": [{ "op": "multiply", "value": 10 }],
-        "description": "Mean of item responses (0–10), multiplied by 10 (0–100)."
-      }
-    }
-  },
-  "translations": {
-    "en": {
-      "instruction": "Choose the option that best fits your experience.",
-      "q1": "First item wording.",
-      "q2": "Second item wording.",
-      "opt_0": "0%",
-      "opt_10": "10%",
-      "opt_20": "20%",
-      "opt_30": "30%",
-      "opt_40": "40%",
-      "opt_50": "50%",
-      "opt_60": "60%",
-      "opt_70": "70%",
-      "opt_80": "80%",
-      "opt_90": "90%",
-      "opt_100": "100%"
-    }
-  }
-}
-```
-
-This second skeleton demonstrates together: `show_numbers` as `"none"`, `question_head` → `instruction`, `dimensions`+`scoring` shared id, `transform` as a one-step **array** with `"op"`, and literal `"description"`.
 
 ---
 

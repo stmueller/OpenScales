@@ -47,6 +47,17 @@ an optional runner/tool feature — useful when translations are large or
 numerous — but it is not the primary format and tools are not required to
 support it.
 
+**Filename:** Save bundles as `{code}.osd`. The content is JSON, but the
+`.osd` extension is the distribution convention (ScaleBuilder downloads
+`.osd`; chat UIs often export `.json` — rename before sharing). Prefer
+`scale_info.code` values that are safe filename stems: letters, digits,
+underscore (e.g. `MDS16` rather than `MDS-16`).
+
+**LLM / automated authoring:** Generative models frequently invent invalid
+shapes (missing `text_key`, wrong `likert_options`, `scoring` as an array).
+See **[LLM_OSD_GUIDE.md](LLM_OSD_GUIDE.md)** for a pasteable prompt, a
+minimal skeleton, anti-patterns, and a worked MDS-16 counterexample.
+
 Language codes follow [BCP 47](https://www.rfc-editor.org/info/bcp47) (e.g., `en`, `de`, `es`, `zh-Hans`).
 
 ### The `.osd` Bundle Format
@@ -343,6 +354,14 @@ Most single-format scales use only `likert_options`. Scales with multiple respon
   }
 }
 ```
+
+> **Common invalid shape (do not use):**  
+> `"likert_options": { "my_opts": [ {"value": 0, "text": "0%"}, ... ] }`  
+> That confuses `likert_options` with `option_sets` / `multi` options. Labels
+> are translation **keys** in a parallel `translations` entry, not inline
+> `"text"` fields. For non-unit spacing (0, 10, …, 100), use `multi` +
+> `option_sets` or Likert `min`/`max` with unit steps plus a scoring
+> `transform` — see [LLM_OSD_GUIDE.md](LLM_OSD_GUIDE.md).
 
 **Example — endpoint-anchored 7-point scale (MRSS):**
 
@@ -675,6 +694,9 @@ The `scoring` object defines how dimension scores are computed. Each key must ma
   }
 }
 ```
+
+> **Not an array.** Do not emit `"scoring": [ { "id": "total", "type": "average", ... } ]`.
+> Keys are score ids; the field name is `method` (e.g. `mean_coded`), not `type`.
 
 **Scoring methods:**
 

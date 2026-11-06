@@ -22,6 +22,7 @@ See [SPECIFICATION.md](documentation/SPECIFICATION.md) for the full format speci
 OpenScales/
   documentation/
     SPECIFICATION.md          — Full OSD format specification
+    LLM_OSD_GUIDE.md          — Prompt template + anti-patterns for LLM-authored .osd files
     OSC_SPECIFICATION.md      — Open Scale Chain format (multi-scale sessions)
     CONTRIBUTING.md           — Guidelines for contributing scales
     REGISTRY.md               — Scale registry documentation
@@ -147,7 +148,7 @@ The OSD format is designed to be implemented by any survey or experiment platfor
 
 ## Contributing
 
-See [CONTRIBUTING.md](documentation/CONTRIBUTING.md) for guidelines on submitting new scales or improving existing ones.
+See [CONTRIBUTING.md](documentation/CONTRIBUTING.md) for guidelines on submitting new scales or improving existing ones. For LLM-assisted authoring, use [LLM_OSD_GUIDE.md](documentation/LLM_OSD_GUIDE.md) (short prompt + worked failure cases) rather than the full spec alone.
 
 ## License
 

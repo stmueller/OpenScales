@@ -47,6 +47,9 @@ Your `{CODE}.osd` is a single JSON file containing the definition and all transl
       "labels": ["likert_1", "likert_2", "likert_3", "likert_4", "likert_5"],
       "question_head": "question_head"
     },
+    "dimensions": [
+      { "id": "total", "name": "Total Score" }
+    ],
     "items": [
       {
         "id": "q1",
@@ -54,14 +57,13 @@ Your `{CODE}.osd` is a single JSON file containing the definition and all transl
         "type": "likert"
       }
     ],
-    "scoring": [
-      {
-        "id": "total",
-        "name": "Total Score",
-        "method": "sum",
-        "items": ["q1"]
+    "scoring": {
+      "total": {
+        "method": "sum_coded",
+        "items": ["q1"],
+        "description": "Sum of items"
       }
-    ]
+    }
   },
   "translations": {
     "en": {
@@ -79,6 +81,8 @@ Your `{CODE}.osd` is a single JSON file containing the definition and all transl
 ```
 
 See [SPECIFICATION.md](SPECIFICATION.md) for all available fields, item types, scoring methods, and features.
+
+**Authoring with an LLM?** Use [LLM_OSD_GUIDE.md](LLM_OSD_GUIDE.md) — a short prompt template, anti-patterns, and a worked MDS-16 failure case. Do not rely on CONTRIBUTING alone; older drafts (and some LLM training data) used an invalid `scoring` **array** shape.
 
 ### 3. Add a screenshot (optional)
 

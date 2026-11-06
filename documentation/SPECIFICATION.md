@@ -47,6 +47,17 @@ an optional runner/tool feature — useful when translations are large or
 numerous — but it is not the primary format and tools are not required to
 support it.
 
+**Filename:** Save bundles as `{code}.osd`. The content is JSON, but the
+`.osd` extension is the distribution convention (ScaleBuilder downloads
+`.osd`; chat UIs often export `.json` — rename before sharing). Prefer
+`scale_info.code` values that are safe filename stems: letters, digits,
+underscore (e.g. `MDS16` rather than `MDS-16`).
+
+**LLM / automated authoring:** Generative models frequently invent invalid
+shapes (missing `text_key`, wrong `likert_options`, `scoring` as an array).
+See **[LLM_OSD_GUIDE.md](LLM_OSD_GUIDE.md)** for a pasteable prompt, a
+minimal skeleton, anti-patterns, and a worked MDS-16 counterexample.
+
 Language codes follow [BCP 47](https://www.rfc-editor.org/info/bcp47) (e.g., `en`, `de`, `es`, `zh-Hans`).
 
 ### The `.osd` Bundle Format
@@ -343,6 +354,14 @@ Most single-format scales use only `likert_options`. Scales with multiple respon
   }
 }
 ```
+
+> **Common invalid shape (do not use):**  
+> `"likert_options": { "my_opts": [ {"value": 0, "text": "0%"}, ... ] }`  
+> That confuses `likert_options` with `option_sets` / `multi` options. Labels
+> are translation **keys** in a parallel `translations` entry, not inline
+> `"text"` fields. For non-unit spacing (0, 10, …, 100), use `multi` +
+> `option_sets` or Likert `min`/`max` with unit steps plus a scoring
+> `transform` — see [LLM_OSD_GUIDE.md](LLM_OSD_GUIDE.md).
 
 **Example — endpoint-anchored 7-point scale (MRSS):**
 
@@ -675,6 +694,9 @@ The `scoring` object defines how dimension scores are computed. Each key must ma
   }
 }
 ```
+
+> **Not an array.** Do not emit `"scoring": [ { "id": "total", "type": "average", ... } ]`.
+> Keys are score ids; the field name is `method` (e.g. `mean_coded`), not `type`.
 
 **Scoring methods:**
 
@@ -1359,10 +1381,12 @@ The PEBL ScaleRunner supports pattern validation via the built-in `RegexMatch(te
 ### C10. Terminology Codes (`codes`) — Optional
 
 **Optional.** An overlay block at `definition.codes` carrying standard terminology codes
-(**LOINC**, **SNOMED CT**, **ICD-10**) for FHIR and outcome-registry interoperability. Purely
-additive metadata — runners MAY ignore it entirely, and a scale with no `codes` block is fully
-valid. It is consumed by the FHIR exporter (`tools/convert_to_fhir.py`); per-scale *population*
-of codes is ongoing curation, but the schema below is stable.
+(**LOINC**, **SNOMED CT**, **ICD-10**) for FHIR and outcome-registry interoperability, and/or
+an **NDA** block for NIMH Data Archive submission. Purely additive metadata — runners MAY ignore
+it entirely, and a scale with no `codes` block is fully valid. It is consumed by the FHIR
+exporter (`tools/convert_to_fhir.py`) and the planned NDA exporter
+(`tools/convert_to_nda.py`); per-scale *population* of codes is ongoing curation, but the
+schema below is stable.
 
 **Motivation.** As OpenScales grows into a broader ecosystem — including commercial and
 registry partners, not only the open repository — interoperability with electronic health
@@ -1409,12 +1433,31 @@ sprinkled inline on each item/option. This is a deliberate design choice for thr
   "items": {                                              // QUESTION codes — keyed by item id
     "looking_up_increases_problem": { "loinc": "67345-9" },
     "feel_frustrated":              { "loinc": "67346-7" }
+  },
+  "nda": {                                               // NDA submission mapping (optional)
+    "short_name": "phq901",                              // NDA data structure short name
+    "version":    "01",                                  // NDA structure version
+    "items": {                                           // .osd item id -> NDA column name
+      "phq9_anhedonia":  "phq9_1",
+      "phq9_depressed":  "phq9_2"
+    }
   }
 }
 ```
 
 An optional per-item answer override (`codes.items.<id>.options`) wins over the shared scale for
 the rare case where the same answer text means a different SNOMED concept in one question.
+
+**NDA block.** `codes.nda` maps an `.osd` to an NDA Data Archive data structure for automated
+submission CSV generation. `short_name` and `version` identify the NDA structure (browsable at
+`https://nda.nih.gov/data-structure/{short_name}`; template at
+`https://nda.nih.gov/api/datadictionary/v2/datastructure/{short_name}/template`). The template
+is a two-row CSV: row 1 = `"{short_name}","{version}"`, row 2 = all column names in NDA's
+required order. The `items` map translates `.osd` item `id` values to NDA column names;
+the five universal NDA header fields (`subjectkey`, `src_subject_id`, `interview_date`,
+`interview_age`, `sex`) are supplied from runner session metadata at export time. The planned
+tool `tools/convert_to_nda.py` reads this block and a runner response CSV to emit a
+ready-to-upload NDA submission file. See `documentation/health_scales_ecosystem.md §4b`.
 
 **Implementation.** The FHIR exporter `tools/convert_to_fhir.py` reads this overlay and emits:
 `Questionnaire.code` (panel), `item.code` (per-question LOINC), and answer `valueCoding` set to
@@ -1425,8 +1468,8 @@ test server lacking the LOINC/SNOMED terminology to check code *values*). `misc/
 the overlay for PhenX scales from the PhenX↔LOINC panels.
 
 **Licensing note.** LOINC is free to embed and comes first; SNOMED CT redistribution requires an
-Affiliate License, so SNOMED codes are included only where that license permits. Scales simply omit
-`codes` until curated.
+Affiliate License, so SNOMED codes are included only where that license permits. NDA `short_name`
+and column names are public (no license). Scales simply omit `codes` until curated.
 
 ---
 

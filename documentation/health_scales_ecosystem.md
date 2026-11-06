@@ -83,6 +83,49 @@ to the licensing fight over content.
 - **Layer:** B (curation). Academic **core outcome sets** — consensus on *which outcomes* to
   measure per condition (broader/research-driven cousin of ICHOM). https://www.comet-initiative.org/
 
+### NDA — NIMH Data Archive
+- **Layer:** D (format/exchange) + E (distribution of collected data). **An archive of actual
+  research data, not a scale registry.**
+- Federated data repository for sharing de-identified human-subjects data across NIMH-funded
+  studies. **Mandatory submission**: NIMH-funded investigators must deposit data in NDA format
+  within 1 year of collection. Site: https://nda.nih.gov/
+- **Data Dictionary:** ~6,375 standardized **data structures** (mostly Clinical Assessments)
+  covering ~500,000 individual data elements from thousands of studies. Each data structure has
+  a stable short name (e.g. `phq901`) and a browsable page at
+  `https://nda.nih.gov/data-structure/{shortname}`. Machine-readable via REST API:
+  `https://nda.nih.gov/api/datadictionary/v2/datastructure/{shortname}`.
+- **Standard header on every structure:** `subjectkey` (GUID, format `NDAR*`),
+  `src_subject_id`, `interview_date`, `interview_age` (months), `sex` — required on every
+  submission, enabling cross-study linking.
+- **No LOINC/SNOMED/ICD-10 codes.** Elements use NDA-internal `dataElementId` integers as
+  stable cross-study identifiers. Categories are informal flat tags ("Depression", "Anxiety",
+  "Questionnaire"). Diagnostic taxonomy is **DSM-5** (conceptually), not ICD-10.
+- **RDoC** (Research Domain Criteria — NIMH's own dimensional research framework with domains
+  Negative Valence, Positive Valence, Cognitive, Social, Arousal/Regulatory) is NIMH's
+  framework for *how to study* mental illness; it is **not** an encoding system used in NDA
+  data structures. The two are separate.
+- **The 13 NIMH Common Data Elements (CDEs):** A curated mandatory core — every NIMH-funded
+  study should collect these:
+
+  | NDA short name | Instrument | Domain |
+  |---|---|---|
+  | `cde_phq901` | PHQ-9 | Depression |
+  | `cde_gad701` | GAD-7 | Anxiety |
+  | `cde_rcads01` / `cde_rcadsyouth01` | RCADS-25 (parent/youth) | Anxiety/Depression |
+  | `cde_whodas01` | WHODAS 2.0 | Functional disability |
+  | `cde_dsm5crossad01` / `cde_dsm5crosspg01` / `cde_dsm5crossyouth01` | DSM-5 Level 1 Cross-Cutting (adult/parent/youth) | Transdiagnostic screening |
+  | `dar_cde101/201/301` | HIV/ART/PrEP CDEs | HIV |
+  | `ndar_subject01` | Research Subject (demographics) | Identifiers |
+  | `standul01` | NIH Data Use Limitations | Admin |
+
+- **Licensing:** PHQ-9 and GAD-7 are public domain (Pfizer). WHODAS 2.0 is WHO-published,
+  free for research. DSM-5 cross-cutting measures: APA copyright, distributed as "freely
+  available for clinical/research use" in DSM-5 supplementary materials — redistribution in
+  a software repository warrants verification (similar to PROMIS situation).
+- **Sources in NDA:** NDA (4,746 structures), NIAAA (828), ABCD Study (394+), CPEA/STAART
+  (75), Connectome Coordination Facility (67), HEAL Initiative (65), PhenX (9), and only
+  **13 from NIMH Common Data Elements** specifically.
+
 ### Scale archives / journals (content sources we mine)
 - **ZIS / GESIS** (social-science scales), **ZPID/PsychArchives**, **Dove Press** journals,
   **BMC/PLoS** open access, **HTx** PROM overview — layer A/E sources of publishable instruments.
@@ -105,9 +148,12 @@ to the licensing fight over content.
 | **SNOMED CT** (SNOMED Int'l) | fine-grained clinical concepts (~350k) | **Affiliate License** required in non-member countries | diagnoses/findings referenced by a scale; redistribution is gated |
 | **ICD-10** (WHO) | disease **categories** (~14k; ICD-10-CM ~70k) | free (WHO) | diagnosis/case-mix variables; billing/statistics layer |
 | **UMLS** (NLM) | meta-thesaurus mapping *across* LOINC/SNOMED/ICD/etc. | free (UMLS license) | crosswalks between the above |
+| **NDA `shortName` + `dataElementId`** (NIMH) | data structures and individual elements in the NDA Data Dictionary — de-facto stable identifiers for NIMH-funded research | free (public API) | maps an `.osd` to the NDA submission format; enables auto-generation of NDA-compliant CSV |
 
 Division of labour: **LOINC = observations & survey Q/A · SNOMED = detailed clinical concepts ·
-ICD-10 = coarse diagnosis/billing.** SNOMED and ICD-10 overlap on diseases (granular vs coarse).
+ICD-10 = coarse diagnosis/billing · NDA shortName = NIMH research archive submission.**
+SNOMED and ICD-10 overlap on diseases (granular vs coarse). NDA identifiers are orthogonal
+to LOINC — they address data submission to a specific archive, not semantic interoperability.
 
 ### D. Exchange formats (how the file is *written*)
 | Format | Owner | Notes |
@@ -117,6 +163,7 @@ ICD-10 = coarse diagnosis/billing.** SNOMED and ICD-10 overlap on diseases (gran
 | **REDCap data dictionary** | Vanderbilt | CSV instrument definition; ubiquitous, proprietary, un-coded by default |
 | **QTI** | 1EdTech | assessment/test interchange (education-leaning) |
 | **`.osd`** | OpenScales | JSON-native; items + response scales + **scoring** + **translations** + variants, first-class; simpler than FHIR but similar scope |
+| **NDA submission CSV** | NIMH | Two-row header CSV (`shortName, version` then column names); one data row per participant. Template available at `https://nda.nih.gov/api/datadictionary/v2/datastructure/{shortname}/template`. Required format for all NIMH-funded data submission. |
 
 **JSON** is not a vocabulary — it is the common **envelope**. `.osd` is JSON; FHIR resources are
 usually JSON; ICHOM ships JSON. The *coded meaning* lives inside via LOINC/SNOMED/ICD-10.
@@ -130,17 +177,95 @@ skip logic + translations) but is JSON-native, simpler, and treats **scoring and
 first-class** rather than extension-bolt-ons. What it lacks today is the **terminology layer (C)**.
 
 **The roadmap to interoperate with this whole ecosystem:**
-1. **`codes` metadata in `.osd`** — optional LOINC/SNOMED/ICD-10 codes on the scale, items, and
-   answer options (**SPECIFICATION.md Roadmap R3**). LOINC-first (free); SNOMED only where its
-   Affiliate License permits. Additive/optional — no existing `.osd` breaks.
+1. **`codes` metadata in `.osd`** — optional LOINC/SNOMED/ICD-10/**NDA** codes on the scale,
+   items, and answer options (**SPECIFICATION.md Roadmap R3**). LOINC-first (free); SNOMED only
+   where its Affiliate License permits; NDA `shortName`/`dataElementId` for NIMH-funded research
+   export. Additive/optional — no existing `.osd` breaks.
 2. **`osd` → FHIR conversion tool (`convert_to_fhir.py`)** — emit a FHIR **`Questionnaire`**
    (weights via `itemWeight`, answers via LOINC answer lists, skip logic via `enableWhen`) and,
    at runtime, a **`QuestionnaireResponse` / `Observation`** from the runner (**TODO: "FHIR
    Interoperability (scale-runner)"**). **This is the key next tool to build once R3 lands.**
-3. Result: an `.osd` administered by the runner (self-hosted or embedded) can export
-   FHIR-conformant, code-mapped data that plugs straight into **EHRs, outcome registries, and
-   ICHOM's IT-ready pipeline** — the interoperability value that is attractive to commercial and
-   registry partners *independent of* the open-vs-licensed content question.
+3. **`osd` → NDA submission CSV (`convert_to_nda.py`)** — fetch the NDA template for the
+   mapped `shortName`, emit a valid submission CSV with the required header rows and column
+   mapping from `.osd` item IDs to NDA element names. See §4b below.
+4. Result: an `.osd` administered by the runner can export FHIR-conformant, code-mapped data
+   that plugs straight into **EHRs, outcome registries, and ICHOM's IT-ready pipeline**, *and*
+   NDA-submission CSV for NIMH-funded research — the interoperability value that is attractive
+   to commercial and registry partners *independent of* the open-vs-licensed content question.
+
+---
+
+## 4b. NDA Harmonization — Automatic Submission CSV from `.osd`
+
+The NDA provides a machine-readable **submission template** for every data structure at:
+```
+https://nda.nih.gov/api/datadictionary/v2/datastructure/{shortname}/template
+```
+The template is a two-row CSV:
+- **Row 1:** `shortName, version` (e.g. `"phq9","01"`)
+- **Row 2:** all column names — always starting with the 5 universal fields
+  (`subjectkey, src_subject_id, interview_date, interview_age, sex`) followed by instrument
+  items (`phq9_1` … `phq9_9`, `phq9_10` for language, `study`)
+
+This makes **automatic NDA-format export straightforward**, once an `.osd` carries an `nda`
+code entry mapping its items to NDA element names.
+
+### The `codes.nda` block in `.osd`
+
+```json
+"codes": {
+  "nda": {
+    "short_name": "phq901",
+    "version":    "01",
+    "items": {
+      "phq9_anhedonia": "phq9_1",
+      "phq9_depressed":  "phq9_2",
+      "phq9_sleep":      "phq9_3",
+      "phq9_tired":      "phq9_4",
+      "phq9_appetite":   "phq9_5",
+      "phq9_failure":    "phq9_6",
+      "phq9_concentrate":"phq9_7",
+      "phq9_psychomotor":"phq9_8",
+      "phq9_suicidal":   "phq9_9"
+    }
+  }
+}
+```
+
+The keys are `.osd` item `id` values; the values are NDA column names from the template.
+Fields in the NDA template that have no `.osd` analog (e.g. `study`, `site`, `week`) are
+passed through as optional metadata at submission time.
+
+### `convert_to_nda.py` — planned tool
+
+**Input:** a scale directory (`.osd` with `codes.nda` block) + a response CSV from the runner
+(one row per participant, columns = `.osd` item IDs).
+
+**Output:** a valid NDA submission CSV:
+1. Fetch (or cache) the NDA template for `codes.nda.short_name` to get the column order.
+2. Emit row 1: `"{short_name}","{version}"`.
+3. Emit row 2: template column names.
+4. For each participant row: remap `.osd` item IDs → NDA column names via `codes.nda.items`;
+   populate the 5 universal header fields from runner session metadata (GUID, subject ID,
+   date, age in months, sex); fill `study` from the `.osc` study code if available; leave
+   unmapped optional columns blank.
+
+**No NDA account required to generate the CSV** — the template is public. Upload requires an
+NDA account and study registration, but generation is fully automated.
+
+### NDA CDEs already in (or near) OpenScales
+
+| NDA CDE | NDA short name | OpenScales status |
+|---------|---------------|-------------------|
+| PHQ-9 | `cde_phq901` | **In repo** (`openscales/PHQ9`) |
+| GAD-7 | `cde_gad701` | Priority add (CC0/public domain) |
+| WHODAS 2.0 | `cde_whodas01` | Priority add (WHO, free for research) |
+| DSM-5 Cross-Cutting (adult) | `cde_dsm5crossad01` | Needs APA permission check |
+| RCADS-25 | `cde_rcads01` | Needs license check |
+
+Adding `codes.nda` blocks to PHQ-9 and GAD-7, and building `convert_to_nda.py`, would make
+OpenScales the only open-source tool that: runs a scale, scores it, and outputs both a
+FHIR `QuestionnaireResponse` *and* a ready-to-upload NDA submission CSV.
 
 ---
 

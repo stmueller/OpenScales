@@ -19,8 +19,18 @@ BEFORE writing any JSON:
 1. Open https://github.com/stmueller/OpenScales/blob/main/documentation/LLM_OSD_GUIDE.md
 2. Quote the section "Fingerprint of a REJECT file" verbatim in your reply
 3. Confirm you will NOT emit that fingerprint
+4. Ask the user any open choices below (or state the defaults you will use
+   and proceed only if they already answered / said to use defaults)
 
-Rules (override generic survey-JSON habits):
+ASK THE USER (or apply defaults and say so):
+- show_numbers on likert_options: "all" | "labeled_only" | "none"?
+  DEFAULT when every label already states the value (e.g. "0%", "10%", …,
+  or "−3"…"3"): "none". Otherwise DEFAULT "all" for ordinary Never…Always
+  anchors. Prefer "labeled_only" when only endpoints are labeled and
+  middles are null.
+- Any other display/scoring ambiguity from the source measure.
+
+Rules (override generic survey-JSON habits — do NOT invert these):
 
 1. Output ONE JSON object. Filename `{CODE}.osd` (not .json). Prefer CODE
    without spaces or hyphens (letters, digits, underscore).
@@ -28,12 +38,14 @@ Rules (override generic survey-JSON habits):
 3. EVERY item MUST include "text_key" (usually same as "id"). Wording lives ONLY
    under translations.en[text_key]. Missing text_key → blank questions in ScaleBuilder.
 4. likert_options MUST look like:
-     { "points": N, "min": A, "max": A+N-1, "labels": ["key1", ...], "question_head": "question_head" }
+     { "points": N, "min": A, "max": A+N-1, "labels": ["key1", ...],
+       "show_numbers": "all"|"labeled_only"|"none", "question_head": "question_head" }
    NEVER: { "my_opts": [ {"value": 0, "text": "Never"}, ... ] }
    NEVER item field "options": "some_name" on likert items.
-5. scoring MUST be an object, NOT an array:
-     "scoring": { "total": { "method": "mean_coded", "items": ["q1", "q2"] } }
-   NEVER: "scoring": [ { "id": "...", "type": "average", ... } ]
+5. scoring MUST be a keyed OBJECT. Score id is the OBJECT KEY, not an "id" field:
+     CORRECT: "scoring": { "total": { "method": "mean_coded", "items": ["q1","q2"] } }
+     WRONG:   "scoring": [ { "id": "total", "method": "mean_coded", "items": ["q1"] } ]
+   Do not "fix" a keyed object into an array — that is the common reject shape.
 6. Subscales / totals: EVERY score needs a matching entry in BOTH
    `dimensions` and `scoring` with the SAME id. ScaleBuilder keeps scoring
    only for ids listed in dimensions; scoring-only keys are dropped on
@@ -46,12 +58,12 @@ Rules (override generic survey-JSON habits):
    NEVER "transform": { "operation": "multiply", "value": 10 }.
    NEVER description_key — use literal "description" on the scoring block.
 9. After writing JSON, self-check and list: (a) every item has text_key,
-   (b) likert_options has "points" OR you used option_sets, (c) scoring is an object
-   with "method", (d) every scoring key has a matching dimensions[].id,
-   (e) transform is an array of {op, value} if present,
+   (b) likert_options has "points" OR you used option_sets, (c) scoring is a
+   non-array object with "method" under each key, (d) every scoring key has a
+   matching dimensions[].id, (e) transform is an array of {op, value} if present,
    (f) if the published measure has subscales, each subscale (and any total)
-   appears as its own dimensions+scoring pair with the correct item lists.
-   If any check fails, fix before answering.
+   appears as its own dimensions+scoring pair with the correct item lists,
+   (g) show_numbers is set intentionally. If any check fails, fix before answering.
 
 Then implement: <SCALE NAME / SOURCE URL / PDF>.
 Use PHQ9.osd for a single total score; DASS21.osd for multiple subscales.
@@ -96,6 +108,7 @@ Also attach or link:
       "min": 1,
       "max": 5,
       "labels": ["likert_1", "likert_2", "likert_3", "likert_4", "likert_5"],
+      "show_numbers": "all",
       "question_head": "question_head"
     },
     "dimensions": [
@@ -135,11 +148,18 @@ Also attach or link:
 
 ## Fingerprint of a REJECT file
 
-If output matches **all** of these, it is invalid — delete and regenerate (do not “explain” and ship it):
+If output matches **any** of these, it is invalid — delete and regenerate (do not “explain” and ship it):
 
 - Items like `{"id":"q1","type":"likert","options":"my_opts"}` with **no** `text_key`
 - `likert_options` shaped as `{ "my_opts": [ {"value":0,"text":"Never"}, ... ] }`
-- `scoring` as an **array** with `"type":"average"`
+- **`scoring` as an array** — including “fixes” that wrap a keyed object into
+  `[{ "id": "total", "method": "mean_coded", ... }]`. The score name is the
+  **object key**, never an `"id"` field inside an array element.
+- `scoring` entries that use `"type": "average"` instead of `"method": "mean_coded"`
+
+**Do not invert the scoring rule.** A keyed object is the *correct* OSD shape.
+Converting `{ "total": { ... } }` into `[ { "id": "total", ... } ]` is a known
+LLM failure mode and produces no usable scores in ScaleBuilder.
 
 ScaleBuilder and runners **reject** this shape — they do not auto-repair it. Linking this guide is not enough unless the model quotes the fingerprint and self-checks.
 
@@ -147,12 +167,50 @@ ScaleBuilder and runners **reject** this shape — they do not auto-repair it. L
 
 | Mistake | Wrong | Correct |
 |---------|-------|---------|
+| `scoring` as array | `"scoring": [{ "id": "total", ... }]` | `"scoring": { "total": { ... } }` |
 | No `dimensions` | only `scoring.total` | also `"dimensions": [{ "id": "total", "name": "Total" }]` — **same id** |
 | Subscale scoring without dimension rows | `scoring.anxiety` only | `dimensions` entry `{ "id": "anxiety", ... }` **and** `scoring.anxiety` |
 | Bad `transform` | `"transform": { "operation": "multiply", "value": 10 }` | `"transform": [{ "op": "multiply", "value": 10 }]` |
 | Wrong description field | `"description_key": "score_desc"` | `"description": "Literal explanation of the score."` |
 
-**Silent Preview trap:** ScaleBuilder may still open and Preview a file that has `scoring` but no matching `dimensions`. On import it rebuilds scoring **only from** `dimensions`, so orphan `scoring.*` keys are discarded. The run looks fine (items + responses) while Summary stays empty. Treat missing `dimensions` as a hard error even if Preview “works.”
+**Silent Preview trap:** ScaleBuilder may still open and Preview a file that has `scoring` but no matching `dimensions` (or that used an array `scoring` which was dropped). On import it rebuilds scoring **only from** `dimensions`, so orphan / invalid `scoring` is discarded. The run looks fine (items + responses) while Summary stays empty. Treat missing `dimensions` or array-shaped `scoring` as a hard error even if Preview “works.”
+
+---
+
+## Suppressing numeric labels under Likert buttons (`show_numbers`)
+
+By default the runner draws the **stored numeric value** under each button *and*
+the label text above it (`show_numbers: "all"`). When labels already encode the
+metric (percentages, signed integers, letter grades), that under-number is
+redundant and confusing (e.g. label `10%` with a `1` underneath because
+`min=0`…`max=10`).
+
+Set on `likert_options` (or a named `response_scales` entry):
+
+| Value | Behavior | When to use |
+|-------|----------|-------------|
+| `"all"` | Number under every button (default) | Ordinary verbal anchors (“Never”…“Always”) |
+| `"labeled_only"` | Number only on `null` label slots | Endpoint-anchored scales with blank middles |
+| `"none"` | Labels only; no under-numbers | Labels already show the value (`"0%"`, `"10%"`, … / `"−3"`…`"3"`) |
+
+```json
+"likert_options": {
+  "points": 11,
+  "min": 0,
+  "max": 10,
+  "labels": ["opt_0","opt_10","opt_20","opt_30","opt_40","opt_50",
+             "opt_60","opt_70","opt_80","opt_90","opt_100"],
+  "show_numbers": "none"
+}
+```
+
+(Legacy alias: `suppress_likert_numbers: true` ≡ `show_numbers: "none"`.)
+
+**Authoring rule for LLMs:** Before emitting JSON, **ask the user** which
+`show_numbers` mode they want. If they do not answer, use the defaults in the
+prompt above (`"none"` when labels encode values; otherwise `"all"`) and state
+that choice in the reply so it can be tested. Repo example: `TiA.osd`
+(`show_numbers: "none"`).
 
 ---
 
@@ -342,7 +400,8 @@ Do not put `{value, text}` arrays inside `likert_options`.
 // BAD: invented likert_options shape
 "likert_options": { "my_scale": [ { "value": 1, "text": "Never" } ] }
 
-// BAD: scoring as array / wrong field names
+// BAD: scoring as array (including "id" inside the element) — NEVER do this
+"scoring": [ { "id": "total", "method": "mean_coded", "items": ["q1"] } ]
 "scoring": [ { "id": "total", "type": "average", "items": ["q1"] } ]
 
 // BAD: scoring without dimensions (Preview may run; Summary stays empty)
@@ -352,7 +411,17 @@ Do not put `{value, text}` arrays inside `likert_options`.
 // BAD: transform as a single object
 "transform": { "operation": "multiply", "value": 10 }
 
-// GOOD: dimensions + scoring share ids; transform is an array
+// BAD: percent/signed labels with default show_numbers (duplicates the metric)
+"labels": ["opt_0","opt_10",...],  // translations "0%","10%",...
+// (omit show_numbers → "all" → button shows "10%" and "1")
+
+// GOOD: keyed scoring + dimensions; transform array; suppress redundant numbers
+"likert_options": {
+  "points": 11, "min": 0, "max": 10,
+  "labels": ["opt_0","opt_10","opt_20","opt_30","opt_40","opt_50",
+             "opt_60","opt_70","opt_80","opt_90","opt_100"],
+  "show_numbers": "none"
+},
 "dimensions": [{ "id": "total", "name": "Total" }],
 "scoring": {
   "total": {
@@ -372,16 +441,17 @@ Do not put `{value, text}` arrays inside `likert_options`.
 2. [ ] Every item has `id`, `type`, and (unless `section`) `text_key`.
 3. [ ] Every `text_key` / label key / option `text_key` exists under `translations.en` (or target language).
 4. [ ] `likert_options` (if used) has `points`, `min`, `max`, `labels` with `max === min + points - 1`.
-5. [ ] `scoring` is an object; methods are from the spec (`mean_coded`, `sum_coded`, …).
+5. [ ] `scoring` is a **keyed object** (not an array); methods are from the spec (`mean_coded`, `sum_coded`, …).
 6. [ ] `dimensions` is present whenever `scoring` is; every `scoring` key has a matching `dimensions[].id`.
 7. [ ] If the measure has subscales, each subscale (and any total) is its own dimensions+scoring pair with the correct item lists.
 8. [ ] If `transform` is present, it is an **array** of `{ "op": "...", "value": ... }` (field is `op`, not `operation`).
 9. [ ] Scoring uses `"description": "..."` (string), not `description_key`.
-10. [ ] `scale_info.code` matches the intended filename stem; prefer `[A-Za-z0-9_]+`.
-11. [ ] License uses a short recommended label + `license_explanation` + `license_url` when possible.
-12. [ ] `implementation.author` is the actual implementer (not a fictional org name).
-13. [ ] Rename chat downloads from `.json` → `.osd` before sharing.
-14. [ ] Run `python3 tools/validate_scale.py path/to/CODE.osd` when available.
+10. [ ] `show_numbers` is set deliberately (`"all"` / `"labeled_only"` / `"none"`); asked the user or stated the default.
+11. [ ] `scale_info.code` matches the intended filename stem; prefer `[A-Za-z0-9_]+`.
+12. [ ] License uses a short recommended label + `license_explanation` + `license_url` when possible.
+13. [ ] `implementation.author` is the actual implementer (not a fictional org name).
+14. [ ] Rename chat downloads from `.json` → `.osd` before sharing.
+15. [ ] Run `python3 tools/validate_scale.py path/to/CODE.osd` when available.
 
 ---
 

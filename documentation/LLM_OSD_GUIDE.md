@@ -34,30 +34,35 @@ Rules (override generic survey-JSON habits):
 5. scoring MUST be an object, NOT an array:
      "scoring": { "total": { "method": "mean_coded", "items": ["q1", "q2"] } }
    NEVER: "scoring": [ { "id": "...", "type": "average", ... } ]
-6. Non-unit response spacing (e.g. published values 0,10,20,…): use type "multi" +
+6. Subscales / totals: EVERY score needs a matching entry in BOTH
+   `dimensions` and `scoring` with the SAME id. ScaleBuilder keeps scoring
+   only for ids listed in dimensions; scoring-only keys are dropped on
+   import, so Preview can still run the items with an empty Summary.
+   See "Subscales (dimensions + scoring)" below.
+7. Non-unit response spacing (e.g. published values 0,10,20,…): use type "multi" +
    option_sets with numeric values, OR a unit-step likert plus scoring transform
    (see Scoring section). Do not invent a likert_options shape for that.
-7. Scoring that appears in reports requires matching ids:
-     - dimensions: [{ "id": "total", "name": "Total" }]
-     - scoring: { "total": { "method": "mean_coded", "items": [...], "description": "..." } }
-     - optional transform as an ARRAY: "transform": [{ "op": "multiply", "value": 10 }]
-     NEVER omit dimensions when you define scoring.
-     NEVER "transform": { "operation": "multiply", "value": 10 }.
-     NEVER description_key — use literal "description" on the scoring block.
-8. After writing JSON, self-check and list: (a) every item has text_key,
+8. Optional transform is ALWAYS an array: "transform": [{ "op": "multiply", "value": 10 }]
+   NEVER "transform": { "operation": "multiply", "value": 10 }.
+   NEVER description_key — use literal "description" on the scoring block.
+9. After writing JSON, self-check and list: (a) every item has text_key,
    (b) likert_options has "points" OR you used option_sets, (c) scoring is an object
    with "method", (d) every scoring key has a matching dimensions[].id,
-   (e) transform is an array of {op, value} if present. If any check fails, fix before answering.
+   (e) transform is an array of {op, value} if present,
+   (f) if the published measure has subscales, each subscale (and any total)
+   appears as its own dimensions+scoring pair with the correct item lists.
+   If any check fails, fix before answering.
 
 Then implement: <SCALE NAME / SOURCE URL / PDF>.
-Use PHQ9.osd as the structural template for ordinary Likert scales.
+Use PHQ9.osd for a single total score; DASS21.osd for multiple subscales.
 ```
 
 Also attach or link:
 
 - https://github.com/stmueller/OpenScales/blob/main/documentation/SPECIFICATION.md  
 - https://github.com/stmueller/OpenScales/blob/main/documentation/LLM_OSD_GUIDE.md  
-- A working example: `scales/openscales/PHQ9/PHQ9.osd`
+- Single total: `scales/openscales/PHQ9/PHQ9.osd`  
+- Multiple subscales: `scales/openscales/DASS21/DASS21.osd`
 
 ---
 
@@ -143,43 +148,178 @@ ScaleBuilder and runners **reject** this shape — they do not auto-repair it. L
 | Mistake | Wrong | Correct |
 |---------|-------|---------|
 | No `dimensions` | only `scoring.total` | also `"dimensions": [{ "id": "total", "name": "Total" }]` — **same id** |
+| Subscale scoring without dimension rows | `scoring.anxiety` only | `dimensions` entry `{ "id": "anxiety", ... }` **and** `scoring.anxiety` |
 | Bad `transform` | `"transform": { "operation": "multiply", "value": 10 }` | `"transform": [{ "op": "multiply", "value": 10 }]` |
 | Wrong description field | `"description_key": "score_desc"` | `"description": "Literal explanation of the score."` |
 
-Without a matching `dimensions` entry, ScaleBuilder drops the scoring block on import. With a non-array `transform`, rescaling never runs.
+**Silent Preview trap:** ScaleBuilder may still open and Preview a file that has `scoring` but no matching `dimensions`. On import it rebuilds scoring **only from** `dimensions`, so orphan `scoring.*` keys are discarded. The run looks fine (items + responses) while Summary stays empty. Treat missing `dimensions` as a hard error even if Preview “works.”
 
 ---
 
-## Scoring that actually appears in the report
+## Subscales (dimensions + scoring)
 
-Every score id must exist in **both** `dimensions` and `scoring`:
+OSD splits **display metadata** (`dimensions`) from **computation** (`scoring`). Each reported score — a single total, each subscale, or both — needs the **same id** in both places.
+
+Mental model:
+
+```
+dimensions[].id  ←→  scoring.<id>   (1:1 for every score that should appear)
+scoring.<id>.items  = which item ids feed that score
+```
+
+### Rules
+
+1. One `dimensions` object per score you want in the report (subscale **or** total).
+2. `dimensions[].id` must equal the key under `scoring`.
+3. `scoring.<id>.items` lists the item ids for that subscale (or all items for a total).
+4. An item may appear in more than one scoring block (e.g. a subscale and a total).
+5. Prefer published subscale names as ids when they are filename-safe (`depression`, `anxiety`); otherwise use short snake_case ids and put the printed name in `dimensions[].name`.
+6. Use `method: "sum_coded"` or `"mean_coded"` as the publication specifies — not `"type": "average"`.
+7. If the publication multiplies/rescales after summing/averaging, put that in `transform` (array of `{op, value}`), not in a homemade field.
+
+### Pattern A — one total score (no subscales)
 
 ```json
 "dimensions": [
-  { "id": "total", "name": "Total", "description": "Mean of items." }
+  { "id": "total", "name": "Total" }
+],
+"scoring": {
+  "total": {
+    "method": "sum_coded",
+    "items": ["q1", "q2", "q3", "q4"],
+    "description": "Sum of all items."
+  }
+}
+```
+
+Repo template: `PHQ9.osd`.
+
+### Pattern B — several subscales (no overall total)
+
+Each subscale is its own dimension + scoring block with a disjoint (or overlapping, if published that way) item list:
+
+```json
+"dimensions": [
+  { "id": "factor_a", "name": "Factor A" },
+  { "id": "factor_b", "name": "Factor B" },
+  { "id": "factor_c", "name": "Factor C" }
+],
+"items": [
+  { "id": "q1", "type": "likert", "text_key": "q1" },
+  { "id": "q2", "type": "likert", "text_key": "q2" },
+  { "id": "q3", "type": "likert", "text_key": "q3" },
+  { "id": "q4", "type": "likert", "text_key": "q4" },
+  { "id": "q5", "type": "likert", "text_key": "q5" },
+  { "id": "q6", "type": "likert", "text_key": "q6" }
+],
+"scoring": {
+  "factor_a": {
+    "method": "sum_coded",
+    "items": ["q1", "q2"],
+    "description": "Sum of Factor A items."
+  },
+  "factor_b": {
+    "method": "sum_coded",
+    "items": ["q3", "q4"],
+    "description": "Sum of Factor B items."
+  },
+  "factor_c": {
+    "method": "sum_coded",
+    "items": ["q5", "q6"],
+    "description": "Sum of Factor C items."
+  }
+}
+```
+
+Repo template: `DASS21.osd` (three subscales, seven items each).
+
+### Pattern C — subscales plus an overall total
+
+Add a `total` dimension whose `items` are all scored items (or use `scores` to combine subscale scores when the publication defines a composite that way — see SPECIFICATION.md):
+
+```json
+"dimensions": [
+  { "id": "factor_a", "name": "Factor A" },
+  { "id": "factor_b", "name": "Factor B" },
+  { "id": "total", "name": "Total" }
+],
+"scoring": {
+  "factor_a": {
+    "method": "mean_coded",
+    "items": ["q1", "q2", "q3"],
+    "description": "Mean of Factor A items."
+  },
+  "factor_b": {
+    "method": "mean_coded",
+    "items": ["q4", "q5", "q6"],
+    "description": "Mean of Factor B items."
+  },
+  "total": {
+    "method": "mean_coded",
+    "items": ["q1", "q2", "q3", "q4", "q5", "q6"],
+    "description": "Mean of all items."
+  }
+}
+```
+
+Repo template: `FFMQ15.osd` (five facets + total).
+
+### Pattern D — rescaling after the method
+
+When the published metric is “mean (or sum), then multiply by N”:
+
+```json
+"dimensions": [
+  { "id": "total", "name": "Total" }
 ],
 "scoring": {
   "total": {
     "method": "mean_coded",
     "items": ["q1", "q2", "q3"],
-    "description": "Mean of item responses.",
-    "norms": {
-      "thresholds": [
-        { "min": 1, "max": 2.5, "label": "Low" },
-        { "min": 2.5, "max": 5, "label": "High" }
-      ]
-    }
+    "transform": [{ "op": "multiply", "value": 10 }],
+    "description": "Mean of items, multiplied by 10."
   }
 }
 ```
 
-**Optional affine rescaling** after the method (e.g. map a 0–10 mean onto another published range):
+Apply the same `transform` on each subscale block if every subscale uses that rescaling.
+
+### Reverse-coded items within a subscale
+
+When some items are reverse-scored inside one subscale, use an **object** for `items` (coding −1) instead of a plain array — see SPECIFICATION.md / RFQ examples. Do not invent a separate `"reverse": true` flag unless you also emit the object coding form the runner understands.
+
+### Self-check for subscales
+
+Before finishing, list every published subscale/total and confirm:
+
+- [ ] `dimensions` length equals the number of scores you intend to report  
+- [ ] every `dimensions[].id` exists as `scoring.<id>`  
+- [ ] every `scoring` key exists in `dimensions`  
+- [ ] each subscale’s `items` list matches the publication (no accidental empty or all-items lists)  
+- [ ] any post-score multiply/add is a `transform` **array** with `"op"`, not `"operation"`
+
+---
+
+## Scoring that actually appears in the report
+
+Every score id must exist in **both** `dimensions` and `scoring` (see patterns above). Optional norms:
+
+```json
+"norms": {
+  "thresholds": [
+    { "min": 0, "max": 9, "label": "Low" },
+    { "min": 10, "max": 20, "label": "High" }
+  ]
+}
+```
+
+**Optional affine rescaling** after the method — always an **array**:
 
 ```json
 "transform": [ { "op": "multiply", "value": 10 } ]
 ```
 
-`op` is one of `add`, `subtract`, `multiply`, `divide`. `transform` is always an **array** of steps.
+`op` is one of `add`, `subtract`, `multiply`, `divide`.
 
 **Non-unit published option values** (spacing ≠ 1): either
 
@@ -205,15 +345,21 @@ Do not put `{value, text}` arrays inside `likert_options`.
 // BAD: scoring as array / wrong field names
 "scoring": [ { "id": "total", "type": "average", "items": ["q1"] } ]
 
+// BAD: scoring without dimensions (Preview may run; Summary stays empty)
+"scoring": { "total": { "method": "mean_coded", "items": ["q1"] } }
+// (missing "dimensions": [{ "id": "total", "name": "Total" }])
+
 // BAD: transform as a single object
 "transform": { "operation": "multiply", "value": 10 }
 
-// GOOD:
+// GOOD: dimensions + scoring share ids; transform is an array
+"dimensions": [{ "id": "total", "name": "Total" }],
 "scoring": {
   "total": {
     "method": "mean_coded",
     "items": ["q1"],
-    "transform": [{ "op": "multiply", "value": 10 }]
+    "transform": [{ "op": "multiply", "value": 10 }],
+    "description": "Mean × 10."
   }
 }
 ```
@@ -227,14 +373,15 @@ Do not put `{value, text}` arrays inside `likert_options`.
 3. [ ] Every `text_key` / label key / option `text_key` exists under `translations.en` (or target language).
 4. [ ] `likert_options` (if used) has `points`, `min`, `max`, `labels` with `max === min + points - 1`.
 5. [ ] `scoring` is an object; methods are from the spec (`mean_coded`, `sum_coded`, …).
-6. [ ] Every `scoring` key has a matching `dimensions[].id` (required for ScaleBuilder + reports).
-7. [ ] If `transform` is present, it is an **array** of `{ "op": "...", "value": ... }` (field is `op`, not `operation`).
-8. [ ] Scoring uses `"description": "..."` (string), not `description_key`.
-9. [ ] `scale_info.code` matches the intended filename stem; prefer `[A-Za-z0-9_]+`.
-10. [ ] License uses a short recommended label + `license_explanation` + `license_url` when possible.
-11. [ ] `implementation.author` is the actual implementer (not a fictional org name).
-12. [ ] Rename chat downloads from `.json` → `.osd` before sharing.
-13. [ ] Run `python3 tools/validate_scale.py path/to/CODE.osd` when available.
+6. [ ] `dimensions` is present whenever `scoring` is; every `scoring` key has a matching `dimensions[].id`.
+7. [ ] If the measure has subscales, each subscale (and any total) is its own dimensions+scoring pair with the correct item lists.
+8. [ ] If `transform` is present, it is an **array** of `{ "op": "...", "value": ... }` (field is `op`, not `operation`).
+9. [ ] Scoring uses `"description": "..."` (string), not `description_key`.
+10. [ ] `scale_info.code` matches the intended filename stem; prefer `[A-Za-z0-9_]+`.
+11. [ ] License uses a short recommended label + `license_explanation` + `license_url` when possible.
+12. [ ] `implementation.author` is the actual implementer (not a fictional org name).
+13. [ ] Rename chat downloads from `.json` → `.osd` before sharing.
+14. [ ] Run `python3 tools/validate_scale.py path/to/CODE.osd` when available.
 
 ---
 
@@ -243,4 +390,4 @@ Do not put `{value, text}` arrays inside `likert_options`.
 - [SPECIFICATION.md](SPECIFICATION.md) — normative reference  
 - [CONTRIBUTING.md](CONTRIBUTING.md) — repo submission  
 - Website help: “Implementing OSD with LLMs” (OpenScales help center)  
-- Working examples: `scales/openscales/PHQ9/PHQ9.osd`, `scales/openscales/GAD7/GAD7.osd`
+- Working examples: `PHQ9.osd` (single total), `DASS21.osd` (subscales), `FFMQ15.osd` (subscales + total), `GAD7.osd`

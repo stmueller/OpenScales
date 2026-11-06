@@ -393,6 +393,46 @@ const ScaleRunner = (() => {
   // CONDITION EVALUATOR
   // ============================================================
 
+  /** Parse "25", "25%", "1/4" into a number; null if not parseable. */
+  function parseFlexibleNumber(text) {
+    const t = String(text || '').trim();
+    if (!t) return null;
+    const frac = t.match(/^(-?\d+(?:\.\d+)?)\s*\/\s*(-?\d+(?:\.\d+)?)\s*%?$/);
+    if (frac) {
+      const b = parseFloat(frac[2]);
+      if (!b) return null;
+      return parseFloat(frac[1]) / b;
+    }
+    const pct = t.match(/^(-?\d+(?:\.\d+)?)\s*%$/);
+    if (pct) return parseFloat(pct[1]);
+    const num = t.match(/^(-?\d+(?:\.\d+)?)$/);
+    if (num) return parseFloat(num[1]);
+    return null;
+  }
+
+  /** String equality, or flexible numeric equality (25 == 25%, 1/4 == 25). */
+  function looseEquals(a, b) {
+    // Map JSON/JS booleans onto 0/1 so OSD visible_when equals "0"/"1" works
+    // when params arrive as true/false rather than 0/1.
+    const norm = (v) => {
+      if (v === true || v === false) return v ? '1' : '0';
+      const s = String(v ?? '').trim();
+      const lower = s.toLowerCase();
+      if (lower === 'true') return '1';
+      if (lower === 'false') return '0';
+      return s;
+    };
+    const sa = norm(a);
+    const sb = norm(b);
+    if (sa === sb) return true;
+    const na = parseFlexibleNumber(sa);
+    const nb = parseFlexibleNumber(sb);
+    if (na === null || nb === null) return false;
+    if (Math.abs(na - nb) < 1e-4) return true;
+    if (Math.abs(na * 100 - nb) < 1e-4 || Math.abs(nb * 100 - na) < 1e-4) return true;
+    return false;
+  }
+
   /**
    * Exact port of ScaleRunner.pbl's recursive condition evaluator.
    * Operators: equals, not_equals, greater_than, less_than,
@@ -437,20 +477,20 @@ const ScaleRunner = (() => {
     if (op === 'is_answered')     return lhsRaw !== undefined && lhsRaw !== null && lhsRaw !== '';
     if (op === 'is_not_answered') return lhsRaw === undefined || lhsRaw === null || lhsRaw === '';
 
-    const lhsStr = String(lhsRaw !== undefined && lhsRaw !== null ? lhsRaw : '');
-    const rhsStr = String(rhsRaw !== undefined && rhsRaw !== null ? rhsRaw : '');
+    const lhsStr = String(lhsRaw !== undefined && lhsRaw !== null ? lhsRaw : '').trim();
+    const rhsStr = String(rhsRaw !== undefined && rhsRaw !== null ? rhsRaw : '').trim();
 
     switch (op) {
-      case 'equals':     return lhsStr === rhsStr;
-      case 'not_equals': return lhsStr !== rhsStr;
+      case 'equals':     return looseEquals(lhsStr, rhsStr);
+      case 'not_equals': return !looseEquals(lhsStr, rhsStr);
       case 'greater_than': return parseFloat(lhsStr) > parseFloat(rhsStr);
       case 'less_than':    return parseFloat(lhsStr) < parseFloat(rhsStr);
       case 'in':    return Array.isArray(rhsRaw)
-        ? rhsRaw.map(String).includes(lhsStr)
-        : String(rhsRaw).split(',').map(s => s.trim()).includes(lhsStr);
+        ? rhsRaw.map(String).some(v => looseEquals(lhsStr, v.trim()))
+        : String(rhsRaw).split(',').map(s => s.trim()).some(v => looseEquals(lhsStr, v));
       case 'not_in': return Array.isArray(rhsRaw)
-        ? !rhsRaw.map(String).includes(lhsStr)
-        : !String(rhsRaw).split(',').map(s => s.trim()).includes(lhsStr);
+        ? !rhsRaw.map(String).some(v => looseEquals(lhsStr, v.trim()))
+        : !String(rhsRaw).split(',').map(s => s.trim()).some(v => looseEquals(lhsStr, v));
       default: return true;
     }
   }
@@ -1777,12 +1817,13 @@ const ScaleRunner = (() => {
         if (method === 'sum_correct') {
           const acceptable = correct[itemId];
           if (acceptable) {
-            const resp = String(rawVal).toLowerCase().trim();
+            const resp = String(rawVal).trim();
             const match = acceptable.some(ans => {
-              const a = String(ans).toLowerCase().trim();
+              const a = String(ans).trim();
               if (a === '*') return true;
-              if (a.includes('?') || a.includes('*')) return wildcardMatch(resp, a);
-              return resp === a;
+              if (looseEquals(resp, a)) return true;
+              if (a.includes('?') || a.includes('*')) return wildcardMatch(resp.toLowerCase(), a.toLowerCase());
+              return resp.toLowerCase() === a.toLowerCase();
             });
             if (match) total++;
             count++;
@@ -1912,6 +1953,9 @@ const ScaleRunner = (() => {
   }
 
   function applyTransform(rawScore, transformSteps, codedValues) {
+    // Spec: transform MUST be an array of {op, value}. A single object
+    // like {operation:"multiply", value:10} is invalid and is ignored.
+    if (!Array.isArray(transformSteps) || !transformSteps.length) return rawScore;
     const n = codedValues.length;
     const stats = { n };
     if (n > 0) {
@@ -2189,6 +2233,80 @@ const ScaleRunner = (() => {
                    ...qVals, ...dimVals, ...tDimVals, ...compVals, ...branchVals]);
   }
 
+  /**
+   * Build the "table key" — a column reference describing every column of the pooled data
+   * file, in Psych-DS style (schema.org `variableMeasured` array of `PropertyValue` objects).
+   * Terminology codes (LOINC / SNOMED / …) ride on each column's `propertyID` (schema.org's
+   * field for "a standard code for a property"); the data column names stay item ids, so the
+   * CSV is unchanged. Column order mirrors buildPooledHeader() exactly.
+   */
+  function buildTableKey(state, scaleDef, computedVars, strings) {
+    const info  = scaleDef.scale_info || {};
+    const codes = scaleDef.codes || {};
+    const vars  = [];
+    const pv = (name, description, extra) =>
+      Object.assign({ '@type': 'PropertyValue', name: name, description: description || name }, extra || {});
+
+    // item terminology codes -> CURIE-ish propertyID, e.g. "LOINC:67345-9" (array if several)
+    function itemPropertyID(id) {
+      const m = (codes.items || {})[id];
+      if (!m) return null;
+      const out = [];
+      Object.keys(m).forEach(sys => {
+        if (sys === 'options') return;                 // answer-level codes, not column-level
+        const c = m[sys];
+        (Array.isArray(c) ? c : [c]).forEach(x => out.push(`${sys.toUpperCase()}:${x}`));
+      });
+      return out.length ? (out.length === 1 ? out[0] : out) : null;
+    }
+
+    vars.push(pv('subnum', 'Participant identifier'));
+    vars.push(pv('timestamp', 'Unix timestamp (ms) at scale start'));
+    vars.push(pv('time', 'Elapsed completion time', { unitText: 's' }));
+
+    // one PropertyValue per data column, in pooled-header order
+    (state.questions || []).forEach(qdef => {
+      if (['section', 'inst', 'image'].includes(qdef.type)) return;
+      const text = resolveText(qdef.text_key, strings, state.params, {}, {});
+      const pid  = itemPropertyID(qdef.id);
+      if (qdef.type === 'grid') {
+        (qdef.rows || []).forEach((rowKey, ri) => {
+          const e = {}; if (pid) e.propertyID = pid;
+          vars.push(pv(`${qdef.id}_${ri + 1}`, resolveText(rowKey, strings, state.params, {}, {}), e));
+        });
+      } else if (qdef.type === 'multicheck') {
+        getEffectiveOptions(qdef, scaleDef).forEach(opt => {
+          const val = opt.value !== undefined ? String(opt.value) : String(opt);
+          vars.push(pv(`${qdef.id}_${val}`, `${text} [checkbox option ${val}]`, { dataType: 'boolean' }));
+        });
+      } else {
+        const e = {}; if (pid) e.propertyID = pid;
+        const rng = getQuestionRange(qdef, scaleDef);
+        if (rng && rng[0] !== null && rng[0] !== undefined) e.minValue = rng[0];
+        if (rng && rng[1] !== null && rng[1] !== undefined) e.maxValue = rng[1];
+        vars.push(pv(qdef.id, text, e));
+      }
+    });
+
+    const activeSets = activeVariantSetIds(scaleDef, state.params);
+    const scoring = scaleDef.scoring || {};
+    const dims = Object.keys(scoring).filter(d => isScoringActive(scoring[d], activeSets));
+    dims.forEach(d => { const sc = scoring[d] || {}; vars.push(pv(d, sc.description || sc.name || `${d} score`, { dataType: 'number' })); });
+    dims.filter(d => (scoring[d] || {}).transform).forEach(d => { const sc = scoring[d] || {}; vars.push(pv(`${d}_t`, `${sc.name || d} (transformed)`, { dataType: 'number' })); });
+    Object.keys(computedVars || {}).forEach(n => vars.push(pv(n, `Computed variable: ${n}`, { dataType: 'number' })));
+    Object.keys(state.branchChoices || {}).forEach(g => vars.push(pv(`${g}_arm`, `Branch arm chosen for group ${g}`)));
+
+    return {
+      '@context': 'https://schema.org/',
+      '@type': 'Dataset',
+      name: (info.name || state.scale || '') + ' — response table key',
+      description: 'Column reference for the pooled response data (schema.org variableMeasured / '
+                 + 'PropertyValue, Psych-DS compatible). propertyID carries terminology codes '
+                 + '(LOINC / SNOMED CT / …) where the scale provides them; data column names remain the item ids.',
+      variableMeasured: vars
+    };
+  }
+
   // ============================================================
   // UPLOADER
   // ============================================================
@@ -2197,7 +2315,7 @@ const ScaleRunner = (() => {
    * POST data to collectURL.
    * Shape matches both peblhub api/upload.php and server/collect.php.
    */
-  async function submitData(config, csvLines, pooledLine, pooledHeader, scaleDef) {
+  async function submitData(config, csvLines, pooledLine, pooledHeader, scaleDef, tableKey) {
     if (!config.collectURL) return { ok: true, local: true };
 
     const fd = new FormData();
@@ -2217,6 +2335,12 @@ const ScaleRunner = (() => {
     fd.append('pooled',        pooledLine);
     fd.append('pooled_header', pooledHeader);
     fd.append('individual_header', csvLines[0] || '');
+
+    // Table key (column reference / Psych-DS variableMeasured) — one per scale
+    if (tableKey) {
+      fd.append('tablekey', new Blob([tableKey], { type: 'application/json' }),
+                `${config.scale}-key.json`);
+    }
 
     // taskname for peblhub compat
     fd.append('taskname', config.scale || '');
@@ -2664,15 +2788,19 @@ const ScaleRunner = (() => {
       const csvLines   = buildIndividualCSV(state, scaleDef, scores, transformedScores, strings);
       const pooledHdr  = buildPooledHeader(state, scaleDef, computedVars);
       const pooledLine = buildPooledLine(state, scaleDef, scores, transformedScores, computedVars);
+      const tableKey   = JSON.stringify(buildTableKey(state, scaleDef, computedVars, strings), null, 2);
 
       // Upload data — status will be visible from incomplete question columns
       try {
-        await submitData(config, csvLines, pooledLine, pooledHdr, scaleDef);
+        await submitData(config, csvLines, pooledLine, pooledHdr, scaleDef, tableKey);
       } catch (err) {
         console.warn('ScaleRunner: upload error on termination', err);
       }
 
-      // Show termination message
+      // Show termination message and wait for OK before signaling the chain.
+      // Matches PEBL ScaleRunner's ShowFormattedMessage (blocking until dismiss).
+      // Without this wait, peblTestComplete fires immediately and the chain
+      // launcher clears #js-scale-container before the message is readable.
       const msgKey  = gate.terminate_message_key;
       const msgText = (msgKey && strings[msgKey]) || strings['gate_terminated'] ||
         'Thank you. Based on your responses you are not eligible to continue.';
@@ -2683,15 +2811,28 @@ const ScaleRunner = (() => {
       const msgEl = el('p', 'sr-terminate-text');
       msgEl.innerHTML = msgText;
       wrap.appendChild(msgEl);
+
+      const okBtn = document.createElement('button');
+      okBtn.type = 'button';
+      okBtn.className = 'sr-next-btn';
+      okBtn.textContent = strings['ok_label'] || strings['continue_label'] || 'OK';
+      wrap.appendChild(okBtn);
       main.appendChild(wrap);
 
       // Expose data before callbacks so chain runners can access responseMap
       container._scaleData = { csvLines, pooledLine, pooledHdr, scores, state };
 
-      // Dispatch peblTestComplete with status 'terminated' — chain runners see this
       const detail = { status: 'terminated', scale: config.scale,
                        participant: config.participant, scores, computed: computedVars,
                        responses: state.responseMap };
+
+      await new Promise((resolve) => {
+        okBtn.addEventListener('click', () => {
+          okBtn.disabled = true;
+          resolve();
+        }, { once: true });
+      });
+
       document.dispatchEvent(new CustomEvent('peblTestComplete', {
         bubbles: true, detail
       }));
@@ -2711,11 +2852,12 @@ const ScaleRunner = (() => {
       const csvLines    = buildIndividualCSV(state, scaleDef, scores, transformedScores, strings);
       const pooledHdr   = buildPooledHeader(state, scaleDef, computedVars);
       const pooledLine  = buildPooledLine(state, scaleDef, scores, transformedScores, computedVars);
+      const tableKey    = JSON.stringify(buildTableKey(state, scaleDef, computedVars, strings), null, 2);
 
       // Upload
       let uploadOK = false;
       try {
-        const res = await submitData(config, csvLines, pooledLine, pooledHdr, scaleDef);
+        const res = await submitData(config, csvLines, pooledLine, pooledHdr, scaleDef, tableKey);
         uploadOK = res.ok;
       } catch (err) {
         console.warn('ScaleRunner: upload error', err);
@@ -2782,6 +2924,15 @@ const ScaleRunner = (() => {
         csvLink.className = 'sr-report-link';
         csvLink.textContent = 'Download trial-by-trial data';
         main.appendChild(csvLink);
+
+        // Table key (column reference, Psych-DS variableMeasured) download link
+        const keyBlob = new Blob([tableKey], { type: 'application/json' });
+        const keyLink = document.createElement('a');
+        keyLink.href      = URL.createObjectURL(keyBlob);
+        keyLink.download  = `${config.scale}-key.json`;
+        keyLink.className = 'sr-report-link';
+        keyLink.textContent = 'Download table key';
+        main.appendChild(keyLink);
       }
 
       if (!uploadOK && config.collectURL && !inChain) {
@@ -2841,13 +2992,16 @@ const ScaleRunner = (() => {
       .citation { font-style: italic; color: #666; margin: 10px 0; }
       .norm-label { font-style: italic; color: #555; }`;
 
-    // ── Dimension scores table ────────────────────────────────
+    // ── Dimension / score table ───────────────────────────────
+    // Prefer dimensions[] for labels; always include any scoring{} keys that
+    // produced a value (composites or LLM files that omit dimensions).
     let dimScoresSection = '';
-    if (scaleDef.dimensions && scaleDef.dimensions.length) {
+    {
       let hasNorms = false;
       let hasTrans = false;
-      const dimIds = new Set(scaleDef.dimensions.map(d => d.id));
-      const rowData = scaleDef.dimensions.map(dim => {
+      const dims = scaleDef.dimensions || [];
+      const dimIds = new Set(dims.map(d => d.id));
+      const rowData = dims.map(dim => {
         const score = scores[dim.id];
         if (score === undefined) return null;
         const val = score !== null ? (Math.round(score * 100) / 100) : 'N/A';
@@ -2860,7 +3014,6 @@ const ScaleRunner = (() => {
         return { name: dim.name, val, normLabel, tVal };
       }).filter(r => r !== null);
 
-      // Include composite scores (scoring keys not matching any dimension)
       if (scaleDef.scoring) {
         Object.keys(scaleDef.scoring).forEach(key => {
           if (dimIds.has(key)) return;
@@ -2873,7 +3026,6 @@ const ScaleRunner = (() => {
           const tScore = (transformedScores || {})[key];
           const tVal = tScore !== undefined ? Math.round(tScore * 100) / 100 : null;
           if (tVal !== null) hasTrans = true;
-          // Use name field, or fall back to formatted key
           const name = scoreDef.name
             || key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
           rowData.push({ name, val, normLabel, tVal });
@@ -3069,6 +3221,37 @@ const ScaleRunner = (() => {
     const footerSection = footerRefs.length
       ? '<hr>' + footerRefs.map(r => `<p>${r}</p>`).join('') : '';
 
+    // ── Licensing (license terms + third-party licensor) ──────
+    const _licParts = [];
+    if (info.license) _licParts.push(info.license_url
+      ? `<a href="${info.license_url}" target="_blank" rel="noopener">${info.license}</a>` : info.license);
+    if (info.licensor) _licParts.push('licensed by ' + (info.licensor_url
+      ? `<a href="${info.licensor_url}" target="_blank" rel="noopener">${info.licensor}</a>` : info.licensor));
+    const licenseLine = _licParts.length
+      ? `<p style="font-size:0.9em;color:#555;">License: ${_licParts.join(' &middot; ')}</p>` : '';
+
+    // ── Terminology codes (data-dictionary for FHIR/EHR interop) ───────
+    const _codes   = scaleDef.codes || {};
+    const _sysName = { loinc: 'LOINC', loinc_answer: 'LOINC answer', snomed: 'SNOMED CT',
+      icd10: 'ICD-10', hpo: 'HPO', cadsr: 'caDSR', orphanet: 'Orphanet' };
+    const _codeRows = [];
+    if (_codes.scale) Object.entries(_codes.scale).forEach(([sys, code]) =>
+      (Array.isArray(code) ? code : [code]).forEach(c =>
+        _codeRows.push(`<tr><td><em>(whole scale)</em></td><td>${_sysName[sys] || sys}</td><td>${c}</td></tr>`)));
+    if (_codes.items) Object.entries(_codes.items).forEach(([id, m]) =>
+      Object.entries(m || {}).forEach(([sys, code]) => {
+        if (sys === 'options') return;                     // answer-level codes; not per-item here
+        (Array.isArray(code) ? code : [code]).forEach(c =>
+          _codeRows.push(`<tr><td>${id}</td><td>${_sysName[sys] || sys}</td><td>${c}</td></tr>`));
+      }));
+    const codesSection = _codeRows.length ? `<hr>
+      <h2>Terminology Codes</h2>
+      <p style="font-size:0.85em;color:#666;">Standard codes this scale carries for interoperability
+      (used by the FHIR/EHR export). This is the data dictionary mapping each item to its code &mdash;
+      the CSV data columns keep their item-id names.</p>
+      <table><thead><tr><th>Item</th><th>System</th><th>Code</th></tr></thead>
+      <tbody>${_codeRows.join('')}</tbody></table>` : '';
+
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -3080,6 +3263,7 @@ const ScaleRunner = (() => {
 <body>
   <h1>${name}</h1>
   ${citation ? `<p><span class="citation">${citation}</span></p>` : ''}
+  ${licenseLine}
   <p>Participant: <strong>${state.participant}</strong></p>
   <p>Test Date: <strong>${ts}</strong></p>
   <hr>
@@ -3093,6 +3277,7 @@ const ScaleRunner = (() => {
   ${responsesSection}
   ${dataFilesSection}
   ${paramsSection}
+  ${codesSection}
   ${footerSection}
   <hr>
   <p style="font-size:0.85em;color:#888;text-align:center;">

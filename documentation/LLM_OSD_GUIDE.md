@@ -8,6 +8,66 @@ LLMs given only the full specification often invent plausible-but-invalid struct
 
 This page is the **short, example-driven contract** to paste into a prompt (or link alongside the spec). Examples here are generic (`EX`, `q1`, `total`) — apply the same patterns to whatever scale you are implementing. Prefer a real repo file such as `PHQ9.osd` as the structural template.
 
+**Pattern-match the templates in this guide** (especially the complete skeletons). Do not invent “standard survey JSON” shapes (`scoring` arrays, boolean toggles, `operation` instead of `op`).
+
+---
+
+## Required pieces under `definition` (checklist)
+
+Envelope keys are only `osd_version`, `definition`, `translations`. Inside `definition`, a scored Likert scale typically **must** include all of:
+
+| Block | Role | Hard rule |
+|-------|------|-----------|
+| `scale_info` | name, `code`, license, citation, … | `code` ≈ filename stem (`[A-Za-z0-9_]+`) |
+| `likert_options` (or `response_scales`) | response buttons | see typed schema below |
+| `items` | questions | every scored item has `text_key` |
+| `dimensions` | score **metadata** (id + display name) | required whenever you define scores |
+| `scoring` | score **computation** | keyed object; keys **must match** `dimensions[].id` |
+| `implementation` | who encoded the `.osd` | recommended |
+
+Mandatory link: **`dimensions[].id` ↔ `scoring.<id>`** (same string). Omitting `dimensions` while emitting `scoring` is the usual reason Preview runs but Summary has no scores.
+
+### `likert_options` typed fields (do not guess types)
+
+```text
+likert_options: {
+  points: number,          // button count
+  min: number,             // stored value of first button
+  max: number,             // MUST equal min + points - 1
+  labels: (string|null)[], // translation keys, length === points; null = unlabeled
+  show_numbers: "all" | "labeled_only" | "none",   // STRING enum — NOT boolean
+  question_head?: string   // translation key for scale-wide stem / instructions
+}
+```
+
+- **`show_numbers`:** only `"all"`, `"labeled_only"`, or `"none"`.  
+  There is **no** `"endpoints"` value and **no** boolean `false`/`true`.  
+  Use `"none"` when labels already encode the metric (`"0%"`, `"10%"`, …).  
+  Use `"labeled_only"` when only some slots have labels and middles are `null`.
+- **`question_head`:** translation key for the instruction/stem shown above items. Put the wording under `translations.en[<that key>]`, then set `"question_head": "<that key>"` (often `"instruction"` or `"question_head"`). Leaving text only in `translations` without this link does not attach it to the scale UI.
+
+### Strings: translation keys vs literal fields
+
+| Kind | How to store | Examples |
+|------|----------------|----------|
+| Participant-facing item/option/stem text | **Translation key** on the structure + string under `translations.en` | item `text_key`; `likert_options.labels[]`; `question_head` |
+| Score explanation for reports / builders | **Literal string** on the scoring block | `"description": "Mean of items × 10."` |
+| Dimension display name | **Literal** on `dimensions[]` | `"name": "Total"` |
+
+Do **not** invent `description_key` on scoring. Keys ending in `_key` are only where the spec says so (e.g. item `text_key`, norm `label_key`).
+
+### `transform` strict schema (optional, per scoring block)
+
+```text
+transform: [                    // ALWAYS an array (even for one step)
+  { op: "add"|"subtract"|"multiply"|"divide", value: number },
+  ...
+]
+```
+
+- Field name is **`op`**, never `operation`.
+- A bare object `"transform": { "operation": "multiply", "value": 10 }` is invalid and ignored.
+
 ---
 
 ## Copy-paste prompt (recommended)
@@ -81,7 +141,9 @@ Also attach or link:
 
 ---
 
-## Minimal valid skeleton
+## Minimal valid skeleton (ordinary verbal anchors)
+
+Copy this structure first. Then change ids/text/methods to match the published measure.
 
 ```json
 {
@@ -112,7 +174,7 @@ Also attach or link:
       "max": 5,
       "labels": ["likert_1", "likert_2", "likert_3", "likert_4", "likert_5"],
       "show_numbers": "all",
-      "question_head": "question_head"
+      "question_head": "instruction"
     },
     "dimensions": [
       { "id": "total", "name": "Total" }
@@ -131,7 +193,7 @@ Also attach or link:
   },
   "translations": {
     "en": {
-      "question_head": "Please answer each item.",
+      "instruction": "Please answer each item.",
       "q1": "First item wording.",
       "q2": "Second item wording.",
       "likert_1": "Never",
@@ -146,6 +208,73 @@ Also attach or link:
 ```
 
 **File name:** `EX.osd` (same as `scale_info.code`). Prefer codes that are safe filename stems: `[A-Za-z0-9_]+`.
+
+## Complete skeleton (percent labels + suppress numbers + transform)
+
+Use this when labels already state the metric and the published score rescales after mean/sum. Lock onto these exact field shapes:
+
+```json
+{
+  "osd_version": "1.0",
+  "definition": {
+    "scale_info": {
+      "name": "Example Percent Scale",
+      "code": "EXPCT",
+      "description": "Illustrative 0–10 buttons labeled as percents; mean×10 → 0–100."
+    },
+    "implementation": {
+      "author": "Your Name",
+      "license": "CC BY 4.0"
+    },
+    "likert_options": {
+      "points": 11,
+      "min": 0,
+      "max": 10,
+      "labels": [
+        "opt_0", "opt_10", "opt_20", "opt_30", "opt_40", "opt_50",
+        "opt_60", "opt_70", "opt_80", "opt_90", "opt_100"
+      ],
+      "show_numbers": "none",
+      "question_head": "instruction"
+    },
+    "dimensions": [
+      { "id": "total", "name": "Total" }
+    ],
+    "items": [
+      { "id": "q1", "type": "likert", "text_key": "q1" },
+      { "id": "q2", "type": "likert", "text_key": "q2" }
+    ],
+    "scoring": {
+      "total": {
+        "method": "mean_coded",
+        "items": ["q1", "q2"],
+        "transform": [{ "op": "multiply", "value": 10 }],
+        "description": "Mean of item responses (0–10), multiplied by 10 (0–100)."
+      }
+    }
+  },
+  "translations": {
+    "en": {
+      "instruction": "Choose the option that best fits your experience.",
+      "q1": "First item wording.",
+      "q2": "Second item wording.",
+      "opt_0": "0%",
+      "opt_10": "10%",
+      "opt_20": "20%",
+      "opt_30": "30%",
+      "opt_40": "40%",
+      "opt_50": "50%",
+      "opt_60": "60%",
+      "opt_70": "70%",
+      "opt_80": "80%",
+      "opt_90": "90%",
+      "opt_100": "100%"
+    }
+  }
+}
+```
+
+This second skeleton demonstrates together: `show_numbers` as `"none"`, `question_head` → `instruction`, `dimensions`+`scoring` shared id, `transform` as a one-step **array** with `"op"`, and literal `"description"`.
 
 ---
 
@@ -195,14 +324,16 @@ After a failed attempt, models often partially correct one issue and invent anot
 
 ## Suppressing numeric labels under Likert buttons (`show_numbers`)
 
+**Type:** string. **Allowed values only:** `"all"` | `"labeled_only"` | `"none"`.  
+Not a boolean. Not `"endpoints"` (that value does not exist — use `"labeled_only"` when middles are `null`).
+
 By default the runner draws the **stored numeric value** under each button *and*
 the label text above it (`show_numbers: "all"`). When labels already encode the
 metric (percentages, signed integers, letter grades), that under-number is
 redundant and confusing (e.g. label `10%` with a `1` underneath because
 `min=0`…`max=10`).
 
-Set on `likert_options` (or a named `response_scales` entry). **Type is a string
-enum — not a boolean:**
+Set on `likert_options` (or a named `response_scales` entry):
 
 | Value | Behavior | When to use |
 |-------|----------|-------------|
@@ -394,13 +525,15 @@ Every score id must exist in **both** `dimensions` and `scoring` (see patterns a
 }
 ```
 
-**Optional affine rescaling** after the method — always an **array**:
+**Optional affine rescaling** after the method — always an **array of steps**, even when there is only one step. Each step object has exactly the keys `op` and `value` (plus nothing named `operation`):
 
 ```json
 "transform": [ { "op": "multiply", "value": 10 } ]
 ```
 
-`op` is one of `add`, `subtract`, `multiply`, `divide`.
+`op` is one of `add`, `subtract`, `multiply`, `divide`. `value` is a number.
+
+**Scale-wide instructions:** set `likert_options.question_head` to a translation key (e.g. `"instruction"`) and define that key under `translations.en`. That is the standard way to render a prompt above the item list; do not leave instructions only as an orphaned translation entry.
 
 **Non-unit published option values** (spacing ≠ 1): either
 

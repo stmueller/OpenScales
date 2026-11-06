@@ -1381,10 +1381,12 @@ The PEBL ScaleRunner supports pattern validation via the built-in `RegexMatch(te
 ### C10. Terminology Codes (`codes`) — Optional
 
 **Optional.** An overlay block at `definition.codes` carrying standard terminology codes
-(**LOINC**, **SNOMED CT**, **ICD-10**) for FHIR and outcome-registry interoperability. Purely
-additive metadata — runners MAY ignore it entirely, and a scale with no `codes` block is fully
-valid. It is consumed by the FHIR exporter (`tools/convert_to_fhir.py`); per-scale *population*
-of codes is ongoing curation, but the schema below is stable.
+(**LOINC**, **SNOMED CT**, **ICD-10**) for FHIR and outcome-registry interoperability, and/or
+an **NDA** block for NIMH Data Archive submission. Purely additive metadata — runners MAY ignore
+it entirely, and a scale with no `codes` block is fully valid. It is consumed by the FHIR
+exporter (`tools/convert_to_fhir.py`) and the planned NDA exporter
+(`tools/convert_to_nda.py`); per-scale *population* of codes is ongoing curation, but the
+schema below is stable.
 
 **Motivation.** As OpenScales grows into a broader ecosystem — including commercial and
 registry partners, not only the open repository — interoperability with electronic health
@@ -1431,12 +1433,31 @@ sprinkled inline on each item/option. This is a deliberate design choice for thr
   "items": {                                              // QUESTION codes — keyed by item id
     "looking_up_increases_problem": { "loinc": "67345-9" },
     "feel_frustrated":              { "loinc": "67346-7" }
+  },
+  "nda": {                                               // NDA submission mapping (optional)
+    "short_name": "phq901",                              // NDA data structure short name
+    "version":    "01",                                  // NDA structure version
+    "items": {                                           // .osd item id -> NDA column name
+      "phq9_anhedonia":  "phq9_1",
+      "phq9_depressed":  "phq9_2"
+    }
   }
 }
 ```
 
 An optional per-item answer override (`codes.items.<id>.options`) wins over the shared scale for
 the rare case where the same answer text means a different SNOMED concept in one question.
+
+**NDA block.** `codes.nda` maps an `.osd` to an NDA Data Archive data structure for automated
+submission CSV generation. `short_name` and `version` identify the NDA structure (browsable at
+`https://nda.nih.gov/data-structure/{short_name}`; template at
+`https://nda.nih.gov/api/datadictionary/v2/datastructure/{short_name}/template`). The template
+is a two-row CSV: row 1 = `"{short_name}","{version}"`, row 2 = all column names in NDA's
+required order. The `items` map translates `.osd` item `id` values to NDA column names;
+the five universal NDA header fields (`subjectkey`, `src_subject_id`, `interview_date`,
+`interview_age`, `sex`) are supplied from runner session metadata at export time. The planned
+tool `tools/convert_to_nda.py` reads this block and a runner response CSV to emit a
+ready-to-upload NDA submission file. See `documentation/health_scales_ecosystem.md §4b`.
 
 **Implementation.** The FHIR exporter `tools/convert_to_fhir.py` reads this overlay and emits:
 `Questionnaire.code` (panel), `item.code` (per-question LOINC), and answer `valueCoding` set to
@@ -1447,8 +1468,8 @@ test server lacking the LOINC/SNOMED terminology to check code *values*). `misc/
 the overlay for PhenX scales from the PhenX↔LOINC panels.
 
 **Licensing note.** LOINC is free to embed and comes first; SNOMED CT redistribution requires an
-Affiliate License, so SNOMED codes are included only where that license permits. Scales simply omit
-`codes` until curated.
+Affiliate License, so SNOMED codes are included only where that license permits. NDA `short_name`
+and column names are public (no license). Scales simply omit `codes` until curated.
 
 ---
 

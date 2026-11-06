@@ -23,7 +23,9 @@ BEFORE writing any JSON:
    and proceed only if they already answered / said to use defaults)
 
 ASK THE USER (or apply defaults and say so):
-- show_numbers on likert_options: "all" | "labeled_only" | "none"?
+- show_numbers on likert_options — MUST be a STRING enum, never a boolean:
+    "all" | "labeled_only" | "none"
+  NEVER "show_numbers": false or true (boolean false is ignored → numbers still show).
   DEFAULT when every label already states the value (e.g. "0%", "10%", …,
   or "−3"…"3"): "none". Otherwise DEFAULT "all" for ordinary Never…Always
   anchors. Prefer "labeled_only" when only endpoints are labeled and
@@ -54,9 +56,10 @@ Rules (override generic survey-JSON habits — do NOT invert these):
 7. Non-unit response spacing (e.g. published values 0,10,20,…): use type "multi" +
    option_sets with numeric values, OR a unit-step likert plus scoring transform
    (see Scoring section). Do not invent a likert_options shape for that.
-8. Optional transform is ALWAYS an array: "transform": [{ "op": "multiply", "value": 10 }]
-   NEVER "transform": { "operation": "multiply", "value": 10 }.
-   NEVER description_key — use literal "description" on the scoring block.
+8. Optional transform is ALWAYS an array of steps with field "op" (not "operation"):
+     CORRECT: "transform": [{ "op": "multiply", "value": 10 }]
+     WRONG:   "transform": { "operation": "multiply", "value": 10 }
+   Score text uses literal "description": "...", NEVER "description_key".
 9. After writing JSON, self-check and list: (a) every item has text_key,
    (b) likert_options has "points" OR you used option_sets, (c) scoring is a
    non-array object with "method" under each key, (d) every scoring key has a
@@ -156,6 +159,7 @@ If output matches **any** of these, it is invalid — delete and regenerate (do 
   `[{ "id": "total", "method": "mean_coded", ... }]`. The score name is the
   **object key**, never an `"id"` field inside an array element.
 - `scoring` entries that use `"type": "average"` instead of `"method": "mean_coded"`
+- `"show_numbers": false` or `true` (boolean) — must be the string `"none"` / `"all"` / `"labeled_only"`
 
 **Do not invert the scoring rule.** A keyed object is the *correct* OSD shape.
 Converting `{ "total": { ... } }` into `[ { "id": "total", ... } ]` is a known
@@ -163,7 +167,7 @@ LLM failure mode and produces no usable scores in ScaleBuilder.
 
 ScaleBuilder and runners **reject** this shape — they do not auto-repair it. Linking this guide is not enough unless the model quotes the fingerprint and self-checks.
 
-### Related failures (loads questions, but no summary score)
+### Related failures (loads questions, but no summary score / wrong UI)
 
 | Mistake | Wrong | Correct |
 |---------|-------|---------|
@@ -172,8 +176,20 @@ ScaleBuilder and runners **reject** this shape — they do not auto-repair it. L
 | Subscale scoring without dimension rows | `scoring.anxiety` only | `dimensions` entry `{ "id": "anxiety", ... }` **and** `scoring.anxiety` |
 | Bad `transform` | `"transform": { "operation": "multiply", "value": 10 }` | `"transform": [{ "op": "multiply", "value": 10 }]` |
 | Wrong description field | `"description_key": "score_desc"` | `"description": "Literal explanation of the score."` |
+| Boolean `show_numbers` | `"show_numbers": false` | `"show_numbers": "none"` (string enum) |
 
 **Silent Preview trap:** ScaleBuilder may still open and Preview a file that has `scoring` but no matching `dimensions` (or that used an array `scoring` which was dropped). On import it rebuilds scoring **only from** `dimensions`, so orphan / invalid `scoring` is discarded. The run looks fine (items + responses) while Summary stays empty. Treat missing `dimensions` or array-shaped `scoring` as a hard error even if Preview “works.”
+
+### Recurring “I fixed it” mistakes (still wrong)
+
+After a failed attempt, models often partially correct one issue and invent another. Treat this checklist as still-broken until **all** pass:
+
+1. **Keyed `scoring` object** — good. Do **not** re-wrap it as an array later.
+2. **`dimensions` with matching ids** — still required; keyed scoring alone is not enough for ScaleBuilder.
+3. **`transform`** — array of `{ "op": "...", "value": N }`. A single object with `"operation"` is ignored (no ×10 / rescale).
+4. **`description`** — literal string on the scoring block. `"description_key"` is not read for scores.
+5. **`show_numbers`** — string `"none"`, never boolean `false`. In the JS runner, `false` is falsy and falls through to default `"all"`, so under-numbers **still appear**.
+6. Prefer `osd_version": "1.0"` unless you are intentionally targeting a newer documented envelope; do not invent `"1.1.0"` as a substitute for using `show_numbers` correctly.
 
 ---
 
@@ -185,7 +201,8 @@ metric (percentages, signed integers, letter grades), that under-number is
 redundant and confusing (e.g. label `10%` with a `1` underneath because
 `min=0`…`max=10`).
 
-Set on `likert_options` (or a named `response_scales` entry):
+Set on `likert_options` (or a named `response_scales` entry). **Type is a string
+enum — not a boolean:**
 
 | Value | Behavior | When to use |
 |-------|----------|-------------|
@@ -204,13 +221,19 @@ Set on `likert_options` (or a named `response_scales` entry):
 }
 ```
 
-(Legacy alias: `suppress_likert_numbers: true` ≡ `show_numbers: "none"`.)
+```json
+// WRONG — boolean is not in the enum; runner treats false as missing → "all"
+"show_numbers": false
+```
+
+Legacy alias only: `suppress_likert_numbers: true` (boolean) ≡ `show_numbers: "none"`.
+Prefer the string enum; do not invent `"show_numbers": false`.
 
 **Authoring rule for LLMs:** Before emitting JSON, **ask the user** which
 `show_numbers` mode they want. If they do not answer, use the defaults in the
 prompt above (`"none"` when labels encode values; otherwise `"all"`) and state
 that choice in the reply so it can be tested. Repo example: `TiA.osd`
-(`show_numbers: "none"`).
+(`"show_numbers": "none"`).
 
 ---
 
@@ -415,7 +438,13 @@ Do not put `{value, text}` arrays inside `likert_options`.
 "labels": ["opt_0","opt_10",...],  // translations "0%","10%",...
 // (omit show_numbers → "all" → button shows "10%" and "1")
 
-// GOOD: keyed scoring + dimensions; transform array; suppress redundant numbers
+// BAD: boolean show_numbers (ignored → still shows numbers)
+"show_numbers": false
+
+// BAD: description_key (not used for score text)
+"description_key": "score_desc"
+
+// GOOD: keyed scoring + dimensions; transform array; string show_numbers
 "likert_options": {
   "points": 11, "min": 0, "max": 10,
   "labels": ["opt_0","opt_10","opt_20","opt_30","opt_40","opt_50",
@@ -446,7 +475,7 @@ Do not put `{value, text}` arrays inside `likert_options`.
 7. [ ] If the measure has subscales, each subscale (and any total) is its own dimensions+scoring pair with the correct item lists.
 8. [ ] If `transform` is present, it is an **array** of `{ "op": "...", "value": ... }` (field is `op`, not `operation`).
 9. [ ] Scoring uses `"description": "..."` (string), not `description_key`.
-10. [ ] `show_numbers` is set deliberately (`"all"` / `"labeled_only"` / `"none"`); asked the user or stated the default.
+10. [ ] `show_numbers` is the string `"all"` / `"labeled_only"` / `"none"` (not boolean); asked the user or stated the default.
 11. [ ] `scale_info.code` matches the intended filename stem; prefer `[A-Za-z0-9_]+`.
 12. [ ] License uses a short recommended label + `license_explanation` + `license_url` when possible.
 13. [ ] `implementation.author` is the actual implementer (not a fictional org name).

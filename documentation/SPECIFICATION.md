@@ -51,12 +51,12 @@ support it.
 `.osd` extension is the distribution convention (ScaleBuilder downloads
 `.osd`; chat UIs often export `.json` — rename before sharing). Prefer
 `scale_info.code` values that are safe filename stems: letters, digits,
-underscore (e.g. `MDS16` rather than `MDS-16`).
+underscore (e.g. `PHQ9` rather than `PHQ-9` when a hyphen would complicate paths).
 
 **LLM / automated authoring:** Generative models frequently invent invalid
-shapes (missing `text_key`, wrong `likert_options`, `scoring` as an array).
-See **[LLM_OSD_GUIDE.md](LLM_OSD_GUIDE.md)** for a pasteable prompt, a
-minimal skeleton, anti-patterns, and a worked MDS-16 counterexample.
+shapes (missing `text_key`, wrong `likert_options`, `scoring` as an array,
+`transform` as a single object). See **[LLM_OSD_GUIDE.md](LLM_OSD_GUIDE.md)**
+for a pasteable prompt, minimal skeleton, and anti-patterns.
 
 Language codes follow [BCP 47](https://www.rfc-editor.org/info/bcp47) (e.g., `en`, `de`, `es`, `zh-Hans`).
 

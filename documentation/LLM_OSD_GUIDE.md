@@ -4,9 +4,9 @@
 
 ## Why this guide exists
 
-LLMs given only the full specification often invent plausible-but-invalid structures: they put item text in the wrong place, invent response-scale shapes, and use scoring shapes from other survey formats. The result may open in ScaleBuilder but show **blank questions**, wrong response buttons, or broken scoring.
+LLMs given only the full specification often invent plausible-but-invalid structures: they put item text in the wrong place, invent response-scale shapes, and use scoring shapes from other survey formats. The result may open in ScaleBuilder but show **blank questions**, wrong response buttons, or missing summary scores.
 
-This page is the **short, example-driven contract** to paste into a prompt (or link alongside the spec).
+This page is the **short, example-driven contract** to paste into a prompt (or link alongside the spec). Examples here are generic (`EX`, `q1`, `total`) — apply the same patterns to whatever scale you are implementing. Prefer a real repo file such as `PHQ9.osd` as the structural template.
 
 ---
 
@@ -15,26 +15,42 @@ This page is the **short, example-driven contract** to paste into a prompt (or l
 ```
 You are implementing an OpenScales .osd scale file.
 
-Read these rules carefully — they override generic survey-JSON habits:
+BEFORE writing any JSON:
+1. Open https://github.com/stmueller/OpenScales/blob/main/documentation/LLM_OSD_GUIDE.md
+2. Quote the section "Fingerprint of a REJECT file" verbatim in your reply
+3. Confirm you will NOT emit that fingerprint
 
-1. Output ONE JSON object saved as `{CODE}.osd` (extension .osd, not .json).
+Rules (override generic survey-JSON habits):
+
+1. Output ONE JSON object. Filename `{CODE}.osd` (not .json). Prefer CODE
+   without spaces or hyphens (letters, digits, underscore).
 2. Top-level keys MUST be exactly: osd_version, definition, translations.
-3. ALL participant-facing strings live ONLY under translations.{lang}.
-   Items MUST have text_key pointing into that map. Never put item wording
-   only under translations without text_key on the item, and never put
-   wording inline on the item as "text".
-4. likert_options is ONE object with points, min, max, labels (array of
-   translation keys or null) — NOT a dict of named option lists, NOT
-   arrays of {value, text}.
-5. scoring is an OBJECT keyed by score id (not an array). Use method
-   mean_coded or sum_coded (not type/average/sum).
-6. Match published response values. If options are 0,10,...,100 (not
-   consecutive integers), use type multi with numeric value + text_key
-   options, or use likert 0..10 with a scoring transform multiply by 10.
-7. Follow the minimal template and anti-patterns below. Prefer the
-   OpenScales PHQ9.osd pattern for ordinary Likert scales.
+3. EVERY item MUST include "text_key" (usually same as "id"). Wording lives ONLY
+   under translations.en[text_key]. Missing text_key → blank questions in ScaleBuilder.
+4. likert_options MUST look like:
+     { "points": N, "min": A, "max": A+N-1, "labels": ["key1", ...], "question_head": "question_head" }
+   NEVER: { "my_opts": [ {"value": 0, "text": "Never"}, ... ] }
+   NEVER item field "options": "some_name" on likert items.
+5. scoring MUST be an object, NOT an array:
+     "scoring": { "total": { "method": "mean_coded", "items": ["q1", "q2"] } }
+   NEVER: "scoring": [ { "id": "...", "type": "average", ... } ]
+6. Non-unit response spacing (e.g. published values 0,10,20,…): use type "multi" +
+   option_sets with numeric values, OR a unit-step likert plus scoring transform
+   (see Scoring section). Do not invent a likert_options shape for that.
+7. Scoring that appears in reports requires matching ids:
+     - dimensions: [{ "id": "total", "name": "Total" }]
+     - scoring: { "total": { "method": "mean_coded", "items": [...], "description": "..." } }
+     - optional transform as an ARRAY: "transform": [{ "op": "multiply", "value": 10 }]
+     NEVER omit dimensions when you define scoring.
+     NEVER "transform": { "operation": "multiply", "value": 10 }.
+     NEVER description_key — use literal "description" on the scoring block.
+8. After writing JSON, self-check and list: (a) every item has text_key,
+   (b) likert_options has "points" OR you used option_sets, (c) scoring is an object
+   with "method", (d) every scoring key has a matching dimensions[].id,
+   (e) transform is an array of {op, value} if present. If any check fails, fix before answering.
 
 Then implement: <SCALE NAME / SOURCE URL / PDF>.
+Use PHQ9.osd as the structural template for ordinary Likert scales.
 ```
 
 Also attach or link:
@@ -108,120 +124,69 @@ Also attach or link:
 }
 ```
 
-**File name:** `EX.osd` (same as `scale_info.code`). Prefer codes without spaces or hyphens (`MDS16` not `MDS-16`) so filenames and URLs stay simple.
+**File name:** `EX.osd` (same as `scale_info.code`). Prefer codes that are safe filename stems: `[A-Za-z0-9_]+`.
 
 ---
 
-## Case study: what Gemini got wrong for MDS-16
+## Fingerprint of a REJECT file
 
-Prompt used: review SPECIFICATION.md + implement MDS-16 from the MDRH measures page. Output was structurally close at the envelope level but **invalid for runners/ScaleBuilder**.
+If output matches **all** of these, it is invalid — delete and regenerate (do not “explain” and ship it):
 
-| # | Gemini output | Spec / runner requirement | Effect |
-|---|---------------|---------------------------|--------|
-| 1 | Items like `{"id":"mds_1","type":"likert","options":"mds_options"}` — **no `text_key`** | Every scored item MUST have `text_key` into `translations` | ScaleBuilder imports `text: ''` → **blank questions online** even though wording exists under `translations.en.mds_1` |
-| 2 | `likert_options: { "mds_options": [ {"value":0,"text":"0%"}, ... ] }` | `likert_options` is a **single** object: `points`, `min`, `max`, `labels` (translation keys). Named formats go in `response_scales`. Labels are keys, not `"text"` | Response UI ignored / wrong; invented schema |
-| 3 | Item field `"options": "mds_options"` | Likert uses optional `response_scale` (name into `response_scales`). `options` is for `multi`/`multicheck` and must be an **array** (or use `option_set`) | Options not resolved |
-| 4 | `scoring` as an **array** with `"type":"average"` | `scoring` is an **object**; use `"method":"mean_coded"` (or `"mean"`) | Scoring dropped / ignored |
-| 5 | `translations.en.instruction` | Shared stem → `likert_options.question_head` → key such as `question_head` (not `instruction`) | Instructions not shown as stem |
-| 6 | License `"Open Access (...)"`; missing `domain`, `license_explanation`, `abbreviation`, `version` | Prefer short recommended license labels; document grant in `license_explanation` | Weak / nonstandard metadata |
-| 7 | Downloaded as `.json` from the chat UI | Canonical extension is **`.osd`** (content is JSON). ScaleBuilder download uses `.osd`; rename chat exports | Confusing for upload workflows |
-| 8 | Response values 0,10,…,100 as if ordinary Likert | Spec Likert `max` must equal `min + points − 1` (unit steps). Non-unit spacing needs `multi` values or Likert 0–10 + `transform` ×10 | Even a “fixed” Likert 0–100 with 11 points would violate `max = min+points-1` if max=100 and points=11 |
+- Items like `{"id":"q1","type":"likert","options":"my_opts"}` with **no** `text_key`
+- `likert_options` shaped as `{ "my_opts": [ {"value":0,"text":"Never"}, ... ] }`
+- `scoring` as an **array** with `"type":"average"`
 
-### Corrected MDS-16 pattern (excerpt)
+ScaleBuilder and runners **reject** this shape — they do not auto-repair it. Linking this guide is not enough unless the model quotes the fingerprint and self-checks.
 
-MDS-16 items are rated **0%, 10%, …, 100%**; total score is the **mean** (0–100); cutoff ≈ **40**. Because spacing is 10, prefer `multi` with numeric values (preserves published scores) **or** Likert 0–10 with mean×10.
+### Related failures (loads questions, but no summary score)
 
-**Option A — `multi` with published values (recommended for fidelity):**
+| Mistake | Wrong | Correct |
+|---------|-------|---------|
+| No `dimensions` | only `scoring.total` | also `"dimensions": [{ "id": "total", "name": "Total" }]` — **same id** |
+| Bad `transform` | `"transform": { "operation": "multiply", "value": 10 }` | `"transform": [{ "op": "multiply", "value": 10 }]` |
+| Wrong description field | `"description_key": "score_desc"` | `"description": "Literal explanation of the score."` |
 
-```json
-{
-  "osd_version": "1.0",
-  "definition": {
-    "scale_info": {
-      "name": "Maladaptive Daydreaming Scale-16",
-      "code": "MDS16",
-      "abbreviation": "MDS-16",
-      "description": "16-item self-report of maladaptive daydreaming. Items rated 0–100% in 10% steps; total score is the mean (0–100). A mean ≥40 suggests suspected clinical-level MD (English cutoff; see Soffer-Dudek corrigenda).",
-      "citation": "Somer, E., Lehrfeld, J., Jopp, D. S., & Bigelsen, J. (2016). Development and validation of the Maladaptive Daydreaming Scale (MDS). Consciousness and Cognition, 39, 77–91. https://doi.org/10.1016/j.concog.2015.12.001",
-      "license": "free for research use",
-      "license_explanation": "MDRH states the MDS-16 is open access for research and clinical use without charge; share resulting publications with the authors. Not a diagnostic tool.",
-      "license_url": "https://daydreamresearch.wixsite.com/md-research/measures",
-      "version": "1.0",
-      "url": "https://daydreamresearch.wixsite.com/md-research/measures",
-      "domain": "Mental Health"
-    },
-    "implementation": {
-      "author": "Your Name",
-      "organization": "OpenScales Project",
-      "date": "2026-11-05",
-      "license": "CC BY 4.0",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "notes": "Item wording must be transcribed from an authorized MDS-16 form. Response options 0–100 step 10 encoded as multi values."
-    },
-    "option_sets": {
-      "default": [
-        {"value": 0, "text_key": "pct_0"},
-        {"value": 10, "text_key": "pct_10"},
-        {"value": 20, "text_key": "pct_20"},
-        {"value": 30, "text_key": "pct_30"},
-        {"value": 40, "text_key": "pct_40"},
-        {"value": 50, "text_key": "pct_50"},
-        {"value": 60, "text_key": "pct_60"},
-        {"value": 70, "text_key": "pct_70"},
-        {"value": 80, "text_key": "pct_80"},
-        {"value": 90, "text_key": "pct_90"},
-        {"value": 100, "text_key": "pct_100"}
-      ]
-    },
-    "dimensions": [
-      { "id": "total", "name": "MDS-16 Total", "description": "Mean of 16 items (0–100). ≥40 suggests probable MD (English)." }
-    ],
-    "items": [
-      { "id": "mds1", "type": "multi", "text_key": "mds1" },
-      { "id": "mds2", "type": "multi", "text_key": "mds2" }
-    ],
-    "scoring": {
-      "total": {
-        "method": "mean_coded",
-        "items": ["mds1", "mds2"],
-        "description": "Mean of item values (0–100). Cutoff 40 (English)."
-      }
-    }
-  },
-  "translations": {
-    "en": {
-      "question_head": "In answering the following questions, please refer to your daydreaming activities in the last month.",
-      "mds1": "(Full published item 1 text…)",
-      "mds2": "(Full published item 2 text…)",
-      "pct_0": "0%",
-      "pct_10": "10%",
-      "pct_100": "100%",
-      "debrief": "Thank you."
-    }
-  }
-}
-```
+Without a matching `dimensions` entry, ScaleBuilder drops the scoring block on import. With a non-array `transform`, rescaling never runs.
 
-**Option B — Likert 0–10 + transform ×10:**
+---
+
+## Scoring that actually appears in the report
+
+Every score id must exist in **both** `dimensions` and `scoring`:
 
 ```json
-"likert_options": {
-  "points": 11,
-  "min": 0,
-  "max": 10,
-  "labels": ["pct_0","pct_10","pct_20","pct_30","pct_40","pct_50","pct_60","pct_70","pct_80","pct_90","pct_100"],
-  "question_head": "question_head",
-  "show_numbers": "none"
-},
+"dimensions": [
+  { "id": "total", "name": "Total", "description": "Mean of items." }
+],
 "scoring": {
   "total": {
     "method": "mean_coded",
-    "items": ["mds1", "mds2", "..."],
-    "transform": [ { "op": "multiply", "value": 10 } ],
-    "description": "Mean of 0–10 ratings ×10 → 0–100 scale."
+    "items": ["q1", "q2", "q3"],
+    "description": "Mean of item responses.",
+    "norms": {
+      "thresholds": [
+        { "min": 1, "max": 2.5, "label": "Low" },
+        { "min": 2.5, "max": 5, "label": "High" }
+      ]
+    }
   }
 }
 ```
+
+**Optional affine rescaling** after the method (e.g. map a 0–10 mean onto another published range):
+
+```json
+"transform": [ { "op": "multiply", "value": 10 } ]
+```
+
+`op` is one of `add`, `subtract`, `multiply`, `divide`. `transform` is always an **array** of steps.
+
+**Non-unit published option values** (spacing ≠ 1): either
+
+- `type: "multi"` with `option_sets` / `options` using numeric `value` + `text_key`, or  
+- unit-step `likert` (`max === min + points - 1`) plus a `transform` that recovers the published metric.
+
+Do not put `{value, text}` arrays inside `likert_options`.
 
 ---
 
@@ -240,8 +205,17 @@ MDS-16 items are rated **0%, 10%, …, 100%**; total score is the **mean** (0–
 // BAD: scoring as array / wrong field names
 "scoring": [ { "id": "total", "type": "average", "items": ["q1"] } ]
 
+// BAD: transform as a single object
+"transform": { "operation": "multiply", "value": 10 }
+
 // GOOD:
-"scoring": { "total": { "method": "mean_coded", "items": ["q1"] } }
+"scoring": {
+  "total": {
+    "method": "mean_coded",
+    "items": ["q1"],
+    "transform": [{ "op": "multiply", "value": 10 }]
+  }
+}
 ```
 
 ---
@@ -253,11 +227,14 @@ MDS-16 items are rated **0%, 10%, …, 100%**; total score is the **mean** (0–
 3. [ ] Every `text_key` / label key / option `text_key` exists under `translations.en` (or target language).
 4. [ ] `likert_options` (if used) has `points`, `min`, `max`, `labels` with `max === min + points - 1`.
 5. [ ] `scoring` is an object; methods are from the spec (`mean_coded`, `sum_coded`, …).
-6. [ ] `scale_info.code` matches the intended filename stem; prefer `[A-Za-z0-9_]+`.
-7. [ ] License uses a short recommended label + `license_explanation` + `license_url` when possible.
-8. [ ] `implementation.author` is the actual implementer (not a fictional “OpenScales Community”).
-9. [ ] Rename chat downloads from `.json` → `.osd` before sharing.
-10. [ ] Run `python3 tools/validate_scale.py path/to/CODE.osd` when available.
+6. [ ] Every `scoring` key has a matching `dimensions[].id` (required for ScaleBuilder + reports).
+7. [ ] If `transform` is present, it is an **array** of `{ "op": "...", "value": ... }` (field is `op`, not `operation`).
+8. [ ] Scoring uses `"description": "..."` (string), not `description_key`.
+9. [ ] `scale_info.code` matches the intended filename stem; prefer `[A-Za-z0-9_]+`.
+10. [ ] License uses a short recommended label + `license_explanation` + `license_url` when possible.
+11. [ ] `implementation.author` is the actual implementer (not a fictional org name).
+12. [ ] Rename chat downloads from `.json` → `.osd` before sharing.
+13. [ ] Run `python3 tools/validate_scale.py path/to/CODE.osd` when available.
 
 ---
 
